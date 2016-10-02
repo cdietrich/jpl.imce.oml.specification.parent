@@ -75,7 +75,7 @@ public class OMFSchemaTableGenerator {
   
   public void generate() {
     try {
-      final String sourceFile = "/gov.nasa.jpl.imce.omf.schema/model/OMFSchema.xcore";
+      final String sourceFile = "/gov.nasa.jpl.imce.omf.schema.specification/model/OMFSchema.xcore";
       final String targetBundle = "jpl.omf.schema.tables";
       final String targetFolder = "/shared/src/main/scala/gov/nasa/jpl/imce/omf/schema/tables";
       final XtextResourceSet set = new XtextResourceSet();

@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EEnum
 class OMFSchemaTableGenerator {
 	
 	def generate() {
-		val sourceFile = "/gov.nasa.jpl.imce.omf.schema/model/OMFSchema.xcore"
+		val sourceFile = "/gov.nasa.jpl.imce.omf.schema.specification/model/OMFSchema.xcore"
 		val targetBundle = "jpl.omf.schema.tables"
 		val targetFolder = "/shared/src/main/scala/gov/nasa/jpl/imce/omf/schema/tables"
 		val set = new XtextResourceSet();
