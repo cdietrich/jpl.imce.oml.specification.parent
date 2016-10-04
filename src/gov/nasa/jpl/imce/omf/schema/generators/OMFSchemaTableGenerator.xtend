@@ -23,15 +23,25 @@ class OMFSchemaTableGenerator {
 	def generate() {
 		val sourceFile = "/gov.nasa.jpl.imce.omf.schema.specification/model/OMFSchema.xcore"
 		val targetBundle = "jpl.omf.schema.tables"
-		val targetFolder = "/shared/src/main/scala/gov/nasa/jpl/imce/omf/schema/tables"
+		
 		val set = new XtextResourceSet();
 		set.getURIConverter().getURIMap().putAll(EcorePlugin.computePlatformURIMap(true));
 		set.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
       	val sourceURI = URI.createPlatformResourceURI(sourceFile, false)
       	val sourceResource = set.getResource(sourceURI, true)
       	val ePackage = sourceResource.getContents().filter(EPackage).get(0)
+      	
+		val targetFolder = "/shared/src/main/scala/gov/nasa/jpl/imce/omf/schema/tables"
 		val folder = FileLocator.toFileURL(Platform.getBundle(targetBundle).getEntry(targetFolder))
       	generate(ePackage, folder.path)
+      	      	
+		val targetJSFolder = "/js/src/main/scala/gov/nasa/jpl/imce/omf/schema/tables"
+		val folderJS = FileLocator.toFileURL(Platform.getBundle(targetBundle).getEntry(targetJSFolder))
+      	generateJS(ePackage, folderJS.path)
+      	
+		val targetJVMFolder = "/jvm/src/main/scala/gov/nasa/jpl/imce/omf/schema/tables"
+		val folderJVM = FileLocator.toFileURL(Platform.getBundle(targetBundle).getEntry(targetJVMFolder))
+      	generateJVM(ePackage, folderJVM.path)
 	}
 	
 	def generate(EPackage ePackage, String targetFolder) {
@@ -40,6 +50,20 @@ class OMFSchemaTableGenerator {
 		for(eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract])  {
 			val classFile = new FileOutputStream(new File(targetFolder + File::separator + eClass.name + ".scala"))
 			classFile.write(generateClassFile(eClass).bytes)
+		}
+	}
+	
+	def generateJS(EPackage ePackage, String targetJSFolder) {
+		for(eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && hasOptionalAttributes])  {
+			val classFile = new FileOutputStream(new File(targetJSFolder + File::separator + eClass.name + "JS.scala"))
+			classFile.write(generateJSClassFile(eClass).bytes)
+		}
+	}
+	
+	def generateJVM(EPackage ePackage, String targetJVMFolder) {
+		for(eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && hasOptionalAttributes])  {
+			val classFile = new FileOutputStream(new File(targetJVMFolder + File::separator + eClass.name + "Java.scala"))
+			classFile.write(generateJVMClassFile(eClass).bytes)
 		}
 	}
 	
@@ -99,14 +123,16 @@ class OMFSchemaTableGenerator {
 		
 		/**
 		  «FOR attr : eClass.getSortedAttributes»
-		  * @param «attr.columnName»
+		  * @param «attr.columnName»[«attr.lowerBound»,«attr.upperBound»]
 		  «ENDFOR» 
 		  */
+		«IF ! eClass.hasOptionalAttributes»
 		@JSExport
+		«ENDIF»
 		case class «eClass.name»
 		(
 		 «FOR attr : eClass.getSortedAttributes SEPARATOR ","»
-		 @(JSExport @field) «attr.columnName»: «attr.typeName»
+		 @(JSExport @field) «attr.columnName»: «attr.constructorTypeName»
 		 «ENDFOR»
 		)
 		
@@ -134,11 +160,102 @@ class OMFSchemaTableGenerator {
 		}	
 	'''
 	
-	def List<EStructuralFeature> getSortedAttributes(EClass eClass) {
+		def String generateJSClassFile(EClass eClass) '''
+		/*
+		 * Copyright 2016 California Institute of Technology ("Caltech").
+		 * U.S. Government sponsorship acknowledged.
+		 *
+		 * Licensed under the Apache License, Version 2.0 (the "License");
+		 * you may not use this file except in compliance with the License.
+		 * You may obtain a copy of the License at
+		 *
+		 *     http://www.apache.org/licenses/LICENSE-2.0
+		 *
+		 * Unless required by applicable law or agreed to in writing, software
+		 * distributed under the License is distributed on an "AS IS" BASIS,
+		 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+		 * See the License for the specific language governing permissions and
+		 * limitations under the License.
+		 * License Terms
+		 */
+		 
+		package gov.nasa.jpl.imce.omf.schema.tables
+		
+		import scala.scalajs.js.annotation.JSExport
+		
+		@JSExport
+		object «eClass.name»JS {
+		  «IF eClass.hasOptionalAttributes»
+		  
+		  @JSExport
+		  def js«eClass.name»(
+		    «FOR attr : eClass.getSortedAttributes SEPARATOR ","»
+		    «attr.columnName»: «attr.jsTypeName»
+		    «ENDFOR»
+		  )
+		  : «eClass.name»
+		  = «eClass.name»(
+		    «FOR attr : eClass.getSortedAttributes SEPARATOR ","»
+		    «attr.jsArgName»
+		    «ENDFOR»
+		  )
+		  «ENDIF»
+		  
+		}	
+	'''
+	
+		def String generateJVMClassFile(EClass eClass) '''
+		/*
+		 * Copyright 2016 California Institute of Technology ("Caltech").
+		 * U.S. Government sponsorship acknowledged.
+		 *
+		 * Licensed under the Apache License, Version 2.0 (the "License");
+		 * you may not use this file except in compliance with the License.
+		 * You may obtain a copy of the License at
+		 *
+		 *     http://www.apache.org/licenses/LICENSE-2.0
+		 *
+		 * Unless required by applicable law or agreed to in writing, software
+		 * distributed under the License is distributed on an "AS IS" BASIS,
+		 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+		 * See the License for the specific language governing permissions and
+		 * limitations under the License.
+		 * License Terms
+		 */
+		 
+		package gov.nasa.jpl.imce.omf.schema.tables
+		
+		import java.util.Optional
+		import scala.compat.java8.OptionConverters._
+		
+		object «eClass.name»Java {
+		  «IF eClass.hasOptionalAttributes»
+		  
+		  def java«eClass.name»(
+		    «FOR attr : eClass.getSortedAttributes SEPARATOR ","»
+		    «attr.columnName»: «attr.javaTypeName»
+		    «ENDFOR»
+		  )
+		  : «eClass.name»
+		  = «eClass.name»(
+		    «FOR attr : eClass.getSortedAttributes SEPARATOR ","»
+		    «attr.javaArgName»
+		    «ENDFOR»
+		  )
+		  «ENDIF»
+		  
+		}	
+	'''
+	
+	static def Boolean hasOptionalAttributes(EClass eClass) {
+		eClass.getSortedAttributes.exists(a | a.lowerBound == 0)
+	}
+	
+	static def List<EStructuralFeature> getSortedAttributes(EClass eClass) {
 		eClass.selfAndAllSupertypes.map[EStructuralFeatures].flatten.sortWith(new OMFFeatureCompare())
 	}
 	
-	def List<EClass> selfAndAllSupertypes(EClass eClass) {
+	static def List<EClass> selfAndAllSupertypes(EClass eClass) {
 		val parents = new ArrayList(eClass.EAllSuperTypes)
 		parents.add(eClass)
 		parents
@@ -148,7 +265,7 @@ class OMFSchemaTableGenerator {
 		if (feature instanceof EReference) feature.name+"UUID" else feature.name
 	}
 	
-	static def String typeName(EStructuralFeature feature) {
+	static def String scalaTypeName(EStructuralFeature feature) {
 		val type = feature.EType
 		switch (type.name) {
 			case "EInt": "scala.Int"
@@ -157,6 +274,44 @@ class OMFSchemaTableGenerator {
 			case type instanceof EClass: "UUID"
 			default: type.name
 		}
+	}
+	static def String constructorTypeName(EStructuralFeature feature) {
+		val scalaType = feature.scalaTypeName
+		if (feature.lowerBound == 0)
+		  "scala.Option["+scalaType+"]"
+	    else
+	      scalaType
+	}
+
+	static def String jsTypeName(EStructuralFeature feature) {
+		val scalaType = feature.scalaTypeName
+		if (feature.lowerBound == 0)
+		  "scala.scalajs.js.UndefOr["+scalaType+"]"
+		else
+		  scalaType
+	}
+
+	static def String jsArgName(EStructuralFeature feature) {
+		if (feature.lowerBound == 0)
+		  feature.columnName+".toOption"
+		else
+		  feature.columnName
+	}
+
+
+	static def String javaTypeName(EStructuralFeature feature) {
+		val scalaType = feature.scalaTypeName
+		if (feature.lowerBound == 0)
+		  "Optional["+scalaType+"]"
+		else
+		  scalaType
+	}
+
+	static def String javaArgName(EStructuralFeature feature) {
+		if (feature.lowerBound == 0)
+		  feature.columnName+".asScala"
+		else
+		  feature.columnName
 	}
 
 	static class OMFFeatureCompare implements Comparator<EStructuralFeature> {

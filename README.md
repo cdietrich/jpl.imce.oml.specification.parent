@@ -35,17 +35,6 @@ You can import these projects via the following [Eclipse Team Project Set](https
 You can run the Xtend generator with the following Eclipse launch configuration:
 [launchers/OMFSchemaGeneratorTest.launch](launchers/OMFSchemaGeneratorTest.launch).
 
-The expected Console output looks like this:
+The expected Console output has several EMF-related misleading errors.
+Instead of the console output, use the JUnit success/failure to determine whether the code generation worked properly or not.
 
-```
-!SESSION 2016-10-02 19:04:13.558 -----------------------------------------------
-eclipse.buildId=unknown
-java.version=1.8.0_92
-java.vendor=Oracle Corporation
-BootLoader constants: OS=..., ARCH=..., WS=..., NL=...
-Framework arguments:  -version 3 -port 33739 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames gov.nasa.jpl.imce.omf.schema.generators.OMFSchemaGeneratorTest -application org.eclipse.pde.junit.runtime.coretestapplication -testpluginname gov.nasa.jpl.imce.omf.schema.generators
-Command-line arguments:  -os linux -ws gtk -arch x86_64 -consoleLog -version 3 -port 33739 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames gov.nasa.jpl.imce.omf.schema.generators.OMFSchemaGeneratorTest -application org.eclipse.pde.junit.runtime.coretestapplication -data /.../Junit -dev file:.../.metadata/.plugins/org.eclipse.pde.core/pde-junit/dev.properties -os ... -ws ... -arch ... -consoleLog -testpluginname gov.nasa.jpl.imce.omf.schema.generators
-
-!ENTRY org.eclipse.core.resources 2 10035 2016-10-02 19:04:19.925
-!MESSAGE The workspace will exit with unsaved changes in this session.
-```

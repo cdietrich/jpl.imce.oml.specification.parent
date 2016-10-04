@@ -32,7 +32,7 @@ public class OMFSchemaGeneratorTest extends TestCase {
 
 	public void testGenerate() {
 	    try {
-			String name = "gov.nasa.jpl.imce.omf.schema";
+			String name = "gov.nasa.jpl.imce.omf.schema.specification";
 		    IProjectDescription desc = ResourcesPlugin.getWorkspace().newProjectDescription(name);
 		    IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(name);
 		    project.create(desc, new NullProgressMonitor());

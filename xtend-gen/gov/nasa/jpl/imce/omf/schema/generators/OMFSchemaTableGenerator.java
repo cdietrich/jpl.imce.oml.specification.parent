@@ -77,7 +77,6 @@ public class OMFSchemaTableGenerator {
     try {
       final String sourceFile = "/gov.nasa.jpl.imce.omf.schema.specification/model/OMFSchema.xcore";
       final String targetBundle = "jpl.omf.schema.tables";
-      final String targetFolder = "/shared/src/main/scala/gov/nasa/jpl/imce/omf/schema/tables";
       final XtextResourceSet set = new XtextResourceSet();
       URIConverter _uRIConverter = set.getURIConverter();
       Map<URI, URI> _uRIMap = _uRIConverter.getURIMap();
@@ -89,11 +88,24 @@ public class OMFSchemaTableGenerator {
       EList<EObject> _contents = sourceResource.getContents();
       Iterable<EPackage> _filter = Iterables.<EPackage>filter(_contents, EPackage.class);
       final EPackage ePackage = ((EPackage[])Conversions.unwrapArray(_filter, EPackage.class))[0];
+      final String targetFolder = "/shared/src/main/scala/gov/nasa/jpl/imce/omf/schema/tables";
       Bundle _bundle = Platform.getBundle(targetBundle);
       URL _entry = _bundle.getEntry(targetFolder);
       final URL folder = FileLocator.toFileURL(_entry);
       String _path = folder.getPath();
       this.generate(ePackage, _path);
+      final String targetJSFolder = "/js/src/main/scala/gov/nasa/jpl/imce/omf/schema/tables";
+      Bundle _bundle_1 = Platform.getBundle(targetBundle);
+      URL _entry_1 = _bundle_1.getEntry(targetJSFolder);
+      final URL folderJS = FileLocator.toFileURL(_entry_1);
+      String _path_1 = folderJS.getPath();
+      this.generateJS(ePackage, _path_1);
+      final String targetJVMFolder = "/jvm/src/main/scala/gov/nasa/jpl/imce/omf/schema/tables";
+      Bundle _bundle_2 = Platform.getBundle(targetBundle);
+      URL _entry_2 = _bundle_2.getEntry(targetJVMFolder);
+      final URL folderJVM = FileLocator.toFileURL(_entry_2);
+      String _path_2 = folderJVM.getPath();
+      this.generateJVM(ePackage, _path_2);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -123,6 +135,56 @@ public class OMFSchemaTableGenerator {
           String _generateClassFile = this.generateClassFile(eClass);
           byte[] _bytes_1 = _generateClassFile.getBytes();
           classFile.write(_bytes_1);
+        }
+      }
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  public void generateJS(final EPackage ePackage, final String targetJSFolder) {
+    try {
+      EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
+      Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
+      final Function1<EClass, Boolean> _function = (EClass it) -> {
+        return Boolean.valueOf(((!it.isAbstract()) && (OMFSchemaTableGenerator.hasOptionalAttributes(it)).booleanValue()));
+      };
+      Iterable<EClass> _filter_1 = IterableExtensions.<EClass>filter(_filter, _function);
+      for (final EClass eClass : _filter_1) {
+        {
+          String _name = eClass.getName();
+          String _plus = ((targetJSFolder + File.separator) + _name);
+          String _plus_1 = (_plus + "JS.scala");
+          File _file = new File(_plus_1);
+          final FileOutputStream classFile = new FileOutputStream(_file);
+          String _generateJSClassFile = this.generateJSClassFile(eClass);
+          byte[] _bytes = _generateJSClassFile.getBytes();
+          classFile.write(_bytes);
+        }
+      }
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  public void generateJVM(final EPackage ePackage, final String targetJVMFolder) {
+    try {
+      EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
+      Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
+      final Function1<EClass, Boolean> _function = (EClass it) -> {
+        return Boolean.valueOf(((!it.isAbstract()) && (OMFSchemaTableGenerator.hasOptionalAttributes(it)).booleanValue()));
+      };
+      Iterable<EClass> _filter_1 = IterableExtensions.<EClass>filter(_filter, _function);
+      for (final EClass eClass : _filter_1) {
+        {
+          String _name = eClass.getName();
+          String _plus = ((targetJVMFolder + File.separator) + _name);
+          String _plus_1 = (_plus + "Java.scala");
+          File _file = new File(_plus_1);
+          final FileOutputStream classFile = new FileOutputStream(_file);
+          String _generateJVMClassFile = this.generateJVMClassFile(eClass);
+          byte[] _bytes = _generateJVMClassFile.getBytes();
+          classFile.write(_bytes);
         }
       }
     } catch (Throwable _e) {
@@ -282,20 +344,33 @@ public class OMFSchemaTableGenerator {
     _builder.append("/**");
     _builder.newLine();
     {
-      List<EStructuralFeature> _sortedAttributes = this.getSortedAttributes(eClass);
+      List<EStructuralFeature> _sortedAttributes = OMFSchemaTableGenerator.getSortedAttributes(eClass);
       for(final EStructuralFeature attr : _sortedAttributes) {
         _builder.append("  ");
         _builder.append("* @param ");
         String _columnName = OMFSchemaTableGenerator.columnName(attr);
         _builder.append(_columnName, "  ");
+        _builder.append("[");
+        int _lowerBound = attr.getLowerBound();
+        _builder.append(_lowerBound, "  ");
+        _builder.append(",");
+        int _upperBound = attr.getUpperBound();
+        _builder.append(_upperBound, "  ");
+        _builder.append("]");
         _builder.newLineIfNotEmpty();
       }
     }
     _builder.append("  ");
     _builder.append("*/");
     _builder.newLine();
-    _builder.append("@JSExport");
-    _builder.newLine();
+    {
+      Boolean _hasOptionalAttributes = OMFSchemaTableGenerator.hasOptionalAttributes(eClass);
+      boolean _not = (!(_hasOptionalAttributes).booleanValue());
+      if (_not) {
+        _builder.append("@JSExport");
+        _builder.newLine();
+      }
+    }
     _builder.append("case class ");
     String _name = eClass.getName();
     _builder.append(_name, "");
@@ -303,7 +378,7 @@ public class OMFSchemaTableGenerator {
     _builder.append("(");
     _builder.newLine();
     {
-      List<EStructuralFeature> _sortedAttributes_1 = this.getSortedAttributes(eClass);
+      List<EStructuralFeature> _sortedAttributes_1 = OMFSchemaTableGenerator.getSortedAttributes(eClass);
       boolean _hasElements = false;
       for(final EStructuralFeature attr_1 : _sortedAttributes_1) {
         if (!_hasElements) {
@@ -316,8 +391,8 @@ public class OMFSchemaTableGenerator {
         String _columnName_1 = OMFSchemaTableGenerator.columnName(attr_1);
         _builder.append(_columnName_1, " ");
         _builder.append(": ");
-        String _typeName = OMFSchemaTableGenerator.typeName(attr_1);
-        _builder.append(_typeName, " ");
+        String _constructorTypeName = OMFSchemaTableGenerator.constructorTypeName(attr_1);
+        _builder.append(_constructorTypeName, " ");
         _builder.newLineIfNotEmpty();
       }
     }
@@ -403,8 +478,298 @@ public class OMFSchemaTableGenerator {
     return _builder.toString();
   }
   
-  public List<EStructuralFeature> getSortedAttributes(final EClass eClass) {
-    List<EClass> _selfAndAllSupertypes = this.selfAndAllSupertypes(eClass);
+  public String generateJSClassFile(final EClass eClass) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("/*");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* Copyright 2016 California Institute of Technology (\"Caltech\").");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* U.S. Government sponsorship acknowledged.");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("*");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* Licensed under the Apache License, Version 2.0 (the \"License\");");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* you may not use this file except in compliance with the License.");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* You may obtain a copy of the License at");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("*");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("*     http://www.apache.org/licenses/LICENSE-2.0");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("*");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* Unless required by applicable law or agreed to in writing, software");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* distributed under the License is distributed on an \"AS IS\" BASIS,");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* See the License for the specific language governing permissions and");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* limitations under the License.");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* License Terms");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("*/");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.newLine();
+    _builder.append("package gov.nasa.jpl.imce.omf.schema.tables");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("import scala.scalajs.js.annotation.JSExport");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("@JSExport");
+    _builder.newLine();
+    _builder.append("object ");
+    String _name = eClass.getName();
+    _builder.append(_name, "");
+    _builder.append("JS {");
+    _builder.newLineIfNotEmpty();
+    {
+      Boolean _hasOptionalAttributes = OMFSchemaTableGenerator.hasOptionalAttributes(eClass);
+      if ((_hasOptionalAttributes).booleanValue()) {
+        _builder.append("  ");
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.append("@JSExport");
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.append("def js");
+        String _name_1 = eClass.getName();
+        _builder.append(_name_1, "  ");
+        _builder.append("(");
+        _builder.newLineIfNotEmpty();
+        {
+          List<EStructuralFeature> _sortedAttributes = OMFSchemaTableGenerator.getSortedAttributes(eClass);
+          boolean _hasElements = false;
+          for(final EStructuralFeature attr : _sortedAttributes) {
+            if (!_hasElements) {
+              _hasElements = true;
+            } else {
+              _builder.appendImmediate(",", "    ");
+            }
+            _builder.append("  ");
+            _builder.append("  ");
+            String _columnName = OMFSchemaTableGenerator.columnName(attr);
+            _builder.append(_columnName, "    ");
+            _builder.append(": ");
+            String _jsTypeName = OMFSchemaTableGenerator.jsTypeName(attr);
+            _builder.append(_jsTypeName, "    ");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        _builder.append("  ");
+        _builder.append(")");
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.append(": ");
+        String _name_2 = eClass.getName();
+        _builder.append(_name_2, "  ");
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        _builder.append("= ");
+        String _name_3 = eClass.getName();
+        _builder.append(_name_3, "  ");
+        _builder.append("(");
+        _builder.newLineIfNotEmpty();
+        {
+          List<EStructuralFeature> _sortedAttributes_1 = OMFSchemaTableGenerator.getSortedAttributes(eClass);
+          boolean _hasElements_1 = false;
+          for(final EStructuralFeature attr_1 : _sortedAttributes_1) {
+            if (!_hasElements_1) {
+              _hasElements_1 = true;
+            } else {
+              _builder.appendImmediate(",", "    ");
+            }
+            _builder.append("  ");
+            _builder.append("  ");
+            String _jsArgName = OMFSchemaTableGenerator.jsArgName(attr_1);
+            _builder.append(_jsArgName, "    ");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        _builder.append("  ");
+        _builder.append(")");
+        _builder.newLine();
+      }
+    }
+    _builder.append("  ");
+    _builder.newLine();
+    _builder.append("}\t");
+    _builder.newLine();
+    return _builder.toString();
+  }
+  
+  public String generateJVMClassFile(final EClass eClass) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("/*");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* Copyright 2016 California Institute of Technology (\"Caltech\").");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* U.S. Government sponsorship acknowledged.");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("*");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* Licensed under the Apache License, Version 2.0 (the \"License\");");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* you may not use this file except in compliance with the License.");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* You may obtain a copy of the License at");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("*");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("*     http://www.apache.org/licenses/LICENSE-2.0");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("*");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* Unless required by applicable law or agreed to in writing, software");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* distributed under the License is distributed on an \"AS IS\" BASIS,");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* See the License for the specific language governing permissions and");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* limitations under the License.");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* License Terms");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("*/");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.newLine();
+    _builder.append("package gov.nasa.jpl.imce.omf.schema.tables");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("import java.util.Optional");
+    _builder.newLine();
+    _builder.append("import scala.compat.java8.OptionConverters._");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("object ");
+    String _name = eClass.getName();
+    _builder.append(_name, "");
+    _builder.append("Java {");
+    _builder.newLineIfNotEmpty();
+    {
+      Boolean _hasOptionalAttributes = OMFSchemaTableGenerator.hasOptionalAttributes(eClass);
+      if ((_hasOptionalAttributes).booleanValue()) {
+        _builder.append("  ");
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.append("def java");
+        String _name_1 = eClass.getName();
+        _builder.append(_name_1, "  ");
+        _builder.append("(");
+        _builder.newLineIfNotEmpty();
+        {
+          List<EStructuralFeature> _sortedAttributes = OMFSchemaTableGenerator.getSortedAttributes(eClass);
+          boolean _hasElements = false;
+          for(final EStructuralFeature attr : _sortedAttributes) {
+            if (!_hasElements) {
+              _hasElements = true;
+            } else {
+              _builder.appendImmediate(",", "    ");
+            }
+            _builder.append("  ");
+            _builder.append("  ");
+            String _columnName = OMFSchemaTableGenerator.columnName(attr);
+            _builder.append(_columnName, "    ");
+            _builder.append(": ");
+            String _javaTypeName = OMFSchemaTableGenerator.javaTypeName(attr);
+            _builder.append(_javaTypeName, "    ");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        _builder.append("  ");
+        _builder.append(")");
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.append(": ");
+        String _name_2 = eClass.getName();
+        _builder.append(_name_2, "  ");
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        _builder.append("= ");
+        String _name_3 = eClass.getName();
+        _builder.append(_name_3, "  ");
+        _builder.append("(");
+        _builder.newLineIfNotEmpty();
+        {
+          List<EStructuralFeature> _sortedAttributes_1 = OMFSchemaTableGenerator.getSortedAttributes(eClass);
+          boolean _hasElements_1 = false;
+          for(final EStructuralFeature attr_1 : _sortedAttributes_1) {
+            if (!_hasElements_1) {
+              _hasElements_1 = true;
+            } else {
+              _builder.appendImmediate(",", "    ");
+            }
+            _builder.append("  ");
+            _builder.append("  ");
+            String _javaArgName = OMFSchemaTableGenerator.javaArgName(attr_1);
+            _builder.append(_javaArgName, "    ");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        _builder.append("  ");
+        _builder.append(")");
+        _builder.newLine();
+      }
+    }
+    _builder.append("  ");
+    _builder.newLine();
+    _builder.append("}\t");
+    _builder.newLine();
+    return _builder.toString();
+  }
+  
+  public static Boolean hasOptionalAttributes(final EClass eClass) {
+    List<EStructuralFeature> _sortedAttributes = OMFSchemaTableGenerator.getSortedAttributes(eClass);
+    final Function1<EStructuralFeature, Boolean> _function = (EStructuralFeature a) -> {
+      int _lowerBound = a.getLowerBound();
+      return Boolean.valueOf((_lowerBound == 0));
+    };
+    return Boolean.valueOf(IterableExtensions.<EStructuralFeature>exists(_sortedAttributes, _function));
+  }
+  
+  public static List<EStructuralFeature> getSortedAttributes(final EClass eClass) {
+    List<EClass> _selfAndAllSupertypes = OMFSchemaTableGenerator.selfAndAllSupertypes(eClass);
     final Function1<EClass, EList<EStructuralFeature>> _function = (EClass it) -> {
       return it.getEStructuralFeatures();
     };
@@ -414,7 +779,7 @@ public class OMFSchemaTableGenerator {
     return IterableExtensions.<EStructuralFeature>sortWith(_flatten, _oMFFeatureCompare);
   }
   
-  public List<EClass> selfAndAllSupertypes(final EClass eClass) {
+  public static List<EClass> selfAndAllSupertypes(final EClass eClass) {
     ArrayList<EClass> _xblockexpression = null;
     {
       EList<EClass> _eAllSuperTypes = eClass.getEAllSuperTypes();
@@ -436,7 +801,7 @@ public class OMFSchemaTableGenerator {
     return _xifexpression;
   }
   
-  public static String typeName(final EStructuralFeature feature) {
+  public static String scalaTypeName(final EStructuralFeature feature) {
     String _xblockexpression = null;
     {
       final EClassifier type = feature.getEType();
@@ -471,5 +836,82 @@ public class OMFSchemaTableGenerator {
       _xblockexpression = _switchResult;
     }
     return _xblockexpression;
+  }
+  
+  public static String constructorTypeName(final EStructuralFeature feature) {
+    String _xblockexpression = null;
+    {
+      final String scalaType = OMFSchemaTableGenerator.scalaTypeName(feature);
+      String _xifexpression = null;
+      int _lowerBound = feature.getLowerBound();
+      boolean _equals = (_lowerBound == 0);
+      if (_equals) {
+        _xifexpression = (("scala.Option[" + scalaType) + "]");
+      } else {
+        _xifexpression = scalaType;
+      }
+      _xblockexpression = _xifexpression;
+    }
+    return _xblockexpression;
+  }
+  
+  public static String jsTypeName(final EStructuralFeature feature) {
+    String _xblockexpression = null;
+    {
+      final String scalaType = OMFSchemaTableGenerator.scalaTypeName(feature);
+      String _xifexpression = null;
+      int _lowerBound = feature.getLowerBound();
+      boolean _equals = (_lowerBound == 0);
+      if (_equals) {
+        _xifexpression = (("scala.scalajs.js.UndefOr[" + scalaType) + "]");
+      } else {
+        _xifexpression = scalaType;
+      }
+      _xblockexpression = _xifexpression;
+    }
+    return _xblockexpression;
+  }
+  
+  public static String jsArgName(final EStructuralFeature feature) {
+    String _xifexpression = null;
+    int _lowerBound = feature.getLowerBound();
+    boolean _equals = (_lowerBound == 0);
+    if (_equals) {
+      String _columnName = OMFSchemaTableGenerator.columnName(feature);
+      _xifexpression = (_columnName + ".toOption");
+    } else {
+      _xifexpression = OMFSchemaTableGenerator.columnName(feature);
+    }
+    return _xifexpression;
+  }
+  
+  public static String javaTypeName(final EStructuralFeature feature) {
+    String _xblockexpression = null;
+    {
+      final String scalaType = OMFSchemaTableGenerator.scalaTypeName(feature);
+      String _xifexpression = null;
+      int _lowerBound = feature.getLowerBound();
+      boolean _equals = (_lowerBound == 0);
+      if (_equals) {
+        _xifexpression = (("Optional[" + scalaType) + "]");
+      } else {
+        _xifexpression = scalaType;
+      }
+      _xblockexpression = _xifexpression;
+    }
+    return _xblockexpression;
+  }
+  
+  public static String javaArgName(final EStructuralFeature feature) {
+    String _xifexpression = null;
+    int _lowerBound = feature.getLowerBound();
+    boolean _equals = (_lowerBound == 0);
+    if (_equals) {
+      String _columnName = OMFSchemaTableGenerator.columnName(feature);
+      _xifexpression = (_columnName + ".asScala");
+    } else {
+      _xifexpression = OMFSchemaTableGenerator.columnName(feature);
+    }
+    return _xifexpression;
   }
 }
