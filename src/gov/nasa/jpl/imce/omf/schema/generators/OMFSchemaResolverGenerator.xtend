@@ -7,6 +7,8 @@ import org.eclipse.core.runtime.Platform
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EDataType
+import org.eclipse.emf.ecore.ENamedElement
+import org.eclipse.emf.ecore.EOperation
 import org.eclipse.emf.ecore.EPackage
 import org.eclipse.emf.ecore.EReference
 import org.eclipse.emf.ecore.EStructuralFeature
@@ -14,15 +16,6 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin
 import org.eclipse.xtext.resource.XtextResource
 import org.eclipse.xtext.resource.XtextResourceSet
 
-/*
- * I tried to use XCore to specify the OMF Schema Resolver API in terms of read-only queries.
- * This is possible for simple metamodeling constructs like binary associations.
- * Unfortunately, XCore, like EMF, only supports a few collections; too few for an API (e.g. Map)
- * 
- * The skeleton of the OMF Schema Resolver API is generated with this template.
- * Additional API features are added manually.
- * TODO Augment this template to avoid over-writing the manually-added API features. 
- */
 class OMFSchemaResolverGenerator {
 	
 	def generate() {
@@ -75,9 +68,20 @@ class OMFSchemaResolverGenerator {
 		 
 		package gov.nasa.jpl.imce.omf.schema.resolved
 		
-		«eClass.traitDeclaration»
-		«FOR f : eClass.EStructuralFeatures BEFORE "{\n  " SEPARATOR "\n  " AFTER "\n}"»val «f.queryName»: «f.queryType»«ENDFOR»
+		«eClass.doc("")»«eClass.traitDeclaration»
+		{
+		«FOR f : eClass.EStructuralFeatures BEFORE "\n  " SEPARATOR "\n  " AFTER "\n"»«f.doc("  ")»val «f.queryName»: «f.queryType»«ENDFOR»
+		«FOR op : eClass.EOperations BEFORE "\n  " SEPARATOR "\n  " AFTER "\n"»«op.doc("  ")»«op.queryName»: «op.queryType»«ENDFOR»
+		}
 	'''
+	
+	static def String doc(ENamedElement op, String indent) {
+		val doc = op.getEAnnotation("http://www.eclipse.org/emf/2002/GenModel")?.details?.get("documentation") ?: ""
+		if (doc.empty) 
+		doc
+		else 
+		"/*\n"+indent+" * "+doc.replaceAll("\n","\n"+indent+" * ")+"\n"+indent+" */\n"+indent	
+	}
 	
 	static def String traitDeclaration(EClass eClass) '''
 		trait «eClass.name»
@@ -133,5 +137,23 @@ class OMFSchemaResolverGenerator {
 				type.name+"//Default"
 		}
 	}
-
+	
+	static def String queryName(EOperation op) {
+		val decl = if (null != op.getEAnnotation("http://imce.jpl.nasa.gov/omf/Override")) "override val" else "val"
+		decl+" "+op.name
+	}
+	
+	static def String queryType(EOperation op) {
+		val ann = op.getEAnnotation("http://imce.jpl.nasa.gov/omf/Collection")?.details
+		switch ann?.get("kind") ?: "" {
+			case "Map": {
+				val key=ann.get("key")
+				"scala.collection.immutable.Map["+key+","+op.EType.name+"]"				
+			}
+			case "Set": 
+				"scala.collection.immutable.Set["+op.EType.name+"]"		
+			default:
+				op.EType.name
+		}
+	} 
 }

@@ -1,5 +1,6 @@
 package gov.nasa.jpl.imce.omf.schema.generators;
 
+import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -8,11 +9,15 @@ import java.util.Map;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -26,15 +31,6 @@ import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.osgi.framework.Bundle;
 
-/**
- * I tried to use XCore to specify the OMF Schema Resolver API in terms of read-only queries.
- * This is possible for simple metamodeling constructs like binary associations.
- * Unfortunately, XCore, like EMF, only supports a few collections; too few for an API (e.g. Map)
- * 
- * The skeleton of the OMF Schema Resolver API is generated with this template.
- * Additional API features are added manually.
- * TODO Augment this template to avoid over-writing the manually-added API features.
- */
 @SuppressWarnings("all")
 public class OMFSchemaResolverGenerator {
   public void generate() {
@@ -149,19 +145,25 @@ public class OMFSchemaResolverGenerator {
     _builder.append("package gov.nasa.jpl.imce.omf.schema.resolved");
     _builder.newLine();
     _builder.newLine();
+    String _doc = OMFSchemaResolverGenerator.doc(eClass, "");
+    _builder.append(_doc, "");
     String _traitDeclaration = OMFSchemaResolverGenerator.traitDeclaration(eClass);
     _builder.append(_traitDeclaration, "");
     _builder.newLineIfNotEmpty();
+    _builder.append("{");
+    _builder.newLine();
     {
       EList<EStructuralFeature> _eStructuralFeatures = eClass.getEStructuralFeatures();
       boolean _hasElements = false;
       for(final EStructuralFeature f : _eStructuralFeatures) {
         if (!_hasElements) {
           _hasElements = true;
-          _builder.append("{\n  ", "");
+          _builder.append("\n  ", "");
         } else {
           _builder.appendImmediate("\n  ", "");
         }
+        String _doc_1 = OMFSchemaResolverGenerator.doc(f, "  ");
+        _builder.append(_doc_1, "");
         _builder.append("val ");
         String _queryName = OMFSchemaResolverGenerator.queryName(f);
         _builder.append(_queryName, "");
@@ -170,11 +172,72 @@ public class OMFSchemaResolverGenerator {
         _builder.append(_queryType, "");
       }
       if (_hasElements) {
-        _builder.append("\n}", "");
+        _builder.append("\n", "");
       }
     }
     _builder.newLineIfNotEmpty();
+    {
+      EList<EOperation> _eOperations = eClass.getEOperations();
+      boolean _hasElements_1 = false;
+      for(final EOperation op : _eOperations) {
+        if (!_hasElements_1) {
+          _hasElements_1 = true;
+          _builder.append("\n  ", "");
+        } else {
+          _builder.appendImmediate("\n  ", "");
+        }
+        String _doc_2 = OMFSchemaResolverGenerator.doc(op, "  ");
+        _builder.append(_doc_2, "");
+        String _queryName_1 = OMFSchemaResolverGenerator.queryName(op);
+        _builder.append(_queryName_1, "");
+        _builder.append(": ");
+        String _queryType_1 = OMFSchemaResolverGenerator.queryType(op);
+        _builder.append(_queryType_1, "");
+      }
+      if (_hasElements_1) {
+        _builder.append("\n", "");
+      }
+    }
+    _builder.newLineIfNotEmpty();
+    _builder.append("}");
+    _builder.newLine();
     return _builder.toString();
+  }
+  
+  public static String doc(final ENamedElement op, final String indent) {
+    String _xblockexpression = null;
+    {
+      String _elvis = null;
+      EAnnotation _eAnnotation = op.getEAnnotation("http://www.eclipse.org/emf/2002/GenModel");
+      EMap<String, String> _details = null;
+      if (_eAnnotation!=null) {
+        _details=_eAnnotation.getDetails();
+      }
+      String _get = null;
+      if (_details!=null) {
+        _get=_details.get("documentation");
+      }
+      if (_get != null) {
+        _elvis = _get;
+      } else {
+        _elvis = "";
+      }
+      final String doc = _elvis;
+      String _xifexpression = null;
+      boolean _isEmpty = doc.isEmpty();
+      if (_isEmpty) {
+        _xifexpression = doc;
+      } else {
+        String _replaceAll = doc.replaceAll("\n", (("\n" + indent) + " * "));
+        String _plus = ((("/*\n" + indent) + " * ") + _replaceAll);
+        String _plus_1 = (_plus + "\n");
+        String _plus_2 = (_plus_1 + indent);
+        String _plus_3 = (_plus_2 + " */\n");
+        _xifexpression = (_plus_3 + indent);
+      }
+      _xblockexpression = _xifexpression;
+    }
+    return _xblockexpression;
   }
   
   public static String traitDeclaration(final EClass eClass) {
@@ -307,6 +370,72 @@ public class OMFSchemaResolverGenerator {
       if (!_matched) {
         String _name_1 = type.getName();
         _switchResult = (_name_1 + "//Default");
+      }
+      _xblockexpression = _switchResult;
+    }
+    return _xblockexpression;
+  }
+  
+  public static String queryName(final EOperation op) {
+    String _xblockexpression = null;
+    {
+      String _xifexpression = null;
+      EAnnotation _eAnnotation = op.getEAnnotation("http://imce.jpl.nasa.gov/omf/Override");
+      boolean _notEquals = (!Objects.equal(null, _eAnnotation));
+      if (_notEquals) {
+        _xifexpression = "override val";
+      } else {
+        _xifexpression = "val";
+      }
+      final String decl = _xifexpression;
+      String _name = op.getName();
+      _xblockexpression = ((decl + " ") + _name);
+    }
+    return _xblockexpression;
+  }
+  
+  public static String queryType(final EOperation op) {
+    String _xblockexpression = null;
+    {
+      EAnnotation _eAnnotation = op.getEAnnotation("http://imce.jpl.nasa.gov/omf/Collection");
+      EMap<String, String> _details = null;
+      if (_eAnnotation!=null) {
+        _details=_eAnnotation.getDetails();
+      }
+      final EMap<String, String> ann = _details;
+      String _switchResult = null;
+      String _elvis = null;
+      String _get = null;
+      if (ann!=null) {
+        _get=ann.get("kind");
+      }
+      if (_get != null) {
+        _elvis = _get;
+      } else {
+        _elvis = "";
+      }
+      switch (_elvis) {
+        case "Map":
+          String _xblockexpression_1 = null;
+          {
+            final String key = ann.get("key");
+            EClassifier _eType = op.getEType();
+            String _name = _eType.getName();
+            String _plus = ((("scala.collection.immutable.Map[" + key) + ",") + _name);
+            _xblockexpression_1 = (_plus + "]");
+          }
+          _switchResult = _xblockexpression_1;
+          break;
+        case "Set":
+          EClassifier _eType = op.getEType();
+          String _name = _eType.getName();
+          String _plus = ("scala.collection.immutable.Set[" + _name);
+          _switchResult = (_plus + "]");
+          break;
+        default:
+          EClassifier _eType_1 = op.getEType();
+          _switchResult = _eType_1.getName();
+          break;
       }
       _xblockexpression = _switchResult;
     }
