@@ -208,7 +208,20 @@ class OMFSchemaTableGenerator {
 	}
 	
 	static def List<EStructuralFeature> getSortedAttributes(EClass eClass) {
-		eClass.selfAndAllSupertypes.map[EStructuralFeatures].flatten.sortWith(new OMFFeatureCompare())
+		eClass
+		.selfAndAllSupertypes
+		.map[EStructuralFeatures]
+		.flatten
+		.filter([EStructuralFeature f | isAttributeOrReferenceOrContainer(f)])
+		.sortWith(new OMFFeatureCompare())
+	}
+	
+	static def Boolean isAttributeOrReferenceOrContainer(EStructuralFeature f) {
+		switch f {
+			EReference: 
+				! f.containment
+			default: true
+		}
 	}
 	
 	static def List<EClass> selfAndAllSupertypes(EClass eClass) {

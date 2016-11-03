@@ -642,8 +642,26 @@ public class OMFSchemaTableGenerator {
     };
     List<EList<EStructuralFeature>> _map = ListExtensions.<EClass, EList<EStructuralFeature>>map(_selfAndAllSupertypes, _function);
     Iterable<EStructuralFeature> _flatten = Iterables.<EStructuralFeature>concat(_map);
+    final Function1<EStructuralFeature, Boolean> _function_1 = (EStructuralFeature f) -> {
+      return OMFSchemaTableGenerator.isAttributeOrReferenceOrContainer(f);
+    };
+    Iterable<EStructuralFeature> _filter = IterableExtensions.<EStructuralFeature>filter(_flatten, _function_1);
     OMFSchemaTableGenerator.OMFFeatureCompare _oMFFeatureCompare = new OMFSchemaTableGenerator.OMFFeatureCompare();
-    return IterableExtensions.<EStructuralFeature>sortWith(_flatten, _oMFFeatureCompare);
+    return IterableExtensions.<EStructuralFeature>sortWith(_filter, _oMFFeatureCompare);
+  }
+  
+  public static Boolean isAttributeOrReferenceOrContainer(final EStructuralFeature f) {
+    boolean _switchResult = false;
+    boolean _matched = false;
+    if (f instanceof EReference) {
+      _matched=true;
+      boolean _isContainment = ((EReference)f).isContainment();
+      _switchResult = (!_isContainment);
+    }
+    if (!_matched) {
+      _switchResult = true;
+    }
+    return Boolean.valueOf(_switchResult);
   }
   
   public static List<EClass> selfAndAllSupertypes(final EClass eClass) {
