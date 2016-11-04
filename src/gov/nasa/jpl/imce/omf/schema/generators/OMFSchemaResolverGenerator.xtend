@@ -29,7 +29,7 @@ class OMFSchemaResolverGenerator {
       	val sourceResource = set.getResource(sourceURI, true)
       	val ePackage = sourceResource.getContents().filter(EPackage).get(0)
       	
-		val targetFolder = "/shared/src/main/scala/gov/nasa/jpl/imce/omf/schema/resolved"
+		val targetFolder = "/shared/src/main/scala/gov/nasa/jpl/imce/omf/schema/resolver/api"
 		val targetURL = Platform.getBundle(targetBundle).getEntry(targetFolder)
 		val folder = FileLocator.toFileURL(targetURL)
       	generate(ePackage, folder.path)

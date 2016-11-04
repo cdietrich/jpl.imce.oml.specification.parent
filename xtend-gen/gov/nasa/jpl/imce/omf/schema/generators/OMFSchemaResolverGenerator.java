@@ -48,7 +48,7 @@ public class OMFSchemaResolverGenerator {
       EList<EObject> _contents = sourceResource.getContents();
       Iterable<EPackage> _filter = Iterables.<EPackage>filter(_contents, EPackage.class);
       final EPackage ePackage = ((EPackage[])Conversions.unwrapArray(_filter, EPackage.class))[0];
-      final String targetFolder = "/shared/src/main/scala/gov/nasa/jpl/imce/omf/schema/resolved";
+      final String targetFolder = "/shared/src/main/scala/gov/nasa/jpl/imce/omf/schema/resolver/api";
       Bundle _bundle = Platform.getBundle(targetBundle);
       final URL targetURL = _bundle.getEntry(targetFolder);
       final URL folder = FileLocator.toFileURL(targetURL);
