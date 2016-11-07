@@ -48,11 +48,125 @@ class OMFSchemaTableGenerator {
 	def generate(EPackage ePackage, String targetFolder) {
 		val packageFile = new FileOutputStream(new File(targetFolder + File::separator + "package.scala"))
 		packageFile.write(generatePackageFile(ePackage).bytes)
+		val tablesFile = new FileOutputStream(new File(targetFolder + File::separator + "OMFTables.scala"))
+		tablesFile.write(generateTablesFile(ePackage).bytes)
 		for(eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract])  {
 			val classFile = new FileOutputStream(new File(targetFolder + File::separator + eClass.name + ".scala"))
 			classFile.write(generateClassFile(eClass).bytes)
 		}
 	}
+	
+	def String generateTablesFile(EPackage ePackage) '''
+		«copyright»
+
+		package gov.nasa.jpl.imce.omf.schema.tables
+		
+		import java.io.{File,InputStream}
+		import org.apache.commons.compress.archivers.zip.{ZipArchiveEntry, ZipFile}
+		
+		import scala.collection.immutable.Seq
+		import scala.collection.JavaConversions._
+		import scala.Unit
+		import scala.util.control.Exception._
+		import scala.util.{Failure,Success,Try}
+		
+		case class OMFTables private[tables]
+		«FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortBy[name] BEFORE "(\n  " SEPARATOR ",\n  " AFTER "\n)"»«eClass.tableVariable»«ENDFOR» 
+		«FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortBy[name] BEFORE "{\n" SEPARATOR "\n" AFTER "\n}"»
+		  «eClass.tableReader»
+		«ENDFOR»
+		
+		object OMFTables {
+			
+		  def loadOMFTables(omfSchemaJsonZipFile: File)
+		  : Try[OMFTables]
+		  = nonFatalCatch[Try[OMFTables]]
+		    .withApply {
+		      (cause: java.lang.Throwable) =>
+		        cause.fillInStackTrace()
+		        Failure(cause)
+		    }
+		    .apply {
+		      val zipFile = new ZipFile(omfSchemaJsonZipFile)
+		      val omfTables =
+		        zipFile
+		        .getEntries
+		        .toIterable
+		        .par
+		         .aggregate(OMFTables())(seqop = readZipArchive(zipFile), combop = mergeTables)
+		      zipFile.close()
+		      Success(omfTables)
+		    }
+		
+		  private[tables] def mergeTables
+		  (t1: OMFTables, t2: OMFTables)
+		  : OMFTables
+		  = «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortBy[name] BEFORE "OMFTables(\n    " SEPARATOR ",\n    " AFTER ")"»«eClass.tableVariableName» = t1.«eClass.tableVariableName» ++ t2.«eClass.tableVariableName»«ENDFOR» 
+		
+		  private[tables] def readZipArchive
+		  (zipFile: ZipFile)
+		  (tables: OMFTables, ze: ZipArchiveEntry)
+		  : OMFTables
+		  = {
+		  	val is = zipFile.getInputStream(ze)
+		  	ze.getName match {
+		  	  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortBy[name]»
+		  	  case «eClass.name»Helper.TABLE_JSON_FILENAME =>
+		  	    tables.«eClass.tableReaderName»(is)
+		      «ENDFOR»
+		    }
+		  }
+		  
+		  def saveOMFTables
+		  (tables: OMFTables,
+		   omfSchemaJsonZipFile: File)
+		  : Try[Unit]
+		  = nonFatalCatch[Try[Unit]]
+		    .withApply {
+		      (cause: java.lang.Throwable) =>
+		        cause.fillInStackTrace()
+		        Failure(cause)
+		    }
+		    .apply {
+		  	  // @see http://www.oracle.com/technetwork/articles/java/compress-1565076.html
+		  	  val fos = new java.io.FileOutputStream(omfSchemaJsonZipFile)
+		  	  val bos = new java.io.BufferedOutputStream(fos, 100000)
+		  	  val cos = new java.util.zip.CheckedOutputStream(bos, new java.util.zip.Adler32())
+		  	  val zos = new java.util.zip.ZipOutputStream(new java.io.BufferedOutputStream(cos))
+		  
+		  	  zos.setMethod(java.util.zip.ZipOutputStream.DEFLATED)
+		  
+		      «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortBy[name]»
+		      zos.putNextEntry(new java.util.zip.ZipEntry(«eClass.name»Helper.TABLE_JSON_FILENAME))
+		      tables.«eClass.tableVariableName».foreach { t =>
+		         val line = «eClass.name»Helper.toJSON(t)+"\n"
+		         zos.write(line.getBytes(java.nio.charset.Charset.forName("UTF-8")))
+		      }
+		      zos.closeEntry()
+		      «ENDFOR»
+		  
+		      zos.close()
+		  	  Success(())
+		  	}
+		
+		}
+	'''
+	
+	static def String tableReaderName(EClass eClass)
+	'''read«eClass.name»s'''
+	
+	static def String tableVariableName(EClass eClass)
+	'''«eClass.name.toFirstLower»s'''
+	
+	static def String tableVariable(EClass eClass)
+	'''«eClass.tableVariableName» : Seq[«eClass.name»] = Seq.empty'''
+	
+	static def String tableReader(EClass eClass)	
+	'''
+	def «eClass.tableReaderName»(is: InputStream)
+	: OMFTables
+	= copy(«eClass.tableVariableName» = readJSonTable(is, «eClass.name»Helper.fromJSON))
+	'''
 	
 	def generateJS(EPackage ePackage, String targetJSFolder) {
 		for(eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && hasOptionalAttributes])  {
@@ -73,10 +187,19 @@ class OMFSchemaTableGenerator {
 
 		package gov.nasa.jpl.imce.omf.schema
 		
+		import java.io.InputStream
+		import scala.collection.immutable.Seq
+		import scala.io
+		import scala.Predef.String
+		
 		package object tables {
 			«FOR type : ePackage.EClassifiers.filter(EDataType).filter[t|!(t instanceof EEnum)].sortBy[name]»
-				type «type.name» = scala.Predef.String
-		  	«ENDFOR» 
+				type «type.name» = String
+		  	«ENDFOR»
+		  	
+		  def readJSonTable[T](is: InputStream, fromJSon: String => T)
+		  : Seq[T]
+		  = io.Source.fromInputStream(is).getLines.map(fromJSon).to[Seq]
 		}
 	'''
 	
@@ -108,6 +231,10 @@ class OMFSchemaTableGenerator {
 		@JSExport
 		object «eClass.name»Helper {
 		
+		  val TABLE_JSON_FILENAME 
+		  : scala.Predef.String 
+		  = "«eClass.name»s.json"
+		  
 		  implicit val w
 		  : upickle.default.Writer[«eClass.name»]
 		  = upickle.default.macroW[«eClass.name»]
