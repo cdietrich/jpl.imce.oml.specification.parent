@@ -9,14 +9,15 @@ import org.eclipse.core.runtime.FileLocator
 import org.eclipse.core.runtime.Platform
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.EClass
+import org.eclipse.emf.ecore.EDataType
+import org.eclipse.emf.ecore.EEnum
+import org.eclipse.emf.ecore.ENamedElement
 import org.eclipse.emf.ecore.EPackage
 import org.eclipse.emf.ecore.EReference
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.emf.ecore.plugin.EcorePlugin
 import org.eclipse.xtext.resource.XtextResource
 import org.eclipse.xtext.resource.XtextResourceSet
-import org.eclipse.emf.ecore.EDataType
-import org.eclipse.emf.ecore.EEnum
 
 class OMFSchemaTableGenerator {
 	
@@ -67,26 +68,6 @@ class OMFSchemaTableGenerator {
 		}
 	}
 	
-	def copyright() '''
-		/*
-		 * Copyright 2016 California Institute of Technology ("Caltech").
-		 * U.S. Government sponsorship acknowledged.
-		 *
-		 * Licensed under the Apache License, Version 2.0 (the "License");
-		 * you may not use this file except in compliance with the License.
-		 * You may obtain a copy of the License at
-		 *
-		 *     http://www.apache.org/licenses/LICENSE-2.0
-		 *
-		 * Unless required by applicable law or agreed to in writing, software
-		 * distributed under the License is distributed on an "AS IS" BASIS,
-		 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-		 * See the License for the specific language governing permissions and
-		 * limitations under the License.
-		 * License Terms
-		 */
-    '''
-    
 	def String generatePackageFile(EPackage ePackage) '''
 		«copyright»
 
@@ -212,7 +193,7 @@ class OMFSchemaTableGenerator {
 		.selfAndAllSupertypes
 		.map[EStructuralFeatures]
 		.flatten
-		.filter([EStructuralFeature f | isAttributeOrReferenceOrContainer(f)])
+		.filter([EStructuralFeature f | isAttributeOrReferenceOrContainer(f) && isSchema(f)])
 		.sortWith(new OMFFeatureCompare())
 	}
 	
@@ -302,4 +283,38 @@ class OMFSchemaTableGenerator {
 		}
 		
 	}
+	
+    
+    static def Boolean isSchema(ENamedElement e) {
+    	null == e.getEAnnotation("http://imce.jpl.nasa.gov/omf/NotSchema")
+    }
+    
+	static def String doc(ENamedElement e, String indent) {
+		val doc = e.getEAnnotation("http://www.eclipse.org/emf/2002/GenModel")?.details?.get("documentation") ?: ""
+		if (doc.empty) 
+		doc
+		else 
+		"/*\n"+indent+" * "+doc.replaceAll("\n","\n"+indent+" * ")+"\n"+indent+" */\n"+indent	
+	}
+	
+	def copyright() '''
+		/*
+		 * Copyright 2016 California Institute of Technology ("Caltech").
+		 * U.S. Government sponsorship acknowledged.
+		 *
+		 * Licensed under the Apache License, Version 2.0 (the "License");
+		 * you may not use this file except in compliance with the License.
+		 * You may obtain a copy of the License at
+		 *
+		 *     http://www.apache.org/licenses/LICENSE-2.0
+		 *
+		 * Unless required by applicable law or agreed to in writing, software
+		 * distributed under the License is distributed on an "AS IS" BASIS,
+		 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+		 * See the License for the specific language governing permissions and
+		 * limitations under the License.
+		 * License Terms
+		 */
+    '''
+    
 }

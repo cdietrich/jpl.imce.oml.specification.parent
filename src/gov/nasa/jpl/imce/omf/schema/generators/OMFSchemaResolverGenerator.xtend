@@ -43,45 +43,16 @@ class OMFSchemaResolverGenerator {
 		}
 	}
 	
-	def copyright() '''
-		/*
-		 * Copyright 2016 California Institute of Technology ("Caltech").
-		 * U.S. Government sponsorship acknowledged.
-		 *
-		 * Licensed under the Apache License, Version 2.0 (the "License");
-		 * you may not use this file except in compliance with the License.
-		 * You may obtain a copy of the License at
-		 *
-		 *     http://www.apache.org/licenses/LICENSE-2.0
-		 *
-		 * Unless required by applicable law or agreed to in writing, software
-		 * distributed under the License is distributed on an "AS IS" BASIS,
-		 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-		 * See the License for the specific language governing permissions and
-		 * limitations under the License.
-		 * License Terms
-		 */
-    '''
-    
 	def String generateClassFile(EClass eClass) '''
 		«copyright»
-		 
-		package gov.nasa.jpl.imce.omf.schema.resolved
+		package gov.nasa.jpl.imce.omf.schema.resolver.api
 		
 		«eClass.doc("")»«eClass.traitDeclaration»
 		{
-		«FOR f : eClass.EStructuralFeatures BEFORE "\n  " SEPARATOR "\n  " AFTER "\n"»«f.doc("  ")»val «f.queryName»: «f.queryType»«ENDFOR»
-		«FOR op : eClass.EOperations BEFORE "\n  " SEPARATOR "\n  " AFTER "\n"»«op.doc("  ")»«op.queryName»: «op.queryType»«ENDFOR»
+		«FOR f : eClass.APIStructuralFeatures BEFORE "\n  " SEPARATOR "\n  " AFTER "\n"»«f.doc("  ")»val «f.queryName»: «f.queryType»«ENDFOR»
+		«FOR op : eClass.APIOperations BEFORE "\n  " SEPARATOR "\n  " AFTER "\n"»«op.doc("  ")»«op.queryName»: «op.queryType»«ENDFOR»
 		}
 	'''
-	
-	static def String doc(ENamedElement op, String indent) {
-		val doc = op.getEAnnotation("http://www.eclipse.org/emf/2002/GenModel")?.details?.get("documentation") ?: ""
-		if (doc.empty) 
-		doc
-		else 
-		"/*\n"+indent+" * "+doc.replaceAll("\n","\n"+indent+" * ")+"\n"+indent+" */\n"+indent	
-	}
 	
 	static def String traitDeclaration(EClass eClass) '''
 		trait «eClass.name»
@@ -129,8 +100,12 @@ class OMFSchemaResolverGenerator {
 	   			else
 	      			scalaType
 			case type instanceof EClass:
-				if (feature.lowerBound == 0 && feature.upperBound == -1)
-					"scala.collection.immutable.Set["+type.name+"]"
+				if (feature.lowerBound == 0) {
+					if (feature.upperBound == -1)
+						"scala.collection.immutable.Set[_ <: "+type.name+"]"
+					else
+						"scala.Option["+type.name+"]"
+				}
 				else
 					type.name
 			default:
@@ -151,9 +126,53 @@ class OMFSchemaResolverGenerator {
 				"scala.collection.immutable.Map["+key+","+op.EType.name+"]"				
 			}
 			case "Set": 
-				"scala.collection.immutable.Set["+op.EType.name+"]"		
+				"scala.collection.immutable.Set[_ <: "+op.EType.name+"]"		
 			default:
-				op.EType.name
+				if (0 == op.lowerBound)
+					"scala.Option["+op.EType.name+"]"
+				else
+					op.EType.name
 		}
 	} 
+	
+	static def Iterable<EStructuralFeature> APIStructuralFeatures(EClass eClass) {
+		eClass.EStructuralFeatures.filter(f | f.isAPI)
+	}
+    
+	static def Iterable<EOperation> APIOperations(EClass eClass) {
+		eClass.EOperations.filter(f | f.isAPI)
+	}
+    
+    static def Boolean isAPI(ENamedElement e) {
+    	null == e.getEAnnotation("http://imce.jpl.nasa.gov/omf/NotAPI")
+    }
+    
+	static def String doc(ENamedElement e, String indent) {
+		val doc = e.getEAnnotation("http://www.eclipse.org/emf/2002/GenModel")?.details?.get("documentation") ?: ""
+		if (doc.empty) 
+		doc
+		else 
+		"/*\n"+indent+" * "+doc.replaceAll("\n","\n"+indent+" * ")+"\n"+indent+" */\n"+indent	
+	}
+	
+	def copyright() '''
+		/*
+		 * Copyright 2016 California Institute of Technology ("Caltech").
+		 * U.S. Government sponsorship acknowledged.
+		 *
+		 * Licensed under the Apache License, Version 2.0 (the "License");
+		 * you may not use this file except in compliance with the License.
+		 * You may obtain a copy of the License at
+		 *
+		 *     http://www.apache.org/licenses/LICENSE-2.0
+		 *
+		 * Unless required by applicable law or agreed to in writing, software
+		 * distributed under the License is distributed on an "AS IS" BASIS,
+		 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+		 * See the License for the specific language governing permissions and
+		 * limitations under the License.
+		 * License Terms
+		 */
+		
+    '''
 }

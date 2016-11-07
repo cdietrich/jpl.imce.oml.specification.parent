@@ -13,11 +13,14 @@ import java.util.Map;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -190,61 +193,6 @@ public class OMFSchemaTableGenerator {
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
-  }
-  
-  public CharSequence copyright() {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("/*");
-    _builder.newLine();
-    _builder.append(" ");
-    _builder.append("* Copyright 2016 California Institute of Technology (\"Caltech\").");
-    _builder.newLine();
-    _builder.append(" ");
-    _builder.append("* U.S. Government sponsorship acknowledged.");
-    _builder.newLine();
-    _builder.append(" ");
-    _builder.append("*");
-    _builder.newLine();
-    _builder.append(" ");
-    _builder.append("* Licensed under the Apache License, Version 2.0 (the \"License\");");
-    _builder.newLine();
-    _builder.append(" ");
-    _builder.append("* you may not use this file except in compliance with the License.");
-    _builder.newLine();
-    _builder.append(" ");
-    _builder.append("* You may obtain a copy of the License at");
-    _builder.newLine();
-    _builder.append(" ");
-    _builder.append("*");
-    _builder.newLine();
-    _builder.append(" ");
-    _builder.append("*     http://www.apache.org/licenses/LICENSE-2.0");
-    _builder.newLine();
-    _builder.append(" ");
-    _builder.append("*");
-    _builder.newLine();
-    _builder.append(" ");
-    _builder.append("* Unless required by applicable law or agreed to in writing, software");
-    _builder.newLine();
-    _builder.append(" ");
-    _builder.append("* distributed under the License is distributed on an \"AS IS\" BASIS,");
-    _builder.newLine();
-    _builder.append(" ");
-    _builder.append("* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.");
-    _builder.newLine();
-    _builder.append(" ");
-    _builder.append("* See the License for the specific language governing permissions and");
-    _builder.newLine();
-    _builder.append(" ");
-    _builder.append("* limitations under the License.");
-    _builder.newLine();
-    _builder.append(" ");
-    _builder.append("* License Terms");
-    _builder.newLine();
-    _builder.append(" ");
-    _builder.append("*/");
-    _builder.newLine();
-    return _builder;
   }
   
   public String generatePackageFile(final EPackage ePackage) {
@@ -643,7 +591,7 @@ public class OMFSchemaTableGenerator {
     List<EList<EStructuralFeature>> _map = ListExtensions.<EClass, EList<EStructuralFeature>>map(_selfAndAllSupertypes, _function);
     Iterable<EStructuralFeature> _flatten = Iterables.<EStructuralFeature>concat(_map);
     final Function1<EStructuralFeature, Boolean> _function_1 = (EStructuralFeature f) -> {
-      return OMFSchemaTableGenerator.isAttributeOrReferenceOrContainer(f);
+      return Boolean.valueOf(((OMFSchemaTableGenerator.isAttributeOrReferenceOrContainer(f)).booleanValue() && (OMFSchemaTableGenerator.isSchema(f)).booleanValue()));
     };
     Iterable<EStructuralFeature> _filter = IterableExtensions.<EStructuralFeature>filter(_flatten, _function_1);
     OMFSchemaTableGenerator.OMFFeatureCompare _oMFFeatureCompare = new OMFSchemaTableGenerator.OMFFeatureCompare();
@@ -798,5 +746,101 @@ public class OMFSchemaTableGenerator {
       _xifexpression = OMFSchemaTableGenerator.columnName(feature);
     }
     return _xifexpression;
+  }
+  
+  public static Boolean isSchema(final ENamedElement e) {
+    EAnnotation _eAnnotation = e.getEAnnotation("http://imce.jpl.nasa.gov/omf/NotSchema");
+    return Boolean.valueOf(Objects.equal(null, _eAnnotation));
+  }
+  
+  public static String doc(final ENamedElement e, final String indent) {
+    String _xblockexpression = null;
+    {
+      String _elvis = null;
+      EAnnotation _eAnnotation = e.getEAnnotation("http://www.eclipse.org/emf/2002/GenModel");
+      EMap<String, String> _details = null;
+      if (_eAnnotation!=null) {
+        _details=_eAnnotation.getDetails();
+      }
+      String _get = null;
+      if (_details!=null) {
+        _get=_details.get("documentation");
+      }
+      if (_get != null) {
+        _elvis = _get;
+      } else {
+        _elvis = "";
+      }
+      final String doc = _elvis;
+      String _xifexpression = null;
+      boolean _isEmpty = doc.isEmpty();
+      if (_isEmpty) {
+        _xifexpression = doc;
+      } else {
+        String _replaceAll = doc.replaceAll("\n", (("\n" + indent) + " * "));
+        String _plus = ((("/*\n" + indent) + " * ") + _replaceAll);
+        String _plus_1 = (_plus + "\n");
+        String _plus_2 = (_plus_1 + indent);
+        String _plus_3 = (_plus_2 + " */\n");
+        _xifexpression = (_plus_3 + indent);
+      }
+      _xblockexpression = _xifexpression;
+    }
+    return _xblockexpression;
+  }
+  
+  public CharSequence copyright() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("/*");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* Copyright 2016 California Institute of Technology (\"Caltech\").");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* U.S. Government sponsorship acknowledged.");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("*");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* Licensed under the Apache License, Version 2.0 (the \"License\");");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* you may not use this file except in compliance with the License.");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* You may obtain a copy of the License at");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("*");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("*     http://www.apache.org/licenses/LICENSE-2.0");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("*");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* Unless required by applicable law or agreed to in writing, software");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* distributed under the License is distributed on an \"AS IS\" BASIS,");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* See the License for the specific language governing permissions and");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* limitations under the License.");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("* License Terms");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("*/");
+    _builder.newLine();
+    return _builder;
   }
 }
