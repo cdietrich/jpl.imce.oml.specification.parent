@@ -36,13 +36,13 @@ class OMFSchemaTableGenerator {
 		val folder = FileLocator.toFileURL(Platform.getBundle(targetBundle).getEntry(targetFolder))
       	generate(ePackage, folder.path)
       	      	
-		val targetJSFolder = "/js/src/main/scala/gov/nasa/jpl/imce/omf/schema/tables"
-		val folderJS = FileLocator.toFileURL(Platform.getBundle(targetBundle).getEntry(targetJSFolder))
-      	generateJS(ePackage, folderJS.path)
+		//val targetJSFolder = "/js/src/main/scala/gov/nasa/jpl/imce/omf/schema/tables"
+		//val folderJS = FileLocator.toFileURL(Platform.getBundle(targetBundle).getEntry(targetJSFolder))
+      	//generateJS(ePackage, folderJS.path)
       	
-		val targetJVMFolder = "/jvm/src/main/scala/gov/nasa/jpl/imce/omf/schema/tables"
-		val folderJVM = FileLocator.toFileURL(Platform.getBundle(targetBundle).getEntry(targetJVMFolder))
-      	generateJVM(ePackage, folderJVM.path)
+		//val targetJVMFolder = "/jvm/src/main/scala/gov/nasa/jpl/imce/omf/schema/tables"
+		//val folderJVM = FileLocator.toFileURL(Platform.getBundle(targetBundle).getEntry(targetJVMFolder))
+      	//generateJVM(ePackage, folderJVM.path)
 	}
 	
 	def generate(EPackage ePackage, String targetFolder) {
@@ -227,10 +227,11 @@ class OMFSchemaTableGenerator {
 		 @(JSExport @field) «attr.columnName»: «attr.constructorTypeName»
 		 «ENDFOR»
 		) «IF eClass.hasOptionalAttributes»{
-			
+		
+		@JSExport
 		def this(
 			«FOR attr : eClass.getSortedAttributes.filter(a | a.lowerBound > 0) SEPARATOR ","»
-			@(JSExport @field) «attr.columnName»: «attr.constructorTypeName»
+			«attr.columnName»: «attr.constructorTypeName»
 			«ENDFOR»
 		) 
 		= this(
