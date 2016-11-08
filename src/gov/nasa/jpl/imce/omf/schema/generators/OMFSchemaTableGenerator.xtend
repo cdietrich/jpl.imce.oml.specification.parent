@@ -226,13 +226,8 @@ class OMFSchemaTableGenerator {
 		 «FOR attr : eClass.getSortedAttributes SEPARATOR ","»
 		 @(JSExport @field) «attr.columnName»: «attr.constructorTypeName»
 		 «ENDFOR»
-		«IF ! eClass.hasOptionalAttributes» 
-		) 
-		«ELSE»
-		) {
-		«ENDIF»
-
-		«IF (eClass.hasOptionalAttributes)»
+		) «IF eClass.hasOptionalAttributes»{
+			
 		def this(
 			«FOR attr : eClass.getSortedAttributes.filter(a | a.lowerBound > 0) SEPARATOR ","»
 			@(JSExport @field) «attr.columnName»: «attr.constructorTypeName»
@@ -249,9 +244,10 @@ class OMFSchemaTableGenerator {
 		) 
 		
 		«FOR attr : eClass.getSortedAttributes.filter(a | a.lowerBound == 0) SEPARATOR ""»
-			def with«attr.columnName.substring(0,1).toUpperCase() + attr.columnName.substring(1)»(l: «attr.scalaTypeName»)	 
+			def with«attr.columnName.toFirstUpper»(l: «attr.scalaTypeName»)	 
 			: «eClass.name»
 			= copy(«attr.columnName»=Some(l))
+			
 		«ENDFOR»
 		}
 		
