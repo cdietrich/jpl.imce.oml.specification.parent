@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EOperation
 import org.eclipse.emf.ecore.EPackage
 import org.eclipse.emf.ecore.EReference
 import org.eclipse.emf.ecore.EStructuralFeature
+import org.eclipse.emf.ecore.ETypedElement
 import org.eclipse.emf.ecore.plugin.EcorePlugin
 import org.eclipse.emf.ecore.xcore.mappings.XcoreMapper
 import org.eclipse.xtext.resource.XtextResource
@@ -145,7 +146,7 @@ class OMFSchemaResolverImplGenerator {
 		feature.name
 	}
 	
-	static def String scalaTypeName(EStructuralFeature feature) {
+	static def String scalaTypeName(ETypedElement feature) {
 		val type = feature.EType
 		switch (type.name) {
 			case "EInt": "scala.Int"
@@ -164,7 +165,7 @@ class OMFSchemaResolverImplGenerator {
 		}
 	}
 	
-	static def String queryType(EStructuralFeature feature) {
+	static def String queryType(ETypedElement feature) {
 		val type = feature.EType
 		val scalaType = feature.scalaTypeName
 		switch type {
@@ -175,11 +176,21 @@ class OMFSchemaResolverImplGenerator {
 	      			scalaType
 			case type instanceof EClass:
 				if (feature.lowerBound == 0) {
-					if (feature.upperBound == -1)
-						"scala.collection.immutable.Set[_ <: resolver.api."+type.name+"]"
+					if (feature.upperBound == -1) {
+						val ann = feature.getEAnnotation("http://imce.jpl.nasa.gov/omf/Collection")?.details
+						switch ann?.get("kind") ?: "" {
+						case "Map": {
+							val key=ann.get("key")
+							"scala.collection.immutable.Map["+key+", resolver.api."+type.name+"]"				
+						}
+						case "Set": 
+							"scala.collection.immutable.Set[_ <: resolver.api."+type.name+"]"		
+						}	
+					}
 					else
 						"scala.Option[resolver.api."+type.name+"]"
-				} else
+				}
+				else
 					"resolver.api."+type.name
 			default:
 				type.name+"//Default"
@@ -187,7 +198,10 @@ class OMFSchemaResolverImplGenerator {
 	}
 	
 	static def String queryName(EOperation op) {
-		"override val "+op.name
+		val kind = if (op.EParameters.empty) "val" else "def"
+		val decl = if (null != op.getEAnnotation("http://imce.jpl.nasa.gov/omf/Override")) "override "+kind else kind
+		val args = '''«FOR p : op.EParameters BEFORE "\n  (" SEPARATOR ",\n  " AFTER "\n  )"»«p.name»: «p.queryType»«ENDFOR»'''
+		decl+" "+op.name+args
 	}
 	
 	static def String queryType(EOperation op) {
@@ -208,11 +222,11 @@ class OMFSchemaResolverImplGenerator {
 	} 
 	
 	static def Iterable<EStructuralFeature> APIStructuralFeatures(EClass eClass) {
-		eClass.EStructuralFeatures.filter(f | f.isAPI)
+		eClass.EStructuralFeatures.filter[isAPI]
 	}
     
 	static def Iterable<EOperation> APIOperations(EClass eClass) {
-		eClass.EOperations.filter(f | f.isAPI)
+		eClass.EOperations.filter[isAPI]
 	}
     
 	static def Iterable<EOperation> ScalaOperations(EClass eClass) {

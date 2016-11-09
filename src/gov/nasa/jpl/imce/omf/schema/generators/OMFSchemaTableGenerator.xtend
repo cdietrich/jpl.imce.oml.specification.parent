@@ -66,15 +66,20 @@ class OMFSchemaTableGenerator {
 		
 		import scala.collection.immutable.Seq
 		import scala.collection.JavaConversions._
-		import scala.Unit
+		import scala.{Boolean,Unit}
 		import scala.util.control.Exception._
 		import scala.util.{Failure,Success,Try}
 		
 		case class OMFTables private[tables]
 		«FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortBy[name] BEFORE "(\n  " SEPARATOR ",\n  " AFTER "\n)"»«eClass.tableVariable»«ENDFOR» 
-		«FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortBy[name] BEFORE "{\n" SEPARATOR "\n" AFTER "\n}"»
+		{
+		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortBy[name]»
 		  «eClass.tableReader»
-		«ENDFOR»
+		  «ENDFOR»
+		
+		  def isEmpty: Boolean
+		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortBy[name] BEFORE "= " SEPARATOR " &&\n  "»«eClass.tableVariableName».isEmpty«ENDFOR»
+		}
 		
 		object OMFTables {
 			

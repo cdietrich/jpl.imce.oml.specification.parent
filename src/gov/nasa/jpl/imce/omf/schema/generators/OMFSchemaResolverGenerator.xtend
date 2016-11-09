@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EOperation
 import org.eclipse.emf.ecore.EPackage
 import org.eclipse.emf.ecore.EReference
 import org.eclipse.emf.ecore.EStructuralFeature
+import org.eclipse.emf.ecore.ETypedElement
 import org.eclipse.emf.ecore.plugin.EcorePlugin
 import org.eclipse.xtext.resource.XtextResource
 import org.eclipse.xtext.resource.XtextResourceSet
@@ -71,7 +72,7 @@ class OMFSchemaResolverGenerator {
 		feature.name
 	}
 	
-	static def String scalaTypeName(EStructuralFeature feature) {
+	static def String scalaTypeName(ETypedElement feature) {
 		val type = feature.EType
 		switch (type.name) {
 			case "EInt": "scala.Int"
@@ -90,7 +91,7 @@ class OMFSchemaResolverGenerator {
 		}
 	}
 	
-	static def String queryType(EStructuralFeature feature) {
+	static def String queryType(ETypedElement feature) {
 		val type = feature.EType
 		val scalaType = feature.scalaTypeName
 		switch type {
@@ -101,8 +102,17 @@ class OMFSchemaResolverGenerator {
 	      			scalaType
 			case type instanceof EClass:
 				if (feature.lowerBound == 0) {
-					if (feature.upperBound == -1)
-						"scala.collection.immutable.Set[_ <: "+type.name+"]"
+					if (feature.upperBound == -1) {
+						val ann = feature.getEAnnotation("http://imce.jpl.nasa.gov/omf/Collection")?.details
+						switch ann?.get("kind") ?: "" {
+						case "Map": {
+							val key=ann.get("key")
+							"scala.collection.immutable.Map["+key+", "+type.name+"]"				
+						}
+						case "Set": 
+							"scala.collection.immutable.Set[_ <: "+type.name+"]"		
+						}	
+					}
 					else
 						"scala.Option["+type.name+"]"
 				}
@@ -114,8 +124,10 @@ class OMFSchemaResolverGenerator {
 	}
 	
 	static def String queryName(EOperation op) {
-		val decl = if (null != op.getEAnnotation("http://imce.jpl.nasa.gov/omf/Override")) "override val" else "val"
-		decl+" "+op.name
+		val kind = if (op.EParameters.empty) "val" else "def"
+		val decl = if (null != op.getEAnnotation("http://imce.jpl.nasa.gov/omf/Override")) "override "+kind else kind
+		val args = '''«FOR p : op.EParameters BEFORE "\n  (" SEPARATOR ",\n  " AFTER "\n  )"»«p.name»: «p.queryType»«ENDFOR»'''
+		decl+" "+op.name+args
 	}
 	
 	static def String queryType(EOperation op) {
@@ -136,11 +148,11 @@ class OMFSchemaResolverGenerator {
 	} 
 	
 	static def Iterable<EStructuralFeature> APIStructuralFeatures(EClass eClass) {
-		eClass.EStructuralFeatures.filter(f | f.isAPI)
+		eClass.EStructuralFeatures.filter[isAPI]
 	}
     
 	static def Iterable<EOperation> APIOperations(EClass eClass) {
-		eClass.EOperations.filter(f | f.isAPI)
+		eClass.EOperations.filter[isAPI]
 	}
     
     static def Boolean isAPI(ENamedElement e) {
