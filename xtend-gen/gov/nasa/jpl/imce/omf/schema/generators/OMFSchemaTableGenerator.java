@@ -5,11 +5,15 @@ import com.google.common.collect.Iterables;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.net.URL;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.EList;
@@ -78,6 +82,11 @@ public class OMFSchemaTableGenerator {
   }
   
   public void generate() {
+    this.generateTables();
+    this.generateProvenance();
+  }
+  
+  public void generateTables() {
     try {
       final String sourceFile = "/gov.nasa.jpl.imce.omf.schema.specification/model/OMFSchema.xcore";
       final String targetBundle = "jpl.omf.schema.tables";
@@ -92,27 +101,65 @@ public class OMFSchemaTableGenerator {
       EList<EObject> _contents = sourceResource.getContents();
       Iterable<EPackage> _filter = Iterables.<EPackage>filter(_contents, EPackage.class);
       final EPackage ePackage = ((EPackage[])Conversions.unwrapArray(_filter, EPackage.class))[0];
-      final String targetFolder = "/shared/src/main/scala/gov/nasa/jpl/imce/omf/schema/tables";
-      Bundle _bundle = Platform.getBundle(targetBundle);
-      URL _entry = _bundle.getEntry(targetFolder);
-      final URL folder = FileLocator.toFileURL(_entry);
-      String _path = folder.getPath();
-      this.generate(ePackage, _path);
+      final Bundle bundle = Platform.getBundle(targetBundle);
+      URL _entry = bundle.getEntry("/");
+      URL _fileURL = FileLocator.toFileURL(_entry);
+      java.net.URI _uRI = _fileURL.toURI();
+      final Path bundleDir = Paths.get(_uRI);
+      final String targetFolder = "shared/src/main/scala/gov/nasa/jpl/imce/omf/schema/tables";
+      final Path targetPath = bundleDir.resolve(targetFolder);
+      File _file = targetPath.toFile();
+      _file.mkdirs();
+      Path _absolutePath = targetPath.toAbsolutePath();
+      String _string = _absolutePath.toString();
+      this.generate(ePackage, _string, "gov.nasa.jpl.imce.omf.schema", "gov.nasa.jpl.imce.omf.schema.tables");
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }
   
-  public void generate(final EPackage ePackage, final String targetFolder) {
+  public void generateProvenance() {
+    try {
+      final String sourceFile = "/gov.nasa.jpl.imce.omf.schema.specification/model/OMFProvenanceOTI.xcore";
+      final String targetBundle = "jpl.omf.schema.tables";
+      final XtextResourceSet set = new XtextResourceSet();
+      URIConverter _uRIConverter = set.getURIConverter();
+      Map<URI, URI> _uRIMap = _uRIConverter.getURIMap();
+      Map<URI, URI> _computePlatformURIMap = EcorePlugin.computePlatformURIMap(true);
+      _uRIMap.putAll(_computePlatformURIMap);
+      set.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
+      final URI sourceURI = URI.createPlatformResourceURI(sourceFile, false);
+      final Resource sourceResource = set.getResource(sourceURI, true);
+      EList<EObject> _contents = sourceResource.getContents();
+      Iterable<EPackage> _filter = Iterables.<EPackage>filter(_contents, EPackage.class);
+      final EPackage ePackage = ((EPackage[])Conversions.unwrapArray(_filter, EPackage.class))[0];
+      final Bundle bundle = Platform.getBundle(targetBundle);
+      URL _entry = bundle.getEntry("/");
+      URL _fileURL = FileLocator.toFileURL(_entry);
+      java.net.URI _uRI = _fileURL.toURI();
+      final Path bundleDir = Paths.get(_uRI);
+      final String targetFolder = "shared/src/main/scala/gov/nasa/jpl/imce/omf/provenance/oti/schema/tables";
+      final Path targetPath = bundleDir.resolve(targetFolder);
+      File _file = targetPath.toFile();
+      _file.mkdirs();
+      Path _absolutePath = targetPath.toAbsolutePath();
+      String _string = _absolutePath.toString();
+      this.generate(ePackage, _string, "gov.nasa.jpl.imce.omf.provenance.oti.schema", "gov.nasa.jpl.imce.omf.provenance.oti.schema.tables");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  public void generate(final EPackage ePackage, final String targetFolder, final String packageQName, final String packageTablesQName) {
     try {
       File _file = new File(((targetFolder + File.separator) + "package.scala"));
       final FileOutputStream packageFile = new FileOutputStream(_file);
-      String _generatePackageFile = this.generatePackageFile(ePackage);
+      String _generatePackageFile = this.generatePackageFile(ePackage, packageQName);
       byte[] _bytes = _generatePackageFile.getBytes();
       packageFile.write(_bytes);
       File _file_1 = new File(((targetFolder + File.separator) + "OMFTables.scala"));
       final FileOutputStream tablesFile = new FileOutputStream(_file_1);
-      String _generateTablesFile = this.generateTablesFile(ePackage);
+      String _generateTablesFile = this.generateTablesFile(ePackage, packageTablesQName);
       byte[] _bytes_1 = _generateTablesFile.getBytes();
       tablesFile.write(_bytes_1);
       EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
@@ -129,7 +176,7 @@ public class OMFSchemaTableGenerator {
           String _plus_1 = (_plus + ".scala");
           File _file_2 = new File(_plus_1);
           final FileOutputStream classFile = new FileOutputStream(_file_2);
-          String _generateClassFile = this.generateClassFile(eClass);
+          String _generateClassFile = this.generateClassFile(eClass, packageTablesQName);
           byte[] _bytes_2 = _generateClassFile.getBytes();
           classFile.write(_bytes_2);
         }
@@ -139,14 +186,15 @@ public class OMFSchemaTableGenerator {
     }
   }
   
-  public String generateTablesFile(final EPackage ePackage) {
+  public String generateTablesFile(final EPackage ePackage, final String packageQName) {
     StringConcatenation _builder = new StringConcatenation();
     CharSequence _copyright = this.copyright();
     _builder.append(_copyright, "");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
-    _builder.append("package gov.nasa.jpl.imce.omf.schema.tables");
-    _builder.newLine();
+    _builder.append("package ");
+    _builder.append(packageQName, "");
+    _builder.newLineIfNotEmpty();
     _builder.newLine();
     _builder.append("import java.io.{File,InputStream}");
     _builder.newLine();
@@ -542,12 +590,25 @@ public class OMFSchemaTableGenerator {
   }
   
   public static String tableVariableName(final EClass eClass) {
-    StringConcatenation _builder = new StringConcatenation();
-    String _name = eClass.getName();
-    String _firstLower = StringExtensions.toFirstLower(_name);
-    _builder.append(_firstLower, "");
-    _builder.append("s");
-    return _builder.toString();
+    String _xblockexpression = null;
+    {
+      Pattern _compile = Pattern.compile("^(\\p{Upper}+)(\\w+)$");
+      String _name = eClass.getName();
+      final Matcher m = _compile.matcher(_name);
+      boolean _matches = m.matches();
+      boolean _not = (!_matches);
+      if (_not) {
+        String _name_1 = eClass.getName();
+        String _plus = ("tableVariableName needs a class whose name begins with uppercase characters: " + _name_1);
+        throw new IllegalArgumentException(_plus);
+      }
+      String _group = m.group(1);
+      String _lowerCase = _group.toLowerCase();
+      String _group_1 = m.group(2);
+      String _plus_1 = (_lowerCase + _group_1);
+      _xblockexpression = (_plus_1 + "s");
+    }
+    return _xblockexpression;
   }
   
   public static String tableVariable(final EClass eClass) {
@@ -631,14 +692,15 @@ public class OMFSchemaTableGenerator {
     }
   }
   
-  public String generatePackageFile(final EPackage ePackage) {
+  public String generatePackageFile(final EPackage ePackage, final String packageQName) {
     StringConcatenation _builder = new StringConcatenation();
     CharSequence _copyright = this.copyright();
     _builder.append(_copyright, "");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
-    _builder.append("package gov.nasa.jpl.imce.omf.schema");
-    _builder.newLine();
+    _builder.append("package ");
+    _builder.append(packageQName, "");
+    _builder.newLineIfNotEmpty();
     _builder.newLine();
     _builder.append("import java.io.InputStream");
     _builder.newLine();
@@ -687,15 +749,16 @@ public class OMFSchemaTableGenerator {
     return _builder.toString();
   }
   
-  public String generateClassFile(final EClass eClass) {
+  public String generateClassFile(final EClass eClass, final String packageQName) {
     StringConcatenation _builder = new StringConcatenation();
     CharSequence _copyright = this.copyright();
     _builder.append(_copyright, "");
     _builder.newLineIfNotEmpty();
     _builder.append(" ");
     _builder.newLine();
-    _builder.append("package gov.nasa.jpl.imce.omf.schema.tables");
-    _builder.newLine();
+    _builder.append("package ");
+    _builder.append(packageQName, "");
+    _builder.newLineIfNotEmpty();
     _builder.newLine();
     _builder.append("import scala.annotation.meta.field");
     _builder.newLine();

@@ -2,9 +2,12 @@ package gov.nasa.jpl.imce.omf.schema.generators
 
 import java.io.File
 import java.io.FileOutputStream
+import java.nio.file.Paths
+
 import java.util.ArrayList
 import java.util.Comparator
 import java.util.List
+import java.util.regex.Pattern
 import org.eclipse.core.runtime.FileLocator
 import org.eclipse.core.runtime.Platform
 import org.eclipse.emf.common.util.URI
@@ -22,6 +25,11 @@ import org.eclipse.xtext.resource.XtextResourceSet
 class OMFSchemaTableGenerator {
 	
 	def generate() {
+		generateTables()
+		generateProvenance()
+	}
+	
+	def generateTables() {
 		val sourceFile = "/gov.nasa.jpl.imce.omf.schema.specification/model/OMFSchema.xcore"
 		val targetBundle = "jpl.omf.schema.tables"
 		
@@ -32,34 +40,51 @@ class OMFSchemaTableGenerator {
       	val sourceResource = set.getResource(sourceURI, true)
       	val ePackage = sourceResource.getContents().filter(EPackage).get(0)
       	
-		val targetFolder = "/shared/src/main/scala/gov/nasa/jpl/imce/omf/schema/tables"
-		val folder = FileLocator.toFileURL(Platform.getBundle(targetBundle).getEntry(targetFolder))
-      	generate(ePackage, folder.path)
-      	      	
-		//val targetJSFolder = "/js/src/main/scala/gov/nasa/jpl/imce/omf/schema/tables"
-		//val folderJS = FileLocator.toFileURL(Platform.getBundle(targetBundle).getEntry(targetJSFolder))
-      	//generateJS(ePackage, folderJS.path)
-      	
-		//val targetJVMFolder = "/jvm/src/main/scala/gov/nasa/jpl/imce/omf/schema/tables"
-		//val folderJVM = FileLocator.toFileURL(Platform.getBundle(targetBundle).getEntry(targetJVMFolder))
-      	//generateJVM(ePackage, folderJVM.path)
+      	val bundle = Platform.getBundle(targetBundle)
+      	val bundleDir = Paths.get(FileLocator.toFileURL(bundle.getEntry("/")).toURI)
+		val targetFolder = "shared/src/main/scala/gov/nasa/jpl/imce/omf/schema/tables"
+		val targetPath = bundleDir.resolve(targetFolder)
+		targetPath.toFile.mkdirs	
+					
+      	generate(ePackage, targetPath.toAbsolutePath.toString, "gov.nasa.jpl.imce.omf.schema", "gov.nasa.jpl.imce.omf.schema.tables")      	
 	}
 	
-	def generate(EPackage ePackage, String targetFolder) {
+	def generateProvenance() {
+		val sourceFile = "/gov.nasa.jpl.imce.omf.schema.specification/model/OMFProvenanceOTI.xcore"
+		val targetBundle = "jpl.omf.schema.tables"
+		
+		val set = new XtextResourceSet();
+		set.getURIConverter().getURIMap().putAll(EcorePlugin.computePlatformURIMap(true));
+		set.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
+      	val sourceURI = URI.createPlatformResourceURI(sourceFile, false)
+      	val sourceResource = set.getResource(sourceURI, true)
+      	val ePackage = sourceResource.getContents().filter(EPackage).get(0)
+      	
+      	val bundle = Platform.getBundle(targetBundle)
+      	val bundleDir = Paths.get(FileLocator.toFileURL(bundle.getEntry("/")).toURI)
+      	val targetFolder = "shared/src/main/scala/gov/nasa/jpl/imce/omf/provenance/oti/schema/tables"
+		val targetPath = bundleDir.resolve(targetFolder)
+		targetPath.toFile.mkdirs
+		
+      	generate(ePackage, targetPath.toAbsolutePath.toString, "gov.nasa.jpl.imce.omf.provenance.oti.schema", "gov.nasa.jpl.imce.omf.provenance.oti.schema.tables")
+    }
+    
+	
+	def generate(EPackage ePackage, String targetFolder, String packageQName, String packageTablesQName) {
 		val packageFile = new FileOutputStream(new File(targetFolder + File::separator + "package.scala"))
-		packageFile.write(generatePackageFile(ePackage).bytes)
+		packageFile.write(generatePackageFile(ePackage, packageQName).bytes)
 		val tablesFile = new FileOutputStream(new File(targetFolder + File::separator + "OMFTables.scala"))
-		tablesFile.write(generateTablesFile(ePackage).bytes)
+		tablesFile.write(generateTablesFile(ePackage, packageTablesQName).bytes)
 		for(eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract])  {
 			val classFile = new FileOutputStream(new File(targetFolder + File::separator + eClass.name + ".scala"))
-			classFile.write(generateClassFile(eClass).bytes)
+			classFile.write(generateClassFile(eClass, packageTablesQName).bytes)
 		}
 	}
 	
-	def String generateTablesFile(EPackage ePackage) '''
+	def String generateTablesFile(EPackage ePackage, String packageQName) '''
 		«copyright»
 
-		package gov.nasa.jpl.imce.omf.schema.tables
+		package «packageQName»
 		
 		import java.io.{File,InputStream}
 		import org.apache.commons.compress.archivers.zip.{ZipArchiveEntry, ZipFile}
@@ -160,8 +185,12 @@ class OMFSchemaTableGenerator {
 	static def String tableReaderName(EClass eClass)
 	'''read«eClass.name»s'''
 	
-	static def String tableVariableName(EClass eClass)
-	'''«eClass.name.toFirstLower»s'''
+	static def String tableVariableName(EClass eClass) {
+	  val m = Pattern.compile("^(\\p{Upper}+)(\\w+)$").matcher(eClass.name)
+	  if (!m.matches())
+	  	throw new java.lang.IllegalArgumentException("tableVariableName needs a class whose name begins with uppercase characters: " + eClass.name)
+	  m.group(1).toLowerCase + m.group(2) + "s"
+	}
 	
 	static def String tableVariable(EClass eClass)
 	'''«eClass.tableVariableName» : Seq[«eClass.name»] = Seq.empty'''
@@ -187,10 +216,10 @@ class OMFSchemaTableGenerator {
 		}
 	}
 	
-	def String generatePackageFile(EPackage ePackage) '''
+	def String generatePackageFile(EPackage ePackage, String packageQName) '''
 		«copyright»
 
-		package gov.nasa.jpl.imce.omf.schema
+		package «packageQName»
 		
 		import java.io.InputStream
 		import scala.collection.immutable.Seq
@@ -208,10 +237,10 @@ class OMFSchemaTableGenerator {
 		}
 	'''
 	
-	def String generateClassFile(EClass eClass) '''
+	def String generateClassFile(EClass eClass, String packageQName) '''
 		«copyright»
 		 
-		package gov.nasa.jpl.imce.omf.schema.tables
+		package «packageQName»
 		
 		import scala.annotation.meta.field
 		import scala.scalajs.js.annotation.JSExport
