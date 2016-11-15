@@ -46,7 +46,13 @@ class OMFSchemaTableGenerator {
 		val targetPath = bundleDir.resolve(targetFolder)
 		targetPath.toFile.mkdirs	
 					
-      	generate(ePackage, targetPath.toAbsolutePath.toString, "gov.nasa.jpl.imce.omf.schema", "gov.nasa.jpl.imce.omf.schema.tables")      	
+      	generate(
+      		ePackage, 
+      		targetPath.toAbsolutePath.toString, 
+      		"gov.nasa.jpl.imce.omf.schema",
+  		 	"gov.nasa.jpl.imce.omf.schema.tables",
+      		"OMFSchemaTables"
+      	)      	
 	}
 	
 	def generateProvenance() {
@@ -66,22 +72,28 @@ class OMFSchemaTableGenerator {
 		val targetPath = bundleDir.resolve(targetFolder)
 		targetPath.toFile.mkdirs
 		
-      	generate(ePackage, targetPath.toAbsolutePath.toString, "gov.nasa.jpl.imce.omf.provenance.oti.schema", "gov.nasa.jpl.imce.omf.provenance.oti.schema.tables")
+      	generate(
+      		ePackage, 
+      		targetPath.toAbsolutePath.toString, 
+      		"gov.nasa.jpl.imce.omf.provenance.oti.schema", 
+      		"gov.nasa.jpl.imce.omf.provenance.oti.schema.tables",
+      		"OMF2OTIProvenanceTables"
+      	)
     }
     
 	
-	def generate(EPackage ePackage, String targetFolder, String packageQName, String packageTablesQName) {
+	def generate(EPackage ePackage, String targetFolder, String packageQName, String packageTablesQName, String tableName) {
 		val packageFile = new FileOutputStream(new File(targetFolder + File::separator + "package.scala"))
 		packageFile.write(generatePackageFile(ePackage, packageQName).bytes)
 		val tablesFile = new FileOutputStream(new File(targetFolder + File::separator + "OMFTables.scala"))
-		tablesFile.write(generateTablesFile(ePackage, packageTablesQName).bytes)
+		tablesFile.write(generateTablesFile(ePackage, packageTablesQName, tableName).bytes)
 		for(eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract])  {
 			val classFile = new FileOutputStream(new File(targetFolder + File::separator + eClass.name + ".scala"))
 			classFile.write(generateClassFile(eClass, packageTablesQName).bytes)
 		}
 	}
 	
-	def String generateTablesFile(EPackage ePackage, String packageQName) '''
+	def String generateTablesFile(EPackage ePackage, String packageQName, String tableName) '''
 		«copyright»
 
 		package «packageQName»
@@ -95,7 +107,7 @@ class OMFSchemaTableGenerator {
 		import scala.util.control.Exception._
 		import scala.util.{Failure,Success,Try}
 		
-		case class OMFTables private[tables]
+		case class «tableName» private[tables]
 		«FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortBy[name] BEFORE "(\n  " SEPARATOR ",\n  " AFTER "\n)"»«eClass.tableVariable»«ENDFOR» 
 		{
 		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortBy[name]»
@@ -106,15 +118,15 @@ class OMFSchemaTableGenerator {
 		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortBy[name] BEFORE "= " SEPARATOR " &&\n  "»«eClass.tableVariableName».isEmpty«ENDFOR»
 		}
 		
-		object OMFTables {
+		object «tableName» {
 			
-		  def createOMFTables()
-		  : OMFTables
-		  = new OMFTables()
+		  def create«tableName»()
+		  : «tableName»
+		  = new «tableName»()
 		  
-		  def loadOMFTables(omfSchemaJsonZipFile: File)
-		  : Try[OMFTables]
-		  = nonFatalCatch[Try[OMFTables]]
+		  def load«tableName»(omfSchemaJsonZipFile: File)
+		  : Try[«tableName»]
+		  = nonFatalCatch[Try[«tableName»]]
 		    .withApply {
 		      (cause: java.lang.Throwable) =>
 		        cause.fillInStackTrace()
@@ -127,20 +139,20 @@ class OMFSchemaTableGenerator {
 		        .getEntries
 		        .toIterable
 		        .par
-		         .aggregate(OMFTables())(seqop = readZipArchive(zipFile), combop = mergeTables)
+		         .aggregate(«tableName»())(seqop = readZipArchive(zipFile), combop = mergeTables)
 		      zipFile.close()
 		      Success(omfTables)
 		    }
 		
 		  private[tables] def mergeTables
-		  (t1: OMFTables, t2: OMFTables)
-		  : OMFTables
-		  = «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortBy[name] BEFORE "OMFTables(\n    " SEPARATOR ",\n    " AFTER ")"»«eClass.tableVariableName» = t1.«eClass.tableVariableName» ++ t2.«eClass.tableVariableName»«ENDFOR» 
+		  (t1: «tableName», t2: «tableName»)
+		  : «tableName»
+		  = «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortBy[name] BEFORE "«tableName»(\n    " SEPARATOR ",\n    " AFTER ")"»«eClass.tableVariableName» = t1.«eClass.tableVariableName» ++ t2.«eClass.tableVariableName»«ENDFOR» 
 		
 		  private[tables] def readZipArchive
 		  (zipFile: ZipFile)
-		  (tables: OMFTables, ze: ZipArchiveEntry)
-		  : OMFTables
+		  (tables: «tableName», ze: ZipArchiveEntry)
+		  : «tableName»
 		  = {
 		  	val is = zipFile.getInputStream(ze)
 		  	ze.getName match {
@@ -151,8 +163,8 @@ class OMFSchemaTableGenerator {
 		    }
 		  }
 		  
-		  def saveOMFTables
-		  (tables: OMFTables,
+		  def save«tableName»
+		  (tables: «tableName»,
 		   omfSchemaJsonZipFile: File)
 		  : Try[Unit]
 		  = nonFatalCatch[Try[Unit]]

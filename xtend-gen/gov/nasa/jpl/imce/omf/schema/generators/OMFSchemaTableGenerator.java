@@ -112,7 +112,10 @@ public class OMFSchemaTableGenerator {
       _file.mkdirs();
       Path _absolutePath = targetPath.toAbsolutePath();
       String _string = _absolutePath.toString();
-      this.generate(ePackage, _string, "gov.nasa.jpl.imce.omf.schema", "gov.nasa.jpl.imce.omf.schema.tables");
+      this.generate(ePackage, _string, 
+        "gov.nasa.jpl.imce.omf.schema", 
+        "gov.nasa.jpl.imce.omf.schema.tables", 
+        "OMFSchemaTables");
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -144,13 +147,16 @@ public class OMFSchemaTableGenerator {
       _file.mkdirs();
       Path _absolutePath = targetPath.toAbsolutePath();
       String _string = _absolutePath.toString();
-      this.generate(ePackage, _string, "gov.nasa.jpl.imce.omf.provenance.oti.schema", "gov.nasa.jpl.imce.omf.provenance.oti.schema.tables");
+      this.generate(ePackage, _string, 
+        "gov.nasa.jpl.imce.omf.provenance.oti.schema", 
+        "gov.nasa.jpl.imce.omf.provenance.oti.schema.tables", 
+        "OMF2OTIProvenanceTables");
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }
   
-  public void generate(final EPackage ePackage, final String targetFolder, final String packageQName, final String packageTablesQName) {
+  public void generate(final EPackage ePackage, final String targetFolder, final String packageQName, final String packageTablesQName, final String tableName) {
     try {
       File _file = new File(((targetFolder + File.separator) + "package.scala"));
       final FileOutputStream packageFile = new FileOutputStream(_file);
@@ -159,7 +165,7 @@ public class OMFSchemaTableGenerator {
       packageFile.write(_bytes);
       File _file_1 = new File(((targetFolder + File.separator) + "OMFTables.scala"));
       final FileOutputStream tablesFile = new FileOutputStream(_file_1);
-      String _generateTablesFile = this.generateTablesFile(ePackage, packageTablesQName);
+      String _generateTablesFile = this.generateTablesFile(ePackage, packageTablesQName, tableName);
       byte[] _bytes_1 = _generateTablesFile.getBytes();
       tablesFile.write(_bytes_1);
       EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
@@ -186,7 +192,7 @@ public class OMFSchemaTableGenerator {
     }
   }
   
-  public String generateTablesFile(final EPackage ePackage, final String packageQName) {
+  public String generateTablesFile(final EPackage ePackage, final String packageQName, final String tableName) {
     StringConcatenation _builder = new StringConcatenation();
     CharSequence _copyright = this.copyright();
     _builder.append(_copyright, "");
@@ -212,8 +218,10 @@ public class OMFSchemaTableGenerator {
     _builder.append("import scala.util.{Failure,Success,Try}");
     _builder.newLine();
     _builder.newLine();
-    _builder.append("case class OMFTables private[tables]");
-    _builder.newLine();
+    _builder.append("case class ");
+    _builder.append(tableName, "");
+    _builder.append(" private[tables]");
+    _builder.newLineIfNotEmpty();
     {
       EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
       Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
@@ -298,30 +306,43 @@ public class OMFSchemaTableGenerator {
     _builder.append("}");
     _builder.newLine();
     _builder.newLine();
-    _builder.append("object OMFTables {");
-    _builder.newLine();
+    _builder.append("object ");
+    _builder.append(tableName, "");
+    _builder.append(" {");
+    _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.newLine();
     _builder.append("  ");
-    _builder.append("def createOMFTables()");
+    _builder.append("def create");
+    _builder.append(tableName, "  ");
+    _builder.append("()");
+    _builder.newLineIfNotEmpty();
+    _builder.append("  ");
+    _builder.append(": ");
+    _builder.append(tableName, "  ");
+    _builder.newLineIfNotEmpty();
+    _builder.append("  ");
+    _builder.append("= new ");
+    _builder.append(tableName, "  ");
+    _builder.append("()");
+    _builder.newLineIfNotEmpty();
+    _builder.append("  ");
     _builder.newLine();
     _builder.append("  ");
-    _builder.append(": OMFTables");
-    _builder.newLine();
+    _builder.append("def load");
+    _builder.append(tableName, "  ");
+    _builder.append("(omfSchemaJsonZipFile: File)");
+    _builder.newLineIfNotEmpty();
     _builder.append("  ");
-    _builder.append("= new OMFTables()");
-    _builder.newLine();
+    _builder.append(": Try[");
+    _builder.append(tableName, "  ");
+    _builder.append("]");
+    _builder.newLineIfNotEmpty();
     _builder.append("  ");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("def loadOMFTables(omfSchemaJsonZipFile: File)");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append(": Try[OMFTables]");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("= nonFatalCatch[Try[OMFTables]]");
-    _builder.newLine();
+    _builder.append("= nonFatalCatch[Try[");
+    _builder.append(tableName, "  ");
+    _builder.append("]]");
+    _builder.newLineIfNotEmpty();
     _builder.append("    ");
     _builder.append(".withApply {");
     _builder.newLine();
@@ -359,8 +380,10 @@ public class OMFSchemaTableGenerator {
     _builder.append(".par");
     _builder.newLine();
     _builder.append("         ");
-    _builder.append(".aggregate(OMFTables())(seqop = readZipArchive(zipFile), combop = mergeTables)");
-    _builder.newLine();
+    _builder.append(".aggregate(");
+    _builder.append(tableName, "         ");
+    _builder.append("())(seqop = readZipArchive(zipFile), combop = mergeTables)");
+    _builder.newLineIfNotEmpty();
     _builder.append("      ");
     _builder.append("zipFile.close()");
     _builder.newLine();
@@ -375,11 +398,16 @@ public class OMFSchemaTableGenerator {
     _builder.append("private[tables] def mergeTables");
     _builder.newLine();
     _builder.append("  ");
-    _builder.append("(t1: OMFTables, t2: OMFTables)");
-    _builder.newLine();
+    _builder.append("(t1: ");
+    _builder.append(tableName, "  ");
+    _builder.append(", t2: ");
+    _builder.append(tableName, "  ");
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
     _builder.append("  ");
-    _builder.append(": OMFTables");
-    _builder.newLine();
+    _builder.append(": ");
+    _builder.append(tableName, "  ");
+    _builder.newLineIfNotEmpty();
     _builder.append("  ");
     _builder.append("= ");
     {
@@ -398,7 +426,7 @@ public class OMFSchemaTableGenerator {
       for(final EClass eClass_3 : _sortBy_3) {
         if (!_hasElements_2) {
           _hasElements_2 = true;
-          _builder.append("OMFTables(\n    ", "  ");
+          _builder.append("«tableName»(\n    ", "  ");
         } else {
           _builder.appendImmediate(",\n    ", "  ");
         }
@@ -425,11 +453,14 @@ public class OMFSchemaTableGenerator {
     _builder.append("(zipFile: ZipFile)");
     _builder.newLine();
     _builder.append("  ");
-    _builder.append("(tables: OMFTables, ze: ZipArchiveEntry)");
-    _builder.newLine();
+    _builder.append("(tables: ");
+    _builder.append(tableName, "  ");
+    _builder.append(", ze: ZipArchiveEntry)");
+    _builder.newLineIfNotEmpty();
     _builder.append("  ");
-    _builder.append(": OMFTables");
-    _builder.newLine();
+    _builder.append(": ");
+    _builder.append(tableName, "  ");
+    _builder.newLineIfNotEmpty();
     _builder.append("  ");
     _builder.append("= {");
     _builder.newLine();
@@ -476,11 +507,14 @@ public class OMFSchemaTableGenerator {
     _builder.append("  ");
     _builder.newLine();
     _builder.append("  ");
-    _builder.append("def saveOMFTables");
-    _builder.newLine();
+    _builder.append("def save");
+    _builder.append(tableName, "  ");
+    _builder.newLineIfNotEmpty();
     _builder.append("  ");
-    _builder.append("(tables: OMFTables,");
-    _builder.newLine();
+    _builder.append("(tables: ");
+    _builder.append(tableName, "  ");
+    _builder.append(",");
+    _builder.newLineIfNotEmpty();
     _builder.append("   ");
     _builder.append("omfSchemaJsonZipFile: File)");
     _builder.newLine();
