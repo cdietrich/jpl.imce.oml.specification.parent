@@ -163,7 +163,7 @@ public class OMFSchemaTableGenerator {
       String _generatePackageFile = this.generatePackageFile(ePackage, packageQName);
       byte[] _bytes = _generatePackageFile.getBytes();
       packageFile.write(_bytes);
-      File _file_1 = new File(((targetFolder + File.separator) + "OMFTables.scala"));
+      File _file_1 = new File((((targetFolder + File.separator) + tableName) + ".scala"));
       final FileOutputStream tablesFile = new FileOutputStream(_file_1);
       String _generateTablesFile = this.generateTablesFile(ePackage, packageTablesQName, tableName);
       byte[] _bytes_1 = _generateTablesFile.getBytes();
@@ -267,7 +267,7 @@ public class OMFSchemaTableGenerator {
       List<EClass> _sortBy_1 = IterableExtensions.<EClass, String>sortBy(_filter_3, _function_3);
       for(final EClass eClass_1 : _sortBy_1) {
         _builder.append("  ");
-        String _tableReader = OMFSchemaTableGenerator.tableReader(eClass_1);
+        String _tableReader = OMFSchemaTableGenerator.tableReader(eClass_1, tableName);
         _builder.append(_tableReader, "  ");
         _builder.newLineIfNotEmpty();
       }
@@ -313,7 +313,7 @@ public class OMFSchemaTableGenerator {
     _builder.append("\t");
     _builder.newLine();
     _builder.append("  ");
-    _builder.append("def create");
+    _builder.append("def createEmpty");
     _builder.append(tableName, "  ");
     _builder.append("()");
     _builder.newLineIfNotEmpty();
@@ -426,7 +426,7 @@ public class OMFSchemaTableGenerator {
       for(final EClass eClass_3 : _sortBy_3) {
         if (!_hasElements_2) {
           _hasElements_2 = true;
-          _builder.append("«tableName»(\n    ", "  ");
+          _builder.append((tableName + "(\n    "), "  ");
         } else {
           _builder.appendImmediate(",\n    ", "  ");
         }
@@ -667,15 +667,16 @@ public class OMFSchemaTableGenerator {
     return _builder.toString();
   }
   
-  public static String tableReader(final EClass eClass) {
+  public static String tableReader(final EClass eClass, final String tableName) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("def ");
     String _tableReaderName = OMFSchemaTableGenerator.tableReaderName(eClass);
     _builder.append(_tableReaderName, "");
     _builder.append("(is: InputStream)");
     _builder.newLineIfNotEmpty();
-    _builder.append(": OMFTables");
-    _builder.newLine();
+    _builder.append(": ");
+    _builder.append(tableName, "");
+    _builder.newLineIfNotEmpty();
     _builder.append("= copy(");
     String _tableVariableName = OMFSchemaTableGenerator.tableVariableName(eClass);
     _builder.append(_tableVariableName, "");

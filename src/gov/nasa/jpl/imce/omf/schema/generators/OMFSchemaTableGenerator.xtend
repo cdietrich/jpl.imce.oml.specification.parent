@@ -85,7 +85,7 @@ class OMFSchemaTableGenerator {
 	def generate(EPackage ePackage, String targetFolder, String packageQName, String packageTablesQName, String tableName) {
 		val packageFile = new FileOutputStream(new File(targetFolder + File::separator + "package.scala"))
 		packageFile.write(generatePackageFile(ePackage, packageQName).bytes)
-		val tablesFile = new FileOutputStream(new File(targetFolder + File::separator + "OMFTables.scala"))
+		val tablesFile = new FileOutputStream(new File(targetFolder + File::separator + tableName + ".scala"))
 		tablesFile.write(generateTablesFile(ePackage, packageTablesQName, tableName).bytes)
 		for(eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract])  {
 			val classFile = new FileOutputStream(new File(targetFolder + File::separator + eClass.name + ".scala"))
@@ -111,7 +111,7 @@ class OMFSchemaTableGenerator {
 		«FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortBy[name] BEFORE "(\n  " SEPARATOR ",\n  " AFTER "\n)"»«eClass.tableVariable»«ENDFOR» 
 		{
 		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortBy[name]»
-		  «eClass.tableReader»
+		  «eClass.tableReader(tableName)»
 		  «ENDFOR»
 		
 		  def isEmpty: Boolean
@@ -120,7 +120,7 @@ class OMFSchemaTableGenerator {
 		
 		object «tableName» {
 			
-		  def create«tableName»()
+		  def createEmpty«tableName»()
 		  : «tableName»
 		  = new «tableName»()
 		  
@@ -147,7 +147,7 @@ class OMFSchemaTableGenerator {
 		  private[tables] def mergeTables
 		  (t1: «tableName», t2: «tableName»)
 		  : «tableName»
-		  = «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortBy[name] BEFORE "«tableName»(\n    " SEPARATOR ",\n    " AFTER ")"»«eClass.tableVariableName» = t1.«eClass.tableVariableName» ++ t2.«eClass.tableVariableName»«ENDFOR» 
+		  = «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortBy[name] BEFORE tableName + "(\n    " SEPARATOR ",\n    " AFTER ")"»«eClass.tableVariableName» = t1.«eClass.tableVariableName» ++ t2.«eClass.tableVariableName»«ENDFOR» 
 		
 		  private[tables] def readZipArchive
 		  (zipFile: ZipFile)
@@ -211,10 +211,10 @@ class OMFSchemaTableGenerator {
 	static def String tableVariable(EClass eClass)
 	'''«eClass.tableVariableName» : Seq[«eClass.name»] = Seq.empty'''
 	
-	static def String tableReader(EClass eClass)	
+	static def String tableReader(EClass eClass, String tableName)	
 	'''
 	def «eClass.tableReaderName»(is: InputStream)
-	: OMFTables
+	: «tableName»
 	= copy(«eClass.tableVariableName» = readJSonTable(is, «eClass.name»Helper.fromJSON))
 	'''
 	
