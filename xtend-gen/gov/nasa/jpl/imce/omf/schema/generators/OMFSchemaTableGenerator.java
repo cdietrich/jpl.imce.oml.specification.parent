@@ -303,6 +303,17 @@ public class OMFSchemaTableGenerator {
     _builder.append("\t");
     _builder.newLine();
     _builder.append("  ");
+    _builder.append("def createOMFTables()");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append(": OMFTables");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("= new OMFTables()");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.newLine();
+    _builder.append("  ");
     _builder.append("def loadOMFTables(omfSchemaJsonZipFile: File)");
     _builder.newLine();
     _builder.append("  ");

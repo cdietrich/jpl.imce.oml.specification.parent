@@ -108,6 +108,10 @@ class OMFSchemaTableGenerator {
 		
 		object OMFTables {
 			
+		  def createOMFTables()
+		  : OMFTables
+		  = new OMFTables()
+		  
 		  def loadOMFTables(omfSchemaJsonZipFile: File)
 		  : Try[OMFTables]
 		  = nonFatalCatch[Try[OMFTables]]
