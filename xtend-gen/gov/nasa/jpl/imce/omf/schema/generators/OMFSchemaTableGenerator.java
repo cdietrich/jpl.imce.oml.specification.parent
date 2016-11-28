@@ -46,6 +46,41 @@ import org.osgi.framework.Bundle;
 
 @SuppressWarnings("all")
 public class OMFSchemaTableGenerator {
+  public static class OMFTableCompare implements Comparator<EClass> {
+    private final List<String> knownTables = Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("TerminologyGraph", "Bundle", "ConceptDesignationTerminologyGraphAxiom", "TerminologyExtensionAxiom", "TerminologyNestingAxiom", "Aspect", "Concept", "ReifiedRelationship", "UnreifiedRelationship", "Scalar", "Structure", "BinaryScalarRestriction", "IRIScalarRestriction", "NumericScalarRestriction", "PlainLiteralScalarRestriction", "ScalarOneOfRestriction", "StringScalarRestriction", "TimeScalarRestriction", "AspectSpecializationAxiom", "ConceptSpecializationAxiom", "ReifiedRelationshipSpecializationAxiom", "EntityExistentialRestrictionAxiom", "EntityUniversalRestrictionAxiom", "EntityScalarDataPropertyExistentialRestrictionAxiom", "EntityScalarDataPropertyParticularRestrictionAxiom", "EntityScalarDataPropertyUniversalRestrictionAxiom", "ScalarOneOfLiteral"));
+    
+    @Override
+    public int compare(final EClass c1, final EClass c2) {
+      int _xblockexpression = (int) 0;
+      {
+        final String name1 = c1.getName();
+        final String name2 = c2.getName();
+        final int i1 = this.knownTables.indexOf(name1);
+        final int i2 = this.knownTables.indexOf(name2);
+        int _xifexpression = (int) 0;
+        if (((i1 > (-1)) && (i2 > (-1)))) {
+          _xifexpression = Integer.valueOf(i1).compareTo(Integer.valueOf(i2));
+        } else {
+          int _xifexpression_1 = (int) 0;
+          if (((i1 > (-1)) && (i2 == (-1)))) {
+            _xifexpression_1 = (-1);
+          } else {
+            int _xifexpression_2 = (int) 0;
+            if (((i1 == (-1)) && (i2 > (-1)))) {
+              _xifexpression_2 = 1;
+            } else {
+              _xifexpression_2 = name1.compareTo(name2);
+            }
+            _xifexpression_1 = _xifexpression_2;
+          }
+          _xifexpression = _xifexpression_1;
+        }
+        _xblockexpression = _xifexpression;
+      }
+      return _xblockexpression;
+    }
+  }
+  
   public static class OMFFeatureCompare implements Comparator<EStructuralFeature> {
     private final List<String> knownAttributes = Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("graphUUID", "uuid", "kind", "isAbstract", "asymmetric", "essential", "functional", "inverseEssential", "inverseFunctional", "irreflexive", "reflexive", "symmetric", "transitive", "name", "iri"));
     
@@ -230,12 +265,10 @@ public class OMFSchemaTableGenerator {
         return Boolean.valueOf((!_isAbstract));
       };
       Iterable<EClass> _filter_1 = IterableExtensions.<EClass>filter(_filter, _function);
-      final Function1<EClass, String> _function_1 = (EClass it) -> {
-        return it.getName();
-      };
-      List<EClass> _sortBy = IterableExtensions.<EClass, String>sortBy(_filter_1, _function_1);
+      OMFSchemaTableGenerator.OMFTableCompare _oMFTableCompare = new OMFSchemaTableGenerator.OMFTableCompare();
+      List<EClass> _sortWith = IterableExtensions.<EClass>sortWith(_filter_1, _oMFTableCompare);
       boolean _hasElements = false;
-      for(final EClass eClass : _sortBy) {
+      for(final EClass eClass : _sortWith) {
         if (!_hasElements) {
           _hasElements = true;
           _builder.append("(\n  ", "");
@@ -256,16 +289,14 @@ public class OMFSchemaTableGenerator {
     {
       EList<EClassifier> _eClassifiers_1 = ePackage.getEClassifiers();
       Iterable<EClass> _filter_2 = Iterables.<EClass>filter(_eClassifiers_1, EClass.class);
-      final Function1<EClass, Boolean> _function_2 = (EClass it) -> {
+      final Function1<EClass, Boolean> _function_1 = (EClass it) -> {
         boolean _isAbstract = it.isAbstract();
         return Boolean.valueOf((!_isAbstract));
       };
-      Iterable<EClass> _filter_3 = IterableExtensions.<EClass>filter(_filter_2, _function_2);
-      final Function1<EClass, String> _function_3 = (EClass it) -> {
-        return it.getName();
-      };
-      List<EClass> _sortBy_1 = IterableExtensions.<EClass, String>sortBy(_filter_3, _function_3);
-      for(final EClass eClass_1 : _sortBy_1) {
+      Iterable<EClass> _filter_3 = IterableExtensions.<EClass>filter(_filter_2, _function_1);
+      OMFSchemaTableGenerator.OMFTableCompare _oMFTableCompare_1 = new OMFSchemaTableGenerator.OMFTableCompare();
+      List<EClass> _sortWith_1 = IterableExtensions.<EClass>sortWith(_filter_3, _oMFTableCompare_1);
+      for(final EClass eClass_1 : _sortWith_1) {
         _builder.append("  ");
         String _tableReader = OMFSchemaTableGenerator.tableReader(eClass_1, tableName);
         _builder.append(_tableReader, "  ");
@@ -280,17 +311,15 @@ public class OMFSchemaTableGenerator {
     {
       EList<EClassifier> _eClassifiers_2 = ePackage.getEClassifiers();
       Iterable<EClass> _filter_4 = Iterables.<EClass>filter(_eClassifiers_2, EClass.class);
-      final Function1<EClass, Boolean> _function_4 = (EClass it) -> {
+      final Function1<EClass, Boolean> _function_2 = (EClass it) -> {
         boolean _isAbstract = it.isAbstract();
         return Boolean.valueOf((!_isAbstract));
       };
-      Iterable<EClass> _filter_5 = IterableExtensions.<EClass>filter(_filter_4, _function_4);
-      final Function1<EClass, String> _function_5 = (EClass it) -> {
-        return it.getName();
-      };
-      List<EClass> _sortBy_2 = IterableExtensions.<EClass, String>sortBy(_filter_5, _function_5);
+      Iterable<EClass> _filter_5 = IterableExtensions.<EClass>filter(_filter_4, _function_2);
+      OMFSchemaTableGenerator.OMFTableCompare _oMFTableCompare_2 = new OMFSchemaTableGenerator.OMFTableCompare();
+      List<EClass> _sortWith_2 = IterableExtensions.<EClass>sortWith(_filter_5, _oMFTableCompare_2);
       boolean _hasElements_1 = false;
-      for(final EClass eClass_2 : _sortBy_2) {
+      for(final EClass eClass_2 : _sortWith_2) {
         if (!_hasElements_1) {
           _hasElements_1 = true;
           _builder.append("= ", "  ");
@@ -413,17 +442,15 @@ public class OMFSchemaTableGenerator {
     {
       EList<EClassifier> _eClassifiers_3 = ePackage.getEClassifiers();
       Iterable<EClass> _filter_6 = Iterables.<EClass>filter(_eClassifiers_3, EClass.class);
-      final Function1<EClass, Boolean> _function_6 = (EClass it) -> {
+      final Function1<EClass, Boolean> _function_3 = (EClass it) -> {
         boolean _isAbstract = it.isAbstract();
         return Boolean.valueOf((!_isAbstract));
       };
-      Iterable<EClass> _filter_7 = IterableExtensions.<EClass>filter(_filter_6, _function_6);
-      final Function1<EClass, String> _function_7 = (EClass it) -> {
-        return it.getName();
-      };
-      List<EClass> _sortBy_3 = IterableExtensions.<EClass, String>sortBy(_filter_7, _function_7);
+      Iterable<EClass> _filter_7 = IterableExtensions.<EClass>filter(_filter_6, _function_3);
+      OMFSchemaTableGenerator.OMFTableCompare _oMFTableCompare_3 = new OMFSchemaTableGenerator.OMFTableCompare();
+      List<EClass> _sortWith_3 = IterableExtensions.<EClass>sortWith(_filter_7, _oMFTableCompare_3);
       boolean _hasElements_2 = false;
-      for(final EClass eClass_3 : _sortBy_3) {
+      for(final EClass eClass_3 : _sortWith_3) {
         if (!_hasElements_2) {
           _hasElements_2 = true;
           _builder.append((tableName + "(\n    "), "  ");
@@ -473,16 +500,14 @@ public class OMFSchemaTableGenerator {
     {
       EList<EClassifier> _eClassifiers_4 = ePackage.getEClassifiers();
       Iterable<EClass> _filter_8 = Iterables.<EClass>filter(_eClassifiers_4, EClass.class);
-      final Function1<EClass, Boolean> _function_8 = (EClass it) -> {
+      final Function1<EClass, Boolean> _function_4 = (EClass it) -> {
         boolean _isAbstract = it.isAbstract();
         return Boolean.valueOf((!_isAbstract));
       };
-      Iterable<EClass> _filter_9 = IterableExtensions.<EClass>filter(_filter_8, _function_8);
-      final Function1<EClass, String> _function_9 = (EClass it) -> {
-        return it.getName();
-      };
-      List<EClass> _sortBy_4 = IterableExtensions.<EClass, String>sortBy(_filter_9, _function_9);
-      for(final EClass eClass_4 : _sortBy_4) {
+      Iterable<EClass> _filter_9 = IterableExtensions.<EClass>filter(_filter_8, _function_4);
+      OMFSchemaTableGenerator.OMFTableCompare _oMFTableCompare_4 = new OMFSchemaTableGenerator.OMFTableCompare();
+      List<EClass> _sortWith_4 = IterableExtensions.<EClass>sortWith(_filter_9, _oMFTableCompare_4);
+      for(final EClass eClass_4 : _sortWith_4) {
         _builder.append("  \t  ");
         _builder.append("case ");
         String _name = eClass_4.getName();
@@ -567,16 +592,14 @@ public class OMFSchemaTableGenerator {
     {
       EList<EClassifier> _eClassifiers_5 = ePackage.getEClassifiers();
       Iterable<EClass> _filter_10 = Iterables.<EClass>filter(_eClassifiers_5, EClass.class);
-      final Function1<EClass, Boolean> _function_10 = (EClass it) -> {
+      final Function1<EClass, Boolean> _function_5 = (EClass it) -> {
         boolean _isAbstract = it.isAbstract();
         return Boolean.valueOf((!_isAbstract));
       };
-      Iterable<EClass> _filter_11 = IterableExtensions.<EClass>filter(_filter_10, _function_10);
-      final Function1<EClass, String> _function_11 = (EClass it) -> {
-        return it.getName();
-      };
-      List<EClass> _sortBy_5 = IterableExtensions.<EClass, String>sortBy(_filter_11, _function_11);
-      for(final EClass eClass_5 : _sortBy_5) {
+      Iterable<EClass> _filter_11 = IterableExtensions.<EClass>filter(_filter_10, _function_5);
+      OMFSchemaTableGenerator.OMFTableCompare _oMFTableCompare_5 = new OMFSchemaTableGenerator.OMFTableCompare();
+      List<EClass> _sortWith_5 = IterableExtensions.<EClass>sortWith(_filter_11, _oMFTableCompare_5);
+      for(final EClass eClass_5 : _sortWith_5) {
         _builder.append("      ");
         _builder.append("zos.putNextEntry(new java.util.zip.ZipEntry(");
         String _name_1 = eClass_5.getName();
@@ -625,33 +648,60 @@ public class OMFSchemaTableGenerator {
     return _builder.toString();
   }
   
+  public static String pluralize(final String s) {
+    String _xifexpression = null;
+    boolean _endsWith = s.endsWith("y");
+    if (_endsWith) {
+      int _length = s.length();
+      int _minus = (_length - 1);
+      String _substring = s.substring(0, _minus);
+      _xifexpression = (_substring + "ies");
+    } else {
+      _xifexpression = (s + "s");
+    }
+    return _xifexpression;
+  }
+  
   public static String tableReaderName(final EClass eClass) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("read");
     String _name = eClass.getName();
-    _builder.append(_name, "");
-    _builder.append("s");
+    String _pluralize = OMFSchemaTableGenerator.pluralize(_name);
+    _builder.append(_pluralize, "");
     return _builder.toString();
   }
   
   public static String tableVariableName(final EClass eClass) {
     String _xblockexpression = null;
     {
-      Pattern _compile = Pattern.compile("^(\\p{Upper}+)(\\w+)$");
-      String _name = eClass.getName();
-      final Matcher m = _compile.matcher(_name);
-      boolean _matches = m.matches();
-      boolean _not = (!_matches);
-      if (_not) {
-        String _name_1 = eClass.getName();
-        String _plus = ("tableVariableName needs a class whose name begins with uppercase characters: " + _name_1);
-        throw new IllegalArgumentException(_plus);
+      final String n = eClass.getName();
+      String _xifexpression = null;
+      boolean _startsWith = n.startsWith("IRI");
+      if (_startsWith) {
+        String _substring = n.substring(3);
+        String _pluralize = OMFSchemaTableGenerator.pluralize(_substring);
+        _xifexpression = ("iri" + _pluralize);
+      } else {
+        String _xblockexpression_1 = null;
+        {
+          Pattern _compile = Pattern.compile("^(\\p{Upper}+)(\\w+)$");
+          final Matcher m = _compile.matcher(n);
+          boolean _matches = m.matches();
+          boolean _not = (!_matches);
+          if (_not) {
+            String _name = eClass.getName();
+            String _plus = ("tableVariableName needs a class whose name begins with uppercase characters: " + _name);
+            throw new IllegalArgumentException(_plus);
+          }
+          String _group = m.group(1);
+          String _lowerCase = _group.toLowerCase();
+          String _group_1 = m.group(2);
+          String _pluralize_1 = OMFSchemaTableGenerator.pluralize(_group_1);
+          _xblockexpression_1 = (_lowerCase + _pluralize_1);
+        }
+        _xifexpression = _xblockexpression_1;
       }
-      String _group = m.group(1);
-      String _lowerCase = _group.toLowerCase();
-      String _group_1 = m.group(2);
-      String _plus_1 = (_lowerCase + _group_1);
-      _xblockexpression = (_plus_1 + "s");
+      _xblockexpression = _xifexpression;
     }
     return _xblockexpression;
   }

@@ -93,6 +93,54 @@ class OMFSchemaTableGenerator {
 		}
 	}
 	
+	static class OMFTableCompare implements Comparator<EClass> {
+		
+		val knownTables = #[
+		"TerminologyGraph", 
+		"Bundle", 
+		"ConceptDesignationTerminologyGraphAxiom",
+		"TerminologyExtensionAxiom", 
+		"TerminologyNestingAxiom",
+		"Aspect",
+		"Concept",
+		"ReifiedRelationship", 
+		"UnreifiedRelationship",
+		"Scalar",
+		"Structure", 
+		"BinaryScalarRestriction", 
+		"IRIScalarRestriction", 
+		"NumericScalarRestriction",
+		"PlainLiteralScalarRestriction",
+		"ScalarOneOfRestriction",
+		"StringScalarRestriction",
+		"TimeScalarRestriction",
+		"AspectSpecializationAxiom",
+		"ConceptSpecializationAxiom",
+		"ReifiedRelationshipSpecializationAxiom",
+		"EntityExistentialRestrictionAxiom",
+		"EntityUniversalRestrictionAxiom",
+		"EntityScalarDataPropertyExistentialRestrictionAxiom",
+		"EntityScalarDataPropertyParticularRestrictionAxiom",
+		"EntityScalarDataPropertyUniversalRestrictionAxiom",
+		"ScalarOneOfLiteral"]
+		
+		override compare(EClass c1, EClass c2) {
+			val name1 = c1.name
+			val name2 = c2.name
+			val i1 = knownTables.indexOf(name1)
+			val i2 = knownTables.indexOf(name2)
+			if (i1 > -1 && i2 > -1)
+			   i1.compareTo(i2)
+			else if (i1 > -1 && i2 == -1)
+			   -1
+			else if (i1 == -1 && i2 > -1)
+			   1
+			else
+			   name1.compareTo(name2)   
+		}
+		
+	}
+	
 	def String generateTablesFile(EPackage ePackage, String packageQName, String tableName) '''
 		«copyright»
 
@@ -108,14 +156,14 @@ class OMFSchemaTableGenerator {
 		import scala.util.{Failure,Success,Try}
 		
 		case class «tableName» private[tables]
-		«FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortBy[name] BEFORE "(\n  " SEPARATOR ",\n  " AFTER "\n)"»«eClass.tableVariable»«ENDFOR» 
+		«FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortWith(new OMFTableCompare()) BEFORE "(\n  " SEPARATOR ",\n  " AFTER "\n)"»«eClass.tableVariable»«ENDFOR» 
 		{
-		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortBy[name]»
+		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortWith(new OMFTableCompare())»
 		  «eClass.tableReader(tableName)»
 		  «ENDFOR»
 		
 		  def isEmpty: Boolean
-		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortBy[name] BEFORE "= " SEPARATOR " &&\n  "»«eClass.tableVariableName».isEmpty«ENDFOR»
+		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortWith(new OMFTableCompare()) BEFORE "= " SEPARATOR " &&\n  "»«eClass.tableVariableName».isEmpty«ENDFOR»
 		}
 		
 		object «tableName» {
@@ -147,7 +195,7 @@ class OMFSchemaTableGenerator {
 		  private[tables] def mergeTables
 		  (t1: «tableName», t2: «tableName»)
 		  : «tableName»
-		  = «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortBy[name] BEFORE tableName + "(\n    " SEPARATOR ",\n    " AFTER ")"»«eClass.tableVariableName» = t1.«eClass.tableVariableName» ++ t2.«eClass.tableVariableName»«ENDFOR» 
+		  = «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortWith(new OMFTableCompare()) BEFORE tableName + "(\n    " SEPARATOR ",\n    " AFTER ")"»«eClass.tableVariableName» = t1.«eClass.tableVariableName» ++ t2.«eClass.tableVariableName»«ENDFOR» 
 		
 		  private[tables] def readZipArchive
 		  (zipFile: ZipFile)
@@ -156,7 +204,7 @@ class OMFSchemaTableGenerator {
 		  = {
 		  	val is = zipFile.getInputStream(ze)
 		  	ze.getName match {
-		  	  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortBy[name]»
+		  	  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortWith(new OMFTableCompare())»
 		  	  case «eClass.name»Helper.TABLE_JSON_FILENAME =>
 		  	    tables.«eClass.tableReaderName»(is)
 		      «ENDFOR»
@@ -182,7 +230,7 @@ class OMFSchemaTableGenerator {
 		  
 		  	  zos.setMethod(java.util.zip.ZipOutputStream.DEFLATED)
 		  
-		      «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortBy[name]»
+		      «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortWith(new OMFTableCompare())»
 		      zos.putNextEntry(new java.util.zip.ZipEntry(«eClass.name»Helper.TABLE_JSON_FILENAME))
 		      tables.«eClass.tableVariableName».foreach { t =>
 		         val line = «eClass.name»Helper.toJSON(t)+"\n"
@@ -197,15 +245,27 @@ class OMFSchemaTableGenerator {
 		
 		}
 	'''
+	static def String pluralize(String s) {
+	  if (s.endsWith("y")) { 
+	  	s.substring(0, s.length-1)+"ies"
+	  } else {
+	  	s+"s"
+	  }	 
+	}
 	
 	static def String tableReaderName(EClass eClass)
-	'''read«eClass.name»s'''
+	  '''read«pluralize(eClass.name)»'''
 	
 	static def String tableVariableName(EClass eClass) {
-	  val m = Pattern.compile("^(\\p{Upper}+)(\\w+)$").matcher(eClass.name)
-	  if (!m.matches())
-	  	throw new java.lang.IllegalArgumentException("tableVariableName needs a class whose name begins with uppercase characters: " + eClass.name)
-	  m.group(1).toLowerCase + m.group(2) + "s"
+	  val n = eClass.name
+	  if (n.startsWith("IRI")) {
+	  	"iri" + pluralize(n.substring(3))
+	  } else {
+	  	val m = Pattern.compile("^(\\p{Upper}+)(\\w+)$").matcher(n)
+	  	if (!m.matches())
+	  		throw new java.lang.IllegalArgumentException("tableVariableName needs a class whose name begins with uppercase characters: " + eClass.name)
+	 	m.group(1).toLowerCase + pluralize(m.group(2))
+	  }
 	}
 	
 	static def String tableVariable(EClass eClass)
@@ -404,7 +464,8 @@ class OMFSchemaTableGenerator {
 		switch f {
 			EReference: 
 				! f.containment
-			default: true
+			default: 
+				true
 		}
 	}
 	
