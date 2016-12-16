@@ -579,6 +579,7 @@ class OMFSchemaTableGenerator {
 		 * limitations under the License.
 		 * License Terms
 		 */
-    '''
+		
+	'''
     
 }

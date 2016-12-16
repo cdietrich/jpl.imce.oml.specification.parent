@@ -1572,6 +1572,7 @@ public class OMFSchemaTableGenerator {
     _builder.append(" ");
     _builder.append("*/");
     _builder.newLine();
+    _builder.newLine();
     return _builder;
   }
 }
