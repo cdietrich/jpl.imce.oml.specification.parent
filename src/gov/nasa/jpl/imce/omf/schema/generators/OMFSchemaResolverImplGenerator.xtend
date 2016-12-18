@@ -21,7 +21,7 @@ import org.eclipse.xtext.resource.XtextResource
 import org.eclipse.xtext.resource.XtextResourceSet
 import org.eclipse.xtext.xbase.XExpression
 import org.eclipse.xtext.xbase.XFeatureCall
-//import org.eclipse.xtext.xbase.XMemberFeatureCall
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils
 
 class OMFSchemaResolverImplGenerator {
 	
@@ -69,10 +69,12 @@ class OMFSchemaResolverImplGenerator {
 	 * Transform an XText base XExpression to an equivalent Scala expression in concrete syntax (String).
 	 */
 	static def String toScala(XExpression exp) {
-		switch exp {
-			XFeatureCall:
-				exp.toString
-				
+		val result = switch exp {
+			XFeatureCall: {
+			    val n = NodeModelUtils.findActualNodeFor(exp)
+			    val s = NodeModelUtils.getTokenText(n)
+				s
+			}
 				
 			//XMemberFeatureCall:
 			//	exp.actualReceiver.toScala+"."+exp.feature.simpleName
@@ -82,6 +84,7 @@ class OMFSchemaResolverImplGenerator {
 			default:
 				exp.toString + "/* default */"
 		}
+		result
 	}
 	
 	static def String classDeclaration(EClass eClass) '''

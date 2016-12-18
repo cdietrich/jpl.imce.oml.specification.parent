@@ -33,6 +33,8 @@ import org.eclipse.emf.ecore.resource.URIConverter;
 import org.eclipse.emf.ecore.xcore.XOperation;
 import org.eclipse.emf.ecore.xcore.mappings.XcoreMapper;
 import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.nodemodel.ICompositeNode;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.resource.XtextResourceSet;
 import org.eclipse.xtext.xbase.XBlockExpression;
@@ -199,17 +201,28 @@ public class OMFSchemaResolverImplGenerator {
    * Transform an XText base XExpression to an equivalent Scala expression in concrete syntax (String).
    */
   public static String toScala(final XExpression exp) {
-    String _switchResult = null;
-    boolean _matched = false;
-    if (exp instanceof XFeatureCall) {
-      _matched=true;
-      _switchResult = ((XFeatureCall)exp).toString();
+    String _xblockexpression = null;
+    {
+      String _switchResult = null;
+      boolean _matched = false;
+      if (exp instanceof XFeatureCall) {
+        _matched=true;
+        String _xblockexpression_1 = null;
+        {
+          final ICompositeNode n = NodeModelUtils.findActualNodeFor(exp);
+          final String s = NodeModelUtils.getTokenText(n);
+          _xblockexpression_1 = s;
+        }
+        _switchResult = _xblockexpression_1;
+      }
+      if (!_matched) {
+        String _string = exp.toString();
+        _switchResult = (_string + "/* default */");
+      }
+      final String result = _switchResult;
+      _xblockexpression = result;
     }
-    if (!_matched) {
-      String _string = exp.toString();
-      _switchResult = (_string + "/* default */");
-    }
-    return _switchResult;
+    return _xblockexpression;
   }
   
   public static String classDeclaration(final EClass eClass) {
