@@ -98,7 +98,7 @@ class OMFSchemaTableGenerator {
 		val knownTables = #[
 		"TerminologyGraph", 
 		"Bundle", 
-		"ConceptDesignationTerminologyGraphAxiom",
+		"ConceptDesignationTerminologyAxiom",
 		"TerminologyExtensionAxiom", 
 		"TerminologyNestingAxiom",
 		"Aspect",
@@ -122,7 +122,12 @@ class OMFSchemaTableGenerator {
 		"EntityScalarDataPropertyExistentialRestrictionAxiom",
 		"EntityScalarDataPropertyParticularRestrictionAxiom",
 		"EntityScalarDataPropertyUniversalRestrictionAxiom",
-		"ScalarOneOfLiteral"]
+		"ScalarOneOfLiteral",
+		"BundledTerminologyAxiom",
+		"AnonymousConceptTaxonomyAxiom",
+		"RootConceptTaxonomyAxiom",
+		"SpecificDisjointConceptAxiom"
+		]
 		
 		override compare(EClass c1, EClass c2) {
 			val name1 = c1.name
