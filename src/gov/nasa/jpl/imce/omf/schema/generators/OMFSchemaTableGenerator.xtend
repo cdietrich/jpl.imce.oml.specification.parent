@@ -544,6 +544,7 @@ class OMFSchemaTableGenerator {
 		val knownAttributes = #[
 		"graphUUID",
 		"uuid", 
+		"axiomUUID",
 		"kind",
 		"isAbstract", 
 		"asymmetric", 
@@ -556,6 +557,8 @@ class OMFSchemaTableGenerator {
 		"symmetric", 
 		"transitive",
 		"name",
+		"unreifiedPropertyName",
+		"unreifiedInversePropertyName",
 		"iri",
 		"property",
 		"value"

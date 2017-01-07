@@ -82,7 +82,7 @@ public class OMFSchemaTableGenerator {
   }
   
   public static class OMFFeatureCompare implements Comparator<EStructuralFeature> {
-    private final List<String> knownAttributes = Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("graphUUID", "uuid", "kind", "isAbstract", "asymmetric", "essential", "functional", "inverseEssential", "inverseFunctional", "irreflexive", "reflexive", "symmetric", "transitive", "name", "iri", "property", "value"));
+    private final List<String> knownAttributes = Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("graphUUID", "uuid", "axiomUUID", "kind", "isAbstract", "asymmetric", "essential", "functional", "inverseEssential", "inverseFunctional", "irreflexive", "reflexive", "symmetric", "transitive", "name", "unreifiedPropertyName", "unreifiedInversePropertyName", "iri", "property", "value"));
     
     @Override
     public int compare(final EStructuralFeature o1, final EStructuralFeature o2) {

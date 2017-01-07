@@ -122,6 +122,7 @@ class OMFSchemaResolverImplGenerator {
 		val knownAttributes = #[
 		"graphUUID", 
 		"uuid", 
+		"axiomUUID",
 		"kind", 
 		"isAbstract",
 		"asymmetric", 
@@ -134,6 +135,8 @@ class OMFSchemaResolverImplGenerator {
 		"symmetric", 
 		"transitive", 
 		"name", 
+		"unreifiedPropertyName",
+		"unreifiedInversePropertyName",
 		"iri",
 		"property",
 		"value"]
