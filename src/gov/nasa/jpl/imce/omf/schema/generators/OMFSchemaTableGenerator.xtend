@@ -96,6 +96,7 @@ class OMFSchemaTableGenerator {
 	static class OMFTableCompare implements Comparator<EClass> {
 		
 		val knownTables = #[
+		"AnnotationProperty",
 		"TerminologyGraph", 
 		"Bundle", 
 		"ConceptDesignationTerminologyAxiom",
@@ -130,7 +131,8 @@ class OMFSchemaTableGenerator {
 		"BundledTerminologyAxiom",
 		"AnonymousConceptTaxonomyAxiom",
 		"RootConceptTaxonomyAxiom",
-		"SpecificDisjointConceptAxiom"
+		"SpecificDisjointConceptAxiom",
+		"AnnotationPair"
 		]
 		
 		override compare(EClass c1, EClass c2) {
@@ -539,7 +541,25 @@ class OMFSchemaTableGenerator {
 
 	static class OMFFeatureCompare implements Comparator<EStructuralFeature> {
 		
-		val knownAttributes = #["graphUUID", "uuid", "kind", "isAbstract", "asymmetric", "essential", "functional", "inverseEssential", "inverseFunctional", "irreflexive", "reflexive", "symmetric", "transitive", "name", "iri"]
+		val knownAttributes = #[
+		"graphUUID",
+		"uuid", 
+		"kind",
+		"isAbstract", 
+		"asymmetric", 
+		"essential", 
+		"functional",
+		"inverseEssential",
+		"inverseFunctional", 
+		"irreflexive", 
+		"reflexive",
+		"symmetric", 
+		"transitive",
+		"name",
+		"iri",
+		"property",
+		"value"
+		]
 		override compare(EStructuralFeature o1, EStructuralFeature o2) {
 			val name1 = o1.columnName
 			val name2 = o2.columnName

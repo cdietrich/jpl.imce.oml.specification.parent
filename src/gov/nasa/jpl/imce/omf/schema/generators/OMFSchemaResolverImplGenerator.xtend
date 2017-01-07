@@ -119,7 +119,24 @@ class OMFSchemaResolverImplGenerator {
 	
 	static class OMFFeatureCompare implements Comparator<EStructuralFeature> {
 		
-		val knownAttributes = #["graphUUID", "uuid", "kind", "isAbstract", "asymmetric", "essential", "functional", "inverseEssential", "inverseFunctional", "irreflexive", "reflexive", "symmetric", "transitive", "name", "iri"]
+		val knownAttributes = #[
+		"graphUUID", 
+		"uuid", 
+		"kind", 
+		"isAbstract",
+		"asymmetric", 
+		"essential", 
+		"functional", 
+		"inverseEssential", 
+		"inverseFunctional", 
+		"irreflexive", 
+		"reflexive", 
+		"symmetric", 
+		"transitive", 
+		"name", 
+		"iri",
+		"property",
+		"value"]
 		override compare(EStructuralFeature o1, EStructuralFeature o2) {
 			val name1 = o1.columnName
 			val name2 = o2.columnName
