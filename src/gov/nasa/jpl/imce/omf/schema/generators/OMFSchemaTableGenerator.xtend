@@ -546,6 +546,7 @@ class OMFSchemaTableGenerator {
 		"uuid", 
 		"axiomUUID",
 		"terminologyUUID",
+		"subjectUUID",
 		"propertyUUID",
 		"kind",
 		"isAbstract", 

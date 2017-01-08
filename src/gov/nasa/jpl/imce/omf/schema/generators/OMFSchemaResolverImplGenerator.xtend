@@ -124,6 +124,7 @@ class OMFSchemaResolverImplGenerator {
 		"uuid", 
 		"axiomUUID",
 		"terminologyUUID",
+		"subjectUUID",
 		"propertyUUID",
 		"kind", 
 		"isAbstract",
