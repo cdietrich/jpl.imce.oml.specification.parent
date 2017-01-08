@@ -342,7 +342,7 @@ public class OMFSchemaResolverGenerator {
       EList<EParameter> _eParameters = op.getEParameters();
       boolean _isEmpty = _eParameters.isEmpty();
       if (_isEmpty) {
-        _xifexpression = "val";
+        _xifexpression = "def";
       } else {
         _xifexpression = "def";
       }
@@ -363,7 +363,6 @@ public class OMFSchemaResolverGenerator {
         for(final EParameter p : _eParameters_1) {
           if (!_hasElements) {
             _hasElements = true;
-            _builder.append("\n  (", "");
           } else {
             _builder.appendImmediate(",\n  ", "");
           }
@@ -373,14 +372,20 @@ public class OMFSchemaResolverGenerator {
           String _queryType = OMFSchemaResolverGenerator.queryType(p);
           _builder.append(_queryType, "");
         }
-        if (_hasElements) {
-          _builder.append("\n  )", "");
-        }
       }
       final String args = _builder.toString();
       String _name_1 = op.getName();
       String _plus = ((decl + " ") + _name_1);
-      _xblockexpression = (_plus + args);
+      String _plus_1 = (_plus + "\n  (");
+      String _plus_2 = (_plus_1 + args);
+      String _xifexpression_2 = null;
+      boolean _isEmpty_1 = args.isEmpty();
+      if (_isEmpty_1) {
+        _xifexpression_2 = ")";
+      } else {
+        _xifexpression_2 = "\n  ";
+      }
+      _xblockexpression = (_plus_2 + _xifexpression_2);
     }
     return _xblockexpression;
   }
