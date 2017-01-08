@@ -545,6 +545,8 @@ class OMFSchemaTableGenerator {
 		"graphUUID",
 		"uuid", 
 		"axiomUUID",
+		"terminologyUUID",
+		"propertyUUID",
 		"kind",
 		"isAbstract", 
 		"asymmetric", 
@@ -560,7 +562,6 @@ class OMFSchemaTableGenerator {
 		"unreifiedPropertyName",
 		"unreifiedInversePropertyName",
 		"iri",
-		"property",
 		"value"
 		]
 		override compare(EStructuralFeature o1, EStructuralFeature o2) {

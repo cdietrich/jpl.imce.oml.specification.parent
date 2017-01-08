@@ -123,6 +123,8 @@ class OMFSchemaResolverImplGenerator {
 		"graphUUID", 
 		"uuid", 
 		"axiomUUID",
+		"terminologyUUID",
+		"propertyUUID",
 		"kind", 
 		"isAbstract",
 		"asymmetric", 
@@ -138,7 +140,6 @@ class OMFSchemaResolverImplGenerator {
 		"unreifiedPropertyName",
 		"unreifiedInversePropertyName",
 		"iri",
-		"property",
 		"value"]
 		override compare(EStructuralFeature o1, EStructuralFeature o2) {
 			val name1 = o1.columnName
