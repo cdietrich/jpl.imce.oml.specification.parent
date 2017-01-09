@@ -114,6 +114,7 @@ class OMFSchemaTableGenerator {
 		"PlainLiteralScalarRestriction",
 		"ScalarOneOfRestriction",
 		"StringScalarRestriction",
+		"SynonymScalarRestriction",
 		"TimeScalarRestriction",
 		"EntityScalarDataProperty",
 		"EntityStructuredDataProperty",
@@ -132,7 +133,7 @@ class OMFSchemaTableGenerator {
 		"AnonymousConceptTaxonomyAxiom",
 		"RootConceptTaxonomyAxiom",
 		"SpecificDisjointConceptAxiom",
-		"AnnotationPair"
+		"Annotation"
 		]
 		
 		override compare(EClass c1, EClass c2) {
