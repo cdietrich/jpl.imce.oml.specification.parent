@@ -383,7 +383,7 @@ public class OMFSchemaResolverGenerator {
       if (_isEmpty_1) {
         _xifexpression_2 = ")";
       } else {
-        _xifexpression_2 = "\n  ";
+        _xifexpression_2 = "\n  )";
       }
       _xblockexpression = (_plus_2 + _xifexpression_2);
     }

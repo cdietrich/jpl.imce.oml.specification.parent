@@ -127,7 +127,7 @@ class OMFSchemaResolverGenerator {
 		val kind = if (op.EParameters.empty) "def" else "def"
 		val decl = if (null != op.getEAnnotation("http://imce.jpl.nasa.gov/omf/Override")) "override "+kind else kind
 		val args = '''«FOR p : op.EParameters SEPARATOR ",\n  "»«p.name»: «p.queryType»«ENDFOR»'''
-		decl+" "+op.name+"\n  ("+args+(if (args.empty) ")" else "\n  ")
+		decl+" "+op.name+"\n  ("+args+(if (args.empty) ")" else "\n  )")
 	}
 	
 	static def String queryType(EOperation op) {
