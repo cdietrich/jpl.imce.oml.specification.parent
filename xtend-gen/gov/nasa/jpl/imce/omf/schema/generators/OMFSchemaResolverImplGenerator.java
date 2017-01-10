@@ -439,15 +439,25 @@ public class OMFSchemaResolverImplGenerator {
                   _elvis = "";
                 }
                 switch (_elvis) {
-                  case "Map":
+                  case "Map(Seq)":
                     String _xblockexpression_2 = null;
                     {
                       final String key = ann.get("key");
                       String _name = type.getName();
-                      String _plus = ((("scala.collection.immutable.Map[" + key) + ", resolver.api.") + _name);
-                      _xblockexpression_2 = (_plus + "]");
+                      String _plus = ((("scala.collection.immutable.Map[" + key) + ", scala.collection.immutable.Seq[resolver.api.") + _name);
+                      _xblockexpression_2 = (_plus + "]]");
                     }
                     _switchResult_1 = _xblockexpression_2;
+                    break;
+                  case "Map":
+                    String _xblockexpression_3 = null;
+                    {
+                      final String key = ann.get("key");
+                      String _name = type.getName();
+                      String _plus = ((("scala.collection.immutable.Map[" + key) + ", resolver.api.") + _name);
+                      _xblockexpression_3 = (_plus + "]");
+                    }
+                    _switchResult_1 = _xblockexpression_3;
                     break;
                   case "Set":
                     String _name = type.getName();

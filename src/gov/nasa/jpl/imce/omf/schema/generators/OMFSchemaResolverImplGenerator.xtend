@@ -204,6 +204,10 @@ class OMFSchemaResolverImplGenerator {
 					if (feature.upperBound == -1) {
 						val ann = feature.getEAnnotation("http://imce.jpl.nasa.gov/omf/Collection")?.details
 						switch ann?.get("kind") ?: "" {
+						case "Map(Seq)": {
+							val key=ann.get("key")
+							"scala.collection.immutable.Map["+key+", scala.collection.immutable.Seq[resolver.api."+type.name+"]]"				
+						}
 						case "Map": {
 							val key=ann.get("key")
 							"scala.collection.immutable.Map["+key+", resolver.api."+type.name+"]"				
