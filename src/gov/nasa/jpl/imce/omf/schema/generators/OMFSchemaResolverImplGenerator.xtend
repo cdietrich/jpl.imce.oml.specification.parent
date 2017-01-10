@@ -206,7 +206,7 @@ class OMFSchemaResolverImplGenerator {
 						switch ann?.get("kind") ?: "" {
 						case "Map(Seq)": {
 							val key=ann.get("key")
-							"scala.collection.immutable.Map["+key+", scala.collection.immutable.Seq[resolver.api."+type.name+"]]"				
+							"scala.collection.immutable.Map[resolver.api."+key+", scala.collection.immutable.Seq[resolver.api."+type.name+"]]"				
 						}
 						case "Map": {
 							val key=ann.get("key")

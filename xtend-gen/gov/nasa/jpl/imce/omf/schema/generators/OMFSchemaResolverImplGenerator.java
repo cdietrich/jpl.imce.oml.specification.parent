@@ -444,7 +444,7 @@ public class OMFSchemaResolverImplGenerator {
                     {
                       final String key = ann.get("key");
                       String _name = type.getName();
-                      String _plus = ((("scala.collection.immutable.Map[" + key) + ", scala.collection.immutable.Seq[resolver.api.") + _name);
+                      String _plus = ((("scala.collection.immutable.Map[resolver.api." + key) + ", scala.collection.immutable.Seq[resolver.api.") + _name);
                       _xblockexpression_2 = (_plus + "]]");
                     }
                     _switchResult_1 = _xblockexpression_2;
