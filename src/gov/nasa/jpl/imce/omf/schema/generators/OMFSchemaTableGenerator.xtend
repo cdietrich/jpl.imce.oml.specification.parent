@@ -81,7 +81,6 @@ class OMFSchemaTableGenerator {
       	)
     }
     
-	
 	def generate(EPackage ePackage, String targetFolder, String packageQName, String packageTablesQName, String tableName) {
 		val packageFile = new FileOutputStream(new File(targetFolder + File::separator + "package.scala"))
 		packageFile.write(generatePackageFile(ePackage, packageQName).bytes)
@@ -161,19 +160,31 @@ class OMFSchemaTableGenerator {
 		import java.io.{File,InputStream}
 		import org.apache.commons.compress.archivers.zip.{ZipArchiveEntry, ZipFile}
 		
+		«IF 'OMFSchemaTables' == tableName»
+		import scala.collection.immutable.{Map,Seq}
+		«ELSE»
 		import scala.collection.immutable.Seq
+		«ENDIF»
 		import scala.collection.JavaConversions._
-		import scala.{Boolean,Unit}
 		import scala.util.control.Exception._
 		import scala.util.{Failure,Success,Try}
+		import scala.{Boolean,Unit}
+		«IF 'OMFSchemaTables' == tableName»
+		import scala.Predef.ArrowAssoc
+		«ENDIF»
 		
 		case class «tableName» private[tables]
-		«FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortWith(new OMFTableCompare()) BEFORE "(\n  " SEPARATOR ",\n  " AFTER "\n)"»«eClass.tableVariable»«ENDFOR» 
+		«IF 'OMFSchemaTables' == tableName»
+		«FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && !isAnnotation].sortWith(new OMFTableCompare()) BEFORE "(\n  " SEPARATOR ",\n  " AFTER ","»«eClass.tableVariable»«ENDFOR»
+		  annotations: Map[AnnotationProperty, Seq[Annotation]] = Map.empty)
+		«ELSE»
+		«FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && !isAnnotation].sortWith(new OMFTableCompare()) BEFORE "(\n  " SEPARATOR ",\n  " AFTER "\n)"»«eClass.tableVariable»«ENDFOR» 
+		«ENDIF»
 		{
-		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortWith(new OMFTableCompare())»
+		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && !isAnnotation].sortWith(new OMFTableCompare())»
 		  «eClass.tableReader(tableName)»
 		  «ENDFOR»
-		
+		  
 		  def isEmpty: Boolean
 		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortWith(new OMFTableCompare()) BEFORE "= " SEPARATOR " &&\n  "»«eClass.tableVariableName».isEmpty«ENDFOR»
 		}
@@ -216,10 +227,20 @@ class OMFSchemaTableGenerator {
 		  = {
 		  	val is = zipFile.getInputStream(ze)
 		  	ze.getName match {
-		  	  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortWith(new OMFTableCompare())»
+		  	  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && !isAnnotation].sortWith(new OMFTableCompare())»
 		  	  case «eClass.name»Helper.TABLE_JSON_FILENAME =>
 		  	    tables.«eClass.tableReaderName»(is)
 		      «ENDFOR»
+		      «IF 'OMFSchemaTables' == tableName»
+		      case annotationPropertyIRI =>
+		        tables
+		          .annotationProperties
+		          .find(_.iri == annotationPropertyIRI)
+		          .fold[OMFSchemaTables](tables) { ap =>
+		          val annotationPropertyTable = ap -> readJSonTable[Annotation](is, AnnotationHelper.fromJSON)
+		          tables.copy(annotations = tables.annotations + annotationPropertyTable)
+		        }
+		      «ENDIF»
 		    }
 		  }
 		  
@@ -242,7 +263,7 @@ class OMFSchemaTableGenerator {
 		  
 		  	  zos.setMethod(java.util.zip.ZipOutputStream.DEFLATED)
 		  
-		      «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortWith(new OMFTableCompare())»
+		      «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && !isAnnotation].sortWith(new OMFTableCompare())»
 		      zos.putNextEntry(new java.util.zip.ZipEntry(«eClass.name»Helper.TABLE_JSON_FILENAME))
 		      tables.«eClass.tableVariableName».foreach { t =>
 		         val line = «eClass.name»Helper.toJSON(t)+"\n"
@@ -250,6 +271,24 @@ class OMFSchemaTableGenerator {
 		      }
 		      zos.closeEntry()
 		      «ENDFOR»
+		      
+		      «IF 'OMFSchemaTables' == tableName»
+		      tables
+		        .annotationProperties
+		        .foreach { ap =>
+		          tables
+		            .annotations
+		            .get(ap)
+		            .foreach { as =>
+		              zos.putNextEntry(new java.util.zip.ZipEntry(ap.iri))
+		              as.foreach { a =>
+		                val line = AnnotationHelper.toJSON(a)+"\n"
+		                zos.write(line.getBytes(java.nio.charset.Charset.forName("UTF-8")))
+		              }
+		              zos.closeEntry()
+		            }
+		        }
+		      «ENDIF»
 		  
 		      zos.close()
 		  	  Success(())
@@ -257,12 +296,17 @@ class OMFSchemaTableGenerator {
 		
 		}
 	'''
+	
 	static def String pluralize(String s) {
 	  if (s.endsWith("y")) { 
 	  	s.substring(0, s.length-1)+"ies"
 	  } else {
 	  	s+"s"
 	  }	 
+	}
+	
+	static def Boolean isAnnotation(EClass eClass) {
+		"Annotation" == eClass.name
 	}
 	
 	static def String tableReaderName(EClass eClass)
@@ -345,36 +389,38 @@ class OMFSchemaTableGenerator {
 		«ENDIF»
 		case class «eClass.name»
 		(
-		 «FOR attr : eClass.getSortedAttributes SEPARATOR ","»
-		 @(JSExport @field) «attr.columnName»: «attr.constructorTypeName»
-		 «ENDFOR»
-		) «IF eClass.hasOptionalAttributes»{
+		  «FOR attr : eClass.getSortedAttributes SEPARATOR ","»
+		  @(JSExport @field) «attr.columnName»: «attr.constructorTypeName»
+		  «ENDFOR»
+		) {
+		«IF eClass.hasOptionalAttributes»
+		  @JSExport
+		  def this(
+		  «FOR attr : eClass.getSortedAttributes.filter(a | a.lowerBound > 0) SEPARATOR ",\n" AFTER ")"»  «attr.columnName»: «attr.constructorTypeName»«ENDFOR»
+		  = this(
+		  «FOR attr : eClass.getSortedAttributes SEPARATOR ",\n" AFTER ")\n"»«IF attr.lowerBound > 0»    «attr.columnName»«ELSE»    None /* «attr.columnName» */«ENDIF»«ENDFOR»
 		
-		@JSExport
-		def this(
-			«FOR attr : eClass.getSortedAttributes.filter(a | a.lowerBound > 0) SEPARATOR ","»
-			«attr.columnName»: «attr.constructorTypeName»
-			«ENDFOR»
-		) 
-		= this(
-		«FOR attr : eClass.getSortedAttributes SEPARATOR ","»
-				«IF attr.lowerBound > 0»
-				«attr.columnName»
-				«ELSE»
-				None
-				«ENDIF»			
-		«ENDFOR»			
-		) 
-		
-		«FOR attr : eClass.getSortedAttributes.filter(a | a.lowerBound == 0) SEPARATOR ""»
-			def with«attr.columnName.toFirstUpper»(l: «attr.scalaTypeName»)	 
-			: «eClass.name»
-			= copy(«attr.columnName»=Some(l))
-			
-		«ENDFOR»
-		}
-		
+		  «FOR attr : eClass.getSortedAttributes.filter(a | a.lowerBound == 0) SEPARATOR ""»
+		  def with«attr.columnName.toFirstUpper»(l: «attr.scalaTypeName»)	 
+		  : «eClass.name»
+		  = copy(«attr.columnName»=Some(l))
+		  
+		  «ENDFOR»
 		«ENDIF»
+		  override val hashCode
+		  : scala.Int 
+		  = «FOR attr : eClass.getSortedAttributes BEFORE "(" SEPARATOR ", " AFTER ").##"»«attr.columnName»«ENDFOR»
+		  
+		  override def equals(other: scala.Any): scala.Boolean = other match {
+		  	case that: «eClass.name» =>
+		  	  «FOR attr : eClass.getSortedAttributes SEPARATOR " &&"»
+		  	  (this.«attr.columnName» == that.«attr.columnName»)
+		      «ENDFOR»
+		    case _ =>
+		      false
+		  }
+		  
+		}
 		
 		@JSExport
 		object «eClass.name»Helper {

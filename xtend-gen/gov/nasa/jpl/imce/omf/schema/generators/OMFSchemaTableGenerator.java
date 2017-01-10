@@ -242,91 +242,139 @@ public class OMFSchemaTableGenerator {
     _builder.append("import org.apache.commons.compress.archivers.zip.{ZipArchiveEntry, ZipFile}");
     _builder.newLine();
     _builder.newLine();
-    _builder.append("import scala.collection.immutable.Seq");
-    _builder.newLine();
+    {
+      boolean _equals = Objects.equal("OMFSchemaTables", tableName);
+      if (_equals) {
+        _builder.append("import scala.collection.immutable.{Map,Seq}");
+        _builder.newLine();
+      } else {
+        _builder.append("import scala.collection.immutable.Seq");
+        _builder.newLine();
+      }
+    }
     _builder.append("import scala.collection.JavaConversions._");
-    _builder.newLine();
-    _builder.append("import scala.{Boolean,Unit}");
     _builder.newLine();
     _builder.append("import scala.util.control.Exception._");
     _builder.newLine();
     _builder.append("import scala.util.{Failure,Success,Try}");
     _builder.newLine();
+    _builder.append("import scala.{Boolean,Unit}");
+    _builder.newLine();
+    {
+      boolean _equals_1 = Objects.equal("OMFSchemaTables", tableName);
+      if (_equals_1) {
+        _builder.append("import scala.Predef.ArrowAssoc");
+        _builder.newLine();
+      }
+    }
     _builder.newLine();
     _builder.append("case class ");
     _builder.append(tableName, "");
     _builder.append(" private[tables]");
     _builder.newLineIfNotEmpty();
     {
-      EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
-      Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
-      final Function1<EClass, Boolean> _function = (EClass it) -> {
-        boolean _isAbstract = it.isAbstract();
-        return Boolean.valueOf((!_isAbstract));
-      };
-      Iterable<EClass> _filter_1 = IterableExtensions.<EClass>filter(_filter, _function);
-      OMFSchemaTableGenerator.OMFTableCompare _oMFTableCompare = new OMFSchemaTableGenerator.OMFTableCompare();
-      List<EClass> _sortWith = IterableExtensions.<EClass>sortWith(_filter_1, _oMFTableCompare);
-      boolean _hasElements = false;
-      for(final EClass eClass : _sortWith) {
-        if (!_hasElements) {
-          _hasElements = true;
-          _builder.append("(\n  ", "");
-        } else {
-          _builder.appendImmediate(",\n  ", "");
+      boolean _equals_2 = Objects.equal("OMFSchemaTables", tableName);
+      if (_equals_2) {
+        {
+          EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
+          Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
+          final Function1<EClass, Boolean> _function = (EClass it) -> {
+            return Boolean.valueOf(((!it.isAbstract()) && (!(OMFSchemaTableGenerator.isAnnotation(it)).booleanValue())));
+          };
+          Iterable<EClass> _filter_1 = IterableExtensions.<EClass>filter(_filter, _function);
+          OMFSchemaTableGenerator.OMFTableCompare _oMFTableCompare = new OMFSchemaTableGenerator.OMFTableCompare();
+          List<EClass> _sortWith = IterableExtensions.<EClass>sortWith(_filter_1, _oMFTableCompare);
+          boolean _hasElements = false;
+          for(final EClass eClass : _sortWith) {
+            if (!_hasElements) {
+              _hasElements = true;
+              _builder.append("(\n  ", "");
+            } else {
+              _builder.appendImmediate(",\n  ", "");
+            }
+            String _tableVariable = OMFSchemaTableGenerator.tableVariable(eClass);
+            _builder.append(_tableVariable, "");
+          }
+          if (_hasElements) {
+            _builder.append(",", "");
+          }
         }
-        String _tableVariable = OMFSchemaTableGenerator.tableVariable(eClass);
-        _builder.append(_tableVariable, "");
-      }
-      if (_hasElements) {
-        _builder.append("\n)", "");
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        _builder.append("annotations: Map[AnnotationProperty, Seq[Annotation]] = Map.empty)");
+        _builder.newLine();
+      } else {
+        {
+          EList<EClassifier> _eClassifiers_1 = ePackage.getEClassifiers();
+          Iterable<EClass> _filter_2 = Iterables.<EClass>filter(_eClassifiers_1, EClass.class);
+          final Function1<EClass, Boolean> _function_1 = (EClass it) -> {
+            return Boolean.valueOf(((!it.isAbstract()) && (!(OMFSchemaTableGenerator.isAnnotation(it)).booleanValue())));
+          };
+          Iterable<EClass> _filter_3 = IterableExtensions.<EClass>filter(_filter_2, _function_1);
+          OMFSchemaTableGenerator.OMFTableCompare _oMFTableCompare_1 = new OMFSchemaTableGenerator.OMFTableCompare();
+          List<EClass> _sortWith_1 = IterableExtensions.<EClass>sortWith(_filter_3, _oMFTableCompare_1);
+          boolean _hasElements_1 = false;
+          for(final EClass eClass_1 : _sortWith_1) {
+            if (!_hasElements_1) {
+              _hasElements_1 = true;
+              _builder.append("(\n  ", "");
+            } else {
+              _builder.appendImmediate(",\n  ", "");
+            }
+            String _tableVariable_1 = OMFSchemaTableGenerator.tableVariable(eClass_1);
+            _builder.append(_tableVariable_1, "");
+          }
+          if (_hasElements_1) {
+            _builder.append("\n)", "");
+          }
+        }
+        _builder.append(" ");
+        _builder.newLineIfNotEmpty();
       }
     }
-    _builder.append(" ");
-    _builder.newLineIfNotEmpty();
     _builder.append("{");
     _builder.newLine();
     {
-      EList<EClassifier> _eClassifiers_1 = ePackage.getEClassifiers();
-      Iterable<EClass> _filter_2 = Iterables.<EClass>filter(_eClassifiers_1, EClass.class);
-      final Function1<EClass, Boolean> _function_1 = (EClass it) -> {
-        boolean _isAbstract = it.isAbstract();
-        return Boolean.valueOf((!_isAbstract));
+      EList<EClassifier> _eClassifiers_2 = ePackage.getEClassifiers();
+      Iterable<EClass> _filter_4 = Iterables.<EClass>filter(_eClassifiers_2, EClass.class);
+      final Function1<EClass, Boolean> _function_2 = (EClass it) -> {
+        return Boolean.valueOf(((!it.isAbstract()) && (!(OMFSchemaTableGenerator.isAnnotation(it)).booleanValue())));
       };
-      Iterable<EClass> _filter_3 = IterableExtensions.<EClass>filter(_filter_2, _function_1);
-      OMFSchemaTableGenerator.OMFTableCompare _oMFTableCompare_1 = new OMFSchemaTableGenerator.OMFTableCompare();
-      List<EClass> _sortWith_1 = IterableExtensions.<EClass>sortWith(_filter_3, _oMFTableCompare_1);
-      for(final EClass eClass_1 : _sortWith_1) {
+      Iterable<EClass> _filter_5 = IterableExtensions.<EClass>filter(_filter_4, _function_2);
+      OMFSchemaTableGenerator.OMFTableCompare _oMFTableCompare_2 = new OMFSchemaTableGenerator.OMFTableCompare();
+      List<EClass> _sortWith_2 = IterableExtensions.<EClass>sortWith(_filter_5, _oMFTableCompare_2);
+      for(final EClass eClass_2 : _sortWith_2) {
         _builder.append("  ");
-        String _tableReader = OMFSchemaTableGenerator.tableReader(eClass_1, tableName);
+        String _tableReader = OMFSchemaTableGenerator.tableReader(eClass_2, tableName);
         _builder.append(_tableReader, "  ");
         _builder.newLineIfNotEmpty();
       }
     }
+    _builder.append("  ");
     _builder.newLine();
     _builder.append("  ");
     _builder.append("def isEmpty: Boolean");
     _builder.newLine();
     _builder.append("  ");
     {
-      EList<EClassifier> _eClassifiers_2 = ePackage.getEClassifiers();
-      Iterable<EClass> _filter_4 = Iterables.<EClass>filter(_eClassifiers_2, EClass.class);
-      final Function1<EClass, Boolean> _function_2 = (EClass it) -> {
+      EList<EClassifier> _eClassifiers_3 = ePackage.getEClassifiers();
+      Iterable<EClass> _filter_6 = Iterables.<EClass>filter(_eClassifiers_3, EClass.class);
+      final Function1<EClass, Boolean> _function_3 = (EClass it) -> {
         boolean _isAbstract = it.isAbstract();
         return Boolean.valueOf((!_isAbstract));
       };
-      Iterable<EClass> _filter_5 = IterableExtensions.<EClass>filter(_filter_4, _function_2);
-      OMFSchemaTableGenerator.OMFTableCompare _oMFTableCompare_2 = new OMFSchemaTableGenerator.OMFTableCompare();
-      List<EClass> _sortWith_2 = IterableExtensions.<EClass>sortWith(_filter_5, _oMFTableCompare_2);
-      boolean _hasElements_1 = false;
-      for(final EClass eClass_2 : _sortWith_2) {
-        if (!_hasElements_1) {
-          _hasElements_1 = true;
+      Iterable<EClass> _filter_7 = IterableExtensions.<EClass>filter(_filter_6, _function_3);
+      OMFSchemaTableGenerator.OMFTableCompare _oMFTableCompare_3 = new OMFSchemaTableGenerator.OMFTableCompare();
+      List<EClass> _sortWith_3 = IterableExtensions.<EClass>sortWith(_filter_7, _oMFTableCompare_3);
+      boolean _hasElements_2 = false;
+      for(final EClass eClass_3 : _sortWith_3) {
+        if (!_hasElements_2) {
+          _hasElements_2 = true;
           _builder.append("= ", "  ");
         } else {
           _builder.appendImmediate(" &&\n  ", "  ");
         }
-        String _tableVariableName = OMFSchemaTableGenerator.tableVariableName(eClass_2);
+        String _tableVariableName = OMFSchemaTableGenerator.tableVariableName(eClass_3);
         _builder.append(_tableVariableName, "  ");
         _builder.append(".isEmpty");
       }
@@ -440,33 +488,33 @@ public class OMFSchemaTableGenerator {
     _builder.append("  ");
     _builder.append("= ");
     {
-      EList<EClassifier> _eClassifiers_3 = ePackage.getEClassifiers();
-      Iterable<EClass> _filter_6 = Iterables.<EClass>filter(_eClassifiers_3, EClass.class);
-      final Function1<EClass, Boolean> _function_3 = (EClass it) -> {
+      EList<EClassifier> _eClassifiers_4 = ePackage.getEClassifiers();
+      Iterable<EClass> _filter_8 = Iterables.<EClass>filter(_eClassifiers_4, EClass.class);
+      final Function1<EClass, Boolean> _function_4 = (EClass it) -> {
         boolean _isAbstract = it.isAbstract();
         return Boolean.valueOf((!_isAbstract));
       };
-      Iterable<EClass> _filter_7 = IterableExtensions.<EClass>filter(_filter_6, _function_3);
-      OMFSchemaTableGenerator.OMFTableCompare _oMFTableCompare_3 = new OMFSchemaTableGenerator.OMFTableCompare();
-      List<EClass> _sortWith_3 = IterableExtensions.<EClass>sortWith(_filter_7, _oMFTableCompare_3);
-      boolean _hasElements_2 = false;
-      for(final EClass eClass_3 : _sortWith_3) {
-        if (!_hasElements_2) {
-          _hasElements_2 = true;
+      Iterable<EClass> _filter_9 = IterableExtensions.<EClass>filter(_filter_8, _function_4);
+      OMFSchemaTableGenerator.OMFTableCompare _oMFTableCompare_4 = new OMFSchemaTableGenerator.OMFTableCompare();
+      List<EClass> _sortWith_4 = IterableExtensions.<EClass>sortWith(_filter_9, _oMFTableCompare_4);
+      boolean _hasElements_3 = false;
+      for(final EClass eClass_4 : _sortWith_4) {
+        if (!_hasElements_3) {
+          _hasElements_3 = true;
           _builder.append((tableName + "(\n    "), "  ");
         } else {
           _builder.appendImmediate(",\n    ", "  ");
         }
-        String _tableVariableName_1 = OMFSchemaTableGenerator.tableVariableName(eClass_3);
+        String _tableVariableName_1 = OMFSchemaTableGenerator.tableVariableName(eClass_4);
         _builder.append(_tableVariableName_1, "  ");
         _builder.append(" = t1.");
-        String _tableVariableName_2 = OMFSchemaTableGenerator.tableVariableName(eClass_3);
+        String _tableVariableName_2 = OMFSchemaTableGenerator.tableVariableName(eClass_4);
         _builder.append(_tableVariableName_2, "  ");
         _builder.append(" ++ t2.");
-        String _tableVariableName_3 = OMFSchemaTableGenerator.tableVariableName(eClass_3);
+        String _tableVariableName_3 = OMFSchemaTableGenerator.tableVariableName(eClass_4);
         _builder.append(_tableVariableName_3, "  ");
       }
-      if (_hasElements_2) {
+      if (_hasElements_3) {
         _builder.append(")", "  ");
       }
     }
@@ -498,29 +546,64 @@ public class OMFSchemaTableGenerator {
     _builder.append("ze.getName match {");
     _builder.newLine();
     {
-      EList<EClassifier> _eClassifiers_4 = ePackage.getEClassifiers();
-      Iterable<EClass> _filter_8 = Iterables.<EClass>filter(_eClassifiers_4, EClass.class);
-      final Function1<EClass, Boolean> _function_4 = (EClass it) -> {
-        boolean _isAbstract = it.isAbstract();
-        return Boolean.valueOf((!_isAbstract));
+      EList<EClassifier> _eClassifiers_5 = ePackage.getEClassifiers();
+      Iterable<EClass> _filter_10 = Iterables.<EClass>filter(_eClassifiers_5, EClass.class);
+      final Function1<EClass, Boolean> _function_5 = (EClass it) -> {
+        return Boolean.valueOf(((!it.isAbstract()) && (!(OMFSchemaTableGenerator.isAnnotation(it)).booleanValue())));
       };
-      Iterable<EClass> _filter_9 = IterableExtensions.<EClass>filter(_filter_8, _function_4);
-      OMFSchemaTableGenerator.OMFTableCompare _oMFTableCompare_4 = new OMFSchemaTableGenerator.OMFTableCompare();
-      List<EClass> _sortWith_4 = IterableExtensions.<EClass>sortWith(_filter_9, _oMFTableCompare_4);
-      for(final EClass eClass_4 : _sortWith_4) {
+      Iterable<EClass> _filter_11 = IterableExtensions.<EClass>filter(_filter_10, _function_5);
+      OMFSchemaTableGenerator.OMFTableCompare _oMFTableCompare_5 = new OMFSchemaTableGenerator.OMFTableCompare();
+      List<EClass> _sortWith_5 = IterableExtensions.<EClass>sortWith(_filter_11, _oMFTableCompare_5);
+      for(final EClass eClass_5 : _sortWith_5) {
         _builder.append("  \t  ");
         _builder.append("case ");
-        String _name = eClass_4.getName();
+        String _name = eClass_5.getName();
         _builder.append(_name, "  \t  ");
         _builder.append("Helper.TABLE_JSON_FILENAME =>");
         _builder.newLineIfNotEmpty();
         _builder.append("  \t  ");
         _builder.append("  ");
         _builder.append("tables.");
-        String _tableReaderName = OMFSchemaTableGenerator.tableReaderName(eClass_4);
+        String _tableReaderName = OMFSchemaTableGenerator.tableReaderName(eClass_5);
         _builder.append(_tableReaderName, "  \t    ");
         _builder.append("(is)");
         _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      boolean _equals_3 = Objects.equal("OMFSchemaTables", tableName);
+      if (_equals_3) {
+        _builder.append("      ");
+        _builder.append("case annotationPropertyIRI =>");
+        _builder.newLine();
+        _builder.append("      ");
+        _builder.append("  ");
+        _builder.append("tables");
+        _builder.newLine();
+        _builder.append("      ");
+        _builder.append("    ");
+        _builder.append(".annotationProperties");
+        _builder.newLine();
+        _builder.append("      ");
+        _builder.append("    ");
+        _builder.append(".find(_.iri == annotationPropertyIRI)");
+        _builder.newLine();
+        _builder.append("      ");
+        _builder.append("    ");
+        _builder.append(".fold[OMFSchemaTables](tables) { ap =>");
+        _builder.newLine();
+        _builder.append("      ");
+        _builder.append("    ");
+        _builder.append("val annotationPropertyTable = ap -> readJSonTable[Annotation](is, AnnotationHelper.fromJSON)");
+        _builder.newLine();
+        _builder.append("      ");
+        _builder.append("    ");
+        _builder.append("tables.copy(annotations = tables.annotations + annotationPropertyTable)");
+        _builder.newLine();
+        _builder.append("      ");
+        _builder.append("  ");
+        _builder.append("}");
+        _builder.newLine();
       }
     }
     _builder.append("    ");
@@ -590,32 +673,31 @@ public class OMFSchemaTableGenerator {
     _builder.append("  ");
     _builder.newLine();
     {
-      EList<EClassifier> _eClassifiers_5 = ePackage.getEClassifiers();
-      Iterable<EClass> _filter_10 = Iterables.<EClass>filter(_eClassifiers_5, EClass.class);
-      final Function1<EClass, Boolean> _function_5 = (EClass it) -> {
-        boolean _isAbstract = it.isAbstract();
-        return Boolean.valueOf((!_isAbstract));
+      EList<EClassifier> _eClassifiers_6 = ePackage.getEClassifiers();
+      Iterable<EClass> _filter_12 = Iterables.<EClass>filter(_eClassifiers_6, EClass.class);
+      final Function1<EClass, Boolean> _function_6 = (EClass it) -> {
+        return Boolean.valueOf(((!it.isAbstract()) && (!(OMFSchemaTableGenerator.isAnnotation(it)).booleanValue())));
       };
-      Iterable<EClass> _filter_11 = IterableExtensions.<EClass>filter(_filter_10, _function_5);
-      OMFSchemaTableGenerator.OMFTableCompare _oMFTableCompare_5 = new OMFSchemaTableGenerator.OMFTableCompare();
-      List<EClass> _sortWith_5 = IterableExtensions.<EClass>sortWith(_filter_11, _oMFTableCompare_5);
-      for(final EClass eClass_5 : _sortWith_5) {
+      Iterable<EClass> _filter_13 = IterableExtensions.<EClass>filter(_filter_12, _function_6);
+      OMFSchemaTableGenerator.OMFTableCompare _oMFTableCompare_6 = new OMFSchemaTableGenerator.OMFTableCompare();
+      List<EClass> _sortWith_6 = IterableExtensions.<EClass>sortWith(_filter_13, _oMFTableCompare_6);
+      for(final EClass eClass_6 : _sortWith_6) {
         _builder.append("      ");
         _builder.append("zos.putNextEntry(new java.util.zip.ZipEntry(");
-        String _name_1 = eClass_5.getName();
+        String _name_1 = eClass_6.getName();
         _builder.append(_name_1, "      ");
         _builder.append("Helper.TABLE_JSON_FILENAME))");
         _builder.newLineIfNotEmpty();
         _builder.append("      ");
         _builder.append("tables.");
-        String _tableVariableName_4 = OMFSchemaTableGenerator.tableVariableName(eClass_5);
+        String _tableVariableName_4 = OMFSchemaTableGenerator.tableVariableName(eClass_6);
         _builder.append(_tableVariableName_4, "      ");
         _builder.append(".foreach { t =>");
         _builder.newLineIfNotEmpty();
         _builder.append("      ");
         _builder.append("   ");
         _builder.append("val line = ");
-        String _name_2 = eClass_5.getName();
+        String _name_2 = eClass_6.getName();
         _builder.append(_name_2, "         ");
         _builder.append("Helper.toJSON(t)+\"\\n\"");
         _builder.newLineIfNotEmpty();
@@ -628,6 +710,72 @@ public class OMFSchemaTableGenerator {
         _builder.newLine();
         _builder.append("      ");
         _builder.append("zos.closeEntry()");
+        _builder.newLine();
+      }
+    }
+    _builder.append("      ");
+    _builder.newLine();
+    {
+      boolean _equals_4 = Objects.equal("OMFSchemaTables", tableName);
+      if (_equals_4) {
+        _builder.append("      ");
+        _builder.append("tables");
+        _builder.newLine();
+        _builder.append("      ");
+        _builder.append("  ");
+        _builder.append(".annotationProperties");
+        _builder.newLine();
+        _builder.append("      ");
+        _builder.append("  ");
+        _builder.append(".foreach { ap =>");
+        _builder.newLine();
+        _builder.append("      ");
+        _builder.append("    ");
+        _builder.append("tables");
+        _builder.newLine();
+        _builder.append("      ");
+        _builder.append("      ");
+        _builder.append(".annotations");
+        _builder.newLine();
+        _builder.append("      ");
+        _builder.append("      ");
+        _builder.append(".get(ap)");
+        _builder.newLine();
+        _builder.append("      ");
+        _builder.append("      ");
+        _builder.append(".foreach { as =>");
+        _builder.newLine();
+        _builder.append("      ");
+        _builder.append("        ");
+        _builder.append("zos.putNextEntry(new java.util.zip.ZipEntry(ap.iri))");
+        _builder.newLine();
+        _builder.append("      ");
+        _builder.append("        ");
+        _builder.append("as.foreach { a =>");
+        _builder.newLine();
+        _builder.append("      ");
+        _builder.append("          ");
+        _builder.append("val line = AnnotationHelper.toJSON(a)+\"\\n\"");
+        _builder.newLine();
+        _builder.append("      ");
+        _builder.append("          ");
+        _builder.append("zos.write(line.getBytes(java.nio.charset.Charset.forName(\"UTF-8\")))");
+        _builder.newLine();
+        _builder.append("      ");
+        _builder.append("        ");
+        _builder.append("}");
+        _builder.newLine();
+        _builder.append("      ");
+        _builder.append("        ");
+        _builder.append("zos.closeEntry()");
+        _builder.newLine();
+        _builder.append("      ");
+        _builder.append("      ");
+        _builder.append("}");
+        _builder.newLine();
+        _builder.append("      ");
+        _builder.append("  ");
+        _builder.append("}");
         _builder.newLine();
       }
     }
@@ -660,6 +808,11 @@ public class OMFSchemaTableGenerator {
       _xifexpression = (s + "s");
     }
     return _xifexpression;
+  }
+  
+  public static Boolean isAnnotation(final EClass eClass) {
+    String _name = eClass.getName();
+    return Boolean.valueOf(Objects.equal("Annotation", _name));
   }
   
   public static String tableReaderName(final EClass eClass) {
@@ -908,29 +1061,30 @@ public class OMFSchemaTableGenerator {
         if (!_hasElements) {
           _hasElements = true;
         } else {
-          _builder.appendImmediate(",", " ");
+          _builder.appendImmediate(",", "  ");
         }
-        _builder.append(" ");
+        _builder.append("  ");
         _builder.append("@(JSExport @field) ");
         String _columnName_1 = OMFSchemaTableGenerator.columnName(attr_1);
-        _builder.append(_columnName_1, " ");
+        _builder.append(_columnName_1, "  ");
         _builder.append(": ");
         String _constructorTypeName = OMFSchemaTableGenerator.constructorTypeName(attr_1);
-        _builder.append(_constructorTypeName, " ");
+        _builder.append(_constructorTypeName, "  ");
         _builder.newLineIfNotEmpty();
       }
     }
-    _builder.append(") ");
+    _builder.append(") {");
+    _builder.newLine();
     {
       Boolean _hasOptionalAttributes_1 = OMFSchemaTableGenerator.hasOptionalAttributes(eClass);
       if ((_hasOptionalAttributes_1).booleanValue()) {
-        _builder.append("{");
-        _builder.newLineIfNotEmpty();
-        _builder.newLine();
+        _builder.append("  ");
         _builder.append("@JSExport");
         _builder.newLine();
+        _builder.append("  ");
         _builder.append("def this(");
         _builder.newLine();
+        _builder.append("  ");
         {
           List<EStructuralFeature> _sortedAttributes_2 = OMFSchemaTableGenerator.getSortedAttributes(eClass);
           final Function1<EStructuralFeature, Boolean> _function = (EStructuralFeature a) -> {
@@ -943,21 +1097,24 @@ public class OMFSchemaTableGenerator {
             if (!_hasElements_1) {
               _hasElements_1 = true;
             } else {
-              _builder.appendImmediate(",", "\t");
+              _builder.appendImmediate(",\n", "  ");
             }
-            _builder.append("\t");
+            _builder.append("  ");
             String _columnName_2 = OMFSchemaTableGenerator.columnName(attr_2);
-            _builder.append(_columnName_2, "\t");
+            _builder.append(_columnName_2, "  ");
             _builder.append(": ");
             String _constructorTypeName_1 = OMFSchemaTableGenerator.constructorTypeName(attr_2);
-            _builder.append(_constructorTypeName_1, "\t");
-            _builder.newLineIfNotEmpty();
+            _builder.append(_constructorTypeName_1, "  ");
+          }
+          if (_hasElements_1) {
+            _builder.append(")", "  ");
           }
         }
-        _builder.append(") ");
-        _builder.newLine();
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
         _builder.append("= this(");
         _builder.newLine();
+        _builder.append("  ");
         {
           List<EStructuralFeature> _sortedAttributes_3 = OMFSchemaTableGenerator.getSortedAttributes(eClass);
           boolean _hasElements_2 = false;
@@ -965,24 +1122,28 @@ public class OMFSchemaTableGenerator {
             if (!_hasElements_2) {
               _hasElements_2 = true;
             } else {
-              _builder.appendImmediate(",", "");
+              _builder.appendImmediate(",\n", "  ");
             }
             {
               int _lowerBound_1 = attr_3.getLowerBound();
               boolean _greaterThan = (_lowerBound_1 > 0);
               if (_greaterThan) {
+                _builder.append("    ");
                 String _columnName_3 = OMFSchemaTableGenerator.columnName(attr_3);
-                _builder.append(_columnName_3, "");
-                _builder.newLineIfNotEmpty();
+                _builder.append(_columnName_3, "  ");
               } else {
-                _builder.append("None");
-                _builder.newLine();
+                _builder.append("    None /* ");
+                String _columnName_4 = OMFSchemaTableGenerator.columnName(attr_3);
+                _builder.append(_columnName_4, "  ");
+                _builder.append(" */");
               }
             }
           }
+          if (_hasElements_2) {
+            _builder.append(")\n", "  ");
+          }
         }
-        _builder.append(") ");
-        _builder.newLine();
+        _builder.newLineIfNotEmpty();
         _builder.newLine();
         {
           List<EStructuralFeature> _sortedAttributes_4 = OMFSchemaTableGenerator.getSortedAttributes(eClass);
@@ -996,40 +1157,111 @@ public class OMFSchemaTableGenerator {
             if (!_hasElements_3) {
               _hasElements_3 = true;
             } else {
-              _builder.appendImmediate("", "");
+              _builder.appendImmediate("", "  ");
             }
+            _builder.append("  ");
             _builder.append("def with");
-            String _columnName_4 = OMFSchemaTableGenerator.columnName(attr_4);
-            String _firstUpper = StringExtensions.toFirstUpper(_columnName_4);
-            _builder.append(_firstUpper, "");
+            String _columnName_5 = OMFSchemaTableGenerator.columnName(attr_4);
+            String _firstUpper = StringExtensions.toFirstUpper(_columnName_5);
+            _builder.append(_firstUpper, "  ");
             _builder.append("(l: ");
             String _scalaTypeName = OMFSchemaTableGenerator.scalaTypeName(attr_4);
-            _builder.append(_scalaTypeName, "");
+            _builder.append(_scalaTypeName, "  ");
             _builder.append(")\t ");
             _builder.newLineIfNotEmpty();
+            _builder.append("  ");
             _builder.append(": ");
             String _name_1 = eClass.getName();
-            _builder.append(_name_1, "");
+            _builder.append(_name_1, "  ");
             _builder.newLineIfNotEmpty();
+            _builder.append("  ");
             _builder.append("= copy(");
-            String _columnName_5 = OMFSchemaTableGenerator.columnName(attr_4);
-            _builder.append(_columnName_5, "");
+            String _columnName_6 = OMFSchemaTableGenerator.columnName(attr_4);
+            _builder.append(_columnName_6, "  ");
             _builder.append("=Some(l))");
             _builder.newLineIfNotEmpty();
+            _builder.append("  ");
             _builder.newLine();
           }
         }
-        _builder.append("}");
-        _builder.newLine();
-        _builder.newLine();
       }
     }
+    _builder.append("  ");
+    _builder.append("override val hashCode");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append(": scala.Int ");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("= ");
+    {
+      List<EStructuralFeature> _sortedAttributes_5 = OMFSchemaTableGenerator.getSortedAttributes(eClass);
+      boolean _hasElements_4 = false;
+      for(final EStructuralFeature attr_5 : _sortedAttributes_5) {
+        if (!_hasElements_4) {
+          _hasElements_4 = true;
+          _builder.append("(", "  ");
+        } else {
+          _builder.appendImmediate(", ", "  ");
+        }
+        String _columnName_7 = OMFSchemaTableGenerator.columnName(attr_5);
+        _builder.append(_columnName_7, "  ");
+      }
+      if (_hasElements_4) {
+        _builder.append(").##", "  ");
+      }
+    }
+    _builder.newLineIfNotEmpty();
+    _builder.append("  ");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("override def equals(other: scala.Any): scala.Boolean = other match {");
+    _builder.newLine();
+    _builder.append("  \t");
+    _builder.append("case that: ");
+    String _name_2 = eClass.getName();
+    _builder.append(_name_2, "  \t");
+    _builder.append(" =>");
+    _builder.newLineIfNotEmpty();
+    {
+      List<EStructuralFeature> _sortedAttributes_6 = OMFSchemaTableGenerator.getSortedAttributes(eClass);
+      boolean _hasElements_5 = false;
+      for(final EStructuralFeature attr_6 : _sortedAttributes_6) {
+        if (!_hasElements_5) {
+          _hasElements_5 = true;
+        } else {
+          _builder.appendImmediate(" &&", "  \t  ");
+        }
+        _builder.append("  \t  ");
+        _builder.append("(this.");
+        String _columnName_8 = OMFSchemaTableGenerator.columnName(attr_6);
+        _builder.append(_columnName_8, "  \t  ");
+        _builder.append(" == that.");
+        String _columnName_9 = OMFSchemaTableGenerator.columnName(attr_6);
+        _builder.append(_columnName_9, "  \t  ");
+        _builder.append(")");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("    ");
+    _builder.append("case _ =>");
+    _builder.newLine();
+    _builder.append("      ");
+    _builder.append("false");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
     _builder.newLine();
     _builder.append("@JSExport");
     _builder.newLine();
     _builder.append("object ");
-    String _name_2 = eClass.getName();
-    _builder.append(_name_2, "");
+    String _name_3 = eClass.getName();
+    _builder.append(_name_3, "");
     _builder.append("Helper {");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
@@ -1041,8 +1273,8 @@ public class OMFSchemaTableGenerator {
     _builder.newLine();
     _builder.append("  ");
     _builder.append("= \"");
-    String _name_3 = eClass.getName();
-    _builder.append(_name_3, "  ");
+    String _name_4 = eClass.getName();
+    _builder.append(_name_4, "  ");
     _builder.append("s.json\"");
     _builder.newLineIfNotEmpty();
     _builder.append("  ");
@@ -1052,14 +1284,14 @@ public class OMFSchemaTableGenerator {
     _builder.newLine();
     _builder.append("  ");
     _builder.append(": upickle.default.Writer[");
-    String _name_4 = eClass.getName();
-    _builder.append(_name_4, "  ");
+    String _name_5 = eClass.getName();
+    _builder.append(_name_5, "  ");
     _builder.append("]");
     _builder.newLineIfNotEmpty();
     _builder.append("  ");
     _builder.append("= upickle.default.macroW[");
-    String _name_5 = eClass.getName();
-    _builder.append(_name_5, "  ");
+    String _name_6 = eClass.getName();
+    _builder.append(_name_6, "  ");
     _builder.append("]");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
@@ -1068,8 +1300,8 @@ public class OMFSchemaTableGenerator {
     _builder.newLine();
     _builder.append("  ");
     _builder.append("def toJSON(c: ");
-    String _name_6 = eClass.getName();
-    _builder.append(_name_6, "  ");
+    String _name_7 = eClass.getName();
+    _builder.append(_name_7, "  ");
     _builder.append(")");
     _builder.newLineIfNotEmpty();
     _builder.append("  ");
@@ -1084,14 +1316,14 @@ public class OMFSchemaTableGenerator {
     _builder.newLine();
     _builder.append("  ");
     _builder.append(": upickle.default.Reader[");
-    String _name_7 = eClass.getName();
-    _builder.append(_name_7, "  ");
+    String _name_8 = eClass.getName();
+    _builder.append(_name_8, "  ");
     _builder.append("]");
     _builder.newLineIfNotEmpty();
     _builder.append("  ");
     _builder.append("= upickle.default.macroR[");
-    String _name_8 = eClass.getName();
-    _builder.append(_name_8, "  ");
+    String _name_9 = eClass.getName();
+    _builder.append(_name_9, "  ");
     _builder.append("]");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
@@ -1103,13 +1335,13 @@ public class OMFSchemaTableGenerator {
     _builder.newLine();
     _builder.append("  ");
     _builder.append(": ");
-    String _name_9 = eClass.getName();
-    _builder.append(_name_9, "  ");
+    String _name_10 = eClass.getName();
+    _builder.append(_name_10, "  ");
     _builder.newLineIfNotEmpty();
     _builder.append("  ");
     _builder.append("= upickle.default.read[");
-    String _name_10 = eClass.getName();
-    _builder.append(_name_10, "  ");
+    String _name_11 = eClass.getName();
+    _builder.append(_name_11, "  ");
     _builder.append("](c)");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
