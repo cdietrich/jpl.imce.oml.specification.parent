@@ -1,4 +1,4 @@
-package gov.nasa.jpl.imce.omf.schema.generators;
+package gov.nasa.jpl.imce.oml.specification.scala.generators;
 
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
@@ -48,7 +48,7 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.osgi.framework.Bundle;
 
 @SuppressWarnings("all")
-public class OMFSchemaResolverImplGenerator {
+public class OMLSpecificationResolverLibraryGenerator {
   public static class OMFFeatureCompare implements Comparator<EStructuralFeature> {
     private final List<String> knownAttributes = Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("graphUUID", "uuid", "axiomUUID", "terminologyUUID", "subjectUUID", "propertyUUID", "kind", "isAbstract", "asymmetric", "essential", "functional", "inverseEssential", "inverseFunctional", "irreflexive", "reflexive", "symmetric", "transitive", "name", "unreifiedPropertyName", "unreifiedInversePropertyName", "iri", "value"));
     
@@ -56,8 +56,8 @@ public class OMFSchemaResolverImplGenerator {
     public int compare(final EStructuralFeature o1, final EStructuralFeature o2) {
       int _xblockexpression = (int) 0;
       {
-        final String name1 = OMFSchemaResolverImplGenerator.columnName(o1);
-        final String name2 = OMFSchemaResolverImplGenerator.columnName(o2);
+        final String name1 = OMLSpecificationResolverLibraryGenerator.columnName(o1);
+        final String name2 = OMLSpecificationResolverLibraryGenerator.columnName(o2);
         final int i1 = this.knownAttributes.indexOf(name1);
         final int i2 = this.knownAttributes.indexOf(name2);
         int _xifexpression = (int) 0;
@@ -115,7 +115,7 @@ public class OMFSchemaResolverImplGenerator {
       EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
       Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
       final Function1<EClass, Boolean> _function = (EClass ec) -> {
-        Boolean _hasCustomImplementation = OMFSchemaResolverImplGenerator.hasCustomImplementation(ec);
+        Boolean _hasCustomImplementation = OMLSpecificationResolverLibraryGenerator.hasCustomImplementation(ec);
         return Boolean.valueOf((!(_hasCustomImplementation).booleanValue()));
       };
       Iterable<EClass> _filter_1 = IterableExtensions.<EClass>filter(_filter, _function);
@@ -155,13 +155,13 @@ public class OMFSchemaResolverImplGenerator {
         _builder.append("case class ");
       }
     }
-    String _classDeclaration = OMFSchemaResolverImplGenerator.classDeclaration(eClass);
+    String _classDeclaration = OMLSpecificationResolverLibraryGenerator.classDeclaration(eClass);
     _builder.append(_classDeclaration, "");
     _builder.newLineIfNotEmpty();
     _builder.append("{");
     _builder.newLine();
     {
-      Iterable<EOperation> _ScalaOperations = OMFSchemaResolverImplGenerator.ScalaOperations(eClass);
+      Iterable<EOperation> _ScalaOperations = OMLSpecificationResolverLibraryGenerator.ScalaOperations(eClass);
       boolean _hasElements = false;
       for(final EOperation op : _ScalaOperations) {
         if (!_hasElements) {
@@ -170,19 +170,19 @@ public class OMFSchemaResolverImplGenerator {
         } else {
           _builder.appendImmediate("\n  ", "");
         }
-        String _doc = OMFSchemaResolverImplGenerator.doc(op, "  ");
+        String _doc = OMLSpecificationResolverLibraryGenerator.doc(op, "  ");
         _builder.append(_doc, "");
-        String _queryName = OMFSchemaResolverImplGenerator.queryName(op);
+        String _queryName = OMLSpecificationResolverLibraryGenerator.queryName(op);
         _builder.append(_queryName, "");
         _builder.newLineIfNotEmpty();
         _builder.append("  ");
         _builder.append(": ");
-        String _queryType = OMFSchemaResolverImplGenerator.queryType(op);
+        String _queryType = OMLSpecificationResolverLibraryGenerator.queryType(op);
         _builder.append(_queryType, "  ");
         _builder.newLineIfNotEmpty();
         _builder.append("  ");
         _builder.append("= ");
-        String _queryBody = OMFSchemaResolverImplGenerator.queryBody(op);
+        String _queryBody = OMLSpecificationResolverLibraryGenerator.queryBody(op);
         _builder.append(_queryBody, "  ");
         _builder.newLineIfNotEmpty();
         _builder.append("  ");
@@ -238,7 +238,7 @@ public class OMFSchemaResolverImplGenerator {
         _builder.append("(");
         _builder.newLine();
         {
-          Iterable<EStructuralFeature> _sortedAttributes = OMFSchemaResolverImplGenerator.getSortedAttributes(eClass);
+          Iterable<EStructuralFeature> _sortedAttributes = OMLSpecificationResolverLibraryGenerator.getSortedAttributes(eClass);
           boolean _hasElements = false;
           for(final EStructuralFeature attr : _sortedAttributes) {
             if (!_hasElements) {
@@ -251,7 +251,7 @@ public class OMFSchemaResolverImplGenerator {
             String _name_1 = attr.getName();
             _builder.append(_name_1, " ");
             _builder.append(": ");
-            String _queryType = OMFSchemaResolverImplGenerator.queryType(attr);
+            String _queryType = OMLSpecificationResolverLibraryGenerator.queryType(attr);
             _builder.append(_queryType, " ");
             _builder.newLineIfNotEmpty();
           }
@@ -283,17 +283,17 @@ public class OMFSchemaResolverImplGenerator {
   }
   
   public static Iterable<EStructuralFeature> getSortedAttributes(final EClass eClass) {
-    Iterable<EClass> _selfAndAllSupertypes = OMFSchemaResolverImplGenerator.selfAndAllSupertypes(eClass);
+    Iterable<EClass> _selfAndAllSupertypes = OMLSpecificationResolverLibraryGenerator.selfAndAllSupertypes(eClass);
     final Function1<EClass, Iterable<EStructuralFeature>> _function = (EClass it) -> {
-      return OMFSchemaResolverImplGenerator.APIStructuralFeatures(it);
+      return OMLSpecificationResolverLibraryGenerator.APIStructuralFeatures(it);
     };
     Iterable<Iterable<EStructuralFeature>> _map = IterableExtensions.<EClass, Iterable<EStructuralFeature>>map(_selfAndAllSupertypes, _function);
     Iterable<EStructuralFeature> _flatten = Iterables.<EStructuralFeature>concat(_map);
     final Function1<EStructuralFeature, Boolean> _function_1 = (EStructuralFeature f) -> {
-      return OMFSchemaResolverImplGenerator.isAPI(f);
+      return OMLSpecificationResolverLibraryGenerator.isAPI(f);
     };
     Iterable<EStructuralFeature> _filter = IterableExtensions.<EStructuralFeature>filter(_flatten, _function_1);
-    OMFSchemaResolverImplGenerator.OMFFeatureCompare _oMFFeatureCompare = new OMFSchemaResolverImplGenerator.OMFFeatureCompare();
+    OMLSpecificationResolverLibraryGenerator.OMFFeatureCompare _oMFFeatureCompare = new OMLSpecificationResolverLibraryGenerator.OMFFeatureCompare();
     return IterableExtensions.<EStructuralFeature>sortWith(_filter, _oMFFeatureCompare);
   }
   
@@ -393,7 +393,7 @@ public class OMFSchemaResolverImplGenerator {
     String _xblockexpression = null;
     {
       final EClassifier type = feature.getEType();
-      final String scalaType = OMFSchemaResolverImplGenerator.scalaTypeName(feature);
+      final String scalaType = OMLSpecificationResolverLibraryGenerator.scalaTypeName(feature);
       String _switchResult = null;
       boolean _matched = false;
       if ((type instanceof EDataType)) {
@@ -524,7 +524,7 @@ public class OMFSchemaResolverImplGenerator {
           String _name = p.getName();
           _builder.append(_name, "");
           _builder.append(": ");
-          String _queryType = OMFSchemaResolverImplGenerator.queryType(p);
+          String _queryType = OMLSpecificationResolverLibraryGenerator.queryType(p);
           _builder.append(_queryType, "");
         }
       }
@@ -608,7 +608,7 @@ public class OMFSchemaResolverImplGenerator {
   public static Iterable<EStructuralFeature> APIStructuralFeatures(final EClass eClass) {
     EList<EStructuralFeature> _eStructuralFeatures = eClass.getEStructuralFeatures();
     final Function1<EStructuralFeature, Boolean> _function = (EStructuralFeature it) -> {
-      return OMFSchemaResolverImplGenerator.isAPI(it);
+      return OMLSpecificationResolverLibraryGenerator.isAPI(it);
     };
     return IterableExtensions.<EStructuralFeature>filter(_eStructuralFeatures, _function);
   }
@@ -616,7 +616,7 @@ public class OMFSchemaResolverImplGenerator {
   public static Iterable<EOperation> APIOperations(final EClass eClass) {
     EList<EOperation> _eOperations = eClass.getEOperations();
     final Function1<EOperation, Boolean> _function = (EOperation it) -> {
-      return OMFSchemaResolverImplGenerator.isAPI(it);
+      return OMLSpecificationResolverLibraryGenerator.isAPI(it);
     };
     return IterableExtensions.<EOperation>filter(_eOperations, _function);
   }
@@ -624,7 +624,7 @@ public class OMFSchemaResolverImplGenerator {
   public static Iterable<EOperation> ScalaOperations(final EClass eClass) {
     EList<EOperation> _eOperations = eClass.getEOperations();
     final Function1<EOperation, Boolean> _function = (EOperation op) -> {
-      return Boolean.valueOf(((OMFSchemaResolverImplGenerator.isScala(op)).booleanValue() || (!Objects.equal(null, OMFSchemaResolverImplGenerator.xExpressions(op)))));
+      return Boolean.valueOf(((OMLSpecificationResolverLibraryGenerator.isScala(op)).booleanValue() || (!Objects.equal(null, OMLSpecificationResolverLibraryGenerator.xExpressions(op)))));
     };
     return IterableExtensions.<EOperation>filter(_eOperations, _function);
   }
@@ -679,8 +679,8 @@ public class OMFSchemaResolverImplGenerator {
   public static String queryBody(final EOperation op) {
     String _xblockexpression = null;
     {
-      final String scalaCode = OMFSchemaResolverImplGenerator.scalaAnnotation(op);
-      final Iterable<XExpression> xExpressions = OMFSchemaResolverImplGenerator.xExpressions(op);
+      final String scalaCode = OMLSpecificationResolverLibraryGenerator.scalaAnnotation(op);
+      final Iterable<XExpression> xExpressions = OMLSpecificationResolverLibraryGenerator.xExpressions(op);
       String _xifexpression = null;
       boolean _notEquals = (!Objects.equal(null, scalaCode));
       if (_notEquals) {
@@ -707,7 +707,7 @@ public class OMFSchemaResolverImplGenerator {
               } else {
                 _builder_1.appendImmediate("\n  ", "");
               }
-              String _scala = OMFSchemaResolverImplGenerator.toScala(exp);
+              String _scala = OMLSpecificationResolverLibraryGenerator.toScala(exp);
               _builder_1.append(_scala, "");
             }
             if (_hasElements) {

@@ -1,4 +1,4 @@
-package gov.nasa.jpl.imce.omf.schema.generators
+package gov.nasa.jpl.imce.oml.specification.scala.generators
 
 import java.io.File
 import java.io.FileOutputStream
@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin
 import org.eclipse.xtext.resource.XtextResource
 import org.eclipse.xtext.resource.XtextResourceSet
 
-class OMFSchemaTableGenerator {
+class OMLSpecificationTablesGenerator {
 	
 	def generate() {
 		generateTables()
@@ -30,8 +30,8 @@ class OMFSchemaTableGenerator {
 	}
 	
 	def generateTables() {
-		val sourceFile = "/gov.nasa.jpl.imce.omf.schema.specification/model/OMFSchema.xcore"
-		val targetBundle = "jpl.omf.schema.tables"
+		val sourceFile = "/gov.nasa.jpl.imce.oml.specification/model/OMLSpecification.xcore"
+		val targetBundle = "gov.nasa.jpl.imce.oml.specification.tables"
 		
 		val set = new XtextResourceSet();
 		set.getURIConverter().getURIMap().putAll(EcorePlugin.computePlatformURIMap(true));
@@ -42,22 +42,22 @@ class OMFSchemaTableGenerator {
       	
       	val bundle = Platform.getBundle(targetBundle)
       	val bundleDir = Paths.get(FileLocator.toFileURL(bundle.getEntry("/")).toURI)
-		val targetFolder = "shared/src/main/scala/gov/nasa/jpl/imce/omf/schema/tables"
+		val targetFolder = "shared/src/main/scala/gov/nasa/jpl/imce/oml/specification/tables"
 		val targetPath = bundleDir.resolve(targetFolder)
 		targetPath.toFile.mkdirs	
 					
       	generate(
       		ePackage, 
       		targetPath.toAbsolutePath.toString, 
-      		"gov.nasa.jpl.imce.omf.schema",
-  		 	"gov.nasa.jpl.imce.omf.schema.tables",
-      		"OMFSchemaTables"
+      		"gov.nasa.jpl.imce.oml.specification",
+  		 	"gov.nasa.jpl.imce.oml.specification.tables",
+      		"OMLSpecificationTables"
       	)      	
 	}
 	
 	def generateProvenance() {
-		val sourceFile = "/gov.nasa.jpl.imce.omf.schema.specification/model/OMFProvenanceOTI.xcore"
-		val targetBundle = "jpl.omf.schema.tables"
+		val sourceFile = "/gov.nasa.jpl.imce.oml.specification/model/OMLProvenanceOTI.xcore"
+		val targetBundle = "gov.nasa.jpl.imce.oml.specification.tables"
 		
 		val set = new XtextResourceSet();
 		set.getURIConverter().getURIMap().putAll(EcorePlugin.computePlatformURIMap(true));
@@ -68,16 +68,16 @@ class OMFSchemaTableGenerator {
       	
       	val bundle = Platform.getBundle(targetBundle)
       	val bundleDir = Paths.get(FileLocator.toFileURL(bundle.getEntry("/")).toURI)
-      	val targetFolder = "shared/src/main/scala/gov/nasa/jpl/imce/omf/provenance/oti/schema/tables"
+      	val targetFolder = "shared/src/main/scala/gov/nasa/jpl/imce/oml/provenance/oti"
 		val targetPath = bundleDir.resolve(targetFolder)
 		targetPath.toFile.mkdirs
 		
       	generate(
       		ePackage, 
       		targetPath.toAbsolutePath.toString, 
-      		"gov.nasa.jpl.imce.omf.provenance.oti.schema", 
-      		"gov.nasa.jpl.imce.omf.provenance.oti.schema.tables",
-      		"OMF2OTIProvenanceTables"
+      		"gov.nasa.jpl.imce.oml.provenance.oti", 
+      		"gov.nasa.jpl.imce.oml.provenance.oti.tables",
+      		"OML2OTIProvenanceTables"
       	)
     }
     
@@ -86,16 +86,21 @@ class OMFSchemaTableGenerator {
 		packageFile.write(generatePackageFile(ePackage, packageQName).bytes)
 		val tablesFile = new FileOutputStream(new File(targetFolder + File::separator + tableName + ".scala"))
 		tablesFile.write(generateTablesFile(ePackage, packageTablesQName, tableName).bytes)
-		for(eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract])  {
+		for(eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && isFunctionalAPI])  {
 			val classFile = new FileOutputStream(new File(targetFolder + File::separator + eClass.name + ".scala"))
 			classFile.write(generateClassFile(eClass, packageTablesQName).bytes)
 		}
 	}
 	
-	static class OMFTableCompare implements Comparator<EClass> {
+	static class OMLTableCompare implements Comparator<EClass> {
 		
 		val knownTables = #[
+		"Annotation",
 		"AnnotationProperty",
+		"AnnotationPropertyTable",
+		"AnnotationEntry",
+		"AnnotationSubjectTable",
+		"AnnotationSubjectPropertyValue",
 		"TerminologyGraph", 
 		"Bundle", 
 		"ConceptDesignationTerminologyAxiom",
@@ -160,7 +165,7 @@ class OMFSchemaTableGenerator {
 		import java.io.{File,InputStream}
 		import org.apache.commons.compress.archivers.zip.{ZipArchiveEntry, ZipFile}
 		
-		«IF 'OMFSchemaTables' == tableName»
+		«IF 'OMLSpecificationTables' == tableName»
 		import scala.collection.immutable.{Map,Seq}
 		«ELSE»
 		import scala.collection.immutable.Seq
@@ -169,24 +174,28 @@ class OMFSchemaTableGenerator {
 		import scala.util.control.Exception._
 		import scala.util.{Failure,Success,Try}
 		import scala.{Boolean,Unit}
-		«IF 'OMFSchemaTables' == tableName»
+		«IF 'OMLSpecificationTables' == tableName»
 		import scala.Predef.ArrowAssoc
 		«ENDIF»
 		
 		case class «tableName» private[tables]
-		«IF 'OMFSchemaTables' == tableName»
-		«FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && !isAnnotation].sortWith(new OMFTableCompare()) BEFORE "(\n  " SEPARATOR ",\n  " AFTER ","»«eClass.tableVariable»«ENDFOR»
-		  annotations: Map[AnnotationProperty, Seq[Annotation]] = Map.empty)
+		«IF 'OMLSpecificationTables' == tableName»
+		«FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare()) BEFORE "(\n  " SEPARATOR ",\n  " AFTER ","»«eClass.tableVariable»«ENDFOR»
+		  annotations: Map[AnnotationProperty, Seq[AnnotationEntry]] = Map.empty)
 		«ELSE»
-		«FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && !isAnnotation].sortWith(new OMFTableCompare()) BEFORE "(\n  " SEPARATOR ",\n  " AFTER "\n)"»«eClass.tableVariable»«ENDFOR» 
+		«FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare()) BEFORE "(\n  " SEPARATOR ",\n  " AFTER "\n)"»«eClass.tableVariable»«ENDFOR» 
 		«ENDIF»
 		{
-		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && !isAnnotation].sortWith(new OMFTableCompare())»
+		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare())»
 		  «eClass.tableReader(tableName)»
 		  «ENDFOR»
 		  
 		  def isEmpty: Boolean
-		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortWith(new OMFTableCompare()) BEFORE "= " SEPARATOR " &&\n  "»«eClass.tableVariableName».isEmpty«ENDFOR»
+		  «IF 'OMLSpecificationTables' == tableName»
+		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare()) BEFORE "= " SEPARATOR " &&\n  " AFTER " &&\n  annotations.isEmpty"»«eClass.tableVariableName».isEmpty«ENDFOR»
+		  «ELSE»
+		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare()) BEFORE "= " SEPARATOR " &&\n  "»«eClass.tableVariableName».isEmpty«ENDFOR»
+		  «ENDIF»
 		}
 		
 		object «tableName» {
@@ -195,7 +204,7 @@ class OMFSchemaTableGenerator {
 		  : «tableName»
 		  = new «tableName»()
 		  
-		  def load«tableName»(omfSchemaJsonZipFile: File)
+		  def load«tableName»(omlSchemaJsonZipFile: File)
 		  : Try[«tableName»]
 		  = nonFatalCatch[Try[«tableName»]]
 		    .withApply {
@@ -204,22 +213,26 @@ class OMFSchemaTableGenerator {
 		        Failure(cause)
 		    }
 		    .apply {
-		      val zipFile = new ZipFile(omfSchemaJsonZipFile)
-		      val omfTables =
+		      val zipFile = new ZipFile(omlSchemaJsonZipFile)
+		      val omlTables =
 		        zipFile
 		        .getEntries
 		        .toIterable
 		        .par
 		         .aggregate(«tableName»())(seqop = readZipArchive(zipFile), combop = mergeTables)
 		      zipFile.close()
-		      Success(omfTables)
+		      Success(omlTables)
 		    }
 		
 		  private[tables] def mergeTables
 		  (t1: «tableName», t2: «tableName»)
 		  : «tableName»
-		  = «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract].sortWith(new OMFTableCompare()) BEFORE tableName + "(\n    " SEPARATOR ",\n    " AFTER ")"»«eClass.tableVariableName» = t1.«eClass.tableVariableName» ++ t2.«eClass.tableVariableName»«ENDFOR» 
-		
+		  «IF 'OMLSpecificationTables' == tableName»
+		  = «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare()) BEFORE tableName + "(\n    " SEPARATOR ",\n    " AFTER ",\n    annotations = t1.annotations ++ t2.annotations)"»«eClass.tableVariableName» = t1.«eClass.tableVariableName» ++ t2.«eClass.tableVariableName»«ENDFOR»
+		  «ELSE» 
+		  = «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare()) BEFORE tableName + "(\n    " SEPARATOR ",\n    " AFTER ")"»«eClass.tableVariableName» = t1.«eClass.tableVariableName» ++ t2.«eClass.tableVariableName»«ENDFOR» 
+		  «ENDIF»
+		  
 		  private[tables] def readZipArchive
 		  (zipFile: ZipFile)
 		  (tables: «tableName», ze: ZipArchiveEntry)
@@ -227,17 +240,17 @@ class OMFSchemaTableGenerator {
 		  = {
 		  	val is = zipFile.getInputStream(ze)
 		  	ze.getName match {
-		  	  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && !isAnnotation].sortWith(new OMFTableCompare())»
+		  	  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare())»
 		  	  case «eClass.name»Helper.TABLE_JSON_FILENAME =>
 		  	    tables.«eClass.tableReaderName»(is)
 		      «ENDFOR»
-		      «IF 'OMFSchemaTables' == tableName»
+		      «IF 'OMLSpecificationTables' == tableName»
 		      case annotationPropertyIRI =>
 		        tables
 		          .annotationProperties
 		          .find(_.iri == annotationPropertyIRI)
-		          .fold[OMFSchemaTables](tables) { ap =>
-		          val annotationPropertyTable = ap -> readJSonTable[Annotation](is, AnnotationHelper.fromJSON)
+		          .fold[OMLSpecificationTables](tables) { ap =>
+		          val annotationPropertyTable = ap -> readJSonTable[AnnotationEntry](is, AnnotationEntryHelper.fromJSON)
 		          tables.copy(annotations = tables.annotations + annotationPropertyTable)
 		        }
 		      «ENDIF»
@@ -246,7 +259,7 @@ class OMFSchemaTableGenerator {
 		  
 		  def save«tableName»
 		  (tables: «tableName»,
-		   omfSchemaJsonZipFile: File)
+		   omlSchemaJsonZipFile: File)
 		  : Try[Unit]
 		  = nonFatalCatch[Try[Unit]]
 		    .withApply {
@@ -256,14 +269,14 @@ class OMFSchemaTableGenerator {
 		    }
 		    .apply {
 		  	  // @see http://www.oracle.com/technetwork/articles/java/compress-1565076.html
-		  	  val fos = new java.io.FileOutputStream(omfSchemaJsonZipFile)
+		  	  val fos = new java.io.FileOutputStream(omlSchemaJsonZipFile)
 		  	  val bos = new java.io.BufferedOutputStream(fos, 100000)
 		  	  val cos = new java.util.zip.CheckedOutputStream(bos, new java.util.zip.Adler32())
 		  	  val zos = new java.util.zip.ZipOutputStream(new java.io.BufferedOutputStream(cos))
 		  
 		  	  zos.setMethod(java.util.zip.ZipOutputStream.DEFLATED)
 		  
-		      «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && !isAnnotation].sortWith(new OMFTableCompare())»
+		      «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare())»
 		      zos.putNextEntry(new java.util.zip.ZipEntry(«eClass.name»Helper.TABLE_JSON_FILENAME))
 		      tables.«eClass.tableVariableName».foreach { t =>
 		         val line = «eClass.name»Helper.toJSON(t)+"\n"
@@ -272,7 +285,7 @@ class OMFSchemaTableGenerator {
 		      zos.closeEntry()
 		      «ENDFOR»
 		      
-		      «IF 'OMFSchemaTables' == tableName»
+		      «IF 'OMLSpecificationTables' == tableName»
 		      tables
 		        .annotationProperties
 		        .foreach { ap =>
@@ -282,7 +295,7 @@ class OMFSchemaTableGenerator {
 		            .foreach { as =>
 		              zos.putNextEntry(new java.util.zip.ZipEntry(ap.iri))
 		              as.foreach { a =>
-		                val line = AnnotationHelper.toJSON(a)+"\n"
+		                val line = AnnotationEntryHelper.toJSON(a)+"\n"
 		                zos.write(line.getBytes(java.nio.charset.Charset.forName("UTF-8")))
 		              }
 		              zos.closeEntry()
@@ -303,10 +316,6 @@ class OMFSchemaTableGenerator {
 	  } else {
 	  	s+"s"
 	  }	 
-	}
-	
-	static def Boolean isAnnotation(EClass eClass) {
-		"Annotation" == eClass.name
 	}
 	
 	static def String tableReaderName(EClass eClass)
@@ -453,7 +462,7 @@ class OMFSchemaTableGenerator {
 	def String generateJSClassFile(EClass eClass) '''
 		«copyright»
 		 
-		package gov.nasa.jpl.imce.omf.schema.tables
+		package gov.nasa.jpl.imce.oml.specification.tables
 		
 		import scala.scalajs.js.annotation.JSExport
 		
@@ -481,7 +490,7 @@ class OMFSchemaTableGenerator {
 	def String generateJVMClassFile(EClass eClass) '''
 		«copyright»
 		 
-		package gov.nasa.jpl.imce.omf.schema.tables
+		package gov.nasa.jpl.imce.oml.specification.tables
 		
 		import java.util.Optional
 		import scala.compat.java8.OptionConverters._
@@ -515,7 +524,7 @@ class OMFSchemaTableGenerator {
 		.map[EStructuralFeatures]
 		.flatten
 		.filter([EStructuralFeature f | isAttributeOrReferenceOrContainer(f) && isSchema(f)])
-		.sortWith(new OMFFeatureCompare())
+		.sortWith(new OMLFeatureCompare())
 	}
 	
 	static def Boolean isAttributeOrReferenceOrContainer(EStructuralFeature f) {
@@ -570,7 +579,6 @@ class OMFSchemaTableGenerator {
 		  feature.columnName
 	}
 
-
 	static def String javaTypeName(EStructuralFeature feature) {
 		val scalaType = feature.scalaTypeName
 		if (feature.lowerBound == 0)
@@ -586,13 +594,14 @@ class OMFSchemaTableGenerator {
 		  feature.columnName
 	}
 
-	static class OMFFeatureCompare implements Comparator<EStructuralFeature> {
+	static class OMLFeatureCompare implements Comparator<EStructuralFeature> {
 		
 		val knownAttributes = #[
 		"graphUUID",
 		"uuid", 
 		"axiomUUID",
 		"terminologyUUID",
+		"keyUUID",
 		"subjectUUID",
 		"propertyUUID",
 		"kind",
@@ -629,9 +638,16 @@ class OMFSchemaTableGenerator {
 		
 	}
 	
-    
+    static def Boolean isFunctionalAPI(ENamedElement e) {
+    	null == e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotFunctionalAPI")
+    }
+     
+    static def Boolean isValueTable(ENamedElement e) {
+    	null != e.getEAnnotation("http://imce.jpl.nasa.gov/oml/ValueTable")
+    }
+   
     static def Boolean isSchema(ENamedElement e) {
-    	null == e.getEAnnotation("http://imce.jpl.nasa.gov/omf/NotSchema")
+    	null == e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotSchema")
     }
     
 	static def String doc(ENamedElement e, String indent) {

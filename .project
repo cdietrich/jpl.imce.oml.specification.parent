@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>gov.nasa.jpl.imce.omf.schema.generators</name>
+	<name>gov.nasa.jpl.imce.oml.specification.scala.generators</name>
 	<comment></comment>
 	<projects>
 	</projects>

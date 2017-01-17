@@ -1,4 +1,4 @@
-package gov.nasa.jpl.imce.omf.schema.generators
+package gov.nasa.jpl.imce.oml.specification.scala.generators
 
 import java.io.File
 import java.io.FileOutputStream
@@ -23,7 +23,7 @@ import org.eclipse.xtext.xbase.XExpression
 import org.eclipse.xtext.xbase.XFeatureCall
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils
 
-class OMFSchemaResolverImplGenerator {
+class OMLSpecificationResolverLibraryGenerator {
 	
 	def generate() {
 		val sourceFile = "/gov.nasa.jpl.imce.omf.schema.specification/model/OMFSchema.xcore"

@@ -1,6 +1,6 @@
 /**
  */
-package gov.nasa.jpl.imce.omf.schema.generators;
+package gov.nasa.jpl.imce.oml.specification.scala.generators;
 
 import junit.framework.TestCase;
 
@@ -10,14 +10,14 @@ import junit.framework.TestCase;
  * <!-- end-user-doc -->
  * @generated
  */
-public class OMFSchemaResolverGeneratorTest extends TestCase {
+public class OMLSpecificationTablesGeneratorTest extends TestCase {
 
-	public OMFSchemaResolverGeneratorTest(String name) {
+	public OMLSpecificationTablesGeneratorTest(String name) {
 		super(name);
 	}
 
 	public void testGenerate() {
-		new OMFSchemaResolverGenerator().generate();
+		new OMLSpecificationTablesGenerator().generate();
 	}
 
 }
