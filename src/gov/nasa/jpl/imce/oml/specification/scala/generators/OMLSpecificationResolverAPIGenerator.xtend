@@ -20,8 +20,8 @@ import org.eclipse.xtext.resource.XtextResourceSet
 class OMLSpecificationResolverAPIGenerator {
 	
 	def generate() {
-		val sourceFile = "/gov.nasa.jpl.imce.omf.schema.specification/model/OMFSchema.xcore"
-		val targetBundle = "jpl.omf.schema.tables"
+		val sourceFile = "/gov.nasa.jpl.imce.oml.specification/model/OMLSpecification.xcore"
+		val targetBundle = "gov.nasa.jpl.imce.oml.specification.tables"
 		
 		val set = new XtextResourceSet();
 		set.getURIConverter().getURIMap().putAll(EcorePlugin.computePlatformURIMap(true));
@@ -30,7 +30,7 @@ class OMLSpecificationResolverAPIGenerator {
       	val sourceResource = set.getResource(sourceURI, true)
       	val ePackage = sourceResource.getContents().filter(EPackage).get(0)
       	
-		val targetFolder = "/shared/src/main/scala/gov/nasa/jpl/imce/omf/schema/resolver/api"
+		val targetFolder = "/shared/src/main/scala/gov/nasa/jpl/imce/oml/specification/resolver/api"
 		val targetURL = Platform.getBundle(targetBundle).getEntry(targetFolder)
 		val folder = FileLocator.toFileURL(targetURL)
       	generate(ePackage, folder.path)
@@ -46,11 +46,11 @@ class OMLSpecificationResolverAPIGenerator {
 	
 	def String generateClassFile(EClass eClass) '''
 		«copyright»
-		package gov.nasa.jpl.imce.omf.schema.resolver.api
+		package gov.nasa.jpl.imce.oml.specification.resolver.api
 		
 		«eClass.doc("")»«eClass.traitDeclaration»
 		{
-		«FOR f : eClass.APIStructuralFeatures BEFORE "\n  " SEPARATOR "\n  " AFTER "\n"»«f.doc("  ")»val «f.queryName»: «f.queryType»«ENDFOR»
+		«FOR f : eClass.APIStructuralFeatures BEFORE "\n  " SEPARATOR "\n  " AFTER "\n"»«f.doc("  ")»val «f.name»: «f.queryType»«ENDFOR»
 		«FOR op : eClass.APIOperations BEFORE "\n  " SEPARATOR "\n  " AFTER "\n"»«op.doc("  ")»«op.queryName»: «op.queryType»«ENDFOR»
 		}
 	'''
@@ -78,15 +78,15 @@ class OMLSpecificationResolverAPIGenerator {
 			case "EInt": "scala.Int"
 			case "EBoolean": "scala.Boolean"
 			case "EString": "scala.Predef.String"
-			case "IRI": "gov.nasa.jpl.imce.omf.schema.tables.IRI"
-			case "Language": "gov.nasa.jpl.imce.omf.schema.tables.Language"
-			case "LexicalNumber": "gov.nasa.jpl.imce.omf.schema.tables.LexicalNumber"
-			case "LexicalTime": "gov.nasa.jpl.imce.omf.schema.tables.LexicalTime"
-			case "LexicalValue": "gov.nasa.jpl.imce.omf.schema.tables.LexicalValue"
-			case "LocalName": "gov.nasa.jpl.imce.omf.schema.tables.LocalName"
-			case "Pattern": "gov.nasa.jpl.imce.omf.schema.tables.Pattern"
+			case "IRI": "gov.nasa.jpl.imce.oml.specification.tables.IRI"
+			case "Language": "gov.nasa.jpl.imce.oml.specification.tables.Language"
+			case "LexicalNumber": "gov.nasa.jpl.imce.oml.specification.tables.LexicalNumber"
+			case "LexicalTime": "gov.nasa.jpl.imce.oml.specification.tables.LexicalTime"
+			case "LexicalValue": "gov.nasa.jpl.imce.oml.specification.tables.LexicalValue"
+			case "LocalName": "gov.nasa.jpl.imce.oml.specification.tables.LocalName"
+			case "Pattern": "gov.nasa.jpl.imce.oml.specification.tables.Pattern"
 			case "UUID": "java.util.UUID"
-			case "TerminologyGraphKind": "gov.nasa.jpl.imce.omf.schema.tables.TerminologyGraphKind"
+			case "TerminologyGraphKind": "gov.nasa.jpl.imce.oml.specification.tables.TerminologyGraphKind"
 			default: type.name
 		}
 	}
@@ -103,7 +103,7 @@ class OMLSpecificationResolverAPIGenerator {
 			case type instanceof EClass:
 				if (feature.lowerBound == 0) {
 					if (feature.upperBound == -1) {
-						val ann = feature.getEAnnotation("http://imce.jpl.nasa.gov/omf/Collection")?.details
+						val ann = feature.getEAnnotation("http://imce.jpl.nasa.gov/oml/Collection")?.details
 						switch ann?.get("kind") ?: "" {
 						case "Map(Seq)": {
 							val key=ann.get("key")
@@ -115,7 +115,10 @@ class OMLSpecificationResolverAPIGenerator {
 						}
 						case "Set": 
 							"scala.collection.immutable.Set[_ <: "+type.name+"]"		
-						}	
+					
+						case "SortedSet": 
+							"scala.collection.immutable.SortedSet[_ <: "+type.name+"]"		
+						}
 					}
 					else
 						"scala.Option["+type.name+"]"
@@ -129,18 +132,20 @@ class OMLSpecificationResolverAPIGenerator {
 	
 	static def String queryName(EOperation op) {
 		val kind = if (op.EParameters.empty) "def" else "def"
-		val decl = if (null != op.getEAnnotation("http://imce.jpl.nasa.gov/omf/Override")) "override "+kind else kind
+		val decl = if (null != op.getEAnnotation("http://imce.jpl.nasa.gov/oml/Override")) "override "+kind else kind
 		val args = '''«FOR p : op.EParameters SEPARATOR ",\n  "»«p.name»: «p.queryType»«ENDFOR»'''
 		decl+" "+op.name+"\n  ("+args+(if (args.empty) ")" else "\n  )")
 	}
 	
 	static def String queryType(EOperation op) {
-		val ann = op.getEAnnotation("http://imce.jpl.nasa.gov/omf/Collection")?.details
+		val ann = op.getEAnnotation("http://imce.jpl.nasa.gov/oml/Collection")?.details
 		switch ann?.get("kind") ?: "" {
 			case "Map": {
 				val key=ann.get("key")
 				"scala.collection.immutable.Map["+key+","+op.EType.name+"]"				
 			}
+			case "SortedSet": 
+				"scala.collection.immutable.SortedSet[_ <: "+op.EType.name+"]"	
 			case "Set": 
 				"scala.collection.immutable.Set[_ <: "+op.EType.name+"]"		
 			default:
@@ -151,16 +156,35 @@ class OMLSpecificationResolverAPIGenerator {
 		}
 	} 
 	
-	static def Iterable<EStructuralFeature> APIStructuralFeatures(EClass eClass) {
-		eClass.EStructuralFeatures.filter[isAPI]
+	static def Iterable<ETypedElement> APIStructuralFeatures(EClass eClass) {
+		val features = new java.util.ArrayList<ETypedElement>()
+		features.addAll(eClass.EStructuralFeatures.filter[isAPI])
+		features.addAll(eClass.ImmutableFeatureOperations)
+		features
 	}
     
+	static def Iterable<EClass> FunctionalAPIClasses(EPackage ePkg) {
+		ePkg.EClassifiers.filter(EClass).filter[isFunctionalAPIClass]
+	}
+	
+    static def Boolean isFunctionalAPIClass(EClass c) {
+    	null == c.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotFunctionalAPI")
+    }
+    
+	static def Iterable<EOperation> ImmutableFeatureOperations(EClass eClass) {
+		eClass.EOperations.filter[isImmutableFeature]
+	}
+	
+    static def Boolean isImmutableFeature(ENamedElement e) {
+    	null != e.getEAnnotation("http://imce.jpl.nasa.gov/oml/ImmutableFeature")
+    }
+    
 	static def Iterable<EOperation> APIOperations(EClass eClass) {
-		eClass.EOperations.filter[isAPI]
+		eClass.EOperations.filter[isAPI && !isImmutableFeature]
 	}
     
     static def Boolean isAPI(ENamedElement e) {
-    	null == e.getEAnnotation("http://imce.jpl.nasa.gov/omf/NotAPI")
+    	null == e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotAPI")
     }
     
 	static def String doc(ENamedElement e, String indent) {

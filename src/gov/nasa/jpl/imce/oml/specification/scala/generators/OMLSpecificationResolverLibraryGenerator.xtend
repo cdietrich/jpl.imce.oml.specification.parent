@@ -26,8 +26,8 @@ import org.eclipse.xtext.nodemodel.util.NodeModelUtils
 class OMLSpecificationResolverLibraryGenerator {
 	
 	def generate() {
-		val sourceFile = "/gov.nasa.jpl.imce.omf.schema.specification/model/OMFSchema.xcore"
-		val targetBundle = "jpl.omf.schema.resolver"
+		val sourceFile = "/gov.nasa.jpl.imce.oml.specification/model/OMLSpecification.xcore"
+		val targetBundle = "gov.nasa.jpl.imce.oml.specification.resolver"
 		
 		val set = new XtextResourceSet();
 		set.getURIConverter().getURIMap().putAll(EcorePlugin.computePlatformURIMap(true));
@@ -36,7 +36,7 @@ class OMLSpecificationResolverLibraryGenerator {
       	val sourceResource = set.getResource(sourceURI, true)
       	val ePackage = sourceResource.getContents().filter(EPackage).get(0)
       	
-		val targetFolder = "/src/main/scala/gov/nasa/jpl/imce/omf/schema/resolver/impl"
+		val targetFolder = "/src/main/scala/gov/nasa/jpl/imce/oml/specification/resolver/impl"
 		val targetURL = Platform.getBundle(targetBundle).getEntry(targetFolder)
 		val folder = FileLocator.toFileURL(targetURL)
       	generate(ePackage, folder.path)	      	
@@ -51,9 +51,9 @@ class OMLSpecificationResolverLibraryGenerator {
 	
 	def String generateClassFile(EClass eClass) '''
 		«copyright»
-		package gov.nasa.jpl.imce.omf.schema.resolver.impl
+		package gov.nasa.jpl.imce.oml.specification.resolver.impl
 		
-		import gov.nasa.jpl.imce.omf.schema._
+		import gov.nasa.jpl.imce.oml.specification._
 		
 		«IF (eClass.abstract)»trait «ELSE»case class «ENDIF»«eClass.classDeclaration»
 		{
@@ -104,7 +104,7 @@ class OMLSpecificationResolverLibraryGenerator {
 		.map[APIStructuralFeatures]
 		.flatten
 		.filter([EStructuralFeature f | isAPI(f)])
-		.sortWith(new OMFFeatureCompare())
+		.sortWith(new OMLFeatureCompare())
 	}
 	
 	static def Iterable<EClass> selfAndAllSupertypes(EClass eClass) {
@@ -117,7 +117,7 @@ class OMLSpecificationResolverLibraryGenerator {
 		if (feature instanceof EReference) feature.name+"UUID" else feature.name
 	}
 	
-	static class OMFFeatureCompare implements Comparator<EStructuralFeature> {
+	static class OMLFeatureCompare implements Comparator<EStructuralFeature> {
 		
 		val knownAttributes = #[
 		"graphUUID", 
@@ -177,15 +177,15 @@ class OMLSpecificationResolverLibraryGenerator {
 			case "EInt": "scala.Int"
 			case "EBoolean": "scala.Boolean"
 			case "EString": "scala.Predef.String"
-			case "IRI": "gov.nasa.jpl.imce.omf.schema.tables.IRI"
-			case "Language": "gov.nasa.jpl.imce.omf.schema.tables.Language"
-			case "LexicalNumber": "gov.nasa.jpl.imce.omf.schema.tables.LexicalNumber"
-			case "LexicalTime": "gov.nasa.jpl.imce.omf.schema.tables.LexicalTime"
-			case "LexicalValue": "gov.nasa.jpl.imce.omf.schema.tables.LexicalValue"
-			case "LocalName": "gov.nasa.jpl.imce.omf.schema.tables.LocalName"
-			case "Pattern": "gov.nasa.jpl.imce.omf.schema.tables.Pattern"
+			case "IRI": "gov.nasa.jpl.imce.oml.specification.tables.IRI"
+			case "Language": "gov.nasa.jpl.imce.oml.specification.tables.Language"
+			case "LexicalNumber": "gov.nasa.jpl.imce.oml.specification.tables.LexicalNumber"
+			case "LexicalTime": "gov.nasa.jpl.imce.oml.specification.tables.LexicalTime"
+			case "LexicalValue": "gov.nasa.jpl.imce.oml.specification.tables.LexicalValue"
+			case "LocalName": "gov.nasa.jpl.imce.oml.specification.tables.LocalName"
+			case "Pattern": "gov.nasa.jpl.imce.oml.specification.tables.Pattern"
 			case "UUID": "java.util.UUID"
-			case "TerminologyGraphKind": "gov.nasa.jpl.imce.omf.schema.tables.TerminologyGraphKind"
+			case "TerminologyGraphKind": "gov.nasa.jpl.imce.oml.specification.tables.TerminologyGraphKind"
 			default: type.name
 		}
 	}
@@ -202,7 +202,7 @@ class OMLSpecificationResolverLibraryGenerator {
 			case type instanceof EClass:
 				if (feature.lowerBound == 0) {
 					if (feature.upperBound == -1) {
-						val ann = feature.getEAnnotation("http://imce.jpl.nasa.gov/omf/Collection")?.details
+						val ann = feature.getEAnnotation("http://imce.jpl.nasa.gov/oml/Collection")?.details
 						switch ann?.get("kind") ?: "" {
 						case "Map(Seq)": {
 							val key=ann.get("key")
@@ -228,13 +228,13 @@ class OMLSpecificationResolverLibraryGenerator {
 	
 	static def String queryName(EOperation op) {
 		val kind = if (op.EParameters.empty) "def" else "def"
-		val decl = if (null != op.getEAnnotation("http://imce.jpl.nasa.gov/omf/Override")) "override "+kind else kind
+		val decl = if (null != op.getEAnnotation("http://imce.jpl.nasa.gov/oml/Override")) "override "+kind else kind
 		val args = '''«FOR p : op.EParameters SEPARATOR ",\n  "»«p.name»: «p.queryType»«ENDFOR»'''
 		decl+" "+op.name+"\n  ("+args+(if (args.empty) ")" else "\n  )")
 	}
 	
 	static def String queryType(EOperation op) {
-		val ann = op.getEAnnotation("http://imce.jpl.nasa.gov/omf/Collection")?.details
+		val ann = op.getEAnnotation("http://imce.jpl.nasa.gov/oml/Collection")?.details
 		switch ann?.get("kind") ?: "" {
 			case "Map": {
 				val key=ann.get("key")
@@ -263,23 +263,23 @@ class OMLSpecificationResolverLibraryGenerator {
 	}
 	
     static def Boolean hasCustomImplementation(ENamedElement e) {
-    	null != e.getEAnnotation("http://imce.jpl.nasa.gov/omf/CustomImplementation")
+    	null != e.getEAnnotation("http://imce.jpl.nasa.gov/oml/CustomImplementation")
     }
     
     static def Boolean isAPI(ENamedElement e) {
-    	null == e.getEAnnotation("http://imce.jpl.nasa.gov/omf/NotAPI")
+    	null == e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotAPI")
     }
     
     static def Boolean isSchema(ENamedElement e) {
-    	null == e.getEAnnotation("http://imce.jpl.nasa.gov/omf/NotSchema")
+    	null == e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotSchema")
     }
     
     static def Boolean isScala(ENamedElement e) {
-    	null != e.getEAnnotation("http://imce.jpl.nasa.gov/omf/Scala")
+    	null != e.getEAnnotation("http://imce.jpl.nasa.gov/oml/Scala")
     }
     
     static def String scalaAnnotation(EOperation op) {
-    	op.getEAnnotation("http://imce.jpl.nasa.gov/omf/Scala")?.details?.get("code")
+    	op.getEAnnotation("http://imce.jpl.nasa.gov/oml/Scala")?.details?.get("code")
     }
     
     static def Iterable<XExpression> xExpressions(EOperation op) {
