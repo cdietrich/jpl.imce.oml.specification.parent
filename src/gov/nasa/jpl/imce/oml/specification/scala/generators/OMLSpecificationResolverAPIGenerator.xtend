@@ -2,6 +2,9 @@ package gov.nasa.jpl.imce.oml.specification.scala.generators
 
 import java.io.File
 import java.io.FileOutputStream
+import java.util.ArrayList
+import java.util.Comparator
+import java.util.List
 import org.eclipse.core.runtime.FileLocator
 import org.eclipse.core.runtime.Platform
 import org.eclipse.emf.common.util.URI
@@ -33,16 +36,40 @@ class OMLSpecificationResolverAPIGenerator {
 		val targetFolder = "/shared/src/main/scala/gov/nasa/jpl/imce/oml/specification/resolver/api"
 		val targetURL = Platform.getBundle(targetBundle).getEntry(targetFolder)
 		val folder = FileLocator.toFileURL(targetURL)
-      	generate(ePackage, folder.path)
+      	generate(ePackage, "gov.nasa.jpl.imce.oml.specification.resolver.api", folder.path)
       	      	
 	}
 	
-	def generate(EPackage ePackage, String targetFolder) {
-		for(eClass : ePackage.EClassifiers.filter(EClass))  {
+	def generate(EPackage ePackage, String packageQName, String targetFolder) {
+		val packageFile = new FileOutputStream(new File(targetFolder + File::separator + "package.scala"))
+		packageFile.write(generatePackageFile(ePackage, packageQName).bytes)
+		for(eClass : ePackage.EClassifiers.filter(EClass).filter[isAPI])  {
 			val classFile = new FileOutputStream(new File(targetFolder + File::separator + eClass.name + ".scala"))
 			classFile.write(generateClassFile(eClass).bytes)
 		}
 	}
+	
+	def String generatePackageFile(EPackage ePackage, String packageQName) '''
+		«copyright»
+
+		package «packageQName.substring(0, packageQName.lastIndexOf('.'))»
+		
+		package object «packageQName.substring(packageQName.lastIndexOf('.')+1)» {
+			
+		  «FOR eClass: ePackage.FunctionalAPIClasses.filter[!orderingKeys.isEmpty].sortBy[name]»
+		  implicit def «eClass.name.toFirstLower»Ordering
+		  : scala.Ordering[«eClass.name»]
+		  = new scala.Ordering[«eClass.name»] {
+		  	def compare(x: «eClass.name», y: «eClass.name»)
+		  	: scala.Int
+		  	= «FOR keyFeature: eClass.orderingKeys»«IF (keyFeature.isClassFeature)»«keyFeature.EType.name.toFirstLower»Ordering.compare(x.«keyFeature.name»,y.«keyFeature.name»)«ELSE»x.«keyFeature.columnName».compareTo(y.«keyFeature.columnName»)«ENDIF» match {
+		  	 	case c_«keyFeature.name» if 0 != c_«keyFeature.name» => c_«keyFeature.name»
+		  	 	case 0 => «ENDFOR»«FOR keyFeature: eClass.orderingKeys BEFORE "0 }" SEPARATOR " }"»«ENDFOR»
+		  }
+		  
+		  «ENDFOR»
+		}
+	'''
 	
 	def String generateClassFile(EClass eClass) '''
 		«copyright»
@@ -50,10 +77,100 @@ class OMLSpecificationResolverAPIGenerator {
 		
 		«eClass.doc("")»«eClass.traitDeclaration»
 		{
-		«FOR f : eClass.APIStructuralFeatures BEFORE "\n  " SEPARATOR "\n  " AFTER "\n"»«f.doc("  ")»val «f.name»: «f.queryType»«ENDFOR»
+		«FOR f : eClass.APIStructuralFeatures BEFORE "\n  " SEPARATOR "\n  " AFTER "\n"»«f.doc("  ")»«IF (f.isOverride)»override «ENDIF»val «f.name»: «f.queryType»«ENDFOR»
 		«FOR op : eClass.APIOperations BEFORE "\n  " SEPARATOR "\n  " AFTER "\n"»«op.doc("  ")»«op.queryName»: «op.queryType»«ENDFOR»
+		«IF (eClass.isRootHierarchyClass)»
+		  
+		  def canEqual(that: scala.Any): scala.Boolean
+		«ENDIF»
 		}
 	'''
+	
+	static def Iterable<EStructuralFeature> orderingKeys(EClass eClass) {
+		eClass
+		.getSortedAttributes
+		.filter([EStructuralFeature f | null != f.getEAnnotation("http://imce.jpl.nasa.gov/oml/IsOrderingKey")])
+	} 
+	
+	
+	static def List<EStructuralFeature> getSortedAttributes(EClass eClass) {
+		eClass
+		.selfAndAllSupertypes
+		.map[EStructuralFeatures]
+		.flatten
+		.filter([EStructuralFeature f | isAttributeOrReferenceOrContainer(f) && isSchema(f)])
+		.sortWith(new OMLFeatureCompare())
+	}
+	
+	static def List<EClass> selfAndAllSupertypes(EClass eClass) {
+		val parents = new ArrayList(eClass.EAllSuperTypes)
+		parents.add(eClass)
+		parents
+	}
+	
+    static def Boolean isSchema(ENamedElement e) {
+    	null == e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotSchema")
+    }
+    
+	static class OMLFeatureCompare implements Comparator<EStructuralFeature> {
+		
+		val knownAttributes = #[
+		"graphUUID",
+		"uuid", 
+		"axiomUUID",
+		"terminologyUUID",
+		"keyUUID",
+		"subjectUUID",
+		"propertyUUID",
+		"kind",
+		"isAbstract", 
+		"asymmetric", 
+		"essential", 
+		"functional",
+		"inverseEssential",
+		"inverseFunctional", 
+		"irreflexive", 
+		"reflexive",
+		"symmetric", 
+		"transitive",
+		"name",
+		"unreifiedPropertyName",
+		"unreifiedInversePropertyName",
+		"iri",
+		"value"
+		]
+		override compare(EStructuralFeature o1, EStructuralFeature o2) {
+			val name1 = o1.columnName
+			val name2 = o2.columnName
+			val i1 = knownAttributes.indexOf(name1)
+			val i2 = knownAttributes.indexOf(name2)
+			if (i1 > -1 && i2 > -1)
+			   i1.compareTo(i2)
+			else if (i1 > -1 && i2 == -1)
+			   -1
+			else if (i1 == -1 && i2 > -1)
+			   1
+			else
+			   name1.compareTo(name2)   
+		}
+		
+	}
+	
+	static def String columnName(EStructuralFeature feature) {
+		if (feature instanceof EReference) feature.name+"UUID" else feature.name
+	}
+	
+	static def Boolean isAuxiliaryClass(EClass eClass) {
+		eClass.isAbstract && eClass.ESuperTypes.isEmpty && eClass.EStructuralFeatures.isEmpty
+	}
+	
+	static def Boolean isRootHierarchyClass(EClass eClass) {
+		eClass.isAbstract && eClass.ESuperTypes.isEmpty && !eClass.orderingKeys.isEmpty
+	}
+	
+	static def Boolean isSpecializationOfRootClass(EClass eClass) {
+		!eClass.ESuperTypes.isEmpty && eClass.selfAndAllSupertypes.exists[isRootHierarchyClass]
+	}
 	
 	static def String traitDeclaration(EClass eClass) '''
 		trait «eClass.name»
@@ -91,6 +208,15 @@ class OMLSpecificationResolverAPIGenerator {
 		}
 	}
 	
+	static def Boolean isClassFeature(ETypedElement feature) {
+		val type = feature.EType
+		type instanceof EClass
+	}
+	
+	static def Boolean isOverride(ETypedElement feature) {
+		null != feature.getEAnnotation("http://imce.jpl.nasa.gov/oml/Override")
+	}
+	
 	static def String queryType(ETypedElement feature) {
 		val type = feature.EType
 		val scalaType = feature.scalaTypeName
@@ -117,7 +243,7 @@ class OMLSpecificationResolverAPIGenerator {
 							"scala.collection.immutable.Set[_ <: "+type.name+"]"		
 					
 						case "SortedSet": 
-							"scala.collection.immutable.SortedSet[_ <: "+type.name+"]"		
+							"scala.collection.immutable.SortedSet["+type.name+"]"		
 						}
 					}
 					else
@@ -139,52 +265,38 @@ class OMLSpecificationResolverAPIGenerator {
 	
 	static def String queryType(EOperation op) {
 		val ann = op.getEAnnotation("http://imce.jpl.nasa.gov/oml/Collection")?.details
+		val scalaType = op.scalaTypeName
 		switch ann?.get("kind") ?: "" {
 			case "Map": {
 				val key=ann.get("key")
-				"scala.collection.immutable.Map["+key+","+op.EType.name+"]"				
+				"scala.collection.immutable.Map["+key+","+scalaType+"]"				
 			}
 			case "SortedSet": 
-				"scala.collection.immutable.SortedSet[_ <: "+op.EType.name+"]"	
+				"scala.collection.immutable.SortedSet["+scalaType+"]"	
 			case "Set": 
-				"scala.collection.immutable.Set[_ <: "+op.EType.name+"]"		
+				"scala.collection.immutable.Set[_ <: "+scalaType+"]"		
 			default:
 				if (0 == op.lowerBound)
-					"scala.Option["+op.EType.name+"]"
+					"scala.Option["+scalaType+"]"
 				else
-					op.EType.name
+					scalaType
 		}
 	} 
 	
-	static def Iterable<ETypedElement> APIStructuralFeatures(EClass eClass) {
-		val features = new java.util.ArrayList<ETypedElement>()
-		features.addAll(eClass.EStructuralFeatures.filter[isAPI])
-		features.addAll(eClass.ImmutableFeatureOperations)
-		features
+	static def Iterable<EStructuralFeature> APIStructuralFeatures(EClass eClass) {
+		eClass.EStructuralFeatures.filter[isAPI]
 	}
     
 	static def Iterable<EClass> FunctionalAPIClasses(EPackage ePkg) {
-		ePkg.EClassifiers.filter(EClass).filter[isFunctionalAPIClass]
+		ePkg.EClassifiers.filter(EClass).filter[isAPI]
 	}
-	
-    static def Boolean isFunctionalAPIClass(EClass c) {
-    	null == c.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotFunctionalAPI")
-    }
-    
-	static def Iterable<EOperation> ImmutableFeatureOperations(EClass eClass) {
-		eClass.EOperations.filter[isImmutableFeature]
-	}
-	
-    static def Boolean isImmutableFeature(ENamedElement e) {
-    	null != e.getEAnnotation("http://imce.jpl.nasa.gov/oml/ImmutableFeature")
-    }
     
 	static def Iterable<EOperation> APIOperations(EClass eClass) {
-		eClass.EOperations.filter[isAPI && !isImmutableFeature]
+		eClass.EOperations.filter[isAPI]
 	}
     
     static def Boolean isAPI(ENamedElement e) {
-    	null == e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotAPI")
+    	null == e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotFunctionalAPI")
     }
     
 	static def String doc(ENamedElement e, String indent) {

@@ -49,8 +49,7 @@ class OMLSpecificationTablesGenerator {
       	generate(
       		ePackage, 
       		targetPath.toAbsolutePath.toString, 
-      		"gov.nasa.jpl.imce.oml.specification",
-  		 	"gov.nasa.jpl.imce.oml.specification.tables",
+      		"gov.nasa.jpl.imce.oml.specification.tables",
       		"OMLSpecificationTables"
       	)      	
 	}
@@ -75,20 +74,19 @@ class OMLSpecificationTablesGenerator {
       	generate(
       		ePackage, 
       		targetPath.toAbsolutePath.toString, 
-      		"gov.nasa.jpl.imce.oml.provenance.oti", 
-      		"gov.nasa.jpl.imce.oml.provenance.oti.tables",
+      		"gov.nasa.jpl.imce.oml.provenance.oti.tables", 
       		"OML2OTIProvenanceTables"
       	)
     }
     
-	def generate(EPackage ePackage, String targetFolder, String packageQName, String packageTablesQName, String tableName) {
+	def generate(EPackage ePackage, String targetFolder, String packageQName, String tableName) {
 		val packageFile = new FileOutputStream(new File(targetFolder + File::separator + "package.scala"))
 		packageFile.write(generatePackageFile(ePackage, packageQName).bytes)
 		val tablesFile = new FileOutputStream(new File(targetFolder + File::separator + tableName + ".scala"))
-		tablesFile.write(generateTablesFile(ePackage, packageTablesQName, tableName).bytes)
-		for(eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && isFunctionalAPI])  {
+		tablesFile.write(generateTablesFile(ePackage, packageQName, tableName).bytes)
+		for(eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI])  {
 			val classFile = new FileOutputStream(new File(targetFolder + File::separator + eClass.name + ".scala"))
-			classFile.write(generateClassFile(eClass, packageTablesQName).bytes)
+			classFile.write(generateClassFile(eClass, packageQName).bytes)
 		}
 	}
 	
@@ -180,21 +178,21 @@ class OMLSpecificationTablesGenerator {
 		
 		case class «tableName» private[tables]
 		«IF 'OMLSpecificationTables' == tableName»
-		«FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare()) BEFORE "(\n  " SEPARATOR ",\n  " AFTER ","»«eClass.tableVariable»«ENDFOR»
+		«FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare()) BEFORE "(\n  " SEPARATOR ",\n  " AFTER ","»«eClass.tableVariable»«ENDFOR»
 		  annotations: Map[AnnotationProperty, Seq[AnnotationEntry]] = Map.empty)
 		«ELSE»
-		«FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare()) BEFORE "(\n  " SEPARATOR ",\n  " AFTER "\n)"»«eClass.tableVariable»«ENDFOR» 
+		«FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare()) BEFORE "(\n  " SEPARATOR ",\n  " AFTER "\n)"»«eClass.tableVariable»«ENDFOR» 
 		«ENDIF»
 		{
-		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare())»
+		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare())»
 		  «eClass.tableReader(tableName)»
 		  «ENDFOR»
 		  
 		  def isEmpty: Boolean
 		  «IF 'OMLSpecificationTables' == tableName»
-		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare()) BEFORE "= " SEPARATOR " &&\n  " AFTER " &&\n  annotations.isEmpty"»«eClass.tableVariableName».isEmpty«ENDFOR»
+		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare()) BEFORE "= " SEPARATOR " &&\n  " AFTER " &&\n  annotations.isEmpty"»«eClass.tableVariableName».isEmpty«ENDFOR»
 		  «ELSE»
-		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare()) BEFORE "= " SEPARATOR " &&\n  "»«eClass.tableVariableName».isEmpty«ENDFOR»
+		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare()) BEFORE "= " SEPARATOR " &&\n  "»«eClass.tableVariableName».isEmpty«ENDFOR»
 		  «ENDIF»
 		}
 		
@@ -228,9 +226,9 @@ class OMLSpecificationTablesGenerator {
 		  (t1: «tableName», t2: «tableName»)
 		  : «tableName»
 		  «IF 'OMLSpecificationTables' == tableName»
-		  = «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare()) BEFORE tableName + "(\n    " SEPARATOR ",\n    " AFTER ",\n    annotations = t1.annotations ++ t2.annotations)"»«eClass.tableVariableName» = t1.«eClass.tableVariableName» ++ t2.«eClass.tableVariableName»«ENDFOR»
+		  = «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare()) BEFORE tableName + "(\n    " SEPARATOR ",\n    " AFTER ",\n    annotations = t1.annotations ++ t2.annotations)"»«eClass.tableVariableName» = t1.«eClass.tableVariableName» ++ t2.«eClass.tableVariableName»«ENDFOR»
 		  «ELSE» 
-		  = «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare()) BEFORE tableName + "(\n    " SEPARATOR ",\n    " AFTER ")"»«eClass.tableVariableName» = t1.«eClass.tableVariableName» ++ t2.«eClass.tableVariableName»«ENDFOR» 
+		  = «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare()) BEFORE tableName + "(\n    " SEPARATOR ",\n    " AFTER ")"»«eClass.tableVariableName» = t1.«eClass.tableVariableName» ++ t2.«eClass.tableVariableName»«ENDFOR» 
 		  «ENDIF»
 		  
 		  private[tables] def readZipArchive
@@ -240,7 +238,7 @@ class OMLSpecificationTablesGenerator {
 		  = {
 		  	val is = zipFile.getInputStream(ze)
 		  	ze.getName match {
-		  	  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare())»
+		  	  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare())»
 		  	  case «eClass.name»Helper.TABLE_JSON_FILENAME =>
 		  	    tables.«eClass.tableReaderName»(is)
 		      «ENDFOR»
@@ -276,7 +274,7 @@ class OMLSpecificationTablesGenerator {
 		  
 		  	  zos.setMethod(java.util.zip.ZipOutputStream.DEFLATED)
 		  
-		      «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare())»
+		      «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare())»
 		      zos.putNextEntry(new java.util.zip.ZipEntry(«eClass.name»Helper.TABLE_JSON_FILENAME))
 		      tables.«eClass.tableVariableName».foreach { t =>
 		         val line = «eClass.name»Helper.toJSON(t)+"\n"
@@ -344,14 +342,14 @@ class OMLSpecificationTablesGenerator {
 	'''
 	
 	def generateJS(EPackage ePackage, String targetJSFolder) {
-		for(eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && hasOptionalAttributes])  {
+		for(eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && hasOptionalAttributes])  {
 			val classFile = new FileOutputStream(new File(targetJSFolder + File::separator + eClass.name + "JS.scala"))
 			classFile.write(generateJSClassFile(eClass).bytes)
 		}
 	}
 	
 	def generateJVM(EPackage ePackage, String targetJVMFolder) {
-		for(eClass : ePackage.EClassifiers.filter(EClass).filter[!isAbstract && hasOptionalAttributes])  {
+		for(eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && hasOptionalAttributes])  {
 			val classFile = new FileOutputStream(new File(targetJVMFolder + File::separator + eClass.name + "Java.scala"))
 			classFile.write(generateJVMClassFile(eClass).bytes)
 		}
@@ -360,14 +358,14 @@ class OMLSpecificationTablesGenerator {
 	def String generatePackageFile(EPackage ePackage, String packageQName) '''
 		«copyright»
 
-		package «packageQName»
+		package «packageQName.substring(0, packageQName.lastIndexOf('.'))»
 		
 		import java.io.InputStream
 		import scala.collection.immutable.Seq
 		import scala.io
 		import scala.Predef.String
 		
-		package object tables {
+		package object «packageQName.substring(packageQName.lastIndexOf('.')+1)» {
 			«FOR type : ePackage.EClassifiers.filter(EDataType).filter[t|!(t instanceof EEnum)].sortBy[name]»
 				type «type.name» = String
 		  	«ENDFOR»
@@ -375,8 +373,27 @@ class OMLSpecificationTablesGenerator {
 		  def readJSonTable[T](is: InputStream, fromJSon: String => T)
 		  : Seq[T]
 		  = io.Source.fromInputStream(is).getLines.map(fromJSon).to[Seq]
+		  
+		  «FOR eClass: ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !orderingKeys.isEmpty].sortBy[name]»
+		  implicit def «eClass.name.toFirstLower»Ordering
+		  : scala.Ordering[«eClass.name»]
+		  = new scala.Ordering[«eClass.name»] {
+		  	def compare(x: «eClass.name», y: «eClass.name»)
+		  	: scala.Int
+		  	= «FOR keyFeature: eClass.orderingKeys»x.«keyFeature.columnName».compareTo(y.«keyFeature.columnName») match {
+		  	 	case c_«keyFeature.columnName» if 0 != c_«keyFeature.columnName» => c_«keyFeature.columnName»
+		  	 	case 0 => «ENDFOR»«FOR keyFeature: eClass.orderingKeys BEFORE "0 }" SEPARATOR " }"»«ENDFOR»
+		  }
+		  
+		  «ENDFOR»
 		}
 	'''
+	
+	static def Iterable<EStructuralFeature> orderingKeys(EClass eClass) {
+		eClass
+		.getSortedAttributes
+		.filter([EStructuralFeature f | null != f.getEAnnotation("http://imce.jpl.nasa.gov/oml/IsOrderingKey")])
+	} 
 	
 	def String generateClassFile(EClass eClass, String packageQName) '''
 		«copyright»
@@ -639,7 +656,15 @@ class OMLSpecificationTablesGenerator {
 	}
 	
     static def Boolean isFunctionalAPI(ENamedElement e) {
-    	null == e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotFunctionalAPI")
+    	if (e.isSchema && null == e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotFunctionalAPI"))
+    	switch e {
+    		EClass:
+    		  !e.isAbstract
+    	 	default:
+    		  true
+    	  }
+    	else
+    	  false
     }
      
     static def Boolean isValueTable(ENamedElement e) {

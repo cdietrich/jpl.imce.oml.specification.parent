@@ -43,7 +43,7 @@ class OMLSpecificationResolverLibraryGenerator {
 	}
 	
 	def generate(EPackage ePackage, String targetFolder) {
-		for(eClass : ePackage.EClassifiers.filter(EClass).filter(ec | ! ec.hasCustomImplementation))  {
+		for(eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPIClass])  {
 			val classFile = new FileOutputStream(new File(targetFolder + File::separator + eClass.name + ".scala"))
 			classFile.write(generateClassFile(eClass).bytes)
 		}
@@ -62,6 +62,27 @@ class OMLSpecificationResolverLibraryGenerator {
 		  = «op.queryBody»
 		  
 		«ENDFOR»
+		  
+		  override def canEqual(that: scala.Any): scala.Boolean = that match {
+		  	case _: «eClass.name» => true
+		  	case _ => false
+		  }
+		
+		«IF (!eClass.abstract)»
+		
+		  override val hashCode
+		  : scala.Int
+		  = «FOR keyFeature: eClass.getSortedAttributes BEFORE "(" SEPARATOR ", " AFTER ").##"»«keyFeature.name»«ENDFOR»
+		
+		  override def equals(other: scala.Any): scala.Boolean = other match {
+			  case that: «eClass.name» =>
+			    (that canEqual this) &&
+			    «FOR keyFeature: eClass.getSortedAttributes SEPARATOR " &&\n"»(this.«keyFeature.name» == that.«keyFeature.name»)«ENDFOR»
+		
+			  case _ =>
+			    false
+		  }
+		«ENDIF»
 		}
 	'''
 	
@@ -98,12 +119,20 @@ class OMLSpecificationResolverLibraryGenerator {
 		«FOR parent : eClass.ESuperTypes BEFORE "  with " SEPARATOR "\n  with "»«parent.name»«ENDFOR»
 	'''
 	
+	static def Iterable<EStructuralFeature> orderingKeys(EClass eClass) {
+		eClass
+		.selfAndAllSupertypes
+		.map[EStructuralFeatures]
+		.flatten
+		.filter([EStructuralFeature f | f.isAPI && null != f.getEAnnotation("http://imce.jpl.nasa.gov/oml/IsOrderingKey")])
+		.sortWith(new OMLFeatureCompare())
+	} 
+	
 	static def Iterable<EStructuralFeature> getSortedAttributes(EClass eClass) {
 		eClass
 		.selfAndAllSupertypes
 		.map[APIStructuralFeatures]
 		.flatten
-		.filter([EStructuralFeature f | isAPI(f)])
 		.sortWith(new OMLFeatureCompare())
 	}
 	
@@ -113,11 +142,16 @@ class OMLSpecificationResolverLibraryGenerator {
 		parents
 	}
 	
-	static def String columnName(EStructuralFeature feature) {
-		if (feature instanceof EReference) feature.name+"UUID" else feature.name
+	static def String columnName(ETypedElement feature) {
+		switch feature {
+			case feature instanceof EReference:
+				feature.name+"UUID"
+			default:
+				feature.name
+		}
 	}
 	
-	static class OMLFeatureCompare implements Comparator<EStructuralFeature> {
+	static class OMLFeatureCompare implements Comparator<ETypedElement> {
 		
 		val knownAttributes = #[
 		"graphUUID", 
@@ -142,7 +176,7 @@ class OMLSpecificationResolverLibraryGenerator {
 		"unreifiedInversePropertyName",
 		"iri",
 		"value"]
-		override compare(EStructuralFeature o1, EStructuralFeature o2) {
+		override compare(ETypedElement o1, ETypedElement o2) {
 			val name1 = o1.columnName
 			val name2 = o2.columnName
 			val i1 = knownAttributes.indexOf(name1)
@@ -213,7 +247,9 @@ class OMLSpecificationResolverLibraryGenerator {
 							"scala.collection.immutable.Map["+key+", resolver.api."+type.name+"]"				
 						}
 						case "Set": 
-							"scala.collection.immutable.Set[_ <: resolver.api."+type.name+"]"		
+							"scala.collection.immutable.Set[_ <: resolver.api."+type.name+"]"	
+						case "SortedSet": 
+							"scala.collection.immutable.SortedSet[resolver.api."+type.name+"]"		
 						}	
 					}
 					else
@@ -240,6 +276,8 @@ class OMLSpecificationResolverLibraryGenerator {
 				val key=ann.get("key")
 				"scala.collection.immutable.Map["+key+", resolver.api."+op.EType.name+"]"				
 			}
+			case "SortedSet": 
+				"scala.collection.immutable.SortedSet[resolver.api."+op.EType.name+"]"	
 			case "Set": 
 				"scala.collection.immutable.Set[_ <: resolver.api."+op.EType.name+"]"		
 			default:
@@ -253,7 +291,23 @@ class OMLSpecificationResolverLibraryGenerator {
 	static def Iterable<EStructuralFeature> APIStructuralFeatures(EClass eClass) {
 		eClass.EStructuralFeatures.filter[isAPI]
 	}
+     
+	static def Iterable<EClass> FunctionalAPIClasses(EPackage ePkg) {
+		ePkg.EClassifiers.filter(EClass).filter[isFunctionalAPIClass]
+	}
+	
+    static def Boolean isFunctionalAPIClass(EClass c) {
+    	null == c.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotFunctionalAPI")
+    }
     
+	static def Boolean isRootHierarchyClass(EClass eClass) {
+		eClass.isAbstract && eClass.ESuperTypes.isEmpty && !eClass.orderingKeys.isEmpty
+	}
+	
+	static def Boolean isSpecializationOfRootClass(EClass eClass) {
+		!eClass.ESuperTypes.isEmpty && eClass.selfAndAllSupertypes.exists[isRootHierarchyClass]
+	}
+	
 	static def Iterable<EOperation> APIOperations(EClass eClass) {
 		eClass.EOperations.filter[isAPI]
 	}
@@ -262,10 +316,6 @@ class OMLSpecificationResolverLibraryGenerator {
 		eClass.EOperations.filter(op | op.isScala || null != op.xExpressions) 
 	}
 	
-    static def Boolean hasCustomImplementation(ENamedElement e) {
-    	null != e.getEAnnotation("http://imce.jpl.nasa.gov/oml/CustomImplementation")
-    }
-    
     static def Boolean isAPI(ENamedElement e) {
     	null == e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotAPI")
     }

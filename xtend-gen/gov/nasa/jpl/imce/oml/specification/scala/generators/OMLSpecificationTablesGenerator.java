@@ -148,7 +148,6 @@ public class OMLSpecificationTablesGenerator {
       Path _absolutePath = targetPath.toAbsolutePath();
       String _string = _absolutePath.toString();
       this.generate(ePackage, _string, 
-        "gov.nasa.jpl.imce.oml.specification", 
         "gov.nasa.jpl.imce.oml.specification.tables", 
         "OMLSpecificationTables");
     } catch (Throwable _e) {
@@ -183,7 +182,6 @@ public class OMLSpecificationTablesGenerator {
       Path _absolutePath = targetPath.toAbsolutePath();
       String _string = _absolutePath.toString();
       this.generate(ePackage, _string, 
-        "gov.nasa.jpl.imce.oml.provenance.oti", 
         "gov.nasa.jpl.imce.oml.provenance.oti.tables", 
         "OML2OTIProvenanceTables");
     } catch (Throwable _e) {
@@ -191,7 +189,7 @@ public class OMLSpecificationTablesGenerator {
     }
   }
   
-  public void generate(final EPackage ePackage, final String targetFolder, final String packageQName, final String packageTablesQName, final String tableName) {
+  public void generate(final EPackage ePackage, final String targetFolder, final String packageQName, final String tableName) {
     try {
       File _file = new File(((targetFolder + File.separator) + "package.scala"));
       final FileOutputStream packageFile = new FileOutputStream(_file);
@@ -200,13 +198,13 @@ public class OMLSpecificationTablesGenerator {
       packageFile.write(_bytes);
       File _file_1 = new File((((targetFolder + File.separator) + tableName) + ".scala"));
       final FileOutputStream tablesFile = new FileOutputStream(_file_1);
-      String _generateTablesFile = this.generateTablesFile(ePackage, packageTablesQName, tableName);
+      String _generateTablesFile = this.generateTablesFile(ePackage, packageQName, tableName);
       byte[] _bytes_1 = _generateTablesFile.getBytes();
       tablesFile.write(_bytes_1);
       EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
       Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
       final Function1<EClass, Boolean> _function = (EClass it) -> {
-        return Boolean.valueOf(((!it.isAbstract()) && (OMLSpecificationTablesGenerator.isFunctionalAPI(it)).booleanValue()));
+        return OMLSpecificationTablesGenerator.isFunctionalAPI(it);
       };
       Iterable<EClass> _filter_1 = IterableExtensions.<EClass>filter(_filter, _function);
       for (final EClass eClass : _filter_1) {
@@ -216,7 +214,7 @@ public class OMLSpecificationTablesGenerator {
           String _plus_1 = (_plus + ".scala");
           File _file_2 = new File(_plus_1);
           final FileOutputStream classFile = new FileOutputStream(_file_2);
-          String _generateClassFile = this.generateClassFile(eClass, packageTablesQName);
+          String _generateClassFile = this.generateClassFile(eClass, packageQName);
           byte[] _bytes_2 = _generateClassFile.getBytes();
           classFile.write(_bytes_2);
         }
@@ -278,7 +276,7 @@ public class OMLSpecificationTablesGenerator {
           EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
           Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
           final Function1<EClass, Boolean> _function = (EClass it) -> {
-            return Boolean.valueOf((((!it.isAbstract()) && (OMLSpecificationTablesGenerator.isFunctionalAPI(it)).booleanValue()) && (!(OMLSpecificationTablesGenerator.isValueTable(it)).booleanValue())));
+            return Boolean.valueOf(((OMLSpecificationTablesGenerator.isFunctionalAPI(it)).booleanValue() && (!(OMLSpecificationTablesGenerator.isValueTable(it)).booleanValue())));
           };
           Iterable<EClass> _filter_1 = IterableExtensions.<EClass>filter(_filter, _function);
           OMLSpecificationTablesGenerator.OMLTableCompare _oMLTableCompare = new OMLSpecificationTablesGenerator.OMLTableCompare();
@@ -307,7 +305,7 @@ public class OMLSpecificationTablesGenerator {
           EList<EClassifier> _eClassifiers_1 = ePackage.getEClassifiers();
           Iterable<EClass> _filter_2 = Iterables.<EClass>filter(_eClassifiers_1, EClass.class);
           final Function1<EClass, Boolean> _function_1 = (EClass it) -> {
-            return Boolean.valueOf((((!it.isAbstract()) && (OMLSpecificationTablesGenerator.isFunctionalAPI(it)).booleanValue()) && (!(OMLSpecificationTablesGenerator.isValueTable(it)).booleanValue())));
+            return Boolean.valueOf(((OMLSpecificationTablesGenerator.isFunctionalAPI(it)).booleanValue() && (!(OMLSpecificationTablesGenerator.isValueTable(it)).booleanValue())));
           };
           Iterable<EClass> _filter_3 = IterableExtensions.<EClass>filter(_filter_2, _function_1);
           OMLSpecificationTablesGenerator.OMLTableCompare _oMLTableCompare_1 = new OMLSpecificationTablesGenerator.OMLTableCompare();
@@ -337,7 +335,7 @@ public class OMLSpecificationTablesGenerator {
       EList<EClassifier> _eClassifiers_2 = ePackage.getEClassifiers();
       Iterable<EClass> _filter_4 = Iterables.<EClass>filter(_eClassifiers_2, EClass.class);
       final Function1<EClass, Boolean> _function_2 = (EClass it) -> {
-        return Boolean.valueOf((((!it.isAbstract()) && (OMLSpecificationTablesGenerator.isFunctionalAPI(it)).booleanValue()) && (!(OMLSpecificationTablesGenerator.isValueTable(it)).booleanValue())));
+        return Boolean.valueOf(((OMLSpecificationTablesGenerator.isFunctionalAPI(it)).booleanValue() && (!(OMLSpecificationTablesGenerator.isValueTable(it)).booleanValue())));
       };
       Iterable<EClass> _filter_5 = IterableExtensions.<EClass>filter(_filter_4, _function_2);
       OMLSpecificationTablesGenerator.OMLTableCompare _oMLTableCompare_2 = new OMLSpecificationTablesGenerator.OMLTableCompare();
@@ -362,7 +360,7 @@ public class OMLSpecificationTablesGenerator {
           EList<EClassifier> _eClassifiers_3 = ePackage.getEClassifiers();
           Iterable<EClass> _filter_6 = Iterables.<EClass>filter(_eClassifiers_3, EClass.class);
           final Function1<EClass, Boolean> _function_3 = (EClass it) -> {
-            return Boolean.valueOf((((!it.isAbstract()) && (OMLSpecificationTablesGenerator.isFunctionalAPI(it)).booleanValue()) && (!(OMLSpecificationTablesGenerator.isValueTable(it)).booleanValue())));
+            return Boolean.valueOf(((OMLSpecificationTablesGenerator.isFunctionalAPI(it)).booleanValue() && (!(OMLSpecificationTablesGenerator.isValueTable(it)).booleanValue())));
           };
           Iterable<EClass> _filter_7 = IterableExtensions.<EClass>filter(_filter_6, _function_3);
           OMLSpecificationTablesGenerator.OMLTableCompare _oMLTableCompare_3 = new OMLSpecificationTablesGenerator.OMLTableCompare();
@@ -390,7 +388,7 @@ public class OMLSpecificationTablesGenerator {
           EList<EClassifier> _eClassifiers_4 = ePackage.getEClassifiers();
           Iterable<EClass> _filter_8 = Iterables.<EClass>filter(_eClassifiers_4, EClass.class);
           final Function1<EClass, Boolean> _function_4 = (EClass it) -> {
-            return Boolean.valueOf((((!it.isAbstract()) && (OMLSpecificationTablesGenerator.isFunctionalAPI(it)).booleanValue()) && (!(OMLSpecificationTablesGenerator.isValueTable(it)).booleanValue())));
+            return Boolean.valueOf(((OMLSpecificationTablesGenerator.isFunctionalAPI(it)).booleanValue() && (!(OMLSpecificationTablesGenerator.isValueTable(it)).booleanValue())));
           };
           Iterable<EClass> _filter_9 = IterableExtensions.<EClass>filter(_filter_8, _function_4);
           OMLSpecificationTablesGenerator.OMLTableCompare _oMLTableCompare_4 = new OMLSpecificationTablesGenerator.OMLTableCompare();
@@ -525,7 +523,7 @@ public class OMLSpecificationTablesGenerator {
           EList<EClassifier> _eClassifiers_5 = ePackage.getEClassifiers();
           Iterable<EClass> _filter_10 = Iterables.<EClass>filter(_eClassifiers_5, EClass.class);
           final Function1<EClass, Boolean> _function_5 = (EClass it) -> {
-            return Boolean.valueOf((((!it.isAbstract()) && (OMLSpecificationTablesGenerator.isFunctionalAPI(it)).booleanValue()) && (!(OMLSpecificationTablesGenerator.isValueTable(it)).booleanValue())));
+            return Boolean.valueOf(((OMLSpecificationTablesGenerator.isFunctionalAPI(it)).booleanValue() && (!(OMLSpecificationTablesGenerator.isValueTable(it)).booleanValue())));
           };
           Iterable<EClass> _filter_11 = IterableExtensions.<EClass>filter(_filter_10, _function_5);
           OMLSpecificationTablesGenerator.OMLTableCompare _oMLTableCompare_5 = new OMLSpecificationTablesGenerator.OMLTableCompare();
@@ -559,7 +557,7 @@ public class OMLSpecificationTablesGenerator {
           EList<EClassifier> _eClassifiers_6 = ePackage.getEClassifiers();
           Iterable<EClass> _filter_12 = Iterables.<EClass>filter(_eClassifiers_6, EClass.class);
           final Function1<EClass, Boolean> _function_6 = (EClass it) -> {
-            return Boolean.valueOf((((!it.isAbstract()) && (OMLSpecificationTablesGenerator.isFunctionalAPI(it)).booleanValue()) && (!(OMLSpecificationTablesGenerator.isValueTable(it)).booleanValue())));
+            return Boolean.valueOf(((OMLSpecificationTablesGenerator.isFunctionalAPI(it)).booleanValue() && (!(OMLSpecificationTablesGenerator.isValueTable(it)).booleanValue())));
           };
           Iterable<EClass> _filter_13 = IterableExtensions.<EClass>filter(_filter_12, _function_6);
           OMLSpecificationTablesGenerator.OMLTableCompare _oMLTableCompare_6 = new OMLSpecificationTablesGenerator.OMLTableCompare();
@@ -619,7 +617,7 @@ public class OMLSpecificationTablesGenerator {
       EList<EClassifier> _eClassifiers_7 = ePackage.getEClassifiers();
       Iterable<EClass> _filter_14 = Iterables.<EClass>filter(_eClassifiers_7, EClass.class);
       final Function1<EClass, Boolean> _function_7 = (EClass it) -> {
-        return Boolean.valueOf((((!it.isAbstract()) && (OMLSpecificationTablesGenerator.isFunctionalAPI(it)).booleanValue()) && (!(OMLSpecificationTablesGenerator.isValueTable(it)).booleanValue())));
+        return Boolean.valueOf(((OMLSpecificationTablesGenerator.isFunctionalAPI(it)).booleanValue() && (!(OMLSpecificationTablesGenerator.isValueTable(it)).booleanValue())));
       };
       Iterable<EClass> _filter_15 = IterableExtensions.<EClass>filter(_filter_14, _function_7);
       OMLSpecificationTablesGenerator.OMLTableCompare _oMLTableCompare_7 = new OMLSpecificationTablesGenerator.OMLTableCompare();
@@ -746,7 +744,7 @@ public class OMLSpecificationTablesGenerator {
       EList<EClassifier> _eClassifiers_8 = ePackage.getEClassifiers();
       Iterable<EClass> _filter_16 = Iterables.<EClass>filter(_eClassifiers_8, EClass.class);
       final Function1<EClass, Boolean> _function_8 = (EClass it) -> {
-        return Boolean.valueOf((((!it.isAbstract()) && (OMLSpecificationTablesGenerator.isFunctionalAPI(it)).booleanValue()) && (!(OMLSpecificationTablesGenerator.isValueTable(it)).booleanValue())));
+        return Boolean.valueOf(((OMLSpecificationTablesGenerator.isFunctionalAPI(it)).booleanValue() && (!(OMLSpecificationTablesGenerator.isValueTable(it)).booleanValue())));
       };
       Iterable<EClass> _filter_17 = IterableExtensions.<EClass>filter(_filter_16, _function_8);
       OMLSpecificationTablesGenerator.OMLTableCompare _oMLTableCompare_8 = new OMLSpecificationTablesGenerator.OMLTableCompare();
@@ -961,7 +959,7 @@ public class OMLSpecificationTablesGenerator {
       EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
       Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
       final Function1<EClass, Boolean> _function = (EClass it) -> {
-        return Boolean.valueOf(((!it.isAbstract()) && (OMLSpecificationTablesGenerator.hasOptionalAttributes(it)).booleanValue()));
+        return Boolean.valueOf(((OMLSpecificationTablesGenerator.isFunctionalAPI(it)).booleanValue() && (OMLSpecificationTablesGenerator.hasOptionalAttributes(it)).booleanValue()));
       };
       Iterable<EClass> _filter_1 = IterableExtensions.<EClass>filter(_filter, _function);
       for (final EClass eClass : _filter_1) {
@@ -986,7 +984,7 @@ public class OMLSpecificationTablesGenerator {
       EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
       Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
       final Function1<EClass, Boolean> _function = (EClass it) -> {
-        return Boolean.valueOf(((!it.isAbstract()) && (OMLSpecificationTablesGenerator.hasOptionalAttributes(it)).booleanValue()));
+        return Boolean.valueOf(((OMLSpecificationTablesGenerator.isFunctionalAPI(it)).booleanValue() && (OMLSpecificationTablesGenerator.hasOptionalAttributes(it)).booleanValue()));
       };
       Iterable<EClass> _filter_1 = IterableExtensions.<EClass>filter(_filter, _function);
       for (final EClass eClass : _filter_1) {
@@ -1013,7 +1011,9 @@ public class OMLSpecificationTablesGenerator {
     _builder.newLineIfNotEmpty();
     _builder.newLine();
     _builder.append("package ");
-    _builder.append(packageQName, "");
+    int _lastIndexOf = packageQName.lastIndexOf(".");
+    String _substring = packageQName.substring(0, _lastIndexOf);
+    _builder.append(_substring, "");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
     _builder.append("import java.io.InputStream");
@@ -1025,8 +1025,13 @@ public class OMLSpecificationTablesGenerator {
     _builder.append("import scala.Predef.String");
     _builder.newLine();
     _builder.newLine();
-    _builder.append("package object tables {");
-    _builder.newLine();
+    _builder.append("package object ");
+    int _lastIndexOf_1 = packageQName.lastIndexOf(".");
+    int _plus = (_lastIndexOf_1 + 1);
+    String _substring_1 = packageQName.substring(_plus);
+    _builder.append(_substring_1, "");
+    _builder.append(" {");
+    _builder.newLineIfNotEmpty();
     {
       EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
       Iterable<EDataType> _filter = Iterables.<EDataType>filter(_eClassifiers, EDataType.class);
@@ -1058,9 +1063,118 @@ public class OMLSpecificationTablesGenerator {
     _builder.append("  ");
     _builder.append("= io.Source.fromInputStream(is).getLines.map(fromJSon).to[Seq]");
     _builder.newLine();
+    _builder.append("  ");
+    _builder.newLine();
+    {
+      EList<EClassifier> _eClassifiers_1 = ePackage.getEClassifiers();
+      Iterable<EClass> _filter_2 = Iterables.<EClass>filter(_eClassifiers_1, EClass.class);
+      final Function1<EClass, Boolean> _function_2 = (EClass it) -> {
+        return Boolean.valueOf(((OMLSpecificationTablesGenerator.isFunctionalAPI(it)).booleanValue() && (!IterableExtensions.isEmpty(OMLSpecificationTablesGenerator.orderingKeys(it)))));
+      };
+      Iterable<EClass> _filter_3 = IterableExtensions.<EClass>filter(_filter_2, _function_2);
+      final Function1<EClass, String> _function_3 = (EClass it) -> {
+        return it.getName();
+      };
+      List<EClass> _sortBy_1 = IterableExtensions.<EClass, String>sortBy(_filter_3, _function_3);
+      for(final EClass eClass : _sortBy_1) {
+        _builder.append("  ");
+        _builder.append("implicit def ");
+        String _name_1 = eClass.getName();
+        String _firstLower = StringExtensions.toFirstLower(_name_1);
+        _builder.append(_firstLower, "  ");
+        _builder.append("Ordering");
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        _builder.append(": scala.Ordering[");
+        String _name_2 = eClass.getName();
+        _builder.append(_name_2, "  ");
+        _builder.append("]");
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        _builder.append("= new scala.Ordering[");
+        String _name_3 = eClass.getName();
+        _builder.append(_name_3, "  ");
+        _builder.append("] {");
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        _builder.append("\t");
+        _builder.append("def compare(x: ");
+        String _name_4 = eClass.getName();
+        _builder.append(_name_4, "  \t");
+        _builder.append(", y: ");
+        String _name_5 = eClass.getName();
+        _builder.append(_name_5, "  \t");
+        _builder.append(")");
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        _builder.append("\t");
+        _builder.append(": scala.Int");
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.append("\t");
+        _builder.append("= ");
+        {
+          Iterable<EStructuralFeature> _orderingKeys = OMLSpecificationTablesGenerator.orderingKeys(eClass);
+          for(final EStructuralFeature keyFeature : _orderingKeys) {
+            _builder.append("x.");
+            String _columnName = OMLSpecificationTablesGenerator.columnName(keyFeature);
+            _builder.append(_columnName, "  \t");
+            _builder.append(".compareTo(y.");
+            String _columnName_1 = OMLSpecificationTablesGenerator.columnName(keyFeature);
+            _builder.append(_columnName_1, "  \t");
+            _builder.append(") match {");
+            _builder.newLineIfNotEmpty();
+            _builder.append("  ");
+            _builder.append("\t");
+            _builder.append(" \t");
+            _builder.append("case c_");
+            String _columnName_2 = OMLSpecificationTablesGenerator.columnName(keyFeature);
+            _builder.append(_columnName_2, "  \t \t");
+            _builder.append(" if 0 != c_");
+            String _columnName_3 = OMLSpecificationTablesGenerator.columnName(keyFeature);
+            _builder.append(_columnName_3, "  \t \t");
+            _builder.append(" => c_");
+            String _columnName_4 = OMLSpecificationTablesGenerator.columnName(keyFeature);
+            _builder.append(_columnName_4, "  \t \t");
+            _builder.newLineIfNotEmpty();
+            _builder.append("  ");
+            _builder.append("\t");
+            _builder.append(" \t");
+            _builder.append("case 0 => ");
+          }
+        }
+        {
+          Iterable<EStructuralFeature> _orderingKeys_1 = OMLSpecificationTablesGenerator.orderingKeys(eClass);
+          boolean _hasElements = false;
+          for(final EStructuralFeature keyFeature_1 : _orderingKeys_1) {
+            if (!_hasElements) {
+              _hasElements = true;
+              _builder.append("0 }", "  \t");
+            } else {
+              _builder.appendImmediate(" }", "  \t");
+            }
+          }
+        }
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        _builder.append("}");
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.newLine();
+      }
+    }
     _builder.append("}");
     _builder.newLine();
     return _builder.toString();
+  }
+  
+  public static Iterable<EStructuralFeature> orderingKeys(final EClass eClass) {
+    List<EStructuralFeature> _sortedAttributes = OMLSpecificationTablesGenerator.getSortedAttributes(eClass);
+    final Function1<EStructuralFeature, Boolean> _function = (EStructuralFeature f) -> {
+      EAnnotation _eAnnotation = f.getEAnnotation("http://imce.jpl.nasa.gov/oml/IsOrderingKey");
+      return Boolean.valueOf((!Objects.equal(null, _eAnnotation)));
+    };
+    return IterableExtensions.<EStructuralFeature>filter(_sortedAttributes, _function);
   }
   
   public String generateClassFile(final EClass eClass, final String packageQName) {
@@ -1777,8 +1891,23 @@ public class OMLSpecificationTablesGenerator {
   }
   
   public static Boolean isFunctionalAPI(final ENamedElement e) {
-    EAnnotation _eAnnotation = e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotFunctionalAPI");
-    return Boolean.valueOf(Objects.equal(null, _eAnnotation));
+    boolean _xifexpression = false;
+    if (((OMLSpecificationTablesGenerator.isSchema(e)).booleanValue() && Objects.equal(null, e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotFunctionalAPI")))) {
+      boolean _switchResult = false;
+      boolean _matched = false;
+      if (e instanceof EClass) {
+        _matched=true;
+        boolean _isAbstract = ((EClass)e).isAbstract();
+        _switchResult = (!_isAbstract);
+      }
+      if (!_matched) {
+        _switchResult = true;
+      }
+      _xifexpression = _switchResult;
+    } else {
+      _xifexpression = false;
+    }
+    return Boolean.valueOf(_xifexpression);
   }
   
   public static Boolean isValueTable(final ENamedElement e) {
