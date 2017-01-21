@@ -112,6 +112,11 @@ public class OMLSpecificationResolverAPIGenerator {
       String _generatePackageFile = this.generatePackageFile(ePackage, packageQName);
       byte[] _bytes = _generatePackageFile.getBytes();
       packageFile.write(_bytes);
+      File _file_1 = new File(((targetFolder + File.separator) + "OMLResolvedFactory.scala"));
+      final FileOutputStream factoryFile = new FileOutputStream(_file_1);
+      String _generateFactoryFile = this.generateFactoryFile(ePackage, packageQName);
+      byte[] _bytes_1 = _generateFactoryFile.getBytes();
+      factoryFile.write(_bytes_1);
       EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
       Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
       final Function1<EClass, Boolean> _function = (EClass it) -> {
@@ -123,11 +128,11 @@ public class OMLSpecificationResolverAPIGenerator {
           String _name = eClass.getName();
           String _plus = ((targetFolder + File.separator) + _name);
           String _plus_1 = (_plus + ".scala");
-          File _file_1 = new File(_plus_1);
-          final FileOutputStream classFile = new FileOutputStream(_file_1);
+          File _file_2 = new File(_plus_1);
+          final FileOutputStream classFile = new FileOutputStream(_file_2);
           String _generateClassFile = this.generateClassFile(eClass);
-          byte[] _bytes_1 = _generateClassFile.getBytes();
-          classFile.write(_bytes_1);
+          byte[] _bytes_2 = _generateClassFile.getBytes();
+          classFile.write(_bytes_2);
         }
       }
     } catch (Throwable _e) {
@@ -278,6 +283,115 @@ public class OMLSpecificationResolverAPIGenerator {
     return _builder.toString();
   }
   
+  public String generateFactoryFile(final EPackage ePackage, final String packageQName) {
+    StringConcatenation _builder = new StringConcatenation();
+    CharSequence _copyright = this.copyright();
+    _builder.append(_copyright, "");
+    _builder.newLineIfNotEmpty();
+    _builder.append("package ");
+    _builder.append(packageQName, "");
+    _builder.newLineIfNotEmpty();
+    _builder.newLine();
+    _builder.append("trait OMLResolvedFactory {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    {
+      Iterable<EClass> _FunctionalAPIClasses = OMLSpecificationResolverAPIGenerator.FunctionalAPIClasses(ePackage);
+      final Function1<EClass, Boolean> _function = (EClass it) -> {
+        boolean _isAbstract = it.isAbstract();
+        return Boolean.valueOf((!_isAbstract));
+      };
+      Iterable<EClass> _filter = IterableExtensions.<EClass>filter(_FunctionalAPIClasses, _function);
+      final Function1<EClass, String> _function_1 = (EClass it) -> {
+        return it.getName();
+      };
+      List<EClass> _sortBy = IterableExtensions.<EClass, String>sortBy(_filter, _function_1);
+      for(final EClass eClass : _sortBy) {
+        _builder.append("  ");
+        _builder.append("// ");
+        String _name = eClass.getName();
+        _builder.append(_name, "  ");
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.append("def create");
+        String _name_1 = eClass.getName();
+        _builder.append(_name_1, "  ");
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        {
+          List<EStructuralFeature> _sortedAttributeSignature = OMLSpecificationResolverAPIGenerator.getSortedAttributeSignature(eClass);
+          boolean _hasElements = false;
+          for(final EStructuralFeature attr : _sortedAttributeSignature) {
+            if (!_hasElements) {
+              _hasElements = true;
+              _builder.append("(", "  ");
+            } else {
+              _builder.appendImmediate(",\n ", "  ");
+            }
+            _builder.append(" ");
+            String _name_2 = attr.getName();
+            _builder.append(_name_2, "  ");
+            _builder.append(": ");
+            String _queryType = OMLSpecificationResolverAPIGenerator.queryType(attr);
+            _builder.append(_queryType, "  ");
+          }
+          if (_hasElements) {
+            _builder.append(" )", "  ");
+          }
+        }
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        _builder.append(": ");
+        String _name_3 = eClass.getName();
+        _builder.append(_name_3, "  ");
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        _builder.newLine();
+        {
+          Iterable<EStructuralFeature> _lookupCopyConstructorArguments = OMLSpecificationResolverAPIGenerator.lookupCopyConstructorArguments(eClass);
+          for(final EStructuralFeature attr_1 : _lookupCopyConstructorArguments) {
+            _builder.append("  ");
+            _builder.append("def copy");
+            String _name_4 = eClass.getName();
+            _builder.append(_name_4, "  ");
+            _builder.append("_");
+            String _name_5 = attr_1.getName();
+            _builder.append(_name_5, "  ");
+            _builder.newLineIfNotEmpty();
+            _builder.append("  ");
+            _builder.append("( that: ");
+            String _name_6 = eClass.getName();
+            _builder.append(_name_6, "  ");
+            _builder.append(",");
+            _builder.newLineIfNotEmpty();
+            _builder.append("  ");
+            _builder.append("  ");
+            String _name_7 = attr_1.getName();
+            _builder.append(_name_7, "    ");
+            _builder.append(": ");
+            String _queryType_1 = OMLSpecificationResolverAPIGenerator.queryType(attr_1);
+            _builder.append(_queryType_1, "    ");
+            _builder.append(" )");
+            _builder.newLineIfNotEmpty();
+            _builder.append("  ");
+            _builder.append(": ");
+            String _name_8 = eClass.getName();
+            _builder.append(_name_8, "  ");
+            _builder.newLineIfNotEmpty();
+            _builder.append("  ");
+            _builder.newLine();
+          }
+        }
+      }
+    }
+    _builder.append("}");
+    _builder.newLine();
+    return _builder.toString();
+  }
+  
   public String generateClassFile(final EClass eClass) {
     StringConcatenation _builder = new StringConcatenation();
     CharSequence _copyright = this.copyright();
@@ -366,6 +480,17 @@ public class OMLSpecificationResolverAPIGenerator {
       return Boolean.valueOf((!Objects.equal(null, _eAnnotation)));
     };
     return IterableExtensions.<EStructuralFeature>filter(_sortedAttributes, _function);
+  }
+  
+  public static List<EStructuralFeature> getSortedAttributeSignature(final EClass eClass) {
+    List<EClass> _selfAndAllSupertypes = OMLSpecificationResolverAPIGenerator.selfAndAllSupertypes(eClass);
+    final Function1<EClass, EList<EStructuralFeature>> _function = (EClass it) -> {
+      return it.getEStructuralFeatures();
+    };
+    List<EList<EStructuralFeature>> _map = ListExtensions.<EClass, EList<EStructuralFeature>>map(_selfAndAllSupertypes, _function);
+    Iterable<EStructuralFeature> _flatten = Iterables.<EStructuralFeature>concat(_map);
+    OMLSpecificationResolverAPIGenerator.OMLFeatureCompare _oMLFeatureCompare = new OMLSpecificationResolverAPIGenerator.OMLFeatureCompare();
+    return IterableExtensions.<EStructuralFeature>sortWith(_flatten, _oMLFeatureCompare);
   }
   
   public static List<EStructuralFeature> getSortedAttributes(final EClass eClass) {
@@ -690,6 +815,19 @@ public class OMLSpecificationResolverAPIGenerator {
       _xblockexpression = (_plus_2 + _xifexpression_2);
     }
     return _xblockexpression;
+  }
+  
+  public static Iterable<EStructuralFeature> lookupCopyConstructorArguments(final EClass eClass) {
+    List<EStructuralFeature> _sortedAttributeSignature = OMLSpecificationResolverAPIGenerator.getSortedAttributeSignature(eClass);
+    final Function1<EStructuralFeature, Boolean> _function = (EStructuralFeature it) -> {
+      return OMLSpecificationResolverAPIGenerator.isCopyConstructorArgument(it);
+    };
+    return IterableExtensions.<EStructuralFeature>filter(_sortedAttributeSignature, _function);
+  }
+  
+  public static Boolean isCopyConstructorArgument(final EStructuralFeature attribute) {
+    EAnnotation _eAnnotation = attribute.getEAnnotation("http://imce.jpl.nasa.gov/oml/CopyConstructor");
+    return Boolean.valueOf((!Objects.equal(null, _eAnnotation)));
   }
   
   public static String queryType(final EOperation op) {

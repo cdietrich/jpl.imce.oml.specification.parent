@@ -112,6 +112,11 @@ public class OMLSpecificationResolverLibraryGenerator {
   
   public void generate(final EPackage ePackage, final String targetFolder) {
     try {
+      File _file = new File(((targetFolder + File.separator) + "OMLResolvedFactoryImpl.scala"));
+      final FileOutputStream factoryFile = new FileOutputStream(_file);
+      String _generateFactoryFile = this.generateFactoryFile(ePackage, "gov.nasa.jpl.imce.oml.specification.resolver.impl");
+      byte[] _bytes = _generateFactoryFile.getBytes();
+      factoryFile.write(_bytes);
       EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
       Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
       final Function1<EClass, Boolean> _function = (EClass it) -> {
@@ -123,16 +128,174 @@ public class OMLSpecificationResolverLibraryGenerator {
           String _name = eClass.getName();
           String _plus = ((targetFolder + File.separator) + _name);
           String _plus_1 = (_plus + ".scala");
-          File _file = new File(_plus_1);
-          final FileOutputStream classFile = new FileOutputStream(_file);
+          File _file_1 = new File(_plus_1);
+          final FileOutputStream classFile = new FileOutputStream(_file_1);
           String _generateClassFile = this.generateClassFile(eClass);
-          byte[] _bytes = _generateClassFile.getBytes();
-          classFile.write(_bytes);
+          byte[] _bytes_1 = _generateClassFile.getBytes();
+          classFile.write(_bytes_1);
         }
       }
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
+  }
+  
+  public String generateFactoryFile(final EPackage ePackage, final String packageQName) {
+    StringConcatenation _builder = new StringConcatenation();
+    CharSequence _copyright = this.copyright();
+    _builder.append(_copyright, "");
+    _builder.newLineIfNotEmpty();
+    _builder.append("package ");
+    _builder.append(packageQName, "");
+    _builder.newLineIfNotEmpty();
+    _builder.newLine();
+    _builder.append("import gov.nasa.jpl.imce.oml.specification._");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("case class OMLResolvedFactoryImpl() extends resolver.api.OMLResolvedFactory {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    {
+      Iterable<EClass> _FunctionalAPIClasses = OMLSpecificationResolverLibraryGenerator.FunctionalAPIClasses(ePackage);
+      final Function1<EClass, Boolean> _function = (EClass it) -> {
+        boolean _isAbstract = it.isAbstract();
+        return Boolean.valueOf((!_isAbstract));
+      };
+      Iterable<EClass> _filter = IterableExtensions.<EClass>filter(_FunctionalAPIClasses, _function);
+      final Function1<EClass, String> _function_1 = (EClass it) -> {
+        return it.getName();
+      };
+      List<EClass> _sortBy = IterableExtensions.<EClass, String>sortBy(_filter, _function_1);
+      for(final EClass eClass : _sortBy) {
+        _builder.append("  ");
+        _builder.append("// ");
+        String _name = eClass.getName();
+        _builder.append(_name, "  ");
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.append("def create");
+        String _name_1 = eClass.getName();
+        _builder.append(_name_1, "  ");
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        {
+          Iterable<EStructuralFeature> _sortedAttributeSignature = OMLSpecificationResolverLibraryGenerator.getSortedAttributeSignature(eClass);
+          boolean _hasElements = false;
+          for(final EStructuralFeature attr : _sortedAttributeSignature) {
+            if (!_hasElements) {
+              _hasElements = true;
+              _builder.append("(", "  ");
+            } else {
+              _builder.appendImmediate(",\n ", "  ");
+            }
+            _builder.append(" ");
+            String _name_2 = attr.getName();
+            _builder.append(_name_2, "  ");
+            _builder.append(": ");
+            String _queryType = OMLSpecificationResolverLibraryGenerator.queryType(attr);
+            _builder.append(_queryType, "  ");
+          }
+          if (_hasElements) {
+            _builder.append(")", "  ");
+          }
+        }
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        _builder.append(": resolver.api.");
+        String _name_3 = eClass.getName();
+        _builder.append(_name_3, "  ");
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        _builder.append("= resolver.impl.");
+        String _name_4 = eClass.getName();
+        _builder.append(_name_4, "  ");
+        {
+          Iterable<EStructuralFeature> _sortedAttributeSignature_1 = OMLSpecificationResolverLibraryGenerator.getSortedAttributeSignature(eClass);
+          boolean _hasElements_1 = false;
+          for(final EStructuralFeature attr_1 : _sortedAttributeSignature_1) {
+            if (!_hasElements_1) {
+              _hasElements_1 = true;
+              _builder.append("(\n", "  ");
+            } else {
+              _builder.appendImmediate(",\n", "  ");
+            }
+            _builder.append("  ");
+            String _name_5 = attr_1.getName();
+            _builder.append(_name_5, "  ");
+          }
+          if (_hasElements_1) {
+            _builder.append(" )", "  ");
+          }
+        }
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        _builder.newLine();
+        {
+          Iterable<EStructuralFeature> _lookupCopyConstructorArguments = OMLSpecificationResolverLibraryGenerator.lookupCopyConstructorArguments(eClass);
+          for(final EStructuralFeature attr_2 : _lookupCopyConstructorArguments) {
+            _builder.append("  ");
+            _builder.append("def copy");
+            String _name_6 = eClass.getName();
+            _builder.append(_name_6, "  ");
+            _builder.append("_");
+            String _name_7 = attr_2.getName();
+            _builder.append(_name_7, "  ");
+            _builder.newLineIfNotEmpty();
+            _builder.append("  ");
+            _builder.append("( that: resolver.api.");
+            String _name_8 = eClass.getName();
+            _builder.append(_name_8, "  ");
+            _builder.append(",");
+            _builder.newLineIfNotEmpty();
+            _builder.append("  ");
+            _builder.append("  ");
+            String _name_9 = attr_2.getName();
+            _builder.append(_name_9, "    ");
+            _builder.append(": ");
+            String _queryType_1 = OMLSpecificationResolverLibraryGenerator.queryType(attr_2);
+            _builder.append(_queryType_1, "    ");
+            _builder.append(" )");
+            _builder.newLineIfNotEmpty();
+            _builder.append("  ");
+            _builder.append(": resolver.api.");
+            String _name_10 = eClass.getName();
+            _builder.append(_name_10, "  ");
+            _builder.newLineIfNotEmpty();
+            _builder.append("  ");
+            _builder.append("= that match {");
+            _builder.newLine();
+            _builder.append("  ");
+            _builder.append("\t");
+            _builder.append("case x: resolver.impl.");
+            String _name_11 = eClass.getName();
+            _builder.append(_name_11, "  \t");
+            _builder.append(" =>");
+            _builder.newLineIfNotEmpty();
+            _builder.append("  ");
+            _builder.append("\t  ");
+            _builder.append("x.copy(");
+            String _name_12 = attr_2.getName();
+            _builder.append(_name_12, "  \t  ");
+            _builder.append(" = ");
+            String _name_13 = attr_2.getName();
+            _builder.append(_name_13, "  \t  ");
+            _builder.append(")");
+            _builder.newLineIfNotEmpty();
+            _builder.append("  ");
+            _builder.append("}");
+            _builder.newLine();
+            _builder.append("  ");
+            _builder.newLine();
+          }
+        }
+      }
+    }
+    _builder.append("}");
+    _builder.newLine();
+    return _builder.toString();
   }
   
   public String generateClassFile(final EClass eClass) {
@@ -161,14 +324,8 @@ public class OMLSpecificationResolverLibraryGenerator {
     _builder.newLine();
     {
       Iterable<EOperation> _ScalaOperations = OMLSpecificationResolverLibraryGenerator.ScalaOperations(eClass);
-      boolean _hasElements = false;
       for(final EOperation op : _ScalaOperations) {
-        if (!_hasElements) {
-          _hasElements = true;
-          _builder.append("\n  ", "");
-        } else {
-          _builder.appendImmediate("\n  ", "");
-        }
+        _builder.append("  ");
         String _doc = OMLSpecificationResolverLibraryGenerator.doc(op, "  ");
         _builder.append(_doc, "");
         String _queryName = OMLSpecificationResolverLibraryGenerator.queryName(op);
@@ -187,28 +344,28 @@ public class OMLSpecificationResolverLibraryGenerator {
         _builder.append("  ");
         _builder.newLine();
       }
-      if (_hasElements) {
-        _builder.append("\n", "");
+    }
+    {
+      Boolean _isSpecializationOfRootClass = OMLSpecificationResolverLibraryGenerator.isSpecializationOfRootClass(eClass);
+      if ((_isSpecializationOfRootClass).booleanValue()) {
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.append("override def canEqual(that: scala.Any): scala.Boolean = that match {");
+        _builder.newLine();
+        _builder.append("  \t");
+        _builder.append("case _: ");
+        String _name = eClass.getName();
+        _builder.append(_name, "  \t");
+        _builder.append(" => true");
+        _builder.newLineIfNotEmpty();
+        _builder.append("  \t");
+        _builder.append("case _ => false");
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.append("}");
+        _builder.newLine();
       }
     }
-    _builder.append("  ");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("override def canEqual(that: scala.Any): scala.Boolean = that match {");
-    _builder.newLine();
-    _builder.append("  \t");
-    _builder.append("case _: ");
-    String _name = eClass.getName();
-    _builder.append(_name, "  \t");
-    _builder.append(" => true");
-    _builder.newLineIfNotEmpty();
-    _builder.append("  \t");
-    _builder.append("case _ => false");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
     {
       boolean _isAbstract_1 = eClass.isAbstract();
       boolean _not = (!_isAbstract_1);
@@ -223,11 +380,11 @@ public class OMLSpecificationResolverLibraryGenerator {
         _builder.append("  ");
         _builder.append("= ");
         {
-          Iterable<EStructuralFeature> _sortedAttributes = OMLSpecificationResolverLibraryGenerator.getSortedAttributes(eClass);
-          boolean _hasElements_1 = false;
-          for(final EStructuralFeature keyFeature : _sortedAttributes) {
-            if (!_hasElements_1) {
-              _hasElements_1 = true;
+          Iterable<EStructuralFeature> _sortedAttributeSignature = OMLSpecificationResolverLibraryGenerator.getSortedAttributeSignature(eClass);
+          boolean _hasElements = false;
+          for(final EStructuralFeature keyFeature : _sortedAttributeSignature) {
+            if (!_hasElements) {
+              _hasElements = true;
               _builder.append("(", "  ");
             } else {
               _builder.appendImmediate(", ", "  ");
@@ -235,7 +392,7 @@ public class OMLSpecificationResolverLibraryGenerator {
             String _name_1 = keyFeature.getName();
             _builder.append(_name_1, "  ");
           }
-          if (_hasElements_1) {
+          if (_hasElements) {
             _builder.append(").##", "  ");
           }
         }
@@ -255,11 +412,11 @@ public class OMLSpecificationResolverLibraryGenerator {
         _builder.newLine();
         _builder.append("\t    ");
         {
-          Iterable<EStructuralFeature> _sortedAttributes_1 = OMLSpecificationResolverLibraryGenerator.getSortedAttributes(eClass);
-          boolean _hasElements_2 = false;
-          for(final EStructuralFeature keyFeature_1 : _sortedAttributes_1) {
-            if (!_hasElements_2) {
-              _hasElements_2 = true;
+          Iterable<EStructuralFeature> _sortedAttributeSignature_1 = OMLSpecificationResolverLibraryGenerator.getSortedAttributeSignature(eClass);
+          boolean _hasElements_1 = false;
+          for(final EStructuralFeature keyFeature_1 : _sortedAttributeSignature_1) {
+            if (!_hasElements_1) {
+              _hasElements_1 = true;
             } else {
               _builder.appendImmediate(" &&\n", "\t    ");
             }
@@ -331,9 +488,9 @@ public class OMLSpecificationResolverLibraryGenerator {
         _builder.append("(");
         _builder.newLine();
         {
-          Iterable<EStructuralFeature> _sortedAttributes = OMLSpecificationResolverLibraryGenerator.getSortedAttributes(eClass);
+          Iterable<EStructuralFeature> _sortedAttributeSignature = OMLSpecificationResolverLibraryGenerator.getSortedAttributeSignature(eClass);
           boolean _hasElements = false;
-          for(final EStructuralFeature attr : _sortedAttributes) {
+          for(final EStructuralFeature attr : _sortedAttributeSignature) {
             if (!_hasElements) {
               _hasElements = true;
             } else {
@@ -390,7 +547,7 @@ public class OMLSpecificationResolverLibraryGenerator {
     return IterableExtensions.<EStructuralFeature>sortWith(_filter, _oMLFeatureCompare);
   }
   
-  public static Iterable<EStructuralFeature> getSortedAttributes(final EClass eClass) {
+  public static Iterable<EStructuralFeature> getSortedAttributeSignature(final EClass eClass) {
     Iterable<EClass> _selfAndAllSupertypes = OMLSpecificationResolverLibraryGenerator.selfAndAllSupertypes(eClass);
     final Function1<EClass, Iterable<EStructuralFeature>> _function = (EClass it) -> {
       return OMLSpecificationResolverLibraryGenerator.APIStructuralFeatures(it);
@@ -488,7 +645,8 @@ public class OMLSpecificationResolverLibraryGenerator {
           _switchResult = "gov.nasa.jpl.imce.oml.specification.tables.TerminologyGraphKind";
           break;
         default:
-          _switchResult = type.getName();
+          String _name_1 = type.getName();
+          _switchResult = ("resolver.api." + _name_1);
           break;
       }
       _xblockexpression = _switchResult;
@@ -602,6 +760,19 @@ public class OMLSpecificationResolverLibraryGenerator {
     return _xblockexpression;
   }
   
+  public static Iterable<EStructuralFeature> lookupCopyConstructorArguments(final EClass eClass) {
+    Iterable<EStructuralFeature> _sortedAttributeSignature = OMLSpecificationResolverLibraryGenerator.getSortedAttributeSignature(eClass);
+    final Function1<EStructuralFeature, Boolean> _function = (EStructuralFeature it) -> {
+      return OMLSpecificationResolverLibraryGenerator.isCopyConstructorArgument(it);
+    };
+    return IterableExtensions.<EStructuralFeature>filter(_sortedAttributeSignature, _function);
+  }
+  
+  public static Boolean isCopyConstructorArgument(final EStructuralFeature attribute) {
+    EAnnotation _eAnnotation = attribute.getEAnnotation("http://imce.jpl.nasa.gov/oml/CopyConstructor");
+    return Boolean.valueOf((!Objects.equal(null, _eAnnotation)));
+  }
+  
   public static String queryName(final EOperation op) {
     String _xblockexpression = null;
     {
@@ -645,14 +816,7 @@ public class OMLSpecificationResolverLibraryGenerator {
       String _plus = ((decl + " ") + _name_1);
       String _plus_1 = (_plus + "\n  (");
       String _plus_2 = (_plus_1 + args);
-      String _xifexpression_2 = null;
-      boolean _isEmpty_1 = args.isEmpty();
-      if (_isEmpty_1) {
-        _xifexpression_2 = ")";
-      } else {
-        _xifexpression_2 = "\n  )";
-      }
-      _xblockexpression = (_plus_2 + _xifexpression_2);
+      _xblockexpression = (_plus_2 + ")");
     }
     return _xblockexpression;
   }
@@ -660,6 +824,7 @@ public class OMLSpecificationResolverLibraryGenerator {
   public static String queryType(final EOperation op) {
     String _xblockexpression = null;
     {
+      final String scalaType = OMLSpecificationResolverLibraryGenerator.scalaTypeName(op);
       EAnnotation _eAnnotation = op.getEAnnotation("http://imce.jpl.nasa.gov/oml/Collection");
       EMap<String, String> _details = null;
       if (_eAnnotation!=null) {
@@ -682,38 +847,24 @@ public class OMLSpecificationResolverLibraryGenerator {
           String _xblockexpression_1 = null;
           {
             final String key = ann.get("key");
-            EClassifier _eType = op.getEType();
-            String _name = _eType.getName();
-            String _plus = ((("scala.collection.immutable.Map[" + key) + ", resolver.api.") + _name);
-            _xblockexpression_1 = (_plus + "]");
+            _xblockexpression_1 = (((("scala.collection.immutable.Map[" + key) + ", ") + scalaType) + "]");
           }
           _switchResult = _xblockexpression_1;
           break;
         case "SortedSet":
-          EClassifier _eType = op.getEType();
-          String _name = _eType.getName();
-          String _plus = ("scala.collection.immutable.SortedSet[resolver.api." + _name);
-          _switchResult = (_plus + "]");
+          _switchResult = (("scala.collection.immutable.SortedSet[" + scalaType) + "]");
           break;
         case "Set":
-          EClassifier _eType_1 = op.getEType();
-          String _name_1 = _eType_1.getName();
-          String _plus_1 = ("scala.collection.immutable.Set[_ <: resolver.api." + _name_1);
-          _switchResult = (_plus_1 + "]");
+          _switchResult = (("scala.collection.immutable.Set[_ <: " + scalaType) + "]");
           break;
         default:
           String _xifexpression = null;
           int _lowerBound = op.getLowerBound();
           boolean _equals = (0 == _lowerBound);
           if (_equals) {
-            EClassifier _eType_2 = op.getEType();
-            String _name_2 = _eType_2.getName();
-            String _plus_2 = ("scala.Option[resolver.api." + _name_2);
-            _xifexpression = (_plus_2 + "]");
+            _xifexpression = (("scala.Option[" + scalaType) + "]");
           } else {
-            EClassifier _eType_3 = op.getEType();
-            String _name_3 = _eType_3.getName();
-            _xifexpression = ("resolver.api." + _name_3);
+            _xifexpression = scalaType;
           }
           _switchResult = _xifexpression;
           break;
@@ -824,10 +975,9 @@ public class OMLSpecificationResolverLibraryGenerator {
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("{");
         _builder.newLine();
-        _builder.append("\t\t\t  ");
-        _builder.append(scalaCode, "\t\t\t  ");
+        _builder.append("  ");
+        _builder.append(scalaCode, "  ");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t\t\t");
         _builder.append("}");
         _xifexpression = _builder.toString();
       } else {

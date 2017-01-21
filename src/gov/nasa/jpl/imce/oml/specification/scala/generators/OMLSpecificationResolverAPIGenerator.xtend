@@ -43,6 +43,8 @@ class OMLSpecificationResolverAPIGenerator {
 	def generate(EPackage ePackage, String packageQName, String targetFolder) {
 		val packageFile = new FileOutputStream(new File(targetFolder + File::separator + "package.scala"))
 		packageFile.write(generatePackageFile(ePackage, packageQName).bytes)
+		val factoryFile = new FileOutputStream(new File(targetFolder + File::separator + "OMLResolvedFactory.scala"))
+		factoryFile.write(generateFactoryFile(ePackage, packageQName).bytes)
 		for(eClass : ePackage.EClassifiers.filter(EClass).filter[isAPI])  {
 			val classFile = new FileOutputStream(new File(targetFolder + File::separator + eClass.name + ".scala"))
 			classFile.write(generateClassFile(eClass).bytes)
@@ -71,6 +73,30 @@ class OMLSpecificationResolverAPIGenerator {
 		}
 	'''
 	
+	def String generateFactoryFile(EPackage ePackage, String packageQName) '''
+		«copyright»
+		package «packageQName»
+		
+		trait OMLResolvedFactory {
+			
+		  «FOR eClass: ePackage.FunctionalAPIClasses.filter[!isAbstract].sortBy[name]»
+		  // «eClass.name»
+		  
+		  def create«eClass.name»
+		  «FOR attr : eClass.getSortedAttributeSignature BEFORE "(" SEPARATOR ",\n " AFTER " )"» «attr.name»: «attr.queryType»«ENDFOR»
+		  : «eClass.name»
+		  
+		  «FOR attr: eClass.lookupCopyConstructorArguments»
+		  def copy«eClass.name»_«attr.name»
+		  ( that: «eClass.name»,
+		    «attr.name»: «attr.queryType» )
+		  : «eClass.name»
+		  
+		  «ENDFOR»
+		  «ENDFOR»
+		}
+	'''
+	
 	def String generateClassFile(EClass eClass) '''
 		«copyright»
 		package gov.nasa.jpl.imce.oml.specification.resolver.api
@@ -92,6 +118,13 @@ class OMLSpecificationResolverAPIGenerator {
 		.filter([EStructuralFeature f | null != f.getEAnnotation("http://imce.jpl.nasa.gov/oml/IsOrderingKey")])
 	} 
 	
+	static def List<EStructuralFeature> getSortedAttributeSignature(EClass eClass) {
+		eClass
+		.selfAndAllSupertypes
+		.map[EStructuralFeatures]
+		.flatten
+		.sortWith(new OMLFeatureCompare())
+	}
 	
 	static def List<EStructuralFeature> getSortedAttributes(EClass eClass) {
 		eClass
@@ -261,6 +294,14 @@ class OMLSpecificationResolverAPIGenerator {
 		val decl = if (null != op.getEAnnotation("http://imce.jpl.nasa.gov/oml/Override")) "override "+kind else kind
 		val args = '''«FOR p : op.EParameters SEPARATOR ",\n  "»«p.name»: «p.queryType»«ENDFOR»'''
 		decl+" "+op.name+"\n  ("+args+(if (args.empty) ")" else "\n  )")
+	}
+	
+	static def Iterable<EStructuralFeature> lookupCopyConstructorArguments(EClass eClass) {
+		eClass.getSortedAttributeSignature.filter[isCopyConstructorArgument]
+	}
+	
+	static def Boolean isCopyConstructorArgument(EStructuralFeature attribute) {
+		null != attribute.getEAnnotation("http://imce.jpl.nasa.gov/oml/CopyConstructor")
 	}
 	
 	static def String queryType(EOperation op) {
