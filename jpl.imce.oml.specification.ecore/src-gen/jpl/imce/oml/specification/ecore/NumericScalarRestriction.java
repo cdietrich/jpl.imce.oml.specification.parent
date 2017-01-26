@@ -1,0 +1,166 @@
+/**
+ * 
+ * Copyright 2016 California Institute of Technology ("Caltech").
+ * U.S. Government sponsorship acknowledged.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+package jpl.imce.oml.specification.ecore;
+
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Numeric Scalar Restriction</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <!-- begin-model-doc -->
+ * A data range that specifies how one numeric scalar range adds facet restrictions to another.
+ * Applies when the restricted scalar represents real, decimal or integer numbers (OWL2: 4.1/4.2)
+ * i.e., when it is one of the following scalars (or their transitively restricted ones):
+ * owl:real
+ * owl:rational
+ * xsd:decimal
+ * xsd:integer
+ * xsd:nonNegativeInteger
+ * xsd:nonPositiveInteger
+ * xsd:positiveInteger
+ * xsd:negativeInteger
+ * xsd:long
+ * xsd:int
+ * xsd:short
+ * xsd:byte
+ * xsd:unsignedLong
+ * xsd:unsignedInt
+ * xsd:unsignedShort
+ * xsd:unsignedByte
+ * xsd:double
+ * xsd:float
+ * <!-- end-model-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link jpl.imce.oml.specification.ecore.NumericScalarRestriction#getMinInclusive <em>Min Inclusive</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.NumericScalarRestriction#getMaxInclusive <em>Max Inclusive</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.NumericScalarRestriction#getMinExclusive <em>Min Exclusive</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.NumericScalarRestriction#getMaxExclusive <em>Max Exclusive</em>}</li>
+ * </ul>
+ *
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getNumericScalarRestriction()
+ * @model
+ * @generated
+ */
+public interface NumericScalarRestriction extends RestrictedDataRange {
+	/**
+	 * Returns the value of the '<em><b>Min Inclusive</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The inclusive minimum value in the range
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Min Inclusive</em>' attribute.
+	 * @see #setMinInclusive(String)
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getNumericScalarRestriction_MinInclusive()
+	 * @model unique="false" dataType="jpl.imce.oml.specification.ecore.LexicalNumber"
+	 * @generated
+	 */
+	String getMinInclusive();
+
+	/**
+	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.NumericScalarRestriction#getMinInclusive <em>Min Inclusive</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Inclusive</em>' attribute.
+	 * @see #getMinInclusive()
+	 * @generated
+	 */
+	void setMinInclusive(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Inclusive</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The inclusive maximum value in the range
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Max Inclusive</em>' attribute.
+	 * @see #setMaxInclusive(String)
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getNumericScalarRestriction_MaxInclusive()
+	 * @model unique="false" dataType="jpl.imce.oml.specification.ecore.LexicalNumber"
+	 * @generated
+	 */
+	String getMaxInclusive();
+
+	/**
+	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.NumericScalarRestriction#getMaxInclusive <em>Max Inclusive</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Inclusive</em>' attribute.
+	 * @see #getMaxInclusive()
+	 * @generated
+	 */
+	void setMaxInclusive(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Exclusive</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The exclusive minimum value in the range
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Min Exclusive</em>' attribute.
+	 * @see #setMinExclusive(String)
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getNumericScalarRestriction_MinExclusive()
+	 * @model unique="false" dataType="jpl.imce.oml.specification.ecore.LexicalNumber"
+	 * @generated
+	 */
+	String getMinExclusive();
+
+	/**
+	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.NumericScalarRestriction#getMinExclusive <em>Min Exclusive</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Exclusive</em>' attribute.
+	 * @see #getMinExclusive()
+	 * @generated
+	 */
+	void setMinExclusive(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Exclusive</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The exclusive maximum value in the range
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Max Exclusive</em>' attribute.
+	 * @see #setMaxExclusive(String)
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getNumericScalarRestriction_MaxExclusive()
+	 * @model unique="false" dataType="jpl.imce.oml.specification.ecore.LexicalNumber"
+	 * @generated
+	 */
+	String getMaxExclusive();
+
+	/**
+	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.NumericScalarRestriction#getMaxExclusive <em>Max Exclusive</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Exclusive</em>' attribute.
+	 * @see #getMaxExclusive()
+	 * @generated
+	 */
+	void setMaxExclusive(String value);
+
+} // NumericScalarRestriction

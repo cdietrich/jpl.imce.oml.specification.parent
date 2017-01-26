@@ -1,0 +1,1161 @@
+@GenModel(copyrightText="
+Copyright 2016 California Institute of Technology (\"Caltech\").
+U.S. Government sponsorship acknowledged.
+
+Licensed under the Apache License, Version 2.0 (the \"License\");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an \"AS IS\" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+", featureDelegation="None",
+   modelPluginVariables="org.eclipse.xtext.xbase.lib org.eclipse.emf.ecore.xcore.lib org.eclipse.emf.cdo",
+   rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl",
+   rootExtendsInterface="org.eclipse.emf.cdo.CDOObject",
+   childCreationExtenders="true", 
+   pluginKey="OML", 
+   modelName="OML", prefix="OML",
+   modelPluginID="jpl.imce.oml.specification.ecore",
+   modelDirectory="/jpl.imce.oml.specification.ecore/src-gen", 
+   
+   editPluginID="jpl.imce.oml.specification.ecore.edit",
+   editPluginClass="jpl.imce.oml.specification.ecore.edit.provider.OMLEditPlugin", 
+   editDirectory="/jpl.imce.oml.specification.ecore.edit/src-gen", 
+   
+   editorPluginID="jpl.imce.oml.specification.ecore.editor", 
+   editorPluginClass="jpl.imce.oml.specification.eore.editor.presentation.OMLEditorPlugin", 
+   editorDirectory="/jpl.imce.oml.specification.ecore.editor/src-gen")
+   
+package jpl.imce.oml.specification.ecore
+
+/* 
+ * If present, the value of the 'kind' key specifies a Scala immutable collection.
+ * Recognized values are 'Map' (the key type is specified in the 'key' value) and 'Set'
+ */
+annotation "http://imce.jpl.nasa.gov/oml/Collection" as Collection
+
+/* 
+ * If present, indicates that this feature overrides another feature in a parent.
+ * Normally, this information should be accessible from the EMF API; however,
+ * it is not obvious how to get it.
+ */
+annotation "http://imce.jpl.nasa.gov/oml/Override" as Override
+
+/*
+ * If present, disables including the feature in the resolver API & resolver Implementation
+ * This is used for:
+ * - classes that are intended for the EMF API but not the functional resolver API
+ * - operations that will generate an EMF API operation but have no sensible equivalent in the functional resolver API
+ * - structural features with a corresponding read-only immutable query operation
+ *   (the structural feature is not part of the functional API; the immutable query operation is)
+ * - inverse container features
+ */
+annotation "http://imce.jpl.nasa.gov/oml/NotFunctionalAPI" as NotFunctionalAPI
+
+/*
+ * If present, disables including the feature in the normalized schema tables API
+ */
+annotation "http://imce.jpl.nasa.gov/oml/NotSchema" as NotSchema
+
+/*
+ * If present, indicates that a Class represents a value in some other table
+ */
+annotation "http://imce.jpl.nasa.gov/oml/ValueTable" as ValueTable
+
+/*
+ * Use @Scala(code="...") when the XCore operation body
+ * is an Xbase XMemberFeatureCall because the XCore API
+ * assumes that the generated code is for Java so it internally
+ * converts feature calls into Java query operation calls.
+ */
+annotation "http://imce.jpl.nasa.gov/oml/Scala" as Scala
+
+/*
+ * Use on structural features to specify whether it participates in ordering criteria for instances of the class.
+ */
+annotation "http://imce.jpl.nasa.gov/oml/IsOrderingKey" as IsOrderingKey
+
+/*
+ * Use on a structural feature to specify that the OMLResolvedFactory needs to include a "copy" constructor
+ * to clone an instance of the feature's class replacing the value of the annotated feature. 
+ */
+annotation "http://imce.jpl.nasa.gov/oml/CopyConstructor" as CopyConstructor
+
+/*
+ * An IRI based on RFC 3987
+ */
+type IRI wraps String
+/*
+ * A local name of an IRI
+ */
+type LocalName wraps String
+/*
+ * A lexical value for a real, a decimal or an integer number
+ */
+type LexicalValue wraps String
+/*
+ * A lexical value for a real, a decimal or an integer number
+ */
+type LexicalNumber wraps String
+/*
+ * A lexical value for a time instant with and without time zone offsets
+ */
+type LexicalTime wraps String
+/*
+ * A regular expression for a string based on rule of xsd:pattern
+ */
+type Pattern wraps String
+/*
+ * An RFC-4122 UUID (either Version 4 (random) or Version 5 (SHA-1 hash & namespace) 
+ */
+type UUID wraps String
+/*
+ * A language range based on RFC 5646
+ */
+type Language wraps String
+
+type AbbrevIRI wraps String
+
+type NamespacePrefix wraps String
+
+abstract class Resource {
+	
+	op IRI[1] iri()
+	
+	op LocalName[1] name()
+}
+
+abstract class TerminologyThing {
+	
+	@IsOrderingKey
+	derived UUID[1] uuid get { calculateUUID() }
+	
+	op UUID calculateUUID()
+}
+
+class AnnotationProperty {
+	
+	@IsOrderingKey
+	op UUID[1] uuid() { java.util.UUID.fromString(iri).toString }
+	
+	IRI[1] iri
+	
+	id AbbrevIRI[1] abbrevIRI
+}
+
+/* 
+ * For the OML tabular interchange representation,
+ * each AnnotationProperty has a corresponding table of Annotations
+ */
+@NotSchema
+class AnnotationPropertyTable wraps java.util.Map$Entry {
+	
+	@IsOrderingKey
+	refers AnnotationProperty[1] key
+	
+	@Collection(kind="SortedSet")
+	contains AnnotationEntry[] value
+}
+
+/*
+ * In the OML tabular interchange representation,
+ * an AnnotationEntry (for a given AnnotationProperty) is a triple:
+ * - the terminology in which the annotation appears 
+ * - the annotated terminology thing (subject)
+ * - the value of the AnnotationProperty for that subject in that terminology
+ */
+@ValueTable
+class AnnotationEntry {
+	
+	@IsOrderingKey
+	refers TerminologyBox[1] terminology
+	
+	@IsOrderingKey 
+	refers TerminologyThing[1] subject
+	
+	@IsOrderingKey
+	String[1] value
+}
+
+/* 
+ * In a given terminology, annotations are indexed by TerminologyThing subject (key).
+ * A subject (key) is associated to a table of AnnotationSubjectPropertyValues
+ */
+@NotFunctionalAPI
+class AnnotationSubjectTable wraps java.util.Map$Entry {
+	refers TerminologyThing[1] key
+	
+	contains AnnotationSubjectPropertyValue[] value
+}
+
+/*
+ * For a given annotated TerminologyThing key, 
+ * an AnnotationSubjectPropertyValue is a pair:
+ * - an annotation property 
+ * - an annotation value
+ */
+@NotFunctionalAPI
+class AnnotationSubjectPropertyValue {
+	refers AnnotationProperty[1] property
+	String[1] value
+}
+
+@NotSchema
+class Annotation {
+	
+	@IsOrderingKey
+	container TerminologyBox[1] terminology opposite annotations
+	
+	@IsOrderingKey
+	refers AnnotationProperty[1] property
+	
+	@IsOrderingKey
+	refers TerminologyThing[1] subject
+	
+	@IsOrderingKey
+	String[1] value
+}
+
+@NotSchema
+class TerminologyExtent {
+	
+	@CopyConstructor
+	@Collection(kind="SortedSet")
+	contains AnnotationProperty[] annotationProperties
+	
+	@CopyConstructor
+	@Collection(kind="SortedSet")
+	contains TerminologyGraph[] terminologyGraphs opposite graphExtent
+	
+	@CopyConstructor
+	@Collection(kind="SortedSet")
+	contains Bundle[] bundles opposite bundleExtent
+	
+}
+
+/*
+ * A TerminologyBox is a logical container for a set of TerminologyBoxStatements.
+ */
+abstract class TerminologyBox extends TerminologyThing, Resource {
+	
+	op TerminologyExtent[1] extent()
+	
+	op UUID[1] calculateUUID() { 
+		com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(iri()).toString
+	}
+	
+	@Override
+	id IRI[1] iri
+	
+	op IRI[1] iri() { getIri() }
+	
+ 	op NamespacePrefix[1] nsPrefix() { getIri().substring(1+getIri().lastIndexOf('/')) }
+	
+	op LocalName[1] name() { nsPrefix }
+	
+	@Collection(kind="SortedSet")
+	contains Annotation[] annotations opposite terminology
+	
+	@NotFunctionalAPI
+	op AnnotationSubjectTable[] annotationsBySubject()
+	
+	@Collection(kind="SortedSet")
+	op AnnotationPropertyTable[] annotationsByProperty()
+	
+	op TerminologyBox[1] withAnnotations
+	(@Collection(kind="SortedSet") AnnotationPropertyTable[] a)
+	
+	TerminologyGraphKind[1] kind
+	
+	/*
+	 * The TerminologyBoxAxioms asserted in this TerminologyBox
+	 */
+	@Collection(kind="SortedSet")
+	contains TerminologyBoxAxiom[] terminologyBoxAxioms opposite terminology
+	
+	/*
+	 * The TerminologyBoxStatements asserted in this TerminologyBox
+	 */
+	@Collection(kind="SortedSet")
+	contains TerminologyBoxStatement[] boxStatements opposite graph
+	 
+	op TerminologyBox[1] withBoxStatements
+	(@Collection(kind="SortedSet") TerminologyBoxStatement[] s)
+	
+	/*
+	 * The subset of statements that are entities.
+     */
+    @Scala(code="boxStatements.selectByKindOf { case e: Entity => e }")
+	@Collection(kind="SortedSet")
+	op Entity[] entities()
+	
+	/*
+	 * The subset of statements that are aspects.
+     */
+    @Scala(code="boxStatements.selectByKindOf { case a: Aspect => a }")
+	@Collection(kind="SortedSet")
+	op Aspect[] aspects()
+	
+	/*
+	 * The subset of statements that are concepts.
+     */
+    @Scala(code="boxStatements.selectByKindOf { case c: Concept => c }")
+	@Collection(kind="SortedSet")
+	op Concept[] concepts()
+	
+	/*
+	 * The subset of statements that are reified relationships.
+     */
+    @Scala(code="boxStatements.selectByKindOf { case rr: ReifiedRelationship => rr }")
+	@Collection(kind="SortedSet")
+	op ReifiedRelationship[] reifiedRelationships()
+		
+	/*
+	 * The subset of statements that are unreified relationships.
+     */
+    @Scala(code="boxStatements.selectByKindOf { case ur: UnreifiedRelationship => ur }")
+	@Collection(kind="SortedSet")
+	op UnreifiedRelationship[] unreifiedRelationships()
+	
+	/*
+	 * The subset of statements that are data relationships.
+     */
+    @Scala(code="boxStatements.selectByKindOf { case dr: DataRelationship => dr }")
+	@Collection(kind="SortedSet")
+	op DataRelationship[] dataRelationships()
+	
+	/*
+	 * A map for the subset of statements that are 
+	 * entity scalar data property terms indexed by their uuid.
+     */
+    @Scala(code="boxStatements.selectByKindOf { case dp: EntityScalarDataProperty => dp }")
+	@Collection(kind="SortedSet")
+	op EntityScalarDataProperty[] entityScalarDataProperties()
+	
+	/*
+	 * A map for the subset of statements that are 
+	 * data range terms indexed by their uuid.
+     */
+    @Scala(code="boxStatements.selectByKindOf { case dr: DataRange => dr }")
+	@Collection(kind="SortedSet")
+	op DataRange[] dataranges()
+	
+	/*
+	 * A map for the subset of statements that are 
+	 * scalar datatype terms indexed by their uuid.
+     */
+    @Scala(code="boxStatements.selectByKindOf { case s: Scalar => s }")
+	@Collection(kind="SortedSet")
+	op Scalar[] scalars()
+	
+	/*
+	 * A map for the subset of statements that are 
+	 * structured datatype terms indexed by their uuid.
+     */
+    @Scala(code="boxStatements.selectByKindOf { case s: Structure => s }")
+	@Collection(kind="SortedSet")
+	op Structure[] structures()
+	
+	/*
+	 * The subset of axioms about terms.
+	 */
+    @Scala(code="boxStatements.selectByKindOf { case tx: TermAxiom => tx }")
+	@Collection(kind="SortedSet")
+	op TermAxiom[] termAxioms()
+	
+	@Scala(code="scala.collection.immutable.SortedSet.empty[resolver.api.TerminologyThing] ++ boxStatements + this")
+	@Collection(kind="SortedSet")
+	op TerminologyThing[] everything()
+}
+
+/*
+ * A Bundle is a concrete TerminologyBox that is 
+ * an acyclic logical aggregate of other TerminologyBoxes (see TerminologyBundleAxiom)
+ * and that can assert concept disjunctions (See TerminologyBundleStatement)
+ */
+class Bundle extends TerminologyBox {
+		
+	op TerminologyExtent[1] extent() { bundleExtent }
+		
+	container TerminologyExtent[1] bundleExtent opposite bundles
+	
+	@Scala(code="copy(annotations = this.annotations ++ resolver.convertToAnnotations(a))")
+	@Override
+	op Bundle[1] withAnnotations
+	(@Collection(kind="SortedSet") AnnotationPropertyTable[] a)
+	
+	@Scala(code="resolver.groupAnnotationsByProperty(annotations)")
+	@Collection(kind="SortedSet")
+	@Override
+	op AnnotationPropertyTable[] annotationsByProperty()	
+	
+	/*
+	 * The TerminologyBundleStatements asserted in this Bundle
+	 */
+	@Collection(kind="SortedSet")
+	contains TerminologyBundleStatement[] bundleStatements opposite bundle
+	
+	/*
+	 * The BundledTerminologyAxioms asserted in this Bundle
+	 */
+	@Collection(kind="SortedSet")
+	contains TerminologyBundleAxiom[] terminologyBundleAxioms opposite terminologyBundle
+			
+	@Scala(code="copy(bundleStatements = this.bundleStatements ++ s)")
+	op Bundle[1] withBundleStatements
+	(@Collection(kind="SortedSet") TerminologyBundleStatement[] s)
+	
+	@Scala(code="copy(boxStatements = this.boxStatements ++ s)")
+	@Override
+	op Bundle[1] withBoxStatements
+	(@Collection(kind="SortedSet") TerminologyBoxStatement[] s)
+
+	@Scala(code="super.everything() ++ bundleStatements + this")
+	@Collection(kind="SortedSet")
+	@Override
+	op TerminologyThing[] everything()
+}
+
+enum TerminologyGraphKind {
+	/*
+	 * Each entity in an OpenWorldDefinition terminology corresponds to a classifier for describing 
+	 * a collection of things in the real world where all the things in that collection 
+	 * exhibit all the capabilities of that entity such as the relationships & data properties that the entity can be invovled in.
+	 * 
+	 * A taxonomy of entities in an open world definition terminology can be further enriched in other open world definition terminologies.
+	 * For example, such a terminology A could define concepts X and Y could assert that X specializes Y.
+	 * Another such terminology B could extend A and could define concept Z and could assert that X specializes Z and that Z specializes Y.
+	 * In effect, B inserts in A's taxonomy of X,Y a new concept Z.
+	 * This is allowed only for open world terminologies.
+	 */
+	OpenWorldDefinitions
+	/*
+	 * Each entity in a ClosedWorldDesignation terminology corresponds to a unique thing in the real world.
+	 * The identity of closed-world designation entities can be specified using annotations (e.g., serial numbers, unique identifiers, ...)
+	 * Each instance of an entity corresponds to modeling a particular state of affairs of the thing correspondign to that entity.
+	 */
+	ClosedWorldDesignations
+}
+
+/*
+ * A TerminologyGraph is a kind of TerminologyBox with no statements our axioms involving Bundles.
+ */
+class TerminologyGraph extends TerminologyBox {
+	
+	op TerminologyExtent[1] extent() { graphExtent }
+		
+	container TerminologyExtent[1] graphExtent opposite terminologyGraphs
+	
+	@Scala(code="copy(annotations = this.annotations ++ resolver.convertToAnnotations(a))")
+	@Override
+	op TerminologyGraph[1] withAnnotations
+	(@Collection(kind="SortedSet") AnnotationPropertyTable[] a)
+	
+	@Scala(code="resolver.groupAnnotationsByProperty(annotations)")
+	@Collection(kind="SortedSet")
+	@Override
+	op AnnotationPropertyTable[] annotationsByProperty()	
+	
+	@Scala(code="copy(boxStatements = this.boxStatements ++ s)")
+	@Override
+	op TerminologyGraph[1] withBoxStatements
+	(@Collection(kind="SortedSet") TerminologyBoxStatement[] s)
+}
+
+abstract class TerminologyStatement extends TerminologyThing {}
+
+abstract class TerminologyBoxStatement extends TerminologyStatement {
+	
+	container TerminologyBox[1] graph opposite boxStatements
+}
+
+abstract class TerminologyBundleStatement extends TerminologyStatement {
+	
+	container Bundle[1] bundle opposite bundleStatements
+}
+
+abstract class Term extends TerminologyBoxStatement, Resource {
+	
+	/*
+	 * The UUID of a Term is a Version5 namespace UUID based on the term's IRI.
+	 */
+	op UUID[1] calculateUUID() { 
+		com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(iri()).toString
+	}
+	
+	@Scala(code="graph.iri + \"#\" + name")
+	@Override
+	op IRI[1] iri() { graph.iri() + "#" + name() }
+	
+	@Override
+	id LocalName[1] name
+	
+	op LocalName[1] name() { getName() }
+}
+
+abstract class Entity extends Term {}
+
+class Aspect extends Entity {}
+
+class Concept extends Entity {
+
+	boolean[1] isAbstract
+}
+
+abstract class EntityRelationship extends Term {
+
+ 	refers Entity[1] source
+
+ 	refers Entity[1] target
+ 	/*
+ 	 * 0 <= target.size <= 1
+	 */
+	boolean[1] isFunctional
+ 	/*
+ 	 * 0 <= source.size <= 1
+	 */ 	 
+ 	boolean[1] isInverseFunctional
+ 	/*
+ 	 * 1 <= target.size
+	 */
+ 	boolean[1] isEssential
+ 	/*
+ 	 * 1 <= source.size 	
+	 */
+ 	boolean[1] isInverseEssential
+ 	/*
+ 	 * Whether this relationship is symmetric
+	 */
+ 	boolean[1] isSymmetric
+ 	/*
+ 	 * Whether this relationship is asymmetric
+	 */
+ 	boolean[1] isAsymmetric
+ 	/*
+ 	 * Whether this relationship is reflexive
+	 */
+ 	boolean[1] isReflexive
+ 	/*
+ 	 * Whether this relationship is irreflexive
+	 */ 	 
+ 	boolean[1] isIrreflexive
+ 	/*
+ 	 * Whether this relationship is transitive
+	 */
+ 	boolean[1] isTransitive
+}
+
+class ReifiedRelationship extends EntityRelationship, Entity {
+	boolean[1] isAbstract
+	LocalName[1] unreifiedPropertyName
+	LocalName[?] unreifiedInversePropertyName
+}
+
+class UnreifiedRelationship extends EntityRelationship {}
+
+
+abstract class Datatype extends Term {}
+
+/*
+ * Corresponds to an OWL2 DataRange with arity=1.
+ */
+abstract class DataRange extends Datatype {}
+
+/*
+ * Corresponds to an OWL2 Declaration of a Datatype with arity=1.
+ */
+class Scalar extends DataRange {}
+
+abstract class DataRelationship extends Term {
+	op Term[1] source()
+	op Datatype[1] target()
+}
+
+abstract class DataRelationshipDomain {}
+
+abstract class DataRelationshipFromEntity extends DataRelationshipDomain {
+	refers Entity[1] domain
+}
+
+abstract class DataRelationshipFromStructure extends DataRelationshipDomain {
+	refers Structure[1] domain
+}
+
+abstract class DataRelationshipRange {}
+
+abstract class DataRelationshipToScalar extends DataRelationshipRange {
+	refers DataRange[1] range
+}
+
+abstract class DataRelationshipToStructure extends DataRelationshipRange {
+	refers Structure[1] range
+}
+
+class EntityStructuredDataProperty extends DataRelationship, DataRelationshipFromEntity, DataRelationshipToStructure {
+	@Override
+	op Term[1] source() { domain }
+	
+	@Override
+	op Datatype[1] target() { range }
+}
+
+class EntityScalarDataProperty extends DataRelationship, DataRelationshipFromEntity, DataRelationshipToScalar {
+	@Override
+	op Term[1] source() { domain }
+	
+	@Override
+	op Datatype[1] target() { range }
+}
+
+class StructuredDataProperty extends DataRelationship, DataRelationshipFromStructure, DataRelationshipToStructure {
+	@Override
+	op Term[1] source() { domain }
+	
+	@Override
+	op Datatype[1] target() { range }
+}
+
+class ScalarDataProperty extends DataRelationship, DataRelationshipFromStructure, DataRelationshipToScalar {
+	@Override
+	op Term[1] source() { domain }
+	
+	@Override
+	op Datatype[1] target() { range }
+}
+
+/*
+ * Corresponds to an OWL2 Declaration of a Datatype with arity > 1.
+ * The arity corresponds to the cardinality of the set of ScalarDataProperty & StructuredDataProperty 
+ * relationships whose domain is this structure.
+ */
+class Structure extends Datatype {}
+
+abstract class Axiom extends TerminologyBoxStatement {}
+
+/*
+ * A TerminologyAxiom is asserted in a TerminologyBox of some kind.
+ */
+abstract class TerminologyAxiom extends TerminologyThing {
+	
+	/*
+	 * The source TerminologyBox
+	 */
+	op TerminologyBox[1] source()
+	
+	/*
+	 * The target TerminologyBox
+	 */
+	op TerminologyBox[1] target()
+}
+
+/*
+ * A TerminologyBoxAxiom is a TerminologyAxiom that asserts a logical statement about a Term.
+ */
+abstract class TerminologyBoxAxiom extends TerminologyAxiom {
+	
+	@CopyConstructor
+	container TerminologyBox[1] terminology opposite terminologyBoxAxioms
+}
+
+/*
+ * A TerminologyBundleAxiom is a TerminologyAxiom that asserts a logical statement in the context of a Bundle.
+ */
+abstract class TerminologyBundleAxiom extends TerminologyAxiom {
+
+	@CopyConstructor
+	container Bundle[1] terminologyBundle opposite terminologyBundleAxioms
+
+}
+
+
+/*
+ * A ConceptTreeDisjunction represents the root & non-leaf nodes of a concept taxonomy:
+ * - Root node is a RootConceptTaxonomyAxiom.
+ * - Non-leaf nodes are AnonymousConceptTaxonomyAxioms.
+ */
+abstract class ConceptTreeDisjunction {}
+
+/*
+ * A DisjointUnionOfConceptsAxioms represents non-leaf & leaf nodes of a concept taxonomy:
+ * - Non-leaf nodes are AnonymousConceptTaxonomyAxioms.
+ * - Leaf nodes are SpecificDisjointConceptAxioms.
+ */
+abstract class DisjointUnionOfConceptsAxiom extends TerminologyBundleStatement {
+	
+	/*
+	 * The parent of this node in a disjoint concept taxonomy tree.
+	 */
+	refers ConceptTreeDisjunction[1] disjointTaxonomyParent
+}
+
+/*
+ * A SpecificDisjointConceptAxiom specifies a leaf in a taxonomy tree.
+ */
+class SpecificDisjointConceptAxiom extends DisjointUnionOfConceptsAxiom {
+	
+	/*
+	 * A Concept that is a disjoint leaf in a taxonomy tree.
+	 */
+	 refers Concept[1] disjointLeaf
+}
+
+/*
+ * An AnonymousConceptTaxonomyAxiom is an anonymous taxonomy tree of DisjointUnionOfEntityAxioms.
+ */
+class AnonymousConceptTaxonomyAxiom extends DisjointUnionOfConceptsAxiom, ConceptTreeDisjunction {
+}
+
+/*
+ * A RootConceptTaxonomyAxiom asserts that, in the context of a Bundle, a particular Entity
+ * is the root of a taxonomy of specializations of that Entity.
+ */
+class RootConceptTaxonomyAxiom extends TerminologyBundleStatement, ConceptTreeDisjunction {
+	
+	/*
+	 * The Concept that is at the root of a taxonomy of disjunctions.
+	 */
+	refers Concept[1] root
+	
+}
+
+/*
+ * This axiom specifies a TerminologyBox that a Bundle aggregates.
+ * A BundledTerminologyAxiom allows a bundle to
+ * make references (via TerminologyStatements) to TerminologyThings
+ * within the transitive closure of a bundledTerminology.
+ */
+class BundledTerminologyAxiom extends TerminologyBundleAxiom {
+
+	@CopyConstructor
+	refers TerminologyBox[1] bundledTerminology
+	
+	/*
+	 * The bundle is the source
+	 */
+	@Override
+	op TerminologyBox[1] source() { terminologyBundle }
+	
+	/*
+	 * The bundledTerminology is the target
+	 */
+	@Override
+	op TerminologyBox[1] target() { bundledTerminology }
+}
+
+class ConceptDesignationTerminologyAxiom extends TerminologyBoxAxiom {
+	
+	@Scala(code="terminology match { case g: TerminologyGraph => g }")
+	op TerminologyGraph[1] designationTerminologyGraph()
+	 
+	@NotSchema
+	@CopyConstructor
+	refers TerminologyBox[1] designatedTerminology
+	
+	refers Concept[1] designatedConcept
+	 
+	/*
+	 * The designationTerminologyGraph is the source
+	 */
+	@Override
+	op TerminologyBox[1] source() { terminology }
+	
+	/*
+	 * The TerminologyBox that asserts the designatedConcept is the target
+	 */
+	@Override
+	op TerminologyBox[1] target() { designatedTerminology }
+}
+
+/*
+ * A TerminologyExtensionAxiom allows an extendingTerminology to
+ * make references (via TerminologyStatements) to TerminologyThings
+ * within the transitive closure of the extendedTerminlogy.
+ */
+class TerminologyExtensionAxiom extends TerminologyBoxAxiom {
+
+	op UUID[1] calculateUUID() { 
+		val namespace = "TerminologyExtensionAxiom(source=" + source().uuid + ",target="+target().uuid+")"
+		com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace).toString
+	}
+	
+	op TerminologyBox[1] extendingTerminology() { terminology }
+	
+	@CopyConstructor
+  	refers TerminologyBox[1] extendedTerminology
+  	
+	/*
+	 * The extendingTerminology is the source
+	 */
+	@Override
+	op TerminologyBox[1] source() { terminology }
+	
+	/*
+	 * The extendedTerminology is the target
+	 */
+	@Override
+	op TerminologyBox[1] target() { extendedTerminology }
+  	
+}
+
+class TerminologyNestingAxiom extends TerminologyBoxAxiom {
+
+  	@CopyConstructor
+	refers TerminologyBox[1] nestingTerminology
+
+	@Scala(code="terminology match { case g: TerminologyGraph => g }")
+	op TerminologyGraph[1] nestedTerminology()
+
+  	refers Concept[1] nestingContext
+  	
+	/*
+	 * The nestedTerminology is the source
+	 */
+	@Override
+	op TerminologyBox[1] source() { terminology }
+	
+	/*
+	 * The nestingTerminology is the target
+	 */
+	@Override
+	op TerminologyBox[1] target() { nestingTerminology }
+  	
+}
+
+abstract class TermAxiom extends Axiom {}
+
+abstract class EntityRestrictionAxiom extends TermAxiom {
+
+	 refers ReifiedRelationship[1] restrictedRelation
+
+	 refers Entity[1] restrictedRange
+
+	 refers Entity[1] restrictedDomain
+}
+
+class EntityExistentialRestrictionAxiom extends EntityRestrictionAxiom {}
+
+class EntityUniversalRestrictionAxiom extends EntityRestrictionAxiom {}
+
+abstract class SpecializationAxiom extends TermAxiom {
+	/*
+	 * Get the sub (child) term
+	 */
+	op Term[1] child()
+	/*
+	 * Get the super (parent) term
+	 */
+	op Term[1] parent()
+}
+
+class AspectSpecializationAxiom extends SpecializationAxiom {
+	
+	op UUID[1] calculateUUID() { 
+		val namespace = "AspectSpecializationAxiom(subEntity=" + subEntity.uuid + ",superAspect="+superAspect.uuid+")"
+		com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace).toString
+	}
+	
+	/*
+	 * The sub (child) entity
+	 */
+	refers Entity[1] subEntity
+	/*
+	 * The super (parent) aspect
+	 */
+	refers Aspect[1] superAspect
+	/*
+	 * Get the sub (child) entity
+	 */
+	@Override
+	op Term[1] child() { subEntity }
+	/*
+	 * Get the super (parent) entity
+	 */
+	@Override
+	op Term[1] parent() { superAspect }
+}
+
+class ConceptSpecializationAxiom extends SpecializationAxiom {
+	refers Concept[1] subConcept
+	refers Concept[1] superConcept
+	/*
+	 * Get the sub (child) entity
+	 */
+	@Override
+	op Term[1] child() { subConcept }
+	/*
+	 * Get the super (parent) entity
+	 */
+	@Override
+	op Term[1] parent() { superConcept }
+}
+
+class ReifiedRelationshipSpecializationAxiom extends SpecializationAxiom {
+	/*
+	 * The sub (child) relationship
+	 */
+	refers ReifiedRelationship[1] subRelationship
+	/*
+	 * The super (parent) relationship
+	 */
+	refers ReifiedRelationship[1] superRelationship
+	/*
+	 * Get the sub (child) entity
+	 */
+	op Term[1] child() { subRelationship }
+	/*
+	 * Get the super (parent) entity
+	 */
+	op Term[1] parent() { superRelationship }
+}
+
+/*
+ * Semantics: OWL2 Data Property Restrictions
+ */
+abstract class EntityScalarDataPropertyRestrictionAxiom extends TermAxiom {
+	refers Entity[1] restrictedEntity
+  	refers EntityScalarDataProperty[1] scalarProperty
+}
+
+/*
+ * Semantics: OWL2 DataSomeValuesFrom (the range must be explicitly defined as a Scalar datatype)
+ */
+class EntityScalarDataPropertyExistentialRestrictionAxiom 
+extends EntityScalarDataPropertyRestrictionAxiom {
+  	refers DataRange[1] scalarRestriction
+}
+
+/*
+ * Semantics: OWL2 DataAllValuesFrom (the range must be explicitly defined as a Scalar datatype)
+ */
+class EntityScalarDataPropertyUniversalRestrictionAxiom 
+extends EntityScalarDataPropertyRestrictionAxiom {
+  	refers DataRange[1] scalarRestriction
+}
+
+/**
+ * Semantics: OWL2 DataHasValue
+ */
+class EntityScalarDataPropertyParticularRestrictionAxiom
+extends EntityScalarDataPropertyRestrictionAxiom {
+	LexicalValue[1] literalValue
+}
+
+/*
+ * Corresponds to an OWL2 DataRange defined in terms of some kind of restriction of some other DataRanges.
+ * Instead of arbitrary OWL2 FacetRestrictionAxioms as constructors of OWL2 DataRanges,
+ * the specializations of RestrictedDataRange correspond to the allowed restrictions in OWL2-DL datatype maps.
+ * Node that the vocabulary of XSD fundamental facets is not included in OWL2-DL, consequently, 
+ * there is no support in OML for specifying datatype restrictions involving XSD fundamental facets as well.
+ * @see https://www.w3.org/TR/owl2-syntax/#Data_Ranges
+ * @see https://www.w3.org/TR/owl2-syntax/#Datatype_Maps
+ */ 
+abstract class RestrictedDataRange extends DataRange {
+	/*
+	 * The restricted (general) data range of this data range (specific)
+	 */
+	refers DataRange[1] restrictedRange
+}
+
+/*
+ * A data range that is defined as a synonym for another (i.e. the restrictedRange).
+ */
+class SynonymScalarRestriction extends RestrictedDataRange {}
+
+/*
+ * A data range that specifies how one numeric scalar range adds facet restrictions to another.
+ * Applies when the restricted scalar represents real, decimal or integer numbers (OWL2: 4.1/4.2)
+ * i.e., when it is one of the following scalars (or their transitively restricted ones):
+ * owl:real
+ * owl:rational
+ * xsd:decimal
+ * xsd:integer
+ * xsd:nonNegativeInteger
+ * xsd:nonPositiveInteger
+ * xsd:positiveInteger
+ * xsd:negativeInteger
+ * xsd:long
+ * xsd:int
+ * xsd:short
+ * xsd:byte
+ * xsd:unsignedLong
+ * xsd:unsignedInt
+ * xsd:unsignedShort
+ * xsd:unsignedByte
+ * xsd:double
+ * xsd:float
+ */
+class NumericScalarRestriction extends RestrictedDataRange {
+	/*
+	 * The inclusive minimum value in the range
+	 */
+	LexicalNumber[?] minInclusive
+	/*
+	 * The inclusive maximum value in the range
+	 */
+	LexicalNumber[?] maxInclusive
+	/*
+	 * The exclusive minimum value in the range
+	 */
+	LexicalNumber[?] minExclusive
+	/*
+	 * The exclusive maximum value in the range
+	 */
+	LexicalNumber[?] maxExclusive
+}
+
+/*
+ * A data range that specifies how one string scalar adds facet restrictions to another.
+ * Applies when the restricted scalar represents strings (OWL2: 4.3)
+ * i.e., when it is one of the following scalars (or their transitively restricted ones):
+ * xsd:string
+ * xsd:normalizedString
+ * xsd:token
+ * xsd:language
+ * xsd:Name
+ * xsd:NCName
+ * xsd:NMTOKEN
+ * xsd:length, xsd:minLength, xsd:maxLength, xsd:pattern
+ */
+class StringScalarRestriction extends RestrictedDataRange {
+	/*
+	 * The length of the string
+	 */
+	int[?] length
+	/*
+	 * The minimum length of the string
+	 */
+	int[?] minLength
+	/*
+	 * The maximum length of the string
+	 */
+	int[?] maxLength
+	/*
+	 * The pattern of the string (https://www.w3.org/TR/xmlschema-2/#regexs)
+	 */
+	Pattern[?] pattern
+}
+
+/*
+ * A data range that specifies how one plain literal scalar adds facet restrictions to another.
+ * Applies when the restricted scalar represents plain literals (OWL2: 4.3)
+ * i.e., when it is one of the following scalars (or their transitively restricted ones):
+ * rdf:PlainLiteral
+ */
+class PlainLiteralScalarRestriction extends RestrictedDataRange {
+	/*
+	 * The length of the plain literal
+	 */
+	int[?] length
+	/*
+	 * The minimum length of the plain literal
+	 */
+	int[?] minLength
+	/*
+	 * The maximum length of the plain literal
+	 */
+	int[?] maxLength
+	/*
+	 * The pattern of the plain literal (https://www.w3.org/TR/xmlschema-2/#regexs)
+	 */
+	Pattern[?] pattern
+	/*
+	 * The language of the plain literal (http://www.rfc-editor.org/rfc/bcp/bcp47.txt)
+	 */
+	Language[?] language
+}
+
+/*
+ * A data range that specifies how one binary scalar adds facet restrictions to another.
+ * Applies when the restricted scalar represents binary data (OWL2: 4.5)
+ * i.e., when it is one of the following scalars (or their transitively restricted ones):
+ * xsd:hexBinary
+ * xsd:base64Binary
+ * xsd:minLength, xsd:maxLength, and xsd:length
+ */
+class BinaryScalarRestriction extends RestrictedDataRange {
+	/*
+	 * The length of the binary data
+	 */
+	int[?] length
+	/*
+	 * The minimum length of the binary data
+	 */
+	int[?] minLength
+	/*
+	 * The maximum length of the binary data
+	 */
+	int[?] maxLength
+}
+
+/*
+ * A data range that specifies how one IRI scalar adds facet restrictions to another.
+ * Applies when the restricted scalar represents IRIs (OWL2: 4.6)
+ * i.e., when it is one of the following scalars (or their transitively restricted ones):
+ * xsd:anyURI
+ */
+class IRIScalarRestriction extends RestrictedDataRange {
+	/*
+	 * The length of the IRI
+	 */
+	int[?] length
+	/*
+	 * The minimum length of the IRI
+	 */
+	int[?] minLength
+	/*
+	 * The maximum length of the IRI
+	 */
+	int[?] maxLength
+	/*
+	 * The pattern of the IRI (https://www.w3.org/TR/xmlschema-2/#regexs)
+	 */
+	Pattern[?] pattern
+}
+
+/*
+ * A data range that specifies how one time scalar adds facet restrictions to another.
+ * Applies when the restricted scalar represents time instants (OWL2: 4.7)
+ * i.e., when it is one of the following scalars (or their transitively restricted ones):
+ * xsd:dateTime
+ * xsd:dateTimeStamp
+ */
+class TimeScalarRestriction extends RestrictedDataRange {
+	/*
+	 * The inclusive minimum value in the range
+	 */
+	LexicalTime[?] minInclusive
+	/*
+	 * The inclusive maximum value in the range
+	 */
+	LexicalTime[?] maxInclusive
+	/*
+	 * The exclusive minimum value in the range
+	 */
+	LexicalTime[?] minExclusive
+	/*
+	 * The exclusive maximum value in the range
+	 */
+	LexicalTime[?] maxExclusive
+}
+
+/*
+ * A data range that specifies how a scalar is a restricted set of literal values of another.
+ * Semantics: OWL2 DataOneOf
+ */
+class ScalarOneOfRestriction extends RestrictedDataRange {}
+
+/*
+ * An axiom specifying a literal in a ScalarOneOfRestriction data range.
+ */
+class ScalarOneOfLiteralAxiom extends Axiom {
+	refers ScalarOneOfRestriction[1] axiom
+	/*
+	 * The value of the literal from the restrictedScalar datatype
+	 */
+	LexicalValue[1] value
+}

@@ -1,0 +1,47 @@
+
+dependencies {
+	compile 'org.eclipse.platform:org.eclipse.core.resources:+'
+	compile('org.eclipse.platform:org.eclipse.ui.views:+') {
+		// Ignore dependencies on platform-specific plugins that are no longer available from eclipse
+   		exclude group: 'org.eclipse.platform', module: 'org.eclipse.swt.gtk.linux.aarch64'
+   		exclude group: 'org.eclipse.platform', module: 'org.eclipse.swt.gtk.linux.arm'
+	}
+	compile('org.eclipse.platform:org.eclipse.ui.ide:+') {
+		// Ignore dependencies on platform-specific plugins that are no longer available from eclipse
+   		exclude group: 'org.eclipse.platform', module: 'org.eclipse.swt.gtk.linux.aarch64'
+   		exclude group: 'org.eclipse.platform', module: 'org.eclipse.swt.gtk.linux.arm'
+	}
+	compile 'org.eclipse.emf:org.eclipse.emf.ecore.xmi:+'
+	
+	// see http://download.eclipse.org/eclipse/updates/4.6/R-4.6.2-201611241400/plugins/
+	//compile 'org.eclipse.platform:org.eclipse.ui.views:3.8.101.v20160816-1954'
+	
+	// see http://download.eclipse.org/modeling/emf/emf/updates/2.12/core/R201605260356/plugins/
+	compile 'org.eclipse.emf:org.eclipse.emf.ecore.change:2.11.0.v20160420-0247'
+	compile 'org.eclipse.emf:org.eclipse.emf.common.ui:2.11.0.v20160526-0356'
+	compile 'org.eclipse.emf:org.eclipse.emf.edit.ui:2.12.0.v20160526-0356'
+	
+	compile project(':jpl.imce.oml.specification.ecore.edit')
+}
+
+configurations.all {
+    
+    resolutionStrategy {
+    
+    	// Override an unresolvable dependency on org.eclipse.emf:org.eclipse.emf.ecore.change:[2.5.0,)
+    	// Required by:
+    	// project :jpl.imce.oml.specification.ecore.editor > 
+    	// org.eclipse.platform:org.eclipse.ui.ide:3.12.2 >
+    	// org.eclipse.platform:org.eclipse.e4.ui.workbench:1.4.0
+    
+    	eachDependency { DependencyResolveDetails details ->
+        	if (details.requested.group == 'org.eclipse.emf' && 
+            	details.requested.name == 'org.eclipse.emf.ecore.change' &&
+            	details.requested.version == '[2.5.0,)') {
+           
+            	details.useVersion '2.11.0.v20160420-0247'
+        	}
+   		}
+   		
+   	}
+}

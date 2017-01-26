@@ -1,0 +1,16 @@
+dependencies {
+	compile project(':jpl.imce.oml.specification.ecore')
+	compile project(':jpl.imce.oml.specification')
+	testCompile project(':jpl.imce.oml.specification')
+	testCompile "org.eclipse.xtext:org.eclipse.xtext.junit4:${xtextVersion}"
+	testCompile "org.eclipse.xtext:org.eclipse.xtext.xbase.junit:${xtextVersion}"
+}
+
+configurations {
+	compile.transitive = true
+	testCompile.transitive = true
+}
+
+//this is an eclipse plugin project
+eclipseClasspath.enabled=false
+cleanEclipseClasspath.enabled=false
