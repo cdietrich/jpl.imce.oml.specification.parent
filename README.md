@@ -1,5 +1,9 @@
 # Composite project for JPL's Integrated Model-Centric Engineering (IMCE) Ontological Modeling Language (OML) Specification
 
+Travis CI: [![Build Status](https://travis-ci.org/JPL-IMCE/jpl.imce.oml.specification.parent.svg?branch=master)](https://travis-ci.org/JPL-IMCE/jpl.imce.oml.specification.parent)
+
+Bintray: [ ![Download](https://api.bintray.com/packages/jpl-imce/gov.nasa.jpl.imce/jpl.imce.oml.specification.parent/images/download.svg) ](https://bintray.com/jpl-imce/gov.nasa.jpl.imce/jpl.imce.oml.specification.parent/_latestVersion)
+
 This composite project comprises several sub-projects:
 - [An ecore metamodel for the OML specification](./jpl.imce.oml.specification.ecore)
 - [A textual concrete syntax for OML models](./jpl.imce.oml.specification)
