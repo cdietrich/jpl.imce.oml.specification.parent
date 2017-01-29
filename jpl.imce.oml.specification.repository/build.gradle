@@ -10,14 +10,16 @@ buildscript {
 
 updateSite {
     extraResources = files('p2.index')
-    signing { File unsignedFolder, File signedFolder ->
-        if (gradle.taskGraph.hasTask(uploadUpdateSite)) {
-            signByEclipseService(signedFolder, unsignedFolder)
-        } else {
-            signLocally(unsignedFolder, signedFolder)
-        }
-    }
-    mutateArtifactsXml { Node artifactsXml ->
+    
+//	signing { File unsignedFolder, File signedFolder ->
+//        if (gradle.taskGraph.hasTask(uploadUpdateSite)) {
+//            signByEclipseService(signedFolder, unsignedFolder)
+//        } else {
+//            signLocally(unsignedFolder, signedFolder)
+//        }
+//    }
+    
+	mutateArtifactsXml { Node artifactsXml ->
         addExtraPropertiesToArtifactsXml(artifactsXml)
     }
 }
