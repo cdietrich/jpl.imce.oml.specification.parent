@@ -10,10 +10,17 @@ buildscript {
 		maven {
 		  url "https://plugins.gradle.org/m2/"
 		}
+		ivy {
+			// See http://download.eclipse.org/eclipse/downloads/
+			// This is 4.6.2 (Neon.2)
+			url "https://repo.gradle.org/gradle/tooling-libs-releases-local/com/gradleware/tooling/p2-repository/0.17.0/p2-repository-0.17.0.zip!/"
+			layout "pattern", { artifact "[organization]/[artifact]_[revision].[ext]" }
+		}
 	}
 	dependencies {
 		classpath 'org.xtext:xtext-gradle-plugin:1.0.2'
 		classpath 'org.xtext:xtext-idea-gradle-plugin:1.0.2'
+		classpath 'plugins:com.gradleware.tooling.model:0.17.0.v20170103170240'
 	}
 }
 
@@ -111,8 +118,19 @@ subprojects {
     repositories {
         mavenCentral()
         jcenter()
-        maven {url "file:/opt/local/imce/users/nfr/github.eclipse/iobserve-repository/mvn-repo" }
-        
+		ivy {
+			// See http://download.eclipse.org/eclipse/downloads/
+			// This is 4.6.2 (Neon.2)
+			url "https://repo.gradle.org/gradle/tooling-libs-releases-local/com/gradleware/tooling/p2-repository/0.17.0/p2-repository-0.17.0.zip!/"
+			layout "pattern", { artifact "[organization]/[artifact]_[revision].[ext]" }
+		}
+		
+		ivy {
+			// See http://download.eclipse.org/eclipse/downloads/
+			// This is 4.6.2 (Neon.2)
+			url "https://repo.gradle.org/gradle/tooling-libs-releases-local/com/gradleware/tooling/p2-repository/0.17.0/p2-repository-0.17.0.zip!/plugins/"
+			layout "pattern", { artifact "[artifact]_[revision].[ext]" }
+		}
 		ivy {
 			// See http://download.eclipse.org/eclipse/downloads/
 			// This is 4.6.2 (Neon.2)
