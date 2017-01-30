@@ -19,9 +19,9 @@ updateSite {
 //        }
 //    }
     
-	mutateArtifactsXml { Node artifactsXml ->
-        addExtraPropertiesToArtifactsXml(artifactsXml)
-    }
+//	mutateArtifactsXml { Node artifactsXml ->
+//        addExtraPropertiesToArtifactsXml(artifactsXml)
+//    }
 }
 
 //remotes {

@@ -41,7 +41,7 @@ This should produce something like this:
 	Root project
 	------------------------------------------------------------
 	
-	Root project 'jpl.imce.oml.specification.parent'
+	Root project 'jpl.imce.oml.specification.parent'jpl.imce.oml.specification/pom.xml
 	+--- Project ':jpl.imce.oml.specification'
 	+--- Project ':jpl.imce.oml.specification.ecore'
 	+--- Project ':jpl.imce.oml.specification.ecore.edit'
@@ -59,6 +59,7 @@ This should produce something like this:
 	
 	Total time: 0.674 secs
 
+-
 
 For example, to build the Xcore concrete syntax from the *.xtext & *.xtend sources, either:
 
@@ -73,3 +74,45 @@ or:
 Either way, gradle will use the common settings specified in the parent (this project);
 in particular, the repositories for resolving dependencies.
 
+## Versioning
+
+For Tycho projects, there is a useful utility to change all version strings:
+
+```
+mvn org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=1.2.0
+```
+
+For buildship, the version info in [version.txt](version.txt) propagates to other build.gradle files.
+However, several files need to be kept in sync:
+
+- [version.txt](version.txt) (it would be nice if this could be 'injected' in other files below...)
+- [build.gradle](build.gradle)
+- [pom.xml](pom.xml)
+
+- [jpl.imce.oml.specification/pom.xml](jpl.imce.oml.specification/pom.xml)
+- [jpl.imce.oml.specification/META-INF/MANIFEST.MF](jpl.imce.oml.specification/META-INF/MANIFEST.MF) 
+
+- [jpl.imce.oml.specification.ecore/META-INF/MANIFEST.MF](jpl.imce.oml.specification.ecore/META-INF/MANIFEST.MF) 
+
+- [jpl.imce.oml.specification.ecore.edit/META-INF/MANIFEST.MF](jpl.imce.oml.specification.ecore.edit/META-INF/MANIFEST.MF) 
+
+- [jpl.imce.oml.specification.ecore.editor/META-INF/MANIFEST.MF](jpl.imce.oml.specification.ecore.editor/META-INF/MANIFEST.MF)
+
+- [jpl.imce.oml.specification.feature/feature.xml](jpl.imce.oml.specification.feature/feature.xml)
+- [jpl.imce.oml.specification.feature/pom.xml](jpl.imce.oml.specification.feature/pom.xml)
+
+- [jpl.imce.oml.specification.ide/META-INF/MANIFEST.MF](jpl.imce.oml.specification.ide/META-INF/MANIFEST.MF)
+- [jpl.imce.oml.specification.ide/pom.xml](jpl.imce.oml.specification.ide/pom.xml)
+
+- [jpl.imce.oml.specification.repository/build.gradle](jpl.imce.oml.specification.repository/build.gradle)
+- [jpl.imce.oml.specification.repository/pom.xml](jpl.imce.oml.specification.repository/pom.xml)
+
+- [jpl.imce.oml.specification.target/pom.xml](jpl.imce.oml.specification.target/pom.xml)
+
+- [jpl.imce.oml.specification.tests/META-INF/MANIFEST.MF](jpl.imce.oml.specification.tests/META-INF/MANIFEST.MF)
+
+- [jpl.imce.oml.specification.ui/META-INF/MANIFEST.MF](jpl.imce.oml.specification.ui/META-INF/MANIFEST.MF)
+- [jpl.imce.oml.specification.ui/pom.xml](jpl.imce.oml.specification.ui/pom.xml)
+
+- [jpl.imce.oml.specification.ui.tests/META-INF/MANIFEST.MF](jpl.imce.oml.specification.ui.tests/META-INF/MANIFEST.MF)
+- [jpl.imce.oml.specification.ui.tests/pom.xml](jpl.imce.oml.specification.ui.tests/pom.xml)

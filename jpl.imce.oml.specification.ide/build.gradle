@@ -1,6 +1,7 @@
+apply plugin: eclipsebuild.BundlePlugin
+
 dependencies {
 	compile project(':jpl.imce.oml.specification.ecore')
-	compile project(':jpl.imce.oml.specification')
 	compile "org.eclipse.xtext:org.eclipse.xtext.ide:${xtextVersion}"
 	compile "org.eclipse.xtext:org.eclipse.xtext.xbase.ide:${xtextVersion}"
 }

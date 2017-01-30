@@ -1,6 +1,8 @@
+
 plugins {
 	id 'war'
 }
+
 dependencies {
 	compile project(':jpl.imce.oml.specification')
 	compile project(':jpl.imce.oml.specification.ide')

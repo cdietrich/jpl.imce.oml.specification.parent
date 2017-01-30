@@ -6,6 +6,7 @@ import org.eclipse.xtext.naming.QualifiedName;
 
 @SuppressWarnings("all")
 public class OMLQualifiedNameConverter extends IQualifiedNameConverter.DefaultImpl {
+  @Override
   public String toString(final QualifiedName qualifiedName) {
     String _xblockexpression = null;
     {
@@ -19,10 +20,12 @@ public class OMLQualifiedNameConverter extends IQualifiedNameConverter.DefaultIm
     return _xblockexpression;
   }
   
+  @Override
   public String getDelimiter() {
     return ":";
   }
   
+  @Override
   public QualifiedName toQualifiedName(final String qualifiedNameAsString) {
     return super.toQualifiedName(qualifiedNameAsString);
   }

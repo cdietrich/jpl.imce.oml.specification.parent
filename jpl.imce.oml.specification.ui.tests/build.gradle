@@ -1,8 +1,8 @@
 apply plugin: eclipsebuild.BundlePlugin
 
 dependencies {
-	compile project(':jpl.imce.oml.specification.ecore')
-	testCompile project(':jpl.imce.oml.specification')
+	testCompile project(':jpl.imce.oml.specification.ide')
+	testCompile project(':jpl.imce.oml.specification.tests')
 	testCompile "org.eclipse.xtext:org.eclipse.xtext.junit4:${xtextVersion}"
 	testCompile "org.eclipse.xtext:org.eclipse.xtext.xbase.junit:${xtextVersion}"
 }
