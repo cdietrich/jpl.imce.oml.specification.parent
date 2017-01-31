@@ -28,17 +28,6 @@ gradle.taskGraph.beforeTask { Task task ->
 
 def repositoryDir = new File(project.buildDir, 'repository')
 
-def m2SettingsFile = new File(System.getenv("HOME") + "/.m2/settings.xml")
-def mavenSettings = (m2SettingsFile.exists()) ? new XmlSlurper().parse(m2SettingsFile) : null
-
-// delay evaluating mavenSettings until it is certain that it isn't null.
-
-def bintrayUser = getBintrayUser(mavenSettings)
-assert null != bintrayUser && "" != bintrayUser
-
-def bintrayApiKey = getBintrayApiKey(mavenSettings)
-assert null != bintrayApiKey && "" != bintrayApiKey
-
 bintray {
 	user = (project.hasProperty('bintray.user') ? project.property('bintray.user') : System.getenv("BINTRAY_USER"))
 	key = (project.hasProperty('bintray.apikey') ? project.property('bintray.apikey') : System.getenv("BINTRAY_APIKEY"))
