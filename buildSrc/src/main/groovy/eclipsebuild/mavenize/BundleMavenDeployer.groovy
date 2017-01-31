@@ -49,7 +49,7 @@ final class BundleMavenDeployer {
    */
   void deploy(File source, File target) {
     File pluginFolder = new File(source, 'plugins')
-    assert pluginFolder.exists()
+    pluginFolder.mkdirs() // NFR
 
     collectArtifacts(pluginFolder)
     fixDependencies()

@@ -2,8 +2,8 @@ apply plugin: eclipsebuild.BundlePlugin
 
 dependencies {
 	compile project(':jpl.imce.oml.specification.ecore')
-	compile "org.eclipse.xtext:org.eclipse.xtext.ide:${xtextVersion}"
-	compile "org.eclipse.xtext:org.eclipse.xtext.xbase.ide:${xtextVersion}"
+	compile withEclipseBundle('org.eclipse.xtext.ide')
+	compile withEclipseBundle('org.eclipse.xtext.xbase.ide')
 }
 //this is an eclipse plugin project
 eclipseClasspath.enabled=false

@@ -3,8 +3,8 @@ apply plugin: eclipsebuild.BundlePlugin
 dependencies {
 	testCompile project(':jpl.imce.oml.specification.ide')
 	testCompile project(':jpl.imce.oml.specification.tests')
-	testCompile "org.eclipse.xtext:org.eclipse.xtext.junit4:${xtextVersion}"
-	testCompile "org.eclipse.xtext:org.eclipse.xtext.xbase.junit:${xtextVersion}"
+	testCompile withEclipseBundle('org.eclipse.xtext.junit4')
+	testCompile withEclipseBundle('org.eclipse.xtext.xbase.junit')
 }
 
 configurations {

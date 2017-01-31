@@ -5,7 +5,7 @@ Bundle-Version: 0.2.0
 Bundle-SymbolicName: jpl.imce.oml.specification.tests; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: jpl.imce.oml.specification,
- org.junit;bundle-version="4.7.0",
+ org.junit,
  org.eclipse.xtext.junit4,
  org.eclipse.xtext.xbase.junit,
  org.eclipse.xtext.xbase.lib

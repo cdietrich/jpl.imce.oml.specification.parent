@@ -34,21 +34,26 @@ class DownloadEclipseSdkTask extends DefaultTask {
     private void downloadEclipseSdkUnprotected(Project project) {
         // download the archive
         File sdkArchive = eclipseSdkArchive()
-        project.logger.info("Download Eclipse SDK from '${downloadUrl}' to '${sdkArchive.absolutePath}'")
-        project.ant.get(src: new URL(downloadUrl), dest: sdkArchive)
-
-        // extract it to the same location where it was extracted
-        project.logger.info("Extract '$sdkArchive' to '$sdkArchive.parentFile.absolutePath'")
-        if (OperatingSystem.current().isWindows()) {
-            project.ant.unzip(src: sdkArchive, dest: sdkArchive.parentFile, overwrite: true)
-        } else {
-            project.ant.untar(src: sdkArchive, dest: sdkArchive.parentFile, compression: "gzip", overwrite: true)
-        }
-
-        // make it executable
-        File exe = eclipseSdkExe()
-        project.logger.info("Set '${exe}' executable")
-        exe.setExecutable(true)
+		project.logger.info("### Eclipse SDK already downloaded? ${sdkArchive}")
+		if (sdkArchive.exists()) { // NFR
+			project.logger.info("### Eclipse SDK already downloaded: ${sdkArchive.absolutePath}")
+		} else { // NFR
+	        project.logger.info("### Download Eclipse SDK from '${downloadUrl}' to '${sdkArchive.absolutePath}'")
+	        project.ant.get(src: new URL(downloadUrl), dest: sdkArchive)
+	
+	        // extract it to the same location where it was extracted
+	        project.logger.info("Extract '$sdkArchive' to '$sdkArchive.parentFile.absolutePath'")
+	        if (OperatingSystem.current().isWindows()) {
+	            project.ant.unzip(src: sdkArchive, dest: sdkArchive.parentFile, overwrite: true)
+	        } else {
+	            project.ant.untar(src: sdkArchive, dest: sdkArchive.parentFile, compression: "gzip", overwrite: true)
+	        }
+	
+	        // make it executable
+	        File exe = eclipseSdkExe()
+	        project.logger.info("Set '${exe}' executable")
+	        exe.setExecutable(true)
+		}
     }
 
     private File eclipseSdkArchive() {

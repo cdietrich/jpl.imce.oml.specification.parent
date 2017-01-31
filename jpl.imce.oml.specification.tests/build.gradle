@@ -1,10 +1,17 @@
 apply plugin: eclipsebuild.BundlePlugin
 
 dependencies {
+	// This does not work because 'org.junit' returns a jar 
+	// that contains junit.jar which is the real dependency we need...
+	//testCompile withEclipseBundle('org.junit')
+	
+	// This works by resolving it from maven central..
+	testCompile 'junit:junit:4.12'
+	
 	compile project(':jpl.imce.oml.specification.ecore')
 	testCompile project(':jpl.imce.oml.specification')
-	testCompile "org.eclipse.xtext:org.eclipse.xtext.junit4:${xtextVersion}"
-	testCompile "org.eclipse.xtext:org.eclipse.xtext.xbase.junit:${xtextVersion}"
+	testCompile withEclipseBundle('org.eclipse.xtext.junit4')
+	testCompile withEclipseBundle('org.eclipse.xtext.xbase.junit')
 }
 
 configurations {

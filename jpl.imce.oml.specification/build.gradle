@@ -1,38 +1,40 @@
 apply plugin: eclipsebuild.BundlePlugin
 
 dependencies {
-	compile "org.eclipse.xtext:org.eclipse.xtext:${xtextVersion}"
-	compile "org.eclipse.xtext:org.eclipse.xtext.xbase:${xtextVersion}"
-    compile 'org.eclipse.emf:org.eclipse.emf.ecore.xcore.lib:+'
+	compile withEclipseBundle('com.ibm.icu')
+	compile withEclipseBundle('org.apache.log4j')
+	compile withEclipseBundle('org.eclipse.xtext')
+	compile withEclipseBundle('org.eclipse.xtext.xbase')
+    compile withEclipseBundle('org.eclipse.emf.ecore.xcore')
+    compile withEclipseBundle('org.eclipse.emf.ecore.xcore.lib')
 	compile project(':jpl.imce.oml.specification.ecore')
     
-    xtextLanguages 'org.eclipse.emf:org.eclipse.emf.ecore.xcore:+'
-    xtextLanguages 'org.eclipse.emf:org.eclipse.emf.ecore.xcore.lib:+'
-    xtextLanguages 'org.eclipse.emf:org.eclipse.emf.codegen.ecore:+'
-    xtextLanguages 'org.eclipse.emf:org.eclipse.emf.codegen.ecore.xtext:+'
-    xtextLanguages "org.eclipse.xtext:org.eclipse.xtext.ecore:${xtextVersion}"
-	xtextLanguages project(':jpl.imce.oml.specification.ecore')
+    xtextLanguages withEclipseBundle('org.eclipse.emf.codegen.ecore')
+    xtextLanguages withEclipseBundle('org.eclipse.emf.codegen.ecore.xtext')
+    xtextLanguages withEclipseBundle('org.eclipse.xtext.ecore')
 }
 configurations {
 	mwe2 {
 		extendsFrom compile
 	}
-
+	xtextLanguages {
+		extendsFrom compile
+	}
 	compile.transitive = true
 	testCompile.transitive = true
 }
 
 dependencies {
-	mwe2 "org.eclipse.emf:org.eclipse.emf.mwe2.launch:2.8.3"
-	mwe2 "org.eclipse.xtext:org.eclipse.xtext.xtext.generator:${xtextVersion}"
-	mwe2 "org.eclipse.xtext:org.eclipse.xtext.generator:${xtextVersion}"
-	mwe2 "org.eclipse.xpand:org.eclipse.xpand:2.0.0"
-	mwe2 "org.eclipse.xpand:org.eclipse.xtend:2.0.0"
+	mwe2 withEclipseBundle('org.eclipse.emf.mwe2.launch')
+	mwe2 withEclipseBundle('org.eclipse.xtext.xtext.generator')
+	mwe2 withEclipseBundle('org.eclipse.xtext.generator')
+	mwe2 withEclipseBundle('org.eclipse.xpand')
+	mwe2 withEclipseBundle('org.eclipse.xtend')
     
 	// added for Xcore support
-	mwe2 'org.eclipse.emf:org.eclipse.emf.ecore.xcore:+'
-    mwe2 'org.eclipse.emf:org.eclipse.emf.ecore.xcore.lib:+'
-	mwe2 'org.eclipse.emf:org.eclipse.emf.codegen.ecore.xtext:+'
+	mwe2 withEclipseBundle('org.eclipse.emf.ecore.xcore')
+    mwe2 withEclipseBundle('org.eclipse.emf.ecore.xcore.lib')
+	mwe2 withEclipseBundle('org.eclipse.emf.codegen.ecore.xtext')
 }
 
 task generateXtextLanguage(type: JavaExec) {

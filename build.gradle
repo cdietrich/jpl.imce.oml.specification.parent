@@ -26,6 +26,9 @@ buildscript {
 
 plugins {
     id 'com.gradle.build-scan' version '1.1.1'
+    
+    // https://github.com/bintray/gradle-bintray-plugin#step-2-apply-the-plugin-to-your-gradle-build-script
+    id "com.jfrog.bintray" version "1.7.3"
 }
 
 buildScan {
@@ -73,10 +76,10 @@ eclipseBuild {
     }
 }
 
-// read the current version from an external file and add a timestamp suffix if requested by the caller
-//ext.baseVersion = file('version.txt').text.trim()
-//version = getVersion(baseVersion)
-version = file('version.txt').text.trim()
+// instead of reading the current version from an external file and add a timestamp suffix if requested by the caller
+// version = file('version.txt').text.trim()
+// get the version from either gradle.properties or from the command line via -Pversion=...
+version = "${version}"
 
 // read xtext version from an external file
 ext.xtextVersion = file('xtextVersion.txt').text.trim()
@@ -115,55 +118,19 @@ subprojects {
 		exclude group: 'asm'
 	}
 	
-    repositories {
+	repositories {
+		// the gradle xtext plugin injects a dependency:
+		// org.eclipse.xtend:org.eclipse.xtend.core:${xtextVersion}
+		// also, it looks at the META-INF/MANIFEST.MF; and appends a "+" to dependencies.
+		// so for antlr, we can't add an explicit dependency: org.antlr.runtime:3.2.0 
+		// because the gradle xtext plugin would change it to an unresolvable dependency: org.antlr.runtime:3.2.0+
         mavenCentral()
-        jcenter()
-		ivy {
-			// See http://download.eclipse.org/eclipse/downloads/
-			// This is 4.6.2 (Neon.2)
-			url "https://repo.gradle.org/gradle/tooling-libs-releases-local/com/gradleware/tooling/p2-repository/0.17.0/p2-repository-0.17.0.zip!/"
-			layout "pattern", { artifact "[organization]/[artifact]_[revision].[ext]" }
-		}
-		
-		ivy {
-			// See http://download.eclipse.org/eclipse/downloads/
-			// This is 4.6.2 (Neon.2)
-			url "https://repo.gradle.org/gradle/tooling-libs-releases-local/com/gradleware/tooling/p2-repository/0.17.0/p2-repository-0.17.0.zip!/plugins/"
-			layout "pattern", { artifact "[artifact]_[revision].[ext]" }
-		}
-		ivy {
-			// See http://download.eclipse.org/eclipse/downloads/
-			// This is 4.6.2 (Neon.2)
-			url "http://download.eclipse.org/eclipse/updates/4.6/R-4.6.2-201611241400/plugins/"
-			layout "pattern", { artifact "[artifact]_[revision].[ext]" }
-		}
-		
-		ivy {
-			// See http://download.eclipse.org/modeling/emf/
-			// Unfortunately, it is not obvious how to get a useful URL for IVY-based resolution for EMF.
-			// 
-			// Here's the workaround used for this project:
-			// - Look for the version-specific release timestamp of EMF needed:
-			//   http://download.eclipse.org/modeling/emf/emf/downloads/drops/?d
-			// 
-			//   For example, for the 2.12 version, the latest 2016 release timestamp is R201605260356
-			//   Unfortunately, the EMF download page only provides links for the ZIPs:
-			//   e.g.: http://download.eclipse.org/modeling/emf/emf/downloads/drops/2.12.0/R201605260356/?d
-			// 
-			// - For IVY-based resolution, replace 'downloads' with 'updates' in the drop zip URL as shown below:
-			url "http://download.eclipse.org/modeling/emf/emf/updates/2.12/core/R201605260356/plugins/"
-			layout "pattern", { artifact "[artifact]_[revision].[ext]" }
-		}
-		
-		ivy {
-			// https://www.eclipse.org/cdo/downloads/
-			// This is 4.5 (R20160607-1209)
-			// For coordinates, use 'plugins:<plugin name>:<plugin version>'
-			url "http://download.eclipse.org/modeling/emf/cdo/drops/R20160607-1209/plugins/"
-			layout "pattern", { artifact "[artifact]_[revision].[ext]" }
-		}
-		
-    }
+        
+	    maven {
+	      url "file:${Config.on(rootProject).mavenizedTargetPlatformDir}"
+	    }
+	}
+	
     
     eclipse {
 	    classpath {

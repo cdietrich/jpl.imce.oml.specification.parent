@@ -1,10 +1,13 @@
 apply plugin: eclipsebuild.BundlePlugin
 
+final def swtPluginId = "org.eclipse.swt.${ECLIPSE_WS}.${ECLIPSE_OS}.${ECLIPSE_ARCH}"
+
 dependencies {
+	compile withEclipseBundle(swtPluginId)
 	compile project(':jpl.imce.oml.specification.ide')
 	testCompile project(':jpl.imce.oml.specification')
-	testCompile "org.eclipse.xtext:org.eclipse.xtext.junit4:${xtextVersion}"
-	testCompile "org.eclipse.xtext:org.eclipse.xtext.xbase.junit:${xtextVersion}"
+	testCompile withEclipseBundle('org.eclipse.xtext.junit4')
+	testCompile withEclipseBundle('org.eclipse.xtext.xbase.junit')
 }
 
 configurations {

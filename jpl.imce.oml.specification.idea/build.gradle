@@ -6,7 +6,7 @@ dependencies {
 	compile project(':jpl.imce.oml.specification.ecore')
 	compile project(':jpl.imce.oml.specification')
 	compile project(':jpl.imce.oml.specification.ide')
-	compile 'org.eclipse.emf:org.eclipse.emf.ecore.xcore.lib:+'
+	compile withEclipseBundle('org.eclipse.emf.ecore.xcore.lib')
 }
 
 ideaDevelopment {

@@ -9,6 +9,10 @@ This composite project comprises several sub-projects:
 - [A textual concrete syntax for OML models](./jpl.imce.oml.specification)
 - Several projects generated from XCore IDE wizards
 
+## Installation in Eclipse using a version of the [JPL IMCE OML Specification P2](https://bintray.com/jpl-imce/gov.nasa.jpl.imce.p2/jpl.imce.oml.specification.p2) repository
+
+See [jpl.imce.oml.specification.repository/README.md](jpl.imce.oml.specification.repository/README.md)
+
 ## Developer Notes
 
 This project is developed using the Eclipse Neon.2 Modeling IDE augmented with:

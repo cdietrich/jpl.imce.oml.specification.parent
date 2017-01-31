@@ -206,43 +206,49 @@ class BuildDefinitionPlugin implements Plugin<Project> {
     static void assembleTargetPlatformUnprotected(Project project, Config config) {
         // delete the target platform directory to ensure that the P2 Director creates a fresh product
         if (config.nonMavenizedTargetPlatformDir.exists()) {
-            project.logger.info("Delete mavenized platform directory '${config.nonMavenizedTargetPlatformDir}'")
-            config.nonMavenizedTargetPlatformDir.deleteDir()
-        }
-
-        // collect  update sites and feature names
-        def updateSites = []
-        def features = []
-        def rootNode = new XmlSlurper().parseText(config.targetPlatform.targetDefinition.text)
-        rootNode.locations.location.each { location ->
-            updateSites.add(location.repository.@location.text().replace('\${project_loc}', 'file://' +  project.projectDir.absolutePath))
-            location.unit.each {unit -> features.add("${unit.@id}/${unit.@version}") }
-        }
-
-        // invoke the P2 director application to assemble install all features from the target
-        // definition file to the target platform: http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Fguide%2Fp2_director.html
-        project.logger.info("Assemble target platfrom in '${config.nonMavenizedTargetPlatformDir.absolutePath}'.\n    Update sites: '${updateSites.join(' ')}'\n    Features: '${features.join(' ')}'")
-        project.exec {
-
-            // redirect the external process output to the logging
-            standardOutput = new LogOutputStream(project.logger, LogLevel.INFO)
-            errorOutput = new LogOutputStream(project.logger, LogLevel.INFO)
-
-            commandLine(config.eclipseSdkExe.path,
-                    '-application', 'org.eclipse.equinox.p2.director',
-                    '-repository', updateSites.join(','),
-                    '-installIU', features.join(','),
-                    '-tag', 'target-platform',
-                    '-destination', config.nonMavenizedTargetPlatformDir.path,
-                    '-profile', 'SDKProfile',
-                    '-bundlepool', config.nonMavenizedTargetPlatformDir.path,
-                    '-p2.os', Constants.os,
-                    '-p2.ws', Constants.ws,
-                    '-p2.arch', Constants.arch,
-                    '-roaming',
-                    '-nosplash',
-                    '-consoleLog',
-                    '-vmargs', '-Declipse.p2.mirror=false')
+            project.logger.warn("### Use existing non-mavenized platform directory '${config.nonMavenizedTargetPlatformDir}'")
+           	project.logger.warn("### Clean first if you want to rebuild the non-mavenized platform directory.")
+        } else {
+			project.logger.warn("### Downloading non-mavenized platform directory '${config.nonMavenizedTargetPlatformDir} (this can take some time...)'")
+		
+	        // collect  update sites and feature names
+	        def updateSites = []
+	        def features = []
+	        def rootNode = new XmlSlurper().parseText(config.targetPlatform.targetDefinition.text)
+	        rootNode.locations.location.each { location ->
+	            updateSites.add(location.repository.@location.text().replace('\${project_loc}', 'file://' +  project.projectDir.absolutePath))
+	            location.unit.each {unit -> features.add("${unit.@id}/${unit.@version}") }
+	        }
+			
+			project.logger.warn("### target definition: "+config.targetPlatform.targetDefinition)
+			project.logger.warn("### - update sites="+updateSites.size)
+			project.logger.warn("### - features="+features.size)
+			
+	        // invoke the P2 director application to assemble install all features from the target
+	        // definition file to the target platform: http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Fguide%2Fp2_director.html
+	        project.logger.info("Assemble target platfrom in '${config.nonMavenizedTargetPlatformDir.absolutePath}'.\n    Update sites: '${updateSites.join(' ')}'\n    Features: '${features.join(' ')}'")
+	        project.exec {
+	
+	            // redirect the external process output to the logging
+	            standardOutput = new LogOutputStream(project.logger, LogLevel.INFO)
+	            errorOutput = new LogOutputStream(project.logger, LogLevel.INFO)
+	
+	            commandLine(config.eclipseSdkExe.path,
+	                    '-application', 'org.eclipse.equinox.p2.director',
+	                    '-repository', updateSites.join(','),
+	                    '-installIU', features.join(','),
+	                    '-tag', 'target-platform',
+	                    '-destination', config.nonMavenizedTargetPlatformDir.path,
+	                    '-profile', 'SDKProfile',
+	                    '-bundlepool', config.nonMavenizedTargetPlatformDir.path,
+	                    '-p2.os', Constants.os,
+	                    '-p2.ws', Constants.ws,
+	                    '-p2.arch', Constants.arch,
+	                    '-roaming',
+	                    '-nosplash',
+	                    '-consoleLog',
+	                    '-vmargs', '-Declipse.p2.mirror=false')
+	        }
         }
     }
 
@@ -260,14 +266,14 @@ class BuildDefinitionPlugin implements Plugin<Project> {
         // delete the mavenized target platform directory to ensure that the deployment doesn't
         // have outdated artifacts
         if (config.mavenizedTargetPlatformDir.exists()) {
-            project.logger.info("Delete mavenized platform directory '${config.mavenizedTargetPlatformDir}'")
-            config.mavenizedTargetPlatformDir.deleteDir()
+            project.logger.warn("Use existing mavenized platform directory '${config.mavenizedTargetPlatformDir}'")
+           	project.logger.warn("### Clean first if you want to rebuild the mavenized platform directory.")
+        } else {
+	        // install bundles
+	        project.logger.warn("### Convert Eclipse target platform '${config.nonMavenizedTargetPlatformDir}' to Maven repository '${config.mavenizedTargetPlatformDir}'")
+	        def deployer = new BundleMavenDeployer(project.ant, Constants.mavenizedEclipsePluginGroupName, project.logger)
+	        deployer.deploy(config.nonMavenizedTargetPlatformDir, config.mavenizedTargetPlatformDir)
         }
-
-        // install bundles
-        project.logger.info("Convert Eclipse target platform '${config.nonMavenizedTargetPlatformDir}' to Maven repository '${config.mavenizedTargetPlatformDir}'")
-        def deployer = new BundleMavenDeployer(project.ant, Constants.mavenizedEclipsePluginGroupName, project.logger)
-        deployer.deploy(config.nonMavenizedTargetPlatformDir, config.mavenizedTargetPlatformDir)
     }
 
     static void addTaskUninstallTargetPlatform(Project project, Config config) {

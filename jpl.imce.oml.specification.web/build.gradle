@@ -6,9 +6,17 @@ plugins {
 dependencies {
 	compile project(':jpl.imce.oml.specification')
 	compile project(':jpl.imce.oml.specification.ide')
+	
+	// TODO: add these dependencies on the target definition...
+	//compile withEclipseBundle('org.eclipse.xtext.xbase.web')
+	//compile withEclipseBundle('org.eclipse.xtext.web.servlet')
+	//compile withEclipseBundle('org.eclipse.xtend.lib')
+	
+	// For now, pull these from maven central
 	compile "org.eclipse.xtext:org.eclipse.xtext.xbase.web:${xtextVersion}"
 	compile "org.eclipse.xtext:org.eclipse.xtext.web.servlet:${xtextVersion}"
 	compile "org.eclipse.xtend:org.eclipse.xtend.lib:${xtextVersion}"
+	
 	compile "org.webjars:requirejs:2.2.0"
 	compile "org.webjars:jquery:2.2.3"
 	compile "org.webjars:ace:1.2.2"
