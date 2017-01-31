@@ -2,8 +2,6 @@
 
 set -ev
 
-. $(dirname $0)/travis-decode.sh
-
 # Deploy if TRAVIS_TAG is set.
 # Error if TRAVIS_SECURE_ENV_VARS is false
 
