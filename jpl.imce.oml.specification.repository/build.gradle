@@ -13,6 +13,19 @@ buildscript {
     }
 }
 
+// see https://github.com/gradle/gradle/issues/1010#issuecomment-276415202
+gradle.taskGraph.beforeTask { Task task ->
+	if (':jpl.imce.oml.specification.repository:bintrayUpload' == task.name || 'bintrayUpload' == task.name) {
+		println "... ${task.name}: log level=${logger.context.level}"
+		logger.context.level = LogLevel.INFO
+		logging.captureStandardOutput LogLevel.INFO
+		println "^^^ ${task.name}: capture stdout to log level=${logger.context.level}"
+	} else {
+		println "... ${task.name}: log level=${logger.context.level}"
+	}
+	
+}
+
 def repositoryDir = new File(project.buildDir, 'repository')
 
 def m2SettingsFile = new File(System.getenv("HOME") + "/.m2/settings.xml")
@@ -27,8 +40,8 @@ def bintrayApiKey = getBintrayApiKey(mavenSettings)
 assert null != bintrayApiKey && "" != bintrayApiKey
 
 bintray {
-	user = bintrayUser
-	key = bintrayApiKey
+	user = (project.hasProperty('bintray.user') ? project.property('bintray.user') : System.getenv("BINTRAY_USER"))
+	key = (project.hasProperty('bintray.apikey') ? project.property('bintray.apikey') : System.getenv("BINTRAY_APIKEY"))
 	
 	filesSpec {
 		from repositoryDir
@@ -80,35 +93,3 @@ dependencies {
 }
 
 bintrayUpload.dependsOn(createP2Repository)
-	
-def String getBintrayUser(GPathResult mavenSettings) {
-	if (null == mavenSettings)
-		System.getenv("BINTRAY_USER")
-	else {
-		def GPathResult found =
-		mavenSettings.'**'.find { node ->
-			node.name() == 'bintray.user'
-		}
-		
-		if (null == found)
-			System.getenv("BINTRAY_USER")
-		else
-			found.text()
-	}
-}
-
-def String getBintrayApiKey(GPathResult mavenSettings) {
-	if (null == mavenSettings)
-		System.getenv("BINTRAY_APIKEY")
-	else {
-		def GPathResult found =
-		mavenSettings.'**'.find { node ->
-			node.name() == 'bintray.apikey'
-		}
-		
-		if (null == found)
-			System.getenv("BINTRAY_APIKEY")
-		else
-			found.text()
-	}	
-}
