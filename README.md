@@ -2,7 +2,9 @@
 
 Travis CI: [![Build Status](https://travis-ci.org/JPL-IMCE/jpl.imce.oml.specification.parent.svg?branch=master)](https://travis-ci.org/JPL-IMCE/jpl.imce.oml.specification.parent)
 
-Bintray: [ ![Download](https://api.bintray.com/packages/jpl-imce/gov.nasa.jpl.imce/jpl.imce.oml.specification.parent/images/download.svg) ](https://bintray.com/jpl-imce/gov.nasa.jpl.imce/jpl.imce.oml.specification.parent/_latestVersion)
+Bintray: [ ![Download](https://api.bintray.com/packages/jpl-imce/gov.nasa.jpl.imce.p2/jpl.imce.oml.specification.p2/images/download.svg) ](https://bintray.com/jpl-imce/gov.nasa.jpl.imce.p2/jpl.imce.oml.specification.p2/_latestVersion)
+
+P2: See [jpl.imce.oml.specification.repository/README.md](jpl.imce.oml.specification.repository/README.md)
 
 This composite project comprises several sub-projects:
 - [An ecore metamodel for the OML specification](./jpl.imce.oml.specification.ecore)
@@ -21,8 +23,27 @@ This project is developed using the Eclipse Neon.2 Modeling IDE augmented with:
 - CDO
 - Buildship (for Eclipse gradle support)
 
+### Caveats
+
 Following the suggestion from [Bugzilla – Bug 469287 (CLOSED WONTFIX)](https://bugs.eclipse.org/bugs/show_bug.cgi?id=469287),
 this project includes a copy of the internal gradle plugins that Eclipse buildship uses for building/publishing.
+
+However, following [Eclipse buildship developer setup instructions](https://github.com/eclipse/buildship/blob/master/docs/development/Setup.md) 
+turns out to be a non-trivial affair:
+- Adding the Java & Groovy nature (and possibly Gradle nature) would be required to get JDT support for
+  editing the buildship Java+Groovy scripts in [buildSrc/src/main/groovy](buildSrc/src/main/groovy).
+  However, doing so brings a lot of compilation errors; including the fact that without the Gradle 3.3 libraries,
+  a lot of imports are unresolved.
+  
+- The Eclipse buildship support can add gradle nature; however, it doesn't add Gradle 3.3 to the project classpath.
+  This means that there is no JDT support for editing gradle scripts!
+
+- Debugging gradle scripts is a mystery.
+
+All of this makes editing gradle scripts very tedious; still, it is overall better than the alternative (i.e. Maven/Tycho)
+because Gradle feels like SBT without compile-time type checking and operates in a manner that is functionally similar to SBT.
+
+## Continuous Integration
 
 For continuous integration & development, this project should be buildable from a shell (unix/cygwin) using gradle.
 For example, the following will build all sub-projects:

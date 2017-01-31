@@ -83,17 +83,45 @@ dependencies {
 bintrayUpload.dependsOn(createP2Repository)
 	
 def String getBintrayUser(Optional<GPathResult> mavenSettings) {
+	
+	def Optional<String> user =
 	mavenSettings.map { GPathResult gp ->
-		gp.'**'.find { node -> node.name() == 'bintray.user' }.text()
-	}.orElse {
+		
+		def GPathResult found = 
+		gp.'**'.find { node -> 
+			project.logger.warn("### getBintrayUser.gp.node: ${node}")
+			node.name() == 'bintray.user' 
+		}
+		
+		if (null == found) 
+			Optional.empty()
+		else 
+			Optional.of(found.text())
+		
+	}
+	
+	user.orElse {
 		System.getenv("BINTRAY_USER")
 	}
 }
 
 def String getBintrayApiKey(Optional<GPathResult> mavenSettings) {
+	def Optional<String> apikey =
 	mavenSettings.map { GPathResult gp ->
-		gp.'**'.find { node -> node.name() == 'bintray.apikey' }.text()
-	}.orElse {
+		
+		def GPathResult found =
+		gp.'**'.find { node ->
+			project.logger.warn("### getBintrayApiKey.gp.node: ${node}")
+			node.name() == 'bintray.apikey'
+		}
+		
+		if (null == found)
+			Optional.empty()
+		else 
+			Optional.of(found.text())
+	}
+	
+	apikey.orElse {
 		System.getenv("BINTRAY_APIKEY")
 	}
 }
