@@ -17,10 +17,12 @@ def repositoryDir = new File(project.buildDir, 'repository')
 def m2SettingsFile = new File(System.getenv("HOME") + "/.m2/settings.xml")
 def mavenSettings = (m2SettingsFile.exists()) ? new XmlSlurper().parse(m2SettingsFile) : null
 
-def bintrayUser = (null != mavenSettings) ? mavenSettings.'**'.find { node -> node.name() == 'bintray.user' }.text() : System.getenv("BINTRAY_USER")
+// delay evaluating mavenSettings until it is certain that it isn't null.
+
+def bintrayUser = (null == mavenSettings) ? System.getenv("BINTRAY_USER") : mavenSettings.'**'.find { node -> node.name() == 'bintray.user' }.text()
 assert null != bintrayUser && "" != bintrayUser
 
-def bintrayApiKey = (null != mavenSettings) ? mavenSettings.'**'.find { node -> node.name() == 'bintray.apikey' }.text() : System.getenv("BINTRAY_APIKEY")
+def bintrayApiKey = (null == mavenSettings) ? System.getenv("BINTRAY_APIKEY") : mavenSettings.'**'.find { node -> node.name() == 'bintray.apikey' }.text()
 assert null != bintrayApiKey && "" != bintrayApiKey
 
 bintray {
