@@ -1,5 +1,7 @@
 import groovy.util.XmlParser
 import groovy.util.XmlSlurper
+import groovy.util.slurpersupport.GPathResult
+import java.util.Optional
 
 apply plugin: eclipsebuild.UpdateSitePlugin
 apply plugin: 'org.hidetake.ssh'
@@ -15,14 +17,14 @@ buildscript {
 def repositoryDir = new File(project.buildDir, 'repository')
 
 def m2SettingsFile = new File(System.getenv("HOME") + "/.m2/settings.xml")
-def mavenSettings = (m2SettingsFile.exists()) ? new XmlSlurper().parse(m2SettingsFile) : null
+def Optional<GPathResult> mavenSettings = (m2SettingsFile.exists()) ? Optional.of(new XmlSlurper().parse(m2SettingsFile)) : Optional.empty()
 
 // delay evaluating mavenSettings until it is certain that it isn't null.
 
-def bintrayUser = (null == mavenSettings) ? System.getenv("BINTRAY_USER") : mavenSettings.'**'.find { node -> node.name() == 'bintray.user' }.text()
+def bintrayUser = getBintrayUser(mavenSettings)
 assert null != bintrayUser && "" != bintrayUser
 
-def bintrayApiKey = (null == mavenSettings) ? System.getenv("BINTRAY_APIKEY") : mavenSettings.'**'.find { node -> node.name() == 'bintray.apikey' }.text()
+def bintrayApiKey = getBintrayApiKey(mavenSettings)
 assert null != bintrayApiKey && "" != bintrayApiKey
 
 bintray {
@@ -80,3 +82,18 @@ dependencies {
 
 bintrayUpload.dependsOn(createP2Repository)
 	
+def String getBintrayUser(Optional<GPathResult> mavenSettings) {
+	mavenSettings.map { GPathResult gp ->
+		gp.'**'.find { node -> node.name() == 'bintray.user' }.text()
+	}.orElse {
+		System.getenv("BINTRAY_USER")
+	}
+}
+
+def String getBintrayApiKey(Optional<GPathResult> mavenSettings) {
+	mavenSettings.map { GPathResult gp ->
+		gp.'**'.find { node -> node.name() == 'bintray.apikey' }.text()
+	}.orElse {
+		System.getenv("BINTRAY_APIKEY")
+	}
+}
