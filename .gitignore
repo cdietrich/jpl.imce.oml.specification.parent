@@ -1,4 +1,6 @@
 .gradle
+._trace
+.xtendbin
 build
 target
 *.log

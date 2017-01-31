@@ -13,7 +13,6 @@ import org.eclipse.xtext.util.Modules2;
 
 @SuppressWarnings("all")
 public class OntologicalModelingLanguageStandaloneSetupIdea extends OntologicalModelingLanguageStandaloneSetupGenerated {
-  @Override
   public Injector createInjector() {
     final OntologicalModelingLanguageRuntimeModule runtimeModule = new OntologicalModelingLanguageRuntimeModule();
     final OntologicalModelingLanguageIdeaModule ideaModule = new OntologicalModelingLanguageIdeaModule();
