@@ -9,6 +9,7 @@ cache:
  - $HOME/.gradle/caches/
  - $HOME/.gradle/wrapper/
  - $HOME/.gradle/nodejs/
+ - $HOME/.tooling
  - node_modules
 
 language: java
