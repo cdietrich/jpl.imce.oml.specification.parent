@@ -15,4 +15,4 @@ set -ev
 ./gradlew build 
 
 # Upload the update size
-./gradlew build :jpl.imce.oml.specification.repository:bintrayUpload
+./gradlew build :jpl.imce.oml.specification.repository:bintrayUpload --debug --stacktrace
