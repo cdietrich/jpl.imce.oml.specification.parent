@@ -79,6 +79,7 @@ public class OMLAnnotationTest2 {
       int _size = ann.size();
       Assert.assertEquals(2, _size);
       final Consumer<Annotation> _function = new Consumer<Annotation>() {
+        @Override
         public void accept(final Annotation a) {
           final AnnotationProperty a_prop = a.getProperty();
           final TerminologyThing a_subj = a.getSubject();
