@@ -11,5 +11,5 @@ t=$(git name-rev --tags --name-only $(git rev-parse HEAD))
 # Bypass the build if the tag is anything but 'undefined'.
 [ "undefined" != "$t" ] && exit 0;
 
-../gradlew build --continue
+./gradlew build --continue
 
