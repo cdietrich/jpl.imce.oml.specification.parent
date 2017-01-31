@@ -205,7 +205,7 @@ class BuildDefinitionPlugin implements Plugin<Project> {
 
     static void assembleTargetPlatformUnprotected(Project project, Config config) {
         // delete the target platform directory to ensure that the P2 Director creates a fresh product
-        if (config.nonMavenizedTargetPlatformDir.exists()) {
+        if ((new File(config.nonMavenizedTargetPlatformDir, "artifacts.xml")).exists()) {
             project.logger.warn("### Use existing non-mavenized platform directory '${config.nonMavenizedTargetPlatformDir}'")
            	project.logger.warn("### Clean first if you want to rebuild the non-mavenized platform directory.")
         } else {
@@ -265,7 +265,7 @@ class BuildDefinitionPlugin implements Plugin<Project> {
     static void installTargetPlatform(Project project, Config config) {
         // delete the mavenized target platform directory to ensure that the deployment doesn't
         // have outdated artifacts
-        if (config.mavenizedTargetPlatformDir.exists()) {
+        if ((new File(config.mavenizedTargetPlatformDir, "eclipse")).exists()) {
             project.logger.warn("Use existing mavenized platform directory '${config.mavenizedTargetPlatformDir}'")
            	project.logger.warn("### Clean first if you want to rebuild the mavenized platform directory.")
         } else {

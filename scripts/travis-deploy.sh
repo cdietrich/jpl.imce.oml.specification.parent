@@ -8,4 +8,11 @@ set -ev
 [ -z "${TRAVIS_TAG}" ] && exit 0;
 [ ! ${TRAVIS_SECURE_ENV_VARS} ] && exit -1;
 
-./gradlew build :jpl.imce.oml.specification.repository:bintrayUpload --continue
+# Download dependencies and create a mavenized target platform repository for dependency resolution
+./gradlew :installTargetPlatform
+
+# Use the mavenized target platform repository to build the actual eclipse projects
+./gradlew build 
+
+# Upload the update size
+./gradlew build :jpl.imce.oml.specification.repository:bintrayUpload

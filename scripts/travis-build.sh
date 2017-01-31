@@ -13,5 +13,9 @@ t=$(git name-rev --tags --name-only $(git rev-parse HEAD))
 
 ./gradlew --version
 
-./gradlew build --continue
+# Download dependencies and create a mavenized target platform repository for dependency resolution
+./gradlew :installTargetPlatform
+
+# Use the mavenized target platform repository to build the actual eclipse projects
+./gradlew build 
 

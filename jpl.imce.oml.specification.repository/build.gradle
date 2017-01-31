@@ -89,7 +89,6 @@ def String getBintrayUser(Optional<GPathResult> mavenSettings) {
 		
 		def GPathResult found = 
 		gp.'**'.find { node -> 
-			project.logger.warn("### getBintrayUser.gp.node: ${node}")
 			node.name() == 'bintray.user' 
 		}
 		
@@ -111,7 +110,6 @@ def String getBintrayApiKey(Optional<GPathResult> mavenSettings) {
 		
 		def GPathResult found =
 		gp.'**'.find { node ->
-			project.logger.warn("### getBintrayApiKey.gp.node: ${node}")
 			node.name() == 'bintray.apikey'
 		}
 		
