@@ -1,7 +1,6 @@
 import groovy.util.XmlParser
 import groovy.util.XmlSlurper
 import groovy.util.slurpersupport.GPathResult
-import java.util.Optional
 
 apply plugin: eclipsebuild.UpdateSitePlugin
 apply plugin: 'org.hidetake.ssh'
@@ -17,7 +16,7 @@ buildscript {
 def repositoryDir = new File(project.buildDir, 'repository')
 
 def m2SettingsFile = new File(System.getenv("HOME") + "/.m2/settings.xml")
-def Optional<GPathResult> mavenSettings = (m2SettingsFile.exists()) ? Optional.of(new XmlSlurper().parse(m2SettingsFile)) : Optional.empty()
+def mavenSettings = (m2SettingsFile.exists()) ? new XmlSlurper().parse(m2SettingsFile) : null
 
 // delay evaluating mavenSettings until it is certain that it isn't null.
 
@@ -82,44 +81,34 @@ dependencies {
 
 bintrayUpload.dependsOn(createP2Repository)
 	
-def String getBintrayUser(Optional<GPathResult> mavenSettings) {
-	
-	def Optional<String> user =
-	mavenSettings.map { GPathResult gp ->
-		
-		def GPathResult found = 
-		gp.'**'.find { node -> 
-			node.name() == 'bintray.user' 
+def String getBintrayUser(GPathResult mavenSettings) {
+	if (null == mavenSettings)
+		System.getenv("BINTRAY_USER")
+	else {
+		def GPathResult found =
+		mavenSettings.'**'.find { node ->
+			node.name() == 'bintray.user'
 		}
 		
-		if (null == found) 
-			Optional.empty()
-		else 
-			Optional.of(found.text())
-		
-	}
-	
-	user.orElse {
-		System.getenv("BINTRAY_USER")
+		if (null == found)
+			System.getenv("BINTRAY_USER")
+		else
+			found.text()
 	}
 }
 
-def String getBintrayApiKey(Optional<GPathResult> mavenSettings) {
-	def Optional<String> apikey =
-	mavenSettings.map { GPathResult gp ->
-		
+def String getBintrayApiKey(GPathResult mavenSettings) {
+	if (null == mavenSettings)
+		System.getenv("BINTRAY_APIKEY")
+	else {
 		def GPathResult found =
-		gp.'**'.find { node ->
+		mavenSettings.'**'.find { node ->
 			node.name() == 'bintray.apikey'
 		}
 		
 		if (null == found)
-			Optional.empty()
-		else 
-			Optional.of(found.text())
-	}
-	
-	apikey.orElse {
-		System.getenv("BINTRAY_APIKEY")
-	}
+			System.getenv("BINTRAY_APIKEY")
+		else
+			found.text()
+	}	
 }
