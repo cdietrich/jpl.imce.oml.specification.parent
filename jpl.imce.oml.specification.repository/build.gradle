@@ -13,19 +13,6 @@ buildscript {
     }
 }
 
-// see https://github.com/gradle/gradle/issues/1010#issuecomment-276415202
-gradle.taskGraph.beforeTask { Task task ->
-	if (':jpl.imce.oml.specification.repository:bintrayUpload' == task.name || 'bintrayUpload' == task.name) {
-		println "... ${task.name}: log level=${logger.context.level}"
-		logger.context.level = LogLevel.INFO
-		logging.captureStandardOutput LogLevel.INFO
-		println "^^^ ${task.name}: capture stdout to log level=${logger.context.level}"
-	} else {
-		println "... ${task.name}: log level=${logger.context.level}"
-	}
-	
-}
-
 def repositoryDir = new File(project.buildDir, 'repository')
 
 bintray {
@@ -39,9 +26,7 @@ bintray {
 	}
 	
 	dryRun = "1" == (project.hasProperty('bintray.dryRun') ? project.property('bintray.dryRun') : System.getenv("BINTRAY_DRYRUN"))
-	
 	publish = "1" == (project.hasProperty('bintray.publish') ? project.property('bintray.publish') : System.getenv("BINTRAY_PUBLISH"))
-	
 	override = "1" == (project.hasProperty('bintray.override') ? project.property('bintray.override') : System.getenv("BINTRAY_OVERRIDE"))
 	
 	pkg {
