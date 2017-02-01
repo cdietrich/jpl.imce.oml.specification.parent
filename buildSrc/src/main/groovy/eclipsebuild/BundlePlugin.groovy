@@ -25,6 +25,15 @@ import org.gradle.api.plugins.JavaPlugin
 import org.gradle.api.tasks.Copy
 import org.osgi.framework.Version
 
+import javax.xml.parsers.DocumentBuilder
+import javax.xml.parsers.DocumentBuilderFactory
+import javax.xml.transform.Transformer
+import javax.xml.transform.TransformerException
+import javax.xml.transform.TransformerFactory
+import javax.xml.transform.dom.DOMSource
+import javax.xml.transform.stream.StreamResult
+import org.w3c.dom.Document
+
 /**
  * Gradle plug-in for building Eclipse bundles.
  * <p/>
@@ -54,6 +63,7 @@ class BundlePlugin implements Plugin<Project> {
     static final String TASK_NAME_UPDATE_LIBS = 'updateLibs'
     static final String TASK_NAME_COPY_LIBS = 'copyLibs'
     static final String TASK_NAME_UPDATE_MANIFEST = 'updateManifest'
+    static final String TASK_NAME_SET_MANIFEST_VERSION = 'setManifestVersion'
 
     @Override
     public void apply(Project project) {
@@ -61,6 +71,7 @@ class BundlePlugin implements Plugin<Project> {
         loadDependenciesFromManifest(project)
 
         addTaskCopyLibs(project)
+		addTaskSetManifestVersion(project)
         addTaskUpdateManifest(project)
         addTaskUpdateLibs(project)
     }
@@ -84,6 +95,9 @@ class BundlePlugin implements Plugin<Project> {
         assert project.file('build.properties').exists()
         assert project.file('META-INF/MANIFEST.MF').exists()
 
+		// update the version in MANIFEST.MF & pom
+		setManifestVersion(project)
+		
         // use the same MANIFEST.MF file as it is in the project except the Bundle-Version
         PluginUtils.updatePluginManifest(project)
 
@@ -171,6 +185,72 @@ class BundlePlugin implements Plugin<Project> {
             from project.configurations.bundledSource
         }
     }
+	
+	static void addTaskSetManifestVersion(Project project) {
+		project.task(TASK_NAME_SET_MANIFEST_VERSION) {
+			group = Constants.gradleTaskGroupName
+			description = 'Set the version in the manifest file.'
+			doLast { setManifestVersion(project) }
+		}
+	}
+
+    static void setManifestVersion(Project project) {
+
+        File manifest = project.file('META-INF/MANIFEST.MF')
+		if (!manifest.exists()) {
+			project.logger.debug("### Skip setting manifest version: no file: '${manifest.absolutePath}'")
+			return
+		}
+		
+        List<String> lines = manifest.readLines()
+        int i = 0
+
+        manifest.withPrintWriter { out ->
+            // copy file upto line with 'Bundle-Version: '
+            while (i < lines.size() && !lines[i].startsWith('Bundle-Version: ')) {
+                out.println(lines[i])
+                i++
+            }
+
+            out.print 'Bundle-Version: ' + project.version + '\n'
+
+            // copy the remaining lines
+            while (i < lines.size()) {
+				if (!lines[i].startsWith('Bundle-Version: '))
+					out.println lines[i]
+                i++
+            }
+        }
+        project.logger.debug("### Set bundle version to ${project.version} in ${manifest.absolutePath}")
+		
+		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance()
+		DocumentBuilder db = dbf.newDocumentBuilder()
+		
+		TransformerFactory transformerFactory = TransformerFactory.newInstance()
+		Transformer transformer = transformerFactory.newTransformer()
+		
+		File pom = project.file('pom.xml')
+		if (pom.exists()) {
+			updatePOMVersion(project, db, transformer, pom)
+		}
+    }
+	
+	
+	static void updatePOMVersion(Project project, DocumentBuilder db, Transformer transformer, File pom) {
+		Document doc = db.parse(pom.absolutePath)
+		org.w3c.dom.Node root = doc.getFirstChild()
+		org.w3c.dom.Node parent = root.getChildNodes().find { org.w3c.dom.Node n -> 'parent' == n.getNodeName() }
+		
+		org.w3c.dom.Node nVersion = parent.getChildNodes().find { org.w3c.dom.Node n -> 'version' == n.getNodeName() }
+		nVersion.setTextContent(project.version)
+	
+		DOMSource source = new DOMSource(doc)
+		StreamResult result = new StreamResult(pom.absolutePath)
+		transformer.transform(source, result)
+		
+		project.logger.debug("### Set pom version to ${project.version} in ${pom.absolutePath}")
+	}
+
 
     static void addTaskUpdateManifest(Project project) {
         project.task(TASK_NAME_UPDATE_MANIFEST, dependsOn: project.configurations.bundled) {

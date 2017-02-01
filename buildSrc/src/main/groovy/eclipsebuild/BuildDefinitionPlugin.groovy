@@ -17,6 +17,15 @@ import org.gradle.api.logging.LogLevel
 import org.gradle.internal.os.OperatingSystem
 import eclipsebuild.mavenize.BundleMavenDeployer
 
+import javax.xml.parsers.DocumentBuilder
+import javax.xml.parsers.DocumentBuilderFactory
+import javax.xml.transform.Transformer
+import javax.xml.transform.TransformerException
+import javax.xml.transform.TransformerFactory
+import javax.xml.transform.dom.DOMSource
+import javax.xml.transform.stream.StreamResult
+import org.w3c.dom.Document
+
 /**
  * Gradle plugin for the root project of the Eclipse plugin build.
  * <p/>
@@ -117,6 +126,7 @@ class BuildDefinitionPlugin implements Plugin<Project> {
     static final String TASK_NAME_INSTALL_TARGET_PLATFORM = "installTargetPlatform"
     static final String TASK_NAME_UNINSTALL_TARGET_PLATFORM = "uninstallTargetPlatform"
     static final String TASK_NAME_UNINSTALL_ALL_TARGET_PLATFORMS = "uninstallAllTargetPlatforms"
+    static final String TASK_NAME_SET_POM_VERSION = "setPOMVersion"
 
     @Override
     public void apply(Project project) {
@@ -129,6 +139,7 @@ class BuildDefinitionPlugin implements Plugin<Project> {
         addTaskInstallTargetPlatform(project, config)
         addTaskUninstallTargetPlatform(project, config)
         addTaskUninstallAllTargetPlatforms(project, config)
+		addTaskSetPOMVersion(project, config)
     }
 
     static void configureProject(Project project) {
@@ -140,6 +151,9 @@ class BuildDefinitionPlugin implements Plugin<Project> {
 
         // make the withEclipseBundle(String) method available in the build script
         project.ext.withEclipseBundle = { String pluginName -> DependencyUtils.calculatePluginDependency(project, pluginName) }
+	
+		// update the version in pom.xml
+		setPOMVersion(project)
     }
 
     static void validateDslBeforeBuildStarts(Project project, Config config) {
@@ -304,4 +318,36 @@ class BuildDefinitionPlugin implements Plugin<Project> {
             doLast { deleteFolder(project, config.targetPlatformsDir) }
         }
     }
+
+    static void addTaskSetPOMVersion(Project project, Config config) {
+        project.task(TASK_NAME_SET_POM_VERSION) {
+            group = Constants.gradleTaskGroupName
+            description = "Set the version in pom.xml from the project's version."
+            doLast { setPOMVersion(project) }
+        }
+    }
+	
+	static void setPOMVersion(Project project) {
+		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance()
+		DocumentBuilder db = dbf.newDocumentBuilder()
+		
+		TransformerFactory transformerFactory = TransformerFactory.newInstance()
+		Transformer transformer = transformerFactory.newTransformer()
+		
+		File pom = project.file('pom.xml')
+		if (pom.exists()) {
+			Document doc = db.parse(pom.absolutePath)
+			org.w3c.dom.Node root = doc.getFirstChild()
+			org.w3c.dom.Node nVersion = root.getChildNodes().find { org.w3c.dom.Node n -> 'version' == n.getNodeName() }
+			nVersion.setTextContent(project.version)
+	
+			DOMSource source = new DOMSource(doc)
+			StreamResult result = new StreamResult(pom.absolutePath)
+			transformer.transform(source, result)
+		
+			project.logger.debug("### Set pom version to ${project.version} in ${pom.absolutePath}")
+		}
+	}
+
+	
 }

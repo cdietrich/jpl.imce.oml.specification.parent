@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
 	<feature id="jpl.imce.oml.specification.feature" version="0.0.0">
-		<category name="main"/>
+		<category name="OntologicalModeling"/>
 	</feature>
 	<feature id="jpl.imce.oml.specification.feature.source" version="0.0.0">
-		<category name="main.source"/>
+		<category name="OntologicalModeling.Sources"/>
 	</feature>
-	<category-def name="main" label="OntologicalModelingLanguage"/>
-	<category-def name="main.source" label="OntologicalModelingLanguage (Sources)"/>
+	<category-def name="OntologicalModeling" label="Ontological Modeling Language"/>
+	<category-def name="OntologicalModeling.Sources" label="Ontological Modeling Language (Sources)"/>
 </site>
