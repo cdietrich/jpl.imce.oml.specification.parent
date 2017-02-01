@@ -101,6 +101,14 @@ in particular, the repositories for resolving dependencies.
 
 ## Versioning
 
+### Summary
+
+For changing the version, either:
+- update the [gradle.properties](gradle.properties) file.
+- override it on the command line with `-Pversion=...`
+
+### Details
+
 For Tycho projects, there is a useful utility to change all version strings:
 
 ```
@@ -109,10 +117,6 @@ mvn org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=1.2.0
 
 This project includes enhancements to [Eclipse Buildship](https://github.com/eclipse/buildship) for automatically updating
 the version information in manifests, feature.xml and pom.xml files according to the kind of buildship project.
-
-For changing the version, either:
-- update the [gradle.properties](gradle.properties) file.
-- override it on the command line with `-Pversion=...`
 
 ### BuildDefinitionPlugin
 

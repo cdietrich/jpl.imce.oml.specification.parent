@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="jpl.imce.oml.specification.feature" label="%featureName" provider-name="%providerName" version="0.2.0">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="jpl.imce.oml.specification.feature" label="%featureName" provider-name="%providerName" version="0.3.0">
 
    <requires>
       <import feature="org.eclipse.e4.rcp" version="1.5.2.v20161122-1740"/>

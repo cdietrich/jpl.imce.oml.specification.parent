@@ -18,6 +18,7 @@ public class OntologicalModelingLanguageStandaloneSetup extends OntologicalModel
     _ontologicalModelingLanguageStandaloneSetup.createInjectorAndDoEMFRegistration();
   }
   
+  @Override
   public void register(final Injector injector) {
     boolean _containsKey = EPackage.Registry.INSTANCE.containsKey(OMLPackage.eNS_URI);
     boolean _not = (!_containsKey);
