@@ -101,43 +101,58 @@ in particular, the repositories for resolving dependencies.
 
 ## Versioning
 
+### Summary
+
+For changing the version, either:
+- update the [gradle.properties](gradle.properties) file.
+- override it on the command line with `-Pversion=...`
+
+### Details
+
 For Tycho projects, there is a useful utility to change all version strings:
 
 ```
 mvn org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=1.2.0
 ```
 
-For buildship, the version info in [version.txt](version.txt) propagates to other build.gradle files.
-However, several files need to be kept in sync:
+This project includes enhancements to [Eclipse Buildship](https://github.com/eclipse/buildship) for automatically updating
+the version information in manifests, feature.xml and pom.xml files according to the kind of buildship project.
 
-- [version.txt](version.txt) (it would be nice if this could be 'injected' in other files below...)
-- [build.gradle](build.gradle)
+### BuildDefinitionPlugin
+
+This project includes an enhancement 
+of [Eclipse Buildship](https://github.com/eclipse/buildship)'s 
+[BuildDefinitionPlugin](https://github.com/eclipse/buildship/blob/master/buildSrc/src/main/groovy/eclipsebuild/BuildDefinitionPlugin.groovy)
+to update the `version` setting in `pom.xml` files automatically from the project's version:
+
 - [pom.xml](pom.xml)
 
-- [jpl.imce.oml.specification/pom.xml](jpl.imce.oml.specification/pom.xml)
+### BundlePlugin
+
+This project includes an enhancement 
+of [Eclipse Buildship](https://github.com/eclipse/buildship)'s 
+[BundlePlugin](https://github.com/eclipse/buildship/blob/master/buildSrc/src/main/groovy/eclipsebuild/BundlePlugin.groovy)
+to update the `Bundle-Version` setting in manifests and pom.xml, if any, automatically from the project's version:
+
 - [jpl.imce.oml.specification/META-INF/MANIFEST.MF](jpl.imce.oml.specification/META-INF/MANIFEST.MF) 
-
+- [jpl.imce.oml.specification/pom.xml](jpl.imce.oml.specification/pom.xml)
 - [jpl.imce.oml.specification.ecore/META-INF/MANIFEST.MF](jpl.imce.oml.specification.ecore/META-INF/MANIFEST.MF) 
-
 - [jpl.imce.oml.specification.ecore.edit/META-INF/MANIFEST.MF](jpl.imce.oml.specification.ecore.edit/META-INF/MANIFEST.MF) 
-
 - [jpl.imce.oml.specification.ecore.editor/META-INF/MANIFEST.MF](jpl.imce.oml.specification.ecore.editor/META-INF/MANIFEST.MF)
+- [jpl.imce.oml.specification.ide/META-INF/MANIFEST.MF](jpl.imce.oml.specification.ide/META-INF/MANIFEST.MF)
+- [jpl.imce.oml.specification.ide/pom.xml](jpl.imce.oml.specification.ide/pom.xml)
+- [jpl.imce.oml.specification.tests/META-INF/MANIFEST.MF](jpl.imce.oml.specification.tests/META-INF/MANIFEST.MF)
+- [jpl.imce.oml.specification.ui/META-INF/MANIFEST.MF](jpl.imce.oml.specification.ui/META-INF/MANIFEST.MF)
+- [jpl.imce.oml.specification.ui/pom.xml](jpl.imce.oml.specification.ui/pom.xml)
+- [jpl.imce.oml.specification.ui.tests/META-INF/MANIFEST.MF](jpl.imce.oml.specification.ui.tests/META-INF/MANIFEST.MF)
+- [jpl.imce.oml.specification.ui.tests/pom.xml](jpl.imce.oml.specification.ui.tests/pom.xml)
+
+### FeaturePlugin
+
+This project includes an enhancement 
+of [Eclipse Buildship](https://github.com/eclipse/buildship)'s 
+[FeaturePlugin](https://github.com/eclipse/buildship/blob/master/buildSrc/src/main/groovy/eclipsebuild/FeaturePlugin.groovy)
+to update the `version` setting in `feature.xml` files automatically from the project's version:
 
 - [jpl.imce.oml.specification.feature/feature.xml](jpl.imce.oml.specification.feature/feature.xml)
 - [jpl.imce.oml.specification.feature/pom.xml](jpl.imce.oml.specification.feature/pom.xml)
-
-- [jpl.imce.oml.specification.ide/META-INF/MANIFEST.MF](jpl.imce.oml.specification.ide/META-INF/MANIFEST.MF)
-- [jpl.imce.oml.specification.ide/pom.xml](jpl.imce.oml.specification.ide/pom.xml)
-
-- [jpl.imce.oml.specification.repository/build.gradle](jpl.imce.oml.specification.repository/build.gradle)
-- [jpl.imce.oml.specification.repository/pom.xml](jpl.imce.oml.specification.repository/pom.xml)
-
-- [jpl.imce.oml.specification.target/pom.xml](jpl.imce.oml.specification.target/pom.xml)
-
-- [jpl.imce.oml.specification.tests/META-INF/MANIFEST.MF](jpl.imce.oml.specification.tests/META-INF/MANIFEST.MF)
-
-- [jpl.imce.oml.specification.ui/META-INF/MANIFEST.MF](jpl.imce.oml.specification.ui/META-INF/MANIFEST.MF)
-- [jpl.imce.oml.specification.ui/pom.xml](jpl.imce.oml.specification.ui/pom.xml)
-
-- [jpl.imce.oml.specification.ui.tests/META-INF/MANIFEST.MF](jpl.imce.oml.specification.ui.tests/META-INF/MANIFEST.MF)
-- [jpl.imce.oml.specification.ui.tests/pom.xml](jpl.imce.oml.specification.ui.tests/pom.xml)
