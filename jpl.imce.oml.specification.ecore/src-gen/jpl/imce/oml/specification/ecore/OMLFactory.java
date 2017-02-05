@@ -326,42 +326,6 @@ public interface OMLFactory extends EFactory {
 	EntityScalarDataPropertyParticularRestrictionAxiom createEntityScalarDataPropertyParticularRestrictionAxiom();
 
 	/**
-	 * Returns a new object of class '<em>Synonym Scalar Restriction</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Synonym Scalar Restriction</em>'.
-	 * @generated
-	 */
-	SynonymScalarRestriction createSynonymScalarRestriction();
-
-	/**
-	 * Returns a new object of class '<em>Numeric Scalar Restriction</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Numeric Scalar Restriction</em>'.
-	 * @generated
-	 */
-	NumericScalarRestriction createNumericScalarRestriction();
-
-	/**
-	 * Returns a new object of class '<em>String Scalar Restriction</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>String Scalar Restriction</em>'.
-	 * @generated
-	 */
-	StringScalarRestriction createStringScalarRestriction();
-
-	/**
-	 * Returns a new object of class '<em>Plain Literal Scalar Restriction</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Plain Literal Scalar Restriction</em>'.
-	 * @generated
-	 */
-	PlainLiteralScalarRestriction createPlainLiteralScalarRestriction();
-
-	/**
 	 * Returns a new object of class '<em>Binary Scalar Restriction</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -380,6 +344,33 @@ public interface OMLFactory extends EFactory {
 	IRIScalarRestriction createIRIScalarRestriction();
 
 	/**
+	 * Returns a new object of class '<em>Numeric Scalar Restriction</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Numeric Scalar Restriction</em>'.
+	 * @generated
+	 */
+	NumericScalarRestriction createNumericScalarRestriction();
+
+	/**
+	 * Returns a new object of class '<em>Plain Literal Scalar Restriction</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Plain Literal Scalar Restriction</em>'.
+	 * @generated
+	 */
+	PlainLiteralScalarRestriction createPlainLiteralScalarRestriction();
+
+	/**
+	 * Returns a new object of class '<em>String Scalar Restriction</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>String Scalar Restriction</em>'.
+	 * @generated
+	 */
+	StringScalarRestriction createStringScalarRestriction();
+
+	/**
 	 * Returns a new object of class '<em>Time Scalar Restriction</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -387,6 +378,15 @@ public interface OMLFactory extends EFactory {
 	 * @generated
 	 */
 	TimeScalarRestriction createTimeScalarRestriction();
+
+	/**
+	 * Returns a new object of class '<em>Synonym Scalar Restriction</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Synonym Scalar Restriction</em>'.
+	 * @generated
+	 */
+	SynonymScalarRestriction createSynonymScalarRestriction();
 
 	/**
 	 * Returns a new object of class '<em>Scalar One Of Restriction</em>'.

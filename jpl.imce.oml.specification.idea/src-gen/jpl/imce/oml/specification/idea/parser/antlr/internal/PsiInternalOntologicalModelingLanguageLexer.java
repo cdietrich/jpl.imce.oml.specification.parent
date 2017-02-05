@@ -914,8 +914,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ANNOTATION_PROPERTY_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:4980:32: ( 'annotationProperty' )
-            // PsiInternalOntologicalModelingLanguage.g:4980:34: 'annotationProperty'
+            // PsiInternalOntologicalModelingLanguage.g:4993:32: ( 'annotationProperty' )
+            // PsiInternalOntologicalModelingLanguage.g:4993:34: 'annotationProperty'
             {
             match("annotationProperty"); 
 
@@ -935,8 +935,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ANNOTATION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:4982:23: ( '@' )
-            // PsiInternalOntologicalModelingLanguage.g:4982:25: '@'
+            // PsiInternalOntologicalModelingLanguage.g:4995:23: ( '@' )
+            // PsiInternalOntologicalModelingLanguage.g:4995:25: '@'
             {
             match('@'); 
 
@@ -955,8 +955,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_TERMINOLOGY_GRAPH_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:4984:30: ( 'terminology' )
-            // PsiInternalOntologicalModelingLanguage.g:4984:32: 'terminology'
+            // PsiInternalOntologicalModelingLanguage.g:4997:30: ( 'terminology' )
+            // PsiInternalOntologicalModelingLanguage.g:4997:32: 'terminology'
             {
             match("terminology"); 
 
@@ -976,8 +976,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_BUNDLE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:4986:19: ( 'bundle' )
-            // PsiInternalOntologicalModelingLanguage.g:4986:21: 'bundle'
+            // PsiInternalOntologicalModelingLanguage.g:4999:19: ( 'bundle' )
+            // PsiInternalOntologicalModelingLanguage.g:4999:21: 'bundle'
             {
             match("bundle"); 
 
@@ -997,8 +997,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_KIND_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:4988:17: ( 'kind' )
-            // PsiInternalOntologicalModelingLanguage.g:4988:19: 'kind'
+            // PsiInternalOntologicalModelingLanguage.g:5001:17: ( 'kind' )
+            // PsiInternalOntologicalModelingLanguage.g:5001:19: 'kind'
             {
             match("kind"); 
 
@@ -1018,8 +1018,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ASPECT_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:4990:19: ( 'aspect' )
-            // PsiInternalOntologicalModelingLanguage.g:4990:21: 'aspect'
+            // PsiInternalOntologicalModelingLanguage.g:5003:19: ( 'aspect' )
+            // PsiInternalOntologicalModelingLanguage.g:5003:21: 'aspect'
             {
             match("aspect"); 
 
@@ -1039,8 +1039,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ABSTRACT_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:4992:21: ( 'abstract' )
-            // PsiInternalOntologicalModelingLanguage.g:4992:23: 'abstract'
+            // PsiInternalOntologicalModelingLanguage.g:5005:21: ( 'abstract' )
+            // PsiInternalOntologicalModelingLanguage.g:5005:23: 'abstract'
             {
             match("abstract"); 
 
@@ -1060,8 +1060,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_CONCEPT_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:4994:20: ( 'concept' )
-            // PsiInternalOntologicalModelingLanguage.g:4994:22: 'concept'
+            // PsiInternalOntologicalModelingLanguage.g:5007:20: ( 'concept' )
+            // PsiInternalOntologicalModelingLanguage.g:5007:22: 'concept'
             {
             match("concept"); 
 
@@ -1081,8 +1081,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_REIFIED_RELATIONSHIP_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:4996:33: ( 'reifiedRelationship' )
-            // PsiInternalOntologicalModelingLanguage.g:4996:35: 'reifiedRelationship'
+            // PsiInternalOntologicalModelingLanguage.g:5009:33: ( 'reifiedRelationship' )
+            // PsiInternalOntologicalModelingLanguage.g:5009:35: 'reifiedRelationship'
             {
             match("reifiedRelationship"); 
 
@@ -1102,8 +1102,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_UNREIFIED_RELATIONSHIP_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:4998:35: ( 'unreifiedRelationship' )
-            // PsiInternalOntologicalModelingLanguage.g:4998:37: 'unreifiedRelationship'
+            // PsiInternalOntologicalModelingLanguage.g:5011:35: ( 'unreifiedRelationship' )
+            // PsiInternalOntologicalModelingLanguage.g:5011:37: 'unreifiedRelationship'
             {
             match("unreifiedRelationship"); 
 
@@ -1123,8 +1123,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_FUNCTIONAL_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5000:23: ( 'functional' )
-            // PsiInternalOntologicalModelingLanguage.g:5000:25: 'functional'
+            // PsiInternalOntologicalModelingLanguage.g:5013:23: ( 'functional' )
+            // PsiInternalOntologicalModelingLanguage.g:5013:25: 'functional'
             {
             match("functional"); 
 
@@ -1144,8 +1144,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_INVERSE_FUNCTIONAL_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5002:31: ( 'inverseFunctional' )
-            // PsiInternalOntologicalModelingLanguage.g:5002:33: 'inverseFunctional'
+            // PsiInternalOntologicalModelingLanguage.g:5015:31: ( 'inverseFunctional' )
+            // PsiInternalOntologicalModelingLanguage.g:5015:33: 'inverseFunctional'
             {
             match("inverseFunctional"); 
 
@@ -1165,8 +1165,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ESSENTIAL_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5004:22: ( 'essential' )
-            // PsiInternalOntologicalModelingLanguage.g:5004:24: 'essential'
+            // PsiInternalOntologicalModelingLanguage.g:5017:22: ( 'essential' )
+            // PsiInternalOntologicalModelingLanguage.g:5017:24: 'essential'
             {
             match("essential"); 
 
@@ -1186,8 +1186,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_INVERSE_ESSENTIAL_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5006:30: ( 'inverseEssential' )
-            // PsiInternalOntologicalModelingLanguage.g:5006:32: 'inverseEssential'
+            // PsiInternalOntologicalModelingLanguage.g:5019:30: ( 'inverseEssential' )
+            // PsiInternalOntologicalModelingLanguage.g:5019:32: 'inverseEssential'
             {
             match("inverseEssential"); 
 
@@ -1207,8 +1207,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SYMMETRIC_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5008:22: ( 'symmetric' )
-            // PsiInternalOntologicalModelingLanguage.g:5008:24: 'symmetric'
+            // PsiInternalOntologicalModelingLanguage.g:5021:22: ( 'symmetric' )
+            // PsiInternalOntologicalModelingLanguage.g:5021:24: 'symmetric'
             {
             match("symmetric"); 
 
@@ -1228,8 +1228,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ASYMMETRIC_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5010:23: ( 'asymmetric' )
-            // PsiInternalOntologicalModelingLanguage.g:5010:25: 'asymmetric'
+            // PsiInternalOntologicalModelingLanguage.g:5023:23: ( 'asymmetric' )
+            // PsiInternalOntologicalModelingLanguage.g:5023:25: 'asymmetric'
             {
             match("asymmetric"); 
 
@@ -1249,8 +1249,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_REFLEXIVE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5012:22: ( 'reflexive' )
-            // PsiInternalOntologicalModelingLanguage.g:5012:24: 'reflexive'
+            // PsiInternalOntologicalModelingLanguage.g:5025:22: ( 'reflexive' )
+            // PsiInternalOntologicalModelingLanguage.g:5025:24: 'reflexive'
             {
             match("reflexive"); 
 
@@ -1270,8 +1270,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_IRREFLEXIVE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5014:24: ( 'irreflexive' )
-            // PsiInternalOntologicalModelingLanguage.g:5014:26: 'irreflexive'
+            // PsiInternalOntologicalModelingLanguage.g:5027:24: ( 'irreflexive' )
+            // PsiInternalOntologicalModelingLanguage.g:5027:26: 'irreflexive'
             {
             match("irreflexive"); 
 
@@ -1291,8 +1291,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_TRANSITIVE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5016:23: ( 'transitive' )
-            // PsiInternalOntologicalModelingLanguage.g:5016:25: 'transitive'
+            // PsiInternalOntologicalModelingLanguage.g:5029:23: ( 'transitive' )
+            // PsiInternalOntologicalModelingLanguage.g:5029:25: 'transitive'
             {
             match("transitive"); 
 
@@ -1312,8 +1312,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_UNREIFIED_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5018:22: ( 'unreified' )
-            // PsiInternalOntologicalModelingLanguage.g:5018:24: 'unreified'
+            // PsiInternalOntologicalModelingLanguage.g:5031:22: ( 'unreified' )
+            // PsiInternalOntologicalModelingLanguage.g:5031:24: 'unreified'
             {
             match("unreified"); 
 
@@ -1333,8 +1333,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_INVERSE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5020:20: ( 'inverse' )
-            // PsiInternalOntologicalModelingLanguage.g:5020:22: 'inverse'
+            // PsiInternalOntologicalModelingLanguage.g:5033:20: ( 'inverse' )
+            // PsiInternalOntologicalModelingLanguage.g:5033:22: 'inverse'
             {
             match("inverse"); 
 
@@ -1354,8 +1354,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SOURCE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5022:19: ( 'source' )
-            // PsiInternalOntologicalModelingLanguage.g:5022:21: 'source'
+            // PsiInternalOntologicalModelingLanguage.g:5035:19: ( 'source' )
+            // PsiInternalOntologicalModelingLanguage.g:5035:21: 'source'
             {
             match("source"); 
 
@@ -1375,8 +1375,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_TARGET_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5024:19: ( 'target' )
-            // PsiInternalOntologicalModelingLanguage.g:5024:21: 'target'
+            // PsiInternalOntologicalModelingLanguage.g:5037:19: ( 'target' )
+            // PsiInternalOntologicalModelingLanguage.g:5037:21: 'target'
             {
             match("target"); 
 
@@ -1396,8 +1396,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SCALAR_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5026:19: ( 'scalar' )
-            // PsiInternalOntologicalModelingLanguage.g:5026:21: 'scalar'
+            // PsiInternalOntologicalModelingLanguage.g:5039:19: ( 'scalar' )
+            // PsiInternalOntologicalModelingLanguage.g:5039:21: 'scalar'
             {
             match("scalar"); 
 
@@ -1417,8 +1417,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_STRUCTURE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5028:22: ( 'structure' )
-            // PsiInternalOntologicalModelingLanguage.g:5028:24: 'structure'
+            // PsiInternalOntologicalModelingLanguage.g:5041:22: ( 'structure' )
+            // PsiInternalOntologicalModelingLanguage.g:5041:24: 'structure'
             {
             match("structure"); 
 
@@ -1438,8 +1438,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_DOMAIN_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5030:19: ( 'domain' )
-            // PsiInternalOntologicalModelingLanguage.g:5030:21: 'domain'
+            // PsiInternalOntologicalModelingLanguage.g:5043:19: ( 'domain' )
+            // PsiInternalOntologicalModelingLanguage.g:5043:21: 'domain'
             {
             match("domain"); 
 
@@ -1459,8 +1459,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_RANGE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5032:18: ( 'range' )
-            // PsiInternalOntologicalModelingLanguage.g:5032:20: 'range'
+            // PsiInternalOntologicalModelingLanguage.g:5045:18: ( 'range' )
+            // PsiInternalOntologicalModelingLanguage.g:5045:20: 'range'
             {
             match("range"); 
 
@@ -1480,8 +1480,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5034:40: ( 'rootConceptTaxonomyAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5034:42: 'rootConceptTaxonomyAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:5047:40: ( 'rootConceptTaxonomyAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:5047:42: 'rootConceptTaxonomyAxiom'
             {
             match("rootConceptTaxonomyAxiom"); 
 
@@ -1501,8 +1501,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5036:44: ( 'specificDisjointConceptAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5036:46: 'specificDisjointConceptAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:5049:44: ( 'specificDisjointConceptAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:5049:46: 'specificDisjointConceptAxiom'
             {
             match("specificDisjointConceptAxiom"); 
 
@@ -1522,8 +1522,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5038:45: ( 'anonymousConceptTaxonomyAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5038:47: 'anonymousConceptTaxonomyAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:5051:45: ( 'anonymousConceptTaxonomyAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:5051:47: 'anonymousConceptTaxonomyAxiom'
             {
             match("anonymousConceptTaxonomyAxiom"); 
 
@@ -1543,8 +1543,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_BUNDLED_TERMINOLOGY_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5040:38: ( 'bundledTerminologyAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5040:40: 'bundledTerminologyAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:5053:38: ( 'bundledTerminologyAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:5053:40: 'bundledTerminologyAxiom'
             {
             match("bundledTerminologyAxiom"); 
 
@@ -1564,8 +1564,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5042:50: ( 'conceptDesignationTerminologyAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5042:52: 'conceptDesignationTerminologyAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:5055:50: ( 'conceptDesignationTerminologyAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:5055:52: 'conceptDesignationTerminologyAxiom'
             {
             match("conceptDesignationTerminologyAxiom"); 
 
@@ -1585,8 +1585,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_TERMINOLOGY_NESTING_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5044:38: ( 'terminologyNestingAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5044:40: 'terminologyNestingAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:5057:38: ( 'terminologyNestingAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:5057:40: 'terminologyNestingAxiom'
             {
             match("terminologyNestingAxiom"); 
 
@@ -1606,8 +1606,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_TERMINOLOGY_EXTENSION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5046:40: ( 'extends' )
-            // PsiInternalOntologicalModelingLanguage.g:5046:42: 'extends'
+            // PsiInternalOntologicalModelingLanguage.g:5059:40: ( 'extends' )
+            // PsiInternalOntologicalModelingLanguage.g:5059:42: 'extends'
             {
             match("extends"); 
 
@@ -1627,8 +1627,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5048:49: ( 'entityExistentialRestrictionAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5048:51: 'entityExistentialRestrictionAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:5061:49: ( 'entityExistentialRestrictionAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:5061:51: 'entityExistentialRestrictionAxiom'
             {
             match("entityExistentialRestrictionAxiom"); 
 
@@ -1648,8 +1648,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5050:47: ( 'entityUniversalRestrictionAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5050:49: 'entityUniversalRestrictionAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:5063:47: ( 'entityUniversalRestrictionAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:5063:49: 'entityUniversalRestrictionAxiom'
             {
             match("entityUniversalRestrictionAxiom"); 
 
@@ -1669,8 +1669,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5052:41: ( 'conceptSpecializationAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5052:43: 'conceptSpecializationAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:5065:41: ( 'conceptSpecializationAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:5065:43: 'conceptSpecializationAxiom'
             {
             match("conceptSpecializationAxiom"); 
 
@@ -1690,8 +1690,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5054:40: ( 'extendsAspect' )
-            // PsiInternalOntologicalModelingLanguage.g:5054:42: 'extendsAspect'
+            // PsiInternalOntologicalModelingLanguage.g:5067:40: ( 'extendsAspect' )
+            // PsiInternalOntologicalModelingLanguage.g:5067:42: 'extendsAspect'
             {
             match("extendsAspect"); 
 
@@ -1711,8 +1711,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5056:54: ( 'reifiedRelationshipSpecializationAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5056:56: 'reifiedRelationshipSpecializationAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:5069:54: ( 'reifiedRelationshipSpecializationAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:5069:56: 'reifiedRelationshipSpecializationAxiom'
             {
             match("reifiedRelationshipSpecializationAxiom"); 
 
@@ -1732,8 +1732,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5058:70: ( 'entityScalarDataPropertyExistentialRestrictionAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5058:72: 'entityScalarDataPropertyExistentialRestrictionAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:5071:70: ( 'entityScalarDataPropertyExistentialRestrictionAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:5071:72: 'entityScalarDataPropertyExistentialRestrictionAxiom'
             {
             match("entityScalarDataPropertyExistentialRestrictionAxiom"); 
 
@@ -1753,8 +1753,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5060:68: ( 'entityScalarDataPropertyUniversalRestrictionAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5060:70: 'entityScalarDataPropertyUniversalRestrictionAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:5073:68: ( 'entityScalarDataPropertyUniversalRestrictionAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:5073:70: 'entityScalarDataPropertyUniversalRestrictionAxiom'
             {
             match("entityScalarDataPropertyUniversalRestrictionAxiom"); 
 
@@ -1774,8 +1774,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5062:69: ( 'entityScalarDataPropertyParticularRestrictionAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5062:71: 'entityScalarDataPropertyParticularRestrictionAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:5075:69: ( 'entityScalarDataPropertyParticularRestrictionAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:5075:71: 'entityScalarDataPropertyParticularRestrictionAxiom'
             {
             match("entityScalarDataPropertyParticularRestrictionAxiom"); 
 
@@ -1795,8 +1795,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5064:39: ( 'synonymScalarRestriction' )
-            // PsiInternalOntologicalModelingLanguage.g:5064:41: 'synonymScalarRestriction'
+            // PsiInternalOntologicalModelingLanguage.g:5077:39: ( 'synonymScalarRestriction' )
+            // PsiInternalOntologicalModelingLanguage.g:5077:41: 'synonymScalarRestriction'
             {
             match("synonymScalarRestriction"); 
 
@@ -1816,8 +1816,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5066:39: ( 'numericScalarRestriction' )
-            // PsiInternalOntologicalModelingLanguage.g:5066:41: 'numericScalarRestriction'
+            // PsiInternalOntologicalModelingLanguage.g:5079:39: ( 'numericScalarRestriction' )
+            // PsiInternalOntologicalModelingLanguage.g:5079:41: 'numericScalarRestriction'
             {
             match("numericScalarRestriction"); 
 
@@ -1837,8 +1837,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_STRING_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5068:38: ( 'stringScalarRestriction' )
-            // PsiInternalOntologicalModelingLanguage.g:5068:40: 'stringScalarRestriction'
+            // PsiInternalOntologicalModelingLanguage.g:5081:38: ( 'stringScalarRestriction' )
+            // PsiInternalOntologicalModelingLanguage.g:5081:40: 'stringScalarRestriction'
             {
             match("stringScalarRestriction"); 
 
@@ -1858,8 +1858,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5070:45: ( 'plainLiteralScalarRestriction' )
-            // PsiInternalOntologicalModelingLanguage.g:5070:47: 'plainLiteralScalarRestriction'
+            // PsiInternalOntologicalModelingLanguage.g:5083:45: ( 'plainLiteralScalarRestriction' )
+            // PsiInternalOntologicalModelingLanguage.g:5083:47: 'plainLiteralScalarRestriction'
             {
             match("plainLiteralScalarRestriction"); 
 
@@ -1879,8 +1879,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_BINARY_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5072:38: ( 'binaryScalarRestriction' )
-            // PsiInternalOntologicalModelingLanguage.g:5072:40: 'binaryScalarRestriction'
+            // PsiInternalOntologicalModelingLanguage.g:5085:38: ( 'binaryScalarRestriction' )
+            // PsiInternalOntologicalModelingLanguage.g:5085:40: 'binaryScalarRestriction'
             {
             match("binaryScalarRestriction"); 
 
@@ -1900,8 +1900,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_IRI_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5074:35: ( 'iriScalarRestriction' )
-            // PsiInternalOntologicalModelingLanguage.g:5074:37: 'iriScalarRestriction'
+            // PsiInternalOntologicalModelingLanguage.g:5087:35: ( 'iriScalarRestriction' )
+            // PsiInternalOntologicalModelingLanguage.g:5087:37: 'iriScalarRestriction'
             {
             match("iriScalarRestriction"); 
 
@@ -1921,8 +1921,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_TIME_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5076:36: ( 'timeScalarRestriction' )
-            // PsiInternalOntologicalModelingLanguage.g:5076:38: 'timeScalarRestriction'
+            // PsiInternalOntologicalModelingLanguage.g:5089:36: ( 'timeScalarRestriction' )
+            // PsiInternalOntologicalModelingLanguage.g:5089:38: 'timeScalarRestriction'
             {
             match("timeScalarRestriction"); 
 
@@ -1942,8 +1942,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5078:38: ( 'scalarOneOfRestriction' )
-            // PsiInternalOntologicalModelingLanguage.g:5078:40: 'scalarOneOfRestriction'
+            // PsiInternalOntologicalModelingLanguage.g:5091:38: ( 'scalarOneOfRestriction' )
+            // PsiInternalOntologicalModelingLanguage.g:5091:40: 'scalarOneOfRestriction'
             {
             match("scalarOneOfRestriction"); 
 
@@ -1963,8 +1963,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5080:40: ( 'scalarOneOfLiteralAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5080:42: 'scalarOneOfLiteralAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:5093:40: ( 'scalarOneOfLiteralAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:5093:42: 'scalarOneOfLiteralAxiom'
             {
             match("scalarOneOfLiteralAxiom"); 
 
@@ -1984,8 +1984,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_LCURLY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5082:13: ( '{' )
-            // PsiInternalOntologicalModelingLanguage.g:5082:15: '{'
+            // PsiInternalOntologicalModelingLanguage.g:5095:13: ( '{' )
+            // PsiInternalOntologicalModelingLanguage.g:5095:15: '{'
             {
             match('{'); 
 
@@ -2004,8 +2004,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_RCURLY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5084:13: ( '}' )
-            // PsiInternalOntologicalModelingLanguage.g:5084:15: '}'
+            // PsiInternalOntologicalModelingLanguage.g:5097:13: ( '}' )
+            // PsiInternalOntologicalModelingLanguage.g:5097:15: '}'
             {
             match('}'); 
 
@@ -2024,8 +2024,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5086:12: ( '=' )
-            // PsiInternalOntologicalModelingLanguage.g:5086:14: '='
+            // PsiInternalOntologicalModelingLanguage.g:5099:12: ( '=' )
+            // PsiInternalOntologicalModelingLanguage.g:5099:14: '='
             {
             match('='); 
 
@@ -2044,10 +2044,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5088:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? ) )
-            // PsiInternalOntologicalModelingLanguage.g:5088:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
+            // PsiInternalOntologicalModelingLanguage.g:5101:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? ) )
+            // PsiInternalOntologicalModelingLanguage.g:5101:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5088:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
+            // PsiInternalOntologicalModelingLanguage.g:5101:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -2065,10 +2065,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:5088:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )?
+                    // PsiInternalOntologicalModelingLanguage.g:5101:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )?
                     {
                     match('\"'); 
-                    // PsiInternalOntologicalModelingLanguage.g:5088:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // PsiInternalOntologicalModelingLanguage.g:5101:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop1:
                     do {
                         int alt1=3;
@@ -2084,7 +2084,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
 
                         switch (alt1) {
                     	case 1 :
-                    	    // PsiInternalOntologicalModelingLanguage.g:5088:21: '\\\\' .
+                    	    // PsiInternalOntologicalModelingLanguage.g:5101:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2092,7 +2092,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // PsiInternalOntologicalModelingLanguage.g:5088:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // PsiInternalOntologicalModelingLanguage.g:5101:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2112,7 +2112,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                         }
                     } while (true);
 
-                    // PsiInternalOntologicalModelingLanguage.g:5088:44: ( '\"' )?
+                    // PsiInternalOntologicalModelingLanguage.g:5101:44: ( '\"' )?
                     int alt2=2;
                     int LA2_0 = input.LA(1);
 
@@ -2121,7 +2121,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     switch (alt2) {
                         case 1 :
-                            // PsiInternalOntologicalModelingLanguage.g:5088:44: '\"'
+                            // PsiInternalOntologicalModelingLanguage.g:5101:44: '\"'
                             {
                             match('\"'); 
 
@@ -2134,10 +2134,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // PsiInternalOntologicalModelingLanguage.g:5088:49: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )?
+                    // PsiInternalOntologicalModelingLanguage.g:5101:49: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )?
                     {
                     match('\''); 
-                    // PsiInternalOntologicalModelingLanguage.g:5088:54: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // PsiInternalOntologicalModelingLanguage.g:5101:54: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop3:
                     do {
                         int alt3=3;
@@ -2153,7 +2153,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // PsiInternalOntologicalModelingLanguage.g:5088:55: '\\\\' .
+                    	    // PsiInternalOntologicalModelingLanguage.g:5101:55: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2161,7 +2161,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // PsiInternalOntologicalModelingLanguage.g:5088:62: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // PsiInternalOntologicalModelingLanguage.g:5101:62: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2181,7 +2181,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                         }
                     } while (true);
 
-                    // PsiInternalOntologicalModelingLanguage.g:5088:79: ( '\\'' )?
+                    // PsiInternalOntologicalModelingLanguage.g:5101:79: ( '\\'' )?
                     int alt4=2;
                     int LA4_0 = input.LA(1);
 
@@ -2190,7 +2190,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     switch (alt4) {
                         case 1 :
-                            // PsiInternalOntologicalModelingLanguage.g:5088:79: '\\''
+                            // PsiInternalOntologicalModelingLanguage.g:5101:79: '\\''
                             {
                             match('\''); 
 
@@ -2221,11 +2221,11 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_IRI;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5090:10: ( '<' (~ ( '>' ) )* '>' )
-            // PsiInternalOntologicalModelingLanguage.g:5090:12: '<' (~ ( '>' ) )* '>'
+            // PsiInternalOntologicalModelingLanguage.g:5103:10: ( '<' (~ ( '>' ) )* '>' )
+            // PsiInternalOntologicalModelingLanguage.g:5103:12: '<' (~ ( '>' ) )* '>'
             {
             match('<'); 
-            // PsiInternalOntologicalModelingLanguage.g:5090:16: (~ ( '>' ) )*
+            // PsiInternalOntologicalModelingLanguage.g:5103:16: (~ ( '>' ) )*
             loop6:
             do {
                 int alt6=2;
@@ -2238,7 +2238,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // PsiInternalOntologicalModelingLanguage.g:5090:16: ~ ( '>' )
+            	    // PsiInternalOntologicalModelingLanguage.g:5103:16: ~ ( '>' )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='=')||(input.LA(1)>='?' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2275,10 +2275,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5092:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // PsiInternalOntologicalModelingLanguage.g:5092:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // PsiInternalOntologicalModelingLanguage.g:5105:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // PsiInternalOntologicalModelingLanguage.g:5105:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // PsiInternalOntologicalModelingLanguage.g:5092:11: ( '^' )?
+            // PsiInternalOntologicalModelingLanguage.g:5105:11: ( '^' )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2287,7 +2287,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:5092:11: '^'
+                    // PsiInternalOntologicalModelingLanguage.g:5105:11: '^'
                     {
                     match('^'); 
 
@@ -2305,7 +2305,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // PsiInternalOntologicalModelingLanguage.g:5092:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // PsiInternalOntologicalModelingLanguage.g:5105:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop8:
             do {
                 int alt8=2;
@@ -2354,8 +2354,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_UUID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5094:11: ( RULE_HEX_8DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_12DIGITS )
-            // PsiInternalOntologicalModelingLanguage.g:5094:13: RULE_HEX_8DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_12DIGITS
+            // PsiInternalOntologicalModelingLanguage.g:5107:11: ( RULE_HEX_8DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_12DIGITS )
+            // PsiInternalOntologicalModelingLanguage.g:5107:13: RULE_HEX_8DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_12DIGITS
             {
             mRULE_HEX_8DIGITS(); 
             match('-'); 
@@ -2380,8 +2380,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
     // $ANTLR start "RULE_HEX_12DIGITS"
     public final void mRULE_HEX_12DIGITS() throws RecognitionException {
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5096:28: ( RULE_HEX_8DIGITS RULE_HEX_4DIGITS )
-            // PsiInternalOntologicalModelingLanguage.g:5096:30: RULE_HEX_8DIGITS RULE_HEX_4DIGITS
+            // PsiInternalOntologicalModelingLanguage.g:5109:28: ( RULE_HEX_8DIGITS RULE_HEX_4DIGITS )
+            // PsiInternalOntologicalModelingLanguage.g:5109:30: RULE_HEX_8DIGITS RULE_HEX_4DIGITS
             {
             mRULE_HEX_8DIGITS(); 
             mRULE_HEX_4DIGITS(); 
@@ -2397,8 +2397,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
     // $ANTLR start "RULE_HEX_8DIGITS"
     public final void mRULE_HEX_8DIGITS() throws RecognitionException {
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5098:27: ( RULE_HEX_4DIGITS RULE_HEX_4DIGITS )
-            // PsiInternalOntologicalModelingLanguage.g:5098:29: RULE_HEX_4DIGITS RULE_HEX_4DIGITS
+            // PsiInternalOntologicalModelingLanguage.g:5111:27: ( RULE_HEX_4DIGITS RULE_HEX_4DIGITS )
+            // PsiInternalOntologicalModelingLanguage.g:5111:29: RULE_HEX_4DIGITS RULE_HEX_4DIGITS
             {
             mRULE_HEX_4DIGITS(); 
             mRULE_HEX_4DIGITS(); 
@@ -2414,8 +2414,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
     // $ANTLR start "RULE_HEX_4DIGITS"
     public final void mRULE_HEX_4DIGITS() throws RecognitionException {
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5100:27: ( RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT )
-            // PsiInternalOntologicalModelingLanguage.g:5100:29: RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT
+            // PsiInternalOntologicalModelingLanguage.g:5113:27: ( RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT )
+            // PsiInternalOntologicalModelingLanguage.g:5113:29: RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT
             {
             mRULE_HEX_DIGIT(); 
             mRULE_HEX_DIGIT(); 
@@ -2433,8 +2433,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
     // $ANTLR start "RULE_HEX_DIGIT"
     public final void mRULE_HEX_DIGIT() throws RecognitionException {
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5102:25: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
-            // PsiInternalOntologicalModelingLanguage.g:5102:27: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
+            // PsiInternalOntologicalModelingLanguage.g:5115:25: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
+            // PsiInternalOntologicalModelingLanguage.g:5115:27: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
             {
             if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f') ) {
                 input.consume();
@@ -2459,10 +2459,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5104:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // PsiInternalOntologicalModelingLanguage.g:5104:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:5117:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // PsiInternalOntologicalModelingLanguage.g:5117:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // PsiInternalOntologicalModelingLanguage.g:5104:12: ( '0x' | '0X' )
+            // PsiInternalOntologicalModelingLanguage.g:5117:12: ( '0x' | '0X' )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2490,7 +2490,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:5104:13: '0x'
+                    // PsiInternalOntologicalModelingLanguage.g:5117:13: '0x'
                     {
                     match("0x"); 
 
@@ -2498,7 +2498,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // PsiInternalOntologicalModelingLanguage.g:5104:18: '0X'
+                    // PsiInternalOntologicalModelingLanguage.g:5117:18: '0X'
                     {
                     match("0X"); 
 
@@ -2508,7 +2508,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
 
             }
 
-            // PsiInternalOntologicalModelingLanguage.g:5104:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // PsiInternalOntologicalModelingLanguage.g:5117:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt10=0;
             loop10:
             do {
@@ -2546,7 +2546,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                 cnt10++;
             } while (true);
 
-            // PsiInternalOntologicalModelingLanguage.g:5104:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:5117:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -2555,10 +2555,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:5104:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // PsiInternalOntologicalModelingLanguage.g:5117:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // PsiInternalOntologicalModelingLanguage.g:5104:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // PsiInternalOntologicalModelingLanguage.g:5117:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -2576,7 +2576,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // PsiInternalOntologicalModelingLanguage.g:5104:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // PsiInternalOntologicalModelingLanguage.g:5117:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -2600,7 +2600,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // PsiInternalOntologicalModelingLanguage.g:5104:84: ( 'l' | 'L' )
+                            // PsiInternalOntologicalModelingLanguage.g:5117:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -2639,11 +2639,11 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5106:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // PsiInternalOntologicalModelingLanguage.g:5106:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // PsiInternalOntologicalModelingLanguage.g:5119:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // PsiInternalOntologicalModelingLanguage.g:5119:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // PsiInternalOntologicalModelingLanguage.g:5106:21: ( '0' .. '9' | '_' )*
+            // PsiInternalOntologicalModelingLanguage.g:5119:21: ( '0' .. '9' | '_' )*
             loop13:
             do {
                 int alt13=2;
@@ -2692,11 +2692,11 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5108:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // PsiInternalOntologicalModelingLanguage.g:5108:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // PsiInternalOntologicalModelingLanguage.g:5121:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // PsiInternalOntologicalModelingLanguage.g:5121:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // PsiInternalOntologicalModelingLanguage.g:5108:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // PsiInternalOntologicalModelingLanguage.g:5121:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -2705,7 +2705,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt15) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:5108:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // PsiInternalOntologicalModelingLanguage.g:5121:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -2716,7 +2716,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // PsiInternalOntologicalModelingLanguage.g:5108:36: ( '+' | '-' )?
+                    // PsiInternalOntologicalModelingLanguage.g:5121:36: ( '+' | '-' )?
                     int alt14=2;
                     int LA14_0 = input.LA(1);
 
@@ -2749,7 +2749,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
 
             }
 
-            // PsiInternalOntologicalModelingLanguage.g:5108:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // PsiInternalOntologicalModelingLanguage.g:5121:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt16=3;
             int LA16_0 = input.LA(1);
 
@@ -2761,7 +2761,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt16) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:5108:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // PsiInternalOntologicalModelingLanguage.g:5121:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -2785,7 +2785,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // PsiInternalOntologicalModelingLanguage.g:5108:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // PsiInternalOntologicalModelingLanguage.g:5121:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -2818,12 +2818,12 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5110:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // PsiInternalOntologicalModelingLanguage.g:5110:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // PsiInternalOntologicalModelingLanguage.g:5123:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // PsiInternalOntologicalModelingLanguage.g:5123:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // PsiInternalOntologicalModelingLanguage.g:5110:24: ( options {greedy=false; } : . )*
+            // PsiInternalOntologicalModelingLanguage.g:5123:24: ( options {greedy=false; } : . )*
             loop17:
             do {
                 int alt17=2;
@@ -2848,7 +2848,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
 
                 switch (alt17) {
             	case 1 :
-            	    // PsiInternalOntologicalModelingLanguage.g:5110:52: .
+            	    // PsiInternalOntologicalModelingLanguage.g:5123:52: .
             	    {
             	    matchAny(); 
 
@@ -2878,12 +2878,12 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5112:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // PsiInternalOntologicalModelingLanguage.g:5112:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // PsiInternalOntologicalModelingLanguage.g:5125:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // PsiInternalOntologicalModelingLanguage.g:5125:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // PsiInternalOntologicalModelingLanguage.g:5112:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // PsiInternalOntologicalModelingLanguage.g:5125:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop18:
             do {
                 int alt18=2;
@@ -2896,7 +2896,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
 
                 switch (alt18) {
             	case 1 :
-            	    // PsiInternalOntologicalModelingLanguage.g:5112:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // PsiInternalOntologicalModelingLanguage.g:5125:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2916,7 +2916,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                 }
             } while (true);
 
-            // PsiInternalOntologicalModelingLanguage.g:5112:40: ( ( '\\r' )? '\\n' )?
+            // PsiInternalOntologicalModelingLanguage.g:5125:40: ( ( '\\r' )? '\\n' )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -2925,9 +2925,9 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt20) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:5112:41: ( '\\r' )? '\\n'
+                    // PsiInternalOntologicalModelingLanguage.g:5125:41: ( '\\r' )? '\\n'
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:5112:41: ( '\\r' )?
+                    // PsiInternalOntologicalModelingLanguage.g:5125:41: ( '\\r' )?
                     int alt19=2;
                     int LA19_0 = input.LA(1);
 
@@ -2936,7 +2936,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     switch (alt19) {
                         case 1 :
-                            // PsiInternalOntologicalModelingLanguage.g:5112:41: '\\r'
+                            // PsiInternalOntologicalModelingLanguage.g:5125:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2968,10 +2968,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5114:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // PsiInternalOntologicalModelingLanguage.g:5114:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // PsiInternalOntologicalModelingLanguage.g:5127:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // PsiInternalOntologicalModelingLanguage.g:5127:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // PsiInternalOntologicalModelingLanguage.g:5114:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // PsiInternalOntologicalModelingLanguage.g:5127:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt21=0;
             loop21:
             do {
@@ -3025,8 +3025,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5116:16: ( . )
-            // PsiInternalOntologicalModelingLanguage.g:5116:18: .
+            // PsiInternalOntologicalModelingLanguage.g:5129:16: ( . )
+            // PsiInternalOntologicalModelingLanguage.g:5129:18: .
             {
             matchAny(); 
 

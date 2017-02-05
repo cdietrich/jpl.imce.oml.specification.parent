@@ -29,7 +29,7 @@ package jpl.imce.oml.specification.ecore;
  * @model abstract="true"
  * @generated
  */
-public interface DataRelationship extends Term {
+public interface DataRelationship extends DirectedBinaryRelationship {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -42,8 +42,26 @@ public interface DataRelationship extends Term {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model unique="false" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.source();'"
+	 * @generated
+	 */
+	Term relationDomain();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false" required="true"
 	 * @generated
 	 */
 	Datatype target();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.target();'"
+	 * @generated
+	 */
+	Term relationRange();
 
 } // DataRelationship

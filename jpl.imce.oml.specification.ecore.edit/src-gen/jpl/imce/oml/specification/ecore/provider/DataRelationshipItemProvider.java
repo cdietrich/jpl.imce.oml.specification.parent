@@ -35,7 +35,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DataRelationshipItemProvider extends TermItemProvider {
+public class DataRelationshipItemProvider extends DirectedBinaryRelationshipItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

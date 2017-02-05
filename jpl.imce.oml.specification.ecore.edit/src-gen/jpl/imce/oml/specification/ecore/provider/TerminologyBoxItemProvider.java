@@ -310,26 +310,6 @@ public class TerminologyBoxItemProvider extends TerminologyThingItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
-				 OMLFactory.eINSTANCE.createSynonymScalarRestriction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
-				 OMLFactory.eINSTANCE.createNumericScalarRestriction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
-				 OMLFactory.eINSTANCE.createStringScalarRestriction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
-				 OMLFactory.eINSTANCE.createPlainLiteralScalarRestriction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
 				 OMLFactory.eINSTANCE.createBinaryScalarRestriction()));
 
 		newChildDescriptors.add
@@ -340,7 +320,27 @@ public class TerminologyBoxItemProvider extends TerminologyThingItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				 OMLFactory.eINSTANCE.createNumericScalarRestriction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				 OMLFactory.eINSTANCE.createPlainLiteralScalarRestriction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				 OMLFactory.eINSTANCE.createStringScalarRestriction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
 				 OMLFactory.eINSTANCE.createTimeScalarRestriction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				 OMLFactory.eINSTANCE.createSynonymScalarRestriction()));
 
 		newChildDescriptors.add
 			(createChildParameter

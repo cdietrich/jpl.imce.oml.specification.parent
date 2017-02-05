@@ -30,4 +30,12 @@
             genModel="model/OMLSpecification.xcore"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated OMLProvenanceOTI -->
+      <package
+            uri="gov.nasa.jpl.imce.oml.provenance.oti"
+            class="gov.nasa.jpl.imce.oml.provenance.oti.OMLPPackage"
+            genModel="model/OMLProvenanceOTI.xcore"/>
+   </extension>
+
 </plugin>

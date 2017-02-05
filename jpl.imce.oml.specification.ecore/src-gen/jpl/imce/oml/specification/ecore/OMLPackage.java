@@ -1633,6 +1633,188 @@ public interface OMLPackage extends EPackage {
 	int TERM_OPERATION_COUNT = TERMINOLOGY_BOX_STATEMENT_OPERATION_COUNT + 5;
 
 	/**
+	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.UnaryTermImpl <em>Unary Term</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpl.imce.oml.specification.ecore.impl.UnaryTermImpl
+	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getUnaryTerm()
+	 * @generated
+	 */
+	int UNARY_TERM = 16;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_TERM__UUID = TERM__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Graph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_TERM__GRAPH = TERM__GRAPH;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_TERM__NAME = TERM__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Unary Term</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_TERM_FEATURE_COUNT = TERM_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Calculate UUID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_TERM___CALCULATE_UUID = TERM___CALCULATE_UUID;
+
+	/**
+	 * The operation id for the '<em>Iri</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_TERM___IRI = TERM___IRI;
+
+	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_TERM___NAME = TERM___NAME;
+
+	/**
+	 * The number of operations of the '<em>Unary Term</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_TERM_OPERATION_COUNT = TERM_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.DirectedBinaryRelationshipImpl <em>Directed Binary Relationship</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpl.imce.oml.specification.ecore.impl.DirectedBinaryRelationshipImpl
+	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDirectedBinaryRelationship()
+	 * @generated
+	 */
+	int DIRECTED_BINARY_RELATIONSHIP = 17;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_BINARY_RELATIONSHIP__UUID = TERM__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Graph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_BINARY_RELATIONSHIP__GRAPH = TERM__GRAPH;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_BINARY_RELATIONSHIP__NAME = TERM__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Directed Binary Relationship</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT = TERM_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Calculate UUID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_BINARY_RELATIONSHIP___CALCULATE_UUID = TERM___CALCULATE_UUID;
+
+	/**
+	 * The operation id for the '<em>Iri</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_BINARY_RELATIONSHIP___IRI = TERM___IRI;
+
+	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_BINARY_RELATIONSHIP___NAME = TERM___NAME;
+
+	/**
+	 * The operation id for the '<em>Relationship Subject</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_BINARY_RELATIONSHIP___RELATIONSHIP_SUBJECT = TERM_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Relation Range</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_BINARY_RELATIONSHIP___RELATION_RANGE = TERM_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Directed Binary Relationship</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_BINARY_RELATIONSHIP_OPERATION_COUNT = TERM_OPERATION_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.EntityImpl <em>Entity</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1640,7 +1822,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getEntity()
 	 * @generated
 	 */
-	int ENTITY = 16;
+	int ENTITY = 18;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -1722,7 +1904,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getAspect()
 	 * @generated
 	 */
-	int ASPECT = 17;
+	int ASPECT = 19;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -1804,7 +1986,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getConcept()
 	 * @generated
 	 */
-	int CONCEPT = 18;
+	int CONCEPT = 20;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -1895,7 +2077,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getEntityRelationship()
 	 * @generated
 	 */
-	int ENTITY_RELATIONSHIP = 19;
+	int ENTITY_RELATIONSHIP = 21;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -1904,7 +2086,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__UUID = TERM__UUID;
+	int ENTITY_RELATIONSHIP__UUID = DIRECTED_BINARY_RELATIONSHIP__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Graph</b></em>' container reference.
@@ -1913,7 +2095,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__GRAPH = TERM__GRAPH;
+	int ENTITY_RELATIONSHIP__GRAPH = DIRECTED_BINARY_RELATIONSHIP__GRAPH;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1922,7 +2104,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__NAME = TERM__NAME;
+	int ENTITY_RELATIONSHIP__NAME = DIRECTED_BINARY_RELATIONSHIP__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -1931,7 +2113,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__SOURCE = TERM_FEATURE_COUNT + 0;
+	int ENTITY_RELATIONSHIP__SOURCE = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -1940,7 +2122,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__TARGET = TERM_FEATURE_COUNT + 1;
+	int ENTITY_RELATIONSHIP__TARGET = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Is Functional</b></em>' attribute.
@@ -1949,7 +2131,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__IS_FUNCTIONAL = TERM_FEATURE_COUNT + 2;
+	int ENTITY_RELATIONSHIP__IS_FUNCTIONAL = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Is Inverse Functional</b></em>' attribute.
@@ -1958,7 +2140,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__IS_INVERSE_FUNCTIONAL = TERM_FEATURE_COUNT + 3;
+	int ENTITY_RELATIONSHIP__IS_INVERSE_FUNCTIONAL = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Is Essential</b></em>' attribute.
@@ -1967,7 +2149,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__IS_ESSENTIAL = TERM_FEATURE_COUNT + 4;
+	int ENTITY_RELATIONSHIP__IS_ESSENTIAL = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Is Inverse Essential</b></em>' attribute.
@@ -1976,7 +2158,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__IS_INVERSE_ESSENTIAL = TERM_FEATURE_COUNT + 5;
+	int ENTITY_RELATIONSHIP__IS_INVERSE_ESSENTIAL = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Is Symmetric</b></em>' attribute.
@@ -1985,7 +2167,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__IS_SYMMETRIC = TERM_FEATURE_COUNT + 6;
+	int ENTITY_RELATIONSHIP__IS_SYMMETRIC = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Is Asymmetric</b></em>' attribute.
@@ -1994,7 +2176,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__IS_ASYMMETRIC = TERM_FEATURE_COUNT + 7;
+	int ENTITY_RELATIONSHIP__IS_ASYMMETRIC = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Is Reflexive</b></em>' attribute.
@@ -2003,7 +2185,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__IS_REFLEXIVE = TERM_FEATURE_COUNT + 8;
+	int ENTITY_RELATIONSHIP__IS_REFLEXIVE = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Is Irreflexive</b></em>' attribute.
@@ -2012,7 +2194,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__IS_IRREFLEXIVE = TERM_FEATURE_COUNT + 9;
+	int ENTITY_RELATIONSHIP__IS_IRREFLEXIVE = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Is Transitive</b></em>' attribute.
@@ -2021,7 +2203,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__IS_TRANSITIVE = TERM_FEATURE_COUNT + 10;
+	int ENTITY_RELATIONSHIP__IS_TRANSITIVE = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Entity Relationship</em>' class.
@@ -2030,7 +2212,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP_FEATURE_COUNT = TERM_FEATURE_COUNT + 11;
+	int ENTITY_RELATIONSHIP_FEATURE_COUNT = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 11;
 
 	/**
 	 * The operation id for the '<em>Calculate UUID</em>' operation.
@@ -2039,7 +2221,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP___CALCULATE_UUID = TERM___CALCULATE_UUID;
+	int ENTITY_RELATIONSHIP___CALCULATE_UUID = DIRECTED_BINARY_RELATIONSHIP___CALCULATE_UUID;
 
 	/**
 	 * The operation id for the '<em>Iri</em>' operation.
@@ -2048,7 +2230,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP___IRI = TERM___IRI;
+	int ENTITY_RELATIONSHIP___IRI = DIRECTED_BINARY_RELATIONSHIP___IRI;
 
 	/**
 	 * The operation id for the '<em>Name</em>' operation.
@@ -2057,7 +2239,34 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP___NAME = TERM___NAME;
+	int ENTITY_RELATIONSHIP___NAME = DIRECTED_BINARY_RELATIONSHIP___NAME;
+
+	/**
+	 * The operation id for the '<em>Relationship Subject</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_RELATIONSHIP___RELATIONSHIP_SUBJECT = DIRECTED_BINARY_RELATIONSHIP___RELATIONSHIP_SUBJECT;
+
+	/**
+	 * The operation id for the '<em>Relation Domain</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_RELATIONSHIP___RELATION_DOMAIN = DIRECTED_BINARY_RELATIONSHIP_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Relation Range</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_RELATIONSHIP___RELATION_RANGE = DIRECTED_BINARY_RELATIONSHIP_OPERATION_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Entity Relationship</em>' class.
@@ -2066,7 +2275,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP_OPERATION_COUNT = TERM_OPERATION_COUNT + 0;
+	int ENTITY_RELATIONSHIP_OPERATION_COUNT = DIRECTED_BINARY_RELATIONSHIP_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.ReifiedRelationshipImpl <em>Reified Relationship</em>}' class.
@@ -2076,7 +2285,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getReifiedRelationship()
 	 * @generated
 	 */
-	int REIFIED_RELATIONSHIP = 20;
+	int REIFIED_RELATIONSHIP = 22;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -2268,6 +2477,33 @@ public interface OMLPackage extends EPackage {
 	int REIFIED_RELATIONSHIP___NAME = ENTITY_RELATIONSHIP___NAME;
 
 	/**
+	 * The operation id for the '<em>Relationship Subject</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP___RELATIONSHIP_SUBJECT = ENTITY_RELATIONSHIP___RELATIONSHIP_SUBJECT;
+
+	/**
+	 * The operation id for the '<em>Relation Domain</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP___RELATION_DOMAIN = ENTITY_RELATIONSHIP___RELATION_DOMAIN;
+
+	/**
+	 * The operation id for the '<em>Relation Range</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP___RELATION_RANGE = ENTITY_RELATIONSHIP___RELATION_RANGE;
+
+	/**
 	 * The number of operations of the '<em>Reified Relationship</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2284,7 +2520,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getUnreifiedRelationship()
 	 * @generated
 	 */
-	int UNREIFIED_RELATIONSHIP = 21;
+	int UNREIFIED_RELATIONSHIP = 23;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -2449,6 +2685,33 @@ public interface OMLPackage extends EPackage {
 	int UNREIFIED_RELATIONSHIP___NAME = ENTITY_RELATIONSHIP___NAME;
 
 	/**
+	 * The operation id for the '<em>Relationship Subject</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNREIFIED_RELATIONSHIP___RELATIONSHIP_SUBJECT = ENTITY_RELATIONSHIP___RELATIONSHIP_SUBJECT;
+
+	/**
+	 * The operation id for the '<em>Relation Domain</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNREIFIED_RELATIONSHIP___RELATION_DOMAIN = ENTITY_RELATIONSHIP___RELATION_DOMAIN;
+
+	/**
+	 * The operation id for the '<em>Relation Range</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNREIFIED_RELATIONSHIP___RELATION_RANGE = ENTITY_RELATIONSHIP___RELATION_RANGE;
+
+	/**
 	 * The number of operations of the '<em>Unreified Relationship</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2465,7 +2728,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDatatype()
 	 * @generated
 	 */
-	int DATATYPE = 22;
+	int DATATYPE = 24;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -2474,7 +2737,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATATYPE__UUID = TERM__UUID;
+	int DATATYPE__UUID = UNARY_TERM__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Graph</b></em>' container reference.
@@ -2483,7 +2746,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATATYPE__GRAPH = TERM__GRAPH;
+	int DATATYPE__GRAPH = UNARY_TERM__GRAPH;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2492,7 +2755,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATATYPE__NAME = TERM__NAME;
+	int DATATYPE__NAME = UNARY_TERM__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Datatype</em>' class.
@@ -2501,7 +2764,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATATYPE_FEATURE_COUNT = TERM_FEATURE_COUNT + 0;
+	int DATATYPE_FEATURE_COUNT = UNARY_TERM_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Calculate UUID</em>' operation.
@@ -2510,7 +2773,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATATYPE___CALCULATE_UUID = TERM___CALCULATE_UUID;
+	int DATATYPE___CALCULATE_UUID = UNARY_TERM___CALCULATE_UUID;
 
 	/**
 	 * The operation id for the '<em>Iri</em>' operation.
@@ -2519,7 +2782,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATATYPE___IRI = TERM___IRI;
+	int DATATYPE___IRI = UNARY_TERM___IRI;
 
 	/**
 	 * The operation id for the '<em>Name</em>' operation.
@@ -2528,7 +2791,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATATYPE___NAME = TERM___NAME;
+	int DATATYPE___NAME = UNARY_TERM___NAME;
 
 	/**
 	 * The number of operations of the '<em>Datatype</em>' class.
@@ -2537,7 +2800,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATATYPE_OPERATION_COUNT = TERM_OPERATION_COUNT + 0;
+	int DATATYPE_OPERATION_COUNT = UNARY_TERM_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.DataRangeImpl <em>Data Range</em>}' class.
@@ -2547,7 +2810,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDataRange()
 	 * @generated
 	 */
-	int DATA_RANGE = 23;
+	int DATA_RANGE = 25;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -2629,7 +2892,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getScalar()
 	 * @generated
 	 */
-	int SCALAR = 24;
+	int SCALAR = 26;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -2711,7 +2974,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDataRelationship()
 	 * @generated
 	 */
-	int DATA_RELATIONSHIP = 25;
+	int DATA_RELATIONSHIP = 27;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -2720,7 +2983,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_RELATIONSHIP__UUID = TERM__UUID;
+	int DATA_RELATIONSHIP__UUID = DIRECTED_BINARY_RELATIONSHIP__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Graph</b></em>' container reference.
@@ -2729,7 +2992,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_RELATIONSHIP__GRAPH = TERM__GRAPH;
+	int DATA_RELATIONSHIP__GRAPH = DIRECTED_BINARY_RELATIONSHIP__GRAPH;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2738,7 +3001,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_RELATIONSHIP__NAME = TERM__NAME;
+	int DATA_RELATIONSHIP__NAME = DIRECTED_BINARY_RELATIONSHIP__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Data Relationship</em>' class.
@@ -2747,7 +3010,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_RELATIONSHIP_FEATURE_COUNT = TERM_FEATURE_COUNT + 0;
+	int DATA_RELATIONSHIP_FEATURE_COUNT = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Calculate UUID</em>' operation.
@@ -2756,7 +3019,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_RELATIONSHIP___CALCULATE_UUID = TERM___CALCULATE_UUID;
+	int DATA_RELATIONSHIP___CALCULATE_UUID = DIRECTED_BINARY_RELATIONSHIP___CALCULATE_UUID;
 
 	/**
 	 * The operation id for the '<em>Iri</em>' operation.
@@ -2765,7 +3028,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_RELATIONSHIP___IRI = TERM___IRI;
+	int DATA_RELATIONSHIP___IRI = DIRECTED_BINARY_RELATIONSHIP___IRI;
 
 	/**
 	 * The operation id for the '<em>Name</em>' operation.
@@ -2774,7 +3037,16 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_RELATIONSHIP___NAME = TERM___NAME;
+	int DATA_RELATIONSHIP___NAME = DIRECTED_BINARY_RELATIONSHIP___NAME;
+
+	/**
+	 * The operation id for the '<em>Relationship Subject</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_RELATIONSHIP___RELATIONSHIP_SUBJECT = DIRECTED_BINARY_RELATIONSHIP___RELATIONSHIP_SUBJECT;
 
 	/**
 	 * The operation id for the '<em>Source</em>' operation.
@@ -2783,7 +3055,16 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_RELATIONSHIP___SOURCE = TERM_OPERATION_COUNT + 0;
+	int DATA_RELATIONSHIP___SOURCE = DIRECTED_BINARY_RELATIONSHIP_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Relation Domain</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_RELATIONSHIP___RELATION_DOMAIN = DIRECTED_BINARY_RELATIONSHIP_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Target</em>' operation.
@@ -2792,7 +3073,16 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_RELATIONSHIP___TARGET = TERM_OPERATION_COUNT + 1;
+	int DATA_RELATIONSHIP___TARGET = DIRECTED_BINARY_RELATIONSHIP_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Relation Range</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_RELATIONSHIP___RELATION_RANGE = DIRECTED_BINARY_RELATIONSHIP_OPERATION_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Data Relationship</em>' class.
@@ -2801,7 +3091,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_RELATIONSHIP_OPERATION_COUNT = TERM_OPERATION_COUNT + 2;
+	int DATA_RELATIONSHIP_OPERATION_COUNT = DIRECTED_BINARY_RELATIONSHIP_OPERATION_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.DataRelationshipDomainImpl <em>Data Relationship Domain</em>}' class.
@@ -2811,7 +3101,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDataRelationshipDomain()
 	 * @generated
 	 */
-	int DATA_RELATIONSHIP_DOMAIN = 26;
+	int DATA_RELATIONSHIP_DOMAIN = 28;
 
 	/**
 	 * The number of structural features of the '<em>Data Relationship Domain</em>' class.
@@ -2839,7 +3129,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDataRelationshipFromEntity()
 	 * @generated
 	 */
-	int DATA_RELATIONSHIP_FROM_ENTITY = 27;
+	int DATA_RELATIONSHIP_FROM_ENTITY = 29;
 
 	/**
 	 * The feature id for the '<em><b>Domain</b></em>' reference.
@@ -2876,7 +3166,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDataRelationshipFromStructure()
 	 * @generated
 	 */
-	int DATA_RELATIONSHIP_FROM_STRUCTURE = 28;
+	int DATA_RELATIONSHIP_FROM_STRUCTURE = 30;
 
 	/**
 	 * The feature id for the '<em><b>Domain</b></em>' reference.
@@ -2913,7 +3203,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDataRelationshipRange()
 	 * @generated
 	 */
-	int DATA_RELATIONSHIP_RANGE = 29;
+	int DATA_RELATIONSHIP_RANGE = 31;
 
 	/**
 	 * The number of structural features of the '<em>Data Relationship Range</em>' class.
@@ -2941,7 +3231,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDataRelationshipToScalar()
 	 * @generated
 	 */
-	int DATA_RELATIONSHIP_TO_SCALAR = 30;
+	int DATA_RELATIONSHIP_TO_SCALAR = 32;
 
 	/**
 	 * The feature id for the '<em><b>Range</b></em>' reference.
@@ -2978,7 +3268,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDataRelationshipToStructure()
 	 * @generated
 	 */
-	int DATA_RELATIONSHIP_TO_STRUCTURE = 31;
+	int DATA_RELATIONSHIP_TO_STRUCTURE = 33;
 
 	/**
 	 * The feature id for the '<em><b>Range</b></em>' reference.
@@ -3015,7 +3305,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getEntityStructuredDataProperty()
 	 * @generated
 	 */
-	int ENTITY_STRUCTURED_DATA_PROPERTY = 32;
+	int ENTITY_STRUCTURED_DATA_PROPERTY = 34;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -3099,6 +3389,33 @@ public interface OMLPackage extends EPackage {
 	int ENTITY_STRUCTURED_DATA_PROPERTY___NAME = DATA_RELATIONSHIP___NAME;
 
 	/**
+	 * The operation id for the '<em>Relationship Subject</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_STRUCTURED_DATA_PROPERTY___RELATIONSHIP_SUBJECT = DATA_RELATIONSHIP___RELATIONSHIP_SUBJECT;
+
+	/**
+	 * The operation id for the '<em>Relation Domain</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_STRUCTURED_DATA_PROPERTY___RELATION_DOMAIN = DATA_RELATIONSHIP___RELATION_DOMAIN;
+
+	/**
+	 * The operation id for the '<em>Relation Range</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_STRUCTURED_DATA_PROPERTY___RELATION_RANGE = DATA_RELATIONSHIP___RELATION_RANGE;
+
+	/**
 	 * The operation id for the '<em>Source</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3133,7 +3450,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getEntityScalarDataProperty()
 	 * @generated
 	 */
-	int ENTITY_SCALAR_DATA_PROPERTY = 33;
+	int ENTITY_SCALAR_DATA_PROPERTY = 35;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -3217,6 +3534,33 @@ public interface OMLPackage extends EPackage {
 	int ENTITY_SCALAR_DATA_PROPERTY___NAME = DATA_RELATIONSHIP___NAME;
 
 	/**
+	 * The operation id for the '<em>Relationship Subject</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_SCALAR_DATA_PROPERTY___RELATIONSHIP_SUBJECT = DATA_RELATIONSHIP___RELATIONSHIP_SUBJECT;
+
+	/**
+	 * The operation id for the '<em>Relation Domain</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_SCALAR_DATA_PROPERTY___RELATION_DOMAIN = DATA_RELATIONSHIP___RELATION_DOMAIN;
+
+	/**
+	 * The operation id for the '<em>Relation Range</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_SCALAR_DATA_PROPERTY___RELATION_RANGE = DATA_RELATIONSHIP___RELATION_RANGE;
+
+	/**
 	 * The operation id for the '<em>Source</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3251,7 +3595,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getStructuredDataProperty()
 	 * @generated
 	 */
-	int STRUCTURED_DATA_PROPERTY = 34;
+	int STRUCTURED_DATA_PROPERTY = 36;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -3335,6 +3679,33 @@ public interface OMLPackage extends EPackage {
 	int STRUCTURED_DATA_PROPERTY___NAME = DATA_RELATIONSHIP___NAME;
 
 	/**
+	 * The operation id for the '<em>Relationship Subject</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_DATA_PROPERTY___RELATIONSHIP_SUBJECT = DATA_RELATIONSHIP___RELATIONSHIP_SUBJECT;
+
+	/**
+	 * The operation id for the '<em>Relation Domain</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_DATA_PROPERTY___RELATION_DOMAIN = DATA_RELATIONSHIP___RELATION_DOMAIN;
+
+	/**
+	 * The operation id for the '<em>Relation Range</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_DATA_PROPERTY___RELATION_RANGE = DATA_RELATIONSHIP___RELATION_RANGE;
+
+	/**
 	 * The operation id for the '<em>Source</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3369,7 +3740,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getScalarDataProperty()
 	 * @generated
 	 */
-	int SCALAR_DATA_PROPERTY = 35;
+	int SCALAR_DATA_PROPERTY = 37;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -3453,6 +3824,33 @@ public interface OMLPackage extends EPackage {
 	int SCALAR_DATA_PROPERTY___NAME = DATA_RELATIONSHIP___NAME;
 
 	/**
+	 * The operation id for the '<em>Relationship Subject</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCALAR_DATA_PROPERTY___RELATIONSHIP_SUBJECT = DATA_RELATIONSHIP___RELATIONSHIP_SUBJECT;
+
+	/**
+	 * The operation id for the '<em>Relation Domain</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCALAR_DATA_PROPERTY___RELATION_DOMAIN = DATA_RELATIONSHIP___RELATION_DOMAIN;
+
+	/**
+	 * The operation id for the '<em>Relation Range</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCALAR_DATA_PROPERTY___RELATION_RANGE = DATA_RELATIONSHIP___RELATION_RANGE;
+
+	/**
 	 * The operation id for the '<em>Source</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3487,7 +3885,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getStructure()
 	 * @generated
 	 */
-	int STRUCTURE = 36;
+	int STRUCTURE = 38;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -3569,7 +3967,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getAxiom()
 	 * @generated
 	 */
-	int AXIOM = 37;
+	int AXIOM = 39;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -3624,7 +4022,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getTerminologyAxiom()
 	 * @generated
 	 */
-	int TERMINOLOGY_AXIOM = 38;
+	int TERMINOLOGY_AXIOM = 40;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -3688,7 +4086,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getTerminologyBoxAxiom()
 	 * @generated
 	 */
-	int TERMINOLOGY_BOX_AXIOM = 39;
+	int TERMINOLOGY_BOX_AXIOM = 41;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -3761,7 +4159,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getTerminologyBundleAxiom()
 	 * @generated
 	 */
-	int TERMINOLOGY_BUNDLE_AXIOM = 40;
+	int TERMINOLOGY_BUNDLE_AXIOM = 42;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -3834,7 +4232,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getConceptTreeDisjunction()
 	 * @generated
 	 */
-	int CONCEPT_TREE_DISJUNCTION = 41;
+	int CONCEPT_TREE_DISJUNCTION = 43;
 
 	/**
 	 * The number of structural features of the '<em>Concept Tree Disjunction</em>' class.
@@ -3862,7 +4260,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDisjointUnionOfConceptsAxiom()
 	 * @generated
 	 */
-	int DISJOINT_UNION_OF_CONCEPTS_AXIOM = 42;
+	int DISJOINT_UNION_OF_CONCEPTS_AXIOM = 44;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -3926,7 +4324,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getSpecificDisjointConceptAxiom()
 	 * @generated
 	 */
-	int SPECIFIC_DISJOINT_CONCEPT_AXIOM = 43;
+	int SPECIFIC_DISJOINT_CONCEPT_AXIOM = 45;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -3999,7 +4397,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getAnonymousConceptTaxonomyAxiom()
 	 * @generated
 	 */
-	int ANONYMOUS_CONCEPT_TAXONOMY_AXIOM = 44;
+	int ANONYMOUS_CONCEPT_TAXONOMY_AXIOM = 46;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -4063,7 +4461,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getRootConceptTaxonomyAxiom()
 	 * @generated
 	 */
-	int ROOT_CONCEPT_TAXONOMY_AXIOM = 45;
+	int ROOT_CONCEPT_TAXONOMY_AXIOM = 47;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -4127,7 +4525,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getBundledTerminologyAxiom()
 	 * @generated
 	 */
-	int BUNDLED_TERMINOLOGY_AXIOM = 46;
+	int BUNDLED_TERMINOLOGY_AXIOM = 48;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -4209,7 +4607,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getConceptDesignationTerminologyAxiom()
 	 * @generated
 	 */
-	int CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM = 47;
+	int CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM = 49;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -4309,7 +4707,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getTerminologyExtensionAxiom()
 	 * @generated
 	 */
-	int TERMINOLOGY_EXTENSION_AXIOM = 48;
+	int TERMINOLOGY_EXTENSION_AXIOM = 50;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -4400,7 +4798,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getTerminologyNestingAxiom()
 	 * @generated
 	 */
-	int TERMINOLOGY_NESTING_AXIOM = 49;
+	int TERMINOLOGY_NESTING_AXIOM = 51;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -4500,7 +4898,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getTermAxiom()
 	 * @generated
 	 */
-	int TERM_AXIOM = 50;
+	int TERM_AXIOM = 52;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -4555,7 +4953,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getEntityRestrictionAxiom()
 	 * @generated
 	 */
-	int ENTITY_RESTRICTION_AXIOM = 51;
+	int ENTITY_RESTRICTION_AXIOM = 53;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -4637,7 +5035,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getEntityExistentialRestrictionAxiom()
 	 * @generated
 	 */
-	int ENTITY_EXISTENTIAL_RESTRICTION_AXIOM = 52;
+	int ENTITY_EXISTENTIAL_RESTRICTION_AXIOM = 54;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -4719,7 +5117,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getEntityUniversalRestrictionAxiom()
 	 * @generated
 	 */
-	int ENTITY_UNIVERSAL_RESTRICTION_AXIOM = 53;
+	int ENTITY_UNIVERSAL_RESTRICTION_AXIOM = 55;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -4801,7 +5199,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getSpecializationAxiom()
 	 * @generated
 	 */
-	int SPECIALIZATION_AXIOM = 54;
+	int SPECIALIZATION_AXIOM = 56;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -4874,7 +5272,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getAspectSpecializationAxiom()
 	 * @generated
 	 */
-	int ASPECT_SPECIALIZATION_AXIOM = 55;
+	int ASPECT_SPECIALIZATION_AXIOM = 57;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -4965,7 +5363,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getConceptSpecializationAxiom()
 	 * @generated
 	 */
-	int CONCEPT_SPECIALIZATION_AXIOM = 56;
+	int CONCEPT_SPECIALIZATION_AXIOM = 58;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -5056,7 +5454,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getReifiedRelationshipSpecializationAxiom()
 	 * @generated
 	 */
-	int REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM = 57;
+	int REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM = 59;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -5147,7 +5545,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getEntityScalarDataPropertyRestrictionAxiom()
 	 * @generated
 	 */
-	int ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM = 58;
+	int ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM = 60;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -5220,7 +5618,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getEntityScalarDataPropertyExistentialRestrictionAxiom()
 	 * @generated
 	 */
-	int ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM = 59;
+	int ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM = 61;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -5302,7 +5700,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getEntityScalarDataPropertyUniversalRestrictionAxiom()
 	 * @generated
 	 */
-	int ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM = 60;
+	int ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM = 62;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -5384,7 +5782,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getEntityScalarDataPropertyParticularRestrictionAxiom()
 	 * @generated
 	 */
-	int ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM = 61;
+	int ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM = 63;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -5466,7 +5864,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getRestrictedDataRange()
 	 * @generated
 	 */
-	int RESTRICTED_DATA_RANGE = 62;
+	int RESTRICTED_DATA_RANGE = 64;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -5550,14 +5948,14 @@ public interface OMLPackage extends EPackage {
 	int RESTRICTED_DATA_RANGE_OPERATION_COUNT = DATA_RANGE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.SynonymScalarRestrictionImpl <em>Synonym Scalar Restriction</em>}' class.
+	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.BinaryScalarRestrictionImpl <em>Binary Scalar Restriction</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see jpl.imce.oml.specification.ecore.impl.SynonymScalarRestrictionImpl
-	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getSynonymScalarRestriction()
+	 * @see jpl.imce.oml.specification.ecore.impl.BinaryScalarRestrictionImpl
+	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getBinaryScalarRestriction()
 	 * @generated
 	 */
-	int SYNONYM_SCALAR_RESTRICTION = 63;
+	int BINARY_SCALAR_RESTRICTION = 65;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -5566,7 +5964,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNONYM_SCALAR_RESTRICTION__UUID = RESTRICTED_DATA_RANGE__UUID;
+	int BINARY_SCALAR_RESTRICTION__UUID = RESTRICTED_DATA_RANGE__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Graph</b></em>' container reference.
@@ -5575,7 +5973,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNONYM_SCALAR_RESTRICTION__GRAPH = RESTRICTED_DATA_RANGE__GRAPH;
+	int BINARY_SCALAR_RESTRICTION__GRAPH = RESTRICTED_DATA_RANGE__GRAPH;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5584,7 +5982,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNONYM_SCALAR_RESTRICTION__NAME = RESTRICTED_DATA_RANGE__NAME;
+	int BINARY_SCALAR_RESTRICTION__NAME = RESTRICTED_DATA_RANGE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Restricted Range</b></em>' reference.
@@ -5593,16 +5991,43 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNONYM_SCALAR_RESTRICTION__RESTRICTED_RANGE = RESTRICTED_DATA_RANGE__RESTRICTED_RANGE;
+	int BINARY_SCALAR_RESTRICTION__RESTRICTED_RANGE = RESTRICTED_DATA_RANGE__RESTRICTED_RANGE;
 
 	/**
-	 * The number of structural features of the '<em>Synonym Scalar Restriction</em>' class.
+	 * The feature id for the '<em><b>Length</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYNONYM_SCALAR_RESTRICTION_FEATURE_COUNT = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 0;
+	int BINARY_SCALAR_RESTRICTION__LENGTH = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Min Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_SCALAR_RESTRICTION__MIN_LENGTH = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Max Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_SCALAR_RESTRICTION__MAX_LENGTH = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Binary Scalar Restriction</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_SCALAR_RESTRICTION_FEATURE_COUNT = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Calculate UUID</em>' operation.
@@ -5611,7 +6036,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNONYM_SCALAR_RESTRICTION___CALCULATE_UUID = RESTRICTED_DATA_RANGE___CALCULATE_UUID;
+	int BINARY_SCALAR_RESTRICTION___CALCULATE_UUID = RESTRICTED_DATA_RANGE___CALCULATE_UUID;
 
 	/**
 	 * The operation id for the '<em>Iri</em>' operation.
@@ -5620,7 +6045,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNONYM_SCALAR_RESTRICTION___IRI = RESTRICTED_DATA_RANGE___IRI;
+	int BINARY_SCALAR_RESTRICTION___IRI = RESTRICTED_DATA_RANGE___IRI;
 
 	/**
 	 * The operation id for the '<em>Name</em>' operation.
@@ -5629,16 +6054,143 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNONYM_SCALAR_RESTRICTION___NAME = RESTRICTED_DATA_RANGE___NAME;
+	int BINARY_SCALAR_RESTRICTION___NAME = RESTRICTED_DATA_RANGE___NAME;
 
 	/**
-	 * The number of operations of the '<em>Synonym Scalar Restriction</em>' class.
+	 * The number of operations of the '<em>Binary Scalar Restriction</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYNONYM_SCALAR_RESTRICTION_OPERATION_COUNT = RESTRICTED_DATA_RANGE_OPERATION_COUNT + 0;
+	int BINARY_SCALAR_RESTRICTION_OPERATION_COUNT = RESTRICTED_DATA_RANGE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.IRIScalarRestrictionImpl <em>IRI Scalar Restriction</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpl.imce.oml.specification.ecore.impl.IRIScalarRestrictionImpl
+	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getIRIScalarRestriction()
+	 * @generated
+	 */
+	int IRI_SCALAR_RESTRICTION = 66;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IRI_SCALAR_RESTRICTION__UUID = RESTRICTED_DATA_RANGE__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Graph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IRI_SCALAR_RESTRICTION__GRAPH = RESTRICTED_DATA_RANGE__GRAPH;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IRI_SCALAR_RESTRICTION__NAME = RESTRICTED_DATA_RANGE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Restricted Range</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IRI_SCALAR_RESTRICTION__RESTRICTED_RANGE = RESTRICTED_DATA_RANGE__RESTRICTED_RANGE;
+
+	/**
+	 * The feature id for the '<em><b>Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IRI_SCALAR_RESTRICTION__LENGTH = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Min Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IRI_SCALAR_RESTRICTION__MIN_LENGTH = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Max Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IRI_SCALAR_RESTRICTION__MAX_LENGTH = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Pattern</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IRI_SCALAR_RESTRICTION__PATTERN = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>IRI Scalar Restriction</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IRI_SCALAR_RESTRICTION_FEATURE_COUNT = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Calculate UUID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IRI_SCALAR_RESTRICTION___CALCULATE_UUID = RESTRICTED_DATA_RANGE___CALCULATE_UUID;
+
+	/**
+	 * The operation id for the '<em>Iri</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IRI_SCALAR_RESTRICTION___IRI = RESTRICTED_DATA_RANGE___IRI;
+
+	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IRI_SCALAR_RESTRICTION___NAME = RESTRICTED_DATA_RANGE___NAME;
+
+	/**
+	 * The number of operations of the '<em>IRI Scalar Restriction</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IRI_SCALAR_RESTRICTION_OPERATION_COUNT = RESTRICTED_DATA_RANGE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.NumericScalarRestrictionImpl <em>Numeric Scalar Restriction</em>}' class.
@@ -5648,7 +6200,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getNumericScalarRestriction()
 	 * @generated
 	 */
-	int NUMERIC_SCALAR_RESTRICTION = 64;
+	int NUMERIC_SCALAR_RESTRICTION = 67;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -5768,133 +6320,6 @@ public interface OMLPackage extends EPackage {
 	int NUMERIC_SCALAR_RESTRICTION_OPERATION_COUNT = RESTRICTED_DATA_RANGE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.StringScalarRestrictionImpl <em>String Scalar Restriction</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see jpl.imce.oml.specification.ecore.impl.StringScalarRestrictionImpl
-	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getStringScalarRestriction()
-	 * @generated
-	 */
-	int STRING_SCALAR_RESTRICTION = 65;
-
-	/**
-	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_SCALAR_RESTRICTION__UUID = RESTRICTED_DATA_RANGE__UUID;
-
-	/**
-	 * The feature id for the '<em><b>Graph</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_SCALAR_RESTRICTION__GRAPH = RESTRICTED_DATA_RANGE__GRAPH;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_SCALAR_RESTRICTION__NAME = RESTRICTED_DATA_RANGE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Restricted Range</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_SCALAR_RESTRICTION__RESTRICTED_RANGE = RESTRICTED_DATA_RANGE__RESTRICTED_RANGE;
-
-	/**
-	 * The feature id for the '<em><b>Length</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_SCALAR_RESTRICTION__LENGTH = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Min Length</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_SCALAR_RESTRICTION__MIN_LENGTH = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Max Length</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_SCALAR_RESTRICTION__MAX_LENGTH = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_SCALAR_RESTRICTION__PATTERN = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>String Scalar Restriction</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_SCALAR_RESTRICTION_FEATURE_COUNT = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Calculate UUID</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_SCALAR_RESTRICTION___CALCULATE_UUID = RESTRICTED_DATA_RANGE___CALCULATE_UUID;
-
-	/**
-	 * The operation id for the '<em>Iri</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_SCALAR_RESTRICTION___IRI = RESTRICTED_DATA_RANGE___IRI;
-
-	/**
-	 * The operation id for the '<em>Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_SCALAR_RESTRICTION___NAME = RESTRICTED_DATA_RANGE___NAME;
-
-	/**
-	 * The number of operations of the '<em>String Scalar Restriction</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_SCALAR_RESTRICTION_OPERATION_COUNT = RESTRICTED_DATA_RANGE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.PlainLiteralScalarRestrictionImpl <em>Plain Literal Scalar Restriction</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5902,7 +6327,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getPlainLiteralScalarRestriction()
 	 * @generated
 	 */
-	int PLAIN_LITERAL_SCALAR_RESTRICTION = 66;
+	int PLAIN_LITERAL_SCALAR_RESTRICTION = 68;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -6031,14 +6456,14 @@ public interface OMLPackage extends EPackage {
 	int PLAIN_LITERAL_SCALAR_RESTRICTION_OPERATION_COUNT = RESTRICTED_DATA_RANGE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.BinaryScalarRestrictionImpl <em>Binary Scalar Restriction</em>}' class.
+	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.StringScalarRestrictionImpl <em>String Scalar Restriction</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see jpl.imce.oml.specification.ecore.impl.BinaryScalarRestrictionImpl
-	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getBinaryScalarRestriction()
+	 * @see jpl.imce.oml.specification.ecore.impl.StringScalarRestrictionImpl
+	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getStringScalarRestriction()
 	 * @generated
 	 */
-	int BINARY_SCALAR_RESTRICTION = 67;
+	int STRING_SCALAR_RESTRICTION = 69;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -6047,7 +6472,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_SCALAR_RESTRICTION__UUID = RESTRICTED_DATA_RANGE__UUID;
+	int STRING_SCALAR_RESTRICTION__UUID = RESTRICTED_DATA_RANGE__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Graph</b></em>' container reference.
@@ -6056,7 +6481,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_SCALAR_RESTRICTION__GRAPH = RESTRICTED_DATA_RANGE__GRAPH;
+	int STRING_SCALAR_RESTRICTION__GRAPH = RESTRICTED_DATA_RANGE__GRAPH;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6065,7 +6490,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_SCALAR_RESTRICTION__NAME = RESTRICTED_DATA_RANGE__NAME;
+	int STRING_SCALAR_RESTRICTION__NAME = RESTRICTED_DATA_RANGE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Restricted Range</b></em>' reference.
@@ -6074,7 +6499,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_SCALAR_RESTRICTION__RESTRICTED_RANGE = RESTRICTED_DATA_RANGE__RESTRICTED_RANGE;
+	int STRING_SCALAR_RESTRICTION__RESTRICTED_RANGE = RESTRICTED_DATA_RANGE__RESTRICTED_RANGE;
 
 	/**
 	 * The feature id for the '<em><b>Length</b></em>' attribute.
@@ -6083,7 +6508,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_SCALAR_RESTRICTION__LENGTH = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 0;
+	int STRING_SCALAR_RESTRICTION__LENGTH = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Min Length</b></em>' attribute.
@@ -6092,7 +6517,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_SCALAR_RESTRICTION__MIN_LENGTH = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 1;
+	int STRING_SCALAR_RESTRICTION__MIN_LENGTH = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Max Length</b></em>' attribute.
@@ -6101,125 +6526,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_SCALAR_RESTRICTION__MAX_LENGTH = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Binary Scalar Restriction</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_SCALAR_RESTRICTION_FEATURE_COUNT = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Calculate UUID</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_SCALAR_RESTRICTION___CALCULATE_UUID = RESTRICTED_DATA_RANGE___CALCULATE_UUID;
-
-	/**
-	 * The operation id for the '<em>Iri</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_SCALAR_RESTRICTION___IRI = RESTRICTED_DATA_RANGE___IRI;
-
-	/**
-	 * The operation id for the '<em>Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_SCALAR_RESTRICTION___NAME = RESTRICTED_DATA_RANGE___NAME;
-
-	/**
-	 * The number of operations of the '<em>Binary Scalar Restriction</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_SCALAR_RESTRICTION_OPERATION_COUNT = RESTRICTED_DATA_RANGE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.IRIScalarRestrictionImpl <em>IRI Scalar Restriction</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see jpl.imce.oml.specification.ecore.impl.IRIScalarRestrictionImpl
-	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getIRIScalarRestriction()
-	 * @generated
-	 */
-	int IRI_SCALAR_RESTRICTION = 68;
-
-	/**
-	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IRI_SCALAR_RESTRICTION__UUID = RESTRICTED_DATA_RANGE__UUID;
-
-	/**
-	 * The feature id for the '<em><b>Graph</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IRI_SCALAR_RESTRICTION__GRAPH = RESTRICTED_DATA_RANGE__GRAPH;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IRI_SCALAR_RESTRICTION__NAME = RESTRICTED_DATA_RANGE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Restricted Range</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IRI_SCALAR_RESTRICTION__RESTRICTED_RANGE = RESTRICTED_DATA_RANGE__RESTRICTED_RANGE;
-
-	/**
-	 * The feature id for the '<em><b>Length</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IRI_SCALAR_RESTRICTION__LENGTH = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Min Length</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IRI_SCALAR_RESTRICTION__MIN_LENGTH = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Max Length</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IRI_SCALAR_RESTRICTION__MAX_LENGTH = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 2;
+	int STRING_SCALAR_RESTRICTION__MAX_LENGTH = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' attribute.
@@ -6228,16 +6535,16 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IRI_SCALAR_RESTRICTION__PATTERN = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 3;
+	int STRING_SCALAR_RESTRICTION__PATTERN = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of structural features of the '<em>IRI Scalar Restriction</em>' class.
+	 * The number of structural features of the '<em>String Scalar Restriction</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IRI_SCALAR_RESTRICTION_FEATURE_COUNT = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 4;
+	int STRING_SCALAR_RESTRICTION_FEATURE_COUNT = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Calculate UUID</em>' operation.
@@ -6246,7 +6553,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IRI_SCALAR_RESTRICTION___CALCULATE_UUID = RESTRICTED_DATA_RANGE___CALCULATE_UUID;
+	int STRING_SCALAR_RESTRICTION___CALCULATE_UUID = RESTRICTED_DATA_RANGE___CALCULATE_UUID;
 
 	/**
 	 * The operation id for the '<em>Iri</em>' operation.
@@ -6255,7 +6562,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IRI_SCALAR_RESTRICTION___IRI = RESTRICTED_DATA_RANGE___IRI;
+	int STRING_SCALAR_RESTRICTION___IRI = RESTRICTED_DATA_RANGE___IRI;
 
 	/**
 	 * The operation id for the '<em>Name</em>' operation.
@@ -6264,16 +6571,16 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IRI_SCALAR_RESTRICTION___NAME = RESTRICTED_DATA_RANGE___NAME;
+	int STRING_SCALAR_RESTRICTION___NAME = RESTRICTED_DATA_RANGE___NAME;
 
 	/**
-	 * The number of operations of the '<em>IRI Scalar Restriction</em>' class.
+	 * The number of operations of the '<em>String Scalar Restriction</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IRI_SCALAR_RESTRICTION_OPERATION_COUNT = RESTRICTED_DATA_RANGE_OPERATION_COUNT + 0;
+	int STRING_SCALAR_RESTRICTION_OPERATION_COUNT = RESTRICTED_DATA_RANGE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.TimeScalarRestrictionImpl <em>Time Scalar Restriction</em>}' class.
@@ -6283,7 +6590,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getTimeScalarRestriction()
 	 * @generated
 	 */
-	int TIME_SCALAR_RESTRICTION = 69;
+	int TIME_SCALAR_RESTRICTION = 70;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -6403,6 +6710,97 @@ public interface OMLPackage extends EPackage {
 	int TIME_SCALAR_RESTRICTION_OPERATION_COUNT = RESTRICTED_DATA_RANGE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.SynonymScalarRestrictionImpl <em>Synonym Scalar Restriction</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpl.imce.oml.specification.ecore.impl.SynonymScalarRestrictionImpl
+	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getSynonymScalarRestriction()
+	 * @generated
+	 */
+	int SYNONYM_SCALAR_RESTRICTION = 71;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNONYM_SCALAR_RESTRICTION__UUID = RESTRICTED_DATA_RANGE__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Graph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNONYM_SCALAR_RESTRICTION__GRAPH = RESTRICTED_DATA_RANGE__GRAPH;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNONYM_SCALAR_RESTRICTION__NAME = RESTRICTED_DATA_RANGE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Restricted Range</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNONYM_SCALAR_RESTRICTION__RESTRICTED_RANGE = RESTRICTED_DATA_RANGE__RESTRICTED_RANGE;
+
+	/**
+	 * The number of structural features of the '<em>Synonym Scalar Restriction</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNONYM_SCALAR_RESTRICTION_FEATURE_COUNT = RESTRICTED_DATA_RANGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Calculate UUID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNONYM_SCALAR_RESTRICTION___CALCULATE_UUID = RESTRICTED_DATA_RANGE___CALCULATE_UUID;
+
+	/**
+	 * The operation id for the '<em>Iri</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNONYM_SCALAR_RESTRICTION___IRI = RESTRICTED_DATA_RANGE___IRI;
+
+	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNONYM_SCALAR_RESTRICTION___NAME = RESTRICTED_DATA_RANGE___NAME;
+
+	/**
+	 * The number of operations of the '<em>Synonym Scalar Restriction</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNONYM_SCALAR_RESTRICTION_OPERATION_COUNT = RESTRICTED_DATA_RANGE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.ScalarOneOfRestrictionImpl <em>Scalar One Of Restriction</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6410,7 +6808,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getScalarOneOfRestriction()
 	 * @generated
 	 */
-	int SCALAR_ONE_OF_RESTRICTION = 70;
+	int SCALAR_ONE_OF_RESTRICTION = 72;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -6501,7 +6899,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getScalarOneOfLiteralAxiom()
 	 * @generated
 	 */
-	int SCALAR_ONE_OF_LITERAL_AXIOM = 71;
+	int SCALAR_ONE_OF_LITERAL_AXIOM = 73;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -6574,7 +6972,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getTerminologyGraphKind()
 	 * @generated
 	 */
-	int TERMINOLOGY_GRAPH_KIND = 72;
+	int TERMINOLOGY_GRAPH_KIND = 74;
 
 	/**
 	 * The meta object id for the '<em>IRI</em>' data type.
@@ -6584,7 +6982,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getIRI()
 	 * @generated
 	 */
-	int IRI = 73;
+	int IRI = 75;
 
 	/**
 	 * The meta object id for the '<em>Local Name</em>' data type.
@@ -6594,7 +6992,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getLocalName()
 	 * @generated
 	 */
-	int LOCAL_NAME = 74;
+	int LOCAL_NAME = 76;
 
 	/**
 	 * The meta object id for the '<em>Lexical Value</em>' data type.
@@ -6604,7 +7002,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getLexicalValue()
 	 * @generated
 	 */
-	int LEXICAL_VALUE = 75;
+	int LEXICAL_VALUE = 77;
 
 	/**
 	 * The meta object id for the '<em>Lexical Number</em>' data type.
@@ -6614,7 +7012,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getLexicalNumber()
 	 * @generated
 	 */
-	int LEXICAL_NUMBER = 76;
+	int LEXICAL_NUMBER = 78;
 
 	/**
 	 * The meta object id for the '<em>Lexical Time</em>' data type.
@@ -6624,7 +7022,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getLexicalTime()
 	 * @generated
 	 */
-	int LEXICAL_TIME = 77;
+	int LEXICAL_TIME = 79;
 
 	/**
 	 * The meta object id for the '<em>Pattern</em>' data type.
@@ -6634,7 +7032,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getPattern()
 	 * @generated
 	 */
-	int PATTERN = 78;
+	int PATTERN = 80;
 
 	/**
 	 * The meta object id for the '<em>UUID</em>' data type.
@@ -6644,7 +7042,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getUUID()
 	 * @generated
 	 */
-	int UUID = 79;
+	int UUID = 81;
 
 	/**
 	 * The meta object id for the '<em>Language</em>' data type.
@@ -6654,7 +7052,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getLanguage()
 	 * @generated
 	 */
-	int LANGUAGE = 80;
+	int LANGUAGE = 82;
 
 	/**
 	 * The meta object id for the '<em>Abbrev IRI</em>' data type.
@@ -6664,7 +7062,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getAbbrevIRI()
 	 * @generated
 	 */
-	int ABBREV_IRI = 81;
+	int ABBREV_IRI = 83;
 
 	/**
 	 * The meta object id for the '<em>Namespace Prefix</em>' data type.
@@ -6674,7 +7072,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getNamespacePrefix()
 	 * @generated
 	 */
-	int NAMESPACE_PREFIX = 82;
+	int NAMESPACE_PREFIX = 84;
 
 
 	/**
@@ -7564,6 +7962,46 @@ public interface OMLPackage extends EPackage {
 	EOperation getTerm__Name();
 
 	/**
+	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.UnaryTerm <em>Unary Term</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Unary Term</em>'.
+	 * @see jpl.imce.oml.specification.ecore.UnaryTerm
+	 * @generated
+	 */
+	EClass getUnaryTerm();
+
+	/**
+	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.DirectedBinaryRelationship <em>Directed Binary Relationship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Directed Binary Relationship</em>'.
+	 * @see jpl.imce.oml.specification.ecore.DirectedBinaryRelationship
+	 * @generated
+	 */
+	EClass getDirectedBinaryRelationship();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DirectedBinaryRelationship#relationshipSubject() <em>Relationship Subject</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Relationship Subject</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DirectedBinaryRelationship#relationshipSubject()
+	 * @generated
+	 */
+	EOperation getDirectedBinaryRelationship__RelationshipSubject();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DirectedBinaryRelationship#relationRange() <em>Relation Range</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Relation Range</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DirectedBinaryRelationship#relationRange()
+	 * @generated
+	 */
+	EOperation getDirectedBinaryRelationship__RelationRange();
+
+	/**
 	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.Entity <em>Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7736,6 +8174,26 @@ public interface OMLPackage extends EPackage {
 	EAttribute getEntityRelationship_IsTransitive();
 
 	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.EntityRelationship#relationDomain() <em>Relation Domain</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Relation Domain</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.EntityRelationship#relationDomain()
+	 * @generated
+	 */
+	EOperation getEntityRelationship__RelationDomain();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.EntityRelationship#relationRange() <em>Relation Range</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Relation Range</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.EntityRelationship#relationRange()
+	 * @generated
+	 */
+	EOperation getEntityRelationship__RelationRange();
+
+	/**
 	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.ReifiedRelationship <em>Reified Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7839,6 +8297,16 @@ public interface OMLPackage extends EPackage {
 	EOperation getDataRelationship__Source();
 
 	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DataRelationship#relationDomain() <em>Relation Domain</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Relation Domain</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DataRelationship#relationDomain()
+	 * @generated
+	 */
+	EOperation getDataRelationship__RelationDomain();
+
+	/**
 	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DataRelationship#target() <em>Target</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7847,6 +8315,16 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getDataRelationship__Target();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DataRelationship#relationRange() <em>Relation Range</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Relation Range</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DataRelationship#relationRange()
+	 * @generated
+	 */
+	EOperation getDataRelationship__RelationRange();
 
 	/**
 	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.DataRelationshipDomain <em>Data Relationship Domain</em>}'.
@@ -8859,189 +9337,6 @@ public interface OMLPackage extends EPackage {
 	EReference getRestrictedDataRange_RestrictedRange();
 
 	/**
-	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.SynonymScalarRestriction <em>Synonym Scalar Restriction</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Synonym Scalar Restriction</em>'.
-	 * @see jpl.imce.oml.specification.ecore.SynonymScalarRestriction
-	 * @generated
-	 */
-	EClass getSynonymScalarRestriction();
-
-	/**
-	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.NumericScalarRestriction <em>Numeric Scalar Restriction</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Numeric Scalar Restriction</em>'.
-	 * @see jpl.imce.oml.specification.ecore.NumericScalarRestriction
-	 * @generated
-	 */
-	EClass getNumericScalarRestriction();
-
-	/**
-	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.NumericScalarRestriction#getMinInclusive <em>Min Inclusive</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Min Inclusive</em>'.
-	 * @see jpl.imce.oml.specification.ecore.NumericScalarRestriction#getMinInclusive()
-	 * @see #getNumericScalarRestriction()
-	 * @generated
-	 */
-	EAttribute getNumericScalarRestriction_MinInclusive();
-
-	/**
-	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.NumericScalarRestriction#getMaxInclusive <em>Max Inclusive</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Max Inclusive</em>'.
-	 * @see jpl.imce.oml.specification.ecore.NumericScalarRestriction#getMaxInclusive()
-	 * @see #getNumericScalarRestriction()
-	 * @generated
-	 */
-	EAttribute getNumericScalarRestriction_MaxInclusive();
-
-	/**
-	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.NumericScalarRestriction#getMinExclusive <em>Min Exclusive</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Min Exclusive</em>'.
-	 * @see jpl.imce.oml.specification.ecore.NumericScalarRestriction#getMinExclusive()
-	 * @see #getNumericScalarRestriction()
-	 * @generated
-	 */
-	EAttribute getNumericScalarRestriction_MinExclusive();
-
-	/**
-	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.NumericScalarRestriction#getMaxExclusive <em>Max Exclusive</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Max Exclusive</em>'.
-	 * @see jpl.imce.oml.specification.ecore.NumericScalarRestriction#getMaxExclusive()
-	 * @see #getNumericScalarRestriction()
-	 * @generated
-	 */
-	EAttribute getNumericScalarRestriction_MaxExclusive();
-
-	/**
-	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.StringScalarRestriction <em>String Scalar Restriction</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>String Scalar Restriction</em>'.
-	 * @see jpl.imce.oml.specification.ecore.StringScalarRestriction
-	 * @generated
-	 */
-	EClass getStringScalarRestriction();
-
-	/**
-	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.StringScalarRestriction#getLength <em>Length</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Length</em>'.
-	 * @see jpl.imce.oml.specification.ecore.StringScalarRestriction#getLength()
-	 * @see #getStringScalarRestriction()
-	 * @generated
-	 */
-	EAttribute getStringScalarRestriction_Length();
-
-	/**
-	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.StringScalarRestriction#getMinLength <em>Min Length</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Min Length</em>'.
-	 * @see jpl.imce.oml.specification.ecore.StringScalarRestriction#getMinLength()
-	 * @see #getStringScalarRestriction()
-	 * @generated
-	 */
-	EAttribute getStringScalarRestriction_MinLength();
-
-	/**
-	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.StringScalarRestriction#getMaxLength <em>Max Length</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Max Length</em>'.
-	 * @see jpl.imce.oml.specification.ecore.StringScalarRestriction#getMaxLength()
-	 * @see #getStringScalarRestriction()
-	 * @generated
-	 */
-	EAttribute getStringScalarRestriction_MaxLength();
-
-	/**
-	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.StringScalarRestriction#getPattern <em>Pattern</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Pattern</em>'.
-	 * @see jpl.imce.oml.specification.ecore.StringScalarRestriction#getPattern()
-	 * @see #getStringScalarRestriction()
-	 * @generated
-	 */
-	EAttribute getStringScalarRestriction_Pattern();
-
-	/**
-	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction <em>Plain Literal Scalar Restriction</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Plain Literal Scalar Restriction</em>'.
-	 * @see jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction
-	 * @generated
-	 */
-	EClass getPlainLiteralScalarRestriction();
-
-	/**
-	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getLength <em>Length</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Length</em>'.
-	 * @see jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getLength()
-	 * @see #getPlainLiteralScalarRestriction()
-	 * @generated
-	 */
-	EAttribute getPlainLiteralScalarRestriction_Length();
-
-	/**
-	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getMinLength <em>Min Length</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Min Length</em>'.
-	 * @see jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getMinLength()
-	 * @see #getPlainLiteralScalarRestriction()
-	 * @generated
-	 */
-	EAttribute getPlainLiteralScalarRestriction_MinLength();
-
-	/**
-	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getMaxLength <em>Max Length</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Max Length</em>'.
-	 * @see jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getMaxLength()
-	 * @see #getPlainLiteralScalarRestriction()
-	 * @generated
-	 */
-	EAttribute getPlainLiteralScalarRestriction_MaxLength();
-
-	/**
-	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getPattern <em>Pattern</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Pattern</em>'.
-	 * @see jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getPattern()
-	 * @see #getPlainLiteralScalarRestriction()
-	 * @generated
-	 */
-	EAttribute getPlainLiteralScalarRestriction_Pattern();
-
-	/**
-	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getLanguage <em>Language</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Language</em>'.
-	 * @see jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getLanguage()
-	 * @see #getPlainLiteralScalarRestriction()
-	 * @generated
-	 */
-	EAttribute getPlainLiteralScalarRestriction_Language();
-
-	/**
 	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.BinaryScalarRestriction <em>Binary Scalar Restriction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9139,6 +9434,179 @@ public interface OMLPackage extends EPackage {
 	EAttribute getIRIScalarRestriction_Pattern();
 
 	/**
+	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.NumericScalarRestriction <em>Numeric Scalar Restriction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Numeric Scalar Restriction</em>'.
+	 * @see jpl.imce.oml.specification.ecore.NumericScalarRestriction
+	 * @generated
+	 */
+	EClass getNumericScalarRestriction();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.NumericScalarRestriction#getMinInclusive <em>Min Inclusive</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Min Inclusive</em>'.
+	 * @see jpl.imce.oml.specification.ecore.NumericScalarRestriction#getMinInclusive()
+	 * @see #getNumericScalarRestriction()
+	 * @generated
+	 */
+	EAttribute getNumericScalarRestriction_MinInclusive();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.NumericScalarRestriction#getMaxInclusive <em>Max Inclusive</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Max Inclusive</em>'.
+	 * @see jpl.imce.oml.specification.ecore.NumericScalarRestriction#getMaxInclusive()
+	 * @see #getNumericScalarRestriction()
+	 * @generated
+	 */
+	EAttribute getNumericScalarRestriction_MaxInclusive();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.NumericScalarRestriction#getMinExclusive <em>Min Exclusive</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Min Exclusive</em>'.
+	 * @see jpl.imce.oml.specification.ecore.NumericScalarRestriction#getMinExclusive()
+	 * @see #getNumericScalarRestriction()
+	 * @generated
+	 */
+	EAttribute getNumericScalarRestriction_MinExclusive();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.NumericScalarRestriction#getMaxExclusive <em>Max Exclusive</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Max Exclusive</em>'.
+	 * @see jpl.imce.oml.specification.ecore.NumericScalarRestriction#getMaxExclusive()
+	 * @see #getNumericScalarRestriction()
+	 * @generated
+	 */
+	EAttribute getNumericScalarRestriction_MaxExclusive();
+
+	/**
+	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction <em>Plain Literal Scalar Restriction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Plain Literal Scalar Restriction</em>'.
+	 * @see jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction
+	 * @generated
+	 */
+	EClass getPlainLiteralScalarRestriction();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getLength <em>Length</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Length</em>'.
+	 * @see jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getLength()
+	 * @see #getPlainLiteralScalarRestriction()
+	 * @generated
+	 */
+	EAttribute getPlainLiteralScalarRestriction_Length();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getMinLength <em>Min Length</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Min Length</em>'.
+	 * @see jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getMinLength()
+	 * @see #getPlainLiteralScalarRestriction()
+	 * @generated
+	 */
+	EAttribute getPlainLiteralScalarRestriction_MinLength();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getMaxLength <em>Max Length</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Max Length</em>'.
+	 * @see jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getMaxLength()
+	 * @see #getPlainLiteralScalarRestriction()
+	 * @generated
+	 */
+	EAttribute getPlainLiteralScalarRestriction_MaxLength();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getPattern <em>Pattern</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Pattern</em>'.
+	 * @see jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getPattern()
+	 * @see #getPlainLiteralScalarRestriction()
+	 * @generated
+	 */
+	EAttribute getPlainLiteralScalarRestriction_Pattern();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getLanguage <em>Language</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Language</em>'.
+	 * @see jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getLanguage()
+	 * @see #getPlainLiteralScalarRestriction()
+	 * @generated
+	 */
+	EAttribute getPlainLiteralScalarRestriction_Language();
+
+	/**
+	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.StringScalarRestriction <em>String Scalar Restriction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>String Scalar Restriction</em>'.
+	 * @see jpl.imce.oml.specification.ecore.StringScalarRestriction
+	 * @generated
+	 */
+	EClass getStringScalarRestriction();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.StringScalarRestriction#getLength <em>Length</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Length</em>'.
+	 * @see jpl.imce.oml.specification.ecore.StringScalarRestriction#getLength()
+	 * @see #getStringScalarRestriction()
+	 * @generated
+	 */
+	EAttribute getStringScalarRestriction_Length();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.StringScalarRestriction#getMinLength <em>Min Length</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Min Length</em>'.
+	 * @see jpl.imce.oml.specification.ecore.StringScalarRestriction#getMinLength()
+	 * @see #getStringScalarRestriction()
+	 * @generated
+	 */
+	EAttribute getStringScalarRestriction_MinLength();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.StringScalarRestriction#getMaxLength <em>Max Length</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Max Length</em>'.
+	 * @see jpl.imce.oml.specification.ecore.StringScalarRestriction#getMaxLength()
+	 * @see #getStringScalarRestriction()
+	 * @generated
+	 */
+	EAttribute getStringScalarRestriction_MaxLength();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.StringScalarRestriction#getPattern <em>Pattern</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Pattern</em>'.
+	 * @see jpl.imce.oml.specification.ecore.StringScalarRestriction#getPattern()
+	 * @see #getStringScalarRestriction()
+	 * @generated
+	 */
+	EAttribute getStringScalarRestriction_Pattern();
+
+	/**
 	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.TimeScalarRestriction <em>Time Scalar Restriction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9191,6 +9659,16 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTimeScalarRestriction_MaxExclusive();
+
+	/**
+	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.SynonymScalarRestriction <em>Synonym Scalar Restriction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Synonym Scalar Restriction</em>'.
+	 * @see jpl.imce.oml.specification.ecore.SynonymScalarRestriction
+	 * @generated
+	 */
+	EClass getSynonymScalarRestriction();
 
 	/**
 	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.ScalarOneOfRestriction <em>Scalar One Of Restriction</em>}'.
@@ -10090,6 +10568,42 @@ public interface OMLPackage extends EPackage {
 		EOperation TERM___NAME = eINSTANCE.getTerm__Name();
 
 		/**
+		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.UnaryTermImpl <em>Unary Term</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpl.imce.oml.specification.ecore.impl.UnaryTermImpl
+		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getUnaryTerm()
+		 * @generated
+		 */
+		EClass UNARY_TERM = eINSTANCE.getUnaryTerm();
+
+		/**
+		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.DirectedBinaryRelationshipImpl <em>Directed Binary Relationship</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpl.imce.oml.specification.ecore.impl.DirectedBinaryRelationshipImpl
+		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDirectedBinaryRelationship()
+		 * @generated
+		 */
+		EClass DIRECTED_BINARY_RELATIONSHIP = eINSTANCE.getDirectedBinaryRelationship();
+
+		/**
+		 * The meta object literal for the '<em><b>Relationship Subject</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DIRECTED_BINARY_RELATIONSHIP___RELATIONSHIP_SUBJECT = eINSTANCE.getDirectedBinaryRelationship__RelationshipSubject();
+
+		/**
+		 * The meta object literal for the '<em><b>Relation Range</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DIRECTED_BINARY_RELATIONSHIP___RELATION_RANGE = eINSTANCE.getDirectedBinaryRelationship__RelationRange();
+
+		/**
 		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.EntityImpl <em>Entity</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -10226,6 +10740,22 @@ public interface OMLPackage extends EPackage {
 		EAttribute ENTITY_RELATIONSHIP__IS_TRANSITIVE = eINSTANCE.getEntityRelationship_IsTransitive();
 
 		/**
+		 * The meta object literal for the '<em><b>Relation Domain</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ENTITY_RELATIONSHIP___RELATION_DOMAIN = eINSTANCE.getEntityRelationship__RelationDomain();
+
+		/**
+		 * The meta object literal for the '<em><b>Relation Range</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ENTITY_RELATIONSHIP___RELATION_RANGE = eINSTANCE.getEntityRelationship__RelationRange();
+
+		/**
 		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.ReifiedRelationshipImpl <em>Reified Relationship</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -10318,12 +10848,28 @@ public interface OMLPackage extends EPackage {
 		EOperation DATA_RELATIONSHIP___SOURCE = eINSTANCE.getDataRelationship__Source();
 
 		/**
+		 * The meta object literal for the '<em><b>Relation Domain</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_RELATIONSHIP___RELATION_DOMAIN = eINSTANCE.getDataRelationship__RelationDomain();
+
+		/**
 		 * The meta object literal for the '<em><b>Target</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EOperation DATA_RELATIONSHIP___TARGET = eINSTANCE.getDataRelationship__Target();
+
+		/**
+		 * The meta object literal for the '<em><b>Relation Range</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_RELATIONSHIP___RELATION_RANGE = eINSTANCE.getDataRelationship__RelationRange();
 
 		/**
 		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.DataRelationshipDomainImpl <em>Data Relationship Domain</em>}' class.
@@ -11184,150 +11730,6 @@ public interface OMLPackage extends EPackage {
 		EReference RESTRICTED_DATA_RANGE__RESTRICTED_RANGE = eINSTANCE.getRestrictedDataRange_RestrictedRange();
 
 		/**
-		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.SynonymScalarRestrictionImpl <em>Synonym Scalar Restriction</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see jpl.imce.oml.specification.ecore.impl.SynonymScalarRestrictionImpl
-		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getSynonymScalarRestriction()
-		 * @generated
-		 */
-		EClass SYNONYM_SCALAR_RESTRICTION = eINSTANCE.getSynonymScalarRestriction();
-
-		/**
-		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.NumericScalarRestrictionImpl <em>Numeric Scalar Restriction</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see jpl.imce.oml.specification.ecore.impl.NumericScalarRestrictionImpl
-		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getNumericScalarRestriction()
-		 * @generated
-		 */
-		EClass NUMERIC_SCALAR_RESTRICTION = eINSTANCE.getNumericScalarRestriction();
-
-		/**
-		 * The meta object literal for the '<em><b>Min Inclusive</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NUMERIC_SCALAR_RESTRICTION__MIN_INCLUSIVE = eINSTANCE.getNumericScalarRestriction_MinInclusive();
-
-		/**
-		 * The meta object literal for the '<em><b>Max Inclusive</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NUMERIC_SCALAR_RESTRICTION__MAX_INCLUSIVE = eINSTANCE.getNumericScalarRestriction_MaxInclusive();
-
-		/**
-		 * The meta object literal for the '<em><b>Min Exclusive</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NUMERIC_SCALAR_RESTRICTION__MIN_EXCLUSIVE = eINSTANCE.getNumericScalarRestriction_MinExclusive();
-
-		/**
-		 * The meta object literal for the '<em><b>Max Exclusive</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NUMERIC_SCALAR_RESTRICTION__MAX_EXCLUSIVE = eINSTANCE.getNumericScalarRestriction_MaxExclusive();
-
-		/**
-		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.StringScalarRestrictionImpl <em>String Scalar Restriction</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see jpl.imce.oml.specification.ecore.impl.StringScalarRestrictionImpl
-		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getStringScalarRestriction()
-		 * @generated
-		 */
-		EClass STRING_SCALAR_RESTRICTION = eINSTANCE.getStringScalarRestriction();
-
-		/**
-		 * The meta object literal for the '<em><b>Length</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STRING_SCALAR_RESTRICTION__LENGTH = eINSTANCE.getStringScalarRestriction_Length();
-
-		/**
-		 * The meta object literal for the '<em><b>Min Length</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STRING_SCALAR_RESTRICTION__MIN_LENGTH = eINSTANCE.getStringScalarRestriction_MinLength();
-
-		/**
-		 * The meta object literal for the '<em><b>Max Length</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STRING_SCALAR_RESTRICTION__MAX_LENGTH = eINSTANCE.getStringScalarRestriction_MaxLength();
-
-		/**
-		 * The meta object literal for the '<em><b>Pattern</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STRING_SCALAR_RESTRICTION__PATTERN = eINSTANCE.getStringScalarRestriction_Pattern();
-
-		/**
-		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.PlainLiteralScalarRestrictionImpl <em>Plain Literal Scalar Restriction</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see jpl.imce.oml.specification.ecore.impl.PlainLiteralScalarRestrictionImpl
-		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getPlainLiteralScalarRestriction()
-		 * @generated
-		 */
-		EClass PLAIN_LITERAL_SCALAR_RESTRICTION = eINSTANCE.getPlainLiteralScalarRestriction();
-
-		/**
-		 * The meta object literal for the '<em><b>Length</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PLAIN_LITERAL_SCALAR_RESTRICTION__LENGTH = eINSTANCE.getPlainLiteralScalarRestriction_Length();
-
-		/**
-		 * The meta object literal for the '<em><b>Min Length</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PLAIN_LITERAL_SCALAR_RESTRICTION__MIN_LENGTH = eINSTANCE.getPlainLiteralScalarRestriction_MinLength();
-
-		/**
-		 * The meta object literal for the '<em><b>Max Length</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PLAIN_LITERAL_SCALAR_RESTRICTION__MAX_LENGTH = eINSTANCE.getPlainLiteralScalarRestriction_MaxLength();
-
-		/**
-		 * The meta object literal for the '<em><b>Pattern</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PLAIN_LITERAL_SCALAR_RESTRICTION__PATTERN = eINSTANCE.getPlainLiteralScalarRestriction_Pattern();
-
-		/**
-		 * The meta object literal for the '<em><b>Language</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PLAIN_LITERAL_SCALAR_RESTRICTION__LANGUAGE = eINSTANCE.getPlainLiteralScalarRestriction_Language();
-
-		/**
 		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.BinaryScalarRestrictionImpl <em>Binary Scalar Restriction</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -11404,6 +11806,140 @@ public interface OMLPackage extends EPackage {
 		EAttribute IRI_SCALAR_RESTRICTION__PATTERN = eINSTANCE.getIRIScalarRestriction_Pattern();
 
 		/**
+		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.NumericScalarRestrictionImpl <em>Numeric Scalar Restriction</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpl.imce.oml.specification.ecore.impl.NumericScalarRestrictionImpl
+		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getNumericScalarRestriction()
+		 * @generated
+		 */
+		EClass NUMERIC_SCALAR_RESTRICTION = eINSTANCE.getNumericScalarRestriction();
+
+		/**
+		 * The meta object literal for the '<em><b>Min Inclusive</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NUMERIC_SCALAR_RESTRICTION__MIN_INCLUSIVE = eINSTANCE.getNumericScalarRestriction_MinInclusive();
+
+		/**
+		 * The meta object literal for the '<em><b>Max Inclusive</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NUMERIC_SCALAR_RESTRICTION__MAX_INCLUSIVE = eINSTANCE.getNumericScalarRestriction_MaxInclusive();
+
+		/**
+		 * The meta object literal for the '<em><b>Min Exclusive</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NUMERIC_SCALAR_RESTRICTION__MIN_EXCLUSIVE = eINSTANCE.getNumericScalarRestriction_MinExclusive();
+
+		/**
+		 * The meta object literal for the '<em><b>Max Exclusive</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NUMERIC_SCALAR_RESTRICTION__MAX_EXCLUSIVE = eINSTANCE.getNumericScalarRestriction_MaxExclusive();
+
+		/**
+		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.PlainLiteralScalarRestrictionImpl <em>Plain Literal Scalar Restriction</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpl.imce.oml.specification.ecore.impl.PlainLiteralScalarRestrictionImpl
+		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getPlainLiteralScalarRestriction()
+		 * @generated
+		 */
+		EClass PLAIN_LITERAL_SCALAR_RESTRICTION = eINSTANCE.getPlainLiteralScalarRestriction();
+
+		/**
+		 * The meta object literal for the '<em><b>Length</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PLAIN_LITERAL_SCALAR_RESTRICTION__LENGTH = eINSTANCE.getPlainLiteralScalarRestriction_Length();
+
+		/**
+		 * The meta object literal for the '<em><b>Min Length</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PLAIN_LITERAL_SCALAR_RESTRICTION__MIN_LENGTH = eINSTANCE.getPlainLiteralScalarRestriction_MinLength();
+
+		/**
+		 * The meta object literal for the '<em><b>Max Length</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PLAIN_LITERAL_SCALAR_RESTRICTION__MAX_LENGTH = eINSTANCE.getPlainLiteralScalarRestriction_MaxLength();
+
+		/**
+		 * The meta object literal for the '<em><b>Pattern</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PLAIN_LITERAL_SCALAR_RESTRICTION__PATTERN = eINSTANCE.getPlainLiteralScalarRestriction_Pattern();
+
+		/**
+		 * The meta object literal for the '<em><b>Language</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PLAIN_LITERAL_SCALAR_RESTRICTION__LANGUAGE = eINSTANCE.getPlainLiteralScalarRestriction_Language();
+
+		/**
+		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.StringScalarRestrictionImpl <em>String Scalar Restriction</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpl.imce.oml.specification.ecore.impl.StringScalarRestrictionImpl
+		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getStringScalarRestriction()
+		 * @generated
+		 */
+		EClass STRING_SCALAR_RESTRICTION = eINSTANCE.getStringScalarRestriction();
+
+		/**
+		 * The meta object literal for the '<em><b>Length</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRING_SCALAR_RESTRICTION__LENGTH = eINSTANCE.getStringScalarRestriction_Length();
+
+		/**
+		 * The meta object literal for the '<em><b>Min Length</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRING_SCALAR_RESTRICTION__MIN_LENGTH = eINSTANCE.getStringScalarRestriction_MinLength();
+
+		/**
+		 * The meta object literal for the '<em><b>Max Length</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRING_SCALAR_RESTRICTION__MAX_LENGTH = eINSTANCE.getStringScalarRestriction_MaxLength();
+
+		/**
+		 * The meta object literal for the '<em><b>Pattern</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRING_SCALAR_RESTRICTION__PATTERN = eINSTANCE.getStringScalarRestriction_Pattern();
+
+		/**
 		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.TimeScalarRestrictionImpl <em>Time Scalar Restriction</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -11444,6 +11980,16 @@ public interface OMLPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TIME_SCALAR_RESTRICTION__MAX_EXCLUSIVE = eINSTANCE.getTimeScalarRestriction_MaxExclusive();
+
+		/**
+		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.SynonymScalarRestrictionImpl <em>Synonym Scalar Restriction</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpl.imce.oml.specification.ecore.impl.SynonymScalarRestrictionImpl
+		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getSynonymScalarRestriction()
+		 * @generated
+		 */
+		EClass SYNONYM_SCALAR_RESTRICTION = eINSTANCE.getSynonymScalarRestriction();
 
 		/**
 		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.ScalarOneOfRestrictionImpl <em>Scalar One Of Restriction</em>}' class.

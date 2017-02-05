@@ -45,7 +45,7 @@ package jpl.imce.oml.specification.ecore;
  * @model abstract="true"
  * @generated
  */
-public interface EntityRelationship extends Term {
+public interface EntityRelationship extends DirectedBinaryRelationship {
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -322,5 +322,23 @@ public interface EntityRelationship extends Term {
 	 * @generated
 	 */
 	void setIsTransitive(boolean value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getSource();'"
+	 * @generated
+	 */
+	Term relationDomain();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getTarget();'"
+	 * @generated
+	 */
+	Term relationRange();
 
 } // EntityRelationship

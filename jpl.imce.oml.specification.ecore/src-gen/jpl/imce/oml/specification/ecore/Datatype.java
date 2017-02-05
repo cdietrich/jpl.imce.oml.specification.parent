@@ -29,5 +29,5 @@ package jpl.imce.oml.specification.ecore;
  * @model abstract="true"
  * @generated
  */
-public interface Datatype extends Term {
+public interface Datatype extends UnaryTerm {
 } // Datatype
