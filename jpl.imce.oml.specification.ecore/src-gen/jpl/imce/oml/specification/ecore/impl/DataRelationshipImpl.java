@@ -36,7 +36,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public abstract class DataRelationshipImpl extends TermImpl implements DataRelationship {
+public abstract class DataRelationshipImpl extends DirectedBinaryRelationshipImpl implements DataRelationship {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -72,10 +72,28 @@ public abstract class DataRelationshipImpl extends TermImpl implements DataRelat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Term relationDomain() {
+		return this.source();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Datatype target() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Term relationRange() {
+		return this.target();
 	}
 
 	/**
@@ -88,8 +106,12 @@ public abstract class DataRelationshipImpl extends TermImpl implements DataRelat
 		switch (operationID) {
 			case OMLPackage.DATA_RELATIONSHIP___SOURCE:
 				return source();
+			case OMLPackage.DATA_RELATIONSHIP___RELATION_DOMAIN:
+				return relationDomain();
 			case OMLPackage.DATA_RELATIONSHIP___TARGET:
 				return target();
+			case OMLPackage.DATA_RELATIONSHIP___RELATION_RANGE:
+				return relationRange();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

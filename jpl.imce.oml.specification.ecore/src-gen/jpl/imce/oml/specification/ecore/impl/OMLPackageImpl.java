@@ -44,6 +44,7 @@ import jpl.imce.oml.specification.ecore.DataRelationshipRange;
 import jpl.imce.oml.specification.ecore.DataRelationshipToScalar;
 import jpl.imce.oml.specification.ecore.DataRelationshipToStructure;
 import jpl.imce.oml.specification.ecore.Datatype;
+import jpl.imce.oml.specification.ecore.DirectedBinaryRelationship;
 import jpl.imce.oml.specification.ecore.DisjointUnionOfConceptsAxiom;
 import jpl.imce.oml.specification.ecore.Entity;
 import jpl.imce.oml.specification.ecore.EntityExistentialRestrictionAxiom;
@@ -92,6 +93,7 @@ import jpl.imce.oml.specification.ecore.TerminologyNestingAxiom;
 import jpl.imce.oml.specification.ecore.TerminologyStatement;
 import jpl.imce.oml.specification.ecore.TerminologyThing;
 import jpl.imce.oml.specification.ecore.TimeScalarRestriction;
+import jpl.imce.oml.specification.ecore.UnaryTerm;
 import jpl.imce.oml.specification.ecore.UnreifiedRelationship;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -223,6 +225,20 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * @generated
 	 */
 	private EClass termEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass unaryTermEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass directedBinaryRelationshipEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -558,34 +574,6 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass synonymScalarRestrictionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass numericScalarRestrictionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass stringScalarRestrictionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass plainLiteralScalarRestrictionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass binaryScalarRestrictionEClass = null;
 
 	/**
@@ -600,7 +588,35 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass numericScalarRestrictionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass plainLiteralScalarRestrictionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass stringScalarRestrictionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass timeScalarRestrictionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass synonymScalarRestrictionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1527,6 +1543,42 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getUnaryTerm() {
+		return unaryTermEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDirectedBinaryRelationship() {
+		return directedBinaryRelationshipEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDirectedBinaryRelationship__RelationshipSubject() {
+		return directedBinaryRelationshipEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDirectedBinaryRelationship__RelationRange() {
+		return directedBinaryRelationshipEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEntity() {
 		return entityEClass;
 	}
@@ -1671,6 +1723,24 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getEntityRelationship__RelationDomain() {
+		return entityRelationshipEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getEntityRelationship__RelationRange() {
+		return entityRelationshipEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getReifiedRelationship() {
 		return reifiedRelationshipEClass;
 	}
@@ -1761,8 +1831,26 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getDataRelationship__Target() {
+	public EOperation getDataRelationship__RelationDomain() {
 		return dataRelationshipEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataRelationship__Target() {
+		return dataRelationshipEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataRelationship__RelationRange() {
+		return dataRelationshipEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -2652,159 +2740,6 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSynonymScalarRestriction() {
-		return synonymScalarRestrictionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getNumericScalarRestriction() {
-		return numericScalarRestrictionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNumericScalarRestriction_MinInclusive() {
-		return (EAttribute)numericScalarRestrictionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNumericScalarRestriction_MaxInclusive() {
-		return (EAttribute)numericScalarRestrictionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNumericScalarRestriction_MinExclusive() {
-		return (EAttribute)numericScalarRestrictionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNumericScalarRestriction_MaxExclusive() {
-		return (EAttribute)numericScalarRestrictionEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getStringScalarRestriction() {
-		return stringScalarRestrictionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getStringScalarRestriction_Length() {
-		return (EAttribute)stringScalarRestrictionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getStringScalarRestriction_MinLength() {
-		return (EAttribute)stringScalarRestrictionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getStringScalarRestriction_MaxLength() {
-		return (EAttribute)stringScalarRestrictionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getStringScalarRestriction_Pattern() {
-		return (EAttribute)stringScalarRestrictionEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getPlainLiteralScalarRestriction() {
-		return plainLiteralScalarRestrictionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getPlainLiteralScalarRestriction_Length() {
-		return (EAttribute)plainLiteralScalarRestrictionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getPlainLiteralScalarRestriction_MinLength() {
-		return (EAttribute)plainLiteralScalarRestrictionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getPlainLiteralScalarRestriction_MaxLength() {
-		return (EAttribute)plainLiteralScalarRestrictionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getPlainLiteralScalarRestriction_Pattern() {
-		return (EAttribute)plainLiteralScalarRestrictionEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getPlainLiteralScalarRestriction_Language() {
-		return (EAttribute)plainLiteralScalarRestrictionEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getBinaryScalarRestriction() {
 		return binaryScalarRestrictionEClass;
 	}
@@ -2886,6 +2821,150 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getNumericScalarRestriction() {
+		return numericScalarRestrictionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNumericScalarRestriction_MinInclusive() {
+		return (EAttribute)numericScalarRestrictionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNumericScalarRestriction_MaxInclusive() {
+		return (EAttribute)numericScalarRestrictionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNumericScalarRestriction_MinExclusive() {
+		return (EAttribute)numericScalarRestrictionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNumericScalarRestriction_MaxExclusive() {
+		return (EAttribute)numericScalarRestrictionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPlainLiteralScalarRestriction() {
+		return plainLiteralScalarRestrictionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPlainLiteralScalarRestriction_Length() {
+		return (EAttribute)plainLiteralScalarRestrictionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPlainLiteralScalarRestriction_MinLength() {
+		return (EAttribute)plainLiteralScalarRestrictionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPlainLiteralScalarRestriction_MaxLength() {
+		return (EAttribute)plainLiteralScalarRestrictionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPlainLiteralScalarRestriction_Pattern() {
+		return (EAttribute)plainLiteralScalarRestrictionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPlainLiteralScalarRestriction_Language() {
+		return (EAttribute)plainLiteralScalarRestrictionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getStringScalarRestriction() {
+		return stringScalarRestrictionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStringScalarRestriction_Length() {
+		return (EAttribute)stringScalarRestrictionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStringScalarRestriction_MinLength() {
+		return (EAttribute)stringScalarRestrictionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStringScalarRestriction_MaxLength() {
+		return (EAttribute)stringScalarRestrictionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStringScalarRestriction_Pattern() {
+		return (EAttribute)stringScalarRestrictionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTimeScalarRestriction() {
 		return timeScalarRestrictionEClass;
 	}
@@ -2924,6 +3003,15 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 */
 	public EAttribute getTimeScalarRestriction_MaxExclusive() {
 		return (EAttribute)timeScalarRestrictionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSynonymScalarRestriction() {
+		return synonymScalarRestrictionEClass;
 	}
 
 	/**
@@ -3190,6 +3278,12 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		createEOperation(termEClass, TERM___IRI);
 		createEOperation(termEClass, TERM___NAME);
 
+		unaryTermEClass = createEClass(UNARY_TERM);
+
+		directedBinaryRelationshipEClass = createEClass(DIRECTED_BINARY_RELATIONSHIP);
+		createEOperation(directedBinaryRelationshipEClass, DIRECTED_BINARY_RELATIONSHIP___RELATIONSHIP_SUBJECT);
+		createEOperation(directedBinaryRelationshipEClass, DIRECTED_BINARY_RELATIONSHIP___RELATION_RANGE);
+
 		entityEClass = createEClass(ENTITY);
 
 		aspectEClass = createEClass(ASPECT);
@@ -3209,6 +3303,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		createEAttribute(entityRelationshipEClass, ENTITY_RELATIONSHIP__IS_REFLEXIVE);
 		createEAttribute(entityRelationshipEClass, ENTITY_RELATIONSHIP__IS_IRREFLEXIVE);
 		createEAttribute(entityRelationshipEClass, ENTITY_RELATIONSHIP__IS_TRANSITIVE);
+		createEOperation(entityRelationshipEClass, ENTITY_RELATIONSHIP___RELATION_DOMAIN);
+		createEOperation(entityRelationshipEClass, ENTITY_RELATIONSHIP___RELATION_RANGE);
 
 		reifiedRelationshipEClass = createEClass(REIFIED_RELATIONSHIP);
 		createEAttribute(reifiedRelationshipEClass, REIFIED_RELATIONSHIP__IS_ABSTRACT);
@@ -3225,7 +3321,9 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 
 		dataRelationshipEClass = createEClass(DATA_RELATIONSHIP);
 		createEOperation(dataRelationshipEClass, DATA_RELATIONSHIP___SOURCE);
+		createEOperation(dataRelationshipEClass, DATA_RELATIONSHIP___RELATION_DOMAIN);
 		createEOperation(dataRelationshipEClass, DATA_RELATIONSHIP___TARGET);
+		createEOperation(dataRelationshipEClass, DATA_RELATIONSHIP___RELATION_RANGE);
 
 		dataRelationshipDomainEClass = createEClass(DATA_RELATIONSHIP_DOMAIN);
 
@@ -3362,27 +3460,6 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		restrictedDataRangeEClass = createEClass(RESTRICTED_DATA_RANGE);
 		createEReference(restrictedDataRangeEClass, RESTRICTED_DATA_RANGE__RESTRICTED_RANGE);
 
-		synonymScalarRestrictionEClass = createEClass(SYNONYM_SCALAR_RESTRICTION);
-
-		numericScalarRestrictionEClass = createEClass(NUMERIC_SCALAR_RESTRICTION);
-		createEAttribute(numericScalarRestrictionEClass, NUMERIC_SCALAR_RESTRICTION__MIN_INCLUSIVE);
-		createEAttribute(numericScalarRestrictionEClass, NUMERIC_SCALAR_RESTRICTION__MAX_INCLUSIVE);
-		createEAttribute(numericScalarRestrictionEClass, NUMERIC_SCALAR_RESTRICTION__MIN_EXCLUSIVE);
-		createEAttribute(numericScalarRestrictionEClass, NUMERIC_SCALAR_RESTRICTION__MAX_EXCLUSIVE);
-
-		stringScalarRestrictionEClass = createEClass(STRING_SCALAR_RESTRICTION);
-		createEAttribute(stringScalarRestrictionEClass, STRING_SCALAR_RESTRICTION__LENGTH);
-		createEAttribute(stringScalarRestrictionEClass, STRING_SCALAR_RESTRICTION__MIN_LENGTH);
-		createEAttribute(stringScalarRestrictionEClass, STRING_SCALAR_RESTRICTION__MAX_LENGTH);
-		createEAttribute(stringScalarRestrictionEClass, STRING_SCALAR_RESTRICTION__PATTERN);
-
-		plainLiteralScalarRestrictionEClass = createEClass(PLAIN_LITERAL_SCALAR_RESTRICTION);
-		createEAttribute(plainLiteralScalarRestrictionEClass, PLAIN_LITERAL_SCALAR_RESTRICTION__LENGTH);
-		createEAttribute(plainLiteralScalarRestrictionEClass, PLAIN_LITERAL_SCALAR_RESTRICTION__MIN_LENGTH);
-		createEAttribute(plainLiteralScalarRestrictionEClass, PLAIN_LITERAL_SCALAR_RESTRICTION__MAX_LENGTH);
-		createEAttribute(plainLiteralScalarRestrictionEClass, PLAIN_LITERAL_SCALAR_RESTRICTION__PATTERN);
-		createEAttribute(plainLiteralScalarRestrictionEClass, PLAIN_LITERAL_SCALAR_RESTRICTION__LANGUAGE);
-
 		binaryScalarRestrictionEClass = createEClass(BINARY_SCALAR_RESTRICTION);
 		createEAttribute(binaryScalarRestrictionEClass, BINARY_SCALAR_RESTRICTION__LENGTH);
 		createEAttribute(binaryScalarRestrictionEClass, BINARY_SCALAR_RESTRICTION__MIN_LENGTH);
@@ -3394,11 +3471,32 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		createEAttribute(iriScalarRestrictionEClass, IRI_SCALAR_RESTRICTION__MAX_LENGTH);
 		createEAttribute(iriScalarRestrictionEClass, IRI_SCALAR_RESTRICTION__PATTERN);
 
+		numericScalarRestrictionEClass = createEClass(NUMERIC_SCALAR_RESTRICTION);
+		createEAttribute(numericScalarRestrictionEClass, NUMERIC_SCALAR_RESTRICTION__MIN_INCLUSIVE);
+		createEAttribute(numericScalarRestrictionEClass, NUMERIC_SCALAR_RESTRICTION__MAX_INCLUSIVE);
+		createEAttribute(numericScalarRestrictionEClass, NUMERIC_SCALAR_RESTRICTION__MIN_EXCLUSIVE);
+		createEAttribute(numericScalarRestrictionEClass, NUMERIC_SCALAR_RESTRICTION__MAX_EXCLUSIVE);
+
+		plainLiteralScalarRestrictionEClass = createEClass(PLAIN_LITERAL_SCALAR_RESTRICTION);
+		createEAttribute(plainLiteralScalarRestrictionEClass, PLAIN_LITERAL_SCALAR_RESTRICTION__LENGTH);
+		createEAttribute(plainLiteralScalarRestrictionEClass, PLAIN_LITERAL_SCALAR_RESTRICTION__MIN_LENGTH);
+		createEAttribute(plainLiteralScalarRestrictionEClass, PLAIN_LITERAL_SCALAR_RESTRICTION__MAX_LENGTH);
+		createEAttribute(plainLiteralScalarRestrictionEClass, PLAIN_LITERAL_SCALAR_RESTRICTION__PATTERN);
+		createEAttribute(plainLiteralScalarRestrictionEClass, PLAIN_LITERAL_SCALAR_RESTRICTION__LANGUAGE);
+
+		stringScalarRestrictionEClass = createEClass(STRING_SCALAR_RESTRICTION);
+		createEAttribute(stringScalarRestrictionEClass, STRING_SCALAR_RESTRICTION__LENGTH);
+		createEAttribute(stringScalarRestrictionEClass, STRING_SCALAR_RESTRICTION__MIN_LENGTH);
+		createEAttribute(stringScalarRestrictionEClass, STRING_SCALAR_RESTRICTION__MAX_LENGTH);
+		createEAttribute(stringScalarRestrictionEClass, STRING_SCALAR_RESTRICTION__PATTERN);
+
 		timeScalarRestrictionEClass = createEClass(TIME_SCALAR_RESTRICTION);
 		createEAttribute(timeScalarRestrictionEClass, TIME_SCALAR_RESTRICTION__MIN_INCLUSIVE);
 		createEAttribute(timeScalarRestrictionEClass, TIME_SCALAR_RESTRICTION__MAX_INCLUSIVE);
 		createEAttribute(timeScalarRestrictionEClass, TIME_SCALAR_RESTRICTION__MIN_EXCLUSIVE);
 		createEAttribute(timeScalarRestrictionEClass, TIME_SCALAR_RESTRICTION__MAX_EXCLUSIVE);
+
+		synonymScalarRestrictionEClass = createEClass(SYNONYM_SCALAR_RESTRICTION);
 
 		scalarOneOfRestrictionEClass = createEClass(SCALAR_ONE_OF_RESTRICTION);
 
@@ -3462,17 +3560,21 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		terminologyBundleStatementEClass.getESuperTypes().add(this.getTerminologyStatement());
 		termEClass.getESuperTypes().add(this.getTerminologyBoxStatement());
 		termEClass.getESuperTypes().add(this.getResource());
+		unaryTermEClass.getESuperTypes().add(this.getTerm());
+		directedBinaryRelationshipEClass.getESuperTypes().add(this.getTerm());
 		entityEClass.getESuperTypes().add(this.getTerm());
 		aspectEClass.getESuperTypes().add(this.getEntity());
+		aspectEClass.getESuperTypes().add(this.getUnaryTerm());
 		conceptEClass.getESuperTypes().add(this.getEntity());
-		entityRelationshipEClass.getESuperTypes().add(this.getTerm());
+		conceptEClass.getESuperTypes().add(this.getUnaryTerm());
+		entityRelationshipEClass.getESuperTypes().add(this.getDirectedBinaryRelationship());
 		reifiedRelationshipEClass.getESuperTypes().add(this.getEntityRelationship());
 		reifiedRelationshipEClass.getESuperTypes().add(this.getEntity());
 		unreifiedRelationshipEClass.getESuperTypes().add(this.getEntityRelationship());
-		datatypeEClass.getESuperTypes().add(this.getTerm());
+		datatypeEClass.getESuperTypes().add(this.getUnaryTerm());
 		dataRangeEClass.getESuperTypes().add(this.getDatatype());
 		scalarEClass.getESuperTypes().add(this.getDataRange());
-		dataRelationshipEClass.getESuperTypes().add(this.getTerm());
+		dataRelationshipEClass.getESuperTypes().add(this.getDirectedBinaryRelationship());
 		dataRelationshipFromEntityEClass.getESuperTypes().add(this.getDataRelationshipDomain());
 		dataRelationshipFromStructureEClass.getESuperTypes().add(this.getDataRelationshipDomain());
 		dataRelationshipToScalarEClass.getESuperTypes().add(this.getDataRelationshipRange());
@@ -3517,13 +3619,13 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		entityScalarDataPropertyUniversalRestrictionAxiomEClass.getESuperTypes().add(this.getEntityScalarDataPropertyRestrictionAxiom());
 		entityScalarDataPropertyParticularRestrictionAxiomEClass.getESuperTypes().add(this.getEntityScalarDataPropertyRestrictionAxiom());
 		restrictedDataRangeEClass.getESuperTypes().add(this.getDataRange());
-		synonymScalarRestrictionEClass.getESuperTypes().add(this.getRestrictedDataRange());
-		numericScalarRestrictionEClass.getESuperTypes().add(this.getRestrictedDataRange());
-		stringScalarRestrictionEClass.getESuperTypes().add(this.getRestrictedDataRange());
-		plainLiteralScalarRestrictionEClass.getESuperTypes().add(this.getRestrictedDataRange());
 		binaryScalarRestrictionEClass.getESuperTypes().add(this.getRestrictedDataRange());
 		iriScalarRestrictionEClass.getESuperTypes().add(this.getRestrictedDataRange());
+		numericScalarRestrictionEClass.getESuperTypes().add(this.getRestrictedDataRange());
+		plainLiteralScalarRestrictionEClass.getESuperTypes().add(this.getRestrictedDataRange());
+		stringScalarRestrictionEClass.getESuperTypes().add(this.getRestrictedDataRange());
 		timeScalarRestrictionEClass.getESuperTypes().add(this.getRestrictedDataRange());
+		synonymScalarRestrictionEClass.getESuperTypes().add(this.getRestrictedDataRange());
 		scalarOneOfRestrictionEClass.getESuperTypes().add(this.getRestrictedDataRange());
 		scalarOneOfLiteralAxiomEClass.getESuperTypes().add(this.getAxiom());
 
@@ -3674,6 +3776,14 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 
 		initEOperation(getTerm__Name(), this.getLocalName(), "name", 1, 1, !IS_UNIQUE, IS_ORDERED);
 
+		initEClass(unaryTermEClass, UnaryTerm.class, "UnaryTerm", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(directedBinaryRelationshipEClass, DirectedBinaryRelationship.class, "DirectedBinaryRelationship", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getDirectedBinaryRelationship__RelationshipSubject(), this.getTerm(), "relationshipSubject", 1, 1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getDirectedBinaryRelationship__RelationRange(), this.getTerm(), "relationRange", 1, 1, !IS_UNIQUE, IS_ORDERED);
+
 		initEClass(entityEClass, Entity.class, "Entity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(aspectEClass, Aspect.class, "Aspect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -3694,6 +3804,10 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		initEAttribute(getEntityRelationship_IsIrreflexive(), theEcorePackage.getEBoolean(), "isIrreflexive", null, 1, 1, EntityRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityRelationship_IsTransitive(), theEcorePackage.getEBoolean(), "isTransitive", null, 1, 1, EntityRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEOperation(getEntityRelationship__RelationDomain(), this.getTerm(), "relationDomain", 1, 1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getEntityRelationship__RelationRange(), this.getTerm(), "relationRange", 1, 1, !IS_UNIQUE, IS_ORDERED);
+
 		initEClass(reifiedRelationshipEClass, ReifiedRelationship.class, "ReifiedRelationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getReifiedRelationship_IsAbstract(), theEcorePackage.getEBoolean(), "isAbstract", null, 1, 1, ReifiedRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getReifiedRelationship_UnreifiedPropertyName(), this.getLocalName(), "unreifiedPropertyName", null, 1, 1, ReifiedRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3711,7 +3825,11 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 
 		initEOperation(getDataRelationship__Source(), this.getTerm(), "source", 1, 1, !IS_UNIQUE, IS_ORDERED);
 
+		initEOperation(getDataRelationship__RelationDomain(), this.getTerm(), "relationDomain", 1, 1, !IS_UNIQUE, IS_ORDERED);
+
 		initEOperation(getDataRelationship__Target(), this.getDatatype(), "target", 1, 1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getDataRelationship__RelationRange(), this.getTerm(), "relationRange", 1, 1, !IS_UNIQUE, IS_ORDERED);
 
 		initEClass(dataRelationshipDomainEClass, DataRelationshipDomain.class, "DataRelationshipDomain", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3879,27 +3997,6 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		initEClass(restrictedDataRangeEClass, RestrictedDataRange.class, "RestrictedDataRange", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRestrictedDataRange_RestrictedRange(), this.getDataRange(), null, "restrictedRange", null, 1, 1, RestrictedDataRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(synonymScalarRestrictionEClass, SynonymScalarRestriction.class, "SynonymScalarRestriction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(numericScalarRestrictionEClass, NumericScalarRestriction.class, "NumericScalarRestriction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNumericScalarRestriction_MinInclusive(), this.getLexicalNumber(), "minInclusive", null, 0, 1, NumericScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getNumericScalarRestriction_MaxInclusive(), this.getLexicalNumber(), "maxInclusive", null, 0, 1, NumericScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getNumericScalarRestriction_MinExclusive(), this.getLexicalNumber(), "minExclusive", null, 0, 1, NumericScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getNumericScalarRestriction_MaxExclusive(), this.getLexicalNumber(), "maxExclusive", null, 0, 1, NumericScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(stringScalarRestrictionEClass, StringScalarRestriction.class, "StringScalarRestriction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStringScalarRestriction_Length(), theEcorePackage.getEInt(), "length", null, 0, 1, StringScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStringScalarRestriction_MinLength(), theEcorePackage.getEInt(), "minLength", null, 0, 1, StringScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStringScalarRestriction_MaxLength(), theEcorePackage.getEInt(), "maxLength", null, 0, 1, StringScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStringScalarRestriction_Pattern(), this.getPattern(), "pattern", null, 0, 1, StringScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(plainLiteralScalarRestrictionEClass, PlainLiteralScalarRestriction.class, "PlainLiteralScalarRestriction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPlainLiteralScalarRestriction_Length(), theEcorePackage.getEInt(), "length", null, 0, 1, PlainLiteralScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPlainLiteralScalarRestriction_MinLength(), theEcorePackage.getEInt(), "minLength", null, 0, 1, PlainLiteralScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPlainLiteralScalarRestriction_MaxLength(), theEcorePackage.getEInt(), "maxLength", null, 0, 1, PlainLiteralScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPlainLiteralScalarRestriction_Pattern(), this.getPattern(), "pattern", null, 0, 1, PlainLiteralScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPlainLiteralScalarRestriction_Language(), this.getLanguage(), "language", null, 0, 1, PlainLiteralScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(binaryScalarRestrictionEClass, BinaryScalarRestriction.class, "BinaryScalarRestriction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBinaryScalarRestriction_Length(), theEcorePackage.getEInt(), "length", null, 0, 1, BinaryScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBinaryScalarRestriction_MinLength(), theEcorePackage.getEInt(), "minLength", null, 0, 1, BinaryScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3911,11 +4008,32 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		initEAttribute(getIRIScalarRestriction_MaxLength(), theEcorePackage.getEInt(), "maxLength", null, 0, 1, IRIScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIRIScalarRestriction_Pattern(), this.getPattern(), "pattern", null, 0, 1, IRIScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(numericScalarRestrictionEClass, NumericScalarRestriction.class, "NumericScalarRestriction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNumericScalarRestriction_MinInclusive(), this.getLexicalNumber(), "minInclusive", null, 0, 1, NumericScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNumericScalarRestriction_MaxInclusive(), this.getLexicalNumber(), "maxInclusive", null, 0, 1, NumericScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNumericScalarRestriction_MinExclusive(), this.getLexicalNumber(), "minExclusive", null, 0, 1, NumericScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNumericScalarRestriction_MaxExclusive(), this.getLexicalNumber(), "maxExclusive", null, 0, 1, NumericScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(plainLiteralScalarRestrictionEClass, PlainLiteralScalarRestriction.class, "PlainLiteralScalarRestriction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPlainLiteralScalarRestriction_Length(), theEcorePackage.getEInt(), "length", null, 0, 1, PlainLiteralScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPlainLiteralScalarRestriction_MinLength(), theEcorePackage.getEInt(), "minLength", null, 0, 1, PlainLiteralScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPlainLiteralScalarRestriction_MaxLength(), theEcorePackage.getEInt(), "maxLength", null, 0, 1, PlainLiteralScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPlainLiteralScalarRestriction_Pattern(), this.getPattern(), "pattern", null, 0, 1, PlainLiteralScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPlainLiteralScalarRestriction_Language(), this.getLanguage(), "language", null, 0, 1, PlainLiteralScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(stringScalarRestrictionEClass, StringScalarRestriction.class, "StringScalarRestriction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getStringScalarRestriction_Length(), theEcorePackage.getEInt(), "length", null, 0, 1, StringScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStringScalarRestriction_MinLength(), theEcorePackage.getEInt(), "minLength", null, 0, 1, StringScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStringScalarRestriction_MaxLength(), theEcorePackage.getEInt(), "maxLength", null, 0, 1, StringScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStringScalarRestriction_Pattern(), this.getPattern(), "pattern", null, 0, 1, StringScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(timeScalarRestrictionEClass, TimeScalarRestriction.class, "TimeScalarRestriction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTimeScalarRestriction_MinInclusive(), this.getLexicalTime(), "minInclusive", null, 0, 1, TimeScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTimeScalarRestriction_MaxInclusive(), this.getLexicalTime(), "maxInclusive", null, 0, 1, TimeScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTimeScalarRestriction_MinExclusive(), this.getLexicalTime(), "minExclusive", null, 0, 1, TimeScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTimeScalarRestriction_MaxExclusive(), this.getLexicalTime(), "maxExclusive", null, 0, 1, TimeScalarRestriction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(synonymScalarRestrictionEClass, SynonymScalarRestriction.class, "SynonymScalarRestriction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(scalarOneOfRestrictionEClass, ScalarOneOfRestriction.class, "ScalarOneOfRestriction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

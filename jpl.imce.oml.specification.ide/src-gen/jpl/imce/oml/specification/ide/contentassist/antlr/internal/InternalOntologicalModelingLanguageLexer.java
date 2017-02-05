@@ -914,8 +914,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ANNOTATION_PROPERTY_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13532:32: ( 'annotationProperty' )
-            // InternalOntologicalModelingLanguage.g:13532:34: 'annotationProperty'
+            // InternalOntologicalModelingLanguage.g:13545:32: ( 'annotationProperty' )
+            // InternalOntologicalModelingLanguage.g:13545:34: 'annotationProperty'
             {
             match("annotationProperty"); 
 
@@ -935,8 +935,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ANNOTATION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13534:23: ( '@' )
-            // InternalOntologicalModelingLanguage.g:13534:25: '@'
+            // InternalOntologicalModelingLanguage.g:13547:23: ( '@' )
+            // InternalOntologicalModelingLanguage.g:13547:25: '@'
             {
             match('@'); 
 
@@ -955,8 +955,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_TERMINOLOGY_GRAPH_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13536:30: ( 'terminology' )
-            // InternalOntologicalModelingLanguage.g:13536:32: 'terminology'
+            // InternalOntologicalModelingLanguage.g:13549:30: ( 'terminology' )
+            // InternalOntologicalModelingLanguage.g:13549:32: 'terminology'
             {
             match("terminology"); 
 
@@ -976,8 +976,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_BUNDLE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13538:19: ( 'bundle' )
-            // InternalOntologicalModelingLanguage.g:13538:21: 'bundle'
+            // InternalOntologicalModelingLanguage.g:13551:19: ( 'bundle' )
+            // InternalOntologicalModelingLanguage.g:13551:21: 'bundle'
             {
             match("bundle"); 
 
@@ -997,8 +997,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_KIND_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13540:17: ( 'kind' )
-            // InternalOntologicalModelingLanguage.g:13540:19: 'kind'
+            // InternalOntologicalModelingLanguage.g:13553:17: ( 'kind' )
+            // InternalOntologicalModelingLanguage.g:13553:19: 'kind'
             {
             match("kind"); 
 
@@ -1018,8 +1018,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ASPECT_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13542:19: ( 'aspect' )
-            // InternalOntologicalModelingLanguage.g:13542:21: 'aspect'
+            // InternalOntologicalModelingLanguage.g:13555:19: ( 'aspect' )
+            // InternalOntologicalModelingLanguage.g:13555:21: 'aspect'
             {
             match("aspect"); 
 
@@ -1039,8 +1039,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ABSTRACT_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13544:21: ( 'abstract' )
-            // InternalOntologicalModelingLanguage.g:13544:23: 'abstract'
+            // InternalOntologicalModelingLanguage.g:13557:21: ( 'abstract' )
+            // InternalOntologicalModelingLanguage.g:13557:23: 'abstract'
             {
             match("abstract"); 
 
@@ -1060,8 +1060,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_CONCEPT_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13546:20: ( 'concept' )
-            // InternalOntologicalModelingLanguage.g:13546:22: 'concept'
+            // InternalOntologicalModelingLanguage.g:13559:20: ( 'concept' )
+            // InternalOntologicalModelingLanguage.g:13559:22: 'concept'
             {
             match("concept"); 
 
@@ -1081,8 +1081,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_REIFIED_RELATIONSHIP_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13548:33: ( 'reifiedRelationship' )
-            // InternalOntologicalModelingLanguage.g:13548:35: 'reifiedRelationship'
+            // InternalOntologicalModelingLanguage.g:13561:33: ( 'reifiedRelationship' )
+            // InternalOntologicalModelingLanguage.g:13561:35: 'reifiedRelationship'
             {
             match("reifiedRelationship"); 
 
@@ -1102,8 +1102,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_UNREIFIED_RELATIONSHIP_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13550:35: ( 'unreifiedRelationship' )
-            // InternalOntologicalModelingLanguage.g:13550:37: 'unreifiedRelationship'
+            // InternalOntologicalModelingLanguage.g:13563:35: ( 'unreifiedRelationship' )
+            // InternalOntologicalModelingLanguage.g:13563:37: 'unreifiedRelationship'
             {
             match("unreifiedRelationship"); 
 
@@ -1123,8 +1123,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_FUNCTIONAL_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13552:23: ( 'functional' )
-            // InternalOntologicalModelingLanguage.g:13552:25: 'functional'
+            // InternalOntologicalModelingLanguage.g:13565:23: ( 'functional' )
+            // InternalOntologicalModelingLanguage.g:13565:25: 'functional'
             {
             match("functional"); 
 
@@ -1144,8 +1144,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_INVERSE_FUNCTIONAL_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13554:31: ( 'inverseFunctional' )
-            // InternalOntologicalModelingLanguage.g:13554:33: 'inverseFunctional'
+            // InternalOntologicalModelingLanguage.g:13567:31: ( 'inverseFunctional' )
+            // InternalOntologicalModelingLanguage.g:13567:33: 'inverseFunctional'
             {
             match("inverseFunctional"); 
 
@@ -1165,8 +1165,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ESSENTIAL_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13556:22: ( 'essential' )
-            // InternalOntologicalModelingLanguage.g:13556:24: 'essential'
+            // InternalOntologicalModelingLanguage.g:13569:22: ( 'essential' )
+            // InternalOntologicalModelingLanguage.g:13569:24: 'essential'
             {
             match("essential"); 
 
@@ -1186,8 +1186,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_INVERSE_ESSENTIAL_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13558:30: ( 'inverseEssential' )
-            // InternalOntologicalModelingLanguage.g:13558:32: 'inverseEssential'
+            // InternalOntologicalModelingLanguage.g:13571:30: ( 'inverseEssential' )
+            // InternalOntologicalModelingLanguage.g:13571:32: 'inverseEssential'
             {
             match("inverseEssential"); 
 
@@ -1207,8 +1207,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SYMMETRIC_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13560:22: ( 'symmetric' )
-            // InternalOntologicalModelingLanguage.g:13560:24: 'symmetric'
+            // InternalOntologicalModelingLanguage.g:13573:22: ( 'symmetric' )
+            // InternalOntologicalModelingLanguage.g:13573:24: 'symmetric'
             {
             match("symmetric"); 
 
@@ -1228,8 +1228,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ASYMMETRIC_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13562:23: ( 'asymmetric' )
-            // InternalOntologicalModelingLanguage.g:13562:25: 'asymmetric'
+            // InternalOntologicalModelingLanguage.g:13575:23: ( 'asymmetric' )
+            // InternalOntologicalModelingLanguage.g:13575:25: 'asymmetric'
             {
             match("asymmetric"); 
 
@@ -1249,8 +1249,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_REFLEXIVE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13564:22: ( 'reflexive' )
-            // InternalOntologicalModelingLanguage.g:13564:24: 'reflexive'
+            // InternalOntologicalModelingLanguage.g:13577:22: ( 'reflexive' )
+            // InternalOntologicalModelingLanguage.g:13577:24: 'reflexive'
             {
             match("reflexive"); 
 
@@ -1270,8 +1270,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_IRREFLEXIVE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13566:24: ( 'irreflexive' )
-            // InternalOntologicalModelingLanguage.g:13566:26: 'irreflexive'
+            // InternalOntologicalModelingLanguage.g:13579:24: ( 'irreflexive' )
+            // InternalOntologicalModelingLanguage.g:13579:26: 'irreflexive'
             {
             match("irreflexive"); 
 
@@ -1291,8 +1291,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_TRANSITIVE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13568:23: ( 'transitive' )
-            // InternalOntologicalModelingLanguage.g:13568:25: 'transitive'
+            // InternalOntologicalModelingLanguage.g:13581:23: ( 'transitive' )
+            // InternalOntologicalModelingLanguage.g:13581:25: 'transitive'
             {
             match("transitive"); 
 
@@ -1312,8 +1312,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_UNREIFIED_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13570:22: ( 'unreified' )
-            // InternalOntologicalModelingLanguage.g:13570:24: 'unreified'
+            // InternalOntologicalModelingLanguage.g:13583:22: ( 'unreified' )
+            // InternalOntologicalModelingLanguage.g:13583:24: 'unreified'
             {
             match("unreified"); 
 
@@ -1333,8 +1333,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_INVERSE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13572:20: ( 'inverse' )
-            // InternalOntologicalModelingLanguage.g:13572:22: 'inverse'
+            // InternalOntologicalModelingLanguage.g:13585:20: ( 'inverse' )
+            // InternalOntologicalModelingLanguage.g:13585:22: 'inverse'
             {
             match("inverse"); 
 
@@ -1354,8 +1354,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SOURCE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13574:19: ( 'source' )
-            // InternalOntologicalModelingLanguage.g:13574:21: 'source'
+            // InternalOntologicalModelingLanguage.g:13587:19: ( 'source' )
+            // InternalOntologicalModelingLanguage.g:13587:21: 'source'
             {
             match("source"); 
 
@@ -1375,8 +1375,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_TARGET_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13576:19: ( 'target' )
-            // InternalOntologicalModelingLanguage.g:13576:21: 'target'
+            // InternalOntologicalModelingLanguage.g:13589:19: ( 'target' )
+            // InternalOntologicalModelingLanguage.g:13589:21: 'target'
             {
             match("target"); 
 
@@ -1396,8 +1396,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SCALAR_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13578:19: ( 'scalar' )
-            // InternalOntologicalModelingLanguage.g:13578:21: 'scalar'
+            // InternalOntologicalModelingLanguage.g:13591:19: ( 'scalar' )
+            // InternalOntologicalModelingLanguage.g:13591:21: 'scalar'
             {
             match("scalar"); 
 
@@ -1417,8 +1417,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_STRUCTURE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13580:22: ( 'structure' )
-            // InternalOntologicalModelingLanguage.g:13580:24: 'structure'
+            // InternalOntologicalModelingLanguage.g:13593:22: ( 'structure' )
+            // InternalOntologicalModelingLanguage.g:13593:24: 'structure'
             {
             match("structure"); 
 
@@ -1438,8 +1438,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_DOMAIN_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13582:19: ( 'domain' )
-            // InternalOntologicalModelingLanguage.g:13582:21: 'domain'
+            // InternalOntologicalModelingLanguage.g:13595:19: ( 'domain' )
+            // InternalOntologicalModelingLanguage.g:13595:21: 'domain'
             {
             match("domain"); 
 
@@ -1459,8 +1459,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_RANGE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13584:18: ( 'range' )
-            // InternalOntologicalModelingLanguage.g:13584:20: 'range'
+            // InternalOntologicalModelingLanguage.g:13597:18: ( 'range' )
+            // InternalOntologicalModelingLanguage.g:13597:20: 'range'
             {
             match("range"); 
 
@@ -1480,8 +1480,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13586:40: ( 'rootConceptTaxonomyAxiom' )
-            // InternalOntologicalModelingLanguage.g:13586:42: 'rootConceptTaxonomyAxiom'
+            // InternalOntologicalModelingLanguage.g:13599:40: ( 'rootConceptTaxonomyAxiom' )
+            // InternalOntologicalModelingLanguage.g:13599:42: 'rootConceptTaxonomyAxiom'
             {
             match("rootConceptTaxonomyAxiom"); 
 
@@ -1501,8 +1501,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13588:44: ( 'specificDisjointConceptAxiom' )
-            // InternalOntologicalModelingLanguage.g:13588:46: 'specificDisjointConceptAxiom'
+            // InternalOntologicalModelingLanguage.g:13601:44: ( 'specificDisjointConceptAxiom' )
+            // InternalOntologicalModelingLanguage.g:13601:46: 'specificDisjointConceptAxiom'
             {
             match("specificDisjointConceptAxiom"); 
 
@@ -1522,8 +1522,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13590:45: ( 'anonymousConceptTaxonomyAxiom' )
-            // InternalOntologicalModelingLanguage.g:13590:47: 'anonymousConceptTaxonomyAxiom'
+            // InternalOntologicalModelingLanguage.g:13603:45: ( 'anonymousConceptTaxonomyAxiom' )
+            // InternalOntologicalModelingLanguage.g:13603:47: 'anonymousConceptTaxonomyAxiom'
             {
             match("anonymousConceptTaxonomyAxiom"); 
 
@@ -1543,8 +1543,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_BUNDLED_TERMINOLOGY_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13592:38: ( 'bundledTerminologyAxiom' )
-            // InternalOntologicalModelingLanguage.g:13592:40: 'bundledTerminologyAxiom'
+            // InternalOntologicalModelingLanguage.g:13605:38: ( 'bundledTerminologyAxiom' )
+            // InternalOntologicalModelingLanguage.g:13605:40: 'bundledTerminologyAxiom'
             {
             match("bundledTerminologyAxiom"); 
 
@@ -1564,8 +1564,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13594:50: ( 'conceptDesignationTerminologyAxiom' )
-            // InternalOntologicalModelingLanguage.g:13594:52: 'conceptDesignationTerminologyAxiom'
+            // InternalOntologicalModelingLanguage.g:13607:50: ( 'conceptDesignationTerminologyAxiom' )
+            // InternalOntologicalModelingLanguage.g:13607:52: 'conceptDesignationTerminologyAxiom'
             {
             match("conceptDesignationTerminologyAxiom"); 
 
@@ -1585,8 +1585,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_TERMINOLOGY_NESTING_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13596:38: ( 'terminologyNestingAxiom' )
-            // InternalOntologicalModelingLanguage.g:13596:40: 'terminologyNestingAxiom'
+            // InternalOntologicalModelingLanguage.g:13609:38: ( 'terminologyNestingAxiom' )
+            // InternalOntologicalModelingLanguage.g:13609:40: 'terminologyNestingAxiom'
             {
             match("terminologyNestingAxiom"); 
 
@@ -1606,8 +1606,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_TERMINOLOGY_EXTENSION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13598:40: ( 'extends' )
-            // InternalOntologicalModelingLanguage.g:13598:42: 'extends'
+            // InternalOntologicalModelingLanguage.g:13611:40: ( 'extends' )
+            // InternalOntologicalModelingLanguage.g:13611:42: 'extends'
             {
             match("extends"); 
 
@@ -1627,8 +1627,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13600:49: ( 'entityExistentialRestrictionAxiom' )
-            // InternalOntologicalModelingLanguage.g:13600:51: 'entityExistentialRestrictionAxiom'
+            // InternalOntologicalModelingLanguage.g:13613:49: ( 'entityExistentialRestrictionAxiom' )
+            // InternalOntologicalModelingLanguage.g:13613:51: 'entityExistentialRestrictionAxiom'
             {
             match("entityExistentialRestrictionAxiom"); 
 
@@ -1648,8 +1648,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13602:47: ( 'entityUniversalRestrictionAxiom' )
-            // InternalOntologicalModelingLanguage.g:13602:49: 'entityUniversalRestrictionAxiom'
+            // InternalOntologicalModelingLanguage.g:13615:47: ( 'entityUniversalRestrictionAxiom' )
+            // InternalOntologicalModelingLanguage.g:13615:49: 'entityUniversalRestrictionAxiom'
             {
             match("entityUniversalRestrictionAxiom"); 
 
@@ -1669,8 +1669,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13604:41: ( 'conceptSpecializationAxiom' )
-            // InternalOntologicalModelingLanguage.g:13604:43: 'conceptSpecializationAxiom'
+            // InternalOntologicalModelingLanguage.g:13617:41: ( 'conceptSpecializationAxiom' )
+            // InternalOntologicalModelingLanguage.g:13617:43: 'conceptSpecializationAxiom'
             {
             match("conceptSpecializationAxiom"); 
 
@@ -1690,8 +1690,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13606:40: ( 'extendsAspect' )
-            // InternalOntologicalModelingLanguage.g:13606:42: 'extendsAspect'
+            // InternalOntologicalModelingLanguage.g:13619:40: ( 'extendsAspect' )
+            // InternalOntologicalModelingLanguage.g:13619:42: 'extendsAspect'
             {
             match("extendsAspect"); 
 
@@ -1711,8 +1711,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13608:54: ( 'reifiedRelationshipSpecializationAxiom' )
-            // InternalOntologicalModelingLanguage.g:13608:56: 'reifiedRelationshipSpecializationAxiom'
+            // InternalOntologicalModelingLanguage.g:13621:54: ( 'reifiedRelationshipSpecializationAxiom' )
+            // InternalOntologicalModelingLanguage.g:13621:56: 'reifiedRelationshipSpecializationAxiom'
             {
             match("reifiedRelationshipSpecializationAxiom"); 
 
@@ -1732,8 +1732,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13610:70: ( 'entityScalarDataPropertyExistentialRestrictionAxiom' )
-            // InternalOntologicalModelingLanguage.g:13610:72: 'entityScalarDataPropertyExistentialRestrictionAxiom'
+            // InternalOntologicalModelingLanguage.g:13623:70: ( 'entityScalarDataPropertyExistentialRestrictionAxiom' )
+            // InternalOntologicalModelingLanguage.g:13623:72: 'entityScalarDataPropertyExistentialRestrictionAxiom'
             {
             match("entityScalarDataPropertyExistentialRestrictionAxiom"); 
 
@@ -1753,8 +1753,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13612:68: ( 'entityScalarDataPropertyUniversalRestrictionAxiom' )
-            // InternalOntologicalModelingLanguage.g:13612:70: 'entityScalarDataPropertyUniversalRestrictionAxiom'
+            // InternalOntologicalModelingLanguage.g:13625:68: ( 'entityScalarDataPropertyUniversalRestrictionAxiom' )
+            // InternalOntologicalModelingLanguage.g:13625:70: 'entityScalarDataPropertyUniversalRestrictionAxiom'
             {
             match("entityScalarDataPropertyUniversalRestrictionAxiom"); 
 
@@ -1774,8 +1774,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13614:69: ( 'entityScalarDataPropertyParticularRestrictionAxiom' )
-            // InternalOntologicalModelingLanguage.g:13614:71: 'entityScalarDataPropertyParticularRestrictionAxiom'
+            // InternalOntologicalModelingLanguage.g:13627:69: ( 'entityScalarDataPropertyParticularRestrictionAxiom' )
+            // InternalOntologicalModelingLanguage.g:13627:71: 'entityScalarDataPropertyParticularRestrictionAxiom'
             {
             match("entityScalarDataPropertyParticularRestrictionAxiom"); 
 
@@ -1795,8 +1795,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13616:39: ( 'synonymScalarRestriction' )
-            // InternalOntologicalModelingLanguage.g:13616:41: 'synonymScalarRestriction'
+            // InternalOntologicalModelingLanguage.g:13629:39: ( 'synonymScalarRestriction' )
+            // InternalOntologicalModelingLanguage.g:13629:41: 'synonymScalarRestriction'
             {
             match("synonymScalarRestriction"); 
 
@@ -1816,8 +1816,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13618:39: ( 'numericScalarRestriction' )
-            // InternalOntologicalModelingLanguage.g:13618:41: 'numericScalarRestriction'
+            // InternalOntologicalModelingLanguage.g:13631:39: ( 'numericScalarRestriction' )
+            // InternalOntologicalModelingLanguage.g:13631:41: 'numericScalarRestriction'
             {
             match("numericScalarRestriction"); 
 
@@ -1837,8 +1837,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_STRING_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13620:38: ( 'stringScalarRestriction' )
-            // InternalOntologicalModelingLanguage.g:13620:40: 'stringScalarRestriction'
+            // InternalOntologicalModelingLanguage.g:13633:38: ( 'stringScalarRestriction' )
+            // InternalOntologicalModelingLanguage.g:13633:40: 'stringScalarRestriction'
             {
             match("stringScalarRestriction"); 
 
@@ -1858,8 +1858,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13622:45: ( 'plainLiteralScalarRestriction' )
-            // InternalOntologicalModelingLanguage.g:13622:47: 'plainLiteralScalarRestriction'
+            // InternalOntologicalModelingLanguage.g:13635:45: ( 'plainLiteralScalarRestriction' )
+            // InternalOntologicalModelingLanguage.g:13635:47: 'plainLiteralScalarRestriction'
             {
             match("plainLiteralScalarRestriction"); 
 
@@ -1879,8 +1879,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_BINARY_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13624:38: ( 'binaryScalarRestriction' )
-            // InternalOntologicalModelingLanguage.g:13624:40: 'binaryScalarRestriction'
+            // InternalOntologicalModelingLanguage.g:13637:38: ( 'binaryScalarRestriction' )
+            // InternalOntologicalModelingLanguage.g:13637:40: 'binaryScalarRestriction'
             {
             match("binaryScalarRestriction"); 
 
@@ -1900,8 +1900,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_IRI_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13626:35: ( 'iriScalarRestriction' )
-            // InternalOntologicalModelingLanguage.g:13626:37: 'iriScalarRestriction'
+            // InternalOntologicalModelingLanguage.g:13639:35: ( 'iriScalarRestriction' )
+            // InternalOntologicalModelingLanguage.g:13639:37: 'iriScalarRestriction'
             {
             match("iriScalarRestriction"); 
 
@@ -1921,8 +1921,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_TIME_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13628:36: ( 'timeScalarRestriction' )
-            // InternalOntologicalModelingLanguage.g:13628:38: 'timeScalarRestriction'
+            // InternalOntologicalModelingLanguage.g:13641:36: ( 'timeScalarRestriction' )
+            // InternalOntologicalModelingLanguage.g:13641:38: 'timeScalarRestriction'
             {
             match("timeScalarRestriction"); 
 
@@ -1942,8 +1942,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13630:38: ( 'scalarOneOfRestriction' )
-            // InternalOntologicalModelingLanguage.g:13630:40: 'scalarOneOfRestriction'
+            // InternalOntologicalModelingLanguage.g:13643:38: ( 'scalarOneOfRestriction' )
+            // InternalOntologicalModelingLanguage.g:13643:40: 'scalarOneOfRestriction'
             {
             match("scalarOneOfRestriction"); 
 
@@ -1963,8 +1963,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13632:40: ( 'scalarOneOfLiteralAxiom' )
-            // InternalOntologicalModelingLanguage.g:13632:42: 'scalarOneOfLiteralAxiom'
+            // InternalOntologicalModelingLanguage.g:13645:40: ( 'scalarOneOfLiteralAxiom' )
+            // InternalOntologicalModelingLanguage.g:13645:42: 'scalarOneOfLiteralAxiom'
             {
             match("scalarOneOfLiteralAxiom"); 
 
@@ -1984,8 +1984,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_LCURLY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13634:13: ( '{' )
-            // InternalOntologicalModelingLanguage.g:13634:15: '{'
+            // InternalOntologicalModelingLanguage.g:13647:13: ( '{' )
+            // InternalOntologicalModelingLanguage.g:13647:15: '{'
             {
             match('{'); 
 
@@ -2004,8 +2004,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_RCURLY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13636:13: ( '}' )
-            // InternalOntologicalModelingLanguage.g:13636:15: '}'
+            // InternalOntologicalModelingLanguage.g:13649:13: ( '}' )
+            // InternalOntologicalModelingLanguage.g:13649:15: '}'
             {
             match('}'); 
 
@@ -2024,8 +2024,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13638:12: ( '=' )
-            // InternalOntologicalModelingLanguage.g:13638:14: '='
+            // InternalOntologicalModelingLanguage.g:13651:12: ( '=' )
+            // InternalOntologicalModelingLanguage.g:13651:14: '='
             {
             match('='); 
 
@@ -2044,10 +2044,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13640:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? ) )
-            // InternalOntologicalModelingLanguage.g:13640:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
+            // InternalOntologicalModelingLanguage.g:13653:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? ) )
+            // InternalOntologicalModelingLanguage.g:13653:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
             {
-            // InternalOntologicalModelingLanguage.g:13640:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
+            // InternalOntologicalModelingLanguage.g:13653:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -2065,10 +2065,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:13640:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )?
+                    // InternalOntologicalModelingLanguage.g:13653:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )?
                     {
                     match('\"'); 
-                    // InternalOntologicalModelingLanguage.g:13640:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalOntologicalModelingLanguage.g:13653:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop1:
                     do {
                         int alt1=3;
@@ -2084,7 +2084,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
 
                         switch (alt1) {
                     	case 1 :
-                    	    // InternalOntologicalModelingLanguage.g:13640:21: '\\\\' .
+                    	    // InternalOntologicalModelingLanguage.g:13653:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2092,7 +2092,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalOntologicalModelingLanguage.g:13640:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalOntologicalModelingLanguage.g:13653:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2112,7 +2112,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                         }
                     } while (true);
 
-                    // InternalOntologicalModelingLanguage.g:13640:44: ( '\"' )?
+                    // InternalOntologicalModelingLanguage.g:13653:44: ( '\"' )?
                     int alt2=2;
                     int LA2_0 = input.LA(1);
 
@@ -2121,7 +2121,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     switch (alt2) {
                         case 1 :
-                            // InternalOntologicalModelingLanguage.g:13640:44: '\"'
+                            // InternalOntologicalModelingLanguage.g:13653:44: '\"'
                             {
                             match('\"'); 
 
@@ -2134,10 +2134,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalOntologicalModelingLanguage.g:13640:49: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )?
+                    // InternalOntologicalModelingLanguage.g:13653:49: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )?
                     {
                     match('\''); 
-                    // InternalOntologicalModelingLanguage.g:13640:54: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalOntologicalModelingLanguage.g:13653:54: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop3:
                     do {
                         int alt3=3;
@@ -2153,7 +2153,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // InternalOntologicalModelingLanguage.g:13640:55: '\\\\' .
+                    	    // InternalOntologicalModelingLanguage.g:13653:55: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2161,7 +2161,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalOntologicalModelingLanguage.g:13640:62: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalOntologicalModelingLanguage.g:13653:62: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2181,7 +2181,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                         }
                     } while (true);
 
-                    // InternalOntologicalModelingLanguage.g:13640:79: ( '\\'' )?
+                    // InternalOntologicalModelingLanguage.g:13653:79: ( '\\'' )?
                     int alt4=2;
                     int LA4_0 = input.LA(1);
 
@@ -2190,7 +2190,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     switch (alt4) {
                         case 1 :
-                            // InternalOntologicalModelingLanguage.g:13640:79: '\\''
+                            // InternalOntologicalModelingLanguage.g:13653:79: '\\''
                             {
                             match('\''); 
 
@@ -2221,11 +2221,11 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_IRI;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13642:10: ( '<' (~ ( '>' ) )* '>' )
-            // InternalOntologicalModelingLanguage.g:13642:12: '<' (~ ( '>' ) )* '>'
+            // InternalOntologicalModelingLanguage.g:13655:10: ( '<' (~ ( '>' ) )* '>' )
+            // InternalOntologicalModelingLanguage.g:13655:12: '<' (~ ( '>' ) )* '>'
             {
             match('<'); 
-            // InternalOntologicalModelingLanguage.g:13642:16: (~ ( '>' ) )*
+            // InternalOntologicalModelingLanguage.g:13655:16: (~ ( '>' ) )*
             loop6:
             do {
                 int alt6=2;
@@ -2238,7 +2238,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalOntologicalModelingLanguage.g:13642:16: ~ ( '>' )
+            	    // InternalOntologicalModelingLanguage.g:13655:16: ~ ( '>' )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='=')||(input.LA(1)>='?' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2275,10 +2275,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13644:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // InternalOntologicalModelingLanguage.g:13644:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // InternalOntologicalModelingLanguage.g:13657:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // InternalOntologicalModelingLanguage.g:13657:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // InternalOntologicalModelingLanguage.g:13644:11: ( '^' )?
+            // InternalOntologicalModelingLanguage.g:13657:11: ( '^' )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2287,7 +2287,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:13644:11: '^'
+                    // InternalOntologicalModelingLanguage.g:13657:11: '^'
                     {
                     match('^'); 
 
@@ -2305,7 +2305,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalOntologicalModelingLanguage.g:13644:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // InternalOntologicalModelingLanguage.g:13657:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop8:
             do {
                 int alt8=2;
@@ -2354,8 +2354,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_UUID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13646:11: ( RULE_HEX_8DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_12DIGITS )
-            // InternalOntologicalModelingLanguage.g:13646:13: RULE_HEX_8DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_12DIGITS
+            // InternalOntologicalModelingLanguage.g:13659:11: ( RULE_HEX_8DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_12DIGITS )
+            // InternalOntologicalModelingLanguage.g:13659:13: RULE_HEX_8DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_12DIGITS
             {
             mRULE_HEX_8DIGITS(); 
             match('-'); 
@@ -2380,8 +2380,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
     // $ANTLR start "RULE_HEX_12DIGITS"
     public final void mRULE_HEX_12DIGITS() throws RecognitionException {
         try {
-            // InternalOntologicalModelingLanguage.g:13648:28: ( RULE_HEX_8DIGITS RULE_HEX_4DIGITS )
-            // InternalOntologicalModelingLanguage.g:13648:30: RULE_HEX_8DIGITS RULE_HEX_4DIGITS
+            // InternalOntologicalModelingLanguage.g:13661:28: ( RULE_HEX_8DIGITS RULE_HEX_4DIGITS )
+            // InternalOntologicalModelingLanguage.g:13661:30: RULE_HEX_8DIGITS RULE_HEX_4DIGITS
             {
             mRULE_HEX_8DIGITS(); 
             mRULE_HEX_4DIGITS(); 
@@ -2397,8 +2397,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
     // $ANTLR start "RULE_HEX_8DIGITS"
     public final void mRULE_HEX_8DIGITS() throws RecognitionException {
         try {
-            // InternalOntologicalModelingLanguage.g:13650:27: ( RULE_HEX_4DIGITS RULE_HEX_4DIGITS )
-            // InternalOntologicalModelingLanguage.g:13650:29: RULE_HEX_4DIGITS RULE_HEX_4DIGITS
+            // InternalOntologicalModelingLanguage.g:13663:27: ( RULE_HEX_4DIGITS RULE_HEX_4DIGITS )
+            // InternalOntologicalModelingLanguage.g:13663:29: RULE_HEX_4DIGITS RULE_HEX_4DIGITS
             {
             mRULE_HEX_4DIGITS(); 
             mRULE_HEX_4DIGITS(); 
@@ -2414,8 +2414,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
     // $ANTLR start "RULE_HEX_4DIGITS"
     public final void mRULE_HEX_4DIGITS() throws RecognitionException {
         try {
-            // InternalOntologicalModelingLanguage.g:13652:27: ( RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT )
-            // InternalOntologicalModelingLanguage.g:13652:29: RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT
+            // InternalOntologicalModelingLanguage.g:13665:27: ( RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT )
+            // InternalOntologicalModelingLanguage.g:13665:29: RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT
             {
             mRULE_HEX_DIGIT(); 
             mRULE_HEX_DIGIT(); 
@@ -2433,8 +2433,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
     // $ANTLR start "RULE_HEX_DIGIT"
     public final void mRULE_HEX_DIGIT() throws RecognitionException {
         try {
-            // InternalOntologicalModelingLanguage.g:13654:25: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
-            // InternalOntologicalModelingLanguage.g:13654:27: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
+            // InternalOntologicalModelingLanguage.g:13667:25: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
+            // InternalOntologicalModelingLanguage.g:13667:27: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
             {
             if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f') ) {
                 input.consume();
@@ -2459,10 +2459,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13656:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // InternalOntologicalModelingLanguage.g:13656:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // InternalOntologicalModelingLanguage.g:13669:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // InternalOntologicalModelingLanguage.g:13669:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // InternalOntologicalModelingLanguage.g:13656:12: ( '0x' | '0X' )
+            // InternalOntologicalModelingLanguage.g:13669:12: ( '0x' | '0X' )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2490,7 +2490,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:13656:13: '0x'
+                    // InternalOntologicalModelingLanguage.g:13669:13: '0x'
                     {
                     match("0x"); 
 
@@ -2498,7 +2498,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalOntologicalModelingLanguage.g:13656:18: '0X'
+                    // InternalOntologicalModelingLanguage.g:13669:18: '0X'
                     {
                     match("0X"); 
 
@@ -2508,7 +2508,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
 
             }
 
-            // InternalOntologicalModelingLanguage.g:13656:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // InternalOntologicalModelingLanguage.g:13669:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt10=0;
             loop10:
             do {
@@ -2546,7 +2546,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                 cnt10++;
             } while (true);
 
-            // InternalOntologicalModelingLanguage.g:13656:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // InternalOntologicalModelingLanguage.g:13669:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -2555,10 +2555,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:13656:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // InternalOntologicalModelingLanguage.g:13669:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // InternalOntologicalModelingLanguage.g:13656:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // InternalOntologicalModelingLanguage.g:13669:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -2576,7 +2576,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // InternalOntologicalModelingLanguage.g:13656:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // InternalOntologicalModelingLanguage.g:13669:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -2600,7 +2600,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // InternalOntologicalModelingLanguage.g:13656:84: ( 'l' | 'L' )
+                            // InternalOntologicalModelingLanguage.g:13669:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -2639,11 +2639,11 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13658:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // InternalOntologicalModelingLanguage.g:13658:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // InternalOntologicalModelingLanguage.g:13671:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // InternalOntologicalModelingLanguage.g:13671:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // InternalOntologicalModelingLanguage.g:13658:21: ( '0' .. '9' | '_' )*
+            // InternalOntologicalModelingLanguage.g:13671:21: ( '0' .. '9' | '_' )*
             loop13:
             do {
                 int alt13=2;
@@ -2692,11 +2692,11 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13660:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // InternalOntologicalModelingLanguage.g:13660:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // InternalOntologicalModelingLanguage.g:13673:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // InternalOntologicalModelingLanguage.g:13673:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // InternalOntologicalModelingLanguage.g:13660:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // InternalOntologicalModelingLanguage.g:13673:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -2705,7 +2705,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt15) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:13660:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // InternalOntologicalModelingLanguage.g:13673:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -2716,7 +2716,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // InternalOntologicalModelingLanguage.g:13660:36: ( '+' | '-' )?
+                    // InternalOntologicalModelingLanguage.g:13673:36: ( '+' | '-' )?
                     int alt14=2;
                     int LA14_0 = input.LA(1);
 
@@ -2749,7 +2749,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
 
             }
 
-            // InternalOntologicalModelingLanguage.g:13660:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // InternalOntologicalModelingLanguage.g:13673:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt16=3;
             int LA16_0 = input.LA(1);
 
@@ -2761,7 +2761,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt16) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:13660:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // InternalOntologicalModelingLanguage.g:13673:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -2785,7 +2785,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalOntologicalModelingLanguage.g:13660:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // InternalOntologicalModelingLanguage.g:13673:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -2818,12 +2818,12 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13662:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalOntologicalModelingLanguage.g:13662:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalOntologicalModelingLanguage.g:13675:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalOntologicalModelingLanguage.g:13675:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalOntologicalModelingLanguage.g:13662:24: ( options {greedy=false; } : . )*
+            // InternalOntologicalModelingLanguage.g:13675:24: ( options {greedy=false; } : . )*
             loop17:
             do {
                 int alt17=2;
@@ -2848,7 +2848,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
 
                 switch (alt17) {
             	case 1 :
-            	    // InternalOntologicalModelingLanguage.g:13662:52: .
+            	    // InternalOntologicalModelingLanguage.g:13675:52: .
             	    {
             	    matchAny(); 
 
@@ -2878,12 +2878,12 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13664:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalOntologicalModelingLanguage.g:13664:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalOntologicalModelingLanguage.g:13677:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalOntologicalModelingLanguage.g:13677:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalOntologicalModelingLanguage.g:13664:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalOntologicalModelingLanguage.g:13677:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop18:
             do {
                 int alt18=2;
@@ -2896,7 +2896,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
 
                 switch (alt18) {
             	case 1 :
-            	    // InternalOntologicalModelingLanguage.g:13664:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalOntologicalModelingLanguage.g:13677:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2916,7 +2916,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalOntologicalModelingLanguage.g:13664:40: ( ( '\\r' )? '\\n' )?
+            // InternalOntologicalModelingLanguage.g:13677:40: ( ( '\\r' )? '\\n' )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -2925,9 +2925,9 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt20) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:13664:41: ( '\\r' )? '\\n'
+                    // InternalOntologicalModelingLanguage.g:13677:41: ( '\\r' )? '\\n'
                     {
-                    // InternalOntologicalModelingLanguage.g:13664:41: ( '\\r' )?
+                    // InternalOntologicalModelingLanguage.g:13677:41: ( '\\r' )?
                     int alt19=2;
                     int LA19_0 = input.LA(1);
 
@@ -2936,7 +2936,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     switch (alt19) {
                         case 1 :
-                            // InternalOntologicalModelingLanguage.g:13664:41: '\\r'
+                            // InternalOntologicalModelingLanguage.g:13677:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2968,10 +2968,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13666:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalOntologicalModelingLanguage.g:13666:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalOntologicalModelingLanguage.g:13679:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalOntologicalModelingLanguage.g:13679:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalOntologicalModelingLanguage.g:13666:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalOntologicalModelingLanguage.g:13679:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt21=0;
             loop21:
             do {
@@ -3025,8 +3025,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:13668:16: ( . )
-            // InternalOntologicalModelingLanguage.g:13668:18: .
+            // InternalOntologicalModelingLanguage.g:13681:16: ( . )
+            // InternalOntologicalModelingLanguage.g:13681:18: .
             {
             matchAny(); 
 

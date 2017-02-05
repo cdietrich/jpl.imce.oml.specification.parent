@@ -498,20 +498,32 @@ abstract class Term extends TerminologyBoxStatement, Resource {
 	op LocalName[1] name() { getName() }
 }
 
+abstract class UnaryTerm extends Term {}
+
+abstract class DirectedBinaryRelationship extends Term {
+	op Term[1] relationshipSubject()
+	op Term[1] relationRange()
+}
+
 abstract class Entity extends Term {}
 
-class Aspect extends Entity {}
+class Aspect extends Entity, UnaryTerm {}
 
-class Concept extends Entity {
+class Concept extends Entity, UnaryTerm {
 
 	boolean[1] isAbstract
 }
 
-abstract class EntityRelationship extends Term {
+abstract class EntityRelationship extends DirectedBinaryRelationship {
 
  	refers Entity[1] source
 
+	op Term[1] relationDomain() { source }
+
  	refers Entity[1] target
+
+	op Term[1] relationRange() { target }
+	
  	/*
  	 * 0 <= target.size <= 1
 	 */
@@ -559,7 +571,7 @@ class ReifiedRelationship extends EntityRelationship, Entity {
 class UnreifiedRelationship extends EntityRelationship {}
 
 
-abstract class Datatype extends Term {}
+abstract class Datatype extends UnaryTerm {}
 
 /*
  * Corresponds to an OWL2 DataRange with arity=1.
@@ -571,9 +583,11 @@ abstract class DataRange extends Datatype {}
  */
 class Scalar extends DataRange {}
 
-abstract class DataRelationship extends Term {
+abstract class DataRelationship extends DirectedBinaryRelationship {
 	op Term[1] source()
+	op Term[1] relationDomain() { source }
 	op Datatype[1] target()
+	op Term[1] relationRange() { target }
 }
 
 abstract class DataRelationshipDomain {}
@@ -962,114 +976,6 @@ abstract class RestrictedDataRange extends DataRange {
 }
 
 /*
- * A data range that is defined as a synonym for another (i.e. the restrictedRange).
- */
-class SynonymScalarRestriction extends RestrictedDataRange {}
-
-/*
- * A data range that specifies how one numeric scalar range adds facet restrictions to another.
- * Applies when the restricted scalar represents real, decimal or integer numbers (OWL2: 4.1/4.2)
- * i.e., when it is one of the following scalars (or their transitively restricted ones):
- * owl:real
- * owl:rational
- * xsd:decimal
- * xsd:integer
- * xsd:nonNegativeInteger
- * xsd:nonPositiveInteger
- * xsd:positiveInteger
- * xsd:negativeInteger
- * xsd:long
- * xsd:int
- * xsd:short
- * xsd:byte
- * xsd:unsignedLong
- * xsd:unsignedInt
- * xsd:unsignedShort
- * xsd:unsignedByte
- * xsd:double
- * xsd:float
- */
-class NumericScalarRestriction extends RestrictedDataRange {
-	/*
-	 * The inclusive minimum value in the range
-	 */
-	LexicalNumber[?] minInclusive
-	/*
-	 * The inclusive maximum value in the range
-	 */
-	LexicalNumber[?] maxInclusive
-	/*
-	 * The exclusive minimum value in the range
-	 */
-	LexicalNumber[?] minExclusive
-	/*
-	 * The exclusive maximum value in the range
-	 */
-	LexicalNumber[?] maxExclusive
-}
-
-/*
- * A data range that specifies how one string scalar adds facet restrictions to another.
- * Applies when the restricted scalar represents strings (OWL2: 4.3)
- * i.e., when it is one of the following scalars (or their transitively restricted ones):
- * xsd:string
- * xsd:normalizedString
- * xsd:token
- * xsd:language
- * xsd:Name
- * xsd:NCName
- * xsd:NMTOKEN
- * xsd:length, xsd:minLength, xsd:maxLength, xsd:pattern
- */
-class StringScalarRestriction extends RestrictedDataRange {
-	/*
-	 * The length of the string
-	 */
-	int[?] length
-	/*
-	 * The minimum length of the string
-	 */
-	int[?] minLength
-	/*
-	 * The maximum length of the string
-	 */
-	int[?] maxLength
-	/*
-	 * The pattern of the string (https://www.w3.org/TR/xmlschema-2/#regexs)
-	 */
-	Pattern[?] pattern
-}
-
-/*
- * A data range that specifies how one plain literal scalar adds facet restrictions to another.
- * Applies when the restricted scalar represents plain literals (OWL2: 4.3)
- * i.e., when it is one of the following scalars (or their transitively restricted ones):
- * rdf:PlainLiteral
- */
-class PlainLiteralScalarRestriction extends RestrictedDataRange {
-	/*
-	 * The length of the plain literal
-	 */
-	int[?] length
-	/*
-	 * The minimum length of the plain literal
-	 */
-	int[?] minLength
-	/*
-	 * The maximum length of the plain literal
-	 */
-	int[?] maxLength
-	/*
-	 * The pattern of the plain literal (https://www.w3.org/TR/xmlschema-2/#regexs)
-	 */
-	Pattern[?] pattern
-	/*
-	 * The language of the plain literal (http://www.rfc-editor.org/rfc/bcp/bcp47.txt)
-	 */
-	Language[?] language
-}
-
-/*
  * A data range that specifies how one binary scalar adds facet restrictions to another.
  * Applies when the restricted scalar represents binary data (OWL2: 4.5)
  * i.e., when it is one of the following scalars (or their transitively restricted ones):
@@ -1118,6 +1024,109 @@ class IRIScalarRestriction extends RestrictedDataRange {
 }
 
 /*
+ * A data range that specifies how one numeric scalar range adds facet restrictions to another.
+ * Applies when the restricted scalar represents real, decimal or integer numbers (OWL2: 4.1/4.2)
+ * i.e., when it is one of the following scalars (or their transitively restricted ones):
+ * owl:real
+ * owl:rational
+ * xsd:decimal
+ * xsd:integer
+ * xsd:nonNegativeInteger
+ * xsd:nonPositiveInteger
+ * xsd:positiveInteger
+ * xsd:negativeInteger
+ * xsd:long
+ * xsd:int
+ * xsd:short
+ * xsd:byte
+ * xsd:unsignedLong
+ * xsd:unsignedInt
+ * xsd:unsignedShort
+ * xsd:unsignedByte
+ * xsd:double
+ * xsd:float
+ */
+class NumericScalarRestriction extends RestrictedDataRange {
+	/*
+	 * The inclusive minimum value in the range
+	 */
+	LexicalNumber[?] minInclusive
+	/*
+	 * The inclusive maximum value in the range
+	 */
+	LexicalNumber[?] maxInclusive
+	/*
+	 * The exclusive minimum value in the range
+	 */
+	LexicalNumber[?] minExclusive
+	/*
+	 * The exclusive maximum value in the range
+	 */
+	LexicalNumber[?] maxExclusive
+}
+
+/*
+ * A data range that specifies how one plain literal scalar adds facet restrictions to another.
+ * Applies when the restricted scalar represents plain literals (OWL2: 4.3)
+ * i.e., when it is one of the following scalars (or their transitively restricted ones):
+ * rdf:PlainLiteral
+ */
+class PlainLiteralScalarRestriction extends RestrictedDataRange {
+	/*
+	 * The length of the plain literal
+	 */
+	int[?] length
+	/*
+	 * The minimum length of the plain literal
+	 */
+	int[?] minLength
+	/*
+	 * The maximum length of the plain literal
+	 */
+	int[?] maxLength
+	/*
+	 * The pattern of the plain literal (https://www.w3.org/TR/xmlschema-2/#regexs)
+	 */
+	Pattern[?] pattern
+	/*
+	 * The language of the plain literal (http://www.rfc-editor.org/rfc/bcp/bcp47.txt)
+	 */
+	Language[?] language
+}
+
+/*
+ * A data range that specifies how one string scalar adds facet restrictions to another.
+ * Applies when the restricted scalar represents strings (OWL2: 4.3)
+ * i.e., when it is one of the following scalars (or their transitively restricted ones):
+ * xsd:string
+ * xsd:normalizedString
+ * xsd:token
+ * xsd:language
+ * xsd:Name
+ * xsd:NCName
+ * xsd:NMTOKEN
+ * xsd:length, xsd:minLength, xsd:maxLength, xsd:pattern
+ */
+class StringScalarRestriction extends RestrictedDataRange {
+	/*
+	 * The length of the string
+	 */
+	int[?] length
+	/*
+	 * The minimum length of the string
+	 */
+	int[?] minLength
+	/*
+	 * The maximum length of the string
+	 */
+	int[?] maxLength
+	/*
+	 * The pattern of the string (https://www.w3.org/TR/xmlschema-2/#regexs)
+	 */
+	Pattern[?] pattern
+}
+
+/*
  * A data range that specifies how one time scalar adds facet restrictions to another.
  * Applies when the restricted scalar represents time instants (OWL2: 4.7)
  * i.e., when it is one of the following scalars (or their transitively restricted ones):
@@ -1142,6 +1151,11 @@ class TimeScalarRestriction extends RestrictedDataRange {
 	 */
 	LexicalTime[?] maxExclusive
 }
+
+/*
+ * A data range that is defined as a synonym for another (i.e. the restrictedRange).
+ */
+class SynonymScalarRestriction extends RestrictedDataRange {}
 
 /*
  * A data range that specifies how a scalar is a restricted set of literal values of another.

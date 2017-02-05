@@ -152,6 +152,14 @@ public class OMLAdapterFactory extends AdapterFactoryImpl {
 				return createTermAdapter();
 			}
 			@Override
+			public Adapter caseUnaryTerm(UnaryTerm object) {
+				return createUnaryTermAdapter();
+			}
+			@Override
+			public Adapter caseDirectedBinaryRelationship(DirectedBinaryRelationship object) {
+				return createDirectedBinaryRelationshipAdapter();
+			}
+			@Override
 			public Adapter caseEntity(Entity object) {
 				return createEntityAdapter();
 			}
@@ -340,22 +348,6 @@ public class OMLAdapterFactory extends AdapterFactoryImpl {
 				return createRestrictedDataRangeAdapter();
 			}
 			@Override
-			public Adapter caseSynonymScalarRestriction(SynonymScalarRestriction object) {
-				return createSynonymScalarRestrictionAdapter();
-			}
-			@Override
-			public Adapter caseNumericScalarRestriction(NumericScalarRestriction object) {
-				return createNumericScalarRestrictionAdapter();
-			}
-			@Override
-			public Adapter caseStringScalarRestriction(StringScalarRestriction object) {
-				return createStringScalarRestrictionAdapter();
-			}
-			@Override
-			public Adapter casePlainLiteralScalarRestriction(PlainLiteralScalarRestriction object) {
-				return createPlainLiteralScalarRestrictionAdapter();
-			}
-			@Override
 			public Adapter caseBinaryScalarRestriction(BinaryScalarRestriction object) {
 				return createBinaryScalarRestrictionAdapter();
 			}
@@ -364,8 +356,24 @@ public class OMLAdapterFactory extends AdapterFactoryImpl {
 				return createIRIScalarRestrictionAdapter();
 			}
 			@Override
+			public Adapter caseNumericScalarRestriction(NumericScalarRestriction object) {
+				return createNumericScalarRestrictionAdapter();
+			}
+			@Override
+			public Adapter casePlainLiteralScalarRestriction(PlainLiteralScalarRestriction object) {
+				return createPlainLiteralScalarRestrictionAdapter();
+			}
+			@Override
+			public Adapter caseStringScalarRestriction(StringScalarRestriction object) {
+				return createStringScalarRestrictionAdapter();
+			}
+			@Override
 			public Adapter caseTimeScalarRestriction(TimeScalarRestriction object) {
 				return createTimeScalarRestrictionAdapter();
+			}
+			@Override
+			public Adapter caseSynonymScalarRestriction(SynonymScalarRestriction object) {
+				return createSynonymScalarRestrictionAdapter();
 			}
 			@Override
 			public Adapter caseScalarOneOfRestriction(ScalarOneOfRestriction object) {
@@ -616,6 +624,34 @@ public class OMLAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTermAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.UnaryTerm <em>Unary Term</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpl.imce.oml.specification.ecore.UnaryTerm
+	 * @generated
+	 */
+	public Adapter createUnaryTermAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.DirectedBinaryRelationship <em>Directed Binary Relationship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpl.imce.oml.specification.ecore.DirectedBinaryRelationship
+	 * @generated
+	 */
+	public Adapter createDirectedBinaryRelationshipAdapter() {
 		return null;
 	}
 
@@ -1278,62 +1314,6 @@ public class OMLAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.SynonymScalarRestriction <em>Synonym Scalar Restriction</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see jpl.imce.oml.specification.ecore.SynonymScalarRestriction
-	 * @generated
-	 */
-	public Adapter createSynonymScalarRestrictionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.NumericScalarRestriction <em>Numeric Scalar Restriction</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see jpl.imce.oml.specification.ecore.NumericScalarRestriction
-	 * @generated
-	 */
-	public Adapter createNumericScalarRestrictionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.StringScalarRestriction <em>String Scalar Restriction</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see jpl.imce.oml.specification.ecore.StringScalarRestriction
-	 * @generated
-	 */
-	public Adapter createStringScalarRestrictionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction <em>Plain Literal Scalar Restriction</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction
-	 * @generated
-	 */
-	public Adapter createPlainLiteralScalarRestrictionAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.BinaryScalarRestriction <em>Binary Scalar Restriction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1362,6 +1342,48 @@ public class OMLAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.NumericScalarRestriction <em>Numeric Scalar Restriction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpl.imce.oml.specification.ecore.NumericScalarRestriction
+	 * @generated
+	 */
+	public Adapter createNumericScalarRestrictionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction <em>Plain Literal Scalar Restriction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction
+	 * @generated
+	 */
+	public Adapter createPlainLiteralScalarRestrictionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.StringScalarRestriction <em>String Scalar Restriction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpl.imce.oml.specification.ecore.StringScalarRestriction
+	 * @generated
+	 */
+	public Adapter createStringScalarRestrictionAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.TimeScalarRestriction <em>Time Scalar Restriction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1372,6 +1394,20 @@ public class OMLAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTimeScalarRestrictionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.SynonymScalarRestriction <em>Synonym Scalar Restriction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpl.imce.oml.specification.ecore.SynonymScalarRestriction
+	 * @generated
+	 */
+	public Adapter createSynonymScalarRestrictionAdapter() {
 		return null;
 	}
 

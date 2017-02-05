@@ -111,13 +111,13 @@ public class OMLFactoryImpl extends EFactoryImpl implements OMLFactory {
 			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM: return (EObject)createEntityScalarDataPropertyExistentialRestrictionAxiom();
 			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM: return (EObject)createEntityScalarDataPropertyUniversalRestrictionAxiom();
 			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM: return (EObject)createEntityScalarDataPropertyParticularRestrictionAxiom();
-			case OMLPackage.SYNONYM_SCALAR_RESTRICTION: return (EObject)createSynonymScalarRestriction();
-			case OMLPackage.NUMERIC_SCALAR_RESTRICTION: return (EObject)createNumericScalarRestriction();
-			case OMLPackage.STRING_SCALAR_RESTRICTION: return (EObject)createStringScalarRestriction();
-			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION: return (EObject)createPlainLiteralScalarRestriction();
 			case OMLPackage.BINARY_SCALAR_RESTRICTION: return (EObject)createBinaryScalarRestriction();
 			case OMLPackage.IRI_SCALAR_RESTRICTION: return (EObject)createIRIScalarRestriction();
+			case OMLPackage.NUMERIC_SCALAR_RESTRICTION: return (EObject)createNumericScalarRestriction();
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION: return (EObject)createPlainLiteralScalarRestriction();
+			case OMLPackage.STRING_SCALAR_RESTRICTION: return (EObject)createStringScalarRestriction();
 			case OMLPackage.TIME_SCALAR_RESTRICTION: return (EObject)createTimeScalarRestriction();
+			case OMLPackage.SYNONYM_SCALAR_RESTRICTION: return (EObject)createSynonymScalarRestriction();
 			case OMLPackage.SCALAR_ONE_OF_RESTRICTION: return (EObject)createScalarOneOfRestriction();
 			case OMLPackage.SCALAR_ONE_OF_LITERAL_AXIOM: return (EObject)createScalarOneOfLiteralAxiom();
 			default:
@@ -540,46 +540,6 @@ public class OMLFactoryImpl extends EFactoryImpl implements OMLFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SynonymScalarRestriction createSynonymScalarRestriction() {
-		SynonymScalarRestrictionImpl synonymScalarRestriction = new SynonymScalarRestrictionImpl();
-		return synonymScalarRestriction;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NumericScalarRestriction createNumericScalarRestriction() {
-		NumericScalarRestrictionImpl numericScalarRestriction = new NumericScalarRestrictionImpl();
-		return numericScalarRestriction;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public StringScalarRestriction createStringScalarRestriction() {
-		StringScalarRestrictionImpl stringScalarRestriction = new StringScalarRestrictionImpl();
-		return stringScalarRestriction;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PlainLiteralScalarRestriction createPlainLiteralScalarRestriction() {
-		PlainLiteralScalarRestrictionImpl plainLiteralScalarRestriction = new PlainLiteralScalarRestrictionImpl();
-		return plainLiteralScalarRestriction;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public BinaryScalarRestriction createBinaryScalarRestriction() {
 		BinaryScalarRestrictionImpl binaryScalarRestriction = new BinaryScalarRestrictionImpl();
 		return binaryScalarRestriction;
@@ -600,9 +560,49 @@ public class OMLFactoryImpl extends EFactoryImpl implements OMLFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public NumericScalarRestriction createNumericScalarRestriction() {
+		NumericScalarRestrictionImpl numericScalarRestriction = new NumericScalarRestrictionImpl();
+		return numericScalarRestriction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PlainLiteralScalarRestriction createPlainLiteralScalarRestriction() {
+		PlainLiteralScalarRestrictionImpl plainLiteralScalarRestriction = new PlainLiteralScalarRestrictionImpl();
+		return plainLiteralScalarRestriction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StringScalarRestriction createStringScalarRestriction() {
+		StringScalarRestrictionImpl stringScalarRestriction = new StringScalarRestrictionImpl();
+		return stringScalarRestriction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public TimeScalarRestriction createTimeScalarRestriction() {
 		TimeScalarRestrictionImpl timeScalarRestriction = new TimeScalarRestrictionImpl();
 		return timeScalarRestriction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SynonymScalarRestriction createSynonymScalarRestriction() {
+		SynonymScalarRestrictionImpl synonymScalarRestriction = new SynonymScalarRestrictionImpl();
+		return synonymScalarRestriction;
 	}
 
 	/**

@@ -18,11 +18,16 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import java.lang.reflect.InvocationTargetException;
+
 import jpl.imce.oml.specification.ecore.Entity;
 import jpl.imce.oml.specification.ecore.EntityRelationship;
 import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.Term;
 
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -53,7 +58,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public abstract class EntityRelationshipImpl extends TermImpl implements EntityRelationship {
+public abstract class EntityRelationshipImpl extends DirectedBinaryRelationshipImpl implements EntityRelationship {
 	/**
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -543,6 +548,24 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Term relationDomain() {
+		return this.getSource();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Term relationRange() {
+		return this.getTarget();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -696,6 +719,22 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 				return isTransitive != IS_TRANSITIVE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OMLPackage.ENTITY_RELATIONSHIP___RELATION_DOMAIN:
+				return relationDomain();
+			case OMLPackage.ENTITY_RELATIONSHIP___RELATION_RANGE:
+				return relationRange();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -1209,13 +1209,13 @@ public class OMLItemProviderAdapterFactory extends OMLAdapterFactory implements 
 		if (entityScalarDataPropertyExistentialRestrictionAxiomItemProvider != null) entityScalarDataPropertyExistentialRestrictionAxiomItemProvider.dispose();
 		if (entityScalarDataPropertyUniversalRestrictionAxiomItemProvider != null) entityScalarDataPropertyUniversalRestrictionAxiomItemProvider.dispose();
 		if (entityScalarDataPropertyParticularRestrictionAxiomItemProvider != null) entityScalarDataPropertyParticularRestrictionAxiomItemProvider.dispose();
-		if (synonymScalarRestrictionItemProvider != null) synonymScalarRestrictionItemProvider.dispose();
-		if (numericScalarRestrictionItemProvider != null) numericScalarRestrictionItemProvider.dispose();
-		if (stringScalarRestrictionItemProvider != null) stringScalarRestrictionItemProvider.dispose();
-		if (plainLiteralScalarRestrictionItemProvider != null) plainLiteralScalarRestrictionItemProvider.dispose();
 		if (binaryScalarRestrictionItemProvider != null) binaryScalarRestrictionItemProvider.dispose();
 		if (iriScalarRestrictionItemProvider != null) iriScalarRestrictionItemProvider.dispose();
+		if (numericScalarRestrictionItemProvider != null) numericScalarRestrictionItemProvider.dispose();
+		if (plainLiteralScalarRestrictionItemProvider != null) plainLiteralScalarRestrictionItemProvider.dispose();
+		if (stringScalarRestrictionItemProvider != null) stringScalarRestrictionItemProvider.dispose();
 		if (timeScalarRestrictionItemProvider != null) timeScalarRestrictionItemProvider.dispose();
+		if (synonymScalarRestrictionItemProvider != null) synonymScalarRestrictionItemProvider.dispose();
 		if (scalarOneOfRestrictionItemProvider != null) scalarOneOfRestrictionItemProvider.dispose();
 		if (scalarOneOfLiteralAxiomItemProvider != null) scalarOneOfLiteralAxiomItemProvider.dispose();
 	}

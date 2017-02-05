@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public abstract class DatatypeImpl extends TermImpl implements Datatype {
+public abstract class DatatypeImpl extends UnaryTermImpl implements Datatype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
