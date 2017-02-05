@@ -29,7 +29,7 @@ package jpl.imce.oml.specification.ecore;
  * @model abstract="true"
  * @generated
  */
-public interface DataRelationship extends DirectedBinaryRelationship {
+public interface DataRelationship extends Term, DirectedBinaryRelationshipKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

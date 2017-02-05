@@ -199,25 +199,15 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OMLPackage.UNARY_TERM: {
-				UnaryTerm unaryTerm = (UnaryTerm)theEObject;
-				T result = caseUnaryTerm(unaryTerm);
-				if (result == null) result = caseTerm(unaryTerm);
-				if (result == null) result = caseTerminologyBoxStatement(unaryTerm);
-				if (result == null) result = caseResource(unaryTerm);
-				if (result == null) result = caseTerminologyStatement(unaryTerm);
-				if (result == null) result = caseTerminologyThing(unaryTerm);
+			case OMLPackage.UNARY_TERM_KIND: {
+				UnaryTermKind unaryTermKind = (UnaryTermKind)theEObject;
+				T result = caseUnaryTermKind(unaryTermKind);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OMLPackage.DIRECTED_BINARY_RELATIONSHIP: {
-				DirectedBinaryRelationship directedBinaryRelationship = (DirectedBinaryRelationship)theEObject;
-				T result = caseDirectedBinaryRelationship(directedBinaryRelationship);
-				if (result == null) result = caseTerm(directedBinaryRelationship);
-				if (result == null) result = caseTerminologyBoxStatement(directedBinaryRelationship);
-				if (result == null) result = caseResource(directedBinaryRelationship);
-				if (result == null) result = caseTerminologyStatement(directedBinaryRelationship);
-				if (result == null) result = caseTerminologyThing(directedBinaryRelationship);
+			case OMLPackage.DIRECTED_BINARY_RELATIONSHIP_KIND: {
+				DirectedBinaryRelationshipKind directedBinaryRelationshipKind = (DirectedBinaryRelationshipKind)theEObject;
+				T result = caseDirectedBinaryRelationshipKind(directedBinaryRelationshipKind);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -236,7 +226,7 @@ public class OMLSwitch<T> extends Switch<T> {
 				Aspect aspect = (Aspect)theEObject;
 				T result = caseAspect(aspect);
 				if (result == null) result = caseEntity(aspect);
-				if (result == null) result = caseUnaryTerm(aspect);
+				if (result == null) result = caseUnaryTermKind(aspect);
 				if (result == null) result = caseTerm(aspect);
 				if (result == null) result = caseTerminologyBoxStatement(aspect);
 				if (result == null) result = caseResource(aspect);
@@ -249,7 +239,7 @@ public class OMLSwitch<T> extends Switch<T> {
 				Concept concept = (Concept)theEObject;
 				T result = caseConcept(concept);
 				if (result == null) result = caseEntity(concept);
-				if (result == null) result = caseUnaryTerm(concept);
+				if (result == null) result = caseUnaryTermKind(concept);
 				if (result == null) result = caseTerm(concept);
 				if (result == null) result = caseTerminologyBoxStatement(concept);
 				if (result == null) result = caseResource(concept);
@@ -261,8 +251,8 @@ public class OMLSwitch<T> extends Switch<T> {
 			case OMLPackage.ENTITY_RELATIONSHIP: {
 				EntityRelationship entityRelationship = (EntityRelationship)theEObject;
 				T result = caseEntityRelationship(entityRelationship);
-				if (result == null) result = caseDirectedBinaryRelationship(entityRelationship);
 				if (result == null) result = caseTerm(entityRelationship);
+				if (result == null) result = caseDirectedBinaryRelationshipKind(entityRelationship);
 				if (result == null) result = caseTerminologyBoxStatement(entityRelationship);
 				if (result == null) result = caseResource(entityRelationship);
 				if (result == null) result = caseTerminologyStatement(entityRelationship);
@@ -275,8 +265,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				T result = caseReifiedRelationship(reifiedRelationship);
 				if (result == null) result = caseEntityRelationship(reifiedRelationship);
 				if (result == null) result = caseEntity(reifiedRelationship);
-				if (result == null) result = caseDirectedBinaryRelationship(reifiedRelationship);
 				if (result == null) result = caseTerm(reifiedRelationship);
+				if (result == null) result = caseDirectedBinaryRelationshipKind(reifiedRelationship);
 				if (result == null) result = caseTerminologyBoxStatement(reifiedRelationship);
 				if (result == null) result = caseResource(reifiedRelationship);
 				if (result == null) result = caseTerminologyStatement(reifiedRelationship);
@@ -288,8 +278,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				UnreifiedRelationship unreifiedRelationship = (UnreifiedRelationship)theEObject;
 				T result = caseUnreifiedRelationship(unreifiedRelationship);
 				if (result == null) result = caseEntityRelationship(unreifiedRelationship);
-				if (result == null) result = caseDirectedBinaryRelationship(unreifiedRelationship);
 				if (result == null) result = caseTerm(unreifiedRelationship);
+				if (result == null) result = caseDirectedBinaryRelationshipKind(unreifiedRelationship);
 				if (result == null) result = caseTerminologyBoxStatement(unreifiedRelationship);
 				if (result == null) result = caseResource(unreifiedRelationship);
 				if (result == null) result = caseTerminologyStatement(unreifiedRelationship);
@@ -300,8 +290,8 @@ public class OMLSwitch<T> extends Switch<T> {
 			case OMLPackage.DATATYPE: {
 				Datatype datatype = (Datatype)theEObject;
 				T result = caseDatatype(datatype);
-				if (result == null) result = caseUnaryTerm(datatype);
 				if (result == null) result = caseTerm(datatype);
+				if (result == null) result = caseUnaryTermKind(datatype);
 				if (result == null) result = caseTerminologyBoxStatement(datatype);
 				if (result == null) result = caseResource(datatype);
 				if (result == null) result = caseTerminologyStatement(datatype);
@@ -313,8 +303,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				DataRange dataRange = (DataRange)theEObject;
 				T result = caseDataRange(dataRange);
 				if (result == null) result = caseDatatype(dataRange);
-				if (result == null) result = caseUnaryTerm(dataRange);
 				if (result == null) result = caseTerm(dataRange);
+				if (result == null) result = caseUnaryTermKind(dataRange);
 				if (result == null) result = caseTerminologyBoxStatement(dataRange);
 				if (result == null) result = caseResource(dataRange);
 				if (result == null) result = caseTerminologyStatement(dataRange);
@@ -327,8 +317,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				T result = caseScalar(scalar);
 				if (result == null) result = caseDataRange(scalar);
 				if (result == null) result = caseDatatype(scalar);
-				if (result == null) result = caseUnaryTerm(scalar);
 				if (result == null) result = caseTerm(scalar);
+				if (result == null) result = caseUnaryTermKind(scalar);
 				if (result == null) result = caseTerminologyBoxStatement(scalar);
 				if (result == null) result = caseResource(scalar);
 				if (result == null) result = caseTerminologyStatement(scalar);
@@ -339,8 +329,8 @@ public class OMLSwitch<T> extends Switch<T> {
 			case OMLPackage.DATA_RELATIONSHIP: {
 				DataRelationship dataRelationship = (DataRelationship)theEObject;
 				T result = caseDataRelationship(dataRelationship);
-				if (result == null) result = caseDirectedBinaryRelationship(dataRelationship);
 				if (result == null) result = caseTerm(dataRelationship);
+				if (result == null) result = caseDirectedBinaryRelationshipKind(dataRelationship);
 				if (result == null) result = caseTerminologyBoxStatement(dataRelationship);
 				if (result == null) result = caseResource(dataRelationship);
 				if (result == null) result = caseTerminologyStatement(dataRelationship);
@@ -394,10 +384,10 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDataRelationship(entityStructuredDataProperty);
 				if (result == null) result = caseDataRelationshipFromEntity(entityStructuredDataProperty);
 				if (result == null) result = caseDataRelationshipToStructure(entityStructuredDataProperty);
-				if (result == null) result = caseDirectedBinaryRelationship(entityStructuredDataProperty);
+				if (result == null) result = caseTerm(entityStructuredDataProperty);
+				if (result == null) result = caseDirectedBinaryRelationshipKind(entityStructuredDataProperty);
 				if (result == null) result = caseDataRelationshipDomain(entityStructuredDataProperty);
 				if (result == null) result = caseDataRelationshipRange(entityStructuredDataProperty);
-				if (result == null) result = caseTerm(entityStructuredDataProperty);
 				if (result == null) result = caseTerminologyBoxStatement(entityStructuredDataProperty);
 				if (result == null) result = caseResource(entityStructuredDataProperty);
 				if (result == null) result = caseTerminologyStatement(entityStructuredDataProperty);
@@ -411,10 +401,10 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDataRelationship(entityScalarDataProperty);
 				if (result == null) result = caseDataRelationshipFromEntity(entityScalarDataProperty);
 				if (result == null) result = caseDataRelationshipToScalar(entityScalarDataProperty);
-				if (result == null) result = caseDirectedBinaryRelationship(entityScalarDataProperty);
+				if (result == null) result = caseTerm(entityScalarDataProperty);
+				if (result == null) result = caseDirectedBinaryRelationshipKind(entityScalarDataProperty);
 				if (result == null) result = caseDataRelationshipDomain(entityScalarDataProperty);
 				if (result == null) result = caseDataRelationshipRange(entityScalarDataProperty);
-				if (result == null) result = caseTerm(entityScalarDataProperty);
 				if (result == null) result = caseTerminologyBoxStatement(entityScalarDataProperty);
 				if (result == null) result = caseResource(entityScalarDataProperty);
 				if (result == null) result = caseTerminologyStatement(entityScalarDataProperty);
@@ -428,10 +418,10 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDataRelationship(structuredDataProperty);
 				if (result == null) result = caseDataRelationshipFromStructure(structuredDataProperty);
 				if (result == null) result = caseDataRelationshipToStructure(structuredDataProperty);
-				if (result == null) result = caseDirectedBinaryRelationship(structuredDataProperty);
+				if (result == null) result = caseTerm(structuredDataProperty);
+				if (result == null) result = caseDirectedBinaryRelationshipKind(structuredDataProperty);
 				if (result == null) result = caseDataRelationshipDomain(structuredDataProperty);
 				if (result == null) result = caseDataRelationshipRange(structuredDataProperty);
-				if (result == null) result = caseTerm(structuredDataProperty);
 				if (result == null) result = caseTerminologyBoxStatement(structuredDataProperty);
 				if (result == null) result = caseResource(structuredDataProperty);
 				if (result == null) result = caseTerminologyStatement(structuredDataProperty);
@@ -445,10 +435,10 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDataRelationship(scalarDataProperty);
 				if (result == null) result = caseDataRelationshipFromStructure(scalarDataProperty);
 				if (result == null) result = caseDataRelationshipToScalar(scalarDataProperty);
-				if (result == null) result = caseDirectedBinaryRelationship(scalarDataProperty);
+				if (result == null) result = caseTerm(scalarDataProperty);
+				if (result == null) result = caseDirectedBinaryRelationshipKind(scalarDataProperty);
 				if (result == null) result = caseDataRelationshipDomain(scalarDataProperty);
 				if (result == null) result = caseDataRelationshipRange(scalarDataProperty);
-				if (result == null) result = caseTerm(scalarDataProperty);
 				if (result == null) result = caseTerminologyBoxStatement(scalarDataProperty);
 				if (result == null) result = caseResource(scalarDataProperty);
 				if (result == null) result = caseTerminologyStatement(scalarDataProperty);
@@ -460,8 +450,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				Structure structure = (Structure)theEObject;
 				T result = caseStructure(structure);
 				if (result == null) result = caseDatatype(structure);
-				if (result == null) result = caseUnaryTerm(structure);
 				if (result == null) result = caseTerm(structure);
+				if (result == null) result = caseUnaryTermKind(structure);
 				if (result == null) result = caseTerminologyBoxStatement(structure);
 				if (result == null) result = caseResource(structure);
 				if (result == null) result = caseTerminologyStatement(structure);
@@ -727,8 +717,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				T result = caseRestrictedDataRange(restrictedDataRange);
 				if (result == null) result = caseDataRange(restrictedDataRange);
 				if (result == null) result = caseDatatype(restrictedDataRange);
-				if (result == null) result = caseUnaryTerm(restrictedDataRange);
 				if (result == null) result = caseTerm(restrictedDataRange);
+				if (result == null) result = caseUnaryTermKind(restrictedDataRange);
 				if (result == null) result = caseTerminologyBoxStatement(restrictedDataRange);
 				if (result == null) result = caseResource(restrictedDataRange);
 				if (result == null) result = caseTerminologyStatement(restrictedDataRange);
@@ -742,8 +732,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseRestrictedDataRange(binaryScalarRestriction);
 				if (result == null) result = caseDataRange(binaryScalarRestriction);
 				if (result == null) result = caseDatatype(binaryScalarRestriction);
-				if (result == null) result = caseUnaryTerm(binaryScalarRestriction);
 				if (result == null) result = caseTerm(binaryScalarRestriction);
+				if (result == null) result = caseUnaryTermKind(binaryScalarRestriction);
 				if (result == null) result = caseTerminologyBoxStatement(binaryScalarRestriction);
 				if (result == null) result = caseResource(binaryScalarRestriction);
 				if (result == null) result = caseTerminologyStatement(binaryScalarRestriction);
@@ -757,8 +747,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseRestrictedDataRange(iriScalarRestriction);
 				if (result == null) result = caseDataRange(iriScalarRestriction);
 				if (result == null) result = caseDatatype(iriScalarRestriction);
-				if (result == null) result = caseUnaryTerm(iriScalarRestriction);
 				if (result == null) result = caseTerm(iriScalarRestriction);
+				if (result == null) result = caseUnaryTermKind(iriScalarRestriction);
 				if (result == null) result = caseTerminologyBoxStatement(iriScalarRestriction);
 				if (result == null) result = caseResource(iriScalarRestriction);
 				if (result == null) result = caseTerminologyStatement(iriScalarRestriction);
@@ -772,8 +762,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseRestrictedDataRange(numericScalarRestriction);
 				if (result == null) result = caseDataRange(numericScalarRestriction);
 				if (result == null) result = caseDatatype(numericScalarRestriction);
-				if (result == null) result = caseUnaryTerm(numericScalarRestriction);
 				if (result == null) result = caseTerm(numericScalarRestriction);
+				if (result == null) result = caseUnaryTermKind(numericScalarRestriction);
 				if (result == null) result = caseTerminologyBoxStatement(numericScalarRestriction);
 				if (result == null) result = caseResource(numericScalarRestriction);
 				if (result == null) result = caseTerminologyStatement(numericScalarRestriction);
@@ -787,8 +777,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseRestrictedDataRange(plainLiteralScalarRestriction);
 				if (result == null) result = caseDataRange(plainLiteralScalarRestriction);
 				if (result == null) result = caseDatatype(plainLiteralScalarRestriction);
-				if (result == null) result = caseUnaryTerm(plainLiteralScalarRestriction);
 				if (result == null) result = caseTerm(plainLiteralScalarRestriction);
+				if (result == null) result = caseUnaryTermKind(plainLiteralScalarRestriction);
 				if (result == null) result = caseTerminologyBoxStatement(plainLiteralScalarRestriction);
 				if (result == null) result = caseResource(plainLiteralScalarRestriction);
 				if (result == null) result = caseTerminologyStatement(plainLiteralScalarRestriction);
@@ -802,8 +792,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseRestrictedDataRange(stringScalarRestriction);
 				if (result == null) result = caseDataRange(stringScalarRestriction);
 				if (result == null) result = caseDatatype(stringScalarRestriction);
-				if (result == null) result = caseUnaryTerm(stringScalarRestriction);
 				if (result == null) result = caseTerm(stringScalarRestriction);
+				if (result == null) result = caseUnaryTermKind(stringScalarRestriction);
 				if (result == null) result = caseTerminologyBoxStatement(stringScalarRestriction);
 				if (result == null) result = caseResource(stringScalarRestriction);
 				if (result == null) result = caseTerminologyStatement(stringScalarRestriction);
@@ -817,8 +807,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseRestrictedDataRange(timeScalarRestriction);
 				if (result == null) result = caseDataRange(timeScalarRestriction);
 				if (result == null) result = caseDatatype(timeScalarRestriction);
-				if (result == null) result = caseUnaryTerm(timeScalarRestriction);
 				if (result == null) result = caseTerm(timeScalarRestriction);
+				if (result == null) result = caseUnaryTermKind(timeScalarRestriction);
 				if (result == null) result = caseTerminologyBoxStatement(timeScalarRestriction);
 				if (result == null) result = caseResource(timeScalarRestriction);
 				if (result == null) result = caseTerminologyStatement(timeScalarRestriction);
@@ -832,8 +822,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseRestrictedDataRange(synonymScalarRestriction);
 				if (result == null) result = caseDataRange(synonymScalarRestriction);
 				if (result == null) result = caseDatatype(synonymScalarRestriction);
-				if (result == null) result = caseUnaryTerm(synonymScalarRestriction);
 				if (result == null) result = caseTerm(synonymScalarRestriction);
+				if (result == null) result = caseUnaryTermKind(synonymScalarRestriction);
 				if (result == null) result = caseTerminologyBoxStatement(synonymScalarRestriction);
 				if (result == null) result = caseResource(synonymScalarRestriction);
 				if (result == null) result = caseTerminologyStatement(synonymScalarRestriction);
@@ -847,8 +837,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseRestrictedDataRange(scalarOneOfRestriction);
 				if (result == null) result = caseDataRange(scalarOneOfRestriction);
 				if (result == null) result = caseDatatype(scalarOneOfRestriction);
-				if (result == null) result = caseUnaryTerm(scalarOneOfRestriction);
 				if (result == null) result = caseTerm(scalarOneOfRestriction);
+				if (result == null) result = caseUnaryTermKind(scalarOneOfRestriction);
 				if (result == null) result = caseTerminologyBoxStatement(scalarOneOfRestriction);
 				if (result == null) result = caseResource(scalarOneOfRestriction);
 				if (result == null) result = caseTerminologyStatement(scalarOneOfRestriction);
@@ -1111,32 +1101,32 @@ public class OMLSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Unary Term</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Unary Term Kind</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Unary Term</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Unary Term Kind</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUnaryTerm(UnaryTerm object) {
+	public T caseUnaryTermKind(UnaryTermKind object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Directed Binary Relationship</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Directed Binary Relationship Kind</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Directed Binary Relationship</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Directed Binary Relationship Kind</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDirectedBinaryRelationship(DirectedBinaryRelationship object) {
+	public T caseDirectedBinaryRelationshipKind(DirectedBinaryRelationshipKind object) {
 		return null;
 	}
 

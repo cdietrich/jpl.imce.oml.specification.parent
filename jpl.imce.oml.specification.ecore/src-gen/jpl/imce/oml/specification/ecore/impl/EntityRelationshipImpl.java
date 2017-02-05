@@ -20,6 +20,7 @@ package jpl.imce.oml.specification.ecore.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
+import jpl.imce.oml.specification.ecore.DirectedBinaryRelationshipKind;
 import jpl.imce.oml.specification.ecore.Entity;
 import jpl.imce.oml.specification.ecore.EntityRelationship;
 import jpl.imce.oml.specification.ecore.OMLPackage;
@@ -58,7 +59,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public abstract class EntityRelationshipImpl extends DirectedBinaryRelationshipImpl implements EntityRelationship {
+public abstract class EntityRelationshipImpl extends TermImpl implements EntityRelationship {
 	/**
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -566,6 +567,17 @@ public abstract class EntityRelationshipImpl extends DirectedBinaryRelationshipI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Term relationshipSubject() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -727,12 +739,31 @@ public abstract class EntityRelationshipImpl extends DirectedBinaryRelationshipI
 	 * @generated
 	 */
 	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == DirectedBinaryRelationshipKind.class) {
+			switch (baseOperationID) {
+				case OMLPackage.DIRECTED_BINARY_RELATIONSHIP_KIND___RELATIONSHIP_SUBJECT: return OMLPackage.ENTITY_RELATIONSHIP___RELATIONSHIP_SUBJECT;
+				case OMLPackage.DIRECTED_BINARY_RELATIONSHIP_KIND___RELATION_RANGE: return OMLPackage.ENTITY_RELATIONSHIP___RELATION_RANGE;
+				default: return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case OMLPackage.ENTITY_RELATIONSHIP___RELATION_DOMAIN:
 				return relationDomain();
 			case OMLPackage.ENTITY_RELATIONSHIP___RELATION_RANGE:
 				return relationRange();
+			case OMLPackage.ENTITY_RELATIONSHIP___RELATIONSHIP_SUBJECT:
+				return relationshipSubject();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

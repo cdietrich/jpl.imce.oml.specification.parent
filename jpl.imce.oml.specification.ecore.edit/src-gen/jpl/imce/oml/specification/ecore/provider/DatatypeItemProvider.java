@@ -35,7 +35,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DatatypeItemProvider extends UnaryTermItemProvider {
+public class DatatypeItemProvider extends TermItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

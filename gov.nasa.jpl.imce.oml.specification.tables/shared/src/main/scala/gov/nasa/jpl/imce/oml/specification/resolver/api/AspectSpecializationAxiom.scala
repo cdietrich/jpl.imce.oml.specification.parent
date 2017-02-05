@@ -31,6 +31,8 @@ trait AspectSpecializationAxiom
    */
   val superAspect: Aspect
 
+  def calculateUUID
+  (): java.util.UUID
   /*
    * Get the sub (child) entity
    */

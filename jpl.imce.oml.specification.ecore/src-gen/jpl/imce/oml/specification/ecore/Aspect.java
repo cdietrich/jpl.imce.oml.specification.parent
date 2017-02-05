@@ -29,5 +29,5 @@ package jpl.imce.oml.specification.ecore;
  * @model
  * @generated
  */
-public interface Aspect extends Entity, UnaryTerm {
+public interface Aspect extends Entity, UnaryTermKind {
 } // Aspect

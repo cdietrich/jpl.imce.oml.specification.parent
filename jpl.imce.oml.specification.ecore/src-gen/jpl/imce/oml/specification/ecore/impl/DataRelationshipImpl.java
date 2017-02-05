@@ -22,6 +22,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import jpl.imce.oml.specification.ecore.DataRelationship;
 import jpl.imce.oml.specification.ecore.Datatype;
+import jpl.imce.oml.specification.ecore.DirectedBinaryRelationshipKind;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.Term;
 
@@ -36,7 +37,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public abstract class DataRelationshipImpl extends DirectedBinaryRelationshipImpl implements DataRelationship {
+public abstract class DataRelationshipImpl extends TermImpl implements DataRelationship {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -101,6 +102,34 @@ public abstract class DataRelationshipImpl extends DirectedBinaryRelationshipImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Term relationshipSubject() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == DirectedBinaryRelationshipKind.class) {
+			switch (baseOperationID) {
+				case OMLPackage.DIRECTED_BINARY_RELATIONSHIP_KIND___RELATIONSHIP_SUBJECT: return OMLPackage.DATA_RELATIONSHIP___RELATIONSHIP_SUBJECT;
+				case OMLPackage.DIRECTED_BINARY_RELATIONSHIP_KIND___RELATION_RANGE: return OMLPackage.DATA_RELATIONSHIP___RELATION_RANGE;
+				default: return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
@@ -112,6 +141,8 @@ public abstract class DataRelationshipImpl extends DirectedBinaryRelationshipImp
 				return target();
 			case OMLPackage.DATA_RELATIONSHIP___RELATION_RANGE:
 				return relationRange();
+			case OMLPackage.DATA_RELATIONSHIP___RELATIONSHIP_SUBJECT:
+				return relationshipSubject();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

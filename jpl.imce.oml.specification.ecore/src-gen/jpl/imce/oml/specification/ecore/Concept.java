@@ -35,7 +35,7 @@ package jpl.imce.oml.specification.ecore;
  * @model
  * @generated
  */
-public interface Concept extends Entity, UnaryTerm {
+public interface Concept extends Entity, UnaryTermKind {
 	/**
 	 * Returns the value of the '<em><b>Is Abstract</b></em>' attribute.
 	 * <!-- begin-user-doc -->

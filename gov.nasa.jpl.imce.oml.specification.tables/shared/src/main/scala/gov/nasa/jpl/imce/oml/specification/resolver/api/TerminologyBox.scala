@@ -27,7 +27,6 @@ trait TerminologyBox
 {
 
   override val iri: gov.nasa.jpl.imce.oml.specification.tables.IRI
-  val nsPrefix: gov.nasa.jpl.imce.oml.specification.tables.NamespacePrefix
   val annotations: scala.collection.immutable.SortedSet[Annotation]
   val kind: gov.nasa.jpl.imce.oml.specification.tables.TerminologyGraphKind
   /*
@@ -39,14 +38,20 @@ trait TerminologyBox
    */
   val boxStatements: scala.collection.immutable.SortedSet[TerminologyBoxStatement]
 
+  def extent
+  (): TerminologyExtent
+  def calculateUUID
+  (): java.util.UUID
+  def nsPrefix
+  (): resolver.api.NamespacePrefix
+  def name
+  (): gov.nasa.jpl.imce.oml.specification.tables.LocalName
   def annotationsByProperty
   (): scala.collection.immutable.SortedSet[AnnotationPropertyTable]
   def withAnnotations
-  (a: scala.collection.immutable.SortedSet[AnnotationPropertyTable]
-  ): TerminologyBox
+  (a: scala.collection.immutable.SortedSet[AnnotationPropertyTable]): TerminologyBox
   def withBoxStatements
-  (s: scala.collection.immutable.SortedSet[TerminologyBoxStatement]
-  ): TerminologyBox
+  (s: scala.collection.immutable.SortedSet[TerminologyBoxStatement]): TerminologyBox
   /*
    * The subset of statements that are entities.
    */

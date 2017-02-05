@@ -17,13 +17,11 @@
  */
 package jpl.imce.oml.specification.validation;
 
-import jpl.imce.oml.specification.validation.AbstractOntologicalModelingLanguageValidator;
-
 /**
  * This class contains custom validation rules.
  * 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 @SuppressWarnings("all")
-public class OntologicalModelingLanguageValidator extends AbstractOntologicalModelingLanguageValidator {
+public class OntologicalModelingLanguageValidator /* implements AbstractOntologicalModelingLanguageValidator  */{
 }

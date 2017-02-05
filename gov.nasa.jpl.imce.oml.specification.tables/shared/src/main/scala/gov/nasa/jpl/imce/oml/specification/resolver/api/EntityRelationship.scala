@@ -20,6 +20,7 @@ package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 trait EntityRelationship
   extends Term
+  with DirectedBinaryRelationshipKind
 {
 
   val source: Entity
@@ -60,4 +61,9 @@ trait EntityRelationship
    * Whether this relationship is transitive
    */
   val isTransitive: scala.Boolean
+
+  def relationDomain
+  (): Term
+  def relationRange
+  (): Term
 }

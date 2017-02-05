@@ -46,9 +46,17 @@ because Gradle feels like SBT without compile-time type checking and operates in
 ## Continuous Integration
 
 For continuous integration & development, this project should be buildable from a shell (unix/cygwin) using gradle.
-For example, the following will build all sub-projects:
+The first step involves installing an Eclipse target platform according to the features defined in [tooling-e46.target](tooling-e46.target).
 
 	% cd .../jpl.imce.oml.specification.parent
+	% gradle :installTargetPlatform
+	
+This can take a while....
+
+The target is installed in ` ~/.tooling/eclipse/targetPlatforms/46`
+
+The second step is to build the remaining projects:
+
 	% gradle build
 
 

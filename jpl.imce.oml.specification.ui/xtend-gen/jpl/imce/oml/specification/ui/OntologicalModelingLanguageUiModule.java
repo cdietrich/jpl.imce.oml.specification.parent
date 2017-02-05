@@ -13,7 +13,7 @@ import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor;
 @FinalFieldsConstructor
 @SuppressWarnings("all")
 public class OntologicalModelingLanguageUiModule extends AbstractOntologicalModelingLanguageUiModule {
-  public OntologicalModelingLanguageUiModule(final AbstractUIPlugin arg0) {
-    super(arg0);
+  public OntologicalModelingLanguageUiModule(final AbstractUIPlugin plugin) {
+    super(plugin);
   }
 }

@@ -3,21 +3,12 @@
  */
 package jpl.imce.oml.specification.idea;
 
-import com.google.inject.Guice;
 import com.google.inject.Injector;
-import com.google.inject.Module;
-import jpl.imce.oml.specification.OntologicalModelingLanguageRuntimeModule;
-import jpl.imce.oml.specification.OntologicalModelingLanguageStandaloneSetupGenerated;
-import jpl.imce.oml.specification.idea.OntologicalModelingLanguageIdeaModule;
-import org.eclipse.xtext.util.Modules2;
 
 @SuppressWarnings("all")
-public class OntologicalModelingLanguageStandaloneSetupIdea extends OntologicalModelingLanguageStandaloneSetupGenerated {
-  @Override
+public class OntologicalModelingLanguageStandaloneSetupIdea /* implements OntologicalModelingLanguageStandaloneSetupGenerated  */{
   public Injector createInjector() {
-    final OntologicalModelingLanguageRuntimeModule runtimeModule = new OntologicalModelingLanguageRuntimeModule();
-    final OntologicalModelingLanguageIdeaModule ideaModule = new OntologicalModelingLanguageIdeaModule();
-    final Module mergedModule = Modules2.mixin(runtimeModule, ideaModule);
-    return Guice.createInjector(mergedModule);
+    throw new Error("Unresolved compilation problems:"
+      + "\nType mismatch: cannot convert from OntologicalModelingLanguageRuntimeModule to Module");
   }
 }

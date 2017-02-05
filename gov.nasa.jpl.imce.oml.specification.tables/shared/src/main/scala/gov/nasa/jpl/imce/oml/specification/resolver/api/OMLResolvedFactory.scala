@@ -40,8 +40,7 @@ trait OMLResolvedFactory {
   // AnnotationProperty
   
   def createAnnotationProperty
-  ( uuid: java.util.UUID,
-    iri: gov.nasa.jpl.imce.oml.specification.tables.IRI,
+  ( iri: gov.nasa.jpl.imce.oml.specification.tables.IRI,
     abbrevIRI: gov.nasa.jpl.imce.oml.specification.tables.AbbrevIRI )
   : AnnotationProperty
   
@@ -94,11 +93,10 @@ trait OMLResolvedFactory {
   def createBundle
   ( uuid: java.util.UUID,
     kind: gov.nasa.jpl.imce.oml.specification.tables.TerminologyGraphKind,
-    name: gov.nasa.jpl.imce.oml.specification.tables.LocalName,
     iri: gov.nasa.jpl.imce.oml.specification.tables.IRI,
-    nsPrefix: gov.nasa.jpl.imce.oml.specification.tables.NamespacePrefix,
     annotations: scala.collection.immutable.SortedSet[Annotation],
     boxStatements: scala.collection.immutable.SortedSet[TerminologyBoxStatement],
+    bundleExtent: TerminologyExtent,
     bundleStatements: scala.collection.immutable.SortedSet[TerminologyBundleStatement],
     terminologyBoxAxioms: scala.collection.immutable.SortedSet[TerminologyBoxAxiom],
     terminologyBundleAxioms: scala.collection.immutable.SortedSet[TerminologyBundleAxiom] )
@@ -439,11 +437,10 @@ trait OMLResolvedFactory {
   def createTerminologyGraph
   ( uuid: java.util.UUID,
     kind: gov.nasa.jpl.imce.oml.specification.tables.TerminologyGraphKind,
-    name: gov.nasa.jpl.imce.oml.specification.tables.LocalName,
     iri: gov.nasa.jpl.imce.oml.specification.tables.IRI,
-    nsPrefix: gov.nasa.jpl.imce.oml.specification.tables.NamespacePrefix,
     annotations: scala.collection.immutable.SortedSet[Annotation],
     boxStatements: scala.collection.immutable.SortedSet[TerminologyBoxStatement],
+    graphExtent: TerminologyExtent,
     terminologyBoxAxioms: scala.collection.immutable.SortedSet[TerminologyBoxAxiom] )
   : TerminologyGraph
   

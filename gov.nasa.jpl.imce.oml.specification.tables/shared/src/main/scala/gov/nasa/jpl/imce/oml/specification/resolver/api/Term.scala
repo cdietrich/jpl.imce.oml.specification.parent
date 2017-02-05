@@ -23,6 +23,15 @@ trait Term
   with Resource
 {
 
+  override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName
+
+  /*
+   * The UUID of a Term is a Version5 namespace UUID based on the term's IRI.
+   */
+  def calculateUUID
+  (): java.util.UUID
   override def iri
   (): gov.nasa.jpl.imce.oml.specification.tables.IRI
+  def name
+  (): gov.nasa.jpl.imce.oml.specification.tables.LocalName
 }

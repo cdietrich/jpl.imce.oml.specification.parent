@@ -1,0 +1,115 @@
+apply plugin: eclipsebuild.BundlePlugin
+
+dependencies { 
+	compile project(':jpl.imce.oml.specification.ecore')
+	compile 'junit:junit:4.12'
+}
+
+configurations {
+	compile.transitive = true
+	compileClasspath {
+		extendsFrom compile
+	}
+}
+
+xtend {
+	generator {
+		//whether to generate @SuppressWarnings("all"), enabled by default
+		suppressWarningsAnnotation = false
+		//whether to generate the @Generated annotation, disabled by default
+		generatedAnnotation {
+			comment = "/*\n * Copyright 2016 California Institute of Technology (\\\"Caltech\\\").\n * U.S. Government sponsorship acknowledged.\n *\n * Licensed under the Apache License, Version 2.0 (the \\\"License\\\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \\\"AS IS\\\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */"
+			includeDate = true
+		}
+	}
+	debugger {
+		//how to install debug info into generated Java code
+		//SMAP adds Xtend debug info on top of Java
+		//PRIMARY makes Xtend the only debug info (throws away Java line numbers)
+		//default is SMAP for Java projects and PRIMARY for Android
+		sourceInstaller = 'SMAP' //or 'PRIMARY' or 'NONE'
+		//whether to hide synthetic variables in the debugger
+		hideSyntheticVariables = true
+	}
+	validator {
+		//adjust severity of issues
+		//available levels are error, warning, info and ignore
+		error 'org.eclipse.xtend.core.validation.IssueCodes.unused_private_member'
+		// These issue IDs can be found in your Eclipse project's .settings/org.eclipse.xtend.core.Xtend.prefs
+		// after enabling Project > Properties > Xtend > Errors/Warnings: [X] Enable project specific settings
+	}
+}
+
+sourceSets {
+	main {
+		java.srcDirs = ['src', 'xtend-gen']
+		resources.srcDirs = []
+		xtendOutputDir = 'xtend-gen'
+	}
+}
+
+task OMLLoadTest(type: JavaExec, dependsOn: jar) {
+	description 'Test loading the OML Spec'
+	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLLoadTest.xtend')
+	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLUtilities.xtend')
+	
+	classpath sourceSets.main.runtimeClasspath
+	
+	main = "gov.nasa.jpl.imce.oml.specification.scala.generators.OMLLoadTest"
+	args new File('../gov.nasa.jpl.imce.oml.specification.tables').absolutePath
+	
+	doLast {
+		project.logger.warn("# generateOMLSpecificationTables: Done")
+	}
+}
+
+task generateOMLSpecificationTables(type: JavaExec, dependsOn: jar) {
+	description 'Generates multi-language APIs & libraries for the OML tabular interchange representation for Java, JavaScript and Scala'
+	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLSpecificationTablesGenerator.xtend')
+	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLUtilities.xtend')
+	outputs.dir new File('../gov.nasa.jpl.imce.oml.specification.tables/shared/src/main/scala/gov/nasa/jpl/imce/oml/specification/tables')
+	outputs.dir new File('../gov.nasa.jpl.imce.oml.specification.tables/shared/src/main/scala/gov/nasa/jpl/imce/oml/provenance/oti')
+	
+	classpath sourceSets.main.runtimeClasspath
+	
+	main = "gov.nasa.jpl.imce.oml.specification.scala.generators.OMLSpecificationTablesGenerator"
+	args new File('../gov.nasa.jpl.imce.oml.specification.tables').absolutePath
+	
+	doLast {
+		project.logger.warn("# generateOMLSpecificationTables: Done")
+	}
+}
+
+task generateOMLResolverAPI(type: JavaExec, dependsOn: generateOMLSpecificationTables) {
+	description 'Generates the OML Resolver Scala API'
+	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLSpecificationResolverAPIGenerator.xtend')
+	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLUtilities.xtend')
+	outputs.files()
+	
+	classpath sourceSets.main.runtimeClasspath
+	
+	main = "gov.nasa.jpl.imce.oml.specification.scala.generators.OMLSpecificationResolverAPIGenerator"
+	args new File('../gov.nasa.jpl.imce.oml.specification.tables').absolutePath
+	
+	doLast {
+		project.logger.warn("# generateOMLResolverAPI: Done")
+	}
+}
+
+task generateOMLResolverLibrary(type: JavaExec, dependsOn: generateOMLResolverAPI) {
+	description 'Generates the OML Resolver Scala API'
+	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLSpecificationResolverLibraryGenerator.xtend')
+	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLUtilities.xtend')
+	outputs.files()
+	
+	classpath sourceSets.main.runtimeClasspath
+	
+	main = "gov.nasa.jpl.imce.oml.specification.scala.generators.OMLSpecificationResolverLibraryGenerator"
+	
+	doLast {
+		project.logger.warn("# generateOMLResolverLibrary: Done")
+	}
+}
+//this is an eclipse plugin project
+eclipseClasspath.enabled=false
+cleanEclipseClasspath.enabled=false

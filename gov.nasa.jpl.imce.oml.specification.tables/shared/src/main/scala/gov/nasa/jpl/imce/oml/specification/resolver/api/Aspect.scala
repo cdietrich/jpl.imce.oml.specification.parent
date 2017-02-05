@@ -20,5 +20,6 @@ package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 trait Aspect
   extends Entity
+  with UnaryTermKind
 {
 }

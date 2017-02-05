@@ -152,12 +152,12 @@ public class OMLAdapterFactory extends AdapterFactoryImpl {
 				return createTermAdapter();
 			}
 			@Override
-			public Adapter caseUnaryTerm(UnaryTerm object) {
-				return createUnaryTermAdapter();
+			public Adapter caseUnaryTermKind(UnaryTermKind object) {
+				return createUnaryTermKindAdapter();
 			}
 			@Override
-			public Adapter caseDirectedBinaryRelationship(DirectedBinaryRelationship object) {
-				return createDirectedBinaryRelationshipAdapter();
+			public Adapter caseDirectedBinaryRelationshipKind(DirectedBinaryRelationshipKind object) {
+				return createDirectedBinaryRelationshipKindAdapter();
 			}
 			@Override
 			public Adapter caseEntity(Entity object) {
@@ -628,30 +628,30 @@ public class OMLAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.UnaryTerm <em>Unary Term</em>}'.
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.UnaryTermKind <em>Unary Term Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see jpl.imce.oml.specification.ecore.UnaryTerm
+	 * @see jpl.imce.oml.specification.ecore.UnaryTermKind
 	 * @generated
 	 */
-	public Adapter createUnaryTermAdapter() {
+	public Adapter createUnaryTermKindAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.DirectedBinaryRelationship <em>Directed Binary Relationship</em>}'.
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.DirectedBinaryRelationshipKind <em>Directed Binary Relationship Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see jpl.imce.oml.specification.ecore.DirectedBinaryRelationship
+	 * @see jpl.imce.oml.specification.ecore.DirectedBinaryRelationshipKind
 	 * @generated
 	 */
-	public Adapter createDirectedBinaryRelationshipAdapter() {
+	public Adapter createDirectedBinaryRelationshipKindAdapter() {
 		return null;
 	}
 

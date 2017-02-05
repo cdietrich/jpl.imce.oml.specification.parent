@@ -1633,159 +1633,51 @@ public interface OMLPackage extends EPackage {
 	int TERM_OPERATION_COUNT = TERMINOLOGY_BOX_STATEMENT_OPERATION_COUNT + 5;
 
 	/**
-	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.UnaryTermImpl <em>Unary Term</em>}' class.
+	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.UnaryTermKindImpl <em>Unary Term Kind</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see jpl.imce.oml.specification.ecore.impl.UnaryTermImpl
-	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getUnaryTerm()
+	 * @see jpl.imce.oml.specification.ecore.impl.UnaryTermKindImpl
+	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getUnaryTermKind()
 	 * @generated
 	 */
-	int UNARY_TERM = 16;
+	int UNARY_TERM_KIND = 16;
 
 	/**
-	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * The number of structural features of the '<em>Unary Term Kind</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNARY_TERM__UUID = TERM__UUID;
+	int UNARY_TERM_KIND_FEATURE_COUNT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Graph</b></em>' container reference.
+	 * The number of operations of the '<em>Unary Term Kind</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNARY_TERM__GRAPH = TERM__GRAPH;
+	int UNARY_TERM_KIND_OPERATION_COUNT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.DirectedBinaryRelationshipKindImpl <em>Directed Binary Relationship Kind</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpl.imce.oml.specification.ecore.impl.DirectedBinaryRelationshipKindImpl
+	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDirectedBinaryRelationshipKind()
+	 * @generated
+	 */
+	int DIRECTED_BINARY_RELATIONSHIP_KIND = 17;
+
+	/**
+	 * The number of structural features of the '<em>Directed Binary Relationship Kind</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNARY_TERM__NAME = TERM__NAME;
-
-	/**
-	 * The number of structural features of the '<em>Unary Term</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_TERM_FEATURE_COUNT = TERM_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Calculate UUID</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_TERM___CALCULATE_UUID = TERM___CALCULATE_UUID;
-
-	/**
-	 * The operation id for the '<em>Iri</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_TERM___IRI = TERM___IRI;
-
-	/**
-	 * The operation id for the '<em>Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_TERM___NAME = TERM___NAME;
-
-	/**
-	 * The number of operations of the '<em>Unary Term</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_TERM_OPERATION_COUNT = TERM_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.DirectedBinaryRelationshipImpl <em>Directed Binary Relationship</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see jpl.imce.oml.specification.ecore.impl.DirectedBinaryRelationshipImpl
-	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDirectedBinaryRelationship()
-	 * @generated
-	 */
-	int DIRECTED_BINARY_RELATIONSHIP = 17;
-
-	/**
-	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIRECTED_BINARY_RELATIONSHIP__UUID = TERM__UUID;
-
-	/**
-	 * The feature id for the '<em><b>Graph</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIRECTED_BINARY_RELATIONSHIP__GRAPH = TERM__GRAPH;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIRECTED_BINARY_RELATIONSHIP__NAME = TERM__NAME;
-
-	/**
-	 * The number of structural features of the '<em>Directed Binary Relationship</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT = TERM_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Calculate UUID</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIRECTED_BINARY_RELATIONSHIP___CALCULATE_UUID = TERM___CALCULATE_UUID;
-
-	/**
-	 * The operation id for the '<em>Iri</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIRECTED_BINARY_RELATIONSHIP___IRI = TERM___IRI;
-
-	/**
-	 * The operation id for the '<em>Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIRECTED_BINARY_RELATIONSHIP___NAME = TERM___NAME;
+	int DIRECTED_BINARY_RELATIONSHIP_KIND_FEATURE_COUNT = 0;
 
 	/**
 	 * The operation id for the '<em>Relationship Subject</em>' operation.
@@ -1794,7 +1686,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIRECTED_BINARY_RELATIONSHIP___RELATIONSHIP_SUBJECT = TERM_OPERATION_COUNT + 0;
+	int DIRECTED_BINARY_RELATIONSHIP_KIND___RELATIONSHIP_SUBJECT = 0;
 
 	/**
 	 * The operation id for the '<em>Relation Range</em>' operation.
@@ -1803,16 +1695,16 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIRECTED_BINARY_RELATIONSHIP___RELATION_RANGE = TERM_OPERATION_COUNT + 1;
+	int DIRECTED_BINARY_RELATIONSHIP_KIND___RELATION_RANGE = 1;
 
 	/**
-	 * The number of operations of the '<em>Directed Binary Relationship</em>' class.
+	 * The number of operations of the '<em>Directed Binary Relationship Kind</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIRECTED_BINARY_RELATIONSHIP_OPERATION_COUNT = TERM_OPERATION_COUNT + 2;
+	int DIRECTED_BINARY_RELATIONSHIP_KIND_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.EntityImpl <em>Entity</em>}' class.
@@ -2086,7 +1978,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__UUID = DIRECTED_BINARY_RELATIONSHIP__UUID;
+	int ENTITY_RELATIONSHIP__UUID = TERM__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Graph</b></em>' container reference.
@@ -2095,7 +1987,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__GRAPH = DIRECTED_BINARY_RELATIONSHIP__GRAPH;
+	int ENTITY_RELATIONSHIP__GRAPH = TERM__GRAPH;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2104,7 +1996,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__NAME = DIRECTED_BINARY_RELATIONSHIP__NAME;
+	int ENTITY_RELATIONSHIP__NAME = TERM__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -2113,7 +2005,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__SOURCE = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 0;
+	int ENTITY_RELATIONSHIP__SOURCE = TERM_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -2122,7 +2014,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__TARGET = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 1;
+	int ENTITY_RELATIONSHIP__TARGET = TERM_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Is Functional</b></em>' attribute.
@@ -2131,7 +2023,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__IS_FUNCTIONAL = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 2;
+	int ENTITY_RELATIONSHIP__IS_FUNCTIONAL = TERM_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Is Inverse Functional</b></em>' attribute.
@@ -2140,7 +2032,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__IS_INVERSE_FUNCTIONAL = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 3;
+	int ENTITY_RELATIONSHIP__IS_INVERSE_FUNCTIONAL = TERM_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Is Essential</b></em>' attribute.
@@ -2149,7 +2041,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__IS_ESSENTIAL = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 4;
+	int ENTITY_RELATIONSHIP__IS_ESSENTIAL = TERM_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Is Inverse Essential</b></em>' attribute.
@@ -2158,7 +2050,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__IS_INVERSE_ESSENTIAL = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 5;
+	int ENTITY_RELATIONSHIP__IS_INVERSE_ESSENTIAL = TERM_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Is Symmetric</b></em>' attribute.
@@ -2167,7 +2059,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__IS_SYMMETRIC = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 6;
+	int ENTITY_RELATIONSHIP__IS_SYMMETRIC = TERM_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Is Asymmetric</b></em>' attribute.
@@ -2176,7 +2068,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__IS_ASYMMETRIC = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 7;
+	int ENTITY_RELATIONSHIP__IS_ASYMMETRIC = TERM_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Is Reflexive</b></em>' attribute.
@@ -2185,7 +2077,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__IS_REFLEXIVE = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 8;
+	int ENTITY_RELATIONSHIP__IS_REFLEXIVE = TERM_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Is Irreflexive</b></em>' attribute.
@@ -2194,7 +2086,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__IS_IRREFLEXIVE = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 9;
+	int ENTITY_RELATIONSHIP__IS_IRREFLEXIVE = TERM_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Is Transitive</b></em>' attribute.
@@ -2203,7 +2095,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP__IS_TRANSITIVE = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 10;
+	int ENTITY_RELATIONSHIP__IS_TRANSITIVE = TERM_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Entity Relationship</em>' class.
@@ -2212,7 +2104,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP_FEATURE_COUNT = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 11;
+	int ENTITY_RELATIONSHIP_FEATURE_COUNT = TERM_FEATURE_COUNT + 11;
 
 	/**
 	 * The operation id for the '<em>Calculate UUID</em>' operation.
@@ -2221,7 +2113,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP___CALCULATE_UUID = DIRECTED_BINARY_RELATIONSHIP___CALCULATE_UUID;
+	int ENTITY_RELATIONSHIP___CALCULATE_UUID = TERM___CALCULATE_UUID;
 
 	/**
 	 * The operation id for the '<em>Iri</em>' operation.
@@ -2230,7 +2122,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP___IRI = DIRECTED_BINARY_RELATIONSHIP___IRI;
+	int ENTITY_RELATIONSHIP___IRI = TERM___IRI;
 
 	/**
 	 * The operation id for the '<em>Name</em>' operation.
@@ -2239,7 +2131,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP___NAME = DIRECTED_BINARY_RELATIONSHIP___NAME;
+	int ENTITY_RELATIONSHIP___NAME = TERM___NAME;
 
 	/**
 	 * The operation id for the '<em>Relationship Subject</em>' operation.
@@ -2248,7 +2140,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP___RELATIONSHIP_SUBJECT = DIRECTED_BINARY_RELATIONSHIP___RELATIONSHIP_SUBJECT;
+	int ENTITY_RELATIONSHIP___RELATIONSHIP_SUBJECT = TERM_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Relation Domain</em>' operation.
@@ -2257,7 +2149,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP___RELATION_DOMAIN = DIRECTED_BINARY_RELATIONSHIP_OPERATION_COUNT + 0;
+	int ENTITY_RELATIONSHIP___RELATION_DOMAIN = TERM_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Relation Range</em>' operation.
@@ -2266,7 +2158,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP___RELATION_RANGE = DIRECTED_BINARY_RELATIONSHIP_OPERATION_COUNT + 1;
+	int ENTITY_RELATIONSHIP___RELATION_RANGE = TERM_OPERATION_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Entity Relationship</em>' class.
@@ -2275,7 +2167,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_RELATIONSHIP_OPERATION_COUNT = DIRECTED_BINARY_RELATIONSHIP_OPERATION_COUNT + 2;
+	int ENTITY_RELATIONSHIP_OPERATION_COUNT = TERM_OPERATION_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.ReifiedRelationshipImpl <em>Reified Relationship</em>}' class.
@@ -2737,7 +2629,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATATYPE__UUID = UNARY_TERM__UUID;
+	int DATATYPE__UUID = TERM__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Graph</b></em>' container reference.
@@ -2746,7 +2638,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATATYPE__GRAPH = UNARY_TERM__GRAPH;
+	int DATATYPE__GRAPH = TERM__GRAPH;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2755,7 +2647,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATATYPE__NAME = UNARY_TERM__NAME;
+	int DATATYPE__NAME = TERM__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Datatype</em>' class.
@@ -2764,7 +2656,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATATYPE_FEATURE_COUNT = UNARY_TERM_FEATURE_COUNT + 0;
+	int DATATYPE_FEATURE_COUNT = TERM_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Calculate UUID</em>' operation.
@@ -2773,7 +2665,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATATYPE___CALCULATE_UUID = UNARY_TERM___CALCULATE_UUID;
+	int DATATYPE___CALCULATE_UUID = TERM___CALCULATE_UUID;
 
 	/**
 	 * The operation id for the '<em>Iri</em>' operation.
@@ -2782,7 +2674,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATATYPE___IRI = UNARY_TERM___IRI;
+	int DATATYPE___IRI = TERM___IRI;
 
 	/**
 	 * The operation id for the '<em>Name</em>' operation.
@@ -2791,7 +2683,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATATYPE___NAME = UNARY_TERM___NAME;
+	int DATATYPE___NAME = TERM___NAME;
 
 	/**
 	 * The number of operations of the '<em>Datatype</em>' class.
@@ -2800,7 +2692,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATATYPE_OPERATION_COUNT = UNARY_TERM_OPERATION_COUNT + 0;
+	int DATATYPE_OPERATION_COUNT = TERM_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.DataRangeImpl <em>Data Range</em>}' class.
@@ -2983,7 +2875,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_RELATIONSHIP__UUID = DIRECTED_BINARY_RELATIONSHIP__UUID;
+	int DATA_RELATIONSHIP__UUID = TERM__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Graph</b></em>' container reference.
@@ -2992,7 +2884,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_RELATIONSHIP__GRAPH = DIRECTED_BINARY_RELATIONSHIP__GRAPH;
+	int DATA_RELATIONSHIP__GRAPH = TERM__GRAPH;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3001,7 +2893,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_RELATIONSHIP__NAME = DIRECTED_BINARY_RELATIONSHIP__NAME;
+	int DATA_RELATIONSHIP__NAME = TERM__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Data Relationship</em>' class.
@@ -3010,7 +2902,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_RELATIONSHIP_FEATURE_COUNT = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 0;
+	int DATA_RELATIONSHIP_FEATURE_COUNT = TERM_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Calculate UUID</em>' operation.
@@ -3019,7 +2911,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_RELATIONSHIP___CALCULATE_UUID = DIRECTED_BINARY_RELATIONSHIP___CALCULATE_UUID;
+	int DATA_RELATIONSHIP___CALCULATE_UUID = TERM___CALCULATE_UUID;
 
 	/**
 	 * The operation id for the '<em>Iri</em>' operation.
@@ -3028,7 +2920,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_RELATIONSHIP___IRI = DIRECTED_BINARY_RELATIONSHIP___IRI;
+	int DATA_RELATIONSHIP___IRI = TERM___IRI;
 
 	/**
 	 * The operation id for the '<em>Name</em>' operation.
@@ -3037,7 +2929,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_RELATIONSHIP___NAME = DIRECTED_BINARY_RELATIONSHIP___NAME;
+	int DATA_RELATIONSHIP___NAME = TERM___NAME;
 
 	/**
 	 * The operation id for the '<em>Relationship Subject</em>' operation.
@@ -3046,7 +2938,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_RELATIONSHIP___RELATIONSHIP_SUBJECT = DIRECTED_BINARY_RELATIONSHIP___RELATIONSHIP_SUBJECT;
+	int DATA_RELATIONSHIP___RELATIONSHIP_SUBJECT = TERM_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Source</em>' operation.
@@ -3055,7 +2947,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_RELATIONSHIP___SOURCE = DIRECTED_BINARY_RELATIONSHIP_OPERATION_COUNT + 0;
+	int DATA_RELATIONSHIP___SOURCE = TERM_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Relation Domain</em>' operation.
@@ -3064,7 +2956,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_RELATIONSHIP___RELATION_DOMAIN = DIRECTED_BINARY_RELATIONSHIP_OPERATION_COUNT + 1;
+	int DATA_RELATIONSHIP___RELATION_DOMAIN = TERM_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Target</em>' operation.
@@ -3073,7 +2965,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_RELATIONSHIP___TARGET = DIRECTED_BINARY_RELATIONSHIP_OPERATION_COUNT + 2;
+	int DATA_RELATIONSHIP___TARGET = TERM_OPERATION_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Relation Range</em>' operation.
@@ -3082,7 +2974,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_RELATIONSHIP___RELATION_RANGE = DIRECTED_BINARY_RELATIONSHIP_OPERATION_COUNT + 3;
+	int DATA_RELATIONSHIP___RELATION_RANGE = TERM_OPERATION_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Data Relationship</em>' class.
@@ -3091,7 +2983,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_RELATIONSHIP_OPERATION_COUNT = DIRECTED_BINARY_RELATIONSHIP_OPERATION_COUNT + 4;
+	int DATA_RELATIONSHIP_OPERATION_COUNT = TERM_OPERATION_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.DataRelationshipDomainImpl <em>Data Relationship Domain</em>}' class.
@@ -7962,44 +7854,44 @@ public interface OMLPackage extends EPackage {
 	EOperation getTerm__Name();
 
 	/**
-	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.UnaryTerm <em>Unary Term</em>}'.
+	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.UnaryTermKind <em>Unary Term Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Unary Term</em>'.
-	 * @see jpl.imce.oml.specification.ecore.UnaryTerm
+	 * @return the meta object for class '<em>Unary Term Kind</em>'.
+	 * @see jpl.imce.oml.specification.ecore.UnaryTermKind
 	 * @generated
 	 */
-	EClass getUnaryTerm();
+	EClass getUnaryTermKind();
 
 	/**
-	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.DirectedBinaryRelationship <em>Directed Binary Relationship</em>}'.
+	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.DirectedBinaryRelationshipKind <em>Directed Binary Relationship Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Directed Binary Relationship</em>'.
-	 * @see jpl.imce.oml.specification.ecore.DirectedBinaryRelationship
+	 * @return the meta object for class '<em>Directed Binary Relationship Kind</em>'.
+	 * @see jpl.imce.oml.specification.ecore.DirectedBinaryRelationshipKind
 	 * @generated
 	 */
-	EClass getDirectedBinaryRelationship();
+	EClass getDirectedBinaryRelationshipKind();
 
 	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DirectedBinaryRelationship#relationshipSubject() <em>Relationship Subject</em>}' operation.
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DirectedBinaryRelationshipKind#relationshipSubject() <em>Relationship Subject</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Relationship Subject</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.DirectedBinaryRelationship#relationshipSubject()
+	 * @see jpl.imce.oml.specification.ecore.DirectedBinaryRelationshipKind#relationshipSubject()
 	 * @generated
 	 */
-	EOperation getDirectedBinaryRelationship__RelationshipSubject();
+	EOperation getDirectedBinaryRelationshipKind__RelationshipSubject();
 
 	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DirectedBinaryRelationship#relationRange() <em>Relation Range</em>}' operation.
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DirectedBinaryRelationshipKind#relationRange() <em>Relation Range</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Relation Range</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.DirectedBinaryRelationship#relationRange()
+	 * @see jpl.imce.oml.specification.ecore.DirectedBinaryRelationshipKind#relationRange()
 	 * @generated
 	 */
-	EOperation getDirectedBinaryRelationship__RelationRange();
+	EOperation getDirectedBinaryRelationshipKind__RelationRange();
 
 	/**
 	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.Entity <em>Entity</em>}'.
@@ -10568,24 +10460,24 @@ public interface OMLPackage extends EPackage {
 		EOperation TERM___NAME = eINSTANCE.getTerm__Name();
 
 		/**
-		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.UnaryTermImpl <em>Unary Term</em>}' class.
+		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.UnaryTermKindImpl <em>Unary Term Kind</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see jpl.imce.oml.specification.ecore.impl.UnaryTermImpl
-		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getUnaryTerm()
+		 * @see jpl.imce.oml.specification.ecore.impl.UnaryTermKindImpl
+		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getUnaryTermKind()
 		 * @generated
 		 */
-		EClass UNARY_TERM = eINSTANCE.getUnaryTerm();
+		EClass UNARY_TERM_KIND = eINSTANCE.getUnaryTermKind();
 
 		/**
-		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.DirectedBinaryRelationshipImpl <em>Directed Binary Relationship</em>}' class.
+		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.DirectedBinaryRelationshipKindImpl <em>Directed Binary Relationship Kind</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see jpl.imce.oml.specification.ecore.impl.DirectedBinaryRelationshipImpl
-		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDirectedBinaryRelationship()
+		 * @see jpl.imce.oml.specification.ecore.impl.DirectedBinaryRelationshipKindImpl
+		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDirectedBinaryRelationshipKind()
 		 * @generated
 		 */
-		EClass DIRECTED_BINARY_RELATIONSHIP = eINSTANCE.getDirectedBinaryRelationship();
+		EClass DIRECTED_BINARY_RELATIONSHIP_KIND = eINSTANCE.getDirectedBinaryRelationshipKind();
 
 		/**
 		 * The meta object literal for the '<em><b>Relationship Subject</b></em>' operation.
@@ -10593,7 +10485,7 @@ public interface OMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation DIRECTED_BINARY_RELATIONSHIP___RELATIONSHIP_SUBJECT = eINSTANCE.getDirectedBinaryRelationship__RelationshipSubject();
+		EOperation DIRECTED_BINARY_RELATIONSHIP_KIND___RELATIONSHIP_SUBJECT = eINSTANCE.getDirectedBinaryRelationshipKind__RelationshipSubject();
 
 		/**
 		 * The meta object literal for the '<em><b>Relation Range</b></em>' operation.
@@ -10601,7 +10493,7 @@ public interface OMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation DIRECTED_BINARY_RELATIONSHIP___RELATION_RANGE = eINSTANCE.getDirectedBinaryRelationship__RelationRange();
+		EOperation DIRECTED_BINARY_RELATIONSHIP_KIND___RELATION_RANGE = eINSTANCE.getDirectedBinaryRelationshipKind__RelationRange();
 
 		/**
 		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.EntityImpl <em>Entity</em>}' class.

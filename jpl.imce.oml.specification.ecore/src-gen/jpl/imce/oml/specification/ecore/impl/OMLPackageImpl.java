@@ -44,7 +44,7 @@ import jpl.imce.oml.specification.ecore.DataRelationshipRange;
 import jpl.imce.oml.specification.ecore.DataRelationshipToScalar;
 import jpl.imce.oml.specification.ecore.DataRelationshipToStructure;
 import jpl.imce.oml.specification.ecore.Datatype;
-import jpl.imce.oml.specification.ecore.DirectedBinaryRelationship;
+import jpl.imce.oml.specification.ecore.DirectedBinaryRelationshipKind;
 import jpl.imce.oml.specification.ecore.DisjointUnionOfConceptsAxiom;
 import jpl.imce.oml.specification.ecore.Entity;
 import jpl.imce.oml.specification.ecore.EntityExistentialRestrictionAxiom;
@@ -93,7 +93,7 @@ import jpl.imce.oml.specification.ecore.TerminologyNestingAxiom;
 import jpl.imce.oml.specification.ecore.TerminologyStatement;
 import jpl.imce.oml.specification.ecore.TerminologyThing;
 import jpl.imce.oml.specification.ecore.TimeScalarRestriction;
-import jpl.imce.oml.specification.ecore.UnaryTerm;
+import jpl.imce.oml.specification.ecore.UnaryTermKind;
 import jpl.imce.oml.specification.ecore.UnreifiedRelationship;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -231,14 +231,14 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass unaryTermEClass = null;
+	private EClass unaryTermKindEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass directedBinaryRelationshipEClass = null;
+	private EClass directedBinaryRelationshipKindEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1543,8 +1543,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getUnaryTerm() {
-		return unaryTermEClass;
+	public EClass getUnaryTermKind() {
+		return unaryTermKindEClass;
 	}
 
 	/**
@@ -1552,8 +1552,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getDirectedBinaryRelationship() {
-		return directedBinaryRelationshipEClass;
+	public EClass getDirectedBinaryRelationshipKind() {
+		return directedBinaryRelationshipKindEClass;
 	}
 
 	/**
@@ -1561,8 +1561,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getDirectedBinaryRelationship__RelationshipSubject() {
-		return directedBinaryRelationshipEClass.getEOperations().get(0);
+	public EOperation getDirectedBinaryRelationshipKind__RelationshipSubject() {
+		return directedBinaryRelationshipKindEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1570,8 +1570,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getDirectedBinaryRelationship__RelationRange() {
-		return directedBinaryRelationshipEClass.getEOperations().get(1);
+	public EOperation getDirectedBinaryRelationshipKind__RelationRange() {
+		return directedBinaryRelationshipKindEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -3278,11 +3278,11 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		createEOperation(termEClass, TERM___IRI);
 		createEOperation(termEClass, TERM___NAME);
 
-		unaryTermEClass = createEClass(UNARY_TERM);
+		unaryTermKindEClass = createEClass(UNARY_TERM_KIND);
 
-		directedBinaryRelationshipEClass = createEClass(DIRECTED_BINARY_RELATIONSHIP);
-		createEOperation(directedBinaryRelationshipEClass, DIRECTED_BINARY_RELATIONSHIP___RELATIONSHIP_SUBJECT);
-		createEOperation(directedBinaryRelationshipEClass, DIRECTED_BINARY_RELATIONSHIP___RELATION_RANGE);
+		directedBinaryRelationshipKindEClass = createEClass(DIRECTED_BINARY_RELATIONSHIP_KIND);
+		createEOperation(directedBinaryRelationshipKindEClass, DIRECTED_BINARY_RELATIONSHIP_KIND___RELATIONSHIP_SUBJECT);
+		createEOperation(directedBinaryRelationshipKindEClass, DIRECTED_BINARY_RELATIONSHIP_KIND___RELATION_RANGE);
 
 		entityEClass = createEClass(ENTITY);
 
@@ -3560,21 +3560,22 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		terminologyBundleStatementEClass.getESuperTypes().add(this.getTerminologyStatement());
 		termEClass.getESuperTypes().add(this.getTerminologyBoxStatement());
 		termEClass.getESuperTypes().add(this.getResource());
-		unaryTermEClass.getESuperTypes().add(this.getTerm());
-		directedBinaryRelationshipEClass.getESuperTypes().add(this.getTerm());
 		entityEClass.getESuperTypes().add(this.getTerm());
 		aspectEClass.getESuperTypes().add(this.getEntity());
-		aspectEClass.getESuperTypes().add(this.getUnaryTerm());
+		aspectEClass.getESuperTypes().add(this.getUnaryTermKind());
 		conceptEClass.getESuperTypes().add(this.getEntity());
-		conceptEClass.getESuperTypes().add(this.getUnaryTerm());
-		entityRelationshipEClass.getESuperTypes().add(this.getDirectedBinaryRelationship());
+		conceptEClass.getESuperTypes().add(this.getUnaryTermKind());
+		entityRelationshipEClass.getESuperTypes().add(this.getTerm());
+		entityRelationshipEClass.getESuperTypes().add(this.getDirectedBinaryRelationshipKind());
 		reifiedRelationshipEClass.getESuperTypes().add(this.getEntityRelationship());
 		reifiedRelationshipEClass.getESuperTypes().add(this.getEntity());
 		unreifiedRelationshipEClass.getESuperTypes().add(this.getEntityRelationship());
-		datatypeEClass.getESuperTypes().add(this.getUnaryTerm());
+		datatypeEClass.getESuperTypes().add(this.getTerm());
+		datatypeEClass.getESuperTypes().add(this.getUnaryTermKind());
 		dataRangeEClass.getESuperTypes().add(this.getDatatype());
 		scalarEClass.getESuperTypes().add(this.getDataRange());
-		dataRelationshipEClass.getESuperTypes().add(this.getDirectedBinaryRelationship());
+		dataRelationshipEClass.getESuperTypes().add(this.getTerm());
+		dataRelationshipEClass.getESuperTypes().add(this.getDirectedBinaryRelationshipKind());
 		dataRelationshipFromEntityEClass.getESuperTypes().add(this.getDataRelationshipDomain());
 		dataRelationshipFromStructureEClass.getESuperTypes().add(this.getDataRelationshipDomain());
 		dataRelationshipToScalarEClass.getESuperTypes().add(this.getDataRelationshipRange());
@@ -3776,13 +3777,13 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 
 		initEOperation(getTerm__Name(), this.getLocalName(), "name", 1, 1, !IS_UNIQUE, IS_ORDERED);
 
-		initEClass(unaryTermEClass, UnaryTerm.class, "UnaryTerm", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(unaryTermKindEClass, UnaryTermKind.class, "UnaryTermKind", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(directedBinaryRelationshipEClass, DirectedBinaryRelationship.class, "DirectedBinaryRelationship", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(directedBinaryRelationshipKindEClass, DirectedBinaryRelationshipKind.class, "DirectedBinaryRelationshipKind", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEOperation(getDirectedBinaryRelationship__RelationshipSubject(), this.getTerm(), "relationshipSubject", 1, 1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDirectedBinaryRelationshipKind__RelationshipSubject(), this.getTerm(), "relationshipSubject", 1, 1, !IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getDirectedBinaryRelationship__RelationRange(), this.getTerm(), "relationRange", 1, 1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDirectedBinaryRelationshipKind__RelationRange(), this.getTerm(), "relationRange", 1, 1, !IS_UNIQUE, IS_ORDERED);
 
 		initEClass(entityEClass, Entity.class, "Entity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -4064,10 +4065,10 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		// Create annotations
 		// http://www.eclipse.org/emf/2011/Xcore
 		createXcoreAnnotations();
-		// http://imce.jpl.nasa.gov/oml/IsOrderingKey
-		createIsOrderingKeyAnnotations();
 		// http://imce.jpl.nasa.gov/oml/NotSchema
 		createNotSchemaAnnotations();
+		// http://imce.jpl.nasa.gov/oml/IsOrderingKey
+		createIsOrderingKeyAnnotations();
 		// http://imce.jpl.nasa.gov/oml/Collection
 		createCollectionAnnotations();
 		// http://imce.jpl.nasa.gov/oml/ValueTable
@@ -4102,6 +4103,436 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 			 "Scala", "http://imce.jpl.nasa.gov/oml/Scala",
 			 "IsOrderingKey", "http://imce.jpl.nasa.gov/oml/IsOrderingKey",
 			 "CopyConstructor", "http://imce.jpl.nasa.gov/oml/CopyConstructor"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://imce.jpl.nasa.gov/oml/NotSchema</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createNotSchemaAnnotations() {
+		String source = "http://imce.jpl.nasa.gov/oml/NotSchema";	
+		addAnnotation
+		  (getResource__Iri(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyThing__CalculateUUID(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (annotationPropertyTableEClass, 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (annotationEClass, 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (terminologyExtentEClass, 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__Extent(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__CalculateUUID(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__Name(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__AnnotationsByProperty(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__WithAnnotations__EMap(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__WithBoxStatements__EList(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__Entities(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__Aspects(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__Concepts(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__ReifiedRelationships(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__UnreifiedRelationships(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__DataRelationships(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__EntityScalarDataProperties(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__Dataranges(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__Scalars(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__Structures(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__TermAxioms(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__Everything(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox_Annotations(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox_TerminologyBoxAxioms(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox_BoxStatements(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getBundle__Extent(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getBundle__WithAnnotations__EMap(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getBundle__AnnotationsByProperty(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getBundle__WithBundleStatements__EList(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getBundle__WithBoxStatements__EList(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getBundle__Everything(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getBundle_BundleExtent(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getBundle_BundleStatements(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getBundle_TerminologyBundleAxioms(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyGraph__Extent(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyGraph__WithAnnotations__EMap(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyGraph__AnnotationsByProperty(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyGraph__WithBoxStatements__EList(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyGraph_GraphExtent(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerm__CalculateUUID(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerm__Iri(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerm__Name(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerm_Name(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDirectedBinaryRelationshipKind__RelationshipSubject(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDirectedBinaryRelationshipKind__RelationRange(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getEntityRelationship__RelationDomain(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getEntityRelationship__RelationRange(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDataRelationship__Source(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDataRelationship__RelationDomain(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDataRelationship__Target(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDataRelationship__RelationRange(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getEntityStructuredDataProperty__Source(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getEntityStructuredDataProperty__Target(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getEntityScalarDataProperty__Source(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getEntityScalarDataProperty__Target(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getStructuredDataProperty__Source(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getStructuredDataProperty__Target(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getScalarDataProperty__Source(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getScalarDataProperty__Target(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyAxiom__Source(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyAxiom__Target(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getBundledTerminologyAxiom__Source(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getBundledTerminologyAxiom__Target(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getConceptDesignationTerminologyAxiom__DesignationTerminologyGraph(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getConceptDesignationTerminologyAxiom__Source(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getConceptDesignationTerminologyAxiom__Target(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getConceptDesignationTerminologyAxiom_DesignatedTerminology(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyExtensionAxiom__CalculateUUID(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyExtensionAxiom__ExtendingTerminology(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyExtensionAxiom__Source(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyExtensionAxiom__Target(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyNestingAxiom__NestedTerminology(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyNestingAxiom__Source(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyNestingAxiom__Target(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getSpecializationAxiom__Child(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getSpecializationAxiom__Parent(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getAspectSpecializationAxiom__CalculateUUID(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getAspectSpecializationAxiom__Child(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getAspectSpecializationAxiom__Parent(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getConceptSpecializationAxiom__Child(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getConceptSpecializationAxiom__Parent(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getReifiedRelationshipSpecializationAxiom__Child(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getReifiedRelationshipSpecializationAxiom__Parent(), 
+		   source, 
+		   new String[] {
 		   });
 	}
 
@@ -4160,36 +4591,6 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		   });	
 		addAnnotation
 		  (getAnnotation_Value(), 
-		   source, 
-		   new String[] {
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://imce.jpl.nasa.gov/oml/NotSchema</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createNotSchemaAnnotations() {
-		String source = "http://imce.jpl.nasa.gov/oml/NotSchema";	
-		addAnnotation
-		  (annotationPropertyTableEClass, 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (annotationEClass, 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (terminologyExtentEClass, 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getConceptDesignationTerminologyAxiom_DesignatedTerminology(), 
 		   source, 
 		   new String[] {
 		   });
@@ -4427,6 +4828,11 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		   });	
 		addAnnotation
 		  (annotationSubjectPropertyValueEClass, 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__Iri(), 
 		   source, 
 		   new String[] {
 		   });	
@@ -4795,6 +5201,16 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		   });	
 		addAnnotation
 		  (getConceptSpecializationAxiom__Parent(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getReifiedRelationshipSpecializationAxiom__Child(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getReifiedRelationshipSpecializationAxiom__Parent(), 
 		   source, 
 		   new String[] {
 		   });

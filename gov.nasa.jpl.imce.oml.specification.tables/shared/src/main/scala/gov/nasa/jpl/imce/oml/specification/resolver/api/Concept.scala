@@ -20,6 +20,7 @@ package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 trait Concept
   extends Entity
+  with UnaryTermKind
 {
 
   val isAbstract: scala.Boolean

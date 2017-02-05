@@ -34,11 +34,11 @@ trait ReifiedRelationshipSpecializationAxiom
   /*
    * Get the sub (child) entity
    */
-  def child
+  override def child
   (): Term
   /*
    * Get the super (parent) entity
    */
-  def parent
+  override def parent
   (): Term
 }

@@ -20,10 +20,15 @@ package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 trait DataRelationship
   extends Term
+  with DirectedBinaryRelationshipKind
 {
 
   def source
   (): Term
+  def relationDomain
+  (): Term
   def target
   (): Datatype
+  def relationRange
+  (): Term
 }

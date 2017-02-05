@@ -29,6 +29,8 @@ trait TerminologyExtensionAxiom
 
   val extendedTerminology: TerminologyBox
 
+  def calculateUUID
+  (): java.util.UUID
   def extendingTerminology
   (): TerminologyBox
   /*

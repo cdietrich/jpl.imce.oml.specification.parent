@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<psf version="2.0">
-<provider id="org.eclipse.egit.core.GitProvider">
-<project reference="1.0,git@github.com:JPL-IMCE/gov.nasa.jpl.imce.omf.schema.generators.git,master,."/>
-<project reference="1.0,git@github.com:JPL-IMCE/gov.nasa.jpl.imce.omf.schema.specification.git,master,."/>
-<project reference="1.0,git@github.com:JPL-IMCE/jpl.omf.schema.tables.git,master,."/>
-</provider>
-</psf>

@@ -17,8 +17,6 @@
  */
 package jpl.imce.oml.specification.scoping;
 
-import jpl.imce.oml.specification.scoping.AbstractOntologicalModelingLanguageScopeProvider;
-
 /**
  * This class contains custom scoping description.
  * 
@@ -26,5 +24,5 @@ import jpl.imce.oml.specification.scoping.AbstractOntologicalModelingLanguageSco
  * on how and when to use it.
  */
 @SuppressWarnings("all")
-public class OntologicalModelingLanguageScopeProvider extends AbstractOntologicalModelingLanguageScopeProvider {
+public class OntologicalModelingLanguageScopeProvider /* implements AbstractOntologicalModelingLanguageScopeProvider  */{
 }

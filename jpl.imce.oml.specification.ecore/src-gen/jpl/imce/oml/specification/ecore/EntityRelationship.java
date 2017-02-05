@@ -45,7 +45,7 @@ package jpl.imce.oml.specification.ecore;
  * @model abstract="true"
  * @generated
  */
-public interface EntityRelationship extends DirectedBinaryRelationship {
+public interface EntityRelationship extends Term, DirectedBinaryRelationshipKind {
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
 	 * <!-- begin-user-doc -->

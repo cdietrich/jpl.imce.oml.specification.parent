@@ -23,5 +23,8 @@ trait TerminologyThing
 
   val uuid: java.util.UUID
 
+  def calculateUUID
+  (): scala.Option[java.util.UUID]
+
 def canEqual(that: scala.Any): scala.Boolean
 }

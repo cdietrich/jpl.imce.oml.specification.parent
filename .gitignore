@@ -1,4 +1,7 @@
+.boot
 .gradle
+.ivy
+.sbtboot
 *.log
 *._trace
 *.xtendbin

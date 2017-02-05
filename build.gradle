@@ -50,7 +50,7 @@ def eclipseVersionAgnosticDependencies = [
     'org.slf4j.simple'                  : '1.7.2',
     'com.google.guava'                  : '15.0.0',
     'com.google.gson'                   : '2.2.4',
-    'org.junit'                         : '4.11.0',
+    'org.junit'                         : '4.12.0',
     'org.apache.log4j'                  : '1.2.15',
     'org.eclipse.swtbot.eclipse.finder' : '2.2.1',
     'org.eclipse.swtbot.junit4_x'       : '2.2.1',

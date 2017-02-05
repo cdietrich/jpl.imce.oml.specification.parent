@@ -125,6 +125,7 @@ type NamespacePrefix wraps String
 
 abstract class Resource {
 	
+	@NotSchema
 	op IRI[1] iri()
 	
 	op LocalName[1] name()
@@ -135,6 +136,7 @@ abstract class TerminologyThing {
 	@IsOrderingKey
 	derived UUID[1] uuid get { calculateUUID() }
 	
+	@NotSchema
 	op UUID calculateUUID()
 }
 
@@ -243,8 +245,10 @@ class TerminologyExtent {
  */
 abstract class TerminologyBox extends TerminologyThing, Resource {
 	
+	@NotSchema
 	op TerminologyExtent[1] extent()
 	
+	@NotSchema
 	op UUID[1] calculateUUID() { 
 		com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(iri()).toString
 	}
@@ -252,21 +256,26 @@ abstract class TerminologyBox extends TerminologyThing, Resource {
 	@Override
 	id IRI[1] iri
 	
+	@NotFunctionalAPI
 	op IRI[1] iri() { getIri() }
 	
  	op NamespacePrefix[1] nsPrefix() { getIri().substring(1+getIri().lastIndexOf('/')) }
 	
+	@NotSchema
 	op LocalName[1] name() { nsPrefix }
 	
+	@NotSchema
 	@Collection(kind="SortedSet")
 	contains Annotation[] annotations opposite terminology
 	
 	@NotFunctionalAPI
 	op AnnotationSubjectTable[] annotationsBySubject()
 	
+	@NotSchema
 	@Collection(kind="SortedSet")
 	op AnnotationPropertyTable[] annotationsByProperty()
 	
+	@NotSchema
 	op TerminologyBox[1] withAnnotations
 	(@Collection(kind="SortedSet") AnnotationPropertyTable[] a)
 	
@@ -275,57 +284,66 @@ abstract class TerminologyBox extends TerminologyThing, Resource {
 	/*
 	 * The TerminologyBoxAxioms asserted in this TerminologyBox
 	 */
+	@NotSchema
 	@Collection(kind="SortedSet")
 	contains TerminologyBoxAxiom[] terminologyBoxAxioms opposite terminology
 	
 	/*
 	 * The TerminologyBoxStatements asserted in this TerminologyBox
 	 */
+	@NotSchema
 	@Collection(kind="SortedSet")
 	contains TerminologyBoxStatement[] boxStatements opposite graph
 	 
+	@NotSchema
 	op TerminologyBox[1] withBoxStatements
 	(@Collection(kind="SortedSet") TerminologyBoxStatement[] s)
 	
 	/*
 	 * The subset of statements that are entities.
      */
-    @Scala(code="boxStatements.selectByKindOf { case e: Entity => e }")
+    @NotSchema
+	@Scala(code="boxStatements.selectByKindOf { case e: Entity => e }")
 	@Collection(kind="SortedSet")
 	op Entity[] entities()
 	
 	/*
 	 * The subset of statements that are aspects.
      */
-    @Scala(code="boxStatements.selectByKindOf { case a: Aspect => a }")
+    @NotSchema
+	@Scala(code="boxStatements.selectByKindOf { case a: Aspect => a }")
 	@Collection(kind="SortedSet")
 	op Aspect[] aspects()
 	
 	/*
 	 * The subset of statements that are concepts.
      */
-    @Scala(code="boxStatements.selectByKindOf { case c: Concept => c }")
+    @NotSchema
+	@Scala(code="boxStatements.selectByKindOf { case c: Concept => c }")
 	@Collection(kind="SortedSet")
 	op Concept[] concepts()
 	
 	/*
 	 * The subset of statements that are reified relationships.
      */
-    @Scala(code="boxStatements.selectByKindOf { case rr: ReifiedRelationship => rr }")
+    @NotSchema
+	@Scala(code="boxStatements.selectByKindOf { case rr: ReifiedRelationship => rr }")
 	@Collection(kind="SortedSet")
 	op ReifiedRelationship[] reifiedRelationships()
 		
 	/*
 	 * The subset of statements that are unreified relationships.
      */
-    @Scala(code="boxStatements.selectByKindOf { case ur: UnreifiedRelationship => ur }")
+    @NotSchema
+	@Scala(code="boxStatements.selectByKindOf { case ur: UnreifiedRelationship => ur }")
 	@Collection(kind="SortedSet")
 	op UnreifiedRelationship[] unreifiedRelationships()
 	
 	/*
 	 * The subset of statements that are data relationships.
      */
-    @Scala(code="boxStatements.selectByKindOf { case dr: DataRelationship => dr }")
+    @NotSchema
+	@Scala(code="boxStatements.selectByKindOf { case dr: DataRelationship => dr }")
 	@Collection(kind="SortedSet")
 	op DataRelationship[] dataRelationships()
 	
@@ -333,7 +351,8 @@ abstract class TerminologyBox extends TerminologyThing, Resource {
 	 * A map for the subset of statements that are 
 	 * entity scalar data property terms indexed by their uuid.
      */
-    @Scala(code="boxStatements.selectByKindOf { case dp: EntityScalarDataProperty => dp }")
+    @NotSchema
+	@Scala(code="boxStatements.selectByKindOf { case dp: EntityScalarDataProperty => dp }")
 	@Collection(kind="SortedSet")
 	op EntityScalarDataProperty[] entityScalarDataProperties()
 	
@@ -341,7 +360,8 @@ abstract class TerminologyBox extends TerminologyThing, Resource {
 	 * A map for the subset of statements that are 
 	 * data range terms indexed by their uuid.
      */
-    @Scala(code="boxStatements.selectByKindOf { case dr: DataRange => dr }")
+    @NotSchema
+	@Scala(code="boxStatements.selectByKindOf { case dr: DataRange => dr }")
 	@Collection(kind="SortedSet")
 	op DataRange[] dataranges()
 	
@@ -349,7 +369,8 @@ abstract class TerminologyBox extends TerminologyThing, Resource {
 	 * A map for the subset of statements that are 
 	 * scalar datatype terms indexed by their uuid.
      */
-    @Scala(code="boxStatements.selectByKindOf { case s: Scalar => s }")
+    @NotSchema
+	@Scala(code="boxStatements.selectByKindOf { case s: Scalar => s }")
 	@Collection(kind="SortedSet")
 	op Scalar[] scalars()
 	
@@ -357,17 +378,20 @@ abstract class TerminologyBox extends TerminologyThing, Resource {
 	 * A map for the subset of statements that are 
 	 * structured datatype terms indexed by their uuid.
      */
-    @Scala(code="boxStatements.selectByKindOf { case s: Structure => s }")
+    @NotSchema
+	@Scala(code="boxStatements.selectByKindOf { case s: Structure => s }")
 	@Collection(kind="SortedSet")
 	op Structure[] structures()
 	
 	/*
 	 * The subset of axioms about terms.
 	 */
-    @Scala(code="boxStatements.selectByKindOf { case tx: TermAxiom => tx }")
+    @NotSchema
+	@Scala(code="boxStatements.selectByKindOf { case tx: TermAxiom => tx }")
 	@Collection(kind="SortedSet")
 	op TermAxiom[] termAxioms()
 	
+	@NotSchema
 	@Scala(code="scala.collection.immutable.SortedSet.empty[resolver.api.TerminologyThing] ++ boxStatements + this")
 	@Collection(kind="SortedSet")
 	op TerminologyThing[] everything()
@@ -380,15 +404,19 @@ abstract class TerminologyBox extends TerminologyThing, Resource {
  */
 class Bundle extends TerminologyBox {
 		
+	@NotSchema
 	op TerminologyExtent[1] extent() { bundleExtent }
 		
+	@NotSchema
 	container TerminologyExtent[1] bundleExtent opposite bundles
 	
+	@NotSchema
 	@Scala(code="copy(annotations = this.annotations ++ resolver.convertToAnnotations(a))")
 	@Override
 	op Bundle[1] withAnnotations
 	(@Collection(kind="SortedSet") AnnotationPropertyTable[] a)
 	
+	@NotSchema
 	@Scala(code="resolver.groupAnnotationsByProperty(annotations)")
 	@Collection(kind="SortedSet")
 	@Override
@@ -397,24 +425,29 @@ class Bundle extends TerminologyBox {
 	/*
 	 * The TerminologyBundleStatements asserted in this Bundle
 	 */
+	@NotSchema
 	@Collection(kind="SortedSet")
 	contains TerminologyBundleStatement[] bundleStatements opposite bundle
 	
 	/*
 	 * The BundledTerminologyAxioms asserted in this Bundle
 	 */
+	@NotSchema
 	@Collection(kind="SortedSet")
 	contains TerminologyBundleAxiom[] terminologyBundleAxioms opposite terminologyBundle
 			
+	@NotSchema
 	@Scala(code="copy(bundleStatements = this.bundleStatements ++ s)")
 	op Bundle[1] withBundleStatements
 	(@Collection(kind="SortedSet") TerminologyBundleStatement[] s)
 	
+	@NotSchema
 	@Scala(code="copy(boxStatements = this.boxStatements ++ s)")
 	@Override
 	op Bundle[1] withBoxStatements
 	(@Collection(kind="SortedSet") TerminologyBoxStatement[] s)
 
+	@NotSchema
 	@Scala(code="super.everything() ++ bundleStatements + this")
 	@Collection(kind="SortedSet")
 	@Override
@@ -447,20 +480,25 @@ enum TerminologyGraphKind {
  */
 class TerminologyGraph extends TerminologyBox {
 	
+	@NotSchema
 	op TerminologyExtent[1] extent() { graphExtent }
 		
+	@NotSchema
 	container TerminologyExtent[1] graphExtent opposite terminologyGraphs
 	
+	@NotSchema
 	@Scala(code="copy(annotations = this.annotations ++ resolver.convertToAnnotations(a))")
 	@Override
 	op TerminologyGraph[1] withAnnotations
 	(@Collection(kind="SortedSet") AnnotationPropertyTable[] a)
 	
+	@NotSchema
 	@Scala(code="resolver.groupAnnotationsByProperty(annotations)")
 	@Collection(kind="SortedSet")
 	@Override
 	op AnnotationPropertyTable[] annotationsByProperty()	
 	
+	@NotSchema
 	@Scala(code="copy(boxStatements = this.boxStatements ++ s)")
 	@Override
 	op TerminologyGraph[1] withBoxStatements
@@ -484,44 +522,54 @@ abstract class Term extends TerminologyBoxStatement, Resource {
 	/*
 	 * The UUID of a Term is a Version5 namespace UUID based on the term's IRI.
 	 */
+	@NotSchema 
 	op UUID[1] calculateUUID() { 
 		com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(iri()).toString
 	}
 	
 	@Scala(code="graph.iri + \"#\" + name")
+	@NotSchema
 	@Override
 	op IRI[1] iri() { graph.iri() + "#" + name() }
 	
+	@NotSchema
 	@Override
 	id LocalName[1] name
 	
+	@NotSchema
 	op LocalName[1] name() { getName() }
 }
 
-abstract class UnaryTerm extends Term {}
+abstract class UnaryTermKind {}
 
-abstract class DirectedBinaryRelationship extends Term {
+abstract class DirectedBinaryRelationshipKind {
+	
+	@NotSchema
 	op Term[1] relationshipSubject()
+	
+	@NotSchema
 	op Term[1] relationRange()
 }
 
 abstract class Entity extends Term {}
 
-class Aspect extends Entity, UnaryTerm {}
+class Aspect extends Entity, UnaryTermKind {}
 
-class Concept extends Entity, UnaryTerm {
+class Concept extends Entity, UnaryTermKind {
 
 	boolean[1] isAbstract
 }
 
-abstract class EntityRelationship extends DirectedBinaryRelationship {
+abstract class EntityRelationship extends Term, DirectedBinaryRelationshipKind {
 
  	refers Entity[1] source
 
+	@NotSchema
 	op Term[1] relationDomain() { source }
 
  	refers Entity[1] target
 
+	@NotSchema
 	op Term[1] relationRange() { target }
 	
  	/*
@@ -571,7 +619,7 @@ class ReifiedRelationship extends EntityRelationship, Entity {
 class UnreifiedRelationship extends EntityRelationship {}
 
 
-abstract class Datatype extends UnaryTerm {}
+abstract class Datatype extends Term, UnaryTermKind {}
 
 /*
  * Corresponds to an OWL2 DataRange with arity=1.
@@ -583,10 +631,18 @@ abstract class DataRange extends Datatype {}
  */
 class Scalar extends DataRange {}
 
-abstract class DataRelationship extends DirectedBinaryRelationship {
+abstract class DataRelationship extends Term, DirectedBinaryRelationshipKind {
+	
+	@NotSchema
 	op Term[1] source()
+	
+	@NotSchema
 	op Term[1] relationDomain() { source }
+	
+	@NotSchema
 	op Datatype[1] target()
+	
+	@NotSchema
 	op Term[1] relationRange() { target }
 }
 
@@ -611,33 +667,45 @@ abstract class DataRelationshipToStructure extends DataRelationshipRange {
 }
 
 class EntityStructuredDataProperty extends DataRelationship, DataRelationshipFromEntity, DataRelationshipToStructure {
+	
+	@NotSchema
 	@Override
 	op Term[1] source() { domain }
 	
+	@NotSchema
 	@Override
 	op Datatype[1] target() { range }
 }
 
 class EntityScalarDataProperty extends DataRelationship, DataRelationshipFromEntity, DataRelationshipToScalar {
+	
+	@NotSchema
 	@Override
 	op Term[1] source() { domain }
 	
+	@NotSchema
 	@Override
 	op Datatype[1] target() { range }
 }
 
 class StructuredDataProperty extends DataRelationship, DataRelationshipFromStructure, DataRelationshipToStructure {
+	
+	@NotSchema
 	@Override
 	op Term[1] source() { domain }
 	
+	@NotSchema
 	@Override
 	op Datatype[1] target() { range }
 }
 
 class ScalarDataProperty extends DataRelationship, DataRelationshipFromStructure, DataRelationshipToScalar {
+	
+	@NotSchema
 	@Override
 	op Term[1] source() { domain }
 	
+	@NotSchema
 	@Override
 	op Datatype[1] target() { range }
 }
@@ -659,11 +727,13 @@ abstract class TerminologyAxiom extends TerminologyThing {
 	/*
 	 * The source TerminologyBox
 	 */
+	@NotSchema
 	op TerminologyBox[1] source()
 	
 	/*
 	 * The target TerminologyBox
 	 */
+	@NotSchema
 	op TerminologyBox[1] target()
 }
 
@@ -685,7 +755,6 @@ abstract class TerminologyBundleAxiom extends TerminologyAxiom {
 	container Bundle[1] terminologyBundle opposite terminologyBundleAxioms
 
 }
-
 
 /*
  * A ConceptTreeDisjunction represents the root & non-leaf nodes of a concept taxonomy:
@@ -751,18 +820,21 @@ class BundledTerminologyAxiom extends TerminologyBundleAxiom {
 	/*
 	 * The bundle is the source
 	 */
+	@NotSchema
 	@Override
 	op TerminologyBox[1] source() { terminologyBundle }
 	
 	/*
 	 * The bundledTerminology is the target
 	 */
+	@NotSchema
 	@Override
 	op TerminologyBox[1] target() { bundledTerminology }
 }
 
 class ConceptDesignationTerminologyAxiom extends TerminologyBoxAxiom {
 	
+	@NotSchema
 	@Scala(code="terminology match { case g: TerminologyGraph => g }")
 	op TerminologyGraph[1] designationTerminologyGraph()
 	 
@@ -775,12 +847,14 @@ class ConceptDesignationTerminologyAxiom extends TerminologyBoxAxiom {
 	/*
 	 * The designationTerminologyGraph is the source
 	 */
+	@NotSchema
 	@Override
 	op TerminologyBox[1] source() { terminology }
 	
 	/*
 	 * The TerminologyBox that asserts the designatedConcept is the target
 	 */
+	@NotSchema
 	@Override
 	op TerminologyBox[1] target() { designatedTerminology }
 }
@@ -792,11 +866,13 @@ class ConceptDesignationTerminologyAxiom extends TerminologyBoxAxiom {
  */
 class TerminologyExtensionAxiom extends TerminologyBoxAxiom {
 
+	@NotSchema
 	op UUID[1] calculateUUID() { 
 		val namespace = "TerminologyExtensionAxiom(source=" + source().uuid + ",target="+target().uuid+")"
 		com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace).toString
 	}
 	
+	@NotSchema
 	op TerminologyBox[1] extendingTerminology() { terminology }
 	
 	@CopyConstructor
@@ -805,12 +881,14 @@ class TerminologyExtensionAxiom extends TerminologyBoxAxiom {
 	/*
 	 * The extendingTerminology is the source
 	 */
+	@NotSchema
 	@Override
 	op TerminologyBox[1] source() { terminology }
 	
 	/*
 	 * The extendedTerminology is the target
 	 */
+	@NotSchema
 	@Override
 	op TerminologyBox[1] target() { extendedTerminology }
   	
@@ -821,6 +899,7 @@ class TerminologyNestingAxiom extends TerminologyBoxAxiom {
   	@CopyConstructor
 	refers TerminologyBox[1] nestingTerminology
 
+	@NotSchema
 	@Scala(code="terminology match { case g: TerminologyGraph => g }")
 	op TerminologyGraph[1] nestedTerminology()
 
@@ -829,12 +908,14 @@ class TerminologyNestingAxiom extends TerminologyBoxAxiom {
 	/*
 	 * The nestedTerminology is the source
 	 */
+	@NotSchema
 	@Override
 	op TerminologyBox[1] source() { terminology }
 	
 	/*
 	 * The nestingTerminology is the target
 	 */
+	@NotSchema
 	@Override
 	op TerminologyBox[1] target() { nestingTerminology }
   	
@@ -859,15 +940,18 @@ abstract class SpecializationAxiom extends TermAxiom {
 	/*
 	 * Get the sub (child) term
 	 */
+	@NotSchema
 	op Term[1] child()
 	/*
 	 * Get the super (parent) term
 	 */
+	@NotSchema
 	op Term[1] parent()
 }
 
 class AspectSpecializationAxiom extends SpecializationAxiom {
 	
+	@NotSchema
 	op UUID[1] calculateUUID() { 
 		val namespace = "AspectSpecializationAxiom(subEntity=" + subEntity.uuid + ",superAspect="+superAspect.uuid+")"
 		com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace).toString
@@ -884,11 +968,13 @@ class AspectSpecializationAxiom extends SpecializationAxiom {
 	/*
 	 * Get the sub (child) entity
 	 */
+	@NotSchema
 	@Override
 	op Term[1] child() { subEntity }
 	/*
 	 * Get the super (parent) entity
 	 */
+	@NotSchema
 	@Override
 	op Term[1] parent() { superAspect }
 }
@@ -899,11 +985,13 @@ class ConceptSpecializationAxiom extends SpecializationAxiom {
 	/*
 	 * Get the sub (child) entity
 	 */
+	@NotSchema
 	@Override
 	op Term[1] child() { subConcept }
 	/*
 	 * Get the super (parent) entity
 	 */
+	@NotSchema
 	@Override
 	op Term[1] parent() { superConcept }
 }
@@ -920,10 +1008,14 @@ class ReifiedRelationshipSpecializationAxiom extends SpecializationAxiom {
 	/*
 	 * Get the sub (child) entity
 	 */
+	@NotSchema
+	@Override
 	op Term[1] child() { subRelationship }
 	/*
 	 * Get the super (parent) entity
 	 */
+	@NotSchema
+	@Override
 	op Term[1] parent() { superRelationship }
 }
 
