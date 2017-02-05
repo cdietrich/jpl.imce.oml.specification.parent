@@ -1,3 +1,20 @@
+/*
+ * Copyright 2016 California Institute of Technology ("Caltech").
+ * U.S. Government sponsorship acknowledged.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * License Terms
+ */
 package gov.nasa.jpl.imce.oml.specification.scala.generators
 
 import java.io.File
@@ -30,7 +47,7 @@ class OMLSpecificationTablesGenerator {
 	}
 	
 	def generateTables() {
-		val sourceFile = "/gov.nasa.jpl.imce.oml.specification/model/OMLSpecification.xcore"
+		val sourceFile = "/jpl.imce.oml.specification.ecore/model/OMLSpecification.xcore"
 		val targetBundle = "gov.nasa.jpl.imce.oml.specification.tables"
 		
 		val set = new XtextResourceSet();
@@ -55,7 +72,7 @@ class OMLSpecificationTablesGenerator {
 	}
 	
 	def generateProvenance() {
-		val sourceFile = "/gov.nasa.jpl.imce.oml.specification/model/OMLProvenanceOTI.xcore"
+		val sourceFile = "/jpl.imce.oml.specification.ecore/model/OMLProvenanceOTI.xcore"
 		val targetBundle = "gov.nasa.jpl.imce.oml.specification.tables"
 		
 		val set = new XtextResourceSet();
@@ -392,7 +409,7 @@ class OMLSpecificationTablesGenerator {
 	static def Iterable<EStructuralFeature> orderingKeys(EClass eClass) {
 		eClass
 		.getSortedAttributes
-		.filter([EStructuralFeature f | null != f.getEAnnotation("http://imce.jpl.nasa.gov/oml/IsOrderingKey")])
+		.filter([EStructuralFeature f | null !== f.getEAnnotation("http://imce.jpl.nasa.gov/oml/IsOrderingKey")])
 	} 
 	
 	def String generateClassFile(EClass eClass, String packageQName) '''
@@ -656,7 +673,7 @@ class OMLSpecificationTablesGenerator {
 	}
 	
     static def Boolean isFunctionalAPI(ENamedElement e) {
-    	if (e.isSchema && null == e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotFunctionalAPI"))
+    	if (e.isSchema && null === e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotFunctionalAPI"))
     	switch e {
     		EClass:
     		  !e.isAbstract
@@ -668,11 +685,11 @@ class OMLSpecificationTablesGenerator {
     }
      
     static def Boolean isValueTable(ENamedElement e) {
-    	null != e.getEAnnotation("http://imce.jpl.nasa.gov/oml/ValueTable")
+    	null !== e.getEAnnotation("http://imce.jpl.nasa.gov/oml/ValueTable")
     }
    
     static def Boolean isSchema(ENamedElement e) {
-    	null == e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotSchema")
+    	null === e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotSchema")
     }
     
 	static def String doc(ENamedElement e, String indent) {

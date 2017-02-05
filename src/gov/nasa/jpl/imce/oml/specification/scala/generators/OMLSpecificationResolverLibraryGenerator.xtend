@@ -1,3 +1,20 @@
+/*
+ * Copyright 2016 California Institute of Technology ("Caltech").
+ * U.S. Government sponsorship acknowledged.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * License Terms
+ */
 package gov.nasa.jpl.imce.oml.specification.scala.generators
 
 import java.io.File
@@ -26,7 +43,7 @@ import org.eclipse.xtext.nodemodel.util.NodeModelUtils
 class OMLSpecificationResolverLibraryGenerator {
 	
 	def generate() {
-		val sourceFile = "/gov.nasa.jpl.imce.oml.specification/model/OMLSpecification.xcore"
+		val sourceFile = "/jpl.imce.oml.specification.ecore/model/OMLSpecification.xcore"
 		val targetBundle = "gov.nasa.jpl.imce.oml.specification.resolver"
 		
 		val set = new XtextResourceSet();
@@ -158,7 +175,7 @@ class OMLSpecificationResolverLibraryGenerator {
 		.selfAndAllSupertypes
 		.map[EStructuralFeatures]
 		.flatten
-		.filter([EStructuralFeature f | f.isAPI && null != f.getEAnnotation("http://imce.jpl.nasa.gov/oml/IsOrderingKey")])
+		.filter([EStructuralFeature f | f.isAPI && null !== f.getEAnnotation("http://imce.jpl.nasa.gov/oml/IsOrderingKey")])
 		.sortWith(new OMLFeatureCompare())
 	} 
 	
@@ -301,12 +318,12 @@ class OMLSpecificationResolverLibraryGenerator {
 	}
 	
 	static def Boolean isCopyConstructorArgument(EStructuralFeature attribute) {
-		null != attribute.getEAnnotation("http://imce.jpl.nasa.gov/oml/CopyConstructor")
+		null !== attribute.getEAnnotation("http://imce.jpl.nasa.gov/oml/CopyConstructor")
 	}
 	
 	static def String queryName(EOperation op) {
 		val kind = if (op.EParameters.empty) "def" else "def"
-		val decl = if (null != op.getEAnnotation("http://imce.jpl.nasa.gov/oml/Override")) "override "+kind else kind
+		val decl = if (null !== op.getEAnnotation("http://imce.jpl.nasa.gov/oml/Override")) "override "+kind else kind
 		val args = '''«FOR p : op.EParameters SEPARATOR ",\n  "»«p.name»: «p.queryType»«ENDFOR»'''
 		decl+" "+op.name+"\n  ("+args+")"
 	}
@@ -340,7 +357,7 @@ class OMLSpecificationResolverLibraryGenerator {
 	}
 	
     static def Boolean isFunctionalAPIClass(EClass c) {
-    	null == c.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotFunctionalAPI")
+    	null === c.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotFunctionalAPI")
     }
     
 	static def Boolean isRootHierarchyClass(EClass eClass) {
@@ -356,19 +373,19 @@ class OMLSpecificationResolverLibraryGenerator {
 	}
     
 	static def Iterable<EOperation> ScalaOperations(EClass eClass) {
-		eClass.EOperations.filter(op | op.isScala || null != op.xExpressions) 
+		eClass.EOperations.filter(op | op.isScala || null !== op.xExpressions) 
 	}
 	
     static def Boolean isAPI(ENamedElement e) {
-    	null == e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotAPI")
+    	null === e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotAPI")
     }
     
     static def Boolean isSchema(ENamedElement e) {
-    	null == e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotSchema")
+    	null === e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotSchema")
     }
     
     static def Boolean isScala(ENamedElement e) {
-    	null != e.getEAnnotation("http://imce.jpl.nasa.gov/oml/Scala")
+    	null !== e.getEAnnotation("http://imce.jpl.nasa.gov/oml/Scala")
     }
     
     static def String scalaAnnotation(EOperation op) {
@@ -382,11 +399,11 @@ class OMLSpecificationResolverLibraryGenerator {
 	static def String queryBody(EOperation op) {
 		val scalaCode = op.scalaAnnotation
 		val xExpressions = op.xExpressions
-		if (null != scalaCode)
+		if (null !== scalaCode)
 '''{
   «scalaCode»
 }'''
-		else if (null != xExpressions)
+		else if (null !== xExpressions)
 			'''«FOR exp: xExpressions BEFORE "{\n  " SEPARATOR "\n  " AFTER "\n}"»«exp.toScala»«ENDFOR»'''
 	}
 	

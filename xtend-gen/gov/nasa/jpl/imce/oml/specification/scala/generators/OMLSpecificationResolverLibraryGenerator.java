@@ -1,6 +1,22 @@
+/**
+ * Copyright 2016 California Institute of Technology ("Caltech").
+ * U.S. Government sponsorship acknowledged.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * License Terms
+ */
 package gov.nasa.jpl.imce.oml.specification.scala.generators;
 
-import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -9,7 +25,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.EList;
@@ -20,7 +35,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.ENamedElement;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EParameter;
@@ -29,7 +43,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.URIConverter;
 import org.eclipse.emf.ecore.xcore.XOperation;
 import org.eclipse.emf.ecore.xcore.mappings.XcoreMapper;
 import org.eclipse.xtend2.lib.StringConcatenation;
@@ -45,9 +58,7 @@ import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.osgi.framework.Bundle;
 
-@SuppressWarnings("all")
 public class OMLSpecificationResolverLibraryGenerator {
   public static class OMLFeatureCompare implements Comparator<ETypedElement> {
     private final List<String> knownAttributes = Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("graphUUID", "uuid", "axiomUUID", "terminologyUUID", "subjectUUID", "propertyUUID", "kind", "isAbstract", "asymmetric", "essential", "functional", "inverseEssential", "inverseFunctional", "irreflexive", "reflexive", "symmetric", "transitive", "name", "unreifiedPropertyName", "unreifiedInversePropertyName", "iri", "value"));
@@ -86,25 +97,18 @@ public class OMLSpecificationResolverLibraryGenerator {
   
   public void generate() {
     try {
-      final String sourceFile = "/gov.nasa.jpl.imce.oml.specification/model/OMLSpecification.xcore";
+      final String sourceFile = "/jpl.imce.oml.specification.ecore/model/OMLSpecification.xcore";
       final String targetBundle = "gov.nasa.jpl.imce.oml.specification.resolver";
       final XtextResourceSet set = new XtextResourceSet();
-      URIConverter _uRIConverter = set.getURIConverter();
-      Map<URI, URI> _uRIMap = _uRIConverter.getURIMap();
-      Map<URI, URI> _computePlatformURIMap = EcorePlugin.computePlatformURIMap(true);
-      _uRIMap.putAll(_computePlatformURIMap);
+      set.getURIConverter().getURIMap().putAll(EcorePlugin.computePlatformURIMap(true));
       set.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
       final URI sourceURI = URI.createPlatformResourceURI(sourceFile, false);
       final Resource sourceResource = set.getResource(sourceURI, true);
-      EList<EObject> _contents = sourceResource.getContents();
-      Iterable<EPackage> _filter = Iterables.<EPackage>filter(_contents, EPackage.class);
-      final EPackage ePackage = ((EPackage[])Conversions.unwrapArray(_filter, EPackage.class))[0];
+      final EPackage ePackage = ((EPackage[])Conversions.unwrapArray(Iterables.<EPackage>filter(sourceResource.getContents(), EPackage.class), EPackage.class))[0];
       final String targetFolder = "/src/main/scala/gov/nasa/jpl/imce/oml/specification/resolver/impl";
-      Bundle _bundle = Platform.getBundle(targetBundle);
-      final URL targetURL = _bundle.getEntry(targetFolder);
+      final URL targetURL = Platform.getBundle(targetBundle).getEntry(targetFolder);
       final URL folder = FileLocator.toFileURL(targetURL);
-      String _path = folder.getPath();
-      this.generate(ePackage, _path);
+      this.generate(ePackage, folder.getPath());
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -114,25 +118,19 @@ public class OMLSpecificationResolverLibraryGenerator {
     try {
       File _file = new File(((targetFolder + File.separator) + "OMLResolvedFactoryImpl.scala"));
       final FileOutputStream factoryFile = new FileOutputStream(_file);
-      String _generateFactoryFile = this.generateFactoryFile(ePackage, "gov.nasa.jpl.imce.oml.specification.resolver.impl");
-      byte[] _bytes = _generateFactoryFile.getBytes();
-      factoryFile.write(_bytes);
-      EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
-      Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
+      factoryFile.write(this.generateFactoryFile(ePackage, "gov.nasa.jpl.imce.oml.specification.resolver.impl").getBytes());
       final Function1<EClass, Boolean> _function = (EClass it) -> {
         return OMLSpecificationResolverLibraryGenerator.isFunctionalAPIClass(it);
       };
-      Iterable<EClass> _filter_1 = IterableExtensions.<EClass>filter(_filter, _function);
-      for (final EClass eClass : _filter_1) {
+      Iterable<EClass> _filter = IterableExtensions.<EClass>filter(Iterables.<EClass>filter(ePackage.getEClassifiers(), EClass.class), _function);
+      for (final EClass eClass : _filter) {
         {
           String _name = eClass.getName();
           String _plus = ((targetFolder + File.separator) + _name);
           String _plus_1 = (_plus + ".scala");
           File _file_1 = new File(_plus_1);
           final FileOutputStream classFile = new FileOutputStream(_file_1);
-          String _generateClassFile = this.generateClassFile(eClass);
-          byte[] _bytes_1 = _generateClassFile.getBytes();
-          classFile.write(_bytes_1);
+          classFile.write(this.generateClassFile(eClass).getBytes());
         }
       }
     } catch (Throwable _e) {
@@ -143,10 +141,10 @@ public class OMLSpecificationResolverLibraryGenerator {
   public String generateFactoryFile(final EPackage ePackage, final String packageQName) {
     StringConcatenation _builder = new StringConcatenation();
     CharSequence _copyright = this.copyright();
-    _builder.append(_copyright, "");
+    _builder.append(_copyright);
     _builder.newLineIfNotEmpty();
     _builder.append("package ");
-    _builder.append(packageQName, "");
+    _builder.append(packageQName);
     _builder.newLineIfNotEmpty();
     _builder.newLine();
     _builder.append("import gov.nasa.jpl.imce.oml.specification._");
@@ -157,16 +155,14 @@ public class OMLSpecificationResolverLibraryGenerator {
     _builder.append("\t");
     _builder.newLine();
     {
-      Iterable<EClass> _FunctionalAPIClasses = OMLSpecificationResolverLibraryGenerator.FunctionalAPIClasses(ePackage);
       final Function1<EClass, Boolean> _function = (EClass it) -> {
         boolean _isAbstract = it.isAbstract();
         return Boolean.valueOf((!_isAbstract));
       };
-      Iterable<EClass> _filter = IterableExtensions.<EClass>filter(_FunctionalAPIClasses, _function);
       final Function1<EClass, String> _function_1 = (EClass it) -> {
         return it.getName();
       };
-      List<EClass> _sortBy = IterableExtensions.<EClass, String>sortBy(_filter, _function_1);
+      List<EClass> _sortBy = IterableExtensions.<EClass, String>sortBy(IterableExtensions.<EClass>filter(OMLSpecificationResolverLibraryGenerator.FunctionalAPIClasses(ePackage), _function), _function_1);
       for(final EClass eClass : _sortBy) {
         _builder.append("  ");
         _builder.append("// ");
@@ -301,7 +297,7 @@ public class OMLSpecificationResolverLibraryGenerator {
   public String generateClassFile(final EClass eClass) {
     StringConcatenation _builder = new StringConcatenation();
     CharSequence _copyright = this.copyright();
-    _builder.append(_copyright, "");
+    _builder.append(_copyright);
     _builder.newLineIfNotEmpty();
     _builder.append("package gov.nasa.jpl.imce.oml.specification.resolver.impl");
     _builder.newLine();
@@ -318,7 +314,7 @@ public class OMLSpecificationResolverLibraryGenerator {
       }
     }
     String _classDeclaration = OMLSpecificationResolverLibraryGenerator.classDeclaration(eClass);
-    _builder.append(_classDeclaration, "");
+    _builder.append(_classDeclaration);
     _builder.newLineIfNotEmpty();
     _builder.append("{");
     _builder.newLine();
@@ -327,9 +323,9 @@ public class OMLSpecificationResolverLibraryGenerator {
       for(final EOperation op : _ScalaOperations) {
         _builder.append("  ");
         String _doc = OMLSpecificationResolverLibraryGenerator.doc(op, "  ");
-        _builder.append(_doc, "");
+        _builder.append(_doc);
         String _queryName = OMLSpecificationResolverLibraryGenerator.queryName(op);
-        _builder.append(_queryName, "");
+        _builder.append(_queryName);
         _builder.newLineIfNotEmpty();
         _builder.append("  ");
         _builder.append(": ");
@@ -478,7 +474,7 @@ public class OMLSpecificationResolverLibraryGenerator {
   public static String classDeclaration(final EClass eClass) {
     StringConcatenation _builder = new StringConcatenation();
     String _name = eClass.getName();
-    _builder.append(_name, "");
+    _builder.append(_name);
     {
       boolean _isAbstract = eClass.isAbstract();
       boolean _not = (!_isAbstract);
@@ -512,7 +508,7 @@ public class OMLSpecificationResolverLibraryGenerator {
     _builder.newLineIfNotEmpty();
     _builder.append("extends resolver.api.");
     String _name_2 = eClass.getName();
-    _builder.append(_name_2, "");
+    _builder.append(_name_2);
     _builder.newLineIfNotEmpty();
     {
       EList<EClass> _eSuperTypes = eClass.getESuperTypes();
@@ -520,12 +516,12 @@ public class OMLSpecificationResolverLibraryGenerator {
       for(final EClass parent : _eSuperTypes) {
         if (!_hasElements_1) {
           _hasElements_1 = true;
-          _builder.append("  with ", "");
+          _builder.append("  with ");
         } else {
           _builder.appendImmediate("\n  with ", "");
         }
         String _name_3 = parent.getName();
-        _builder.append(_name_3, "");
+        _builder.append(_name_3);
       }
     }
     _builder.newLineIfNotEmpty();
@@ -533,27 +529,22 @@ public class OMLSpecificationResolverLibraryGenerator {
   }
   
   public static Iterable<EStructuralFeature> orderingKeys(final EClass eClass) {
-    Iterable<EClass> _selfAndAllSupertypes = OMLSpecificationResolverLibraryGenerator.selfAndAllSupertypes(eClass);
     final Function1<EClass, EList<EStructuralFeature>> _function = (EClass it) -> {
       return it.getEStructuralFeatures();
     };
-    Iterable<EList<EStructuralFeature>> _map = IterableExtensions.<EClass, EList<EStructuralFeature>>map(_selfAndAllSupertypes, _function);
-    Iterable<EStructuralFeature> _flatten = Iterables.<EStructuralFeature>concat(_map);
     final Function1<EStructuralFeature, Boolean> _function_1 = (EStructuralFeature f) -> {
-      return Boolean.valueOf(((OMLSpecificationResolverLibraryGenerator.isAPI(f)).booleanValue() && (!Objects.equal(null, f.getEAnnotation("http://imce.jpl.nasa.gov/oml/IsOrderingKey")))));
+      return Boolean.valueOf(((OMLSpecificationResolverLibraryGenerator.isAPI(f)).booleanValue() && (null != f.getEAnnotation("http://imce.jpl.nasa.gov/oml/IsOrderingKey"))));
     };
-    Iterable<EStructuralFeature> _filter = IterableExtensions.<EStructuralFeature>filter(_flatten, _function_1);
+    Iterable<EStructuralFeature> _filter = IterableExtensions.<EStructuralFeature>filter(Iterables.<EStructuralFeature>concat(IterableExtensions.<EClass, EList<EStructuralFeature>>map(OMLSpecificationResolverLibraryGenerator.selfAndAllSupertypes(eClass), _function)), _function_1);
     OMLSpecificationResolverLibraryGenerator.OMLFeatureCompare _oMLFeatureCompare = new OMLSpecificationResolverLibraryGenerator.OMLFeatureCompare();
     return IterableExtensions.<EStructuralFeature>sortWith(_filter, _oMLFeatureCompare);
   }
   
   public static Iterable<EStructuralFeature> getSortedAttributeSignature(final EClass eClass) {
-    Iterable<EClass> _selfAndAllSupertypes = OMLSpecificationResolverLibraryGenerator.selfAndAllSupertypes(eClass);
     final Function1<EClass, Iterable<EStructuralFeature>> _function = (EClass it) -> {
       return OMLSpecificationResolverLibraryGenerator.APIStructuralFeatures(it);
     };
-    Iterable<Iterable<EStructuralFeature>> _map = IterableExtensions.<EClass, Iterable<EStructuralFeature>>map(_selfAndAllSupertypes, _function);
-    Iterable<EStructuralFeature> _flatten = Iterables.<EStructuralFeature>concat(_map);
+    Iterable<EStructuralFeature> _flatten = Iterables.<EStructuralFeature>concat(IterableExtensions.<EClass, Iterable<EStructuralFeature>>map(OMLSpecificationResolverLibraryGenerator.selfAndAllSupertypes(eClass), _function));
     OMLSpecificationResolverLibraryGenerator.OMLFeatureCompare _oMLFeatureCompare = new OMLSpecificationResolverLibraryGenerator.OMLFeatureCompare();
     return IterableExtensions.<EStructuralFeature>sortWith(_flatten, _oMLFeatureCompare);
   }
@@ -607,47 +598,52 @@ public class OMLSpecificationResolverLibraryGenerator {
       final EClassifier type = feature.getEType();
       String _switchResult = null;
       String _name = type.getName();
-      switch (_name) {
-        case "EInt":
-          _switchResult = "scala.Int";
-          break;
-        case "EBoolean":
-          _switchResult = "scala.Boolean";
-          break;
-        case "EString":
-          _switchResult = "scala.Predef.String";
-          break;
-        case "IRI":
-          _switchResult = "gov.nasa.jpl.imce.oml.specification.tables.IRI";
-          break;
-        case "Language":
-          _switchResult = "gov.nasa.jpl.imce.oml.specification.tables.Language";
-          break;
-        case "LexicalNumber":
-          _switchResult = "gov.nasa.jpl.imce.oml.specification.tables.LexicalNumber";
-          break;
-        case "LexicalTime":
-          _switchResult = "gov.nasa.jpl.imce.oml.specification.tables.LexicalTime";
-          break;
-        case "LexicalValue":
-          _switchResult = "gov.nasa.jpl.imce.oml.specification.tables.LexicalValue";
-          break;
-        case "LocalName":
-          _switchResult = "gov.nasa.jpl.imce.oml.specification.tables.LocalName";
-          break;
-        case "Pattern":
-          _switchResult = "gov.nasa.jpl.imce.oml.specification.tables.Pattern";
-          break;
-        case "UUID":
-          _switchResult = "java.util.UUID";
-          break;
-        case "TerminologyGraphKind":
-          _switchResult = "gov.nasa.jpl.imce.oml.specification.tables.TerminologyGraphKind";
-          break;
-        default:
-          String _name_1 = type.getName();
-          _switchResult = ("resolver.api." + _name_1);
-          break;
+      if (_name != null) {
+        switch (_name) {
+          case "EInt":
+            _switchResult = "scala.Int";
+            break;
+          case "EBoolean":
+            _switchResult = "scala.Boolean";
+            break;
+          case "EString":
+            _switchResult = "scala.Predef.String";
+            break;
+          case "IRI":
+            _switchResult = "gov.nasa.jpl.imce.oml.specification.tables.IRI";
+            break;
+          case "Language":
+            _switchResult = "gov.nasa.jpl.imce.oml.specification.tables.Language";
+            break;
+          case "LexicalNumber":
+            _switchResult = "gov.nasa.jpl.imce.oml.specification.tables.LexicalNumber";
+            break;
+          case "LexicalTime":
+            _switchResult = "gov.nasa.jpl.imce.oml.specification.tables.LexicalTime";
+            break;
+          case "LexicalValue":
+            _switchResult = "gov.nasa.jpl.imce.oml.specification.tables.LexicalValue";
+            break;
+          case "LocalName":
+            _switchResult = "gov.nasa.jpl.imce.oml.specification.tables.LocalName";
+            break;
+          case "Pattern":
+            _switchResult = "gov.nasa.jpl.imce.oml.specification.tables.Pattern";
+            break;
+          case "UUID":
+            _switchResult = "java.util.UUID";
+            break;
+          case "TerminologyGraphKind":
+            _switchResult = "gov.nasa.jpl.imce.oml.specification.tables.TerminologyGraphKind";
+            break;
+          default:
+            String _name_1 = type.getName();
+            _switchResult = ("resolver.api." + _name_1);
+            break;
+        }
+      } else {
+        String _name_1 = type.getName();
+        _switchResult = ("resolver.api." + _name_1);
       }
       _xblockexpression = _switchResult;
     }
@@ -703,37 +699,39 @@ public class OMLSpecificationResolverLibraryGenerator {
                 } else {
                   _elvis = "";
                 }
-                switch (_elvis) {
-                  case "Map(Seq)":
-                    String _xblockexpression_2 = null;
-                    {
-                      final String key = ann.get("key");
+                if (_elvis != null) {
+                  switch (_elvis) {
+                    case "Map(Seq)":
+                      String _xblockexpression_2 = null;
+                      {
+                        final String key = ann.get("key");
+                        String _name = type.getName();
+                        String _plus = ((("scala.collection.immutable.Map[resolver.api." + key) + ", scala.collection.immutable.Seq[resolver.api.") + _name);
+                        _xblockexpression_2 = (_plus + "]]");
+                      }
+                      _switchResult_1 = _xblockexpression_2;
+                      break;
+                    case "Map":
+                      String _xblockexpression_3 = null;
+                      {
+                        final String key = ann.get("key");
+                        String _name = type.getName();
+                        String _plus = ((("scala.collection.immutable.Map[" + key) + ", resolver.api.") + _name);
+                        _xblockexpression_3 = (_plus + "]");
+                      }
+                      _switchResult_1 = _xblockexpression_3;
+                      break;
+                    case "Set":
                       String _name = type.getName();
-                      String _plus = ((("scala.collection.immutable.Map[resolver.api." + key) + ", scala.collection.immutable.Seq[resolver.api.") + _name);
-                      _xblockexpression_2 = (_plus + "]]");
-                    }
-                    _switchResult_1 = _xblockexpression_2;
-                    break;
-                  case "Map":
-                    String _xblockexpression_3 = null;
-                    {
-                      final String key = ann.get("key");
-                      String _name = type.getName();
-                      String _plus = ((("scala.collection.immutable.Map[" + key) + ", resolver.api.") + _name);
-                      _xblockexpression_3 = (_plus + "]");
-                    }
-                    _switchResult_1 = _xblockexpression_3;
-                    break;
-                  case "Set":
-                    String _name = type.getName();
-                    String _plus = ("scala.collection.immutable.Set[_ <: resolver.api." + _name);
-                    _switchResult_1 = (_plus + "]");
-                    break;
-                  case "SortedSet":
-                    String _name_1 = type.getName();
-                    String _plus_1 = ("scala.collection.immutable.SortedSet[resolver.api." + _name_1);
-                    _switchResult_1 = (_plus_1 + "]");
-                    break;
+                      String _plus = ("scala.collection.immutable.Set[_ <: resolver.api." + _name);
+                      _switchResult_1 = (_plus + "]");
+                      break;
+                    case "SortedSet":
+                      String _name_1 = type.getName();
+                      String _plus_1 = ("scala.collection.immutable.SortedSet[resolver.api." + _name_1);
+                      _switchResult_1 = (_plus_1 + "]");
+                      break;
+                  }
                 }
                 _xblockexpression_1 = _switchResult_1;
               }
@@ -761,24 +759,22 @@ public class OMLSpecificationResolverLibraryGenerator {
   }
   
   public static Iterable<EStructuralFeature> lookupCopyConstructorArguments(final EClass eClass) {
-    Iterable<EStructuralFeature> _sortedAttributeSignature = OMLSpecificationResolverLibraryGenerator.getSortedAttributeSignature(eClass);
     final Function1<EStructuralFeature, Boolean> _function = (EStructuralFeature it) -> {
       return OMLSpecificationResolverLibraryGenerator.isCopyConstructorArgument(it);
     };
-    return IterableExtensions.<EStructuralFeature>filter(_sortedAttributeSignature, _function);
+    return IterableExtensions.<EStructuralFeature>filter(OMLSpecificationResolverLibraryGenerator.getSortedAttributeSignature(eClass), _function);
   }
   
   public static Boolean isCopyConstructorArgument(final EStructuralFeature attribute) {
     EAnnotation _eAnnotation = attribute.getEAnnotation("http://imce.jpl.nasa.gov/oml/CopyConstructor");
-    return Boolean.valueOf((!Objects.equal(null, _eAnnotation)));
+    return Boolean.valueOf((null != _eAnnotation));
   }
   
   public static String queryName(final EOperation op) {
     String _xblockexpression = null;
     {
       String _xifexpression = null;
-      EList<EParameter> _eParameters = op.getEParameters();
-      boolean _isEmpty = _eParameters.isEmpty();
+      boolean _isEmpty = op.getEParameters().isEmpty();
       if (_isEmpty) {
         _xifexpression = "def";
       } else {
@@ -787,8 +783,8 @@ public class OMLSpecificationResolverLibraryGenerator {
       final String kind = _xifexpression;
       String _xifexpression_1 = null;
       EAnnotation _eAnnotation = op.getEAnnotation("http://imce.jpl.nasa.gov/oml/Override");
-      boolean _notEquals = (!Objects.equal(null, _eAnnotation));
-      if (_notEquals) {
+      boolean _tripleNotEquals = (null != _eAnnotation);
+      if (_tripleNotEquals) {
         _xifexpression_1 = ("override " + kind);
       } else {
         _xifexpression_1 = kind;
@@ -796,19 +792,19 @@ public class OMLSpecificationResolverLibraryGenerator {
       final String decl = _xifexpression_1;
       StringConcatenation _builder = new StringConcatenation();
       {
-        EList<EParameter> _eParameters_1 = op.getEParameters();
+        EList<EParameter> _eParameters = op.getEParameters();
         boolean _hasElements = false;
-        for(final EParameter p : _eParameters_1) {
+        for(final EParameter p : _eParameters) {
           if (!_hasElements) {
             _hasElements = true;
           } else {
             _builder.appendImmediate(",\n  ", "");
           }
           String _name = p.getName();
-          _builder.append(_name, "");
+          _builder.append(_name);
           _builder.append(": ");
           String _queryType = OMLSpecificationResolverLibraryGenerator.queryType(p);
-          _builder.append(_queryType, "");
+          _builder.append(_queryType);
         }
       }
       final String args = _builder.toString();
@@ -842,32 +838,44 @@ public class OMLSpecificationResolverLibraryGenerator {
       } else {
         _elvis = "";
       }
-      switch (_elvis) {
-        case "Map":
-          String _xblockexpression_1 = null;
-          {
-            final String key = ann.get("key");
-            _xblockexpression_1 = (((("scala.collection.immutable.Map[" + key) + ", ") + scalaType) + "]");
-          }
-          _switchResult = _xblockexpression_1;
-          break;
-        case "SortedSet":
-          _switchResult = (("scala.collection.immutable.SortedSet[" + scalaType) + "]");
-          break;
-        case "Set":
-          _switchResult = (("scala.collection.immutable.Set[_ <: " + scalaType) + "]");
-          break;
-        default:
-          String _xifexpression = null;
-          int _lowerBound = op.getLowerBound();
-          boolean _equals = (0 == _lowerBound);
-          if (_equals) {
-            _xifexpression = (("scala.Option[" + scalaType) + "]");
-          } else {
-            _xifexpression = scalaType;
-          }
-          _switchResult = _xifexpression;
-          break;
+      if (_elvis != null) {
+        switch (_elvis) {
+          case "Map":
+            String _xblockexpression_1 = null;
+            {
+              final String key = ann.get("key");
+              _xblockexpression_1 = (((("scala.collection.immutable.Map[" + key) + ", ") + scalaType) + "]");
+            }
+            _switchResult = _xblockexpression_1;
+            break;
+          case "SortedSet":
+            _switchResult = (("scala.collection.immutable.SortedSet[" + scalaType) + "]");
+            break;
+          case "Set":
+            _switchResult = (("scala.collection.immutable.Set[_ <: " + scalaType) + "]");
+            break;
+          default:
+            String _xifexpression = null;
+            int _lowerBound = op.getLowerBound();
+            boolean _equals = (0 == _lowerBound);
+            if (_equals) {
+              _xifexpression = (("scala.Option[" + scalaType) + "]");
+            } else {
+              _xifexpression = scalaType;
+            }
+            _switchResult = _xifexpression;
+            break;
+        }
+      } else {
+        String _xifexpression = null;
+        int _lowerBound = op.getLowerBound();
+        boolean _equals = (0 == _lowerBound);
+        if (_equals) {
+          _xifexpression = (("scala.Option[" + scalaType) + "]");
+        } else {
+          _xifexpression = scalaType;
+        }
+        _switchResult = _xifexpression;
       }
       _xblockexpression = _switchResult;
     }
@@ -875,25 +883,22 @@ public class OMLSpecificationResolverLibraryGenerator {
   }
   
   public static Iterable<EStructuralFeature> APIStructuralFeatures(final EClass eClass) {
-    EList<EStructuralFeature> _eStructuralFeatures = eClass.getEStructuralFeatures();
     final Function1<EStructuralFeature, Boolean> _function = (EStructuralFeature it) -> {
       return OMLSpecificationResolverLibraryGenerator.isAPI(it);
     };
-    return IterableExtensions.<EStructuralFeature>filter(_eStructuralFeatures, _function);
+    return IterableExtensions.<EStructuralFeature>filter(eClass.getEStructuralFeatures(), _function);
   }
   
   public static Iterable<EClass> FunctionalAPIClasses(final EPackage ePkg) {
-    EList<EClassifier> _eClassifiers = ePkg.getEClassifiers();
-    Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
     final Function1<EClass, Boolean> _function = (EClass it) -> {
       return OMLSpecificationResolverLibraryGenerator.isFunctionalAPIClass(it);
     };
-    return IterableExtensions.<EClass>filter(_filter, _function);
+    return IterableExtensions.<EClass>filter(Iterables.<EClass>filter(ePkg.getEClassifiers(), EClass.class), _function);
   }
   
   public static Boolean isFunctionalAPIClass(final EClass c) {
     EAnnotation _eAnnotation = c.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotFunctionalAPI");
-    return Boolean.valueOf(Objects.equal(null, _eAnnotation));
+    return Boolean.valueOf((null == _eAnnotation));
   }
   
   public static Boolean isRootHierarchyClass(final EClass eClass) {
@@ -907,34 +912,32 @@ public class OMLSpecificationResolverLibraryGenerator {
   }
   
   public static Iterable<EOperation> APIOperations(final EClass eClass) {
-    EList<EOperation> _eOperations = eClass.getEOperations();
     final Function1<EOperation, Boolean> _function = (EOperation it) -> {
       return OMLSpecificationResolverLibraryGenerator.isAPI(it);
     };
-    return IterableExtensions.<EOperation>filter(_eOperations, _function);
+    return IterableExtensions.<EOperation>filter(eClass.getEOperations(), _function);
   }
   
   public static Iterable<EOperation> ScalaOperations(final EClass eClass) {
-    EList<EOperation> _eOperations = eClass.getEOperations();
     final Function1<EOperation, Boolean> _function = (EOperation op) -> {
-      return Boolean.valueOf(((OMLSpecificationResolverLibraryGenerator.isScala(op)).booleanValue() || (!Objects.equal(null, OMLSpecificationResolverLibraryGenerator.xExpressions(op)))));
+      return Boolean.valueOf(((OMLSpecificationResolverLibraryGenerator.isScala(op)).booleanValue() || (null != OMLSpecificationResolverLibraryGenerator.xExpressions(op))));
     };
-    return IterableExtensions.<EOperation>filter(_eOperations, _function);
+    return IterableExtensions.<EOperation>filter(eClass.getEOperations(), _function);
   }
   
   public static Boolean isAPI(final ENamedElement e) {
     EAnnotation _eAnnotation = e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotAPI");
-    return Boolean.valueOf(Objects.equal(null, _eAnnotation));
+    return Boolean.valueOf((null == _eAnnotation));
   }
   
   public static Boolean isSchema(final ENamedElement e) {
     EAnnotation _eAnnotation = e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotSchema");
-    return Boolean.valueOf(Objects.equal(null, _eAnnotation));
+    return Boolean.valueOf((null == _eAnnotation));
   }
   
   public static Boolean isScala(final ENamedElement e) {
     EAnnotation _eAnnotation = e.getEAnnotation("http://imce.jpl.nasa.gov/oml/Scala");
-    return Boolean.valueOf((!Objects.equal(null, _eAnnotation)));
+    return Boolean.valueOf((null != _eAnnotation));
   }
   
   public static String scalaAnnotation(final EOperation op) {
@@ -951,8 +954,7 @@ public class OMLSpecificationResolverLibraryGenerator {
   }
   
   public static Iterable<XExpression> xExpressions(final EOperation op) {
-    XcoreMapper _xcoreMapper = new XcoreMapper();
-    XOperation _xOperation = _xcoreMapper.getXOperation(op);
+    XOperation _xOperation = new XcoreMapper().getXOperation(op);
     XBlockExpression _body = null;
     if (_xOperation!=null) {
       _body=_xOperation.getBody();
@@ -970,8 +972,7 @@ public class OMLSpecificationResolverLibraryGenerator {
       final String scalaCode = OMLSpecificationResolverLibraryGenerator.scalaAnnotation(op);
       final Iterable<XExpression> xExpressions = OMLSpecificationResolverLibraryGenerator.xExpressions(op);
       String _xifexpression = null;
-      boolean _notEquals = (!Objects.equal(null, scalaCode));
-      if (_notEquals) {
+      if ((null != scalaCode)) {
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("{");
         _builder.newLine();
@@ -982,23 +983,22 @@ public class OMLSpecificationResolverLibraryGenerator {
         _xifexpression = _builder.toString();
       } else {
         String _xifexpression_1 = null;
-        boolean _notEquals_1 = (!Objects.equal(null, xExpressions));
-        if (_notEquals_1) {
+        if ((null != xExpressions)) {
           StringConcatenation _builder_1 = new StringConcatenation();
           {
             boolean _hasElements = false;
             for(final XExpression exp : xExpressions) {
               if (!_hasElements) {
                 _hasElements = true;
-                _builder_1.append("{\n  ", "");
+                _builder_1.append("{\n  ");
               } else {
                 _builder_1.appendImmediate("\n  ", "");
               }
               String _scala = OMLSpecificationResolverLibraryGenerator.toScala(exp);
-              _builder_1.append(_scala, "");
+              _builder_1.append(_scala);
             }
             if (_hasElements) {
-              _builder_1.append("\n}", "");
+              _builder_1.append("\n}");
             }
           }
           _xifexpression_1 = _builder_1.toString();
