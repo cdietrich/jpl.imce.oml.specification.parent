@@ -273,5 +273,4 @@ The key characteristics between the [external DSL] and the host language are:
 
     - An OML [terminology] maps to an [OWL2-DL ontology].
 
-    - An OML [term] of some kind maps to a pattern of [OWL2 axioms] including an [OWL2 
-      declaration] for an [OWL2 entity] corresponding to the OML [term].
+    - An OML [term] of some kind maps to a pattern of [OWL2 axioms] including an [OWL2 declaration] for an [OWL2 entity] corresponding to the OML [term].
