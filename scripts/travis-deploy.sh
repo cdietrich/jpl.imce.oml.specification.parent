@@ -8,11 +8,7 @@ set -ev
 [ -z "${TRAVIS_TAG}" ] && exit 0;
 [ ! ${TRAVIS_SECURE_ENV_VARS} ] && exit -1;
 
-# Download dependencies and create a mavenized target platform repository for dependency resolution
-./gradlew :installTargetPlatform
-
-# Use the mavenized target platform repository to build the actual eclipse projects
-./gradlew build 
+./scripts/travis-build.sh
 
 # Upload the update size
 ./gradlew build :jpl.imce.oml.specification.repository:bintrayUpload --info --stacktrace

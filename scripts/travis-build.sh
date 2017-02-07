@@ -16,6 +16,12 @@ t=$(git name-rev --tags --name-only $(git rev-parse HEAD))
 # Download dependencies and create a mavenized target platform repository for dependency resolution
 ./gradlew :installTargetPlatform
 
+# build the OML metamodel
+./gradlew :jpl.imce.oml.specification.ecore:build
+
+# generate the Scala libraries
+./gradlew :gov.nasa.jpl.imce.oml.specification.scala.generators:generateOMLResolverLibrary
+
 # Use the mavenized target platform repository to build the actual eclipse projects
 ./gradlew build 
 
