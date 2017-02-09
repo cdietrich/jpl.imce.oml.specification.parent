@@ -1,0 +1,11 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/JPL-IMCE/gov.nasa.jpl.imce.oml.specification.doc
+	branch = master
+	commit = e48b3f1a2ac4da944b879f4f34646f5b3014af28
+	parent = 07f8303a97554a95bb7d6c442066a0a74d395079
+	cmdver = 0.3.1
