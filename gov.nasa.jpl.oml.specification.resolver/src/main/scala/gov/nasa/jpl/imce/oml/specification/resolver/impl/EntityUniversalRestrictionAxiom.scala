@@ -22,11 +22,11 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class EntityUniversalRestrictionAxiom private[impl] 
 (
- override val graph: resolver.api.TerminologyBox,
+ override val graph: TerminologyBox,
  override val uuid: java.util.UUID,
- override val restrictedDomain: resolver.api.Entity,
- override val restrictedRange: resolver.api.Entity,
- override val restrictedRelation: resolver.api.ReifiedRelationship
+ override val restrictedDomain: Entity,
+ override val restrictedRange: Entity,
+ override val restrictedRelation: ReifiedRelationship
 )
 extends resolver.api.EntityUniversalRestrictionAxiom
   with EntityRestrictionAxiom

@@ -53,13 +53,18 @@ task OMLLoadTest(type: JavaExec, dependsOn: jar) {
 	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLLoadTest.xtend')
 	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLUtilities.xtend')
 	
+	// This will produce a lot of error messages due this bug:
+	// https://bugs.eclipse.org/bugs/show_bug.cgi?id=511875
+	// The error messages can be filtered by uncommenting the next line.
+	// standardOutput = new ByteArrayOutputStream()
+	
 	classpath sourceSets.main.runtimeClasspath
 	
 	main = "gov.nasa.jpl.imce.oml.specification.scala.generators.OMLLoadTest"
-	args new File('../gov.nasa.jpl.imce.oml.specification.tables').absolutePath
+	args new File('../gov.nasa.jpl.imce.oml.specification.tables2').absolutePath
 	
 	doLast {
-		project.logger.warn("# generateOMLSpecificationTables: Done")
+		project.logger.warn("# OMLLoadTest: Finished")
 	}
 }
 
@@ -70,13 +75,17 @@ task generateOMLSpecificationTables(type: JavaExec, dependsOn: jar) {
 	outputs.dir new File('../gov.nasa.jpl.imce.oml.specification.tables/shared/src/main/scala/gov/nasa/jpl/imce/oml/specification/tables')
 	outputs.dir new File('../gov.nasa.jpl.imce.oml.specification.tables/shared/src/main/scala/gov/nasa/jpl/imce/oml/provenance/oti')
 	
+	// Suppress output as a temporary workaround for this bug:
+	// https://bugs.eclipse.org/bugs/show_bug.cgi?id=511875
+	standardOutput = new ByteArrayOutputStream()
+	
 	classpath sourceSets.main.runtimeClasspath
 	
 	main = "gov.nasa.jpl.imce.oml.specification.scala.generators.OMLSpecificationTablesGenerator"
 	args new File('../gov.nasa.jpl.imce.oml.specification.tables').absolutePath
 	
 	doLast {
-		project.logger.warn("# generateOMLSpecificationTables: Done")
+		project.logger.warn("# generateOMLSpecificationTables: Finished")
 	}
 }
 
@@ -86,13 +95,17 @@ task generateOMLResolverAPI(type: JavaExec, dependsOn: generateOMLSpecificationT
 	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLUtilities.xtend')
 	outputs.files()
 	
+	// Suppress output as a temporary workaround for this bug:
+	// https://bugs.eclipse.org/bugs/show_bug.cgi?id=511875
+	standardOutput = new ByteArrayOutputStream()
+	
 	classpath sourceSets.main.runtimeClasspath
 	
 	main = "gov.nasa.jpl.imce.oml.specification.scala.generators.OMLSpecificationResolverAPIGenerator"
 	args new File('../gov.nasa.jpl.imce.oml.specification.tables').absolutePath
 	
 	doLast {
-		project.logger.warn("# generateOMLResolverAPI: Done")
+		project.logger.warn("# generateOMLResolverAPI: Finished")
 	}
 }
 
@@ -102,12 +115,17 @@ task generateOMLResolverLibrary(type: JavaExec, dependsOn: generateOMLResolverAP
 	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLUtilities.xtend')
 	outputs.files()
 	
+	// Suppress output as a temporary workaround for this bug:
+	// https://bugs.eclipse.org/bugs/show_bug.cgi?id=511875
+	standardOutput = new ByteArrayOutputStream()
+	
 	classpath sourceSets.main.runtimeClasspath
 	
 	main = "gov.nasa.jpl.imce.oml.specification.scala.generators.OMLSpecificationResolverLibraryGenerator"
+	args new File('../gov.nasa.jpl.oml.specification.resolver').absolutePath
 	
 	doLast {
-		project.logger.warn("# generateOMLResolverLibrary: Done")
+		project.logger.warn("# generateOMLResolverLibrary: Finished")
 	}
 }
 //this is an eclipse plugin project

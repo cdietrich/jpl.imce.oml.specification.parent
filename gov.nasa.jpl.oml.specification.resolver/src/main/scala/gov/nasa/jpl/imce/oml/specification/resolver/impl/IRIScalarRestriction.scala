@@ -22,14 +22,14 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class IRIScalarRestriction private[impl] 
 (
- override val graph: resolver.api.TerminologyBox,
+ override val graph: TerminologyBox,
  override val uuid: java.util.UUID,
  override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName,
  override val length: scala.Option[scala.Int],
  override val maxLength: scala.Option[scala.Int],
  override val minLength: scala.Option[scala.Int],
  override val pattern: scala.Option[gov.nasa.jpl.imce.oml.specification.tables.Pattern],
- override val restrictedRange: resolver.api.DataRange
+ override val restrictedRange: DataRange
 )
 extends resolver.api.IRIScalarRestriction
   with RestrictedDataRange

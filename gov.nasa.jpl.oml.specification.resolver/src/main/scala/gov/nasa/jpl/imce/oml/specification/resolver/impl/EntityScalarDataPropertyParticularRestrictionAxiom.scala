@@ -22,11 +22,11 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class EntityScalarDataPropertyParticularRestrictionAxiom private[impl] 
 (
- override val graph: resolver.api.TerminologyBox,
+ override val graph: TerminologyBox,
  override val uuid: java.util.UUID,
  override val literalValue: gov.nasa.jpl.imce.oml.specification.tables.LexicalValue,
- override val restrictedEntity: resolver.api.Entity,
- override val scalarProperty: resolver.api.EntityScalarDataProperty
+ override val restrictedEntity: Entity,
+ override val scalarProperty: EntityScalarDataProperty
 )
 extends resolver.api.EntityScalarDataPropertyParticularRestrictionAxiom
   with EntityScalarDataPropertyRestrictionAxiom

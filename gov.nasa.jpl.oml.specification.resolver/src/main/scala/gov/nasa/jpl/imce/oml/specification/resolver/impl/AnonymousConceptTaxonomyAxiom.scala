@@ -23,8 +23,8 @@ import gov.nasa.jpl.imce.oml.specification._
 case class AnonymousConceptTaxonomyAxiom private[impl] 
 (
  override val uuid: java.util.UUID,
- override val bundle: resolver.api.Bundle,
- override val disjointTaxonomyParent: resolver.api.ConceptTreeDisjunction
+ override val bundle: Bundle,
+ override val disjointTaxonomyParent: ConceptTreeDisjunction
 )
 extends resolver.api.AnonymousConceptTaxonomyAxiom
   with DisjointUnionOfConceptsAxiom

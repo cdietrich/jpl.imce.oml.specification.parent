@@ -19,16 +19,16 @@ package gov.nasa.jpl.imce.oml.specification.scala.generators
 
 import java.io.File
 import java.io.FileOutputStream
+import java.nio.file.Paths
 import java.util.Map
 import jpl.imce.oml.specification.ecore.OMLPackage
-import org.eclipse.core.runtime.FileLocator
-import org.eclipse.core.runtime.Platform
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EOperation
 import org.eclipse.emf.ecore.EPackage
 import org.eclipse.emf.ecore.EReference
 import org.eclipse.emf.ecore.EStructuralFeature
+import org.eclipse.emf.ecore.util.EcoreUtil
 import org.eclipse.emf.ecore.xcore.mappings.XcoreMapper
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils
 import org.eclipse.xtext.xbase.XExpression
@@ -37,10 +37,15 @@ import org.eclipse.xtext.xbase.XFeatureCall
 class OMLSpecificationResolverLibraryGenerator extends OMLUtilities {
 	
 	static def main(String[] args) {
-		new OMLSpecificationResolverLibraryGenerator().generate()	
+		if (1 != args.length) {
+			System.err.println("usage: <dir> where <dir> is the directory of the /gov.nasa.jpl.imce.oml.specification.tables project")
+			System.exit(1)
+		}
+		
+		new OMLSpecificationResolverLibraryGenerator().generate(args.get(0))	
 	}
 	
-	def generate() {
+	def generate(String targetDir) {
 		val omlXcore = "/model/OMLSpecification.xcore"
 		val set = createXcoreResourceSet(
 			[Map<URI,URI> uriMap | 
@@ -49,16 +54,17 @@ class OMLSpecificationResolverLibraryGenerator extends OMLUtilities {
 				URI.createURI(OMLPackage.getResource(omlXcore).toURI.toString))
 				])
 		
-		val targetBundle = "gov.nasa.jpl.imce.oml.specification.resolver"
-		
-      	val sourceURI = URI.createPlatformResourceURI("/jpl.imce.oml.specification.ecore"+omlXcore, false)
+		val sourceURI = URI.createPlatformResourceURI("/jpl.imce.oml.specification.ecore"+omlXcore, false)
       	val sourceResource = set.getResource(sourceURI, true)
+      	EcoreUtil.resolveAll(set)
       	val ePackage = sourceResource.getContents().filter(EPackage).get(0)
       	
-		val targetFolder = "/src/main/scala/gov/nasa/jpl/imce/oml/specification/resolver/impl"
-		val targetURL = Platform.getBundle(targetBundle).getEntry(targetFolder)
-		val folder = FileLocator.toFileURL(targetURL)
-      	generate(ePackage, folder.path)	      	
+		val bundlePath = Paths.get(targetDir)
+		val targetFolder = "src/main/scala/gov/nasa/jpl/imce/oml/specification/resolver/impl"
+		val targetPath = bundlePath.resolve(targetFolder)
+		targetPath.toFile.mkdirs	
+		
+      	generate(ePackage, targetPath.toAbsolutePath.toString)	      	
 	}
 	
 	def generate(EPackage ePackage, String targetFolder) {

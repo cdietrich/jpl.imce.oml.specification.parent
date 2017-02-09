@@ -22,10 +22,10 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class ConceptSpecializationAxiom private[impl] 
 (
- override val graph: resolver.api.TerminologyBox,
+ override val graph: TerminologyBox,
  override val uuid: java.util.UUID,
- override val subConcept: resolver.api.Concept,
- override val superConcept: resolver.api.Concept
+ override val subConcept: Concept,
+ override val superConcept: Concept
 )
 extends resolver.api.ConceptSpecializationAxiom
   with SpecializationAxiom
@@ -35,7 +35,7 @@ extends resolver.api.ConceptSpecializationAxiom
    */
   override def child
   ()
-  : resolver.api.Term
+  : Term
   = {
     subConcept
   }
@@ -45,7 +45,7 @@ extends resolver.api.ConceptSpecializationAxiom
    */
   override def parent
   ()
-  : resolver.api.Term
+  : Term
   = {
     superConcept
   }

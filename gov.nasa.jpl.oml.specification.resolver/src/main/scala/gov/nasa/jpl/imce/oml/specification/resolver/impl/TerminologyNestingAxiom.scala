@@ -23,16 +23,16 @@ import gov.nasa.jpl.imce.oml.specification._
 case class TerminologyNestingAxiom private[impl] 
 (
  override val uuid: java.util.UUID,
- override val terminology: resolver.api.TerminologyBox,
- override val nestingContext: resolver.api.Concept,
- override val nestingTerminology: resolver.api.TerminologyBox
+ override val terminology: TerminologyBox,
+ override val nestingContext: Concept,
+ override val nestingTerminology: TerminologyBox
 )
 extends resolver.api.TerminologyNestingAxiom
   with TerminologyBoxAxiom
 {
   def nestedTerminology
   ()
-  : resolver.api.TerminologyGraph
+  : TerminologyGraph
   = {
     terminology match { case g: TerminologyGraph => g }
   }
@@ -42,7 +42,7 @@ extends resolver.api.TerminologyNestingAxiom
    */
   override def source
   ()
-  : resolver.api.TerminologyBox
+  : TerminologyBox
   = {
     terminology
   }
@@ -52,7 +52,7 @@ extends resolver.api.TerminologyNestingAxiom
    */
   override def target
   ()
-  : resolver.api.TerminologyBox
+  : TerminologyBox
   = {
     nestingTerminology
   }

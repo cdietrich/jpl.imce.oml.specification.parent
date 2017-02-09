@@ -23,8 +23,8 @@ import gov.nasa.jpl.imce.oml.specification._
 case class RootConceptTaxonomyAxiom private[impl] 
 (
  override val uuid: java.util.UUID,
- override val bundle: resolver.api.Bundle,
- override val root: resolver.api.Concept
+ override val bundle: Bundle,
+ override val root: Concept
 )
 extends resolver.api.RootConceptTaxonomyAxiom
   with TerminologyBundleStatement

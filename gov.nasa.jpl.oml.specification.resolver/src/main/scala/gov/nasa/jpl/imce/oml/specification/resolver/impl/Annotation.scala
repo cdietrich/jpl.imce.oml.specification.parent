@@ -22,9 +22,9 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class Annotation private[impl] 
 (
- override val terminology: resolver.api.TerminologyBox,
- override val subject: resolver.api.TerminologyThing,
- override val property: resolver.api.AnnotationProperty,
+ override val terminology: TerminologyBox,
+ override val subject: TerminologyThing,
+ override val property: AnnotationProperty,
  override val value: scala.Predef.String
 )
 extends resolver.api.Annotation

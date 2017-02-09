@@ -22,11 +22,11 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class EntityScalarDataProperty private[impl] 
 (
- override val graph: resolver.api.TerminologyBox,
+ override val graph: TerminologyBox,
  override val uuid: java.util.UUID,
  override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName,
- override val domain: resolver.api.Entity,
- override val range: resolver.api.DataRange
+ override val domain: Entity,
+ override val range: DataRange
 )
 extends resolver.api.EntityScalarDataProperty
   with DataRelationship
@@ -35,14 +35,14 @@ extends resolver.api.EntityScalarDataProperty
 {
   override def source
   ()
-  : resolver.api.Term
+  : Term
   = {
     domain
   }
   
   override def target
   ()
-  : resolver.api.Datatype
+  : Datatype
   = {
     range
   }

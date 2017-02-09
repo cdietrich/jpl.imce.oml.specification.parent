@@ -22,20 +22,28 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class AspectSpecializationAxiom private[impl] 
 (
- override val graph: resolver.api.TerminologyBox,
+ override val graph: TerminologyBox,
  override val uuid: java.util.UUID,
- override val subEntity: resolver.api.Entity,
- override val superAspect: resolver.api.Aspect
+ override val subEntity: Entity,
+ override val superAspect: Aspect
 )
 extends resolver.api.AspectSpecializationAxiom
   with SpecializationAxiom
 {
+  def calculateUUID
+  ()
+  : java.util.UUID
+  = {
+    val namespace/* default */
+    <XMemberFeatureCallImplCustom>.toString/* default */
+  }
+  
   /*
    * Get the sub (child) entity
    */
   override def child
   ()
-  : resolver.api.Term
+  : Term
   = {
     subEntity
   }
@@ -45,7 +53,7 @@ extends resolver.api.AspectSpecializationAxiom
    */
   override def parent
   ()
-  : resolver.api.Term
+  : Term
   = {
     superAspect
   }

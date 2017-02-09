@@ -37,13 +37,11 @@ class OMLSpecificationTablesGenerator extends OMLUtilities {
 		if (1 != args.length) {
 			System.err.println("usage: <dir> where <dir> is the directory of the /gov.nasa.jpl.imce.oml.specification.tables project")
 			System.exit(1)
-		}
-		
+		}	
 		new OMLSpecificationTablesGenerator().generate(args.get(0))	
 	}
 	
 	def generate(String targetDir) {
-		
 		val omlXcore = "/model/OMLSpecification.xcore"
 		val oml2otiXcore = "/model/OMLProvenanceOTI.xcore"
 		

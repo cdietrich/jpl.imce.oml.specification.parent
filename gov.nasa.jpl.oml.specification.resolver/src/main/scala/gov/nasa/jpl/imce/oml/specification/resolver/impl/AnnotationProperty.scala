@@ -22,21 +22,26 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class AnnotationProperty private[impl] 
 (
- override val uuid: java.util.UUID,
  override val iri: gov.nasa.jpl.imce.oml.specification.tables.IRI,
  override val abbrevIRI: gov.nasa.jpl.imce.oml.specification.tables.AbbrevIRI
 )
 extends resolver.api.AnnotationProperty
 {
+  def uuid
+  ()
+  : java.util.UUID
+  = {
+    <XMemberFeatureCallImplCustom>.toString/* default */
+  }
+  
 
   override val hashCode
   : scala.Int
-  = (uuid, iri, abbrevIRI).##
+  = (iri, abbrevIRI).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: AnnotationProperty =>
 	    (that canEqual this) &&
-	    (this.uuid == that.uuid) &&
 	    (this.iri == that.iri) &&
 	    (this.abbrevIRI == that.abbrevIRI)
 

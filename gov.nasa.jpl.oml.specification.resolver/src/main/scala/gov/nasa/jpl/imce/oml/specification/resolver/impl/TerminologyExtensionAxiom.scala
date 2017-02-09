@@ -23,15 +23,23 @@ import gov.nasa.jpl.imce.oml.specification._
 case class TerminologyExtensionAxiom private[impl] 
 (
  override val uuid: java.util.UUID,
- override val terminology: resolver.api.TerminologyBox,
- override val extendedTerminology: resolver.api.TerminologyBox
+ override val terminology: TerminologyBox,
+ override val extendedTerminology: TerminologyBox
 )
 extends resolver.api.TerminologyExtensionAxiom
   with TerminologyBoxAxiom
 {
+  def calculateUUID
+  ()
+  : java.util.UUID
+  = {
+    val namespace/* default */
+    <XMemberFeatureCallImplCustom>.toString/* default */
+  }
+  
   def extendingTerminology
   ()
-  : resolver.api.TerminologyBox
+  : TerminologyBox
   = {
     terminology
   }
@@ -41,7 +49,7 @@ extends resolver.api.TerminologyExtensionAxiom
    */
   override def source
   ()
-  : resolver.api.TerminologyBox
+  : TerminologyBox
   = {
     terminology
   }
@@ -51,7 +59,7 @@ extends resolver.api.TerminologyExtensionAxiom
    */
   override def target
   ()
-  : resolver.api.TerminologyBox
+  : TerminologyBox
   = {
     extendedTerminology
   }

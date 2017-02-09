@@ -22,11 +22,11 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class EntityStructuredDataProperty private[impl] 
 (
- override val graph: resolver.api.TerminologyBox,
+ override val graph: TerminologyBox,
  override val uuid: java.util.UUID,
  override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName,
- override val domain: resolver.api.Entity,
- override val range: resolver.api.Structure
+ override val domain: Entity,
+ override val range: Structure
 )
 extends resolver.api.EntityStructuredDataProperty
   with DataRelationship
@@ -35,14 +35,14 @@ extends resolver.api.EntityStructuredDataProperty
 {
   override def source
   ()
-  : resolver.api.Term
+  : Term
   = {
     domain
   }
   
   override def target
   ()
-  : resolver.api.Datatype
+  : Datatype
   = {
     range
   }

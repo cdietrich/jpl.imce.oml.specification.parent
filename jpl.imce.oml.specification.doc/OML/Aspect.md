@@ -1,3 +1,0 @@
-# Aspect
-
-An OML Aspect is...

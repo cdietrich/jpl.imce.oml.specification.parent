@@ -22,12 +22,13 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class Aspect private[impl] 
 (
- override val graph: resolver.api.TerminologyBox,
+ override val graph: TerminologyBox,
  override val uuid: java.util.UUID,
  override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName
 )
 extends resolver.api.Aspect
   with Entity
+  with UnaryTermKind
 {
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {

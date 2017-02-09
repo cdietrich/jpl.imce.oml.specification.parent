@@ -23,7 +23,22 @@ import gov.nasa.jpl.imce.oml.specification._
 trait DataRelationship
 extends resolver.api.DataRelationship
   with Term
+  with DirectedBinaryRelationshipKind
 {
+  def relationDomain
+  ()
+  : Term
+  = {
+    source
+  }
+  
+  def relationRange
+  ()
+  : Term
+  = {
+    target
+  }
+  
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: DataRelationship => true

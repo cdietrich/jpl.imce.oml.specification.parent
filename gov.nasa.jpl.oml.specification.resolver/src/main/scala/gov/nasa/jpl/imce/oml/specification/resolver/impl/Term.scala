@@ -25,11 +25,28 @@ extends resolver.api.Term
   with TerminologyBoxStatement
   with Resource
 {
+  /*
+   * The UUID of a Term is a Version5 namespace UUID based on the term's IRI.
+   */
+  def calculateUUID
+  ()
+  : java.util.UUID
+  = {
+    <XMemberFeatureCallImplCustom>.toString/* default */
+  }
+  
   override def iri
   ()
   : gov.nasa.jpl.imce.oml.specification.tables.IRI
   = {
     graph.iri + "#" + name
+  }
+  
+  def name
+  ()
+  : gov.nasa.jpl.imce.oml.specification.tables.LocalName
+  = {
+    getName()
   }
   
 

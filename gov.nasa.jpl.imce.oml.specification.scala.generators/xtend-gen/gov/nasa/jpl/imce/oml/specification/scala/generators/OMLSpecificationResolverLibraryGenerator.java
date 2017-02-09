@@ -22,11 +22,11 @@ import gov.nasa.jpl.imce.oml.specification.scala.generators.OMLUtilities;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.net.URL;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 import jpl.imce.oml.specification.ecore.OMLPackage;
-import org.eclipse.core.runtime.FileLocator;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.common.util.URI;
@@ -39,6 +39,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xcore.XOperation;
 import org.eclipse.emf.ecore.xcore.mappings.XcoreMapper;
 import org.eclipse.xtend2.lib.StringConcatenation;
@@ -53,48 +54,52 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
-import org.osgi.framework.Bundle;
 
 public class OMLSpecificationResolverLibraryGenerator extends OMLUtilities {
   public static void main(final String[] args) {
+    int _length = args.length;
+    boolean _notEquals = (1 != _length);
+    if (_notEquals) {
+      System.err.println("usage: <dir> where <dir> is the directory of the /gov.nasa.jpl.imce.oml.specification.tables project");
+      System.exit(1);
+    }
     OMLSpecificationResolverLibraryGenerator _oMLSpecificationResolverLibraryGenerator = new OMLSpecificationResolverLibraryGenerator();
-    _oMLSpecificationResolverLibraryGenerator.generate();
+    String _get = args[0];
+    _oMLSpecificationResolverLibraryGenerator.generate(_get);
   }
   
-  public void generate() {
-    try {
-      final String omlXcore = "/model/OMLSpecification.xcore";
-      final Procedure1<Map<URI, URI>> _function = new Procedure1<Map<URI, URI>>() {
-        @Override
-        public void apply(final Map<URI, URI> uriMap) {
-          try {
-            URI _createURI = URI.createURI(("platform:/resource/jpl.imce.oml.specification.ecore" + omlXcore));
-            URL _resource = OMLPackage.class.getResource(omlXcore);
-            java.net.URI _uRI = _resource.toURI();
-            String _string = _uRI.toString();
-            URI _createURI_1 = URI.createURI(_string);
-            uriMap.put(_createURI, _createURI_1);
-          } catch (Throwable _e) {
-            throw Exceptions.sneakyThrow(_e);
-          }
+  public void generate(final String targetDir) {
+    final String omlXcore = "/model/OMLSpecification.xcore";
+    final Procedure1<Map<URI, URI>> _function = new Procedure1<Map<URI, URI>>() {
+      @Override
+      public void apply(final Map<URI, URI> uriMap) {
+        try {
+          URI _createURI = URI.createURI(("platform:/resource/jpl.imce.oml.specification.ecore" + omlXcore));
+          URL _resource = OMLPackage.class.getResource(omlXcore);
+          java.net.URI _uRI = _resource.toURI();
+          String _string = _uRI.toString();
+          URI _createURI_1 = URI.createURI(_string);
+          uriMap.put(_createURI, _createURI_1);
+        } catch (Throwable _e) {
+          throw Exceptions.sneakyThrow(_e);
         }
-      };
-      final XtextResourceSet set = OMLUtilities.createXcoreResourceSet(_function);
-      final String targetBundle = "gov.nasa.jpl.imce.oml.specification.resolver";
-      final URI sourceURI = URI.createPlatformResourceURI(("/jpl.imce.oml.specification.ecore" + omlXcore), false);
-      final Resource sourceResource = set.getResource(sourceURI, true);
-      EList<EObject> _contents = sourceResource.getContents();
-      Iterable<EPackage> _filter = Iterables.<EPackage>filter(_contents, EPackage.class);
-      final EPackage ePackage = ((EPackage[])Conversions.unwrapArray(_filter, EPackage.class))[0];
-      final String targetFolder = "/src/main/scala/gov/nasa/jpl/imce/oml/specification/resolver/impl";
-      Bundle _bundle = Platform.getBundle(targetBundle);
-      final URL targetURL = _bundle.getEntry(targetFolder);
-      final URL folder = FileLocator.toFileURL(targetURL);
-      String _path = folder.getPath();
-      this.generate(ePackage, _path);
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
+      }
+    };
+    final XtextResourceSet set = OMLUtilities.createXcoreResourceSet(_function);
+    final URI sourceURI = URI.createPlatformResourceURI(("/jpl.imce.oml.specification.ecore" + omlXcore), false);
+    final Resource sourceResource = set.getResource(sourceURI, true);
+    EcoreUtil.resolveAll(set);
+    EList<EObject> _contents = sourceResource.getContents();
+    Iterable<EPackage> _filter = Iterables.<EPackage>filter(_contents, EPackage.class);
+    final EPackage ePackage = ((EPackage[])Conversions.unwrapArray(_filter, EPackage.class))[0];
+    final Path bundlePath = Paths.get(targetDir);
+    final String targetFolder = "src/main/scala/gov/nasa/jpl/imce/oml/specification/resolver/impl";
+    final Path targetPath = bundlePath.resolve(targetFolder);
+    File _file = targetPath.toFile();
+    _file.mkdirs();
+    Path _absolutePath = targetPath.toAbsolutePath();
+    String _string = _absolutePath.toString();
+    this.generate(ePackage, _string);
   }
   
   public void generate(final EPackage ePackage, final String targetFolder) {

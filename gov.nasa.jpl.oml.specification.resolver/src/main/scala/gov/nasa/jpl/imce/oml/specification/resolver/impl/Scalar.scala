@@ -22,7 +22,7 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class Scalar private[impl] 
 (
- override val graph: resolver.api.TerminologyBox,
+ override val graph: TerminologyBox,
  override val uuid: java.util.UUID,
  override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName
 )

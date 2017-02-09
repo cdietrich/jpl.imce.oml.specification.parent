@@ -22,7 +22,7 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class ReifiedRelationship private[impl] 
 (
- override val graph: resolver.api.TerminologyBox,
+ override val graph: TerminologyBox,
  override val uuid: java.util.UUID,
  override val isAbstract: scala.Boolean,
  override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName,
@@ -37,8 +37,8 @@ case class ReifiedRelationship private[impl]
  override val isReflexive: scala.Boolean,
  override val isSymmetric: scala.Boolean,
  override val isTransitive: scala.Boolean,
- override val source: resolver.api.Entity,
- override val target: resolver.api.Entity
+ override val source: Entity,
+ override val target: Entity
 )
 extends resolver.api.ReifiedRelationship
   with EntityRelationship

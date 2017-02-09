@@ -22,6 +22,7 @@ import com.google.common.collect.Iterables;
 import gov.nasa.jpl.imce.oml.specification.scala.generators.OMLUtilities;
 import java.net.URL;
 import java.util.Map;
+import java.util.function.Consumer;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
@@ -67,28 +68,50 @@ public class OMLLoadTest extends OMLUtilities {
     final URI sourceURI = URI.createPlatformResourceURI(("/jpl.imce.oml.specification.ecore" + xcoreFile), false);
     final Resource sourceResource = set.getResource(sourceURI, true);
     EcoreUtil.resolveAll(set);
+    EList<Resource.Diagnostic> _errors = sourceResource.getErrors();
+    boolean _isEmpty = _errors.isEmpty();
+    boolean _not = (!_isEmpty);
+    if (_not) {
+      EList<Resource.Diagnostic> _errors_1 = sourceResource.getErrors();
+      int _size = _errors_1.size();
+      String _plus = (Integer.valueOf(_size) + " errors in resource!");
+      System.err.println(_plus);
+      EList<Resource.Diagnostic> _errors_2 = sourceResource.getErrors();
+      final Consumer<Resource.Diagnostic> _function_1 = new Consumer<Resource.Diagnostic>() {
+        @Override
+        public void accept(final Resource.Diagnostic e) {
+          Class<? extends Resource.Diagnostic> _class = e.getClass();
+          String _name = _class.getName();
+          String _plus = (_name + " => ");
+          String _message = e.getMessage();
+          String _plus_1 = (_plus + _message);
+          System.err.println(_plus_1);
+        }
+      };
+      _errors_2.forEach(_function_1);
+    }
     EList<EObject> _contents = sourceResource.getContents();
     Iterable<EPackage> _filter = Iterables.<EPackage>filter(_contents, EPackage.class);
     final EPackage ePackage = ((EPackage[])Conversions.unwrapArray(_filter, EPackage.class))[0];
     EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
     Iterable<EClass> _filter_1 = Iterables.<EClass>filter(_eClassifiers, EClass.class);
-    final Function1<EClass, Boolean> _function_1 = new Function1<EClass, Boolean>() {
+    final Function1<EClass, Boolean> _function_2 = new Function1<EClass, Boolean>() {
       @Override
       public Boolean apply(final EClass it) {
         String _name = it.getName();
         return Boolean.valueOf(Objects.equal(_name, "Concept"));
       }
     };
-    EClass _findFirst = IterableExtensions.<EClass>findFirst(_filter_1, _function_1);
+    EClass _findFirst = IterableExtensions.<EClass>findFirst(_filter_1, _function_2);
     EList<EStructuralFeature> _eStructuralFeatures = _findFirst.getEStructuralFeatures();
-    final Function1<EStructuralFeature, Boolean> _function_2 = new Function1<EStructuralFeature, Boolean>() {
+    final Function1<EStructuralFeature, Boolean> _function_3 = new Function1<EStructuralFeature, Boolean>() {
       @Override
       public Boolean apply(final EStructuralFeature it) {
         String _name = it.getName();
         return Boolean.valueOf(Objects.equal(_name, "isAbstract"));
       }
     };
-    EStructuralFeature _findFirst_1 = IterableExtensions.<EStructuralFeature>findFirst(_eStructuralFeatures, _function_2);
+    EStructuralFeature _findFirst_1 = IterableExtensions.<EStructuralFeature>findFirst(_eStructuralFeatures, _function_3);
     EClassifier _eType = _findFirst_1.getEType();
     final String eboolean_name = _eType.getName();
     boolean _notEquals_1 = (!Objects.equal("EBoolean", eboolean_name));

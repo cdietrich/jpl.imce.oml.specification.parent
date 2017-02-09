@@ -45,7 +45,12 @@ class OMLLoadTest extends OMLUtilities {
       	val sourceResource = set.getResource(sourceURI, true)
     
       	EcoreUtil.resolveAll(set)
-      	
+      	if (!sourceResource.errors.empty) {
+      		System.err.println(sourceResource.errors.size + " errors in resource!")
+      		sourceResource.errors.forEach[e |
+      			System.err.println(e.class.name + " => " + e.message)
+      		]
+      	}
       	val ePackage = sourceResource.getContents().filter(EPackage).get(0)
       	      	
       	val eboolean_name = 

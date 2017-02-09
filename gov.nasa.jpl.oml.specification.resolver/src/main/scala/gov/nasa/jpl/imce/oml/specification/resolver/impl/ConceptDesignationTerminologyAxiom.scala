@@ -23,16 +23,16 @@ import gov.nasa.jpl.imce.oml.specification._
 case class ConceptDesignationTerminologyAxiom private[impl] 
 (
  override val uuid: java.util.UUID,
- override val terminology: resolver.api.TerminologyBox,
- override val designatedConcept: resolver.api.Concept,
- override val designatedTerminology: resolver.api.TerminologyBox
+ override val terminology: TerminologyBox,
+ override val designatedConcept: Concept,
+ override val designatedTerminology: TerminologyBox
 )
 extends resolver.api.ConceptDesignationTerminologyAxiom
   with TerminologyBoxAxiom
 {
   def designationTerminologyGraph
   ()
-  : resolver.api.TerminologyGraph
+  : TerminologyGraph
   = {
     terminology match { case g: TerminologyGraph => g }
   }
@@ -42,7 +42,7 @@ extends resolver.api.ConceptDesignationTerminologyAxiom
    */
   override def source
   ()
-  : resolver.api.TerminologyBox
+  : TerminologyBox
   = {
     terminology
   }
@@ -52,7 +52,7 @@ extends resolver.api.ConceptDesignationTerminologyAxiom
    */
   override def target
   ()
-  : resolver.api.TerminologyBox
+  : TerminologyBox
   = {
     designatedTerminology
   }

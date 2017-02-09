@@ -20,33 +20,7 @@ package gov.nasa.jpl.imce.oml.specification.resolver.impl
 
 import gov.nasa.jpl.imce.oml.specification._
 
-case class Structure private[impl] 
-(
- override val graph: TerminologyBox,
- override val uuid: java.util.UUID,
- override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName
-)
-extends resolver.api.Structure
-  with Datatype
+trait DirectedBinaryRelationshipKind
+extends resolver.api.DirectedBinaryRelationshipKind
 {
-
-  override def canEqual(that: scala.Any): scala.Boolean = that match {
-  	case _: Structure => true
-  	case _ => false
-  }
-
-  override val hashCode
-  : scala.Int
-  = (graph, uuid, name).##
-
-  override def equals(other: scala.Any): scala.Boolean = other match {
-	  case that: Structure =>
-	    (that canEqual this) &&
-	    (this.graph == that.graph) &&
-	    (this.uuid == that.uuid) &&
-	    (this.name == that.name)
-
-	  case _ =>
-	    false
-  }
 }

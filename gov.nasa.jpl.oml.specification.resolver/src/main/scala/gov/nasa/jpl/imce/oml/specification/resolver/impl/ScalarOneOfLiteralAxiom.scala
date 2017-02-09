@@ -22,9 +22,9 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class ScalarOneOfLiteralAxiom private[impl] 
 (
- override val graph: resolver.api.TerminologyBox,
+ override val graph: TerminologyBox,
  override val uuid: java.util.UUID,
- override val axiom: resolver.api.ScalarOneOfRestriction,
+ override val axiom: ScalarOneOfRestriction,
  override val value: gov.nasa.jpl.imce.oml.specification.tables.LexicalValue
 )
 extends resolver.api.ScalarOneOfLiteralAxiom
