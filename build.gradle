@@ -89,7 +89,10 @@ project.assembleTargetPlatform.inputs.file file('gradle.properties')
 
 
 subprojects { subproject ->
-    if (!subproject.name.endsWith("feature") && !subproject.name.endsWith("repository") && !subproject.name.endsWith("target")) {
+    if (!subproject.name.endsWith("doc") && 
+		!subproject.name.endsWith("feature") &&
+		!subproject.name.endsWith("reository") && 
+		!subproject.name.endsWith("target")) {
         apply plugin: 'org.xtext.xtend'
     }
 }

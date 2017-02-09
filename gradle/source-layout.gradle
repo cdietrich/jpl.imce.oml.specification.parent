@@ -10,7 +10,7 @@ if (name.endsWith(".tests")) {
 			xtendOutputDir = 'xtend-gen'
 		}
 	}
-} else if (name.endsWith(".feature") || name.endsWith(".repository")) {
+} else if (name.endsWith(".feature") || name.endsWith(".repository") || name.endsWith(".doc")) {
 	sourceSets {
 		main {
 			java.srcDirs = []
