@@ -14,7 +14,7 @@ import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor;
 @FinalFieldsConstructor
 @SuppressWarnings("all")
 public class OntologicalModelingLanguageWebModule extends AbstractOntologicalModelingLanguageWebModule {
-  public OntologicalModelingLanguageWebModule(final Provider<ExecutorService> arg0) {
-    super(arg0);
+  public OntologicalModelingLanguageWebModule(final Provider<ExecutorService> executorServiceProvider) {
+    super(executorServiceProvider);
   }
 }
