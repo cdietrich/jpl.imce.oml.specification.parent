@@ -17,6 +17,7 @@
  */
 package jpl.imce.oml.specification;
 
+import jpl.imce.oml.specification.AbstractOntologicalModelingLanguageRuntimeModule;
 import jpl.imce.oml.specification.linking.OWLLinkingService;
 import jpl.imce.oml.specification.scoping.OMLImportedNamespaceAwareLocalScopeProvider;
 import jpl.imce.oml.specification.util.OMLQualifiedNameConverter;
@@ -32,7 +33,7 @@ import org.eclipse.xtext.scoping.IScopeProvider;
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 @SuppressWarnings("all")
-public class OntologicalModelingLanguageRuntimeModule /* implements AbstractOntologicalModelingLanguageRuntimeModule  */{
+public class OntologicalModelingLanguageRuntimeModule extends AbstractOntologicalModelingLanguageRuntimeModule {
   public Class<? extends ILinkingService> bindILinkingService() {
     return OWLLinkingService.class;
   }

@@ -55,6 +55,7 @@ import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
+@SuppressWarnings("all")
 public class OMLSpecificationResolverLibraryGenerator extends OMLUtilities {
   public static void main(final String[] args) {
     int _length = args.length;
@@ -70,19 +71,16 @@ public class OMLSpecificationResolverLibraryGenerator extends OMLUtilities {
   
   public void generate(final String targetDir) {
     final String omlXcore = "/model/OMLSpecification.xcore";
-    final Procedure1<Map<URI, URI>> _function = new Procedure1<Map<URI, URI>>() {
-      @Override
-      public void apply(final Map<URI, URI> uriMap) {
-        try {
-          URI _createURI = URI.createURI(("platform:/resource/jpl.imce.oml.specification.ecore" + omlXcore));
-          URL _resource = OMLPackage.class.getResource(omlXcore);
-          java.net.URI _uRI = _resource.toURI();
-          String _string = _uRI.toString();
-          URI _createURI_1 = URI.createURI(_string);
-          uriMap.put(_createURI, _createURI_1);
-        } catch (Throwable _e) {
-          throw Exceptions.sneakyThrow(_e);
-        }
+    final Procedure1<Map<URI, URI>> _function = (Map<URI, URI> uriMap) -> {
+      try {
+        URI _createURI = URI.createURI(("platform:/resource/jpl.imce.oml.specification.ecore" + omlXcore));
+        URL _resource = OMLPackage.class.getResource(omlXcore);
+        java.net.URI _uRI = _resource.toURI();
+        String _string = _uRI.toString();
+        URI _createURI_1 = URI.createURI(_string);
+        uriMap.put(_createURI, _createURI_1);
+      } catch (Throwable _e) {
+        throw Exceptions.sneakyThrow(_e);
       }
     };
     final XtextResourceSet set = OMLUtilities.createXcoreResourceSet(_function);
@@ -111,11 +109,8 @@ public class OMLSpecificationResolverLibraryGenerator extends OMLUtilities {
       factoryFile.write(_bytes);
       EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
       Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
-      final Function1<EClass, Boolean> _function = new Function1<EClass, Boolean>() {
-        @Override
-        public Boolean apply(final EClass it) {
-          return OMLSpecificationResolverLibraryGenerator.isFunctionalAPIClass(it);
-        }
+      final Function1<EClass, Boolean> _function = (EClass it) -> {
+        return OMLSpecificationResolverLibraryGenerator.isFunctionalAPIClass(it);
       };
       Iterable<EClass> _filter_1 = IterableExtensions.<EClass>filter(_filter, _function);
       for (final EClass eClass : _filter_1) {
@@ -153,19 +148,13 @@ public class OMLSpecificationResolverLibraryGenerator extends OMLUtilities {
     _builder.newLine();
     {
       Iterable<EClass> _FunctionalAPIClasses = OMLSpecificationResolverLibraryGenerator.FunctionalAPIClasses(ePackage);
-      final Function1<EClass, Boolean> _function = new Function1<EClass, Boolean>() {
-        @Override
-        public Boolean apply(final EClass it) {
-          boolean _isAbstract = it.isAbstract();
-          return Boolean.valueOf((!_isAbstract));
-        }
+      final Function1<EClass, Boolean> _function = (EClass it) -> {
+        boolean _isAbstract = it.isAbstract();
+        return Boolean.valueOf((!_isAbstract));
       };
       Iterable<EClass> _filter = IterableExtensions.<EClass>filter(_FunctionalAPIClasses, _function);
-      final Function1<EClass, String> _function_1 = new Function1<EClass, String>() {
-        @Override
-        public String apply(final EClass it) {
-          return it.getName();
-        }
+      final Function1<EClass, String> _function_1 = (EClass it) -> {
+        return it.getName();
       };
       List<EClass> _sortBy = IterableExtensions.<EClass, String>sortBy(_filter, _function_1);
       for(final EClass eClass : _sortBy) {
@@ -535,11 +524,8 @@ public class OMLSpecificationResolverLibraryGenerator extends OMLUtilities {
   
   public static Iterable<EStructuralFeature> getSortedAttributeSignature(final EClass eClass) {
     Iterable<EClass> _selfAndAllSupertypes = OMLUtilities.selfAndAllSupertypes(eClass);
-    final Function1<EClass, Iterable<EStructuralFeature>> _function = new Function1<EClass, Iterable<EStructuralFeature>>() {
-      @Override
-      public Iterable<EStructuralFeature> apply(final EClass it) {
-        return OMLSpecificationResolverLibraryGenerator.APIStructuralFeatures(it);
-      }
+    final Function1<EClass, Iterable<EStructuralFeature>> _function = (EClass it) -> {
+      return OMLSpecificationResolverLibraryGenerator.APIStructuralFeatures(it);
     };
     Iterable<Iterable<EStructuralFeature>> _map = IterableExtensions.<EClass, Iterable<EStructuralFeature>>map(_selfAndAllSupertypes, _function);
     Iterable<EStructuralFeature> _flatten = Iterables.<EStructuralFeature>concat(_map);
@@ -567,11 +553,8 @@ public class OMLSpecificationResolverLibraryGenerator extends OMLUtilities {
   
   public static Iterable<EStructuralFeature> lookupCopyConstructorArguments(final EClass eClass) {
     Iterable<EStructuralFeature> _sortedAttributeSignature = OMLSpecificationResolverLibraryGenerator.getSortedAttributeSignature(eClass);
-    final Function1<EStructuralFeature, Boolean> _function = new Function1<EStructuralFeature, Boolean>() {
-      @Override
-      public Boolean apply(final EStructuralFeature it) {
-        return OMLSpecificationResolverLibraryGenerator.isCopyConstructorArgument(it);
-      }
+    final Function1<EStructuralFeature, Boolean> _function = (EStructuralFeature it) -> {
+      return OMLSpecificationResolverLibraryGenerator.isCopyConstructorArgument(it);
     };
     return IterableExtensions.<EStructuralFeature>filter(_sortedAttributeSignature, _function);
   }
@@ -583,11 +566,8 @@ public class OMLSpecificationResolverLibraryGenerator extends OMLUtilities {
   
   public static Iterable<EStructuralFeature> APIStructuralFeatures(final EClass eClass) {
     EList<EStructuralFeature> _eStructuralFeatures = eClass.getEStructuralFeatures();
-    final Function1<EStructuralFeature, Boolean> _function = new Function1<EStructuralFeature, Boolean>() {
-      @Override
-      public Boolean apply(final EStructuralFeature it) {
-        return OMLUtilities.isAPI(it);
-      }
+    final Function1<EStructuralFeature, Boolean> _function = (EStructuralFeature it) -> {
+      return OMLUtilities.isAPI(it);
     };
     return IterableExtensions.<EStructuralFeature>filter(_eStructuralFeatures, _function);
   }
@@ -595,11 +575,8 @@ public class OMLSpecificationResolverLibraryGenerator extends OMLUtilities {
   public static Iterable<EClass> FunctionalAPIClasses(final EPackage ePkg) {
     EList<EClassifier> _eClassifiers = ePkg.getEClassifiers();
     Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
-    final Function1<EClass, Boolean> _function = new Function1<EClass, Boolean>() {
-      @Override
-      public Boolean apply(final EClass it) {
-        return OMLSpecificationResolverLibraryGenerator.isFunctionalAPIClass(it);
-      }
+    final Function1<EClass, Boolean> _function = (EClass it) -> {
+      return OMLSpecificationResolverLibraryGenerator.isFunctionalAPIClass(it);
     };
     return IterableExtensions.<EClass>filter(_filter, _function);
   }
@@ -614,32 +591,23 @@ public class OMLSpecificationResolverLibraryGenerator extends OMLUtilities {
   }
   
   public static Boolean isSpecializationOfRootClass(final EClass eClass) {
-    return Boolean.valueOf(((!eClass.getESuperTypes().isEmpty()) && IterableExtensions.<EClass>exists(OMLUtilities.selfAndAllSupertypes(eClass), new Function1<EClass, Boolean>() {
-      @Override
-      public Boolean apply(final EClass it) {
-        return OMLSpecificationResolverLibraryGenerator.isRootHierarchyClass(it);
-      }
-    })));
+    return Boolean.valueOf(((!eClass.getESuperTypes().isEmpty()) && IterableExtensions.<EClass>exists(OMLUtilities.selfAndAllSupertypes(eClass), ((Function1<EClass, Boolean>) (EClass it) -> {
+      return OMLSpecificationResolverLibraryGenerator.isRootHierarchyClass(it);
+    }))));
   }
   
   public static Iterable<EOperation> APIOperations(final EClass eClass) {
     EList<EOperation> _eOperations = eClass.getEOperations();
-    final Function1<EOperation, Boolean> _function = new Function1<EOperation, Boolean>() {
-      @Override
-      public Boolean apply(final EOperation it) {
-        return OMLUtilities.isAPI(it);
-      }
+    final Function1<EOperation, Boolean> _function = (EOperation it) -> {
+      return OMLUtilities.isAPI(it);
     };
     return IterableExtensions.<EOperation>filter(_eOperations, _function);
   }
   
   public static Iterable<EOperation> ScalaOperations(final EClass eClass) {
     EList<EOperation> _eOperations = eClass.getEOperations();
-    final Function1<EOperation, Boolean> _function = new Function1<EOperation, Boolean>() {
-      @Override
-      public Boolean apply(final EOperation op) {
-        return Boolean.valueOf(((OMLUtilities.isScala(op)).booleanValue() || (null != OMLSpecificationResolverLibraryGenerator.xExpressions(op))));
-      }
+    final Function1<EOperation, Boolean> _function = (EOperation op) -> {
+      return Boolean.valueOf(((OMLUtilities.isScala(op)).booleanValue() || (null != OMLSpecificationResolverLibraryGenerator.xExpressions(op))));
     };
     return IterableExtensions.<EOperation>filter(_eOperations, _function);
   }

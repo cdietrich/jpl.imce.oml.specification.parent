@@ -18,20 +18,26 @@
 package jpl.imce.oml.specification;
 
 import com.google.inject.Injector;
+import jpl.imce.oml.specification.OntologicalModelingLanguageStandaloneSetupGenerated;
+import jpl.imce.oml.specification.ecore.OMLPackage;
+import org.eclipse.emf.ecore.EPackage;
 
 /**
  * Initialization support for running Xtext languages without Equinox extension registry.
  */
 @SuppressWarnings("all")
-public class OntologicalModelingLanguageStandaloneSetup /* implements OntologicalModelingLanguageStandaloneSetupGenerated  */{
+public class OntologicalModelingLanguageStandaloneSetup extends OntologicalModelingLanguageStandaloneSetupGenerated {
   public static void doSetup() {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method createInjectorAndDoEMFRegistration() is undefined for the type OntologicalModelingLanguageStandaloneSetup");
+    OntologicalModelingLanguageStandaloneSetup _ontologicalModelingLanguageStandaloneSetup = new OntologicalModelingLanguageStandaloneSetup();
+    _ontologicalModelingLanguageStandaloneSetup.createInjectorAndDoEMFRegistration();
   }
   
-  public Object register(final Injector injector) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field super is undefined"
-      + "\nregister cannot be resolved");
+  public void register(final Injector injector) {
+    boolean _containsKey = EPackage.Registry.INSTANCE.containsKey(OMLPackage.eNS_URI);
+    boolean _not = (!_containsKey);
+    if (_not) {
+      EPackage.Registry.INSTANCE.put(OMLPackage.eNS_URI, OMLPackage.eINSTANCE);
+    }
+    super.register(injector);
   }
 }
