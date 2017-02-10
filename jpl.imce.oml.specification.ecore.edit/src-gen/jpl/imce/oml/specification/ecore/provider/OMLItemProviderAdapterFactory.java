@@ -1077,6 +1077,259 @@ public class OMLItemProviderAdapterFactory extends OMLAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link jpl.imce.oml.specification.ecore.DescriptionBox} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DescriptionBoxItemProvider descriptionBoxItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link jpl.imce.oml.specification.ecore.DescriptionBox}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDescriptionBoxAdapter() {
+		if (descriptionBoxItemProvider == null) {
+			descriptionBoxItemProvider = new DescriptionBoxItemProvider(this);
+		}
+
+		return descriptionBoxItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DescriptionBoxExtendsClosedWorldDefinitionsItemProvider descriptionBoxExtendsClosedWorldDefinitionsItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDescriptionBoxExtendsClosedWorldDefinitionsAdapter() {
+		if (descriptionBoxExtendsClosedWorldDefinitionsItemProvider == null) {
+			descriptionBoxExtendsClosedWorldDefinitionsItemProvider = new DescriptionBoxExtendsClosedWorldDefinitionsItemProvider(this);
+		}
+
+		return descriptionBoxExtendsClosedWorldDefinitionsItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link jpl.imce.oml.specification.ecore.DescriptionBoxRefinement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DescriptionBoxRefinementItemProvider descriptionBoxRefinementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link jpl.imce.oml.specification.ecore.DescriptionBoxRefinement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDescriptionBoxRefinementAdapter() {
+		if (descriptionBoxRefinementItemProvider == null) {
+			descriptionBoxRefinementItemProvider = new DescriptionBoxRefinementItemProvider(this);
+		}
+
+		return descriptionBoxRefinementItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link jpl.imce.oml.specification.ecore.ConceptInstance} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConceptInstanceItemProvider conceptInstanceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link jpl.imce.oml.specification.ecore.ConceptInstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createConceptInstanceAdapter() {
+		if (conceptInstanceItemProvider == null) {
+			conceptInstanceItemProvider = new ConceptInstanceItemProvider(this);
+		}
+
+		return conceptInstanceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstance} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ReifiedRelationshipInstanceItemProvider reifiedRelationshipInstanceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createReifiedRelationshipInstanceAdapter() {
+		if (reifiedRelationshipInstanceItemProvider == null) {
+			reifiedRelationshipInstanceItemProvider = new ReifiedRelationshipInstanceItemProvider(this);
+		}
+
+		return reifiedRelationshipInstanceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceDomain} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ReifiedRelationshipInstanceDomainItemProvider reifiedRelationshipInstanceDomainItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceDomain}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createReifiedRelationshipInstanceDomainAdapter() {
+		if (reifiedRelationshipInstanceDomainItemProvider == null) {
+			reifiedRelationshipInstanceDomainItemProvider = new ReifiedRelationshipInstanceDomainItemProvider(this);
+		}
+
+		return reifiedRelationshipInstanceDomainItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceRange} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ReifiedRelationshipInstanceRangeItemProvider reifiedRelationshipInstanceRangeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceRange}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createReifiedRelationshipInstanceRangeAdapter() {
+		if (reifiedRelationshipInstanceRangeItemProvider == null) {
+			reifiedRelationshipInstanceRangeItemProvider = new ReifiedRelationshipInstanceRangeItemProvider(this);
+		}
+
+		return reifiedRelationshipInstanceRangeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UnreifiedRelationshipInstanceTupleItemProvider unreifiedRelationshipInstanceTupleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createUnreifiedRelationshipInstanceTupleAdapter() {
+		if (unreifiedRelationshipInstanceTupleItemProvider == null) {
+			unreifiedRelationshipInstanceTupleItemProvider = new UnreifiedRelationshipInstanceTupleItemProvider(this);
+		}
+
+		return unreifiedRelationshipInstanceTupleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link jpl.imce.oml.specification.ecore.DataStructureTuple} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DataStructureTupleItemProvider dataStructureTupleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link jpl.imce.oml.specification.ecore.DataStructureTuple}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDataStructureTupleAdapter() {
+		if (dataStructureTupleItemProvider == null) {
+			dataStructureTupleItemProvider = new DataStructureTupleItemProvider(this);
+		}
+
+		return dataStructureTupleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StructuredDataPropertyValueItemProvider structuredDataPropertyValueItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStructuredDataPropertyValueAdapter() {
+		if (structuredDataPropertyValueItemProvider == null) {
+			structuredDataPropertyValueItemProvider = new StructuredDataPropertyValueItemProvider(this);
+		}
+
+		return structuredDataPropertyValueItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link jpl.imce.oml.specification.ecore.ScalarDataPropertyValue} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ScalarDataPropertyValueItemProvider scalarDataPropertyValueItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link jpl.imce.oml.specification.ecore.ScalarDataPropertyValue}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createScalarDataPropertyValueAdapter() {
+		if (scalarDataPropertyValueItemProvider == null) {
+			scalarDataPropertyValueItemProvider = new ScalarDataPropertyValueItemProvider(this);
+		}
+
+		return scalarDataPropertyValueItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1218,6 +1471,17 @@ public class OMLItemProviderAdapterFactory extends OMLAdapterFactory implements 
 		if (synonymScalarRestrictionItemProvider != null) synonymScalarRestrictionItemProvider.dispose();
 		if (scalarOneOfRestrictionItemProvider != null) scalarOneOfRestrictionItemProvider.dispose();
 		if (scalarOneOfLiteralAxiomItemProvider != null) scalarOneOfLiteralAxiomItemProvider.dispose();
+		if (descriptionBoxItemProvider != null) descriptionBoxItemProvider.dispose();
+		if (descriptionBoxExtendsClosedWorldDefinitionsItemProvider != null) descriptionBoxExtendsClosedWorldDefinitionsItemProvider.dispose();
+		if (descriptionBoxRefinementItemProvider != null) descriptionBoxRefinementItemProvider.dispose();
+		if (scalarDataPropertyValueItemProvider != null) scalarDataPropertyValueItemProvider.dispose();
+		if (structuredDataPropertyValueItemProvider != null) structuredDataPropertyValueItemProvider.dispose();
+		if (dataStructureTupleItemProvider != null) dataStructureTupleItemProvider.dispose();
+		if (conceptInstanceItemProvider != null) conceptInstanceItemProvider.dispose();
+		if (reifiedRelationshipInstanceItemProvider != null) reifiedRelationshipInstanceItemProvider.dispose();
+		if (reifiedRelationshipInstanceDomainItemProvider != null) reifiedRelationshipInstanceDomainItemProvider.dispose();
+		if (reifiedRelationshipInstanceRangeItemProvider != null) reifiedRelationshipInstanceRangeItemProvider.dispose();
+		if (unreifiedRelationshipInstanceTupleItemProvider != null) unreifiedRelationshipInstanceTupleItemProvider.dispose();
 	}
 
 }

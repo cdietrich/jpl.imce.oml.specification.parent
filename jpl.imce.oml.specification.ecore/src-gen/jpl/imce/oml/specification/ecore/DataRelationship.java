@@ -24,6 +24,10 @@ package jpl.imce.oml.specification.ecore;
  * A representation of the model object '<em><b>Data Relationship</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An OML DataRelationship ...
+ * <!-- end-model-doc -->
+ *
  *
  * @see jpl.imce.oml.specification.ecore.OMLPackage#getDataRelationship()
  * @model abstract="true"

@@ -222,6 +222,12 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case OMLPackage.CONCEPTUAL_ENTITY: {
+				ConceptualEntity conceptualEntity = (ConceptualEntity)theEObject;
+				T result = caseConceptualEntity(conceptualEntity);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case OMLPackage.ASPECT: {
 				Aspect aspect = (Aspect)theEObject;
 				T result = caseAspect(aspect);
@@ -239,6 +245,7 @@ public class OMLSwitch<T> extends Switch<T> {
 				Concept concept = (Concept)theEObject;
 				T result = caseConcept(concept);
 				if (result == null) result = caseEntity(concept);
+				if (result == null) result = caseConceptualEntity(concept);
 				if (result == null) result = caseUnaryTermKind(concept);
 				if (result == null) result = caseTerm(concept);
 				if (result == null) result = caseTerminologyBoxStatement(concept);
@@ -265,6 +272,7 @@ public class OMLSwitch<T> extends Switch<T> {
 				T result = caseReifiedRelationship(reifiedRelationship);
 				if (result == null) result = caseEntityRelationship(reifiedRelationship);
 				if (result == null) result = caseEntity(reifiedRelationship);
+				if (result == null) result = caseConceptualEntity(reifiedRelationship);
 				if (result == null) result = caseTerm(reifiedRelationship);
 				if (result == null) result = caseDirectedBinaryRelationshipKind(reifiedRelationship);
 				if (result == null) result = caseTerminologyBoxStatement(reifiedRelationship);
@@ -856,6 +864,126 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case OMLPackage.DESCRIPTION_BOX: {
+				DescriptionBox descriptionBox = (DescriptionBox)theEObject;
+				T result = caseDescriptionBox(descriptionBox);
+				if (result == null) result = caseTerminologyThing(descriptionBox);
+				if (result == null) result = caseResource(descriptionBox);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS: {
+				DescriptionBoxExtendsClosedWorldDefinitions descriptionBoxExtendsClosedWorldDefinitions = (DescriptionBoxExtendsClosedWorldDefinitions)theEObject;
+				T result = caseDescriptionBoxExtendsClosedWorldDefinitions(descriptionBoxExtendsClosedWorldDefinitions);
+				if (result == null) result = caseTerminologyThing(descriptionBoxExtendsClosedWorldDefinitions);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OMLPackage.DESCRIPTION_BOX_REFINEMENT: {
+				DescriptionBoxRefinement descriptionBoxRefinement = (DescriptionBoxRefinement)theEObject;
+				T result = caseDescriptionBoxRefinement(descriptionBoxRefinement);
+				if (result == null) result = caseTerminologyThing(descriptionBoxRefinement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION: {
+				TerminologyInstanceAssertion terminologyInstanceAssertion = (TerminologyInstanceAssertion)theEObject;
+				T result = caseTerminologyInstanceAssertion(terminologyInstanceAssertion);
+				if (result == null) result = caseTerminologyThing(terminologyInstanceAssertion);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OMLPackage.SINGLETON_INSTANCE: {
+				SingletonInstance singletonInstance = (SingletonInstance)theEObject;
+				T result = caseSingletonInstance(singletonInstance);
+				if (result == null) result = caseTerminologyInstanceAssertion(singletonInstance);
+				if (result == null) result = caseResource(singletonInstance);
+				if (result == null) result = caseTerminologyThing(singletonInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OMLPackage.SCALAR_DATA_PROPERTY_VALUE: {
+				ScalarDataPropertyValue scalarDataPropertyValue = (ScalarDataPropertyValue)theEObject;
+				T result = caseScalarDataPropertyValue(scalarDataPropertyValue);
+				if (result == null) result = caseTerminologyInstanceAssertion(scalarDataPropertyValue);
+				if (result == null) result = caseTerminologyThing(scalarDataPropertyValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE: {
+				StructuredDataPropertyValue structuredDataPropertyValue = (StructuredDataPropertyValue)theEObject;
+				T result = caseStructuredDataPropertyValue(structuredDataPropertyValue);
+				if (result == null) result = caseTerminologyInstanceAssertion(structuredDataPropertyValue);
+				if (result == null) result = caseTerminologyThing(structuredDataPropertyValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OMLPackage.DATA_STRUCTURE_TUPLE: {
+				DataStructureTuple dataStructureTuple = (DataStructureTuple)theEObject;
+				T result = caseDataStructureTuple(dataStructureTuple);
+				if (result == null) result = caseSingletonInstance(dataStructureTuple);
+				if (result == null) result = caseTerminologyInstanceAssertion(dataStructureTuple);
+				if (result == null) result = caseResource(dataStructureTuple);
+				if (result == null) result = caseTerminologyThing(dataStructureTuple);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OMLPackage.CONCEPTUAL_ENTITY_SINGLETON_INSTANCE: {
+				ConceptualEntitySingletonInstance conceptualEntitySingletonInstance = (ConceptualEntitySingletonInstance)theEObject;
+				T result = caseConceptualEntitySingletonInstance(conceptualEntitySingletonInstance);
+				if (result == null) result = caseSingletonInstance(conceptualEntitySingletonInstance);
+				if (result == null) result = caseTerminologyInstanceAssertion(conceptualEntitySingletonInstance);
+				if (result == null) result = caseResource(conceptualEntitySingletonInstance);
+				if (result == null) result = caseTerminologyThing(conceptualEntitySingletonInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OMLPackage.CONCEPT_INSTANCE: {
+				ConceptInstance conceptInstance = (ConceptInstance)theEObject;
+				T result = caseConceptInstance(conceptInstance);
+				if (result == null) result = caseConceptualEntitySingletonInstance(conceptInstance);
+				if (result == null) result = caseSingletonInstance(conceptInstance);
+				if (result == null) result = caseTerminologyInstanceAssertion(conceptInstance);
+				if (result == null) result = caseResource(conceptInstance);
+				if (result == null) result = caseTerminologyThing(conceptInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE: {
+				ReifiedRelationshipInstance reifiedRelationshipInstance = (ReifiedRelationshipInstance)theEObject;
+				T result = caseReifiedRelationshipInstance(reifiedRelationshipInstance);
+				if (result == null) result = caseConceptualEntitySingletonInstance(reifiedRelationshipInstance);
+				if (result == null) result = caseSingletonInstance(reifiedRelationshipInstance);
+				if (result == null) result = caseTerminologyInstanceAssertion(reifiedRelationshipInstance);
+				if (result == null) result = caseResource(reifiedRelationshipInstance);
+				if (result == null) result = caseTerminologyThing(reifiedRelationshipInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_DOMAIN: {
+				ReifiedRelationshipInstanceDomain reifiedRelationshipInstanceDomain = (ReifiedRelationshipInstanceDomain)theEObject;
+				T result = caseReifiedRelationshipInstanceDomain(reifiedRelationshipInstanceDomain);
+				if (result == null) result = caseTerminologyInstanceAssertion(reifiedRelationshipInstanceDomain);
+				if (result == null) result = caseTerminologyThing(reifiedRelationshipInstanceDomain);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_RANGE: {
+				ReifiedRelationshipInstanceRange reifiedRelationshipInstanceRange = (ReifiedRelationshipInstanceRange)theEObject;
+				T result = caseReifiedRelationshipInstanceRange(reifiedRelationshipInstanceRange);
+				if (result == null) result = caseTerminologyInstanceAssertion(reifiedRelationshipInstanceRange);
+				if (result == null) result = caseTerminologyThing(reifiedRelationshipInstanceRange);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE: {
+				UnreifiedRelationshipInstanceTuple unreifiedRelationshipInstanceTuple = (UnreifiedRelationshipInstanceTuple)theEObject;
+				T result = caseUnreifiedRelationshipInstanceTuple(unreifiedRelationshipInstanceTuple);
+				if (result == null) result = caseTerminologyInstanceAssertion(unreifiedRelationshipInstanceTuple);
+				if (result == null) result = caseTerminologyThing(unreifiedRelationshipInstanceTuple);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -1142,6 +1270,21 @@ public class OMLSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEntity(Entity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Conceptual Entity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Conceptual Entity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConceptualEntity(ConceptualEntity object) {
 		return null;
 	}
 
@@ -1967,6 +2110,216 @@ public class OMLSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseScalarOneOfLiteralAxiom(ScalarOneOfLiteralAxiom object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Description Box</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Description Box</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDescriptionBox(DescriptionBox object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Description Box Extends Closed World Definitions</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Description Box Extends Closed World Definitions</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDescriptionBoxExtendsClosedWorldDefinitions(DescriptionBoxExtendsClosedWorldDefinitions object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Description Box Refinement</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Description Box Refinement</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDescriptionBoxRefinement(DescriptionBoxRefinement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Terminology Instance Assertion</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Terminology Instance Assertion</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTerminologyInstanceAssertion(TerminologyInstanceAssertion object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Singleton Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Singleton Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSingletonInstance(SingletonInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Scalar Data Property Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Scalar Data Property Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseScalarDataPropertyValue(ScalarDataPropertyValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Structured Data Property Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Structured Data Property Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStructuredDataPropertyValue(StructuredDataPropertyValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Data Structure Tuple</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Data Structure Tuple</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDataStructureTuple(DataStructureTuple object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Conceptual Entity Singleton Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Conceptual Entity Singleton Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConceptualEntitySingletonInstance(ConceptualEntitySingletonInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Concept Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Concept Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConceptInstance(ConceptInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Reified Relationship Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Reified Relationship Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReifiedRelationshipInstance(ReifiedRelationshipInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Reified Relationship Instance Domain</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Reified Relationship Instance Domain</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReifiedRelationshipInstanceDomain(ReifiedRelationshipInstanceDomain object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Reified Relationship Instance Range</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Reified Relationship Instance Range</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReifiedRelationshipInstanceRange(ReifiedRelationshipInstanceRange object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Unreified Relationship Instance Tuple</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Unreified Relationship Instance Tuple</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUnreifiedRelationshipInstanceTuple(UnreifiedRelationshipInstanceTuple object) {
 		return null;
 	}
 

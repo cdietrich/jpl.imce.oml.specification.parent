@@ -25,6 +25,10 @@ import org.eclipse.emf.cdo.CDOObject;
  * A representation of the model object '<em><b>Data Relationship Range</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An OML DataRelationshipRange ...
+ * <!-- end-model-doc -->
+ *
  *
  * @see jpl.imce.oml.specification.ecore.OMLPackage#getDataRelationshipRange()
  * @model abstract="true"

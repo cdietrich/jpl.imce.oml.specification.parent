@@ -18,6 +18,8 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import jpl.imce.oml.specification.ecore.ConceptualEntity;
+import jpl.imce.oml.specification.ecore.Entity;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.ReifiedRelationship;
 
@@ -261,6 +263,48 @@ public class ReifiedRelationshipImpl extends EntityRelationshipImpl implements R
 				return UNREIFIED_INVERSE_PROPERTY_NAME_EDEFAULT == null ? unreifiedInversePropertyName != null : !UNREIFIED_INVERSE_PROPERTY_NAME_EDEFAULT.equals(unreifiedInversePropertyName);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == Entity.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == ConceptualEntity.class) {
+			switch (derivedFeatureID) {
+				case OMLPackage.REIFIED_RELATIONSHIP__IS_ABSTRACT: return OMLPackage.CONCEPTUAL_ENTITY__IS_ABSTRACT;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == Entity.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == ConceptualEntity.class) {
+			switch (baseFeatureID) {
+				case OMLPackage.CONCEPTUAL_ENTITY__IS_ABSTRACT: return OMLPackage.REIFIED_RELATIONSHIP__IS_ABSTRACT;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

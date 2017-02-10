@@ -29,6 +29,21 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Terminology Graph Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * OML supports two different interpretations for OML TerminologyBox vocabularies:
+ * - An open-world interpretation where the vocabulary formalizes a particular domain
+ *   that will be used for modeling particular systems in that domain.
+ * - A closed-world interpretation where the vocabulary formalizes the description of
+ *   a particular system modeled using the open-world vocabulary for a particular domain.
+ * The difference between these interpretations primarily affects the mapping to an [OWL2-DL Class]
+ * of a concrete OML ConceptualEntity as follows:
+ * - For OpenWorldDefinitions, the mapped [OWL2-DL Class] has open-world semantics; that is,
+ *   it classifies a set of individuals that share the characteristics and capabilities
+ *   encoded in the [OWL2-DL Class].
+ * - For ClosedWorldDefinitions, the mapped [OWL2-DL Class] has a closed-world semantics in
+ *   the sense that it is intended to classify a singleton individual uniquely identified
+ *   via the values of its identifying OML DataRelationshipFromEntity properties.
+ * <!-- end-model-doc -->
  * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyGraphKind()
  * @model
  * @generated
@@ -59,15 +74,18 @@ public enum TerminologyGraphKind implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Each entity in an OpenWorldDefinition terminology corresponds to a classifier for describing
-	 * a collection of things in the real world where all the things in that collection
-	 * exhibit all the capabilities of that entity such as the relationships & data properties that the entity can be invovled in.
-	 * 
-	 * A taxonomy of entities in an open world definition terminology can be further enriched in other open world definition terminologies.
-	 * For example, such a terminology A could define concepts X and Y could assert that X specializes Y.
-	 * Another such terminology B could extend A and could define concept Z and could assert that X specializes Z and that Z specializes Y.
-	 * In effect, B inserts in A's taxonomy of X,Y a new concept Z.
-	 * This is allowed only for open world terminologies.
+	 * Each OML Entity in an OpenWorldDefinitions OML TerminologyBox has the semantics of
+	 * an [OWL2-DL Class]; that is, it classifies a set of individuals
+	 * that share the characteristics and capabilities encoded in the [OWL2-DL Class].
+	 * A well-formed OML SpecializationAxiom establishing a taxonomic relationship between
+	 * two OML Terms can be asserted arbitrarily in any OpenWorldDefinitions OML TerminologyBox
+	 * that directly or indirectly includes the related OML Terms.
+	 * For example, suppose that OML Concepts `A` and `B`
+	 * are defined in OpenWorldDefinitions OML TerminologyBox `P` and `Q` respectively.
+	 * Suppose further that OpenWorldDefinitions OML TerminologyBoxes, `U` and `V`, each
+	 * extend both `P` and `Q` where `U` asserts that `A` extends `B` while `V` asserts that `B` extends `A.
+	 * This is well-formed; furthermore, an OpenWorldDefinitions OML TerminologyBox extending both `U` and `V`
+	 * would force `A` and `B` to become equivalent OML Concepts per the open-world semantics of [OWL2-DL].
 	 * <!-- end-model-doc -->
 	 * @see #OPEN_WORLD_DEFINITIONS
 	 * @model name="OpenWorldDefinitions"
@@ -81,9 +99,14 @@ public enum TerminologyGraphKind implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Each entity in a ClosedWorldDesignation terminology corresponds to a unique thing in the real world.
-	 * The identity of closed-world designation entities can be specified using annotations (e.g., serial numbers, unique identifiers, ...)
-	 * Each instance of an entity corresponds to modeling a particular state of affairs of the thing correspondign to that entity.
+	 * Each OML ConceptualEntity in a ClosedWorldDesignation terminology describes a unique thing
+	 * in the real world uniquely identifiable by the collection of its identifying OML DataRelationshipFromEntity properties
+	 * (e.g., serial numbers, unique identifiers, ...).
+	 * A well-formed ClosedWorldDesignations OML TerminologyBox is restricted to defining singleton OML ConceptualEntities, each as
+	 * a specialization of at least one concrete OML ConceptualEntity defined  in an extended OpenWorldDefinitions OML TerminologyBox.
+	 * Each OML ConceptualEntity in a ClosedWorldDesignations OML TerminologyBox maps to
+	 * an [OWL2-DL Class] with an axiom asserting its equivalence to an exact cardinality restriction of 1 for
+	 * each of its identifying OML DataRelationshipFromEntity properties.
 	 * <!-- end-model-doc -->
 	 * @see #CLOSED_WORLD_DESIGNATIONS
 	 * @model name="ClosedWorldDesignations"

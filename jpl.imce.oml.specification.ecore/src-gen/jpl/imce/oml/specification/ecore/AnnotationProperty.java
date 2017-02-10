@@ -25,6 +25,10 @@ import org.eclipse.emf.cdo.CDOObject;
  * A representation of the model object '<em><b>Annotation Property</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An OML AnnotationProperty ...
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>

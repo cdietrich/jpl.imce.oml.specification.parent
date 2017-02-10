@@ -25,6 +25,10 @@ import org.eclipse.emf.cdo.CDOObject;
  * A representation of the model object '<em><b>Terminology Thing</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An OML TerminologyThing ...
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>

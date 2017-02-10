@@ -25,6 +25,10 @@ import org.eclipse.emf.cdo.CDOObject;
  * A representation of the model object '<em><b>Directed Binary Relationship Kind</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An OML DirectedBinaryRelationshipKind ...
+ * <!-- end-model-doc -->
+ *
  *
  * @see jpl.imce.oml.specification.ecore.OMLPackage#getDirectedBinaryRelationshipKind()
  * @model abstract="true"

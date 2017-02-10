@@ -25,9 +25,9 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This axiom specifies a TerminologyBox that a Bundle aggregates.
- * A BundledTerminologyAxiom allows a bundle to
- * make references (via TerminologyStatements) to TerminologyThings
+ * An OML BundledTerminologyAxiom identifies an OML TerminologyBox that an OML Bundle aggregates.
+ * An OML BundledTerminologyAxiom allows an OML Bundle to
+ * make references (via OML TerminologyStatements) to OML TerminologyThings
  * within the transitive closure of a bundledTerminology.
  * <!-- end-model-doc -->
  *

@@ -1,7 +1,7 @@
 include 'jpl.imce.oml.specification.ecore'
 include 'gov.nasa.jpl.imce.oml.specification.scala.generators'
 include 'jpl.imce.oml.specification'
-include 'jpl.imce.oml.specification.doc'
+include 'gov.nasa.jpl.imce.oml.specification.doc'
 include 'jpl.imce.oml.specification.tests'
 include 'jpl.imce.oml.specification.ecore.edit'
 include 'jpl.imce.oml.specification.ecore.editor'

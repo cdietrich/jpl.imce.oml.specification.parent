@@ -25,7 +25,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A data range that is defined as a synonym for another (i.e. the restrictedRange).
+ * An OML SynonymScalarRestriction is a data range that is defined as a synonym for another (i.e. the restrictedRange).
  * <!-- end-model-doc -->
  *
  *

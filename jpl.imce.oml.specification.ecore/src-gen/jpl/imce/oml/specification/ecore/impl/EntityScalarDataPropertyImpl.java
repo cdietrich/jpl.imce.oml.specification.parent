@@ -50,6 +50,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.EntityScalarDataPropertyImpl#getDomain <em>Domain</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.impl.EntityScalarDataPropertyImpl#isIsIdentityCriteria <em>Is Identity Criteria</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.EntityScalarDataPropertyImpl#getRange <em>Range</em>}</li>
  * </ul>
  *
@@ -65,6 +66,26 @@ public class EntityScalarDataPropertyImpl extends DataRelationshipImpl implement
 	 * @ordered
 	 */
 	protected Entity domain;
+
+	/**
+	 * The default value of the '{@link #isIsIdentityCriteria() <em>Is Identity Criteria</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsIdentityCriteria()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_IDENTITY_CRITERIA_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsIdentityCriteria() <em>Is Identity Criteria</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsIdentityCriteria()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isIdentityCriteria = IS_IDENTITY_CRITERIA_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getRange() <em>Range</em>}' reference.
@@ -138,6 +159,27 @@ public class EntityScalarDataPropertyImpl extends DataRelationshipImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isIsIdentityCriteria() {
+		return isIdentityCriteria;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsIdentityCriteria(boolean newIsIdentityCriteria) {
+		boolean oldIsIdentityCriteria = isIdentityCriteria;
+		isIdentityCriteria = newIsIdentityCriteria;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__IS_IDENTITY_CRITERIA, oldIsIdentityCriteria, isIdentityCriteria));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DataRange getRange() {
 		if (range != null && ((EObject)range).eIsProxy()) {
 			InternalEObject oldRange = (InternalEObject)range;
@@ -200,6 +242,8 @@ public class EntityScalarDataPropertyImpl extends DataRelationshipImpl implement
 			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__DOMAIN:
 				if (resolve) return getDomain();
 				return basicGetDomain();
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
+				return isIsIdentityCriteria();
 			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__RANGE:
 				if (resolve) return getRange();
 				return basicGetRange();
@@ -217,6 +261,9 @@ public class EntityScalarDataPropertyImpl extends DataRelationshipImpl implement
 		switch (featureID) {
 			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__DOMAIN:
 				setDomain((Entity)newValue);
+				return;
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
+				setIsIdentityCriteria((Boolean)newValue);
 				return;
 			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__RANGE:
 				setRange((DataRange)newValue);
@@ -236,6 +283,9 @@ public class EntityScalarDataPropertyImpl extends DataRelationshipImpl implement
 			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__DOMAIN:
 				setDomain((Entity)null);
 				return;
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
+				setIsIdentityCriteria(IS_IDENTITY_CRITERIA_EDEFAULT);
+				return;
 			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__RANGE:
 				setRange((DataRange)null);
 				return;
@@ -253,6 +303,8 @@ public class EntityScalarDataPropertyImpl extends DataRelationshipImpl implement
 		switch (featureID) {
 			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__DOMAIN:
 				return domain != null;
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
+				return isIdentityCriteria != IS_IDENTITY_CRITERIA_EDEFAULT;
 			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__RANGE:
 				return range != null;
 		}
@@ -274,6 +326,7 @@ public class EntityScalarDataPropertyImpl extends DataRelationshipImpl implement
 		if (baseClass == DataRelationshipFromEntity.class) {
 			switch (derivedFeatureID) {
 				case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__DOMAIN: return OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN;
+				case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__IS_IDENTITY_CRITERIA: return OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA;
 				default: return -1;
 			}
 		}
@@ -306,6 +359,7 @@ public class EntityScalarDataPropertyImpl extends DataRelationshipImpl implement
 		if (baseClass == DataRelationshipFromEntity.class) {
 			switch (baseFeatureID) {
 				case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN: return OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__DOMAIN;
+				case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA: return OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__IS_IDENTITY_CRITERIA;
 				default: return -1;
 			}
 		}
@@ -337,6 +391,22 @@ public class EntityScalarDataPropertyImpl extends DataRelationshipImpl implement
 				return target();
 		}
 		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (isIdentityCriteria: ");
+		result.append(isIdentityCriteria);
+		result.append(')');
+		return result.toString();
 	}
 
 } //EntityScalarDataPropertyImpl

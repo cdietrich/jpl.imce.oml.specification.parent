@@ -25,7 +25,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Corresponds to an OWL2 DataRange with arity=1.
+ * An OWL DataRange corresponds to an OWL2 DataRange with arity=1.
  * <!-- end-model-doc -->
  *
  *

@@ -24,6 +24,10 @@ package jpl.imce.oml.specification.ecore;
  * A representation of the model object '<em><b>Entity</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An OML Entity ...
+ * <!-- end-model-doc -->
+ *
  *
  * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntity()
  * @model abstract="true"

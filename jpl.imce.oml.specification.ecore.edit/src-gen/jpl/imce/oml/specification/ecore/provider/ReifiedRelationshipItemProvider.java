@@ -79,9 +79,9 @@ public class ReifiedRelationshipItemProvider extends EntityRelationshipItemProvi
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ReifiedRelationship_isAbstract_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ReifiedRelationship_isAbstract_feature", "_UI_ReifiedRelationship_type"),
-				 OMLPackage.Literals.REIFIED_RELATIONSHIP__IS_ABSTRACT,
+				 getString("_UI_ConceptualEntity_isAbstract_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConceptualEntity_isAbstract_feature", "_UI_ConceptualEntity_type"),
+				 OMLPackage.Literals.CONCEPTUAL_ENTITY__IS_ABSTRACT,
 				 true,
 				 false,
 				 false,

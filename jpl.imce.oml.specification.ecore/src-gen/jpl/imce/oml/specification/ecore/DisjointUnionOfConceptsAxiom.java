@@ -25,7 +25,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A DisjointUnionOfConceptsAxioms represents non-leaf & leaf nodes of a concept taxonomy:
+ * An OML DisjointUnionOfConceptsAxioms represents non-leaf & leaf nodes of a concept taxonomy:
  * - Non-leaf nodes are AnonymousConceptTaxonomyAxioms.
  * - Leaf nodes are SpecificDisjointConceptAxioms.
  * <!-- end-model-doc -->

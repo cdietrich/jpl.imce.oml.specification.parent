@@ -24,6 +24,10 @@ package jpl.imce.oml.specification.ecore;
  * A representation of the model object '<em><b>Concept Designation Terminology Axiom</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An OML ConceptDesignationTerminologyAxiom ...
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>

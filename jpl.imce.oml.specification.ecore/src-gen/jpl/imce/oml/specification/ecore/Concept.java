@@ -24,42 +24,14 @@ package jpl.imce.oml.specification.ecore;
  * A representation of the model object '<em><b>Concept</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link jpl.imce.oml.specification.ecore.Concept#isIsAbstract <em>Is Abstract</em>}</li>
- * </ul>
+ * <!-- begin-model-doc -->
+ * An OML Concept ...
+ * <!-- end-model-doc -->
+ *
  *
  * @see jpl.imce.oml.specification.ecore.OMLPackage#getConcept()
  * @model
  * @generated
  */
-public interface Concept extends Entity, UnaryTermKind {
-	/**
-	 * Returns the value of the '<em><b>Is Abstract</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Is Abstract</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Abstract</em>' attribute.
-	 * @see #setIsAbstract(boolean)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getConcept_IsAbstract()
-	 * @model unique="false" required="true"
-	 * @generated
-	 */
-	boolean isIsAbstract();
-
-	/**
-	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.Concept#isIsAbstract <em>Is Abstract</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Abstract</em>' attribute.
-	 * @see #isIsAbstract()
-	 * @generated
-	 */
-	void setIsAbstract(boolean value);
-
+public interface Concept extends Entity, ConceptualEntity, UnaryTermKind {
 } // Concept

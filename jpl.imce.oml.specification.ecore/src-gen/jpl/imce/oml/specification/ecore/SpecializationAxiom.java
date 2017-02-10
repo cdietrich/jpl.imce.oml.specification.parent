@@ -24,6 +24,10 @@ package jpl.imce.oml.specification.ecore;
  * A representation of the model object '<em><b>Specialization Axiom</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An OML SpecializationAxiom ...
+ * <!-- end-model-doc -->
+ *
  *
  * @see jpl.imce.oml.specification.ecore.OMLPackage#getSpecializationAxiom()
  * @model abstract="true"

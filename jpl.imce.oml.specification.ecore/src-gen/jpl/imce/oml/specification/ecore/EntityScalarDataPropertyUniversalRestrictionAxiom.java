@@ -25,7 +25,8 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Semantics: OWL2 DataAllValuesFrom (the range must be explicitly defined as a Scalar datatype)
+ * An OML EntityScalarDataPropertyUniversalRestrictionAxiom maps to an
+ * OWL2 DataAllValuesFrom (the range must be explicitly defined as a Scalar datatype)
  * <!-- end-model-doc -->
  *
  * <p>

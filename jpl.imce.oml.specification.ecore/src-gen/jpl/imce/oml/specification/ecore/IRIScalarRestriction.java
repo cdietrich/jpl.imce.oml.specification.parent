@@ -25,7 +25,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A data range that specifies how one IRI scalar adds facet restrictions to another.
+ * An OML IRIScalarRestriction is a data range that specifies how one IRI scalar adds facet restrictions to another.
  * Applies when the restricted scalar represents IRIs (OWL2: 4.6)
  * i.e., when it is one of the following scalars (or their transitively restricted ones):
  * xsd:anyURI

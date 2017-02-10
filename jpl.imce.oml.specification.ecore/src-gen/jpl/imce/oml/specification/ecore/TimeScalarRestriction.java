@@ -25,7 +25,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A data range that specifies how one time scalar adds facet restrictions to another.
+ * An OML TimeScalarRestriction is a data range that specifies how one time scalar adds facet restrictions to another.
  * Applies when the restricted scalar represents time instants (OWL2: 4.7)
  * i.e., when it is one of the following scalars (or their transitively restricted ones):
  * xsd:dateTime

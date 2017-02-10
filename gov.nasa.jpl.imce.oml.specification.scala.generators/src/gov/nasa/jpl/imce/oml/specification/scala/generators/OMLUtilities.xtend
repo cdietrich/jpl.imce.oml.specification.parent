@@ -281,10 +281,10 @@ class OMLUtilities {
     	null === e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotFunctionalAPI")
     }
     
-    static def Boolean isValueTable(ENamedElement e) {
-    	null !== e.getEAnnotation("http://imce.jpl.nasa.gov/oml/ValueTable")
+    static def Boolean isGlossary(ENamedElement e) {
+    	null !== e.getEAnnotation("http://imce.jpl.nasa.gov/oml/Glossary")
     }
-   
+    
     static def Boolean isScala(ENamedElement e) {
     	null !== e.getEAnnotation("http://imce.jpl.nasa.gov/oml/Scala")
     }
@@ -293,6 +293,10 @@ class OMLUtilities {
     	null === e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotSchema")
     }
     
+    static def Boolean isValueTable(ENamedElement e) {
+    	null !== e.getEAnnotation("http://imce.jpl.nasa.gov/oml/ValueTable")
+    }
+   
 	static def String pluralize(String s) {
 	  if (s.endsWith("y")) { 
 	  	s.substring(0, s.length-1)+"ies"
@@ -412,6 +416,11 @@ class OMLUtilities {
 	
 	static def String columnName(ETypedElement feature) {
 		if (feature instanceof EReference) feature.name+"UUID" else feature.name
+	}
+	
+	static def String markDown(ENamedElement e) {
+		val doc = e.getEAnnotation("http://www.eclipse.org/emf/2002/GenModel")?.details?.get("documentation") ?: ""
+		doc
 	}
 	
 	static def String doc(ENamedElement e, String indent) {

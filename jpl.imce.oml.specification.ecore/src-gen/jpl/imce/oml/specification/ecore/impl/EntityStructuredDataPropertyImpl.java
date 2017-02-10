@@ -50,6 +50,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.EntityStructuredDataPropertyImpl#getDomain <em>Domain</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.impl.EntityStructuredDataPropertyImpl#isIsIdentityCriteria <em>Is Identity Criteria</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.EntityStructuredDataPropertyImpl#getRange <em>Range</em>}</li>
  * </ul>
  *
@@ -65,6 +66,26 @@ public class EntityStructuredDataPropertyImpl extends DataRelationshipImpl imple
 	 * @ordered
 	 */
 	protected Entity domain;
+
+	/**
+	 * The default value of the '{@link #isIsIdentityCriteria() <em>Is Identity Criteria</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsIdentityCriteria()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_IDENTITY_CRITERIA_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsIdentityCriteria() <em>Is Identity Criteria</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsIdentityCriteria()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isIdentityCriteria = IS_IDENTITY_CRITERIA_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getRange() <em>Range</em>}' reference.
@@ -138,6 +159,27 @@ public class EntityStructuredDataPropertyImpl extends DataRelationshipImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isIsIdentityCriteria() {
+		return isIdentityCriteria;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsIdentityCriteria(boolean newIsIdentityCriteria) {
+		boolean oldIsIdentityCriteria = isIdentityCriteria;
+		isIdentityCriteria = newIsIdentityCriteria;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__IS_IDENTITY_CRITERIA, oldIsIdentityCriteria, isIdentityCriteria));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Structure getRange() {
 		if (range != null && ((EObject)range).eIsProxy()) {
 			InternalEObject oldRange = (InternalEObject)range;
@@ -200,6 +242,8 @@ public class EntityStructuredDataPropertyImpl extends DataRelationshipImpl imple
 			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__DOMAIN:
 				if (resolve) return getDomain();
 				return basicGetDomain();
+			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
+				return isIsIdentityCriteria();
 			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__RANGE:
 				if (resolve) return getRange();
 				return basicGetRange();
@@ -217,6 +261,9 @@ public class EntityStructuredDataPropertyImpl extends DataRelationshipImpl imple
 		switch (featureID) {
 			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__DOMAIN:
 				setDomain((Entity)newValue);
+				return;
+			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
+				setIsIdentityCriteria((Boolean)newValue);
 				return;
 			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__RANGE:
 				setRange((Structure)newValue);
@@ -236,6 +283,9 @@ public class EntityStructuredDataPropertyImpl extends DataRelationshipImpl imple
 			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__DOMAIN:
 				setDomain((Entity)null);
 				return;
+			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
+				setIsIdentityCriteria(IS_IDENTITY_CRITERIA_EDEFAULT);
+				return;
 			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__RANGE:
 				setRange((Structure)null);
 				return;
@@ -253,6 +303,8 @@ public class EntityStructuredDataPropertyImpl extends DataRelationshipImpl imple
 		switch (featureID) {
 			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__DOMAIN:
 				return domain != null;
+			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
+				return isIdentityCriteria != IS_IDENTITY_CRITERIA_EDEFAULT;
 			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__RANGE:
 				return range != null;
 		}
@@ -274,6 +326,7 @@ public class EntityStructuredDataPropertyImpl extends DataRelationshipImpl imple
 		if (baseClass == DataRelationshipFromEntity.class) {
 			switch (derivedFeatureID) {
 				case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__DOMAIN: return OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN;
+				case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__IS_IDENTITY_CRITERIA: return OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA;
 				default: return -1;
 			}
 		}
@@ -306,6 +359,7 @@ public class EntityStructuredDataPropertyImpl extends DataRelationshipImpl imple
 		if (baseClass == DataRelationshipFromEntity.class) {
 			switch (baseFeatureID) {
 				case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN: return OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__DOMAIN;
+				case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA: return OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__IS_IDENTITY_CRITERIA;
 				default: return -1;
 			}
 		}
@@ -337,6 +391,22 @@ public class EntityStructuredDataPropertyImpl extends DataRelationshipImpl imple
 				return target();
 		}
 		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (isIdentityCriteria: ");
+		result.append(isIdentityCriteria);
+		result.append(')');
+		return result.toString();
 	}
 
 } //EntityStructuredDataPropertyImpl

@@ -25,7 +25,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A SpecificDisjointConceptAxiom specifies a leaf in a taxonomy tree.
+ * An OML SpecificDisjointConceptAxiom specifies a leaf in a taxonomy tree.
  * <!-- end-model-doc -->
  *
  * <p>

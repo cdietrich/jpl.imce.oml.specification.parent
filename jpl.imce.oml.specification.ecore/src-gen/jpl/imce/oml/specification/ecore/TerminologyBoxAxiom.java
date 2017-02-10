@@ -25,7 +25,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A TerminologyBoxAxiom is a TerminologyAxiom that asserts a logical statement about a Term.
+ * An OML TerminologyBoxAxiom is a TerminologyAxiom that asserts a logical statement about a Term.
  * <!-- end-model-doc -->
  *
  * <p>

@@ -24,10 +24,8 @@ import java.util.List;
 
 import jpl.imce.oml.specification.ecore.Concept;
 import jpl.imce.oml.specification.ecore.OMLPackage;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -77,9 +75,9 @@ public class ConceptItemProvider extends EntityItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Concept_isAbstract_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Concept_isAbstract_feature", "_UI_Concept_type"),
-				 OMLPackage.Literals.CONCEPT__IS_ABSTRACT,
+				 getString("_UI_ConceptualEntity_isAbstract_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConceptualEntity_isAbstract_feature", "_UI_ConceptualEntity_type"),
+				 OMLPackage.Literals.CONCEPTUAL_ENTITY__IS_ABSTRACT,
 				 true,
 				 false,
 				 false,

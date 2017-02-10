@@ -22,6 +22,7 @@ package jpl.imce.oml.specification.ecore.provider;
 import java.util.Collection;
 import java.util.List;
 
+import jpl.imce.oml.specification.ecore.DataRelationshipFromEntity;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -29,6 +30,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link jpl.imce.oml.specification.ecore.DataRelationshipFromEntity} object.
@@ -59,6 +62,7 @@ public class DataRelationshipFromEntityItemProvider extends DataRelationshipDoma
 			super.getPropertyDescriptors(object);
 
 			addDomainPropertyDescriptor(object);
+			addIsIdentityCriteriaPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -86,6 +90,28 @@ public class DataRelationshipFromEntityItemProvider extends DataRelationshipDoma
 	}
 
 	/**
+	 * This adds a property descriptor for the Is Identity Criteria feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsIdentityCriteriaPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataRelationshipFromEntity_isIdentityCriteria_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataRelationshipFromEntity_isIdentityCriteria_feature", "_UI_DataRelationshipFromEntity_type"),
+				 OMLPackage.Literals.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -93,7 +119,8 @@ public class DataRelationshipFromEntityItemProvider extends DataRelationshipDoma
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_DataRelationshipFromEntity_type");
+		DataRelationshipFromEntity dataRelationshipFromEntity = (DataRelationshipFromEntity)object;
+		return getString("_UI_DataRelationshipFromEntity_type") + " " + dataRelationshipFromEntity.isIsIdentityCriteria();
 	}
 	
 
@@ -107,6 +134,12 @@ public class DataRelationshipFromEntityItemProvider extends DataRelationshipDoma
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(DataRelationshipFromEntity.class)) {
+			case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

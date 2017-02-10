@@ -39,6 +39,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.DataRelationshipFromEntityImpl#getDomain <em>Domain</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.impl.DataRelationshipFromEntityImpl#isIsIdentityCriteria <em>Is Identity Criteria</em>}</li>
  * </ul>
  *
  * @generated
@@ -53,6 +54,26 @@ public abstract class DataRelationshipFromEntityImpl extends DataRelationshipDom
 	 * @ordered
 	 */
 	protected Entity domain;
+
+	/**
+	 * The default value of the '{@link #isIsIdentityCriteria() <em>Is Identity Criteria</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsIdentityCriteria()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_IDENTITY_CRITERIA_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsIdentityCriteria() <em>Is Identity Criteria</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsIdentityCriteria()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isIdentityCriteria = IS_IDENTITY_CRITERIA_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,12 +137,35 @@ public abstract class DataRelationshipFromEntityImpl extends DataRelationshipDom
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isIsIdentityCriteria() {
+		return isIdentityCriteria;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsIdentityCriteria(boolean newIsIdentityCriteria) {
+		boolean oldIsIdentityCriteria = isIdentityCriteria;
+		isIdentityCriteria = newIsIdentityCriteria;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA, oldIsIdentityCriteria, isIdentityCriteria));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN:
 				if (resolve) return getDomain();
 				return basicGetDomain();
+			case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA:
+				return isIsIdentityCriteria();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -136,6 +180,9 @@ public abstract class DataRelationshipFromEntityImpl extends DataRelationshipDom
 		switch (featureID) {
 			case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN:
 				setDomain((Entity)newValue);
+				return;
+			case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA:
+				setIsIdentityCriteria((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -152,6 +199,9 @@ public abstract class DataRelationshipFromEntityImpl extends DataRelationshipDom
 			case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN:
 				setDomain((Entity)null);
 				return;
+			case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA:
+				setIsIdentityCriteria(IS_IDENTITY_CRITERIA_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -166,8 +216,26 @@ public abstract class DataRelationshipFromEntityImpl extends DataRelationshipDom
 		switch (featureID) {
 			case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN:
 				return domain != null;
+			case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA:
+				return isIdentityCriteria != IS_IDENTITY_CRITERIA_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (isIdentityCriteria: ");
+		result.append(isIdentityCriteria);
+		result.append(')');
+		return result.toString();
 	}
 
 } //DataRelationshipFromEntityImpl

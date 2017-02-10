@@ -27,7 +27,12 @@ import org.eclipse.emf.common.util.EMap;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A TerminologyBox is a logical container for a set of TerminologyBoxStatements.
+ * An OML TerminologyBox is a logical set of OML TerminologyBoxStatements defining the vocabulary
+ * for a domain, possibly by reuse of other vocabularies via OML TerminologyBoxAxioms.
+ * The semantics of an OML TerminologyBox domain-specific vocabulary is defined
+ * by the mapping to [OWL2-DL] of the other vocabularies it reuses, if any, and
+ * that of its OML TerminologyBoxAxioms and OML TerminologyBoxStatements
+ * according to its OML TerminologyGraphKind.
  * <!-- end-model-doc -->
  *
  * <p>

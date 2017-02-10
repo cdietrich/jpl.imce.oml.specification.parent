@@ -25,7 +25,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An axiom specifying a literal in a ScalarOneOfRestriction data range.
+ * An OML ScalarOneOfLiteralAxiom specifies a literal in a ScalarOneOfRestriction data range.
  * <!-- end-model-doc -->
  *
  * <p>

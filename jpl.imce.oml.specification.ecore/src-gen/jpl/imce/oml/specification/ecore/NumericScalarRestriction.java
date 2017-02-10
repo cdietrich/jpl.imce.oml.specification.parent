@@ -25,7 +25,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A data range that specifies how one numeric scalar range adds facet restrictions to another.
+ * An OML NumericScalarRestriction is a data range that specifies how one numeric scalar range adds facet restrictions to another.
  * Applies when the restricted scalar represents real, decimal or integer numbers (OWL2: 4.1/4.2)
  * i.e., when it is one of the following scalars (or their transitively restricted ones):
  * owl:real

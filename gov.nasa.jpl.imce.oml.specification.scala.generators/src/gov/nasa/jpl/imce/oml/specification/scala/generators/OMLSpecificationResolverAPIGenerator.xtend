@@ -71,12 +71,24 @@ class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
 	
 	def generate(EPackage ePackage, String packageQName, String targetFolder) {
 		val packageFile = new FileOutputStream(new File(targetFolder + File::separator + "package.scala"))
-		packageFile.write(generatePackageFile(ePackage, packageQName).bytes)
+		try {
+			packageFile.write(generatePackageFile(ePackage, packageQName).bytes)
+		} finally {
+			packageFile.close
+		}
 		val factoryFile = new FileOutputStream(new File(targetFolder + File::separator + "OMLResolvedFactory.scala"))
-		factoryFile.write(generateFactoryFile(ePackage, packageQName).bytes)
+		try {
+			factoryFile.write(generateFactoryFile(ePackage, packageQName).bytes)
+		} finally {
+			factoryFile.close
+		}
 		for(eClass : ePackage.EClassifiers.filter(EClass).filter[isAPI])  {
 			val classFile = new FileOutputStream(new File(targetFolder + File::separator + eClass.name + ".scala"))
-			classFile.write(generateClassFile(eClass).bytes)
+			try {
+				classFile.write(generateClassFile(eClass).bytes)	
+			} finally {
+				classFile.close
+			}
 		}
 	}
 	

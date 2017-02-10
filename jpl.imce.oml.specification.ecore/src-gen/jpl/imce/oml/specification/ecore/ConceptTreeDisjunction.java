@@ -26,7 +26,7 @@ import org.eclipse.emf.cdo.CDOObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A ConceptTreeDisjunction represents the root & non-leaf nodes of a concept taxonomy:
+ * An OML ConceptTreeDisjunction represents the root & non-leaf nodes of a concept taxonomy:
  * - Root node is a RootConceptTaxonomyAxiom.
  * - Non-leaf nodes are AnonymousConceptTaxonomyAxioms.
  * <!-- end-model-doc -->

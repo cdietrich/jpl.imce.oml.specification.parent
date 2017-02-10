@@ -25,7 +25,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A RootConceptTaxonomyAxiom asserts that, in the context of a Bundle, a particular Entity
+ * An OML RootConceptTaxonomyAxiom asserts that, in the context of a Bundle, a particular Entity
  * is the root of a taxonomy of specializations of that Entity.
  * <!-- end-model-doc -->
  *

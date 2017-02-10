@@ -26,7 +26,7 @@ package jpl.imce.oml.specification.ecore;
  *
  * <!-- begin-model-doc -->
  * *
- * Semantics: OWL2 DataHasValue
+ * An OML EntityScalarDataPropertyParticularRestrictionAxiom maps to an OWL2 DataHasValue restriction.
  * <!-- end-model-doc -->
  *
  * <p>

@@ -164,6 +164,10 @@ public class OMLAdapterFactory extends AdapterFactoryImpl {
 				return createEntityAdapter();
 			}
 			@Override
+			public Adapter caseConceptualEntity(ConceptualEntity object) {
+				return createConceptualEntityAdapter();
+			}
+			@Override
 			public Adapter caseAspect(Aspect object) {
 				return createAspectAdapter();
 			}
@@ -382,6 +386,62 @@ public class OMLAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseScalarOneOfLiteralAxiom(ScalarOneOfLiteralAxiom object) {
 				return createScalarOneOfLiteralAxiomAdapter();
+			}
+			@Override
+			public Adapter caseDescriptionBox(DescriptionBox object) {
+				return createDescriptionBoxAdapter();
+			}
+			@Override
+			public Adapter caseDescriptionBoxExtendsClosedWorldDefinitions(DescriptionBoxExtendsClosedWorldDefinitions object) {
+				return createDescriptionBoxExtendsClosedWorldDefinitionsAdapter();
+			}
+			@Override
+			public Adapter caseDescriptionBoxRefinement(DescriptionBoxRefinement object) {
+				return createDescriptionBoxRefinementAdapter();
+			}
+			@Override
+			public Adapter caseTerminologyInstanceAssertion(TerminologyInstanceAssertion object) {
+				return createTerminologyInstanceAssertionAdapter();
+			}
+			@Override
+			public Adapter caseSingletonInstance(SingletonInstance object) {
+				return createSingletonInstanceAdapter();
+			}
+			@Override
+			public Adapter caseScalarDataPropertyValue(ScalarDataPropertyValue object) {
+				return createScalarDataPropertyValueAdapter();
+			}
+			@Override
+			public Adapter caseStructuredDataPropertyValue(StructuredDataPropertyValue object) {
+				return createStructuredDataPropertyValueAdapter();
+			}
+			@Override
+			public Adapter caseDataStructureTuple(DataStructureTuple object) {
+				return createDataStructureTupleAdapter();
+			}
+			@Override
+			public Adapter caseConceptualEntitySingletonInstance(ConceptualEntitySingletonInstance object) {
+				return createConceptualEntitySingletonInstanceAdapter();
+			}
+			@Override
+			public Adapter caseConceptInstance(ConceptInstance object) {
+				return createConceptInstanceAdapter();
+			}
+			@Override
+			public Adapter caseReifiedRelationshipInstance(ReifiedRelationshipInstance object) {
+				return createReifiedRelationshipInstanceAdapter();
+			}
+			@Override
+			public Adapter caseReifiedRelationshipInstanceDomain(ReifiedRelationshipInstanceDomain object) {
+				return createReifiedRelationshipInstanceDomainAdapter();
+			}
+			@Override
+			public Adapter caseReifiedRelationshipInstanceRange(ReifiedRelationshipInstanceRange object) {
+				return createReifiedRelationshipInstanceRangeAdapter();
+			}
+			@Override
+			public Adapter caseUnreifiedRelationshipInstanceTuple(UnreifiedRelationshipInstanceTuple object) {
+				return createUnreifiedRelationshipInstanceTupleAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -666,6 +726,20 @@ public class OMLAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEntityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.ConceptualEntity <em>Conceptual Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpl.imce.oml.specification.ecore.ConceptualEntity
+	 * @generated
+	 */
+	public Adapter createConceptualEntityAdapter() {
 		return null;
 	}
 
@@ -1436,6 +1510,202 @@ public class OMLAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createScalarOneOfLiteralAxiomAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.DescriptionBox <em>Description Box</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox
+	 * @generated
+	 */
+	public Adapter createDescriptionBoxAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions <em>Description Box Extends Closed World Definitions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions
+	 * @generated
+	 */
+	public Adapter createDescriptionBoxExtendsClosedWorldDefinitionsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.DescriptionBoxRefinement <em>Description Box Refinement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBoxRefinement
+	 * @generated
+	 */
+	public Adapter createDescriptionBoxRefinementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion <em>Terminology Instance Assertion</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion
+	 * @generated
+	 */
+	public Adapter createTerminologyInstanceAssertionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.SingletonInstance <em>Singleton Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpl.imce.oml.specification.ecore.SingletonInstance
+	 * @generated
+	 */
+	public Adapter createSingletonInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.ScalarDataPropertyValue <em>Scalar Data Property Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpl.imce.oml.specification.ecore.ScalarDataPropertyValue
+	 * @generated
+	 */
+	public Adapter createScalarDataPropertyValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue <em>Structured Data Property Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpl.imce.oml.specification.ecore.StructuredDataPropertyValue
+	 * @generated
+	 */
+	public Adapter createStructuredDataPropertyValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.DataStructureTuple <em>Data Structure Tuple</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpl.imce.oml.specification.ecore.DataStructureTuple
+	 * @generated
+	 */
+	public Adapter createDataStructureTupleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance <em>Conceptual Entity Singleton Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance
+	 * @generated
+	 */
+	public Adapter createConceptualEntitySingletonInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.ConceptInstance <em>Concept Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpl.imce.oml.specification.ecore.ConceptInstance
+	 * @generated
+	 */
+	public Adapter createConceptInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstance <em>Reified Relationship Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpl.imce.oml.specification.ecore.ReifiedRelationshipInstance
+	 * @generated
+	 */
+	public Adapter createReifiedRelationshipInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceDomain <em>Reified Relationship Instance Domain</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceDomain
+	 * @generated
+	 */
+	public Adapter createReifiedRelationshipInstanceDomainAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceRange <em>Reified Relationship Instance Range</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceRange
+	 * @generated
+	 */
+	public Adapter createReifiedRelationshipInstanceRangeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple <em>Unreified Relationship Instance Tuple</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple
+	 * @generated
+	 */
+	public Adapter createUnreifiedRelationshipInstanceTupleAdapter() {
 		return null;
 	}
 

@@ -25,7 +25,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A data range that specifies how a scalar is a restricted set of literal values of another.
+ * An OML ScalarOneOfRestriction is a data range that specifies how a scalar is a restricted set of literal values of another.
  * Semantics: OWL2 DataOneOf
  * <!-- end-model-doc -->
  *

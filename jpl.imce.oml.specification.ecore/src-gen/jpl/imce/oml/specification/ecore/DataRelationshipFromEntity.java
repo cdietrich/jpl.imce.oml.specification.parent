@@ -24,11 +24,21 @@ package jpl.imce.oml.specification.ecore;
  * A representation of the model object '<em><b>Data Relationship From Entity</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An OML DataRelationshipFromEntity defines a binary relationship
+ * from an OML Entity domain to an OML Datatype of some kind.
+ * The mapping of an OML DataRelationshipFromEntity to [OWL2-DL]
+ * depends on the kind of OML Datatype.
+ * The semantics of an OML DataRelationshipFromEntity to [OWL2-DL]
+ * depends on whether it is an identity criteria for its OML Entity domain.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
  *   <li>{@link jpl.imce.oml.specification.ecore.DataRelationshipFromEntity#getDomain <em>Domain</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.DataRelationshipFromEntity#isIsIdentityCriteria <em>Is Identity Criteria</em>}</li>
  * </ul>
  *
  * @see jpl.imce.oml.specification.ecore.OMLPackage#getDataRelationshipFromEntity()
@@ -61,5 +71,34 @@ public interface DataRelationshipFromEntity extends DataRelationshipDomain {
 	 * @generated
 	 */
 	void setDomain(Entity value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Identity Criteria</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Specifies the OntoClean IdentityCriteria semantics of an OML DataRelationshipFromEntity:
+	 * - +IC, if true; which means that every OML ConceptualEntity defined in a ClosedWorldDesignations OML Terminology
+	 *   has an exact cardinality restriction of 1 for the possible values of the relationship, which is an
+	 *   encoding in [OWL2-DL] of
+	 * - ~IC, if false
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Is Identity Criteria</em>' attribute.
+	 * @see #setIsIdentityCriteria(boolean)
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDataRelationshipFromEntity_IsIdentityCriteria()
+	 * @model unique="false" required="true"
+	 * @generated
+	 */
+	boolean isIsIdentityCriteria();
+
+	/**
+	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.DataRelationshipFromEntity#isIsIdentityCriteria <em>Is Identity Criteria</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Identity Criteria</em>' attribute.
+	 * @see #isIsIdentityCriteria()
+	 * @generated
+	 */
+	void setIsIdentityCriteria(boolean value);
 
 } // DataRelationshipFromEntity

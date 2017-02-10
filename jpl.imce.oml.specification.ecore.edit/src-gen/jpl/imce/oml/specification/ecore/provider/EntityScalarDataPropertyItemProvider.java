@@ -30,6 +30,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link jpl.imce.oml.specification.ecore.EntityScalarDataProperty} object.
@@ -60,6 +62,7 @@ public class EntityScalarDataPropertyItemProvider extends DataRelationshipItemPr
 			super.getPropertyDescriptors(object);
 
 			addDomainPropertyDescriptor(object);
+			addIsIdentityCriteriaPropertyDescriptor(object);
 			addRangePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -83,6 +86,28 @@ public class EntityScalarDataPropertyItemProvider extends DataRelationshipItemPr
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Identity Criteria feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsIdentityCriteriaPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataRelationshipFromEntity_isIdentityCriteria_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataRelationshipFromEntity_isIdentityCriteria_feature", "_UI_DataRelationshipFromEntity_type"),
+				 OMLPackage.Literals.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -145,6 +170,12 @@ public class EntityScalarDataPropertyItemProvider extends DataRelationshipItemPr
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(EntityScalarDataProperty.class)) {
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

@@ -41,7 +41,7 @@ import org.eclipse.emf.ecore.EReference;
  * @see jpl.imce.oml.specification.ecore.OMLFactory
  * @model kind="package"
  *        annotation="http://www.eclipse.org/emf/2002/GenModel copyrightText='\nCopyright 2016 California Institute of Technology (\"Caltech\").\nU.S. Government sponsorship acknowledged.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n     http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n' featureDelegation='None' modelPluginVariables='org.eclipse.xtext.xbase.lib org.eclipse.emf.ecore.xcore.lib org.eclipse.emf.cdo' rootExtendsClass='org.eclipse.emf.internal.cdo.CDOObjectImpl' rootExtendsInterface='org.eclipse.emf.cdo.CDOObject' childCreationExtenders='true' pluginKey='OML' modelName='OML' prefix='OML' modelPluginID='jpl.imce.oml.specification.ecore' modelDirectory='/jpl.imce.oml.specification.ecore/src-gen' editPluginID='jpl.imce.oml.specification.ecore.edit' editPluginClass='jpl.imce.oml.specification.ecore.edit.provider.OMLEditPlugin' editDirectory='/jpl.imce.oml.specification.ecore.edit/src-gen' editorPluginID='jpl.imce.oml.specification.ecore.editor' editorPluginClass='jpl.imce.oml.specification.eore.editor.presentation.OMLEditorPlugin' editorDirectory='/jpl.imce.oml.specification.ecore.editor/src-gen' basePackage='jpl.imce.oml.specification'"
- *        annotation="http://www.eclipse.org/emf/2011/Xcore Collection='http://imce.jpl.nasa.gov/oml/Collection' Override='http://imce.jpl.nasa.gov/oml/Override' NotFunctionalAPI='http://imce.jpl.nasa.gov/oml/NotFunctionalAPI' NotSchema='http://imce.jpl.nasa.gov/oml/NotSchema' ValueTable='http://imce.jpl.nasa.gov/oml/ValueTable' Scala='http://imce.jpl.nasa.gov/oml/Scala' IsOrderingKey='http://imce.jpl.nasa.gov/oml/IsOrderingKey' CopyConstructor='http://imce.jpl.nasa.gov/oml/CopyConstructor'"
+ *        annotation="http://www.eclipse.org/emf/2011/Xcore Collection='http://imce.jpl.nasa.gov/oml/Collection' Override='http://imce.jpl.nasa.gov/oml/Override' NotFunctionalAPI='http://imce.jpl.nasa.gov/oml/NotFunctionalAPI' NotSchema='http://imce.jpl.nasa.gov/oml/NotSchema' ValueTable='http://imce.jpl.nasa.gov/oml/ValueTable' Scala='http://imce.jpl.nasa.gov/oml/Scala' IsOrderingKey='http://imce.jpl.nasa.gov/oml/IsOrderingKey' CopyConstructor='http://imce.jpl.nasa.gov/oml/CopyConstructor' Glossary='http://imce.jpl.nasa.gov/oml/Glossary'"
  * @generated
  */
 public interface OMLPackage extends EPackage {
@@ -519,13 +519,31 @@ public interface OMLPackage extends EPackage {
 	int TERMINOLOGY_EXTENT__BUNDLES = 2;
 
 	/**
+	 * The feature id for the '<em><b>Descriptions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINOLOGY_EXTENT__DESCRIPTIONS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Instance Assertions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINOLOGY_EXTENT__INSTANCE_ASSERTIONS = 4;
+
+	/**
 	 * The number of structural features of the '<em>Terminology Extent</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_EXTENT_FEATURE_COUNT = 3;
+	int TERMINOLOGY_EXTENT_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Terminology Extent</em>' class.
@@ -1789,6 +1807,43 @@ public interface OMLPackage extends EPackage {
 	int ENTITY_OPERATION_COUNT = TERM_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.ConceptualEntityImpl <em>Conceptual Entity</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpl.imce.oml.specification.ecore.impl.ConceptualEntityImpl
+	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getConceptualEntity()
+	 * @generated
+	 */
+	int CONCEPTUAL_ENTITY = 19;
+
+	/**
+	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPTUAL_ENTITY__IS_ABSTRACT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Conceptual Entity</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPTUAL_ENTITY_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Conceptual Entity</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPTUAL_ENTITY_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.AspectImpl <em>Aspect</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1796,7 +1851,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getAspect()
 	 * @generated
 	 */
-	int ASPECT = 19;
+	int ASPECT = 20;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -1878,7 +1933,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getConcept()
 	 * @generated
 	 */
-	int CONCEPT = 20;
+	int CONCEPT = 21;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -1969,7 +2024,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getEntityRelationship()
 	 * @generated
 	 */
-	int ENTITY_RELATIONSHIP = 21;
+	int ENTITY_RELATIONSHIP = 22;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -2177,7 +2232,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getReifiedRelationship()
 	 * @generated
 	 */
-	int REIFIED_RELATIONSHIP = 22;
+	int REIFIED_RELATIONSHIP = 23;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -2412,7 +2467,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getUnreifiedRelationship()
 	 * @generated
 	 */
-	int UNREIFIED_RELATIONSHIP = 23;
+	int UNREIFIED_RELATIONSHIP = 24;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -2620,7 +2675,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDatatype()
 	 * @generated
 	 */
-	int DATATYPE = 24;
+	int DATATYPE = 25;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -2702,7 +2757,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDataRange()
 	 * @generated
 	 */
-	int DATA_RANGE = 25;
+	int DATA_RANGE = 26;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -2784,7 +2839,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getScalar()
 	 * @generated
 	 */
-	int SCALAR = 26;
+	int SCALAR = 27;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -2866,7 +2921,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDataRelationship()
 	 * @generated
 	 */
-	int DATA_RELATIONSHIP = 27;
+	int DATA_RELATIONSHIP = 28;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -2993,7 +3048,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDataRelationshipDomain()
 	 * @generated
 	 */
-	int DATA_RELATIONSHIP_DOMAIN = 28;
+	int DATA_RELATIONSHIP_DOMAIN = 29;
 
 	/**
 	 * The number of structural features of the '<em>Data Relationship Domain</em>' class.
@@ -3021,7 +3076,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDataRelationshipFromEntity()
 	 * @generated
 	 */
-	int DATA_RELATIONSHIP_FROM_ENTITY = 29;
+	int DATA_RELATIONSHIP_FROM_ENTITY = 30;
 
 	/**
 	 * The feature id for the '<em><b>Domain</b></em>' reference.
@@ -3033,13 +3088,22 @@ public interface OMLPackage extends EPackage {
 	int DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN = DATA_RELATIONSHIP_DOMAIN_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Is Identity Criteria</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA = DATA_RELATIONSHIP_DOMAIN_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Data Relationship From Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_RELATIONSHIP_FROM_ENTITY_FEATURE_COUNT = DATA_RELATIONSHIP_DOMAIN_FEATURE_COUNT + 1;
+	int DATA_RELATIONSHIP_FROM_ENTITY_FEATURE_COUNT = DATA_RELATIONSHIP_DOMAIN_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Data Relationship From Entity</em>' class.
@@ -3058,7 +3122,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDataRelationshipFromStructure()
 	 * @generated
 	 */
-	int DATA_RELATIONSHIP_FROM_STRUCTURE = 30;
+	int DATA_RELATIONSHIP_FROM_STRUCTURE = 31;
 
 	/**
 	 * The feature id for the '<em><b>Domain</b></em>' reference.
@@ -3095,7 +3159,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDataRelationshipRange()
 	 * @generated
 	 */
-	int DATA_RELATIONSHIP_RANGE = 31;
+	int DATA_RELATIONSHIP_RANGE = 32;
 
 	/**
 	 * The number of structural features of the '<em>Data Relationship Range</em>' class.
@@ -3123,7 +3187,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDataRelationshipToScalar()
 	 * @generated
 	 */
-	int DATA_RELATIONSHIP_TO_SCALAR = 32;
+	int DATA_RELATIONSHIP_TO_SCALAR = 33;
 
 	/**
 	 * The feature id for the '<em><b>Range</b></em>' reference.
@@ -3160,7 +3224,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDataRelationshipToStructure()
 	 * @generated
 	 */
-	int DATA_RELATIONSHIP_TO_STRUCTURE = 33;
+	int DATA_RELATIONSHIP_TO_STRUCTURE = 34;
 
 	/**
 	 * The feature id for the '<em><b>Range</b></em>' reference.
@@ -3197,7 +3261,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getEntityStructuredDataProperty()
 	 * @generated
 	 */
-	int ENTITY_STRUCTURED_DATA_PROPERTY = 34;
+	int ENTITY_STRUCTURED_DATA_PROPERTY = 35;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -3236,13 +3300,22 @@ public interface OMLPackage extends EPackage {
 	int ENTITY_STRUCTURED_DATA_PROPERTY__DOMAIN = DATA_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Is Identity Criteria</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_STRUCTURED_DATA_PROPERTY__IS_IDENTITY_CRITERIA = DATA_RELATIONSHIP_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Range</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_STRUCTURED_DATA_PROPERTY__RANGE = DATA_RELATIONSHIP_FEATURE_COUNT + 1;
+	int ENTITY_STRUCTURED_DATA_PROPERTY__RANGE = DATA_RELATIONSHIP_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Entity Structured Data Property</em>' class.
@@ -3251,7 +3324,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_STRUCTURED_DATA_PROPERTY_FEATURE_COUNT = DATA_RELATIONSHIP_FEATURE_COUNT + 2;
+	int ENTITY_STRUCTURED_DATA_PROPERTY_FEATURE_COUNT = DATA_RELATIONSHIP_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Calculate UUID</em>' operation.
@@ -3342,7 +3415,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getEntityScalarDataProperty()
 	 * @generated
 	 */
-	int ENTITY_SCALAR_DATA_PROPERTY = 35;
+	int ENTITY_SCALAR_DATA_PROPERTY = 36;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -3381,13 +3454,22 @@ public interface OMLPackage extends EPackage {
 	int ENTITY_SCALAR_DATA_PROPERTY__DOMAIN = DATA_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Is Identity Criteria</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_SCALAR_DATA_PROPERTY__IS_IDENTITY_CRITERIA = DATA_RELATIONSHIP_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Range</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SCALAR_DATA_PROPERTY__RANGE = DATA_RELATIONSHIP_FEATURE_COUNT + 1;
+	int ENTITY_SCALAR_DATA_PROPERTY__RANGE = DATA_RELATIONSHIP_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Entity Scalar Data Property</em>' class.
@@ -3396,7 +3478,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_SCALAR_DATA_PROPERTY_FEATURE_COUNT = DATA_RELATIONSHIP_FEATURE_COUNT + 2;
+	int ENTITY_SCALAR_DATA_PROPERTY_FEATURE_COUNT = DATA_RELATIONSHIP_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Calculate UUID</em>' operation.
@@ -3487,7 +3569,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getStructuredDataProperty()
 	 * @generated
 	 */
-	int STRUCTURED_DATA_PROPERTY = 36;
+	int STRUCTURED_DATA_PROPERTY = 37;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -3632,7 +3714,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getScalarDataProperty()
 	 * @generated
 	 */
-	int SCALAR_DATA_PROPERTY = 37;
+	int SCALAR_DATA_PROPERTY = 38;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -3777,7 +3859,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getStructure()
 	 * @generated
 	 */
-	int STRUCTURE = 38;
+	int STRUCTURE = 39;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -3859,7 +3941,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getAxiom()
 	 * @generated
 	 */
-	int AXIOM = 39;
+	int AXIOM = 40;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -3914,7 +3996,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getTerminologyAxiom()
 	 * @generated
 	 */
-	int TERMINOLOGY_AXIOM = 40;
+	int TERMINOLOGY_AXIOM = 41;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -3978,7 +4060,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getTerminologyBoxAxiom()
 	 * @generated
 	 */
-	int TERMINOLOGY_BOX_AXIOM = 41;
+	int TERMINOLOGY_BOX_AXIOM = 42;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -4051,7 +4133,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getTerminologyBundleAxiom()
 	 * @generated
 	 */
-	int TERMINOLOGY_BUNDLE_AXIOM = 42;
+	int TERMINOLOGY_BUNDLE_AXIOM = 43;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -4124,7 +4206,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getConceptTreeDisjunction()
 	 * @generated
 	 */
-	int CONCEPT_TREE_DISJUNCTION = 43;
+	int CONCEPT_TREE_DISJUNCTION = 44;
 
 	/**
 	 * The number of structural features of the '<em>Concept Tree Disjunction</em>' class.
@@ -4152,7 +4234,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDisjointUnionOfConceptsAxiom()
 	 * @generated
 	 */
-	int DISJOINT_UNION_OF_CONCEPTS_AXIOM = 44;
+	int DISJOINT_UNION_OF_CONCEPTS_AXIOM = 45;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -4216,7 +4298,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getSpecificDisjointConceptAxiom()
 	 * @generated
 	 */
-	int SPECIFIC_DISJOINT_CONCEPT_AXIOM = 45;
+	int SPECIFIC_DISJOINT_CONCEPT_AXIOM = 46;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -4289,7 +4371,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getAnonymousConceptTaxonomyAxiom()
 	 * @generated
 	 */
-	int ANONYMOUS_CONCEPT_TAXONOMY_AXIOM = 46;
+	int ANONYMOUS_CONCEPT_TAXONOMY_AXIOM = 47;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -4353,7 +4435,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getRootConceptTaxonomyAxiom()
 	 * @generated
 	 */
-	int ROOT_CONCEPT_TAXONOMY_AXIOM = 47;
+	int ROOT_CONCEPT_TAXONOMY_AXIOM = 48;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -4417,7 +4499,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getBundledTerminologyAxiom()
 	 * @generated
 	 */
-	int BUNDLED_TERMINOLOGY_AXIOM = 48;
+	int BUNDLED_TERMINOLOGY_AXIOM = 49;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -4499,7 +4581,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getConceptDesignationTerminologyAxiom()
 	 * @generated
 	 */
-	int CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM = 49;
+	int CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM = 50;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -4599,7 +4681,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getTerminologyExtensionAxiom()
 	 * @generated
 	 */
-	int TERMINOLOGY_EXTENSION_AXIOM = 50;
+	int TERMINOLOGY_EXTENSION_AXIOM = 51;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -4690,7 +4772,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getTerminologyNestingAxiom()
 	 * @generated
 	 */
-	int TERMINOLOGY_NESTING_AXIOM = 51;
+	int TERMINOLOGY_NESTING_AXIOM = 52;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -4790,7 +4872,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getTermAxiom()
 	 * @generated
 	 */
-	int TERM_AXIOM = 52;
+	int TERM_AXIOM = 53;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -4845,7 +4927,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getEntityRestrictionAxiom()
 	 * @generated
 	 */
-	int ENTITY_RESTRICTION_AXIOM = 53;
+	int ENTITY_RESTRICTION_AXIOM = 54;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -4927,7 +5009,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getEntityExistentialRestrictionAxiom()
 	 * @generated
 	 */
-	int ENTITY_EXISTENTIAL_RESTRICTION_AXIOM = 54;
+	int ENTITY_EXISTENTIAL_RESTRICTION_AXIOM = 55;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -5009,7 +5091,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getEntityUniversalRestrictionAxiom()
 	 * @generated
 	 */
-	int ENTITY_UNIVERSAL_RESTRICTION_AXIOM = 55;
+	int ENTITY_UNIVERSAL_RESTRICTION_AXIOM = 56;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -5091,7 +5173,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getSpecializationAxiom()
 	 * @generated
 	 */
-	int SPECIALIZATION_AXIOM = 56;
+	int SPECIALIZATION_AXIOM = 57;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -5164,7 +5246,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getAspectSpecializationAxiom()
 	 * @generated
 	 */
-	int ASPECT_SPECIALIZATION_AXIOM = 57;
+	int ASPECT_SPECIALIZATION_AXIOM = 58;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -5255,7 +5337,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getConceptSpecializationAxiom()
 	 * @generated
 	 */
-	int CONCEPT_SPECIALIZATION_AXIOM = 58;
+	int CONCEPT_SPECIALIZATION_AXIOM = 59;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -5346,7 +5428,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getReifiedRelationshipSpecializationAxiom()
 	 * @generated
 	 */
-	int REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM = 59;
+	int REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM = 60;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -5437,7 +5519,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getEntityScalarDataPropertyRestrictionAxiom()
 	 * @generated
 	 */
-	int ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM = 60;
+	int ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM = 61;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -5510,7 +5592,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getEntityScalarDataPropertyExistentialRestrictionAxiom()
 	 * @generated
 	 */
-	int ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM = 61;
+	int ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM = 62;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -5592,7 +5674,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getEntityScalarDataPropertyUniversalRestrictionAxiom()
 	 * @generated
 	 */
-	int ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM = 62;
+	int ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM = 63;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -5674,7 +5756,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getEntityScalarDataPropertyParticularRestrictionAxiom()
 	 * @generated
 	 */
-	int ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM = 63;
+	int ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM = 64;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -5756,7 +5838,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getRestrictedDataRange()
 	 * @generated
 	 */
-	int RESTRICTED_DATA_RANGE = 64;
+	int RESTRICTED_DATA_RANGE = 65;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -5847,7 +5929,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getBinaryScalarRestriction()
 	 * @generated
 	 */
-	int BINARY_SCALAR_RESTRICTION = 65;
+	int BINARY_SCALAR_RESTRICTION = 66;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -5965,7 +6047,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getIRIScalarRestriction()
 	 * @generated
 	 */
-	int IRI_SCALAR_RESTRICTION = 66;
+	int IRI_SCALAR_RESTRICTION = 67;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -6092,7 +6174,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getNumericScalarRestriction()
 	 * @generated
 	 */
-	int NUMERIC_SCALAR_RESTRICTION = 67;
+	int NUMERIC_SCALAR_RESTRICTION = 68;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -6219,7 +6301,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getPlainLiteralScalarRestriction()
 	 * @generated
 	 */
-	int PLAIN_LITERAL_SCALAR_RESTRICTION = 68;
+	int PLAIN_LITERAL_SCALAR_RESTRICTION = 69;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -6355,7 +6437,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getStringScalarRestriction()
 	 * @generated
 	 */
-	int STRING_SCALAR_RESTRICTION = 69;
+	int STRING_SCALAR_RESTRICTION = 70;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -6482,7 +6564,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getTimeScalarRestriction()
 	 * @generated
 	 */
-	int TIME_SCALAR_RESTRICTION = 70;
+	int TIME_SCALAR_RESTRICTION = 71;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -6609,7 +6691,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getSynonymScalarRestriction()
 	 * @generated
 	 */
-	int SYNONYM_SCALAR_RESTRICTION = 71;
+	int SYNONYM_SCALAR_RESTRICTION = 72;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -6700,7 +6782,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getScalarOneOfRestriction()
 	 * @generated
 	 */
-	int SCALAR_ONE_OF_RESTRICTION = 72;
+	int SCALAR_ONE_OF_RESTRICTION = 73;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -6791,7 +6873,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getScalarOneOfLiteralAxiom()
 	 * @generated
 	 */
-	int SCALAR_ONE_OF_LITERAL_AXIOM = 73;
+	int SCALAR_ONE_OF_LITERAL_AXIOM = 74;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -6857,6 +6939,1289 @@ public interface OMLPackage extends EPackage {
 	int SCALAR_ONE_OF_LITERAL_AXIOM_OPERATION_COUNT = AXIOM_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxImpl <em>Description Box</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpl.imce.oml.specification.ecore.impl.DescriptionBoxImpl
+	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDescriptionBox()
+	 * @generated
+	 */
+	int DESCRIPTION_BOX = 75;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX__UUID = TERMINOLOGY_THING__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Terminology Extent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX__TERMINOLOGY_EXTENT = TERMINOLOGY_THING_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Closed World Definitions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS = TERMINOLOGY_THING_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Description Box Refinements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS = TERMINOLOGY_THING_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Concept Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX__CONCEPT_INSTANCES = TERMINOLOGY_THING_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Reified Relationship Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES = TERMINOLOGY_THING_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Reified Relationship Instance Domains</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS = TERMINOLOGY_THING_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Reified Relationship Instance Ranges</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES = TERMINOLOGY_THING_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Unreified Relationship Instance Tuples</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES = TERMINOLOGY_THING_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Data Structure Tuples</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX__DATA_STRUCTURE_TUPLES = TERMINOLOGY_THING_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Scalar Data Property Values</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX__SCALAR_DATA_PROPERTY_VALUES = TERMINOLOGY_THING_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Structured Data Property Values</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX__STRUCTURED_DATA_PROPERTY_VALUES = TERMINOLOGY_THING_FEATURE_COUNT + 10;
+
+	/**
+	 * The number of structural features of the '<em>Description Box</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX_FEATURE_COUNT = TERMINOLOGY_THING_FEATURE_COUNT + 11;
+
+	/**
+	 * The operation id for the '<em>Calculate UUID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX___CALCULATE_UUID = TERMINOLOGY_THING___CALCULATE_UUID;
+
+	/**
+	 * The operation id for the '<em>Iri</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX___IRI = TERMINOLOGY_THING_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX___NAME = TERMINOLOGY_THING_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>With Concept Instances</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX___WITH_CONCEPT_INSTANCES__ELIST = TERMINOLOGY_THING_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>With Reified Relationship Instances</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX___WITH_REIFIED_RELATIONSHIP_INSTANCES__ELIST = TERMINOLOGY_THING_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>With Reified Relationship Instance Domains</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX___WITH_REIFIED_RELATIONSHIP_INSTANCE_DOMAINS__ELIST = TERMINOLOGY_THING_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>With Reified Relationship Instance Ranges</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX___WITH_REIFIED_RELATIONSHIP_INSTANCE_RANGES__ELIST = TERMINOLOGY_THING_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>With Unreified Relationship Instance Tuples</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX___WITH_UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES__ELIST = TERMINOLOGY_THING_OPERATION_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>With Data Structure Tuples</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX___WITH_DATA_STRUCTURE_TUPLES__ELIST = TERMINOLOGY_THING_OPERATION_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>With Scalar Data Property Values</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX___WITH_SCALAR_DATA_PROPERTY_VALUES__ELIST = TERMINOLOGY_THING_OPERATION_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>With Structured Data Property Values</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX___WITH_STRUCTURED_DATA_PROPERTY_VALUES__ELIST = TERMINOLOGY_THING_OPERATION_COUNT + 9;
+
+	/**
+	 * The number of operations of the '<em>Description Box</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX_OPERATION_COUNT = TERMINOLOGY_THING_OPERATION_COUNT + 10;
+
+	/**
+	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxExtendsClosedWorldDefinitionsImpl <em>Description Box Extends Closed World Definitions</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpl.imce.oml.specification.ecore.impl.DescriptionBoxExtendsClosedWorldDefinitionsImpl
+	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDescriptionBoxExtendsClosedWorldDefinitions()
+	 * @generated
+	 */
+	int DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS = 76;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__UUID = TERMINOLOGY_THING__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Description Box</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX = TERMINOLOGY_THING_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Closed World Definitions</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__CLOSED_WORLD_DEFINITIONS = TERMINOLOGY_THING_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Description Box Extends Closed World Definitions</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS_FEATURE_COUNT = TERMINOLOGY_THING_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Calculate UUID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS___CALCULATE_UUID = TERMINOLOGY_THING___CALCULATE_UUID;
+
+	/**
+	 * The number of operations of the '<em>Description Box Extends Closed World Definitions</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS_OPERATION_COUNT = TERMINOLOGY_THING_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxRefinementImpl <em>Description Box Refinement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpl.imce.oml.specification.ecore.impl.DescriptionBoxRefinementImpl
+	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDescriptionBoxRefinement()
+	 * @generated
+	 */
+	int DESCRIPTION_BOX_REFINEMENT = 77;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX_REFINEMENT__UUID = TERMINOLOGY_THING__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Refining Description Box</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX = TERMINOLOGY_THING_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Refined Description Box</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX_REFINEMENT__REFINED_DESCRIPTION_BOX = TERMINOLOGY_THING_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Description Box Refinement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX_REFINEMENT_FEATURE_COUNT = TERMINOLOGY_THING_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Calculate UUID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX_REFINEMENT___CALCULATE_UUID = TERMINOLOGY_THING___CALCULATE_UUID;
+
+	/**
+	 * The number of operations of the '<em>Description Box Refinement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX_REFINEMENT_OPERATION_COUNT = TERMINOLOGY_THING_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.TerminologyInstanceAssertionImpl <em>Terminology Instance Assertion</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpl.imce.oml.specification.ecore.impl.TerminologyInstanceAssertionImpl
+	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getTerminologyInstanceAssertion()
+	 * @generated
+	 */
+	int TERMINOLOGY_INSTANCE_ASSERTION = 78;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINOLOGY_INSTANCE_ASSERTION__UUID = TERMINOLOGY_THING__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Terminology Extent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINOLOGY_INSTANCE_ASSERTION__TERMINOLOGY_EXTENT = TERMINOLOGY_THING_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Terminology Instance Assertion</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT = TERMINOLOGY_THING_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Calculate UUID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID = TERMINOLOGY_THING___CALCULATE_UUID;
+
+	/**
+	 * The number of operations of the '<em>Terminology Instance Assertion</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINOLOGY_INSTANCE_ASSERTION_OPERATION_COUNT = TERMINOLOGY_THING_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.SingletonInstanceImpl <em>Singleton Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpl.imce.oml.specification.ecore.impl.SingletonInstanceImpl
+	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getSingletonInstance()
+	 * @generated
+	 */
+	int SINGLETON_INSTANCE = 79;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_INSTANCE__UUID = TERMINOLOGY_INSTANCE_ASSERTION__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Terminology Extent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_INSTANCE__TERMINOLOGY_EXTENT = TERMINOLOGY_INSTANCE_ASSERTION__TERMINOLOGY_EXTENT;
+
+	/**
+	 * The number of structural features of the '<em>Singleton Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_INSTANCE_FEATURE_COUNT = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Calculate UUID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_INSTANCE___CALCULATE_UUID = TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID;
+
+	/**
+	 * The operation id for the '<em>Iri</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_INSTANCE___IRI = TERMINOLOGY_INSTANCE_ASSERTION_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_INSTANCE___NAME = TERMINOLOGY_INSTANCE_ASSERTION_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Singleton Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_INSTANCE_OPERATION_COUNT = TERMINOLOGY_INSTANCE_ASSERTION_OPERATION_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.ScalarDataPropertyValueImpl <em>Scalar Data Property Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpl.imce.oml.specification.ecore.impl.ScalarDataPropertyValueImpl
+	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getScalarDataPropertyValue()
+	 * @generated
+	 */
+	int SCALAR_DATA_PROPERTY_VALUE = 80;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCALAR_DATA_PROPERTY_VALUE__UUID = TERMINOLOGY_INSTANCE_ASSERTION__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Terminology Extent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCALAR_DATA_PROPERTY_VALUE__TERMINOLOGY_EXTENT = TERMINOLOGY_INSTANCE_ASSERTION__TERMINOLOGY_EXTENT;
+
+	/**
+	 * The feature id for the '<em><b>Singleton Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCALAR_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Scalar Data Property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCALAR_DATA_PROPERTY_VALUE__SCALAR_DATA_PROPERTY = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Scalar Property Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCALAR_DATA_PROPERTY_VALUE__SCALAR_PROPERTY_VALUE = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Scalar Data Property Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCALAR_DATA_PROPERTY_VALUE_FEATURE_COUNT = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Calculate UUID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCALAR_DATA_PROPERTY_VALUE___CALCULATE_UUID = TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID;
+
+	/**
+	 * The number of operations of the '<em>Scalar Data Property Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCALAR_DATA_PROPERTY_VALUE_OPERATION_COUNT = TERMINOLOGY_INSTANCE_ASSERTION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.StructuredDataPropertyValueImpl <em>Structured Data Property Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpl.imce.oml.specification.ecore.impl.StructuredDataPropertyValueImpl
+	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getStructuredDataPropertyValue()
+	 * @generated
+	 */
+	int STRUCTURED_DATA_PROPERTY_VALUE = 81;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_DATA_PROPERTY_VALUE__UUID = TERMINOLOGY_INSTANCE_ASSERTION__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Terminology Extent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_DATA_PROPERTY_VALUE__TERMINOLOGY_EXTENT = TERMINOLOGY_INSTANCE_ASSERTION__TERMINOLOGY_EXTENT;
+
+	/**
+	 * The feature id for the '<em><b>Singleton Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Structured Data Property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_DATA_PROPERTY = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Structured Property Tuple</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_PROPERTY_TUPLE = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Structured Data Property Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_DATA_PROPERTY_VALUE_FEATURE_COUNT = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Calculate UUID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_DATA_PROPERTY_VALUE___CALCULATE_UUID = TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID;
+
+	/**
+	 * The number of operations of the '<em>Structured Data Property Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_DATA_PROPERTY_VALUE_OPERATION_COUNT = TERMINOLOGY_INSTANCE_ASSERTION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.DataStructureTupleImpl <em>Data Structure Tuple</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpl.imce.oml.specification.ecore.impl.DataStructureTupleImpl
+	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDataStructureTuple()
+	 * @generated
+	 */
+	int DATA_STRUCTURE_TUPLE = 82;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_STRUCTURE_TUPLE__UUID = SINGLETON_INSTANCE__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Terminology Extent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_STRUCTURE_TUPLE__TERMINOLOGY_EXTENT = SINGLETON_INSTANCE__TERMINOLOGY_EXTENT;
+
+	/**
+	 * The feature id for the '<em><b>Data Structure Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_STRUCTURE_TUPLE__DATA_STRUCTURE_TYPE = SINGLETON_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Data Structure Tuple</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_STRUCTURE_TUPLE_FEATURE_COUNT = SINGLETON_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Calculate UUID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_STRUCTURE_TUPLE___CALCULATE_UUID = SINGLETON_INSTANCE___CALCULATE_UUID;
+
+	/**
+	 * The operation id for the '<em>Iri</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_STRUCTURE_TUPLE___IRI = SINGLETON_INSTANCE___IRI;
+
+	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_STRUCTURE_TUPLE___NAME = SINGLETON_INSTANCE___NAME;
+
+	/**
+	 * The number of operations of the '<em>Data Structure Tuple</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_STRUCTURE_TUPLE_OPERATION_COUNT = SINGLETON_INSTANCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.ConceptualEntitySingletonInstanceImpl <em>Conceptual Entity Singleton Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpl.imce.oml.specification.ecore.impl.ConceptualEntitySingletonInstanceImpl
+	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getConceptualEntitySingletonInstance()
+	 * @generated
+	 */
+	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE = 83;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__UUID = SINGLETON_INSTANCE__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Terminology Extent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__TERMINOLOGY_EXTENT = SINGLETON_INSTANCE__TERMINOLOGY_EXTENT;
+
+	/**
+	 * The feature id for the '<em><b>Identifying Scalar Values</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__IDENTIFYING_SCALAR_VALUES = SINGLETON_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Identifying Structured Tuples</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__IDENTIFYING_STRUCTURED_TUPLES = SINGLETON_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Conceptual Entity Singleton Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE_FEATURE_COUNT = SINGLETON_INSTANCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Calculate UUID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___CALCULATE_UUID = SINGLETON_INSTANCE___CALCULATE_UUID;
+
+	/**
+	 * The operation id for the '<em>Iri</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___IRI = SINGLETON_INSTANCE___IRI;
+
+	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___NAME = SINGLETON_INSTANCE___NAME;
+
+	/**
+	 * The operation id for the '<em>Conceptual Entity Singleton Classifier</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER = SINGLETON_INSTANCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Conceptual Entity Singleton Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE_OPERATION_COUNT = SINGLETON_INSTANCE_OPERATION_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.ConceptInstanceImpl <em>Concept Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpl.imce.oml.specification.ecore.impl.ConceptInstanceImpl
+	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getConceptInstance()
+	 * @generated
+	 */
+	int CONCEPT_INSTANCE = 84;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_INSTANCE__UUID = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Terminology Extent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_INSTANCE__TERMINOLOGY_EXTENT = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__TERMINOLOGY_EXTENT;
+
+	/**
+	 * The feature id for the '<em><b>Identifying Scalar Values</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_INSTANCE__IDENTIFYING_SCALAR_VALUES = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__IDENTIFYING_SCALAR_VALUES;
+
+	/**
+	 * The feature id for the '<em><b>Identifying Structured Tuples</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_INSTANCE__IDENTIFYING_STRUCTURED_TUPLES = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__IDENTIFYING_STRUCTURED_TUPLES;
+
+	/**
+	 * The feature id for the '<em><b>Singleton Concept Classifier</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_INSTANCE__SINGLETON_CONCEPT_CLASSIFIER = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Concept Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_INSTANCE_FEATURE_COUNT = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Calculate UUID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_INSTANCE___CALCULATE_UUID = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___CALCULATE_UUID;
+
+	/**
+	 * The operation id for the '<em>Iri</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_INSTANCE___IRI = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___IRI;
+
+	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_INSTANCE___NAME = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___NAME;
+
+	/**
+	 * The operation id for the '<em>Conceptual Entity Singleton Classifier</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Concept Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_INSTANCE_OPERATION_COUNT = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE_OPERATION_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.ReifiedRelationshipInstanceImpl <em>Reified Relationship Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpl.imce.oml.specification.ecore.impl.ReifiedRelationshipInstanceImpl
+	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getReifiedRelationshipInstance()
+	 * @generated
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE = 85;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE__UUID = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Terminology Extent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE__TERMINOLOGY_EXTENT = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__TERMINOLOGY_EXTENT;
+
+	/**
+	 * The feature id for the '<em><b>Identifying Scalar Values</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE__IDENTIFYING_SCALAR_VALUES = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__IDENTIFYING_SCALAR_VALUES;
+
+	/**
+	 * The feature id for the '<em><b>Identifying Structured Tuples</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE__IDENTIFYING_STRUCTURED_TUPLES = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__IDENTIFYING_STRUCTURED_TUPLES;
+
+	/**
+	 * The feature id for the '<em><b>Singleton Reified Relationship Classifier</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE__SINGLETON_REIFIED_RELATIONSHIP_CLASSIFIER = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Reified Relationship Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE_FEATURE_COUNT = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Calculate UUID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE___CALCULATE_UUID = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___CALCULATE_UUID;
+
+	/**
+	 * The operation id for the '<em>Iri</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE___IRI = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___IRI;
+
+	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE___NAME = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___NAME;
+
+	/**
+	 * The operation id for the '<em>Conceptual Entity Singleton Classifier</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Reified Relationship Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE_OPERATION_COUNT = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE_OPERATION_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.ReifiedRelationshipInstanceDomainImpl <em>Reified Relationship Instance Domain</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpl.imce.oml.specification.ecore.impl.ReifiedRelationshipInstanceDomainImpl
+	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getReifiedRelationshipInstanceDomain()
+	 * @generated
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE_DOMAIN = 86;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE_DOMAIN__UUID = TERMINOLOGY_INSTANCE_ASSERTION__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Terminology Extent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE_DOMAIN__TERMINOLOGY_EXTENT = TERMINOLOGY_INSTANCE_ASSERTION__TERMINOLOGY_EXTENT;
+
+	/**
+	 * The feature id for the '<em><b>Reified Relationship Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE_DOMAIN__REIFIED_RELATIONSHIP_INSTANCE = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Domain</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE_DOMAIN__DOMAIN = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Reified Relationship Instance Domain</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE_DOMAIN_FEATURE_COUNT = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Calculate UUID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE_DOMAIN___CALCULATE_UUID = TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID;
+
+	/**
+	 * The number of operations of the '<em>Reified Relationship Instance Domain</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE_DOMAIN_OPERATION_COUNT = TERMINOLOGY_INSTANCE_ASSERTION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.ReifiedRelationshipInstanceRangeImpl <em>Reified Relationship Instance Range</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpl.imce.oml.specification.ecore.impl.ReifiedRelationshipInstanceRangeImpl
+	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getReifiedRelationshipInstanceRange()
+	 * @generated
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE_RANGE = 87;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE_RANGE__UUID = TERMINOLOGY_INSTANCE_ASSERTION__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Terminology Extent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE_RANGE__TERMINOLOGY_EXTENT = TERMINOLOGY_INSTANCE_ASSERTION__TERMINOLOGY_EXTENT;
+
+	/**
+	 * The feature id for the '<em><b>Reified Relationship Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE_RANGE__REIFIED_RELATIONSHIP_INSTANCE = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Range</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE_RANGE__RANGE = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Reified Relationship Instance Range</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE_RANGE_FEATURE_COUNT = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Calculate UUID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE_RANGE___CALCULATE_UUID = TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID;
+
+	/**
+	 * The number of operations of the '<em>Reified Relationship Instance Range</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE_RANGE_OPERATION_COUNT = TERMINOLOGY_INSTANCE_ASSERTION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.UnreifiedRelationshipInstanceTupleImpl <em>Unreified Relationship Instance Tuple</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpl.imce.oml.specification.ecore.impl.UnreifiedRelationshipInstanceTupleImpl
+	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getUnreifiedRelationshipInstanceTuple()
+	 * @generated
+	 */
+	int UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE = 88;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__UUID = TERMINOLOGY_INSTANCE_ASSERTION__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Terminology Extent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__TERMINOLOGY_EXTENT = TERMINOLOGY_INSTANCE_ASSERTION__TERMINOLOGY_EXTENT;
+
+	/**
+	 * The feature id for the '<em><b>Unreified Relationship</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__UNREIFIED_RELATIONSHIP = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Domain</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DOMAIN = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Range</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__RANGE = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Unreified Relationship Instance Tuple</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE_FEATURE_COUNT = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Calculate UUID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE___CALCULATE_UUID = TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID;
+
+	/**
+	 * The number of operations of the '<em>Unreified Relationship Instance Tuple</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE_OPERATION_COUNT = TERMINOLOGY_INSTANCE_ASSERTION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.TerminologyGraphKind <em>Terminology Graph Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6864,7 +8229,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getTerminologyGraphKind()
 	 * @generated
 	 */
-	int TERMINOLOGY_GRAPH_KIND = 74;
+	int TERMINOLOGY_GRAPH_KIND = 89;
 
 	/**
 	 * The meta object id for the '<em>IRI</em>' data type.
@@ -6874,7 +8239,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getIRI()
 	 * @generated
 	 */
-	int IRI = 75;
+	int IRI = 90;
 
 	/**
 	 * The meta object id for the '<em>Local Name</em>' data type.
@@ -6884,7 +8249,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getLocalName()
 	 * @generated
 	 */
-	int LOCAL_NAME = 76;
+	int LOCAL_NAME = 91;
 
 	/**
 	 * The meta object id for the '<em>Lexical Value</em>' data type.
@@ -6894,7 +8259,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getLexicalValue()
 	 * @generated
 	 */
-	int LEXICAL_VALUE = 77;
+	int LEXICAL_VALUE = 92;
 
 	/**
 	 * The meta object id for the '<em>Lexical Number</em>' data type.
@@ -6904,7 +8269,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getLexicalNumber()
 	 * @generated
 	 */
-	int LEXICAL_NUMBER = 78;
+	int LEXICAL_NUMBER = 93;
 
 	/**
 	 * The meta object id for the '<em>Lexical Time</em>' data type.
@@ -6914,7 +8279,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getLexicalTime()
 	 * @generated
 	 */
-	int LEXICAL_TIME = 79;
+	int LEXICAL_TIME = 94;
 
 	/**
 	 * The meta object id for the '<em>Pattern</em>' data type.
@@ -6924,7 +8289,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getPattern()
 	 * @generated
 	 */
-	int PATTERN = 80;
+	int PATTERN = 95;
 
 	/**
 	 * The meta object id for the '<em>UUID</em>' data type.
@@ -6934,7 +8299,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getUUID()
 	 * @generated
 	 */
-	int UUID = 81;
+	int UUID = 96;
 
 	/**
 	 * The meta object id for the '<em>Language</em>' data type.
@@ -6944,7 +8309,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getLanguage()
 	 * @generated
 	 */
-	int LANGUAGE = 82;
+	int LANGUAGE = 97;
 
 	/**
 	 * The meta object id for the '<em>Abbrev IRI</em>' data type.
@@ -6954,7 +8319,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getAbbrevIRI()
 	 * @generated
 	 */
-	int ABBREV_IRI = 83;
+	int ABBREV_IRI = 98;
 
 	/**
 	 * The meta object id for the '<em>Namespace Prefix</em>' data type.
@@ -6964,7 +8329,7 @@ public interface OMLPackage extends EPackage {
 	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getNamespacePrefix()
 	 * @generated
 	 */
-	int NAMESPACE_PREFIX = 84;
+	int NAMESPACE_PREFIX = 99;
 
 
 	/**
@@ -7310,6 +8675,28 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTerminologyExtent_Bundles();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link jpl.imce.oml.specification.ecore.TerminologyExtent#getDescriptions <em>Descriptions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Descriptions</em>'.
+	 * @see jpl.imce.oml.specification.ecore.TerminologyExtent#getDescriptions()
+	 * @see #getTerminologyExtent()
+	 * @generated
+	 */
+	EReference getTerminologyExtent_Descriptions();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link jpl.imce.oml.specification.ecore.TerminologyExtent#getInstanceAssertions <em>Instance Assertions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Instance Assertions</em>'.
+	 * @see jpl.imce.oml.specification.ecore.TerminologyExtent#getInstanceAssertions()
+	 * @see #getTerminologyExtent()
+	 * @generated
+	 */
+	EReference getTerminologyExtent_InstanceAssertions();
 
 	/**
 	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.TerminologyBox <em>Terminology Box</em>}'.
@@ -7904,6 +9291,27 @@ public interface OMLPackage extends EPackage {
 	EClass getEntity();
 
 	/**
+	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.ConceptualEntity <em>Conceptual Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Conceptual Entity</em>'.
+	 * @see jpl.imce.oml.specification.ecore.ConceptualEntity
+	 * @generated
+	 */
+	EClass getConceptualEntity();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.ConceptualEntity#isIsAbstract <em>Is Abstract</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Abstract</em>'.
+	 * @see jpl.imce.oml.specification.ecore.ConceptualEntity#isIsAbstract()
+	 * @see #getConceptualEntity()
+	 * @generated
+	 */
+	EAttribute getConceptualEntity_IsAbstract();
+
+	/**
 	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.Aspect <em>Aspect</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7922,17 +9330,6 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getConcept();
-
-	/**
-	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.Concept#isIsAbstract <em>Is Abstract</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Abstract</em>'.
-	 * @see jpl.imce.oml.specification.ecore.Concept#isIsAbstract()
-	 * @see #getConcept()
-	 * @generated
-	 */
-	EAttribute getConcept_IsAbstract();
 
 	/**
 	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.EntityRelationship <em>Entity Relationship</em>}'.
@@ -8096,17 +9493,6 @@ public interface OMLPackage extends EPackage {
 	EClass getReifiedRelationship();
 
 	/**
-	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.ReifiedRelationship#isIsAbstract <em>Is Abstract</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Abstract</em>'.
-	 * @see jpl.imce.oml.specification.ecore.ReifiedRelationship#isIsAbstract()
-	 * @see #getReifiedRelationship()
-	 * @generated
-	 */
-	EAttribute getReifiedRelationship_IsAbstract();
-
-	/**
 	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.ReifiedRelationship#getUnreifiedPropertyName <em>Unreified Property Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8248,6 +9634,17 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDataRelationshipFromEntity_Domain();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.DataRelationshipFromEntity#isIsIdentityCriteria <em>Is Identity Criteria</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Identity Criteria</em>'.
+	 * @see jpl.imce.oml.specification.ecore.DataRelationshipFromEntity#isIsIdentityCriteria()
+	 * @see #getDataRelationshipFromEntity()
+	 * @generated
+	 */
+	EAttribute getDataRelationshipFromEntity_IsIdentityCriteria();
 
 	/**
 	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.DataRelationshipFromStructure <em>Data Relationship From Structure</em>}'.
@@ -9605,6 +11002,630 @@ public interface OMLPackage extends EPackage {
 	EAttribute getScalarOneOfLiteralAxiom_Value();
 
 	/**
+	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.DescriptionBox <em>Description Box</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Description Box</em>'.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox
+	 * @generated
+	 */
+	EClass getDescriptionBox();
+
+	/**
+	 * Returns the meta object for the container reference '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getTerminologyExtent <em>Terminology Extent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Terminology Extent</em>'.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getTerminologyExtent()
+	 * @see #getDescriptionBox()
+	 * @generated
+	 */
+	EReference getDescriptionBox_TerminologyExtent();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getClosedWorldDefinitions <em>Closed World Definitions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Closed World Definitions</em>'.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getClosedWorldDefinitions()
+	 * @see #getDescriptionBox()
+	 * @generated
+	 */
+	EReference getDescriptionBox_ClosedWorldDefinitions();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getDescriptionBoxRefinements <em>Description Box Refinements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Description Box Refinements</em>'.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getDescriptionBoxRefinements()
+	 * @see #getDescriptionBox()
+	 * @generated
+	 */
+	EReference getDescriptionBox_DescriptionBoxRefinements();
+
+	/**
+	 * Returns the meta object for the reference list '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getConceptInstances <em>Concept Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Concept Instances</em>'.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getConceptInstances()
+	 * @see #getDescriptionBox()
+	 * @generated
+	 */
+	EReference getDescriptionBox_ConceptInstances();
+
+	/**
+	 * Returns the meta object for the reference list '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getReifiedRelationshipInstances <em>Reified Relationship Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Reified Relationship Instances</em>'.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getReifiedRelationshipInstances()
+	 * @see #getDescriptionBox()
+	 * @generated
+	 */
+	EReference getDescriptionBox_ReifiedRelationshipInstances();
+
+	/**
+	 * Returns the meta object for the reference list '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getReifiedRelationshipInstanceDomains <em>Reified Relationship Instance Domains</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Reified Relationship Instance Domains</em>'.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getReifiedRelationshipInstanceDomains()
+	 * @see #getDescriptionBox()
+	 * @generated
+	 */
+	EReference getDescriptionBox_ReifiedRelationshipInstanceDomains();
+
+	/**
+	 * Returns the meta object for the reference list '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getReifiedRelationshipInstanceRanges <em>Reified Relationship Instance Ranges</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Reified Relationship Instance Ranges</em>'.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getReifiedRelationshipInstanceRanges()
+	 * @see #getDescriptionBox()
+	 * @generated
+	 */
+	EReference getDescriptionBox_ReifiedRelationshipInstanceRanges();
+
+	/**
+	 * Returns the meta object for the reference list '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getUnreifiedRelationshipInstanceTuples <em>Unreified Relationship Instance Tuples</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Unreified Relationship Instance Tuples</em>'.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getUnreifiedRelationshipInstanceTuples()
+	 * @see #getDescriptionBox()
+	 * @generated
+	 */
+	EReference getDescriptionBox_UnreifiedRelationshipInstanceTuples();
+
+	/**
+	 * Returns the meta object for the reference list '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getDataStructureTuples <em>Data Structure Tuples</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Data Structure Tuples</em>'.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getDataStructureTuples()
+	 * @see #getDescriptionBox()
+	 * @generated
+	 */
+	EReference getDescriptionBox_DataStructureTuples();
+
+	/**
+	 * Returns the meta object for the reference list '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getScalarDataPropertyValues <em>Scalar Data Property Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Scalar Data Property Values</em>'.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getScalarDataPropertyValues()
+	 * @see #getDescriptionBox()
+	 * @generated
+	 */
+	EReference getDescriptionBox_ScalarDataPropertyValues();
+
+	/**
+	 * Returns the meta object for the reference list '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getStructuredDataPropertyValues <em>Structured Data Property Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Structured Data Property Values</em>'.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getStructuredDataPropertyValues()
+	 * @see #getDescriptionBox()
+	 * @generated
+	 */
+	EReference getDescriptionBox_StructuredDataPropertyValues();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#withConceptInstances(org.eclipse.emf.common.util.EList) <em>With Concept Instances</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>With Concept Instances</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#withConceptInstances(org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getDescriptionBox__WithConceptInstances__EList();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#withReifiedRelationshipInstances(org.eclipse.emf.common.util.EList) <em>With Reified Relationship Instances</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>With Reified Relationship Instances</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#withReifiedRelationshipInstances(org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getDescriptionBox__WithReifiedRelationshipInstances__EList();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#withReifiedRelationshipInstanceDomains(org.eclipse.emf.common.util.EList) <em>With Reified Relationship Instance Domains</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>With Reified Relationship Instance Domains</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#withReifiedRelationshipInstanceDomains(org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getDescriptionBox__WithReifiedRelationshipInstanceDomains__EList();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#withReifiedRelationshipInstanceRanges(org.eclipse.emf.common.util.EList) <em>With Reified Relationship Instance Ranges</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>With Reified Relationship Instance Ranges</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#withReifiedRelationshipInstanceRanges(org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getDescriptionBox__WithReifiedRelationshipInstanceRanges__EList();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#withUnreifiedRelationshipInstanceTuples(org.eclipse.emf.common.util.EList) <em>With Unreified Relationship Instance Tuples</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>With Unreified Relationship Instance Tuples</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#withUnreifiedRelationshipInstanceTuples(org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getDescriptionBox__WithUnreifiedRelationshipInstanceTuples__EList();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#withDataStructureTuples(org.eclipse.emf.common.util.EList) <em>With Data Structure Tuples</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>With Data Structure Tuples</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#withDataStructureTuples(org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getDescriptionBox__WithDataStructureTuples__EList();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#withScalarDataPropertyValues(org.eclipse.emf.common.util.EList) <em>With Scalar Data Property Values</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>With Scalar Data Property Values</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#withScalarDataPropertyValues(org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getDescriptionBox__WithScalarDataPropertyValues__EList();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#withStructuredDataPropertyValues(org.eclipse.emf.common.util.EList) <em>With Structured Data Property Values</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>With Structured Data Property Values</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#withStructuredDataPropertyValues(org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getDescriptionBox__WithStructuredDataPropertyValues__EList();
+
+	/**
+	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions <em>Description Box Extends Closed World Definitions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Description Box Extends Closed World Definitions</em>'.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions
+	 * @generated
+	 */
+	EClass getDescriptionBoxExtendsClosedWorldDefinitions();
+
+	/**
+	 * Returns the meta object for the container reference '{@link jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions#getDescriptionBox <em>Description Box</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Description Box</em>'.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions#getDescriptionBox()
+	 * @see #getDescriptionBoxExtendsClosedWorldDefinitions()
+	 * @generated
+	 */
+	EReference getDescriptionBoxExtendsClosedWorldDefinitions_DescriptionBox();
+
+	/**
+	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions#getClosedWorldDefinitions <em>Closed World Definitions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Closed World Definitions</em>'.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions#getClosedWorldDefinitions()
+	 * @see #getDescriptionBoxExtendsClosedWorldDefinitions()
+	 * @generated
+	 */
+	EReference getDescriptionBoxExtendsClosedWorldDefinitions_ClosedWorldDefinitions();
+
+	/**
+	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.DescriptionBoxRefinement <em>Description Box Refinement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Description Box Refinement</em>'.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBoxRefinement
+	 * @generated
+	 */
+	EClass getDescriptionBoxRefinement();
+
+	/**
+	 * Returns the meta object for the container reference '{@link jpl.imce.oml.specification.ecore.DescriptionBoxRefinement#getRefiningDescriptionBox <em>Refining Description Box</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Refining Description Box</em>'.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBoxRefinement#getRefiningDescriptionBox()
+	 * @see #getDescriptionBoxRefinement()
+	 * @generated
+	 */
+	EReference getDescriptionBoxRefinement_RefiningDescriptionBox();
+
+	/**
+	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.DescriptionBoxRefinement#getRefinedDescriptionBox <em>Refined Description Box</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Refined Description Box</em>'.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBoxRefinement#getRefinedDescriptionBox()
+	 * @see #getDescriptionBoxRefinement()
+	 * @generated
+	 */
+	EReference getDescriptionBoxRefinement_RefinedDescriptionBox();
+
+	/**
+	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion <em>Terminology Instance Assertion</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Terminology Instance Assertion</em>'.
+	 * @see jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion
+	 * @generated
+	 */
+	EClass getTerminologyInstanceAssertion();
+
+	/**
+	 * Returns the meta object for the container reference '{@link jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion#getTerminologyExtent <em>Terminology Extent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Terminology Extent</em>'.
+	 * @see jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion#getTerminologyExtent()
+	 * @see #getTerminologyInstanceAssertion()
+	 * @generated
+	 */
+	EReference getTerminologyInstanceAssertion_TerminologyExtent();
+
+	/**
+	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.SingletonInstance <em>Singleton Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Singleton Instance</em>'.
+	 * @see jpl.imce.oml.specification.ecore.SingletonInstance
+	 * @generated
+	 */
+	EClass getSingletonInstance();
+
+	/**
+	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.ScalarDataPropertyValue <em>Scalar Data Property Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Scalar Data Property Value</em>'.
+	 * @see jpl.imce.oml.specification.ecore.ScalarDataPropertyValue
+	 * @generated
+	 */
+	EClass getScalarDataPropertyValue();
+
+	/**
+	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.ScalarDataPropertyValue#getSingletonInstance <em>Singleton Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Singleton Instance</em>'.
+	 * @see jpl.imce.oml.specification.ecore.ScalarDataPropertyValue#getSingletonInstance()
+	 * @see #getScalarDataPropertyValue()
+	 * @generated
+	 */
+	EReference getScalarDataPropertyValue_SingletonInstance();
+
+	/**
+	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.ScalarDataPropertyValue#getScalarDataProperty <em>Scalar Data Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Scalar Data Property</em>'.
+	 * @see jpl.imce.oml.specification.ecore.ScalarDataPropertyValue#getScalarDataProperty()
+	 * @see #getScalarDataPropertyValue()
+	 * @generated
+	 */
+	EReference getScalarDataPropertyValue_ScalarDataProperty();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.ScalarDataPropertyValue#getScalarPropertyValue <em>Scalar Property Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Scalar Property Value</em>'.
+	 * @see jpl.imce.oml.specification.ecore.ScalarDataPropertyValue#getScalarPropertyValue()
+	 * @see #getScalarDataPropertyValue()
+	 * @generated
+	 */
+	EAttribute getScalarDataPropertyValue_ScalarPropertyValue();
+
+	/**
+	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue <em>Structured Data Property Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Structured Data Property Value</em>'.
+	 * @see jpl.imce.oml.specification.ecore.StructuredDataPropertyValue
+	 * @generated
+	 */
+	EClass getStructuredDataPropertyValue();
+
+	/**
+	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getSingletonInstance <em>Singleton Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Singleton Instance</em>'.
+	 * @see jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getSingletonInstance()
+	 * @see #getStructuredDataPropertyValue()
+	 * @generated
+	 */
+	EReference getStructuredDataPropertyValue_SingletonInstance();
+
+	/**
+	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getStructuredDataProperty <em>Structured Data Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Structured Data Property</em>'.
+	 * @see jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getStructuredDataProperty()
+	 * @see #getStructuredDataPropertyValue()
+	 * @generated
+	 */
+	EReference getStructuredDataPropertyValue_StructuredDataProperty();
+
+	/**
+	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getStructuredPropertyTuple <em>Structured Property Tuple</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Structured Property Tuple</em>'.
+	 * @see jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getStructuredPropertyTuple()
+	 * @see #getStructuredDataPropertyValue()
+	 * @generated
+	 */
+	EReference getStructuredDataPropertyValue_StructuredPropertyTuple();
+
+	/**
+	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.DataStructureTuple <em>Data Structure Tuple</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Data Structure Tuple</em>'.
+	 * @see jpl.imce.oml.specification.ecore.DataStructureTuple
+	 * @generated
+	 */
+	EClass getDataStructureTuple();
+
+	/**
+	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.DataStructureTuple#getDataStructureType <em>Data Structure Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Data Structure Type</em>'.
+	 * @see jpl.imce.oml.specification.ecore.DataStructureTuple#getDataStructureType()
+	 * @see #getDataStructureTuple()
+	 * @generated
+	 */
+	EReference getDataStructureTuple_DataStructureType();
+
+	/**
+	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance <em>Conceptual Entity Singleton Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Conceptual Entity Singleton Instance</em>'.
+	 * @see jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance
+	 * @generated
+	 */
+	EClass getConceptualEntitySingletonInstance();
+
+	/**
+	 * Returns the meta object for the reference list '{@link jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance#getIdentifyingScalarValues <em>Identifying Scalar Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Identifying Scalar Values</em>'.
+	 * @see jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance#getIdentifyingScalarValues()
+	 * @see #getConceptualEntitySingletonInstance()
+	 * @generated
+	 */
+	EReference getConceptualEntitySingletonInstance_IdentifyingScalarValues();
+
+	/**
+	 * Returns the meta object for the reference list '{@link jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance#getIdentifyingStructuredTuples <em>Identifying Structured Tuples</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Identifying Structured Tuples</em>'.
+	 * @see jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance#getIdentifyingStructuredTuples()
+	 * @see #getConceptualEntitySingletonInstance()
+	 * @generated
+	 */
+	EReference getConceptualEntitySingletonInstance_IdentifyingStructuredTuples();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance#conceptualEntitySingletonClassifier() <em>Conceptual Entity Singleton Classifier</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Conceptual Entity Singleton Classifier</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance#conceptualEntitySingletonClassifier()
+	 * @generated
+	 */
+	EOperation getConceptualEntitySingletonInstance__ConceptualEntitySingletonClassifier();
+
+	/**
+	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.ConceptInstance <em>Concept Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Concept Instance</em>'.
+	 * @see jpl.imce.oml.specification.ecore.ConceptInstance
+	 * @generated
+	 */
+	EClass getConceptInstance();
+
+	/**
+	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.ConceptInstance#getSingletonConceptClassifier <em>Singleton Concept Classifier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Singleton Concept Classifier</em>'.
+	 * @see jpl.imce.oml.specification.ecore.ConceptInstance#getSingletonConceptClassifier()
+	 * @see #getConceptInstance()
+	 * @generated
+	 */
+	EReference getConceptInstance_SingletonConceptClassifier();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.ConceptInstance#conceptualEntitySingletonClassifier() <em>Conceptual Entity Singleton Classifier</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Conceptual Entity Singleton Classifier</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.ConceptInstance#conceptualEntitySingletonClassifier()
+	 * @generated
+	 */
+	EOperation getConceptInstance__ConceptualEntitySingletonClassifier();
+
+	/**
+	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstance <em>Reified Relationship Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Reified Relationship Instance</em>'.
+	 * @see jpl.imce.oml.specification.ecore.ReifiedRelationshipInstance
+	 * @generated
+	 */
+	EClass getReifiedRelationshipInstance();
+
+	/**
+	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstance#getSingletonReifiedRelationshipClassifier <em>Singleton Reified Relationship Classifier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Singleton Reified Relationship Classifier</em>'.
+	 * @see jpl.imce.oml.specification.ecore.ReifiedRelationshipInstance#getSingletonReifiedRelationshipClassifier()
+	 * @see #getReifiedRelationshipInstance()
+	 * @generated
+	 */
+	EReference getReifiedRelationshipInstance_SingletonReifiedRelationshipClassifier();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstance#conceptualEntitySingletonClassifier() <em>Conceptual Entity Singleton Classifier</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Conceptual Entity Singleton Classifier</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.ReifiedRelationshipInstance#conceptualEntitySingletonClassifier()
+	 * @generated
+	 */
+	EOperation getReifiedRelationshipInstance__ConceptualEntitySingletonClassifier();
+
+	/**
+	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceDomain <em>Reified Relationship Instance Domain</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Reified Relationship Instance Domain</em>'.
+	 * @see jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceDomain
+	 * @generated
+	 */
+	EClass getReifiedRelationshipInstanceDomain();
+
+	/**
+	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceDomain#getReifiedRelationshipInstance <em>Reified Relationship Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Reified Relationship Instance</em>'.
+	 * @see jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceDomain#getReifiedRelationshipInstance()
+	 * @see #getReifiedRelationshipInstanceDomain()
+	 * @generated
+	 */
+	EReference getReifiedRelationshipInstanceDomain_ReifiedRelationshipInstance();
+
+	/**
+	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceDomain#getDomain <em>Domain</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Domain</em>'.
+	 * @see jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceDomain#getDomain()
+	 * @see #getReifiedRelationshipInstanceDomain()
+	 * @generated
+	 */
+	EReference getReifiedRelationshipInstanceDomain_Domain();
+
+	/**
+	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceRange <em>Reified Relationship Instance Range</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Reified Relationship Instance Range</em>'.
+	 * @see jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceRange
+	 * @generated
+	 */
+	EClass getReifiedRelationshipInstanceRange();
+
+	/**
+	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceRange#getReifiedRelationshipInstance <em>Reified Relationship Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Reified Relationship Instance</em>'.
+	 * @see jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceRange#getReifiedRelationshipInstance()
+	 * @see #getReifiedRelationshipInstanceRange()
+	 * @generated
+	 */
+	EReference getReifiedRelationshipInstanceRange_ReifiedRelationshipInstance();
+
+	/**
+	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceRange#getRange <em>Range</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Range</em>'.
+	 * @see jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceRange#getRange()
+	 * @see #getReifiedRelationshipInstanceRange()
+	 * @generated
+	 */
+	EReference getReifiedRelationshipInstanceRange_Range();
+
+	/**
+	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple <em>Unreified Relationship Instance Tuple</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Unreified Relationship Instance Tuple</em>'.
+	 * @see jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple
+	 * @generated
+	 */
+	EClass getUnreifiedRelationshipInstanceTuple();
+
+	/**
+	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple#getUnreifiedRelationship <em>Unreified Relationship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Unreified Relationship</em>'.
+	 * @see jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple#getUnreifiedRelationship()
+	 * @see #getUnreifiedRelationshipInstanceTuple()
+	 * @generated
+	 */
+	EReference getUnreifiedRelationshipInstanceTuple_UnreifiedRelationship();
+
+	/**
+	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple#getDomain <em>Domain</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Domain</em>'.
+	 * @see jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple#getDomain()
+	 * @see #getUnreifiedRelationshipInstanceTuple()
+	 * @generated
+	 */
+	EReference getUnreifiedRelationshipInstanceTuple_Domain();
+
+	/**
+	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple#getRange <em>Range</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Range</em>'.
+	 * @see jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple#getRange()
+	 * @see #getUnreifiedRelationshipInstanceTuple()
+	 * @generated
+	 */
+	EReference getUnreifiedRelationshipInstanceTuple_Range();
+
+	/**
 	 * Returns the meta object for enum '{@link jpl.imce.oml.specification.ecore.TerminologyGraphKind <em>Terminology Graph Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10020,6 +12041,22 @@ public interface OMLPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TERMINOLOGY_EXTENT__BUNDLES = eINSTANCE.getTerminologyExtent_Bundles();
+
+		/**
+		 * The meta object literal for the '<em><b>Descriptions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TERMINOLOGY_EXTENT__DESCRIPTIONS = eINSTANCE.getTerminologyExtent_Descriptions();
+
+		/**
+		 * The meta object literal for the '<em><b>Instance Assertions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TERMINOLOGY_EXTENT__INSTANCE_ASSERTIONS = eINSTANCE.getTerminologyExtent_InstanceAssertions();
 
 		/**
 		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.TerminologyBoxImpl <em>Terminology Box</em>}' class.
@@ -10506,6 +12543,24 @@ public interface OMLPackage extends EPackage {
 		EClass ENTITY = eINSTANCE.getEntity();
 
 		/**
+		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.ConceptualEntityImpl <em>Conceptual Entity</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpl.imce.oml.specification.ecore.impl.ConceptualEntityImpl
+		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getConceptualEntity()
+		 * @generated
+		 */
+		EClass CONCEPTUAL_ENTITY = eINSTANCE.getConceptualEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Abstract</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONCEPTUAL_ENTITY__IS_ABSTRACT = eINSTANCE.getConceptualEntity_IsAbstract();
+
+		/**
 		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.AspectImpl <em>Aspect</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -10524,14 +12579,6 @@ public interface OMLPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CONCEPT = eINSTANCE.getConcept();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Abstract</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONCEPT__IS_ABSTRACT = eINSTANCE.getConcept_IsAbstract();
 
 		/**
 		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.EntityRelationshipImpl <em>Entity Relationship</em>}' class.
@@ -10658,14 +12705,6 @@ public interface OMLPackage extends EPackage {
 		EClass REIFIED_RELATIONSHIP = eINSTANCE.getReifiedRelationship();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Abstract</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REIFIED_RELATIONSHIP__IS_ABSTRACT = eINSTANCE.getReifiedRelationship_IsAbstract();
-
-		/**
 		 * The meta object literal for the '<em><b>Unreified Property Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -10790,6 +12829,14 @@ public interface OMLPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN = eINSTANCE.getDataRelationshipFromEntity_Domain();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Identity Criteria</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA = eINSTANCE.getDataRelationshipFromEntity_IsIdentityCriteria();
 
 		/**
 		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.DataRelationshipFromStructureImpl <em>Data Relationship From Structure</em>}' class.
@@ -11918,6 +13965,506 @@ public interface OMLPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SCALAR_ONE_OF_LITERAL_AXIOM__VALUE = eINSTANCE.getScalarOneOfLiteralAxiom_Value();
+
+		/**
+		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxImpl <em>Description Box</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpl.imce.oml.specification.ecore.impl.DescriptionBoxImpl
+		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDescriptionBox()
+		 * @generated
+		 */
+		EClass DESCRIPTION_BOX = eINSTANCE.getDescriptionBox();
+
+		/**
+		 * The meta object literal for the '<em><b>Terminology Extent</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESCRIPTION_BOX__TERMINOLOGY_EXTENT = eINSTANCE.getDescriptionBox_TerminologyExtent();
+
+		/**
+		 * The meta object literal for the '<em><b>Closed World Definitions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS = eINSTANCE.getDescriptionBox_ClosedWorldDefinitions();
+
+		/**
+		 * The meta object literal for the '<em><b>Description Box Refinements</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS = eINSTANCE.getDescriptionBox_DescriptionBoxRefinements();
+
+		/**
+		 * The meta object literal for the '<em><b>Concept Instances</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESCRIPTION_BOX__CONCEPT_INSTANCES = eINSTANCE.getDescriptionBox_ConceptInstances();
+
+		/**
+		 * The meta object literal for the '<em><b>Reified Relationship Instances</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES = eINSTANCE.getDescriptionBox_ReifiedRelationshipInstances();
+
+		/**
+		 * The meta object literal for the '<em><b>Reified Relationship Instance Domains</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS = eINSTANCE.getDescriptionBox_ReifiedRelationshipInstanceDomains();
+
+		/**
+		 * The meta object literal for the '<em><b>Reified Relationship Instance Ranges</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES = eINSTANCE.getDescriptionBox_ReifiedRelationshipInstanceRanges();
+
+		/**
+		 * The meta object literal for the '<em><b>Unreified Relationship Instance Tuples</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES = eINSTANCE.getDescriptionBox_UnreifiedRelationshipInstanceTuples();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Structure Tuples</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESCRIPTION_BOX__DATA_STRUCTURE_TUPLES = eINSTANCE.getDescriptionBox_DataStructureTuples();
+
+		/**
+		 * The meta object literal for the '<em><b>Scalar Data Property Values</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESCRIPTION_BOX__SCALAR_DATA_PROPERTY_VALUES = eINSTANCE.getDescriptionBox_ScalarDataPropertyValues();
+
+		/**
+		 * The meta object literal for the '<em><b>Structured Data Property Values</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESCRIPTION_BOX__STRUCTURED_DATA_PROPERTY_VALUES = eINSTANCE.getDescriptionBox_StructuredDataPropertyValues();
+
+		/**
+		 * The meta object literal for the '<em><b>With Concept Instances</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DESCRIPTION_BOX___WITH_CONCEPT_INSTANCES__ELIST = eINSTANCE.getDescriptionBox__WithConceptInstances__EList();
+
+		/**
+		 * The meta object literal for the '<em><b>With Reified Relationship Instances</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DESCRIPTION_BOX___WITH_REIFIED_RELATIONSHIP_INSTANCES__ELIST = eINSTANCE.getDescriptionBox__WithReifiedRelationshipInstances__EList();
+
+		/**
+		 * The meta object literal for the '<em><b>With Reified Relationship Instance Domains</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DESCRIPTION_BOX___WITH_REIFIED_RELATIONSHIP_INSTANCE_DOMAINS__ELIST = eINSTANCE.getDescriptionBox__WithReifiedRelationshipInstanceDomains__EList();
+
+		/**
+		 * The meta object literal for the '<em><b>With Reified Relationship Instance Ranges</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DESCRIPTION_BOX___WITH_REIFIED_RELATIONSHIP_INSTANCE_RANGES__ELIST = eINSTANCE.getDescriptionBox__WithReifiedRelationshipInstanceRanges__EList();
+
+		/**
+		 * The meta object literal for the '<em><b>With Unreified Relationship Instance Tuples</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DESCRIPTION_BOX___WITH_UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES__ELIST = eINSTANCE.getDescriptionBox__WithUnreifiedRelationshipInstanceTuples__EList();
+
+		/**
+		 * The meta object literal for the '<em><b>With Data Structure Tuples</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DESCRIPTION_BOX___WITH_DATA_STRUCTURE_TUPLES__ELIST = eINSTANCE.getDescriptionBox__WithDataStructureTuples__EList();
+
+		/**
+		 * The meta object literal for the '<em><b>With Scalar Data Property Values</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DESCRIPTION_BOX___WITH_SCALAR_DATA_PROPERTY_VALUES__ELIST = eINSTANCE.getDescriptionBox__WithScalarDataPropertyValues__EList();
+
+		/**
+		 * The meta object literal for the '<em><b>With Structured Data Property Values</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DESCRIPTION_BOX___WITH_STRUCTURED_DATA_PROPERTY_VALUES__ELIST = eINSTANCE.getDescriptionBox__WithStructuredDataPropertyValues__EList();
+
+		/**
+		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxExtendsClosedWorldDefinitionsImpl <em>Description Box Extends Closed World Definitions</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpl.imce.oml.specification.ecore.impl.DescriptionBoxExtendsClosedWorldDefinitionsImpl
+		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDescriptionBoxExtendsClosedWorldDefinitions()
+		 * @generated
+		 */
+		EClass DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS = eINSTANCE.getDescriptionBoxExtendsClosedWorldDefinitions();
+
+		/**
+		 * The meta object literal for the '<em><b>Description Box</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX = eINSTANCE.getDescriptionBoxExtendsClosedWorldDefinitions_DescriptionBox();
+
+		/**
+		 * The meta object literal for the '<em><b>Closed World Definitions</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__CLOSED_WORLD_DEFINITIONS = eINSTANCE.getDescriptionBoxExtendsClosedWorldDefinitions_ClosedWorldDefinitions();
+
+		/**
+		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxRefinementImpl <em>Description Box Refinement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpl.imce.oml.specification.ecore.impl.DescriptionBoxRefinementImpl
+		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDescriptionBoxRefinement()
+		 * @generated
+		 */
+		EClass DESCRIPTION_BOX_REFINEMENT = eINSTANCE.getDescriptionBoxRefinement();
+
+		/**
+		 * The meta object literal for the '<em><b>Refining Description Box</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX = eINSTANCE.getDescriptionBoxRefinement_RefiningDescriptionBox();
+
+		/**
+		 * The meta object literal for the '<em><b>Refined Description Box</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESCRIPTION_BOX_REFINEMENT__REFINED_DESCRIPTION_BOX = eINSTANCE.getDescriptionBoxRefinement_RefinedDescriptionBox();
+
+		/**
+		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.TerminologyInstanceAssertionImpl <em>Terminology Instance Assertion</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpl.imce.oml.specification.ecore.impl.TerminologyInstanceAssertionImpl
+		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getTerminologyInstanceAssertion()
+		 * @generated
+		 */
+		EClass TERMINOLOGY_INSTANCE_ASSERTION = eINSTANCE.getTerminologyInstanceAssertion();
+
+		/**
+		 * The meta object literal for the '<em><b>Terminology Extent</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TERMINOLOGY_INSTANCE_ASSERTION__TERMINOLOGY_EXTENT = eINSTANCE.getTerminologyInstanceAssertion_TerminologyExtent();
+
+		/**
+		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.SingletonInstanceImpl <em>Singleton Instance</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpl.imce.oml.specification.ecore.impl.SingletonInstanceImpl
+		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getSingletonInstance()
+		 * @generated
+		 */
+		EClass SINGLETON_INSTANCE = eINSTANCE.getSingletonInstance();
+
+		/**
+		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.ScalarDataPropertyValueImpl <em>Scalar Data Property Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpl.imce.oml.specification.ecore.impl.ScalarDataPropertyValueImpl
+		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getScalarDataPropertyValue()
+		 * @generated
+		 */
+		EClass SCALAR_DATA_PROPERTY_VALUE = eINSTANCE.getScalarDataPropertyValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Singleton Instance</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCALAR_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE = eINSTANCE.getScalarDataPropertyValue_SingletonInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Scalar Data Property</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCALAR_DATA_PROPERTY_VALUE__SCALAR_DATA_PROPERTY = eINSTANCE.getScalarDataPropertyValue_ScalarDataProperty();
+
+		/**
+		 * The meta object literal for the '<em><b>Scalar Property Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCALAR_DATA_PROPERTY_VALUE__SCALAR_PROPERTY_VALUE = eINSTANCE.getScalarDataPropertyValue_ScalarPropertyValue();
+
+		/**
+		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.StructuredDataPropertyValueImpl <em>Structured Data Property Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpl.imce.oml.specification.ecore.impl.StructuredDataPropertyValueImpl
+		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getStructuredDataPropertyValue()
+		 * @generated
+		 */
+		EClass STRUCTURED_DATA_PROPERTY_VALUE = eINSTANCE.getStructuredDataPropertyValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Singleton Instance</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRUCTURED_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE = eINSTANCE.getStructuredDataPropertyValue_SingletonInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Structured Data Property</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_DATA_PROPERTY = eINSTANCE.getStructuredDataPropertyValue_StructuredDataProperty();
+
+		/**
+		 * The meta object literal for the '<em><b>Structured Property Tuple</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_PROPERTY_TUPLE = eINSTANCE.getStructuredDataPropertyValue_StructuredPropertyTuple();
+
+		/**
+		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.DataStructureTupleImpl <em>Data Structure Tuple</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpl.imce.oml.specification.ecore.impl.DataStructureTupleImpl
+		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getDataStructureTuple()
+		 * @generated
+		 */
+		EClass DATA_STRUCTURE_TUPLE = eINSTANCE.getDataStructureTuple();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Structure Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA_STRUCTURE_TUPLE__DATA_STRUCTURE_TYPE = eINSTANCE.getDataStructureTuple_DataStructureType();
+
+		/**
+		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.ConceptualEntitySingletonInstanceImpl <em>Conceptual Entity Singleton Instance</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpl.imce.oml.specification.ecore.impl.ConceptualEntitySingletonInstanceImpl
+		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getConceptualEntitySingletonInstance()
+		 * @generated
+		 */
+		EClass CONCEPTUAL_ENTITY_SINGLETON_INSTANCE = eINSTANCE.getConceptualEntitySingletonInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Identifying Scalar Values</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__IDENTIFYING_SCALAR_VALUES = eINSTANCE.getConceptualEntitySingletonInstance_IdentifyingScalarValues();
+
+		/**
+		 * The meta object literal for the '<em><b>Identifying Structured Tuples</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__IDENTIFYING_STRUCTURED_TUPLES = eINSTANCE.getConceptualEntitySingletonInstance_IdentifyingStructuredTuples();
+
+		/**
+		 * The meta object literal for the '<em><b>Conceptual Entity Singleton Classifier</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER = eINSTANCE.getConceptualEntitySingletonInstance__ConceptualEntitySingletonClassifier();
+
+		/**
+		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.ConceptInstanceImpl <em>Concept Instance</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpl.imce.oml.specification.ecore.impl.ConceptInstanceImpl
+		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getConceptInstance()
+		 * @generated
+		 */
+		EClass CONCEPT_INSTANCE = eINSTANCE.getConceptInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Singleton Concept Classifier</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONCEPT_INSTANCE__SINGLETON_CONCEPT_CLASSIFIER = eINSTANCE.getConceptInstance_SingletonConceptClassifier();
+
+		/**
+		 * The meta object literal for the '<em><b>Conceptual Entity Singleton Classifier</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONCEPT_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER = eINSTANCE.getConceptInstance__ConceptualEntitySingletonClassifier();
+
+		/**
+		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.ReifiedRelationshipInstanceImpl <em>Reified Relationship Instance</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpl.imce.oml.specification.ecore.impl.ReifiedRelationshipInstanceImpl
+		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getReifiedRelationshipInstance()
+		 * @generated
+		 */
+		EClass REIFIED_RELATIONSHIP_INSTANCE = eINSTANCE.getReifiedRelationshipInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Singleton Reified Relationship Classifier</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REIFIED_RELATIONSHIP_INSTANCE__SINGLETON_REIFIED_RELATIONSHIP_CLASSIFIER = eINSTANCE.getReifiedRelationshipInstance_SingletonReifiedRelationshipClassifier();
+
+		/**
+		 * The meta object literal for the '<em><b>Conceptual Entity Singleton Classifier</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation REIFIED_RELATIONSHIP_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER = eINSTANCE.getReifiedRelationshipInstance__ConceptualEntitySingletonClassifier();
+
+		/**
+		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.ReifiedRelationshipInstanceDomainImpl <em>Reified Relationship Instance Domain</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpl.imce.oml.specification.ecore.impl.ReifiedRelationshipInstanceDomainImpl
+		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getReifiedRelationshipInstanceDomain()
+		 * @generated
+		 */
+		EClass REIFIED_RELATIONSHIP_INSTANCE_DOMAIN = eINSTANCE.getReifiedRelationshipInstanceDomain();
+
+		/**
+		 * The meta object literal for the '<em><b>Reified Relationship Instance</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REIFIED_RELATIONSHIP_INSTANCE_DOMAIN__REIFIED_RELATIONSHIP_INSTANCE = eINSTANCE.getReifiedRelationshipInstanceDomain_ReifiedRelationshipInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Domain</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REIFIED_RELATIONSHIP_INSTANCE_DOMAIN__DOMAIN = eINSTANCE.getReifiedRelationshipInstanceDomain_Domain();
+
+		/**
+		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.ReifiedRelationshipInstanceRangeImpl <em>Reified Relationship Instance Range</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpl.imce.oml.specification.ecore.impl.ReifiedRelationshipInstanceRangeImpl
+		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getReifiedRelationshipInstanceRange()
+		 * @generated
+		 */
+		EClass REIFIED_RELATIONSHIP_INSTANCE_RANGE = eINSTANCE.getReifiedRelationshipInstanceRange();
+
+		/**
+		 * The meta object literal for the '<em><b>Reified Relationship Instance</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REIFIED_RELATIONSHIP_INSTANCE_RANGE__REIFIED_RELATIONSHIP_INSTANCE = eINSTANCE.getReifiedRelationshipInstanceRange_ReifiedRelationshipInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Range</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REIFIED_RELATIONSHIP_INSTANCE_RANGE__RANGE = eINSTANCE.getReifiedRelationshipInstanceRange_Range();
+
+		/**
+		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.UnreifiedRelationshipInstanceTupleImpl <em>Unreified Relationship Instance Tuple</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpl.imce.oml.specification.ecore.impl.UnreifiedRelationshipInstanceTupleImpl
+		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getUnreifiedRelationshipInstanceTuple()
+		 * @generated
+		 */
+		EClass UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE = eINSTANCE.getUnreifiedRelationshipInstanceTuple();
+
+		/**
+		 * The meta object literal for the '<em><b>Unreified Relationship</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__UNREIFIED_RELATIONSHIP = eINSTANCE.getUnreifiedRelationshipInstanceTuple_UnreifiedRelationship();
+
+		/**
+		 * The meta object literal for the '<em><b>Domain</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DOMAIN = eINSTANCE.getUnreifiedRelationshipInstanceTuple_Domain();
+
+		/**
+		 * The meta object literal for the '<em><b>Range</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__RANGE = eINSTANCE.getUnreifiedRelationshipInstanceTuple_Range();
 
 		/**
 		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.TerminologyGraphKind <em>Terminology Graph Kind</em>}' enum.

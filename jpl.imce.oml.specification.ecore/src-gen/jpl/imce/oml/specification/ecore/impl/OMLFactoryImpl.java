@@ -120,6 +120,17 @@ public class OMLFactoryImpl extends EFactoryImpl implements OMLFactory {
 			case OMLPackage.SYNONYM_SCALAR_RESTRICTION: return (EObject)createSynonymScalarRestriction();
 			case OMLPackage.SCALAR_ONE_OF_RESTRICTION: return (EObject)createScalarOneOfRestriction();
 			case OMLPackage.SCALAR_ONE_OF_LITERAL_AXIOM: return (EObject)createScalarOneOfLiteralAxiom();
+			case OMLPackage.DESCRIPTION_BOX: return (EObject)createDescriptionBox();
+			case OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS: return (EObject)createDescriptionBoxExtendsClosedWorldDefinitions();
+			case OMLPackage.DESCRIPTION_BOX_REFINEMENT: return (EObject)createDescriptionBoxRefinement();
+			case OMLPackage.SCALAR_DATA_PROPERTY_VALUE: return (EObject)createScalarDataPropertyValue();
+			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE: return (EObject)createStructuredDataPropertyValue();
+			case OMLPackage.DATA_STRUCTURE_TUPLE: return (EObject)createDataStructureTuple();
+			case OMLPackage.CONCEPT_INSTANCE: return (EObject)createConceptInstance();
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE: return (EObject)createReifiedRelationshipInstance();
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_DOMAIN: return (EObject)createReifiedRelationshipInstanceDomain();
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_RANGE: return (EObject)createReifiedRelationshipInstanceRange();
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE: return (EObject)createUnreifiedRelationshipInstanceTuple();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -623,6 +634,116 @@ public class OMLFactoryImpl extends EFactoryImpl implements OMLFactory {
 	public ScalarOneOfLiteralAxiom createScalarOneOfLiteralAxiom() {
 		ScalarOneOfLiteralAxiomImpl scalarOneOfLiteralAxiom = new ScalarOneOfLiteralAxiomImpl();
 		return scalarOneOfLiteralAxiom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DescriptionBox createDescriptionBox() {
+		DescriptionBoxImpl descriptionBox = new DescriptionBoxImpl();
+		return descriptionBox;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DescriptionBoxExtendsClosedWorldDefinitions createDescriptionBoxExtendsClosedWorldDefinitions() {
+		DescriptionBoxExtendsClosedWorldDefinitionsImpl descriptionBoxExtendsClosedWorldDefinitions = new DescriptionBoxExtendsClosedWorldDefinitionsImpl();
+		return descriptionBoxExtendsClosedWorldDefinitions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DescriptionBoxRefinement createDescriptionBoxRefinement() {
+		DescriptionBoxRefinementImpl descriptionBoxRefinement = new DescriptionBoxRefinementImpl();
+		return descriptionBoxRefinement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ScalarDataPropertyValue createScalarDataPropertyValue() {
+		ScalarDataPropertyValueImpl scalarDataPropertyValue = new ScalarDataPropertyValueImpl();
+		return scalarDataPropertyValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StructuredDataPropertyValue createStructuredDataPropertyValue() {
+		StructuredDataPropertyValueImpl structuredDataPropertyValue = new StructuredDataPropertyValueImpl();
+		return structuredDataPropertyValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataStructureTuple createDataStructureTuple() {
+		DataStructureTupleImpl dataStructureTuple = new DataStructureTupleImpl();
+		return dataStructureTuple;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ConceptInstance createConceptInstance() {
+		ConceptInstanceImpl conceptInstance = new ConceptInstanceImpl();
+		return conceptInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReifiedRelationshipInstance createReifiedRelationshipInstance() {
+		ReifiedRelationshipInstanceImpl reifiedRelationshipInstance = new ReifiedRelationshipInstanceImpl();
+		return reifiedRelationshipInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReifiedRelationshipInstanceDomain createReifiedRelationshipInstanceDomain() {
+		ReifiedRelationshipInstanceDomainImpl reifiedRelationshipInstanceDomain = new ReifiedRelationshipInstanceDomainImpl();
+		return reifiedRelationshipInstanceDomain;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReifiedRelationshipInstanceRange createReifiedRelationshipInstanceRange() {
+		ReifiedRelationshipInstanceRangeImpl reifiedRelationshipInstanceRange = new ReifiedRelationshipInstanceRangeImpl();
+		return reifiedRelationshipInstanceRange;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UnreifiedRelationshipInstanceTuple createUnreifiedRelationshipInstanceTuple() {
+		UnreifiedRelationshipInstanceTupleImpl unreifiedRelationshipInstanceTuple = new UnreifiedRelationshipInstanceTupleImpl();
+		return unreifiedRelationshipInstanceTuple;
 	}
 
 	/**

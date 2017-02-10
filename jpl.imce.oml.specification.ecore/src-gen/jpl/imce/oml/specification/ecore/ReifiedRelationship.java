@@ -24,11 +24,14 @@ package jpl.imce.oml.specification.ecore;
  * A representation of the model object '<em><b>Reified Relationship</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An OML ReifiedRelationship ...
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link jpl.imce.oml.specification.ecore.ReifiedRelationship#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.ReifiedRelationship#getUnreifiedPropertyName <em>Unreified Property Name</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.ReifiedRelationship#getUnreifiedInversePropertyName <em>Unreified Inverse Property Name</em>}</li>
  * </ul>
@@ -37,33 +40,7 @@ package jpl.imce.oml.specification.ecore;
  * @model
  * @generated
  */
-public interface ReifiedRelationship extends EntityRelationship, Entity {
-	/**
-	 * Returns the value of the '<em><b>Is Abstract</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Is Abstract</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Abstract</em>' attribute.
-	 * @see #setIsAbstract(boolean)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getReifiedRelationship_IsAbstract()
-	 * @model unique="false" required="true"
-	 * @generated
-	 */
-	boolean isIsAbstract();
-
-	/**
-	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.ReifiedRelationship#isIsAbstract <em>Is Abstract</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Abstract</em>' attribute.
-	 * @see #isIsAbstract()
-	 * @generated
-	 */
-	void setIsAbstract(boolean value);
-
+public interface ReifiedRelationship extends EntityRelationship, Entity, ConceptualEntity {
 	/**
 	 * Returns the value of the '<em><b>Unreified Property Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

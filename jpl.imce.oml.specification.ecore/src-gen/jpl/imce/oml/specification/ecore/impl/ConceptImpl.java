@@ -19,7 +19,9 @@
 package jpl.imce.oml.specification.ecore.impl;
 
 import jpl.imce.oml.specification.ecore.Concept;
+import jpl.imce.oml.specification.ecore.ConceptualEntity;
 import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.UnaryTermKind;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -157,6 +159,48 @@ public class ConceptImpl extends EntityImpl implements Concept {
 				return isAbstract != IS_ABSTRACT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == ConceptualEntity.class) {
+			switch (derivedFeatureID) {
+				case OMLPackage.CONCEPT__IS_ABSTRACT: return OMLPackage.CONCEPTUAL_ENTITY__IS_ABSTRACT;
+				default: return -1;
+			}
+		}
+		if (baseClass == UnaryTermKind.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == ConceptualEntity.class) {
+			switch (baseFeatureID) {
+				case OMLPackage.CONCEPTUAL_ENTITY__IS_ABSTRACT: return OMLPackage.CONCEPT__IS_ABSTRACT;
+				default: return -1;
+			}
+		}
+		if (baseClass == UnaryTermKind.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

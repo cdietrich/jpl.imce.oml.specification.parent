@@ -25,7 +25,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A TerminologyAxiom is asserted in a TerminologyBox of some kind.
+ * An OML TerminologyAxiom is asserted in a TerminologyBox of some kind.
  * <!-- end-model-doc -->
  *
  *
