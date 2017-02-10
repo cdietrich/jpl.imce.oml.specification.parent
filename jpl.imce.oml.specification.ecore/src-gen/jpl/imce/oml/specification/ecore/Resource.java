@@ -26,7 +26,12 @@ import org.eclipse.emf.cdo.CDOObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML Resource ...
+ * An OML Resource is an abstraction for
+ * everything in a vocabulary that is identifiable
+ * locally by name within the vocabulary and
+ * globally by an IRI across multiple vocabularies.
+ * For a particular OML Resource, the constraints
+ * between its name and its IRI depend on what kind of OML Resource it is.
  * <!-- end-model-doc -->
  *
  *

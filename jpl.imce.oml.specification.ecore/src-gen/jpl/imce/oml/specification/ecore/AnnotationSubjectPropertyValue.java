@@ -26,8 +26,8 @@ import org.eclipse.emf.cdo.CDOObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * For a given annotated TerminologyThing key,
- * an AnnotationSubjectPropertyValue is a pair:
+ * For a given annotated OML TerminologyThing key,
+ * an OML AnnotationSubjectPropertyValue is a pair:
  * - an annotation property
  * - an annotation value
  * <!-- end-model-doc -->

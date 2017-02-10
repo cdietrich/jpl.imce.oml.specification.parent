@@ -27,7 +27,7 @@ import org.eclipse.emf.cdo.CDOObject;
  *
  * <!-- begin-model-doc -->
  * In the OML tabular interchange representation,
- * an AnnotationEntry (for a given AnnotationProperty) is a triple:
+ * an OML AnnotationEntry (for a given OML AnnotationProperty) is a triple:
  * - the terminology in which the annotation appears
  * - the annotated terminology thing (subject)
  * - the value of the AnnotationProperty for that subject in that terminology

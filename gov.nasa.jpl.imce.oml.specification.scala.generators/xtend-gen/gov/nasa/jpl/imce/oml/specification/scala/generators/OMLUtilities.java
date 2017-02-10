@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -658,6 +659,38 @@ public class OMLUtilities {
     return _xblockexpression;
   }
   
+  public static Iterable<EClass> ESuperClasses(final EClass eClass) {
+    EList<EClass> _eSuperTypes = eClass.getESuperTypes();
+    final Function1<EClass, String> _function = new Function1<EClass, String>() {
+      @Override
+      public String apply(final EClass it) {
+        return it.getName();
+      }
+    };
+    return IterableExtensions.<EClass, String>sortBy(_eSuperTypes, _function);
+  }
+  
+  public static Iterable<EClass> ESpecificClasses(final EClass eClass) {
+    EPackage _ePackage = eClass.getEPackage();
+    EList<EClassifier> _eClassifiers = _ePackage.getEClassifiers();
+    Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
+    final Function1<EClass, Boolean> _function = new Function1<EClass, Boolean>() {
+      @Override
+      public Boolean apply(final EClass it) {
+        EList<EClass> _eSuperTypes = it.getESuperTypes();
+        return Boolean.valueOf(_eSuperTypes.contains(eClass));
+      }
+    };
+    Iterable<EClass> _filter_1 = IterableExtensions.<EClass>filter(_filter, _function);
+    final Function1<EClass, String> _function_1 = new Function1<EClass, String>() {
+      @Override
+      public String apply(final EClass it) {
+        return it.getName();
+      }
+    };
+    return IterableExtensions.<EClass, String>sortBy(_filter_1, _function_1);
+  }
+  
   public static Boolean isFunctionalAPIOrOrderingKey(final ENamedElement e) {
     return Boolean.valueOf(((OMLUtilities.isFunctionalAPI(e)).booleanValue() || (OMLUtilities.isOrderingKey(e)).booleanValue()));
   }
@@ -738,6 +771,16 @@ public class OMLUtilities {
   public static Boolean isValueTable(final ENamedElement e) {
     EAnnotation _eAnnotation = e.getEAnnotation("http://imce.jpl.nasa.gov/oml/ValueTable");
     return Boolean.valueOf((null != _eAnnotation));
+  }
+  
+  public static String pluralizeIfMany(final String s, final int cardinality) {
+    String _xifexpression = null;
+    if ((cardinality > 1)) {
+      _xifexpression = OMLUtilities.pluralize(s);
+    } else {
+      _xifexpression = s;
+    }
+    return _xifexpression;
   }
   
   public static String pluralize(final String s) {

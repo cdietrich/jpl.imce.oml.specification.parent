@@ -129,7 +129,12 @@ type AbbrevIRI wraps String
 type NamespacePrefix wraps String
 
 /*
- * An OML Resource ...
+ * An OML Resource is an abstraction for 
+ * everything in a vocabulary that is identifiable
+ * locally by name within the vocabulary and 
+ * globally by an IRI across multiple vocabularies.
+ * For a particular OML Resource, the constraints 
+ * between its name and its IRI depend on what kind of OML Resource it is.
  */
 @Glossary
 abstract class Resource {
@@ -141,7 +146,8 @@ abstract class Resource {
 }
 
 /*
- * An OML TerminologyThing ...
+ * An OML TerminologyThing is an abstraction for everything
+ * in a vocabulary that is globally identified by a UUID.
  */
 @Glossary
 abstract class TerminologyThing {
@@ -154,7 +160,9 @@ abstract class TerminologyThing {
 }
 
 /*
- * An OML AnnotationProperty ...
+ * An OML AnnotationProperty maps to an [OWL2 AnnotationProperty] 
+ * and is similarly a non-logical property for associating some information
+ * to any OML TerminologyThing in the context of an OML TerminologyBox.
  */
 @Glossary
 class AnnotationProperty {
@@ -184,7 +192,7 @@ class AnnotationPropertyTable wraps java.util.Map$Entry {
 
 /*
  * In the OML tabular interchange representation,
- * an AnnotationEntry (for a given AnnotationProperty) is a triple:
+ * an OML AnnotationEntry (for a given OML AnnotationProperty) is a triple:
  * - the terminology in which the annotation appears 
  * - the annotated terminology thing (subject)
  * - the value of the AnnotationProperty for that subject in that terminology
@@ -204,8 +212,9 @@ class AnnotationEntry {
 }
 
 /* 
- * In a given terminology, annotations are indexed by TerminologyThing subject (key).
- * A subject (key) is associated to a table of AnnotationSubjectPropertyValues
+ * In a given OML TerminologyBox, annotations are indexed by 
+ * an OML TerminologyThing subject (key).
+ * A subject (key) is associated to a table of OML AnnotationSubjectPropertyValues
  */
 @Glossary
 @NotFunctionalAPI
@@ -216,8 +225,8 @@ class AnnotationSubjectTable wraps java.util.Map$Entry {
 }
 
 /*
- * For a given annotated TerminologyThing key, 
- * an AnnotationSubjectPropertyValue is a pair:
+ * For a given annotated OML TerminologyThing key, 
+ * an OML AnnotationSubjectPropertyValue is a pair:
  * - an annotation property 
  * - an annotation value
  */
@@ -229,7 +238,10 @@ class AnnotationSubjectPropertyValue {
 }
 
 /*
- * An OML Annotation ...
+ * An OML Annotation maps to an [OWL2 Annotation] and is similarly
+ * a non-logical statement in the context of an OML Terminology
+ * associating some information as the value of an
+ * OML AnnotationProperty for describing a subject (an OML TerminologyThing).
  */
 @Glossary
 @NotSchema

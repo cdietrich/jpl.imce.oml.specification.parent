@@ -240,8 +240,16 @@ class OMLUtilities {
 		parents
 	}
 	
+	static def Iterable<EClass> ESuperClasses(EClass eClass) {
+		eClass.ESuperTypes.sortBy[name]
+	}
+	
+	static def Iterable<EClass> ESpecificClasses(EClass eClass) {
+		eClass.EPackage.EClassifiers.filter(EClass).filter[ESuperTypes.contains(eClass)].sortBy[name]
+	}
+	
 	static def Boolean isFunctionalAPIOrOrderingKey(ENamedElement e) {
-	 	(e.isFunctionalAPI || e.isOrderingKey)
+	 	e.isFunctionalAPI || e.isOrderingKey
 	}
 	
     static def Boolean isFunctionalAPI(ENamedElement e) {
@@ -297,6 +305,13 @@ class OMLUtilities {
     	null !== e.getEAnnotation("http://imce.jpl.nasa.gov/oml/ValueTable")
     }
    
+	static def String pluralizeIfMany(String s, int cardinality) {
+		if (cardinality > 1)
+			pluralize(s)
+		else
+			s
+	}
+
 	static def String pluralize(String s) {
 	  if (s.endsWith("y")) { 
 	  	s.substring(0, s.length-1)+"ies"

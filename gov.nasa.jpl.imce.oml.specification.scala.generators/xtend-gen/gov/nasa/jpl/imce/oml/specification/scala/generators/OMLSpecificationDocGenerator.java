@@ -29,6 +29,7 @@ import java.util.Map;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -112,47 +113,135 @@ public class OMLSpecificationDocGenerator extends OMLUtilities {
       _builder.newLine();
       final StringBuffer preamble = new StringBuffer(_builder);
       EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
-      final Function1<EClassifier, String> _function = new Function1<EClassifier, String>() {
+      Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
+      final Function1<EClass, String> _function = new Function1<EClass, String>() {
         @Override
-        public String apply(final EClassifier it) {
+        public String apply(final EClass it) {
           return it.getName();
         }
       };
-      List<EClassifier> _sortBy = IterableExtensions.<EClassifier, String>sortBy(_eClassifiers, _function);
-      final Function2<StringBuffer, EClassifier, StringBuffer> _function_1 = new Function2<StringBuffer, EClassifier, StringBuffer>() {
+      List<EClass> _sortBy = IterableExtensions.<EClass, String>sortBy(_filter, _function);
+      final Function2<StringBuffer, EClass, StringBuffer> _function_1 = new Function2<StringBuffer, EClass, StringBuffer>() {
         @Override
-        public StringBuffer apply(final StringBuffer buffer, final EClassifier eClassifier) {
+        public StringBuffer apply(final StringBuffer buffer, final EClass eClass) {
           StringBuffer _xifexpression = null;
-          Boolean _isGlossary = OMLUtilities.isGlossary(eClassifier);
+          Boolean _isGlossary = OMLUtilities.isGlossary(eClass);
           boolean _not = (!(_isGlossary).booleanValue());
           if (_not) {
             _xifexpression = buffer;
           } else {
-            _xifexpression = OMLSpecificationDocGenerator.this.generateClassifierGlossaryContents(buffer, eClassifier);
+            _xifexpression = OMLSpecificationDocGenerator.this.generateClassGlossaryContents(buffer, eClass);
           }
           return _xifexpression;
         }
       };
-      final StringBuffer glossary = IterableExtensions.<EClassifier, StringBuffer>fold(_sortBy, preamble, _function_1);
+      final StringBuffer glossary = IterableExtensions.<EClass, StringBuffer>fold(_sortBy, preamble, _function_1);
       _xblockexpression = glossary.toString();
     }
     return _xblockexpression;
   }
   
-  public StringBuffer generateClassifierGlossaryContents(final StringBuffer buffer, final EClassifier eClassifier) {
+  public StringBuffer generateClassGlossaryContents(final StringBuffer buffer, final EClass eClass) {
     StringBuffer _xblockexpression = null;
     {
       StringConcatenation _builder = new StringConcatenation();
       _builder.newLine();
       _builder.append("## OML ");
-      String _name = eClassifier.getName();
+      String _name = eClass.getName();
       _builder.append(_name, "");
       _builder.newLineIfNotEmpty();
       _builder.newLine();
-      String _markDown = OMLUtilities.markDown(eClassifier);
-      _builder.append(_markDown, "");
-      _builder.newLineIfNotEmpty();
       buffer.append(_builder);
+      String _xifexpression = null;
+      boolean _isAbstract = eClass.isAbstract();
+      if (_isAbstract) {
+        _xifexpression = "Abstract,";
+      } else {
+        _xifexpression = "Concrete,";
+      }
+      final String gprefix = _xifexpression;
+      final Iterable<EClass> general = OMLUtilities.ESuperClasses(eClass);
+      String _xifexpression_1 = null;
+      boolean _isEmpty = IterableExtensions.isEmpty(general);
+      if (_isEmpty) {
+        _xifexpression_1 = gprefix;
+      } else {
+        _xifexpression_1 = "and";
+      }
+      final String sprefix = _xifexpression_1;
+      final Iterable<EClass> specific = OMLUtilities.ESpecificClasses(eClass);
+      boolean _isEmpty_1 = IterableExtensions.isEmpty(general);
+      boolean _not = (!_isEmpty_1);
+      if (_not) {
+        StringConcatenation _builder_1 = new StringConcatenation();
+        {
+          boolean _hasElements = false;
+          for(final EClass g : general) {
+            if (!_hasElements) {
+              _hasElements = true;
+              StringConcatenation _builder_2 = new StringConcatenation();
+              _builder_2.append(gprefix, "");
+              _builder_2.append(" with ");
+              int _size = IterableExtensions.size(general);
+              _builder_2.append(_size, "");
+              _builder_2.append(" ");
+              int _size_1 = IterableExtensions.size(general);
+              String _pluralizeIfMany = OMLUtilities.pluralizeIfMany("generalization", _size_1);
+              _builder_2.append(_pluralizeIfMany, "");
+              _builder_2.append(":");
+              String _plus = (_builder_2.toString() + "\n");
+              _builder_1.append(_plus, "");
+            } else {
+              _builder_1.appendImmediate("\n", "");
+            }
+            _builder_1.append(" - OML ");
+            String _name_1 = g.getName();
+            _builder_1.append(_name_1, "");
+          }
+          if (_hasElements) {
+            _builder_1.append("\n", "");
+          }
+        }
+        buffer.append(_builder_1);
+      }
+      boolean _isAbstract_1 = eClass.isAbstract();
+      if (_isAbstract_1) {
+        StringConcatenation _builder_3 = new StringConcatenation();
+        {
+          boolean _hasElements_1 = false;
+          for(final EClass s : specific) {
+            if (!_hasElements_1) {
+              _hasElements_1 = true;
+              StringConcatenation _builder_4 = new StringConcatenation();
+              _builder_4.append(sprefix, "");
+              _builder_4.append(" with ");
+              int _size_2 = IterableExtensions.size(specific);
+              _builder_4.append(_size_2, "");
+              _builder_4.append(" ");
+              int _size_3 = IterableExtensions.size(specific);
+              String _pluralizeIfMany_1 = OMLUtilities.pluralizeIfMany("specialization", _size_3);
+              _builder_4.append(_pluralizeIfMany_1, "");
+              _builder_4.append(":");
+              String _plus_1 = (_builder_4.toString() + "\n");
+              _builder_3.append(_plus_1, "");
+            } else {
+              _builder_3.appendImmediate("\n", "");
+            }
+            _builder_3.append(" - OML ");
+            String _name_2 = s.getName();
+            _builder_3.append(_name_2, "");
+          }
+          if (_hasElements_1) {
+            _builder_3.append("\n", "");
+          }
+        }
+        buffer.append(_builder_3);
+      }
+      StringConcatenation _builder_5 = new StringConcatenation();
+      String _markDown = OMLUtilities.markDown(eClass);
+      _builder_5.append(_markDown, "");
+      _builder_5.newLineIfNotEmpty();
+      buffer.append(_builder_5);
       _xblockexpression = buffer;
     }
     return _xblockexpression;

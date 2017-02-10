@@ -26,7 +26,9 @@ import org.eclipse.emf.cdo.CDOObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML AnnotationProperty ...
+ * An OML AnnotationProperty maps to an [OWL2 AnnotationProperty]
+ * and is similarly a non-logical property for associating some information
+ * to any OML TerminologyThing in the context of an OML TerminologyBox.
  * <!-- end-model-doc -->
  *
  * <p>

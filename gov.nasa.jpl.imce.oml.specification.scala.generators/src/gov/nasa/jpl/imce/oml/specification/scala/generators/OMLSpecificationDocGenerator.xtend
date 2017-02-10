@@ -23,7 +23,7 @@ import java.nio.file.Paths
 import java.util.Map
 import jpl.imce.oml.specification.ecore.OMLPackage
 import org.eclipse.emf.common.util.URI
-import org.eclipse.emf.ecore.EClassifier
+import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EPackage
 import org.eclipse.emf.ecore.util.EcoreUtil
 
@@ -78,23 +78,42 @@ class OMLSpecificationDocGenerator extends OMLUtilities {
 		val glossary = 
 		ePackage
 		.EClassifiers
+		.filter(EClass)
 		.sortBy[name]
 		.fold(
 			preamble, 
-			[buffer, eClassifier | 
-				if (!eClassifier.isGlossary) buffer
-				else generateClassifierGlossaryContents(buffer, eClassifier)
+			[buffer, eClass | 
+				if (!eClass.isGlossary) buffer
+				else generateClassGlossaryContents(buffer, eClass)
 			])
 		
 		glossary.toString
 	}
 	
-	def StringBuffer generateClassifierGlossaryContents(StringBuffer buffer, EClassifier eClassifier ) {
+	def StringBuffer generateClassGlossaryContents(StringBuffer buffer, EClass eClass ) {
 		buffer.append('''
 		
-		## OML «eClassifier.name»
+		## OML «eClass.name»
 		
-		«eClassifier.markDown»
+		''')
+		
+		val gprefix = if (eClass.isAbstract) "Abstract," else "Concrete,"
+		val general = eClass.ESuperClasses
+		val sprefix = if (general.empty) gprefix else "and"
+		val specific = eClass.ESpecificClasses
+		
+		if (!general.empty)
+			buffer
+			.append('''«FOR g : general BEFORE '''«gprefix» with «general.size» «pluralizeIfMany("generalization", general.size)»:'''+"\n" SEPARATOR "\n" AFTER "\n"» - OML «g.name»«ENDFOR»''')
+		
+		
+		if (eClass.isAbstract)
+			buffer
+			.append('''«FOR s : specific BEFORE '''«sprefix» with «specific.size» «pluralizeIfMany("specialization", specific.size)»:'''+"\n" SEPARATOR "\n" AFTER "\n"» - OML «s.name»«ENDFOR»''')
+			
+		buffer
+		.append('''
+		«eClass.markDown»
 		''')
 		
 		buffer	

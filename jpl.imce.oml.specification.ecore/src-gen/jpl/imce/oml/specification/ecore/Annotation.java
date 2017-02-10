@@ -26,7 +26,10 @@ import org.eclipse.emf.cdo.CDOObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML Annotation ...
+ * An OML Annotation maps to an [OWL2 Annotation] and is similarly
+ * a non-logical statement in the context of an OML Terminology
+ * associating some information as the value of an
+ * OML AnnotationProperty for describing a subject (an OML TerminologyThing).
  * <!-- end-model-doc -->
  *
  * <p>
