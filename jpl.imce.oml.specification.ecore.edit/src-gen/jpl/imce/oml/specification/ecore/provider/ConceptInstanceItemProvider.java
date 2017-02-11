@@ -59,9 +59,32 @@ public class ConceptInstanceItemProvider extends ConceptualEntitySingletonInstan
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDescriptionBoxPropertyDescriptor(object);
 			addSingletonConceptClassifierPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Description Box feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDescriptionBoxPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ConceptInstance_descriptionBox_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConceptInstance_descriptionBox_feature", "_UI_ConceptInstance_type"),
+				 OMLPackage.Literals.CONCEPT_INSTANCE__DESCRIPTION_BOX,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

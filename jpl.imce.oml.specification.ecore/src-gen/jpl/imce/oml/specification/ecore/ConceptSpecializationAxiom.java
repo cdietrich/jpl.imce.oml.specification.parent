@@ -25,7 +25,9 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML ConceptSpecializationAxiom ...
+ * An OML ConceptSpecializationAxiom is a logical axiom
+ * about a taxonomic relationship between a specific and general
+ * OML Concept.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -103,7 +105,7 @@ public interface ConceptSpecializationAxiom extends SpecializationAxiom {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getSubConcept();'"
 	 * @generated
 	 */
-	Term child();
+	Entity child();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,6 +117,6 @@ public interface ConceptSpecializationAxiom extends SpecializationAxiom {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getSuperConcept();'"
 	 * @generated
 	 */
-	Term parent();
+	Entity parent();
 
 } // ConceptSpecializationAxiom

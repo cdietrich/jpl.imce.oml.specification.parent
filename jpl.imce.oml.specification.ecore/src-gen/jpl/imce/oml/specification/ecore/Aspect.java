@@ -25,7 +25,9 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML Aspect ...
+ * An OML Aspect is a kind of OML Entity of OML UnaryTermKind.
+ * It is intended to be used as a specialization parent
+ * for one or more OML ConceptualEntity.
  * <!-- end-model-doc -->
  *
  *

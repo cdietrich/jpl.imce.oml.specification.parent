@@ -26,18 +26,19 @@ import org.eclipse.emf.cdo.CDOObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * In the OML tabular interchange representation,
+ * For the OML tabular interchange representation,
  * an OML AnnotationEntry (for a given OML AnnotationProperty) is a triple:
- * - the terminology in which the annotation appears
- * - the annotated terminology thing (subject)
- * - the value of the AnnotationProperty for that subject in that terminology
+ * - an OML Context in which the OML AnnotationEntry appears
+ * - an annotated OML TerminologyThing subject
+ * - a String value as the representation of some information
+ *   about the subject in that context.
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link jpl.imce.oml.specification.ecore.AnnotationEntry#getTerminology <em>Terminology</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.AnnotationEntry#getContext <em>Context</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.AnnotationEntry#getSubject <em>Subject</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.AnnotationEntry#getValue <em>Value</em>}</li>
  * </ul>
@@ -49,30 +50,30 @@ import org.eclipse.emf.cdo.CDOObject;
  */
 public interface AnnotationEntry extends CDOObject {
 	/**
-	 * Returns the value of the '<em><b>Terminology</b></em>' reference.
+	 * Returns the value of the '<em><b>Context</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Terminology</em>' reference isn't clear,
+	 * If the meaning of the '<em>Context</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Terminology</em>' reference.
-	 * @see #setTerminology(TerminologyBox)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getAnnotationEntry_Terminology()
+	 * @return the value of the '<em>Context</em>' reference.
+	 * @see #setContext(Context)
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getAnnotationEntry_Context()
 	 * @model required="true"
 	 * @generated
 	 */
-	TerminologyBox getTerminology();
+	Context getContext();
 
 	/**
-	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.AnnotationEntry#getTerminology <em>Terminology</em>}' reference.
+	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.AnnotationEntry#getContext <em>Context</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Terminology</em>' reference.
-	 * @see #getTerminology()
+	 * @param value the new value of the '<em>Context</em>' reference.
+	 * @see #getContext()
 	 * @generated
 	 */
-	void setTerminology(TerminologyBox value);
+	void setContext(Context value);
 
 	/**
 	 * Returns the value of the '<em><b>Subject</b></em>' reference.

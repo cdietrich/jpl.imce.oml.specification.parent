@@ -26,26 +26,33 @@ package jpl.imce.oml.specification.ecore;
  *
  * <!-- begin-model-doc -->
  * An OML NumericScalarRestriction is a data range that specifies how one numeric scalar range adds facet restrictions to another.
- * Applies when the restricted scalar represents real, decimal or integer numbers (OWL2: 4.1/4.2)
- * i.e., when it is one of the following scalars (or their transitively restricted ones):
- * owl:real
- * owl:rational
- * xsd:decimal
- * xsd:integer
- * xsd:nonNegativeInteger
- * xsd:nonPositiveInteger
- * xsd:positiveInteger
- * xsd:negativeInteger
- * xsd:long
- * xsd:int
- * xsd:short
- * xsd:byte
- * xsd:unsignedLong
- * xsd:unsignedInt
- * xsd:unsignedShort
- * xsd:unsignedByte
- * xsd:double
- * xsd:float
+ * Applies when the restricted scalar represents [OWL2 Real Numbers, Decimal Numbers and Integers] or [OWL2 Floating-Point Numbers].
+ * 
+ * The restricted scalar must be directly or indirectly a restriction of:
+ * - [owl:real]
+ * - [owl:rational]
+ * - [xsd:decimal]
+ * - [xsd:integer]
+ * - [xsd:nonNegativeInteger]
+ * - [xsd:nonPositiveInteger]
+ * - [xsd:positiveInteger]
+ * - [xsd:negativeInteger]
+ * - [xsd:long]
+ * - [xsd:int]
+ * - [xsd:short]
+ * - [xsd:byte]
+ * - [xsd:unsignedLong]
+ * - [xsd:unsignedInt]
+ * - [xsd:unsignedShort]
+ * - [xsd:unsignedByte]
+ * - [xsd:double]
+ * - [xsd:float]
+ * 
+ * Facets:
+ * - [xsd:minInclusive]
+ * - [xsd:maxInclusive]
+ * - [xsd:minExclusive]
+ * - [xsd:maxExclusive]
  * <!-- end-model-doc -->
  *
  * <p>

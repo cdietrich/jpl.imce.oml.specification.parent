@@ -20,10 +20,10 @@ package jpl.imce.oml.specification.ecore.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
+import jpl.imce.oml.specification.ecore.Entity;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.ReifiedRelationship;
 import jpl.imce.oml.specification.ecore.ReifiedRelationshipSpecializationAxiom;
-import jpl.imce.oml.specification.ecore.Term;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -170,7 +170,7 @@ public class ReifiedRelationshipSpecializationAxiomImpl extends SpecializationAx
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Term child() {
+	public Entity child() {
 		return this.getSubRelationship();
 	}
 
@@ -179,7 +179,7 @@ public class ReifiedRelationshipSpecializationAxiomImpl extends SpecializationAx
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Term parent() {
+	public Entity parent() {
 		return this.getSuperRelationship();
 	}
 

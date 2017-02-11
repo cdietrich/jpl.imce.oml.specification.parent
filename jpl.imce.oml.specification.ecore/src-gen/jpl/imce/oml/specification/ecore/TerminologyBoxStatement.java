@@ -25,47 +25,48 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML TerminologyBoxStatement ...
+ * An OML TerminologyBoxStatement is a logical axiom about an OML TerminologyThing
+ * asserted in the context of an OML TerminologyBox.
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link jpl.imce.oml.specification.ecore.TerminologyBoxStatement#getGraph <em>Graph</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.TerminologyBoxStatement#getTbox <em>Tbox</em>}</li>
  * </ul>
  *
  * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyBoxStatement()
  * @model abstract="true"
  * @generated
  */
-public interface TerminologyBoxStatement extends TerminologyStatement {
+public interface TerminologyBoxStatement extends TerminologyThing {
 	/**
-	 * Returns the value of the '<em><b>Graph</b></em>' container reference.
+	 * Returns the value of the '<em><b>Tbox</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.TerminologyBox#getBoxStatements <em>Box Statements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Graph</em>' container reference isn't clear,
+	 * If the meaning of the '<em>Tbox</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Graph</em>' container reference.
-	 * @see #setGraph(TerminologyBox)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyBoxStatement_Graph()
+	 * @return the value of the '<em>Tbox</em>' container reference.
+	 * @see #setTbox(TerminologyBox)
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyBoxStatement_Tbox()
 	 * @see jpl.imce.oml.specification.ecore.TerminologyBox#getBoxStatements
 	 * @model opposite="boxStatements" required="true" transient="false"
 	 * @generated
 	 */
-	TerminologyBox getGraph();
+	TerminologyBox getTbox();
 
 	/**
-	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.TerminologyBoxStatement#getGraph <em>Graph</em>}' container reference.
+	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.TerminologyBoxStatement#getTbox <em>Tbox</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Graph</em>' container reference.
-	 * @see #getGraph()
+	 * @param value the new value of the '<em>Tbox</em>' container reference.
+	 * @see #getTbox()
 	 * @generated
 	 */
-	void setGraph(TerminologyBox value);
+	void setTbox(TerminologyBox value);
 
 } // TerminologyBoxStatement

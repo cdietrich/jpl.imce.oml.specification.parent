@@ -25,7 +25,11 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML UnreifiedRelationship ...
+ * An OML UnreifiedRelationship is a kind of OML EntityRelationship
+ * where an instance has no intrinsic identity but rather structural
+ * equivalence semantics as a tuple of references. This means
+ * that an OML UnreifiedRelationship cannot be involved as the domain
+ * or range of any kind of OML DirectedBinaryRelationshipKind.
  * <!-- end-model-doc -->
  *
  *

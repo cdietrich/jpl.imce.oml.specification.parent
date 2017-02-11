@@ -25,7 +25,8 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML ScalarDataProperty ...
+ * An OML ScalarDataProperty is an OML DataRelationship
+ * whose domain is an OML Structure and range is an OML DataRange.
  * <!-- end-model-doc -->
  *
  *

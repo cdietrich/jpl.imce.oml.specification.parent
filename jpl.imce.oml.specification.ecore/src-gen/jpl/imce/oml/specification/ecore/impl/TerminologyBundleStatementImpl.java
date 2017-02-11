@@ -46,7 +46,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *
  * @generated
  */
-public abstract class TerminologyBundleStatementImpl extends TerminologyStatementImpl implements TerminologyBundleStatement {
+public abstract class TerminologyBundleStatementImpl extends TerminologyThingImpl implements TerminologyBundleStatement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

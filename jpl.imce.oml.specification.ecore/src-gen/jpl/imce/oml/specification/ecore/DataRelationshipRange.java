@@ -26,7 +26,8 @@ import org.eclipse.emf.cdo.CDOObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML DataRelationshipRange ...
+ * An OML DataRelationshipRange is an abstraction
+ * for the range of an OML DataRelationship
  * <!-- end-model-doc -->
  *
  *

@@ -20,9 +20,9 @@ package jpl.imce.oml.specification.ecore.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
+import jpl.imce.oml.specification.ecore.Entity;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.SpecializationAxiom;
-import jpl.imce.oml.specification.ecore.Term;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -60,7 +60,7 @@ public abstract class SpecializationAxiomImpl extends TermAxiomImpl implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Term child() {
+	public Entity child() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -71,7 +71,7 @@ public abstract class SpecializationAxiomImpl extends TermAxiomImpl implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Term parent() {
+	public Entity parent() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

@@ -25,7 +25,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML SingletonInstance ...
+ * An OML SingletonInstance defines an instance of either an OML ConceptualEntity or of an OML Structure.
  * <!-- end-model-doc -->
  *
  *
@@ -33,5 +33,5 @@ package jpl.imce.oml.specification.ecore;
  * @model abstract="true"
  * @generated
  */
-public interface SingletonInstance extends TerminologyInstanceAssertion, Resource {
+public interface SingletonInstance extends TerminologyInstanceAssertion {
 } // SingletonInstance

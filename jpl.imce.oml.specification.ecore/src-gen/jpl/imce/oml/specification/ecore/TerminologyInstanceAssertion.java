@@ -25,47 +25,21 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML TerminologyInstanceAssertion ...
+ * An OML TerminologyInstanceAssertion is a logical OML TerminologyThing defined in an OML TerminologyDescription.
  * <!-- end-model-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion#getTerminologyExtent <em>Terminology Extent</em>}</li>
- * </ul>
  *
  * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyInstanceAssertion()
  * @model abstract="true"
  * @generated
  */
-public interface TerminologyInstanceAssertion extends TerminologyThing {
+public interface TerminologyInstanceAssertion extends TerminologyThing, Resource {
 	/**
-	 * Returns the value of the '<em><b>Terminology Extent</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.TerminologyExtent#getInstanceAssertions <em>Instance Assertions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Terminology Extent</em>' container reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Terminology Extent</em>' container reference.
-	 * @see #setTerminologyExtent(TerminologyExtent)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyInstanceAssertion_TerminologyExtent()
-	 * @see jpl.imce.oml.specification.ecore.TerminologyExtent#getInstanceAssertions
-	 * @model opposite="instanceAssertions" required="true" transient="false"
-	 * @generated
-	 */
-	TerminologyExtent getTerminologyExtent();
-
-	/**
-	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion#getTerminologyExtent <em>Terminology Extent</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Terminology Extent</em>' container reference.
-	 * @see #getTerminologyExtent()
+	 * @model unique="false" required="true"
 	 * @generated
 	 */
-	void setTerminologyExtent(TerminologyExtent value);
+	DescriptionBox descriptionBox();
 
 } // TerminologyInstanceAssertion

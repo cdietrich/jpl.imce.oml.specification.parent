@@ -25,7 +25,9 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML AspectSpecializationAxiom ...
+ * An OML AspectSpecializationAxiom is a logical axiom
+ * about a taxonomic relationship between a specific OML Aspect
+ * and a general OML Entity.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -110,7 +112,7 @@ public interface AspectSpecializationAxiom extends SpecializationAxiom {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getSubEntity();'"
 	 * @generated
 	 */
-	Term child();
+	Entity child();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -122,6 +124,6 @@ public interface AspectSpecializationAxiom extends SpecializationAxiom {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getSuperAspect();'"
 	 * @generated
 	 */
-	Term parent();
+	Entity parent();
 
 } // AspectSpecializationAxiom

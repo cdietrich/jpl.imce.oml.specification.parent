@@ -18,13 +18,8 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
-import java.lang.reflect.InvocationTargetException;
-
 import jpl.imce.oml.specification.ecore.OMLPackage;
-import jpl.imce.oml.specification.ecore.Resource;
 import jpl.imce.oml.specification.ecore.SingletonInstance;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -53,61 +48,6 @@ public abstract class SingletonInstanceImpl extends TerminologyInstanceAssertion
 	@Override
 	protected EClass eStaticClass() {
 		return OMLPackage.Literals.SINGLETON_INSTANCE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String iri() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String name() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
-		if (baseClass == Resource.class) {
-			switch (baseOperationID) {
-				case OMLPackage.RESOURCE___IRI: return OMLPackage.SINGLETON_INSTANCE___IRI;
-				case OMLPackage.RESOURCE___NAME: return OMLPackage.SINGLETON_INSTANCE___NAME;
-				default: return -1;
-			}
-		}
-		return super.eDerivedOperationID(baseOperationID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case OMLPackage.SINGLETON_INSTANCE___IRI:
-				return iri();
-			case OMLPackage.SINGLETON_INSTANCE___NAME:
-				return name();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //SingletonInstanceImpl

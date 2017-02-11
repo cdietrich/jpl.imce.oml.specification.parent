@@ -25,7 +25,10 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML Entity ...
+ * An OML Entity is an abstraction for an OML Term
+ * that is either an OML UnaryTermKind or
+ * an OML DirectedBinaryRelationshipKind whose subject
+ * and range are both a kind of OML Entity.
  * <!-- end-model-doc -->
  *
  *

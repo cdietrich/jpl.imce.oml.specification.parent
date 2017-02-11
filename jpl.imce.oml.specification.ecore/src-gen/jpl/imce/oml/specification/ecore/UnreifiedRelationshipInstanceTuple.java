@@ -25,13 +25,19 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML UnreifiedRelationshipInstanceTuple ...
+ * An OML UnreifiedRelationshipInstanceTuple specifies a triple involving
+ * a reference to an OML ConceptualEntitySingletonInstance playing the role of the domain
+ * of an OML UnreifiedRelationship whose range is played by a reference to an OML ConceptualEntitySingletonInstance.
+ * An OML UnreifiedRelationshipInstanceTuple has no intrinsic identity; instead,
+ * an OML UnreifiedRelationshipInstanceTuple is semantically equivalent
+ * to another OML UnreifiedRelationshipInstanceTuple referencing the same domain, property and range.
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple#getDescriptionBox <em>Description Box</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple#getUnreifiedRelationship <em>Unreified Relationship</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple#getDomain <em>Domain</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple#getRange <em>Range</em>}</li>
@@ -42,6 +48,34 @@ package jpl.imce.oml.specification.ecore;
  * @generated
  */
 public interface UnreifiedRelationshipInstanceTuple extends TerminologyInstanceAssertion {
+	/**
+	 * Returns the value of the '<em><b>Description Box</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getUnreifiedRelationshipInstanceTuples <em>Unreified Relationship Instance Tuples</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Description Box</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Description Box</em>' container reference.
+	 * @see #setDescriptionBox(DescriptionBox)
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getUnreifiedRelationshipInstanceTuple_DescriptionBox()
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getUnreifiedRelationshipInstanceTuples
+	 * @model opposite="unreifiedRelationshipInstanceTuples" required="true" transient="false"
+	 * @generated
+	 */
+	DescriptionBox getDescriptionBox();
+
+	/**
+	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple#getDescriptionBox <em>Description Box</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Description Box</em>' container reference.
+	 * @see #getDescriptionBox()
+	 * @generated
+	 */
+	void setDescriptionBox(DescriptionBox value);
+
 	/**
 	 * Returns the value of the '<em><b>Unreified Relationship</b></em>' reference.
 	 * <!-- begin-user-doc -->

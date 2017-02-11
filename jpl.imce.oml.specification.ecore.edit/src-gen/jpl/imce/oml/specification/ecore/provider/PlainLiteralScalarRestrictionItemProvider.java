@@ -65,7 +65,7 @@ public class PlainLiteralScalarRestrictionItemProvider extends RestrictedDataRan
 			addMinLengthPropertyDescriptor(object);
 			addMaxLengthPropertyDescriptor(object);
 			addPatternPropertyDescriptor(object);
-			addLanguagePropertyDescriptor(object);
+			addLangRangePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -159,19 +159,19 @@ public class PlainLiteralScalarRestrictionItemProvider extends RestrictedDataRan
 	}
 
 	/**
-	 * This adds a property descriptor for the Language feature.
+	 * This adds a property descriptor for the Lang Range feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLanguagePropertyDescriptor(Object object) {
+	protected void addLangRangePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PlainLiteralScalarRestriction_language_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PlainLiteralScalarRestriction_language_feature", "_UI_PlainLiteralScalarRestriction_type"),
-				 OMLPackage.Literals.PLAIN_LITERAL_SCALAR_RESTRICTION__LANGUAGE,
+				 getString("_UI_PlainLiteralScalarRestriction_langRange_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PlainLiteralScalarRestriction_langRange_feature", "_UI_PlainLiteralScalarRestriction_type"),
+				 OMLPackage.Literals.PLAIN_LITERAL_SCALAR_RESTRICTION__LANG_RANGE,
 				 true,
 				 false,
 				 false,
@@ -222,7 +222,7 @@ public class PlainLiteralScalarRestrictionItemProvider extends RestrictedDataRan
 			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MIN_LENGTH:
 			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MAX_LENGTH:
 			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__PATTERN:
-			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LANGUAGE:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LANG_RANGE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

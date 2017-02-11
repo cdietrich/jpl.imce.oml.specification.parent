@@ -25,12 +25,8 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML DataRelationshipFromEntity defines a binary relationship
- * from an OML Entity domain to an OML Datatype of some kind.
- * The mapping of an OML DataRelationshipFromEntity to [OWL2-DL]
- * depends on the kind of OML Datatype.
- * The semantics of an OML DataRelationshipFromEntity to [OWL2-DL]
- * depends on whether it is an identity criteria for its OML Entity domain.
+ * An OML DataRelationshipFromEntity is an OML DataRelationship
+ * whose domain is an OML Entity.
  * <!-- end-model-doc -->
  *
  * <p>

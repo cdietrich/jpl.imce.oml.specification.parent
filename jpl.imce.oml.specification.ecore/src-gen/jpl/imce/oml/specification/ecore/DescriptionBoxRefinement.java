@@ -25,7 +25,9 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML DescriptionBoxRefinement ...
+ * An OML DescriptionBoxRefinement is an OML DescriptionBoxRelationship
+ * from an OML DescriptionBox to another OML DescriptionBox where
+ * the former refines the descriptions of the latter.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -40,7 +42,7 @@ package jpl.imce.oml.specification.ecore;
  * @model
  * @generated
  */
-public interface DescriptionBoxRefinement extends TerminologyThing {
+public interface DescriptionBoxRefinement extends DescriptionBoxRelationship {
 	/**
 	 * Returns the value of the '<em><b>Refining Description Box</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getDescriptionBoxRefinements <em>Description Box Refinements</em>}'.
@@ -94,5 +96,23 @@ public interface DescriptionBoxRefinement extends TerminologyThing {
 	 * @generated
 	 */
 	void setRefinedDescriptionBox(DescriptionBox value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getRefiningDescriptionBox();'"
+	 * @generated
+	 */
+	DescriptionBox descriptionDomain();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getRefinedDescriptionBox();'"
+	 * @generated
+	 */
+	Context contextTarget();
 
 } // DescriptionBoxRefinement

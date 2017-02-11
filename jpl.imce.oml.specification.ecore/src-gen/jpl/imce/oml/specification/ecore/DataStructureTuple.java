@@ -25,13 +25,14 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML DataStructureTuple ...
+ * An OML DataStructureTuple defines an structured tuple instance of an OML Structure.
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link jpl.imce.oml.specification.ecore.DataStructureTuple#getDescriptionBox <em>Description Box</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.DataStructureTuple#getDataStructureType <em>Data Structure Type</em>}</li>
  * </ul>
  *
@@ -40,6 +41,34 @@ package jpl.imce.oml.specification.ecore;
  * @generated
  */
 public interface DataStructureTuple extends SingletonInstance {
+	/**
+	 * Returns the value of the '<em><b>Description Box</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getDataStructureTuples <em>Data Structure Tuples</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Description Box</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Description Box</em>' container reference.
+	 * @see #setDescriptionBox(DescriptionBox)
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDataStructureTuple_DescriptionBox()
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getDataStructureTuples
+	 * @model opposite="dataStructureTuples" required="true" transient="false"
+	 * @generated
+	 */
+	DescriptionBox getDescriptionBox();
+
+	/**
+	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.DataStructureTuple#getDescriptionBox <em>Description Box</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Description Box</em>' container reference.
+	 * @see #getDescriptionBox()
+	 * @generated
+	 */
+	void setDescriptionBox(DescriptionBox value);
+
 	/**
 	 * Returns the value of the '<em><b>Data Structure Type</b></em>' reference.
 	 * <!-- begin-user-doc -->

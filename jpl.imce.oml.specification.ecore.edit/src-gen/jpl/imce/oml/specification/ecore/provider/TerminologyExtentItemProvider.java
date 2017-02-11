@@ -99,7 +99,6 @@ public class TerminologyExtentItemProvider
 			childrenFeatures.add(OMLPackage.Literals.TERMINOLOGY_EXTENT__TERMINOLOGY_GRAPHS);
 			childrenFeatures.add(OMLPackage.Literals.TERMINOLOGY_EXTENT__BUNDLES);
 			childrenFeatures.add(OMLPackage.Literals.TERMINOLOGY_EXTENT__DESCRIPTIONS);
-			childrenFeatures.add(OMLPackage.Literals.TERMINOLOGY_EXTENT__INSTANCE_ASSERTIONS);
 		}
 		return childrenFeatures;
 	}
@@ -156,7 +155,6 @@ public class TerminologyExtentItemProvider
 			case OMLPackage.TERMINOLOGY_EXTENT__TERMINOLOGY_GRAPHS:
 			case OMLPackage.TERMINOLOGY_EXTENT__BUNDLES:
 			case OMLPackage.TERMINOLOGY_EXTENT__DESCRIPTIONS:
-			case OMLPackage.TERMINOLOGY_EXTENT__INSTANCE_ASSERTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -193,46 +191,6 @@ public class TerminologyExtentItemProvider
 			(createChildParameter
 				(OMLPackage.Literals.TERMINOLOGY_EXTENT__DESCRIPTIONS,
 				 OMLFactory.eINSTANCE.createDescriptionBox()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_EXTENT__INSTANCE_ASSERTIONS,
-				 OMLFactory.eINSTANCE.createScalarDataPropertyValue()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_EXTENT__INSTANCE_ASSERTIONS,
-				 OMLFactory.eINSTANCE.createStructuredDataPropertyValue()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_EXTENT__INSTANCE_ASSERTIONS,
-				 OMLFactory.eINSTANCE.createDataStructureTuple()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_EXTENT__INSTANCE_ASSERTIONS,
-				 OMLFactory.eINSTANCE.createConceptInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_EXTENT__INSTANCE_ASSERTIONS,
-				 OMLFactory.eINSTANCE.createReifiedRelationshipInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_EXTENT__INSTANCE_ASSERTIONS,
-				 OMLFactory.eINSTANCE.createReifiedRelationshipInstanceDomain()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_EXTENT__INSTANCE_ASSERTIONS,
-				 OMLFactory.eINSTANCE.createReifiedRelationshipInstanceRange()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_EXTENT__INSTANCE_ASSERTIONS,
-				 OMLFactory.eINSTANCE.createUnreifiedRelationshipInstanceTuple()));
 	}
 
 	/**

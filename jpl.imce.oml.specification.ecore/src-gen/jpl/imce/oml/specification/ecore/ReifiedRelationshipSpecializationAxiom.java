@@ -25,7 +25,9 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML ReifiedRelationshipSpecializationAxiom ...
+ * An OML ReifiedRelationshipSpecializationAxiom is a logical axiom
+ * about a taxonomic relationship between a specific and general
+ * OML ReifiedRelationship.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -101,7 +103,7 @@ public interface ReifiedRelationshipSpecializationAxiom extends SpecializationAx
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getSubRelationship();'"
 	 * @generated
 	 */
-	Term child();
+	Entity child();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,6 +115,6 @@ public interface ReifiedRelationshipSpecializationAxiom extends SpecializationAx
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getSuperRelationship();'"
 	 * @generated
 	 */
-	Term parent();
+	Entity parent();
 
 } // ReifiedRelationshipSpecializationAxiom

@@ -18,6 +18,9 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import java.lang.reflect.InvocationTargetException;
+
+import jpl.imce.oml.specification.ecore.Context;
 import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions;
 import jpl.imce.oml.specification.ecore.OMLPackage;
@@ -25,6 +28,8 @@ import jpl.imce.oml.specification.ecore.TerminologyBox;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -48,7 +53,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *
  * @generated
  */
-public class DescriptionBoxExtendsClosedWorldDefinitionsImpl extends TerminologyThingImpl implements DescriptionBoxExtendsClosedWorldDefinitions {
+public class DescriptionBoxExtendsClosedWorldDefinitionsImpl extends DescriptionBoxRelationshipImpl implements DescriptionBoxExtendsClosedWorldDefinitions {
 	/**
 	 * The cached value of the '{@link #getClosedWorldDefinitions() <em>Closed World Definitions</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -172,6 +177,24 @@ public class DescriptionBoxExtendsClosedWorldDefinitionsImpl extends Terminology
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DescriptionBox descriptionDomain() {
+		return this.getDescriptionBox();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Context contextTarget() {
+		return this.getClosedWorldDefinitions();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -279,6 +302,22 @@ public class DescriptionBoxExtendsClosedWorldDefinitionsImpl extends Terminology
 				return closedWorldDefinitions != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS___DESCRIPTION_DOMAIN:
+				return descriptionDomain();
+			case OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS___CONTEXT_TARGET:
+				return contextTarget();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //DescriptionBoxExtendsClosedWorldDefinitionsImpl

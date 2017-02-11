@@ -50,19 +50,19 @@ class OMLScopeExtensions {
 	 * Therefore, construct the resolvable scope of AnnotationProperties
 	 * in terms of the abbrevIRI of each AnnotationProperty in the TerminologyExtent.
 	 */
-	def scope_Annotation_property(Annotation context, EReference eRef) {
+	def scope_Annotation_property(Annotation annotation, EReference eRef) {
 		Scopes.scopeFor(
-			context.terminology.extent.annotationProperties,
+			annotation.context.extent.annotationProperties,
 			[ qnc.toQualifiedName(it.abbrevIRI) ],
 			IScope.NULLSCOPE)	
 	}
 	
 	def scope_AspectSpecializationAxiom_subEntity(AspectSpecializationAxiom context) {
-		context.graph.allEntitiesScope
+		context.getTbox.allEntitiesScope
 	}
 	
 	def scope_AspectSpecializationAxiom_superAspect(AspectSpecializationAxiom context) {
-		context.graph.allAspectsScope
+		context.getTbox.allAspectsScope
 	}
 	
 	def scope_BundledTerminologyAxiom_bundledTerminology(BundledTerminologyAxiom context) {
@@ -74,7 +74,7 @@ class OMLScopeExtensions {
 	
 	def scope_ConceptDesignationTerminologyAxiom_designatedTerminology(ConceptDesignationTerminologyAxiom context) {
 		Scopes.scopeFor(
-			context.terminology.extent.terminologies,
+			context.getTbox.extent.terminologies,
 			[ qnc.toQualifiedName(it.nsPrefix) ],
 			IScope.NULLSCOPE)	
 	}
@@ -84,7 +84,7 @@ class OMLScopeExtensions {
 	}
 	
 	def scope_EntityRelationship(EntityRelationship context) {
-		context.graph.allEntitiesScope
+		context.getTbox.allEntitiesScope
 	}
 	
 	
@@ -94,7 +94,7 @@ class OMLScopeExtensions {
 	 * in terms of the nsPrefix of each TerminologyBox in the TerminologyExtent.
 	 */
 	def scope_TerminologyExtensionAxiom_extendedTerminology(TerminologyExtensionAxiom context, EReference eRef) {
-		val ext = context.terminology.extent
+		val ext = context.getTbox.extent
 		val tboxes = ext.terminologyGraphs + ext.bundles
 		Scopes.scopeFor(
 			tboxes,

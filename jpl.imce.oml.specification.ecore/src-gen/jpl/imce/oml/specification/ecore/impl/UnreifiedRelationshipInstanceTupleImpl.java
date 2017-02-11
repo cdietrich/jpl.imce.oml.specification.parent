@@ -19,17 +19,21 @@
 package jpl.imce.oml.specification.ecore.impl;
 
 import jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance;
+import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.UnreifiedRelationship;
 import jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,6 +43,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link jpl.imce.oml.specification.ecore.impl.UnreifiedRelationshipInstanceTupleImpl#getDescriptionBox <em>Description Box</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.UnreifiedRelationshipInstanceTupleImpl#getUnreifiedRelationship <em>Unreified Relationship</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.UnreifiedRelationshipInstanceTupleImpl#getDomain <em>Domain</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.UnreifiedRelationshipInstanceTupleImpl#getRange <em>Range</em>}</li>
@@ -94,6 +99,57 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 	@Override
 	protected EClass eStaticClass() {
 		return OMLPackage.Literals.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DescriptionBox getDescriptionBox() {
+		if (eContainerFeatureID() != OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX) return null;
+		return (DescriptionBox)eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DescriptionBox basicGetDescriptionBox() {
+		if (eContainerFeatureID() != OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX) return null;
+		return (DescriptionBox)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDescriptionBox(DescriptionBox newDescriptionBox, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newDescriptionBox, OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDescriptionBox(DescriptionBox newDescriptionBox) {
+		if (newDescriptionBox != eInternalContainer() || (eContainerFeatureID() != OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX && newDescriptionBox != null)) {
+			if (EcoreUtil.isAncestor(this, (EObject)newDescriptionBox))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newDescriptionBox != null)
+				msgs = ((InternalEObject)newDescriptionBox).eInverseAdd(this, OMLPackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES, DescriptionBox.class, msgs);
+			msgs = basicSetDescriptionBox(newDescriptionBox, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX, newDescriptionBox, newDescriptionBox));
 	}
 
 	/**
@@ -216,8 +272,55 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetDescriptionBox((DescriptionBox)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX:
+				return basicSetDescriptionBox(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX:
+				return eInternalContainer().eInverseRemove(this, OMLPackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES, DescriptionBox.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX:
+				if (resolve) return getDescriptionBox();
+				return basicGetDescriptionBox();
 			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__UNREIFIED_RELATIONSHIP:
 				if (resolve) return getUnreifiedRelationship();
 				return basicGetUnreifiedRelationship();
@@ -239,6 +342,9 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX:
+				setDescriptionBox((DescriptionBox)newValue);
+				return;
 			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__UNREIFIED_RELATIONSHIP:
 				setUnreifiedRelationship((UnreifiedRelationship)newValue);
 				return;
@@ -260,6 +366,9 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX:
+				setDescriptionBox((DescriptionBox)null);
+				return;
 			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__UNREIFIED_RELATIONSHIP:
 				setUnreifiedRelationship((UnreifiedRelationship)null);
 				return;
@@ -281,6 +390,8 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX:
+				return basicGetDescriptionBox() != null;
 			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__UNREIFIED_RELATIONSHIP:
 				return unreifiedRelationship != null;
 			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DOMAIN:

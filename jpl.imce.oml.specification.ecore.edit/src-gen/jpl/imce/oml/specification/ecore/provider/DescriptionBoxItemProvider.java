@@ -30,6 +30,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -39,7 +40,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class DescriptionBoxItemProvider 
-	extends TerminologyThingItemProvider {
+	extends ContextItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -61,17 +62,32 @@ public class DescriptionBoxItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addKindPropertyDescriptor(object);
 			addTerminologyExtentPropertyDescriptor(object);
-			addConceptInstancesPropertyDescriptor(object);
-			addReifiedRelationshipInstancesPropertyDescriptor(object);
-			addReifiedRelationshipInstanceDomainsPropertyDescriptor(object);
-			addReifiedRelationshipInstanceRangesPropertyDescriptor(object);
-			addUnreifiedRelationshipInstanceTuplesPropertyDescriptor(object);
-			addDataStructureTuplesPropertyDescriptor(object);
-			addScalarDataPropertyValuesPropertyDescriptor(object);
-			addStructuredDataPropertyValuesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Kind feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addKindPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DescriptionBox_kind_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionBox_kind_feature", "_UI_DescriptionBox_type"),
+				 OMLPackage.Literals.DESCRIPTION_BOX__KIND,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -97,182 +113,6 @@ public class DescriptionBoxItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Concept Instances feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addConceptInstancesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DescriptionBox_conceptInstances_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionBox_conceptInstances_feature", "_UI_DescriptionBox_type"),
-				 OMLPackage.Literals.DESCRIPTION_BOX__CONCEPT_INSTANCES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Reified Relationship Instances feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addReifiedRelationshipInstancesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DescriptionBox_reifiedRelationshipInstances_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionBox_reifiedRelationshipInstances_feature", "_UI_DescriptionBox_type"),
-				 OMLPackage.Literals.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Reified Relationship Instance Domains feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addReifiedRelationshipInstanceDomainsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DescriptionBox_reifiedRelationshipInstanceDomains_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionBox_reifiedRelationshipInstanceDomains_feature", "_UI_DescriptionBox_type"),
-				 OMLPackage.Literals.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Reified Relationship Instance Ranges feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addReifiedRelationshipInstanceRangesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DescriptionBox_reifiedRelationshipInstanceRanges_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionBox_reifiedRelationshipInstanceRanges_feature", "_UI_DescriptionBox_type"),
-				 OMLPackage.Literals.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Unreified Relationship Instance Tuples feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUnreifiedRelationshipInstanceTuplesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DescriptionBox_unreifiedRelationshipInstanceTuples_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionBox_unreifiedRelationshipInstanceTuples_feature", "_UI_DescriptionBox_type"),
-				 OMLPackage.Literals.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Data Structure Tuples feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDataStructureTuplesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DescriptionBox_dataStructureTuples_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionBox_dataStructureTuples_feature", "_UI_DescriptionBox_type"),
-				 OMLPackage.Literals.DESCRIPTION_BOX__DATA_STRUCTURE_TUPLES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Scalar Data Property Values feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addScalarDataPropertyValuesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DescriptionBox_scalarDataPropertyValues_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionBox_scalarDataPropertyValues_feature", "_UI_DescriptionBox_type"),
-				 OMLPackage.Literals.DESCRIPTION_BOX__SCALAR_DATA_PROPERTY_VALUES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Structured Data Property Values feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addStructuredDataPropertyValuesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DescriptionBox_structuredDataPropertyValues_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionBox_structuredDataPropertyValues_feature", "_UI_DescriptionBox_type"),
-				 OMLPackage.Literals.DESCRIPTION_BOX__STRUCTURED_DATA_PROPERTY_VALUES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -286,6 +126,14 @@ public class DescriptionBoxItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(OMLPackage.Literals.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS);
 			childrenFeatures.add(OMLPackage.Literals.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS);
+			childrenFeatures.add(OMLPackage.Literals.DESCRIPTION_BOX__CONCEPT_INSTANCES);
+			childrenFeatures.add(OMLPackage.Literals.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES);
+			childrenFeatures.add(OMLPackage.Literals.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS);
+			childrenFeatures.add(OMLPackage.Literals.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES);
+			childrenFeatures.add(OMLPackage.Literals.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES);
+			childrenFeatures.add(OMLPackage.Literals.DESCRIPTION_BOX__DATA_STRUCTURE_TUPLES);
+			childrenFeatures.add(OMLPackage.Literals.DESCRIPTION_BOX__SCALAR_DATA_PROPERTY_VALUES);
+			childrenFeatures.add(OMLPackage.Literals.DESCRIPTION_BOX__STRUCTURED_DATA_PROPERTY_VALUES);
 		}
 		return childrenFeatures;
 	}
@@ -341,8 +189,19 @@ public class DescriptionBoxItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DescriptionBox.class)) {
+			case OMLPackage.DESCRIPTION_BOX__KIND:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case OMLPackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS:
 			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS:
+			case OMLPackage.DESCRIPTION_BOX__CONCEPT_INSTANCES:
+			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES:
+			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS:
+			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES:
+			case OMLPackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES:
+			case OMLPackage.DESCRIPTION_BOX__DATA_STRUCTURE_TUPLES:
+			case OMLPackage.DESCRIPTION_BOX__SCALAR_DATA_PROPERTY_VALUES:
+			case OMLPackage.DESCRIPTION_BOX__STRUCTURED_DATA_PROPERTY_VALUES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -369,6 +228,46 @@ public class DescriptionBoxItemProvider
 			(createChildParameter
 				(OMLPackage.Literals.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS,
 				 OMLFactory.eINSTANCE.createDescriptionBoxRefinement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OMLPackage.Literals.DESCRIPTION_BOX__CONCEPT_INSTANCES,
+				 OMLFactory.eINSTANCE.createConceptInstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OMLPackage.Literals.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES,
+				 OMLFactory.eINSTANCE.createReifiedRelationshipInstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OMLPackage.Literals.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS,
+				 OMLFactory.eINSTANCE.createReifiedRelationshipInstanceDomain()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OMLPackage.Literals.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES,
+				 OMLFactory.eINSTANCE.createReifiedRelationshipInstanceRange()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OMLPackage.Literals.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES,
+				 OMLFactory.eINSTANCE.createUnreifiedRelationshipInstanceTuple()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OMLPackage.Literals.DESCRIPTION_BOX__DATA_STRUCTURE_TUPLES,
+				 OMLFactory.eINSTANCE.createDataStructureTuple()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OMLPackage.Literals.DESCRIPTION_BOX__SCALAR_DATA_PROPERTY_VALUES,
+				 OMLFactory.eINSTANCE.createScalarDataPropertyValue()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OMLPackage.Literals.DESCRIPTION_BOX__STRUCTURED_DATA_PROPERTY_VALUES,
+				 OMLFactory.eINSTANCE.createStructuredDataPropertyValue()));
 	}
 
 }

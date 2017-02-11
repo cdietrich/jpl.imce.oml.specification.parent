@@ -27,9 +27,9 @@ import org.eclipse.emf.common.util.EMap;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A Bundle is a concrete TerminologyBox that is
- * an acyclic logical aggregate of other TerminologyBoxes (see TerminologyBundleAxiom)
- * and that can assert concept disjunctions (See TerminologyBundleStatement)
+ * An OML Bundle is an OML TerminologyBox that is
+ * an acyclic logical aggregate of other OML TerminologyBoxes
+ * and that logically assert OML TerminologyBundleStatements.
  * <!-- end-model-doc -->
  *
  * <p>

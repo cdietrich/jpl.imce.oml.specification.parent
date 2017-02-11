@@ -25,7 +25,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML Term ...
+ * An OML Term map to the declaration of an [OWL2-DL Entity] of some kind.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -82,7 +82,7 @@ public interface Term extends TerminologyBoxStatement, Resource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model dataType="jpl.imce.oml.specification.ecore.IRI" unique="false" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%jpl.imce.oml.specification.ecore.TerminologyBox%> _graph = this.getGraph();\n<%java.lang.String%> _iri = _graph.iri();\n<%java.lang.String%> _plus = (_iri + \"#\");\n<%java.lang.String%> _name = this.name();\nreturn (_plus + _name);'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%jpl.imce.oml.specification.ecore.TerminologyBox%> _tbox = this.getTbox();\n<%java.lang.String%> _iri = _tbox.iri();\n<%java.lang.String%> _plus = (_iri + \"#\");\n<%java.lang.String%> _name = this.name();\nreturn (_plus + _name);'"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='graph.iri + \"#\" + name'"
 	 * @generated
 	 */

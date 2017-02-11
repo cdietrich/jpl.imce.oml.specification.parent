@@ -140,9 +140,18 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case OMLPackage.CONTEXT: {
+				Context context = (Context)theEObject;
+				T result = caseContext(context);
+				if (result == null) result = caseTerminologyThing(context);
+				if (result == null) result = caseResource(context);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case OMLPackage.TERMINOLOGY_BOX: {
 				TerminologyBox terminologyBox = (TerminologyBox)theEObject;
 				T result = caseTerminologyBox(terminologyBox);
+				if (result == null) result = caseContext(terminologyBox);
 				if (result == null) result = caseTerminologyThing(terminologyBox);
 				if (result == null) result = caseResource(terminologyBox);
 				if (result == null) result = defaultCase(theEObject);
@@ -152,6 +161,7 @@ public class OMLSwitch<T> extends Switch<T> {
 				Bundle bundle = (Bundle)theEObject;
 				T result = caseBundle(bundle);
 				if (result == null) result = caseTerminologyBox(bundle);
+				if (result == null) result = caseContext(bundle);
 				if (result == null) result = caseTerminologyThing(bundle);
 				if (result == null) result = caseResource(bundle);
 				if (result == null) result = defaultCase(theEObject);
@@ -161,22 +171,15 @@ public class OMLSwitch<T> extends Switch<T> {
 				TerminologyGraph terminologyGraph = (TerminologyGraph)theEObject;
 				T result = caseTerminologyGraph(terminologyGraph);
 				if (result == null) result = caseTerminologyBox(terminologyGraph);
+				if (result == null) result = caseContext(terminologyGraph);
 				if (result == null) result = caseTerminologyThing(terminologyGraph);
 				if (result == null) result = caseResource(terminologyGraph);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case OMLPackage.TERMINOLOGY_STATEMENT: {
-				TerminologyStatement terminologyStatement = (TerminologyStatement)theEObject;
-				T result = caseTerminologyStatement(terminologyStatement);
-				if (result == null) result = caseTerminologyThing(terminologyStatement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OMLPackage.TERMINOLOGY_BOX_STATEMENT: {
 				TerminologyBoxStatement terminologyBoxStatement = (TerminologyBoxStatement)theEObject;
 				T result = caseTerminologyBoxStatement(terminologyBoxStatement);
-				if (result == null) result = caseTerminologyStatement(terminologyBoxStatement);
 				if (result == null) result = caseTerminologyThing(terminologyBoxStatement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -184,7 +187,6 @@ public class OMLSwitch<T> extends Switch<T> {
 			case OMLPackage.TERMINOLOGY_BUNDLE_STATEMENT: {
 				TerminologyBundleStatement terminologyBundleStatement = (TerminologyBundleStatement)theEObject;
 				T result = caseTerminologyBundleStatement(terminologyBundleStatement);
-				if (result == null) result = caseTerminologyStatement(terminologyBundleStatement);
 				if (result == null) result = caseTerminologyThing(terminologyBundleStatement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -194,7 +196,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				T result = caseTerm(term);
 				if (result == null) result = caseTerminologyBoxStatement(term);
 				if (result == null) result = caseResource(term);
-				if (result == null) result = caseTerminologyStatement(term);
 				if (result == null) result = caseTerminologyThing(term);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -217,7 +218,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseTerm(entity);
 				if (result == null) result = caseTerminologyBoxStatement(entity);
 				if (result == null) result = caseResource(entity);
-				if (result == null) result = caseTerminologyStatement(entity);
 				if (result == null) result = caseTerminologyThing(entity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -236,7 +236,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseTerm(aspect);
 				if (result == null) result = caseTerminologyBoxStatement(aspect);
 				if (result == null) result = caseResource(aspect);
-				if (result == null) result = caseTerminologyStatement(aspect);
 				if (result == null) result = caseTerminologyThing(aspect);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -250,7 +249,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseTerm(concept);
 				if (result == null) result = caseTerminologyBoxStatement(concept);
 				if (result == null) result = caseResource(concept);
-				if (result == null) result = caseTerminologyStatement(concept);
 				if (result == null) result = caseTerminologyThing(concept);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -262,7 +260,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDirectedBinaryRelationshipKind(entityRelationship);
 				if (result == null) result = caseTerminologyBoxStatement(entityRelationship);
 				if (result == null) result = caseResource(entityRelationship);
-				if (result == null) result = caseTerminologyStatement(entityRelationship);
 				if (result == null) result = caseTerminologyThing(entityRelationship);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -277,7 +274,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDirectedBinaryRelationshipKind(reifiedRelationship);
 				if (result == null) result = caseTerminologyBoxStatement(reifiedRelationship);
 				if (result == null) result = caseResource(reifiedRelationship);
-				if (result == null) result = caseTerminologyStatement(reifiedRelationship);
 				if (result == null) result = caseTerminologyThing(reifiedRelationship);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -290,7 +286,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDirectedBinaryRelationshipKind(unreifiedRelationship);
 				if (result == null) result = caseTerminologyBoxStatement(unreifiedRelationship);
 				if (result == null) result = caseResource(unreifiedRelationship);
-				if (result == null) result = caseTerminologyStatement(unreifiedRelationship);
 				if (result == null) result = caseTerminologyThing(unreifiedRelationship);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -299,10 +294,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				Datatype datatype = (Datatype)theEObject;
 				T result = caseDatatype(datatype);
 				if (result == null) result = caseTerm(datatype);
-				if (result == null) result = caseUnaryTermKind(datatype);
 				if (result == null) result = caseTerminologyBoxStatement(datatype);
 				if (result == null) result = caseResource(datatype);
-				if (result == null) result = caseTerminologyStatement(datatype);
 				if (result == null) result = caseTerminologyThing(datatype);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -312,10 +305,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				T result = caseDataRange(dataRange);
 				if (result == null) result = caseDatatype(dataRange);
 				if (result == null) result = caseTerm(dataRange);
-				if (result == null) result = caseUnaryTermKind(dataRange);
 				if (result == null) result = caseTerminologyBoxStatement(dataRange);
 				if (result == null) result = caseResource(dataRange);
-				if (result == null) result = caseTerminologyStatement(dataRange);
 				if (result == null) result = caseTerminologyThing(dataRange);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -324,12 +315,11 @@ public class OMLSwitch<T> extends Switch<T> {
 				Scalar scalar = (Scalar)theEObject;
 				T result = caseScalar(scalar);
 				if (result == null) result = caseDataRange(scalar);
+				if (result == null) result = caseUnaryTermKind(scalar);
 				if (result == null) result = caseDatatype(scalar);
 				if (result == null) result = caseTerm(scalar);
-				if (result == null) result = caseUnaryTermKind(scalar);
 				if (result == null) result = caseTerminologyBoxStatement(scalar);
 				if (result == null) result = caseResource(scalar);
-				if (result == null) result = caseTerminologyStatement(scalar);
 				if (result == null) result = caseTerminologyThing(scalar);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -341,7 +331,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDirectedBinaryRelationshipKind(dataRelationship);
 				if (result == null) result = caseTerminologyBoxStatement(dataRelationship);
 				if (result == null) result = caseResource(dataRelationship);
-				if (result == null) result = caseTerminologyStatement(dataRelationship);
 				if (result == null) result = caseTerminologyThing(dataRelationship);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -398,7 +387,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDataRelationshipRange(entityStructuredDataProperty);
 				if (result == null) result = caseTerminologyBoxStatement(entityStructuredDataProperty);
 				if (result == null) result = caseResource(entityStructuredDataProperty);
-				if (result == null) result = caseTerminologyStatement(entityStructuredDataProperty);
 				if (result == null) result = caseTerminologyThing(entityStructuredDataProperty);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -415,7 +403,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDataRelationshipRange(entityScalarDataProperty);
 				if (result == null) result = caseTerminologyBoxStatement(entityScalarDataProperty);
 				if (result == null) result = caseResource(entityScalarDataProperty);
-				if (result == null) result = caseTerminologyStatement(entityScalarDataProperty);
 				if (result == null) result = caseTerminologyThing(entityScalarDataProperty);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -432,7 +419,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDataRelationshipRange(structuredDataProperty);
 				if (result == null) result = caseTerminologyBoxStatement(structuredDataProperty);
 				if (result == null) result = caseResource(structuredDataProperty);
-				if (result == null) result = caseTerminologyStatement(structuredDataProperty);
 				if (result == null) result = caseTerminologyThing(structuredDataProperty);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -449,7 +435,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDataRelationshipRange(scalarDataProperty);
 				if (result == null) result = caseTerminologyBoxStatement(scalarDataProperty);
 				if (result == null) result = caseResource(scalarDataProperty);
-				if (result == null) result = caseTerminologyStatement(scalarDataProperty);
 				if (result == null) result = caseTerminologyThing(scalarDataProperty);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -458,11 +443,10 @@ public class OMLSwitch<T> extends Switch<T> {
 				Structure structure = (Structure)theEObject;
 				T result = caseStructure(structure);
 				if (result == null) result = caseDatatype(structure);
-				if (result == null) result = caseTerm(structure);
 				if (result == null) result = caseUnaryTermKind(structure);
+				if (result == null) result = caseTerm(structure);
 				if (result == null) result = caseTerminologyBoxStatement(structure);
 				if (result == null) result = caseResource(structure);
-				if (result == null) result = caseTerminologyStatement(structure);
 				if (result == null) result = caseTerminologyThing(structure);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -471,7 +455,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				Axiom axiom = (Axiom)theEObject;
 				T result = caseAxiom(axiom);
 				if (result == null) result = caseTerminologyBoxStatement(axiom);
-				if (result == null) result = caseTerminologyStatement(axiom);
 				if (result == null) result = caseTerminologyThing(axiom);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -509,7 +492,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				DisjointUnionOfConceptsAxiom disjointUnionOfConceptsAxiom = (DisjointUnionOfConceptsAxiom)theEObject;
 				T result = caseDisjointUnionOfConceptsAxiom(disjointUnionOfConceptsAxiom);
 				if (result == null) result = caseTerminologyBundleStatement(disjointUnionOfConceptsAxiom);
-				if (result == null) result = caseTerminologyStatement(disjointUnionOfConceptsAxiom);
 				if (result == null) result = caseTerminologyThing(disjointUnionOfConceptsAxiom);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -519,7 +501,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				T result = caseSpecificDisjointConceptAxiom(specificDisjointConceptAxiom);
 				if (result == null) result = caseDisjointUnionOfConceptsAxiom(specificDisjointConceptAxiom);
 				if (result == null) result = caseTerminologyBundleStatement(specificDisjointConceptAxiom);
-				if (result == null) result = caseTerminologyStatement(specificDisjointConceptAxiom);
 				if (result == null) result = caseTerminologyThing(specificDisjointConceptAxiom);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -530,7 +511,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDisjointUnionOfConceptsAxiom(anonymousConceptTaxonomyAxiom);
 				if (result == null) result = caseConceptTreeDisjunction(anonymousConceptTaxonomyAxiom);
 				if (result == null) result = caseTerminologyBundleStatement(anonymousConceptTaxonomyAxiom);
-				if (result == null) result = caseTerminologyStatement(anonymousConceptTaxonomyAxiom);
 				if (result == null) result = caseTerminologyThing(anonymousConceptTaxonomyAxiom);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -540,7 +520,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				T result = caseRootConceptTaxonomyAxiom(rootConceptTaxonomyAxiom);
 				if (result == null) result = caseTerminologyBundleStatement(rootConceptTaxonomyAxiom);
 				if (result == null) result = caseConceptTreeDisjunction(rootConceptTaxonomyAxiom);
-				if (result == null) result = caseTerminologyStatement(rootConceptTaxonomyAxiom);
 				if (result == null) result = caseTerminologyThing(rootConceptTaxonomyAxiom);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -586,7 +565,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				T result = caseTermAxiom(termAxiom);
 				if (result == null) result = caseAxiom(termAxiom);
 				if (result == null) result = caseTerminologyBoxStatement(termAxiom);
-				if (result == null) result = caseTerminologyStatement(termAxiom);
 				if (result == null) result = caseTerminologyThing(termAxiom);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -597,7 +575,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseTermAxiom(entityRestrictionAxiom);
 				if (result == null) result = caseAxiom(entityRestrictionAxiom);
 				if (result == null) result = caseTerminologyBoxStatement(entityRestrictionAxiom);
-				if (result == null) result = caseTerminologyStatement(entityRestrictionAxiom);
 				if (result == null) result = caseTerminologyThing(entityRestrictionAxiom);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -609,7 +586,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseTermAxiom(entityExistentialRestrictionAxiom);
 				if (result == null) result = caseAxiom(entityExistentialRestrictionAxiom);
 				if (result == null) result = caseTerminologyBoxStatement(entityExistentialRestrictionAxiom);
-				if (result == null) result = caseTerminologyStatement(entityExistentialRestrictionAxiom);
 				if (result == null) result = caseTerminologyThing(entityExistentialRestrictionAxiom);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -621,7 +597,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseTermAxiom(entityUniversalRestrictionAxiom);
 				if (result == null) result = caseAxiom(entityUniversalRestrictionAxiom);
 				if (result == null) result = caseTerminologyBoxStatement(entityUniversalRestrictionAxiom);
-				if (result == null) result = caseTerminologyStatement(entityUniversalRestrictionAxiom);
 				if (result == null) result = caseTerminologyThing(entityUniversalRestrictionAxiom);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -632,7 +607,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseTermAxiom(specializationAxiom);
 				if (result == null) result = caseAxiom(specializationAxiom);
 				if (result == null) result = caseTerminologyBoxStatement(specializationAxiom);
-				if (result == null) result = caseTerminologyStatement(specializationAxiom);
 				if (result == null) result = caseTerminologyThing(specializationAxiom);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -644,7 +618,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseTermAxiom(aspectSpecializationAxiom);
 				if (result == null) result = caseAxiom(aspectSpecializationAxiom);
 				if (result == null) result = caseTerminologyBoxStatement(aspectSpecializationAxiom);
-				if (result == null) result = caseTerminologyStatement(aspectSpecializationAxiom);
 				if (result == null) result = caseTerminologyThing(aspectSpecializationAxiom);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -656,7 +629,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseTermAxiom(conceptSpecializationAxiom);
 				if (result == null) result = caseAxiom(conceptSpecializationAxiom);
 				if (result == null) result = caseTerminologyBoxStatement(conceptSpecializationAxiom);
-				if (result == null) result = caseTerminologyStatement(conceptSpecializationAxiom);
 				if (result == null) result = caseTerminologyThing(conceptSpecializationAxiom);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -668,7 +640,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseTermAxiom(reifiedRelationshipSpecializationAxiom);
 				if (result == null) result = caseAxiom(reifiedRelationshipSpecializationAxiom);
 				if (result == null) result = caseTerminologyBoxStatement(reifiedRelationshipSpecializationAxiom);
-				if (result == null) result = caseTerminologyStatement(reifiedRelationshipSpecializationAxiom);
 				if (result == null) result = caseTerminologyThing(reifiedRelationshipSpecializationAxiom);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -679,7 +650,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseTermAxiom(entityScalarDataPropertyRestrictionAxiom);
 				if (result == null) result = caseAxiom(entityScalarDataPropertyRestrictionAxiom);
 				if (result == null) result = caseTerminologyBoxStatement(entityScalarDataPropertyRestrictionAxiom);
-				if (result == null) result = caseTerminologyStatement(entityScalarDataPropertyRestrictionAxiom);
 				if (result == null) result = caseTerminologyThing(entityScalarDataPropertyRestrictionAxiom);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -691,7 +661,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseTermAxiom(entityScalarDataPropertyExistentialRestrictionAxiom);
 				if (result == null) result = caseAxiom(entityScalarDataPropertyExistentialRestrictionAxiom);
 				if (result == null) result = caseTerminologyBoxStatement(entityScalarDataPropertyExistentialRestrictionAxiom);
-				if (result == null) result = caseTerminologyStatement(entityScalarDataPropertyExistentialRestrictionAxiom);
 				if (result == null) result = caseTerminologyThing(entityScalarDataPropertyExistentialRestrictionAxiom);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -703,7 +672,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseTermAxiom(entityScalarDataPropertyUniversalRestrictionAxiom);
 				if (result == null) result = caseAxiom(entityScalarDataPropertyUniversalRestrictionAxiom);
 				if (result == null) result = caseTerminologyBoxStatement(entityScalarDataPropertyUniversalRestrictionAxiom);
-				if (result == null) result = caseTerminologyStatement(entityScalarDataPropertyUniversalRestrictionAxiom);
 				if (result == null) result = caseTerminologyThing(entityScalarDataPropertyUniversalRestrictionAxiom);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -715,7 +683,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseTermAxiom(entityScalarDataPropertyParticularRestrictionAxiom);
 				if (result == null) result = caseAxiom(entityScalarDataPropertyParticularRestrictionAxiom);
 				if (result == null) result = caseTerminologyBoxStatement(entityScalarDataPropertyParticularRestrictionAxiom);
-				if (result == null) result = caseTerminologyStatement(entityScalarDataPropertyParticularRestrictionAxiom);
 				if (result == null) result = caseTerminologyThing(entityScalarDataPropertyParticularRestrictionAxiom);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -726,10 +693,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDataRange(restrictedDataRange);
 				if (result == null) result = caseDatatype(restrictedDataRange);
 				if (result == null) result = caseTerm(restrictedDataRange);
-				if (result == null) result = caseUnaryTermKind(restrictedDataRange);
 				if (result == null) result = caseTerminologyBoxStatement(restrictedDataRange);
 				if (result == null) result = caseResource(restrictedDataRange);
-				if (result == null) result = caseTerminologyStatement(restrictedDataRange);
 				if (result == null) result = caseTerminologyThing(restrictedDataRange);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -741,10 +706,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDataRange(binaryScalarRestriction);
 				if (result == null) result = caseDatatype(binaryScalarRestriction);
 				if (result == null) result = caseTerm(binaryScalarRestriction);
-				if (result == null) result = caseUnaryTermKind(binaryScalarRestriction);
 				if (result == null) result = caseTerminologyBoxStatement(binaryScalarRestriction);
 				if (result == null) result = caseResource(binaryScalarRestriction);
-				if (result == null) result = caseTerminologyStatement(binaryScalarRestriction);
 				if (result == null) result = caseTerminologyThing(binaryScalarRestriction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -756,10 +719,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDataRange(iriScalarRestriction);
 				if (result == null) result = caseDatatype(iriScalarRestriction);
 				if (result == null) result = caseTerm(iriScalarRestriction);
-				if (result == null) result = caseUnaryTermKind(iriScalarRestriction);
 				if (result == null) result = caseTerminologyBoxStatement(iriScalarRestriction);
 				if (result == null) result = caseResource(iriScalarRestriction);
-				if (result == null) result = caseTerminologyStatement(iriScalarRestriction);
 				if (result == null) result = caseTerminologyThing(iriScalarRestriction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -771,10 +732,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDataRange(numericScalarRestriction);
 				if (result == null) result = caseDatatype(numericScalarRestriction);
 				if (result == null) result = caseTerm(numericScalarRestriction);
-				if (result == null) result = caseUnaryTermKind(numericScalarRestriction);
 				if (result == null) result = caseTerminologyBoxStatement(numericScalarRestriction);
 				if (result == null) result = caseResource(numericScalarRestriction);
-				if (result == null) result = caseTerminologyStatement(numericScalarRestriction);
 				if (result == null) result = caseTerminologyThing(numericScalarRestriction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -786,10 +745,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDataRange(plainLiteralScalarRestriction);
 				if (result == null) result = caseDatatype(plainLiteralScalarRestriction);
 				if (result == null) result = caseTerm(plainLiteralScalarRestriction);
-				if (result == null) result = caseUnaryTermKind(plainLiteralScalarRestriction);
 				if (result == null) result = caseTerminologyBoxStatement(plainLiteralScalarRestriction);
 				if (result == null) result = caseResource(plainLiteralScalarRestriction);
-				if (result == null) result = caseTerminologyStatement(plainLiteralScalarRestriction);
 				if (result == null) result = caseTerminologyThing(plainLiteralScalarRestriction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -801,10 +758,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDataRange(stringScalarRestriction);
 				if (result == null) result = caseDatatype(stringScalarRestriction);
 				if (result == null) result = caseTerm(stringScalarRestriction);
-				if (result == null) result = caseUnaryTermKind(stringScalarRestriction);
 				if (result == null) result = caseTerminologyBoxStatement(stringScalarRestriction);
 				if (result == null) result = caseResource(stringScalarRestriction);
-				if (result == null) result = caseTerminologyStatement(stringScalarRestriction);
 				if (result == null) result = caseTerminologyThing(stringScalarRestriction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -816,10 +771,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDataRange(timeScalarRestriction);
 				if (result == null) result = caseDatatype(timeScalarRestriction);
 				if (result == null) result = caseTerm(timeScalarRestriction);
-				if (result == null) result = caseUnaryTermKind(timeScalarRestriction);
 				if (result == null) result = caseTerminologyBoxStatement(timeScalarRestriction);
 				if (result == null) result = caseResource(timeScalarRestriction);
-				if (result == null) result = caseTerminologyStatement(timeScalarRestriction);
 				if (result == null) result = caseTerminologyThing(timeScalarRestriction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -831,10 +784,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDataRange(synonymScalarRestriction);
 				if (result == null) result = caseDatatype(synonymScalarRestriction);
 				if (result == null) result = caseTerm(synonymScalarRestriction);
-				if (result == null) result = caseUnaryTermKind(synonymScalarRestriction);
 				if (result == null) result = caseTerminologyBoxStatement(synonymScalarRestriction);
 				if (result == null) result = caseResource(synonymScalarRestriction);
-				if (result == null) result = caseTerminologyStatement(synonymScalarRestriction);
 				if (result == null) result = caseTerminologyThing(synonymScalarRestriction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -846,10 +797,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDataRange(scalarOneOfRestriction);
 				if (result == null) result = caseDatatype(scalarOneOfRestriction);
 				if (result == null) result = caseTerm(scalarOneOfRestriction);
-				if (result == null) result = caseUnaryTermKind(scalarOneOfRestriction);
 				if (result == null) result = caseTerminologyBoxStatement(scalarOneOfRestriction);
 				if (result == null) result = caseResource(scalarOneOfRestriction);
-				if (result == null) result = caseTerminologyStatement(scalarOneOfRestriction);
 				if (result == null) result = caseTerminologyThing(scalarOneOfRestriction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -859,7 +808,6 @@ public class OMLSwitch<T> extends Switch<T> {
 				T result = caseScalarOneOfLiteralAxiom(scalarOneOfLiteralAxiom);
 				if (result == null) result = caseAxiom(scalarOneOfLiteralAxiom);
 				if (result == null) result = caseTerminologyBoxStatement(scalarOneOfLiteralAxiom);
-				if (result == null) result = caseTerminologyStatement(scalarOneOfLiteralAxiom);
 				if (result == null) result = caseTerminologyThing(scalarOneOfLiteralAxiom);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -867,14 +815,23 @@ public class OMLSwitch<T> extends Switch<T> {
 			case OMLPackage.DESCRIPTION_BOX: {
 				DescriptionBox descriptionBox = (DescriptionBox)theEObject;
 				T result = caseDescriptionBox(descriptionBox);
+				if (result == null) result = caseContext(descriptionBox);
 				if (result == null) result = caseTerminologyThing(descriptionBox);
 				if (result == null) result = caseResource(descriptionBox);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OMLPackage.DESCRIPTION_BOX_RELATIONSHIP: {
+				DescriptionBoxRelationship descriptionBoxRelationship = (DescriptionBoxRelationship)theEObject;
+				T result = caseDescriptionBoxRelationship(descriptionBoxRelationship);
+				if (result == null) result = caseTerminologyThing(descriptionBoxRelationship);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS: {
 				DescriptionBoxExtendsClosedWorldDefinitions descriptionBoxExtendsClosedWorldDefinitions = (DescriptionBoxExtendsClosedWorldDefinitions)theEObject;
 				T result = caseDescriptionBoxExtendsClosedWorldDefinitions(descriptionBoxExtendsClosedWorldDefinitions);
+				if (result == null) result = caseDescriptionBoxRelationship(descriptionBoxExtendsClosedWorldDefinitions);
 				if (result == null) result = caseTerminologyThing(descriptionBoxExtendsClosedWorldDefinitions);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -882,6 +839,7 @@ public class OMLSwitch<T> extends Switch<T> {
 			case OMLPackage.DESCRIPTION_BOX_REFINEMENT: {
 				DescriptionBoxRefinement descriptionBoxRefinement = (DescriptionBoxRefinement)theEObject;
 				T result = caseDescriptionBoxRefinement(descriptionBoxRefinement);
+				if (result == null) result = caseDescriptionBoxRelationship(descriptionBoxRefinement);
 				if (result == null) result = caseTerminologyThing(descriptionBoxRefinement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -890,6 +848,7 @@ public class OMLSwitch<T> extends Switch<T> {
 				TerminologyInstanceAssertion terminologyInstanceAssertion = (TerminologyInstanceAssertion)theEObject;
 				T result = caseTerminologyInstanceAssertion(terminologyInstanceAssertion);
 				if (result == null) result = caseTerminologyThing(terminologyInstanceAssertion);
+				if (result == null) result = caseResource(terminologyInstanceAssertion);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -897,8 +856,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				SingletonInstance singletonInstance = (SingletonInstance)theEObject;
 				T result = caseSingletonInstance(singletonInstance);
 				if (result == null) result = caseTerminologyInstanceAssertion(singletonInstance);
-				if (result == null) result = caseResource(singletonInstance);
 				if (result == null) result = caseTerminologyThing(singletonInstance);
+				if (result == null) result = caseResource(singletonInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -907,6 +866,7 @@ public class OMLSwitch<T> extends Switch<T> {
 				T result = caseScalarDataPropertyValue(scalarDataPropertyValue);
 				if (result == null) result = caseTerminologyInstanceAssertion(scalarDataPropertyValue);
 				if (result == null) result = caseTerminologyThing(scalarDataPropertyValue);
+				if (result == null) result = caseResource(scalarDataPropertyValue);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -915,6 +875,7 @@ public class OMLSwitch<T> extends Switch<T> {
 				T result = caseStructuredDataPropertyValue(structuredDataPropertyValue);
 				if (result == null) result = caseTerminologyInstanceAssertion(structuredDataPropertyValue);
 				if (result == null) result = caseTerminologyThing(structuredDataPropertyValue);
+				if (result == null) result = caseResource(structuredDataPropertyValue);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -923,8 +884,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				T result = caseDataStructureTuple(dataStructureTuple);
 				if (result == null) result = caseSingletonInstance(dataStructureTuple);
 				if (result == null) result = caseTerminologyInstanceAssertion(dataStructureTuple);
-				if (result == null) result = caseResource(dataStructureTuple);
 				if (result == null) result = caseTerminologyThing(dataStructureTuple);
+				if (result == null) result = caseResource(dataStructureTuple);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -933,8 +894,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				T result = caseConceptualEntitySingletonInstance(conceptualEntitySingletonInstance);
 				if (result == null) result = caseSingletonInstance(conceptualEntitySingletonInstance);
 				if (result == null) result = caseTerminologyInstanceAssertion(conceptualEntitySingletonInstance);
-				if (result == null) result = caseResource(conceptualEntitySingletonInstance);
 				if (result == null) result = caseTerminologyThing(conceptualEntitySingletonInstance);
+				if (result == null) result = caseResource(conceptualEntitySingletonInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -944,8 +905,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseConceptualEntitySingletonInstance(conceptInstance);
 				if (result == null) result = caseSingletonInstance(conceptInstance);
 				if (result == null) result = caseTerminologyInstanceAssertion(conceptInstance);
-				if (result == null) result = caseResource(conceptInstance);
 				if (result == null) result = caseTerminologyThing(conceptInstance);
+				if (result == null) result = caseResource(conceptInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -955,8 +916,8 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = caseConceptualEntitySingletonInstance(reifiedRelationshipInstance);
 				if (result == null) result = caseSingletonInstance(reifiedRelationshipInstance);
 				if (result == null) result = caseTerminologyInstanceAssertion(reifiedRelationshipInstance);
-				if (result == null) result = caseResource(reifiedRelationshipInstance);
 				if (result == null) result = caseTerminologyThing(reifiedRelationshipInstance);
+				if (result == null) result = caseResource(reifiedRelationshipInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -965,6 +926,7 @@ public class OMLSwitch<T> extends Switch<T> {
 				T result = caseReifiedRelationshipInstanceDomain(reifiedRelationshipInstanceDomain);
 				if (result == null) result = caseTerminologyInstanceAssertion(reifiedRelationshipInstanceDomain);
 				if (result == null) result = caseTerminologyThing(reifiedRelationshipInstanceDomain);
+				if (result == null) result = caseResource(reifiedRelationshipInstanceDomain);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -973,6 +935,7 @@ public class OMLSwitch<T> extends Switch<T> {
 				T result = caseReifiedRelationshipInstanceRange(reifiedRelationshipInstanceRange);
 				if (result == null) result = caseTerminologyInstanceAssertion(reifiedRelationshipInstanceRange);
 				if (result == null) result = caseTerminologyThing(reifiedRelationshipInstanceRange);
+				if (result == null) result = caseResource(reifiedRelationshipInstanceRange);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -981,6 +944,7 @@ public class OMLSwitch<T> extends Switch<T> {
 				T result = caseUnreifiedRelationshipInstanceTuple(unreifiedRelationshipInstanceTuple);
 				if (result == null) result = caseTerminologyInstanceAssertion(unreifiedRelationshipInstanceTuple);
 				if (result == null) result = caseTerminologyThing(unreifiedRelationshipInstanceTuple);
+				if (result == null) result = caseResource(unreifiedRelationshipInstanceTuple);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1124,6 +1088,21 @@ public class OMLSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Context</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Context</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseContext(Context object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Terminology Box</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1165,21 +1144,6 @@ public class OMLSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTerminologyGraph(TerminologyGraph object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Terminology Statement</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Terminology Statement</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTerminologyStatement(TerminologyStatement object) {
 		return null;
 	}
 
@@ -2125,6 +2089,21 @@ public class OMLSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDescriptionBox(DescriptionBox object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Description Box Relationship</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Description Box Relationship</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDescriptionBoxRelationship(DescriptionBoxRelationship object) {
 		return null;
 	}
 

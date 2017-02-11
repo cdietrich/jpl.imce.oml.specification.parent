@@ -25,6 +25,18 @@ import org.eclipse.emf.cdo.CDOObject;
  * A representation of the model object '<em><b>Conceptual Entity</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An OML ConceptualEntity is an OML Entity
+ * that can be either abstract or concrete.
+ * An abstract OML ConceptualEntity cannot have any instance
+ * in a final OML DescriptionBox.
+ * A concrete OML ConceptualEntity can be partially instantiated
+ * as an OML ConceptualEntitySingletonInstance in any OML DescriptionBox.
+ * If is partially instantiated if some essential OML EntityRelationship
+ * or OML DataRelationshipFromEntity with `isIdentityCriteria=true` lacks
+ * an OML TerminologyInstanceAssertion specifying its reference or value respectively.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>

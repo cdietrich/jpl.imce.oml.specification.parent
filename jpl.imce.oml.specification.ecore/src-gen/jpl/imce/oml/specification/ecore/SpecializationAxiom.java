@@ -25,7 +25,8 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML SpecializationAxiom ...
+ * An OML SpecializationAxiom is a logical axiom
+ * about a taxonomic relationship between a specific and a general OML Entity.
  * <!-- end-model-doc -->
  *
  *
@@ -38,22 +39,22 @@ public interface SpecializationAxiom extends TermAxiom {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Get the sub (child) term
+	 * Get the sub (child) entity
 	 * <!-- end-model-doc -->
 	 * @model unique="false" required="true"
 	 * @generated
 	 */
-	Term child();
+	Entity child();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Get the super (parent) term
+	 * Get the super (parent) entity
 	 * <!-- end-model-doc -->
 	 * @model unique="false" required="true"
 	 * @generated
 	 */
-	Term parent();
+	Entity parent();
 
 } // SpecializationAxiom

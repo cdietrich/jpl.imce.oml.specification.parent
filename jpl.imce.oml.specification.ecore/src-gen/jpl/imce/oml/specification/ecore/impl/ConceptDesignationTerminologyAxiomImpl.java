@@ -183,7 +183,7 @@ public class ConceptDesignationTerminologyAxiomImpl extends TerminologyBoxAxiomI
 	 * @generated
 	 */
 	public TerminologyBox source() {
-		return this.getTerminology();
+		return this.getTbox();
 	}
 
 	/**

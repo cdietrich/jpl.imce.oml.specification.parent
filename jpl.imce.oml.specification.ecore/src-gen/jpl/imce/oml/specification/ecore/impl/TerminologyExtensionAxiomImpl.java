@@ -150,7 +150,7 @@ public class TerminologyExtensionAxiomImpl extends TerminologyBoxAxiomImpl imple
 	 * @generated
 	 */
 	public TerminologyBox extendingTerminology() {
-		return this.getTerminology();
+		return this.getTbox();
 	}
 
 	/**
@@ -159,7 +159,7 @@ public class TerminologyExtensionAxiomImpl extends TerminologyBoxAxiomImpl imple
 	 * @generated
 	 */
 	public TerminologyBox source() {
-		return this.getTerminology();
+		return this.getTbox();
 	}
 
 	/**

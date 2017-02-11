@@ -26,13 +26,15 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML DescriptionBox ...
+ * An OML DescriptionBox maps to an [OWL2-DL Ontology]
+ * about [OWL2-DL NamedIndividuals] mapped from OML TerminologyInstanceAssertions.
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link jpl.imce.oml.specification.ecore.DescriptionBox#getKind <em>Kind</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.DescriptionBox#getTerminologyExtent <em>Terminology Extent</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.DescriptionBox#getClosedWorldDefinitions <em>Closed World Definitions</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.DescriptionBox#getDescriptionBoxRefinements <em>Description Box Refinements</em>}</li>
@@ -50,7 +52,36 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface DescriptionBox extends TerminologyThing, Resource {
+public interface DescriptionBox extends Context {
+	/**
+	 * Returns the value of the '<em><b>Kind</b></em>' attribute.
+	 * The literals are from the enumeration {@link jpl.imce.oml.specification.ecore.DescriptionKind}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Kind</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Kind</em>' attribute.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionKind
+	 * @see #setKind(DescriptionKind)
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBox_Kind()
+	 * @model unique="false" required="true"
+	 * @generated
+	 */
+	DescriptionKind getKind();
+
+	/**
+	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getKind <em>Kind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Kind</em>' attribute.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionKind
+	 * @see #getKind()
+	 * @generated
+	 */
+	void setKind(DescriptionKind value);
+
 	/**
 	 * Returns the value of the '<em><b>Terminology Extent</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.TerminologyExtent#getDescriptions <em>Descriptions</em>}'.
@@ -118,129 +149,153 @@ public interface DescriptionBox extends TerminologyThing, Resource {
 	EList<DescriptionBoxRefinement> getDescriptionBoxRefinements();
 
 	/**
-	 * Returns the value of the '<em><b>Concept Instances</b></em>' reference list.
+	 * Returns the value of the '<em><b>Concept Instances</b></em>' containment reference list.
 	 * The list contents are of type {@link jpl.imce.oml.specification.ecore.ConceptInstance}.
+	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.ConceptInstance#getDescriptionBox <em>Description Box</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Concept Instances</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Concept Instances</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Concept Instances</em>' reference list.
+	 * @return the value of the '<em>Concept Instances</em>' containment reference list.
 	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBox_ConceptInstances()
-	 * @model annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @see jpl.imce.oml.specification.ecore.ConceptInstance#getDescriptionBox
+	 * @model opposite="descriptionBox" containment="true"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
 	 * @generated
 	 */
 	EList<ConceptInstance> getConceptInstances();
 
 	/**
-	 * Returns the value of the '<em><b>Reified Relationship Instances</b></em>' reference list.
+	 * Returns the value of the '<em><b>Reified Relationship Instances</b></em>' containment reference list.
 	 * The list contents are of type {@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstance}.
+	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstance#getDescriptionBox <em>Description Box</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Reified Relationship Instances</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Reified Relationship Instances</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Reified Relationship Instances</em>' reference list.
+	 * @return the value of the '<em>Reified Relationship Instances</em>' containment reference list.
 	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBox_ReifiedRelationshipInstances()
-	 * @model annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @see jpl.imce.oml.specification.ecore.ReifiedRelationshipInstance#getDescriptionBox
+	 * @model opposite="descriptionBox" containment="true"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
 	 * @generated
 	 */
 	EList<ReifiedRelationshipInstance> getReifiedRelationshipInstances();
 
 	/**
-	 * Returns the value of the '<em><b>Reified Relationship Instance Domains</b></em>' reference list.
+	 * Returns the value of the '<em><b>Reified Relationship Instance Domains</b></em>' containment reference list.
 	 * The list contents are of type {@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceDomain}.
+	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceDomain#getDescriptionBox <em>Description Box</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Reified Relationship Instance Domains</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Reified Relationship Instance Domains</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Reified Relationship Instance Domains</em>' reference list.
+	 * @return the value of the '<em>Reified Relationship Instance Domains</em>' containment reference list.
 	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBox_ReifiedRelationshipInstanceDomains()
-	 * @model annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @see jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceDomain#getDescriptionBox
+	 * @model opposite="descriptionBox" containment="true"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
 	 * @generated
 	 */
 	EList<ReifiedRelationshipInstanceDomain> getReifiedRelationshipInstanceDomains();
 
 	/**
-	 * Returns the value of the '<em><b>Reified Relationship Instance Ranges</b></em>' reference list.
+	 * Returns the value of the '<em><b>Reified Relationship Instance Ranges</b></em>' containment reference list.
 	 * The list contents are of type {@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceRange}.
+	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceRange#getDescriptionBox <em>Description Box</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Reified Relationship Instance Ranges</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Reified Relationship Instance Ranges</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Reified Relationship Instance Ranges</em>' reference list.
+	 * @return the value of the '<em>Reified Relationship Instance Ranges</em>' containment reference list.
 	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBox_ReifiedRelationshipInstanceRanges()
-	 * @model annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @see jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceRange#getDescriptionBox
+	 * @model opposite="descriptionBox" containment="true"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
 	 * @generated
 	 */
 	EList<ReifiedRelationshipInstanceRange> getReifiedRelationshipInstanceRanges();
 
 	/**
-	 * Returns the value of the '<em><b>Unreified Relationship Instance Tuples</b></em>' reference list.
+	 * Returns the value of the '<em><b>Unreified Relationship Instance Tuples</b></em>' containment reference list.
 	 * The list contents are of type {@link jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple}.
+	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple#getDescriptionBox <em>Description Box</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Unreified Relationship Instance Tuples</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Unreified Relationship Instance Tuples</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Unreified Relationship Instance Tuples</em>' reference list.
+	 * @return the value of the '<em>Unreified Relationship Instance Tuples</em>' containment reference list.
 	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBox_UnreifiedRelationshipInstanceTuples()
-	 * @model annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @see jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple#getDescriptionBox
+	 * @model opposite="descriptionBox" containment="true"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
 	 * @generated
 	 */
 	EList<UnreifiedRelationshipInstanceTuple> getUnreifiedRelationshipInstanceTuples();
 
 	/**
-	 * Returns the value of the '<em><b>Data Structure Tuples</b></em>' reference list.
+	 * Returns the value of the '<em><b>Data Structure Tuples</b></em>' containment reference list.
 	 * The list contents are of type {@link jpl.imce.oml.specification.ecore.DataStructureTuple}.
+	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.DataStructureTuple#getDescriptionBox <em>Description Box</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Data Structure Tuples</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Data Structure Tuples</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Structure Tuples</em>' reference list.
+	 * @return the value of the '<em>Data Structure Tuples</em>' containment reference list.
 	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBox_DataStructureTuples()
-	 * @model annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @see jpl.imce.oml.specification.ecore.DataStructureTuple#getDescriptionBox
+	 * @model opposite="descriptionBox" containment="true"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
 	 * @generated
 	 */
 	EList<DataStructureTuple> getDataStructureTuples();
 
 	/**
-	 * Returns the value of the '<em><b>Scalar Data Property Values</b></em>' reference list.
+	 * Returns the value of the '<em><b>Scalar Data Property Values</b></em>' containment reference list.
 	 * The list contents are of type {@link jpl.imce.oml.specification.ecore.ScalarDataPropertyValue}.
+	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.ScalarDataPropertyValue#getDescriptionBox <em>Description Box</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Scalar Data Property Values</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Scalar Data Property Values</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Scalar Data Property Values</em>' reference list.
+	 * @return the value of the '<em>Scalar Data Property Values</em>' containment reference list.
 	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBox_ScalarDataPropertyValues()
-	 * @model annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @see jpl.imce.oml.specification.ecore.ScalarDataPropertyValue#getDescriptionBox
+	 * @model opposite="descriptionBox" containment="true"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
 	 * @generated
 	 */
 	EList<ScalarDataPropertyValue> getScalarDataPropertyValues();
 
 	/**
-	 * Returns the value of the '<em><b>Structured Data Property Values</b></em>' reference list.
+	 * Returns the value of the '<em><b>Structured Data Property Values</b></em>' containment reference list.
 	 * The list contents are of type {@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue}.
+	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getDescriptionBox <em>Description Box</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Structured Data Property Values</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Structured Data Property Values</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Structured Data Property Values</em>' reference list.
+	 * @return the value of the '<em>Structured Data Property Values</em>' containment reference list.
 	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBox_StructuredDataPropertyValues()
-	 * @model annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @see jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getDescriptionBox
+	 * @model opposite="descriptionBox" containment="true"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
 	 * @generated
 	 */
 	EList<StructuredDataPropertyValue> getStructuredDataPropertyValues();
@@ -253,7 +308,7 @@ public interface DescriptionBox extends TerminologyThing, Resource {
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='copy(conceptInstances = this.conceptInstances ++ s)'"
 	 * @generated
 	 */
-	DescriptionBox withConceptInstances(EList<ConceptInstance> s);
+	DescriptionBox addConceptInstances(EList<ConceptInstance> s);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -263,7 +318,7 @@ public interface DescriptionBox extends TerminologyThing, Resource {
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='copy(reifiedRelationshipInstances = this.reifiedRelationshipInstances ++ s)'"
 	 * @generated
 	 */
-	DescriptionBox withReifiedRelationshipInstances(EList<ReifiedRelationshipInstance> s);
+	DescriptionBox addReifiedRelationshipInstances(EList<ReifiedRelationshipInstance> s);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -273,7 +328,7 @@ public interface DescriptionBox extends TerminologyThing, Resource {
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='copy(reifiedRelationshipInstanceDomains = this.reifiedRelationshipInstanceDomains ++ s)'"
 	 * @generated
 	 */
-	DescriptionBox withReifiedRelationshipInstanceDomains(EList<ReifiedRelationshipInstanceDomain> s);
+	DescriptionBox addReifiedRelationshipInstanceDomains(EList<ReifiedRelationshipInstanceDomain> s);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -283,7 +338,7 @@ public interface DescriptionBox extends TerminologyThing, Resource {
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='copy(reifiedRelationshipInstanceRanges = this.reifiedRelationshipInstanceRanges ++ s)'"
 	 * @generated
 	 */
-	DescriptionBox withReifiedRelationshipInstanceRanges(EList<ReifiedRelationshipInstanceRange> s);
+	DescriptionBox addReifiedRelationshipInstanceRanges(EList<ReifiedRelationshipInstanceRange> s);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -293,7 +348,7 @@ public interface DescriptionBox extends TerminologyThing, Resource {
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='copy(unreifiedRelationshipInstanceTuples = this.unreifiedRelationshipInstanceTuples ++ s)'"
 	 * @generated
 	 */
-	DescriptionBox withUnreifiedRelationshipInstanceTuples(EList<UnreifiedRelationshipInstanceTuple> s);
+	DescriptionBox addUnreifiedRelationshipInstanceTuples(EList<UnreifiedRelationshipInstanceTuple> s);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -303,7 +358,7 @@ public interface DescriptionBox extends TerminologyThing, Resource {
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='copy(dataStructureTuples = this.dataStructureTuples ++ s)'"
 	 * @generated
 	 */
-	DescriptionBox withDataStructureTuples(EList<DataStructureTuple> s);
+	DescriptionBox addDataStructureTuples(EList<DataStructureTuple> s);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -313,7 +368,7 @@ public interface DescriptionBox extends TerminologyThing, Resource {
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='copy(scalarDataPropertyValues = this.scalarDataPropertyValues ++ s)'"
 	 * @generated
 	 */
-	DescriptionBox withScalarDataPropertyValues(EList<ScalarDataPropertyValue> s);
+	DescriptionBox addScalarDataPropertyValues(EList<ScalarDataPropertyValue> s);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -323,6 +378,6 @@ public interface DescriptionBox extends TerminologyThing, Resource {
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='copy(structuredDataPropertyValues = this.structuredDataPropertyValues ++ s)'"
 	 * @generated
 	 */
-	DescriptionBox withStructuredDataPropertyValues(EList<StructuredDataPropertyValue> s);
+	DescriptionBox addStructuredDataPropertyValues(EList<StructuredDataPropertyValue> s);
 
 } // DescriptionBox

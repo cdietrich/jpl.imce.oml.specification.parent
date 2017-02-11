@@ -81,7 +81,7 @@ public interface TerminologyExtensionAxiom extends TerminologyBoxAxiom {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model unique="false" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getTerminology();'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getTbox();'"
 	 * @generated
 	 */
 	TerminologyBox extendingTerminology();
@@ -93,7 +93,7 @@ public interface TerminologyExtensionAxiom extends TerminologyBoxAxiom {
 	 * The extendingTerminology is the source
 	 * <!-- end-model-doc -->
 	 * @model unique="false" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getTerminology();'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getTbox();'"
 	 * @generated
 	 */
 	TerminologyBox source();

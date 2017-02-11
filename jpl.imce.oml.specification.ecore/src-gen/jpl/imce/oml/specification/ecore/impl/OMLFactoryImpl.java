@@ -146,6 +146,8 @@ public class OMLFactoryImpl extends EFactoryImpl implements OMLFactory {
 		switch (eDataType.getClassifierID()) {
 			case OMLPackage.TERMINOLOGY_GRAPH_KIND:
 				return createTerminologyGraphKindFromString(eDataType, initialValue);
+			case OMLPackage.DESCRIPTION_KIND:
+				return createDescriptionKindFromString(eDataType, initialValue);
 			case OMLPackage.IRI:
 				return createIRIFromString(eDataType, initialValue);
 			case OMLPackage.LOCAL_NAME:
@@ -160,8 +162,8 @@ public class OMLFactoryImpl extends EFactoryImpl implements OMLFactory {
 				return createPatternFromString(eDataType, initialValue);
 			case OMLPackage.UUID:
 				return createUUIDFromString(eDataType, initialValue);
-			case OMLPackage.LANGUAGE:
-				return createLanguageFromString(eDataType, initialValue);
+			case OMLPackage.LANG_RANGE:
+				return createLangRangeFromString(eDataType, initialValue);
 			case OMLPackage.ABBREV_IRI:
 				return createAbbrevIRIFromString(eDataType, initialValue);
 			case OMLPackage.NAMESPACE_PREFIX:
@@ -181,6 +183,8 @@ public class OMLFactoryImpl extends EFactoryImpl implements OMLFactory {
 		switch (eDataType.getClassifierID()) {
 			case OMLPackage.TERMINOLOGY_GRAPH_KIND:
 				return convertTerminologyGraphKindToString(eDataType, instanceValue);
+			case OMLPackage.DESCRIPTION_KIND:
+				return convertDescriptionKindToString(eDataType, instanceValue);
 			case OMLPackage.IRI:
 				return convertIRIToString(eDataType, instanceValue);
 			case OMLPackage.LOCAL_NAME:
@@ -195,8 +199,8 @@ public class OMLFactoryImpl extends EFactoryImpl implements OMLFactory {
 				return convertPatternToString(eDataType, instanceValue);
 			case OMLPackage.UUID:
 				return convertUUIDToString(eDataType, instanceValue);
-			case OMLPackage.LANGUAGE:
-				return convertLanguageToString(eDataType, instanceValue);
+			case OMLPackage.LANG_RANGE:
+				return convertLangRangeToString(eDataType, instanceValue);
 			case OMLPackage.ABBREV_IRI:
 				return convertAbbrevIRIToString(eDataType, instanceValue);
 			case OMLPackage.NAMESPACE_PREFIX:
@@ -771,6 +775,26 @@ public class OMLFactoryImpl extends EFactoryImpl implements OMLFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DescriptionKind createDescriptionKindFromString(EDataType eDataType, String initialValue) {
+		DescriptionKind result = DescriptionKind.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertDescriptionKindToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String createIRIFromString(EDataType eDataType, String initialValue) {
 		return (String)super.createFromString(eDataType, initialValue);
 	}
@@ -897,7 +921,7 @@ public class OMLFactoryImpl extends EFactoryImpl implements OMLFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String createLanguageFromString(EDataType eDataType, String initialValue) {
+	public String createLangRangeFromString(EDataType eDataType, String initialValue) {
 		return (String)super.createFromString(eDataType, initialValue);
 	}
 
@@ -906,7 +930,7 @@ public class OMLFactoryImpl extends EFactoryImpl implements OMLFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertLanguageToString(EDataType eDataType, Object instanceValue) {
+	public String convertLangRangeToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 

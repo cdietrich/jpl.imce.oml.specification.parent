@@ -748,6 +748,11 @@ public class OMLUtilities {
     return Boolean.valueOf((null != _eAnnotation));
   }
   
+  public static Boolean isOO(final ENamedElement e) {
+    EAnnotation _eAnnotation = e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotFunctionalAPI");
+    return Boolean.valueOf((null != _eAnnotation));
+  }
+  
   public static Boolean isAPI(final ENamedElement e) {
     EAnnotation _eAnnotation = e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotFunctionalAPI");
     return Boolean.valueOf((null == _eAnnotation));

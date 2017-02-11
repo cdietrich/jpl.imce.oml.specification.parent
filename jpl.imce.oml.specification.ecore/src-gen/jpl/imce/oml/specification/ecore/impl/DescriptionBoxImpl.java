@@ -27,11 +27,11 @@ import jpl.imce.oml.specification.ecore.DataStructureTuple;
 import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions;
 import jpl.imce.oml.specification.ecore.DescriptionBoxRefinement;
+import jpl.imce.oml.specification.ecore.DescriptionKind;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.ReifiedRelationshipInstance;
 import jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceDomain;
 import jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceRange;
-import jpl.imce.oml.specification.ecore.Resource;
 import jpl.imce.oml.specification.ecore.ScalarDataPropertyValue;
 import jpl.imce.oml.specification.ecore.StructuredDataPropertyValue;
 import jpl.imce.oml.specification.ecore.TerminologyExtent;
@@ -49,7 +49,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -61,6 +60,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxImpl#getTerminologyExtent <em>Terminology Extent</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxImpl#getClosedWorldDefinitions <em>Closed World Definitions</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxImpl#getDescriptionBoxRefinements <em>Description Box Refinements</em>}</li>
@@ -76,7 +76,27 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class DescriptionBoxImpl extends TerminologyThingImpl implements DescriptionBox {
+public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
+	/**
+	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKind()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final DescriptionKind KIND_EDEFAULT = DescriptionKind.FINAL;
+
+	/**
+	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKind()
+	 * @generated
+	 * @ordered
+	 */
+	protected DescriptionKind kind = KIND_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getClosedWorldDefinitions() <em>Closed World Definitions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -98,7 +118,7 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	protected EList<DescriptionBoxRefinement> descriptionBoxRefinements;
 
 	/**
-	 * The cached value of the '{@link #getConceptInstances() <em>Concept Instances</em>}' reference list.
+	 * The cached value of the '{@link #getConceptInstances() <em>Concept Instances</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getConceptInstances()
@@ -108,7 +128,7 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	protected EList<ConceptInstance> conceptInstances;
 
 	/**
-	 * The cached value of the '{@link #getReifiedRelationshipInstances() <em>Reified Relationship Instances</em>}' reference list.
+	 * The cached value of the '{@link #getReifiedRelationshipInstances() <em>Reified Relationship Instances</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getReifiedRelationshipInstances()
@@ -118,7 +138,7 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	protected EList<ReifiedRelationshipInstance> reifiedRelationshipInstances;
 
 	/**
-	 * The cached value of the '{@link #getReifiedRelationshipInstanceDomains() <em>Reified Relationship Instance Domains</em>}' reference list.
+	 * The cached value of the '{@link #getReifiedRelationshipInstanceDomains() <em>Reified Relationship Instance Domains</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getReifiedRelationshipInstanceDomains()
@@ -128,7 +148,7 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	protected EList<ReifiedRelationshipInstanceDomain> reifiedRelationshipInstanceDomains;
 
 	/**
-	 * The cached value of the '{@link #getReifiedRelationshipInstanceRanges() <em>Reified Relationship Instance Ranges</em>}' reference list.
+	 * The cached value of the '{@link #getReifiedRelationshipInstanceRanges() <em>Reified Relationship Instance Ranges</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getReifiedRelationshipInstanceRanges()
@@ -138,7 +158,7 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	protected EList<ReifiedRelationshipInstanceRange> reifiedRelationshipInstanceRanges;
 
 	/**
-	 * The cached value of the '{@link #getUnreifiedRelationshipInstanceTuples() <em>Unreified Relationship Instance Tuples</em>}' reference list.
+	 * The cached value of the '{@link #getUnreifiedRelationshipInstanceTuples() <em>Unreified Relationship Instance Tuples</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getUnreifiedRelationshipInstanceTuples()
@@ -148,7 +168,7 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	protected EList<UnreifiedRelationshipInstanceTuple> unreifiedRelationshipInstanceTuples;
 
 	/**
-	 * The cached value of the '{@link #getDataStructureTuples() <em>Data Structure Tuples</em>}' reference list.
+	 * The cached value of the '{@link #getDataStructureTuples() <em>Data Structure Tuples</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDataStructureTuples()
@@ -158,7 +178,7 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	protected EList<DataStructureTuple> dataStructureTuples;
 
 	/**
-	 * The cached value of the '{@link #getScalarDataPropertyValues() <em>Scalar Data Property Values</em>}' reference list.
+	 * The cached value of the '{@link #getScalarDataPropertyValues() <em>Scalar Data Property Values</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getScalarDataPropertyValues()
@@ -168,7 +188,7 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	protected EList<ScalarDataPropertyValue> scalarDataPropertyValues;
 
 	/**
-	 * The cached value of the '{@link #getStructuredDataPropertyValues() <em>Structured Data Property Values</em>}' reference list.
+	 * The cached value of the '{@link #getStructuredDataPropertyValues() <em>Structured Data Property Values</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStructuredDataPropertyValues()
@@ -194,6 +214,27 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	@Override
 	protected EClass eStaticClass() {
 		return OMLPackage.Literals.DESCRIPTION_BOX;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DescriptionKind getKind() {
+		return kind;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setKind(DescriptionKind newKind) {
+		DescriptionKind oldKind = kind;
+		kind = newKind == null ? KIND_EDEFAULT : newKind;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.DESCRIPTION_BOX__KIND, oldKind, kind));
 	}
 
 	/**
@@ -278,7 +319,7 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	 */
 	public EList<ConceptInstance> getConceptInstances() {
 		if (conceptInstances == null) {
-			conceptInstances = new EObjectResolvingEList<ConceptInstance>(ConceptInstance.class, this, OMLPackage.DESCRIPTION_BOX__CONCEPT_INSTANCES);
+			conceptInstances = new EObjectContainmentWithInverseEList<ConceptInstance>(ConceptInstance.class, this, OMLPackage.DESCRIPTION_BOX__CONCEPT_INSTANCES, OMLPackage.CONCEPT_INSTANCE__DESCRIPTION_BOX);
 		}
 		return conceptInstances;
 	}
@@ -290,7 +331,7 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	 */
 	public EList<ReifiedRelationshipInstance> getReifiedRelationshipInstances() {
 		if (reifiedRelationshipInstances == null) {
-			reifiedRelationshipInstances = new EObjectResolvingEList<ReifiedRelationshipInstance>(ReifiedRelationshipInstance.class, this, OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES);
+			reifiedRelationshipInstances = new EObjectContainmentWithInverseEList<ReifiedRelationshipInstance>(ReifiedRelationshipInstance.class, this, OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES, OMLPackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX);
 		}
 		return reifiedRelationshipInstances;
 	}
@@ -302,7 +343,7 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	 */
 	public EList<ReifiedRelationshipInstanceDomain> getReifiedRelationshipInstanceDomains() {
 		if (reifiedRelationshipInstanceDomains == null) {
-			reifiedRelationshipInstanceDomains = new EObjectResolvingEList<ReifiedRelationshipInstanceDomain>(ReifiedRelationshipInstanceDomain.class, this, OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS);
+			reifiedRelationshipInstanceDomains = new EObjectContainmentWithInverseEList<ReifiedRelationshipInstanceDomain>(ReifiedRelationshipInstanceDomain.class, this, OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS, OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_DOMAIN__DESCRIPTION_BOX);
 		}
 		return reifiedRelationshipInstanceDomains;
 	}
@@ -314,7 +355,7 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	 */
 	public EList<ReifiedRelationshipInstanceRange> getReifiedRelationshipInstanceRanges() {
 		if (reifiedRelationshipInstanceRanges == null) {
-			reifiedRelationshipInstanceRanges = new EObjectResolvingEList<ReifiedRelationshipInstanceRange>(ReifiedRelationshipInstanceRange.class, this, OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES);
+			reifiedRelationshipInstanceRanges = new EObjectContainmentWithInverseEList<ReifiedRelationshipInstanceRange>(ReifiedRelationshipInstanceRange.class, this, OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES, OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_RANGE__DESCRIPTION_BOX);
 		}
 		return reifiedRelationshipInstanceRanges;
 	}
@@ -326,7 +367,7 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	 */
 	public EList<UnreifiedRelationshipInstanceTuple> getUnreifiedRelationshipInstanceTuples() {
 		if (unreifiedRelationshipInstanceTuples == null) {
-			unreifiedRelationshipInstanceTuples = new EObjectResolvingEList<UnreifiedRelationshipInstanceTuple>(UnreifiedRelationshipInstanceTuple.class, this, OMLPackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES);
+			unreifiedRelationshipInstanceTuples = new EObjectContainmentWithInverseEList<UnreifiedRelationshipInstanceTuple>(UnreifiedRelationshipInstanceTuple.class, this, OMLPackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES, OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX);
 		}
 		return unreifiedRelationshipInstanceTuples;
 	}
@@ -338,7 +379,7 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	 */
 	public EList<DataStructureTuple> getDataStructureTuples() {
 		if (dataStructureTuples == null) {
-			dataStructureTuples = new EObjectResolvingEList<DataStructureTuple>(DataStructureTuple.class, this, OMLPackage.DESCRIPTION_BOX__DATA_STRUCTURE_TUPLES);
+			dataStructureTuples = new EObjectContainmentWithInverseEList<DataStructureTuple>(DataStructureTuple.class, this, OMLPackage.DESCRIPTION_BOX__DATA_STRUCTURE_TUPLES, OMLPackage.DATA_STRUCTURE_TUPLE__DESCRIPTION_BOX);
 		}
 		return dataStructureTuples;
 	}
@@ -350,7 +391,7 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	 */
 	public EList<ScalarDataPropertyValue> getScalarDataPropertyValues() {
 		if (scalarDataPropertyValues == null) {
-			scalarDataPropertyValues = new EObjectResolvingEList<ScalarDataPropertyValue>(ScalarDataPropertyValue.class, this, OMLPackage.DESCRIPTION_BOX__SCALAR_DATA_PROPERTY_VALUES);
+			scalarDataPropertyValues = new EObjectContainmentWithInverseEList<ScalarDataPropertyValue>(ScalarDataPropertyValue.class, this, OMLPackage.DESCRIPTION_BOX__SCALAR_DATA_PROPERTY_VALUES, OMLPackage.SCALAR_DATA_PROPERTY_VALUE__DESCRIPTION_BOX);
 		}
 		return scalarDataPropertyValues;
 	}
@@ -362,7 +403,7 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	 */
 	public EList<StructuredDataPropertyValue> getStructuredDataPropertyValues() {
 		if (structuredDataPropertyValues == null) {
-			structuredDataPropertyValues = new EObjectResolvingEList<StructuredDataPropertyValue>(StructuredDataPropertyValue.class, this, OMLPackage.DESCRIPTION_BOX__STRUCTURED_DATA_PROPERTY_VALUES);
+			structuredDataPropertyValues = new EObjectContainmentWithInverseEList<StructuredDataPropertyValue>(StructuredDataPropertyValue.class, this, OMLPackage.DESCRIPTION_BOX__STRUCTURED_DATA_PROPERTY_VALUES, OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__DESCRIPTION_BOX);
 		}
 		return structuredDataPropertyValues;
 	}
@@ -372,7 +413,7 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DescriptionBox withConceptInstances(EList<ConceptInstance> s) {
+	public DescriptionBox addConceptInstances(EList<ConceptInstance> s) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -383,7 +424,7 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DescriptionBox withReifiedRelationshipInstances(EList<ReifiedRelationshipInstance> s) {
+	public DescriptionBox addReifiedRelationshipInstances(EList<ReifiedRelationshipInstance> s) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -394,7 +435,7 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DescriptionBox withReifiedRelationshipInstanceDomains(EList<ReifiedRelationshipInstanceDomain> s) {
+	public DescriptionBox addReifiedRelationshipInstanceDomains(EList<ReifiedRelationshipInstanceDomain> s) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -405,7 +446,7 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DescriptionBox withReifiedRelationshipInstanceRanges(EList<ReifiedRelationshipInstanceRange> s) {
+	public DescriptionBox addReifiedRelationshipInstanceRanges(EList<ReifiedRelationshipInstanceRange> s) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -416,7 +457,7 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DescriptionBox withUnreifiedRelationshipInstanceTuples(EList<UnreifiedRelationshipInstanceTuple> s) {
+	public DescriptionBox addUnreifiedRelationshipInstanceTuples(EList<UnreifiedRelationshipInstanceTuple> s) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -427,7 +468,7 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DescriptionBox withDataStructureTuples(EList<DataStructureTuple> s) {
+	public DescriptionBox addDataStructureTuples(EList<DataStructureTuple> s) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -438,7 +479,7 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DescriptionBox withScalarDataPropertyValues(EList<ScalarDataPropertyValue> s) {
+	public DescriptionBox addScalarDataPropertyValues(EList<ScalarDataPropertyValue> s) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -449,29 +490,7 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DescriptionBox withStructuredDataPropertyValues(EList<StructuredDataPropertyValue> s) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String iri() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String name() {
+	public DescriptionBox addStructuredDataPropertyValues(EList<StructuredDataPropertyValue> s) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -494,6 +513,22 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getClosedWorldDefinitions()).basicAdd(otherEnd, msgs);
 			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDescriptionBoxRefinements()).basicAdd(otherEnd, msgs);
+			case OMLPackage.DESCRIPTION_BOX__CONCEPT_INSTANCES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConceptInstances()).basicAdd(otherEnd, msgs);
+			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getReifiedRelationshipInstances()).basicAdd(otherEnd, msgs);
+			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getReifiedRelationshipInstanceDomains()).basicAdd(otherEnd, msgs);
+			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getReifiedRelationshipInstanceRanges()).basicAdd(otherEnd, msgs);
+			case OMLPackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getUnreifiedRelationshipInstanceTuples()).basicAdd(otherEnd, msgs);
+			case OMLPackage.DESCRIPTION_BOX__DATA_STRUCTURE_TUPLES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDataStructureTuples()).basicAdd(otherEnd, msgs);
+			case OMLPackage.DESCRIPTION_BOX__SCALAR_DATA_PROPERTY_VALUES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getScalarDataPropertyValues()).basicAdd(otherEnd, msgs);
+			case OMLPackage.DESCRIPTION_BOX__STRUCTURED_DATA_PROPERTY_VALUES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getStructuredDataPropertyValues()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -512,6 +547,22 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 				return ((InternalEList<?>)getClosedWorldDefinitions()).basicRemove(otherEnd, msgs);
 			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS:
 				return ((InternalEList<?>)getDescriptionBoxRefinements()).basicRemove(otherEnd, msgs);
+			case OMLPackage.DESCRIPTION_BOX__CONCEPT_INSTANCES:
+				return ((InternalEList<?>)getConceptInstances()).basicRemove(otherEnd, msgs);
+			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES:
+				return ((InternalEList<?>)getReifiedRelationshipInstances()).basicRemove(otherEnd, msgs);
+			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS:
+				return ((InternalEList<?>)getReifiedRelationshipInstanceDomains()).basicRemove(otherEnd, msgs);
+			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES:
+				return ((InternalEList<?>)getReifiedRelationshipInstanceRanges()).basicRemove(otherEnd, msgs);
+			case OMLPackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES:
+				return ((InternalEList<?>)getUnreifiedRelationshipInstanceTuples()).basicRemove(otherEnd, msgs);
+			case OMLPackage.DESCRIPTION_BOX__DATA_STRUCTURE_TUPLES:
+				return ((InternalEList<?>)getDataStructureTuples()).basicRemove(otherEnd, msgs);
+			case OMLPackage.DESCRIPTION_BOX__SCALAR_DATA_PROPERTY_VALUES:
+				return ((InternalEList<?>)getScalarDataPropertyValues()).basicRemove(otherEnd, msgs);
+			case OMLPackage.DESCRIPTION_BOX__STRUCTURED_DATA_PROPERTY_VALUES:
+				return ((InternalEList<?>)getStructuredDataPropertyValues()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -538,6 +589,8 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case OMLPackage.DESCRIPTION_BOX__KIND:
+				return getKind();
 			case OMLPackage.DESCRIPTION_BOX__TERMINOLOGY_EXTENT:
 				if (resolve) return getTerminologyExtent();
 				return basicGetTerminologyExtent();
@@ -574,6 +627,9 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case OMLPackage.DESCRIPTION_BOX__KIND:
+				setKind((DescriptionKind)newValue);
+				return;
 			case OMLPackage.DESCRIPTION_BOX__TERMINOLOGY_EXTENT:
 				setTerminologyExtent((TerminologyExtent)newValue);
 				return;
@@ -629,6 +685,9 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case OMLPackage.DESCRIPTION_BOX__KIND:
+				setKind(KIND_EDEFAULT);
+				return;
 			case OMLPackage.DESCRIPTION_BOX__TERMINOLOGY_EXTENT:
 				setTerminologyExtent((TerminologyExtent)null);
 				return;
@@ -674,6 +733,8 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case OMLPackage.DESCRIPTION_BOX__KIND:
+				return kind != KIND_EDEFAULT;
 			case OMLPackage.DESCRIPTION_BOX__TERMINOLOGY_EXTENT:
 				return basicGetTerminologyExtent() != null;
 			case OMLPackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS:
@@ -706,15 +767,27 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	 * @generated
 	 */
 	@Override
-	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
-		if (baseClass == Resource.class) {
-			switch (baseOperationID) {
-				case OMLPackage.RESOURCE___IRI: return OMLPackage.DESCRIPTION_BOX___IRI;
-				case OMLPackage.RESOURCE___NAME: return OMLPackage.DESCRIPTION_BOX___NAME;
-				default: return -1;
-			}
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OMLPackage.DESCRIPTION_BOX___ADD_CONCEPT_INSTANCES__ELIST:
+				return addConceptInstances((EList<ConceptInstance>)arguments.get(0));
+			case OMLPackage.DESCRIPTION_BOX___ADD_REIFIED_RELATIONSHIP_INSTANCES__ELIST:
+				return addReifiedRelationshipInstances((EList<ReifiedRelationshipInstance>)arguments.get(0));
+			case OMLPackage.DESCRIPTION_BOX___ADD_REIFIED_RELATIONSHIP_INSTANCE_DOMAINS__ELIST:
+				return addReifiedRelationshipInstanceDomains((EList<ReifiedRelationshipInstanceDomain>)arguments.get(0));
+			case OMLPackage.DESCRIPTION_BOX___ADD_REIFIED_RELATIONSHIP_INSTANCE_RANGES__ELIST:
+				return addReifiedRelationshipInstanceRanges((EList<ReifiedRelationshipInstanceRange>)arguments.get(0));
+			case OMLPackage.DESCRIPTION_BOX___ADD_UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES__ELIST:
+				return addUnreifiedRelationshipInstanceTuples((EList<UnreifiedRelationshipInstanceTuple>)arguments.get(0));
+			case OMLPackage.DESCRIPTION_BOX___ADD_DATA_STRUCTURE_TUPLES__ELIST:
+				return addDataStructureTuples((EList<DataStructureTuple>)arguments.get(0));
+			case OMLPackage.DESCRIPTION_BOX___ADD_SCALAR_DATA_PROPERTY_VALUES__ELIST:
+				return addScalarDataPropertyValues((EList<ScalarDataPropertyValue>)arguments.get(0));
+			case OMLPackage.DESCRIPTION_BOX___ADD_STRUCTURED_DATA_PROPERTY_VALUES__ELIST:
+				return addStructuredDataPropertyValues((EList<StructuredDataPropertyValue>)arguments.get(0));
 		}
-		return super.eDerivedOperationID(baseOperationID, baseClass);
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
@@ -723,31 +796,14 @@ public class DescriptionBoxImpl extends TerminologyThingImpl implements Descript
 	 * @generated
 	 */
 	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case OMLPackage.DESCRIPTION_BOX___WITH_CONCEPT_INSTANCES__ELIST:
-				return withConceptInstances((EList<ConceptInstance>)arguments.get(0));
-			case OMLPackage.DESCRIPTION_BOX___WITH_REIFIED_RELATIONSHIP_INSTANCES__ELIST:
-				return withReifiedRelationshipInstances((EList<ReifiedRelationshipInstance>)arguments.get(0));
-			case OMLPackage.DESCRIPTION_BOX___WITH_REIFIED_RELATIONSHIP_INSTANCE_DOMAINS__ELIST:
-				return withReifiedRelationshipInstanceDomains((EList<ReifiedRelationshipInstanceDomain>)arguments.get(0));
-			case OMLPackage.DESCRIPTION_BOX___WITH_REIFIED_RELATIONSHIP_INSTANCE_RANGES__ELIST:
-				return withReifiedRelationshipInstanceRanges((EList<ReifiedRelationshipInstanceRange>)arguments.get(0));
-			case OMLPackage.DESCRIPTION_BOX___WITH_UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES__ELIST:
-				return withUnreifiedRelationshipInstanceTuples((EList<UnreifiedRelationshipInstanceTuple>)arguments.get(0));
-			case OMLPackage.DESCRIPTION_BOX___WITH_DATA_STRUCTURE_TUPLES__ELIST:
-				return withDataStructureTuples((EList<DataStructureTuple>)arguments.get(0));
-			case OMLPackage.DESCRIPTION_BOX___WITH_SCALAR_DATA_PROPERTY_VALUES__ELIST:
-				return withScalarDataPropertyValues((EList<ScalarDataPropertyValue>)arguments.get(0));
-			case OMLPackage.DESCRIPTION_BOX___WITH_STRUCTURED_DATA_PROPERTY_VALUES__ELIST:
-				return withStructuredDataPropertyValues((EList<StructuredDataPropertyValue>)arguments.get(0));
-			case OMLPackage.DESCRIPTION_BOX___IRI:
-				return iri();
-			case OMLPackage.DESCRIPTION_BOX___NAME:
-				return name();
-		}
-		return super.eInvoke(operationID, arguments);
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (kind: ");
+		result.append(kind);
+		result.append(')');
+		return result.toString();
 	}
 
 } //DescriptionBoxImpl

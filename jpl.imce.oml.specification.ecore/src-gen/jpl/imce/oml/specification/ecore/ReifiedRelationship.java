@@ -25,7 +25,11 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML ReifiedRelationship ...
+ * An OML ReifiedRelationship is an OML ConceptualEntity and a kind of OML EntityRelationship
+ * where an instance has an intrinsic identity. This means that
+ * an OML ReifiedRelationship can be involved as the domain or the
+ * range of another OML EntityRelationship as well as the
+ * domain of an OML DataRelationshipFromEntity.
  * <!-- end-model-doc -->
  *
  * <p>

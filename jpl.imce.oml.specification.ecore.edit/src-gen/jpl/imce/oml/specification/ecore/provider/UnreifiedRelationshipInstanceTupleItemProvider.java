@@ -59,11 +59,34 @@ public class UnreifiedRelationshipInstanceTupleItemProvider extends TerminologyI
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDescriptionBoxPropertyDescriptor(object);
 			addUnreifiedRelationshipPropertyDescriptor(object);
 			addDomainPropertyDescriptor(object);
 			addRangePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Description Box feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDescriptionBoxPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnreifiedRelationshipInstanceTuple_descriptionBox_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnreifiedRelationshipInstanceTuple_descriptionBox_feature", "_UI_UnreifiedRelationshipInstanceTuple_type"),
+				 OMLPackage.Literals.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

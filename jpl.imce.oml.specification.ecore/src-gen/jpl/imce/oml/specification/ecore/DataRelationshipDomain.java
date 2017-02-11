@@ -26,7 +26,8 @@ import org.eclipse.emf.cdo.CDOObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML DataRelationshipDomain ...
+ * An OML DataRelationshipDomain is an abstraction
+ * for the domain of an OML DataRelationship
  * <!-- end-model-doc -->
  *
  *

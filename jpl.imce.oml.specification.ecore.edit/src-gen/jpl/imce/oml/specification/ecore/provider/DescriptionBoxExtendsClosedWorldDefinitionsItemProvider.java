@@ -36,7 +36,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
  * @generated
  */
 public class DescriptionBoxExtendsClosedWorldDefinitionsItemProvider 
-	extends TerminologyThingItemProvider {
+	extends DescriptionBoxRelationshipItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -33,5 +33,5 @@ package jpl.imce.oml.specification.ecore;
  * @model
  * @generated
  */
-public interface Scalar extends DataRange {
+public interface Scalar extends DataRange, UnaryTermKind {
 } // Scalar

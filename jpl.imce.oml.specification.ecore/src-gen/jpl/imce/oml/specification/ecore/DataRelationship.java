@@ -25,7 +25,8 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML DataRelationship ...
+ * An OML DataRelationship is an OML DirectedBinaryRelationshipKind
+ * where the domain or the range is some kind of OML Datatype.
  * <!-- end-model-doc -->
  *
  *

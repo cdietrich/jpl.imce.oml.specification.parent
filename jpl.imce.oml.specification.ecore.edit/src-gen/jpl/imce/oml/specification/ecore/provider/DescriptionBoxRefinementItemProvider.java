@@ -37,7 +37,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DescriptionBoxRefinementItemProvider extends TerminologyThingItemProvider {
+public class DescriptionBoxRefinementItemProvider extends DescriptionBoxRelationshipItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

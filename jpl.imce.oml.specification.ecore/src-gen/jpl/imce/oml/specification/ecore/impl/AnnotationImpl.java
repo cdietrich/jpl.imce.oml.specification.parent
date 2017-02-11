@@ -20,8 +20,8 @@ package jpl.imce.oml.specification.ecore.impl;
 
 import jpl.imce.oml.specification.ecore.Annotation;
 import jpl.imce.oml.specification.ecore.AnnotationProperty;
+import jpl.imce.oml.specification.ecore.Context;
 import jpl.imce.oml.specification.ecore.OMLPackage;
-import jpl.imce.oml.specification.ecore.TerminologyBox;
 import jpl.imce.oml.specification.ecore.TerminologyThing;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -45,7 +45,7 @@ import org.eclipse.emf.internal.cdo.CDOObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link jpl.imce.oml.specification.ecore.impl.AnnotationImpl#getTerminology <em>Terminology</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.impl.AnnotationImpl#getContext <em>Context</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.AnnotationImpl#getProperty <em>Property</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.AnnotationImpl#getSubject <em>Subject</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.AnnotationImpl#getValue <em>Value</em>}</li>
@@ -118,9 +118,9 @@ public class AnnotationImpl extends CDOObjectImpl implements Annotation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TerminologyBox getTerminology() {
-		if (eContainerFeatureID() != OMLPackage.ANNOTATION__TERMINOLOGY) return null;
-		return (TerminologyBox)eContainer();
+	public Context getContext() {
+		if (eContainerFeatureID() != OMLPackage.ANNOTATION__CONTEXT) return null;
+		return (Context)eContainer();
 	}
 
 	/**
@@ -128,9 +128,9 @@ public class AnnotationImpl extends CDOObjectImpl implements Annotation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TerminologyBox basicGetTerminology() {
-		if (eContainerFeatureID() != OMLPackage.ANNOTATION__TERMINOLOGY) return null;
-		return (TerminologyBox)eInternalContainer();
+	public Context basicGetContext() {
+		if (eContainerFeatureID() != OMLPackage.ANNOTATION__CONTEXT) return null;
+		return (Context)eInternalContainer();
 	}
 
 	/**
@@ -138,8 +138,8 @@ public class AnnotationImpl extends CDOObjectImpl implements Annotation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTerminology(TerminologyBox newTerminology, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newTerminology, OMLPackage.ANNOTATION__TERMINOLOGY, msgs);
+	public NotificationChain basicSetContext(Context newContext, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newContext, OMLPackage.ANNOTATION__CONTEXT, msgs);
 		return msgs;
 	}
 
@@ -148,20 +148,20 @@ public class AnnotationImpl extends CDOObjectImpl implements Annotation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTerminology(TerminologyBox newTerminology) {
-		if (newTerminology != eInternalContainer() || (eContainerFeatureID() != OMLPackage.ANNOTATION__TERMINOLOGY && newTerminology != null)) {
-			if (EcoreUtil.isAncestor(this, (EObject)newTerminology))
+	public void setContext(Context newContext) {
+		if (newContext != eInternalContainer() || (eContainerFeatureID() != OMLPackage.ANNOTATION__CONTEXT && newContext != null)) {
+			if (EcoreUtil.isAncestor(this, (EObject)newContext))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newTerminology != null)
-				msgs = ((InternalEObject)newTerminology).eInverseAdd(this, OMLPackage.TERMINOLOGY_BOX__ANNOTATIONS, TerminologyBox.class, msgs);
-			msgs = basicSetTerminology(newTerminology, msgs);
+			if (newContext != null)
+				msgs = ((InternalEObject)newContext).eInverseAdd(this, OMLPackage.CONTEXT__ANNOTATIONS, Context.class, msgs);
+			msgs = basicSetContext(newContext, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ANNOTATION__TERMINOLOGY, newTerminology, newTerminology));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ANNOTATION__CONTEXT, newContext, newContext));
 	}
 
 	/**
@@ -269,10 +269,10 @@ public class AnnotationImpl extends CDOObjectImpl implements Annotation {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.ANNOTATION__TERMINOLOGY:
+			case OMLPackage.ANNOTATION__CONTEXT:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetTerminology((TerminologyBox)otherEnd, msgs);
+				return basicSetContext((Context)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -285,8 +285,8 @@ public class AnnotationImpl extends CDOObjectImpl implements Annotation {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.ANNOTATION__TERMINOLOGY:
-				return basicSetTerminology(null, msgs);
+			case OMLPackage.ANNOTATION__CONTEXT:
+				return basicSetContext(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -299,8 +299,8 @@ public class AnnotationImpl extends CDOObjectImpl implements Annotation {
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case OMLPackage.ANNOTATION__TERMINOLOGY:
-				return eInternalContainer().eInverseRemove(this, OMLPackage.TERMINOLOGY_BOX__ANNOTATIONS, TerminologyBox.class, msgs);
+			case OMLPackage.ANNOTATION__CONTEXT:
+				return eInternalContainer().eInverseRemove(this, OMLPackage.CONTEXT__ANNOTATIONS, Context.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -313,9 +313,9 @@ public class AnnotationImpl extends CDOObjectImpl implements Annotation {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.ANNOTATION__TERMINOLOGY:
-				if (resolve) return getTerminology();
-				return basicGetTerminology();
+			case OMLPackage.ANNOTATION__CONTEXT:
+				if (resolve) return getContext();
+				return basicGetContext();
 			case OMLPackage.ANNOTATION__PROPERTY:
 				if (resolve) return getProperty();
 				return basicGetProperty();
@@ -336,8 +336,8 @@ public class AnnotationImpl extends CDOObjectImpl implements Annotation {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.ANNOTATION__TERMINOLOGY:
-				setTerminology((TerminologyBox)newValue);
+			case OMLPackage.ANNOTATION__CONTEXT:
+				setContext((Context)newValue);
 				return;
 			case OMLPackage.ANNOTATION__PROPERTY:
 				setProperty((AnnotationProperty)newValue);
@@ -360,8 +360,8 @@ public class AnnotationImpl extends CDOObjectImpl implements Annotation {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.ANNOTATION__TERMINOLOGY:
-				setTerminology((TerminologyBox)null);
+			case OMLPackage.ANNOTATION__CONTEXT:
+				setContext((Context)null);
 				return;
 			case OMLPackage.ANNOTATION__PROPERTY:
 				setProperty((AnnotationProperty)null);
@@ -384,8 +384,8 @@ public class AnnotationImpl extends CDOObjectImpl implements Annotation {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.ANNOTATION__TERMINOLOGY:
-				return basicGetTerminology() != null;
+			case OMLPackage.ANNOTATION__CONTEXT:
+				return basicGetContext() != null;
 			case OMLPackage.ANNOTATION__PROPERTY:
 				return property != null;
 			case OMLPackage.ANNOTATION__SUBJECT:

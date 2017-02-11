@@ -26,7 +26,7 @@ import org.eclipse.emf.cdo.CDOObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML TerminologyThing is an abstraction for everything
+ * An OML TerminologyThing is a logical abstraction for everything
  * in a vocabulary that is globally identified by a UUID.
  * <!-- end-model-doc -->
  *

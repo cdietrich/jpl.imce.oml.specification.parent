@@ -25,7 +25,10 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML DescriptionBoxExtendsClosedWorldDefinitions ...
+ * An OML DescriptionBoxExtendsClosedWorldDefinitions specifies
+ * an OML DescriptionBoxRelationship from an OML DescriptionBox
+ * to an OML TerminologyBox such that an OML SingletonInstance defined in the
+ * former can be an instance of an OML Term defined in the latter.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -40,7 +43,7 @@ package jpl.imce.oml.specification.ecore;
  * @model
  * @generated
  */
-public interface DescriptionBoxExtendsClosedWorldDefinitions extends TerminologyThing {
+public interface DescriptionBoxExtendsClosedWorldDefinitions extends DescriptionBoxRelationship {
 	/**
 	 * Returns the value of the '<em><b>Description Box</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getClosedWorldDefinitions <em>Closed World Definitions</em>}'.
@@ -94,5 +97,23 @@ public interface DescriptionBoxExtendsClosedWorldDefinitions extends Terminology
 	 * @generated
 	 */
 	void setClosedWorldDefinitions(TerminologyBox value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getDescriptionBox();'"
+	 * @generated
+	 */
+	DescriptionBox descriptionDomain();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getClosedWorldDefinitions();'"
+	 * @generated
+	 */
+	Context contextTarget();
 
 } // DescriptionBoxExtendsClosedWorldDefinitions

@@ -37,5 +37,5 @@ package jpl.imce.oml.specification.ecore;
  * @model
  * @generated
  */
-public interface Structure extends Datatype {
+public interface Structure extends Datatype, UnaryTermKind {
 } // Structure

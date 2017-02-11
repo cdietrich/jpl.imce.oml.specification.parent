@@ -32,7 +32,7 @@ package jpl.imce.oml.specification.ecore;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link jpl.imce.oml.specification.ecore.TerminologyBoxAxiom#getTerminology <em>Terminology</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.TerminologyBoxAxiom#getTbox <em>Tbox</em>}</li>
  * </ul>
  *
  * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyBoxAxiom()
@@ -41,31 +41,31 @@ package jpl.imce.oml.specification.ecore;
  */
 public interface TerminologyBoxAxiom extends TerminologyAxiom {
 	/**
-	 * Returns the value of the '<em><b>Terminology</b></em>' container reference.
+	 * Returns the value of the '<em><b>Tbox</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.TerminologyBox#getTerminologyBoxAxioms <em>Terminology Box Axioms</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Terminology</em>' container reference isn't clear,
+	 * If the meaning of the '<em>Tbox</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Terminology</em>' container reference.
-	 * @see #setTerminology(TerminologyBox)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyBoxAxiom_Terminology()
+	 * @return the value of the '<em>Tbox</em>' container reference.
+	 * @see #setTbox(TerminologyBox)
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyBoxAxiom_Tbox()
 	 * @see jpl.imce.oml.specification.ecore.TerminologyBox#getTerminologyBoxAxioms
 	 * @model opposite="terminologyBoxAxioms" required="true" transient="false"
 	 * @generated
 	 */
-	TerminologyBox getTerminology();
+	TerminologyBox getTbox();
 
 	/**
-	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.TerminologyBoxAxiom#getTerminology <em>Terminology</em>}' container reference.
+	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.TerminologyBoxAxiom#getTbox <em>Tbox</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Terminology</em>' container reference.
-	 * @see #getTerminology()
+	 * @param value the new value of the '<em>Tbox</em>' container reference.
+	 * @see #getTbox()
 	 * @generated
 	 */
-	void setTerminology(TerminologyBox value);
+	void setTbox(TerminologyBox value);
 
 } // TerminologyBoxAxiom

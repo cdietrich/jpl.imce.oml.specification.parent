@@ -18,12 +18,17 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import java.lang.reflect.InvocationTargetException;
+
+import jpl.imce.oml.specification.ecore.Context;
 import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.DescriptionBoxRefinement;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -47,7 +52,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *
  * @generated
  */
-public class DescriptionBoxRefinementImpl extends TerminologyThingImpl implements DescriptionBoxRefinement {
+public class DescriptionBoxRefinementImpl extends DescriptionBoxRelationshipImpl implements DescriptionBoxRefinement {
 	/**
 	 * The cached value of the '{@link #getRefinedDescriptionBox() <em>Refined Description Box</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -171,6 +176,24 @@ public class DescriptionBoxRefinementImpl extends TerminologyThingImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DescriptionBox descriptionDomain() {
+		return this.getRefiningDescriptionBox();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Context contextTarget() {
+		return this.getRefinedDescriptionBox();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -278,6 +301,22 @@ public class DescriptionBoxRefinementImpl extends TerminologyThingImpl implement
 				return refinedDescriptionBox != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OMLPackage.DESCRIPTION_BOX_REFINEMENT___DESCRIPTION_DOMAIN:
+				return descriptionDomain();
+			case OMLPackage.DESCRIPTION_BOX_REFINEMENT___CONTEXT_TARGET:
+				return contextTarget();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //DescriptionBoxRefinementImpl

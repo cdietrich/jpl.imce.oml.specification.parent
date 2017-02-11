@@ -22,7 +22,7 @@ package jpl.imce.oml.specification.ecore.provider;
 import java.util.Collection;
 import java.util.List;
 
-import jpl.imce.oml.specification.ecore.TerminologyStatement;
+import jpl.imce.oml.specification.ecore.DescriptionBoxRelationship;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -30,19 +30,19 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link jpl.imce.oml.specification.ecore.TerminologyStatement} object.
+ * This is the item provider adapter for a {@link jpl.imce.oml.specification.ecore.DescriptionBoxRelationship} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class TerminologyStatementItemProvider extends TerminologyThingItemProvider {
+public class DescriptionBoxRelationshipItemProvider extends TerminologyThingItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TerminologyStatementItemProvider(AdapterFactory adapterFactory) {
+	public DescriptionBoxRelationshipItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -69,10 +69,10 @@ public class TerminologyStatementItemProvider extends TerminologyThingItemProvid
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((TerminologyStatement)object).getUuid();
+		String label = ((DescriptionBoxRelationship)object).getUuid();
 		return label == null || label.length() == 0 ?
-			getString("_UI_TerminologyStatement_type") :
-			getString("_UI_TerminologyStatement_type") + " " + label;
+			getString("_UI_DescriptionBoxRelationship_type") :
+			getString("_UI_DescriptionBoxRelationship_type") + " " + label;
 	}
 	
 

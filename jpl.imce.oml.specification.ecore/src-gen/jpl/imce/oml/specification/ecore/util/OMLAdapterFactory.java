@@ -124,6 +124,10 @@ public class OMLAdapterFactory extends AdapterFactoryImpl {
 				return createTerminologyExtentAdapter();
 			}
 			@Override
+			public Adapter caseContext(Context object) {
+				return createContextAdapter();
+			}
+			@Override
 			public Adapter caseTerminologyBox(TerminologyBox object) {
 				return createTerminologyBoxAdapter();
 			}
@@ -134,10 +138,6 @@ public class OMLAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseTerminologyGraph(TerminologyGraph object) {
 				return createTerminologyGraphAdapter();
-			}
-			@Override
-			public Adapter caseTerminologyStatement(TerminologyStatement object) {
-				return createTerminologyStatementAdapter();
 			}
 			@Override
 			public Adapter caseTerminologyBoxStatement(TerminologyBoxStatement object) {
@@ -392,6 +392,10 @@ public class OMLAdapterFactory extends AdapterFactoryImpl {
 				return createDescriptionBoxAdapter();
 			}
 			@Override
+			public Adapter caseDescriptionBoxRelationship(DescriptionBoxRelationship object) {
+				return createDescriptionBoxRelationshipAdapter();
+			}
+			@Override
 			public Adapter caseDescriptionBoxExtendsClosedWorldDefinitions(DescriptionBoxExtendsClosedWorldDefinitions object) {
 				return createDescriptionBoxExtendsClosedWorldDefinitionsAdapter();
 			}
@@ -590,6 +594,20 @@ public class OMLAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.Context <em>Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpl.imce.oml.specification.ecore.Context
+	 * @generated
+	 */
+	public Adapter createContextAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.TerminologyBox <em>Terminology Box</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -628,20 +646,6 @@ public class OMLAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTerminologyGraphAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.TerminologyStatement <em>Terminology Statement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see jpl.imce.oml.specification.ecore.TerminologyStatement
-	 * @generated
-	 */
-	public Adapter createTerminologyStatementAdapter() {
 		return null;
 	}
 
@@ -1524,6 +1528,20 @@ public class OMLAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDescriptionBoxAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.DescriptionBoxRelationship <em>Description Box Relationship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBoxRelationship
+	 * @generated
+	 */
+	public Adapter createDescriptionBoxRelationshipAdapter() {
 		return null;
 	}
 

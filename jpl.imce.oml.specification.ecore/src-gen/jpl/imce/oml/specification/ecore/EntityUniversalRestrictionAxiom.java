@@ -25,7 +25,8 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML EntityUniversalRestrictionAxiom ...
+ * An OML EntityUniversalRestrictionAxiom maps
+ * to an [OWL2 Object Property Universal Restriction].
  * <!-- end-model-doc -->
  *
  *

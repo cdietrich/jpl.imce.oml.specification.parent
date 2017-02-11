@@ -37,7 +37,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TerminologyBoxStatementItemProvider extends TerminologyStatementItemProvider {
+public class TerminologyBoxStatementItemProvider extends TerminologyThingItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -59,25 +59,25 @@ public class TerminologyBoxStatementItemProvider extends TerminologyStatementIte
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addGraphPropertyDescriptor(object);
+			addTboxPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Graph feature.
+	 * This adds a property descriptor for the Tbox feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addGraphPropertyDescriptor(Object object) {
+	protected void addTboxPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_TerminologyBoxStatement_graph_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TerminologyBoxStatement_graph_feature", "_UI_TerminologyBoxStatement_type"),
-				 OMLPackage.Literals.TERMINOLOGY_BOX_STATEMENT__GRAPH,
+				 getString("_UI_TerminologyBoxStatement_tbox_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TerminologyBoxStatement_tbox_feature", "_UI_TerminologyBoxStatement_type"),
+				 OMLPackage.Literals.TERMINOLOGY_BOX_STATEMENT__TBOX,
 				 true,
 				 false,
 				 true,

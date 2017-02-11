@@ -25,13 +25,18 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML ReifiedRelationshipInstanceRange ...
+ * An OML ReifiedRelationshipInstanceRange specifies which OML ConceptualEntitySingletonInstance
+ * plays the role of the range for an OML ReifiedRelationshipInstance.
+ * An OML ReifiedRelationshipInstanceRange has no intrinsic identity; instead,
+ * an OML ReifiedRelationshipInstanceRange is semantically equivalent
+ * to another OML ReifiedRelationshipInstanceRange referencing the same property and range.
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceRange#getDescriptionBox <em>Description Box</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceRange#getReifiedRelationshipInstance <em>Reified Relationship Instance</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceRange#getRange <em>Range</em>}</li>
  * </ul>
@@ -41,6 +46,34 @@ package jpl.imce.oml.specification.ecore;
  * @generated
  */
 public interface ReifiedRelationshipInstanceRange extends TerminologyInstanceAssertion {
+	/**
+	 * Returns the value of the '<em><b>Description Box</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getReifiedRelationshipInstanceRanges <em>Reified Relationship Instance Ranges</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Description Box</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Description Box</em>' container reference.
+	 * @see #setDescriptionBox(DescriptionBox)
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getReifiedRelationshipInstanceRange_DescriptionBox()
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getReifiedRelationshipInstanceRanges
+	 * @model opposite="reifiedRelationshipInstanceRanges" required="true" transient="false"
+	 * @generated
+	 */
+	DescriptionBox getDescriptionBox();
+
+	/**
+	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceRange#getDescriptionBox <em>Description Box</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Description Box</em>' container reference.
+	 * @see #getDescriptionBox()
+	 * @generated
+	 */
+	void setDescriptionBox(DescriptionBox value);
+
 	/**
 	 * Returns the value of the '<em><b>Reified Relationship Instance</b></em>' reference.
 	 * <!-- begin-user-doc -->

@@ -25,7 +25,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML Concept ...
+ * An OML Concept is an OML ConceptualEntity of OML UnaryTermKind.
  * <!-- end-model-doc -->
  *
  *

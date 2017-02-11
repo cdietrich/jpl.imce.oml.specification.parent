@@ -25,7 +25,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML Axiom ...
+ * An OML Axiom maps to a pattern of [OWL2 Axioms].
  * <!-- end-model-doc -->
  *
  *

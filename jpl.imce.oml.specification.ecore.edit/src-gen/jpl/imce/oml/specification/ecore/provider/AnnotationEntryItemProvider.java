@@ -78,7 +78,7 @@ public class AnnotationEntryItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTerminologyPropertyDescriptor(object);
+			addContextPropertyDescriptor(object);
 			addSubjectPropertyDescriptor(object);
 			addValuePropertyDescriptor(object);
 		}
@@ -86,19 +86,19 @@ public class AnnotationEntryItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Terminology feature.
+	 * This adds a property descriptor for the Context feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTerminologyPropertyDescriptor(Object object) {
+	protected void addContextPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AnnotationEntry_terminology_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationEntry_terminology_feature", "_UI_AnnotationEntry_type"),
-				 OMLPackage.Literals.ANNOTATION_ENTRY__TERMINOLOGY,
+				 getString("_UI_AnnotationEntry_context_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationEntry_context_feature", "_UI_AnnotationEntry_type"),
+				 OMLPackage.Literals.ANNOTATION_ENTRY__CONTEXT,
 				 true,
 				 false,
 				 true,

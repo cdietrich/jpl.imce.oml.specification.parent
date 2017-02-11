@@ -42,7 +42,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TerminologyBoxItemProvider extends TerminologyThingItemProvider {
+public class TerminologyBoxItemProvider extends ContextItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -64,32 +64,9 @@ public class TerminologyBoxItemProvider extends TerminologyThingItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIriPropertyDescriptor(object);
 			addKindPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Iri feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIriPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_TerminologyBox_iri_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TerminologyBox_iri_feature", "_UI_TerminologyBox_type"),
-				 OMLPackage.Literals.TERMINOLOGY_BOX__IRI,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -126,7 +103,6 @@ public class TerminologyBoxItemProvider extends TerminologyThingItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OMLPackage.Literals.TERMINOLOGY_BOX__ANNOTATIONS);
 			childrenFeatures.add(OMLPackage.Literals.TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS);
 			childrenFeatures.add(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS);
 		}
@@ -173,11 +149,9 @@ public class TerminologyBoxItemProvider extends TerminologyThingItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TerminologyBox.class)) {
-			case OMLPackage.TERMINOLOGY_BOX__IRI:
 			case OMLPackage.TERMINOLOGY_BOX__KIND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case OMLPackage.TERMINOLOGY_BOX__ANNOTATIONS:
 			case OMLPackage.TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS:
 			case OMLPackage.TERMINOLOGY_BOX__BOX_STATEMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -196,11 +170,6 @@ public class TerminologyBoxItemProvider extends TerminologyThingItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__ANNOTATIONS,
-				 OMLFactory.eINSTANCE.createAnnotation()));
 
 		newChildDescriptors.add
 			(createChildParameter

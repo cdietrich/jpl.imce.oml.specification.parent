@@ -22,8 +22,8 @@ import java.lang.reflect.InvocationTargetException;
 
 import jpl.imce.oml.specification.ecore.Concept;
 import jpl.imce.oml.specification.ecore.ConceptSpecializationAxiom;
+import jpl.imce.oml.specification.ecore.Entity;
 import jpl.imce.oml.specification.ecore.OMLPackage;
-import jpl.imce.oml.specification.ecore.Term;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -170,7 +170,7 @@ public class ConceptSpecializationAxiomImpl extends SpecializationAxiomImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Term child() {
+	public Entity child() {
 		return this.getSubConcept();
 	}
 
@@ -179,7 +179,7 @@ public class ConceptSpecializationAxiomImpl extends SpecializationAxiomImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Term parent() {
+	public Entity parent() {
 		return this.getSuperConcept();
 	}
 

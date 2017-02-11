@@ -25,7 +25,8 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML EntityExistentialRestrictionAxiom ...
+ * An OML EntityExistentialRestrictionAxiom maps
+ * to an [OWL2 Object Property Existential Restriction].
  * <!-- end-model-doc -->
  *
  *

@@ -25,7 +25,8 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Semantics: OWL2 Data Property Restrictions
+ * An OML EntityScalarDataPropertyRestrictionAxiom maps to
+ * some kind of OWL2 Data Property Restriction.
  * <!-- end-model-doc -->
  *
  * <p>

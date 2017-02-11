@@ -25,7 +25,11 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML Datatype ...
+ * An OML Datatype is a common abstraction for what should be, in principle,
+ * [OWL2 DataRange] of arity 1 (atomic) or > 1 (tuple structure).
+ * In practice, an OML DataType maps to the [OWL2-DL] subset; which means
+ * that an atomic OML Datatype maps to an [OWL2 Datatype] whereas
+ * a structured OML Datatype maps to an [OWL2 Class].
  * <!-- end-model-doc -->
  *
  *
@@ -33,5 +37,5 @@ package jpl.imce.oml.specification.ecore;
  * @model abstract="true"
  * @generated
  */
-public interface Datatype extends Term, UnaryTermKind {
+public interface Datatype extends Term {
 } // Datatype

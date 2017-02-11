@@ -18,31 +18,21 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import java.lang.reflect.InvocationTargetException;
+
+import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.OMLPackage;
-import jpl.imce.oml.specification.ecore.TerminologyExtent;
+import jpl.imce.oml.specification.ecore.Resource;
 import jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion;
 
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Terminology Instance Assertion</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * The following features are implemented:
- * </p>
- * <ul>
- *   <li>{@link jpl.imce.oml.specification.ecore.impl.TerminologyInstanceAssertionImpl#getTerminologyExtent <em>Terminology Extent</em>}</li>
- * </ul>
  *
  * @generated
  */
@@ -71,9 +61,10 @@ public abstract class TerminologyInstanceAssertionImpl extends TerminologyThingI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TerminologyExtent getTerminologyExtent() {
-		if (eContainerFeatureID() != OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION__TERMINOLOGY_EXTENT) return null;
-		return (TerminologyExtent)eContainer();
+	public DescriptionBox descriptionBox() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -81,9 +72,10 @@ public abstract class TerminologyInstanceAssertionImpl extends TerminologyThingI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TerminologyExtent basicGetTerminologyExtent() {
-		if (eContainerFeatureID() != OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION__TERMINOLOGY_EXTENT) return null;
-		return (TerminologyExtent)eInternalContainer();
+	public String iri() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -91,30 +83,10 @@ public abstract class TerminologyInstanceAssertionImpl extends TerminologyThingI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTerminologyExtent(TerminologyExtent newTerminologyExtent, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newTerminologyExtent, OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION__TERMINOLOGY_EXTENT, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTerminologyExtent(TerminologyExtent newTerminologyExtent) {
-		if (newTerminologyExtent != eInternalContainer() || (eContainerFeatureID() != OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION__TERMINOLOGY_EXTENT && newTerminologyExtent != null)) {
-			if (EcoreUtil.isAncestor(this, (EObject)newTerminologyExtent))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newTerminologyExtent != null)
-				msgs = ((InternalEObject)newTerminologyExtent).eInverseAdd(this, OMLPackage.TERMINOLOGY_EXTENT__INSTANCE_ASSERTIONS, TerminologyExtent.class, msgs);
-			msgs = basicSetTerminologyExtent(newTerminologyExtent, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION__TERMINOLOGY_EXTENT, newTerminologyExtent, newTerminologyExtent));
+	public String name() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -123,14 +95,15 @@ public abstract class TerminologyInstanceAssertionImpl extends TerminologyThingI
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION__TERMINOLOGY_EXTENT:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetTerminologyExtent((TerminologyExtent)otherEnd, msgs);
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == Resource.class) {
+			switch (baseOperationID) {
+				case OMLPackage.RESOURCE___IRI: return OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___IRI;
+				case OMLPackage.RESOURCE___NAME: return OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___NAME;
+				default: return -1;
+			}
 		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
+		return super.eDerivedOperationID(baseOperationID, baseClass);
 	}
 
 	/**
@@ -139,85 +112,16 @@ public abstract class TerminologyInstanceAssertionImpl extends TerminologyThingI
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION__TERMINOLOGY_EXTENT:
-				return basicSetTerminologyExtent(null, msgs);
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___DESCRIPTION_BOX:
+				return descriptionBox();
+			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___IRI:
+				return iri();
+			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___NAME:
+				return name();
 		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION__TERMINOLOGY_EXTENT:
-				return eInternalContainer().eInverseRemove(this, OMLPackage.TERMINOLOGY_EXTENT__INSTANCE_ASSERTIONS, TerminologyExtent.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION__TERMINOLOGY_EXTENT:
-				if (resolve) return getTerminologyExtent();
-				return basicGetTerminologyExtent();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION__TERMINOLOGY_EXTENT:
-				setTerminologyExtent((TerminologyExtent)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION__TERMINOLOGY_EXTENT:
-				setTerminologyExtent((TerminologyExtent)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION__TERMINOLOGY_EXTENT:
-				return basicGetTerminologyExtent() != null;
-		}
-		return super.eIsSet(featureID);
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //TerminologyInstanceAssertionImpl

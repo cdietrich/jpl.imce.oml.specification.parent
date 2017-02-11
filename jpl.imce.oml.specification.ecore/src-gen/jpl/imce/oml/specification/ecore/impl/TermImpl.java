@@ -132,8 +132,8 @@ public abstract class TermImpl extends TerminologyBoxStatementImpl implements Te
 	 * @generated
 	 */
 	public String iri() {
-		TerminologyBox _graph = this.getGraph();
-		String _iri = _graph.iri();
+		TerminologyBox _tbox = this.getTbox();
+		String _iri = _tbox.iri();
 		String _plus = (_iri + "#");
 		String _name = this.name();
 		return (_plus + _name);

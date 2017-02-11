@@ -25,7 +25,11 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML ConceptDesignationTerminologyAxiom ...
+ * An OML ConceptDesignationTerminologyAxiom establishes
+ * a relationship from a source OML TerminologyBox
+ * where a designated OML Concept is defined to
+ * a target OML TerminologyGraph in which the internal
+ * structure of the designated OML Concept can be defined.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -109,7 +113,7 @@ public interface ConceptDesignationTerminologyAxiom extends TerminologyBoxAxiom 
 	 * The designationTerminologyGraph is the source
 	 * <!-- end-model-doc -->
 	 * @model unique="false" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getTerminology();'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getTbox();'"
 	 * @generated
 	 */
 	TerminologyBox source();

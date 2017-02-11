@@ -26,7 +26,9 @@ import org.eclipse.emf.cdo.CDOObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML DirectedBinaryRelationshipKind ...
+ * An OML DirectedBinaryRelationshipKind is an abstraction
+ * for the category of OML Terms
+ * that are relationships with arity 2
  * <!-- end-model-doc -->
  *
  *

@@ -26,9 +26,17 @@ package jpl.imce.oml.specification.ecore;
  *
  * <!-- begin-model-doc -->
  * An OML PlainLiteralScalarRestriction is a data range that specifies how one plain literal scalar adds facet restrictions to another.
- * Applies when the restricted scalar represents plain literals (OWL2: 4.3)
- * i.e., when it is one of the following scalars (or their transitively restricted ones):
- * rdf:PlainLiteral
+ * Applicable when the restricted scalar represents [rdf:PlainLiteral].
+ * 
+ * The restricted scalar must be directly or indirectly a restriction of:
+ * - [rdf:PlainLiteral]
+ * 
+ * Facets:
+ * - [xsd:langRange]
+ * - [xsd:length]
+ * - [xsd:minLength]
+ * - [xsd:maxLength]
+ * - [xsd:pattern]
  * <!-- end-model-doc -->
  *
  * <p>
@@ -39,7 +47,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getMinLength <em>Min Length</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getMaxLength <em>Max Length</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getPattern <em>Pattern</em>}</li>
- *   <li>{@link jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getLanguage <em>Language</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getLangRange <em>Lang Range</em>}</li>
  * </ul>
  *
  * @see jpl.imce.oml.specification.ecore.OMLPackage#getPlainLiteralScalarRestriction()
@@ -148,28 +156,28 @@ public interface PlainLiteralScalarRestriction extends RestrictedDataRange {
 	void setPattern(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Language</b></em>' attribute.
+	 * Returns the value of the '<em><b>Lang Range</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The language of the plain literal (http://www.rfc-editor.org/rfc/bcp/bcp47.txt)
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Language</em>' attribute.
-	 * @see #setLanguage(String)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getPlainLiteralScalarRestriction_Language()
-	 * @model unique="false" dataType="jpl.imce.oml.specification.ecore.Language"
+	 * @return the value of the '<em>Lang Range</em>' attribute.
+	 * @see #setLangRange(String)
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getPlainLiteralScalarRestriction_LangRange()
+	 * @model unique="false" dataType="jpl.imce.oml.specification.ecore.LangRange"
 	 * @generated
 	 */
-	String getLanguage();
+	String getLangRange();
 
 	/**
-	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getLanguage <em>Language</em>}' attribute.
+	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getLangRange <em>Lang Range</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Language</em>' attribute.
-	 * @see #getLanguage()
+	 * @param value the new value of the '<em>Lang Range</em>' attribute.
+	 * @see #getLangRange()
 	 * @generated
 	 */
-	void setLanguage(String value);
+	void setLangRange(String value);
 
 } // PlainLiteralScalarRestriction

@@ -41,12 +41,12 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link jpl.imce.oml.specification.ecore.impl.TerminologyBoxStatementImpl#getGraph <em>Graph</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.impl.TerminologyBoxStatementImpl#getTbox <em>Tbox</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class TerminologyBoxStatementImpl extends TerminologyStatementImpl implements TerminologyBoxStatement {
+public abstract class TerminologyBoxStatementImpl extends TerminologyThingImpl implements TerminologyBoxStatement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -71,8 +71,8 @@ public abstract class TerminologyBoxStatementImpl extends TerminologyStatementIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TerminologyBox getGraph() {
-		if (eContainerFeatureID() != OMLPackage.TERMINOLOGY_BOX_STATEMENT__GRAPH) return null;
+	public TerminologyBox getTbox() {
+		if (eContainerFeatureID() != OMLPackage.TERMINOLOGY_BOX_STATEMENT__TBOX) return null;
 		return (TerminologyBox)eContainer();
 	}
 
@@ -81,8 +81,8 @@ public abstract class TerminologyBoxStatementImpl extends TerminologyStatementIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TerminologyBox basicGetGraph() {
-		if (eContainerFeatureID() != OMLPackage.TERMINOLOGY_BOX_STATEMENT__GRAPH) return null;
+	public TerminologyBox basicGetTbox() {
+		if (eContainerFeatureID() != OMLPackage.TERMINOLOGY_BOX_STATEMENT__TBOX) return null;
 		return (TerminologyBox)eInternalContainer();
 	}
 
@@ -91,8 +91,8 @@ public abstract class TerminologyBoxStatementImpl extends TerminologyStatementIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetGraph(TerminologyBox newGraph, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newGraph, OMLPackage.TERMINOLOGY_BOX_STATEMENT__GRAPH, msgs);
+	public NotificationChain basicSetTbox(TerminologyBox newTbox, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newTbox, OMLPackage.TERMINOLOGY_BOX_STATEMENT__TBOX, msgs);
 		return msgs;
 	}
 
@@ -101,20 +101,20 @@ public abstract class TerminologyBoxStatementImpl extends TerminologyStatementIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGraph(TerminologyBox newGraph) {
-		if (newGraph != eInternalContainer() || (eContainerFeatureID() != OMLPackage.TERMINOLOGY_BOX_STATEMENT__GRAPH && newGraph != null)) {
-			if (EcoreUtil.isAncestor(this, (EObject)newGraph))
+	public void setTbox(TerminologyBox newTbox) {
+		if (newTbox != eInternalContainer() || (eContainerFeatureID() != OMLPackage.TERMINOLOGY_BOX_STATEMENT__TBOX && newTbox != null)) {
+			if (EcoreUtil.isAncestor(this, (EObject)newTbox))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newGraph != null)
-				msgs = ((InternalEObject)newGraph).eInverseAdd(this, OMLPackage.TERMINOLOGY_BOX__BOX_STATEMENTS, TerminologyBox.class, msgs);
-			msgs = basicSetGraph(newGraph, msgs);
+			if (newTbox != null)
+				msgs = ((InternalEObject)newTbox).eInverseAdd(this, OMLPackage.TERMINOLOGY_BOX__BOX_STATEMENTS, TerminologyBox.class, msgs);
+			msgs = basicSetTbox(newTbox, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.TERMINOLOGY_BOX_STATEMENT__GRAPH, newGraph, newGraph));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.TERMINOLOGY_BOX_STATEMENT__TBOX, newTbox, newTbox));
 	}
 
 	/**
@@ -125,10 +125,10 @@ public abstract class TerminologyBoxStatementImpl extends TerminologyStatementIm
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BOX_STATEMENT__GRAPH:
+			case OMLPackage.TERMINOLOGY_BOX_STATEMENT__TBOX:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetGraph((TerminologyBox)otherEnd, msgs);
+				return basicSetTbox((TerminologyBox)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -141,8 +141,8 @@ public abstract class TerminologyBoxStatementImpl extends TerminologyStatementIm
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BOX_STATEMENT__GRAPH:
-				return basicSetGraph(null, msgs);
+			case OMLPackage.TERMINOLOGY_BOX_STATEMENT__TBOX:
+				return basicSetTbox(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -155,7 +155,7 @@ public abstract class TerminologyBoxStatementImpl extends TerminologyStatementIm
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case OMLPackage.TERMINOLOGY_BOX_STATEMENT__GRAPH:
+			case OMLPackage.TERMINOLOGY_BOX_STATEMENT__TBOX:
 				return eInternalContainer().eInverseRemove(this, OMLPackage.TERMINOLOGY_BOX__BOX_STATEMENTS, TerminologyBox.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -169,9 +169,9 @@ public abstract class TerminologyBoxStatementImpl extends TerminologyStatementIm
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BOX_STATEMENT__GRAPH:
-				if (resolve) return getGraph();
-				return basicGetGraph();
+			case OMLPackage.TERMINOLOGY_BOX_STATEMENT__TBOX:
+				if (resolve) return getTbox();
+				return basicGetTbox();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -184,8 +184,8 @@ public abstract class TerminologyBoxStatementImpl extends TerminologyStatementIm
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BOX_STATEMENT__GRAPH:
-				setGraph((TerminologyBox)newValue);
+			case OMLPackage.TERMINOLOGY_BOX_STATEMENT__TBOX:
+				setTbox((TerminologyBox)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -199,8 +199,8 @@ public abstract class TerminologyBoxStatementImpl extends TerminologyStatementIm
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BOX_STATEMENT__GRAPH:
-				setGraph((TerminologyBox)null);
+			case OMLPackage.TERMINOLOGY_BOX_STATEMENT__TBOX:
+				setTbox((TerminologyBox)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -214,8 +214,8 @@ public abstract class TerminologyBoxStatementImpl extends TerminologyStatementIm
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BOX_STATEMENT__GRAPH:
-				return basicGetGraph() != null;
+			case OMLPackage.TERMINOLOGY_BOX_STATEMENT__TBOX:
+				return basicGetTbox() != null;
 		}
 		return super.eIsSet(featureID);
 	}

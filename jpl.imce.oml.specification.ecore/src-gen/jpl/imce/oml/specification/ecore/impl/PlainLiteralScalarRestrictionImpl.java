@@ -39,7 +39,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.PlainLiteralScalarRestrictionImpl#getMinLength <em>Min Length</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.PlainLiteralScalarRestrictionImpl#getMaxLength <em>Max Length</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.PlainLiteralScalarRestrictionImpl#getPattern <em>Pattern</em>}</li>
- *   <li>{@link jpl.imce.oml.specification.ecore.impl.PlainLiteralScalarRestrictionImpl#getLanguage <em>Language</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.impl.PlainLiteralScalarRestrictionImpl#getLangRange <em>Lang Range</em>}</li>
  * </ul>
  *
  * @generated
@@ -126,24 +126,24 @@ public class PlainLiteralScalarRestrictionImpl extends RestrictedDataRangeImpl i
 	protected String pattern = PATTERN_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLanguage() <em>Language</em>}' attribute.
+	 * The default value of the '{@link #getLangRange() <em>Lang Range</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLanguage()
+	 * @see #getLangRange()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String LANGUAGE_EDEFAULT = null;
+	protected static final String LANG_RANGE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getLanguage() <em>Language</em>}' attribute.
+	 * The cached value of the '{@link #getLangRange() <em>Lang Range</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLanguage()
+	 * @see #getLangRange()
 	 * @generated
 	 * @ordered
 	 */
-	protected String language = LANGUAGE_EDEFAULT;
+	protected String langRange = LANG_RANGE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -253,8 +253,8 @@ public class PlainLiteralScalarRestrictionImpl extends RestrictedDataRangeImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLanguage() {
-		return language;
+	public String getLangRange() {
+		return langRange;
 	}
 
 	/**
@@ -262,11 +262,11 @@ public class PlainLiteralScalarRestrictionImpl extends RestrictedDataRangeImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLanguage(String newLanguage) {
-		String oldLanguage = language;
-		language = newLanguage;
+	public void setLangRange(String newLangRange) {
+		String oldLangRange = langRange;
+		langRange = newLangRange;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LANGUAGE, oldLanguage, language));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LANG_RANGE, oldLangRange, langRange));
 	}
 
 	/**
@@ -285,8 +285,8 @@ public class PlainLiteralScalarRestrictionImpl extends RestrictedDataRangeImpl i
 				return getMaxLength();
 			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__PATTERN:
 				return getPattern();
-			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LANGUAGE:
-				return getLanguage();
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LANG_RANGE:
+				return getLangRange();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -311,8 +311,8 @@ public class PlainLiteralScalarRestrictionImpl extends RestrictedDataRangeImpl i
 			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__PATTERN:
 				setPattern((String)newValue);
 				return;
-			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LANGUAGE:
-				setLanguage((String)newValue);
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LANG_RANGE:
+				setLangRange((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -338,8 +338,8 @@ public class PlainLiteralScalarRestrictionImpl extends RestrictedDataRangeImpl i
 			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__PATTERN:
 				setPattern(PATTERN_EDEFAULT);
 				return;
-			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LANGUAGE:
-				setLanguage(LANGUAGE_EDEFAULT);
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LANG_RANGE:
+				setLangRange(LANG_RANGE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -361,8 +361,8 @@ public class PlainLiteralScalarRestrictionImpl extends RestrictedDataRangeImpl i
 				return maxLength != MAX_LENGTH_EDEFAULT;
 			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__PATTERN:
 				return PATTERN_EDEFAULT == null ? pattern != null : !PATTERN_EDEFAULT.equals(pattern);
-			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LANGUAGE:
-				return LANGUAGE_EDEFAULT == null ? language != null : !LANGUAGE_EDEFAULT.equals(language);
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LANG_RANGE:
+				return LANG_RANGE_EDEFAULT == null ? langRange != null : !LANG_RANGE_EDEFAULT.equals(langRange);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -385,8 +385,8 @@ public class PlainLiteralScalarRestrictionImpl extends RestrictedDataRangeImpl i
 		result.append(maxLength);
 		result.append(", pattern: ");
 		result.append(pattern);
-		result.append(", language: ");
-		result.append(language);
+		result.append(", langRange: ");
+		result.append(langRange);
 		result.append(')');
 		return result.toString();
 	}

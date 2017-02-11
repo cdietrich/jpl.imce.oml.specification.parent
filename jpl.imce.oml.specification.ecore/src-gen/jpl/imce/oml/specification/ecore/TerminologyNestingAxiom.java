@@ -25,7 +25,10 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML TerminologyNestingAxiom ...
+ * An OML TerminologyNestingAxiom provides support for relating
+ * a white-box OML TerminologyGraph as a nested terminology
+ * providing details about a black-box OML Concept defined
+ * in a nesting OML TerminologyBox.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -109,7 +112,7 @@ public interface TerminologyNestingAxiom extends TerminologyBoxAxiom {
 	 * The nestedTerminology is the source
 	 * <!-- end-model-doc -->
 	 * @model unique="false" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getTerminology();'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getTbox();'"
 	 * @generated
 	 */
 	TerminologyBox source();

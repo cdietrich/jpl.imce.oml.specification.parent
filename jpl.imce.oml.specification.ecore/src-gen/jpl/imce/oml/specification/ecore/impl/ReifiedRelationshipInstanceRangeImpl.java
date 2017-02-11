@@ -19,17 +19,21 @@
 package jpl.imce.oml.specification.ecore.impl;
 
 import jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance;
+import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.ReifiedRelationshipInstance;
 import jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceRange;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,6 +43,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link jpl.imce.oml.specification.ecore.impl.ReifiedRelationshipInstanceRangeImpl#getDescriptionBox <em>Description Box</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.ReifiedRelationshipInstanceRangeImpl#getReifiedRelationshipInstance <em>Reified Relationship Instance</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.ReifiedRelationshipInstanceRangeImpl#getRange <em>Range</em>}</li>
  * </ul>
@@ -83,6 +88,57 @@ public class ReifiedRelationshipInstanceRangeImpl extends TerminologyInstanceAss
 	@Override
 	protected EClass eStaticClass() {
 		return OMLPackage.Literals.REIFIED_RELATIONSHIP_INSTANCE_RANGE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DescriptionBox getDescriptionBox() {
+		if (eContainerFeatureID() != OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_RANGE__DESCRIPTION_BOX) return null;
+		return (DescriptionBox)eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DescriptionBox basicGetDescriptionBox() {
+		if (eContainerFeatureID() != OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_RANGE__DESCRIPTION_BOX) return null;
+		return (DescriptionBox)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDescriptionBox(DescriptionBox newDescriptionBox, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newDescriptionBox, OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_RANGE__DESCRIPTION_BOX, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDescriptionBox(DescriptionBox newDescriptionBox) {
+		if (newDescriptionBox != eInternalContainer() || (eContainerFeatureID() != OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_RANGE__DESCRIPTION_BOX && newDescriptionBox != null)) {
+			if (EcoreUtil.isAncestor(this, (EObject)newDescriptionBox))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newDescriptionBox != null)
+				msgs = ((InternalEObject)newDescriptionBox).eInverseAdd(this, OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES, DescriptionBox.class, msgs);
+			msgs = basicSetDescriptionBox(newDescriptionBox, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_RANGE__DESCRIPTION_BOX, newDescriptionBox, newDescriptionBox));
 	}
 
 	/**
@@ -167,8 +223,55 @@ public class ReifiedRelationshipInstanceRangeImpl extends TerminologyInstanceAss
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_RANGE__DESCRIPTION_BOX:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetDescriptionBox((DescriptionBox)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_RANGE__DESCRIPTION_BOX:
+				return basicSetDescriptionBox(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_RANGE__DESCRIPTION_BOX:
+				return eInternalContainer().eInverseRemove(this, OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES, DescriptionBox.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_RANGE__DESCRIPTION_BOX:
+				if (resolve) return getDescriptionBox();
+				return basicGetDescriptionBox();
 			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_RANGE__REIFIED_RELATIONSHIP_INSTANCE:
 				if (resolve) return getReifiedRelationshipInstance();
 				return basicGetReifiedRelationshipInstance();
@@ -187,6 +290,9 @@ public class ReifiedRelationshipInstanceRangeImpl extends TerminologyInstanceAss
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_RANGE__DESCRIPTION_BOX:
+				setDescriptionBox((DescriptionBox)newValue);
+				return;
 			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_RANGE__REIFIED_RELATIONSHIP_INSTANCE:
 				setReifiedRelationshipInstance((ReifiedRelationshipInstance)newValue);
 				return;
@@ -205,6 +311,9 @@ public class ReifiedRelationshipInstanceRangeImpl extends TerminologyInstanceAss
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_RANGE__DESCRIPTION_BOX:
+				setDescriptionBox((DescriptionBox)null);
+				return;
 			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_RANGE__REIFIED_RELATIONSHIP_INSTANCE:
 				setReifiedRelationshipInstance((ReifiedRelationshipInstance)null);
 				return;
@@ -223,6 +332,8 @@ public class ReifiedRelationshipInstanceRangeImpl extends TerminologyInstanceAss
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_RANGE__DESCRIPTION_BOX:
+				return basicGetDescriptionBox() != null;
 			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_RANGE__REIFIED_RELATIONSHIP_INSTANCE:
 				return reifiedRelationshipInstance != null;
 			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_RANGE__RANGE:

@@ -27,7 +27,7 @@ import org.eclipse.emf.common.util.EMap;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A TerminologyGraph is a kind of TerminologyBox with no statements our axioms involving Bundles.
+ * An OML TerminologyGraph is an OML TerminologyBox with no statements our axioms involving OML Bundles.
  * <!-- end-model-doc -->
  *
  * <p>

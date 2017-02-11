@@ -21,17 +21,34 @@ package jpl.imce.oml.specification.ecore;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Terminology Statement</b></em>'.
+ * A representation of the model object '<em><b>Description Box Relationship</b></em>'.
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML TerminologyStatement ...
+ * An OML DescriptionBoxRelationship is a directed binary relationship
+ * from an OML DescriptionBox source to an OML Context target.
  * <!-- end-model-doc -->
  *
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyStatement()
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBoxRelationship()
  * @model abstract="true"
  * @generated
  */
-public interface TerminologyStatement extends TerminologyThing {
-} // TerminologyStatement
+public interface DescriptionBoxRelationship extends TerminologyThing {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false" required="true"
+	 * @generated
+	 */
+	DescriptionBox descriptionDomain();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false" required="true"
+	 * @generated
+	 */
+	Context contextTarget();
+
+} // DescriptionBoxRelationship

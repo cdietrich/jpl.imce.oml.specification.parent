@@ -26,7 +26,16 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML ConceptualEntitySingletonInstance ...
+ * An OML ConceptualEntitySingletonInstance defines an instance of an OML ConceptualEntity.
+ * An OML ConceptualEntitySingletonInstance maps to an [OWL2 NamedIndividual].
+ * The semantics depends on the kind of OML ConceptualEntity classifier:
+ * - If the OML ConceptualEntity is the domain for at least at least
+ *   one OML DataRelationshipFromEntity with `isIdentityCriteria=true`,
+ *   then the [OWL2-DL] mapping includes an [OWL2 Key Axiom]
+ *   forcing that all distinctly named OML ConceptualEntitySingletonInstance
+ *   must have different values for each OML DataRelationshipFromEntity with `isIdentityCriteria=true`.
+ * - otherwise, distinctly named OML ConceptualEntitySingletonInstance
+ *   represent semantically different instances.
  * <!-- end-model-doc -->
  *
  * <p>

@@ -25,8 +25,8 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML RestrictedDataRange corresponds to an OWL2 DataRange defined in terms of some kind of restriction of some other OML DataRange.
- * Instead of arbitrary OWL2 FacetRestrictionAxioms as constructors of OWL2 DataRanges,
+ * An OML RestrictedDataRange corresponds to an [OWL2 DataRange] defined in terms of some kind of restriction of some other OML DataRange.
+ * Instead of arbitrary OWL2 FacetRestrictionAxioms as constructors of [OWL2 DataRange]s,
  * the specializations of RestrictedDataRange correspond to the allowed restrictions in OWL2-DL datatype maps.
  * Node that the vocabulary of XSD fundamental facets is not included in OWL2-DL, consequently,
  * there is no support in OML for specifying datatype restrictions involving XSD fundamental facets as well.

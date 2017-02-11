@@ -28,7 +28,12 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML TerminologyExtent ...
+ * An OML TerminologyExtent defines an in-memory tuple
+ * about each OML Context involved in modeling and reasoning about domain-specific
+ * vocabularies and systems descriptions using such vocabularies:
+ * - An OML TerminologyGraph for defining a vocabulary about a domain or a description of a system in a domain;
+ * - An OML Bundle for aggregating OML TerminologyBoxes for as modular [OWL2-DL Ontologies] for monotonic refinement and reasoning;
+ * - An OML DescriptionBox for describing actual systems according to one or more domain-specific OML TerminologyBox vocabularies.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -39,7 +44,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link jpl.imce.oml.specification.ecore.TerminologyExtent#getTerminologyGraphs <em>Terminology Graphs</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.TerminologyExtent#getBundles <em>Bundles</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.TerminologyExtent#getDescriptions <em>Descriptions</em>}</li>
- *   <li>{@link jpl.imce.oml.specification.ecore.TerminologyExtent#getInstanceAssertions <em>Instance Assertions</em>}</li>
  * </ul>
  *
  * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyExtent()
@@ -121,24 +125,5 @@ public interface TerminologyExtent extends CDOObject {
 	 * @generated
 	 */
 	EList<DescriptionBox> getDescriptions();
-
-	/**
-	 * Returns the value of the '<em><b>Instance Assertions</b></em>' containment reference list.
-	 * The list contents are of type {@link jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion}.
-	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion#getTerminologyExtent <em>Terminology Extent</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Instance Assertions</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Instance Assertions</em>' containment reference list.
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyExtent_InstanceAssertions()
-	 * @see jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion#getTerminologyExtent
-	 * @model opposite="terminologyExtent" containment="true"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
-	 * @generated
-	 */
-	EList<TerminologyInstanceAssertion> getInstanceAssertions();
 
 } // TerminologyExtent

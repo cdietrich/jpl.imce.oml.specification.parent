@@ -285,6 +285,10 @@ class OMLUtilities {
     	null !== e.getEAnnotation("http://imce.jpl.nasa.gov/oml/IsOrderingKey")
     }
     
+    static def Boolean isOO(ENamedElement e) {
+    	null !== e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotFunctionalAPI")
+    }
+    
     static def Boolean isAPI(ENamedElement e) {
     	null === e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotFunctionalAPI")
     }

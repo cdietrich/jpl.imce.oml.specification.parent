@@ -183,7 +183,7 @@ public class TerminologyNestingAxiomImpl extends TerminologyBoxAxiomImpl impleme
 	 * @generated
 	 */
 	public TerminologyBox source() {
-		return this.getTerminology();
+		return this.getTbox();
 	}
 
 	/**

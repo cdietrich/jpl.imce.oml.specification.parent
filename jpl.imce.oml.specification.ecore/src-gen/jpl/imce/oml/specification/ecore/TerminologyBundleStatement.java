@@ -25,7 +25,8 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML TerminologyBundleStatement ...
+ * An OML TerminologyBundleStatement is a logical axiom about an OML TerminologyThing
+ * asserted in the context of an OML Bundle.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -39,7 +40,7 @@ package jpl.imce.oml.specification.ecore;
  * @model abstract="true"
  * @generated
  */
-public interface TerminologyBundleStatement extends TerminologyStatement {
+public interface TerminologyBundleStatement extends TerminologyThing {
 	/**
 	 * Returns the value of the '<em><b>Bundle</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.Bundle#getBundleStatements <em>Bundle Statements</em>}'.

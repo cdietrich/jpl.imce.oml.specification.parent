@@ -59,25 +59,25 @@ public class TerminologyBoxAxiomItemProvider extends TerminologyAxiomItemProvide
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTerminologyPropertyDescriptor(object);
+			addTboxPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Terminology feature.
+	 * This adds a property descriptor for the Tbox feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTerminologyPropertyDescriptor(Object object) {
+	protected void addTboxPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_TerminologyBoxAxiom_terminology_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TerminologyBoxAxiom_terminology_feature", "_UI_TerminologyBoxAxiom_type"),
-				 OMLPackage.Literals.TERMINOLOGY_BOX_AXIOM__TERMINOLOGY,
+				 getString("_UI_TerminologyBoxAxiom_tbox_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TerminologyBoxAxiom_tbox_feature", "_UI_TerminologyBoxAxiom_type"),
+				 OMLPackage.Literals.TERMINOLOGY_BOX_AXIOM__TBOX,
 				 true,
 				 false,
 				 true,

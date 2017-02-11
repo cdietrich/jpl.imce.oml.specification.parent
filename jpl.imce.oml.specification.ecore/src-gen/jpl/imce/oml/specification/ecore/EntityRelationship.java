@@ -25,7 +25,9 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML EntityRelationship ...
+ * An OML EntityRelationship is a kind of OML Term that
+ * is an OML DirectedBinaryRelationshipKind between a
+ * domain OML Entity and a range OML Entity.
  * <!-- end-model-doc -->
  *
  * <p>

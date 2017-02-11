@@ -25,7 +25,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML TermAxiom ...
+ * An OML TermAxiom is a logical axiom about an OML Term.
  * <!-- end-model-doc -->
  *
  *

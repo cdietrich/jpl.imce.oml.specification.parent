@@ -26,11 +26,16 @@ package jpl.imce.oml.specification.ecore;
  *
  * <!-- begin-model-doc -->
  * An OML BinaryScalarRestriction is a data range that specifies how one binary scalar adds facet restrictions to another.
- * Applies when the restricted scalar represents binary data (OWL2: 4.5)
- * i.e., when it is one of the following scalars (or their transitively restricted ones):
- * xsd:hexBinary
- * xsd:base64Binary
- * xsd:minLength, xsd:maxLength, and xsd:length
+ * Applicable when the restricted scalar represents [OWL2 Binary Data].
+ * 
+ * The restricted scalar must be directly or indirectly a restriction of:
+ * - [xsd:base64Binary]
+ * - [xsd:hexBinary]
+ * 
+ * Facets:
+ * - [xsd:length]
+ * - [xsd:minLength]
+ * - [xsd:maxLength]
  * <!-- end-model-doc -->
  *
  * <p>

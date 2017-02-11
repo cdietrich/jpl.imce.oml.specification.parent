@@ -25,7 +25,8 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML DataRelationshipToStructure ...
+ * An OML DataRelationshipToStructure is an OML DataRelationship
+ * whose range is an OML Structure.
  * <!-- end-model-doc -->
  *
  * <p>

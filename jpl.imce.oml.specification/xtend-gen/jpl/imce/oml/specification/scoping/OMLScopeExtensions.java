@@ -30,6 +30,7 @@ import jpl.imce.oml.specification.ecore.Bundle;
 import jpl.imce.oml.specification.ecore.BundledTerminologyAxiom;
 import jpl.imce.oml.specification.ecore.Concept;
 import jpl.imce.oml.specification.ecore.ConceptDesignationTerminologyAxiom;
+import jpl.imce.oml.specification.ecore.Context;
 import jpl.imce.oml.specification.ecore.Entity;
 import jpl.imce.oml.specification.ecore.EntityRelationship;
 import jpl.imce.oml.specification.ecore.ReifiedRelationship;
@@ -67,9 +68,9 @@ public class OMLScopeExtensions {
    * Therefore, construct the resolvable scope of AnnotationProperties
    * in terms of the abbrevIRI of each AnnotationProperty in the TerminologyExtent.
    */
-  public IScope scope_Annotation_property(final Annotation context, final EReference eRef) {
-    TerminologyBox _terminology = context.getTerminology();
-    TerminologyExtent _extent = _terminology.extent();
+  public IScope scope_Annotation_property(final Annotation annotation, final EReference eRef) {
+    Context _context = annotation.getContext();
+    TerminologyExtent _extent = _context.extent();
     EList<AnnotationProperty> _annotationProperties = _extent.getAnnotationProperties();
     final Function<AnnotationProperty, QualifiedName> _function = new Function<AnnotationProperty, QualifiedName>() {
       public QualifiedName apply(final AnnotationProperty it) {
@@ -82,13 +83,13 @@ public class OMLScopeExtensions {
   }
   
   public IScope scope_AspectSpecializationAxiom_subEntity(final AspectSpecializationAxiom context) {
-    TerminologyBox _graph = context.getGraph();
-    return this.allEntitiesScope(_graph);
+    TerminologyBox _tbox = context.getTbox();
+    return this.allEntitiesScope(_tbox);
   }
   
   public IScope scope_AspectSpecializationAxiom_superAspect(final AspectSpecializationAxiom context) {
-    TerminologyBox _graph = context.getGraph();
-    return this.allAspectsScope(_graph);
+    TerminologyBox _tbox = context.getTbox();
+    return this.allAspectsScope(_tbox);
   }
   
   public IScope scope_BundledTerminologyAxiom_bundledTerminology(final BundledTerminologyAxiom context) {
@@ -106,8 +107,8 @@ public class OMLScopeExtensions {
   }
   
   public IScope scope_ConceptDesignationTerminologyAxiom_designatedTerminology(final ConceptDesignationTerminologyAxiom context) {
-    TerminologyBox _terminology = context.getTerminology();
-    TerminologyExtent _extent = _terminology.extent();
+    TerminologyBox _tbox = context.getTbox();
+    TerminologyExtent _extent = _tbox.extent();
     Iterable<TerminologyBox> _terminologies = this._oMLExtensions.terminologies(_extent);
     final Function<TerminologyBox, QualifiedName> _function = new Function<TerminologyBox, QualifiedName>() {
       public QualifiedName apply(final TerminologyBox it) {
@@ -125,8 +126,8 @@ public class OMLScopeExtensions {
   }
   
   public IScope scope_EntityRelationship(final EntityRelationship context) {
-    TerminologyBox _graph = context.getGraph();
-    return this.allEntitiesScope(_graph);
+    TerminologyBox _tbox = context.getTbox();
+    return this.allEntitiesScope(_tbox);
   }
   
   /**
@@ -137,8 +138,8 @@ public class OMLScopeExtensions {
   public IScope scope_TerminologyExtensionAxiom_extendedTerminology(final TerminologyExtensionAxiom context, final EReference eRef) {
     IScope _xblockexpression = null;
     {
-      TerminologyBox _terminology = context.getTerminology();
-      final TerminologyExtent ext = _terminology.extent();
+      TerminologyBox _tbox = context.getTbox();
+      final TerminologyExtent ext = _tbox.extent();
       EList<TerminologyGraph> _terminologyGraphs = ext.getTerminologyGraphs();
       EList<Bundle> _bundles = ext.getBundles();
       final Iterable<TerminologyBox> tboxes = Iterables.<TerminologyBox>concat(_terminologyGraphs, _bundles);

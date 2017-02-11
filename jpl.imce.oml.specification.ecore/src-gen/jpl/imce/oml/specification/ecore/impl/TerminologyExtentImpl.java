@@ -26,7 +26,6 @@ import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.TerminologyExtent;
 import jpl.imce.oml.specification.ecore.TerminologyGraph;
-import jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -53,7 +52,6 @@ import org.eclipse.emf.internal.cdo.CDOObjectImpl;
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.TerminologyExtentImpl#getTerminologyGraphs <em>Terminology Graphs</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.TerminologyExtentImpl#getBundles <em>Bundles</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.TerminologyExtentImpl#getDescriptions <em>Descriptions</em>}</li>
- *   <li>{@link jpl.imce.oml.specification.ecore.impl.TerminologyExtentImpl#getInstanceAssertions <em>Instance Assertions</em>}</li>
  * </ul>
  *
  * @generated
@@ -98,16 +96,6 @@ public class TerminologyExtentImpl extends CDOObjectImpl implements TerminologyE
 	 * @ordered
 	 */
 	protected EList<DescriptionBox> descriptions;
-
-	/**
-	 * The cached value of the '{@link #getInstanceAssertions() <em>Instance Assertions</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInstanceAssertions()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<TerminologyInstanceAssertion> instanceAssertions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -181,18 +169,6 @@ public class TerminologyExtentImpl extends CDOObjectImpl implements TerminologyE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<TerminologyInstanceAssertion> getInstanceAssertions() {
-		if (instanceAssertions == null) {
-			instanceAssertions = new EObjectContainmentWithInverseEList<TerminologyInstanceAssertion>(TerminologyInstanceAssertion.class, this, OMLPackage.TERMINOLOGY_EXTENT__INSTANCE_ASSERTIONS, OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION__TERMINOLOGY_EXTENT);
-		}
-		return instanceAssertions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -203,8 +179,6 @@ public class TerminologyExtentImpl extends CDOObjectImpl implements TerminologyE
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBundles()).basicAdd(otherEnd, msgs);
 			case OMLPackage.TERMINOLOGY_EXTENT__DESCRIPTIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDescriptions()).basicAdd(otherEnd, msgs);
-			case OMLPackage.TERMINOLOGY_EXTENT__INSTANCE_ASSERTIONS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInstanceAssertions()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -225,8 +199,6 @@ public class TerminologyExtentImpl extends CDOObjectImpl implements TerminologyE
 				return ((InternalEList<?>)getBundles()).basicRemove(otherEnd, msgs);
 			case OMLPackage.TERMINOLOGY_EXTENT__DESCRIPTIONS:
 				return ((InternalEList<?>)getDescriptions()).basicRemove(otherEnd, msgs);
-			case OMLPackage.TERMINOLOGY_EXTENT__INSTANCE_ASSERTIONS:
-				return ((InternalEList<?>)getInstanceAssertions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -247,8 +219,6 @@ public class TerminologyExtentImpl extends CDOObjectImpl implements TerminologyE
 				return getBundles();
 			case OMLPackage.TERMINOLOGY_EXTENT__DESCRIPTIONS:
 				return getDescriptions();
-			case OMLPackage.TERMINOLOGY_EXTENT__INSTANCE_ASSERTIONS:
-				return getInstanceAssertions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -278,10 +248,6 @@ public class TerminologyExtentImpl extends CDOObjectImpl implements TerminologyE
 				getDescriptions().clear();
 				getDescriptions().addAll((Collection<? extends DescriptionBox>)newValue);
 				return;
-			case OMLPackage.TERMINOLOGY_EXTENT__INSTANCE_ASSERTIONS:
-				getInstanceAssertions().clear();
-				getInstanceAssertions().addAll((Collection<? extends TerminologyInstanceAssertion>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -306,9 +272,6 @@ public class TerminologyExtentImpl extends CDOObjectImpl implements TerminologyE
 			case OMLPackage.TERMINOLOGY_EXTENT__DESCRIPTIONS:
 				getDescriptions().clear();
 				return;
-			case OMLPackage.TERMINOLOGY_EXTENT__INSTANCE_ASSERTIONS:
-				getInstanceAssertions().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -329,8 +292,6 @@ public class TerminologyExtentImpl extends CDOObjectImpl implements TerminologyE
 				return bundles != null && !bundles.isEmpty();
 			case OMLPackage.TERMINOLOGY_EXTENT__DESCRIPTIONS:
 				return descriptions != null && !descriptions.isEmpty();
-			case OMLPackage.TERMINOLOGY_EXTENT__INSTANCE_ASSERTIONS:
-				return instanceAssertions != null && !instanceAssertions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

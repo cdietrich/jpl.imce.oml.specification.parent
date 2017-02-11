@@ -41,7 +41,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link jpl.imce.oml.specification.ecore.impl.TerminologyBoxAxiomImpl#getTerminology <em>Terminology</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.impl.TerminologyBoxAxiomImpl#getTbox <em>Tbox</em>}</li>
  * </ul>
  *
  * @generated
@@ -71,8 +71,8 @@ public abstract class TerminologyBoxAxiomImpl extends TerminologyAxiomImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TerminologyBox getTerminology() {
-		if (eContainerFeatureID() != OMLPackage.TERMINOLOGY_BOX_AXIOM__TERMINOLOGY) return null;
+	public TerminologyBox getTbox() {
+		if (eContainerFeatureID() != OMLPackage.TERMINOLOGY_BOX_AXIOM__TBOX) return null;
 		return (TerminologyBox)eContainer();
 	}
 
@@ -81,8 +81,8 @@ public abstract class TerminologyBoxAxiomImpl extends TerminologyAxiomImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TerminologyBox basicGetTerminology() {
-		if (eContainerFeatureID() != OMLPackage.TERMINOLOGY_BOX_AXIOM__TERMINOLOGY) return null;
+	public TerminologyBox basicGetTbox() {
+		if (eContainerFeatureID() != OMLPackage.TERMINOLOGY_BOX_AXIOM__TBOX) return null;
 		return (TerminologyBox)eInternalContainer();
 	}
 
@@ -91,8 +91,8 @@ public abstract class TerminologyBoxAxiomImpl extends TerminologyAxiomImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTerminology(TerminologyBox newTerminology, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newTerminology, OMLPackage.TERMINOLOGY_BOX_AXIOM__TERMINOLOGY, msgs);
+	public NotificationChain basicSetTbox(TerminologyBox newTbox, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newTbox, OMLPackage.TERMINOLOGY_BOX_AXIOM__TBOX, msgs);
 		return msgs;
 	}
 
@@ -101,20 +101,20 @@ public abstract class TerminologyBoxAxiomImpl extends TerminologyAxiomImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTerminology(TerminologyBox newTerminology) {
-		if (newTerminology != eInternalContainer() || (eContainerFeatureID() != OMLPackage.TERMINOLOGY_BOX_AXIOM__TERMINOLOGY && newTerminology != null)) {
-			if (EcoreUtil.isAncestor(this, (EObject)newTerminology))
+	public void setTbox(TerminologyBox newTbox) {
+		if (newTbox != eInternalContainer() || (eContainerFeatureID() != OMLPackage.TERMINOLOGY_BOX_AXIOM__TBOX && newTbox != null)) {
+			if (EcoreUtil.isAncestor(this, (EObject)newTbox))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newTerminology != null)
-				msgs = ((InternalEObject)newTerminology).eInverseAdd(this, OMLPackage.TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS, TerminologyBox.class, msgs);
-			msgs = basicSetTerminology(newTerminology, msgs);
+			if (newTbox != null)
+				msgs = ((InternalEObject)newTbox).eInverseAdd(this, OMLPackage.TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS, TerminologyBox.class, msgs);
+			msgs = basicSetTbox(newTbox, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.TERMINOLOGY_BOX_AXIOM__TERMINOLOGY, newTerminology, newTerminology));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.TERMINOLOGY_BOX_AXIOM__TBOX, newTbox, newTbox));
 	}
 
 	/**
@@ -125,10 +125,10 @@ public abstract class TerminologyBoxAxiomImpl extends TerminologyAxiomImpl imple
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BOX_AXIOM__TERMINOLOGY:
+			case OMLPackage.TERMINOLOGY_BOX_AXIOM__TBOX:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetTerminology((TerminologyBox)otherEnd, msgs);
+				return basicSetTbox((TerminologyBox)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -141,8 +141,8 @@ public abstract class TerminologyBoxAxiomImpl extends TerminologyAxiomImpl imple
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BOX_AXIOM__TERMINOLOGY:
-				return basicSetTerminology(null, msgs);
+			case OMLPackage.TERMINOLOGY_BOX_AXIOM__TBOX:
+				return basicSetTbox(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -155,7 +155,7 @@ public abstract class TerminologyBoxAxiomImpl extends TerminologyAxiomImpl imple
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case OMLPackage.TERMINOLOGY_BOX_AXIOM__TERMINOLOGY:
+			case OMLPackage.TERMINOLOGY_BOX_AXIOM__TBOX:
 				return eInternalContainer().eInverseRemove(this, OMLPackage.TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS, TerminologyBox.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -169,9 +169,9 @@ public abstract class TerminologyBoxAxiomImpl extends TerminologyAxiomImpl imple
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BOX_AXIOM__TERMINOLOGY:
-				if (resolve) return getTerminology();
-				return basicGetTerminology();
+			case OMLPackage.TERMINOLOGY_BOX_AXIOM__TBOX:
+				if (resolve) return getTbox();
+				return basicGetTbox();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -184,8 +184,8 @@ public abstract class TerminologyBoxAxiomImpl extends TerminologyAxiomImpl imple
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BOX_AXIOM__TERMINOLOGY:
-				setTerminology((TerminologyBox)newValue);
+			case OMLPackage.TERMINOLOGY_BOX_AXIOM__TBOX:
+				setTbox((TerminologyBox)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -199,8 +199,8 @@ public abstract class TerminologyBoxAxiomImpl extends TerminologyAxiomImpl imple
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BOX_AXIOM__TERMINOLOGY:
-				setTerminology((TerminologyBox)null);
+			case OMLPackage.TERMINOLOGY_BOX_AXIOM__TBOX:
+				setTbox((TerminologyBox)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -214,8 +214,8 @@ public abstract class TerminologyBoxAxiomImpl extends TerminologyAxiomImpl imple
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BOX_AXIOM__TERMINOLOGY:
-				return basicGetTerminology() != null;
+			case OMLPackage.TERMINOLOGY_BOX_AXIOM__TBOX:
+				return basicGetTbox() != null;
 		}
 		return super.eIsSet(featureID);
 	}

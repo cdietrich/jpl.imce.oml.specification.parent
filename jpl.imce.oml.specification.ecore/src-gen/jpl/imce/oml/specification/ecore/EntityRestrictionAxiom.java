@@ -25,7 +25,8 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML EntityRestrictionAxiom ...
+ * An OML EntityRestrictionAxiom maps to an [OWL2 Object Property Restiction]
+ * for an OML EntityRelationship.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -51,12 +52,12 @@ public interface EntityRestrictionAxiom extends TermAxiom {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Restricted Relation</em>' reference.
-	 * @see #setRestrictedRelation(ReifiedRelationship)
+	 * @see #setRestrictedRelation(EntityRelationship)
 	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityRestrictionAxiom_RestrictedRelation()
 	 * @model required="true"
 	 * @generated
 	 */
-	ReifiedRelationship getRestrictedRelation();
+	EntityRelationship getRestrictedRelation();
 
 	/**
 	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.EntityRestrictionAxiom#getRestrictedRelation <em>Restricted Relation</em>}' reference.
@@ -66,7 +67,7 @@ public interface EntityRestrictionAxiom extends TermAxiom {
 	 * @see #getRestrictedRelation()
 	 * @generated
 	 */
-	void setRestrictedRelation(ReifiedRelationship value);
+	void setRestrictedRelation(EntityRelationship value);
 
 	/**
 	 * Returns the value of the '<em><b>Restricted Range</b></em>' reference.

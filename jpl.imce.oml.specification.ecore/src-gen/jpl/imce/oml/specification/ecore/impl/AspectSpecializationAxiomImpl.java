@@ -30,7 +30,6 @@ import jpl.imce.oml.specification.ecore.Aspect;
 import jpl.imce.oml.specification.ecore.AspectSpecializationAxiom;
 import jpl.imce.oml.specification.ecore.Entity;
 import jpl.imce.oml.specification.ecore.OMLPackage;
-import jpl.imce.oml.specification.ecore.Term;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -200,7 +199,7 @@ public class AspectSpecializationAxiomImpl extends SpecializationAxiomImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Term child() {
+	public Entity child() {
 		return this.getSubEntity();
 	}
 
@@ -209,7 +208,7 @@ public class AspectSpecializationAxiomImpl extends SpecializationAxiomImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Term parent() {
+	public Entity parent() {
 		return this.getSuperAspect();
 	}
 

@@ -25,7 +25,8 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML DataRelationshipToScalar ...
+ * An OML DataRelationshipToScalar is an OML DataRelationship
+ * whose range is an OML DataRange.
  * <!-- end-model-doc -->
  *
  * <p>
