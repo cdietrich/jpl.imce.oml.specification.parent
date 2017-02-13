@@ -48,6 +48,7 @@ public class OntologicalModelingLanguageParser extends AbstractContentAssistPars
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getTerminologyExtentAccess().getAlternatives_1(), "rule__TerminologyExtent__Alternatives_1");
 					put(grammarAccess.getTerminologyBoxAccess().getAlternatives(), "rule__TerminologyBox__Alternatives");
 					put(grammarAccess.getTerminologyGraphAccess().getAlternatives_4(), "rule__TerminologyGraph__Alternatives_4");
 					put(grammarAccess.getBundleAccess().getAlternatives_4(), "rule__Bundle__Alternatives_4");
@@ -67,9 +68,12 @@ public class OntologicalModelingLanguageParser extends AbstractContentAssistPars
 					put(grammarAccess.getSpecializationAxiomAccess().getAlternatives(), "rule__SpecializationAxiom__Alternatives");
 					put(grammarAccess.getTerminologyBundleStatementAccess().getAlternatives(), "rule__TerminologyBundleStatement__Alternatives");
 					put(grammarAccess.getConceptTreeDisjunctionAccess().getAlternatives(), "rule__ConceptTreeDisjunction__Alternatives");
+					put(grammarAccess.getDescriptionBoxAccess().getAlternatives_4(), "rule__DescriptionBox__Alternatives_4");
+					put(grammarAccess.getTerminologyInstanceAssertionAccess().getAlternatives(), "rule__TerminologyInstanceAssertion__Alternatives");
 					put(grammarAccess.getReferenceAccess().getAlternatives(), "rule__Reference__Alternatives");
 					put(grammarAccess.getQNAMEAccess().getAlternatives(), "rule__QNAME__Alternatives");
 					put(grammarAccess.getTerminologyGraphKindAccess().getAlternatives(), "rule__TerminologyGraphKind__Alternatives");
+					put(grammarAccess.getDescriptionKindAccess().getAlternatives(), "rule__DescriptionKind__Alternatives");
 					put(grammarAccess.getTerminologyExtentAccess().getGroup(), "rule__TerminologyExtent__Group__0");
 					put(grammarAccess.getAnnotationPropertyAccess().getGroup(), "rule__AnnotationProperty__Group__0");
 					put(grammarAccess.getAnnotationAccess().getGroup(), "rule__Annotation__Group__0");
@@ -134,10 +138,22 @@ public class OntologicalModelingLanguageParser extends AbstractContentAssistPars
 					put(grammarAccess.getTimeScalarRestrictionAccess().getGroup_4(), "rule__TimeScalarRestriction__Group_4__0");
 					put(grammarAccess.getTimeScalarRestrictionAccess().getGroup_5(), "rule__TimeScalarRestriction__Group_5__0");
 					put(grammarAccess.getTimeScalarRestrictionAccess().getGroup_6(), "rule__TimeScalarRestriction__Group_6__0");
+					put(grammarAccess.getDescriptionBoxAccess().getGroup(), "rule__DescriptionBox__Group__0");
+					put(grammarAccess.getDescriptionBoxExtendsClosedWorldDefinitionsAccess().getGroup(), "rule__DescriptionBoxExtendsClosedWorldDefinitions__Group__0");
+					put(grammarAccess.getDescriptionBoxRefinementAccess().getGroup(), "rule__DescriptionBoxRefinement__Group__0");
+					put(grammarAccess.getScalarDataPropertyValueAccess().getGroup(), "rule__ScalarDataPropertyValue__Group__0");
+					put(grammarAccess.getStructuredDataPropertyValueAccess().getGroup(), "rule__StructuredDataPropertyValue__Group__0");
+					put(grammarAccess.getDataStructureTupleAccess().getGroup(), "rule__DataStructureTuple__Group__0");
+					put(grammarAccess.getConceptInstanceAccess().getGroup(), "rule__ConceptInstance__Group__0");
+					put(grammarAccess.getReifiedRelationshipInstanceAccess().getGroup(), "rule__ReifiedRelationshipInstance__Group__0");
+					put(grammarAccess.getReifiedRelationshipInstanceDomainAccess().getGroup(), "rule__ReifiedRelationshipInstanceDomain__Group__0");
+					put(grammarAccess.getReifiedRelationshipInstanceRangeAccess().getGroup(), "rule__ReifiedRelationshipInstanceRange__Group__0");
+					put(grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getGroup(), "rule__UnreifiedRelationshipInstanceTuple__Group__0");
 					put(grammarAccess.getABBREV_IRIAccess().getGroup(), "rule__ABBREV_IRI__Group__0");
-					put(grammarAccess.getTerminologyExtentAccess().getAnnotationPropertiesAssignment_1(), "rule__TerminologyExtent__AnnotationPropertiesAssignment_1");
-					put(grammarAccess.getTerminologyExtentAccess().getTerminologyGraphsAssignment_2(), "rule__TerminologyExtent__TerminologyGraphsAssignment_2");
-					put(grammarAccess.getTerminologyExtentAccess().getBundlesAssignment_3(), "rule__TerminologyExtent__BundlesAssignment_3");
+					put(grammarAccess.getTerminologyExtentAccess().getAnnotationPropertiesAssignment_1_0(), "rule__TerminologyExtent__AnnotationPropertiesAssignment_1_0");
+					put(grammarAccess.getTerminologyExtentAccess().getTerminologyGraphsAssignment_1_1(), "rule__TerminologyExtent__TerminologyGraphsAssignment_1_1");
+					put(grammarAccess.getTerminologyExtentAccess().getBundlesAssignment_1_2(), "rule__TerminologyExtent__BundlesAssignment_1_2");
+					put(grammarAccess.getTerminologyExtentAccess().getDescriptionsAssignment_1_3(), "rule__TerminologyExtent__DescriptionsAssignment_1_3");
 					put(grammarAccess.getAnnotationPropertyAccess().getAbbrevIRIAssignment_1(), "rule__AnnotationProperty__AbbrevIRIAssignment_1");
 					put(grammarAccess.getAnnotationPropertyAccess().getIriAssignment_3(), "rule__AnnotationProperty__IriAssignment_3");
 					put(grammarAccess.getAnnotationAccess().getPropertyAssignment_1(), "rule__Annotation__PropertyAssignment_1");
@@ -251,7 +267,7 @@ public class OntologicalModelingLanguageParser extends AbstractContentAssistPars
 					put(grammarAccess.getPlainLiteralScalarRestrictionAccess().getMinLengthAssignment_4_1(), "rule__PlainLiteralScalarRestriction__MinLengthAssignment_4_1");
 					put(grammarAccess.getPlainLiteralScalarRestrictionAccess().getMaxLengthAssignment_5_1(), "rule__PlainLiteralScalarRestriction__MaxLengthAssignment_5_1");
 					put(grammarAccess.getPlainLiteralScalarRestrictionAccess().getPatternAssignment_6_1(), "rule__PlainLiteralScalarRestriction__PatternAssignment_6_1");
-					put(grammarAccess.getPlainLiteralScalarRestrictionAccess().getLanguageAssignment_7_1(), "rule__PlainLiteralScalarRestriction__LanguageAssignment_7_1");
+					put(grammarAccess.getPlainLiteralScalarRestrictionAccess().getLangRangeAssignment_7_1(), "rule__PlainLiteralScalarRestriction__LangRangeAssignment_7_1");
 					put(grammarAccess.getPlainLiteralScalarRestrictionAccess().getRestrictedRangeAssignment_9(), "rule__PlainLiteralScalarRestriction__RestrictedRangeAssignment_9");
 					put(grammarAccess.getScalarOneOfRestrictionAccess().getNameAssignment_1(), "rule__ScalarOneOfRestriction__NameAssignment_1");
 					put(grammarAccess.getScalarOneOfRestrictionAccess().getRestrictedRangeAssignment_4(), "rule__ScalarOneOfRestriction__RestrictedRangeAssignment_4");
@@ -271,6 +287,32 @@ public class OntologicalModelingLanguageParser extends AbstractContentAssistPars
 					put(grammarAccess.getTimeScalarRestrictionAccess().getMinExclusiveAssignment_5_1(), "rule__TimeScalarRestriction__MinExclusiveAssignment_5_1");
 					put(grammarAccess.getTimeScalarRestrictionAccess().getMaxExclusiveAssignment_6_1(), "rule__TimeScalarRestriction__MaxExclusiveAssignment_6_1");
 					put(grammarAccess.getTimeScalarRestrictionAccess().getRestrictedRangeAssignment_8(), "rule__TimeScalarRestriction__RestrictedRangeAssignment_8");
+					put(grammarAccess.getDescriptionBoxAccess().getKindAssignment_0(), "rule__DescriptionBox__KindAssignment_0");
+					put(grammarAccess.getDescriptionBoxAccess().getIriAssignment_2(), "rule__DescriptionBox__IriAssignment_2");
+					put(grammarAccess.getDescriptionBoxAccess().getAnnotationsAssignment_4_0(), "rule__DescriptionBox__AnnotationsAssignment_4_0");
+					put(grammarAccess.getDescriptionBoxAccess().getClosedWorldDefinitionsAssignment_4_1(), "rule__DescriptionBox__ClosedWorldDefinitionsAssignment_4_1");
+					put(grammarAccess.getDescriptionBoxAccess().getDescriptionBoxRefinementsAssignment_4_2(), "rule__DescriptionBox__DescriptionBoxRefinementsAssignment_4_2");
+					put(grammarAccess.getDescriptionBoxAccess().getConceptInstancesAssignment_4_3(), "rule__DescriptionBox__ConceptInstancesAssignment_4_3");
+					put(grammarAccess.getDescriptionBoxAccess().getReifiedRelationshipInstancesAssignment_4_4(), "rule__DescriptionBox__ReifiedRelationshipInstancesAssignment_4_4");
+					put(grammarAccess.getDescriptionBoxAccess().getReifiedRelationshipInstanceDomainsAssignment_4_5(), "rule__DescriptionBox__ReifiedRelationshipInstanceDomainsAssignment_4_5");
+					put(grammarAccess.getDescriptionBoxAccess().getReifiedRelationshipInstanceRangesAssignment_4_6(), "rule__DescriptionBox__ReifiedRelationshipInstanceRangesAssignment_4_6");
+					put(grammarAccess.getDescriptionBoxAccess().getUnreifiedRelationshipInstanceTuplesAssignment_4_7(), "rule__DescriptionBox__UnreifiedRelationshipInstanceTuplesAssignment_4_7");
+					put(grammarAccess.getDescriptionBoxExtendsClosedWorldDefinitionsAccess().getClosedWorldDefinitionsAssignment_1(), "rule__DescriptionBoxExtendsClosedWorldDefinitions__ClosedWorldDefinitionsAssignment_1");
+					put(grammarAccess.getDescriptionBoxRefinementAccess().getRefinedDescriptionBoxAssignment_1(), "rule__DescriptionBoxRefinement__RefinedDescriptionBoxAssignment_1");
+					put(grammarAccess.getScalarDataPropertyValueAccess().getScalarPropertyValueAssignment_3(), "rule__ScalarDataPropertyValue__ScalarPropertyValueAssignment_3");
+					put(grammarAccess.getScalarDataPropertyValueAccess().getScalarDataPropertyAssignment_5(), "rule__ScalarDataPropertyValue__ScalarDataPropertyAssignment_5");
+					put(grammarAccess.getStructuredDataPropertyValueAccess().getStructuredDataPropertyAssignment_3(), "rule__StructuredDataPropertyValue__StructuredDataPropertyAssignment_3");
+					put(grammarAccess.getStructuredDataPropertyValueAccess().getStructuredPropertyTupleAssignment_5(), "rule__StructuredDataPropertyValue__StructuredPropertyTupleAssignment_5");
+					put(grammarAccess.getDataStructureTupleAccess().getDataStructureTypeAssignment_3(), "rule__DataStructureTuple__DataStructureTypeAssignment_3");
+					put(grammarAccess.getConceptInstanceAccess().getSingletonConceptClassifierAssignment_3(), "rule__ConceptInstance__SingletonConceptClassifierAssignment_3");
+					put(grammarAccess.getReifiedRelationshipInstanceAccess().getSingletonReifiedRelationshipClassifierAssignment_3(), "rule__ReifiedRelationshipInstance__SingletonReifiedRelationshipClassifierAssignment_3");
+					put(grammarAccess.getReifiedRelationshipInstanceDomainAccess().getReifiedRelationshipInstanceAssignment_3(), "rule__ReifiedRelationshipInstanceDomain__ReifiedRelationshipInstanceAssignment_3");
+					put(grammarAccess.getReifiedRelationshipInstanceDomainAccess().getDomainAssignment_5(), "rule__ReifiedRelationshipInstanceDomain__DomainAssignment_5");
+					put(grammarAccess.getReifiedRelationshipInstanceRangeAccess().getReifiedRelationshipInstanceAssignment_3(), "rule__ReifiedRelationshipInstanceRange__ReifiedRelationshipInstanceAssignment_3");
+					put(grammarAccess.getReifiedRelationshipInstanceRangeAccess().getRangeAssignment_5(), "rule__ReifiedRelationshipInstanceRange__RangeAssignment_5");
+					put(grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getUnreifiedRelationshipAssignment_3(), "rule__UnreifiedRelationshipInstanceTuple__UnreifiedRelationshipAssignment_3");
+					put(grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getDomainAssignment_5(), "rule__UnreifiedRelationshipInstanceTuple__DomainAssignment_5");
+					put(grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getRangeAssignment_7(), "rule__UnreifiedRelationshipInstanceTuple__RangeAssignment_7");
 				}
 			};
 		}

@@ -44,42 +44,55 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.TerminologyExtent");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cTerminologyExtentAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cAnnotationPropertiesAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cAnnotationPropertiesAnnotationPropertyParserRuleCall_1_0 = (RuleCall)cAnnotationPropertiesAssignment_1.eContents().get(0);
-		private final Assignment cTerminologyGraphsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTerminologyGraphsTerminologyGraphParserRuleCall_2_0 = (RuleCall)cTerminologyGraphsAssignment_2.eContents().get(0);
-		private final Assignment cBundlesAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cBundlesBundleParserRuleCall_3_0 = (RuleCall)cBundlesAssignment_3.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Assignment cAnnotationPropertiesAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
+		private final RuleCall cAnnotationPropertiesAnnotationPropertyParserRuleCall_1_0_0 = (RuleCall)cAnnotationPropertiesAssignment_1_0.eContents().get(0);
+		private final Assignment cTerminologyGraphsAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
+		private final RuleCall cTerminologyGraphsTerminologyGraphParserRuleCall_1_1_0 = (RuleCall)cTerminologyGraphsAssignment_1_1.eContents().get(0);
+		private final Assignment cBundlesAssignment_1_2 = (Assignment)cAlternatives_1.eContents().get(2);
+		private final RuleCall cBundlesBundleParserRuleCall_1_2_0 = (RuleCall)cBundlesAssignment_1_2.eContents().get(0);
+		private final Assignment cDescriptionsAssignment_1_3 = (Assignment)cAlternatives_1.eContents().get(3);
+		private final RuleCall cDescriptionsDescriptionBoxParserRuleCall_1_3_0 = (RuleCall)cDescriptionsAssignment_1_3.eContents().get(0);
 		
 		//TerminologyExtent:
-		//	{TerminologyExtent} annotationProperties+=AnnotationProperty*
-		//	terminologyGraphs+=TerminologyGraph*
-		//	bundles+=Bundle*;
+		//	{TerminologyExtent} (annotationProperties+=AnnotationProperty | terminologyGraphs+=TerminologyGraph | bundles+=Bundle
+		//	| descriptions+=DescriptionBox)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{TerminologyExtent} annotationProperties+=AnnotationProperty* terminologyGraphs+=TerminologyGraph* bundles+=Bundle*
+		//{TerminologyExtent} (annotationProperties+=AnnotationProperty | terminologyGraphs+=TerminologyGraph | bundles+=Bundle |
+		//descriptions+=DescriptionBox)*
 		public Group getGroup() { return cGroup; }
 		
 		//{TerminologyExtent}
 		public Action getTerminologyExtentAction_0() { return cTerminologyExtentAction_0; }
 		
-		//annotationProperties+=AnnotationProperty*
-		public Assignment getAnnotationPropertiesAssignment_1() { return cAnnotationPropertiesAssignment_1; }
+		//(annotationProperties+=AnnotationProperty | terminologyGraphs+=TerminologyGraph | bundles+=Bundle |
+		//descriptions+=DescriptionBox)*
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		
+		//annotationProperties+=AnnotationProperty
+		public Assignment getAnnotationPropertiesAssignment_1_0() { return cAnnotationPropertiesAssignment_1_0; }
 		
 		//AnnotationProperty
-		public RuleCall getAnnotationPropertiesAnnotationPropertyParserRuleCall_1_0() { return cAnnotationPropertiesAnnotationPropertyParserRuleCall_1_0; }
+		public RuleCall getAnnotationPropertiesAnnotationPropertyParserRuleCall_1_0_0() { return cAnnotationPropertiesAnnotationPropertyParserRuleCall_1_0_0; }
 		
-		//terminologyGraphs+=TerminologyGraph*
-		public Assignment getTerminologyGraphsAssignment_2() { return cTerminologyGraphsAssignment_2; }
+		//terminologyGraphs+=TerminologyGraph
+		public Assignment getTerminologyGraphsAssignment_1_1() { return cTerminologyGraphsAssignment_1_1; }
 		
 		//TerminologyGraph
-		public RuleCall getTerminologyGraphsTerminologyGraphParserRuleCall_2_0() { return cTerminologyGraphsTerminologyGraphParserRuleCall_2_0; }
+		public RuleCall getTerminologyGraphsTerminologyGraphParserRuleCall_1_1_0() { return cTerminologyGraphsTerminologyGraphParserRuleCall_1_1_0; }
 		
-		//bundles+=Bundle*
-		public Assignment getBundlesAssignment_3() { return cBundlesAssignment_3; }
+		//bundles+=Bundle
+		public Assignment getBundlesAssignment_1_2() { return cBundlesAssignment_1_2; }
 		
 		//Bundle
-		public RuleCall getBundlesBundleParserRuleCall_3_0() { return cBundlesBundleParserRuleCall_3_0; }
+		public RuleCall getBundlesBundleParserRuleCall_1_2_0() { return cBundlesBundleParserRuleCall_1_2_0; }
+		
+		//descriptions+=DescriptionBox
+		public Assignment getDescriptionsAssignment_1_3() { return cDescriptionsAssignment_1_3; }
+		
+		//DescriptionBox
+		public RuleCall getDescriptionsDescriptionBoxParserRuleCall_1_3_0() { return cDescriptionsDescriptionBoxParserRuleCall_1_3_0; }
 	}
 	public class AnnotationPropertyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.AnnotationProperty");
@@ -1704,20 +1717,20 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 	public class TerminologyExtensionAxiomElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.TerminologyExtensionAxiom");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cTERMINOLOGY_EXTENSION_AXIOM_TOKENTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cEXTENDS_TOKENTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Assignment cExtendedTerminologyAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cExtendedTerminologyTerminologyBoxCrossReference_1_0 = (CrossReference)cExtendedTerminologyAssignment_1.eContents().get(0);
 		private final RuleCall cExtendedTerminologyTerminologyBoxReferenceParserRuleCall_1_0_1 = (RuleCall)cExtendedTerminologyTerminologyBoxCrossReference_1_0.eContents().get(1);
 		
 		//TerminologyExtensionAxiom:
-		//	TERMINOLOGY_EXTENSION_AXIOM_TOKEN extendedTerminology=[TerminologyBox|Reference];
+		//	EXTENDS_TOKEN extendedTerminology=[TerminologyBox|Reference];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//TERMINOLOGY_EXTENSION_AXIOM_TOKEN extendedTerminology=[TerminologyBox|Reference]
+		//EXTENDS_TOKEN extendedTerminology=[TerminologyBox|Reference]
 		public Group getGroup() { return cGroup; }
 		
-		//TERMINOLOGY_EXTENSION_AXIOM_TOKEN
-		public RuleCall getTERMINOLOGY_EXTENSION_AXIOM_TOKENTerminalRuleCall_0() { return cTERMINOLOGY_EXTENSION_AXIOM_TOKENTerminalRuleCall_0; }
+		//EXTENDS_TOKEN
+		public RuleCall getEXTENDS_TOKENTerminalRuleCall_0() { return cEXTENDS_TOKENTerminalRuleCall_0; }
 		
 		//extendedTerminology=[TerminologyBox|Reference]
 		public Assignment getExtendedTerminologyAssignment_1() { return cExtendedTerminologyAssignment_1; }
@@ -2681,9 +2694,9 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 		private final Assignment cPatternAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
 		private final RuleCall cPatternSTRINGTerminalRuleCall_6_1_0 = (RuleCall)cPatternAssignment_6_1.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cLanguageKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Assignment cLanguageAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final RuleCall cLanguageSTRINGTerminalRuleCall_7_1_0 = (RuleCall)cLanguageAssignment_7_1.eContents().get(0);
+		private final Keyword cLangRangeKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cLangRangeAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final RuleCall cLangRangeSTRINGTerminalRuleCall_7_1_0 = (RuleCall)cLangRangeAssignment_7_1.eContents().get(0);
 		private final Keyword cRestrictedRangeKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		private final Assignment cRestrictedRangeAssignment_9 = (Assignment)cGroup.eContents().get(9);
 		private final CrossReference cRestrictedRangeDataRangeCrossReference_9_0 = (CrossReference)cRestrictedRangeAssignment_9.eContents().get(0);
@@ -2693,12 +2706,12 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 		//PlainLiteralScalarRestriction:
 		//	PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN name=ID
 		//	LCURLY ('length' length=INT)? ('minLength' minLength=INT)? ('maxLength' maxLength=INT)? ('pattern' pattern=STRING)?
-		//	('language' language=STRING)?
+		//	('langRange' langRange=STRING)?
 		//	'restrictedRange' restrictedRange=[DataRange|Reference] RCURLY;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN name=ID LCURLY ('length' length=INT)? ('minLength' minLength=INT)? ('maxLength'
-		//maxLength=INT)? ('pattern' pattern=STRING)? ('language' language=STRING)? 'restrictedRange'
+		//maxLength=INT)? ('pattern' pattern=STRING)? ('langRange' langRange=STRING)? 'restrictedRange'
 		//restrictedRange=[DataRange|Reference] RCURLY
 		public Group getGroup() { return cGroup; }
 		
@@ -2762,17 +2775,17 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 		//STRING
 		public RuleCall getPatternSTRINGTerminalRuleCall_6_1_0() { return cPatternSTRINGTerminalRuleCall_6_1_0; }
 		
-		//('language' language=STRING)?
+		//('langRange' langRange=STRING)?
 		public Group getGroup_7() { return cGroup_7; }
 		
-		//'language'
-		public Keyword getLanguageKeyword_7_0() { return cLanguageKeyword_7_0; }
+		//'langRange'
+		public Keyword getLangRangeKeyword_7_0() { return cLangRangeKeyword_7_0; }
 		
-		//language=STRING
-		public Assignment getLanguageAssignment_7_1() { return cLanguageAssignment_7_1; }
+		//langRange=STRING
+		public Assignment getLangRangeAssignment_7_1() { return cLangRangeAssignment_7_1; }
 		
 		//STRING
-		public RuleCall getLanguageSTRINGTerminalRuleCall_7_1_0() { return cLanguageSTRINGTerminalRuleCall_7_1_0; }
+		public RuleCall getLangRangeSTRINGTerminalRuleCall_7_1_0() { return cLangRangeSTRINGTerminalRuleCall_7_1_0; }
 		
 		//'restrictedRange'
 		public Keyword getRestrictedRangeKeyword_8() { return cRestrictedRangeKeyword_8; }
@@ -3171,6 +3184,669 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 		//RCURLY
 		public RuleCall getRCURLYTerminalRuleCall_9() { return cRCURLYTerminalRuleCall_9; }
 	}
+	public class DescriptionBoxElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.DescriptionBox");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cKindAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cKindDescriptionKindEnumRuleCall_0_0 = (RuleCall)cKindAssignment_0.eContents().get(0);
+		private final RuleCall cDESCRIPTION_BOX_TOKENTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cIriAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cIriIRITerminalRuleCall_2_0 = (RuleCall)cIriAssignment_2.eContents().get(0);
+		private final RuleCall cLCURLYTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final Alternatives cAlternatives_4 = (Alternatives)cGroup.eContents().get(4);
+		private final Assignment cAnnotationsAssignment_4_0 = (Assignment)cAlternatives_4.eContents().get(0);
+		private final RuleCall cAnnotationsAnnotationParserRuleCall_4_0_0 = (RuleCall)cAnnotationsAssignment_4_0.eContents().get(0);
+		private final Assignment cClosedWorldDefinitionsAssignment_4_1 = (Assignment)cAlternatives_4.eContents().get(1);
+		private final RuleCall cClosedWorldDefinitionsDescriptionBoxExtendsClosedWorldDefinitionsParserRuleCall_4_1_0 = (RuleCall)cClosedWorldDefinitionsAssignment_4_1.eContents().get(0);
+		private final Assignment cDescriptionBoxRefinementsAssignment_4_2 = (Assignment)cAlternatives_4.eContents().get(2);
+		private final RuleCall cDescriptionBoxRefinementsDescriptionBoxRefinementParserRuleCall_4_2_0 = (RuleCall)cDescriptionBoxRefinementsAssignment_4_2.eContents().get(0);
+		private final Assignment cConceptInstancesAssignment_4_3 = (Assignment)cAlternatives_4.eContents().get(3);
+		private final RuleCall cConceptInstancesConceptInstanceParserRuleCall_4_3_0 = (RuleCall)cConceptInstancesAssignment_4_3.eContents().get(0);
+		private final Assignment cReifiedRelationshipInstancesAssignment_4_4 = (Assignment)cAlternatives_4.eContents().get(4);
+		private final RuleCall cReifiedRelationshipInstancesReifiedRelationshipInstanceParserRuleCall_4_4_0 = (RuleCall)cReifiedRelationshipInstancesAssignment_4_4.eContents().get(0);
+		private final Assignment cReifiedRelationshipInstanceDomainsAssignment_4_5 = (Assignment)cAlternatives_4.eContents().get(5);
+		private final RuleCall cReifiedRelationshipInstanceDomainsReifiedRelationshipInstanceDomainParserRuleCall_4_5_0 = (RuleCall)cReifiedRelationshipInstanceDomainsAssignment_4_5.eContents().get(0);
+		private final Assignment cReifiedRelationshipInstanceRangesAssignment_4_6 = (Assignment)cAlternatives_4.eContents().get(6);
+		private final RuleCall cReifiedRelationshipInstanceRangesReifiedRelationshipInstanceRangeParserRuleCall_4_6_0 = (RuleCall)cReifiedRelationshipInstanceRangesAssignment_4_6.eContents().get(0);
+		private final Assignment cUnreifiedRelationshipInstanceTuplesAssignment_4_7 = (Assignment)cAlternatives_4.eContents().get(7);
+		private final RuleCall cUnreifiedRelationshipInstanceTuplesUnreifiedRelationshipInstanceTupleParserRuleCall_4_7_0 = (RuleCall)cUnreifiedRelationshipInstanceTuplesAssignment_4_7.eContents().get(0);
+		private final RuleCall cRCURLYTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
+		
+		////----------------------------
+		//DescriptionBox:
+		//	kind=DescriptionKind DESCRIPTION_BOX_TOKEN
+		//	iri=IRI
+		//	LCURLY (annotations+=Annotation | closedWorldDefinitions+=DescriptionBoxExtendsClosedWorldDefinitions |
+		//	descriptionBoxRefinements+=DescriptionBoxRefinement | conceptInstances+=ConceptInstance |
+		//	reifiedRelationshipInstances+=ReifiedRelationshipInstance |
+		//	reifiedRelationshipInstanceDomains+=ReifiedRelationshipInstanceDomain |
+		//	reifiedRelationshipInstanceRanges+=ReifiedRelationshipInstanceRange |
+		//	unreifiedRelationshipInstanceTuples+=UnreifiedRelationshipInstanceTuple)*
+		//	RCURLY;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//kind=DescriptionKind DESCRIPTION_BOX_TOKEN iri=IRI LCURLY (annotations+=Annotation |
+		//closedWorldDefinitions+=DescriptionBoxExtendsClosedWorldDefinitions |
+		//descriptionBoxRefinements+=DescriptionBoxRefinement | conceptInstances+=ConceptInstance |
+		//reifiedRelationshipInstances+=ReifiedRelationshipInstance |
+		//reifiedRelationshipInstanceDomains+=ReifiedRelationshipInstanceDomain |
+		//reifiedRelationshipInstanceRanges+=ReifiedRelationshipInstanceRange |
+		//unreifiedRelationshipInstanceTuples+=UnreifiedRelationshipInstanceTuple)* RCURLY
+		public Group getGroup() { return cGroup; }
+		
+		//kind=DescriptionKind
+		public Assignment getKindAssignment_0() { return cKindAssignment_0; }
+		
+		//DescriptionKind
+		public RuleCall getKindDescriptionKindEnumRuleCall_0_0() { return cKindDescriptionKindEnumRuleCall_0_0; }
+		
+		//DESCRIPTION_BOX_TOKEN
+		public RuleCall getDESCRIPTION_BOX_TOKENTerminalRuleCall_1() { return cDESCRIPTION_BOX_TOKENTerminalRuleCall_1; }
+		
+		//iri=IRI
+		public Assignment getIriAssignment_2() { return cIriAssignment_2; }
+		
+		//IRI
+		public RuleCall getIriIRITerminalRuleCall_2_0() { return cIriIRITerminalRuleCall_2_0; }
+		
+		//LCURLY
+		public RuleCall getLCURLYTerminalRuleCall_3() { return cLCURLYTerminalRuleCall_3; }
+		
+		//(annotations+=Annotation | closedWorldDefinitions+=DescriptionBoxExtendsClosedWorldDefinitions |
+		//descriptionBoxRefinements+=DescriptionBoxRefinement | conceptInstances+=ConceptInstance |
+		//reifiedRelationshipInstances+=ReifiedRelationshipInstance |
+		//reifiedRelationshipInstanceDomains+=ReifiedRelationshipInstanceDomain |
+		//reifiedRelationshipInstanceRanges+=ReifiedRelationshipInstanceRange |
+		//unreifiedRelationshipInstanceTuples+=UnreifiedRelationshipInstanceTuple)*
+		public Alternatives getAlternatives_4() { return cAlternatives_4; }
+		
+		//annotations+=Annotation
+		public Assignment getAnnotationsAssignment_4_0() { return cAnnotationsAssignment_4_0; }
+		
+		//Annotation
+		public RuleCall getAnnotationsAnnotationParserRuleCall_4_0_0() { return cAnnotationsAnnotationParserRuleCall_4_0_0; }
+		
+		//closedWorldDefinitions+=DescriptionBoxExtendsClosedWorldDefinitions
+		public Assignment getClosedWorldDefinitionsAssignment_4_1() { return cClosedWorldDefinitionsAssignment_4_1; }
+		
+		//DescriptionBoxExtendsClosedWorldDefinitions
+		public RuleCall getClosedWorldDefinitionsDescriptionBoxExtendsClosedWorldDefinitionsParserRuleCall_4_1_0() { return cClosedWorldDefinitionsDescriptionBoxExtendsClosedWorldDefinitionsParserRuleCall_4_1_0; }
+		
+		//descriptionBoxRefinements+=DescriptionBoxRefinement
+		public Assignment getDescriptionBoxRefinementsAssignment_4_2() { return cDescriptionBoxRefinementsAssignment_4_2; }
+		
+		//DescriptionBoxRefinement
+		public RuleCall getDescriptionBoxRefinementsDescriptionBoxRefinementParserRuleCall_4_2_0() { return cDescriptionBoxRefinementsDescriptionBoxRefinementParserRuleCall_4_2_0; }
+		
+		//conceptInstances+=ConceptInstance
+		public Assignment getConceptInstancesAssignment_4_3() { return cConceptInstancesAssignment_4_3; }
+		
+		//ConceptInstance
+		public RuleCall getConceptInstancesConceptInstanceParserRuleCall_4_3_0() { return cConceptInstancesConceptInstanceParserRuleCall_4_3_0; }
+		
+		//reifiedRelationshipInstances+=ReifiedRelationshipInstance
+		public Assignment getReifiedRelationshipInstancesAssignment_4_4() { return cReifiedRelationshipInstancesAssignment_4_4; }
+		
+		//ReifiedRelationshipInstance
+		public RuleCall getReifiedRelationshipInstancesReifiedRelationshipInstanceParserRuleCall_4_4_0() { return cReifiedRelationshipInstancesReifiedRelationshipInstanceParserRuleCall_4_4_0; }
+		
+		//reifiedRelationshipInstanceDomains+=ReifiedRelationshipInstanceDomain
+		public Assignment getReifiedRelationshipInstanceDomainsAssignment_4_5() { return cReifiedRelationshipInstanceDomainsAssignment_4_5; }
+		
+		//ReifiedRelationshipInstanceDomain
+		public RuleCall getReifiedRelationshipInstanceDomainsReifiedRelationshipInstanceDomainParserRuleCall_4_5_0() { return cReifiedRelationshipInstanceDomainsReifiedRelationshipInstanceDomainParserRuleCall_4_5_0; }
+		
+		//reifiedRelationshipInstanceRanges+=ReifiedRelationshipInstanceRange
+		public Assignment getReifiedRelationshipInstanceRangesAssignment_4_6() { return cReifiedRelationshipInstanceRangesAssignment_4_6; }
+		
+		//ReifiedRelationshipInstanceRange
+		public RuleCall getReifiedRelationshipInstanceRangesReifiedRelationshipInstanceRangeParserRuleCall_4_6_0() { return cReifiedRelationshipInstanceRangesReifiedRelationshipInstanceRangeParserRuleCall_4_6_0; }
+		
+		//unreifiedRelationshipInstanceTuples+=UnreifiedRelationshipInstanceTuple
+		public Assignment getUnreifiedRelationshipInstanceTuplesAssignment_4_7() { return cUnreifiedRelationshipInstanceTuplesAssignment_4_7; }
+		
+		//UnreifiedRelationshipInstanceTuple
+		public RuleCall getUnreifiedRelationshipInstanceTuplesUnreifiedRelationshipInstanceTupleParserRuleCall_4_7_0() { return cUnreifiedRelationshipInstanceTuplesUnreifiedRelationshipInstanceTupleParserRuleCall_4_7_0; }
+		
+		//RCURLY
+		public RuleCall getRCURLYTerminalRuleCall_5() { return cRCURLYTerminalRuleCall_5; }
+	}
+	public class TerminologyInstanceAssertionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.TerminologyInstanceAssertion");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cScalarDataPropertyValueParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cStructuredDataPropertyValueParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cDataStructureTupleParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cConceptInstanceParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cReifiedRelationshipInstanceParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cReifiedRelationshipInstanceDomainParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cReifiedRelationshipInstanceRangeParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cUnreifiedRelationshipInstanceTupleParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		
+		//TerminologyInstanceAssertion:
+		//	ScalarDataPropertyValue | StructuredDataPropertyValue | DataStructureTuple | ConceptInstance |
+		//	ReifiedRelationshipInstance | ReifiedRelationshipInstanceDomain | ReifiedRelationshipInstanceRange |
+		//	UnreifiedRelationshipInstanceTuple;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//ScalarDataPropertyValue | StructuredDataPropertyValue | DataStructureTuple | ConceptInstance |
+		//ReifiedRelationshipInstance | ReifiedRelationshipInstanceDomain | ReifiedRelationshipInstanceRange |
+		//UnreifiedRelationshipInstanceTuple
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//ScalarDataPropertyValue
+		public RuleCall getScalarDataPropertyValueParserRuleCall_0() { return cScalarDataPropertyValueParserRuleCall_0; }
+		
+		//StructuredDataPropertyValue
+		public RuleCall getStructuredDataPropertyValueParserRuleCall_1() { return cStructuredDataPropertyValueParserRuleCall_1; }
+		
+		//DataStructureTuple
+		public RuleCall getDataStructureTupleParserRuleCall_2() { return cDataStructureTupleParserRuleCall_2; }
+		
+		//ConceptInstance
+		public RuleCall getConceptInstanceParserRuleCall_3() { return cConceptInstanceParserRuleCall_3; }
+		
+		//ReifiedRelationshipInstance
+		public RuleCall getReifiedRelationshipInstanceParserRuleCall_4() { return cReifiedRelationshipInstanceParserRuleCall_4; }
+		
+		//ReifiedRelationshipInstanceDomain
+		public RuleCall getReifiedRelationshipInstanceDomainParserRuleCall_5() { return cReifiedRelationshipInstanceDomainParserRuleCall_5; }
+		
+		//ReifiedRelationshipInstanceRange
+		public RuleCall getReifiedRelationshipInstanceRangeParserRuleCall_6() { return cReifiedRelationshipInstanceRangeParserRuleCall_6; }
+		
+		//UnreifiedRelationshipInstanceTuple
+		public RuleCall getUnreifiedRelationshipInstanceTupleParserRuleCall_7() { return cUnreifiedRelationshipInstanceTupleParserRuleCall_7; }
+	}
+	public class DescriptionBoxExtendsClosedWorldDefinitionsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.DescriptionBoxExtendsClosedWorldDefinitions");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cEXTENDS_TOKENTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Assignment cClosedWorldDefinitionsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cClosedWorldDefinitionsTerminologyBoxCrossReference_1_0 = (CrossReference)cClosedWorldDefinitionsAssignment_1.eContents().get(0);
+		private final RuleCall cClosedWorldDefinitionsTerminologyBoxReferenceParserRuleCall_1_0_1 = (RuleCall)cClosedWorldDefinitionsTerminologyBoxCrossReference_1_0.eContents().get(1);
+		
+		//DescriptionBoxExtendsClosedWorldDefinitions:
+		//	EXTENDS_TOKEN closedWorldDefinitions=[TerminologyBox|Reference];
+		@Override public ParserRule getRule() { return rule; }
+		
+		//EXTENDS_TOKEN closedWorldDefinitions=[TerminologyBox|Reference]
+		public Group getGroup() { return cGroup; }
+		
+		//EXTENDS_TOKEN
+		public RuleCall getEXTENDS_TOKENTerminalRuleCall_0() { return cEXTENDS_TOKENTerminalRuleCall_0; }
+		
+		//closedWorldDefinitions=[TerminologyBox|Reference]
+		public Assignment getClosedWorldDefinitionsAssignment_1() { return cClosedWorldDefinitionsAssignment_1; }
+		
+		//[TerminologyBox|Reference]
+		public CrossReference getClosedWorldDefinitionsTerminologyBoxCrossReference_1_0() { return cClosedWorldDefinitionsTerminologyBoxCrossReference_1_0; }
+		
+		//Reference
+		public RuleCall getClosedWorldDefinitionsTerminologyBoxReferenceParserRuleCall_1_0_1() { return cClosedWorldDefinitionsTerminologyBoxReferenceParserRuleCall_1_0_1; }
+	}
+	public class DescriptionBoxRefinementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.DescriptionBoxRefinement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cREFINES_TOKENTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Assignment cRefinedDescriptionBoxAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cRefinedDescriptionBoxDescriptionBoxCrossReference_1_0 = (CrossReference)cRefinedDescriptionBoxAssignment_1.eContents().get(0);
+		private final RuleCall cRefinedDescriptionBoxDescriptionBoxReferenceParserRuleCall_1_0_1 = (RuleCall)cRefinedDescriptionBoxDescriptionBoxCrossReference_1_0.eContents().get(1);
+		
+		//DescriptionBoxRefinement:
+		//	REFINES_TOKEN refinedDescriptionBox=[DescriptionBox|Reference];
+		@Override public ParserRule getRule() { return rule; }
+		
+		//REFINES_TOKEN refinedDescriptionBox=[DescriptionBox|Reference]
+		public Group getGroup() { return cGroup; }
+		
+		//REFINES_TOKEN
+		public RuleCall getREFINES_TOKENTerminalRuleCall_0() { return cREFINES_TOKENTerminalRuleCall_0; }
+		
+		//refinedDescriptionBox=[DescriptionBox|Reference]
+		public Assignment getRefinedDescriptionBoxAssignment_1() { return cRefinedDescriptionBoxAssignment_1; }
+		
+		//[DescriptionBox|Reference]
+		public CrossReference getRefinedDescriptionBoxDescriptionBoxCrossReference_1_0() { return cRefinedDescriptionBoxDescriptionBoxCrossReference_1_0; }
+		
+		//Reference
+		public RuleCall getRefinedDescriptionBoxDescriptionBoxReferenceParserRuleCall_1_0_1() { return cRefinedDescriptionBoxDescriptionBoxReferenceParserRuleCall_1_0_1; }
+	}
+	public class ScalarDataPropertyValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.ScalarDataPropertyValue");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cScalarDataPropertyValueKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cLCURLYTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Keyword cScalarPropertyValueKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cScalarPropertyValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cScalarPropertyValueReferenceParserRuleCall_3_0 = (RuleCall)cScalarPropertyValueAssignment_3.eContents().get(0);
+		private final Keyword cScalarDataPropertyKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cScalarDataPropertyAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cScalarDataPropertyDataRelationshipToScalarCrossReference_5_0 = (CrossReference)cScalarDataPropertyAssignment_5.eContents().get(0);
+		private final RuleCall cScalarDataPropertyDataRelationshipToScalarReferenceParserRuleCall_5_0_1 = (RuleCall)cScalarDataPropertyDataRelationshipToScalarCrossReference_5_0.eContents().get(1);
+		private final RuleCall cRCURLYTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
+		
+		//ScalarDataPropertyValue:
+		//	'ScalarDataPropertyValue'
+		//	LCURLY
+		//	'scalarPropertyValue' scalarPropertyValue=Reference
+		//	'scalarDataProperty' scalarDataProperty=[DataRelationshipToScalar|Reference] RCURLY;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'ScalarDataPropertyValue' LCURLY 'scalarPropertyValue' scalarPropertyValue=Reference 'scalarDataProperty'
+		//scalarDataProperty=[DataRelationshipToScalar|Reference] RCURLY
+		public Group getGroup() { return cGroup; }
+		
+		//'ScalarDataPropertyValue'
+		public Keyword getScalarDataPropertyValueKeyword_0() { return cScalarDataPropertyValueKeyword_0; }
+		
+		//LCURLY
+		public RuleCall getLCURLYTerminalRuleCall_1() { return cLCURLYTerminalRuleCall_1; }
+		
+		//'scalarPropertyValue'
+		public Keyword getScalarPropertyValueKeyword_2() { return cScalarPropertyValueKeyword_2; }
+		
+		//scalarPropertyValue=Reference
+		public Assignment getScalarPropertyValueAssignment_3() { return cScalarPropertyValueAssignment_3; }
+		
+		//Reference
+		public RuleCall getScalarPropertyValueReferenceParserRuleCall_3_0() { return cScalarPropertyValueReferenceParserRuleCall_3_0; }
+		
+		//'scalarDataProperty'
+		public Keyword getScalarDataPropertyKeyword_4() { return cScalarDataPropertyKeyword_4; }
+		
+		//scalarDataProperty=[DataRelationshipToScalar|Reference]
+		public Assignment getScalarDataPropertyAssignment_5() { return cScalarDataPropertyAssignment_5; }
+		
+		//[DataRelationshipToScalar|Reference]
+		public CrossReference getScalarDataPropertyDataRelationshipToScalarCrossReference_5_0() { return cScalarDataPropertyDataRelationshipToScalarCrossReference_5_0; }
+		
+		//Reference
+		public RuleCall getScalarDataPropertyDataRelationshipToScalarReferenceParserRuleCall_5_0_1() { return cScalarDataPropertyDataRelationshipToScalarReferenceParserRuleCall_5_0_1; }
+		
+		//RCURLY
+		public RuleCall getRCURLYTerminalRuleCall_6() { return cRCURLYTerminalRuleCall_6; }
+	}
+	public class StructuredDataPropertyValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.StructuredDataPropertyValue");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cStructuredDataPropertyValueKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cLCURLYTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Keyword cStructuredDataPropertyKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cStructuredDataPropertyAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cStructuredDataPropertyDataRelationshipToStructureCrossReference_3_0 = (CrossReference)cStructuredDataPropertyAssignment_3.eContents().get(0);
+		private final RuleCall cStructuredDataPropertyDataRelationshipToStructureReferenceParserRuleCall_3_0_1 = (RuleCall)cStructuredDataPropertyDataRelationshipToStructureCrossReference_3_0.eContents().get(1);
+		private final Keyword cStructuredPropertyTupleKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cStructuredPropertyTupleAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cStructuredPropertyTupleDataStructureTupleParserRuleCall_5_0 = (RuleCall)cStructuredPropertyTupleAssignment_5.eContents().get(0);
+		private final RuleCall cRCURLYTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
+		
+		//StructuredDataPropertyValue:
+		//	'StructuredDataPropertyValue'
+		//	LCURLY
+		//	'structuredDataProperty' structuredDataProperty=[DataRelationshipToStructure|Reference]
+		//	'structuredPropertyTuple' structuredPropertyTuple=DataStructureTuple
+		//	RCURLY;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'StructuredDataPropertyValue' LCURLY 'structuredDataProperty'
+		//structuredDataProperty=[DataRelationshipToStructure|Reference] 'structuredPropertyTuple'
+		//structuredPropertyTuple=DataStructureTuple RCURLY
+		public Group getGroup() { return cGroup; }
+		
+		//'StructuredDataPropertyValue'
+		public Keyword getStructuredDataPropertyValueKeyword_0() { return cStructuredDataPropertyValueKeyword_0; }
+		
+		//LCURLY
+		public RuleCall getLCURLYTerminalRuleCall_1() { return cLCURLYTerminalRuleCall_1; }
+		
+		//'structuredDataProperty'
+		public Keyword getStructuredDataPropertyKeyword_2() { return cStructuredDataPropertyKeyword_2; }
+		
+		//structuredDataProperty=[DataRelationshipToStructure|Reference]
+		public Assignment getStructuredDataPropertyAssignment_3() { return cStructuredDataPropertyAssignment_3; }
+		
+		//[DataRelationshipToStructure|Reference]
+		public CrossReference getStructuredDataPropertyDataRelationshipToStructureCrossReference_3_0() { return cStructuredDataPropertyDataRelationshipToStructureCrossReference_3_0; }
+		
+		//Reference
+		public RuleCall getStructuredDataPropertyDataRelationshipToStructureReferenceParserRuleCall_3_0_1() { return cStructuredDataPropertyDataRelationshipToStructureReferenceParserRuleCall_3_0_1; }
+		
+		//'structuredPropertyTuple'
+		public Keyword getStructuredPropertyTupleKeyword_4() { return cStructuredPropertyTupleKeyword_4; }
+		
+		//structuredPropertyTuple=DataStructureTuple
+		public Assignment getStructuredPropertyTupleAssignment_5() { return cStructuredPropertyTupleAssignment_5; }
+		
+		//DataStructureTuple
+		public RuleCall getStructuredPropertyTupleDataStructureTupleParserRuleCall_5_0() { return cStructuredPropertyTupleDataStructureTupleParserRuleCall_5_0; }
+		
+		//RCURLY
+		public RuleCall getRCURLYTerminalRuleCall_6() { return cRCURLYTerminalRuleCall_6; }
+	}
+	public class DataStructureTupleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.DataStructureTuple");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDataStructureTupleKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cLCURLYTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Keyword cDataStructureTypeKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cDataStructureTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cDataStructureTypeStructureCrossReference_3_0 = (CrossReference)cDataStructureTypeAssignment_3.eContents().get(0);
+		private final RuleCall cDataStructureTypeStructureReferenceParserRuleCall_3_0_1 = (RuleCall)cDataStructureTypeStructureCrossReference_3_0.eContents().get(1);
+		private final RuleCall cRCURLYTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		
+		//DataStructureTuple:
+		//	'DataStructureTuple'
+		//	LCURLY
+		//	'dataStructureType' dataStructureType=[Structure|Reference] RCURLY;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'DataStructureTuple' LCURLY 'dataStructureType' dataStructureType=[Structure|Reference] RCURLY
+		public Group getGroup() { return cGroup; }
+		
+		//'DataStructureTuple'
+		public Keyword getDataStructureTupleKeyword_0() { return cDataStructureTupleKeyword_0; }
+		
+		//LCURLY
+		public RuleCall getLCURLYTerminalRuleCall_1() { return cLCURLYTerminalRuleCall_1; }
+		
+		//'dataStructureType'
+		public Keyword getDataStructureTypeKeyword_2() { return cDataStructureTypeKeyword_2; }
+		
+		//dataStructureType=[Structure|Reference]
+		public Assignment getDataStructureTypeAssignment_3() { return cDataStructureTypeAssignment_3; }
+		
+		//[Structure|Reference]
+		public CrossReference getDataStructureTypeStructureCrossReference_3_0() { return cDataStructureTypeStructureCrossReference_3_0; }
+		
+		//Reference
+		public RuleCall getDataStructureTypeStructureReferenceParserRuleCall_3_0_1() { return cDataStructureTypeStructureReferenceParserRuleCall_3_0_1; }
+		
+		//RCURLY
+		public RuleCall getRCURLYTerminalRuleCall_4() { return cRCURLYTerminalRuleCall_4; }
+	}
+	public class ConceptInstanceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.ConceptInstance");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cConceptInstanceKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cLCURLYTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Keyword cSingletonConceptClassifierKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cSingletonConceptClassifierAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cSingletonConceptClassifierConceptCrossReference_3_0 = (CrossReference)cSingletonConceptClassifierAssignment_3.eContents().get(0);
+		private final RuleCall cSingletonConceptClassifierConceptReferenceParserRuleCall_3_0_1 = (RuleCall)cSingletonConceptClassifierConceptCrossReference_3_0.eContents().get(1);
+		private final RuleCall cRCURLYTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		
+		//ConceptInstance:
+		//	'ConceptInstance'
+		//	LCURLY
+		//	'singletonConceptClassifier' singletonConceptClassifier=[Concept|Reference] RCURLY;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'ConceptInstance' LCURLY 'singletonConceptClassifier' singletonConceptClassifier=[Concept|Reference] RCURLY
+		public Group getGroup() { return cGroup; }
+		
+		//'ConceptInstance'
+		public Keyword getConceptInstanceKeyword_0() { return cConceptInstanceKeyword_0; }
+		
+		//LCURLY
+		public RuleCall getLCURLYTerminalRuleCall_1() { return cLCURLYTerminalRuleCall_1; }
+		
+		//'singletonConceptClassifier'
+		public Keyword getSingletonConceptClassifierKeyword_2() { return cSingletonConceptClassifierKeyword_2; }
+		
+		//singletonConceptClassifier=[Concept|Reference]
+		public Assignment getSingletonConceptClassifierAssignment_3() { return cSingletonConceptClassifierAssignment_3; }
+		
+		//[Concept|Reference]
+		public CrossReference getSingletonConceptClassifierConceptCrossReference_3_0() { return cSingletonConceptClassifierConceptCrossReference_3_0; }
+		
+		//Reference
+		public RuleCall getSingletonConceptClassifierConceptReferenceParserRuleCall_3_0_1() { return cSingletonConceptClassifierConceptReferenceParserRuleCall_3_0_1; }
+		
+		//RCURLY
+		public RuleCall getRCURLYTerminalRuleCall_4() { return cRCURLYTerminalRuleCall_4; }
+	}
+	public class ReifiedRelationshipInstanceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.ReifiedRelationshipInstance");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cReifiedRelationshipInstanceKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cLCURLYTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Keyword cSingletonReifiedRelationshipClassifierKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cSingletonReifiedRelationshipClassifierAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cSingletonReifiedRelationshipClassifierReifiedRelationshipCrossReference_3_0 = (CrossReference)cSingletonReifiedRelationshipClassifierAssignment_3.eContents().get(0);
+		private final RuleCall cSingletonReifiedRelationshipClassifierReifiedRelationshipReferenceParserRuleCall_3_0_1 = (RuleCall)cSingletonReifiedRelationshipClassifierReifiedRelationshipCrossReference_3_0.eContents().get(1);
+		private final RuleCall cRCURLYTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		
+		//ReifiedRelationshipInstance:
+		//	'ReifiedRelationshipInstance'
+		//	LCURLY
+		//	'singletonReifiedRelationshipClassifier' singletonReifiedRelationshipClassifier=[ReifiedRelationship|Reference]
+		//	RCURLY;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'ReifiedRelationshipInstance' LCURLY 'singletonReifiedRelationshipClassifier'
+		//singletonReifiedRelationshipClassifier=[ReifiedRelationship|Reference] RCURLY
+		public Group getGroup() { return cGroup; }
+		
+		//'ReifiedRelationshipInstance'
+		public Keyword getReifiedRelationshipInstanceKeyword_0() { return cReifiedRelationshipInstanceKeyword_0; }
+		
+		//LCURLY
+		public RuleCall getLCURLYTerminalRuleCall_1() { return cLCURLYTerminalRuleCall_1; }
+		
+		//'singletonReifiedRelationshipClassifier'
+		public Keyword getSingletonReifiedRelationshipClassifierKeyword_2() { return cSingletonReifiedRelationshipClassifierKeyword_2; }
+		
+		//singletonReifiedRelationshipClassifier=[ReifiedRelationship|Reference]
+		public Assignment getSingletonReifiedRelationshipClassifierAssignment_3() { return cSingletonReifiedRelationshipClassifierAssignment_3; }
+		
+		//[ReifiedRelationship|Reference]
+		public CrossReference getSingletonReifiedRelationshipClassifierReifiedRelationshipCrossReference_3_0() { return cSingletonReifiedRelationshipClassifierReifiedRelationshipCrossReference_3_0; }
+		
+		//Reference
+		public RuleCall getSingletonReifiedRelationshipClassifierReifiedRelationshipReferenceParserRuleCall_3_0_1() { return cSingletonReifiedRelationshipClassifierReifiedRelationshipReferenceParserRuleCall_3_0_1; }
+		
+		//RCURLY
+		public RuleCall getRCURLYTerminalRuleCall_4() { return cRCURLYTerminalRuleCall_4; }
+	}
+	public class ReifiedRelationshipInstanceDomainElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.ReifiedRelationshipInstanceDomain");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cReifiedRelationshipInstanceDomainKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cLCURLYTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Keyword cReifiedRelationshipInstanceKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cReifiedRelationshipInstanceAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cReifiedRelationshipInstanceReifiedRelationshipInstanceCrossReference_3_0 = (CrossReference)cReifiedRelationshipInstanceAssignment_3.eContents().get(0);
+		private final RuleCall cReifiedRelationshipInstanceReifiedRelationshipInstanceReferenceParserRuleCall_3_0_1 = (RuleCall)cReifiedRelationshipInstanceReifiedRelationshipInstanceCrossReference_3_0.eContents().get(1);
+		private final RuleCall cDOMAIN_TOKENTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final Assignment cDomainAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cDomainConceptualEntitySingletonInstanceCrossReference_5_0 = (CrossReference)cDomainAssignment_5.eContents().get(0);
+		private final RuleCall cDomainConceptualEntitySingletonInstanceReferenceParserRuleCall_5_0_1 = (RuleCall)cDomainConceptualEntitySingletonInstanceCrossReference_5_0.eContents().get(1);
+		private final RuleCall cRCURLYTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
+		
+		//ReifiedRelationshipInstanceDomain:
+		//	'ReifiedRelationshipInstanceDomain'
+		//	LCURLY
+		//	'reifiedRelationshipInstance' reifiedRelationshipInstance=[ReifiedRelationshipInstance|Reference] DOMAIN_TOKEN
+		//	domain=[ConceptualEntitySingletonInstance|Reference] RCURLY;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'ReifiedRelationshipInstanceDomain' LCURLY 'reifiedRelationshipInstance'
+		//reifiedRelationshipInstance=[ReifiedRelationshipInstance|Reference] DOMAIN_TOKEN
+		//domain=[ConceptualEntitySingletonInstance|Reference] RCURLY
+		public Group getGroup() { return cGroup; }
+		
+		//'ReifiedRelationshipInstanceDomain'
+		public Keyword getReifiedRelationshipInstanceDomainKeyword_0() { return cReifiedRelationshipInstanceDomainKeyword_0; }
+		
+		//LCURLY
+		public RuleCall getLCURLYTerminalRuleCall_1() { return cLCURLYTerminalRuleCall_1; }
+		
+		//'reifiedRelationshipInstance'
+		public Keyword getReifiedRelationshipInstanceKeyword_2() { return cReifiedRelationshipInstanceKeyword_2; }
+		
+		//reifiedRelationshipInstance=[ReifiedRelationshipInstance|Reference]
+		public Assignment getReifiedRelationshipInstanceAssignment_3() { return cReifiedRelationshipInstanceAssignment_3; }
+		
+		//[ReifiedRelationshipInstance|Reference]
+		public CrossReference getReifiedRelationshipInstanceReifiedRelationshipInstanceCrossReference_3_0() { return cReifiedRelationshipInstanceReifiedRelationshipInstanceCrossReference_3_0; }
+		
+		//Reference
+		public RuleCall getReifiedRelationshipInstanceReifiedRelationshipInstanceReferenceParserRuleCall_3_0_1() { return cReifiedRelationshipInstanceReifiedRelationshipInstanceReferenceParserRuleCall_3_0_1; }
+		
+		//DOMAIN_TOKEN
+		public RuleCall getDOMAIN_TOKENTerminalRuleCall_4() { return cDOMAIN_TOKENTerminalRuleCall_4; }
+		
+		//domain=[ConceptualEntitySingletonInstance|Reference]
+		public Assignment getDomainAssignment_5() { return cDomainAssignment_5; }
+		
+		//[ConceptualEntitySingletonInstance|Reference]
+		public CrossReference getDomainConceptualEntitySingletonInstanceCrossReference_5_0() { return cDomainConceptualEntitySingletonInstanceCrossReference_5_0; }
+		
+		//Reference
+		public RuleCall getDomainConceptualEntitySingletonInstanceReferenceParserRuleCall_5_0_1() { return cDomainConceptualEntitySingletonInstanceReferenceParserRuleCall_5_0_1; }
+		
+		//RCURLY
+		public RuleCall getRCURLYTerminalRuleCall_6() { return cRCURLYTerminalRuleCall_6; }
+	}
+	public class ReifiedRelationshipInstanceRangeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.ReifiedRelationshipInstanceRange");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cReifiedRelationshipInstanceRangeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cLCURLYTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Keyword cReifiedRelationshipInstanceKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cReifiedRelationshipInstanceAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cReifiedRelationshipInstanceReifiedRelationshipInstanceCrossReference_3_0 = (CrossReference)cReifiedRelationshipInstanceAssignment_3.eContents().get(0);
+		private final RuleCall cReifiedRelationshipInstanceReifiedRelationshipInstanceReferenceParserRuleCall_3_0_1 = (RuleCall)cReifiedRelationshipInstanceReifiedRelationshipInstanceCrossReference_3_0.eContents().get(1);
+		private final RuleCall cRANGE_TOKENTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final Assignment cRangeAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cRangeConceptualEntitySingletonInstanceCrossReference_5_0 = (CrossReference)cRangeAssignment_5.eContents().get(0);
+		private final RuleCall cRangeConceptualEntitySingletonInstanceReferenceParserRuleCall_5_0_1 = (RuleCall)cRangeConceptualEntitySingletonInstanceCrossReference_5_0.eContents().get(1);
+		private final RuleCall cRCURLYTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
+		
+		//ReifiedRelationshipInstanceRange:
+		//	'ReifiedRelationshipInstanceRange'
+		//	LCURLY
+		//	'reifiedRelationshipInstance' reifiedRelationshipInstance=[ReifiedRelationshipInstance|Reference] RANGE_TOKEN
+		//	range=[ConceptualEntitySingletonInstance|Reference] RCURLY;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'ReifiedRelationshipInstanceRange' LCURLY 'reifiedRelationshipInstance'
+		//reifiedRelationshipInstance=[ReifiedRelationshipInstance|Reference] RANGE_TOKEN
+		//range=[ConceptualEntitySingletonInstance|Reference] RCURLY
+		public Group getGroup() { return cGroup; }
+		
+		//'ReifiedRelationshipInstanceRange'
+		public Keyword getReifiedRelationshipInstanceRangeKeyword_0() { return cReifiedRelationshipInstanceRangeKeyword_0; }
+		
+		//LCURLY
+		public RuleCall getLCURLYTerminalRuleCall_1() { return cLCURLYTerminalRuleCall_1; }
+		
+		//'reifiedRelationshipInstance'
+		public Keyword getReifiedRelationshipInstanceKeyword_2() { return cReifiedRelationshipInstanceKeyword_2; }
+		
+		//reifiedRelationshipInstance=[ReifiedRelationshipInstance|Reference]
+		public Assignment getReifiedRelationshipInstanceAssignment_3() { return cReifiedRelationshipInstanceAssignment_3; }
+		
+		//[ReifiedRelationshipInstance|Reference]
+		public CrossReference getReifiedRelationshipInstanceReifiedRelationshipInstanceCrossReference_3_0() { return cReifiedRelationshipInstanceReifiedRelationshipInstanceCrossReference_3_0; }
+		
+		//Reference
+		public RuleCall getReifiedRelationshipInstanceReifiedRelationshipInstanceReferenceParserRuleCall_3_0_1() { return cReifiedRelationshipInstanceReifiedRelationshipInstanceReferenceParserRuleCall_3_0_1; }
+		
+		//RANGE_TOKEN
+		public RuleCall getRANGE_TOKENTerminalRuleCall_4() { return cRANGE_TOKENTerminalRuleCall_4; }
+		
+		//range=[ConceptualEntitySingletonInstance|Reference]
+		public Assignment getRangeAssignment_5() { return cRangeAssignment_5; }
+		
+		//[ConceptualEntitySingletonInstance|Reference]
+		public CrossReference getRangeConceptualEntitySingletonInstanceCrossReference_5_0() { return cRangeConceptualEntitySingletonInstanceCrossReference_5_0; }
+		
+		//Reference
+		public RuleCall getRangeConceptualEntitySingletonInstanceReferenceParserRuleCall_5_0_1() { return cRangeConceptualEntitySingletonInstanceReferenceParserRuleCall_5_0_1; }
+		
+		//RCURLY
+		public RuleCall getRCURLYTerminalRuleCall_6() { return cRCURLYTerminalRuleCall_6; }
+	}
+	public class UnreifiedRelationshipInstanceTupleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.UnreifiedRelationshipInstanceTuple");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cUnreifiedRelationshipInstanceTupleKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cLCURLYTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final RuleCall cUNREIFIED_RELATIONSHIP_TOKENTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cUnreifiedRelationshipAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cUnreifiedRelationshipUnreifiedRelationshipCrossReference_3_0 = (CrossReference)cUnreifiedRelationshipAssignment_3.eContents().get(0);
+		private final RuleCall cUnreifiedRelationshipUnreifiedRelationshipReferenceParserRuleCall_3_0_1 = (RuleCall)cUnreifiedRelationshipUnreifiedRelationshipCrossReference_3_0.eContents().get(1);
+		private final RuleCall cDOMAIN_TOKENTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final Assignment cDomainAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cDomainConceptualEntitySingletonInstanceCrossReference_5_0 = (CrossReference)cDomainAssignment_5.eContents().get(0);
+		private final RuleCall cDomainConceptualEntitySingletonInstanceReferenceParserRuleCall_5_0_1 = (RuleCall)cDomainConceptualEntitySingletonInstanceCrossReference_5_0.eContents().get(1);
+		private final RuleCall cRANGE_TOKENTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
+		private final Assignment cRangeAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final CrossReference cRangeConceptualEntitySingletonInstanceCrossReference_7_0 = (CrossReference)cRangeAssignment_7.eContents().get(0);
+		private final RuleCall cRangeConceptualEntitySingletonInstanceReferenceParserRuleCall_7_0_1 = (RuleCall)cRangeConceptualEntitySingletonInstanceCrossReference_7_0.eContents().get(1);
+		private final RuleCall cRCURLYTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
+		
+		//UnreifiedRelationshipInstanceTuple:
+		//	'UnreifiedRelationshipInstanceTuple'
+		//	LCURLY
+		//	UNREIFIED_RELATIONSHIP_TOKEN unreifiedRelationship=[UnreifiedRelationship|Reference] DOMAIN_TOKEN
+		//	domain=[ConceptualEntitySingletonInstance|Reference] RANGE_TOKEN range=[ConceptualEntitySingletonInstance|Reference]
+		//	RCURLY;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'UnreifiedRelationshipInstanceTuple' LCURLY UNREIFIED_RELATIONSHIP_TOKEN
+		//unreifiedRelationship=[UnreifiedRelationship|Reference] DOMAIN_TOKEN
+		//domain=[ConceptualEntitySingletonInstance|Reference] RANGE_TOKEN range=[ConceptualEntitySingletonInstance|Reference]
+		//RCURLY
+		public Group getGroup() { return cGroup; }
+		
+		//'UnreifiedRelationshipInstanceTuple'
+		public Keyword getUnreifiedRelationshipInstanceTupleKeyword_0() { return cUnreifiedRelationshipInstanceTupleKeyword_0; }
+		
+		//LCURLY
+		public RuleCall getLCURLYTerminalRuleCall_1() { return cLCURLYTerminalRuleCall_1; }
+		
+		//UNREIFIED_RELATIONSHIP_TOKEN
+		public RuleCall getUNREIFIED_RELATIONSHIP_TOKENTerminalRuleCall_2() { return cUNREIFIED_RELATIONSHIP_TOKENTerminalRuleCall_2; }
+		
+		//unreifiedRelationship=[UnreifiedRelationship|Reference]
+		public Assignment getUnreifiedRelationshipAssignment_3() { return cUnreifiedRelationshipAssignment_3; }
+		
+		//[UnreifiedRelationship|Reference]
+		public CrossReference getUnreifiedRelationshipUnreifiedRelationshipCrossReference_3_0() { return cUnreifiedRelationshipUnreifiedRelationshipCrossReference_3_0; }
+		
+		//Reference
+		public RuleCall getUnreifiedRelationshipUnreifiedRelationshipReferenceParserRuleCall_3_0_1() { return cUnreifiedRelationshipUnreifiedRelationshipReferenceParserRuleCall_3_0_1; }
+		
+		//DOMAIN_TOKEN
+		public RuleCall getDOMAIN_TOKENTerminalRuleCall_4() { return cDOMAIN_TOKENTerminalRuleCall_4; }
+		
+		//domain=[ConceptualEntitySingletonInstance|Reference]
+		public Assignment getDomainAssignment_5() { return cDomainAssignment_5; }
+		
+		//[ConceptualEntitySingletonInstance|Reference]
+		public CrossReference getDomainConceptualEntitySingletonInstanceCrossReference_5_0() { return cDomainConceptualEntitySingletonInstanceCrossReference_5_0; }
+		
+		//Reference
+		public RuleCall getDomainConceptualEntitySingletonInstanceReferenceParserRuleCall_5_0_1() { return cDomainConceptualEntitySingletonInstanceReferenceParserRuleCall_5_0_1; }
+		
+		//RANGE_TOKEN
+		public RuleCall getRANGE_TOKENTerminalRuleCall_6() { return cRANGE_TOKENTerminalRuleCall_6; }
+		
+		//range=[ConceptualEntitySingletonInstance|Reference]
+		public Assignment getRangeAssignment_7() { return cRangeAssignment_7; }
+		
+		//[ConceptualEntitySingletonInstance|Reference]
+		public CrossReference getRangeConceptualEntitySingletonInstanceCrossReference_7_0() { return cRangeConceptualEntitySingletonInstanceCrossReference_7_0; }
+		
+		//Reference
+		public RuleCall getRangeConceptualEntitySingletonInstanceReferenceParserRuleCall_7_0_1() { return cRangeConceptualEntitySingletonInstanceReferenceParserRuleCall_7_0_1; }
+		
+		//RCURLY
+		public RuleCall getRCURLYTerminalRuleCall_8() { return cRCURLYTerminalRuleCall_8; }
+	}
 	public class ReferenceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.Reference");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -3273,6 +3949,34 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 		//'closed'
 		public Keyword getClosedWorldDesignationsClosedKeyword_1_0() { return cClosedWorldDesignationsClosedKeyword_1_0; }
 	}
+	public class DescriptionKindElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.DescriptionKind");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cFinalEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cFinalFinalKeyword_0_0 = (Keyword)cFinalEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cPartialEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cPartialPartialKeyword_1_0 = (Keyword)cPartialEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum DescriptionKind:
+		//	Final='final' |
+		//	Partial='partial';
+		public EnumRule getRule() { return rule; }
+		
+		//Final='final' | Partial='partial'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Final='final'
+		public EnumLiteralDeclaration getFinalEnumLiteralDeclaration_0() { return cFinalEnumLiteralDeclaration_0; }
+		
+		//'final'
+		public Keyword getFinalFinalKeyword_0_0() { return cFinalFinalKeyword_0_0; }
+		
+		//Partial='partial'
+		public EnumLiteralDeclaration getPartialEnumLiteralDeclaration_1() { return cPartialEnumLiteralDeclaration_1; }
+		
+		//'partial'
+		public Keyword getPartialPartialKeyword_1_0() { return cPartialPartialKeyword_1_0; }
+	}
 	
 	private final TerminologyExtentElements pTerminologyExtent;
 	private final AnnotationPropertyElements pAnnotationProperty;
@@ -3332,6 +4036,19 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 	private final StringScalarRestrictionElements pStringScalarRestriction;
 	private final SynonymScalarRestrictionElements pSynonymScalarRestriction;
 	private final TimeScalarRestrictionElements pTimeScalarRestriction;
+	private final DescriptionBoxElements pDescriptionBox;
+	private final DescriptionKindElements eDescriptionKind;
+	private final TerminologyInstanceAssertionElements pTerminologyInstanceAssertion;
+	private final DescriptionBoxExtendsClosedWorldDefinitionsElements pDescriptionBoxExtendsClosedWorldDefinitions;
+	private final DescriptionBoxRefinementElements pDescriptionBoxRefinement;
+	private final ScalarDataPropertyValueElements pScalarDataPropertyValue;
+	private final StructuredDataPropertyValueElements pStructuredDataPropertyValue;
+	private final DataStructureTupleElements pDataStructureTuple;
+	private final ConceptInstanceElements pConceptInstance;
+	private final ReifiedRelationshipInstanceElements pReifiedRelationshipInstance;
+	private final ReifiedRelationshipInstanceDomainElements pReifiedRelationshipInstanceDomain;
+	private final ReifiedRelationshipInstanceRangeElements pReifiedRelationshipInstanceRange;
+	private final UnreifiedRelationshipInstanceTupleElements pUnreifiedRelationshipInstanceTuple;
 	private final ReferenceElements pReference;
 	private final QNAMEElements pQNAME;
 	private final ABBREV_IRIElements pABBREV_IRI;
@@ -3363,13 +4080,14 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 	private final TerminalRule tSTRUCTURE_TOKEN;
 	private final TerminalRule tDOMAIN_TOKEN;
 	private final TerminalRule tRANGE_TOKEN;
+	private final TerminalRule tEXTENDS_TOKEN;
+	private final TerminalRule tREFINES_TOKEN;
 	private final TerminalRule tROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN;
 	private final TerminalRule tSPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN;
 	private final TerminalRule tANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN;
 	private final TerminalRule tBUNDLED_TERMINOLOGY_AXIOM_TOKEN;
 	private final TerminalRule tCONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN;
 	private final TerminalRule tTERMINOLOGY_NESTING_AXIOM_TOKEN;
-	private final TerminalRule tTERMINOLOGY_EXTENSION_AXIOM_TOKEN;
 	private final TerminalRule tENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN;
 	private final TerminalRule tENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN;
 	private final TerminalRule tCONCEPT_SPECIALIZATION_AXIOM_TOKEN;
@@ -3387,6 +4105,7 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 	private final TerminalRule tTIME_SCALAR_RESTRICTION_TOKEN;
 	private final TerminalRule tSCALAR_ONE_OF_RESTRICTION_TOKEN;
 	private final TerminalRule tSCALAR_ONE_OF_LITERAL_AXIOM_TOKEN;
+	private final TerminalRule tDESCRIPTION_BOX_TOKEN;
 	private final TerminalRule tLCURLY;
 	private final TerminalRule tRCURLY;
 	private final TerminalRule tEQUAL;
@@ -3472,6 +4191,19 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 		this.pStringScalarRestriction = new StringScalarRestrictionElements();
 		this.pSynonymScalarRestriction = new SynonymScalarRestrictionElements();
 		this.pTimeScalarRestriction = new TimeScalarRestrictionElements();
+		this.pDescriptionBox = new DescriptionBoxElements();
+		this.eDescriptionKind = new DescriptionKindElements();
+		this.pTerminologyInstanceAssertion = new TerminologyInstanceAssertionElements();
+		this.pDescriptionBoxExtendsClosedWorldDefinitions = new DescriptionBoxExtendsClosedWorldDefinitionsElements();
+		this.pDescriptionBoxRefinement = new DescriptionBoxRefinementElements();
+		this.pScalarDataPropertyValue = new ScalarDataPropertyValueElements();
+		this.pStructuredDataPropertyValue = new StructuredDataPropertyValueElements();
+		this.pDataStructureTuple = new DataStructureTupleElements();
+		this.pConceptInstance = new ConceptInstanceElements();
+		this.pReifiedRelationshipInstance = new ReifiedRelationshipInstanceElements();
+		this.pReifiedRelationshipInstanceDomain = new ReifiedRelationshipInstanceDomainElements();
+		this.pReifiedRelationshipInstanceRange = new ReifiedRelationshipInstanceRangeElements();
+		this.pUnreifiedRelationshipInstanceTuple = new UnreifiedRelationshipInstanceTupleElements();
 		this.pReference = new ReferenceElements();
 		this.pQNAME = new QNAMEElements();
 		this.pABBREV_IRI = new ABBREV_IRIElements();
@@ -3503,13 +4235,14 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 		this.tSTRUCTURE_TOKEN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.STRUCTURE_TOKEN");
 		this.tDOMAIN_TOKEN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.DOMAIN_TOKEN");
 		this.tRANGE_TOKEN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.RANGE_TOKEN");
+		this.tEXTENDS_TOKEN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.EXTENDS_TOKEN");
+		this.tREFINES_TOKEN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.REFINES_TOKEN");
 		this.tROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN");
 		this.tSPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.SPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN");
 		this.tANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.ANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN");
 		this.tBUNDLED_TERMINOLOGY_AXIOM_TOKEN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.BUNDLED_TERMINOLOGY_AXIOM_TOKEN");
 		this.tCONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN");
 		this.tTERMINOLOGY_NESTING_AXIOM_TOKEN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.TERMINOLOGY_NESTING_AXIOM_TOKEN");
-		this.tTERMINOLOGY_EXTENSION_AXIOM_TOKEN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.TERMINOLOGY_EXTENSION_AXIOM_TOKEN");
 		this.tENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN");
 		this.tENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN");
 		this.tCONCEPT_SPECIALIZATION_AXIOM_TOKEN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.CONCEPT_SPECIALIZATION_AXIOM_TOKEN");
@@ -3527,6 +4260,7 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 		this.tTIME_SCALAR_RESTRICTION_TOKEN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.TIME_SCALAR_RESTRICTION_TOKEN");
 		this.tSCALAR_ONE_OF_RESTRICTION_TOKEN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.SCALAR_ONE_OF_RESTRICTION_TOKEN");
 		this.tSCALAR_ONE_OF_LITERAL_AXIOM_TOKEN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN");
+		this.tDESCRIPTION_BOX_TOKEN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.DESCRIPTION_BOX_TOKEN");
 		this.tLCURLY = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.LCURLY");
 		this.tRCURLY = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.RCURLY");
 		this.tEQUAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.EQUAL");
@@ -3574,9 +4308,8 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 
 	
 	//TerminologyExtent:
-	//	{TerminologyExtent} annotationProperties+=AnnotationProperty*
-	//	terminologyGraphs+=TerminologyGraph*
-	//	bundles+=Bundle*;
+	//	{TerminologyExtent} (annotationProperties+=AnnotationProperty | terminologyGraphs+=TerminologyGraph | bundles+=Bundle
+	//	| descriptions+=DescriptionBox)*;
 	public TerminologyExtentElements getTerminologyExtentAccess() {
 		return pTerminologyExtent;
 	}
@@ -4038,7 +4771,7 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 	}
 	
 	//TerminologyExtensionAxiom:
-	//	TERMINOLOGY_EXTENSION_AXIOM_TOKEN extendedTerminology=[TerminologyBox|Reference];
+	//	EXTENDS_TOKEN extendedTerminology=[TerminologyBox|Reference];
 	public TerminologyExtensionAxiomElements getTerminologyExtensionAxiomAccess() {
 		return pTerminologyExtensionAxiom;
 	}
@@ -4211,7 +4944,7 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 	//PlainLiteralScalarRestriction:
 	//	PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN name=ID
 	//	LCURLY ('length' length=INT)? ('minLength' minLength=INT)? ('maxLength' maxLength=INT)? ('pattern' pattern=STRING)?
-	//	('language' language=STRING)?
+	//	('langRange' langRange=STRING)?
 	//	'restrictedRange' restrictedRange=[DataRange|Reference] RCURLY;
 	public PlainLiteralScalarRestrictionElements getPlainLiteralScalarRestrictionAccess() {
 		return pPlainLiteralScalarRestriction;
@@ -4281,6 +5014,172 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 	
 	public ParserRule getTimeScalarRestrictionRule() {
 		return getTimeScalarRestrictionAccess().getRule();
+	}
+	
+	////----------------------------
+	//DescriptionBox:
+	//	kind=DescriptionKind DESCRIPTION_BOX_TOKEN
+	//	iri=IRI
+	//	LCURLY (annotations+=Annotation | closedWorldDefinitions+=DescriptionBoxExtendsClosedWorldDefinitions |
+	//	descriptionBoxRefinements+=DescriptionBoxRefinement | conceptInstances+=ConceptInstance |
+	//	reifiedRelationshipInstances+=ReifiedRelationshipInstance |
+	//	reifiedRelationshipInstanceDomains+=ReifiedRelationshipInstanceDomain |
+	//	reifiedRelationshipInstanceRanges+=ReifiedRelationshipInstanceRange |
+	//	unreifiedRelationshipInstanceTuples+=UnreifiedRelationshipInstanceTuple)*
+	//	RCURLY;
+	public DescriptionBoxElements getDescriptionBoxAccess() {
+		return pDescriptionBox;
+	}
+	
+	public ParserRule getDescriptionBoxRule() {
+		return getDescriptionBoxAccess().getRule();
+	}
+	
+	//enum DescriptionKind:
+	//	Final='final' |
+	//	Partial='partial';
+	public DescriptionKindElements getDescriptionKindAccess() {
+		return eDescriptionKind;
+	}
+	
+	public EnumRule getDescriptionKindRule() {
+		return getDescriptionKindAccess().getRule();
+	}
+	
+	//TerminologyInstanceAssertion:
+	//	ScalarDataPropertyValue | StructuredDataPropertyValue | DataStructureTuple | ConceptInstance |
+	//	ReifiedRelationshipInstance | ReifiedRelationshipInstanceDomain | ReifiedRelationshipInstanceRange |
+	//	UnreifiedRelationshipInstanceTuple;
+	public TerminologyInstanceAssertionElements getTerminologyInstanceAssertionAccess() {
+		return pTerminologyInstanceAssertion;
+	}
+	
+	public ParserRule getTerminologyInstanceAssertionRule() {
+		return getTerminologyInstanceAssertionAccess().getRule();
+	}
+	
+	//DescriptionBoxExtendsClosedWorldDefinitions:
+	//	EXTENDS_TOKEN closedWorldDefinitions=[TerminologyBox|Reference];
+	public DescriptionBoxExtendsClosedWorldDefinitionsElements getDescriptionBoxExtendsClosedWorldDefinitionsAccess() {
+		return pDescriptionBoxExtendsClosedWorldDefinitions;
+	}
+	
+	public ParserRule getDescriptionBoxExtendsClosedWorldDefinitionsRule() {
+		return getDescriptionBoxExtendsClosedWorldDefinitionsAccess().getRule();
+	}
+	
+	//DescriptionBoxRefinement:
+	//	REFINES_TOKEN refinedDescriptionBox=[DescriptionBox|Reference];
+	public DescriptionBoxRefinementElements getDescriptionBoxRefinementAccess() {
+		return pDescriptionBoxRefinement;
+	}
+	
+	public ParserRule getDescriptionBoxRefinementRule() {
+		return getDescriptionBoxRefinementAccess().getRule();
+	}
+	
+	//ScalarDataPropertyValue:
+	//	'ScalarDataPropertyValue'
+	//	LCURLY
+	//	'scalarPropertyValue' scalarPropertyValue=Reference
+	//	'scalarDataProperty' scalarDataProperty=[DataRelationshipToScalar|Reference] RCURLY;
+	public ScalarDataPropertyValueElements getScalarDataPropertyValueAccess() {
+		return pScalarDataPropertyValue;
+	}
+	
+	public ParserRule getScalarDataPropertyValueRule() {
+		return getScalarDataPropertyValueAccess().getRule();
+	}
+	
+	//StructuredDataPropertyValue:
+	//	'StructuredDataPropertyValue'
+	//	LCURLY
+	//	'structuredDataProperty' structuredDataProperty=[DataRelationshipToStructure|Reference]
+	//	'structuredPropertyTuple' structuredPropertyTuple=DataStructureTuple
+	//	RCURLY;
+	public StructuredDataPropertyValueElements getStructuredDataPropertyValueAccess() {
+		return pStructuredDataPropertyValue;
+	}
+	
+	public ParserRule getStructuredDataPropertyValueRule() {
+		return getStructuredDataPropertyValueAccess().getRule();
+	}
+	
+	//DataStructureTuple:
+	//	'DataStructureTuple'
+	//	LCURLY
+	//	'dataStructureType' dataStructureType=[Structure|Reference] RCURLY;
+	public DataStructureTupleElements getDataStructureTupleAccess() {
+		return pDataStructureTuple;
+	}
+	
+	public ParserRule getDataStructureTupleRule() {
+		return getDataStructureTupleAccess().getRule();
+	}
+	
+	//ConceptInstance:
+	//	'ConceptInstance'
+	//	LCURLY
+	//	'singletonConceptClassifier' singletonConceptClassifier=[Concept|Reference] RCURLY;
+	public ConceptInstanceElements getConceptInstanceAccess() {
+		return pConceptInstance;
+	}
+	
+	public ParserRule getConceptInstanceRule() {
+		return getConceptInstanceAccess().getRule();
+	}
+	
+	//ReifiedRelationshipInstance:
+	//	'ReifiedRelationshipInstance'
+	//	LCURLY
+	//	'singletonReifiedRelationshipClassifier' singletonReifiedRelationshipClassifier=[ReifiedRelationship|Reference]
+	//	RCURLY;
+	public ReifiedRelationshipInstanceElements getReifiedRelationshipInstanceAccess() {
+		return pReifiedRelationshipInstance;
+	}
+	
+	public ParserRule getReifiedRelationshipInstanceRule() {
+		return getReifiedRelationshipInstanceAccess().getRule();
+	}
+	
+	//ReifiedRelationshipInstanceDomain:
+	//	'ReifiedRelationshipInstanceDomain'
+	//	LCURLY
+	//	'reifiedRelationshipInstance' reifiedRelationshipInstance=[ReifiedRelationshipInstance|Reference] DOMAIN_TOKEN
+	//	domain=[ConceptualEntitySingletonInstance|Reference] RCURLY;
+	public ReifiedRelationshipInstanceDomainElements getReifiedRelationshipInstanceDomainAccess() {
+		return pReifiedRelationshipInstanceDomain;
+	}
+	
+	public ParserRule getReifiedRelationshipInstanceDomainRule() {
+		return getReifiedRelationshipInstanceDomainAccess().getRule();
+	}
+	
+	//ReifiedRelationshipInstanceRange:
+	//	'ReifiedRelationshipInstanceRange'
+	//	LCURLY
+	//	'reifiedRelationshipInstance' reifiedRelationshipInstance=[ReifiedRelationshipInstance|Reference] RANGE_TOKEN
+	//	range=[ConceptualEntitySingletonInstance|Reference] RCURLY;
+	public ReifiedRelationshipInstanceRangeElements getReifiedRelationshipInstanceRangeAccess() {
+		return pReifiedRelationshipInstanceRange;
+	}
+	
+	public ParserRule getReifiedRelationshipInstanceRangeRule() {
+		return getReifiedRelationshipInstanceRangeAccess().getRule();
+	}
+	
+	//UnreifiedRelationshipInstanceTuple:
+	//	'UnreifiedRelationshipInstanceTuple'
+	//	LCURLY
+	//	UNREIFIED_RELATIONSHIP_TOKEN unreifiedRelationship=[UnreifiedRelationship|Reference] DOMAIN_TOKEN
+	//	domain=[ConceptualEntitySingletonInstance|Reference] RANGE_TOKEN range=[ConceptualEntitySingletonInstance|Reference]
+	//	RCURLY;
+	public UnreifiedRelationshipInstanceTupleElements getUnreifiedRelationshipInstanceTupleAccess() {
+		return pUnreifiedRelationshipInstanceTuple;
+	}
+	
+	public ParserRule getUnreifiedRelationshipInstanceTupleRule() {
+		return getUnreifiedRelationshipInstanceTupleAccess().getRule();
 	}
 	
 	////----------------------------
@@ -4486,6 +5385,18 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 		return tRANGE_TOKEN;
 	}
 	
+	//terminal EXTENDS_TOKEN:
+	//	'extends';
+	public TerminalRule getEXTENDS_TOKENRule() {
+		return tEXTENDS_TOKEN;
+	}
+	
+	//terminal REFINES_TOKEN:
+	//	'refines';
+	public TerminalRule getREFINES_TOKENRule() {
+		return tREFINES_TOKEN;
+	}
+	
 	//terminal ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN:
 	//	'rootConceptTaxonomyAxiom';
 	public TerminalRule getROOT_CONCEPT_TAXONOMY_AXIOM_TOKENRule() {
@@ -4520,12 +5431,6 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 	//	'terminologyNestingAxiom';
 	public TerminalRule getTERMINOLOGY_NESTING_AXIOM_TOKENRule() {
 		return tTERMINOLOGY_NESTING_AXIOM_TOKEN;
-	}
-	
-	//terminal TERMINOLOGY_EXTENSION_AXIOM_TOKEN:
-	//	'extends';
-	public TerminalRule getTERMINOLOGY_EXTENSION_AXIOM_TOKENRule() {
-		return tTERMINOLOGY_EXTENSION_AXIOM_TOKEN;
 	}
 	
 	//terminal ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN:
@@ -4628,6 +5533,12 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 	//	'scalarOneOfLiteralAxiom';
 	public TerminalRule getSCALAR_ONE_OF_LITERAL_AXIOM_TOKENRule() {
 		return tSCALAR_ONE_OF_LITERAL_AXIOM_TOKEN;
+	}
+	
+	//terminal DESCRIPTION_BOX_TOKEN:
+	//	'DescriptionBox';
+	public TerminalRule getDESCRIPTION_BOX_TOKENRule() {
+		return tDESCRIPTION_BOX_TOKEN;
 	}
 	
 	//terminal LCURLY:

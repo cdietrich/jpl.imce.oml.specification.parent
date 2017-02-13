@@ -65,6 +65,8 @@ public class OntologicalModelingLanguageSyntacticSequencer extends AbstractSynta
 			return getCONCEPT_SPECIALIZATION_AXIOM_TOKENToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getCONCEPT_TOKENRule())
 			return getCONCEPT_TOKENToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getDESCRIPTION_BOX_TOKENRule())
+			return getDESCRIPTION_BOX_TOKENToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getDOMAIN_TOKENRule())
 			return getDOMAIN_TOKENToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKENRule())
@@ -81,6 +83,8 @@ public class OntologicalModelingLanguageSyntacticSequencer extends AbstractSynta
 			return getEQUALToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getESSENTIAL_TOKENRule())
 			return getESSENTIAL_TOKENToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getEXTENDS_TOKENRule())
+			return getEXTENDS_TOKENToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getFUNCTIONAL_TOKENRule())
 			return getFUNCTIONAL_TOKENToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getINVERSE_ESSENTIAL_TOKENRule())
@@ -103,6 +107,8 @@ public class OntologicalModelingLanguageSyntacticSequencer extends AbstractSynta
 			return getRANGE_TOKENToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getRCURLYRule())
 			return getRCURLYToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getREFINES_TOKENRule())
+			return getREFINES_TOKENToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getREFLEXIVE_TOKENRule())
 			return getREFLEXIVE_TOKENToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getREIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKENRule())
@@ -131,8 +137,6 @@ public class OntologicalModelingLanguageSyntacticSequencer extends AbstractSynta
 			return getSYNONYM_SCALAR_RESTRICTION_TOKENToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getTARGET_TOKENRule())
 			return getTARGET_TOKENToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getTERMINOLOGY_EXTENSION_AXIOM_TOKENRule())
-			return getTERMINOLOGY_EXTENSION_AXIOM_TOKENToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getTERMINOLOGY_GRAPH_TOKENRule())
 			return getTERMINOLOGY_GRAPH_TOKENToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getTERMINOLOGY_NESTING_AXIOM_TOKENRule())
@@ -266,6 +270,15 @@ public class OntologicalModelingLanguageSyntacticSequencer extends AbstractSynta
 	}
 	
 	/**
+	 * terminal DESCRIPTION_BOX_TOKEN: 'DescriptionBox';
+	 */
+	protected String getDESCRIPTION_BOX_TOKENToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "DescriptionBox";
+	}
+	
+	/**
 	 * terminal DOMAIN_TOKEN: 'domain';
 	 */
 	protected String getDOMAIN_TOKENToken(EObject semanticObject, RuleCall ruleCall, INode node) {
@@ -335,6 +348,15 @@ public class OntologicalModelingLanguageSyntacticSequencer extends AbstractSynta
 		if (node != null)
 			return getTokenText(node);
 		return "essential";
+	}
+	
+	/**
+	 * terminal EXTENDS_TOKEN: 'extends';
+	 */
+	protected String getEXTENDS_TOKENToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "extends";
 	}
 	
 	/**
@@ -434,6 +456,15 @@ public class OntologicalModelingLanguageSyntacticSequencer extends AbstractSynta
 		if (node != null)
 			return getTokenText(node);
 		return "}";
+	}
+	
+	/**
+	 * terminal REFINES_TOKEN: 'refines';
+	 */
+	protected String getREFINES_TOKENToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "refines";
 	}
 	
 	/**
@@ -560,15 +591,6 @@ public class OntologicalModelingLanguageSyntacticSequencer extends AbstractSynta
 		if (node != null)
 			return getTokenText(node);
 		return "target";
-	}
-	
-	/**
-	 * terminal TERMINOLOGY_EXTENSION_AXIOM_TOKEN: 'extends';
-	 */
-	protected String getTERMINOLOGY_EXTENSION_AXIOM_TOKENToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "extends";
 	}
 	
 	/**

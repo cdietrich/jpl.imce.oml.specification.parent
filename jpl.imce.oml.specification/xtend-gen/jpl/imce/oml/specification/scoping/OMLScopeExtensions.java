@@ -73,6 +73,7 @@ public class OMLScopeExtensions {
     TerminologyExtent _extent = _context.extent();
     EList<AnnotationProperty> _annotationProperties = _extent.getAnnotationProperties();
     final Function<AnnotationProperty, QualifiedName> _function = new Function<AnnotationProperty, QualifiedName>() {
+      @Override
       public QualifiedName apply(final AnnotationProperty it) {
         String _abbrevIRI = it.getAbbrevIRI();
         return OMLScopeExtensions.this.qnc.toQualifiedName(_abbrevIRI);
@@ -97,6 +98,7 @@ public class OMLScopeExtensions {
     TerminologyExtent _extent = _terminologyBundle.extent();
     Iterable<TerminologyBox> _terminologies = this._oMLExtensions.terminologies(_extent);
     final Function<TerminologyBox, QualifiedName> _function = new Function<TerminologyBox, QualifiedName>() {
+      @Override
       public QualifiedName apply(final TerminologyBox it) {
         String _nsPrefix = it.nsPrefix();
         return OMLScopeExtensions.this.qnc.toQualifiedName(_nsPrefix);
@@ -111,6 +113,7 @@ public class OMLScopeExtensions {
     TerminologyExtent _extent = _tbox.extent();
     Iterable<TerminologyBox> _terminologies = this._oMLExtensions.terminologies(_extent);
     final Function<TerminologyBox, QualifiedName> _function = new Function<TerminologyBox, QualifiedName>() {
+      @Override
       public QualifiedName apply(final TerminologyBox it) {
         String _nsPrefix = it.nsPrefix();
         return OMLScopeExtensions.this.qnc.toQualifiedName(_nsPrefix);
@@ -144,6 +147,7 @@ public class OMLScopeExtensions {
       EList<Bundle> _bundles = ext.getBundles();
       final Iterable<TerminologyBox> tboxes = Iterables.<TerminologyBox>concat(_terminologyGraphs, _bundles);
       final Function<TerminologyBox, QualifiedName> _function = new Function<TerminologyBox, QualifiedName>() {
+        @Override
         public QualifiedName apply(final TerminologyBox it) {
           String _nsPrefix = it.nsPrefix();
           return OMLScopeExtensions.this.qnc.toQualifiedName(_nsPrefix);
@@ -167,9 +171,11 @@ public class OMLScopeExtensions {
       Iterables.<IEObjectDescription>addAll(result, _scopedElementsFor);
       Iterable<TerminologyBox> _allImportedTerminologies = this._oMLExtensions.allImportedTerminologies(tbox);
       final Function1<TerminologyBox, Iterable<IEObjectDescription>> _function = new Function1<TerminologyBox, Iterable<IEObjectDescription>>() {
+        @Override
         public Iterable<IEObjectDescription> apply(final TerminologyBox importedTbox) {
           Iterable<T> _apply = localScopeFunction.apply(importedTbox);
           final Function<T, QualifiedName> _function = new Function<T, QualifiedName>() {
+            @Override
             public QualifiedName apply(final T importedThing) {
               Pair<TerminologyBox, T> _of = Pair.<TerminologyBox, T>of(importedTbox, importedThing);
               return nameFunction.apply(_of);
@@ -198,11 +204,13 @@ public class OMLScopeExtensions {
   
   public IScope allEntitiesScope(final TerminologyBox tbox) {
     final Function<TerminologyBox, Iterable<Entity>> _function = new Function<TerminologyBox, Iterable<Entity>>() {
+      @Override
       public Iterable<Entity> apply(final TerminologyBox it) {
         return OMLScopeExtensions.this._oMLExtensions.localEntities(it);
       }
     };
     final Function<Pair<TerminologyBox, Entity>, QualifiedName> _function_1 = new Function<Pair<TerminologyBox, Entity>, QualifiedName>() {
+      @Override
       public QualifiedName apply(final Pair<TerminologyBox, Entity> it) {
         return OMLScopeExtensions.this.<Entity>importedResourceNameFunction(it);
       }
@@ -212,11 +220,13 @@ public class OMLScopeExtensions {
   
   public IScope allAspectsScope(final TerminologyBox tbox) {
     final Function<TerminologyBox, Iterable<Aspect>> _function = new Function<TerminologyBox, Iterable<Aspect>>() {
+      @Override
       public Iterable<Aspect> apply(final TerminologyBox it) {
         return OMLScopeExtensions.this._oMLExtensions.localAspects(it);
       }
     };
     final Function<Pair<TerminologyBox, Aspect>, QualifiedName> _function_1 = new Function<Pair<TerminologyBox, Aspect>, QualifiedName>() {
+      @Override
       public QualifiedName apply(final Pair<TerminologyBox, Aspect> it) {
         return OMLScopeExtensions.this.<Aspect>importedResourceNameFunction(it);
       }
@@ -226,11 +236,13 @@ public class OMLScopeExtensions {
   
   public IScope allConceptsScope(final TerminologyBox tbox) {
     final Function<TerminologyBox, Iterable<Concept>> _function = new Function<TerminologyBox, Iterable<Concept>>() {
+      @Override
       public Iterable<Concept> apply(final TerminologyBox it) {
         return OMLScopeExtensions.this._oMLExtensions.localConcepts(it);
       }
     };
     final Function<Pair<TerminologyBox, Concept>, QualifiedName> _function_1 = new Function<Pair<TerminologyBox, Concept>, QualifiedName>() {
+      @Override
       public QualifiedName apply(final Pair<TerminologyBox, Concept> it) {
         return OMLScopeExtensions.this.<Concept>importedResourceNameFunction(it);
       }
@@ -240,11 +252,13 @@ public class OMLScopeExtensions {
   
   public IScope allReifiedRelationshipsScope(final TerminologyBox tbox) {
     final Function<TerminologyBox, Iterable<ReifiedRelationship>> _function = new Function<TerminologyBox, Iterable<ReifiedRelationship>>() {
+      @Override
       public Iterable<ReifiedRelationship> apply(final TerminologyBox it) {
         return OMLScopeExtensions.this._oMLExtensions.localReifiedRelationships(it);
       }
     };
     final Function<Pair<TerminologyBox, ReifiedRelationship>, QualifiedName> _function_1 = new Function<Pair<TerminologyBox, ReifiedRelationship>, QualifiedName>() {
+      @Override
       public QualifiedName apply(final Pair<TerminologyBox, ReifiedRelationship> it) {
         return OMLScopeExtensions.this.<ReifiedRelationship>importedResourceNameFunction(it);
       }

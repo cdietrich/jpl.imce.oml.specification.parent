@@ -62,7 +62,7 @@ public class StructuredDataPropertyValueImpl extends TerminologyInstanceAssertio
 	protected DataRelationshipToStructure structuredDataProperty;
 
 	/**
-	 * The cached value of the '{@link #getStructuredPropertyTuple() <em>Structured Property Tuple</em>}' reference.
+	 * The cached value of the '{@link #getStructuredPropertyTuple() <em>Structured Property Tuple</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStructuredPropertyTuple()
@@ -185,23 +185,6 @@ public class StructuredDataPropertyValueImpl extends TerminologyInstanceAssertio
 	 * @generated
 	 */
 	public DataStructureTuple getStructuredPropertyTuple() {
-		if (structuredPropertyTuple != null && ((EObject)structuredPropertyTuple).eIsProxy()) {
-			InternalEObject oldStructuredPropertyTuple = (InternalEObject)structuredPropertyTuple;
-			structuredPropertyTuple = (DataStructureTuple)eResolveProxy(oldStructuredPropertyTuple);
-			if (structuredPropertyTuple != oldStructuredPropertyTuple) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_PROPERTY_TUPLE, oldStructuredPropertyTuple, structuredPropertyTuple));
-			}
-		}
-		return structuredPropertyTuple;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DataStructureTuple basicGetStructuredPropertyTuple() {
 		return structuredPropertyTuple;
 	}
 
@@ -253,7 +236,7 @@ public class StructuredDataPropertyValueImpl extends TerminologyInstanceAssertio
 				return basicSetSingletonInstance((SingletonInstance)otherEnd, msgs);
 			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_PROPERTY_TUPLE:
 				if (structuredPropertyTuple != null)
-					msgs = ((InternalEObject)structuredPropertyTuple).eInverseRemove(this, OMLPackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE, DataStructureTuple.class, msgs);
+					msgs = ((InternalEObject)structuredPropertyTuple).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_PROPERTY_TUPLE, null, msgs);
 				return basicSetStructuredPropertyTuple((DataStructureTuple)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -304,8 +287,7 @@ public class StructuredDataPropertyValueImpl extends TerminologyInstanceAssertio
 				if (resolve) return getStructuredDataProperty();
 				return basicGetStructuredDataProperty();
 			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_PROPERTY_TUPLE:
-				if (resolve) return getStructuredPropertyTuple();
-				return basicGetStructuredPropertyTuple();
+				return getStructuredPropertyTuple();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

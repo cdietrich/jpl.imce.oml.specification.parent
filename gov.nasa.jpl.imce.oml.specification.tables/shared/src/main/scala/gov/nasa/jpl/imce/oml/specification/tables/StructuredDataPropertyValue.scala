@@ -28,7 +28,6 @@ import scala.Predef._
   * @param uuid[1,1]
   * @param singletonInstanceUUID[1,1]
   * @param structuredDataPropertyUUID[1,1]
-  * @param structuredPropertyTupleUUID[1,1]
   * @param name[1,1]
   */
 @JSExport
@@ -37,19 +36,17 @@ case class StructuredDataPropertyValue
   @(JSExport @field) uuid: UUID,
   @(JSExport @field) singletonInstanceUUID: UUID,
   @(JSExport @field) structuredDataPropertyUUID: UUID,
-  @(JSExport @field) structuredPropertyTupleUUID: UUID,
   @(JSExport @field) name: LocalName
 ) {
   override val hashCode
   : scala.Int 
-  = (uuid, singletonInstanceUUID, structuredDataPropertyUUID, structuredPropertyTupleUUID, name).##
+  = (uuid, singletonInstanceUUID, structuredDataPropertyUUID, name).##
   
   override def equals(other: scala.Any): scala.Boolean = other match {
   	case that: StructuredDataPropertyValue =>
   	  (this.uuid == that.uuid) &&
   	  (this.singletonInstanceUUID == that.singletonInstanceUUID) &&
   	  (this.structuredDataPropertyUUID == that.structuredDataPropertyUUID) &&
-  	  (this.structuredPropertyTupleUUID == that.structuredPropertyTupleUUID) &&
   	  (this.name == that.name)
     case _ =>
       false

@@ -99,59 +99,83 @@ ruleTerminologyExtent returns [EObject current=null]
 		)
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getTerminologyExtentAccess().getAnnotationPropertiesAnnotationPropertyParserRuleCall_1_0());
-				}
-				lv_annotationProperties_1_0=ruleAnnotationProperty
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getTerminologyExtentRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getTerminologyExtentAccess().getAnnotationPropertiesAnnotationPropertyParserRuleCall_1_0_0());
 					}
-					add(
-						$current,
-						"annotationProperties",
-						lv_annotationProperties_1_0,
-						"jpl.imce.oml.specification.OntologicalModelingLanguage.AnnotationProperty");
-					afterParserOrEnumRuleCall();
-				}
+					lv_annotationProperties_1_0=ruleAnnotationProperty
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getTerminologyExtentRule());
+						}
+						add(
+							$current,
+							"annotationProperties",
+							lv_annotationProperties_1_0,
+							"jpl.imce.oml.specification.OntologicalModelingLanguage.AnnotationProperty");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
-		)*
-		(
+			    |
 			(
-				{
-					newCompositeNode(grammarAccess.getTerminologyExtentAccess().getTerminologyGraphsTerminologyGraphParserRuleCall_2_0());
-				}
-				lv_terminologyGraphs_2_0=ruleTerminologyGraph
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getTerminologyExtentRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getTerminologyExtentAccess().getTerminologyGraphsTerminologyGraphParserRuleCall_1_1_0());
 					}
-					add(
-						$current,
-						"terminologyGraphs",
-						lv_terminologyGraphs_2_0,
-						"jpl.imce.oml.specification.OntologicalModelingLanguage.TerminologyGraph");
-					afterParserOrEnumRuleCall();
-				}
+					lv_terminologyGraphs_2_0=ruleTerminologyGraph
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getTerminologyExtentRule());
+						}
+						add(
+							$current,
+							"terminologyGraphs",
+							lv_terminologyGraphs_2_0,
+							"jpl.imce.oml.specification.OntologicalModelingLanguage.TerminologyGraph");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
-		)*
-		(
+			    |
 			(
-				{
-					newCompositeNode(grammarAccess.getTerminologyExtentAccess().getBundlesBundleParserRuleCall_3_0());
-				}
-				lv_bundles_3_0=ruleBundle
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getTerminologyExtentRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getTerminologyExtentAccess().getBundlesBundleParserRuleCall_1_2_0());
 					}
-					add(
-						$current,
-						"bundles",
-						lv_bundles_3_0,
-						"jpl.imce.oml.specification.OntologicalModelingLanguage.Bundle");
-					afterParserOrEnumRuleCall();
-				}
+					lv_bundles_3_0=ruleBundle
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getTerminologyExtentRule());
+						}
+						add(
+							$current,
+							"bundles",
+							lv_bundles_3_0,
+							"jpl.imce.oml.specification.OntologicalModelingLanguage.Bundle");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			    |
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getTerminologyExtentAccess().getDescriptionsDescriptionBoxParserRuleCall_1_3_0());
+					}
+					lv_descriptions_4_0=ruleDescriptionBox
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getTerminologyExtentRule());
+						}
+						add(
+							$current,
+							"descriptions",
+							lv_descriptions_4_0,
+							"jpl.imce.oml.specification.OntologicalModelingLanguage.DescriptionBox");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
 		)*
 	)
@@ -2719,9 +2743,9 @@ ruleTerminologyExtensionAxiom returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		this_TERMINOLOGY_EXTENSION_AXIOM_TOKEN_0=RULE_TERMINOLOGY_EXTENSION_AXIOM_TOKEN
+		this_EXTENDS_TOKEN_0=RULE_EXTENDS_TOKEN
 		{
-			newLeafNode(this_TERMINOLOGY_EXTENSION_AXIOM_TOKEN_0, grammarAccess.getTerminologyExtensionAxiomAccess().getTERMINOLOGY_EXTENSION_AXIOM_TOKENTerminalRuleCall_0());
+			newLeafNode(this_EXTENDS_TOKEN_0, grammarAccess.getTerminologyExtensionAxiomAccess().getEXTENDS_TOKENTerminalRuleCall_0());
 		}
 		(
 			(
@@ -4077,15 +4101,15 @@ rulePlainLiteralScalarRestriction returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_11='language'
+			otherlv_11='langRange'
 			{
-				newLeafNode(otherlv_11, grammarAccess.getPlainLiteralScalarRestrictionAccess().getLanguageKeyword_7_0());
+				newLeafNode(otherlv_11, grammarAccess.getPlainLiteralScalarRestrictionAccess().getLangRangeKeyword_7_0());
 			}
 			(
 				(
-					lv_language_12_0=RULE_STRING
+					lv_langRange_12_0=RULE_STRING
 					{
-						newLeafNode(lv_language_12_0, grammarAccess.getPlainLiteralScalarRestrictionAccess().getLanguageSTRINGTerminalRuleCall_7_1_0());
+						newLeafNode(lv_langRange_12_0, grammarAccess.getPlainLiteralScalarRestrictionAccess().getLangRangeSTRINGTerminalRuleCall_7_1_0());
 					}
 					{
 						if ($current==null) {
@@ -4093,8 +4117,8 @@ rulePlainLiteralScalarRestriction returns [EObject current=null]
 						}
 						setWithLastConsumed(
 							$current,
-							"language",
-							lv_language_12_0,
+							"langRange",
+							lv_langRange_12_0,
 							"jpl.imce.oml.specification.OntologicalModelingLanguage.STRING");
 					}
 				)
@@ -4668,6 +4692,847 @@ ruleTimeScalarRestriction returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleDescriptionBox
+entryRuleDescriptionBox returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDescriptionBoxRule()); }
+	iv_ruleDescriptionBox=ruleDescriptionBox
+	{ $current=$iv_ruleDescriptionBox.current; }
+	EOF;
+
+// Rule DescriptionBox
+ruleDescriptionBox returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDescriptionBoxAccess().getKindDescriptionKindEnumRuleCall_0_0());
+				}
+				lv_kind_0_0=ruleDescriptionKind
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDescriptionBoxRule());
+					}
+					set(
+						$current,
+						"kind",
+						lv_kind_0_0,
+						"jpl.imce.oml.specification.OntologicalModelingLanguage.DescriptionKind");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		this_DESCRIPTION_BOX_TOKEN_1=RULE_DESCRIPTION_BOX_TOKEN
+		{
+			newLeafNode(this_DESCRIPTION_BOX_TOKEN_1, grammarAccess.getDescriptionBoxAccess().getDESCRIPTION_BOX_TOKENTerminalRuleCall_1());
+		}
+		(
+			(
+				lv_iri_2_0=RULE_IRI
+				{
+					newLeafNode(lv_iri_2_0, grammarAccess.getDescriptionBoxAccess().getIriIRITerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDescriptionBoxRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"iri",
+						lv_iri_2_0,
+						"jpl.imce.oml.specification.OntologicalModelingLanguage.IRI");
+				}
+			)
+		)
+		this_LCURLY_3=RULE_LCURLY
+		{
+			newLeafNode(this_LCURLY_3, grammarAccess.getDescriptionBoxAccess().getLCURLYTerminalRuleCall_3());
+		}
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getDescriptionBoxAccess().getAnnotationsAnnotationParserRuleCall_4_0_0());
+					}
+					lv_annotations_4_0=ruleAnnotation
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDescriptionBoxRule());
+						}
+						add(
+							$current,
+							"annotations",
+							lv_annotations_4_0,
+							"jpl.imce.oml.specification.OntologicalModelingLanguage.Annotation");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			    |
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getDescriptionBoxAccess().getClosedWorldDefinitionsDescriptionBoxExtendsClosedWorldDefinitionsParserRuleCall_4_1_0());
+					}
+					lv_closedWorldDefinitions_5_0=ruleDescriptionBoxExtendsClosedWorldDefinitions
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDescriptionBoxRule());
+						}
+						add(
+							$current,
+							"closedWorldDefinitions",
+							lv_closedWorldDefinitions_5_0,
+							"jpl.imce.oml.specification.OntologicalModelingLanguage.DescriptionBoxExtendsClosedWorldDefinitions");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			    |
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getDescriptionBoxAccess().getDescriptionBoxRefinementsDescriptionBoxRefinementParserRuleCall_4_2_0());
+					}
+					lv_descriptionBoxRefinements_6_0=ruleDescriptionBoxRefinement
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDescriptionBoxRule());
+						}
+						add(
+							$current,
+							"descriptionBoxRefinements",
+							lv_descriptionBoxRefinements_6_0,
+							"jpl.imce.oml.specification.OntologicalModelingLanguage.DescriptionBoxRefinement");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			    |
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getDescriptionBoxAccess().getConceptInstancesConceptInstanceParserRuleCall_4_3_0());
+					}
+					lv_conceptInstances_7_0=ruleConceptInstance
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDescriptionBoxRule());
+						}
+						add(
+							$current,
+							"conceptInstances",
+							lv_conceptInstances_7_0,
+							"jpl.imce.oml.specification.OntologicalModelingLanguage.ConceptInstance");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			    |
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getDescriptionBoxAccess().getReifiedRelationshipInstancesReifiedRelationshipInstanceParserRuleCall_4_4_0());
+					}
+					lv_reifiedRelationshipInstances_8_0=ruleReifiedRelationshipInstance
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDescriptionBoxRule());
+						}
+						add(
+							$current,
+							"reifiedRelationshipInstances",
+							lv_reifiedRelationshipInstances_8_0,
+							"jpl.imce.oml.specification.OntologicalModelingLanguage.ReifiedRelationshipInstance");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			    |
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getDescriptionBoxAccess().getReifiedRelationshipInstanceDomainsReifiedRelationshipInstanceDomainParserRuleCall_4_5_0());
+					}
+					lv_reifiedRelationshipInstanceDomains_9_0=ruleReifiedRelationshipInstanceDomain
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDescriptionBoxRule());
+						}
+						add(
+							$current,
+							"reifiedRelationshipInstanceDomains",
+							lv_reifiedRelationshipInstanceDomains_9_0,
+							"jpl.imce.oml.specification.OntologicalModelingLanguage.ReifiedRelationshipInstanceDomain");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			    |
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getDescriptionBoxAccess().getReifiedRelationshipInstanceRangesReifiedRelationshipInstanceRangeParserRuleCall_4_6_0());
+					}
+					lv_reifiedRelationshipInstanceRanges_10_0=ruleReifiedRelationshipInstanceRange
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDescriptionBoxRule());
+						}
+						add(
+							$current,
+							"reifiedRelationshipInstanceRanges",
+							lv_reifiedRelationshipInstanceRanges_10_0,
+							"jpl.imce.oml.specification.OntologicalModelingLanguage.ReifiedRelationshipInstanceRange");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			    |
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getDescriptionBoxAccess().getUnreifiedRelationshipInstanceTuplesUnreifiedRelationshipInstanceTupleParserRuleCall_4_7_0());
+					}
+					lv_unreifiedRelationshipInstanceTuples_11_0=ruleUnreifiedRelationshipInstanceTuple
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDescriptionBoxRule());
+						}
+						add(
+							$current,
+							"unreifiedRelationshipInstanceTuples",
+							lv_unreifiedRelationshipInstanceTuples_11_0,
+							"jpl.imce.oml.specification.OntologicalModelingLanguage.UnreifiedRelationshipInstanceTuple");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+		this_RCURLY_12=RULE_RCURLY
+		{
+			newLeafNode(this_RCURLY_12, grammarAccess.getDescriptionBoxAccess().getRCURLYTerminalRuleCall_5());
+		}
+	)
+;
+
+// Entry rule entryRuleDescriptionBoxExtendsClosedWorldDefinitions
+entryRuleDescriptionBoxExtendsClosedWorldDefinitions returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDescriptionBoxExtendsClosedWorldDefinitionsRule()); }
+	iv_ruleDescriptionBoxExtendsClosedWorldDefinitions=ruleDescriptionBoxExtendsClosedWorldDefinitions
+	{ $current=$iv_ruleDescriptionBoxExtendsClosedWorldDefinitions.current; }
+	EOF;
+
+// Rule DescriptionBoxExtendsClosedWorldDefinitions
+ruleDescriptionBoxExtendsClosedWorldDefinitions returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		this_EXTENDS_TOKEN_0=RULE_EXTENDS_TOKEN
+		{
+			newLeafNode(this_EXTENDS_TOKEN_0, grammarAccess.getDescriptionBoxExtendsClosedWorldDefinitionsAccess().getEXTENDS_TOKENTerminalRuleCall_0());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDescriptionBoxExtendsClosedWorldDefinitionsRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getDescriptionBoxExtendsClosedWorldDefinitionsAccess().getClosedWorldDefinitionsTerminologyBoxCrossReference_1_0());
+				}
+				ruleReference
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleDescriptionBoxRefinement
+entryRuleDescriptionBoxRefinement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDescriptionBoxRefinementRule()); }
+	iv_ruleDescriptionBoxRefinement=ruleDescriptionBoxRefinement
+	{ $current=$iv_ruleDescriptionBoxRefinement.current; }
+	EOF;
+
+// Rule DescriptionBoxRefinement
+ruleDescriptionBoxRefinement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		this_REFINES_TOKEN_0=RULE_REFINES_TOKEN
+		{
+			newLeafNode(this_REFINES_TOKEN_0, grammarAccess.getDescriptionBoxRefinementAccess().getREFINES_TOKENTerminalRuleCall_0());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDescriptionBoxRefinementRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getDescriptionBoxRefinementAccess().getRefinedDescriptionBoxDescriptionBoxCrossReference_1_0());
+				}
+				ruleReference
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleScalarDataPropertyValue
+entryRuleScalarDataPropertyValue returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getScalarDataPropertyValueRule()); }
+	iv_ruleScalarDataPropertyValue=ruleScalarDataPropertyValue
+	{ $current=$iv_ruleScalarDataPropertyValue.current; }
+	EOF;
+
+// Rule ScalarDataPropertyValue
+ruleScalarDataPropertyValue returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='ScalarDataPropertyValue'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getScalarDataPropertyValueAccess().getScalarDataPropertyValueKeyword_0());
+		}
+		this_LCURLY_1=RULE_LCURLY
+		{
+			newLeafNode(this_LCURLY_1, grammarAccess.getScalarDataPropertyValueAccess().getLCURLYTerminalRuleCall_1());
+		}
+		otherlv_2='scalarPropertyValue'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getScalarDataPropertyValueAccess().getScalarPropertyValueKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getScalarDataPropertyValueAccess().getScalarPropertyValueReferenceParserRuleCall_3_0());
+				}
+				lv_scalarPropertyValue_3_0=ruleReference
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getScalarDataPropertyValueRule());
+					}
+					set(
+						$current,
+						"scalarPropertyValue",
+						lv_scalarPropertyValue_3_0,
+						"jpl.imce.oml.specification.OntologicalModelingLanguage.Reference");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_4='scalarDataProperty'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getScalarDataPropertyValueAccess().getScalarDataPropertyKeyword_4());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getScalarDataPropertyValueRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getScalarDataPropertyValueAccess().getScalarDataPropertyDataRelationshipToScalarCrossReference_5_0());
+				}
+				ruleReference
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		this_RCURLY_6=RULE_RCURLY
+		{
+			newLeafNode(this_RCURLY_6, grammarAccess.getScalarDataPropertyValueAccess().getRCURLYTerminalRuleCall_6());
+		}
+	)
+;
+
+// Entry rule entryRuleStructuredDataPropertyValue
+entryRuleStructuredDataPropertyValue returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getStructuredDataPropertyValueRule()); }
+	iv_ruleStructuredDataPropertyValue=ruleStructuredDataPropertyValue
+	{ $current=$iv_ruleStructuredDataPropertyValue.current; }
+	EOF;
+
+// Rule StructuredDataPropertyValue
+ruleStructuredDataPropertyValue returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='StructuredDataPropertyValue'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getStructuredDataPropertyValueAccess().getStructuredDataPropertyValueKeyword_0());
+		}
+		this_LCURLY_1=RULE_LCURLY
+		{
+			newLeafNode(this_LCURLY_1, grammarAccess.getStructuredDataPropertyValueAccess().getLCURLYTerminalRuleCall_1());
+		}
+		otherlv_2='structuredDataProperty'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getStructuredDataPropertyValueAccess().getStructuredDataPropertyKeyword_2());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getStructuredDataPropertyValueRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getStructuredDataPropertyValueAccess().getStructuredDataPropertyDataRelationshipToStructureCrossReference_3_0());
+				}
+				ruleReference
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_4='structuredPropertyTuple'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getStructuredDataPropertyValueAccess().getStructuredPropertyTupleKeyword_4());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getStructuredDataPropertyValueAccess().getStructuredPropertyTupleDataStructureTupleParserRuleCall_5_0());
+				}
+				lv_structuredPropertyTuple_5_0=ruleDataStructureTuple
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getStructuredDataPropertyValueRule());
+					}
+					set(
+						$current,
+						"structuredPropertyTuple",
+						lv_structuredPropertyTuple_5_0,
+						"jpl.imce.oml.specification.OntologicalModelingLanguage.DataStructureTuple");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		this_RCURLY_6=RULE_RCURLY
+		{
+			newLeafNode(this_RCURLY_6, grammarAccess.getStructuredDataPropertyValueAccess().getRCURLYTerminalRuleCall_6());
+		}
+	)
+;
+
+// Entry rule entryRuleDataStructureTuple
+entryRuleDataStructureTuple returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDataStructureTupleRule()); }
+	iv_ruleDataStructureTuple=ruleDataStructureTuple
+	{ $current=$iv_ruleDataStructureTuple.current; }
+	EOF;
+
+// Rule DataStructureTuple
+ruleDataStructureTuple returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='DataStructureTuple'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getDataStructureTupleAccess().getDataStructureTupleKeyword_0());
+		}
+		this_LCURLY_1=RULE_LCURLY
+		{
+			newLeafNode(this_LCURLY_1, grammarAccess.getDataStructureTupleAccess().getLCURLYTerminalRuleCall_1());
+		}
+		otherlv_2='dataStructureType'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getDataStructureTupleAccess().getDataStructureTypeKeyword_2());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDataStructureTupleRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getDataStructureTupleAccess().getDataStructureTypeStructureCrossReference_3_0());
+				}
+				ruleReference
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		this_RCURLY_4=RULE_RCURLY
+		{
+			newLeafNode(this_RCURLY_4, grammarAccess.getDataStructureTupleAccess().getRCURLYTerminalRuleCall_4());
+		}
+	)
+;
+
+// Entry rule entryRuleConceptInstance
+entryRuleConceptInstance returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getConceptInstanceRule()); }
+	iv_ruleConceptInstance=ruleConceptInstance
+	{ $current=$iv_ruleConceptInstance.current; }
+	EOF;
+
+// Rule ConceptInstance
+ruleConceptInstance returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='ConceptInstance'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getConceptInstanceAccess().getConceptInstanceKeyword_0());
+		}
+		this_LCURLY_1=RULE_LCURLY
+		{
+			newLeafNode(this_LCURLY_1, grammarAccess.getConceptInstanceAccess().getLCURLYTerminalRuleCall_1());
+		}
+		otherlv_2='singletonConceptClassifier'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getConceptInstanceAccess().getSingletonConceptClassifierKeyword_2());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getConceptInstanceRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getConceptInstanceAccess().getSingletonConceptClassifierConceptCrossReference_3_0());
+				}
+				ruleReference
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		this_RCURLY_4=RULE_RCURLY
+		{
+			newLeafNode(this_RCURLY_4, grammarAccess.getConceptInstanceAccess().getRCURLYTerminalRuleCall_4());
+		}
+	)
+;
+
+// Entry rule entryRuleReifiedRelationshipInstance
+entryRuleReifiedRelationshipInstance returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getReifiedRelationshipInstanceRule()); }
+	iv_ruleReifiedRelationshipInstance=ruleReifiedRelationshipInstance
+	{ $current=$iv_ruleReifiedRelationshipInstance.current; }
+	EOF;
+
+// Rule ReifiedRelationshipInstance
+ruleReifiedRelationshipInstance returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='ReifiedRelationshipInstance'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getReifiedRelationshipInstanceAccess().getReifiedRelationshipInstanceKeyword_0());
+		}
+		this_LCURLY_1=RULE_LCURLY
+		{
+			newLeafNode(this_LCURLY_1, grammarAccess.getReifiedRelationshipInstanceAccess().getLCURLYTerminalRuleCall_1());
+		}
+		otherlv_2='singletonReifiedRelationshipClassifier'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getReifiedRelationshipInstanceAccess().getSingletonReifiedRelationshipClassifierKeyword_2());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getReifiedRelationshipInstanceRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getReifiedRelationshipInstanceAccess().getSingletonReifiedRelationshipClassifierReifiedRelationshipCrossReference_3_0());
+				}
+				ruleReference
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		this_RCURLY_4=RULE_RCURLY
+		{
+			newLeafNode(this_RCURLY_4, grammarAccess.getReifiedRelationshipInstanceAccess().getRCURLYTerminalRuleCall_4());
+		}
+	)
+;
+
+// Entry rule entryRuleReifiedRelationshipInstanceDomain
+entryRuleReifiedRelationshipInstanceDomain returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getReifiedRelationshipInstanceDomainRule()); }
+	iv_ruleReifiedRelationshipInstanceDomain=ruleReifiedRelationshipInstanceDomain
+	{ $current=$iv_ruleReifiedRelationshipInstanceDomain.current; }
+	EOF;
+
+// Rule ReifiedRelationshipInstanceDomain
+ruleReifiedRelationshipInstanceDomain returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='ReifiedRelationshipInstanceDomain'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getReifiedRelationshipInstanceDomainAccess().getReifiedRelationshipInstanceDomainKeyword_0());
+		}
+		this_LCURLY_1=RULE_LCURLY
+		{
+			newLeafNode(this_LCURLY_1, grammarAccess.getReifiedRelationshipInstanceDomainAccess().getLCURLYTerminalRuleCall_1());
+		}
+		otherlv_2='reifiedRelationshipInstance'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getReifiedRelationshipInstanceDomainAccess().getReifiedRelationshipInstanceKeyword_2());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getReifiedRelationshipInstanceDomainRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getReifiedRelationshipInstanceDomainAccess().getReifiedRelationshipInstanceReifiedRelationshipInstanceCrossReference_3_0());
+				}
+				ruleReference
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		this_DOMAIN_TOKEN_4=RULE_DOMAIN_TOKEN
+		{
+			newLeafNode(this_DOMAIN_TOKEN_4, grammarAccess.getReifiedRelationshipInstanceDomainAccess().getDOMAIN_TOKENTerminalRuleCall_4());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getReifiedRelationshipInstanceDomainRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getReifiedRelationshipInstanceDomainAccess().getDomainConceptualEntitySingletonInstanceCrossReference_5_0());
+				}
+				ruleReference
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		this_RCURLY_6=RULE_RCURLY
+		{
+			newLeafNode(this_RCURLY_6, grammarAccess.getReifiedRelationshipInstanceDomainAccess().getRCURLYTerminalRuleCall_6());
+		}
+	)
+;
+
+// Entry rule entryRuleReifiedRelationshipInstanceRange
+entryRuleReifiedRelationshipInstanceRange returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getReifiedRelationshipInstanceRangeRule()); }
+	iv_ruleReifiedRelationshipInstanceRange=ruleReifiedRelationshipInstanceRange
+	{ $current=$iv_ruleReifiedRelationshipInstanceRange.current; }
+	EOF;
+
+// Rule ReifiedRelationshipInstanceRange
+ruleReifiedRelationshipInstanceRange returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='ReifiedRelationshipInstanceRange'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getReifiedRelationshipInstanceRangeAccess().getReifiedRelationshipInstanceRangeKeyword_0());
+		}
+		this_LCURLY_1=RULE_LCURLY
+		{
+			newLeafNode(this_LCURLY_1, grammarAccess.getReifiedRelationshipInstanceRangeAccess().getLCURLYTerminalRuleCall_1());
+		}
+		otherlv_2='reifiedRelationshipInstance'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getReifiedRelationshipInstanceRangeAccess().getReifiedRelationshipInstanceKeyword_2());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getReifiedRelationshipInstanceRangeRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getReifiedRelationshipInstanceRangeAccess().getReifiedRelationshipInstanceReifiedRelationshipInstanceCrossReference_3_0());
+				}
+				ruleReference
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		this_RANGE_TOKEN_4=RULE_RANGE_TOKEN
+		{
+			newLeafNode(this_RANGE_TOKEN_4, grammarAccess.getReifiedRelationshipInstanceRangeAccess().getRANGE_TOKENTerminalRuleCall_4());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getReifiedRelationshipInstanceRangeRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getReifiedRelationshipInstanceRangeAccess().getRangeConceptualEntitySingletonInstanceCrossReference_5_0());
+				}
+				ruleReference
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		this_RCURLY_6=RULE_RCURLY
+		{
+			newLeafNode(this_RCURLY_6, grammarAccess.getReifiedRelationshipInstanceRangeAccess().getRCURLYTerminalRuleCall_6());
+		}
+	)
+;
+
+// Entry rule entryRuleUnreifiedRelationshipInstanceTuple
+entryRuleUnreifiedRelationshipInstanceTuple returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getUnreifiedRelationshipInstanceTupleRule()); }
+	iv_ruleUnreifiedRelationshipInstanceTuple=ruleUnreifiedRelationshipInstanceTuple
+	{ $current=$iv_ruleUnreifiedRelationshipInstanceTuple.current; }
+	EOF;
+
+// Rule UnreifiedRelationshipInstanceTuple
+ruleUnreifiedRelationshipInstanceTuple returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='UnreifiedRelationshipInstanceTuple'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getUnreifiedRelationshipInstanceTupleKeyword_0());
+		}
+		this_LCURLY_1=RULE_LCURLY
+		{
+			newLeafNode(this_LCURLY_1, grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getLCURLYTerminalRuleCall_1());
+		}
+		this_UNREIFIED_RELATIONSHIP_TOKEN_2=RULE_UNREIFIED_RELATIONSHIP_TOKEN
+		{
+			newLeafNode(this_UNREIFIED_RELATIONSHIP_TOKEN_2, grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getUNREIFIED_RELATIONSHIP_TOKENTerminalRuleCall_2());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getUnreifiedRelationshipInstanceTupleRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getUnreifiedRelationshipUnreifiedRelationshipCrossReference_3_0());
+				}
+				ruleReference
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		this_DOMAIN_TOKEN_4=RULE_DOMAIN_TOKEN
+		{
+			newLeafNode(this_DOMAIN_TOKEN_4, grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getDOMAIN_TOKENTerminalRuleCall_4());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getUnreifiedRelationshipInstanceTupleRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getDomainConceptualEntitySingletonInstanceCrossReference_5_0());
+				}
+				ruleReference
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		this_RANGE_TOKEN_6=RULE_RANGE_TOKEN
+		{
+			newLeafNode(this_RANGE_TOKEN_6, grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getRANGE_TOKENTerminalRuleCall_6());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getUnreifiedRelationshipInstanceTupleRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getRangeConceptualEntitySingletonInstanceCrossReference_7_0());
+				}
+				ruleReference
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		this_RCURLY_8=RULE_RCURLY
+		{
+			newLeafNode(this_RCURLY_8, grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getRCURLYTerminalRuleCall_8());
+		}
+	)
+;
+
 // Entry rule entryRuleReference
 entryRuleReference returns [String current=null]:
 	{ newCompositeNode(grammarAccess.getReferenceRule()); }
@@ -4840,6 +5705,33 @@ ruleTerminologyGraphKind returns [Enumerator current=null]
 	)
 ;
 
+// Rule DescriptionKind
+ruleDescriptionKind returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='final'
+			{
+				$current = grammarAccess.getDescriptionKindAccess().getFinalEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getDescriptionKindAccess().getFinalEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='partial'
+			{
+				$current = grammarAccess.getDescriptionKindAccess().getPartialEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getDescriptionKindAccess().getPartialEnumLiteralDeclaration_1());
+			}
+		)
+	)
+;
+
 RULE_ANNOTATION_PROPERTY_TOKEN : 'annotationProperty';
 
 RULE_ANNOTATION_TOKEN : '@';
@@ -4894,6 +5786,10 @@ RULE_DOMAIN_TOKEN : 'domain';
 
 RULE_RANGE_TOKEN : 'range';
 
+RULE_EXTENDS_TOKEN : 'extends';
+
+RULE_REFINES_TOKEN : 'refines';
+
 RULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN : 'rootConceptTaxonomyAxiom';
 
 RULE_SPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN : 'specificDisjointConceptAxiom';
@@ -4905,8 +5801,6 @@ RULE_BUNDLED_TERMINOLOGY_AXIOM_TOKEN : 'bundledTerminologyAxiom';
 RULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN : 'conceptDesignationTerminologyAxiom';
 
 RULE_TERMINOLOGY_NESTING_AXIOM_TOKEN : 'terminologyNestingAxiom';
-
-RULE_TERMINOLOGY_EXTENSION_AXIOM_TOKEN : 'extends';
 
 RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN : 'entityExistentialRestrictionAxiom';
 
@@ -4941,6 +5835,8 @@ RULE_TIME_SCALAR_RESTRICTION_TOKEN : 'timeScalarRestriction';
 RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN : 'scalarOneOfRestriction';
 
 RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN : 'scalarOneOfLiteralAxiom';
+
+RULE_DESCRIPTION_BOX_TOKEN : 'DescriptionBox';
 
 RULE_LCURLY : '{';
 

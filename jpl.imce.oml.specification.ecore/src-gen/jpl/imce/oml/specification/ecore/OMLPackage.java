@@ -8000,7 +8000,7 @@ public interface OMLPackage extends EPackage {
 	int STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_DATA_PROPERTY = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Structured Property Tuple</b></em>' reference.
+	 * The feature id for the '<em><b>Structured Property Tuple</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -8109,7 +8109,7 @@ public interface OMLPackage extends EPackage {
 	int DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUES = SINGLETON_INSTANCE__STRUCTURED_DATA_PROPERTY_VALUES;
 
 	/**
-	 * The feature id for the '<em><b>Structured Data Property Value</b></em>' reference.
+	 * The feature id for the '<em><b>Structured Data Property Value</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -12374,10 +12374,10 @@ public interface OMLPackage extends EPackage {
 	EReference getStructuredDataPropertyValue_StructuredDataProperty();
 
 	/**
-	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getStructuredPropertyTuple <em>Structured Property Tuple</em>}'.
+	 * Returns the meta object for the containment reference '{@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getStructuredPropertyTuple <em>Structured Property Tuple</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Structured Property Tuple</em>'.
+	 * @return the meta object for the containment reference '<em>Structured Property Tuple</em>'.
 	 * @see jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getStructuredPropertyTuple()
 	 * @see #getStructuredDataPropertyValue()
 	 * @generated
@@ -12395,10 +12395,10 @@ public interface OMLPackage extends EPackage {
 	EClass getDataStructureTuple();
 
 	/**
-	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.DataStructureTuple#getStructuredDataPropertyValue <em>Structured Data Property Value</em>}'.
+	 * Returns the meta object for the container reference '{@link jpl.imce.oml.specification.ecore.DataStructureTuple#getStructuredDataPropertyValue <em>Structured Data Property Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Structured Data Property Value</em>'.
+	 * @return the meta object for the container reference '<em>Structured Data Property Value</em>'.
 	 * @see jpl.imce.oml.specification.ecore.DataStructureTuple#getStructuredDataPropertyValue()
 	 * @see #getDataStructureTuple()
 	 * @generated
@@ -15552,7 +15552,7 @@ public interface OMLPackage extends EPackage {
 		EReference STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_DATA_PROPERTY = eINSTANCE.getStructuredDataPropertyValue_StructuredDataProperty();
 
 		/**
-		 * The meta object literal for the '<em><b>Structured Property Tuple</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Structured Property Tuple</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -15570,7 +15570,7 @@ public interface OMLPackage extends EPackage {
 		EClass DATA_STRUCTURE_TUPLE = eINSTANCE.getDataStructureTuple();
 
 		/**
-		 * The meta object literal for the '<em><b>Structured Data Property Value</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Structured Data Property Value</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

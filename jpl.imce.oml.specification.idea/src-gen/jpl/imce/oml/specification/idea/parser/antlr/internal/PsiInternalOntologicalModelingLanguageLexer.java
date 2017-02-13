@@ -13,7 +13,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
     public static final int RULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN=40;
-    public static final int RULE_HEX=67;
+    public static final int RULE_HEX=69;
     public static final int RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN=56;
     public static final int RULE_LCURLY=10;
     public static final int RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN=54;
@@ -28,19 +28,22 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
     public static final int RULE_TRANSITIVE_TOKEN=26;
     public static final int RULE_FUNCTIONAL_TOKEN=18;
     public static final int RULE_ABSTRACT_TOKEN=15;
-    public static final int RULE_UUID=65;
+    public static final int RULE_UUID=67;
     public static final int RULE_INT=52;
-    public static final int RULE_ML_COMMENT=69;
+    public static final int RULE_ML_COMMENT=71;
+    public static final int T__126=126;
+    public static final int T__125=125;
     public static final int RULE_REIFIED_RELATIONSHIP_TOKEN=17;
     public static final int RULE_INVERSE_TOKEN=28;
+    public static final int T__127=127;
     public static final int RULE_CONCEPT_TOKEN=16;
     public static final int RULE_IRI=6;
     public static final int RULE_BUNDLE_TOKEN=12;
     public static final int RULE_TARGET_TOKEN=30;
     public static final int RULE_TERMINOLOGY_GRAPH_TOKEN=9;
     public static final int RULE_INVERSE_FUNCTIONAL_TOKEN=19;
-    public static final int RULE_HEX_DIGIT=66;
-    public static final int RULE_HEX_8DIGITS=62;
+    public static final int RULE_HEX_DIGIT=68;
+    public static final int RULE_HEX_8DIGITS=64;
     public static final int T__91=91;
     public static final int T__100=100;
     public static final int T__92=92;
@@ -50,11 +53,12 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
     public static final int T__101=101;
     public static final int T__90=90;
     public static final int RULE_TERMINOLOGY_NESTING_AXIOM_TOKEN=42;
-    public static final int RULE_HEX_12DIGITS=64;
+    public static final int RULE_HEX_12DIGITS=66;
     public static final int RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN=49;
     public static final int RULE_STRUCTURE_TOKEN=33;
     public static final int T__99=99;
     public static final int RULE_BINARY_SCALAR_RESTRICTION_TOKEN=51;
+    public static final int RULE_REFINES_TOKEN=62;
     public static final int RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN=47;
     public static final int T__95=95;
     public static final int T__96=96;
@@ -67,48 +71,62 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
     public static final int RULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN=37;
     public static final int RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN=45;
     public static final int RULE_TIME_SCALAR_RESTRICTION_TOKEN=60;
-    public static final int RULE_KIND_TOKEN=61;
-    public static final int RULE_DECIMAL=68;
+    public static final int RULE_KIND_TOKEN=63;
+    public static final int RULE_DECIMAL=70;
     public static final int RULE_SCALAR_TOKEN=32;
     public static final int RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN=55;
     public static final int RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN=48;
     public static final int RULE_IRI_SCALAR_RESTRICTION_TOKEN=53;
     public static final int RULE_RANGE_TOKEN=35;
-    public static final int RULE_TERMINOLOGY_EXTENSION_AXIOM_TOKEN=41;
+    public static final int T__122=122;
+    public static final int T__121=121;
+    public static final int T__124=124;
+    public static final int T__123=123;
     public static final int RULE_UNREIFIED_TOKEN=27;
+    public static final int T__120=120;
     public static final int RULE_STRING=8;
     public static final int RULE_STRING_SCALAR_RESTRICTION_TOKEN=58;
-    public static final int RULE_SL_COMMENT=70;
+    public static final int RULE_SL_COMMENT=72;
     public static final int RULE_INVERSE_ESSENTIAL_TOKEN=21;
     public static final int RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN=44;
     public static final int RULE_ANNOTATION_PROPERTY_TOKEN=4;
     public static final int RULE_SYMMETRIC_TOKEN=22;
     public static final int T__77=77;
+    public static final int T__119=119;
     public static final int RULE_DOMAIN_TOKEN=34;
+    public static final int RULE_EXTENDS_TOKEN=41;
     public static final int T__78=78;
+    public static final int T__118=118;
     public static final int T__79=79;
-    public static final int T__73=73;
-    public static final int RULE_HEX_4DIGITS=63;
+    public static final int T__115=115;
+    public static final int RULE_HEX_4DIGITS=65;
     public static final int EOF=-1;
-    public static final int T__74=74;
+    public static final int T__114=114;
     public static final int T__75=75;
+    public static final int T__117=117;
     public static final int RULE_SPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN=38;
     public static final int T__76=76;
+    public static final int T__116=116;
     public static final int T__80=80;
+    public static final int T__111=111;
     public static final int T__81=81;
+    public static final int T__110=110;
     public static final int T__82=82;
+    public static final int T__113=113;
     public static final int T__83=83;
+    public static final int T__112=112;
     public static final int RULE_IRREFLEXIVE_TOKEN=25;
     public static final int RULE_RCURLY=11;
     public static final int RULE_ANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN=36;
-    public static final int RULE_WS=71;
-    public static final int RULE_ANY_OTHER=72;
+    public static final int RULE_WS=73;
+    public static final int RULE_ANY_OTHER=74;
     public static final int RULE_ASPECT_TOKEN=13;
     public static final int T__88=88;
     public static final int T__108=108;
     public static final int RULE_ESSENTIAL_TOKEN=20;
     public static final int T__89=89;
     public static final int T__107=107;
+    public static final int RULE_DESCRIPTION_BOX_TOKEN=61;
     public static final int T__109=109;
     public static final int T__84=84;
     public static final int T__104=104;
@@ -133,57 +151,15 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
     }
     public String getGrammarFileName() { return "PsiInternalOntologicalModelingLanguage.g"; }
 
-    // $ANTLR start "T__73"
-    public final void mT__73() throws RecognitionException {
-        try {
-            int _type = T__73;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:11:7: ( 'entityStructuredDataProperty' )
-            // PsiInternalOntologicalModelingLanguage.g:11:9: 'entityStructuredDataProperty'
-            {
-            match("entityStructuredDataProperty"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__73"
-
-    // $ANTLR start "T__74"
-    public final void mT__74() throws RecognitionException {
-        try {
-            int _type = T__74;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:12:7: ( 'entityScalarDataProperty' )
-            // PsiInternalOntologicalModelingLanguage.g:12:9: 'entityScalarDataProperty'
-            {
-            match("entityScalarDataProperty"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__74"
-
     // $ANTLR start "T__75"
     public final void mT__75() throws RecognitionException {
         try {
             int _type = T__75;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:13:7: ( 'structuredDataProperty' )
-            // PsiInternalOntologicalModelingLanguage.g:13:9: 'structuredDataProperty'
+            // PsiInternalOntologicalModelingLanguage.g:11:7: ( 'entityStructuredDataProperty' )
+            // PsiInternalOntologicalModelingLanguage.g:11:9: 'entityStructuredDataProperty'
             {
-            match("structuredDataProperty"); 
+            match("entityStructuredDataProperty"); 
 
 
             }
@@ -201,10 +177,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__76;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:14:7: ( 'scalarDataProperty' )
-            // PsiInternalOntologicalModelingLanguage.g:14:9: 'scalarDataProperty'
+            // PsiInternalOntologicalModelingLanguage.g:12:7: ( 'entityScalarDataProperty' )
+            // PsiInternalOntologicalModelingLanguage.g:12:9: 'entityScalarDataProperty'
             {
-            match("scalarDataProperty"); 
+            match("entityScalarDataProperty"); 
 
 
             }
@@ -222,10 +198,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__77;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:15:7: ( 'disjointTaxonomyParent' )
-            // PsiInternalOntologicalModelingLanguage.g:15:9: 'disjointTaxonomyParent'
+            // PsiInternalOntologicalModelingLanguage.g:13:7: ( 'structuredDataProperty' )
+            // PsiInternalOntologicalModelingLanguage.g:13:9: 'structuredDataProperty'
             {
-            match("disjointTaxonomyParent"); 
+            match("structuredDataProperty"); 
 
 
             }
@@ -243,10 +219,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__78;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:16:7: ( 'root' )
-            // PsiInternalOntologicalModelingLanguage.g:16:9: 'root'
+            // PsiInternalOntologicalModelingLanguage.g:14:7: ( 'scalarDataProperty' )
+            // PsiInternalOntologicalModelingLanguage.g:14:9: 'scalarDataProperty'
             {
-            match("root"); 
+            match("scalarDataProperty"); 
 
 
             }
@@ -264,10 +240,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__79;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:17:7: ( 'disjointLeaf' )
-            // PsiInternalOntologicalModelingLanguage.g:17:9: 'disjointLeaf'
+            // PsiInternalOntologicalModelingLanguage.g:15:7: ( 'disjointTaxonomyParent' )
+            // PsiInternalOntologicalModelingLanguage.g:15:9: 'disjointTaxonomyParent'
             {
-            match("disjointLeaf"); 
+            match("disjointTaxonomyParent"); 
 
 
             }
@@ -285,10 +261,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__80;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:18:7: ( 'bundledTerminology' )
-            // PsiInternalOntologicalModelingLanguage.g:18:9: 'bundledTerminology'
+            // PsiInternalOntologicalModelingLanguage.g:16:7: ( 'root' )
+            // PsiInternalOntologicalModelingLanguage.g:16:9: 'root'
             {
-            match("bundledTerminology"); 
+            match("root"); 
 
 
             }
@@ -306,10 +282,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__81;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:19:7: ( 'designatedTerminology' )
-            // PsiInternalOntologicalModelingLanguage.g:19:9: 'designatedTerminology'
+            // PsiInternalOntologicalModelingLanguage.g:17:7: ( 'disjointLeaf' )
+            // PsiInternalOntologicalModelingLanguage.g:17:9: 'disjointLeaf'
             {
-            match("designatedTerminology"); 
+            match("disjointLeaf"); 
 
 
             }
@@ -327,10 +303,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__82;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:20:7: ( 'designatedConcept' )
-            // PsiInternalOntologicalModelingLanguage.g:20:9: 'designatedConcept'
+            // PsiInternalOntologicalModelingLanguage.g:18:7: ( 'bundledTerminology' )
+            // PsiInternalOntologicalModelingLanguage.g:18:9: 'bundledTerminology'
             {
-            match("designatedConcept"); 
+            match("bundledTerminology"); 
 
 
             }
@@ -348,10 +324,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__83;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:21:7: ( 'nestingTerminology' )
-            // PsiInternalOntologicalModelingLanguage.g:21:9: 'nestingTerminology'
+            // PsiInternalOntologicalModelingLanguage.g:19:7: ( 'designatedTerminology' )
+            // PsiInternalOntologicalModelingLanguage.g:19:9: 'designatedTerminology'
             {
-            match("nestingTerminology"); 
+            match("designatedTerminology"); 
 
 
             }
@@ -369,10 +345,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__84;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:22:7: ( 'nestingContext' )
-            // PsiInternalOntologicalModelingLanguage.g:22:9: 'nestingContext'
+            // PsiInternalOntologicalModelingLanguage.g:20:7: ( 'designatedConcept' )
+            // PsiInternalOntologicalModelingLanguage.g:20:9: 'designatedConcept'
             {
-            match("nestingContext"); 
+            match("designatedConcept"); 
 
 
             }
@@ -390,10 +366,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__85;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:23:7: ( 'restrictedRelation' )
-            // PsiInternalOntologicalModelingLanguage.g:23:9: 'restrictedRelation'
+            // PsiInternalOntologicalModelingLanguage.g:21:7: ( 'nestingTerminology' )
+            // PsiInternalOntologicalModelingLanguage.g:21:9: 'nestingTerminology'
             {
-            match("restrictedRelation"); 
+            match("nestingTerminology"); 
 
 
             }
@@ -411,10 +387,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__86;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:24:7: ( 'restrictedRange' )
-            // PsiInternalOntologicalModelingLanguage.g:24:9: 'restrictedRange'
+            // PsiInternalOntologicalModelingLanguage.g:22:7: ( 'nestingContext' )
+            // PsiInternalOntologicalModelingLanguage.g:22:9: 'nestingContext'
             {
-            match("restrictedRange"); 
+            match("nestingContext"); 
 
 
             }
@@ -432,10 +408,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__87;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:25:7: ( 'restrictedDomain' )
-            // PsiInternalOntologicalModelingLanguage.g:25:9: 'restrictedDomain'
+            // PsiInternalOntologicalModelingLanguage.g:23:7: ( 'restrictedRelation' )
+            // PsiInternalOntologicalModelingLanguage.g:23:9: 'restrictedRelation'
             {
-            match("restrictedDomain"); 
+            match("restrictedRelation"); 
 
 
             }
@@ -453,10 +429,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__88;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:26:7: ( 'subConcept' )
-            // PsiInternalOntologicalModelingLanguage.g:26:9: 'subConcept'
+            // PsiInternalOntologicalModelingLanguage.g:24:7: ( 'restrictedRange' )
+            // PsiInternalOntologicalModelingLanguage.g:24:9: 'restrictedRange'
             {
-            match("subConcept"); 
+            match("restrictedRange"); 
 
 
             }
@@ -474,10 +450,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__89;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:27:7: ( 'superConcept' )
-            // PsiInternalOntologicalModelingLanguage.g:27:9: 'superConcept'
+            // PsiInternalOntologicalModelingLanguage.g:25:7: ( 'restrictedDomain' )
+            // PsiInternalOntologicalModelingLanguage.g:25:9: 'restrictedDomain'
             {
-            match("superConcept"); 
+            match("restrictedDomain"); 
 
 
             }
@@ -495,10 +471,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__90;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:28:7: ( 'subRelationship' )
-            // PsiInternalOntologicalModelingLanguage.g:28:9: 'subRelationship'
+            // PsiInternalOntologicalModelingLanguage.g:26:7: ( 'subConcept' )
+            // PsiInternalOntologicalModelingLanguage.g:26:9: 'subConcept'
             {
-            match("subRelationship"); 
+            match("subConcept"); 
 
 
             }
@@ -516,10 +492,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__91;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:29:7: ( 'superRelationship' )
-            // PsiInternalOntologicalModelingLanguage.g:29:9: 'superRelationship'
+            // PsiInternalOntologicalModelingLanguage.g:27:7: ( 'superConcept' )
+            // PsiInternalOntologicalModelingLanguage.g:27:9: 'superConcept'
             {
-            match("superRelationship"); 
+            match("superConcept"); 
 
 
             }
@@ -537,10 +513,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__92;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:30:7: ( 'restrictedEntity' )
-            // PsiInternalOntologicalModelingLanguage.g:30:9: 'restrictedEntity'
+            // PsiInternalOntologicalModelingLanguage.g:28:7: ( 'subRelationship' )
+            // PsiInternalOntologicalModelingLanguage.g:28:9: 'subRelationship'
             {
-            match("restrictedEntity"); 
+            match("subRelationship"); 
 
 
             }
@@ -558,10 +534,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__93;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:31:7: ( 'scalarProperty' )
-            // PsiInternalOntologicalModelingLanguage.g:31:9: 'scalarProperty'
+            // PsiInternalOntologicalModelingLanguage.g:29:7: ( 'superRelationship' )
+            // PsiInternalOntologicalModelingLanguage.g:29:9: 'superRelationship'
             {
-            match("scalarProperty"); 
+            match("superRelationship"); 
 
 
             }
@@ -579,10 +555,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__94;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:32:7: ( 'scalarRestriction' )
-            // PsiInternalOntologicalModelingLanguage.g:32:9: 'scalarRestriction'
+            // PsiInternalOntologicalModelingLanguage.g:30:7: ( 'restrictedEntity' )
+            // PsiInternalOntologicalModelingLanguage.g:30:9: 'restrictedEntity'
             {
-            match("scalarRestriction"); 
+            match("restrictedEntity"); 
 
 
             }
@@ -600,10 +576,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__95;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:33:7: ( 'literalValue' )
-            // PsiInternalOntologicalModelingLanguage.g:33:9: 'literalValue'
+            // PsiInternalOntologicalModelingLanguage.g:31:7: ( 'scalarProperty' )
+            // PsiInternalOntologicalModelingLanguage.g:31:9: 'scalarProperty'
             {
-            match("literalValue"); 
+            match("scalarProperty"); 
 
 
             }
@@ -621,10 +597,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__96;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:34:7: ( 'length' )
-            // PsiInternalOntologicalModelingLanguage.g:34:9: 'length'
+            // PsiInternalOntologicalModelingLanguage.g:32:7: ( 'scalarRestriction' )
+            // PsiInternalOntologicalModelingLanguage.g:32:9: 'scalarRestriction'
             {
-            match("length"); 
+            match("scalarRestriction"); 
 
 
             }
@@ -642,10 +618,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__97;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:35:7: ( 'minLength' )
-            // PsiInternalOntologicalModelingLanguage.g:35:9: 'minLength'
+            // PsiInternalOntologicalModelingLanguage.g:33:7: ( 'literalValue' )
+            // PsiInternalOntologicalModelingLanguage.g:33:9: 'literalValue'
             {
-            match("minLength"); 
+            match("literalValue"); 
 
 
             }
@@ -663,10 +639,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__98;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:36:7: ( 'maxLength' )
-            // PsiInternalOntologicalModelingLanguage.g:36:9: 'maxLength'
+            // PsiInternalOntologicalModelingLanguage.g:34:7: ( 'length' )
+            // PsiInternalOntologicalModelingLanguage.g:34:9: 'length'
             {
-            match("maxLength"); 
+            match("length"); 
 
 
             }
@@ -684,10 +660,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__99;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:37:7: ( 'pattern' )
-            // PsiInternalOntologicalModelingLanguage.g:37:9: 'pattern'
+            // PsiInternalOntologicalModelingLanguage.g:35:7: ( 'minLength' )
+            // PsiInternalOntologicalModelingLanguage.g:35:9: 'minLength'
             {
-            match("pattern"); 
+            match("minLength"); 
 
 
             }
@@ -705,10 +681,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__100;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:38:8: ( 'minInclusive' )
-            // PsiInternalOntologicalModelingLanguage.g:38:10: 'minInclusive'
+            // PsiInternalOntologicalModelingLanguage.g:36:8: ( 'maxLength' )
+            // PsiInternalOntologicalModelingLanguage.g:36:10: 'maxLength'
             {
-            match("minInclusive"); 
+            match("maxLength"); 
 
 
             }
@@ -726,10 +702,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__101;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:39:8: ( 'maxInclusive' )
-            // PsiInternalOntologicalModelingLanguage.g:39:10: 'maxInclusive'
+            // PsiInternalOntologicalModelingLanguage.g:37:8: ( 'pattern' )
+            // PsiInternalOntologicalModelingLanguage.g:37:10: 'pattern'
             {
-            match("maxInclusive"); 
+            match("pattern"); 
 
 
             }
@@ -747,10 +723,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__102;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:40:8: ( 'minExclusive' )
-            // PsiInternalOntologicalModelingLanguage.g:40:10: 'minExclusive'
+            // PsiInternalOntologicalModelingLanguage.g:38:8: ( 'minInclusive' )
+            // PsiInternalOntologicalModelingLanguage.g:38:10: 'minInclusive'
             {
-            match("minExclusive"); 
+            match("minInclusive"); 
 
 
             }
@@ -768,10 +744,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__103;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:41:8: ( 'maxExclusive' )
-            // PsiInternalOntologicalModelingLanguage.g:41:10: 'maxExclusive'
+            // PsiInternalOntologicalModelingLanguage.g:39:8: ( 'maxInclusive' )
+            // PsiInternalOntologicalModelingLanguage.g:39:10: 'maxInclusive'
             {
-            match("maxExclusive"); 
+            match("maxInclusive"); 
 
 
             }
@@ -789,10 +765,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__104;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:42:8: ( 'language' )
-            // PsiInternalOntologicalModelingLanguage.g:42:10: 'language'
+            // PsiInternalOntologicalModelingLanguage.g:40:8: ( 'minExclusive' )
+            // PsiInternalOntologicalModelingLanguage.g:40:10: 'minExclusive'
             {
-            match("language"); 
+            match("minExclusive"); 
 
 
             }
@@ -810,10 +786,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__105;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:43:8: ( 'value' )
-            // PsiInternalOntologicalModelingLanguage.g:43:10: 'value'
+            // PsiInternalOntologicalModelingLanguage.g:41:8: ( 'maxExclusive' )
+            // PsiInternalOntologicalModelingLanguage.g:41:10: 'maxExclusive'
             {
-            match("value"); 
+            match("maxExclusive"); 
 
 
             }
@@ -831,10 +807,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__106;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:44:8: ( 'axiom' )
-            // PsiInternalOntologicalModelingLanguage.g:44:10: 'axiom'
+            // PsiInternalOntologicalModelingLanguage.g:42:8: ( 'langRange' )
+            // PsiInternalOntologicalModelingLanguage.g:42:10: 'langRange'
             {
-            match("axiom"); 
+            match("langRange"); 
 
 
             }
@@ -852,10 +828,11 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__107;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:45:8: ( ':' )
-            // PsiInternalOntologicalModelingLanguage.g:45:10: ':'
+            // PsiInternalOntologicalModelingLanguage.g:43:8: ( 'value' )
+            // PsiInternalOntologicalModelingLanguage.g:43:10: 'value'
             {
-            match(':'); 
+            match("value"); 
+
 
             }
 
@@ -872,10 +849,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__108;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:46:8: ( 'open' )
-            // PsiInternalOntologicalModelingLanguage.g:46:10: 'open'
+            // PsiInternalOntologicalModelingLanguage.g:44:8: ( 'axiom' )
+            // PsiInternalOntologicalModelingLanguage.g:44:10: 'axiom'
             {
-            match("open"); 
+            match("axiom"); 
 
 
             }
@@ -893,10 +870,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__109;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:47:8: ( 'closed' )
-            // PsiInternalOntologicalModelingLanguage.g:47:10: 'closed'
+            // PsiInternalOntologicalModelingLanguage.g:45:8: ( 'ScalarDataPropertyValue' )
+            // PsiInternalOntologicalModelingLanguage.g:45:10: 'ScalarDataPropertyValue'
             {
-            match("closed"); 
+            match("ScalarDataPropertyValue"); 
 
 
             }
@@ -909,13 +886,390 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
     }
     // $ANTLR end "T__109"
 
+    // $ANTLR start "T__110"
+    public final void mT__110() throws RecognitionException {
+        try {
+            int _type = T__110;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // PsiInternalOntologicalModelingLanguage.g:46:8: ( 'scalarPropertyValue' )
+            // PsiInternalOntologicalModelingLanguage.g:46:10: 'scalarPropertyValue'
+            {
+            match("scalarPropertyValue"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__110"
+
+    // $ANTLR start "T__111"
+    public final void mT__111() throws RecognitionException {
+        try {
+            int _type = T__111;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // PsiInternalOntologicalModelingLanguage.g:47:8: ( 'StructuredDataPropertyValue' )
+            // PsiInternalOntologicalModelingLanguage.g:47:10: 'StructuredDataPropertyValue'
+            {
+            match("StructuredDataPropertyValue"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__111"
+
+    // $ANTLR start "T__112"
+    public final void mT__112() throws RecognitionException {
+        try {
+            int _type = T__112;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // PsiInternalOntologicalModelingLanguage.g:48:8: ( 'structuredPropertyTuple' )
+            // PsiInternalOntologicalModelingLanguage.g:48:10: 'structuredPropertyTuple'
+            {
+            match("structuredPropertyTuple"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__112"
+
+    // $ANTLR start "T__113"
+    public final void mT__113() throws RecognitionException {
+        try {
+            int _type = T__113;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // PsiInternalOntologicalModelingLanguage.g:49:8: ( 'DataStructureTuple' )
+            // PsiInternalOntologicalModelingLanguage.g:49:10: 'DataStructureTuple'
+            {
+            match("DataStructureTuple"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__113"
+
+    // $ANTLR start "T__114"
+    public final void mT__114() throws RecognitionException {
+        try {
+            int _type = T__114;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // PsiInternalOntologicalModelingLanguage.g:50:8: ( 'dataStructureType' )
+            // PsiInternalOntologicalModelingLanguage.g:50:10: 'dataStructureType'
+            {
+            match("dataStructureType"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__114"
+
+    // $ANTLR start "T__115"
+    public final void mT__115() throws RecognitionException {
+        try {
+            int _type = T__115;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // PsiInternalOntologicalModelingLanguage.g:51:8: ( 'ConceptInstance' )
+            // PsiInternalOntologicalModelingLanguage.g:51:10: 'ConceptInstance'
+            {
+            match("ConceptInstance"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__115"
+
+    // $ANTLR start "T__116"
+    public final void mT__116() throws RecognitionException {
+        try {
+            int _type = T__116;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // PsiInternalOntologicalModelingLanguage.g:52:8: ( 'singletonConceptClassifier' )
+            // PsiInternalOntologicalModelingLanguage.g:52:10: 'singletonConceptClassifier'
+            {
+            match("singletonConceptClassifier"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__116"
+
+    // $ANTLR start "T__117"
+    public final void mT__117() throws RecognitionException {
+        try {
+            int _type = T__117;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // PsiInternalOntologicalModelingLanguage.g:53:8: ( 'ReifiedRelationshipInstance' )
+            // PsiInternalOntologicalModelingLanguage.g:53:10: 'ReifiedRelationshipInstance'
+            {
+            match("ReifiedRelationshipInstance"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__117"
+
+    // $ANTLR start "T__118"
+    public final void mT__118() throws RecognitionException {
+        try {
+            int _type = T__118;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // PsiInternalOntologicalModelingLanguage.g:54:8: ( 'singletonReifiedRelationshipClassifier' )
+            // PsiInternalOntologicalModelingLanguage.g:54:10: 'singletonReifiedRelationshipClassifier'
+            {
+            match("singletonReifiedRelationshipClassifier"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__118"
+
+    // $ANTLR start "T__119"
+    public final void mT__119() throws RecognitionException {
+        try {
+            int _type = T__119;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // PsiInternalOntologicalModelingLanguage.g:55:8: ( 'ReifiedRelationshipInstanceDomain' )
+            // PsiInternalOntologicalModelingLanguage.g:55:10: 'ReifiedRelationshipInstanceDomain'
+            {
+            match("ReifiedRelationshipInstanceDomain"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__119"
+
+    // $ANTLR start "T__120"
+    public final void mT__120() throws RecognitionException {
+        try {
+            int _type = T__120;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // PsiInternalOntologicalModelingLanguage.g:56:8: ( 'reifiedRelationshipInstance' )
+            // PsiInternalOntologicalModelingLanguage.g:56:10: 'reifiedRelationshipInstance'
+            {
+            match("reifiedRelationshipInstance"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__120"
+
+    // $ANTLR start "T__121"
+    public final void mT__121() throws RecognitionException {
+        try {
+            int _type = T__121;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // PsiInternalOntologicalModelingLanguage.g:57:8: ( 'ReifiedRelationshipInstanceRange' )
+            // PsiInternalOntologicalModelingLanguage.g:57:10: 'ReifiedRelationshipInstanceRange'
+            {
+            match("ReifiedRelationshipInstanceRange"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__121"
+
+    // $ANTLR start "T__122"
+    public final void mT__122() throws RecognitionException {
+        try {
+            int _type = T__122;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // PsiInternalOntologicalModelingLanguage.g:58:8: ( 'UnreifiedRelationshipInstanceTuple' )
+            // PsiInternalOntologicalModelingLanguage.g:58:10: 'UnreifiedRelationshipInstanceTuple'
+            {
+            match("UnreifiedRelationshipInstanceTuple"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__122"
+
+    // $ANTLR start "T__123"
+    public final void mT__123() throws RecognitionException {
+        try {
+            int _type = T__123;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // PsiInternalOntologicalModelingLanguage.g:59:8: ( ':' )
+            // PsiInternalOntologicalModelingLanguage.g:59:10: ':'
+            {
+            match(':'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__123"
+
+    // $ANTLR start "T__124"
+    public final void mT__124() throws RecognitionException {
+        try {
+            int _type = T__124;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // PsiInternalOntologicalModelingLanguage.g:60:8: ( 'open' )
+            // PsiInternalOntologicalModelingLanguage.g:60:10: 'open'
+            {
+            match("open"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__124"
+
+    // $ANTLR start "T__125"
+    public final void mT__125() throws RecognitionException {
+        try {
+            int _type = T__125;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // PsiInternalOntologicalModelingLanguage.g:61:8: ( 'closed' )
+            // PsiInternalOntologicalModelingLanguage.g:61:10: 'closed'
+            {
+            match("closed"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__125"
+
+    // $ANTLR start "T__126"
+    public final void mT__126() throws RecognitionException {
+        try {
+            int _type = T__126;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // PsiInternalOntologicalModelingLanguage.g:62:8: ( 'final' )
+            // PsiInternalOntologicalModelingLanguage.g:62:10: 'final'
+            {
+            match("final"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__126"
+
+    // $ANTLR start "T__127"
+    public final void mT__127() throws RecognitionException {
+        try {
+            int _type = T__127;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // PsiInternalOntologicalModelingLanguage.g:63:8: ( 'partial' )
+            // PsiInternalOntologicalModelingLanguage.g:63:10: 'partial'
+            {
+            match("partial"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__127"
+
     // $ANTLR start "RULE_ANNOTATION_PROPERTY_TOKEN"
     public final void mRULE_ANNOTATION_PROPERTY_TOKEN() throws RecognitionException {
         try {
             int _type = RULE_ANNOTATION_PROPERTY_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:4993:32: ( 'annotationProperty' )
-            // PsiInternalOntologicalModelingLanguage.g:4993:34: 'annotationProperty'
+            // PsiInternalOntologicalModelingLanguage.g:5923:32: ( 'annotationProperty' )
+            // PsiInternalOntologicalModelingLanguage.g:5923:34: 'annotationProperty'
             {
             match("annotationProperty"); 
 
@@ -935,8 +1289,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ANNOTATION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:4995:23: ( '@' )
-            // PsiInternalOntologicalModelingLanguage.g:4995:25: '@'
+            // PsiInternalOntologicalModelingLanguage.g:5925:23: ( '@' )
+            // PsiInternalOntologicalModelingLanguage.g:5925:25: '@'
             {
             match('@'); 
 
@@ -955,8 +1309,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_TERMINOLOGY_GRAPH_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:4997:30: ( 'terminology' )
-            // PsiInternalOntologicalModelingLanguage.g:4997:32: 'terminology'
+            // PsiInternalOntologicalModelingLanguage.g:5927:30: ( 'terminology' )
+            // PsiInternalOntologicalModelingLanguage.g:5927:32: 'terminology'
             {
             match("terminology"); 
 
@@ -976,8 +1330,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_BUNDLE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:4999:19: ( 'bundle' )
-            // PsiInternalOntologicalModelingLanguage.g:4999:21: 'bundle'
+            // PsiInternalOntologicalModelingLanguage.g:5929:19: ( 'bundle' )
+            // PsiInternalOntologicalModelingLanguage.g:5929:21: 'bundle'
             {
             match("bundle"); 
 
@@ -997,8 +1351,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_KIND_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5001:17: ( 'kind' )
-            // PsiInternalOntologicalModelingLanguage.g:5001:19: 'kind'
+            // PsiInternalOntologicalModelingLanguage.g:5931:17: ( 'kind' )
+            // PsiInternalOntologicalModelingLanguage.g:5931:19: 'kind'
             {
             match("kind"); 
 
@@ -1018,8 +1372,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ASPECT_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5003:19: ( 'aspect' )
-            // PsiInternalOntologicalModelingLanguage.g:5003:21: 'aspect'
+            // PsiInternalOntologicalModelingLanguage.g:5933:19: ( 'aspect' )
+            // PsiInternalOntologicalModelingLanguage.g:5933:21: 'aspect'
             {
             match("aspect"); 
 
@@ -1039,8 +1393,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ABSTRACT_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5005:21: ( 'abstract' )
-            // PsiInternalOntologicalModelingLanguage.g:5005:23: 'abstract'
+            // PsiInternalOntologicalModelingLanguage.g:5935:21: ( 'abstract' )
+            // PsiInternalOntologicalModelingLanguage.g:5935:23: 'abstract'
             {
             match("abstract"); 
 
@@ -1060,8 +1414,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_CONCEPT_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5007:20: ( 'concept' )
-            // PsiInternalOntologicalModelingLanguage.g:5007:22: 'concept'
+            // PsiInternalOntologicalModelingLanguage.g:5937:20: ( 'concept' )
+            // PsiInternalOntologicalModelingLanguage.g:5937:22: 'concept'
             {
             match("concept"); 
 
@@ -1081,8 +1435,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_REIFIED_RELATIONSHIP_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5009:33: ( 'reifiedRelationship' )
-            // PsiInternalOntologicalModelingLanguage.g:5009:35: 'reifiedRelationship'
+            // PsiInternalOntologicalModelingLanguage.g:5939:33: ( 'reifiedRelationship' )
+            // PsiInternalOntologicalModelingLanguage.g:5939:35: 'reifiedRelationship'
             {
             match("reifiedRelationship"); 
 
@@ -1102,8 +1456,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_UNREIFIED_RELATIONSHIP_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5011:35: ( 'unreifiedRelationship' )
-            // PsiInternalOntologicalModelingLanguage.g:5011:37: 'unreifiedRelationship'
+            // PsiInternalOntologicalModelingLanguage.g:5941:35: ( 'unreifiedRelationship' )
+            // PsiInternalOntologicalModelingLanguage.g:5941:37: 'unreifiedRelationship'
             {
             match("unreifiedRelationship"); 
 
@@ -1123,8 +1477,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_FUNCTIONAL_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5013:23: ( 'functional' )
-            // PsiInternalOntologicalModelingLanguage.g:5013:25: 'functional'
+            // PsiInternalOntologicalModelingLanguage.g:5943:23: ( 'functional' )
+            // PsiInternalOntologicalModelingLanguage.g:5943:25: 'functional'
             {
             match("functional"); 
 
@@ -1144,8 +1498,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_INVERSE_FUNCTIONAL_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5015:31: ( 'inverseFunctional' )
-            // PsiInternalOntologicalModelingLanguage.g:5015:33: 'inverseFunctional'
+            // PsiInternalOntologicalModelingLanguage.g:5945:31: ( 'inverseFunctional' )
+            // PsiInternalOntologicalModelingLanguage.g:5945:33: 'inverseFunctional'
             {
             match("inverseFunctional"); 
 
@@ -1165,8 +1519,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ESSENTIAL_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5017:22: ( 'essential' )
-            // PsiInternalOntologicalModelingLanguage.g:5017:24: 'essential'
+            // PsiInternalOntologicalModelingLanguage.g:5947:22: ( 'essential' )
+            // PsiInternalOntologicalModelingLanguage.g:5947:24: 'essential'
             {
             match("essential"); 
 
@@ -1186,8 +1540,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_INVERSE_ESSENTIAL_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5019:30: ( 'inverseEssential' )
-            // PsiInternalOntologicalModelingLanguage.g:5019:32: 'inverseEssential'
+            // PsiInternalOntologicalModelingLanguage.g:5949:30: ( 'inverseEssential' )
+            // PsiInternalOntologicalModelingLanguage.g:5949:32: 'inverseEssential'
             {
             match("inverseEssential"); 
 
@@ -1207,8 +1561,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SYMMETRIC_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5021:22: ( 'symmetric' )
-            // PsiInternalOntologicalModelingLanguage.g:5021:24: 'symmetric'
+            // PsiInternalOntologicalModelingLanguage.g:5951:22: ( 'symmetric' )
+            // PsiInternalOntologicalModelingLanguage.g:5951:24: 'symmetric'
             {
             match("symmetric"); 
 
@@ -1228,8 +1582,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ASYMMETRIC_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5023:23: ( 'asymmetric' )
-            // PsiInternalOntologicalModelingLanguage.g:5023:25: 'asymmetric'
+            // PsiInternalOntologicalModelingLanguage.g:5953:23: ( 'asymmetric' )
+            // PsiInternalOntologicalModelingLanguage.g:5953:25: 'asymmetric'
             {
             match("asymmetric"); 
 
@@ -1249,8 +1603,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_REFLEXIVE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5025:22: ( 'reflexive' )
-            // PsiInternalOntologicalModelingLanguage.g:5025:24: 'reflexive'
+            // PsiInternalOntologicalModelingLanguage.g:5955:22: ( 'reflexive' )
+            // PsiInternalOntologicalModelingLanguage.g:5955:24: 'reflexive'
             {
             match("reflexive"); 
 
@@ -1270,8 +1624,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_IRREFLEXIVE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5027:24: ( 'irreflexive' )
-            // PsiInternalOntologicalModelingLanguage.g:5027:26: 'irreflexive'
+            // PsiInternalOntologicalModelingLanguage.g:5957:24: ( 'irreflexive' )
+            // PsiInternalOntologicalModelingLanguage.g:5957:26: 'irreflexive'
             {
             match("irreflexive"); 
 
@@ -1291,8 +1645,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_TRANSITIVE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5029:23: ( 'transitive' )
-            // PsiInternalOntologicalModelingLanguage.g:5029:25: 'transitive'
+            // PsiInternalOntologicalModelingLanguage.g:5959:23: ( 'transitive' )
+            // PsiInternalOntologicalModelingLanguage.g:5959:25: 'transitive'
             {
             match("transitive"); 
 
@@ -1312,8 +1666,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_UNREIFIED_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5031:22: ( 'unreified' )
-            // PsiInternalOntologicalModelingLanguage.g:5031:24: 'unreified'
+            // PsiInternalOntologicalModelingLanguage.g:5961:22: ( 'unreified' )
+            // PsiInternalOntologicalModelingLanguage.g:5961:24: 'unreified'
             {
             match("unreified"); 
 
@@ -1333,8 +1687,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_INVERSE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5033:20: ( 'inverse' )
-            // PsiInternalOntologicalModelingLanguage.g:5033:22: 'inverse'
+            // PsiInternalOntologicalModelingLanguage.g:5963:20: ( 'inverse' )
+            // PsiInternalOntologicalModelingLanguage.g:5963:22: 'inverse'
             {
             match("inverse"); 
 
@@ -1354,8 +1708,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SOURCE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5035:19: ( 'source' )
-            // PsiInternalOntologicalModelingLanguage.g:5035:21: 'source'
+            // PsiInternalOntologicalModelingLanguage.g:5965:19: ( 'source' )
+            // PsiInternalOntologicalModelingLanguage.g:5965:21: 'source'
             {
             match("source"); 
 
@@ -1375,8 +1729,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_TARGET_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5037:19: ( 'target' )
-            // PsiInternalOntologicalModelingLanguage.g:5037:21: 'target'
+            // PsiInternalOntologicalModelingLanguage.g:5967:19: ( 'target' )
+            // PsiInternalOntologicalModelingLanguage.g:5967:21: 'target'
             {
             match("target"); 
 
@@ -1396,8 +1750,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SCALAR_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5039:19: ( 'scalar' )
-            // PsiInternalOntologicalModelingLanguage.g:5039:21: 'scalar'
+            // PsiInternalOntologicalModelingLanguage.g:5969:19: ( 'scalar' )
+            // PsiInternalOntologicalModelingLanguage.g:5969:21: 'scalar'
             {
             match("scalar"); 
 
@@ -1417,8 +1771,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_STRUCTURE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5041:22: ( 'structure' )
-            // PsiInternalOntologicalModelingLanguage.g:5041:24: 'structure'
+            // PsiInternalOntologicalModelingLanguage.g:5971:22: ( 'structure' )
+            // PsiInternalOntologicalModelingLanguage.g:5971:24: 'structure'
             {
             match("structure"); 
 
@@ -1438,8 +1792,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_DOMAIN_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5043:19: ( 'domain' )
-            // PsiInternalOntologicalModelingLanguage.g:5043:21: 'domain'
+            // PsiInternalOntologicalModelingLanguage.g:5973:19: ( 'domain' )
+            // PsiInternalOntologicalModelingLanguage.g:5973:21: 'domain'
             {
             match("domain"); 
 
@@ -1459,8 +1813,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_RANGE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5045:18: ( 'range' )
-            // PsiInternalOntologicalModelingLanguage.g:5045:20: 'range'
+            // PsiInternalOntologicalModelingLanguage.g:5975:18: ( 'range' )
+            // PsiInternalOntologicalModelingLanguage.g:5975:20: 'range'
             {
             match("range"); 
 
@@ -1475,13 +1829,55 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
     }
     // $ANTLR end "RULE_RANGE_TOKEN"
 
+    // $ANTLR start "RULE_EXTENDS_TOKEN"
+    public final void mRULE_EXTENDS_TOKEN() throws RecognitionException {
+        try {
+            int _type = RULE_EXTENDS_TOKEN;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // PsiInternalOntologicalModelingLanguage.g:5977:20: ( 'extends' )
+            // PsiInternalOntologicalModelingLanguage.g:5977:22: 'extends'
+            {
+            match("extends"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_EXTENDS_TOKEN"
+
+    // $ANTLR start "RULE_REFINES_TOKEN"
+    public final void mRULE_REFINES_TOKEN() throws RecognitionException {
+        try {
+            int _type = RULE_REFINES_TOKEN;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // PsiInternalOntologicalModelingLanguage.g:5979:20: ( 'refines' )
+            // PsiInternalOntologicalModelingLanguage.g:5979:22: 'refines'
+            {
+            match("refines"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_REFINES_TOKEN"
+
     // $ANTLR start "RULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN"
     public final void mRULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN() throws RecognitionException {
         try {
             int _type = RULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5047:40: ( 'rootConceptTaxonomyAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5047:42: 'rootConceptTaxonomyAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:5981:40: ( 'rootConceptTaxonomyAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:5981:42: 'rootConceptTaxonomyAxiom'
             {
             match("rootConceptTaxonomyAxiom"); 
 
@@ -1501,8 +1897,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5049:44: ( 'specificDisjointConceptAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5049:46: 'specificDisjointConceptAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:5983:44: ( 'specificDisjointConceptAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:5983:46: 'specificDisjointConceptAxiom'
             {
             match("specificDisjointConceptAxiom"); 
 
@@ -1522,8 +1918,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5051:45: ( 'anonymousConceptTaxonomyAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5051:47: 'anonymousConceptTaxonomyAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:5985:45: ( 'anonymousConceptTaxonomyAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:5985:47: 'anonymousConceptTaxonomyAxiom'
             {
             match("anonymousConceptTaxonomyAxiom"); 
 
@@ -1543,8 +1939,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_BUNDLED_TERMINOLOGY_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5053:38: ( 'bundledTerminologyAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5053:40: 'bundledTerminologyAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:5987:38: ( 'bundledTerminologyAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:5987:40: 'bundledTerminologyAxiom'
             {
             match("bundledTerminologyAxiom"); 
 
@@ -1564,8 +1960,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5055:50: ( 'conceptDesignationTerminologyAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5055:52: 'conceptDesignationTerminologyAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:5989:50: ( 'conceptDesignationTerminologyAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:5989:52: 'conceptDesignationTerminologyAxiom'
             {
             match("conceptDesignationTerminologyAxiom"); 
 
@@ -1585,8 +1981,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_TERMINOLOGY_NESTING_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5057:38: ( 'terminologyNestingAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5057:40: 'terminologyNestingAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:5991:38: ( 'terminologyNestingAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:5991:40: 'terminologyNestingAxiom'
             {
             match("terminologyNestingAxiom"); 
 
@@ -1601,34 +1997,13 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
     }
     // $ANTLR end "RULE_TERMINOLOGY_NESTING_AXIOM_TOKEN"
 
-    // $ANTLR start "RULE_TERMINOLOGY_EXTENSION_AXIOM_TOKEN"
-    public final void mRULE_TERMINOLOGY_EXTENSION_AXIOM_TOKEN() throws RecognitionException {
-        try {
-            int _type = RULE_TERMINOLOGY_EXTENSION_AXIOM_TOKEN;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5059:40: ( 'extends' )
-            // PsiInternalOntologicalModelingLanguage.g:5059:42: 'extends'
-            {
-            match("extends"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "RULE_TERMINOLOGY_EXTENSION_AXIOM_TOKEN"
-
     // $ANTLR start "RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN"
     public final void mRULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN() throws RecognitionException {
         try {
             int _type = RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5061:49: ( 'entityExistentialRestrictionAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5061:51: 'entityExistentialRestrictionAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:5993:49: ( 'entityExistentialRestrictionAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:5993:51: 'entityExistentialRestrictionAxiom'
             {
             match("entityExistentialRestrictionAxiom"); 
 
@@ -1648,8 +2023,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5063:47: ( 'entityUniversalRestrictionAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5063:49: 'entityUniversalRestrictionAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:5995:47: ( 'entityUniversalRestrictionAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:5995:49: 'entityUniversalRestrictionAxiom'
             {
             match("entityUniversalRestrictionAxiom"); 
 
@@ -1669,8 +2044,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5065:41: ( 'conceptSpecializationAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5065:43: 'conceptSpecializationAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:5997:41: ( 'conceptSpecializationAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:5997:43: 'conceptSpecializationAxiom'
             {
             match("conceptSpecializationAxiom"); 
 
@@ -1690,8 +2065,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5067:40: ( 'extendsAspect' )
-            // PsiInternalOntologicalModelingLanguage.g:5067:42: 'extendsAspect'
+            // PsiInternalOntologicalModelingLanguage.g:5999:40: ( 'extendsAspect' )
+            // PsiInternalOntologicalModelingLanguage.g:5999:42: 'extendsAspect'
             {
             match("extendsAspect"); 
 
@@ -1711,8 +2086,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5069:54: ( 'reifiedRelationshipSpecializationAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5069:56: 'reifiedRelationshipSpecializationAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:6001:54: ( 'reifiedRelationshipSpecializationAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:6001:56: 'reifiedRelationshipSpecializationAxiom'
             {
             match("reifiedRelationshipSpecializationAxiom"); 
 
@@ -1732,8 +2107,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5071:70: ( 'entityScalarDataPropertyExistentialRestrictionAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5071:72: 'entityScalarDataPropertyExistentialRestrictionAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:6003:70: ( 'entityScalarDataPropertyExistentialRestrictionAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:6003:72: 'entityScalarDataPropertyExistentialRestrictionAxiom'
             {
             match("entityScalarDataPropertyExistentialRestrictionAxiom"); 
 
@@ -1753,8 +2128,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5073:68: ( 'entityScalarDataPropertyUniversalRestrictionAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5073:70: 'entityScalarDataPropertyUniversalRestrictionAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:6005:68: ( 'entityScalarDataPropertyUniversalRestrictionAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:6005:70: 'entityScalarDataPropertyUniversalRestrictionAxiom'
             {
             match("entityScalarDataPropertyUniversalRestrictionAxiom"); 
 
@@ -1774,8 +2149,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5075:69: ( 'entityScalarDataPropertyParticularRestrictionAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5075:71: 'entityScalarDataPropertyParticularRestrictionAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:6007:69: ( 'entityScalarDataPropertyParticularRestrictionAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:6007:71: 'entityScalarDataPropertyParticularRestrictionAxiom'
             {
             match("entityScalarDataPropertyParticularRestrictionAxiom"); 
 
@@ -1795,8 +2170,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5077:39: ( 'synonymScalarRestriction' )
-            // PsiInternalOntologicalModelingLanguage.g:5077:41: 'synonymScalarRestriction'
+            // PsiInternalOntologicalModelingLanguage.g:6009:39: ( 'synonymScalarRestriction' )
+            // PsiInternalOntologicalModelingLanguage.g:6009:41: 'synonymScalarRestriction'
             {
             match("synonymScalarRestriction"); 
 
@@ -1816,8 +2191,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5079:39: ( 'numericScalarRestriction' )
-            // PsiInternalOntologicalModelingLanguage.g:5079:41: 'numericScalarRestriction'
+            // PsiInternalOntologicalModelingLanguage.g:6011:39: ( 'numericScalarRestriction' )
+            // PsiInternalOntologicalModelingLanguage.g:6011:41: 'numericScalarRestriction'
             {
             match("numericScalarRestriction"); 
 
@@ -1837,8 +2212,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_STRING_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5081:38: ( 'stringScalarRestriction' )
-            // PsiInternalOntologicalModelingLanguage.g:5081:40: 'stringScalarRestriction'
+            // PsiInternalOntologicalModelingLanguage.g:6013:38: ( 'stringScalarRestriction' )
+            // PsiInternalOntologicalModelingLanguage.g:6013:40: 'stringScalarRestriction'
             {
             match("stringScalarRestriction"); 
 
@@ -1858,8 +2233,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5083:45: ( 'plainLiteralScalarRestriction' )
-            // PsiInternalOntologicalModelingLanguage.g:5083:47: 'plainLiteralScalarRestriction'
+            // PsiInternalOntologicalModelingLanguage.g:6015:45: ( 'plainLiteralScalarRestriction' )
+            // PsiInternalOntologicalModelingLanguage.g:6015:47: 'plainLiteralScalarRestriction'
             {
             match("plainLiteralScalarRestriction"); 
 
@@ -1879,8 +2254,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_BINARY_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5085:38: ( 'binaryScalarRestriction' )
-            // PsiInternalOntologicalModelingLanguage.g:5085:40: 'binaryScalarRestriction'
+            // PsiInternalOntologicalModelingLanguage.g:6017:38: ( 'binaryScalarRestriction' )
+            // PsiInternalOntologicalModelingLanguage.g:6017:40: 'binaryScalarRestriction'
             {
             match("binaryScalarRestriction"); 
 
@@ -1900,8 +2275,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_IRI_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5087:35: ( 'iriScalarRestriction' )
-            // PsiInternalOntologicalModelingLanguage.g:5087:37: 'iriScalarRestriction'
+            // PsiInternalOntologicalModelingLanguage.g:6019:35: ( 'iriScalarRestriction' )
+            // PsiInternalOntologicalModelingLanguage.g:6019:37: 'iriScalarRestriction'
             {
             match("iriScalarRestriction"); 
 
@@ -1921,8 +2296,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_TIME_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5089:36: ( 'timeScalarRestriction' )
-            // PsiInternalOntologicalModelingLanguage.g:5089:38: 'timeScalarRestriction'
+            // PsiInternalOntologicalModelingLanguage.g:6021:36: ( 'timeScalarRestriction' )
+            // PsiInternalOntologicalModelingLanguage.g:6021:38: 'timeScalarRestriction'
             {
             match("timeScalarRestriction"); 
 
@@ -1942,8 +2317,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5091:38: ( 'scalarOneOfRestriction' )
-            // PsiInternalOntologicalModelingLanguage.g:5091:40: 'scalarOneOfRestriction'
+            // PsiInternalOntologicalModelingLanguage.g:6023:38: ( 'scalarOneOfRestriction' )
+            // PsiInternalOntologicalModelingLanguage.g:6023:40: 'scalarOneOfRestriction'
             {
             match("scalarOneOfRestriction"); 
 
@@ -1963,8 +2338,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5093:40: ( 'scalarOneOfLiteralAxiom' )
-            // PsiInternalOntologicalModelingLanguage.g:5093:42: 'scalarOneOfLiteralAxiom'
+            // PsiInternalOntologicalModelingLanguage.g:6025:40: ( 'scalarOneOfLiteralAxiom' )
+            // PsiInternalOntologicalModelingLanguage.g:6025:42: 'scalarOneOfLiteralAxiom'
             {
             match("scalarOneOfLiteralAxiom"); 
 
@@ -1979,13 +2354,34 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
     }
     // $ANTLR end "RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN"
 
+    // $ANTLR start "RULE_DESCRIPTION_BOX_TOKEN"
+    public final void mRULE_DESCRIPTION_BOX_TOKEN() throws RecognitionException {
+        try {
+            int _type = RULE_DESCRIPTION_BOX_TOKEN;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // PsiInternalOntologicalModelingLanguage.g:6027:28: ( 'DescriptionBox' )
+            // PsiInternalOntologicalModelingLanguage.g:6027:30: 'DescriptionBox'
+            {
+            match("DescriptionBox"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_DESCRIPTION_BOX_TOKEN"
+
     // $ANTLR start "RULE_LCURLY"
     public final void mRULE_LCURLY() throws RecognitionException {
         try {
             int _type = RULE_LCURLY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5095:13: ( '{' )
-            // PsiInternalOntologicalModelingLanguage.g:5095:15: '{'
+            // PsiInternalOntologicalModelingLanguage.g:6029:13: ( '{' )
+            // PsiInternalOntologicalModelingLanguage.g:6029:15: '{'
             {
             match('{'); 
 
@@ -2004,8 +2400,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_RCURLY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5097:13: ( '}' )
-            // PsiInternalOntologicalModelingLanguage.g:5097:15: '}'
+            // PsiInternalOntologicalModelingLanguage.g:6031:13: ( '}' )
+            // PsiInternalOntologicalModelingLanguage.g:6031:15: '}'
             {
             match('}'); 
 
@@ -2024,8 +2420,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5099:12: ( '=' )
-            // PsiInternalOntologicalModelingLanguage.g:5099:14: '='
+            // PsiInternalOntologicalModelingLanguage.g:6033:12: ( '=' )
+            // PsiInternalOntologicalModelingLanguage.g:6033:14: '='
             {
             match('='); 
 
@@ -2044,10 +2440,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5101:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? ) )
-            // PsiInternalOntologicalModelingLanguage.g:5101:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
+            // PsiInternalOntologicalModelingLanguage.g:6035:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? ) )
+            // PsiInternalOntologicalModelingLanguage.g:6035:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5101:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
+            // PsiInternalOntologicalModelingLanguage.g:6035:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -2065,10 +2461,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:5101:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )?
+                    // PsiInternalOntologicalModelingLanguage.g:6035:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )?
                     {
                     match('\"'); 
-                    // PsiInternalOntologicalModelingLanguage.g:5101:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // PsiInternalOntologicalModelingLanguage.g:6035:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop1:
                     do {
                         int alt1=3;
@@ -2084,7 +2480,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
 
                         switch (alt1) {
                     	case 1 :
-                    	    // PsiInternalOntologicalModelingLanguage.g:5101:21: '\\\\' .
+                    	    // PsiInternalOntologicalModelingLanguage.g:6035:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2092,7 +2488,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // PsiInternalOntologicalModelingLanguage.g:5101:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // PsiInternalOntologicalModelingLanguage.g:6035:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2112,7 +2508,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                         }
                     } while (true);
 
-                    // PsiInternalOntologicalModelingLanguage.g:5101:44: ( '\"' )?
+                    // PsiInternalOntologicalModelingLanguage.g:6035:44: ( '\"' )?
                     int alt2=2;
                     int LA2_0 = input.LA(1);
 
@@ -2121,7 +2517,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     switch (alt2) {
                         case 1 :
-                            // PsiInternalOntologicalModelingLanguage.g:5101:44: '\"'
+                            // PsiInternalOntologicalModelingLanguage.g:6035:44: '\"'
                             {
                             match('\"'); 
 
@@ -2134,10 +2530,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // PsiInternalOntologicalModelingLanguage.g:5101:49: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )?
+                    // PsiInternalOntologicalModelingLanguage.g:6035:49: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )?
                     {
                     match('\''); 
-                    // PsiInternalOntologicalModelingLanguage.g:5101:54: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // PsiInternalOntologicalModelingLanguage.g:6035:54: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop3:
                     do {
                         int alt3=3;
@@ -2153,7 +2549,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // PsiInternalOntologicalModelingLanguage.g:5101:55: '\\\\' .
+                    	    // PsiInternalOntologicalModelingLanguage.g:6035:55: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2161,7 +2557,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // PsiInternalOntologicalModelingLanguage.g:5101:62: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // PsiInternalOntologicalModelingLanguage.g:6035:62: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2181,7 +2577,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                         }
                     } while (true);
 
-                    // PsiInternalOntologicalModelingLanguage.g:5101:79: ( '\\'' )?
+                    // PsiInternalOntologicalModelingLanguage.g:6035:79: ( '\\'' )?
                     int alt4=2;
                     int LA4_0 = input.LA(1);
 
@@ -2190,7 +2586,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     switch (alt4) {
                         case 1 :
-                            // PsiInternalOntologicalModelingLanguage.g:5101:79: '\\''
+                            // PsiInternalOntologicalModelingLanguage.g:6035:79: '\\''
                             {
                             match('\''); 
 
@@ -2221,11 +2617,11 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_IRI;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5103:10: ( '<' (~ ( '>' ) )* '>' )
-            // PsiInternalOntologicalModelingLanguage.g:5103:12: '<' (~ ( '>' ) )* '>'
+            // PsiInternalOntologicalModelingLanguage.g:6037:10: ( '<' (~ ( '>' ) )* '>' )
+            // PsiInternalOntologicalModelingLanguage.g:6037:12: '<' (~ ( '>' ) )* '>'
             {
             match('<'); 
-            // PsiInternalOntologicalModelingLanguage.g:5103:16: (~ ( '>' ) )*
+            // PsiInternalOntologicalModelingLanguage.g:6037:16: (~ ( '>' ) )*
             loop6:
             do {
                 int alt6=2;
@@ -2238,7 +2634,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // PsiInternalOntologicalModelingLanguage.g:5103:16: ~ ( '>' )
+            	    // PsiInternalOntologicalModelingLanguage.g:6037:16: ~ ( '>' )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='=')||(input.LA(1)>='?' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2275,10 +2671,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5105:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // PsiInternalOntologicalModelingLanguage.g:5105:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // PsiInternalOntologicalModelingLanguage.g:6039:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // PsiInternalOntologicalModelingLanguage.g:6039:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // PsiInternalOntologicalModelingLanguage.g:5105:11: ( '^' )?
+            // PsiInternalOntologicalModelingLanguage.g:6039:11: ( '^' )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2287,7 +2683,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:5105:11: '^'
+                    // PsiInternalOntologicalModelingLanguage.g:6039:11: '^'
                     {
                     match('^'); 
 
@@ -2305,7 +2701,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // PsiInternalOntologicalModelingLanguage.g:5105:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // PsiInternalOntologicalModelingLanguage.g:6039:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop8:
             do {
                 int alt8=2;
@@ -2354,8 +2750,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_UUID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5107:11: ( RULE_HEX_8DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_12DIGITS )
-            // PsiInternalOntologicalModelingLanguage.g:5107:13: RULE_HEX_8DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_12DIGITS
+            // PsiInternalOntologicalModelingLanguage.g:6041:11: ( RULE_HEX_8DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_12DIGITS )
+            // PsiInternalOntologicalModelingLanguage.g:6041:13: RULE_HEX_8DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_12DIGITS
             {
             mRULE_HEX_8DIGITS(); 
             match('-'); 
@@ -2380,8 +2776,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
     // $ANTLR start "RULE_HEX_12DIGITS"
     public final void mRULE_HEX_12DIGITS() throws RecognitionException {
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5109:28: ( RULE_HEX_8DIGITS RULE_HEX_4DIGITS )
-            // PsiInternalOntologicalModelingLanguage.g:5109:30: RULE_HEX_8DIGITS RULE_HEX_4DIGITS
+            // PsiInternalOntologicalModelingLanguage.g:6043:28: ( RULE_HEX_8DIGITS RULE_HEX_4DIGITS )
+            // PsiInternalOntologicalModelingLanguage.g:6043:30: RULE_HEX_8DIGITS RULE_HEX_4DIGITS
             {
             mRULE_HEX_8DIGITS(); 
             mRULE_HEX_4DIGITS(); 
@@ -2397,8 +2793,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
     // $ANTLR start "RULE_HEX_8DIGITS"
     public final void mRULE_HEX_8DIGITS() throws RecognitionException {
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5111:27: ( RULE_HEX_4DIGITS RULE_HEX_4DIGITS )
-            // PsiInternalOntologicalModelingLanguage.g:5111:29: RULE_HEX_4DIGITS RULE_HEX_4DIGITS
+            // PsiInternalOntologicalModelingLanguage.g:6045:27: ( RULE_HEX_4DIGITS RULE_HEX_4DIGITS )
+            // PsiInternalOntologicalModelingLanguage.g:6045:29: RULE_HEX_4DIGITS RULE_HEX_4DIGITS
             {
             mRULE_HEX_4DIGITS(); 
             mRULE_HEX_4DIGITS(); 
@@ -2414,8 +2810,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
     // $ANTLR start "RULE_HEX_4DIGITS"
     public final void mRULE_HEX_4DIGITS() throws RecognitionException {
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5113:27: ( RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT )
-            // PsiInternalOntologicalModelingLanguage.g:5113:29: RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT
+            // PsiInternalOntologicalModelingLanguage.g:6047:27: ( RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT )
+            // PsiInternalOntologicalModelingLanguage.g:6047:29: RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT
             {
             mRULE_HEX_DIGIT(); 
             mRULE_HEX_DIGIT(); 
@@ -2433,8 +2829,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
     // $ANTLR start "RULE_HEX_DIGIT"
     public final void mRULE_HEX_DIGIT() throws RecognitionException {
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5115:25: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
-            // PsiInternalOntologicalModelingLanguage.g:5115:27: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
+            // PsiInternalOntologicalModelingLanguage.g:6049:25: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
+            // PsiInternalOntologicalModelingLanguage.g:6049:27: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
             {
             if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f') ) {
                 input.consume();
@@ -2459,10 +2855,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5117:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // PsiInternalOntologicalModelingLanguage.g:5117:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:6051:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // PsiInternalOntologicalModelingLanguage.g:6051:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // PsiInternalOntologicalModelingLanguage.g:5117:12: ( '0x' | '0X' )
+            // PsiInternalOntologicalModelingLanguage.g:6051:12: ( '0x' | '0X' )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2490,7 +2886,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:5117:13: '0x'
+                    // PsiInternalOntologicalModelingLanguage.g:6051:13: '0x'
                     {
                     match("0x"); 
 
@@ -2498,7 +2894,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // PsiInternalOntologicalModelingLanguage.g:5117:18: '0X'
+                    // PsiInternalOntologicalModelingLanguage.g:6051:18: '0X'
                     {
                     match("0X"); 
 
@@ -2508,7 +2904,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
 
             }
 
-            // PsiInternalOntologicalModelingLanguage.g:5117:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // PsiInternalOntologicalModelingLanguage.g:6051:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt10=0;
             loop10:
             do {
@@ -2546,7 +2942,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                 cnt10++;
             } while (true);
 
-            // PsiInternalOntologicalModelingLanguage.g:5117:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:6051:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -2555,10 +2951,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:5117:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // PsiInternalOntologicalModelingLanguage.g:6051:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // PsiInternalOntologicalModelingLanguage.g:5117:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // PsiInternalOntologicalModelingLanguage.g:6051:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -2576,7 +2972,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // PsiInternalOntologicalModelingLanguage.g:5117:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // PsiInternalOntologicalModelingLanguage.g:6051:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -2600,7 +2996,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // PsiInternalOntologicalModelingLanguage.g:5117:84: ( 'l' | 'L' )
+                            // PsiInternalOntologicalModelingLanguage.g:6051:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -2639,11 +3035,11 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5119:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // PsiInternalOntologicalModelingLanguage.g:5119:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // PsiInternalOntologicalModelingLanguage.g:6053:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // PsiInternalOntologicalModelingLanguage.g:6053:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // PsiInternalOntologicalModelingLanguage.g:5119:21: ( '0' .. '9' | '_' )*
+            // PsiInternalOntologicalModelingLanguage.g:6053:21: ( '0' .. '9' | '_' )*
             loop13:
             do {
                 int alt13=2;
@@ -2692,11 +3088,11 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5121:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // PsiInternalOntologicalModelingLanguage.g:5121:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // PsiInternalOntologicalModelingLanguage.g:6055:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // PsiInternalOntologicalModelingLanguage.g:6055:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // PsiInternalOntologicalModelingLanguage.g:5121:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // PsiInternalOntologicalModelingLanguage.g:6055:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -2705,7 +3101,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt15) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:5121:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // PsiInternalOntologicalModelingLanguage.g:6055:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -2716,7 +3112,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // PsiInternalOntologicalModelingLanguage.g:5121:36: ( '+' | '-' )?
+                    // PsiInternalOntologicalModelingLanguage.g:6055:36: ( '+' | '-' )?
                     int alt14=2;
                     int LA14_0 = input.LA(1);
 
@@ -2749,7 +3145,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
 
             }
 
-            // PsiInternalOntologicalModelingLanguage.g:5121:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // PsiInternalOntologicalModelingLanguage.g:6055:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt16=3;
             int LA16_0 = input.LA(1);
 
@@ -2761,7 +3157,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt16) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:5121:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // PsiInternalOntologicalModelingLanguage.g:6055:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -2785,7 +3181,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // PsiInternalOntologicalModelingLanguage.g:5121:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // PsiInternalOntologicalModelingLanguage.g:6055:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -2818,12 +3214,12 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5123:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // PsiInternalOntologicalModelingLanguage.g:5123:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // PsiInternalOntologicalModelingLanguage.g:6057:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // PsiInternalOntologicalModelingLanguage.g:6057:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // PsiInternalOntologicalModelingLanguage.g:5123:24: ( options {greedy=false; } : . )*
+            // PsiInternalOntologicalModelingLanguage.g:6057:24: ( options {greedy=false; } : . )*
             loop17:
             do {
                 int alt17=2;
@@ -2848,7 +3244,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
 
                 switch (alt17) {
             	case 1 :
-            	    // PsiInternalOntologicalModelingLanguage.g:5123:52: .
+            	    // PsiInternalOntologicalModelingLanguage.g:6057:52: .
             	    {
             	    matchAny(); 
 
@@ -2878,12 +3274,12 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5125:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // PsiInternalOntologicalModelingLanguage.g:5125:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // PsiInternalOntologicalModelingLanguage.g:6059:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // PsiInternalOntologicalModelingLanguage.g:6059:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // PsiInternalOntologicalModelingLanguage.g:5125:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // PsiInternalOntologicalModelingLanguage.g:6059:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop18:
             do {
                 int alt18=2;
@@ -2896,7 +3292,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
 
                 switch (alt18) {
             	case 1 :
-            	    // PsiInternalOntologicalModelingLanguage.g:5125:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // PsiInternalOntologicalModelingLanguage.g:6059:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2916,7 +3312,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                 }
             } while (true);
 
-            // PsiInternalOntologicalModelingLanguage.g:5125:40: ( ( '\\r' )? '\\n' )?
+            // PsiInternalOntologicalModelingLanguage.g:6059:40: ( ( '\\r' )? '\\n' )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -2925,9 +3321,9 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt20) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:5125:41: ( '\\r' )? '\\n'
+                    // PsiInternalOntologicalModelingLanguage.g:6059:41: ( '\\r' )? '\\n'
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:5125:41: ( '\\r' )?
+                    // PsiInternalOntologicalModelingLanguage.g:6059:41: ( '\\r' )?
                     int alt19=2;
                     int LA19_0 = input.LA(1);
 
@@ -2936,7 +3332,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     switch (alt19) {
                         case 1 :
-                            // PsiInternalOntologicalModelingLanguage.g:5125:41: '\\r'
+                            // PsiInternalOntologicalModelingLanguage.g:6059:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2968,10 +3364,10 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5127:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // PsiInternalOntologicalModelingLanguage.g:5127:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // PsiInternalOntologicalModelingLanguage.g:6061:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // PsiInternalOntologicalModelingLanguage.g:6061:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // PsiInternalOntologicalModelingLanguage.g:5127:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // PsiInternalOntologicalModelingLanguage.g:6061:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt21=0;
             loop21:
             do {
@@ -3025,8 +3421,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalOntologicalModelingLanguage.g:5129:16: ( . )
-            // PsiInternalOntologicalModelingLanguage.g:5129:18: .
+            // PsiInternalOntologicalModelingLanguage.g:6063:16: ( . )
+            // PsiInternalOntologicalModelingLanguage.g:6063:18: .
             {
             matchAny(); 
 
@@ -3041,719 +3437,845 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // PsiInternalOntologicalModelingLanguage.g:1:8: ( T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | RULE_ANNOTATION_PROPERTY_TOKEN | RULE_ANNOTATION_TOKEN | RULE_TERMINOLOGY_GRAPH_TOKEN | RULE_BUNDLE_TOKEN | RULE_KIND_TOKEN | RULE_ASPECT_TOKEN | RULE_ABSTRACT_TOKEN | RULE_CONCEPT_TOKEN | RULE_REIFIED_RELATIONSHIP_TOKEN | RULE_UNREIFIED_RELATIONSHIP_TOKEN | RULE_FUNCTIONAL_TOKEN | RULE_INVERSE_FUNCTIONAL_TOKEN | RULE_ESSENTIAL_TOKEN | RULE_INVERSE_ESSENTIAL_TOKEN | RULE_SYMMETRIC_TOKEN | RULE_ASYMMETRIC_TOKEN | RULE_REFLEXIVE_TOKEN | RULE_IRREFLEXIVE_TOKEN | RULE_TRANSITIVE_TOKEN | RULE_UNREIFIED_TOKEN | RULE_INVERSE_TOKEN | RULE_SOURCE_TOKEN | RULE_TARGET_TOKEN | RULE_SCALAR_TOKEN | RULE_STRUCTURE_TOKEN | RULE_DOMAIN_TOKEN | RULE_RANGE_TOKEN | RULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN | RULE_SPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN | RULE_ANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN | RULE_BUNDLED_TERMINOLOGY_AXIOM_TOKEN | RULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN | RULE_TERMINOLOGY_NESTING_AXIOM_TOKEN | RULE_TERMINOLOGY_EXTENSION_AXIOM_TOKEN | RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN | RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN | RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN | RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN | RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN | RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN | RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN | RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN | RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN | RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN | RULE_STRING_SCALAR_RESTRICTION_TOKEN | RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN | RULE_BINARY_SCALAR_RESTRICTION_TOKEN | RULE_IRI_SCALAR_RESTRICTION_TOKEN | RULE_TIME_SCALAR_RESTRICTION_TOKEN | RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN | RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN | RULE_LCURLY | RULE_RCURLY | RULE_EQUAL | RULE_STRING | RULE_IRI | RULE_ID | RULE_UUID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt22=102;
+        // PsiInternalOntologicalModelingLanguage.g:1:8: ( T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | RULE_ANNOTATION_PROPERTY_TOKEN | RULE_ANNOTATION_TOKEN | RULE_TERMINOLOGY_GRAPH_TOKEN | RULE_BUNDLE_TOKEN | RULE_KIND_TOKEN | RULE_ASPECT_TOKEN | RULE_ABSTRACT_TOKEN | RULE_CONCEPT_TOKEN | RULE_REIFIED_RELATIONSHIP_TOKEN | RULE_UNREIFIED_RELATIONSHIP_TOKEN | RULE_FUNCTIONAL_TOKEN | RULE_INVERSE_FUNCTIONAL_TOKEN | RULE_ESSENTIAL_TOKEN | RULE_INVERSE_ESSENTIAL_TOKEN | RULE_SYMMETRIC_TOKEN | RULE_ASYMMETRIC_TOKEN | RULE_REFLEXIVE_TOKEN | RULE_IRREFLEXIVE_TOKEN | RULE_TRANSITIVE_TOKEN | RULE_UNREIFIED_TOKEN | RULE_INVERSE_TOKEN | RULE_SOURCE_TOKEN | RULE_TARGET_TOKEN | RULE_SCALAR_TOKEN | RULE_STRUCTURE_TOKEN | RULE_DOMAIN_TOKEN | RULE_RANGE_TOKEN | RULE_EXTENDS_TOKEN | RULE_REFINES_TOKEN | RULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN | RULE_SPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN | RULE_ANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN | RULE_BUNDLED_TERMINOLOGY_AXIOM_TOKEN | RULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN | RULE_TERMINOLOGY_NESTING_AXIOM_TOKEN | RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN | RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN | RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN | RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN | RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN | RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN | RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN | RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN | RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN | RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN | RULE_STRING_SCALAR_RESTRICTION_TOKEN | RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN | RULE_BINARY_SCALAR_RESTRICTION_TOKEN | RULE_IRI_SCALAR_RESTRICTION_TOKEN | RULE_TIME_SCALAR_RESTRICTION_TOKEN | RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN | RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN | RULE_DESCRIPTION_BOX_TOKEN | RULE_LCURLY | RULE_RCURLY | RULE_EQUAL | RULE_STRING | RULE_IRI | RULE_ID | RULE_UUID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt22=120;
         alt22 = dfa22.predict(input);
         switch (alt22) {
             case 1 :
-                // PsiInternalOntologicalModelingLanguage.g:1:10: T__73
-                {
-                mT__73(); 
-
-                }
-                break;
-            case 2 :
-                // PsiInternalOntologicalModelingLanguage.g:1:16: T__74
-                {
-                mT__74(); 
-
-                }
-                break;
-            case 3 :
-                // PsiInternalOntologicalModelingLanguage.g:1:22: T__75
+                // PsiInternalOntologicalModelingLanguage.g:1:10: T__75
                 {
                 mT__75(); 
 
                 }
                 break;
-            case 4 :
-                // PsiInternalOntologicalModelingLanguage.g:1:28: T__76
+            case 2 :
+                // PsiInternalOntologicalModelingLanguage.g:1:16: T__76
                 {
                 mT__76(); 
 
                 }
                 break;
-            case 5 :
-                // PsiInternalOntologicalModelingLanguage.g:1:34: T__77
+            case 3 :
+                // PsiInternalOntologicalModelingLanguage.g:1:22: T__77
                 {
                 mT__77(); 
 
                 }
                 break;
-            case 6 :
-                // PsiInternalOntologicalModelingLanguage.g:1:40: T__78
+            case 4 :
+                // PsiInternalOntologicalModelingLanguage.g:1:28: T__78
                 {
                 mT__78(); 
 
                 }
                 break;
-            case 7 :
-                // PsiInternalOntologicalModelingLanguage.g:1:46: T__79
+            case 5 :
+                // PsiInternalOntologicalModelingLanguage.g:1:34: T__79
                 {
                 mT__79(); 
 
                 }
                 break;
-            case 8 :
-                // PsiInternalOntologicalModelingLanguage.g:1:52: T__80
+            case 6 :
+                // PsiInternalOntologicalModelingLanguage.g:1:40: T__80
                 {
                 mT__80(); 
 
                 }
                 break;
-            case 9 :
-                // PsiInternalOntologicalModelingLanguage.g:1:58: T__81
+            case 7 :
+                // PsiInternalOntologicalModelingLanguage.g:1:46: T__81
                 {
                 mT__81(); 
 
                 }
                 break;
-            case 10 :
-                // PsiInternalOntologicalModelingLanguage.g:1:64: T__82
+            case 8 :
+                // PsiInternalOntologicalModelingLanguage.g:1:52: T__82
                 {
                 mT__82(); 
 
                 }
                 break;
-            case 11 :
-                // PsiInternalOntologicalModelingLanguage.g:1:70: T__83
+            case 9 :
+                // PsiInternalOntologicalModelingLanguage.g:1:58: T__83
                 {
                 mT__83(); 
 
                 }
                 break;
-            case 12 :
-                // PsiInternalOntologicalModelingLanguage.g:1:76: T__84
+            case 10 :
+                // PsiInternalOntologicalModelingLanguage.g:1:64: T__84
                 {
                 mT__84(); 
 
                 }
                 break;
-            case 13 :
-                // PsiInternalOntologicalModelingLanguage.g:1:82: T__85
+            case 11 :
+                // PsiInternalOntologicalModelingLanguage.g:1:70: T__85
                 {
                 mT__85(); 
 
                 }
                 break;
-            case 14 :
-                // PsiInternalOntologicalModelingLanguage.g:1:88: T__86
+            case 12 :
+                // PsiInternalOntologicalModelingLanguage.g:1:76: T__86
                 {
                 mT__86(); 
 
                 }
                 break;
-            case 15 :
-                // PsiInternalOntologicalModelingLanguage.g:1:94: T__87
+            case 13 :
+                // PsiInternalOntologicalModelingLanguage.g:1:82: T__87
                 {
                 mT__87(); 
 
                 }
                 break;
-            case 16 :
-                // PsiInternalOntologicalModelingLanguage.g:1:100: T__88
+            case 14 :
+                // PsiInternalOntologicalModelingLanguage.g:1:88: T__88
                 {
                 mT__88(); 
 
                 }
                 break;
-            case 17 :
-                // PsiInternalOntologicalModelingLanguage.g:1:106: T__89
+            case 15 :
+                // PsiInternalOntologicalModelingLanguage.g:1:94: T__89
                 {
                 mT__89(); 
 
                 }
                 break;
-            case 18 :
-                // PsiInternalOntologicalModelingLanguage.g:1:112: T__90
+            case 16 :
+                // PsiInternalOntologicalModelingLanguage.g:1:100: T__90
                 {
                 mT__90(); 
 
                 }
                 break;
-            case 19 :
-                // PsiInternalOntologicalModelingLanguage.g:1:118: T__91
+            case 17 :
+                // PsiInternalOntologicalModelingLanguage.g:1:106: T__91
                 {
                 mT__91(); 
 
                 }
                 break;
-            case 20 :
-                // PsiInternalOntologicalModelingLanguage.g:1:124: T__92
+            case 18 :
+                // PsiInternalOntologicalModelingLanguage.g:1:112: T__92
                 {
                 mT__92(); 
 
                 }
                 break;
-            case 21 :
-                // PsiInternalOntologicalModelingLanguage.g:1:130: T__93
+            case 19 :
+                // PsiInternalOntologicalModelingLanguage.g:1:118: T__93
                 {
                 mT__93(); 
 
                 }
                 break;
-            case 22 :
-                // PsiInternalOntologicalModelingLanguage.g:1:136: T__94
+            case 20 :
+                // PsiInternalOntologicalModelingLanguage.g:1:124: T__94
                 {
                 mT__94(); 
 
                 }
                 break;
-            case 23 :
-                // PsiInternalOntologicalModelingLanguage.g:1:142: T__95
+            case 21 :
+                // PsiInternalOntologicalModelingLanguage.g:1:130: T__95
                 {
                 mT__95(); 
 
                 }
                 break;
-            case 24 :
-                // PsiInternalOntologicalModelingLanguage.g:1:148: T__96
+            case 22 :
+                // PsiInternalOntologicalModelingLanguage.g:1:136: T__96
                 {
                 mT__96(); 
 
                 }
                 break;
-            case 25 :
-                // PsiInternalOntologicalModelingLanguage.g:1:154: T__97
+            case 23 :
+                // PsiInternalOntologicalModelingLanguage.g:1:142: T__97
                 {
                 mT__97(); 
 
                 }
                 break;
-            case 26 :
-                // PsiInternalOntologicalModelingLanguage.g:1:160: T__98
+            case 24 :
+                // PsiInternalOntologicalModelingLanguage.g:1:148: T__98
                 {
                 mT__98(); 
 
                 }
                 break;
-            case 27 :
-                // PsiInternalOntologicalModelingLanguage.g:1:166: T__99
+            case 25 :
+                // PsiInternalOntologicalModelingLanguage.g:1:154: T__99
                 {
                 mT__99(); 
 
                 }
                 break;
-            case 28 :
-                // PsiInternalOntologicalModelingLanguage.g:1:172: T__100
+            case 26 :
+                // PsiInternalOntologicalModelingLanguage.g:1:160: T__100
                 {
                 mT__100(); 
 
                 }
                 break;
-            case 29 :
-                // PsiInternalOntologicalModelingLanguage.g:1:179: T__101
+            case 27 :
+                // PsiInternalOntologicalModelingLanguage.g:1:167: T__101
                 {
                 mT__101(); 
 
                 }
                 break;
-            case 30 :
-                // PsiInternalOntologicalModelingLanguage.g:1:186: T__102
+            case 28 :
+                // PsiInternalOntologicalModelingLanguage.g:1:174: T__102
                 {
                 mT__102(); 
 
                 }
                 break;
-            case 31 :
-                // PsiInternalOntologicalModelingLanguage.g:1:193: T__103
+            case 29 :
+                // PsiInternalOntologicalModelingLanguage.g:1:181: T__103
                 {
                 mT__103(); 
 
                 }
                 break;
-            case 32 :
-                // PsiInternalOntologicalModelingLanguage.g:1:200: T__104
+            case 30 :
+                // PsiInternalOntologicalModelingLanguage.g:1:188: T__104
                 {
                 mT__104(); 
 
                 }
                 break;
-            case 33 :
-                // PsiInternalOntologicalModelingLanguage.g:1:207: T__105
+            case 31 :
+                // PsiInternalOntologicalModelingLanguage.g:1:195: T__105
                 {
                 mT__105(); 
 
                 }
                 break;
-            case 34 :
-                // PsiInternalOntologicalModelingLanguage.g:1:214: T__106
+            case 32 :
+                // PsiInternalOntologicalModelingLanguage.g:1:202: T__106
                 {
                 mT__106(); 
 
                 }
                 break;
-            case 35 :
-                // PsiInternalOntologicalModelingLanguage.g:1:221: T__107
+            case 33 :
+                // PsiInternalOntologicalModelingLanguage.g:1:209: T__107
                 {
                 mT__107(); 
 
                 }
                 break;
-            case 36 :
-                // PsiInternalOntologicalModelingLanguage.g:1:228: T__108
+            case 34 :
+                // PsiInternalOntologicalModelingLanguage.g:1:216: T__108
                 {
                 mT__108(); 
 
                 }
                 break;
-            case 37 :
-                // PsiInternalOntologicalModelingLanguage.g:1:235: T__109
+            case 35 :
+                // PsiInternalOntologicalModelingLanguage.g:1:223: T__109
                 {
                 mT__109(); 
 
                 }
                 break;
+            case 36 :
+                // PsiInternalOntologicalModelingLanguage.g:1:230: T__110
+                {
+                mT__110(); 
+
+                }
+                break;
+            case 37 :
+                // PsiInternalOntologicalModelingLanguage.g:1:237: T__111
+                {
+                mT__111(); 
+
+                }
+                break;
             case 38 :
-                // PsiInternalOntologicalModelingLanguage.g:1:242: RULE_ANNOTATION_PROPERTY_TOKEN
+                // PsiInternalOntologicalModelingLanguage.g:1:244: T__112
+                {
+                mT__112(); 
+
+                }
+                break;
+            case 39 :
+                // PsiInternalOntologicalModelingLanguage.g:1:251: T__113
+                {
+                mT__113(); 
+
+                }
+                break;
+            case 40 :
+                // PsiInternalOntologicalModelingLanguage.g:1:258: T__114
+                {
+                mT__114(); 
+
+                }
+                break;
+            case 41 :
+                // PsiInternalOntologicalModelingLanguage.g:1:265: T__115
+                {
+                mT__115(); 
+
+                }
+                break;
+            case 42 :
+                // PsiInternalOntologicalModelingLanguage.g:1:272: T__116
+                {
+                mT__116(); 
+
+                }
+                break;
+            case 43 :
+                // PsiInternalOntologicalModelingLanguage.g:1:279: T__117
+                {
+                mT__117(); 
+
+                }
+                break;
+            case 44 :
+                // PsiInternalOntologicalModelingLanguage.g:1:286: T__118
+                {
+                mT__118(); 
+
+                }
+                break;
+            case 45 :
+                // PsiInternalOntologicalModelingLanguage.g:1:293: T__119
+                {
+                mT__119(); 
+
+                }
+                break;
+            case 46 :
+                // PsiInternalOntologicalModelingLanguage.g:1:300: T__120
+                {
+                mT__120(); 
+
+                }
+                break;
+            case 47 :
+                // PsiInternalOntologicalModelingLanguage.g:1:307: T__121
+                {
+                mT__121(); 
+
+                }
+                break;
+            case 48 :
+                // PsiInternalOntologicalModelingLanguage.g:1:314: T__122
+                {
+                mT__122(); 
+
+                }
+                break;
+            case 49 :
+                // PsiInternalOntologicalModelingLanguage.g:1:321: T__123
+                {
+                mT__123(); 
+
+                }
+                break;
+            case 50 :
+                // PsiInternalOntologicalModelingLanguage.g:1:328: T__124
+                {
+                mT__124(); 
+
+                }
+                break;
+            case 51 :
+                // PsiInternalOntologicalModelingLanguage.g:1:335: T__125
+                {
+                mT__125(); 
+
+                }
+                break;
+            case 52 :
+                // PsiInternalOntologicalModelingLanguage.g:1:342: T__126
+                {
+                mT__126(); 
+
+                }
+                break;
+            case 53 :
+                // PsiInternalOntologicalModelingLanguage.g:1:349: T__127
+                {
+                mT__127(); 
+
+                }
+                break;
+            case 54 :
+                // PsiInternalOntologicalModelingLanguage.g:1:356: RULE_ANNOTATION_PROPERTY_TOKEN
                 {
                 mRULE_ANNOTATION_PROPERTY_TOKEN(); 
 
                 }
                 break;
-            case 39 :
-                // PsiInternalOntologicalModelingLanguage.g:1:273: RULE_ANNOTATION_TOKEN
+            case 55 :
+                // PsiInternalOntologicalModelingLanguage.g:1:387: RULE_ANNOTATION_TOKEN
                 {
                 mRULE_ANNOTATION_TOKEN(); 
 
                 }
                 break;
-            case 40 :
-                // PsiInternalOntologicalModelingLanguage.g:1:295: RULE_TERMINOLOGY_GRAPH_TOKEN
+            case 56 :
+                // PsiInternalOntologicalModelingLanguage.g:1:409: RULE_TERMINOLOGY_GRAPH_TOKEN
                 {
                 mRULE_TERMINOLOGY_GRAPH_TOKEN(); 
 
                 }
                 break;
-            case 41 :
-                // PsiInternalOntologicalModelingLanguage.g:1:324: RULE_BUNDLE_TOKEN
+            case 57 :
+                // PsiInternalOntologicalModelingLanguage.g:1:438: RULE_BUNDLE_TOKEN
                 {
                 mRULE_BUNDLE_TOKEN(); 
 
                 }
                 break;
-            case 42 :
-                // PsiInternalOntologicalModelingLanguage.g:1:342: RULE_KIND_TOKEN
+            case 58 :
+                // PsiInternalOntologicalModelingLanguage.g:1:456: RULE_KIND_TOKEN
                 {
                 mRULE_KIND_TOKEN(); 
 
                 }
                 break;
-            case 43 :
-                // PsiInternalOntologicalModelingLanguage.g:1:358: RULE_ASPECT_TOKEN
+            case 59 :
+                // PsiInternalOntologicalModelingLanguage.g:1:472: RULE_ASPECT_TOKEN
                 {
                 mRULE_ASPECT_TOKEN(); 
 
                 }
                 break;
-            case 44 :
-                // PsiInternalOntologicalModelingLanguage.g:1:376: RULE_ABSTRACT_TOKEN
+            case 60 :
+                // PsiInternalOntologicalModelingLanguage.g:1:490: RULE_ABSTRACT_TOKEN
                 {
                 mRULE_ABSTRACT_TOKEN(); 
 
                 }
                 break;
-            case 45 :
-                // PsiInternalOntologicalModelingLanguage.g:1:396: RULE_CONCEPT_TOKEN
+            case 61 :
+                // PsiInternalOntologicalModelingLanguage.g:1:510: RULE_CONCEPT_TOKEN
                 {
                 mRULE_CONCEPT_TOKEN(); 
 
                 }
                 break;
-            case 46 :
-                // PsiInternalOntologicalModelingLanguage.g:1:415: RULE_REIFIED_RELATIONSHIP_TOKEN
+            case 62 :
+                // PsiInternalOntologicalModelingLanguage.g:1:529: RULE_REIFIED_RELATIONSHIP_TOKEN
                 {
                 mRULE_REIFIED_RELATIONSHIP_TOKEN(); 
 
                 }
                 break;
-            case 47 :
-                // PsiInternalOntologicalModelingLanguage.g:1:447: RULE_UNREIFIED_RELATIONSHIP_TOKEN
+            case 63 :
+                // PsiInternalOntologicalModelingLanguage.g:1:561: RULE_UNREIFIED_RELATIONSHIP_TOKEN
                 {
                 mRULE_UNREIFIED_RELATIONSHIP_TOKEN(); 
 
                 }
                 break;
-            case 48 :
-                // PsiInternalOntologicalModelingLanguage.g:1:481: RULE_FUNCTIONAL_TOKEN
+            case 64 :
+                // PsiInternalOntologicalModelingLanguage.g:1:595: RULE_FUNCTIONAL_TOKEN
                 {
                 mRULE_FUNCTIONAL_TOKEN(); 
 
                 }
                 break;
-            case 49 :
-                // PsiInternalOntologicalModelingLanguage.g:1:503: RULE_INVERSE_FUNCTIONAL_TOKEN
+            case 65 :
+                // PsiInternalOntologicalModelingLanguage.g:1:617: RULE_INVERSE_FUNCTIONAL_TOKEN
                 {
                 mRULE_INVERSE_FUNCTIONAL_TOKEN(); 
 
                 }
                 break;
-            case 50 :
-                // PsiInternalOntologicalModelingLanguage.g:1:533: RULE_ESSENTIAL_TOKEN
+            case 66 :
+                // PsiInternalOntologicalModelingLanguage.g:1:647: RULE_ESSENTIAL_TOKEN
                 {
                 mRULE_ESSENTIAL_TOKEN(); 
 
                 }
                 break;
-            case 51 :
-                // PsiInternalOntologicalModelingLanguage.g:1:554: RULE_INVERSE_ESSENTIAL_TOKEN
+            case 67 :
+                // PsiInternalOntologicalModelingLanguage.g:1:668: RULE_INVERSE_ESSENTIAL_TOKEN
                 {
                 mRULE_INVERSE_ESSENTIAL_TOKEN(); 
 
                 }
                 break;
-            case 52 :
-                // PsiInternalOntologicalModelingLanguage.g:1:583: RULE_SYMMETRIC_TOKEN
+            case 68 :
+                // PsiInternalOntologicalModelingLanguage.g:1:697: RULE_SYMMETRIC_TOKEN
                 {
                 mRULE_SYMMETRIC_TOKEN(); 
 
                 }
                 break;
-            case 53 :
-                // PsiInternalOntologicalModelingLanguage.g:1:604: RULE_ASYMMETRIC_TOKEN
+            case 69 :
+                // PsiInternalOntologicalModelingLanguage.g:1:718: RULE_ASYMMETRIC_TOKEN
                 {
                 mRULE_ASYMMETRIC_TOKEN(); 
 
                 }
                 break;
-            case 54 :
-                // PsiInternalOntologicalModelingLanguage.g:1:626: RULE_REFLEXIVE_TOKEN
+            case 70 :
+                // PsiInternalOntologicalModelingLanguage.g:1:740: RULE_REFLEXIVE_TOKEN
                 {
                 mRULE_REFLEXIVE_TOKEN(); 
 
                 }
                 break;
-            case 55 :
-                // PsiInternalOntologicalModelingLanguage.g:1:647: RULE_IRREFLEXIVE_TOKEN
+            case 71 :
+                // PsiInternalOntologicalModelingLanguage.g:1:761: RULE_IRREFLEXIVE_TOKEN
                 {
                 mRULE_IRREFLEXIVE_TOKEN(); 
 
                 }
                 break;
-            case 56 :
-                // PsiInternalOntologicalModelingLanguage.g:1:670: RULE_TRANSITIVE_TOKEN
+            case 72 :
+                // PsiInternalOntologicalModelingLanguage.g:1:784: RULE_TRANSITIVE_TOKEN
                 {
                 mRULE_TRANSITIVE_TOKEN(); 
 
                 }
                 break;
-            case 57 :
-                // PsiInternalOntologicalModelingLanguage.g:1:692: RULE_UNREIFIED_TOKEN
+            case 73 :
+                // PsiInternalOntologicalModelingLanguage.g:1:806: RULE_UNREIFIED_TOKEN
                 {
                 mRULE_UNREIFIED_TOKEN(); 
 
                 }
                 break;
-            case 58 :
-                // PsiInternalOntologicalModelingLanguage.g:1:713: RULE_INVERSE_TOKEN
+            case 74 :
+                // PsiInternalOntologicalModelingLanguage.g:1:827: RULE_INVERSE_TOKEN
                 {
                 mRULE_INVERSE_TOKEN(); 
 
                 }
                 break;
-            case 59 :
-                // PsiInternalOntologicalModelingLanguage.g:1:732: RULE_SOURCE_TOKEN
+            case 75 :
+                // PsiInternalOntologicalModelingLanguage.g:1:846: RULE_SOURCE_TOKEN
                 {
                 mRULE_SOURCE_TOKEN(); 
 
                 }
                 break;
-            case 60 :
-                // PsiInternalOntologicalModelingLanguage.g:1:750: RULE_TARGET_TOKEN
+            case 76 :
+                // PsiInternalOntologicalModelingLanguage.g:1:864: RULE_TARGET_TOKEN
                 {
                 mRULE_TARGET_TOKEN(); 
 
                 }
                 break;
-            case 61 :
-                // PsiInternalOntologicalModelingLanguage.g:1:768: RULE_SCALAR_TOKEN
+            case 77 :
+                // PsiInternalOntologicalModelingLanguage.g:1:882: RULE_SCALAR_TOKEN
                 {
                 mRULE_SCALAR_TOKEN(); 
 
                 }
                 break;
-            case 62 :
-                // PsiInternalOntologicalModelingLanguage.g:1:786: RULE_STRUCTURE_TOKEN
+            case 78 :
+                // PsiInternalOntologicalModelingLanguage.g:1:900: RULE_STRUCTURE_TOKEN
                 {
                 mRULE_STRUCTURE_TOKEN(); 
 
                 }
                 break;
-            case 63 :
-                // PsiInternalOntologicalModelingLanguage.g:1:807: RULE_DOMAIN_TOKEN
+            case 79 :
+                // PsiInternalOntologicalModelingLanguage.g:1:921: RULE_DOMAIN_TOKEN
                 {
                 mRULE_DOMAIN_TOKEN(); 
 
                 }
                 break;
-            case 64 :
-                // PsiInternalOntologicalModelingLanguage.g:1:825: RULE_RANGE_TOKEN
+            case 80 :
+                // PsiInternalOntologicalModelingLanguage.g:1:939: RULE_RANGE_TOKEN
                 {
                 mRULE_RANGE_TOKEN(); 
 
                 }
                 break;
-            case 65 :
-                // PsiInternalOntologicalModelingLanguage.g:1:842: RULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN
+            case 81 :
+                // PsiInternalOntologicalModelingLanguage.g:1:956: RULE_EXTENDS_TOKEN
+                {
+                mRULE_EXTENDS_TOKEN(); 
+
+                }
+                break;
+            case 82 :
+                // PsiInternalOntologicalModelingLanguage.g:1:975: RULE_REFINES_TOKEN
+                {
+                mRULE_REFINES_TOKEN(); 
+
+                }
+                break;
+            case 83 :
+                // PsiInternalOntologicalModelingLanguage.g:1:994: RULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN
                 {
                 mRULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 66 :
-                // PsiInternalOntologicalModelingLanguage.g:1:881: RULE_SPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN
+            case 84 :
+                // PsiInternalOntologicalModelingLanguage.g:1:1033: RULE_SPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN
                 {
                 mRULE_SPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 67 :
-                // PsiInternalOntologicalModelingLanguage.g:1:924: RULE_ANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN
+            case 85 :
+                // PsiInternalOntologicalModelingLanguage.g:1:1076: RULE_ANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN
                 {
                 mRULE_ANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 68 :
-                // PsiInternalOntologicalModelingLanguage.g:1:968: RULE_BUNDLED_TERMINOLOGY_AXIOM_TOKEN
+            case 86 :
+                // PsiInternalOntologicalModelingLanguage.g:1:1120: RULE_BUNDLED_TERMINOLOGY_AXIOM_TOKEN
                 {
                 mRULE_BUNDLED_TERMINOLOGY_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 69 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1005: RULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN
+            case 87 :
+                // PsiInternalOntologicalModelingLanguage.g:1:1157: RULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN
                 {
                 mRULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 70 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1054: RULE_TERMINOLOGY_NESTING_AXIOM_TOKEN
+            case 88 :
+                // PsiInternalOntologicalModelingLanguage.g:1:1206: RULE_TERMINOLOGY_NESTING_AXIOM_TOKEN
                 {
                 mRULE_TERMINOLOGY_NESTING_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 71 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1091: RULE_TERMINOLOGY_EXTENSION_AXIOM_TOKEN
-                {
-                mRULE_TERMINOLOGY_EXTENSION_AXIOM_TOKEN(); 
-
-                }
-                break;
-            case 72 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1130: RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN
+            case 89 :
+                // PsiInternalOntologicalModelingLanguage.g:1:1243: RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN
                 {
                 mRULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 73 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1178: RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN
+            case 90 :
+                // PsiInternalOntologicalModelingLanguage.g:1:1291: RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN
                 {
                 mRULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 74 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1224: RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN
+            case 91 :
+                // PsiInternalOntologicalModelingLanguage.g:1:1337: RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN
                 {
                 mRULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 75 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1264: RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN
+            case 92 :
+                // PsiInternalOntologicalModelingLanguage.g:1:1377: RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN
                 {
                 mRULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 76 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1303: RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN
+            case 93 :
+                // PsiInternalOntologicalModelingLanguage.g:1:1416: RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN
                 {
                 mRULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 77 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1356: RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN
+            case 94 :
+                // PsiInternalOntologicalModelingLanguage.g:1:1469: RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN
                 {
                 mRULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 78 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1425: RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN
+            case 95 :
+                // PsiInternalOntologicalModelingLanguage.g:1:1538: RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN
                 {
                 mRULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 79 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1492: RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN
+            case 96 :
+                // PsiInternalOntologicalModelingLanguage.g:1:1605: RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN
                 {
                 mRULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 80 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1560: RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN
+            case 97 :
+                // PsiInternalOntologicalModelingLanguage.g:1:1673: RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN
                 {
                 mRULE_SYNONYM_SCALAR_RESTRICTION_TOKEN(); 
 
                 }
                 break;
-            case 81 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1598: RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN
+            case 98 :
+                // PsiInternalOntologicalModelingLanguage.g:1:1711: RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN
                 {
                 mRULE_NUMERIC_SCALAR_RESTRICTION_TOKEN(); 
 
                 }
                 break;
-            case 82 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1636: RULE_STRING_SCALAR_RESTRICTION_TOKEN
+            case 99 :
+                // PsiInternalOntologicalModelingLanguage.g:1:1749: RULE_STRING_SCALAR_RESTRICTION_TOKEN
                 {
                 mRULE_STRING_SCALAR_RESTRICTION_TOKEN(); 
 
                 }
                 break;
-            case 83 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1673: RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN
+            case 100 :
+                // PsiInternalOntologicalModelingLanguage.g:1:1786: RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN
                 {
                 mRULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN(); 
 
                 }
                 break;
-            case 84 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1717: RULE_BINARY_SCALAR_RESTRICTION_TOKEN
+            case 101 :
+                // PsiInternalOntologicalModelingLanguage.g:1:1830: RULE_BINARY_SCALAR_RESTRICTION_TOKEN
                 {
                 mRULE_BINARY_SCALAR_RESTRICTION_TOKEN(); 
 
                 }
                 break;
-            case 85 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1754: RULE_IRI_SCALAR_RESTRICTION_TOKEN
+            case 102 :
+                // PsiInternalOntologicalModelingLanguage.g:1:1867: RULE_IRI_SCALAR_RESTRICTION_TOKEN
                 {
                 mRULE_IRI_SCALAR_RESTRICTION_TOKEN(); 
 
                 }
                 break;
-            case 86 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1788: RULE_TIME_SCALAR_RESTRICTION_TOKEN
+            case 103 :
+                // PsiInternalOntologicalModelingLanguage.g:1:1901: RULE_TIME_SCALAR_RESTRICTION_TOKEN
                 {
                 mRULE_TIME_SCALAR_RESTRICTION_TOKEN(); 
 
                 }
                 break;
-            case 87 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1823: RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN
+            case 104 :
+                // PsiInternalOntologicalModelingLanguage.g:1:1936: RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN
                 {
                 mRULE_SCALAR_ONE_OF_RESTRICTION_TOKEN(); 
 
                 }
                 break;
-            case 88 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1860: RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN
+            case 105 :
+                // PsiInternalOntologicalModelingLanguage.g:1:1973: RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN
                 {
                 mRULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 89 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1899: RULE_LCURLY
+            case 106 :
+                // PsiInternalOntologicalModelingLanguage.g:1:2012: RULE_DESCRIPTION_BOX_TOKEN
+                {
+                mRULE_DESCRIPTION_BOX_TOKEN(); 
+
+                }
+                break;
+            case 107 :
+                // PsiInternalOntologicalModelingLanguage.g:1:2039: RULE_LCURLY
                 {
                 mRULE_LCURLY(); 
 
                 }
                 break;
-            case 90 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1911: RULE_RCURLY
+            case 108 :
+                // PsiInternalOntologicalModelingLanguage.g:1:2051: RULE_RCURLY
                 {
                 mRULE_RCURLY(); 
 
                 }
                 break;
-            case 91 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1923: RULE_EQUAL
+            case 109 :
+                // PsiInternalOntologicalModelingLanguage.g:1:2063: RULE_EQUAL
                 {
                 mRULE_EQUAL(); 
 
                 }
                 break;
-            case 92 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1934: RULE_STRING
+            case 110 :
+                // PsiInternalOntologicalModelingLanguage.g:1:2074: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 93 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1946: RULE_IRI
+            case 111 :
+                // PsiInternalOntologicalModelingLanguage.g:1:2086: RULE_IRI
                 {
                 mRULE_IRI(); 
 
                 }
                 break;
-            case 94 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1955: RULE_ID
+            case 112 :
+                // PsiInternalOntologicalModelingLanguage.g:1:2095: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 95 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1963: RULE_UUID
+            case 113 :
+                // PsiInternalOntologicalModelingLanguage.g:1:2103: RULE_UUID
                 {
                 mRULE_UUID(); 
 
                 }
                 break;
-            case 96 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1973: RULE_HEX
+            case 114 :
+                // PsiInternalOntologicalModelingLanguage.g:1:2113: RULE_HEX
                 {
                 mRULE_HEX(); 
 
                 }
                 break;
-            case 97 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1982: RULE_INT
+            case 115 :
+                // PsiInternalOntologicalModelingLanguage.g:1:2122: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 98 :
-                // PsiInternalOntologicalModelingLanguage.g:1:1991: RULE_DECIMAL
+            case 116 :
+                // PsiInternalOntologicalModelingLanguage.g:1:2131: RULE_DECIMAL
                 {
                 mRULE_DECIMAL(); 
 
                 }
                 break;
-            case 99 :
-                // PsiInternalOntologicalModelingLanguage.g:1:2004: RULE_ML_COMMENT
+            case 117 :
+                // PsiInternalOntologicalModelingLanguage.g:1:2144: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 100 :
-                // PsiInternalOntologicalModelingLanguage.g:1:2020: RULE_SL_COMMENT
+            case 118 :
+                // PsiInternalOntologicalModelingLanguage.g:1:2160: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 101 :
-                // PsiInternalOntologicalModelingLanguage.g:1:2036: RULE_WS
+            case 119 :
+                // PsiInternalOntologicalModelingLanguage.g:1:2176: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 102 :
-                // PsiInternalOntologicalModelingLanguage.g:1:2044: RULE_ANY_OTHER
+            case 120 :
+                // PsiInternalOntologicalModelingLanguage.g:1:2184: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -3767,126 +4289,107 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
 
     protected DFA22 dfa22 = new DFA22(this);
     static final String DFA22_eotS =
-        "\1\uffff\13\47\1\uffff\2\47\1\uffff\5\47\5\uffff\2\42\1\47\1\uffff\2\131\1\42\2\uffff\4\47\1\uffff\34\47\1\uffff\3\47\1\uffff\11\47\6\uffff\1\131\3\uffff\1\136\1\131\5\uffff\63\47\1\131\2\uffff\3\136\21\47\1\u00ee\32\47\1\u0109\6\47\1\u0110\5\47\1\131\2\uffff\4\136\22\47\1\uffff\3\47\1\u0133\17\47\1\u0143\1\u0144\5\47\1\uffff\6\47\1\uffff\5\47\1\131\2\uffff\4\136\6\47\1\u0168\6\47\1\u016f\3\47\1\u0173\4\47\1\uffff\1\u0179\4\47\1\u017e\11\47\2\uffff\2\47\1\u018a\2\47\1\u018d\3\47\1\u0191\6\47\1\131\2\uffff\4\136\4\47\1\u01a5\7\47\1\uffff\6\47\1\uffff\3\47\1\uffff\5\47\1\uffff\4\47\1\uffff\7\47\1\u01c7\3\47\1\uffff\2\47\1\uffff\1\u01cf\2\47\1\uffff\3\47\1\u01d7\2\47\1\131\2\uffff\4\136\6\47\1\uffff\32\47\1\u0201\6\47\1\uffff\4\47\1\u020c\2\47\1\uffff\7\47\1\uffff\2\47\1\131\2\uffff\4\136\4\47\1\u021d\1\47\1\u0220\11\47\1\u022a\10\47\1\u0233\6\47\1\uffff\1\u023a\2\47\1\u023d\6\47\1\uffff\5\47\1\u024a\5\47\1\uffff\4\47\1\uffff\2\47\1\uffff\5\47\1\u025c\3\47\1\uffff\10\47\1\uffff\6\47\1\uffff\2\47\1\uffff\5\47\1\u0278\3\47\1\u027c\2\47\1\uffff\1\u027f\4\47\1\136\13\47\1\uffff\33\47\1\uffff\2\47\1\u02b2\1\uffff\2\47\1\uffff\2\47\1\u02b7\1\47\1\136\1\uffff\1\136\15\47\1\u02ca\4\47\1\u02cf\15\47\1\u02dd\1\u02de\1\u02df\1\u02e0\1\u02e1\6\47\1\uffff\4\47\1\uffff\1\47\1\uffff\3\136\4\47\1\u02f5\10\47\1\uffff\4\47\1\uffff\15\47\5\uffff\13\47\1\136\1\uffff\2\136\4\47\1\uffff\3\47\1\u0321\23\47\1\u0335\23\47\1\uffff\3\47\1\u034c\10\47\1\u0355\6\47\1\uffff\26\47\1\uffff\10\47\1\uffff\1\u037a\1\u037b\16\47\1\u038a\10\47\1\u0393\2\47\1\u0396\4\47\1\u039b\2\47\2\uffff\15\47\1\u03ab\1\uffff\7\47\1\u03b3\1\uffff\2\47\1\uffff\4\47\1\uffff\1\47\1\u03bb\1\47\1\u03be\1\47\1\u03c0\2\47\1\u03c3\6\47\1\uffff\7\47\1\uffff\7\47\1\uffff\1\u03d9\1\47\1\uffff\1\47\1\uffff\2\47\1\uffff\25\47\1\uffff\12\47\1\u03fd\13\47\1\u0409\12\47\1\u0414\1\u0415\1\uffff\4\47\1\u041a\1\47\1\u041c\3\47\1\u0420\1\uffff\12\47\2\uffff\4\47\1\uffff\1\u042f\1\uffff\1\u0430\2\47\1\uffff\2\47\1\u0435\1\u0436\5\47\1\u043c\1\47\1\u0441\2\47\2\uffff\1\u0444\1\47\1\u0446\1\47\2\uffff\1\u0448\4\47\1\uffff\4\47\1\uffff\2\47\1\uffff\1\47\1\uffff\1\47\1\uffff\17\47\1\u0464\13\47\1\uffff\1\u0470\5\47\1\u0476\4\47\1\uffff\5\47\1\uffff\1\47\1\u0481\1\u0482\7\47\2\uffff\5\47\1\u048f\6\47\1\uffff\5\47\1\u049b\5\47\1\uffff\1\47\1\u04a2\4\47\1\uffff\13\47\1\u04b2\3\47\1\uffff\34\47\1\u04d2\2\47\1\uffff\1\u04d5\1\u04d6\2\uffff";
+        "\1\uffff\20\53\1\uffff\3\53\1\uffff\4\53\5\uffff\2\47\1\53\1\uffff\2\147\1\47\2\uffff\3\53\1\uffff\46\53\1\uffff\5\53\1\uffff\10\53\7\uffff\2\147\2\uffff\1\156\5\uffff\76\53\1\147\2\uffff\3\156\23\53\1\u0116\43\53\1\u013a\10\53\1\u0143\4\53\1\147\2\uffff\4\156\24\53\1\uffff\4\53\1\u0168\20\53\1\u0179\1\u017a\14\53\1\uffff\2\53\1\u0189\5\53\1\uffff\4\53\1\147\2\uffff\4\156\6\53\1\u01a6\7\53\1\u01ae\4\53\1\u01b3\5\53\1\uffff\1\u01ba\4\53\1\u01bf\12\53\2\uffff\2\53\1\u01cc\11\53\1\u01d6\1\53\1\uffff\3\53\1\u01db\5\53\1\147\2\uffff\4\156\4\53\1\u01ee\7\53\1\uffff\7\53\1\uffff\4\53\1\uffff\4\53\1\u0205\1\53\1\uffff\4\53\1\uffff\7\53\1\u0213\1\u0214\3\53\1\uffff\11\53\1\uffff\1\u0223\3\53\1\uffff\2\53\1\u022b\2\53\1\147\2\uffff\4\156\6\53\1\uffff\26\53\1\uffff\15\53\2\uffff\4\53\1\u0262\11\53\1\uffff\7\53\1\uffff\2\53\1\147\2\uffff\4\156\4\53\1\u027a\1\53\1\u027d\12\53\1\u0289\11\53\1\u0293\6\53\1\u029a\1\u029b\2\53\1\u029e\6\53\1\uffff\15\53\1\u02b3\4\53\1\uffff\4\53\1\uffff\2\53\1\uffff\5\53\1\u02c5\5\53\1\uffff\11\53\1\uffff\6\53\2\uffff\2\53\1\uffff\5\53\1\u02e4\11\53\1\u02ee\1\53\1\u02f0\2\53\1\uffff\4\53\1\156\14\53\1\uffff\36\53\1\uffff\11\53\1\uffff\1\u0330\1\uffff\4\53\1\u0335\1\53\1\156\1\uffff\1\156\16\53\1\u0349\6\53\1\u0350\16\53\1\u035f\1\u0360\1\u0361\1\u0362\1\u0363\15\53\1\uffff\4\53\1\uffff\1\53\1\uffff\3\156\4\53\1\u037e\11\53\1\uffff\6\53\1\uffff\16\53\5\uffff\22\53\1\156\1\uffff\2\156\4\53\1\uffff\4\53\1\u03b7\26\53\1\u03ce\7\53\1\u03d6\24\53\1\uffff\3\53\1\u03ee\13\53\1\u03fa\6\53\1\uffff\7\53\1\uffff\1\u0408\26\53\1\uffff\13\53\1\uffff\1\u042a\1\u042b\13\53\1\uffff\10\53\1\u043f\12\53\1\u044a\2\53\1\u044d\6\53\1\u0454\1\u0455\2\53\2\uffff\22\53\1\u046a\1\uffff\10\53\1\u0473\1\53\1\uffff\2\53\1\uffff\6\53\2\uffff\1\53\1\u047e\1\53\1\u0481\1\53\1\u0483\2\53\1\u0486\3\53\1\u048a\7\53\1\uffff\10\53\1\uffff\1\u049a\11\53\1\uffff\1\u04a6\1\53\1\uffff\1\53\1\uffff\2\53\1\uffff\3\53\1\uffff\17\53\1\uffff\13\53\1\uffff\16\53\1\u04d6\16\53\1\u04e5\17\53\1\u04f5\1\u04f6\1\uffff\4\53\1\u04fb\2\53\1\u04fe\5\53\1\u0504\1\uffff\17\53\2\uffff\4\53\1\uffff\1\u0518\1\u0519\1\uffff\1\u051a\4\53\1\uffff\3\53\1\u0522\1\u0523\3\53\1\u0527\5\53\1\u052d\1\53\1\u0532\2\53\3\uffff\2\53\1\u0537\1\53\1\u0539\2\53\2\uffff\1\u053c\2\53\1\uffff\5\53\1\uffff\4\53\1\uffff\4\53\1\uffff\1\53\1\uffff\2\53\1\uffff\15\53\1\u055c\12\53\1\u0567\6\53\1\uffff\2\53\1\u0570\3\53\1\u0574\1\u0577\2\53\1\uffff\1\u057a\6\53\1\u0581\1\uffff\3\53\1\uffff\2\53\1\uffff\2\53\1\uffff\6\53\1\uffff\1\53\1\u0590\1\u0591\13\53\2\uffff\10\53\1\u05a5\12\53\1\uffff\3\53\1\u05b3\5\53\1\u05b9\2\53\1\u05bc\1\uffff\5\53\1\uffff\2\53\1\uffff\1\u05c4\1\u05c5\5\53\2\uffff\15\53\1\u05d8\1\u05d9\3\53\2\uffff\34\53\1\u05f9\2\53\1\uffff\1\u05fc\1\u05fd\2\uffff";
     static final String DFA22_eofS =
-        "\u04d7\uffff";
+        "\u05fe\uffff";
     static final String DFA22_minS =
-        "\1\0\1\60\1\143\1\60\1\141\1\60\1\145\4\141\1\60\1\uffff\1\160\1\60\1\uffff\1\141\1\151\1\156\1\60\1\156\5\uffff\1\0\1\44\1\60\1\uffff\2\60\1\52\2\uffff\1\164\1\163\1\164\1\60\1\uffff\1\162\1\141\1\142\1\155\1\165\1\145\1\163\1\60\1\155\1\157\1\146\3\156\1\163\1\155\1\164\3\156\1\170\1\164\1\141\1\154\1\151\1\156\1\160\1\60\1\uffff\1\145\1\157\1\156\1\uffff\1\162\1\141\1\162\1\155\1\156\1\162\1\156\1\166\1\151\6\uffff\1\60\1\uffff\1\53\3\60\5\uffff\1\151\2\145\1\60\1\151\1\154\1\103\1\145\1\155\1\157\1\162\1\143\1\152\1\151\1\141\2\164\1\146\1\154\1\147\1\144\1\141\1\164\2\145\2\147\2\105\1\164\1\151\1\165\2\157\1\156\1\145\1\155\1\164\1\156\1\163\1\143\1\155\1\156\1\147\1\145\1\144\1\145\1\143\2\145\1\123\1\60\1\53\4\60\1\164\2\156\1\60\1\143\1\156\1\141\1\157\1\145\1\162\1\145\1\156\1\143\1\151\1\157\1\147\1\151\1\44\1\162\1\151\2\145\1\154\1\162\1\151\2\162\1\164\1\165\1\145\1\156\1\170\1\145\1\156\1\170\1\145\1\156\1\145\1\155\1\164\1\171\1\143\1\155\1\162\1\44\2\145\1\151\1\163\1\145\1\123\1\44\1\151\1\164\1\162\1\146\1\143\1\60\1\53\5\60\1\171\1\164\1\144\1\60\1\164\1\147\1\162\1\156\1\154\1\103\1\164\1\171\1\145\1\146\1\151\2\156\1\157\1\uffff\1\151\1\145\1\170\1\44\1\145\1\171\1\156\1\151\1\141\1\150\1\141\1\156\2\143\1\156\2\143\1\162\1\114\2\44\1\141\1\155\1\164\1\145\1\141\1\uffff\1\144\1\160\1\156\1\151\1\164\1\143\1\uffff\1\146\1\151\1\163\1\154\1\141\1\60\1\53\5\60\1\105\1\151\1\163\1\60\1\165\1\123\1\44\1\143\1\141\1\157\1\145\1\162\1\155\1\44\1\151\1\156\1\141\1\44\1\156\1\143\1\144\1\151\1\uffff\1\44\1\123\1\147\1\143\1\154\1\44\2\147\2\154\1\147\2\154\1\156\1\151\2\uffff\1\164\1\157\1\44\1\164\1\143\1\44\1\164\1\157\1\164\1\44\1\141\1\151\1\157\2\145\1\154\1\60\1\53\5\60\1\143\1\170\1\156\1\141\1\44\1\60\1\162\1\143\1\141\1\162\1\145\1\156\1\uffff\1\145\1\164\1\156\1\154\1\151\1\123\1\uffff\1\143\2\164\1\uffff\1\143\1\164\1\122\1\166\1\124\1\uffff\1\143\1\103\1\123\1\126\1\uffff\1\145\1\164\2\165\1\164\2\165\1\44\1\164\1\151\1\165\1\uffff\1\162\1\164\1\uffff\1\44\1\154\1\151\1\uffff\1\154\1\145\1\156\1\44\1\170\1\141\1\60\1\53\5\60\1\162\1\141\2\151\1\154\1\163\1\uffff\1\55\1\145\1\141\1\164\1\157\1\163\1\145\1\160\1\151\1\143\1\141\2\143\1\104\1\114\6\145\1\141\1\145\1\157\1\143\1\141\1\44\1\150\2\163\1\150\2\163\1\uffff\1\145\1\157\1\163\1\151\1\44\1\145\1\160\1\uffff\1\157\1\166\1\141\1\144\1\141\1\165\1\163\1\uffff\1\151\1\162\1\55\1\53\5\55\1\165\1\154\1\163\1\166\1\44\1\160\1\44\1\154\1\141\1\160\1\164\1\117\1\164\1\157\1\145\1\164\1\44\1\141\1\151\1\141\1\145\1\144\1\160\1\144\1\154\1\44\1\162\1\154\1\162\1\156\1\141\1\154\1\uffff\1\44\2\151\1\44\2\151\1\162\1\156\1\103\1\143\1\uffff\1\163\1\145\1\147\1\145\1\162\1\44\1\154\1\156\1\163\1\166\1\122\1\60\1\143\1\141\1\164\1\145\1\uffff\1\145\1\104\1\uffff\1\141\1\120\1\145\1\162\1\146\1\44\1\156\1\160\1\151\1\uffff\1\154\1\163\1\170\1\141\1\103\1\164\1\104\1\141\1\uffff\1\155\1\141\1\155\1\164\1\154\1\165\1\uffff\2\166\1\uffff\2\166\1\141\1\120\1\157\1\44\1\151\1\143\1\171\1\44\1\122\1\145\1\uffff\1\44\1\143\3\145\1\60\1\164\1\162\1\145\1\162\1\143\1\141\3\162\1\151\1\114\1\uffff\1\163\1\164\1\157\1\141\1\152\1\157\1\146\1\145\1\157\1\124\1\141\1\157\1\156\1\164\1\151\1\162\1\151\1\145\1\141\5\145\1\154\1\162\1\156\1\uffff\1\147\1\151\1\44\1\uffff\1\145\1\154\1\uffff\1\164\1\156\1\44\1\163\3\60\1\165\1\104\1\156\1\163\2\164\1\122\1\157\1\164\1\143\1\145\1\151\1\150\1\44\1\156\1\162\1\157\1\156\1\44\1\162\1\156\1\141\1\154\1\156\1\155\1\164\1\151\1\156\1\122\1\156\1\170\1\162\5\44\1\123\1\157\1\143\1\156\1\141\1\145\1\uffff\1\163\1\141\1\151\1\164\1\uffff\1\164\4\60\1\162\1\141\1\164\1\141\1\44\1\141\1\145\1\160\1\171\1\164\1\163\1\164\1\151\1\uffff\1\163\1\122\1\151\1\157\1\uffff\1\155\1\143\1\170\1\141\1\147\1\141\1\151\2\157\1\145\1\157\1\164\1\122\5\uffff\1\143\1\160\1\145\1\141\1\154\1\163\2\164\1\157\1\151\1\162\4\55\1\145\1\164\1\151\1\154\1\uffff\1\120\1\163\1\145\1\44\1\151\1\164\1\145\1\160\1\150\1\145\1\156\1\155\1\151\1\145\1\157\1\164\1\145\1\151\1\164\1\156\1\154\1\163\1\154\1\44\1\145\1\141\1\145\1\160\1\164\1\151\1\164\1\162\1\151\1\156\1\141\1\151\1\144\2\141\1\122\1\162\1\164\1\162\1\uffff\1\157\2\162\1\44\1\151\1\163\1\164\1\171\1\156\1\160\1\156\1\151\1\44\1\156\1\171\1\163\1\157\1\164\1\157\1\uffff\1\163\1\154\1\162\1\164\1\151\1\172\2\151\1\157\1\141\1\154\1\143\1\104\1\120\1\154\1\145\1\157\1\162\1\164\1\156\1\151\1\141\1\uffff\1\160\1\164\1\103\1\120\1\157\1\164\2\157\1\uffff\2\44\1\150\1\147\1\162\1\147\1\164\1\141\1\164\1\124\1\157\1\141\1\156\1\143\1\156\1\154\1\44\1\164\1\141\1\162\1\122\1\163\1\160\1\151\1\171\1\44\1\143\1\154\1\44\1\162\1\157\1\141\1\154\1\44\1\155\1\156\2\uffff\1\151\1\171\1\151\1\171\2\162\1\171\1\141\1\156\1\164\1\147\1\164\1\163\1\44\1\uffff\1\151\1\164\1\157\1\145\1\164\1\145\1\143\1\44\1\uffff\1\164\1\101\1\uffff\1\151\1\156\1\162\1\157\1\uffff\1\171\1\44\1\160\1\44\1\143\1\44\1\151\1\122\1\44\1\170\1\124\1\151\1\101\1\151\1\150\1\uffff\1\157\1\141\1\160\1\163\2\162\1\164\1\uffff\1\151\1\170\2\143\1\145\1\147\1\101\1\uffff\1\44\1\170\1\uffff\1\164\1\uffff\1\143\1\145\1\uffff\1\157\1\145\1\157\1\170\1\157\1\151\1\156\1\120\1\145\1\164\1\151\1\164\1\151\1\157\1\151\1\164\1\145\1\156\1\171\1\170\1\160\1\uffff\2\151\1\164\1\163\1\156\1\162\1\156\1\151\1\156\1\160\1\44\3\162\1\143\1\171\1\157\1\156\1\157\1\151\1\160\1\164\1\44\1\151\1\145\2\157\1\151\1\164\1\157\1\155\1\101\1\157\2\44\1\uffff\1\157\1\164\1\151\1\164\1\44\1\156\1\44\1\155\1\157\1\164\1\44\1\uffff\1\157\1\143\1\155\1\156\1\157\1\162\1\155\1\151\1\170\1\155\2\uffff\1\160\1\171\1\143\1\151\1\uffff\1\44\1\uffff\1\44\1\156\1\101\1\uffff\1\155\1\151\2\44\1\156\1\151\1\171\1\156\1\151\1\44\1\145\1\44\1\164\1\157\2\uffff\1\44\1\170\1\44\1\141\2\uffff\1\44\1\143\1\101\2\157\1\uffff\1\162\1\170\1\156\1\141\1\uffff\1\151\1\156\1\uffff\1\151\1\uffff\1\154\1\uffff\1\164\1\170\1\154\1\155\1\164\2\151\1\162\1\157\1\101\1\157\3\151\1\157\1\44\1\171\1\163\1\166\1\164\1\156\1\170\1\155\1\172\2\157\1\147\1\uffff\1\44\1\164\1\145\1\151\1\101\1\151\1\44\1\141\1\156\1\155\1\171\1\uffff\1\145\1\162\1\143\1\170\1\157\1\uffff\1\164\2\44\1\101\1\156\1\163\1\165\1\151\1\155\1\151\2\uffff\1\170\1\164\1\141\1\154\1\157\1\44\1\157\2\151\1\154\1\141\1\155\1\uffff\1\156\1\157\1\141\1\122\1\162\1\44\1\101\1\155\1\154\1\145\1\122\1\uffff\1\170\1\44\1\122\1\163\1\145\1\151\1\uffff\1\145\1\164\1\163\1\157\1\163\1\162\1\164\1\155\1\164\1\151\1\162\1\44\1\162\1\143\1\151\1\uffff\1\151\1\164\2\143\1\151\2\164\1\157\2\151\1\156\2\157\1\101\2\156\1\170\2\101\1\151\2\170\1\157\2\151\1\155\2\157\1\44\2\155\1\uffff\2\44\2\uffff";
+        "\1\0\1\60\1\143\1\60\1\141\1\60\1\145\4\141\1\60\1\143\2\60\1\145\1\156\1\uffff\1\160\2\60\1\uffff\1\141\1\151\2\156\5\uffff\1\0\1\44\1\60\1\uffff\2\60\1\52\2\uffff\1\164\1\163\1\164\1\uffff\1\60\1\162\1\141\1\142\1\156\1\155\1\165\1\145\1\163\2\60\1\155\1\157\1\146\3\156\1\163\1\155\1\164\3\156\1\170\1\162\1\141\1\154\1\151\1\156\1\160\1\60\1\141\1\162\2\60\1\156\1\151\1\162\1\uffff\1\145\1\157\3\156\1\uffff\1\162\1\141\1\162\1\155\1\156\1\162\1\166\1\151\7\uffff\2\60\1\53\2\60\5\uffff\1\151\2\145\1\60\1\151\1\154\1\103\1\145\1\147\1\155\1\157\1\162\1\143\1\152\1\151\2\141\2\164\1\146\1\151\1\147\1\144\1\141\1\164\2\145\2\147\2\105\2\164\1\151\1\165\2\157\1\156\1\145\1\155\1\164\1\154\1\165\1\141\2\143\1\146\1\145\1\156\1\163\1\143\1\141\1\143\1\155\1\156\1\147\1\145\1\144\3\145\1\123\1\60\1\53\4\60\1\164\2\156\1\60\1\143\1\156\1\141\1\157\1\145\1\162\1\154\1\145\1\156\1\143\1\151\1\157\1\147\1\123\1\151\1\44\1\162\1\151\1\145\1\156\1\145\1\154\1\162\1\151\2\162\1\164\1\122\1\145\1\156\1\170\1\145\1\156\1\170\1\145\1\151\1\156\1\145\1\155\1\164\1\171\1\143\1\155\1\162\1\141\1\143\1\123\1\162\1\145\2\151\1\44\2\145\1\154\1\164\1\151\1\163\1\145\1\123\1\44\1\151\1\162\1\146\1\143\1\60\1\53\5\60\1\171\1\164\1\144\1\60\1\164\1\147\1\162\1\156\1\154\1\103\1\145\1\164\1\171\1\145\1\146\1\151\1\156\1\164\1\156\1\157\1\uffff\1\151\1\145\1\170\1\145\1\44\1\145\1\171\1\156\1\151\1\141\1\150\1\141\1\156\2\143\1\156\2\143\1\162\1\141\1\114\2\44\1\141\1\155\1\164\1\145\1\141\1\162\2\164\1\151\1\160\1\145\1\146\1\uffff\1\144\1\160\1\44\1\151\1\156\1\151\1\164\1\143\1\uffff\1\146\1\163\1\154\1\141\1\60\1\53\5\60\1\105\1\151\1\163\1\60\1\165\1\123\1\44\1\143\1\141\1\157\1\145\1\164\1\162\1\155\1\44\1\151\1\156\1\141\1\162\1\44\1\156\1\143\1\144\1\151\1\163\1\uffff\1\44\1\123\1\147\1\143\1\154\1\44\1\156\1\147\2\154\1\147\2\154\1\156\1\154\1\151\2\uffff\1\164\1\157\1\44\1\164\1\143\1\104\1\165\1\162\1\160\1\164\1\144\1\151\1\44\1\164\1\uffff\2\157\1\164\1\44\1\141\1\151\2\145\1\154\1\60\1\53\5\60\1\143\1\170\1\156\1\141\1\44\1\60\1\162\1\143\1\141\1\162\1\145\1\156\1\uffff\1\145\1\164\1\156\1\154\1\157\1\151\1\123\1\uffff\1\143\2\164\1\165\1\uffff\1\143\1\164\1\122\1\166\1\44\1\124\1\uffff\1\143\1\103\1\123\1\126\1\uffff\1\147\1\164\2\165\1\164\2\165\2\44\1\164\1\151\1\165\1\uffff\1\162\1\164\1\141\1\162\1\165\1\164\1\111\1\122\1\145\1\uffff\1\44\1\156\1\154\1\151\1\uffff\1\154\1\145\1\44\1\170\1\141\1\60\1\53\5\60\1\162\1\141\2\151\1\154\1\163\1\uffff\1\55\1\145\1\141\1\164\1\157\1\163\1\145\1\160\1\151\1\143\1\141\1\156\2\143\1\104\1\114\1\145\1\143\4\145\1\uffff\1\145\1\141\1\145\1\157\1\143\1\141\1\145\1\150\2\163\1\150\2\163\2\uffff\1\145\1\157\1\163\1\151\1\44\1\164\1\145\1\143\1\151\1\156\1\145\1\144\1\145\1\160\1\uffff\1\141\1\157\1\166\1\141\1\144\1\165\1\163\1\uffff\1\151\1\162\1\55\1\53\5\55\1\165\1\154\1\163\1\166\1\44\1\160\1\44\1\154\1\141\1\160\1\164\1\117\1\164\1\157\1\145\1\164\1\103\1\44\1\141\1\151\1\141\1\145\1\144\1\164\1\160\1\144\1\154\1\44\1\162\1\154\1\162\1\156\1\141\1\154\2\44\2\151\1\44\2\151\1\162\1\156\1\103\1\143\1\uffff\1\141\1\144\1\164\1\157\1\163\1\154\1\122\1\163\1\145\1\154\1\147\1\145\1\162\1\44\1\156\1\163\1\166\1\122\1\60\1\143\1\141\1\164\1\145\1\uffff\1\145\1\104\1\uffff\1\141\1\120\1\145\1\162\1\146\1\44\1\156\1\160\1\151\1\157\1\145\1\uffff\1\154\1\163\1\170\1\141\1\103\1\165\1\164\1\104\1\141\1\uffff\1\155\1\141\1\155\1\164\1\154\1\165\2\uffff\2\166\1\uffff\2\166\1\141\1\120\1\157\1\44\1\120\1\104\1\165\1\156\1\164\1\141\1\145\1\151\1\143\1\44\1\171\1\44\1\122\1\145\1\uffff\1\143\3\145\1\60\1\164\1\162\1\145\1\162\1\143\1\141\4\162\1\151\1\114\1\uffff\1\163\1\164\1\157\1\156\1\151\1\141\1\152\1\157\1\146\1\145\1\157\1\162\1\124\1\141\1\157\1\156\1\164\1\151\1\162\1\151\1\145\1\141\5\145\1\154\1\162\1\156\1\uffff\1\162\1\141\1\162\1\102\1\141\1\164\1\154\1\147\1\151\1\uffff\1\44\1\uffff\1\145\1\154\1\164\1\156\1\44\1\163\3\60\1\165\1\104\1\156\1\163\2\164\1\157\1\122\1\157\1\164\1\143\1\145\1\151\1\150\1\44\1\156\1\143\1\146\1\162\1\157\1\156\1\44\1\162\1\156\1\145\1\141\1\154\1\156\1\155\1\164\1\151\1\156\1\122\1\156\1\170\1\162\5\44\1\123\1\157\1\143\1\157\1\164\1\145\1\157\1\156\1\151\1\141\1\156\1\141\1\145\1\uffff\1\163\1\141\1\151\1\164\1\uffff\1\164\4\60\1\162\1\141\1\164\1\141\1\44\1\141\1\160\1\145\1\160\1\171\1\164\1\163\1\164\1\151\1\uffff\1\163\1\145\1\151\1\122\1\151\1\157\1\uffff\1\155\1\143\1\124\1\170\1\141\1\147\1\141\1\151\2\157\1\145\1\157\1\164\1\122\5\uffff\1\143\1\160\1\145\1\160\1\141\1\124\1\170\1\143\1\157\1\164\1\141\1\154\1\163\2\164\1\157\1\151\1\162\4\55\1\145\1\164\1\151\1\154\1\uffff\1\120\1\145\1\163\1\145\1\44\1\151\1\164\1\145\1\160\1\150\1\160\2\145\1\156\1\155\1\151\1\145\1\171\1\157\1\164\1\145\1\151\1\164\1\156\1\154\1\163\1\154\1\44\1\145\1\141\1\145\1\160\1\145\1\120\1\165\1\44\1\145\1\156\1\151\1\164\1\151\1\164\1\162\1\151\1\156\1\141\1\151\1\144\2\141\1\122\2\162\1\164\1\162\1\141\1\uffff\1\157\2\162\1\44\1\151\1\164\1\144\1\163\1\164\1\171\1\156\2\160\1\156\1\151\1\44\1\156\1\171\1\163\1\157\1\164\1\157\1\uffff\1\163\1\154\1\162\1\164\2\162\1\160\1\uffff\1\44\1\163\1\157\1\151\1\172\2\151\1\157\1\141\1\154\1\143\1\104\1\120\1\154\1\145\1\157\1\164\1\162\1\164\1\154\1\156\1\151\1\141\1\uffff\1\160\1\103\1\122\1\164\1\103\1\120\1\157\1\164\1\145\2\157\1\uffff\2\44\1\150\1\147\1\162\1\147\1\164\1\141\1\164\1\124\1\164\1\157\1\154\1\uffff\1\150\1\156\1\157\1\141\1\156\1\143\1\156\1\154\1\44\1\164\1\141\1\162\1\122\1\163\1\160\1\171\1\151\1\171\1\165\1\44\1\143\1\154\1\44\1\154\1\145\1\162\1\157\1\141\1\154\2\44\1\155\1\156\2\uffff\1\151\1\171\1\151\1\171\2\162\1\171\1\141\1\171\1\160\1\145\1\151\1\163\1\156\1\164\1\147\1\164\1\163\1\44\1\uffff\1\151\1\164\1\157\1\145\1\164\1\145\1\124\1\143\1\44\1\145\1\uffff\1\164\1\101\1\uffff\1\141\1\154\1\151\1\156\1\162\1\157\2\uffff\1\171\1\44\1\160\1\44\1\143\1\44\1\151\1\122\1\44\1\170\1\126\1\145\1\44\1\160\1\150\1\124\1\151\1\101\1\151\1\150\1\uffff\1\157\1\141\1\160\1\163\2\162\1\165\1\164\1\uffff\1\44\1\151\1\170\1\163\1\141\2\143\1\145\1\147\1\101\1\uffff\1\44\1\170\1\uffff\1\164\1\uffff\1\143\1\145\1\uffff\1\157\1\141\1\162\1\uffff\1\111\1\151\1\145\1\157\1\170\1\157\1\151\1\156\1\120\1\145\1\164\1\151\1\164\1\160\1\151\1\uffff\1\157\1\151\1\163\2\164\1\145\1\156\1\171\1\170\1\156\1\160\1\uffff\2\151\1\164\1\163\1\156\1\154\1\164\1\156\1\160\1\162\1\156\1\151\1\156\1\160\1\44\3\162\1\143\1\171\1\154\1\157\1\156\1\157\3\151\1\160\1\164\1\44\1\151\1\163\1\145\2\157\1\151\1\164\1\157\1\165\1\171\1\163\1\111\1\155\1\101\1\157\2\44\1\uffff\1\157\1\164\1\151\1\164\1\44\1\145\1\156\1\44\1\155\1\146\2\157\1\164\1\44\1\uffff\1\157\1\164\1\143\1\155\1\156\1\157\1\162\1\155\1\145\1\126\1\164\1\156\1\151\1\170\1\155\2\uffff\1\160\1\171\1\143\1\151\1\uffff\2\44\1\uffff\1\44\1\151\2\156\1\101\1\uffff\1\155\1\141\1\151\2\44\1\156\1\151\1\171\1\44\2\141\1\163\1\156\1\151\1\44\1\145\1\44\1\164\1\157\3\uffff\1\145\1\163\1\44\1\170\1\44\1\156\1\141\2\uffff\1\44\1\143\1\101\1\uffff\1\154\1\156\1\164\2\157\1\uffff\1\162\1\170\1\156\1\141\1\uffff\1\151\1\156\1\162\1\150\1\uffff\1\151\1\uffff\1\143\1\154\1\uffff\1\164\1\170\1\165\1\143\1\141\1\154\1\155\1\164\2\151\1\162\1\157\1\101\1\44\1\151\1\157\1\145\3\151\2\145\1\156\1\157\1\44\1\171\1\163\1\166\1\164\1\156\1\170\1\uffff\1\160\1\155\1\44\1\172\2\157\2\44\1\143\1\147\1\uffff\1\44\1\164\1\145\1\151\1\101\1\151\1\103\1\44\1\uffff\1\141\1\156\1\155\1\uffff\1\157\1\141\1\uffff\1\145\1\171\1\uffff\1\145\1\162\1\143\1\170\1\157\1\154\1\uffff\1\164\2\44\1\155\1\156\1\124\1\101\1\156\1\163\1\165\1\151\1\155\1\141\1\151\2\uffff\1\141\1\147\1\165\1\170\1\164\1\141\1\154\1\157\1\44\1\163\1\157\1\151\1\145\1\160\2\151\1\154\1\141\1\155\1\uffff\1\163\2\156\1\44\1\154\1\157\1\141\1\122\1\162\1\44\1\151\1\101\1\44\1\uffff\1\145\1\155\1\154\1\145\1\122\1\uffff\1\146\1\170\1\uffff\2\44\1\122\1\163\1\145\2\151\2\uffff\1\145\1\164\1\163\1\145\1\157\1\163\1\162\1\164\1\162\1\155\1\164\1\151\1\162\2\44\1\162\1\143\1\151\2\uffff\1\151\1\164\2\143\1\151\2\164\1\157\2\151\1\156\2\157\1\101\2\156\1\170\2\101\1\151\2\170\1\157\2\151\1\155\2\157\1\44\2\155\1\uffff\2\44\2\uffff";
     static final String DFA22_maxS =
-        "\1\uffff\1\170\1\171\2\157\2\165\2\151\1\154\1\141\1\170\1\uffff\1\160\1\157\1\uffff\1\162\1\151\1\156\1\165\1\162\5\uffff\1\uffff\1\172\1\146\1\uffff\1\170\1\154\1\57\2\uffff\1\164\1\163\1\164\1\146\1\uffff\1\162\1\141\1\160\1\156\1\165\1\145\2\163\1\155\1\157\1\163\3\156\1\163\1\155\1\164\3\156\1\170\1\164\1\141\1\154\1\151\1\157\1\171\1\163\1\uffff\1\145\1\157\1\156\1\uffff\1\162\1\141\1\162\1\155\1\156\1\162\1\156\1\166\1\162\6\uffff\1\154\1\uffff\1\146\1\151\1\146\1\154\5\uffff\1\151\2\145\1\146\1\165\1\154\1\122\1\145\1\155\1\157\1\162\1\143\1\152\1\151\1\141\2\164\1\146\1\154\1\147\1\144\1\141\1\164\2\145\2\147\2\114\1\164\1\151\1\165\2\157\1\156\1\145\1\155\1\164\1\156\1\163\1\143\1\155\1\156\1\147\1\145\1\144\1\145\1\143\2\145\1\123\1\154\1\146\1\151\3\146\1\164\2\156\1\146\1\143\1\156\1\141\1\157\1\145\1\162\1\145\1\156\1\143\1\151\1\157\1\147\1\151\1\172\1\162\1\151\2\145\1\154\1\162\1\151\2\162\1\164\1\165\1\145\1\156\1\170\1\145\1\156\1\170\1\145\1\156\1\145\1\155\1\164\1\171\1\143\1\155\1\162\1\172\2\145\1\151\1\163\1\145\1\123\1\172\1\151\1\164\1\162\1\146\1\143\1\154\1\146\1\151\4\146\1\171\1\164\1\144\1\146\1\164\1\147\1\162\1\156\1\154\1\122\1\164\1\171\1\145\1\146\1\151\2\156\1\157\1\uffff\1\151\1\145\1\170\1\172\1\145\1\171\1\156\1\151\1\141\1\150\1\141\1\156\2\143\1\156\2\143\1\162\1\114\2\172\1\141\1\155\1\164\1\145\1\141\1\uffff\1\144\1\160\1\156\1\151\1\164\1\143\1\uffff\1\146\1\151\1\163\1\154\1\141\1\154\1\146\1\151\4\146\1\125\1\151\1\163\1\146\1\165\1\123\1\172\1\143\1\141\1\157\1\145\1\162\1\155\1\172\1\151\1\156\1\141\1\172\1\156\1\143\1\144\1\151\1\uffff\1\172\1\123\1\147\1\143\1\154\1\172\2\147\2\154\1\147\2\154\1\156\1\151\2\uffff\1\164\1\157\1\172\1\164\1\143\1\172\1\164\1\157\1\164\1\172\1\141\1\151\1\157\2\145\2\154\1\146\1\151\4\146\1\164\1\170\1\156\1\141\1\172\1\146\1\162\1\143\1\141\1\162\1\145\1\156\1\uffff\1\145\1\164\1\156\1\154\1\151\1\123\1\uffff\1\143\2\164\1\uffff\1\143\1\164\1\122\1\166\1\124\1\uffff\1\143\1\124\1\123\1\126\1\uffff\1\145\1\164\2\165\1\164\2\165\1\172\1\164\1\151\1\165\1\uffff\1\162\1\164\1\uffff\1\172\1\154\1\151\1\uffff\1\154\1\145\1\156\1\172\1\170\1\141\1\154\1\146\1\151\4\146\1\162\1\141\2\151\1\154\1\163\1\uffff\1\55\1\145\1\141\1\164\1\157\1\163\1\145\1\160\1\151\1\143\1\141\2\143\1\104\1\124\6\145\1\141\1\145\1\157\1\143\1\141\1\172\1\150\2\163\1\150\2\163\1\uffff\1\145\1\157\1\163\1\151\1\172\1\145\1\160\1\uffff\1\157\1\166\1\141\1\144\1\141\1\165\1\163\1\uffff\1\151\1\162\1\154\1\71\1\151\4\55\1\165\1\154\1\163\1\166\1\172\1\160\1\172\1\154\1\141\1\160\1\164\1\117\1\164\1\157\1\145\1\164\1\172\1\141\1\151\1\141\1\145\1\144\1\160\1\144\1\154\1\172\1\162\1\154\1\162\1\156\1\141\1\154\1\uffff\1\172\2\151\1\172\2\151\1\162\1\156\1\103\1\143\1\uffff\1\163\1\145\1\147\1\145\1\162\1\172\1\154\1\156\1\163\1\166\1\122\1\146\1\143\1\141\1\164\1\145\1\uffff\1\145\1\104\1\uffff\1\141\1\120\1\145\1\162\1\146\1\172\1\156\1\160\1\151\1\uffff\1\154\1\163\1\170\1\141\1\124\1\164\1\122\1\141\1\uffff\1\155\1\141\1\155\1\164\1\154\1\165\1\uffff\2\166\1\uffff\2\166\1\141\1\120\1\157\1\172\1\151\1\143\1\171\1\172\1\122\1\145\1\uffff\1\172\1\143\3\145\1\146\1\164\1\162\1\145\1\162\1\143\1\141\3\162\1\151\1\122\1\uffff\1\163\1\164\1\157\1\141\1\152\1\157\1\146\1\145\1\157\1\124\1\145\1\157\1\156\1\164\1\151\1\162\1\151\1\145\1\141\5\145\1\154\1\162\1\156\1\uffff\1\147\1\151\1\172\1\uffff\1\145\1\154\1\uffff\1\164\1\156\1\172\1\163\1\146\1\151\1\146\1\165\1\104\1\156\1\163\2\164\1\122\1\157\1\164\1\143\1\145\1\151\1\150\1\172\1\156\1\162\1\157\1\156\1\172\1\162\1\156\1\141\1\154\1\156\1\155\1\164\1\151\1\156\1\122\1\156\1\170\1\162\5\172\1\123\1\157\1\143\1\156\1\141\1\145\1\uffff\1\163\1\141\1\151\1\164\1\uffff\1\164\1\151\3\146\1\162\1\141\1\164\1\141\1\172\1\141\1\145\1\160\1\171\1\164\1\163\1\164\1\151\1\uffff\1\163\1\122\1\151\1\157\1\uffff\1\155\1\143\1\170\1\141\1\147\1\141\1\151\2\157\1\145\1\157\1\164\1\122\5\uffff\1\143\1\160\1\145\1\141\1\154\1\163\2\164\1\157\1\151\1\162\1\55\1\151\2\55\1\145\1\164\1\151\1\154\1\uffff\1\120\1\163\1\145\1\172\1\151\1\164\1\145\1\160\1\150\1\145\1\156\1\155\1\151\1\145\1\157\1\164\1\145\1\151\1\164\1\156\1\154\1\163\1\154\1\172\1\145\1\141\1\145\1\160\1\164\1\151\1\164\1\162\1\151\1\156\1\141\1\151\1\144\2\141\1\122\1\162\1\164\1\162\1\uffff\1\157\2\162\1\172\1\151\1\163\1\164\1\171\1\156\1\160\1\156\1\151\1\172\1\156\1\171\1\163\1\157\1\164\1\157\1\uffff\1\163\1\154\1\162\1\164\1\151\1\172\2\151\1\157\1\141\1\154\1\143\1\104\1\120\1\154\1\145\1\157\1\162\1\164\1\156\1\151\1\141\1\uffff\1\160\1\164\1\103\1\120\1\157\1\164\2\157\1\uffff\2\172\1\150\1\147\1\162\1\147\1\164\1\141\1\164\1\124\1\157\1\141\1\156\1\143\1\156\1\154\1\172\1\164\1\141\1\162\1\122\1\163\1\160\1\151\1\171\1\172\1\143\1\154\1\172\1\162\1\157\1\141\1\154\1\172\1\155\1\156\2\uffff\1\151\1\171\1\151\1\171\2\162\1\171\1\141\1\156\1\164\1\147\1\164\1\163\1\172\1\uffff\1\151\1\164\1\157\1\145\1\164\1\145\1\143\1\172\1\uffff\1\164\1\101\1\uffff\1\151\1\156\1\162\1\157\1\uffff\1\171\1\172\1\160\1\172\1\143\1\172\1\151\1\122\1\172\1\170\1\124\1\151\1\101\1\151\1\150\1\uffff\1\157\1\141\1\160\1\163\2\162\1\164\1\uffff\1\151\1\170\2\143\1\145\1\147\1\101\1\uffff\1\172\1\170\1\uffff\1\164\1\uffff\1\143\1\145\1\uffff\1\157\1\145\1\157\1\170\1\157\1\151\1\156\1\120\1\145\1\164\1\151\1\164\1\151\1\157\1\151\1\164\1\145\1\156\1\171\1\170\1\160\1\uffff\2\151\1\164\1\163\1\156\1\162\1\156\1\151\1\156\1\160\1\172\3\162\1\143\1\171\1\157\1\156\1\157\1\151\1\160\1\164\1\172\1\151\1\145\2\157\1\151\1\164\1\157\1\155\1\101\1\157\2\172\1\uffff\1\157\1\164\1\151\1\164\1\172\1\156\1\172\1\155\1\157\1\164\1\172\1\uffff\1\157\1\143\1\155\1\156\1\157\1\162\1\155\1\151\1\170\1\155\2\uffff\1\160\1\171\1\143\1\151\1\uffff\1\172\1\uffff\1\172\1\156\1\101\1\uffff\1\155\1\151\2\172\1\156\1\151\1\171\1\156\1\151\1\172\1\145\1\172\1\164\1\157\2\uffff\1\172\1\170\1\172\1\141\2\uffff\1\172\1\143\1\101\2\157\1\uffff\1\162\1\170\1\156\1\141\1\uffff\1\151\1\156\1\uffff\1\151\1\uffff\1\154\1\uffff\1\164\1\170\1\154\1\155\1\164\2\151\1\162\1\157\1\101\1\157\3\151\1\157\1\172\1\171\1\163\1\166\1\164\1\156\1\170\1\155\1\172\2\157\1\147\1\uffff\1\172\1\164\1\145\1\151\1\101\1\151\1\172\1\141\1\156\1\155\1\171\1\uffff\1\145\1\162\1\143\1\170\1\157\1\uffff\1\164\2\172\1\101\1\156\1\163\1\165\1\151\1\155\1\151\2\uffff\1\170\1\164\1\141\1\154\1\157\1\172\1\157\2\151\1\154\1\141\1\155\1\uffff\1\156\1\157\1\141\1\122\1\162\1\172\1\101\1\155\1\154\1\145\1\122\1\uffff\1\170\1\172\1\122\1\163\1\145\1\151\1\uffff\1\145\1\164\1\163\1\157\1\163\1\162\1\164\1\155\1\164\1\151\1\162\1\172\1\162\1\143\1\151\1\uffff\1\151\1\164\2\143\1\151\2\164\1\157\2\151\1\156\2\157\1\101\2\156\1\170\2\101\1\151\2\170\1\157\2\151\1\155\2\157\1\172\2\155\1\uffff\2\172\2\uffff";
+        "\1\uffff\1\170\1\171\2\157\2\165\2\151\1\154\1\141\1\170\1\164\1\146\1\157\1\145\1\156\1\uffff\1\160\1\157\1\165\1\uffff\1\162\1\151\1\156\1\162\5\uffff\1\uffff\1\172\1\146\1\uffff\1\170\1\154\1\57\2\uffff\1\164\1\163\1\164\1\uffff\1\146\1\162\1\141\1\160\2\156\1\165\1\145\2\163\1\164\1\155\1\157\1\163\3\156\1\163\1\155\1\164\3\156\1\170\1\164\1\141\1\154\1\151\1\157\1\171\1\163\1\141\1\162\1\164\1\163\1\156\1\151\1\162\1\uffff\1\145\1\157\3\156\1\uffff\1\162\1\141\1\162\1\155\1\156\1\162\1\166\1\162\7\uffff\2\154\1\146\1\151\1\146\5\uffff\1\151\2\145\1\146\1\165\1\154\1\122\1\145\1\147\1\155\1\157\1\162\1\143\1\152\1\151\2\141\2\164\1\146\1\154\1\147\1\144\1\141\1\164\2\145\2\147\2\114\2\164\1\151\1\165\2\157\1\156\1\145\1\155\1\164\1\154\1\165\1\141\2\143\1\146\1\145\1\156\1\163\1\143\1\141\1\143\1\155\1\156\1\147\1\145\1\144\3\145\1\123\1\154\1\146\1\151\3\146\1\164\2\156\1\146\1\143\1\156\1\141\1\157\1\145\1\162\1\154\1\145\1\156\1\143\1\151\1\157\1\147\1\123\1\151\1\172\1\162\1\151\1\145\1\156\1\145\1\154\1\162\1\151\2\162\1\164\1\122\1\145\1\156\1\170\1\145\1\156\1\170\1\145\1\151\1\156\1\145\1\155\1\164\1\171\1\143\1\155\1\162\1\141\1\143\1\123\1\162\1\145\2\151\1\172\2\145\1\154\1\164\1\151\1\163\1\145\1\123\1\172\1\151\1\162\1\146\1\143\1\154\1\146\1\151\4\146\1\171\1\164\1\144\1\146\1\164\1\147\1\162\1\156\1\154\1\122\1\145\1\164\1\171\1\145\1\146\1\151\1\156\1\164\1\156\1\157\1\uffff\1\151\1\145\1\170\1\145\1\172\1\145\1\171\1\156\1\151\1\141\1\150\1\141\1\156\2\143\1\156\2\143\1\162\1\141\1\114\2\172\1\141\1\155\1\164\1\145\1\141\1\162\2\164\1\151\1\160\1\145\1\146\1\uffff\1\144\1\160\1\172\1\151\1\156\1\151\1\164\1\143\1\uffff\1\146\1\163\1\154\1\141\1\154\1\146\1\151\4\146\1\125\1\151\1\163\1\146\1\165\1\123\1\172\1\143\1\141\1\157\1\145\1\164\1\162\1\155\1\172\1\151\1\156\1\141\1\162\1\172\1\156\1\143\1\144\1\151\1\163\1\uffff\1\172\1\123\1\147\1\143\1\154\1\172\1\156\1\147\2\154\1\147\2\154\1\156\1\154\1\151\2\uffff\1\164\1\157\1\172\1\164\1\143\1\104\1\165\1\162\1\160\1\164\1\144\1\151\1\172\1\164\1\uffff\2\157\1\164\1\172\1\141\1\151\2\145\2\154\1\146\1\151\4\146\1\164\1\170\1\156\1\141\1\172\1\146\1\162\1\143\1\141\1\162\1\145\1\156\1\uffff\1\145\1\164\1\156\1\154\1\157\1\151\1\123\1\uffff\1\143\2\164\1\165\1\uffff\1\143\1\164\1\122\1\166\1\172\1\124\1\uffff\1\143\1\124\1\123\1\126\1\uffff\1\147\1\164\2\165\1\164\2\165\2\172\1\164\1\151\1\165\1\uffff\1\162\1\164\1\141\1\162\1\165\1\164\1\111\1\122\1\145\1\uffff\1\172\1\156\1\154\1\151\1\uffff\1\154\1\145\1\172\1\170\1\141\1\154\1\146\1\151\4\146\1\162\1\141\2\151\1\154\1\163\1\uffff\1\55\1\145\1\141\1\164\1\157\1\163\1\145\1\160\1\151\1\143\1\141\1\156\2\143\1\104\1\124\1\145\1\143\4\145\1\uffff\1\145\1\141\1\145\1\157\1\143\1\141\1\145\1\150\2\163\1\150\2\163\2\uffff\1\145\1\157\1\163\1\151\1\172\1\164\1\145\1\143\1\151\1\156\1\145\1\144\1\145\1\160\1\uffff\1\141\1\157\1\166\1\141\1\144\1\165\1\163\1\uffff\1\151\1\162\1\154\1\71\1\151\4\55\1\165\1\154\1\163\1\166\1\172\1\160\1\172\1\154\1\141\1\160\1\164\1\117\1\164\1\157\1\145\1\164\1\122\1\172\1\141\1\151\1\141\1\145\1\144\1\164\1\160\1\144\1\154\1\172\1\162\1\154\1\162\1\156\1\141\1\154\2\172\2\151\1\172\2\151\1\162\1\156\1\103\1\143\1\uffff\1\141\1\144\1\164\1\157\1\163\1\154\1\122\1\163\1\145\1\154\1\147\1\145\1\162\1\172\1\156\1\163\1\166\1\122\1\146\1\143\1\141\1\164\1\145\1\uffff\1\145\1\120\1\uffff\1\141\1\120\1\145\1\162\1\146\1\172\1\156\1\160\1\151\1\157\1\145\1\uffff\1\154\1\163\1\170\1\141\1\124\1\165\1\164\1\122\1\141\1\uffff\1\155\1\141\1\155\1\164\1\154\1\165\2\uffff\2\166\1\uffff\2\166\1\141\1\120\1\157\1\172\1\120\1\104\1\165\1\156\1\164\1\141\1\145\1\151\1\143\1\172\1\171\1\172\1\122\1\145\1\uffff\1\143\3\145\1\146\1\164\1\162\1\145\1\162\1\143\1\141\4\162\1\151\1\122\1\uffff\1\163\1\164\1\157\1\156\1\151\1\141\1\152\1\157\1\146\1\145\1\157\1\162\1\124\1\145\1\157\1\156\1\164\1\151\1\162\1\151\1\145\1\141\5\145\1\154\1\162\1\156\1\uffff\1\162\1\141\1\162\1\102\1\141\1\164\1\154\1\147\1\151\1\uffff\1\172\1\uffff\1\145\1\154\1\164\1\156\1\172\1\163\1\146\1\151\1\146\1\165\1\104\1\156\1\163\2\164\1\157\1\122\1\157\1\164\1\143\1\145\1\151\1\150\1\172\1\156\1\143\1\146\1\162\1\157\1\156\1\172\1\162\1\156\1\145\1\141\1\154\1\156\1\155\1\164\1\151\1\156\1\122\1\156\1\170\1\162\5\172\1\123\1\157\1\143\1\157\1\164\1\145\1\157\1\156\1\151\1\141\1\156\1\141\1\145\1\uffff\1\163\1\141\1\151\1\164\1\uffff\1\164\1\151\3\146\1\162\1\141\1\164\1\141\1\172\1\141\1\160\1\145\1\160\1\171\1\164\1\163\1\164\1\151\1\uffff\1\163\1\145\1\151\1\122\1\151\1\157\1\uffff\1\155\1\143\1\124\1\170\1\141\1\147\1\141\1\151\2\157\1\145\1\157\1\164\1\122\5\uffff\1\143\1\160\1\145\1\160\1\141\1\124\1\170\1\143\1\157\1\164\1\141\1\154\1\163\2\164\1\157\1\151\1\162\1\55\1\151\2\55\1\145\1\164\1\151\1\154\1\uffff\1\120\1\145\1\163\1\145\1\172\1\151\1\164\1\145\1\160\1\150\1\160\2\145\1\156\1\155\1\151\1\145\1\171\1\157\1\164\1\145\1\151\1\164\1\156\1\154\1\163\1\154\1\172\1\145\1\141\1\145\1\160\1\145\1\120\1\165\1\172\1\145\1\156\1\151\1\164\1\151\1\164\1\162\1\151\1\156\1\141\1\151\1\144\2\141\1\122\2\162\1\164\1\162\1\141\1\uffff\1\157\2\162\1\172\1\151\1\164\1\144\1\163\1\164\1\171\1\156\2\160\1\156\1\151\1\172\1\156\1\171\1\163\1\157\1\164\1\157\1\uffff\1\163\1\154\1\162\1\164\2\162\1\160\1\uffff\1\172\1\163\1\157\1\151\1\172\2\151\1\157\1\141\1\154\1\143\1\104\1\120\1\154\1\145\1\157\1\164\1\162\1\164\1\154\1\156\1\151\1\141\1\uffff\1\160\1\103\1\122\1\164\1\103\1\120\1\157\1\164\1\145\2\157\1\uffff\2\172\1\150\1\147\1\162\1\147\1\164\1\141\1\164\1\124\1\164\1\157\1\154\1\uffff\1\150\1\156\1\157\1\141\1\156\1\143\1\156\1\154\1\172\1\164\1\141\1\162\1\122\1\163\1\160\1\171\1\151\1\171\1\165\1\172\1\143\1\154\1\172\1\154\1\145\1\162\1\157\1\141\1\154\2\172\1\155\1\156\2\uffff\1\151\1\171\1\151\1\171\2\162\1\171\1\141\1\171\1\160\1\145\1\151\1\163\1\156\1\164\1\147\1\164\1\163\1\172\1\uffff\1\151\1\164\1\157\1\145\1\164\1\145\1\124\1\143\1\172\1\145\1\uffff\1\164\1\101\1\uffff\1\141\1\154\1\151\1\156\1\162\1\157\2\uffff\1\171\1\172\1\160\1\172\1\143\1\172\1\151\1\122\1\172\1\170\1\126\1\145\1\172\1\160\1\150\1\124\1\151\1\101\1\151\1\150\1\uffff\1\157\1\141\1\160\1\163\2\162\1\165\1\164\1\uffff\1\172\1\151\1\170\1\163\1\141\2\143\1\145\1\147\1\101\1\uffff\1\172\1\170\1\uffff\1\164\1\uffff\1\143\1\145\1\uffff\1\157\1\141\1\162\1\uffff\1\111\1\151\1\145\1\157\1\170\1\157\1\151\1\156\1\120\1\145\1\164\1\151\1\164\1\160\1\151\1\uffff\1\157\1\151\1\163\2\164\1\145\1\156\1\171\1\170\1\156\1\160\1\uffff\2\151\1\164\1\163\1\156\1\154\1\164\1\156\1\160\1\162\1\156\1\151\1\156\1\160\1\172\3\162\1\143\1\171\1\154\1\157\1\156\1\157\3\151\1\160\1\164\1\172\1\151\1\163\1\145\2\157\1\151\1\164\1\157\1\165\1\171\1\163\1\111\1\155\1\101\1\157\2\172\1\uffff\1\157\1\164\1\151\1\164\1\172\1\145\1\156\1\172\1\155\1\146\2\157\1\164\1\172\1\uffff\1\157\1\164\1\143\1\155\1\156\1\157\1\162\1\155\1\145\1\126\1\164\1\156\1\151\1\170\1\155\2\uffff\1\160\1\171\1\143\1\151\1\uffff\2\172\1\uffff\1\172\1\151\2\156\1\101\1\uffff\1\155\1\141\1\151\2\172\1\156\1\151\1\171\1\172\2\141\1\163\1\156\1\151\1\172\1\145\1\172\1\164\1\157\3\uffff\1\145\1\163\1\172\1\170\1\172\1\156\1\141\2\uffff\1\172\1\143\1\101\1\uffff\1\154\1\156\1\164\2\157\1\uffff\1\162\1\170\1\156\1\141\1\uffff\1\151\1\156\1\162\1\150\1\uffff\1\151\1\uffff\1\143\1\154\1\uffff\1\164\1\170\1\165\1\143\1\141\1\154\1\155\1\164\2\151\1\162\1\157\1\101\1\172\1\151\1\157\1\145\3\151\2\145\1\156\1\157\1\172\1\171\1\163\1\166\1\164\1\156\1\170\1\uffff\1\160\1\155\2\172\2\157\2\172\1\143\1\147\1\uffff\1\172\1\164\1\145\1\151\1\101\1\151\1\103\1\172\1\uffff\1\141\1\156\1\155\1\uffff\1\157\1\141\1\uffff\1\145\1\171\1\uffff\1\145\1\162\1\143\1\170\1\157\1\154\1\uffff\1\164\2\172\1\155\1\156\1\124\1\101\1\156\1\163\1\165\1\151\1\155\1\141\1\151\2\uffff\1\141\1\147\1\165\1\170\1\164\1\141\1\154\1\157\1\172\1\163\1\157\1\151\1\145\1\160\2\151\1\154\1\141\1\155\1\uffff\1\163\2\156\1\172\1\154\1\157\1\141\1\122\1\162\1\172\1\151\1\101\1\172\1\uffff\1\145\1\155\1\154\1\145\1\122\1\uffff\1\146\1\170\1\uffff\2\172\1\122\1\163\1\145\2\151\2\uffff\1\145\1\164\1\163\1\145\1\157\1\163\1\162\1\164\1\162\1\155\1\164\1\151\1\162\2\172\1\162\1\143\1\151\2\uffff\1\151\1\164\2\143\1\151\2\164\1\157\2\151\1\156\2\157\1\101\2\156\1\170\2\101\1\151\2\170\1\157\2\151\1\155\2\157\1\172\2\155\1\uffff\2\172\2\uffff";
     static final String DFA22_acceptS =
-        "\14\uffff\1\43\2\uffff\1\47\5\uffff\1\131\1\132\1\133\2\134\3\uffff\1\136\3\uffff\1\145\1\146\4\uffff\1\136\34\uffff\1\43\3\uffff\1\47\11\uffff\1\131\1\132\1\133\1\134\1\135\1\140\1\uffff\1\141\4\uffff\1\142\1\137\1\143\1\144\1\145\u008b\uffff\1\6\32\uffff\1\44\6\uffff\1\52\42\uffff\1\100\17\uffff\1\41\1\42\43\uffff\1\75\6\uffff\1\73\3\uffff\1\77\5\uffff\1\51\4\uffff\1\30\13\uffff\1\53\2\uffff\1\45\3\uffff\1\74\23\uffff\1\107\41\uffff\1\33\7\uffff\1\55\7\uffff\1\72\51\uffff\1\40\12\uffff\1\54\20\uffff\1\62\2\uffff\1\76\11\uffff\1\64\10\uffff\1\66\6\uffff\1\31\2\uffff\1\32\14\uffff\1\71\21\uffff\1\20\33\uffff\1\65\3\uffff\1\70\2\uffff\1\60\62\uffff\1\50\4\uffff\1\67\22\uffff\1\21\4\uffff\1\7\15\uffff\1\27\1\34\1\36\1\35\1\37\23\uffff\1\113\53\uffff\1\25\23\uffff\1\14\26\uffff\1\22\10\uffff\1\16\44\uffff\1\17\1\24\16\uffff\1\63\10\uffff\1\26\2\uffff\1\23\4\uffff\1\12\17\uffff\1\61\7\uffff\1\4\7\uffff\1\15\2\uffff\1\10\1\uffff\1\13\2\uffff\1\46\25\uffff\1\56\43\uffff\1\125\13\uffff\1\11\12\uffff\1\126\1\57\4\uffff\1\3\1\uffff\1\127\3\uffff\1\5\16\uffff\1\122\1\130\4\uffff\1\104\1\124\5\uffff\1\106\4\uffff\1\2\2\uffff\1\120\1\uffff\1\101\1\uffff\1\121\33\uffff\1\112\13\uffff\1\1\5\uffff\1\102\12\uffff\1\123\1\103\14\uffff\1\111\13\uffff\1\110\6\uffff\1\105\17\uffff\1\114\37\uffff\1\116\2\uffff\1\117\1\115";
+        "\21\uffff\1\61\3\uffff\1\67\4\uffff\1\153\1\154\1\155\2\156\3\uffff\1\160\3\uffff\1\167\1\170\3\uffff\1\160\46\uffff\1\61\5\uffff\1\67\10\uffff\1\153\1\154\1\155\1\156\1\157\1\162\1\163\5\uffff\1\161\1\164\1\165\1\166\1\167\u00a4\uffff\1\6\43\uffff\1\62\10\uffff\1\72\44\uffff\1\120\20\uffff\1\41\1\42\16\uffff\1\64\34\uffff\1\115\7\uffff\1\113\4\uffff\1\117\6\uffff\1\71\4\uffff\1\30\14\uffff\1\73\11\uffff\1\63\4\uffff\1\114\22\uffff\1\121\26\uffff\1\122\15\uffff\1\33\1\65\16\uffff\1\75\7\uffff\1\112\66\uffff\1\74\27\uffff\1\102\2\uffff\1\116\13\uffff\1\104\11\uffff\1\106\6\uffff\1\40\1\31\2\uffff\1\32\24\uffff\1\111\21\uffff\1\20\36\uffff\1\105\11\uffff\1\100\1\uffff\1\110\77\uffff\1\70\4\uffff\1\107\23\uffff\1\21\6\uffff\1\7\16\uffff\1\27\1\34\1\36\1\35\1\37\32\uffff\1\134\70\uffff\1\25\26\uffff\1\14\7\uffff\1\152\27\uffff\1\22\13\uffff\1\16\15\uffff\1\51\41\uffff\1\17\1\24\23\uffff\1\103\12\uffff\1\26\2\uffff\1\23\6\uffff\1\12\1\50\24\uffff\1\101\10\uffff\1\4\12\uffff\1\15\2\uffff\1\10\1\uffff\1\13\2\uffff\1\66\3\uffff\1\47\17\uffff\1\44\13\uffff\1\76\57\uffff\1\146\16\uffff\1\11\17\uffff\1\147\1\77\4\uffff\1\3\2\uffff\1\150\5\uffff\1\5\23\uffff\1\46\1\143\1\151\7\uffff\1\126\1\145\3\uffff\1\43\5\uffff\1\130\4\uffff\1\2\4\uffff\1\141\1\uffff\1\123\2\uffff\1\142\37\uffff\1\52\12\uffff\1\133\10\uffff\1\56\3\uffff\1\45\2\uffff\1\53\2\uffff\1\1\6\uffff\1\124\16\uffff\1\144\1\125\23\uffff\1\132\15\uffff\1\57\5\uffff\1\131\2\uffff\1\55\7\uffff\1\60\1\127\22\uffff\1\54\1\135\37\uffff\1\137\2\uffff\1\140\1\136";
     static final String DFA22_specialS =
-        "\1\1\31\uffff\1\0\u04bc\uffff}>";
+        "\1\0\36\uffff\1\1\u05de\uffff}>";
     static final String[] DFA22_transitionS = {
-            "\11\42\2\41\2\42\1\41\22\42\1\41\1\42\1\30\1\42\1\35\2\42\1\31\7\42\1\40\1\36\11\37\1\14\1\42\1\32\1\27\2\42\1\17\6\34\24\35\3\42\1\33\1\35\1\42\1\13\1\5\1\16\1\3\1\1\1\23\2\35\1\24\1\35\1\21\1\7\1\10\1\6\1\15\1\11\1\35\1\4\1\2\1\20\1\22\1\12\4\35\1\25\1\42\1\26\uff82\42",
-            "\12\46\7\uffff\6\46\32\uffff\6\46\7\uffff\1\43\4\uffff\1\44\4\uffff\1\45",
-            "\1\51\13\uffff\1\54\1\55\3\uffff\1\50\1\52\3\uffff\1\53",
-            "\12\46\7\uffff\6\46\32\uffff\4\46\1\57\1\46\2\uffff\1\56\5\uffff\1\60",
-            "\1\63\3\uffff\1\62\11\uffff\1\61",
-            "\12\46\7\uffff\6\46\32\uffff\6\46\2\uffff\1\65\13\uffff\1\64",
-            "\1\66\17\uffff\1\67",
-            "\1\72\3\uffff\1\71\3\uffff\1\70",
-            "\1\74\7\uffff\1\73",
-            "\1\75\12\uffff\1\76",
-            "\1\77",
-            "\12\46\7\uffff\6\46\32\uffff\1\46\1\103\4\46\7\uffff\1\101\4\uffff\1\102\4\uffff\1\100",
+            "\11\47\2\46\2\47\1\46\22\47\1\46\1\47\1\35\1\47\1\42\2\47\1\36\7\47\1\45\1\43\11\44\1\21\1\47\1\37\1\34\2\47\1\25\2\41\1\16\1\15\2\41\13\42\1\17\1\14\1\42\1\20\5\42\3\47\1\40\1\42\1\47\1\13\1\5\1\23\1\3\1\1\1\24\2\42\1\31\1\42\1\27\1\7\1\10\1\6\1\22\1\11\1\42\1\4\1\2\1\26\1\30\1\12\4\42\1\32\1\47\1\33\uff82\47",
+            "\12\54\7\uffff\6\54\32\uffff\6\54\7\uffff\1\50\4\uffff\1\51\4\uffff\1\52",
+            "\1\56\5\uffff\1\60\5\uffff\1\62\1\63\3\uffff\1\55\1\57\3\uffff\1\61",
+            "\12\54\7\uffff\6\54\32\uffff\1\66\3\54\1\65\1\54\2\uffff\1\64\5\uffff\1\67",
+            "\1\72\3\uffff\1\71\11\uffff\1\70",
+            "\12\54\7\uffff\6\54\32\uffff\6\54\2\uffff\1\74\13\uffff\1\73",
+            "\1\75\17\uffff\1\76",
+            "\1\101\3\uffff\1\100\3\uffff\1\77",
+            "\1\103\7\uffff\1\102",
+            "\1\104\12\uffff\1\105",
+            "\1\106",
+            "\12\54\7\uffff\6\54\32\uffff\1\54\1\112\4\54\7\uffff\1\110\4\uffff\1\111\4\uffff\1\107",
+            "\1\113\20\uffff\1\114",
+            "\12\54\7\uffff\6\54\32\uffff\1\115\3\54\1\116\1\54",
+            "\12\54\7\uffff\6\54\32\uffff\6\54\10\uffff\1\117",
+            "\1\120",
+            "\1\121",
             "",
-            "\1\105",
-            "\12\46\7\uffff\6\46\32\uffff\6\46\5\uffff\1\106\2\uffff\1\107",
+            "\1\123",
+            "\12\54\7\uffff\6\54\32\uffff\6\54\5\uffff\1\124\2\uffff\1\125",
+            "\12\54\7\uffff\6\54\32\uffff\6\54\2\uffff\1\126\13\uffff\1\127",
             "",
-            "\1\113\3\uffff\1\111\3\uffff\1\114\10\uffff\1\112",
-            "\1\115",
-            "\1\116",
-            "\12\46\7\uffff\6\46\32\uffff\6\46\16\uffff\1\117",
-            "\1\120\3\uffff\1\121",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\0\126",
-            "\1\47\34\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\12\46\7\uffff\6\46\32\uffff\6\46",
-            "",
-            "\12\130\7\uffff\1\137\1\133\1\137\1\134\1\132\1\134\5\uffff\1\136\13\uffff\1\127\6\uffff\1\135\1\uffff\1\137\1\133\1\137\1\134\1\132\1\134\5\uffff\1\136\13\uffff\1\127",
-            "\12\130\7\uffff\1\137\1\133\1\137\1\134\1\132\1\134\5\uffff\1\136\22\uffff\1\135\1\uffff\1\137\1\133\1\137\1\134\1\132\1\134\5\uffff\1\136",
-            "\1\140\4\uffff\1\141",
+            "\1\133\3\uffff\1\131\3\uffff\1\134\10\uffff\1\132",
+            "\1\135",
+            "\1\136",
+            "\1\137\3\uffff\1\140",
             "",
             "",
-            "\1\143",
-            "\1\144",
-            "\1\145",
-            "\12\146\7\uffff\6\146\32\uffff\6\146",
             "",
-            "\1\147",
-            "\1\150",
-            "\1\151\15\uffff\1\152",
-            "\1\153\1\154",
-            "\1\155",
-            "\1\156",
-            "\1\157",
-            "\12\146\7\uffff\6\146\32\uffff\6\146\14\uffff\1\160",
-            "\1\161",
+            "",
+            "",
+            "\0\145",
+            "\1\53\34\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\12\54\7\uffff\6\54\32\uffff\6\54",
+            "",
+            "\12\150\7\uffff\1\155\1\153\1\155\1\154\1\152\1\154\5\uffff\1\156\13\uffff\1\146\6\uffff\1\151\1\uffff\1\155\1\153\1\155\1\154\1\152\1\154\5\uffff\1\156\13\uffff\1\146",
+            "\12\150\7\uffff\1\155\1\153\1\155\1\154\1\152\1\154\5\uffff\1\156\22\uffff\1\151\1\uffff\1\155\1\153\1\155\1\154\1\152\1\154\5\uffff\1\156",
+            "\1\157\4\uffff\1\160",
+            "",
+            "",
             "\1\162",
-            "\1\165\2\uffff\1\164\11\uffff\1\163",
+            "\1\163",
+            "\1\164",
+            "",
+            "\12\165\7\uffff\6\165\32\uffff\6\165",
             "\1\166",
             "\1\167",
-            "\1\170",
-            "\1\171",
+            "\1\170\15\uffff\1\171",
             "\1\172",
-            "\1\173",
-            "\1\174",
+            "\1\173\1\174",
             "\1\175",
             "\1\176",
             "\1\177",
-            "\1\u0080",
-            "\1\u0081",
+            "\12\165\7\uffff\6\165\32\uffff\6\165\14\uffff\1\u0080",
+            "\12\165\7\uffff\6\165\32\uffff\6\165\15\uffff\1\u0081",
             "\1\u0082",
             "\1\u0083",
-            "\1\u0084\1\u0085",
-            "\1\u0086\10\uffff\1\u0087",
-            "\12\146\7\uffff\6\146\32\uffff\6\146\14\uffff\1\u0088",
-            "",
+            "\1\u0086\2\uffff\1\u0085\11\uffff\1\u0084",
+            "\1\u0087",
+            "\1\u0088",
             "\1\u0089",
             "\1\u008a",
             "\1\u008b",
-            "",
             "\1\u008c",
             "\1\u008d",
             "\1\u008e",
             "\1\u008f",
             "\1\u0090",
-            "\1\u0091",
-            "\1\u0092",
+            "\1\u0092\1\uffff\1\u0091",
             "\1\u0093",
-            "\1\u0095\10\uffff\1\u0094",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\12\u0096\7\uffff\1\137\1\u0098\1\137\1\u0099\1\u0097\1\u0099\5\uffff\1\136\22\uffff\1\135\1\uffff\1\137\1\u0098\1\137\1\u0099\1\u0097\1\u0099\5\uffff\1\136",
-            "",
-            "\1\136\1\uffff\1\136\2\uffff\12\u009a\7\uffff\6\137\32\uffff\6\137",
-            "\12\137\7\uffff\3\137\1\u009b\2\137\2\uffff\1\136\27\uffff\3\137\1\u009b\2\137\2\uffff\1\136",
-            "\12\137\7\uffff\6\137\32\uffff\6\137",
-            "\12\135\10\uffff\1\136\1\uffff\3\136\5\uffff\1\136\22\uffff\1\135\2\uffff\1\136\1\uffff\3\136\5\uffff\1\136",
-            "",
-            "",
-            "",
-            "",
-            "",
+            "\1\u0094",
+            "\1\u0095",
+            "\1\u0096\1\u0097",
+            "\1\u0098\10\uffff\1\u0099",
+            "\12\165\7\uffff\6\165\32\uffff\6\165\14\uffff\1\u009a",
+            "\1\u009b",
             "\1\u009c",
-            "\1\u009d",
-            "\1\u009e",
-            "\12\u009f\7\uffff\6\u009f\32\uffff\6\u009f",
-            "\1\u00a1\13\uffff\1\u00a0",
+            "\12\165\7\uffff\6\165\32\uffff\6\165\15\uffff\1\u009d",
+            "\12\165\7\uffff\6\165\32\uffff\6\165\14\uffff\1\u009e",
+            "\1\u009f",
+            "\1\u00a0",
+            "\1\u00a1",
+            "",
             "\1\u00a2",
-            "\1\u00a3\16\uffff\1\u00a4",
+            "\1\u00a3",
+            "\1\u00a4",
             "\1\u00a5",
             "\1\u00a6",
+            "",
             "\1\u00a7",
             "\1\u00a8",
             "\1\u00a9",
@@ -3894,19 +4397,31 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u00ab",
             "\1\u00ac",
             "\1\u00ad",
-            "\1\u00ae",
-            "\1\u00af",
-            "\1\u00b0",
-            "\1\u00b1",
-            "\1\u00b2",
-            "\1\u00b3",
-            "\1\u00b4",
-            "\1\u00b5",
+            "\1\u00af\10\uffff\1\u00ae",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\12\u00b0\7\uffff\1\155\1\u00b2\1\155\1\u00b3\1\u00b1\1\u00b3\5\uffff\1\156\22\uffff\1\151\1\uffff\1\155\1\u00b2\1\155\1\u00b3\1\u00b1\1\u00b3\5\uffff\1\156",
+            "\12\151\10\uffff\1\156\1\uffff\3\156\5\uffff\1\156\22\uffff\1\151\2\uffff\1\156\1\uffff\3\156\5\uffff\1\156",
+            "\1\156\1\uffff\1\156\2\uffff\12\u00b4\7\uffff\6\155\32\uffff\6\155",
+            "\12\155\7\uffff\3\155\1\u00b5\2\155\2\uffff\1\156\27\uffff\3\155\1\u00b5\2\155\2\uffff\1\156",
+            "\12\155\7\uffff\6\155\32\uffff\6\155",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\u00b6",
             "\1\u00b7",
             "\1\u00b8",
-            "\1\u00bb\3\uffff\1\u00ba\2\uffff\1\u00b9",
-            "\1\u00be\3\uffff\1\u00bd\2\uffff\1\u00bc",
+            "\12\u00b9\7\uffff\6\u00b9\32\uffff\6\u00b9",
+            "\1\u00bb\13\uffff\1\u00ba",
+            "\1\u00bc",
+            "\1\u00bd\16\uffff\1\u00be",
             "\1\u00bf",
             "\1\u00c0",
             "\1\u00c1",
@@ -3920,8 +4435,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u00c9",
             "\1\u00ca",
             "\1\u00cb",
-            "\1\u00cc",
-            "\1\u00cd",
+            "\1\u00cd\2\uffff\1\u00cc",
             "\1\u00ce",
             "\1\u00cf",
             "\1\u00d0",
@@ -3929,16 +4443,13 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u00d2",
             "\1\u00d3",
             "\1\u00d4",
-            "\12\u00d5\7\uffff\1\137\1\u00d7\1\137\1\u00d8\1\u00d6\1\u00d8\5\uffff\1\136\22\uffff\1\135\1\uffff\1\137\1\u00d7\1\137\1\u00d8\1\u00d6\1\u00d8\5\uffff\1\136",
-            "\1\136\1\uffff\1\136\2\uffff\12\u00d9\7\uffff\6\137\32\uffff\6\137",
-            "\12\137\7\uffff\3\137\1\u00da\2\137\2\uffff\1\136\27\uffff\3\137\1\u00da\2\137\2\uffff\1\136",
-            "\12\137\7\uffff\6\137\32\uffff\6\137",
-            "\12\u00db\7\uffff\1\137\1\u00d7\1\137\1\u00d8\1\137\1\u00d8\32\uffff\1\137\1\u00d7\1\137\1\u00d8\1\137\1\u00d8",
-            "\12\137\7\uffff\6\137\32\uffff\6\137",
+            "\1\u00d5",
+            "\1\u00d8\3\uffff\1\u00d7\2\uffff\1\u00d6",
+            "\1\u00db\3\uffff\1\u00da\2\uffff\1\u00d9",
             "\1\u00dc",
             "\1\u00dd",
             "\1\u00de",
-            "\12\u00df\7\uffff\6\u00df\32\uffff\6\u00df",
+            "\1\u00df",
             "\1\u00e0",
             "\1\u00e1",
             "\1\u00e2",
@@ -3952,7 +4463,8 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u00ea",
             "\1\u00eb",
             "\1\u00ec",
-            "\1\47\13\uffff\12\47\7\uffff\2\47\1\u00ed\27\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u00ed",
+            "\1\u00ee",
             "\1\u00ef",
             "\1\u00f0",
             "\1\u00f1",
@@ -3965,50 +4477,49 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u00f8",
             "\1\u00f9",
             "\1\u00fa",
-            "\1\u00fb",
-            "\1\u00fc",
-            "\1\u00fd",
-            "\1\u00fe",
-            "\1\u00ff",
-            "\1\u0100",
-            "\1\u0101",
+            "\12\u00fb\7\uffff\1\155\1\u00fd\1\155\1\u00fe\1\u00fc\1\u00fe\5\uffff\1\156\22\uffff\1\151\1\uffff\1\155\1\u00fd\1\155\1\u00fe\1\u00fc\1\u00fe\5\uffff\1\156",
+            "\1\156\1\uffff\1\156\2\uffff\12\u00ff\7\uffff\6\155\32\uffff\6\155",
+            "\12\155\7\uffff\3\155\1\u0100\2\155\2\uffff\1\156\27\uffff\3\155\1\u0100\2\155\2\uffff\1\156",
+            "\12\155\7\uffff\6\155\32\uffff\6\155",
+            "\12\u0101\7\uffff\1\155\1\u00fd\1\155\1\u00fe\1\155\1\u00fe\32\uffff\1\155\1\u00fd\1\155\1\u00fe\1\155\1\u00fe",
+            "\12\155\7\uffff\6\155\32\uffff\6\155",
             "\1\u0102",
             "\1\u0103",
             "\1\u0104",
-            "\1\u0105",
+            "\12\u0105\7\uffff\6\u0105\32\uffff\6\u0105",
             "\1\u0106",
             "\1\u0107",
             "\1\u0108",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u0109",
             "\1\u010a",
             "\1\u010b",
             "\1\u010c",
             "\1\u010d",
             "\1\u010e",
             "\1\u010f",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u0110",
             "\1\u0111",
             "\1\u0112",
             "\1\u0113",
             "\1\u0114",
-            "\1\u0115",
-            "\12\u0116\7\uffff\1\137\1\u0118\1\137\1\u0119\1\u0117\1\u0119\5\uffff\1\136\22\uffff\1\135\1\uffff\1\137\1\u0118\1\137\1\u0119\1\u0117\1\u0119\5\uffff\1\136",
-            "\1\136\1\uffff\1\136\2\uffff\12\u011a\7\uffff\6\137\32\uffff\6\137",
-            "\12\137\7\uffff\3\137\1\u011b\2\137\2\uffff\1\136\27\uffff\3\137\1\u011b\2\137\2\uffff\1\136",
-            "\12\137\7\uffff\6\137\32\uffff\6\137",
-            "\12\u011c\7\uffff\1\137\1\u0118\1\137\1\u0119\1\137\1\u0119\32\uffff\1\137\1\u0118\1\137\1\u0119\1\137\1\u0119",
-            "\12\137\7\uffff\6\137\32\uffff\6\137",
-            "\12\u011c\7\uffff\1\137\1\u0118\1\137\1\u0119\1\137\1\u0119\32\uffff\1\137\1\u0118\1\137\1\u0119\1\137\1\u0119",
+            "\1\53\13\uffff\12\53\7\uffff\2\53\1\u0115\27\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u0117",
+            "\1\u0118",
+            "\1\u0119",
+            "\1\u011a",
+            "\1\u011b",
+            "\1\u011c",
             "\1\u011d",
             "\1\u011e",
             "\1\u011f",
-            "\12\u0120\7\uffff\6\u0120\32\uffff\6\u0120",
+            "\1\u0120",
             "\1\u0121",
             "\1\u0122",
             "\1\u0123",
             "\1\u0124",
             "\1\u0125",
-            "\1\u0126\16\uffff\1\u0127",
+            "\1\u0126",
+            "\1\u0127",
             "\1\u0128",
             "\1\u0129",
             "\1\u012a",
@@ -4017,18 +4528,17 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u012d",
             "\1\u012e",
             "\1\u012f",
-            "",
             "\1\u0130",
             "\1\u0131",
             "\1\u0132",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u0133",
             "\1\u0134",
             "\1\u0135",
             "\1\u0136",
             "\1\u0137",
             "\1\u0138",
             "\1\u0139",
-            "\1\u013a",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u013b",
             "\1\u013c",
             "\1\u013d",
@@ -4037,62 +4547,66 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u0140",
             "\1\u0141",
             "\1\u0142",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u0144",
             "\1\u0145",
             "\1\u0146",
             "\1\u0147",
-            "\1\u0148",
-            "\1\u0149",
-            "",
-            "\1\u014a",
-            "\1\u014b",
-            "\1\u014c",
-            "\1\u014d",
-            "\1\u014e",
+            "\12\u0148\7\uffff\1\155\1\u014a\1\155\1\u014b\1\u0149\1\u014b\5\uffff\1\156\22\uffff\1\151\1\uffff\1\155\1\u014a\1\155\1\u014b\1\u0149\1\u014b\5\uffff\1\156",
+            "\1\156\1\uffff\1\156\2\uffff\12\u014c\7\uffff\6\155\32\uffff\6\155",
+            "\12\155\7\uffff\3\155\1\u014d\2\155\2\uffff\1\156\27\uffff\3\155\1\u014d\2\155\2\uffff\1\156",
+            "\12\155\7\uffff\6\155\32\uffff\6\155",
+            "\12\u014e\7\uffff\1\155\1\u014a\1\155\1\u014b\1\155\1\u014b\32\uffff\1\155\1\u014a\1\155\1\u014b\1\155\1\u014b",
+            "\12\155\7\uffff\6\155\32\uffff\6\155",
+            "\12\u014e\7\uffff\1\155\1\u014a\1\155\1\u014b\1\155\1\u014b\32\uffff\1\155\1\u014a\1\155\1\u014b\1\155\1\u014b",
             "\1\u014f",
-            "",
             "\1\u0150",
             "\1\u0151",
-            "\1\u0152",
+            "\12\u0152\7\uffff\6\u0152\32\uffff\6\u0152",
             "\1\u0153",
             "\1\u0154",
-            "\12\u0155\7\uffff\1\137\1\u0157\1\137\1\u0158\1\u0156\1\u0158\5\uffff\1\136\22\uffff\1\135\1\uffff\1\137\1\u0157\1\137\1\u0158\1\u0156\1\u0158\5\uffff\1\136",
-            "\1\136\1\uffff\1\136\2\uffff\12\u0159\7\uffff\6\137\32\uffff\6\137",
-            "\12\137\7\uffff\3\137\1\u015a\2\137\2\uffff\1\136\27\uffff\3\137\1\u015a\2\137\2\uffff\1\136",
-            "\12\137\7\uffff\6\137\32\uffff\6\137",
-            "\12\u015b\7\uffff\1\137\1\u0157\1\137\1\u0158\1\137\1\u0158\32\uffff\1\137\1\u0157\1\137\1\u0158\1\137\1\u0158",
-            "\12\137\7\uffff\6\137\32\uffff\6\137",
-            "\12\u015b\7\uffff\1\137\1\u0157\1\137\1\u0158\1\137\1\u0158\32\uffff\1\137\1\u0157\1\137\1\u0158\1\137\1\u0158",
-            "\1\u015d\15\uffff\1\u015c\1\uffff\1\u015e",
+            "\1\u0155",
+            "\1\u0156",
+            "\1\u0157",
+            "\1\u0158\16\uffff\1\u0159",
+            "\1\u015a",
+            "\1\u015b",
+            "\1\u015c",
+            "\1\u015d",
+            "\1\u015e",
             "\1\u015f",
             "\1\u0160",
-            "\12\u0161\7\uffff\6\u0161\32\uffff\6\u0161",
+            "\1\u0161",
             "\1\u0162",
             "\1\u0163",
-            "\1\47\13\uffff\12\47\7\uffff\3\47\1\u0164\12\47\1\u0167\1\u0165\1\47\1\u0166\10\47\4\uffff\1\47\1\uffff\32\47",
+            "",
+            "\1\u0164",
+            "\1\u0165",
+            "\1\u0166",
+            "\1\u0167",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u0169",
             "\1\u016a",
             "\1\u016b",
             "\1\u016c",
             "\1\u016d",
             "\1\u016e",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u016f",
             "\1\u0170",
             "\1\u0171",
             "\1\u0172",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u0173",
             "\1\u0174",
             "\1\u0175",
             "\1\u0176",
             "\1\u0177",
-            "",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\3\47\1\u0178\26\47",
-            "\1\u017a",
+            "\1\u0178",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u017b",
             "\1\u017c",
             "\1\u017d",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u017e",
             "\1\u017f",
             "\1\u0180",
             "\1\u0181",
@@ -4101,67 +4615,59 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u0184",
             "\1\u0185",
             "\1\u0186",
+            "",
             "\1\u0187",
-            "",
-            "",
             "\1\u0188",
-            "\1\u0189",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u018a",
             "\1\u018b",
             "\1\u018c",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u018d",
             "\1\u018e",
+            "",
             "\1\u018f",
             "\1\u0190",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u0191",
             "\1\u0192",
-            "\1\u0193",
-            "\1\u0194",
-            "\1\u0195",
-            "\1\u0196",
-            "\1\u0197",
-            "\12\u0198\7\uffff\1\137\1\u019a\1\137\1\u019b\1\u0199\1\u019b\5\uffff\1\136\22\uffff\1\135\1\uffff\1\137\1\u019a\1\137\1\u019b\1\u0199\1\u019b\5\uffff\1\136",
-            "\1\136\1\uffff\1\136\2\uffff\12\u019c\7\uffff\6\137\32\uffff\6\137",
-            "\12\137\7\uffff\3\137\1\u019d\2\137\2\uffff\1\136\27\uffff\3\137\1\u019d\2\137\2\uffff\1\136",
-            "\12\137\7\uffff\6\137\32\uffff\6\137",
-            "\12\u019e\7\uffff\1\137\1\u019a\1\137\1\u019b\1\137\1\u019b\32\uffff\1\137\1\u019a\1\137\1\u019b\1\137\1\u019b",
-            "\12\137\7\uffff\6\137\32\uffff\6\137",
-            "\12\u019e\7\uffff\1\137\1\u019a\1\137\1\u019b\1\137\1\u019b\32\uffff\1\137\1\u019a\1\137\1\u019b\1\137\1\u019b",
-            "\1\u01a0\20\uffff\1\u019f",
+            "\12\u0193\7\uffff\1\155\1\u0195\1\155\1\u0196\1\u0194\1\u0196\5\uffff\1\156\22\uffff\1\151\1\uffff\1\155\1\u0195\1\155\1\u0196\1\u0194\1\u0196\5\uffff\1\156",
+            "\1\156\1\uffff\1\156\2\uffff\12\u0197\7\uffff\6\155\32\uffff\6\155",
+            "\12\155\7\uffff\3\155\1\u0198\2\155\2\uffff\1\156\27\uffff\3\155\1\u0198\2\155\2\uffff\1\156",
+            "\12\155\7\uffff\6\155\32\uffff\6\155",
+            "\12\u0199\7\uffff\1\155\1\u0195\1\155\1\u0196\1\155\1\u0196\32\uffff\1\155\1\u0195\1\155\1\u0196\1\155\1\u0196",
+            "\12\155\7\uffff\6\155\32\uffff\6\155",
+            "\12\u0199\7\uffff\1\155\1\u0195\1\155\1\u0196\1\155\1\u0196\32\uffff\1\155\1\u0195\1\155\1\u0196\1\155\1\u0196",
+            "\1\u019b\15\uffff\1\u019a\1\uffff\1\u019c",
+            "\1\u019d",
+            "\1\u019e",
+            "\12\u019f\7\uffff\6\u019f\32\uffff\6\u019f",
+            "\1\u01a0",
             "\1\u01a1",
-            "\1\u01a2",
-            "\1\u01a3",
-            "\1\47\13\uffff\12\47\7\uffff\1\u01a4\31\47\4\uffff\1\47\1\uffff\32\47",
-            "\12\u01a6\7\uffff\6\u01a6\32\uffff\6\u01a6",
+            "\1\53\13\uffff\12\53\7\uffff\3\53\1\u01a2\12\53\1\u01a5\1\u01a3\1\53\1\u01a4\10\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u01a7",
             "\1\u01a8",
             "\1\u01a9",
             "\1\u01aa",
             "\1\u01ab",
             "\1\u01ac",
-            "",
             "\1\u01ad",
-            "\1\u01ae",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u01af",
             "\1\u01b0",
             "\1\u01b1",
             "\1\u01b2",
-            "",
-            "\1\u01b3",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u01b4",
             "\1\u01b5",
-            "",
             "\1\u01b6",
             "\1\u01b7",
             "\1\u01b8",
-            "\1\u01b9",
-            "\1\u01ba",
             "",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\3\53\1\u01b9\26\53",
             "\1\u01bb",
-            "\1\u01bd\20\uffff\1\u01bc",
+            "\1\u01bc",
+            "\1\u01bd",
             "\1\u01be",
-            "\1\u01bf",
-            "",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u01c0",
             "\1\u01c1",
             "\1\u01c2",
@@ -4169,53 +4675,55 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u01c4",
             "\1\u01c5",
             "\1\u01c6",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u01c7",
             "\1\u01c8",
             "\1\u01c9",
+            "",
+            "",
             "\1\u01ca",
-            "",
             "\1\u01cb",
-            "\1\u01cc",
-            "",
-            "\1\47\13\uffff\12\47\7\uffff\3\47\1\u01cd\16\47\1\u01ce\7\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u01cd",
+            "\1\u01ce",
+            "\1\u01cf",
             "\1\u01d0",
             "\1\u01d1",
-            "",
             "\1\u01d2",
             "\1\u01d3",
             "\1\u01d4",
-            "\1\47\13\uffff\12\47\7\uffff\4\47\1\u01d6\1\u01d5\24\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u01d5",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u01d7",
+            "",
             "\1\u01d8",
             "\1\u01d9",
-            "\12\u01da\7\uffff\1\137\1\u01dc\1\137\1\u01dd\1\u01db\1\u01dd\5\uffff\1\136\22\uffff\1\135\1\uffff\1\137\1\u01dc\1\137\1\u01dd\1\u01db\1\u01dd\5\uffff\1\136",
-            "\1\136\1\uffff\1\136\2\uffff\12\u01de\7\uffff\6\137\32\uffff\6\137",
-            "\12\137\7\uffff\3\137\1\u01df\2\137\2\uffff\1\136\27\uffff\3\137\1\u01df\2\137\2\uffff\1\136",
-            "\12\137\7\uffff\6\137\32\uffff\6\137",
-            "\12\u01e0\7\uffff\1\137\1\u01dc\1\137\1\u01dd\1\137\1\u01dd\32\uffff\1\137\1\u01dc\1\137\1\u01dd\1\137\1\u01dd",
-            "\12\137\7\uffff\6\137\32\uffff\6\137",
-            "\12\u01e0\7\uffff\1\137\1\u01dc\1\137\1\u01dd\1\137\1\u01dd\32\uffff\1\137\1\u01dc\1\137\1\u01dd\1\137\1\u01dd",
-            "\1\u01e1",
-            "\1\u01e2",
-            "\1\u01e3",
-            "\1\u01e4",
-            "\1\u01e5",
-            "\1\u01e6",
-            "",
-            "\1\137",
-            "\1\u01e7",
-            "\1\u01e8",
-            "\1\u01e9",
+            "\1\u01da",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u01dc",
+            "\1\u01dd",
+            "\1\u01de",
+            "\1\u01df",
+            "\1\u01e0",
+            "\12\u01e1\7\uffff\1\155\1\u01e3\1\155\1\u01e4\1\u01e2\1\u01e4\5\uffff\1\156\22\uffff\1\151\1\uffff\1\155\1\u01e3\1\155\1\u01e4\1\u01e2\1\u01e4\5\uffff\1\156",
+            "\1\156\1\uffff\1\156\2\uffff\12\u01e5\7\uffff\6\155\32\uffff\6\155",
+            "\12\155\7\uffff\3\155\1\u01e6\2\155\2\uffff\1\156\27\uffff\3\155\1\u01e6\2\155\2\uffff\1\156",
+            "\12\155\7\uffff\6\155\32\uffff\6\155",
+            "\12\u01e7\7\uffff\1\155\1\u01e3\1\155\1\u01e4\1\155\1\u01e4\32\uffff\1\155\1\u01e3\1\155\1\u01e4\1\155\1\u01e4",
+            "\12\155\7\uffff\6\155\32\uffff\6\155",
+            "\12\u01e7\7\uffff\1\155\1\u01e3\1\155\1\u01e4\1\155\1\u01e4\32\uffff\1\155\1\u01e3\1\155\1\u01e4\1\155\1\u01e4",
+            "\1\u01e9\20\uffff\1\u01e8",
             "\1\u01ea",
             "\1\u01eb",
             "\1\u01ec",
-            "\1\u01ed",
-            "\1\u01ee",
-            "\1\u01ef",
+            "\1\53\13\uffff\12\53\7\uffff\1\u01ed\31\53\4\uffff\1\53\1\uffff\32\53",
+            "\12\u01ef\7\uffff\6\u01ef\32\uffff\6\u01ef",
             "\1\u01f0",
             "\1\u01f1",
             "\1\u01f2",
             "\1\u01f3",
-            "\1\u01f5\7\uffff\1\u01f4",
+            "\1\u01f4",
+            "\1\u01f5",
+            "",
             "\1\u01f6",
             "\1\u01f7",
             "\1\u01f8",
@@ -4223,158 +4731,159 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u01fa",
             "\1\u01fb",
             "\1\u01fc",
+            "",
             "\1\u01fd",
             "\1\u01fe",
             "\1\u01ff",
             "\1\u0200",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "",
+            "\1\u0201",
             "\1\u0202",
             "\1\u0203",
             "\1\u0204",
-            "\1\u0205",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u0206",
-            "\1\u0207",
             "",
-            "\1\u0208",
-            "\1\u0209",
+            "\1\u0207",
+            "\1\u0209\20\uffff\1\u0208",
             "\1\u020a",
             "\1\u020b",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "",
+            "\1\u020c",
             "\1\u020d",
             "\1\u020e",
-            "",
             "\1\u020f",
             "\1\u0210",
             "\1\u0211",
             "\1\u0212",
-            "\1\u0213",
-            "\1\u0214",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u0215",
-            "",
             "\1\u0216",
             "\1\u0217",
-            "\1\137\2\uffff\12\135\10\uffff\1\136\1\uffff\3\136\5\uffff\1\136\22\uffff\1\135\2\uffff\1\136\1\uffff\3\136\5\uffff\1\136",
-            "\1\136\1\uffff\1\u0218\2\uffff\12\136",
-            "\1\137\26\uffff\1\136\4\uffff\1\136\32\uffff\1\136\4\uffff\1\136",
-            "\1\137",
-            "\1\137",
-            "\1\137",
-            "\1\137",
+            "",
+            "\1\u0218",
             "\1\u0219",
             "\1\u021a",
             "\1\u021b",
             "\1\u021c",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u021d",
             "\1\u021e",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\3\47\1\u021f\26\47",
-            "\1\u0221",
-            "\1\u0222",
-            "\1\u0223",
+            "\1\u021f",
+            "\1\u0220",
+            "",
+            "\1\53\13\uffff\12\53\7\uffff\3\53\1\u0221\16\53\1\u0222\7\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u0224",
             "\1\u0225",
             "\1\u0226",
+            "",
             "\1\u0227",
             "\1\u0228",
-            "\1\u0229",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\u022b",
+            "\1\53\13\uffff\12\53\7\uffff\4\53\1\u022a\1\u0229\24\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u022c",
             "\1\u022d",
-            "\1\u022e",
-            "\1\u022f",
-            "\1\u0230",
-            "\1\u0231",
-            "\1\u0232",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\u0234",
+            "\12\u022e\7\uffff\1\155\1\u0230\1\155\1\u0231\1\u022f\1\u0231\5\uffff\1\156\22\uffff\1\151\1\uffff\1\155\1\u0230\1\155\1\u0231\1\u022f\1\u0231\5\uffff\1\156",
+            "\1\156\1\uffff\1\156\2\uffff\12\u0232\7\uffff\6\155\32\uffff\6\155",
+            "\12\155\7\uffff\3\155\1\u0233\2\155\2\uffff\1\156\27\uffff\3\155\1\u0233\2\155\2\uffff\1\156",
+            "\12\155\7\uffff\6\155\32\uffff\6\155",
+            "\12\u0234\7\uffff\1\155\1\u0230\1\155\1\u0231\1\155\1\u0231\32\uffff\1\155\1\u0230\1\155\1\u0231\1\155\1\u0231",
+            "\12\155\7\uffff\6\155\32\uffff\6\155",
+            "\12\u0234\7\uffff\1\155\1\u0230\1\155\1\u0231\1\155\1\u0231\32\uffff\1\155\1\u0230\1\155\1\u0231\1\155\1\u0231",
             "\1\u0235",
             "\1\u0236",
             "\1\u0237",
             "\1\u0238",
             "\1\u0239",
+            "\1\u023a",
             "",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\155",
             "\1\u023b",
             "\1\u023c",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u023d",
             "\1\u023e",
             "\1\u023f",
             "\1\u0240",
             "\1\u0241",
             "\1\u0242",
             "\1\u0243",
-            "",
             "\1\u0244",
             "\1\u0245",
             "\1\u0246",
             "\1\u0247",
             "\1\u0248",
-            "\1\47\13\uffff\12\47\7\uffff\21\47\1\u0249\10\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u024a\7\uffff\1\u0249",
             "\1\u024b",
             "\1\u024c",
             "\1\u024d",
             "\1\u024e",
             "\1\u024f",
-            "\12\u0250\7\uffff\6\137\32\uffff\6\137",
+            "\1\u0250",
+            "",
             "\1\u0251",
             "\1\u0252",
             "\1\u0253",
             "\1\u0254",
-            "",
             "\1\u0255",
             "\1\u0256",
-            "",
             "\1\u0257",
             "\1\u0258",
             "\1\u0259",
             "\1\u025a",
             "\1\u025b",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u025c",
             "\1\u025d",
+            "",
+            "",
             "\1\u025e",
             "\1\u025f",
-            "",
             "\1\u0260",
             "\1\u0261",
-            "\1\u0262",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u0263",
-            "\1\u0265\20\uffff\1\u0264",
+            "\1\u0264",
+            "\1\u0265",
             "\1\u0266",
-            "\1\u0268\1\u0269\14\uffff\1\u0267",
+            "\1\u0267",
+            "\1\u0268",
+            "\1\u0269",
             "\1\u026a",
-            "",
             "\1\u026b",
+            "",
             "\1\u026c",
             "\1\u026d",
             "\1\u026e",
             "\1\u026f",
             "\1\u0270",
-            "",
             "\1\u0271",
             "\1\u0272",
             "",
             "\1\u0273",
             "\1\u0274",
-            "\1\u0275",
+            "\1\155\2\uffff\12\151\10\uffff\1\156\1\uffff\3\156\5\uffff\1\156\22\uffff\1\151\2\uffff\1\156\1\uffff\3\156\5\uffff\1\156",
+            "\1\156\1\uffff\1\u0275\2\uffff\12\156",
+            "\1\155\26\uffff\1\156\4\uffff\1\156\32\uffff\1\156\4\uffff\1\156",
+            "\1\155",
+            "\1\155",
+            "\1\155",
+            "\1\155",
             "\1\u0276",
             "\1\u0277",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u0278",
             "\1\u0279",
-            "\1\u027a",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u027b",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\u027d",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\3\53\1\u027c\26\53",
             "\1\u027e",
-            "",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u027f",
             "\1\u0280",
             "\1\u0281",
             "\1\u0282",
             "\1\u0283",
-            "\12\u0284\7\uffff\1\137\1\u0285\1\137\1\u0286\1\137\1\u0286\32\uffff\1\137\1\u0285\1\137\1\u0286\1\137\1\u0286",
-            "\1\u0287",
-            "\1\u0288",
-            "\1\u0289",
+            "\1\u0284",
+            "\1\u0285",
+            "\1\u0286",
+            "\1\u0287\16\uffff\1\u0288",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u028a",
             "\1\u028b",
             "\1\u028c",
@@ -4382,25 +4891,27 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u028e",
             "\1\u028f",
             "\1\u0290",
-            "\1\u0292\5\uffff\1\u0291",
-            "",
-            "\1\u0293",
+            "\1\u0291",
+            "\1\u0292",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u0294",
             "\1\u0295",
             "\1\u0296",
             "\1\u0297",
             "\1\u0298",
             "\1\u0299",
-            "\1\u029a",
-            "\1\u029b",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u029c",
-            "\1\u029e\3\uffff\1\u029d",
+            "\1\u029d",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u029f",
             "\1\u02a0",
             "\1\u02a1",
             "\1\u02a2",
             "\1\u02a3",
             "\1\u02a4",
+            "",
             "\1\u02a5",
             "\1\u02a6",
             "\1\u02a7",
@@ -4411,99 +4922,95 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u02ac",
             "\1\u02ad",
             "\1\u02ae",
-            "",
             "\1\u02af",
             "\1\u02b0",
-            "\1\47\13\uffff\12\47\7\uffff\15\47\1\u02b1\14\47\4\uffff\1\47\1\uffff\32\47",
-            "",
-            "\1\u02b3",
+            "\1\u02b1",
+            "\1\53\13\uffff\12\53\7\uffff\21\53\1\u02b2\10\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u02b4",
-            "",
             "\1\u02b5",
             "\1\u02b6",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\u02b8",
-            "\12\u02bb\7\uffff\1\137\1\u02b9\1\137\1\u02ba\1\137\1\u02ba\32\uffff\1\137\1\u02b9\1\137\1\u02ba\1\137\1\u02ba",
-            "\12\137\7\uffff\3\137\1\u02bc\2\137\2\uffff\1\136\27\uffff\3\137\1\u02bc\2\137\2\uffff\1\136",
-            "\12\137\7\uffff\6\137\32\uffff\6\137",
+            "\1\u02b7",
+            "\12\u02b8\7\uffff\6\155\32\uffff\6\155",
+            "\1\u02b9",
+            "\1\u02ba",
+            "\1\u02bb",
+            "\1\u02bc",
+            "",
             "\1\u02bd",
-            "\1\u02be",
-            "\1\u02bf",
+            "\1\u02be\13\uffff\1\u02bf",
+            "",
             "\1\u02c0",
             "\1\u02c1",
             "\1\u02c2",
             "\1\u02c3",
             "\1\u02c4",
-            "\1\u02c5",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u02c6",
             "\1\u02c7",
             "\1\u02c8",
             "\1\u02c9",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u02ca",
+            "",
             "\1\u02cb",
             "\1\u02cc",
             "\1\u02cd",
             "\1\u02ce",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\u02d0",
+            "\1\u02d0\20\uffff\1\u02cf",
             "\1\u02d1",
             "\1\u02d2",
-            "\1\u02d3",
-            "\1\u02d4",
-            "\1\u02d5",
+            "\1\u02d4\1\u02d5\14\uffff\1\u02d3",
             "\1\u02d6",
+            "",
             "\1\u02d7",
             "\1\u02d8",
             "\1\u02d9",
             "\1\u02da",
             "\1\u02db",
             "\1\u02dc",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "",
+            "",
+            "\1\u02dd",
+            "\1\u02de",
+            "",
+            "\1\u02df",
+            "\1\u02e0",
+            "\1\u02e1",
             "\1\u02e2",
             "\1\u02e3",
-            "\1\u02e4",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u02e5",
             "\1\u02e6",
             "\1\u02e7",
-            "",
             "\1\u02e8",
             "\1\u02e9",
             "\1\u02ea",
             "\1\u02eb",
-            "",
             "\1\u02ec",
-            "\12\137\7\uffff\3\137\1\u02ed\2\137\2\uffff\1\136\27\uffff\3\137\1\u02ed\2\137\2\uffff\1\136",
-            "\12\137\7\uffff\6\137\32\uffff\6\137",
-            "\12\u02f0\7\uffff\1\137\1\u02ee\1\137\1\u02ef\1\137\1\u02ef\32\uffff\1\137\1\u02ee\1\137\1\u02ef\1\137\1\u02ef",
-            "\12\137\7\uffff\6\137\32\uffff\6\137",
+            "\1\u02ed",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u02ef",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u02f1",
             "\1\u02f2",
+            "",
             "\1\u02f3",
             "\1\u02f4",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u02f5",
             "\1\u02f6",
-            "\1\u02f7",
-            "\1\u02f8",
-            "\1\u02f9",
+            "\12\u02f7\7\uffff\1\155\1\u02f8\1\155\1\u02f9\1\155\1\u02f9\32\uffff\1\155\1\u02f8\1\155\1\u02f9\1\155\1\u02f9",
             "\1\u02fa",
             "\1\u02fb",
             "\1\u02fc",
             "\1\u02fd",
-            "",
             "\1\u02fe",
             "\1\u02ff",
             "\1\u0300",
             "\1\u0301",
-            "",
             "\1\u0302",
             "\1\u0303",
             "\1\u0304",
-            "\1\u0305",
-            "\1\u0306",
+            "\1\u0306\5\uffff\1\u0305",
+            "",
             "\1\u0307",
             "\1\u0308",
             "\1\u0309",
@@ -4512,39 +5019,29 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u030c",
             "\1\u030d",
             "\1\u030e",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\u030f",
             "\1\u0310",
             "\1\u0311",
             "\1\u0312",
             "\1\u0313",
-            "\1\u0314",
-            "\1\u0315",
+            "\1\u0315\3\uffff\1\u0314",
             "\1\u0316",
             "\1\u0317",
             "\1\u0318",
             "\1\u0319",
-            "\1\137",
-            "\1\137\26\uffff\1\136\4\uffff\1\136\32\uffff\1\136\4\uffff\1\136",
-            "\1\137",
-            "\1\137",
             "\1\u031a",
             "\1\u031b",
             "\1\u031c",
             "\1\u031d",
-            "",
             "\1\u031e",
             "\1\u031f",
             "\1\u0320",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u0321",
             "\1\u0322",
             "\1\u0323",
             "\1\u0324",
             "\1\u0325",
+            "",
             "\1\u0326",
             "\1\u0327",
             "\1\u0328",
@@ -4554,18 +5051,18 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u032c",
             "\1\u032d",
             "\1\u032e",
-            "\1\u032f",
-            "\1\u0330",
+            "",
+            "\1\53\13\uffff\12\53\7\uffff\15\53\1\u032f\14\53\4\uffff\1\53\1\uffff\32\53",
+            "",
             "\1\u0331",
             "\1\u0332",
             "\1\u0333",
             "\1\u0334",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u0336",
-            "\1\u0337",
-            "\1\u0338",
-            "\1\u0339",
-            "\1\u033a",
+            "\12\u0339\7\uffff\1\155\1\u0337\1\155\1\u0338\1\155\1\u0338\32\uffff\1\155\1\u0337\1\155\1\u0338\1\155\1\u0338",
+            "\12\155\7\uffff\3\155\1\u033a\2\155\2\uffff\1\156\27\uffff\3\155\1\u033a\2\155\2\uffff\1\156",
+            "\12\155\7\uffff\6\155\32\uffff\6\155",
             "\1\u033b",
             "\1\u033c",
             "\1\u033d",
@@ -4580,35 +5077,33 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u0346",
             "\1\u0347",
             "\1\u0348",
-            "",
-            "\1\u0349",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u034a",
             "\1\u034b",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u034c",
             "\1\u034d",
             "\1\u034e",
             "\1\u034f",
-            "\1\u0350",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u0351",
             "\1\u0352",
             "\1\u0353",
             "\1\u0354",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u0355",
             "\1\u0356",
             "\1\u0357",
             "\1\u0358",
             "\1\u0359",
             "\1\u035a",
             "\1\u035b",
-            "",
             "\1\u035c",
             "\1\u035d",
             "\1\u035e",
-            "\1\u035f",
-            "\1\u0360",
-            "\1\u0361",
-            "\1\u0362",
-            "\1\u0363",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u0364",
             "\1\u0365",
             "\1\u0366",
@@ -4622,22 +5117,22 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u036e",
             "\1\u036f",
             "\1\u0370",
-            "\1\u0371",
             "",
+            "\1\u0371",
             "\1\u0372",
             "\1\u0373",
             "\1\u0374",
-            "\1\u0375",
-            "\1\u0376",
-            "\1\u0377",
-            "\1\u0378",
-            "\1\u0379",
             "",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u0375",
+            "\12\155\7\uffff\3\155\1\u0376\2\155\2\uffff\1\156\27\uffff\3\155\1\u0376\2\155\2\uffff\1\156",
+            "\12\155\7\uffff\6\155\32\uffff\6\155",
+            "\12\u0379\7\uffff\1\155\1\u0377\1\155\1\u0378\1\155\1\u0378\32\uffff\1\155\1\u0377\1\155\1\u0378\1\155\1\u0378",
+            "\12\155\7\uffff\6\155\32\uffff\6\155",
+            "\1\u037a",
+            "\1\u037b",
             "\1\u037c",
             "\1\u037d",
-            "\1\u037e",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u037f",
             "\1\u0380",
             "\1\u0381",
@@ -4647,30 +5142,35 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u0385",
             "\1\u0386",
             "\1\u0387",
+            "",
             "\1\u0388",
             "\1\u0389",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u038a",
             "\1\u038b",
             "\1\u038c",
             "\1\u038d",
+            "",
             "\1\u038e",
             "\1\u038f",
             "\1\u0390",
             "\1\u0391",
             "\1\u0392",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u0393",
             "\1\u0394",
             "\1\u0395",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u0396",
             "\1\u0397",
             "\1\u0398",
             "\1\u0399",
             "\1\u039a",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u039b",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\u039c",
             "\1\u039d",
-            "",
-            "",
             "\1\u039e",
             "\1\u039f",
             "\1\u03a0",
@@ -4684,65 +5184,61 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u03a8",
             "\1\u03a9",
             "\1\u03aa",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "",
+            "\1\u03ab",
             "\1\u03ac",
             "\1\u03ad",
+            "\1\155",
+            "\1\155\26\uffff\1\156\4\uffff\1\156\32\uffff\1\156\4\uffff\1\156",
+            "\1\155",
+            "\1\155",
             "\1\u03ae",
             "\1\u03af",
             "\1\u03b0",
             "\1\u03b1",
-            "\1\u03b2",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
             "",
+            "\1\u03b2",
+            "\1\u03b3",
             "\1\u03b4",
             "\1\u03b5",
-            "",
-            "\1\u03b6",
-            "\1\u03b7",
+            "\1\53\13\uffff\12\53\7\uffff\25\53\1\u03b6\4\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u03b8",
             "\1\u03b9",
-            "",
             "\1\u03ba",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u03bb",
             "\1\u03bc",
-            "\1\47\13\uffff\12\47\7\uffff\1\u03bd\31\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u03bd",
+            "\1\u03be",
             "\1\u03bf",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u03c0",
             "\1\u03c1",
             "\1\u03c2",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u03c3",
             "\1\u03c4",
             "\1\u03c5",
             "\1\u03c6",
             "\1\u03c7",
             "\1\u03c8",
             "\1\u03c9",
-            "",
             "\1\u03ca",
             "\1\u03cb",
             "\1\u03cc",
             "\1\u03cd",
-            "\1\u03ce",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u03cf",
             "\1\u03d0",
-            "",
             "\1\u03d1",
             "\1\u03d2",
             "\1\u03d3",
             "\1\u03d4",
             "\1\u03d5",
-            "\1\u03d6",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u03d7",
-            "",
-            "\1\47\13\uffff\12\47\7\uffff\22\47\1\u03d8\7\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u03d8",
+            "\1\u03d9",
             "\1\u03da",
-            "",
             "\1\u03db",
-            "",
             "\1\u03dc",
             "\1\u03dd",
-            "",
             "\1\u03de",
             "\1\u03df",
             "\1\u03e0",
@@ -4756,15 +5252,15 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u03e8",
             "\1\u03e9",
             "\1\u03ea",
+            "",
             "\1\u03eb",
             "\1\u03ec",
             "\1\u03ed",
-            "\1\u03ee",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u03ef",
             "\1\u03f0",
             "\1\u03f1",
             "\1\u03f2",
-            "",
             "\1\u03f3",
             "\1\u03f4",
             "\1\u03f5",
@@ -4772,13 +5268,14 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u03f7",
             "\1\u03f8",
             "\1\u03f9",
-            "\1\u03fa",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u03fb",
             "\1\u03fc",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u03fd",
             "\1\u03fe",
             "\1\u03ff",
             "\1\u0400",
+            "",
             "\1\u0401",
             "\1\u0402",
             "\1\u0403",
@@ -4786,8 +5283,9 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u0405",
             "\1\u0406",
             "\1\u0407",
-            "\1\u0408",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u0409",
             "\1\u040a",
             "\1\u040b",
             "\1\u040c",
@@ -4798,21 +5296,20 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u0411",
             "\1\u0412",
             "\1\u0413",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "",
+            "\1\u0414",
+            "\1\u0415",
             "\1\u0416",
             "\1\u0417",
             "\1\u0418",
             "\1\u0419",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u041a",
             "\1\u041b",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u041c",
             "\1\u041d",
             "\1\u041e",
-            "\1\u041f",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
             "",
+            "\1\u041f",
+            "\1\u0420",
             "\1\u0421",
             "\1\u0422",
             "\1\u0423",
@@ -4822,63 +5319,56 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u0427",
             "\1\u0428",
             "\1\u0429",
-            "\1\u042a",
             "",
-            "",
-            "\1\u042b",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u042c",
             "\1\u042d",
             "\1\u042e",
-            "",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u042f",
+            "\1\u0430",
             "\1\u0431",
             "\1\u0432",
-            "",
             "\1\u0433",
             "\1\u0434",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u0435",
+            "\1\u0436",
+            "",
             "\1\u0437",
             "\1\u0438",
             "\1\u0439",
             "\1\u043a",
             "\1\u043b",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u043c",
             "\1\u043d",
-            "\1\47\13\uffff\12\47\7\uffff\4\47\1\u043e\12\47\1\u0440\4\47\1\u043f\5\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u043e",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u0440",
+            "\1\u0441",
             "\1\u0442",
             "\1\u0443",
-            "",
-            "",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u0444",
             "\1\u0445",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u0446",
             "\1\u0447",
-            "",
-            "",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u0448",
             "\1\u0449",
-            "\1\u044a",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u044b",
             "\1\u044c",
-            "",
-            "\1\u044d",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u044e",
             "\1\u044f",
             "\1\u0450",
-            "",
             "\1\u0451",
             "\1\u0452",
-            "",
             "\1\u0453",
-            "",
-            "\1\u0454",
-            "",
-            "\1\u0455",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u0456",
             "\1\u0457",
+            "",
+            "",
             "\1\u0458",
             "\1\u0459",
             "\1\u045a",
@@ -4891,97 +5381,97 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u0461",
             "\1\u0462",
             "\1\u0463",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u0464",
             "\1\u0465",
             "\1\u0466",
             "\1\u0467",
             "\1\u0468",
             "\1\u0469",
-            "\1\u046a",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "",
             "\1\u046b",
             "\1\u046c",
             "\1\u046d",
             "\1\u046e",
             "\1\u046f",
-            "",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u0470",
             "\1\u0471",
             "\1\u0472",
-            "\1\u0473",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u0474",
+            "",
             "\1\u0475",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u0476",
+            "",
             "\1\u0477",
             "\1\u0478",
             "\1\u0479",
             "\1\u047a",
-            "",
             "\1\u047b",
             "\1\u047c",
-            "\1\u047d",
-            "\1\u047e",
-            "\1\u047f",
             "",
-            "\1\u0480",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\u0483",
+            "",
+            "\1\u047d",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u047f",
+            "\1\53\13\uffff\12\53\7\uffff\1\u0480\31\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u0482",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u0484",
             "\1\u0485",
-            "\1\u0486",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u0487",
             "\1\u0488",
             "\1\u0489",
-            "",
-            "",
-            "\1\u048a",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u048b",
             "\1\u048c",
             "\1\u048d",
             "\1\u048e",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u048f",
             "\1\u0490",
             "\1\u0491",
+            "",
             "\1\u0492",
             "\1\u0493",
             "\1\u0494",
             "\1\u0495",
-            "",
             "\1\u0496",
             "\1\u0497",
             "\1\u0498",
             "\1\u0499",
-            "\1\u049a",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u049b",
             "\1\u049c",
             "\1\u049d",
             "\1\u049e",
             "\1\u049f",
             "\1\u04a0",
-            "",
             "\1\u04a1",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u04a2",
             "\1\u04a3",
-            "\1\u04a4",
-            "\1\u04a5",
-            "\1\u04a6",
             "",
+            "\1\53\13\uffff\12\53\7\uffff\10\53\1\u04a4\11\53\1\u04a5\7\53\4\uffff\1\53\1\uffff\32\53",
             "\1\u04a7",
+            "",
             "\1\u04a8",
+            "",
             "\1\u04a9",
             "\1\u04aa",
+            "",
             "\1\u04ab",
             "\1\u04ac",
             "\1\u04ad",
+            "",
             "\1\u04ae",
             "\1\u04af",
             "\1\u04b0",
             "\1\u04b1",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u04b2",
             "\1\u04b3",
             "\1\u04b4",
             "\1\u04b5",
-            "",
             "\1\u04b6",
             "\1\u04b7",
             "\1\u04b8",
@@ -4989,6 +5479,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u04ba",
             "\1\u04bb",
             "\1\u04bc",
+            "",
             "\1\u04bd",
             "\1\u04be",
             "\1\u04bf",
@@ -5000,6 +5491,7 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u04c5",
             "\1\u04c6",
             "\1\u04c7",
+            "",
             "\1\u04c8",
             "\1\u04c9",
             "\1\u04ca",
@@ -5010,12 +5502,337 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u04cf",
             "\1\u04d0",
             "\1\u04d1",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u04d2",
             "\1\u04d3",
             "\1\u04d4",
+            "\1\u04d5",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u04d7",
+            "\1\u04d8",
+            "\1\u04d9",
+            "\1\u04da",
+            "\1\u04db",
+            "\1\u04dc",
+            "\1\u04dd",
+            "\1\u04de",
+            "\1\u04df",
+            "\1\u04e0",
+            "\1\u04e1",
+            "\1\u04e2",
+            "\1\u04e3",
+            "\1\u04e4",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u04e6",
+            "\1\u04e7",
+            "\1\u04e8",
+            "\1\u04e9",
+            "\1\u04ea",
+            "\1\u04eb",
+            "\1\u04ec",
+            "\1\u04ed",
+            "\1\u04ee",
+            "\1\u04ef",
+            "\1\u04f0",
+            "\1\u04f1",
+            "\1\u04f2",
+            "\1\u04f3",
+            "\1\u04f4",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\47\13\uffff\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u04f7",
+            "\1\u04f8",
+            "\1\u04f9",
+            "\1\u04fa",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u04fc",
+            "\1\u04fd",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u04ff",
+            "\1\u0500",
+            "\1\u0501",
+            "\1\u0502",
+            "\1\u0503",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "",
+            "\1\u0505",
+            "\1\u0506",
+            "\1\u0507",
+            "\1\u0508",
+            "\1\u0509",
+            "\1\u050a",
+            "\1\u050b",
+            "\1\u050c",
+            "\1\u050d",
+            "\1\u050e",
+            "\1\u050f",
+            "\1\u0510",
+            "\1\u0511",
+            "\1\u0512",
+            "\1\u0513",
+            "",
+            "",
+            "\1\u0514",
+            "\1\u0515",
+            "\1\u0516",
+            "\1\u0517",
+            "",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u051b",
+            "\1\u051c",
+            "\1\u051d",
+            "\1\u051e",
+            "",
+            "\1\u051f",
+            "\1\u0520",
+            "\1\u0521",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u0524",
+            "\1\u0525",
+            "\1\u0526",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u0528",
+            "\1\u0529",
+            "\1\u052a",
+            "\1\u052b",
+            "\1\u052c",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u052e",
+            "\1\53\13\uffff\12\53\7\uffff\4\53\1\u052f\12\53\1\u0531\4\53\1\u0530\5\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u0533",
+            "\1\u0534",
+            "",
+            "",
+            "",
+            "\1\u0535",
+            "\1\u0536",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u0538",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u053a",
+            "\1\u053b",
+            "",
+            "",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u053d",
+            "\1\u053e",
+            "",
+            "\1\u053f",
+            "\1\u0540",
+            "\1\u0541",
+            "\1\u0542",
+            "\1\u0543",
+            "",
+            "\1\u0544",
+            "\1\u0545",
+            "\1\u0546",
+            "\1\u0547",
+            "",
+            "\1\u0548",
+            "\1\u0549",
+            "\1\u054a",
+            "\1\u054b",
+            "",
+            "\1\u054c",
+            "",
+            "\1\u054d",
+            "\1\u054e",
+            "",
+            "\1\u054f",
+            "\1\u0550",
+            "\1\u0551",
+            "\1\u0552",
+            "\1\u0553",
+            "\1\u0554",
+            "\1\u0555",
+            "\1\u0556",
+            "\1\u0557",
+            "\1\u0558",
+            "\1\u0559",
+            "\1\u055a",
+            "\1\u055b",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u055d",
+            "\1\u055e",
+            "\1\u055f",
+            "\1\u0560",
+            "\1\u0561",
+            "\1\u0562",
+            "\1\u0563",
+            "\1\u0564",
+            "\1\u0565",
+            "\1\u0566",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u0568",
+            "\1\u0569",
+            "\1\u056a",
+            "\1\u056b",
+            "\1\u056c",
+            "\1\u056d",
+            "",
+            "\1\u056e",
+            "\1\u056f",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u0571",
+            "\1\u0572",
+            "\1\u0573",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\53\13\uffff\12\53\7\uffff\3\53\1\u0575\15\53\1\u0576\10\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u0578",
+            "\1\u0579",
+            "",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u057b",
+            "\1\u057c",
+            "\1\u057d",
+            "\1\u057e",
+            "\1\u057f",
+            "\1\u0580",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "",
+            "\1\u0582",
+            "\1\u0583",
+            "\1\u0584",
+            "",
+            "\1\u0585",
+            "\1\u0586",
+            "",
+            "\1\u0587",
+            "\1\u0588",
+            "",
+            "\1\u0589",
+            "\1\u058a",
+            "\1\u058b",
+            "\1\u058c",
+            "\1\u058d",
+            "\1\u058e",
+            "",
+            "\1\u058f",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u0592",
+            "\1\u0593",
+            "\1\u0594",
+            "\1\u0595",
+            "\1\u0596",
+            "\1\u0597",
+            "\1\u0598",
+            "\1\u0599",
+            "\1\u059a",
+            "\1\u059b",
+            "\1\u059c",
+            "",
+            "",
+            "\1\u059d",
+            "\1\u059e",
+            "\1\u059f",
+            "\1\u05a0",
+            "\1\u05a1",
+            "\1\u05a2",
+            "\1\u05a3",
+            "\1\u05a4",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u05a6",
+            "\1\u05a7",
+            "\1\u05a8",
+            "\1\u05a9",
+            "\1\u05aa",
+            "\1\u05ab",
+            "\1\u05ac",
+            "\1\u05ad",
+            "\1\u05ae",
+            "\1\u05af",
+            "",
+            "\1\u05b0",
+            "\1\u05b1",
+            "\1\u05b2",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u05b4",
+            "\1\u05b5",
+            "\1\u05b6",
+            "\1\u05b7",
+            "\1\u05b8",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u05ba",
+            "\1\u05bb",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "",
+            "\1\u05bd",
+            "\1\u05be",
+            "\1\u05bf",
+            "\1\u05c0",
+            "\1\u05c1",
+            "",
+            "\1\u05c2",
+            "\1\u05c3",
+            "",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u05c6",
+            "\1\u05c7",
+            "\1\u05c8",
+            "\1\u05c9",
+            "\1\u05ca",
+            "",
+            "",
+            "\1\u05cb",
+            "\1\u05cc",
+            "\1\u05cd",
+            "\1\u05ce",
+            "\1\u05cf",
+            "\1\u05d0",
+            "\1\u05d1",
+            "\1\u05d2",
+            "\1\u05d3",
+            "\1\u05d4",
+            "\1\u05d5",
+            "\1\u05d6",
+            "\1\u05d7",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u05da",
+            "\1\u05db",
+            "\1\u05dc",
+            "",
+            "",
+            "\1\u05dd",
+            "\1\u05de",
+            "\1\u05df",
+            "\1\u05e0",
+            "\1\u05e1",
+            "\1\u05e2",
+            "\1\u05e3",
+            "\1\u05e4",
+            "\1\u05e5",
+            "\1\u05e6",
+            "\1\u05e7",
+            "\1\u05e8",
+            "\1\u05e9",
+            "\1\u05ea",
+            "\1\u05eb",
+            "\1\u05ec",
+            "\1\u05ed",
+            "\1\u05ee",
+            "\1\u05ef",
+            "\1\u05f0",
+            "\1\u05f1",
+            "\1\u05f2",
+            "\1\u05f3",
+            "\1\u05f4",
+            "\1\u05f5",
+            "\1\u05f6",
+            "\1\u05f7",
+            "\1\u05f8",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\u05fa",
+            "\1\u05fb",
+            "",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
+            "\1\53\13\uffff\12\53\7\uffff\32\53\4\uffff\1\53\1\uffff\32\53",
             "",
             ""
     };
@@ -5050,23 +5867,13 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
             this.transition = DFA22_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | RULE_ANNOTATION_PROPERTY_TOKEN | RULE_ANNOTATION_TOKEN | RULE_TERMINOLOGY_GRAPH_TOKEN | RULE_BUNDLE_TOKEN | RULE_KIND_TOKEN | RULE_ASPECT_TOKEN | RULE_ABSTRACT_TOKEN | RULE_CONCEPT_TOKEN | RULE_REIFIED_RELATIONSHIP_TOKEN | RULE_UNREIFIED_RELATIONSHIP_TOKEN | RULE_FUNCTIONAL_TOKEN | RULE_INVERSE_FUNCTIONAL_TOKEN | RULE_ESSENTIAL_TOKEN | RULE_INVERSE_ESSENTIAL_TOKEN | RULE_SYMMETRIC_TOKEN | RULE_ASYMMETRIC_TOKEN | RULE_REFLEXIVE_TOKEN | RULE_IRREFLEXIVE_TOKEN | RULE_TRANSITIVE_TOKEN | RULE_UNREIFIED_TOKEN | RULE_INVERSE_TOKEN | RULE_SOURCE_TOKEN | RULE_TARGET_TOKEN | RULE_SCALAR_TOKEN | RULE_STRUCTURE_TOKEN | RULE_DOMAIN_TOKEN | RULE_RANGE_TOKEN | RULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN | RULE_SPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN | RULE_ANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN | RULE_BUNDLED_TERMINOLOGY_AXIOM_TOKEN | RULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN | RULE_TERMINOLOGY_NESTING_AXIOM_TOKEN | RULE_TERMINOLOGY_EXTENSION_AXIOM_TOKEN | RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN | RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN | RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN | RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN | RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN | RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN | RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN | RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN | RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN | RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN | RULE_STRING_SCALAR_RESTRICTION_TOKEN | RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN | RULE_BINARY_SCALAR_RESTRICTION_TOKEN | RULE_IRI_SCALAR_RESTRICTION_TOKEN | RULE_TIME_SCALAR_RESTRICTION_TOKEN | RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN | RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN | RULE_LCURLY | RULE_RCURLY | RULE_EQUAL | RULE_STRING | RULE_IRI | RULE_ID | RULE_UUID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | RULE_ANNOTATION_PROPERTY_TOKEN | RULE_ANNOTATION_TOKEN | RULE_TERMINOLOGY_GRAPH_TOKEN | RULE_BUNDLE_TOKEN | RULE_KIND_TOKEN | RULE_ASPECT_TOKEN | RULE_ABSTRACT_TOKEN | RULE_CONCEPT_TOKEN | RULE_REIFIED_RELATIONSHIP_TOKEN | RULE_UNREIFIED_RELATIONSHIP_TOKEN | RULE_FUNCTIONAL_TOKEN | RULE_INVERSE_FUNCTIONAL_TOKEN | RULE_ESSENTIAL_TOKEN | RULE_INVERSE_ESSENTIAL_TOKEN | RULE_SYMMETRIC_TOKEN | RULE_ASYMMETRIC_TOKEN | RULE_REFLEXIVE_TOKEN | RULE_IRREFLEXIVE_TOKEN | RULE_TRANSITIVE_TOKEN | RULE_UNREIFIED_TOKEN | RULE_INVERSE_TOKEN | RULE_SOURCE_TOKEN | RULE_TARGET_TOKEN | RULE_SCALAR_TOKEN | RULE_STRUCTURE_TOKEN | RULE_DOMAIN_TOKEN | RULE_RANGE_TOKEN | RULE_EXTENDS_TOKEN | RULE_REFINES_TOKEN | RULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN | RULE_SPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN | RULE_ANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN | RULE_BUNDLED_TERMINOLOGY_AXIOM_TOKEN | RULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN | RULE_TERMINOLOGY_NESTING_AXIOM_TOKEN | RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN | RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN | RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN | RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN | RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN | RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN | RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN | RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN | RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN | RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN | RULE_STRING_SCALAR_RESTRICTION_TOKEN | RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN | RULE_BINARY_SCALAR_RESTRICTION_TOKEN | RULE_IRI_SCALAR_RESTRICTION_TOKEN | RULE_TIME_SCALAR_RESTRICTION_TOKEN | RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN | RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN | RULE_DESCRIPTION_BOX_TOKEN | RULE_LCURLY | RULE_RCURLY | RULE_EQUAL | RULE_STRING | RULE_IRI | RULE_ID | RULE_UUID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA22_26 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA22_26>='\u0000' && LA22_26<='\uFFFF')) ) {s = 86;}
-
-                        else s = 34;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
                         int LA22_0 = input.LA(1);
 
                         s = -1;
@@ -5092,51 +5899,71 @@ public class PsiInternalOntologicalModelingLanguageLexer extends Lexer {
 
                         else if ( (LA22_0=='a') ) {s = 11;}
 
-                        else if ( (LA22_0==':') ) {s = 12;}
+                        else if ( (LA22_0=='S') ) {s = 12;}
 
-                        else if ( (LA22_0=='o') ) {s = 13;}
+                        else if ( (LA22_0=='D') ) {s = 13;}
 
-                        else if ( (LA22_0=='c') ) {s = 14;}
+                        else if ( (LA22_0=='C') ) {s = 14;}
 
-                        else if ( (LA22_0=='@') ) {s = 15;}
+                        else if ( (LA22_0=='R') ) {s = 15;}
 
-                        else if ( (LA22_0=='t') ) {s = 16;}
+                        else if ( (LA22_0=='U') ) {s = 16;}
 
-                        else if ( (LA22_0=='k') ) {s = 17;}
+                        else if ( (LA22_0==':') ) {s = 17;}
 
-                        else if ( (LA22_0=='u') ) {s = 18;}
+                        else if ( (LA22_0=='o') ) {s = 18;}
 
-                        else if ( (LA22_0=='f') ) {s = 19;}
+                        else if ( (LA22_0=='c') ) {s = 19;}
 
-                        else if ( (LA22_0=='i') ) {s = 20;}
+                        else if ( (LA22_0=='f') ) {s = 20;}
 
-                        else if ( (LA22_0=='{') ) {s = 21;}
+                        else if ( (LA22_0=='@') ) {s = 21;}
 
-                        else if ( (LA22_0=='}') ) {s = 22;}
+                        else if ( (LA22_0=='t') ) {s = 22;}
 
-                        else if ( (LA22_0=='=') ) {s = 23;}
+                        else if ( (LA22_0=='k') ) {s = 23;}
 
-                        else if ( (LA22_0=='\"') ) {s = 24;}
+                        else if ( (LA22_0=='u') ) {s = 24;}
 
-                        else if ( (LA22_0=='\'') ) {s = 25;}
+                        else if ( (LA22_0=='i') ) {s = 25;}
 
-                        else if ( (LA22_0=='<') ) {s = 26;}
+                        else if ( (LA22_0=='{') ) {s = 26;}
 
-                        else if ( (LA22_0=='^') ) {s = 27;}
+                        else if ( (LA22_0=='}') ) {s = 27;}
 
-                        else if ( ((LA22_0>='A' && LA22_0<='F')) ) {s = 28;}
+                        else if ( (LA22_0=='=') ) {s = 28;}
 
-                        else if ( (LA22_0=='$'||(LA22_0>='G' && LA22_0<='Z')||LA22_0=='_'||(LA22_0>='g' && LA22_0<='h')||LA22_0=='j'||LA22_0=='q'||(LA22_0>='w' && LA22_0<='z')) ) {s = 29;}
+                        else if ( (LA22_0=='\"') ) {s = 29;}
 
-                        else if ( (LA22_0=='0') ) {s = 30;}
+                        else if ( (LA22_0=='\'') ) {s = 30;}
 
-                        else if ( ((LA22_0>='1' && LA22_0<='9')) ) {s = 31;}
+                        else if ( (LA22_0=='<') ) {s = 31;}
 
-                        else if ( (LA22_0=='/') ) {s = 32;}
+                        else if ( (LA22_0=='^') ) {s = 32;}
 
-                        else if ( ((LA22_0>='\t' && LA22_0<='\n')||LA22_0=='\r'||LA22_0==' ') ) {s = 33;}
+                        else if ( ((LA22_0>='A' && LA22_0<='B')||(LA22_0>='E' && LA22_0<='F')) ) {s = 33;}
 
-                        else if ( ((LA22_0>='\u0000' && LA22_0<='\b')||(LA22_0>='\u000B' && LA22_0<='\f')||(LA22_0>='\u000E' && LA22_0<='\u001F')||LA22_0=='!'||LA22_0=='#'||(LA22_0>='%' && LA22_0<='&')||(LA22_0>='(' && LA22_0<='.')||LA22_0==';'||(LA22_0>='>' && LA22_0<='?')||(LA22_0>='[' && LA22_0<=']')||LA22_0=='`'||LA22_0=='|'||(LA22_0>='~' && LA22_0<='\uFFFF')) ) {s = 34;}
+                        else if ( (LA22_0=='$'||(LA22_0>='G' && LA22_0<='Q')||LA22_0=='T'||(LA22_0>='V' && LA22_0<='Z')||LA22_0=='_'||(LA22_0>='g' && LA22_0<='h')||LA22_0=='j'||LA22_0=='q'||(LA22_0>='w' && LA22_0<='z')) ) {s = 34;}
+
+                        else if ( (LA22_0=='0') ) {s = 35;}
+
+                        else if ( ((LA22_0>='1' && LA22_0<='9')) ) {s = 36;}
+
+                        else if ( (LA22_0=='/') ) {s = 37;}
+
+                        else if ( ((LA22_0>='\t' && LA22_0<='\n')||LA22_0=='\r'||LA22_0==' ') ) {s = 38;}
+
+                        else if ( ((LA22_0>='\u0000' && LA22_0<='\b')||(LA22_0>='\u000B' && LA22_0<='\f')||(LA22_0>='\u000E' && LA22_0<='\u001F')||LA22_0=='!'||LA22_0=='#'||(LA22_0>='%' && LA22_0<='&')||(LA22_0>='(' && LA22_0<='.')||LA22_0==';'||(LA22_0>='>' && LA22_0<='?')||(LA22_0>='[' && LA22_0<=']')||LA22_0=='`'||LA22_0=='|'||(LA22_0>='~' && LA22_0<='\uFFFF')) ) {s = 39;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA22_31 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA22_31>='\u0000' && LA22_31<='\uFFFF')) ) {s = 101;}
+
+                        else s = 39;
 
                         if ( s>=0 ) return s;
                         break;

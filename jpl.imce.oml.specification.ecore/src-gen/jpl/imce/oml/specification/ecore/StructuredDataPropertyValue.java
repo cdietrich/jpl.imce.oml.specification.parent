@@ -98,28 +98,28 @@ public interface StructuredDataPropertyValue extends TerminologyInstanceAssertio
 	void setStructuredDataProperty(DataRelationshipToStructure value);
 
 	/**
-	 * Returns the value of the '<em><b>Structured Property Tuple</b></em>' reference.
+	 * Returns the value of the '<em><b>Structured Property Tuple</b></em>' containment reference.
 	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.DataStructureTuple#getStructuredDataPropertyValue <em>Structured Data Property Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Structured Property Tuple</em>' reference isn't clear,
+	 * If the meaning of the '<em>Structured Property Tuple</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Structured Property Tuple</em>' reference.
+	 * @return the value of the '<em>Structured Property Tuple</em>' containment reference.
 	 * @see #setStructuredPropertyTuple(DataStructureTuple)
 	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getStructuredDataPropertyValue_StructuredPropertyTuple()
 	 * @see jpl.imce.oml.specification.ecore.DataStructureTuple#getStructuredDataPropertyValue
-	 * @model opposite="structuredDataPropertyValue" required="true"
+	 * @model opposite="structuredDataPropertyValue" containment="true" required="true"
 	 * @generated
 	 */
 	DataStructureTuple getStructuredPropertyTuple();
 
 	/**
-	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getStructuredPropertyTuple <em>Structured Property Tuple</em>}' reference.
+	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getStructuredPropertyTuple <em>Structured Property Tuple</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Structured Property Tuple</em>' reference.
+	 * @param value the new value of the '<em>Structured Property Tuple</em>' containment reference.
 	 * @see #getStructuredPropertyTuple()
 	 * @generated
 	 */

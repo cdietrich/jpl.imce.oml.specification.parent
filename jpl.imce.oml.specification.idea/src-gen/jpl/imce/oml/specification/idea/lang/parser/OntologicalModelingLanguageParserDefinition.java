@@ -51,13 +51,16 @@ public class OntologicalModelingLanguageParserDefinition extends AbstractXtextPa
 			if (elementType == elementTypeProvider.getTerminologyExtent_TerminologyExtentAction_0ElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
-			if (elementType == elementTypeProvider.getTerminologyExtent_AnnotationPropertiesAnnotationPropertyParserRuleCall_1_0ElementType()) {
+			if (elementType == elementTypeProvider.getTerminologyExtent_AnnotationPropertiesAnnotationPropertyParserRuleCall_1_0_0ElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
-			if (elementType == elementTypeProvider.getTerminologyExtent_TerminologyGraphsTerminologyGraphParserRuleCall_2_0ElementType()) {
+			if (elementType == elementTypeProvider.getTerminologyExtent_TerminologyGraphsTerminologyGraphParserRuleCall_1_1_0ElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
-			if (elementType == elementTypeProvider.getTerminologyExtent_BundlesBundleParserRuleCall_3_0ElementType()) {
+			if (elementType == elementTypeProvider.getTerminologyExtent_BundlesBundleParserRuleCall_1_2_0ElementType()) {
+				return new PsiEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getTerminologyExtent_DescriptionsDescriptionBoxParserRuleCall_1_3_0ElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
 			if (elementType == elementTypeProvider.getAnnotationPropertyElementType()) {
@@ -400,6 +403,93 @@ public class OntologicalModelingLanguageParserDefinition extends AbstractXtextPa
 				return new PsiNamedEObjectImpl(node) {};
 			}
 			if (elementType == elementTypeProvider.getTimeScalarRestrictionElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getDescriptionBoxElementType()) {
+				return new PsiEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getDescriptionBox_AnnotationsAnnotationParserRuleCall_4_0_0ElementType()) {
+				return new PsiEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getDescriptionBox_ClosedWorldDefinitionsDescriptionBoxExtendsClosedWorldDefinitionsParserRuleCall_4_1_0ElementType()) {
+				return new PsiEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getDescriptionBox_DescriptionBoxRefinementsDescriptionBoxRefinementParserRuleCall_4_2_0ElementType()) {
+				return new PsiEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getDescriptionBox_ConceptInstancesConceptInstanceParserRuleCall_4_3_0ElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getDescriptionBox_ReifiedRelationshipInstancesReifiedRelationshipInstanceParserRuleCall_4_4_0ElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getDescriptionBox_ReifiedRelationshipInstanceDomainsReifiedRelationshipInstanceDomainParserRuleCall_4_5_0ElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getDescriptionBox_ReifiedRelationshipInstanceRangesReifiedRelationshipInstanceRangeParserRuleCall_4_6_0ElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getDescriptionBox_UnreifiedRelationshipInstanceTuplesUnreifiedRelationshipInstanceTupleParserRuleCall_4_7_0ElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getTerminologyInstanceAssertionElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getTerminologyInstanceAssertion_ScalarDataPropertyValueParserRuleCall_0ElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getTerminologyInstanceAssertion_StructuredDataPropertyValueParserRuleCall_1ElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getTerminologyInstanceAssertion_DataStructureTupleParserRuleCall_2ElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getTerminologyInstanceAssertion_ConceptInstanceParserRuleCall_3ElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getTerminologyInstanceAssertion_ReifiedRelationshipInstanceParserRuleCall_4ElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getTerminologyInstanceAssertion_ReifiedRelationshipInstanceDomainParserRuleCall_5ElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getTerminologyInstanceAssertion_ReifiedRelationshipInstanceRangeParserRuleCall_6ElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getTerminologyInstanceAssertion_UnreifiedRelationshipInstanceTupleParserRuleCall_7ElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getDescriptionBoxExtendsClosedWorldDefinitionsElementType()) {
+				return new PsiEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getDescriptionBoxRefinementElementType()) {
+				return new PsiEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getScalarDataPropertyValueElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getStructuredDataPropertyValueElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getStructuredDataPropertyValue_StructuredPropertyTupleDataStructureTupleParserRuleCall_5_0ElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getDataStructureTupleElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getConceptInstanceElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getReifiedRelationshipInstanceElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getReifiedRelationshipInstanceDomainElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getReifiedRelationshipInstanceRangeElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getUnreifiedRelationshipInstanceTupleElementType()) {
 				return new PsiNamedEObjectImpl(node) {};
 			}
 			throw new IllegalStateException("Unexpected element type: " + elementType);

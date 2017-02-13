@@ -28,7 +28,12 @@ import jpl.imce.oml.specification.ecore.Bundle;
 import jpl.imce.oml.specification.ecore.BundledTerminologyAxiom;
 import jpl.imce.oml.specification.ecore.Concept;
 import jpl.imce.oml.specification.ecore.ConceptDesignationTerminologyAxiom;
+import jpl.imce.oml.specification.ecore.ConceptInstance;
 import jpl.imce.oml.specification.ecore.ConceptSpecializationAxiom;
+import jpl.imce.oml.specification.ecore.DataStructureTuple;
+import jpl.imce.oml.specification.ecore.DescriptionBox;
+import jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions;
+import jpl.imce.oml.specification.ecore.DescriptionBoxRefinement;
 import jpl.imce.oml.specification.ecore.EntityExistentialRestrictionAxiom;
 import jpl.imce.oml.specification.ecore.EntityScalarDataProperty;
 import jpl.imce.oml.specification.ecore.EntityScalarDataPropertyExistentialRestrictionAxiom;
@@ -41,16 +46,21 @@ import jpl.imce.oml.specification.ecore.NumericScalarRestriction;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction;
 import jpl.imce.oml.specification.ecore.ReifiedRelationship;
+import jpl.imce.oml.specification.ecore.ReifiedRelationshipInstance;
+import jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceDomain;
+import jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceRange;
 import jpl.imce.oml.specification.ecore.ReifiedRelationshipSpecializationAxiom;
 import jpl.imce.oml.specification.ecore.RootConceptTaxonomyAxiom;
 import jpl.imce.oml.specification.ecore.Scalar;
 import jpl.imce.oml.specification.ecore.ScalarDataProperty;
+import jpl.imce.oml.specification.ecore.ScalarDataPropertyValue;
 import jpl.imce.oml.specification.ecore.ScalarOneOfLiteralAxiom;
 import jpl.imce.oml.specification.ecore.ScalarOneOfRestriction;
 import jpl.imce.oml.specification.ecore.SpecificDisjointConceptAxiom;
 import jpl.imce.oml.specification.ecore.StringScalarRestriction;
 import jpl.imce.oml.specification.ecore.Structure;
 import jpl.imce.oml.specification.ecore.StructuredDataProperty;
+import jpl.imce.oml.specification.ecore.StructuredDataPropertyValue;
 import jpl.imce.oml.specification.ecore.SynonymScalarRestriction;
 import jpl.imce.oml.specification.ecore.TerminologyExtensionAxiom;
 import jpl.imce.oml.specification.ecore.TerminologyExtent;
@@ -58,6 +68,7 @@ import jpl.imce.oml.specification.ecore.TerminologyGraph;
 import jpl.imce.oml.specification.ecore.TerminologyNestingAxiom;
 import jpl.imce.oml.specification.ecore.TimeScalarRestriction;
 import jpl.imce.oml.specification.ecore.UnreifiedRelationship;
+import jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple;
 import jpl.imce.oml.specification.services.OntologicalModelingLanguageGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -113,8 +124,23 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 			case OMLPackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM:
 				sequence_ConceptDesignationTerminologyAxiom(context, (ConceptDesignationTerminologyAxiom) semanticObject); 
 				return; 
+			case OMLPackage.CONCEPT_INSTANCE:
+				sequence_ConceptInstance(context, (ConceptInstance) semanticObject); 
+				return; 
 			case OMLPackage.CONCEPT_SPECIALIZATION_AXIOM:
 				sequence_ConceptSpecializationAxiom(context, (ConceptSpecializationAxiom) semanticObject); 
+				return; 
+			case OMLPackage.DATA_STRUCTURE_TUPLE:
+				sequence_DataStructureTuple(context, (DataStructureTuple) semanticObject); 
+				return; 
+			case OMLPackage.DESCRIPTION_BOX:
+				sequence_DescriptionBox(context, (DescriptionBox) semanticObject); 
+				return; 
+			case OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS:
+				sequence_DescriptionBoxExtendsClosedWorldDefinitions(context, (DescriptionBoxExtendsClosedWorldDefinitions) semanticObject); 
+				return; 
+			case OMLPackage.DESCRIPTION_BOX_REFINEMENT:
+				sequence_DescriptionBoxRefinement(context, (DescriptionBoxRefinement) semanticObject); 
 				return; 
 			case OMLPackage.ENTITY_EXISTENTIAL_RESTRICTION_AXIOM:
 				sequence_EntityExistentialRestrictionAxiom(context, (EntityExistentialRestrictionAxiom) semanticObject); 
@@ -149,6 +175,15 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 			case OMLPackage.REIFIED_RELATIONSHIP:
 				sequence_ReifiedRelationship(context, (ReifiedRelationship) semanticObject); 
 				return; 
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE:
+				sequence_ReifiedRelationshipInstance(context, (ReifiedRelationshipInstance) semanticObject); 
+				return; 
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_DOMAIN:
+				sequence_ReifiedRelationshipInstanceDomain(context, (ReifiedRelationshipInstanceDomain) semanticObject); 
+				return; 
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_RANGE:
+				sequence_ReifiedRelationshipInstanceRange(context, (ReifiedRelationshipInstanceRange) semanticObject); 
+				return; 
 			case OMLPackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM:
 				sequence_ReifiedRelationshipSpecializationAxiom(context, (ReifiedRelationshipSpecializationAxiom) semanticObject); 
 				return; 
@@ -160,6 +195,9 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				return; 
 			case OMLPackage.SCALAR_DATA_PROPERTY:
 				sequence_ScalarDataProperty(context, (ScalarDataProperty) semanticObject); 
+				return; 
+			case OMLPackage.SCALAR_DATA_PROPERTY_VALUE:
+				sequence_ScalarDataPropertyValue(context, (ScalarDataPropertyValue) semanticObject); 
 				return; 
 			case OMLPackage.SCALAR_ONE_OF_LITERAL_AXIOM:
 				sequence_ScalarOneOfLiteralAxiom(context, (ScalarOneOfLiteralAxiom) semanticObject); 
@@ -178,6 +216,9 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				return; 
 			case OMLPackage.STRUCTURED_DATA_PROPERTY:
 				sequence_StructuredDataProperty(context, (StructuredDataProperty) semanticObject); 
+				return; 
+			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE:
+				sequence_StructuredDataPropertyValue(context, (StructuredDataPropertyValue) semanticObject); 
 				return; 
 			case OMLPackage.SYNONYM_SCALAR_RESTRICTION:
 				sequence_SynonymScalarRestriction(context, (SynonymScalarRestriction) semanticObject); 
@@ -199,6 +240,9 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				return; 
 			case OMLPackage.UNREIFIED_RELATIONSHIP:
 				sequence_UnreifiedRelationship(context, (UnreifiedRelationship) semanticObject); 
+				return; 
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE:
+				sequence_UnreifiedRelationshipInstanceTuple(context, (UnreifiedRelationshipInstanceTuple) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -396,6 +440,25 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 	
 	/**
 	 * Contexts:
+	 *     TerminologyInstanceAssertion returns ConceptInstance
+	 *     ConceptInstance returns ConceptInstance
+	 *
+	 * Constraint:
+	 *     singletonConceptClassifier=[Concept|Reference]
+	 */
+	protected void sequence_ConceptInstance(ISerializationContext context, ConceptInstance semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient((EObject) semanticObject, OMLPackage.Literals.CONCEPT_INSTANCE__SINGLETON_CONCEPT_CLASSIFIER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.Literals.CONCEPT_INSTANCE__SINGLETON_CONCEPT_CLASSIFIER));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
+		feeder.accept(grammarAccess.getConceptInstanceAccess().getSingletonConceptClassifierConceptReferenceParserRuleCall_3_0_1(), semanticObject.getSingletonConceptClassifier());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     TerminologyBoxStatement returns ConceptSpecializationAxiom
 	 *     Axiom returns ConceptSpecializationAxiom
 	 *     TermAxiom returns ConceptSpecializationAxiom
@@ -430,6 +493,86 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 	 *     (isAbstract?=ABSTRACT_TOKEN? name=ID)
 	 */
 	protected void sequence_Concept(ISerializationContext context, Concept semanticObject) {
+		genericSequencer.createSequence(context, (EObject) semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TerminologyInstanceAssertion returns DataStructureTuple
+	 *     DataStructureTuple returns DataStructureTuple
+	 *
+	 * Constraint:
+	 *     dataStructureType=[Structure|Reference]
+	 */
+	protected void sequence_DataStructureTuple(ISerializationContext context, DataStructureTuple semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient((EObject) semanticObject, OMLPackage.Literals.DATA_STRUCTURE_TUPLE__DATA_STRUCTURE_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.Literals.DATA_STRUCTURE_TUPLE__DATA_STRUCTURE_TYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
+		feeder.accept(grammarAccess.getDataStructureTupleAccess().getDataStructureTypeStructureReferenceParserRuleCall_3_0_1(), semanticObject.getDataStructureType());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     DescriptionBoxExtendsClosedWorldDefinitions returns DescriptionBoxExtendsClosedWorldDefinitions
+	 *
+	 * Constraint:
+	 *     closedWorldDefinitions=[TerminologyBox|Reference]
+	 */
+	protected void sequence_DescriptionBoxExtendsClosedWorldDefinitions(ISerializationContext context, DescriptionBoxExtendsClosedWorldDefinitions semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient((EObject) semanticObject, OMLPackage.Literals.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__CLOSED_WORLD_DEFINITIONS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.Literals.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__CLOSED_WORLD_DEFINITIONS));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
+		feeder.accept(grammarAccess.getDescriptionBoxExtendsClosedWorldDefinitionsAccess().getClosedWorldDefinitionsTerminologyBoxReferenceParserRuleCall_1_0_1(), semanticObject.getClosedWorldDefinitions());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     DescriptionBoxRefinement returns DescriptionBoxRefinement
+	 *
+	 * Constraint:
+	 *     refinedDescriptionBox=[DescriptionBox|Reference]
+	 */
+	protected void sequence_DescriptionBoxRefinement(ISerializationContext context, DescriptionBoxRefinement semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient((EObject) semanticObject, OMLPackage.Literals.DESCRIPTION_BOX_REFINEMENT__REFINED_DESCRIPTION_BOX) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.Literals.DESCRIPTION_BOX_REFINEMENT__REFINED_DESCRIPTION_BOX));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
+		feeder.accept(grammarAccess.getDescriptionBoxRefinementAccess().getRefinedDescriptionBoxDescriptionBoxReferenceParserRuleCall_1_0_1(), semanticObject.getRefinedDescriptionBox());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     DescriptionBox returns DescriptionBox
+	 *
+	 * Constraint:
+	 *     (
+	 *         kind=DescriptionKind 
+	 *         iri=IRI 
+	 *         (
+	 *             annotations+=Annotation | 
+	 *             closedWorldDefinitions+=DescriptionBoxExtendsClosedWorldDefinitions | 
+	 *             descriptionBoxRefinements+=DescriptionBoxRefinement | 
+	 *             conceptInstances+=ConceptInstance | 
+	 *             reifiedRelationshipInstances+=ReifiedRelationshipInstance | 
+	 *             reifiedRelationshipInstanceDomains+=ReifiedRelationshipInstanceDomain | 
+	 *             reifiedRelationshipInstanceRanges+=ReifiedRelationshipInstanceRange | 
+	 *             unreifiedRelationshipInstanceTuples+=UnreifiedRelationshipInstanceTuple
+	 *         )*
+	 *     )
+	 */
+	protected void sequence_DescriptionBox(ISerializationContext context, DescriptionBox semanticObject) {
 		genericSequencer.createSequence(context, (EObject) semanticObject);
 	}
 	
@@ -692,12 +835,75 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 	 *         minLength=INT? 
 	 *         maxLength=INT? 
 	 *         pattern=STRING? 
-	 *         language=STRING? 
+	 *         langRange=STRING? 
 	 *         restrictedRange=[DataRange|Reference]
 	 *     )
 	 */
 	protected void sequence_PlainLiteralScalarRestriction(ISerializationContext context, PlainLiteralScalarRestriction semanticObject) {
 		genericSequencer.createSequence(context, (EObject) semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TerminologyInstanceAssertion returns ReifiedRelationshipInstanceDomain
+	 *     ReifiedRelationshipInstanceDomain returns ReifiedRelationshipInstanceDomain
+	 *
+	 * Constraint:
+	 *     (reifiedRelationshipInstance=[ReifiedRelationshipInstance|Reference] domain=[ConceptualEntitySingletonInstance|Reference])
+	 */
+	protected void sequence_ReifiedRelationshipInstanceDomain(ISerializationContext context, ReifiedRelationshipInstanceDomain semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient((EObject) semanticObject, OMLPackage.Literals.REIFIED_RELATIONSHIP_INSTANCE_DOMAIN__REIFIED_RELATIONSHIP_INSTANCE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.Literals.REIFIED_RELATIONSHIP_INSTANCE_DOMAIN__REIFIED_RELATIONSHIP_INSTANCE));
+			if (transientValues.isValueTransient((EObject) semanticObject, OMLPackage.Literals.REIFIED_RELATIONSHIP_INSTANCE_DOMAIN__DOMAIN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.Literals.REIFIED_RELATIONSHIP_INSTANCE_DOMAIN__DOMAIN));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
+		feeder.accept(grammarAccess.getReifiedRelationshipInstanceDomainAccess().getReifiedRelationshipInstanceReifiedRelationshipInstanceReferenceParserRuleCall_3_0_1(), semanticObject.getReifiedRelationshipInstance());
+		feeder.accept(grammarAccess.getReifiedRelationshipInstanceDomainAccess().getDomainConceptualEntitySingletonInstanceReferenceParserRuleCall_5_0_1(), semanticObject.getDomain());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TerminologyInstanceAssertion returns ReifiedRelationshipInstanceRange
+	 *     ReifiedRelationshipInstanceRange returns ReifiedRelationshipInstanceRange
+	 *
+	 * Constraint:
+	 *     (reifiedRelationshipInstance=[ReifiedRelationshipInstance|Reference] range=[ConceptualEntitySingletonInstance|Reference])
+	 */
+	protected void sequence_ReifiedRelationshipInstanceRange(ISerializationContext context, ReifiedRelationshipInstanceRange semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient((EObject) semanticObject, OMLPackage.Literals.REIFIED_RELATIONSHIP_INSTANCE_RANGE__REIFIED_RELATIONSHIP_INSTANCE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.Literals.REIFIED_RELATIONSHIP_INSTANCE_RANGE__REIFIED_RELATIONSHIP_INSTANCE));
+			if (transientValues.isValueTransient((EObject) semanticObject, OMLPackage.Literals.REIFIED_RELATIONSHIP_INSTANCE_RANGE__RANGE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.Literals.REIFIED_RELATIONSHIP_INSTANCE_RANGE__RANGE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
+		feeder.accept(grammarAccess.getReifiedRelationshipInstanceRangeAccess().getReifiedRelationshipInstanceReifiedRelationshipInstanceReferenceParserRuleCall_3_0_1(), semanticObject.getReifiedRelationshipInstance());
+		feeder.accept(grammarAccess.getReifiedRelationshipInstanceRangeAccess().getRangeConceptualEntitySingletonInstanceReferenceParserRuleCall_5_0_1(), semanticObject.getRange());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TerminologyInstanceAssertion returns ReifiedRelationshipInstance
+	 *     ReifiedRelationshipInstance returns ReifiedRelationshipInstance
+	 *
+	 * Constraint:
+	 *     singletonReifiedRelationshipClassifier=[ReifiedRelationship|Reference]
+	 */
+	protected void sequence_ReifiedRelationshipInstance(ISerializationContext context, ReifiedRelationshipInstance semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient((EObject) semanticObject, OMLPackage.Literals.REIFIED_RELATIONSHIP_INSTANCE__SINGLETON_REIFIED_RELATIONSHIP_CLASSIFIER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.Literals.REIFIED_RELATIONSHIP_INSTANCE__SINGLETON_REIFIED_RELATIONSHIP_CLASSIFIER));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
+		feeder.accept(grammarAccess.getReifiedRelationshipInstanceAccess().getSingletonReifiedRelationshipClassifierReifiedRelationshipReferenceParserRuleCall_3_0_1(), semanticObject.getSingletonReifiedRelationshipClassifier());
+		feeder.finish();
 	}
 	
 	
@@ -773,6 +979,28 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
 		feeder.accept(grammarAccess.getRootConceptTaxonomyAxiomAccess().getRootConceptReferenceParserRuleCall_3_0_1(), semanticObject.getRoot());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TerminologyInstanceAssertion returns ScalarDataPropertyValue
+	 *     ScalarDataPropertyValue returns ScalarDataPropertyValue
+	 *
+	 * Constraint:
+	 *     (scalarPropertyValue=Reference scalarDataProperty=[DataRelationshipToScalar|Reference])
+	 */
+	protected void sequence_ScalarDataPropertyValue(ISerializationContext context, ScalarDataPropertyValue semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient((EObject) semanticObject, OMLPackage.Literals.SCALAR_DATA_PROPERTY_VALUE__SCALAR_PROPERTY_VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.Literals.SCALAR_DATA_PROPERTY_VALUE__SCALAR_PROPERTY_VALUE));
+			if (transientValues.isValueTransient((EObject) semanticObject, OMLPackage.Literals.SCALAR_DATA_PROPERTY_VALUE__SCALAR_DATA_PROPERTY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.Literals.SCALAR_DATA_PROPERTY_VALUE__SCALAR_DATA_PROPERTY));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
+		feeder.accept(grammarAccess.getScalarDataPropertyValueAccess().getScalarPropertyValueReferenceParserRuleCall_3_0(), semanticObject.getScalarPropertyValue());
+		feeder.accept(grammarAccess.getScalarDataPropertyValueAccess().getScalarDataPropertyDataRelationshipToScalarReferenceParserRuleCall_5_0_1(), semanticObject.getScalarDataProperty());
 		feeder.finish();
 	}
 	
@@ -944,6 +1172,28 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 	
 	/**
 	 * Contexts:
+	 *     TerminologyInstanceAssertion returns StructuredDataPropertyValue
+	 *     StructuredDataPropertyValue returns StructuredDataPropertyValue
+	 *
+	 * Constraint:
+	 *     (structuredDataProperty=[DataRelationshipToStructure|Reference] structuredPropertyTuple=DataStructureTuple)
+	 */
+	protected void sequence_StructuredDataPropertyValue(ISerializationContext context, StructuredDataPropertyValue semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient((EObject) semanticObject, OMLPackage.Literals.STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_DATA_PROPERTY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.Literals.STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_DATA_PROPERTY));
+			if (transientValues.isValueTransient((EObject) semanticObject, OMLPackage.Literals.STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_PROPERTY_TUPLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.Literals.STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_PROPERTY_TUPLE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
+		feeder.accept(grammarAccess.getStructuredDataPropertyValueAccess().getStructuredDataPropertyDataRelationshipToStructureReferenceParserRuleCall_3_0_1(), semanticObject.getStructuredDataProperty());
+		feeder.accept(grammarAccess.getStructuredDataPropertyValueAccess().getStructuredPropertyTupleDataStructureTupleParserRuleCall_5_0(), semanticObject.getStructuredPropertyTuple());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     TerminologyBoxStatement returns StructuredDataProperty
 	 *     Term returns StructuredDataProperty
 	 *     DataRelationship returns StructuredDataProperty
@@ -1019,7 +1269,7 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 	 *     TerminologyExtent returns TerminologyExtent
 	 *
 	 * Constraint:
-	 *     (annotationProperties+=AnnotationProperty* terminologyGraphs+=TerminologyGraph* bundles+=Bundle*)
+	 *     (annotationProperties+=AnnotationProperty | terminologyGraphs+=TerminologyGraph | bundles+=Bundle | descriptions+=DescriptionBox)*
 	 */
 	protected void sequence_TerminologyExtent(ISerializationContext context, TerminologyExtent semanticObject) {
 		genericSequencer.createSequence(context, (EObject) semanticObject);
@@ -1086,6 +1336,35 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 	 */
 	protected void sequence_TimeScalarRestriction(ISerializationContext context, TimeScalarRestriction semanticObject) {
 		genericSequencer.createSequence(context, (EObject) semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TerminologyInstanceAssertion returns UnreifiedRelationshipInstanceTuple
+	 *     UnreifiedRelationshipInstanceTuple returns UnreifiedRelationshipInstanceTuple
+	 *
+	 * Constraint:
+	 *     (
+	 *         unreifiedRelationship=[UnreifiedRelationship|Reference] 
+	 *         domain=[ConceptualEntitySingletonInstance|Reference] 
+	 *         range=[ConceptualEntitySingletonInstance|Reference]
+	 *     )
+	 */
+	protected void sequence_UnreifiedRelationshipInstanceTuple(ISerializationContext context, UnreifiedRelationshipInstanceTuple semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient((EObject) semanticObject, OMLPackage.Literals.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__UNREIFIED_RELATIONSHIP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.Literals.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__UNREIFIED_RELATIONSHIP));
+			if (transientValues.isValueTransient((EObject) semanticObject, OMLPackage.Literals.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DOMAIN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.Literals.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DOMAIN));
+			if (transientValues.isValueTransient((EObject) semanticObject, OMLPackage.Literals.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__RANGE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.Literals.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__RANGE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
+		feeder.accept(grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getUnreifiedRelationshipUnreifiedRelationshipReferenceParserRuleCall_3_0_1(), semanticObject.getUnreifiedRelationship());
+		feeder.accept(grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getDomainConceptualEntitySingletonInstanceReferenceParserRuleCall_5_0_1(), semanticObject.getDomain());
+		feeder.accept(grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getRangeConceptualEntitySingletonInstanceReferenceParserRuleCall_7_0_1(), semanticObject.getRange());
+		feeder.finish();
 	}
 	
 	

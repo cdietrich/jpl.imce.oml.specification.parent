@@ -1950,7 +1950,7 @@ class ScalarDataPropertyValue extends TerminologyInstanceAssertion {
 class StructuredDataPropertyValue extends TerminologyInstanceAssertion {
 	container SingletonInstance[1] singletonInstance opposite structuredDataPropertyValues
 	refers DataRelationshipToStructure[1] structuredDataProperty
-	container DataStructureTuple[1] structuredPropertyTuple opposite structuredDataPropertyValue
+	contains DataStructureTuple[1] structuredPropertyTuple opposite structuredDataPropertyValue
 }
 
 /*

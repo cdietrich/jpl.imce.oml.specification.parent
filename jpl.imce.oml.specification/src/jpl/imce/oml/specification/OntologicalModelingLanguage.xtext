@@ -449,10 +449,7 @@ DescriptionBox returns DescriptionBox:
 	  reifiedRelationshipInstances+=ReifiedRelationshipInstance |
 	  reifiedRelationshipInstanceDomains+=ReifiedRelationshipInstanceDomain|
 	  reifiedRelationshipInstanceRanges+=ReifiedRelationshipInstanceRange |
-	  unreifiedRelationshipInstanceTuples+=UnreifiedRelationshipInstanceTuple |
-	  dataStructureTuples+=DataStructureTuple |
-	  scalarDataPropertyValues+=ScalarDataPropertyValue |
-	  structuredDataPropertyValues+=StructuredDataPropertyValue
+	  unreifiedRelationshipInstanceTuples+=UnreifiedRelationshipInstanceTuple
 	)*
 	RCURLY;
 
@@ -480,16 +477,14 @@ ScalarDataPropertyValue returns ScalarDataPropertyValue:
 	'ScalarDataPropertyValue'
 	LCURLY
 		'scalarPropertyValue' scalarPropertyValue=Reference
-		'singletonInstance' singletonInstance=[SingletonInstance|Reference]
 		'scalarDataProperty' scalarDataProperty=[DataRelationshipToScalar|Reference]
 	RCURLY;
 
 StructuredDataPropertyValue returns StructuredDataPropertyValue:
 	'StructuredDataPropertyValue'
 	LCURLY
-		'singletonInstance' singletonInstance=[SingletonInstance|Reference]
 		'structuredDataProperty' structuredDataProperty=[DataRelationshipToStructure|Reference]
-		'structuredPropertyTuple' structuredPropertyTuple=[DataStructureTuple|Reference]
+		'structuredPropertyTuple' structuredPropertyTuple=DataStructureTuple
 	RCURLY;
 
 DataStructureTuple returns DataStructureTuple:
@@ -501,16 +496,12 @@ DataStructureTuple returns DataStructureTuple:
 ConceptInstance returns ConceptInstance:
 	'ConceptInstance'
 	LCURLY
-		('identifyingScalarValues' '(' identifyingScalarValues+=[ScalarDataPropertyValue|Reference] ( "," identifyingScalarValues+=[ScalarDataPropertyValue|Reference])* ')' )?
-		('identifyingStructuredTuples' '(' identifyingStructuredTuples+=[DataStructureTuple|Reference] ( "," identifyingStructuredTuples+=[DataStructureTuple|Reference])* ')' )?
 		'singletonConceptClassifier' singletonConceptClassifier=[Concept|Reference]
 	RCURLY;
 
 ReifiedRelationshipInstance returns ReifiedRelationshipInstance:
 	'ReifiedRelationshipInstance'
 	LCURLY
-		('identifyingScalarValues' '(' identifyingScalarValues+=[ScalarDataPropertyValue|Reference] ( "," identifyingScalarValues+=[ScalarDataPropertyValue|Reference])* ')' )?
-		('identifyingStructuredTuples' '(' identifyingStructuredTuples+=[DataStructureTuple|Reference] ( "," identifyingStructuredTuples+=[DataStructureTuple|Reference])* ')' )?
 		'singletonReifiedRelationshipClassifier' singletonReifiedRelationshipClassifier=[ReifiedRelationship|Reference]
 	RCURLY;
 

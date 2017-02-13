@@ -42,28 +42,28 @@ package jpl.imce.oml.specification.ecore;
  */
 public interface DataStructureTuple extends SingletonInstance {
 	/**
-	 * Returns the value of the '<em><b>Structured Data Property Value</b></em>' reference.
+	 * Returns the value of the '<em><b>Structured Data Property Value</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getStructuredPropertyTuple <em>Structured Property Tuple</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Structured Data Property Value</em>' reference isn't clear,
+	 * If the meaning of the '<em>Structured Data Property Value</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Structured Data Property Value</em>' reference.
+	 * @return the value of the '<em>Structured Data Property Value</em>' container reference.
 	 * @see #setStructuredDataPropertyValue(StructuredDataPropertyValue)
 	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDataStructureTuple_StructuredDataPropertyValue()
 	 * @see jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getStructuredPropertyTuple
-	 * @model opposite="structuredPropertyTuple" required="true"
+	 * @model opposite="structuredPropertyTuple" required="true" transient="false"
 	 * @generated
 	 */
 	StructuredDataPropertyValue getStructuredDataPropertyValue();
 
 	/**
-	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.DataStructureTuple#getStructuredDataPropertyValue <em>Structured Data Property Value</em>}' reference.
+	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.DataStructureTuple#getStructuredDataPropertyValue <em>Structured Data Property Value</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Structured Data Property Value</em>' reference.
+	 * @param value the new value of the '<em>Structured Data Property Value</em>' container reference.
 	 * @see #getStructuredDataPropertyValue()
 	 * @generated
 	 */
