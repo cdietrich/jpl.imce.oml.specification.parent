@@ -59,26 +59,26 @@ public class DataStructureTupleItemProvider extends SingletonInstanceItemProvide
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDescriptionBoxPropertyDescriptor(object);
+			addStructuredDataPropertyValuePropertyDescriptor(object);
 			addDataStructureTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Description Box feature.
+	 * This adds a property descriptor for the Structured Data Property Value feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDescriptionBoxPropertyDescriptor(Object object) {
+	protected void addStructuredDataPropertyValuePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DataStructureTuple_descriptionBox_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DataStructureTuple_descriptionBox_feature", "_UI_DataStructureTuple_type"),
-				 OMLPackage.Literals.DATA_STRUCTURE_TUPLE__DESCRIPTION_BOX,
+				 getString("_UI_DataStructureTuple_structuredDataPropertyValue_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataStructureTuple_structuredDataPropertyValue_feature", "_UI_DataStructureTuple_type"),
+				 OMLPackage.Literals.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE,
 				 true,
 				 false,
 				 true,
@@ -128,7 +128,7 @@ public class DataStructureTupleItemProvider extends SingletonInstanceItemProvide
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DataStructureTuple)object).getUuid();
+		String label = ((DataStructureTuple)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_DataStructureTuple_type") :
 			getString("_UI_DataStructureTuple_type") + " " + label;

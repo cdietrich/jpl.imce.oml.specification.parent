@@ -22,10 +22,10 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class ScalarOneOfRestriction private[impl] 
 (
- override val graph: TerminologyBox,
  override val uuid: java.util.UUID,
- override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName,
- override val restrictedRange: DataRange
+ override val tbox: TerminologyBox,
+ override val restrictedRange: DataRange,
+ override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName
 )
 extends resolver.api.ScalarOneOfRestriction
   with RestrictedDataRange
@@ -38,15 +38,15 @@ extends resolver.api.ScalarOneOfRestriction
 
   override val hashCode
   : scala.Int
-  = (graph, uuid, name, restrictedRange).##
+  = (uuid, tbox, restrictedRange, name).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: ScalarOneOfRestriction =>
 	    (that canEqual this) &&
-	    (this.graph == that.graph) &&
 	    (this.uuid == that.uuid) &&
-	    (this.name == that.name) &&
-	    (this.restrictedRange == that.restrictedRange)
+	    (this.tbox == that.tbox) &&
+	    (this.restrictedRange == that.restrictedRange) &&
+	    (this.name == that.name)
 
 	  case _ =>
 	    false

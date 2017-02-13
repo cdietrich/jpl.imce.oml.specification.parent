@@ -22,7 +22,7 @@ import gov.nasa.jpl.imce.oml.specification._
 
 trait TerminologyBundleStatement
 extends resolver.api.TerminologyBundleStatement
-  with TerminologyStatement
+  with TerminologyThing
 {
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {

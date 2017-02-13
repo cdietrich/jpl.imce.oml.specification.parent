@@ -22,15 +22,15 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class PlainLiteralScalarRestriction private[impl] 
 (
- override val graph: TerminologyBox,
  override val uuid: java.util.UUID,
- override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName,
- override val language: scala.Option[gov.nasa.jpl.imce.oml.specification.tables.Language],
+ override val tbox: TerminologyBox,
+ override val restrictedRange: DataRange,
  override val length: scala.Option[scala.Int],
- override val maxLength: scala.Option[scala.Int],
  override val minLength: scala.Option[scala.Int],
- override val pattern: scala.Option[gov.nasa.jpl.imce.oml.specification.tables.Pattern],
- override val restrictedRange: DataRange
+ override val maxLength: scala.Option[scala.Int],
+ override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName,
+ override val langRange: scala.Option[resolver.api.LangRange],
+ override val pattern: scala.Option[gov.nasa.jpl.imce.oml.specification.tables.Pattern]
 )
 extends resolver.api.PlainLiteralScalarRestriction
   with RestrictedDataRange
@@ -43,20 +43,20 @@ extends resolver.api.PlainLiteralScalarRestriction
 
   override val hashCode
   : scala.Int
-  = (graph, uuid, name, language, length, maxLength, minLength, pattern, restrictedRange).##
+  = (uuid, tbox, restrictedRange, length, minLength, maxLength, name, langRange, pattern).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: PlainLiteralScalarRestriction =>
 	    (that canEqual this) &&
-	    (this.graph == that.graph) &&
 	    (this.uuid == that.uuid) &&
-	    (this.name == that.name) &&
-	    (this.language == that.language) &&
+	    (this.tbox == that.tbox) &&
+	    (this.restrictedRange == that.restrictedRange) &&
 	    (this.length == that.length) &&
-	    (this.maxLength == that.maxLength) &&
 	    (this.minLength == that.minLength) &&
-	    (this.pattern == that.pattern) &&
-	    (this.restrictedRange == that.restrictedRange)
+	    (this.maxLength == that.maxLength) &&
+	    (this.name == that.name) &&
+	    (this.langRange == that.langRange) &&
+	    (this.pattern == that.pattern)
 
 	  case _ =>
 	    false

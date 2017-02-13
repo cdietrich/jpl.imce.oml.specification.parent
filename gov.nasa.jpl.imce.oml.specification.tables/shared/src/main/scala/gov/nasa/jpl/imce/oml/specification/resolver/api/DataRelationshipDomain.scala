@@ -18,6 +18,10 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML DataRelationshipDomain is an abstraction
+ * for the domain of an OML DataRelationship
+ */
 trait DataRelationshipDomain
 {
 }

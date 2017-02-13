@@ -18,6 +18,9 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML Axiom maps to a pattern of [OWL2 Axioms].
+ */
 trait Axiom
   extends TerminologyBoxStatement
 {

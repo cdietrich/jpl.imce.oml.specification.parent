@@ -18,6 +18,10 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML EntityExistentialRestrictionAxiom maps
+ * to an [OWL2 Object Property Existential Restriction].
+ */
 trait EntityExistentialRestrictionAxiom
   extends EntityRestrictionAxiom
 {

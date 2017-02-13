@@ -27,7 +27,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- begin-model-doc -->
  * An OML BundledTerminologyAxiom identifies an OML TerminologyBox that an OML Bundle aggregates.
  * An OML BundledTerminologyAxiom allows an OML Bundle to
- * make references (via OML TerminologyStatements) to OML TerminologyThings
+ * make references (via OML TerminologyStatement(s)) to OML TerminologyThing(s)
  * within the transitive closure of a bundledTerminology.
  * <!-- end-model-doc -->
  *

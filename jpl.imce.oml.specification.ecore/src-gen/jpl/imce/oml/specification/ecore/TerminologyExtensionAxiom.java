@@ -26,8 +26,8 @@ package jpl.imce.oml.specification.ecore;
  *
  * <!-- begin-model-doc -->
  * An OML TerminologyExtensionAxiom allows an extendingTerminology to
- * make references (via TerminologyStatements) to TerminologyThings
- * within the transitive closure of the extendedTerminlogy.
+ * make references (via OML TerminologyBoxStatement(s)) to OML TerminologyThing(s)
+ * declared within the transitive closure of the extendedTerminlogy.
  * <!-- end-model-doc -->
  *
  * <p>

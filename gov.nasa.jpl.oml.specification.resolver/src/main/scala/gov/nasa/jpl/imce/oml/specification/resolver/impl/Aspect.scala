@@ -22,8 +22,8 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class Aspect private[impl] 
 (
- override val graph: TerminologyBox,
  override val uuid: java.util.UUID,
+ override val tbox: TerminologyBox,
  override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName
 )
 extends resolver.api.Aspect
@@ -38,13 +38,13 @@ extends resolver.api.Aspect
 
   override val hashCode
   : scala.Int
-  = (graph, uuid, name).##
+  = (uuid, tbox, name).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: Aspect =>
 	    (that canEqual this) &&
-	    (this.graph == that.graph) &&
 	    (this.uuid == that.uuid) &&
+	    (this.tbox == that.tbox) &&
 	    (this.name == that.name)
 
 	  case _ =>

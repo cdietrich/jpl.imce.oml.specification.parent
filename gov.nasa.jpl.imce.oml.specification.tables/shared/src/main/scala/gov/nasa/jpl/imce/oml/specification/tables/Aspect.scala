@@ -25,25 +25,25 @@ import scala._
 import scala.Predef._
 
 /**
-  * @param graphUUID[1,1]
   * @param uuid[1,1]
+  * @param tboxUUID[1,1]
   * @param name[1,1]
   */
 @JSExport
 case class Aspect
 (
-  @(JSExport @field) graphUUID: UUID,
   @(JSExport @field) uuid: UUID,
+  @(JSExport @field) tboxUUID: UUID,
   @(JSExport @field) name: LocalName
 ) {
   override val hashCode
   : scala.Int 
-  = (graphUUID, uuid, name).##
+  = (uuid, tboxUUID, name).##
   
   override def equals(other: scala.Any): scala.Boolean = other match {
   	case that: Aspect =>
-  	  (this.graphUUID == that.graphUUID) &&
   	  (this.uuid == that.uuid) &&
+  	  (this.tboxUUID == that.tboxUUID) &&
   	  (this.name == that.name)
     case _ =>
       false

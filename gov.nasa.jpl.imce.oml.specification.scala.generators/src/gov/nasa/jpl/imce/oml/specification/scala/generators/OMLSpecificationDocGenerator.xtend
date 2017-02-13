@@ -69,10 +69,10 @@ class OMLSpecificationDocGenerator extends OMLUtilities {
 
 			val entriesByAbstraction = glossaryEntries.groupBy[isAbstract]
 			val schemaEntries = entriesByAbstraction.get(false).filter[isSchema]
-			val apiEntries = entriesByAbstraction.get(false).filter[isAPI]
+			val apiEntries = entriesByAbstraction.get(false).filter[isAPI && !isSchema]
 			val ooEntries = entriesByAbstraction.get(false).filter[isOO]
 
-			val preamble = new StringBuffer('''
+			val b1 = new StringBuffer('''
 				{% include "./external-links.md" %}
 				# OML Glossary Summary
 				
@@ -100,24 +100,37 @@ class OMLSpecificationDocGenerator extends OMLUtilities {
 				- **Functional** OMF APIs and libraries in Scala for in-memory processing of OML tabular interchange representations
 				
 				  A subset of «apiEntries.size» definitions from the «entriesByAbstraction.get(false).size» concrete definitions
-				  augment the polyglot functional programming OMF APIs for the in-memory processing of OMF information
+				  augment the normalized OMF APIs for the in-memory processing of OMF information
 				  extracted from parsing the OML tabular interchange representation.
 				
 				# OML Glossary of «entriesByAbstraction.get(true).size» Abstract Definitions {#oml-abstract-glossary}
 				''')
 			
-			val abstractGlossary = entriesByAbstraction.get(true).fold(
-				preamble,
+			val b2 = entriesByAbstraction.get(true).fold(
+				b1,
 				[buffer, eClass|generateClassGlossaryContents(buffer, eClass)]
 			)
 			
-			abstractGlossary.append("\n"+'''# OML Glossary of «entriesByAbstraction.get(false).size» Concrete Definitions {#oml-concrete-glossary}''' +"\n")
+			b2.append("\n"+'''# OML Glossary of «entriesByAbstraction.get(false).size» Concrete Definitions {#oml-concrete-glossary}''' +"\n")
+			b2.append("\n"+'''# OML Glossary of «schemaEntries.size» Schema Concrete Definitions {#oml-schema-concrete-glossary}''' +"\n")
 			
-			val concreteGlossary = entriesByAbstraction.get(false).fold(
-				abstractGlossary,
+			val b3 = schemaEntries.sortWith(new OMLTableCompare()).fold(
+				b2,
 				[buffer, eClass|generateClassGlossaryContents(buffer, eClass)])
 
-			glossaryFile.write(concreteGlossary.toString.bytes)
+			b3.append("\n"+'''# OML Glossary of «apiEntries.size» Functional API Concrete Definitions {#oml-functional-concrete-glossary}''' +"\n")
+			
+			val b4 = apiEntries.fold(
+				b3,
+				[buffer, eClass|generateClassGlossaryContents(buffer, eClass)])
+
+			b4.append("\n"+'''# OML Glossary of «ooEntries.size» EMF/CDO API Concrete Definitions {#oml-emf-cdo-concrete-glossary}''' +"\n")
+			
+			val b5 = ooEntries.fold(
+				b4,
+				[buffer, eClass|generateClassGlossaryContents(buffer, eClass)])
+
+			glossaryFile.write(b5.toString.bytes)
 			
 		} finally {
 			glossaryFile.close
@@ -143,7 +156,7 @@ class OMLSpecificationDocGenerator extends OMLUtilities {
 			buffer.append(prefix + "**Functional**");
 			prefix = ", "
 		}
-		if (eClass.isSchema) {
+		if (eClass.isOO) {
 			buffer.append(prefix + "**EMF/CDO**");
 			prefix = ", "
 		}
@@ -163,7 +176,15 @@ class OMLSpecificationDocGenerator extends OMLUtilities {
 			buffer.append(
 				"\n" +
 					'''«FOR s : specific BEFORE '''«sprefix» with «specific.size» «pluralizeIfMany("specialization", specific.size)»:'''+"\n" SEPARATOR "\n" AFTER "\n"» - OML «s.name»«ENDFOR»''')
-
+		else if (eClass.isSchema)
+			buffer.append(
+			"\nNormalized Relational Schema Table:\n"+'''
+			«FOR attr : eClass.functionalAPIOrOrderingKeyAttributes»
+				- «attr.columnName»: «attr.schemaColumnTypeDescription»
+			«ENDFOR»	
+			'''
+			)
+		
 		buffer
 	}
 

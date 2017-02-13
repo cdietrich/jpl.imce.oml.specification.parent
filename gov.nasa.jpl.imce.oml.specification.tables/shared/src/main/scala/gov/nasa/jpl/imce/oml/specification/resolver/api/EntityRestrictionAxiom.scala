@@ -18,11 +18,15 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML EntityRestrictionAxiom maps to an [OWL2 Object Property Restiction]
+ * for an OML EntityRelationship.
+ */
 trait EntityRestrictionAxiom
   extends TermAxiom
 {
 
-  val restrictedRelation: ReifiedRelationship
+  val restrictedRelation: EntityRelationship
   val restrictedRange: Entity
   val restrictedDomain: Entity
 }

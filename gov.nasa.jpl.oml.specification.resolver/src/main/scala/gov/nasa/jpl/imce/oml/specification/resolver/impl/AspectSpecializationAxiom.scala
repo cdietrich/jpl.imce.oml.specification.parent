@@ -22,10 +22,10 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class AspectSpecializationAxiom private[impl] 
 (
- override val graph: TerminologyBox,
  override val uuid: java.util.UUID,
- override val subEntity: Entity,
- override val superAspect: Aspect
+ override val tbox: TerminologyBox,
+ override val superAspect: Aspect,
+ override val subEntity: Entity
 )
 extends resolver.api.AspectSpecializationAxiom
   with SpecializationAxiom
@@ -43,7 +43,7 @@ extends resolver.api.AspectSpecializationAxiom
    */
   override def child
   ()
-  : Term
+  : Entity
   = {
     subEntity
   }
@@ -53,7 +53,7 @@ extends resolver.api.AspectSpecializationAxiom
    */
   override def parent
   ()
-  : Term
+  : Entity
   = {
     superAspect
   }
@@ -66,15 +66,15 @@ extends resolver.api.AspectSpecializationAxiom
 
   override val hashCode
   : scala.Int
-  = (graph, uuid, subEntity, superAspect).##
+  = (uuid, tbox, superAspect, subEntity).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: AspectSpecializationAxiom =>
 	    (that canEqual this) &&
-	    (this.graph == that.graph) &&
 	    (this.uuid == that.uuid) &&
-	    (this.subEntity == that.subEntity) &&
-	    (this.superAspect == that.superAspect)
+	    (this.tbox == that.tbox) &&
+	    (this.superAspect == that.superAspect) &&
+	    (this.subEntity == that.subEntity)
 
 	  case _ =>
 	    false

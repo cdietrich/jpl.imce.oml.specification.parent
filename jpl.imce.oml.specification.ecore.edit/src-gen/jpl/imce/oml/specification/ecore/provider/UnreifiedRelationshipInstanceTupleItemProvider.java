@@ -174,7 +174,7 @@ public class UnreifiedRelationshipInstanceTupleItemProvider extends TerminologyI
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((UnreifiedRelationshipInstanceTuple)object).getUuid();
+		String label = ((UnreifiedRelationshipInstanceTuple)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_UnreifiedRelationshipInstanceTuple_type") :
 			getString("_UI_UnreifiedRelationshipInstanceTuple_type") + " " + label;

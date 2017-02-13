@@ -25,27 +25,27 @@ import scala._
 import scala.Predef._
 
 /**
-  * @param graphUUID[1,1]
   * @param uuid[1,1]
+  * @param tboxUUID[1,1]
   * @param isAbstract[1,1]
   * @param name[1,1]
   */
 @JSExport
 case class Concept
 (
-  @(JSExport @field) graphUUID: UUID,
   @(JSExport @field) uuid: UUID,
+  @(JSExport @field) tboxUUID: UUID,
   @(JSExport @field) isAbstract: scala.Boolean,
   @(JSExport @field) name: LocalName
 ) {
   override val hashCode
   : scala.Int 
-  = (graphUUID, uuid, isAbstract, name).##
+  = (uuid, tboxUUID, isAbstract, name).##
   
   override def equals(other: scala.Any): scala.Boolean = other match {
   	case that: Concept =>
-  	  (this.graphUUID == that.graphUUID) &&
   	  (this.uuid == that.uuid) &&
+  	  (this.tboxUUID == that.tboxUUID) &&
   	  (this.isAbstract == that.isAbstract) &&
   	  (this.name == that.name)
     case _ =>

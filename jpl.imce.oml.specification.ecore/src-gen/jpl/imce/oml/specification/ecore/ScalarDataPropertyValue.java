@@ -33,7 +33,6 @@ package jpl.imce.oml.specification.ecore;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link jpl.imce.oml.specification.ecore.ScalarDataPropertyValue#getDescriptionBox <em>Description Box</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.ScalarDataPropertyValue#getSingletonInstance <em>Singleton Instance</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.ScalarDataPropertyValue#getScalarDataProperty <em>Scalar Data Property</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.ScalarDataPropertyValue#getScalarPropertyValue <em>Scalar Property Value</em>}</li>
@@ -45,54 +44,28 @@ package jpl.imce.oml.specification.ecore;
  */
 public interface ScalarDataPropertyValue extends TerminologyInstanceAssertion {
 	/**
-	 * Returns the value of the '<em><b>Description Box</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getScalarDataPropertyValues <em>Scalar Data Property Values</em>}'.
+	 * Returns the value of the '<em><b>Singleton Instance</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.SingletonInstance#getScalarDataPropertyValues <em>Scalar Data Property Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Description Box</em>' container reference isn't clear,
+	 * If the meaning of the '<em>Singleton Instance</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Description Box</em>' container reference.
-	 * @see #setDescriptionBox(DescriptionBox)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getScalarDataPropertyValue_DescriptionBox()
-	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getScalarDataPropertyValues
-	 * @model opposite="scalarDataPropertyValues" required="true" transient="false"
-	 * @generated
-	 */
-	DescriptionBox getDescriptionBox();
-
-	/**
-	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.ScalarDataPropertyValue#getDescriptionBox <em>Description Box</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description Box</em>' container reference.
-	 * @see #getDescriptionBox()
-	 * @generated
-	 */
-	void setDescriptionBox(DescriptionBox value);
-
-	/**
-	 * Returns the value of the '<em><b>Singleton Instance</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Singleton Instance</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Singleton Instance</em>' reference.
+	 * @return the value of the '<em>Singleton Instance</em>' container reference.
 	 * @see #setSingletonInstance(SingletonInstance)
 	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getScalarDataPropertyValue_SingletonInstance()
-	 * @model required="true"
+	 * @see jpl.imce.oml.specification.ecore.SingletonInstance#getScalarDataPropertyValues
+	 * @model opposite="scalarDataPropertyValues" required="true" transient="false"
 	 * @generated
 	 */
 	SingletonInstance getSingletonInstance();
 
 	/**
-	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.ScalarDataPropertyValue#getSingletonInstance <em>Singleton Instance</em>}' reference.
+	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.ScalarDataPropertyValue#getSingletonInstance <em>Singleton Instance</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Singleton Instance</em>' reference.
+	 * @param value the new value of the '<em>Singleton Instance</em>' container reference.
 	 * @see #getSingletonInstance()
 	 * @generated
 	 */

@@ -22,12 +22,11 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class ReifiedRelationship private[impl] 
 (
- override val graph: TerminologyBox,
  override val uuid: java.util.UUID,
+ override val tbox: TerminologyBox,
+ override val source: Entity,
+ override val target: Entity,
  override val isAbstract: scala.Boolean,
- override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName,
- override val unreifiedPropertyName: gov.nasa.jpl.imce.oml.specification.tables.LocalName,
- override val unreifiedInversePropertyName: scala.Option[gov.nasa.jpl.imce.oml.specification.tables.LocalName],
  override val isAsymmetric: scala.Boolean,
  override val isEssential: scala.Boolean,
  override val isFunctional: scala.Boolean,
@@ -37,12 +36,14 @@ case class ReifiedRelationship private[impl]
  override val isReflexive: scala.Boolean,
  override val isSymmetric: scala.Boolean,
  override val isTransitive: scala.Boolean,
- override val source: Entity,
- override val target: Entity
+ override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName,
+ override val unreifiedPropertyName: gov.nasa.jpl.imce.oml.specification.tables.LocalName,
+ override val unreifiedInversePropertyName: scala.Option[gov.nasa.jpl.imce.oml.specification.tables.LocalName]
 )
 extends resolver.api.ReifiedRelationship
   with EntityRelationship
   with Entity
+  with ConceptualEntity
 {
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
@@ -52,17 +53,16 @@ extends resolver.api.ReifiedRelationship
 
   override val hashCode
   : scala.Int
-  = (graph, uuid, isAbstract, name, unreifiedPropertyName, unreifiedInversePropertyName, isAsymmetric, isEssential, isFunctional, isInverseEssential, isInverseFunctional, isIrreflexive, isReflexive, isSymmetric, isTransitive, source, target).##
+  = (uuid, tbox, source, target, isAbstract, isAsymmetric, isEssential, isFunctional, isInverseEssential, isInverseFunctional, isIrreflexive, isReflexive, isSymmetric, isTransitive, name, unreifiedPropertyName, unreifiedInversePropertyName).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: ReifiedRelationship =>
 	    (that canEqual this) &&
-	    (this.graph == that.graph) &&
 	    (this.uuid == that.uuid) &&
+	    (this.tbox == that.tbox) &&
+	    (this.source == that.source) &&
+	    (this.target == that.target) &&
 	    (this.isAbstract == that.isAbstract) &&
-	    (this.name == that.name) &&
-	    (this.unreifiedPropertyName == that.unreifiedPropertyName) &&
-	    (this.unreifiedInversePropertyName == that.unreifiedInversePropertyName) &&
 	    (this.isAsymmetric == that.isAsymmetric) &&
 	    (this.isEssential == that.isEssential) &&
 	    (this.isFunctional == that.isFunctional) &&
@@ -72,8 +72,9 @@ extends resolver.api.ReifiedRelationship
 	    (this.isReflexive == that.isReflexive) &&
 	    (this.isSymmetric == that.isSymmetric) &&
 	    (this.isTransitive == that.isTransitive) &&
-	    (this.source == that.source) &&
-	    (this.target == that.target)
+	    (this.name == that.name) &&
+	    (this.unreifiedPropertyName == that.unreifiedPropertyName) &&
+	    (this.unreifiedInversePropertyName == that.unreifiedInversePropertyName)
 
 	  case _ =>
 	    false

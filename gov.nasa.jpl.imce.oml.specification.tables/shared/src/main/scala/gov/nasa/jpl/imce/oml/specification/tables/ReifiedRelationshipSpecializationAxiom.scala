@@ -25,29 +25,29 @@ import scala._
 import scala.Predef._
 
 /**
-  * @param graphUUID[1,1]
   * @param uuid[1,1]
-  * @param subRelationshipUUID[1,1]
+  * @param tboxUUID[1,1]
   * @param superRelationshipUUID[1,1]
+  * @param subRelationshipUUID[1,1]
   */
 @JSExport
 case class ReifiedRelationshipSpecializationAxiom
 (
-  @(JSExport @field) graphUUID: UUID,
   @(JSExport @field) uuid: UUID,
-  @(JSExport @field) subRelationshipUUID: UUID,
-  @(JSExport @field) superRelationshipUUID: UUID
+  @(JSExport @field) tboxUUID: UUID,
+  @(JSExport @field) superRelationshipUUID: UUID,
+  @(JSExport @field) subRelationshipUUID: UUID
 ) {
   override val hashCode
   : scala.Int 
-  = (graphUUID, uuid, subRelationshipUUID, superRelationshipUUID).##
+  = (uuid, tboxUUID, superRelationshipUUID, subRelationshipUUID).##
   
   override def equals(other: scala.Any): scala.Boolean = other match {
   	case that: ReifiedRelationshipSpecializationAxiom =>
-  	  (this.graphUUID == that.graphUUID) &&
   	  (this.uuid == that.uuid) &&
-  	  (this.subRelationshipUUID == that.subRelationshipUUID) &&
-  	  (this.superRelationshipUUID == that.superRelationshipUUID)
+  	  (this.tboxUUID == that.tboxUUID) &&
+  	  (this.superRelationshipUUID == that.superRelationshipUUID) &&
+  	  (this.subRelationshipUUID == that.subRelationshipUUID)
     case _ =>
       false
   }

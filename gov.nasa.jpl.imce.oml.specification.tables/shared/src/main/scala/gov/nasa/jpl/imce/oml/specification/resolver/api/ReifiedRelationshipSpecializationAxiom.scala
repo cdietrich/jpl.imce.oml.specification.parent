@@ -18,6 +18,11 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML ReifiedRelationshipSpecializationAxiom is a logical axiom
+ * about a taxonomic relationship between a specific and general
+ * OML ReifiedRelationship.
+ */
 trait ReifiedRelationshipSpecializationAxiom
   extends SpecializationAxiom
 {
@@ -35,10 +40,10 @@ trait ReifiedRelationshipSpecializationAxiom
    * Get the sub (child) entity
    */
   override def child
-  (): Term
+  (): Entity
   /*
    * Get the super (parent) entity
    */
   override def parent
-  (): Term
+  (): Entity
 }

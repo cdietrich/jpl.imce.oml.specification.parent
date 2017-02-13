@@ -32,7 +32,7 @@ package jpl.imce.oml.specification.ecore;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link jpl.imce.oml.specification.ecore.DataStructureTuple#getDescriptionBox <em>Description Box</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.DataStructureTuple#getStructuredDataPropertyValue <em>Structured Data Property Value</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.DataStructureTuple#getDataStructureType <em>Data Structure Type</em>}</li>
  * </ul>
  *
@@ -42,32 +42,32 @@ package jpl.imce.oml.specification.ecore;
  */
 public interface DataStructureTuple extends SingletonInstance {
 	/**
-	 * Returns the value of the '<em><b>Description Box</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getDataStructureTuples <em>Data Structure Tuples</em>}'.
+	 * Returns the value of the '<em><b>Structured Data Property Value</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getStructuredPropertyTuple <em>Structured Property Tuple</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Description Box</em>' container reference isn't clear,
+	 * If the meaning of the '<em>Structured Data Property Value</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Description Box</em>' container reference.
-	 * @see #setDescriptionBox(DescriptionBox)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDataStructureTuple_DescriptionBox()
-	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getDataStructureTuples
-	 * @model opposite="dataStructureTuples" required="true" transient="false"
+	 * @return the value of the '<em>Structured Data Property Value</em>' reference.
+	 * @see #setStructuredDataPropertyValue(StructuredDataPropertyValue)
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDataStructureTuple_StructuredDataPropertyValue()
+	 * @see jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getStructuredPropertyTuple
+	 * @model opposite="structuredPropertyTuple" required="true"
 	 * @generated
 	 */
-	DescriptionBox getDescriptionBox();
+	StructuredDataPropertyValue getStructuredDataPropertyValue();
 
 	/**
-	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.DataStructureTuple#getDescriptionBox <em>Description Box</em>}' container reference.
+	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.DataStructureTuple#getStructuredDataPropertyValue <em>Structured Data Property Value</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description Box</em>' container reference.
-	 * @see #getDescriptionBox()
+	 * @param value the new value of the '<em>Structured Data Property Value</em>' reference.
+	 * @see #getStructuredDataPropertyValue()
 	 * @generated
 	 */
-	void setDescriptionBox(DescriptionBox value);
+	void setStructuredDataPropertyValue(StructuredDataPropertyValue value);
 
 	/**
 	 * Returns the value of the '<em><b>Data Structure Type</b></em>' reference.

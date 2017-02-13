@@ -22,10 +22,10 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class ReifiedRelationshipSpecializationAxiom private[impl] 
 (
- override val graph: TerminologyBox,
  override val uuid: java.util.UUID,
- override val subRelationship: ReifiedRelationship,
- override val superRelationship: ReifiedRelationship
+ override val tbox: TerminologyBox,
+ override val superRelationship: ReifiedRelationship,
+ override val subRelationship: ReifiedRelationship
 )
 extends resolver.api.ReifiedRelationshipSpecializationAxiom
   with SpecializationAxiom
@@ -35,7 +35,7 @@ extends resolver.api.ReifiedRelationshipSpecializationAxiom
    */
   override def child
   ()
-  : Term
+  : Entity
   = {
     subRelationship
   }
@@ -45,7 +45,7 @@ extends resolver.api.ReifiedRelationshipSpecializationAxiom
    */
   override def parent
   ()
-  : Term
+  : Entity
   = {
     superRelationship
   }
@@ -58,15 +58,15 @@ extends resolver.api.ReifiedRelationshipSpecializationAxiom
 
   override val hashCode
   : scala.Int
-  = (graph, uuid, subRelationship, superRelationship).##
+  = (uuid, tbox, superRelationship, subRelationship).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: ReifiedRelationshipSpecializationAxiom =>
 	    (that canEqual this) &&
-	    (this.graph == that.graph) &&
 	    (this.uuid == that.uuid) &&
-	    (this.subRelationship == that.subRelationship) &&
-	    (this.superRelationship == that.superRelationship)
+	    (this.tbox == that.tbox) &&
+	    (this.superRelationship == that.superRelationship) &&
+	    (this.subRelationship == that.subRelationship)
 
 	  case _ =>
 	    false

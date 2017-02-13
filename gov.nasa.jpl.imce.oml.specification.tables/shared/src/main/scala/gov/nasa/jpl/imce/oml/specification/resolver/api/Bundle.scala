@@ -19,9 +19,9 @@
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
- * A Bundle is a concrete TerminologyBox that is
- * an acyclic logical aggregate of other TerminologyBoxes (see TerminologyBundleAxiom)
- * and that can assert concept disjunctions (See TerminologyBundleStatement)
+ * An OML Bundle is an OML TerminologyBox that is
+ * an acyclic logical aggregate of other OML TerminologyBox(es)
+ * and that logically assert OML TerminologyBundleStatement(s).
  */
 trait Bundle
   extends TerminologyBox

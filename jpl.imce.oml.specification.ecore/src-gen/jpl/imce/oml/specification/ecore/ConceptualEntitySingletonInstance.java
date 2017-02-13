@@ -38,13 +38,6 @@ import org.eclipse.emf.common.util.EList;
  *   represent semantically different instances.
  * <!-- end-model-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance#getIdentifyingScalarValues <em>Identifying Scalar Values</em>}</li>
- *   <li>{@link jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance#getIdentifyingStructuredTuples <em>Identifying Structured Tuples</em>}</li>
- * </ul>
  *
  * @see jpl.imce.oml.specification.ecore.OMLPackage#getConceptualEntitySingletonInstance()
  * @model abstract="true"
@@ -52,43 +45,33 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface ConceptualEntitySingletonInstance extends SingletonInstance {
 	/**
-	 * Returns the value of the '<em><b>Identifying Scalar Values</b></em>' reference list.
-	 * The list contents are of type {@link jpl.imce.oml.specification.ecore.ScalarDataPropertyValue}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Identifying Scalar Values</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Identifying Scalar Values</em>' reference list.
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getConceptualEntitySingletonInstance_IdentifyingScalarValues()
-	 * @model annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
-	 * @generated
-	 */
-	EList<ScalarDataPropertyValue> getIdentifyingScalarValues();
-
-	/**
-	 * Returns the value of the '<em><b>Identifying Structured Tuples</b></em>' reference list.
-	 * The list contents are of type {@link jpl.imce.oml.specification.ecore.DataStructureTuple}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Identifying Structured Tuples</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Identifying Structured Tuples</em>' reference list.
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getConceptualEntitySingletonInstance_IdentifyingStructuredTuples()
-	 * @model annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
-	 * @generated
-	 */
-	EList<DataStructureTuple> getIdentifyingStructuredTuples();
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model unique="false" required="true"
 	 * @generated
 	 */
 	ConceptualEntity conceptualEntitySingletonClassifier();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%org.eclipse.emf.common.util.EList%><<%jpl.imce.oml.specification.ecore.ScalarDataPropertyValue%>> _scalarDataPropertyValues = this.getScalarDataPropertyValues();\nfinal <%org.eclipse.xtext.xbase.lib.Functions.Function1%><<%jpl.imce.oml.specification.ecore.ScalarDataPropertyValue%>, <%java.lang.Boolean%>> _function = new <%org.eclipse.xtext.xbase.lib.Functions.Function1%><<%jpl.imce.oml.specification.ecore.ScalarDataPropertyValue%>, <%java.lang.Boolean%>>()\n{\n\tpublic <%java.lang.Boolean%> apply(final <%jpl.imce.oml.specification.ecore.ScalarDataPropertyValue%> v)\n\t{\n\t\tboolean _xblockexpression = false;\n\t\t{\n\t\t\tfinal <%jpl.imce.oml.specification.ecore.DataRelationshipToScalar%> p = v.getScalarDataProperty();\n\t\t\tboolean _switchResult = false;\n\t\t\tboolean _matched = false;\n\t\t\tif (p instanceof <%jpl.imce.oml.specification.ecore.EntityScalarDataProperty%>)\n\t\t\t{\n\t\t\t\t_matched=true;\n\t\t\t\t_switchResult = ((<%jpl.imce.oml.specification.ecore.EntityScalarDataProperty%>)p).isIsIdentityCriteria();\n\t\t\t}\n\t\t\tif (!_matched)\n\t\t\t{\n\t\t\t\t_switchResult = false;\n\t\t\t}\n\t\t\t_xblockexpression = _switchResult;\n\t\t}\n\t\treturn <%java.lang.Boolean%>.valueOf(_xblockexpression);\n\t}\n};\n<%java.lang.Iterable%><<%jpl.imce.oml.specification.ecore.ScalarDataPropertyValue%>> _filter = <%org.eclipse.xtext.xbase.lib.IterableExtensions%>.<<%jpl.imce.oml.specification.ecore.ScalarDataPropertyValue%>>filter(_scalarDataPropertyValues, _function);\nreturn <%org.eclipse.emf.common.util.ECollections%>.<<%jpl.imce.oml.specification.ecore.ScalarDataPropertyValue%>>asEList(((<%jpl.imce.oml.specification.ecore.ScalarDataPropertyValue%>[])org.eclipse.xtext.xbase.lib.Conversions.unwrapArray(_filter, <%jpl.imce.oml.specification.ecore.ScalarDataPropertyValue%>.class)));'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scalarDataPropertyValues.filter{ v =>\n\t  v.scalarDataProperty match {\n\t    case ep: EntityScalarDataProperty =>\n\t\t  ep.isIdentityCriteria\n\t    case _ =>\n\t      false\n\t  }}'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<ScalarDataPropertyValue> identifyingScalarValues();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%org.eclipse.emf.common.util.EList%><<%jpl.imce.oml.specification.ecore.StructuredDataPropertyValue%>> _structuredDataPropertyValues = this.getStructuredDataPropertyValues();\nfinal <%org.eclipse.xtext.xbase.lib.Functions.Function1%><<%jpl.imce.oml.specification.ecore.StructuredDataPropertyValue%>, <%java.lang.Boolean%>> _function = new <%org.eclipse.xtext.xbase.lib.Functions.Function1%><<%jpl.imce.oml.specification.ecore.StructuredDataPropertyValue%>, <%java.lang.Boolean%>>()\n{\n\tpublic <%java.lang.Boolean%> apply(final <%jpl.imce.oml.specification.ecore.StructuredDataPropertyValue%> v)\n\t{\n\t\tboolean _xblockexpression = false;\n\t\t{\n\t\t\tfinal <%jpl.imce.oml.specification.ecore.DataRelationshipToStructure%> p = v.getStructuredDataProperty();\n\t\t\tboolean _switchResult = false;\n\t\t\tboolean _matched = false;\n\t\t\tif (p instanceof <%jpl.imce.oml.specification.ecore.EntityStructuredDataProperty%>)\n\t\t\t{\n\t\t\t\t_matched=true;\n\t\t\t\t_switchResult = ((<%jpl.imce.oml.specification.ecore.EntityStructuredDataProperty%>)p).isIsIdentityCriteria();\n\t\t\t}\n\t\t\tif (!_matched)\n\t\t\t{\n\t\t\t\t_switchResult = false;\n\t\t\t}\n\t\t\t_xblockexpression = _switchResult;\n\t\t}\n\t\treturn <%java.lang.Boolean%>.valueOf(_xblockexpression);\n\t}\n};\n<%java.lang.Iterable%><<%jpl.imce.oml.specification.ecore.StructuredDataPropertyValue%>> _filter = <%org.eclipse.xtext.xbase.lib.IterableExtensions%>.<<%jpl.imce.oml.specification.ecore.StructuredDataPropertyValue%>>filter(_structuredDataPropertyValues, _function);\nreturn <%org.eclipse.emf.common.util.ECollections%>.<<%jpl.imce.oml.specification.ecore.StructuredDataPropertyValue%>>asEList(((<%jpl.imce.oml.specification.ecore.StructuredDataPropertyValue%>[])org.eclipse.xtext.xbase.lib.Conversions.unwrapArray(_filter, <%jpl.imce.oml.specification.ecore.StructuredDataPropertyValue%>.class)));'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='structuredDataPropertyValues.filter{ v =>\n\t  v.structuredDataProperty match {\n\t    case ep: EntityStructuredDataProperty =>\n\t\t  ep.isIdentityCriteria\n\t    case _ =>\n\t      false\n\t  }}'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<StructuredDataPropertyValue> identifyingStructuredTuples();
 
 } // ConceptualEntitySingletonInstance

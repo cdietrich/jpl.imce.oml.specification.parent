@@ -18,6 +18,12 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML Entity is an abstraction for an OML Term
+ * that is either an OML UnaryTermKind or
+ * an OML DirectedBinaryRelationshipKind whose subject
+ * and range are both a kind of OML Entity.
+ */
 trait Entity
   extends Term
 {

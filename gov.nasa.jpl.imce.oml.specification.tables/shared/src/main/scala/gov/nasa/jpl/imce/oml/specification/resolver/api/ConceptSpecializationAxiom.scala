@@ -18,6 +18,11 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML ConceptSpecializationAxiom is a logical axiom
+ * about a taxonomic relationship between a specific and general
+ * OML Concept.
+ */
 trait ConceptSpecializationAxiom
   extends SpecializationAxiom
 {
@@ -29,10 +34,10 @@ trait ConceptSpecializationAxiom
    * Get the sub (child) entity
    */
   override def child
-  (): Term
+  (): Entity
   /*
    * Get the super (parent) entity
    */
   override def parent
-  (): Term
+  (): Entity
 }

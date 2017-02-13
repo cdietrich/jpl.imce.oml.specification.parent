@@ -18,6 +18,10 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML ScalarDataProperty is an OML DataRelationship
+ * whose domain is an OML Structure and range is an OML DataRange.
+ */
 trait ScalarDataProperty
   extends DataRelationship
   with DataRelationshipFromStructure

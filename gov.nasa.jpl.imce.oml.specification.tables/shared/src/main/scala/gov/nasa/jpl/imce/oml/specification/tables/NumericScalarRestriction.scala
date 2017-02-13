@@ -25,50 +25,42 @@ import scala._
 import scala.Predef._
 
 /**
-  * @param graphUUID[1,1]
   * @param uuid[1,1]
-  * @param name[1,1]
-  * @param maxExclusive[0,1]
-  * @param maxInclusive[0,1]
+  * @param tboxUUID[1,1]
+  * @param restrictedRangeUUID[1,1]
   * @param minExclusive[0,1]
   * @param minInclusive[0,1]
-  * @param restrictedRangeUUID[1,1]
+  * @param maxExclusive[0,1]
+  * @param maxInclusive[0,1]
+  * @param name[1,1]
   */
 case class NumericScalarRestriction
 (
-  @(JSExport @field) graphUUID: UUID,
   @(JSExport @field) uuid: UUID,
-  @(JSExport @field) name: LocalName,
-  @(JSExport @field) maxExclusive: scala.Option[LexicalNumber],
-  @(JSExport @field) maxInclusive: scala.Option[LexicalNumber],
+  @(JSExport @field) tboxUUID: UUID,
+  @(JSExport @field) restrictedRangeUUID: UUID,
   @(JSExport @field) minExclusive: scala.Option[LexicalNumber],
   @(JSExport @field) minInclusive: scala.Option[LexicalNumber],
-  @(JSExport @field) restrictedRangeUUID: UUID
+  @(JSExport @field) maxExclusive: scala.Option[LexicalNumber],
+  @(JSExport @field) maxInclusive: scala.Option[LexicalNumber],
+  @(JSExport @field) name: LocalName
 ) {
   @JSExport
   def this(
-    graphUUID: UUID,
     uuid: UUID,
-    name: LocalName,
-    restrictedRangeUUID: UUID)
+    tboxUUID: UUID,
+    restrictedRangeUUID: UUID,
+    name: LocalName)
   = this(
-      graphUUID,
       uuid,
-      name,
-      None /* maxExclusive */,
-      None /* maxInclusive */,
+      tboxUUID,
+      restrictedRangeUUID,
       None /* minExclusive */,
       None /* minInclusive */,
-      restrictedRangeUUID)
+      None /* maxExclusive */,
+      None /* maxInclusive */,
+      name)
 
-  def withMaxExclusive(l: LexicalNumber)	 
-  : NumericScalarRestriction
-  = copy(maxExclusive=Some(l))
-  
-  def withMaxInclusive(l: LexicalNumber)	 
-  : NumericScalarRestriction
-  = copy(maxInclusive=Some(l))
-  
   def withMinExclusive(l: LexicalNumber)	 
   : NumericScalarRestriction
   = copy(minExclusive=Some(l))
@@ -77,20 +69,28 @@ case class NumericScalarRestriction
   : NumericScalarRestriction
   = copy(minInclusive=Some(l))
   
+  def withMaxExclusive(l: LexicalNumber)	 
+  : NumericScalarRestriction
+  = copy(maxExclusive=Some(l))
+  
+  def withMaxInclusive(l: LexicalNumber)	 
+  : NumericScalarRestriction
+  = copy(maxInclusive=Some(l))
+  
   override val hashCode
   : scala.Int 
-  = (graphUUID, uuid, name, maxExclusive, maxInclusive, minExclusive, minInclusive, restrictedRangeUUID).##
+  = (uuid, tboxUUID, restrictedRangeUUID, minExclusive, minInclusive, maxExclusive, maxInclusive, name).##
   
   override def equals(other: scala.Any): scala.Boolean = other match {
   	case that: NumericScalarRestriction =>
-  	  (this.graphUUID == that.graphUUID) &&
   	  (this.uuid == that.uuid) &&
-  	  (this.name == that.name) &&
-  	  (this.maxExclusive == that.maxExclusive) &&
-  	  (this.maxInclusive == that.maxInclusive) &&
+  	  (this.tboxUUID == that.tboxUUID) &&
+  	  (this.restrictedRangeUUID == that.restrictedRangeUUID) &&
   	  (this.minExclusive == that.minExclusive) &&
   	  (this.minInclusive == that.minInclusive) &&
-  	  (this.restrictedRangeUUID == that.restrictedRangeUUID)
+  	  (this.maxExclusive == that.maxExclusive) &&
+  	  (this.maxInclusive == that.maxInclusive) &&
+  	  (this.name == that.name)
     case _ =>
       false
   }

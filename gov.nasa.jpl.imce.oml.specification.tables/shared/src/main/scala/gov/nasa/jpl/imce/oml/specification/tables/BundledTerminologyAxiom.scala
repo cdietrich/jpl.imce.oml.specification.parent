@@ -26,25 +26,25 @@ import scala.Predef._
 
 /**
   * @param uuid[1,1]
-  * @param bundledTerminologyUUID[1,1]
   * @param terminologyBundleUUID[1,1]
+  * @param bundledTerminologyUUID[1,1]
   */
 @JSExport
 case class BundledTerminologyAxiom
 (
   @(JSExport @field) uuid: UUID,
-  @(JSExport @field) bundledTerminologyUUID: UUID,
-  @(JSExport @field) terminologyBundleUUID: UUID
+  @(JSExport @field) terminologyBundleUUID: UUID,
+  @(JSExport @field) bundledTerminologyUUID: UUID
 ) {
   override val hashCode
   : scala.Int 
-  = (uuid, bundledTerminologyUUID, terminologyBundleUUID).##
+  = (uuid, terminologyBundleUUID, bundledTerminologyUUID).##
   
   override def equals(other: scala.Any): scala.Boolean = other match {
   	case that: BundledTerminologyAxiom =>
   	  (this.uuid == that.uuid) &&
-  	  (this.bundledTerminologyUUID == that.bundledTerminologyUUID) &&
-  	  (this.terminologyBundleUUID == that.terminologyBundleUUID)
+  	  (this.terminologyBundleUUID == that.terminologyBundleUUID) &&
+  	  (this.bundledTerminologyUUID == that.bundledTerminologyUUID)
     case _ =>
       false
   }

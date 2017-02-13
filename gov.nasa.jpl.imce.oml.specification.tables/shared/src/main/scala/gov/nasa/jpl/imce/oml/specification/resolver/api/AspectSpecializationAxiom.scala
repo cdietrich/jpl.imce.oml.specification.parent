@@ -18,6 +18,11 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML AspectSpecializationAxiom is a logical axiom
+ * about a taxonomic relationship between a specific OML Aspect
+ * and a general OML Entity.
+ */
 trait AspectSpecializationAxiom
   extends SpecializationAxiom
 {
@@ -37,10 +42,10 @@ trait AspectSpecializationAxiom
    * Get the sub (child) entity
    */
   override def child
-  (): Term
+  (): Entity
   /*
    * Get the super (parent) entity
    */
   override def parent
-  (): Term
+  (): Entity
 }

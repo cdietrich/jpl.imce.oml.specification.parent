@@ -128,7 +128,7 @@ public class ConceptInstanceItemProvider extends ConceptualEntitySingletonInstan
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ConceptInstance)object).getUuid();
+		String label = ((ConceptInstance)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ConceptInstance_type") :
 			getString("_UI_ConceptInstance_type") + " " + label;

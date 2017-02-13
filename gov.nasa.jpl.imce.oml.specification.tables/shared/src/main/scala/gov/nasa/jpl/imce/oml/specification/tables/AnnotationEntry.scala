@@ -25,24 +25,24 @@ import scala._
 import scala.Predef._
 
 /**
-  * @param terminologyUUID[1,1]
+  * @param contextUUID[1,1]
   * @param subjectUUID[1,1]
   * @param value[1,1]
   */
 @JSExport
 case class AnnotationEntry
 (
-  @(JSExport @field) terminologyUUID: UUID,
+  @(JSExport @field) contextUUID: UUID,
   @(JSExport @field) subjectUUID: UUID,
   @(JSExport @field) value: scala.Predef.String
 ) {
   override val hashCode
   : scala.Int 
-  = (terminologyUUID, subjectUUID, value).##
+  = (contextUUID, subjectUUID, value).##
   
   override def equals(other: scala.Any): scala.Boolean = other match {
   	case that: AnnotationEntry =>
-  	  (this.terminologyUUID == that.terminologyUUID) &&
+  	  (this.contextUUID == that.contextUUID) &&
   	  (this.subjectUUID == that.subjectUUID) &&
   	  (this.value == that.value)
     case _ =>

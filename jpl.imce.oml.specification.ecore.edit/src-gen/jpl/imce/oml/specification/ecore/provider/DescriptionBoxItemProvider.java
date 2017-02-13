@@ -131,9 +131,6 @@ public class DescriptionBoxItemProvider
 			childrenFeatures.add(OMLPackage.Literals.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS);
 			childrenFeatures.add(OMLPackage.Literals.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES);
 			childrenFeatures.add(OMLPackage.Literals.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES);
-			childrenFeatures.add(OMLPackage.Literals.DESCRIPTION_BOX__DATA_STRUCTURE_TUPLES);
-			childrenFeatures.add(OMLPackage.Literals.DESCRIPTION_BOX__SCALAR_DATA_PROPERTY_VALUES);
-			childrenFeatures.add(OMLPackage.Literals.DESCRIPTION_BOX__STRUCTURED_DATA_PROPERTY_VALUES);
 		}
 		return childrenFeatures;
 	}
@@ -199,9 +196,6 @@ public class DescriptionBoxItemProvider
 			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS:
 			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES:
 			case OMLPackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES:
-			case OMLPackage.DESCRIPTION_BOX__DATA_STRUCTURE_TUPLES:
-			case OMLPackage.DESCRIPTION_BOX__SCALAR_DATA_PROPERTY_VALUES:
-			case OMLPackage.DESCRIPTION_BOX__STRUCTURED_DATA_PROPERTY_VALUES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -253,21 +247,6 @@ public class DescriptionBoxItemProvider
 			(createChildParameter
 				(OMLPackage.Literals.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES,
 				 OMLFactory.eINSTANCE.createUnreifiedRelationshipInstanceTuple()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OMLPackage.Literals.DESCRIPTION_BOX__DATA_STRUCTURE_TUPLES,
-				 OMLFactory.eINSTANCE.createDataStructureTuple()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OMLPackage.Literals.DESCRIPTION_BOX__SCALAR_DATA_PROPERTY_VALUES,
-				 OMLFactory.eINSTANCE.createScalarDataPropertyValue()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OMLPackage.Literals.DESCRIPTION_BOX__STRUCTURED_DATA_PROPERTY_VALUES,
-				 OMLFactory.eINSTANCE.createStructuredDataPropertyValue()));
 	}
 
 }

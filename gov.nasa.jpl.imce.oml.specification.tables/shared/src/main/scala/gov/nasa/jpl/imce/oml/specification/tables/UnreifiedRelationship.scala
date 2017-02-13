@@ -25,9 +25,10 @@ import scala._
 import scala.Predef._
 
 /**
-  * @param graphUUID[1,1]
   * @param uuid[1,1]
-  * @param name[1,1]
+  * @param tboxUUID[1,1]
+  * @param sourceUUID[1,1]
+  * @param targetUUID[1,1]
   * @param isAsymmetric[1,1]
   * @param isEssential[1,1]
   * @param isFunctional[1,1]
@@ -37,15 +38,15 @@ import scala.Predef._
   * @param isReflexive[1,1]
   * @param isSymmetric[1,1]
   * @param isTransitive[1,1]
-  * @param sourceUUID[1,1]
-  * @param targetUUID[1,1]
+  * @param name[1,1]
   */
 @JSExport
 case class UnreifiedRelationship
 (
-  @(JSExport @field) graphUUID: UUID,
   @(JSExport @field) uuid: UUID,
-  @(JSExport @field) name: LocalName,
+  @(JSExport @field) tboxUUID: UUID,
+  @(JSExport @field) sourceUUID: UUID,
+  @(JSExport @field) targetUUID: UUID,
   @(JSExport @field) isAsymmetric: scala.Boolean,
   @(JSExport @field) isEssential: scala.Boolean,
   @(JSExport @field) isFunctional: scala.Boolean,
@@ -55,18 +56,18 @@ case class UnreifiedRelationship
   @(JSExport @field) isReflexive: scala.Boolean,
   @(JSExport @field) isSymmetric: scala.Boolean,
   @(JSExport @field) isTransitive: scala.Boolean,
-  @(JSExport @field) sourceUUID: UUID,
-  @(JSExport @field) targetUUID: UUID
+  @(JSExport @field) name: LocalName
 ) {
   override val hashCode
   : scala.Int 
-  = (graphUUID, uuid, name, isAsymmetric, isEssential, isFunctional, isInverseEssential, isInverseFunctional, isIrreflexive, isReflexive, isSymmetric, isTransitive, sourceUUID, targetUUID).##
+  = (uuid, tboxUUID, sourceUUID, targetUUID, isAsymmetric, isEssential, isFunctional, isInverseEssential, isInverseFunctional, isIrreflexive, isReflexive, isSymmetric, isTransitive, name).##
   
   override def equals(other: scala.Any): scala.Boolean = other match {
   	case that: UnreifiedRelationship =>
-  	  (this.graphUUID == that.graphUUID) &&
   	  (this.uuid == that.uuid) &&
-  	  (this.name == that.name) &&
+  	  (this.tboxUUID == that.tboxUUID) &&
+  	  (this.sourceUUID == that.sourceUUID) &&
+  	  (this.targetUUID == that.targetUUID) &&
   	  (this.isAsymmetric == that.isAsymmetric) &&
   	  (this.isEssential == that.isEssential) &&
   	  (this.isFunctional == that.isFunctional) &&
@@ -76,8 +77,7 @@ case class UnreifiedRelationship
   	  (this.isReflexive == that.isReflexive) &&
   	  (this.isSymmetric == that.isSymmetric) &&
   	  (this.isTransitive == that.isTransitive) &&
-  	  (this.sourceUUID == that.sourceUUID) &&
-  	  (this.targetUUID == that.targetUUID)
+  	  (this.name == that.name)
     case _ =>
       false
   }

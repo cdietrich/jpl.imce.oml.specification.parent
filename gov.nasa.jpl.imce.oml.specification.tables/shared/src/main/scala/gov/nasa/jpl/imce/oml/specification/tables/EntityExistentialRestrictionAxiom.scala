@@ -25,32 +25,32 @@ import scala._
 import scala.Predef._
 
 /**
-  * @param graphUUID[1,1]
   * @param uuid[1,1]
+  * @param tboxUUID[1,1]
+  * @param restrictedRelationUUID[1,1]
   * @param restrictedDomainUUID[1,1]
   * @param restrictedRangeUUID[1,1]
-  * @param restrictedRelationUUID[1,1]
   */
 @JSExport
 case class EntityExistentialRestrictionAxiom
 (
-  @(JSExport @field) graphUUID: UUID,
   @(JSExport @field) uuid: UUID,
+  @(JSExport @field) tboxUUID: UUID,
+  @(JSExport @field) restrictedRelationUUID: UUID,
   @(JSExport @field) restrictedDomainUUID: UUID,
-  @(JSExport @field) restrictedRangeUUID: UUID,
-  @(JSExport @field) restrictedRelationUUID: UUID
+  @(JSExport @field) restrictedRangeUUID: UUID
 ) {
   override val hashCode
   : scala.Int 
-  = (graphUUID, uuid, restrictedDomainUUID, restrictedRangeUUID, restrictedRelationUUID).##
+  = (uuid, tboxUUID, restrictedRelationUUID, restrictedDomainUUID, restrictedRangeUUID).##
   
   override def equals(other: scala.Any): scala.Boolean = other match {
   	case that: EntityExistentialRestrictionAxiom =>
-  	  (this.graphUUID == that.graphUUID) &&
   	  (this.uuid == that.uuid) &&
+  	  (this.tboxUUID == that.tboxUUID) &&
+  	  (this.restrictedRelationUUID == that.restrictedRelationUUID) &&
   	  (this.restrictedDomainUUID == that.restrictedDomainUUID) &&
-  	  (this.restrictedRangeUUID == that.restrictedRangeUUID) &&
-  	  (this.restrictedRelationUUID == that.restrictedRelationUUID)
+  	  (this.restrictedRangeUUID == that.restrictedRangeUUID)
     case _ =>
       false
   }

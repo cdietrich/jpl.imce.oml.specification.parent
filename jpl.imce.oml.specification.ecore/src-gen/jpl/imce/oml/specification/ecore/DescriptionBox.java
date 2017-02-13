@@ -27,7 +27,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * <!-- begin-model-doc -->
  * An OML DescriptionBox maps to an [OWL2-DL Ontology]
- * about [OWL2-DL NamedIndividuals] mapped from OML TerminologyInstanceAssertions.
+ * about [OWL2-DL NamedIndividuals] mapped from OML TerminologyInstanceAssertion(s).
  * <!-- end-model-doc -->
  *
  * <p>
@@ -43,9 +43,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link jpl.imce.oml.specification.ecore.DescriptionBox#getReifiedRelationshipInstanceDomains <em>Reified Relationship Instance Domains</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.DescriptionBox#getReifiedRelationshipInstanceRanges <em>Reified Relationship Instance Ranges</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.DescriptionBox#getUnreifiedRelationshipInstanceTuples <em>Unreified Relationship Instance Tuples</em>}</li>
- *   <li>{@link jpl.imce.oml.specification.ecore.DescriptionBox#getDataStructureTuples <em>Data Structure Tuples</em>}</li>
- *   <li>{@link jpl.imce.oml.specification.ecore.DescriptionBox#getScalarDataPropertyValues <em>Scalar Data Property Values</em>}</li>
- *   <li>{@link jpl.imce.oml.specification.ecore.DescriptionBox#getStructuredDataPropertyValues <em>Structured Data Property Values</em>}</li>
  * </ul>
  *
  * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBox()
@@ -242,142 +239,5 @@ public interface DescriptionBox extends Context {
 	 * @generated
 	 */
 	EList<UnreifiedRelationshipInstanceTuple> getUnreifiedRelationshipInstanceTuples();
-
-	/**
-	 * Returns the value of the '<em><b>Data Structure Tuples</b></em>' containment reference list.
-	 * The list contents are of type {@link jpl.imce.oml.specification.ecore.DataStructureTuple}.
-	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.DataStructureTuple#getDescriptionBox <em>Description Box</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Data Structure Tuples</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Structure Tuples</em>' containment reference list.
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBox_DataStructureTuples()
-	 * @see jpl.imce.oml.specification.ecore.DataStructureTuple#getDescriptionBox
-	 * @model opposite="descriptionBox" containment="true"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
-	 * @generated
-	 */
-	EList<DataStructureTuple> getDataStructureTuples();
-
-	/**
-	 * Returns the value of the '<em><b>Scalar Data Property Values</b></em>' containment reference list.
-	 * The list contents are of type {@link jpl.imce.oml.specification.ecore.ScalarDataPropertyValue}.
-	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.ScalarDataPropertyValue#getDescriptionBox <em>Description Box</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Scalar Data Property Values</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Scalar Data Property Values</em>' containment reference list.
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBox_ScalarDataPropertyValues()
-	 * @see jpl.imce.oml.specification.ecore.ScalarDataPropertyValue#getDescriptionBox
-	 * @model opposite="descriptionBox" containment="true"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
-	 * @generated
-	 */
-	EList<ScalarDataPropertyValue> getScalarDataPropertyValues();
-
-	/**
-	 * Returns the value of the '<em><b>Structured Data Property Values</b></em>' containment reference list.
-	 * The list contents are of type {@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue}.
-	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getDescriptionBox <em>Description Box</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Structured Data Property Values</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Structured Data Property Values</em>' containment reference list.
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBox_StructuredDataPropertyValues()
-	 * @see jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getDescriptionBox
-	 * @model opposite="descriptionBox" containment="true"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
-	 * @generated
-	 */
-	EList<StructuredDataPropertyValue> getStructuredDataPropertyValues();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model unique="false" required="true" sUnique="false" sMany="true"
-	 *        sAnnotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='copy(conceptInstances = this.conceptInstances ++ s)'"
-	 * @generated
-	 */
-	DescriptionBox addConceptInstances(EList<ConceptInstance> s);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model unique="false" required="true" sUnique="false" sMany="true"
-	 *        sAnnotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='copy(reifiedRelationshipInstances = this.reifiedRelationshipInstances ++ s)'"
-	 * @generated
-	 */
-	DescriptionBox addReifiedRelationshipInstances(EList<ReifiedRelationshipInstance> s);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model unique="false" required="true" sUnique="false" sMany="true"
-	 *        sAnnotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='copy(reifiedRelationshipInstanceDomains = this.reifiedRelationshipInstanceDomains ++ s)'"
-	 * @generated
-	 */
-	DescriptionBox addReifiedRelationshipInstanceDomains(EList<ReifiedRelationshipInstanceDomain> s);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model unique="false" required="true" sUnique="false" sMany="true"
-	 *        sAnnotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='copy(reifiedRelationshipInstanceRanges = this.reifiedRelationshipInstanceRanges ++ s)'"
-	 * @generated
-	 */
-	DescriptionBox addReifiedRelationshipInstanceRanges(EList<ReifiedRelationshipInstanceRange> s);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model unique="false" required="true" sUnique="false" sMany="true"
-	 *        sAnnotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='copy(unreifiedRelationshipInstanceTuples = this.unreifiedRelationshipInstanceTuples ++ s)'"
-	 * @generated
-	 */
-	DescriptionBox addUnreifiedRelationshipInstanceTuples(EList<UnreifiedRelationshipInstanceTuple> s);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model unique="false" required="true" sUnique="false" sMany="true"
-	 *        sAnnotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='copy(dataStructureTuples = this.dataStructureTuples ++ s)'"
-	 * @generated
-	 */
-	DescriptionBox addDataStructureTuples(EList<DataStructureTuple> s);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model unique="false" required="true" sUnique="false" sMany="true"
-	 *        sAnnotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='copy(scalarDataPropertyValues = this.scalarDataPropertyValues ++ s)'"
-	 * @generated
-	 */
-	DescriptionBox addScalarDataPropertyValues(EList<ScalarDataPropertyValue> s);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model unique="false" required="true" sUnique="false" sMany="true"
-	 *        sAnnotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='copy(structuredDataPropertyValues = this.structuredDataPropertyValues ++ s)'"
-	 * @generated
-	 */
-	DescriptionBox addStructuredDataPropertyValues(EList<StructuredDataPropertyValue> s);
 
 } // DescriptionBox

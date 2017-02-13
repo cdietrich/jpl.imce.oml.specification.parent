@@ -27,27 +27,27 @@ import scala.Predef._
 /**
   * @param uuid[1,1]
   * @param bundleUUID[1,1]
-  * @param disjointLeafUUID[1,1]
   * @param disjointTaxonomyParentUUID[1,1]
+  * @param disjointLeafUUID[1,1]
   */
 @JSExport
 case class SpecificDisjointConceptAxiom
 (
   @(JSExport @field) uuid: UUID,
   @(JSExport @field) bundleUUID: UUID,
-  @(JSExport @field) disjointLeafUUID: UUID,
-  @(JSExport @field) disjointTaxonomyParentUUID: UUID
+  @(JSExport @field) disjointTaxonomyParentUUID: UUID,
+  @(JSExport @field) disjointLeafUUID: UUID
 ) {
   override val hashCode
   : scala.Int 
-  = (uuid, bundleUUID, disjointLeafUUID, disjointTaxonomyParentUUID).##
+  = (uuid, bundleUUID, disjointTaxonomyParentUUID, disjointLeafUUID).##
   
   override def equals(other: scala.Any): scala.Boolean = other match {
   	case that: SpecificDisjointConceptAxiom =>
   	  (this.uuid == that.uuid) &&
   	  (this.bundleUUID == that.bundleUUID) &&
-  	  (this.disjointLeafUUID == that.disjointLeafUUID) &&
-  	  (this.disjointTaxonomyParentUUID == that.disjointTaxonomyParentUUID)
+  	  (this.disjointTaxonomyParentUUID == that.disjointTaxonomyParentUUID) &&
+  	  (this.disjointLeafUUID == that.disjointLeafUUID)
     case _ =>
       false
   }

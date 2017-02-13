@@ -28,6 +28,12 @@ package jpl.imce.oml.specification.ecore;
  * An OML TerminologyInstanceAssertion is a logical OML TerminologyThing defined in an OML TerminologyDescription.
  * <!-- end-model-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion#getName <em>Name</em>}</li>
+ * </ul>
  *
  * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyInstanceAssertion()
  * @model abstract="true"
@@ -35,11 +41,68 @@ package jpl.imce.oml.specification.ecore;
  */
 public interface TerminologyInstanceAssertion extends TerminologyThing, Resource {
 	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyInstanceAssertion_Name()
+	 * @model unique="false" id="true" dataType="jpl.imce.oml.specification.ecore.LocalName" required="true"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model unique="false" required="true"
 	 * @generated
 	 */
 	DescriptionBox descriptionBox();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The UUID of a Term is a Version5 namespace UUID based on the term's IRI.
+	 * <!-- end-model-doc -->
+	 * @model dataType="jpl.imce.oml.specification.ecore.UUID" unique="false" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%com.fasterxml.uuid.impl.NameBasedGenerator%> _nameBasedGenerator = <%com.fasterxml.uuid.Generators%>.nameBasedGenerator(<%com.fasterxml.uuid.impl.NameBasedGenerator%>.NAMESPACE_URL);\n<%java.lang.String%> _iri = this.iri();\n<%java.util.UUID%> _generate = _nameBasedGenerator.generate(_iri);\nreturn _generate.toString();'"
+	 * @generated
+	 */
+	String calculateUUID();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model dataType="jpl.imce.oml.specification.ecore.IRI" unique="false" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%jpl.imce.oml.specification.ecore.DescriptionBox%> _descriptionBox = this.descriptionBox();\n<%java.lang.String%> _iri = _descriptionBox.iri();\n<%java.lang.String%> _plus = (_iri + \"#\");\n<%java.lang.String%> _name = this.name();\nreturn (_plus + _name);'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='descriptionBox.iri + \"#\" + name'"
+	 * @generated
+	 */
+	String iri();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model dataType="jpl.imce.oml.specification.ecore.LocalName" unique="false" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getName();'"
+	 * @generated
+	 */
+	String name();
 
 } // TerminologyInstanceAssertion

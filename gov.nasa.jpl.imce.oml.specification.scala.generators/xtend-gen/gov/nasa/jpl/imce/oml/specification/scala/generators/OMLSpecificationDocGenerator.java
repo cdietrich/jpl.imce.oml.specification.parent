@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtend2.lib.StringConcatenation;
@@ -130,7 +131,7 @@ public class OMLSpecificationDocGenerator extends OMLUtilities {
         final Function1<EClass, Boolean> _function_4 = new Function1<EClass, Boolean>() {
           @Override
           public Boolean apply(final EClass it) {
-            return OMLUtilities.isAPI(it);
+            return Boolean.valueOf(((OMLUtilities.isAPI(it)).booleanValue() && (!(OMLUtilities.isSchema(it)).booleanValue())));
           }
         };
         final Iterable<EClass> apiEntries = IterableExtensions.<EClass>filter(_get_1, _function_4);
@@ -245,7 +246,7 @@ public class OMLSpecificationDocGenerator extends OMLUtilities {
         _builder.append(" concrete definitions");
         _builder.newLineIfNotEmpty();
         _builder.append("  ");
-        _builder.append("augment the polyglot functional programming OMF APIs for the in-memory processing of OMF information");
+        _builder.append("augment the normalized OMF APIs for the in-memory processing of OMF information");
         _builder.newLine();
         _builder.append("  ");
         _builder.append("extracted from parsing the OML tabular interchange representation.");
@@ -257,7 +258,7 @@ public class OMLSpecificationDocGenerator extends OMLUtilities {
         _builder.append(_size_12, "");
         _builder.append(" Abstract Definitions {#oml-abstract-glossary}");
         _builder.newLineIfNotEmpty();
-        final StringBuffer preamble = new StringBuffer(_builder);
+        final StringBuffer b1 = new StringBuffer(_builder);
         List<EClass> _get_9 = entriesByAbstraction.get(Boolean.valueOf(true));
         final Function2<StringBuffer, EClass, StringBuffer> _function_6 = new Function2<StringBuffer, EClass, StringBuffer>() {
           @Override
@@ -265,7 +266,7 @@ public class OMLSpecificationDocGenerator extends OMLUtilities {
             return OMLSpecificationDocGenerator.this.generateClassGlossaryContents(buffer, eClass);
           }
         };
-        final StringBuffer abstractGlossary = IterableExtensions.<EClass, StringBuffer>fold(_get_9, preamble, _function_6);
+        final StringBuffer b2 = IterableExtensions.<EClass, StringBuffer>fold(_get_9, b1, _function_6);
         StringConcatenation _builder_1 = new StringConcatenation();
         _builder_1.append("# OML Glossary of ");
         List<EClass> _get_10 = entriesByAbstraction.get(Boolean.valueOf(false));
@@ -274,16 +275,55 @@ public class OMLSpecificationDocGenerator extends OMLUtilities {
         _builder_1.append(" Concrete Definitions {#oml-concrete-glossary}");
         String _plus = ("\n" + _builder_1);
         String _plus_1 = (_plus + "\n");
-        abstractGlossary.append(_plus_1);
-        List<EClass> _get_11 = entriesByAbstraction.get(Boolean.valueOf(false));
+        b2.append(_plus_1);
+        StringConcatenation _builder_2 = new StringConcatenation();
+        _builder_2.append("# OML Glossary of ");
+        int _size_14 = IterableExtensions.size(schemaEntries);
+        _builder_2.append(_size_14, "");
+        _builder_2.append(" Schema Concrete Definitions {#oml-schema-concrete-glossary}");
+        String _plus_2 = ("\n" + _builder_2);
+        String _plus_3 = (_plus_2 + "\n");
+        b2.append(_plus_3);
+        OMLUtilities.OMLTableCompare _oMLTableCompare = new OMLUtilities.OMLTableCompare();
+        List<EClass> _sortWith = IterableExtensions.<EClass>sortWith(schemaEntries, _oMLTableCompare);
         final Function2<StringBuffer, EClass, StringBuffer> _function_7 = new Function2<StringBuffer, EClass, StringBuffer>() {
           @Override
           public StringBuffer apply(final StringBuffer buffer, final EClass eClass) {
             return OMLSpecificationDocGenerator.this.generateClassGlossaryContents(buffer, eClass);
           }
         };
-        final StringBuffer concreteGlossary = IterableExtensions.<EClass, StringBuffer>fold(_get_11, abstractGlossary, _function_7);
-        String _string = concreteGlossary.toString();
+        final StringBuffer b3 = IterableExtensions.<EClass, StringBuffer>fold(_sortWith, b2, _function_7);
+        StringConcatenation _builder_3 = new StringConcatenation();
+        _builder_3.append("# OML Glossary of ");
+        int _size_15 = IterableExtensions.size(apiEntries);
+        _builder_3.append(_size_15, "");
+        _builder_3.append(" Functional API Concrete Definitions {#oml-functional-concrete-glossary}");
+        String _plus_4 = ("\n" + _builder_3);
+        String _plus_5 = (_plus_4 + "\n");
+        b3.append(_plus_5);
+        final Function2<StringBuffer, EClass, StringBuffer> _function_8 = new Function2<StringBuffer, EClass, StringBuffer>() {
+          @Override
+          public StringBuffer apply(final StringBuffer buffer, final EClass eClass) {
+            return OMLSpecificationDocGenerator.this.generateClassGlossaryContents(buffer, eClass);
+          }
+        };
+        final StringBuffer b4 = IterableExtensions.<EClass, StringBuffer>fold(apiEntries, b3, _function_8);
+        StringConcatenation _builder_4 = new StringConcatenation();
+        _builder_4.append("# OML Glossary of ");
+        int _size_16 = IterableExtensions.size(ooEntries);
+        _builder_4.append(_size_16, "");
+        _builder_4.append(" EMF/CDO API Concrete Definitions {#oml-emf-cdo-concrete-glossary}");
+        String _plus_6 = ("\n" + _builder_4);
+        String _plus_7 = (_plus_6 + "\n");
+        b4.append(_plus_7);
+        final Function2<StringBuffer, EClass, StringBuffer> _function_9 = new Function2<StringBuffer, EClass, StringBuffer>() {
+          @Override
+          public StringBuffer apply(final StringBuffer buffer, final EClass eClass) {
+            return OMLSpecificationDocGenerator.this.generateClassGlossaryContents(buffer, eClass);
+          }
+        };
+        final StringBuffer b5 = IterableExtensions.<EClass, StringBuffer>fold(ooEntries, b4, _function_9);
+        String _string = b5.toString();
         byte[] _bytes = _string.getBytes();
         glossaryFile.write(_bytes);
       } finally {
@@ -320,8 +360,8 @@ public class OMLSpecificationDocGenerator extends OMLUtilities {
         buffer.append((prefix + "**Functional**"));
         prefix = ", ";
       }
-      Boolean _isSchema_1 = OMLUtilities.isSchema(eClass);
-      if ((_isSchema_1).booleanValue()) {
+      Boolean _isOO = OMLUtilities.isOO(eClass);
+      if ((_isOO).booleanValue()) {
         buffer.append((prefix + "**EMF/CDO**"));
         prefix = ", ";
       }
@@ -412,6 +452,25 @@ public class OMLSpecificationDocGenerator extends OMLUtilities {
         }
         String _plus_3 = ("\n" + _builder_3);
         buffer.append(_plus_3);
+      } else {
+        Boolean _isSchema_1 = OMLUtilities.isSchema(eClass);
+        if ((_isSchema_1).booleanValue()) {
+          StringConcatenation _builder_5 = new StringConcatenation();
+          {
+            Iterable<ETypedElement> _functionalAPIOrOrderingKeyAttributes = OMLUtilities.functionalAPIOrOrderingKeyAttributes(eClass);
+            for(final ETypedElement attr : _functionalAPIOrOrderingKeyAttributes) {
+              _builder_5.append("- ");
+              String _columnName = OMLUtilities.columnName(attr);
+              _builder_5.append(_columnName, "");
+              _builder_5.append(": ");
+              String _schemaColumnTypeDescription = OMLUtilities.schemaColumnTypeDescription(attr);
+              _builder_5.append(_schemaColumnTypeDescription, "");
+              _builder_5.newLineIfNotEmpty();
+            }
+          }
+          String _plus_4 = ("\nNormalized Relational Schema Table:\n" + _builder_5);
+          buffer.append(_plus_4);
+        }
       }
       _xblockexpression = buffer;
     }

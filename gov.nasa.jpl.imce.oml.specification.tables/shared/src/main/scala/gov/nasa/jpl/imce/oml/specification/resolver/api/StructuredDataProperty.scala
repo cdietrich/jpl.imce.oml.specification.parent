@@ -18,6 +18,10 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML StructuredDataProperty is an OML DataRelationship
+ * whose domain is an OML Structure and range is an OML Structure.
+ */
 trait StructuredDataProperty
   extends DataRelationship
   with DataRelationshipFromStructure

@@ -18,25 +18,62 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import com.fasterxml.uuid.Generators;
+
+import com.fasterxml.uuid.impl.NameBasedGenerator;
+
 import java.lang.reflect.InvocationTargetException;
+
+import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.Resource;
 import jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion;
+import jpl.imce.oml.specification.ecore.TerminologyThing;
+
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Terminology Instance Assertion</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link jpl.imce.oml.specification.ecore.impl.TerminologyInstanceAssertionImpl#getName <em>Name</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public abstract class TerminologyInstanceAssertionImpl extends TerminologyThingImpl implements TerminologyInstanceAssertion {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -61,6 +98,27 @@ public abstract class TerminologyInstanceAssertionImpl extends TerminologyThingI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DescriptionBox descriptionBox() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -72,10 +130,24 @@ public abstract class TerminologyInstanceAssertionImpl extends TerminologyThingI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String calculateUUID() {
+		NameBasedGenerator _nameBasedGenerator = Generators.nameBasedGenerator(NameBasedGenerator.NAMESPACE_URL);
+		String _iri = this.iri();
+		UUID _generate = _nameBasedGenerator.generate(_iri);
+		return _generate.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String iri() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		DescriptionBox _descriptionBox = this.descriptionBox();
+		String _iri = _descriptionBox.iri();
+		String _plus = (_iri + "#");
+		String _name = this.name();
+		return (_plus + _name);
 	}
 
 	/**
@@ -84,9 +156,65 @@ public abstract class TerminologyInstanceAssertionImpl extends TerminologyThingI
 	 * @generated
 	 */
 	public String name() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return this.getName();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION__NAME:
+				return getName();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION__NAME:
+				setName((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		}
+		return super.eIsSet(featureID);
 	}
 
 	/**
@@ -96,6 +224,12 @@ public abstract class TerminologyInstanceAssertionImpl extends TerminologyThingI
 	 */
 	@Override
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == TerminologyThing.class) {
+			switch (baseOperationID) {
+				case OMLPackage.TERMINOLOGY_THING___CALCULATE_UUID: return OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
 		if (baseClass == Resource.class) {
 			switch (baseOperationID) {
 				case OMLPackage.RESOURCE___IRI: return OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___IRI;
@@ -116,12 +250,30 @@ public abstract class TerminologyInstanceAssertionImpl extends TerminologyThingI
 		switch (operationID) {
 			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___DESCRIPTION_BOX:
 				return descriptionBox();
+			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID:
+				return calculateUUID();
 			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___IRI:
 				return iri();
 			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___NAME:
 				return name();
 		}
 		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //TerminologyInstanceAssertionImpl

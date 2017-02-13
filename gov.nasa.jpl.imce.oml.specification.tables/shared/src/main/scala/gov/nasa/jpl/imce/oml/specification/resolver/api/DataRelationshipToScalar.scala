@@ -18,6 +18,10 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML DataRelationshipToScalar is an OML DataRelationship
+ * whose range is an OML DataRange.
+ */
 trait DataRelationshipToScalar
   extends DataRelationshipRange
 {

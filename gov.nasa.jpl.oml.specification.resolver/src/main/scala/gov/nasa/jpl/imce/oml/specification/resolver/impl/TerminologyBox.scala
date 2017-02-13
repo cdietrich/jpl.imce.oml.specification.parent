@@ -22,37 +22,8 @@ import gov.nasa.jpl.imce.oml.specification._
 
 trait TerminologyBox
 extends resolver.api.TerminologyBox
-  with TerminologyThing
-  with Resource
+  with Context
 {
-  def calculateUUID
-  ()
-  : java.util.UUID
-  = {
-    <XMemberFeatureCallImplCustom>.toString/* default */
-  }
-  
-  def iri
-  ()
-  : gov.nasa.jpl.imce.oml.specification.tables.IRI
-  = {
-    getIri()
-  }
-  
-  def nsPrefix
-  ()
-  : resolver.api.NamespacePrefix
-  = {
-    <XFeatureCallImplCustom>.substring(<XBinaryOperationImplCustom>)/* default */
-  }
-  
-  def name
-  ()
-  : gov.nasa.jpl.imce.oml.specification.tables.LocalName
-  = {
-    nsPrefix
-  }
-  
   /*
    * The subset of statements that are entities.
    */

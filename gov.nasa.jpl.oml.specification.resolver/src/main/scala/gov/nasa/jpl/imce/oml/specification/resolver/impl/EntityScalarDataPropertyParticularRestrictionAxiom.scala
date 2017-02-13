@@ -22,11 +22,11 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class EntityScalarDataPropertyParticularRestrictionAxiom private[impl] 
 (
- override val graph: TerminologyBox,
  override val uuid: java.util.UUID,
- override val literalValue: gov.nasa.jpl.imce.oml.specification.tables.LexicalValue,
+ override val tbox: TerminologyBox,
  override val restrictedEntity: Entity,
- override val scalarProperty: EntityScalarDataProperty
+ override val scalarProperty: EntityScalarDataProperty,
+ override val literalValue: gov.nasa.jpl.imce.oml.specification.tables.LexicalValue
 )
 extends resolver.api.EntityScalarDataPropertyParticularRestrictionAxiom
   with EntityScalarDataPropertyRestrictionAxiom
@@ -39,16 +39,16 @@ extends resolver.api.EntityScalarDataPropertyParticularRestrictionAxiom
 
   override val hashCode
   : scala.Int
-  = (graph, uuid, literalValue, restrictedEntity, scalarProperty).##
+  = (uuid, tbox, restrictedEntity, scalarProperty, literalValue).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: EntityScalarDataPropertyParticularRestrictionAxiom =>
 	    (that canEqual this) &&
-	    (this.graph == that.graph) &&
 	    (this.uuid == that.uuid) &&
-	    (this.literalValue == that.literalValue) &&
+	    (this.tbox == that.tbox) &&
 	    (this.restrictedEntity == that.restrictedEntity) &&
-	    (this.scalarProperty == that.scalarProperty)
+	    (this.scalarProperty == that.scalarProperty) &&
+	    (this.literalValue == that.literalValue)
 
 	  case _ =>
 	    false

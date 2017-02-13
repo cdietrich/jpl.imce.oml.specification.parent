@@ -3299,105 +3299,6 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDescriptionBox_DataStructureTuples() {
-		return (EReference)descriptionBoxEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDescriptionBox_ScalarDataPropertyValues() {
-		return (EReference)descriptionBoxEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDescriptionBox_StructuredDataPropertyValues() {
-		return (EReference)descriptionBoxEClass.getEStructuralFeatures().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDescriptionBox__AddConceptInstances__EList() {
-		return descriptionBoxEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDescriptionBox__AddReifiedRelationshipInstances__EList() {
-		return descriptionBoxEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDescriptionBox__AddReifiedRelationshipInstanceDomains__EList() {
-		return descriptionBoxEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDescriptionBox__AddReifiedRelationshipInstanceRanges__EList() {
-		return descriptionBoxEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDescriptionBox__AddUnreifiedRelationshipInstanceTuples__EList() {
-		return descriptionBoxEClass.getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDescriptionBox__AddDataStructureTuples__EList() {
-		return descriptionBoxEClass.getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDescriptionBox__AddScalarDataPropertyValues__EList() {
-		return descriptionBoxEClass.getEOperations().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDescriptionBox__AddStructuredDataPropertyValues__EList() {
-		return descriptionBoxEClass.getEOperations().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getDescriptionBoxRelationship() {
 		return descriptionBoxRelationshipEClass;
 	}
@@ -3524,8 +3425,44 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getTerminologyInstanceAssertion_Name() {
+		return (EAttribute)terminologyInstanceAssertionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getTerminologyInstanceAssertion__DescriptionBox() {
 		return terminologyInstanceAssertionEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getTerminologyInstanceAssertion__CalculateUUID() {
+		return terminologyInstanceAssertionEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getTerminologyInstanceAssertion__Iri() {
+		return terminologyInstanceAssertionEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getTerminologyInstanceAssertion__Name() {
+		return terminologyInstanceAssertionEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -3542,6 +3479,24 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSingletonInstance_ScalarDataPropertyValues() {
+		return (EReference)singletonInstanceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSingletonInstance_StructuredDataPropertyValues() {
+		return (EReference)singletonInstanceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getScalarDataPropertyValue() {
 		return scalarDataPropertyValueEClass;
 	}
@@ -3551,7 +3506,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getScalarDataPropertyValue_DescriptionBox() {
+	public EReference getScalarDataPropertyValue_SingletonInstance() {
 		return (EReference)scalarDataPropertyValueEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -3560,7 +3515,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getScalarDataPropertyValue_SingletonInstance() {
+	public EReference getScalarDataPropertyValue_ScalarDataProperty() {
 		return (EReference)scalarDataPropertyValueEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -3569,17 +3524,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getScalarDataPropertyValue_ScalarDataProperty() {
-		return (EReference)scalarDataPropertyValueEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getScalarDataPropertyValue_ScalarPropertyValue() {
-		return (EAttribute)scalarDataPropertyValueEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)scalarDataPropertyValueEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -3596,7 +3542,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStructuredDataPropertyValue_DescriptionBox() {
+	public EReference getStructuredDataPropertyValue_SingletonInstance() {
 		return (EReference)structuredDataPropertyValueEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -3605,7 +3551,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStructuredDataPropertyValue_SingletonInstance() {
+	public EReference getStructuredDataPropertyValue_StructuredDataProperty() {
 		return (EReference)structuredDataPropertyValueEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -3614,17 +3560,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStructuredDataPropertyValue_StructuredDataProperty() {
-		return (EReference)structuredDataPropertyValueEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getStructuredDataPropertyValue_StructuredPropertyTuple() {
-		return (EReference)structuredDataPropertyValueEClass.getEStructuralFeatures().get(3);
+		return (EReference)structuredDataPropertyValueEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -3641,7 +3578,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataStructureTuple_DescriptionBox() {
+	public EReference getDataStructureTuple_StructuredDataPropertyValue() {
 		return (EReference)dataStructureTupleEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -3668,26 +3605,26 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConceptualEntitySingletonInstance_IdentifyingScalarValues() {
-		return (EReference)conceptualEntitySingletonInstanceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getConceptualEntitySingletonInstance_IdentifyingStructuredTuples() {
-		return (EReference)conceptualEntitySingletonInstanceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EOperation getConceptualEntitySingletonInstance__ConceptualEntitySingletonClassifier() {
 		return conceptualEntitySingletonInstanceEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getConceptualEntitySingletonInstance__IdentifyingScalarValues() {
+		return conceptualEntitySingletonInstanceEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getConceptualEntitySingletonInstance__IdentifyingStructuredTuples() {
+		return conceptualEntitySingletonInstanceEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -4355,17 +4292,6 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		createEReference(descriptionBoxEClass, DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS);
 		createEReference(descriptionBoxEClass, DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES);
 		createEReference(descriptionBoxEClass, DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES);
-		createEReference(descriptionBoxEClass, DESCRIPTION_BOX__DATA_STRUCTURE_TUPLES);
-		createEReference(descriptionBoxEClass, DESCRIPTION_BOX__SCALAR_DATA_PROPERTY_VALUES);
-		createEReference(descriptionBoxEClass, DESCRIPTION_BOX__STRUCTURED_DATA_PROPERTY_VALUES);
-		createEOperation(descriptionBoxEClass, DESCRIPTION_BOX___ADD_CONCEPT_INSTANCES__ELIST);
-		createEOperation(descriptionBoxEClass, DESCRIPTION_BOX___ADD_REIFIED_RELATIONSHIP_INSTANCES__ELIST);
-		createEOperation(descriptionBoxEClass, DESCRIPTION_BOX___ADD_REIFIED_RELATIONSHIP_INSTANCE_DOMAINS__ELIST);
-		createEOperation(descriptionBoxEClass, DESCRIPTION_BOX___ADD_REIFIED_RELATIONSHIP_INSTANCE_RANGES__ELIST);
-		createEOperation(descriptionBoxEClass, DESCRIPTION_BOX___ADD_UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES__ELIST);
-		createEOperation(descriptionBoxEClass, DESCRIPTION_BOX___ADD_DATA_STRUCTURE_TUPLES__ELIST);
-		createEOperation(descriptionBoxEClass, DESCRIPTION_BOX___ADD_SCALAR_DATA_PROPERTY_VALUES__ELIST);
-		createEOperation(descriptionBoxEClass, DESCRIPTION_BOX___ADD_STRUCTURED_DATA_PROPERTY_VALUES__ELIST);
 
 		descriptionBoxRelationshipEClass = createEClass(DESCRIPTION_BOX_RELATIONSHIP);
 		createEOperation(descriptionBoxRelationshipEClass, DESCRIPTION_BOX_RELATIONSHIP___DESCRIPTION_DOMAIN);
@@ -4384,30 +4310,34 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		createEOperation(descriptionBoxRefinementEClass, DESCRIPTION_BOX_REFINEMENT___CONTEXT_TARGET);
 
 		terminologyInstanceAssertionEClass = createEClass(TERMINOLOGY_INSTANCE_ASSERTION);
+		createEAttribute(terminologyInstanceAssertionEClass, TERMINOLOGY_INSTANCE_ASSERTION__NAME);
 		createEOperation(terminologyInstanceAssertionEClass, TERMINOLOGY_INSTANCE_ASSERTION___DESCRIPTION_BOX);
+		createEOperation(terminologyInstanceAssertionEClass, TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID);
+		createEOperation(terminologyInstanceAssertionEClass, TERMINOLOGY_INSTANCE_ASSERTION___IRI);
+		createEOperation(terminologyInstanceAssertionEClass, TERMINOLOGY_INSTANCE_ASSERTION___NAME);
 
 		singletonInstanceEClass = createEClass(SINGLETON_INSTANCE);
+		createEReference(singletonInstanceEClass, SINGLETON_INSTANCE__SCALAR_DATA_PROPERTY_VALUES);
+		createEReference(singletonInstanceEClass, SINGLETON_INSTANCE__STRUCTURED_DATA_PROPERTY_VALUES);
 
 		scalarDataPropertyValueEClass = createEClass(SCALAR_DATA_PROPERTY_VALUE);
-		createEReference(scalarDataPropertyValueEClass, SCALAR_DATA_PROPERTY_VALUE__DESCRIPTION_BOX);
 		createEReference(scalarDataPropertyValueEClass, SCALAR_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE);
 		createEReference(scalarDataPropertyValueEClass, SCALAR_DATA_PROPERTY_VALUE__SCALAR_DATA_PROPERTY);
 		createEAttribute(scalarDataPropertyValueEClass, SCALAR_DATA_PROPERTY_VALUE__SCALAR_PROPERTY_VALUE);
 
 		structuredDataPropertyValueEClass = createEClass(STRUCTURED_DATA_PROPERTY_VALUE);
-		createEReference(structuredDataPropertyValueEClass, STRUCTURED_DATA_PROPERTY_VALUE__DESCRIPTION_BOX);
 		createEReference(structuredDataPropertyValueEClass, STRUCTURED_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE);
 		createEReference(structuredDataPropertyValueEClass, STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_DATA_PROPERTY);
 		createEReference(structuredDataPropertyValueEClass, STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_PROPERTY_TUPLE);
 
 		dataStructureTupleEClass = createEClass(DATA_STRUCTURE_TUPLE);
-		createEReference(dataStructureTupleEClass, DATA_STRUCTURE_TUPLE__DESCRIPTION_BOX);
+		createEReference(dataStructureTupleEClass, DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE);
 		createEReference(dataStructureTupleEClass, DATA_STRUCTURE_TUPLE__DATA_STRUCTURE_TYPE);
 
 		conceptualEntitySingletonInstanceEClass = createEClass(CONCEPTUAL_ENTITY_SINGLETON_INSTANCE);
-		createEReference(conceptualEntitySingletonInstanceEClass, CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__IDENTIFYING_SCALAR_VALUES);
-		createEReference(conceptualEntitySingletonInstanceEClass, CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__IDENTIFYING_STRUCTURED_TUPLES);
 		createEOperation(conceptualEntitySingletonInstanceEClass, CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER);
+		createEOperation(conceptualEntitySingletonInstanceEClass, CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___IDENTIFYING_SCALAR_VALUES);
+		createEOperation(conceptualEntitySingletonInstanceEClass, CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___IDENTIFYING_STRUCTURED_TUPLES);
 
 		conceptInstanceEClass = createEClass(CONCEPT_INSTANCE);
 		createEReference(conceptInstanceEClass, CONCEPT_INSTANCE__DESCRIPTION_BOX);
@@ -5006,33 +4936,6 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		initEReference(getDescriptionBox_ReifiedRelationshipInstanceDomains(), this.getReifiedRelationshipInstanceDomain(), this.getReifiedRelationshipInstanceDomain_DescriptionBox(), "reifiedRelationshipInstanceDomains", null, 0, -1, DescriptionBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDescriptionBox_ReifiedRelationshipInstanceRanges(), this.getReifiedRelationshipInstanceRange(), this.getReifiedRelationshipInstanceRange_DescriptionBox(), "reifiedRelationshipInstanceRanges", null, 0, -1, DescriptionBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDescriptionBox_UnreifiedRelationshipInstanceTuples(), this.getUnreifiedRelationshipInstanceTuple(), this.getUnreifiedRelationshipInstanceTuple_DescriptionBox(), "unreifiedRelationshipInstanceTuples", null, 0, -1, DescriptionBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDescriptionBox_DataStructureTuples(), this.getDataStructureTuple(), this.getDataStructureTuple_DescriptionBox(), "dataStructureTuples", null, 0, -1, DescriptionBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDescriptionBox_ScalarDataPropertyValues(), this.getScalarDataPropertyValue(), this.getScalarDataPropertyValue_DescriptionBox(), "scalarDataPropertyValues", null, 0, -1, DescriptionBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDescriptionBox_StructuredDataPropertyValues(), this.getStructuredDataPropertyValue(), this.getStructuredDataPropertyValue_DescriptionBox(), "structuredDataPropertyValues", null, 0, -1, DescriptionBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		op = initEOperation(getDescriptionBox__AddConceptInstances__EList(), this.getDescriptionBox(), "addConceptInstances", 1, 1, !IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getConceptInstance(), "s", 0, -1, !IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getDescriptionBox__AddReifiedRelationshipInstances__EList(), this.getDescriptionBox(), "addReifiedRelationshipInstances", 1, 1, !IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getReifiedRelationshipInstance(), "s", 0, -1, !IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getDescriptionBox__AddReifiedRelationshipInstanceDomains__EList(), this.getDescriptionBox(), "addReifiedRelationshipInstanceDomains", 1, 1, !IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getReifiedRelationshipInstanceDomain(), "s", 0, -1, !IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getDescriptionBox__AddReifiedRelationshipInstanceRanges__EList(), this.getDescriptionBox(), "addReifiedRelationshipInstanceRanges", 1, 1, !IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getReifiedRelationshipInstanceRange(), "s", 0, -1, !IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getDescriptionBox__AddUnreifiedRelationshipInstanceTuples__EList(), this.getDescriptionBox(), "addUnreifiedRelationshipInstanceTuples", 1, 1, !IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getUnreifiedRelationshipInstanceTuple(), "s", 0, -1, !IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getDescriptionBox__AddDataStructureTuples__EList(), this.getDescriptionBox(), "addDataStructureTuples", 1, 1, !IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getDataStructureTuple(), "s", 0, -1, !IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getDescriptionBox__AddScalarDataPropertyValues__EList(), this.getDescriptionBox(), "addScalarDataPropertyValues", 1, 1, !IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getScalarDataPropertyValue(), "s", 0, -1, !IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getDescriptionBox__AddStructuredDataPropertyValues__EList(), this.getDescriptionBox(), "addStructuredDataPropertyValues", 1, 1, !IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getStructuredDataPropertyValue(), "s", 0, -1, !IS_UNIQUE, IS_ORDERED);
 
 		initEClass(descriptionBoxRelationshipEClass, DescriptionBoxRelationship.class, "DescriptionBoxRelationship", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -5057,32 +4960,41 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		initEOperation(getDescriptionBoxRefinement__ContextTarget(), this.getContext(), "contextTarget", 1, 1, !IS_UNIQUE, IS_ORDERED);
 
 		initEClass(terminologyInstanceAssertionEClass, TerminologyInstanceAssertion.class, "TerminologyInstanceAssertion", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTerminologyInstanceAssertion_Name(), this.getLocalName(), "name", null, 1, 1, TerminologyInstanceAssertion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getTerminologyInstanceAssertion__DescriptionBox(), this.getDescriptionBox(), "descriptionBox", 1, 1, !IS_UNIQUE, IS_ORDERED);
 
+		initEOperation(getTerminologyInstanceAssertion__CalculateUUID(), this.getUUID(), "calculateUUID", 1, 1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getTerminologyInstanceAssertion__Iri(), this.getIRI(), "iri", 1, 1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getTerminologyInstanceAssertion__Name(), this.getLocalName(), "name", 1, 1, !IS_UNIQUE, IS_ORDERED);
+
 		initEClass(singletonInstanceEClass, SingletonInstance.class, "SingletonInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSingletonInstance_ScalarDataPropertyValues(), this.getScalarDataPropertyValue(), this.getScalarDataPropertyValue_SingletonInstance(), "scalarDataPropertyValues", null, 0, -1, SingletonInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSingletonInstance_StructuredDataPropertyValues(), this.getStructuredDataPropertyValue(), this.getStructuredDataPropertyValue_SingletonInstance(), "structuredDataPropertyValues", null, 0, -1, SingletonInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(scalarDataPropertyValueEClass, ScalarDataPropertyValue.class, "ScalarDataPropertyValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getScalarDataPropertyValue_DescriptionBox(), this.getDescriptionBox(), this.getDescriptionBox_ScalarDataPropertyValues(), "descriptionBox", null, 1, 1, ScalarDataPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getScalarDataPropertyValue_SingletonInstance(), this.getSingletonInstance(), null, "singletonInstance", null, 1, 1, ScalarDataPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScalarDataPropertyValue_SingletonInstance(), this.getSingletonInstance(), this.getSingletonInstance_ScalarDataPropertyValues(), "singletonInstance", null, 1, 1, ScalarDataPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScalarDataPropertyValue_ScalarDataProperty(), this.getDataRelationshipToScalar(), null, "scalarDataProperty", null, 1, 1, ScalarDataPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getScalarDataPropertyValue_ScalarPropertyValue(), theEcorePackage.getEString(), "scalarPropertyValue", null, 1, 1, ScalarDataPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(structuredDataPropertyValueEClass, StructuredDataPropertyValue.class, "StructuredDataPropertyValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStructuredDataPropertyValue_DescriptionBox(), this.getDescriptionBox(), this.getDescriptionBox_StructuredDataPropertyValues(), "descriptionBox", null, 1, 1, StructuredDataPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStructuredDataPropertyValue_SingletonInstance(), this.getSingletonInstance(), null, "singletonInstance", null, 1, 1, StructuredDataPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStructuredDataPropertyValue_SingletonInstance(), this.getSingletonInstance(), this.getSingletonInstance_StructuredDataPropertyValues(), "singletonInstance", null, 1, 1, StructuredDataPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStructuredDataPropertyValue_StructuredDataProperty(), this.getDataRelationshipToStructure(), null, "structuredDataProperty", null, 1, 1, StructuredDataPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStructuredDataPropertyValue_StructuredPropertyTuple(), this.getDataStructureTuple(), null, "structuredPropertyTuple", null, 1, 1, StructuredDataPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStructuredDataPropertyValue_StructuredPropertyTuple(), this.getDataStructureTuple(), this.getDataStructureTuple_StructuredDataPropertyValue(), "structuredPropertyTuple", null, 1, 1, StructuredDataPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataStructureTupleEClass, DataStructureTuple.class, "DataStructureTuple", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDataStructureTuple_DescriptionBox(), this.getDescriptionBox(), this.getDescriptionBox_DataStructureTuples(), "descriptionBox", null, 1, 1, DataStructureTuple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataStructureTuple_StructuredDataPropertyValue(), this.getStructuredDataPropertyValue(), this.getStructuredDataPropertyValue_StructuredPropertyTuple(), "structuredDataPropertyValue", null, 1, 1, DataStructureTuple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataStructureTuple_DataStructureType(), this.getStructure(), null, "dataStructureType", null, 1, 1, DataStructureTuple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(conceptualEntitySingletonInstanceEClass, ConceptualEntitySingletonInstance.class, "ConceptualEntitySingletonInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConceptualEntitySingletonInstance_IdentifyingScalarValues(), this.getScalarDataPropertyValue(), null, "identifyingScalarValues", null, 0, -1, ConceptualEntitySingletonInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConceptualEntitySingletonInstance_IdentifyingStructuredTuples(), this.getDataStructureTuple(), null, "identifyingStructuredTuples", null, 0, -1, ConceptualEntitySingletonInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getConceptualEntitySingletonInstance__ConceptualEntitySingletonClassifier(), this.getConceptualEntity(), "conceptualEntitySingletonClassifier", 1, 1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getConceptualEntitySingletonInstance__IdentifyingScalarValues(), this.getScalarDataPropertyValue(), "identifyingScalarValues", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getConceptualEntitySingletonInstance__IdentifyingStructuredTuples(), this.getStructuredDataPropertyValue(), "identifyingStructuredTuples", 0, -1, !IS_UNIQUE, IS_ORDERED);
 
 		initEClass(conceptInstanceEClass, ConceptInstance.class, "ConceptInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConceptInstance_DescriptionBox(), this.getDescriptionBox(), this.getDescriptionBox_ConceptInstances(), "descriptionBox", null, 1, 1, ConceptInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5672,12 +5584,27 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		   new String[] {
 		   });	
 		addAnnotation
+		  (getResource__Name(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
 		  (getTerminologyThing__CalculateUUID(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
 		  (annotationPropertyTableEClass, 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (annotationSubjectTableEClass, 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (annotationSubjectPropertyValueEClass, 
 		   source, 
 		   new String[] {
 		   });	
@@ -5698,6 +5625,11 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		   });	
 		addAnnotation
 		  (getContext__CalculateUUID(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getContext__NsPrefix(), 
 		   source, 
 		   new String[] {
 		   });	
@@ -5878,11 +5810,6 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		   });	
 		addAnnotation
 		  (getTerm__Name(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getTerm_Name(), 
 		   source, 
 		   new String[] {
 		   });	
@@ -6087,46 +6014,6 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getDescriptionBox__AddConceptInstances__EList(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getDescriptionBox__AddReifiedRelationshipInstances__EList(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getDescriptionBox__AddReifiedRelationshipInstanceDomains__EList(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getDescriptionBox__AddReifiedRelationshipInstanceRanges__EList(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getDescriptionBox__AddUnreifiedRelationshipInstanceTuples__EList(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getDescriptionBox__AddDataStructureTuples__EList(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getDescriptionBox__AddScalarDataPropertyValues__EList(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getDescriptionBox__AddStructuredDataPropertyValues__EList(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
 		  (getDescriptionBox_TerminologyExtent(), 
 		   source, 
 		   new String[] {
@@ -6167,17 +6054,32 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		   new String[] {
 		   });	
 		addAnnotation
+		  (getTerminologyInstanceAssertion__CalculateUUID(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyInstanceAssertion__Iri(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyInstanceAssertion__Name(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
 		  (getConceptualEntitySingletonInstance__ConceptualEntitySingletonClassifier(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getConceptualEntitySingletonInstance_IdentifyingScalarValues(), 
+		  (getConceptualEntitySingletonInstance__IdentifyingScalarValues(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getConceptualEntitySingletonInstance_IdentifyingStructuredTuples(), 
+		  (getConceptualEntitySingletonInstance__IdentifyingStructuredTuples(), 
 		   source, 
 		   new String[] {
 		   });	
@@ -6460,54 +6362,6 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 			 "kind", "SortedSet"
 		   });	
 		addAnnotation
-		  ((getDescriptionBox__AddConceptInstances__EList()).getEParameters().get(0), 
-		   source, 
-		   new String[] {
-			 "kind", "SortedSet"
-		   });	
-		addAnnotation
-		  ((getDescriptionBox__AddReifiedRelationshipInstances__EList()).getEParameters().get(0), 
-		   source, 
-		   new String[] {
-			 "kind", "SortedSet"
-		   });	
-		addAnnotation
-		  ((getDescriptionBox__AddReifiedRelationshipInstanceDomains__EList()).getEParameters().get(0), 
-		   source, 
-		   new String[] {
-			 "kind", "SortedSet"
-		   });	
-		addAnnotation
-		  ((getDescriptionBox__AddReifiedRelationshipInstanceRanges__EList()).getEParameters().get(0), 
-		   source, 
-		   new String[] {
-			 "kind", "SortedSet"
-		   });	
-		addAnnotation
-		  ((getDescriptionBox__AddUnreifiedRelationshipInstanceTuples__EList()).getEParameters().get(0), 
-		   source, 
-		   new String[] {
-			 "kind", "SortedSet"
-		   });	
-		addAnnotation
-		  ((getDescriptionBox__AddDataStructureTuples__EList()).getEParameters().get(0), 
-		   source, 
-		   new String[] {
-			 "kind", "SortedSet"
-		   });	
-		addAnnotation
-		  ((getDescriptionBox__AddScalarDataPropertyValues__EList()).getEParameters().get(0), 
-		   source, 
-		   new String[] {
-			 "kind", "SortedSet"
-		   });	
-		addAnnotation
-		  ((getDescriptionBox__AddStructuredDataPropertyValues__EList()).getEParameters().get(0), 
-		   source, 
-		   new String[] {
-			 "kind", "SortedSet"
-		   });	
-		addAnnotation
 		  (getDescriptionBox_ClosedWorldDefinitions(), 
 		   source, 
 		   new String[] {
@@ -6550,31 +6404,25 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 			 "kind", "SortedSet"
 		   });	
 		addAnnotation
-		  (getDescriptionBox_DataStructureTuples(), 
+		  (getSingletonInstance_ScalarDataPropertyValues(), 
 		   source, 
 		   new String[] {
 			 "kind", "SortedSet"
 		   });	
 		addAnnotation
-		  (getDescriptionBox_ScalarDataPropertyValues(), 
+		  (getSingletonInstance_StructuredDataPropertyValues(), 
 		   source, 
 		   new String[] {
 			 "kind", "SortedSet"
 		   });	
 		addAnnotation
-		  (getDescriptionBox_StructuredDataPropertyValues(), 
+		  (getConceptualEntitySingletonInstance__IdentifyingScalarValues(), 
 		   source, 
 		   new String[] {
 			 "kind", "SortedSet"
 		   });	
 		addAnnotation
-		  (getConceptualEntitySingletonInstance_IdentifyingScalarValues(), 
-		   source, 
-		   new String[] {
-			 "kind", "SortedSet"
-		   });	
-		addAnnotation
-		  (getConceptualEntitySingletonInstance_IdentifyingStructuredTuples(), 
+		  (getConceptualEntitySingletonInstance__IdentifyingStructuredTuples(), 
 		   source, 
 		   new String[] {
 			 "kind", "SortedSet"
@@ -6720,17 +6568,12 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getDescriptionBox_DataStructureTuples(), 
+		  (getSingletonInstance_ScalarDataPropertyValues(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getDescriptionBox_ScalarDataPropertyValues(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getDescriptionBox_StructuredDataPropertyValues(), 
+		  (getSingletonInstance_StructuredDataPropertyValues(), 
 		   source, 
 		   new String[] {
 		   });
@@ -6905,6 +6748,16 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		   new String[] {
 		   });	
 		addAnnotation
+		  (getTerminologyInstanceAssertion__Iri(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyInstanceAssertion_Name(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
 		  (getConceptInstance__ConceptualEntitySingletonClassifier(), 
 		   source, 
 		   new String[] {
@@ -7063,52 +6916,22 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 			 "code", "terminology match { case g: TerminologyGraph => g }"
 		   });	
 		addAnnotation
-		  (getDescriptionBox__AddConceptInstances__EList(), 
+		  (getTerminologyInstanceAssertion__Iri(), 
 		   source, 
 		   new String[] {
-			 "code", "copy(conceptInstances = this.conceptInstances ++ s)"
+			 "code", "descriptionBox.iri + \"#\" + name"
 		   });	
 		addAnnotation
-		  (getDescriptionBox__AddReifiedRelationshipInstances__EList(), 
+		  (getConceptualEntitySingletonInstance__IdentifyingScalarValues(), 
 		   source, 
 		   new String[] {
-			 "code", "copy(reifiedRelationshipInstances = this.reifiedRelationshipInstances ++ s)"
+			 "code", "scalarDataPropertyValues.filter{ v =>\n\t  v.scalarDataProperty match {\n\t    case ep: EntityScalarDataProperty =>\n\t\t  ep.isIdentityCriteria\n\t    case _ =>\n\t      false\n\t  }}"
 		   });	
 		addAnnotation
-		  (getDescriptionBox__AddReifiedRelationshipInstanceDomains__EList(), 
+		  (getConceptualEntitySingletonInstance__IdentifyingStructuredTuples(), 
 		   source, 
 		   new String[] {
-			 "code", "copy(reifiedRelationshipInstanceDomains = this.reifiedRelationshipInstanceDomains ++ s)"
-		   });	
-		addAnnotation
-		  (getDescriptionBox__AddReifiedRelationshipInstanceRanges__EList(), 
-		   source, 
-		   new String[] {
-			 "code", "copy(reifiedRelationshipInstanceRanges = this.reifiedRelationshipInstanceRanges ++ s)"
-		   });	
-		addAnnotation
-		  (getDescriptionBox__AddUnreifiedRelationshipInstanceTuples__EList(), 
-		   source, 
-		   new String[] {
-			 "code", "copy(unreifiedRelationshipInstanceTuples = this.unreifiedRelationshipInstanceTuples ++ s)"
-		   });	
-		addAnnotation
-		  (getDescriptionBox__AddDataStructureTuples__EList(), 
-		   source, 
-		   new String[] {
-			 "code", "copy(dataStructureTuples = this.dataStructureTuples ++ s)"
-		   });	
-		addAnnotation
-		  (getDescriptionBox__AddScalarDataPropertyValues__EList(), 
-		   source, 
-		   new String[] {
-			 "code", "copy(scalarDataPropertyValues = this.scalarDataPropertyValues ++ s)"
-		   });	
-		addAnnotation
-		  (getDescriptionBox__AddStructuredDataPropertyValues__EList(), 
-		   source, 
-		   new String[] {
-			 "code", "copy(structuredDataPropertyValues = this.structuredDataPropertyValues ++ s)"
+			 "code", "structuredDataPropertyValues.filter{ v =>\n\t  v.structuredDataProperty match {\n\t    case ep: EntityStructuredDataProperty =>\n\t\t  ep.isIdentityCriteria\n\t    case _ =>\n\t      false\n\t  }}"
 		   });
 	}
 

@@ -27,7 +27,7 @@ import scala.Predef.String
 package object tables {
 	type AbbrevIRI = String
 	type IRI = String
-	type Language = String
+	type LangRange = String
 	type LexicalNumber = String
 	type LexicalTime = String
 	type LexicalValue = String
@@ -45,8 +45,8 @@ package object tables {
   = new scala.Ordering[AnnotationEntry] {
   	def compare(x: AnnotationEntry, y: AnnotationEntry)
   	: scala.Int
-  	= x.terminologyUUID.compareTo(y.terminologyUUID) match {
-  	 	case c_terminologyUUID if 0 != c_terminologyUUID => c_terminologyUUID
+  	= x.contextUUID.compareTo(y.contextUUID) match {
+  	 	case c_contextUUID if 0 != c_contextUUID => c_contextUUID
   	 	case 0 => x.subjectUUID.compareTo(y.subjectUUID) match {
   	 	case c_subjectUUID if 0 != c_subjectUUID => c_subjectUUID
   	 	case 0 => x.value.compareTo(y.value) match {
@@ -144,10 +144,60 @@ package object tables {
   	 	case 0 => 0 }
   }
   
+  implicit def conceptInstanceOrdering
+  : scala.Ordering[ConceptInstance]
+  = new scala.Ordering[ConceptInstance] {
+  	def compare(x: ConceptInstance, y: ConceptInstance)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
   implicit def conceptSpecializationAxiomOrdering
   : scala.Ordering[ConceptSpecializationAxiom]
   = new scala.Ordering[ConceptSpecializationAxiom] {
   	def compare(x: ConceptSpecializationAxiom, y: ConceptSpecializationAxiom)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
+  implicit def dataStructureTupleOrdering
+  : scala.Ordering[DataStructureTuple]
+  = new scala.Ordering[DataStructureTuple] {
+  	def compare(x: DataStructureTuple, y: DataStructureTuple)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
+  implicit def descriptionBoxOrdering
+  : scala.Ordering[DescriptionBox]
+  = new scala.Ordering[DescriptionBox] {
+  	def compare(x: DescriptionBox, y: DescriptionBox)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
+  implicit def descriptionBoxExtendsClosedWorldDefinitionsOrdering
+  : scala.Ordering[DescriptionBoxExtendsClosedWorldDefinitions]
+  = new scala.Ordering[DescriptionBoxExtendsClosedWorldDefinitions] {
+  	def compare(x: DescriptionBoxExtendsClosedWorldDefinitions, y: DescriptionBoxExtendsClosedWorldDefinitions)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
+  implicit def descriptionBoxRefinementOrdering
+  : scala.Ordering[DescriptionBoxRefinement]
+  = new scala.Ordering[DescriptionBoxRefinement] {
+  	def compare(x: DescriptionBoxRefinement, y: DescriptionBoxRefinement)
   	: scala.Int
   	= x.uuid.compareTo(y.uuid) match {
   	 	case c_uuid if 0 != c_uuid => c_uuid
@@ -264,6 +314,36 @@ package object tables {
   	 	case 0 => 0 }
   }
   
+  implicit def reifiedRelationshipInstanceOrdering
+  : scala.Ordering[ReifiedRelationshipInstance]
+  = new scala.Ordering[ReifiedRelationshipInstance] {
+  	def compare(x: ReifiedRelationshipInstance, y: ReifiedRelationshipInstance)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
+  implicit def reifiedRelationshipInstanceDomainOrdering
+  : scala.Ordering[ReifiedRelationshipInstanceDomain]
+  = new scala.Ordering[ReifiedRelationshipInstanceDomain] {
+  	def compare(x: ReifiedRelationshipInstanceDomain, y: ReifiedRelationshipInstanceDomain)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
+  implicit def reifiedRelationshipInstanceRangeOrdering
+  : scala.Ordering[ReifiedRelationshipInstanceRange]
+  = new scala.Ordering[ReifiedRelationshipInstanceRange] {
+  	def compare(x: ReifiedRelationshipInstanceRange, y: ReifiedRelationshipInstanceRange)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
   implicit def reifiedRelationshipSpecializationAxiomOrdering
   : scala.Ordering[ReifiedRelationshipSpecializationAxiom]
   = new scala.Ordering[ReifiedRelationshipSpecializationAxiom] {
@@ -298,6 +378,16 @@ package object tables {
   : scala.Ordering[ScalarDataProperty]
   = new scala.Ordering[ScalarDataProperty] {
   	def compare(x: ScalarDataProperty, y: ScalarDataProperty)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
+  implicit def scalarDataPropertyValueOrdering
+  : scala.Ordering[ScalarDataPropertyValue]
+  = new scala.Ordering[ScalarDataPropertyValue] {
+  	def compare(x: ScalarDataPropertyValue, y: ScalarDataPropertyValue)
   	: scala.Int
   	= x.uuid.compareTo(y.uuid) match {
   	 	case c_uuid if 0 != c_uuid => c_uuid
@@ -364,6 +454,16 @@ package object tables {
   	 	case 0 => 0 }
   }
   
+  implicit def structuredDataPropertyValueOrdering
+  : scala.Ordering[StructuredDataPropertyValue]
+  = new scala.Ordering[StructuredDataPropertyValue] {
+  	def compare(x: StructuredDataPropertyValue, y: StructuredDataPropertyValue)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
   implicit def synonymScalarRestrictionOrdering
   : scala.Ordering[SynonymScalarRestriction]
   = new scala.Ordering[SynonymScalarRestriction] {
@@ -418,6 +518,16 @@ package object tables {
   : scala.Ordering[UnreifiedRelationship]
   = new scala.Ordering[UnreifiedRelationship] {
   	def compare(x: UnreifiedRelationship, y: UnreifiedRelationship)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
+  implicit def unreifiedRelationshipInstanceTupleOrdering
+  : scala.Ordering[UnreifiedRelationshipInstanceTuple]
+  = new scala.Ordering[UnreifiedRelationshipInstanceTuple] {
+  	def compare(x: UnreifiedRelationshipInstanceTuple, y: UnreifiedRelationshipInstanceTuple)
   	: scala.Int
   	= x.uuid.compareTo(y.uuid) match {
   	 	case c_uuid if 0 != c_uuid => c_uuid

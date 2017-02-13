@@ -19,9 +19,9 @@
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
- * This axiom specifies a TerminologyBox that a Bundle aggregates.
- * A BundledTerminologyAxiom allows a bundle to
- * make references (via TerminologyStatements) to TerminologyThings
+ * An OML BundledTerminologyAxiom identifies an OML TerminologyBox that an OML Bundle aggregates.
+ * An OML BundledTerminologyAxiom allows an OML Bundle to
+ * make references (via OML TerminologyStatement(s)) to OML TerminologyThing(s)
  * within the transitive closure of a bundledTerminology.
  */
 trait BundledTerminologyAxiom

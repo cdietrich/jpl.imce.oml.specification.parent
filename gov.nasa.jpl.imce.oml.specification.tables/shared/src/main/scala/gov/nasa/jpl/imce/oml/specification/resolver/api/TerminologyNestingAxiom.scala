@@ -18,6 +18,12 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML TerminologyNestingAxiom provides support for relating
+ * a white-box OML TerminologyGraph as a nested terminology
+ * providing details about a black-box OML Concept defined
+ * in a nesting OML TerminologyBox.
+ */
 trait TerminologyNestingAxiom
   extends TerminologyBoxAxiom
 {

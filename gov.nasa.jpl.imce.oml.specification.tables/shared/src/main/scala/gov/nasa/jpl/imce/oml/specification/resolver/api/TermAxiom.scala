@@ -18,6 +18,9 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML TermAxiom is a logical axiom about an OML Term.
+ */
 trait TermAxiom
   extends Axiom
 {

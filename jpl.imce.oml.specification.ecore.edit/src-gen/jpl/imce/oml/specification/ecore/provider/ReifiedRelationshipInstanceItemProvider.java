@@ -128,7 +128,7 @@ public class ReifiedRelationshipInstanceItemProvider extends ConceptualEntitySin
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ReifiedRelationshipInstance)object).getUuid();
+		String label = ((ReifiedRelationshipInstance)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ReifiedRelationshipInstance_type") :
 			getString("_UI_ReifiedRelationshipInstance_type") + " " + label;

@@ -22,13 +22,14 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class Concept private[impl] 
 (
- override val graph: TerminologyBox,
  override val uuid: java.util.UUID,
+ override val tbox: TerminologyBox,
  override val isAbstract: scala.Boolean,
  override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName
 )
 extends resolver.api.Concept
   with Entity
+  with ConceptualEntity
   with UnaryTermKind
 {
 
@@ -39,13 +40,13 @@ extends resolver.api.Concept
 
   override val hashCode
   : scala.Int
-  = (graph, uuid, isAbstract, name).##
+  = (uuid, tbox, isAbstract, name).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: Concept =>
 	    (that canEqual this) &&
-	    (this.graph == that.graph) &&
 	    (this.uuid == that.uuid) &&
+	    (this.tbox == that.tbox) &&
 	    (this.isAbstract == that.isAbstract) &&
 	    (this.name == that.name)
 

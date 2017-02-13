@@ -18,6 +18,13 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML ConceptDesignationTerminologyAxiom establishes
+ * a relationship from a source OML TerminologyBox
+ * where a designated OML Concept is defined to
+ * a target OML TerminologyGraph in which the internal
+ * structure of the designated OML Concept can be defined.
+ */
 trait ConceptDesignationTerminologyAxiom
   extends TerminologyBoxAxiom
 {

@@ -24,6 +24,7 @@ case class TerminologyExtent private[impl]
 (
  override val annotationProperties: scala.collection.immutable.SortedSet[AnnotationProperty],
  override val bundles: scala.collection.immutable.SortedSet[Bundle],
+ override val descriptions: scala.collection.immutable.SortedSet[DescriptionBox],
  override val terminologyGraphs: scala.collection.immutable.SortedSet[TerminologyGraph]
 )
 extends resolver.api.TerminologyExtent
@@ -31,13 +32,14 @@ extends resolver.api.TerminologyExtent
 
   override val hashCode
   : scala.Int
-  = (annotationProperties, bundles, terminologyGraphs).##
+  = (annotationProperties, bundles, descriptions, terminologyGraphs).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: TerminologyExtent =>
 	    (that canEqual this) &&
 	    (this.annotationProperties == that.annotationProperties) &&
 	    (this.bundles == that.bundles) &&
+	    (this.descriptions == that.descriptions) &&
 	    (this.terminologyGraphs == that.terminologyGraphs)
 
 	  case _ =>

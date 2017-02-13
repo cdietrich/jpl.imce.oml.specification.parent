@@ -19,7 +19,7 @@
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
- * Corresponds to an OWL2 DataRange with arity=1.
+ * An OWL DataRange corresponds to an [OWL2 DataRange] with arity=1.
  */
 trait DataRange
   extends Datatype

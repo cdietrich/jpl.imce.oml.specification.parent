@@ -19,7 +19,7 @@
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
- * A TerminologyAxiom is asserted in a TerminologyBox of some kind.
+ * An OML TerminologyAxiom is asserted in a TerminologyBox of some kind.
  */
 trait TerminologyAxiom
   extends TerminologyThing

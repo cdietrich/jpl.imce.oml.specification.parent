@@ -25,29 +25,29 @@ import scala._
 import scala.Predef._
 
 /**
-  * @param graphUUID[1,1]
   * @param uuid[1,1]
-  * @param subEntityUUID[1,1]
+  * @param tboxUUID[1,1]
   * @param superAspectUUID[1,1]
+  * @param subEntityUUID[1,1]
   */
 @JSExport
 case class AspectSpecializationAxiom
 (
-  @(JSExport @field) graphUUID: UUID,
   @(JSExport @field) uuid: UUID,
-  @(JSExport @field) subEntityUUID: UUID,
-  @(JSExport @field) superAspectUUID: UUID
+  @(JSExport @field) tboxUUID: UUID,
+  @(JSExport @field) superAspectUUID: UUID,
+  @(JSExport @field) subEntityUUID: UUID
 ) {
   override val hashCode
   : scala.Int 
-  = (graphUUID, uuid, subEntityUUID, superAspectUUID).##
+  = (uuid, tboxUUID, superAspectUUID, subEntityUUID).##
   
   override def equals(other: scala.Any): scala.Boolean = other match {
   	case that: AspectSpecializationAxiom =>
-  	  (this.graphUUID == that.graphUUID) &&
   	  (this.uuid == that.uuid) &&
-  	  (this.subEntityUUID == that.subEntityUUID) &&
-  	  (this.superAspectUUID == that.superAspectUUID)
+  	  (this.tboxUUID == that.tboxUUID) &&
+  	  (this.superAspectUUID == that.superAspectUUID) &&
+  	  (this.subEntityUUID == that.subEntityUUID)
     case _ =>
       false
   }

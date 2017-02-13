@@ -22,8 +22,8 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class ScalarOneOfLiteralAxiom private[impl] 
 (
- override val graph: TerminologyBox,
  override val uuid: java.util.UUID,
+ override val tbox: TerminologyBox,
  override val axiom: ScalarOneOfRestriction,
  override val value: gov.nasa.jpl.imce.oml.specification.tables.LexicalValue
 )
@@ -38,13 +38,13 @@ extends resolver.api.ScalarOneOfLiteralAxiom
 
   override val hashCode
   : scala.Int
-  = (graph, uuid, axiom, value).##
+  = (uuid, tbox, axiom, value).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: ScalarOneOfLiteralAxiom =>
 	    (that canEqual this) &&
-	    (this.graph == that.graph) &&
 	    (this.uuid == that.uuid) &&
+	    (this.tbox == that.tbox) &&
 	    (this.axiom == that.axiom) &&
 	    (this.value == that.value)
 

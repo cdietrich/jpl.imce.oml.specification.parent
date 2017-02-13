@@ -25,7 +25,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML Scalar corresponds to an OWL2 Declaration of a Datatype with arity=1.
+ * An OML Scalar corresponds to an OWL2 Declaration of an [OWL2 DataRange] with arity=1.
  * <!-- end-model-doc -->
  *
  *

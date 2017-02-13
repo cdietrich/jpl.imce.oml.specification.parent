@@ -19,7 +19,8 @@
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
- * Semantics: OWL2 DataAllValuesFrom (the range must be explicitly defined as a Scalar datatype)
+ * An OML EntityScalarDataPropertyUniversalRestrictionAxiom maps to an
+ * OWL2 DataAllValuesFrom (the range must be explicitly defined as a Scalar datatype)
  */
 trait EntityScalarDataPropertyUniversalRestrictionAxiom
   extends EntityScalarDataPropertyRestrictionAxiom

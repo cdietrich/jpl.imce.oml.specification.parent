@@ -19,10 +19,18 @@
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
- * A data range that specifies how one plain literal scalar adds facet restrictions to another.
- * Applies when the restricted scalar represents plain literals (OWL2: 4.3)
- * i.e., when it is one of the following scalars (or their transitively restricted ones):
- * rdf:PlainLiteral
+ * An OML PlainLiteralScalarRestriction is a data range that specifies how one plain literal scalar adds facet restrictions to another.
+ * Applicable when the restricted scalar represents [rdf:PlainLiteral].
+ * 
+ * The restricted scalar must be directly or indirectly a restriction of:
+ * - [rdf:PlainLiteral]
+ * 
+ * Facets:
+ * - [xsd:langRange]
+ * - [xsd:length]
+ * - [xsd:minLength]
+ * - [xsd:maxLength]
+ * - [xsd:pattern]
  */
 trait PlainLiteralScalarRestriction
   extends RestrictedDataRange
@@ -47,5 +55,5 @@ trait PlainLiteralScalarRestriction
   /*
    * The language of the plain literal (http://www.rfc-editor.org/rfc/bcp/bcp47.txt)
    */
-  val language: scala.Option[gov.nasa.jpl.imce.oml.specification.tables.Language]
+  val langRange: scala.Option[resolver.api.LangRange]
 }

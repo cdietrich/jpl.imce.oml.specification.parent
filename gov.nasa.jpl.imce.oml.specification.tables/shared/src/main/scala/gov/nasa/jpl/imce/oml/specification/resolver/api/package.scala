@@ -26,8 +26,8 @@ package object api {
   = new scala.Ordering[Annotation] {
   	def compare(x: Annotation, y: Annotation)
   	: scala.Int
-  	= terminologyBoxOrdering.compare(x.terminology,y.terminology) match {
-  	 	case c_terminology if 0 != c_terminology => c_terminology
+  	= contextOrdering.compare(x.context,y.context) match {
+  	 	case c_context if 0 != c_context => c_context
   	 	case 0 => terminologyThingOrdering.compare(x.subject,y.subject) match {
   	 	case c_subject if 0 != c_subject => c_subject
   	 	case 0 => annotationPropertyOrdering.compare(x.property,y.property) match {
@@ -42,8 +42,8 @@ package object api {
   = new scala.Ordering[AnnotationEntry] {
   	def compare(x: AnnotationEntry, y: AnnotationEntry)
   	: scala.Int
-  	= terminologyBoxOrdering.compare(x.terminology,y.terminology) match {
-  	 	case c_terminology if 0 != c_terminology => c_terminology
+  	= contextOrdering.compare(x.context,y.context) match {
+  	 	case c_context if 0 != c_context => c_context
   	 	case 0 => terminologyThingOrdering.compare(x.subject,y.subject) match {
   	 	case c_subject if 0 != c_subject => c_subject
   	 	case 0 => x.value.compareTo(y.value) match {
@@ -161,10 +161,40 @@ package object api {
   	 	case 0 => 0 }
   }
   
+  implicit def conceptInstanceOrdering
+  : scala.Ordering[ConceptInstance]
+  = new scala.Ordering[ConceptInstance] {
+  	def compare(x: ConceptInstance, y: ConceptInstance)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
   implicit def conceptSpecializationAxiomOrdering
   : scala.Ordering[ConceptSpecializationAxiom]
   = new scala.Ordering[ConceptSpecializationAxiom] {
   	def compare(x: ConceptSpecializationAxiom, y: ConceptSpecializationAxiom)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
+  implicit def conceptualEntitySingletonInstanceOrdering
+  : scala.Ordering[ConceptualEntitySingletonInstance]
+  = new scala.Ordering[ConceptualEntitySingletonInstance] {
+  	def compare(x: ConceptualEntitySingletonInstance, y: ConceptualEntitySingletonInstance)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
+  implicit def contextOrdering
+  : scala.Ordering[Context]
+  = new scala.Ordering[Context] {
+  	def compare(x: Context, y: Context)
   	: scala.Int
   	= x.uuid.compareTo(y.uuid) match {
   	 	case c_uuid if 0 != c_uuid => c_uuid
@@ -191,10 +221,60 @@ package object api {
   	 	case 0 => 0 }
   }
   
+  implicit def dataStructureTupleOrdering
+  : scala.Ordering[DataStructureTuple]
+  = new scala.Ordering[DataStructureTuple] {
+  	def compare(x: DataStructureTuple, y: DataStructureTuple)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
   implicit def datatypeOrdering
   : scala.Ordering[Datatype]
   = new scala.Ordering[Datatype] {
   	def compare(x: Datatype, y: Datatype)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
+  implicit def descriptionBoxOrdering
+  : scala.Ordering[DescriptionBox]
+  = new scala.Ordering[DescriptionBox] {
+  	def compare(x: DescriptionBox, y: DescriptionBox)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
+  implicit def descriptionBoxExtendsClosedWorldDefinitionsOrdering
+  : scala.Ordering[DescriptionBoxExtendsClosedWorldDefinitions]
+  = new scala.Ordering[DescriptionBoxExtendsClosedWorldDefinitions] {
+  	def compare(x: DescriptionBoxExtendsClosedWorldDefinitions, y: DescriptionBoxExtendsClosedWorldDefinitions)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
+  implicit def descriptionBoxRefinementOrdering
+  : scala.Ordering[DescriptionBoxRefinement]
+  = new scala.Ordering[DescriptionBoxRefinement] {
+  	def compare(x: DescriptionBoxRefinement, y: DescriptionBoxRefinement)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
+  implicit def descriptionBoxRelationshipOrdering
+  : scala.Ordering[DescriptionBoxRelationship]
+  = new scala.Ordering[DescriptionBoxRelationship] {
+  	def compare(x: DescriptionBoxRelationship, y: DescriptionBoxRelationship)
   	: scala.Int
   	= x.uuid.compareTo(y.uuid) match {
   	 	case c_uuid if 0 != c_uuid => c_uuid
@@ -361,6 +441,36 @@ package object api {
   	 	case 0 => 0 }
   }
   
+  implicit def reifiedRelationshipInstanceOrdering
+  : scala.Ordering[ReifiedRelationshipInstance]
+  = new scala.Ordering[ReifiedRelationshipInstance] {
+  	def compare(x: ReifiedRelationshipInstance, y: ReifiedRelationshipInstance)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
+  implicit def reifiedRelationshipInstanceDomainOrdering
+  : scala.Ordering[ReifiedRelationshipInstanceDomain]
+  = new scala.Ordering[ReifiedRelationshipInstanceDomain] {
+  	def compare(x: ReifiedRelationshipInstanceDomain, y: ReifiedRelationshipInstanceDomain)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
+  implicit def reifiedRelationshipInstanceRangeOrdering
+  : scala.Ordering[ReifiedRelationshipInstanceRange]
+  = new scala.Ordering[ReifiedRelationshipInstanceRange] {
+  	def compare(x: ReifiedRelationshipInstanceRange, y: ReifiedRelationshipInstanceRange)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
   implicit def reifiedRelationshipSpecializationAxiomOrdering
   : scala.Ordering[ReifiedRelationshipSpecializationAxiom]
   = new scala.Ordering[ReifiedRelationshipSpecializationAxiom] {
@@ -411,6 +521,16 @@ package object api {
   	 	case 0 => 0 }
   }
   
+  implicit def scalarDataPropertyValueOrdering
+  : scala.Ordering[ScalarDataPropertyValue]
+  = new scala.Ordering[ScalarDataPropertyValue] {
+  	def compare(x: ScalarDataPropertyValue, y: ScalarDataPropertyValue)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
   implicit def scalarOneOfLiteralAxiomOrdering
   : scala.Ordering[ScalarOneOfLiteralAxiom]
   = new scala.Ordering[ScalarOneOfLiteralAxiom] {
@@ -425,6 +545,16 @@ package object api {
   : scala.Ordering[ScalarOneOfRestriction]
   = new scala.Ordering[ScalarOneOfRestriction] {
   	def compare(x: ScalarOneOfRestriction, y: ScalarOneOfRestriction)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
+  implicit def singletonInstanceOrdering
+  : scala.Ordering[SingletonInstance]
+  = new scala.Ordering[SingletonInstance] {
+  	def compare(x: SingletonInstance, y: SingletonInstance)
   	: scala.Int
   	= x.uuid.compareTo(y.uuid) match {
   	 	case c_uuid if 0 != c_uuid => c_uuid
@@ -475,6 +605,16 @@ package object api {
   : scala.Ordering[StructuredDataProperty]
   = new scala.Ordering[StructuredDataProperty] {
   	def compare(x: StructuredDataProperty, y: StructuredDataProperty)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
+  implicit def structuredDataPropertyValueOrdering
+  : scala.Ordering[StructuredDataPropertyValue]
+  = new scala.Ordering[StructuredDataPropertyValue] {
+  	def compare(x: StructuredDataPropertyValue, y: StructuredDataPropertyValue)
   	: scala.Int
   	= x.uuid.compareTo(y.uuid) match {
   	 	case c_uuid if 0 != c_uuid => c_uuid
@@ -591,20 +731,20 @@ package object api {
   	 	case 0 => 0 }
   }
   
-  implicit def terminologyNestingAxiomOrdering
-  : scala.Ordering[TerminologyNestingAxiom]
-  = new scala.Ordering[TerminologyNestingAxiom] {
-  	def compare(x: TerminologyNestingAxiom, y: TerminologyNestingAxiom)
+  implicit def terminologyInstanceAssertionOrdering
+  : scala.Ordering[TerminologyInstanceAssertion]
+  = new scala.Ordering[TerminologyInstanceAssertion] {
+  	def compare(x: TerminologyInstanceAssertion, y: TerminologyInstanceAssertion)
   	: scala.Int
   	= x.uuid.compareTo(y.uuid) match {
   	 	case c_uuid if 0 != c_uuid => c_uuid
   	 	case 0 => 0 }
   }
   
-  implicit def terminologyStatementOrdering
-  : scala.Ordering[TerminologyStatement]
-  = new scala.Ordering[TerminologyStatement] {
-  	def compare(x: TerminologyStatement, y: TerminologyStatement)
+  implicit def terminologyNestingAxiomOrdering
+  : scala.Ordering[TerminologyNestingAxiom]
+  = new scala.Ordering[TerminologyNestingAxiom] {
+  	def compare(x: TerminologyNestingAxiom, y: TerminologyNestingAxiom)
   	: scala.Int
   	= x.uuid.compareTo(y.uuid) match {
   	 	case c_uuid if 0 != c_uuid => c_uuid
@@ -635,6 +775,16 @@ package object api {
   : scala.Ordering[UnreifiedRelationship]
   = new scala.Ordering[UnreifiedRelationship] {
   	def compare(x: UnreifiedRelationship, y: UnreifiedRelationship)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
+  implicit def unreifiedRelationshipInstanceTupleOrdering
+  : scala.Ordering[UnreifiedRelationshipInstanceTuple]
+  = new scala.Ordering[UnreifiedRelationshipInstanceTuple] {
+  	def compare(x: UnreifiedRelationshipInstanceTuple, y: UnreifiedRelationshipInstanceTuple)
   	: scala.Int
   	= x.uuid.compareTo(y.uuid) match {
   	 	case c_uuid if 0 != c_uuid => c_uuid

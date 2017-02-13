@@ -18,12 +18,9 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
-import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import jpl.imce.oml.specification.ecore.ConceptInstance;
-import jpl.imce.oml.specification.ecore.DataStructureTuple;
 import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions;
 import jpl.imce.oml.specification.ecore.DescriptionBoxRefinement;
@@ -32,8 +29,6 @@ import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.ReifiedRelationshipInstance;
 import jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceDomain;
 import jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceRange;
-import jpl.imce.oml.specification.ecore.ScalarDataPropertyValue;
-import jpl.imce.oml.specification.ecore.StructuredDataPropertyValue;
 import jpl.imce.oml.specification.ecore.TerminologyExtent;
 import jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple;
 
@@ -69,9 +64,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxImpl#getReifiedRelationshipInstanceDomains <em>Reified Relationship Instance Domains</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxImpl#getReifiedRelationshipInstanceRanges <em>Reified Relationship Instance Ranges</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxImpl#getUnreifiedRelationshipInstanceTuples <em>Unreified Relationship Instance Tuples</em>}</li>
- *   <li>{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxImpl#getDataStructureTuples <em>Data Structure Tuples</em>}</li>
- *   <li>{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxImpl#getScalarDataPropertyValues <em>Scalar Data Property Values</em>}</li>
- *   <li>{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxImpl#getStructuredDataPropertyValues <em>Structured Data Property Values</em>}</li>
  * </ul>
  *
  * @generated
@@ -166,36 +158,6 @@ public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
 	 * @ordered
 	 */
 	protected EList<UnreifiedRelationshipInstanceTuple> unreifiedRelationshipInstanceTuples;
-
-	/**
-	 * The cached value of the '{@link #getDataStructureTuples() <em>Data Structure Tuples</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataStructureTuples()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<DataStructureTuple> dataStructureTuples;
-
-	/**
-	 * The cached value of the '{@link #getScalarDataPropertyValues() <em>Scalar Data Property Values</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getScalarDataPropertyValues()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ScalarDataPropertyValue> scalarDataPropertyValues;
-
-	/**
-	 * The cached value of the '{@link #getStructuredDataPropertyValues() <em>Structured Data Property Values</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStructuredDataPropertyValues()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<StructuredDataPropertyValue> structuredDataPropertyValues;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -377,130 +339,6 @@ public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<DataStructureTuple> getDataStructureTuples() {
-		if (dataStructureTuples == null) {
-			dataStructureTuples = new EObjectContainmentWithInverseEList<DataStructureTuple>(DataStructureTuple.class, this, OMLPackage.DESCRIPTION_BOX__DATA_STRUCTURE_TUPLES, OMLPackage.DATA_STRUCTURE_TUPLE__DESCRIPTION_BOX);
-		}
-		return dataStructureTuples;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<ScalarDataPropertyValue> getScalarDataPropertyValues() {
-		if (scalarDataPropertyValues == null) {
-			scalarDataPropertyValues = new EObjectContainmentWithInverseEList<ScalarDataPropertyValue>(ScalarDataPropertyValue.class, this, OMLPackage.DESCRIPTION_BOX__SCALAR_DATA_PROPERTY_VALUES, OMLPackage.SCALAR_DATA_PROPERTY_VALUE__DESCRIPTION_BOX);
-		}
-		return scalarDataPropertyValues;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<StructuredDataPropertyValue> getStructuredDataPropertyValues() {
-		if (structuredDataPropertyValues == null) {
-			structuredDataPropertyValues = new EObjectContainmentWithInverseEList<StructuredDataPropertyValue>(StructuredDataPropertyValue.class, this, OMLPackage.DESCRIPTION_BOX__STRUCTURED_DATA_PROPERTY_VALUES, OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__DESCRIPTION_BOX);
-		}
-		return structuredDataPropertyValues;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DescriptionBox addConceptInstances(EList<ConceptInstance> s) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DescriptionBox addReifiedRelationshipInstances(EList<ReifiedRelationshipInstance> s) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DescriptionBox addReifiedRelationshipInstanceDomains(EList<ReifiedRelationshipInstanceDomain> s) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DescriptionBox addReifiedRelationshipInstanceRanges(EList<ReifiedRelationshipInstanceRange> s) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DescriptionBox addUnreifiedRelationshipInstanceTuples(EList<UnreifiedRelationshipInstanceTuple> s) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DescriptionBox addDataStructureTuples(EList<DataStructureTuple> s) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DescriptionBox addScalarDataPropertyValues(EList<ScalarDataPropertyValue> s) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DescriptionBox addStructuredDataPropertyValues(EList<StructuredDataPropertyValue> s) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -523,12 +361,6 @@ public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getReifiedRelationshipInstanceRanges()).basicAdd(otherEnd, msgs);
 			case OMLPackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getUnreifiedRelationshipInstanceTuples()).basicAdd(otherEnd, msgs);
-			case OMLPackage.DESCRIPTION_BOX__DATA_STRUCTURE_TUPLES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDataStructureTuples()).basicAdd(otherEnd, msgs);
-			case OMLPackage.DESCRIPTION_BOX__SCALAR_DATA_PROPERTY_VALUES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getScalarDataPropertyValues()).basicAdd(otherEnd, msgs);
-			case OMLPackage.DESCRIPTION_BOX__STRUCTURED_DATA_PROPERTY_VALUES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getStructuredDataPropertyValues()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -557,12 +389,6 @@ public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
 				return ((InternalEList<?>)getReifiedRelationshipInstanceRanges()).basicRemove(otherEnd, msgs);
 			case OMLPackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES:
 				return ((InternalEList<?>)getUnreifiedRelationshipInstanceTuples()).basicRemove(otherEnd, msgs);
-			case OMLPackage.DESCRIPTION_BOX__DATA_STRUCTURE_TUPLES:
-				return ((InternalEList<?>)getDataStructureTuples()).basicRemove(otherEnd, msgs);
-			case OMLPackage.DESCRIPTION_BOX__SCALAR_DATA_PROPERTY_VALUES:
-				return ((InternalEList<?>)getScalarDataPropertyValues()).basicRemove(otherEnd, msgs);
-			case OMLPackage.DESCRIPTION_BOX__STRUCTURED_DATA_PROPERTY_VALUES:
-				return ((InternalEList<?>)getStructuredDataPropertyValues()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -608,12 +434,6 @@ public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
 				return getReifiedRelationshipInstanceRanges();
 			case OMLPackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES:
 				return getUnreifiedRelationshipInstanceTuples();
-			case OMLPackage.DESCRIPTION_BOX__DATA_STRUCTURE_TUPLES:
-				return getDataStructureTuples();
-			case OMLPackage.DESCRIPTION_BOX__SCALAR_DATA_PROPERTY_VALUES:
-				return getScalarDataPropertyValues();
-			case OMLPackage.DESCRIPTION_BOX__STRUCTURED_DATA_PROPERTY_VALUES:
-				return getStructuredDataPropertyValues();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -661,18 +481,6 @@ public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
 				getUnreifiedRelationshipInstanceTuples().clear();
 				getUnreifiedRelationshipInstanceTuples().addAll((Collection<? extends UnreifiedRelationshipInstanceTuple>)newValue);
 				return;
-			case OMLPackage.DESCRIPTION_BOX__DATA_STRUCTURE_TUPLES:
-				getDataStructureTuples().clear();
-				getDataStructureTuples().addAll((Collection<? extends DataStructureTuple>)newValue);
-				return;
-			case OMLPackage.DESCRIPTION_BOX__SCALAR_DATA_PROPERTY_VALUES:
-				getScalarDataPropertyValues().clear();
-				getScalarDataPropertyValues().addAll((Collection<? extends ScalarDataPropertyValue>)newValue);
-				return;
-			case OMLPackage.DESCRIPTION_BOX__STRUCTURED_DATA_PROPERTY_VALUES:
-				getStructuredDataPropertyValues().clear();
-				getStructuredDataPropertyValues().addAll((Collection<? extends StructuredDataPropertyValue>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -712,15 +520,6 @@ public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
 			case OMLPackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES:
 				getUnreifiedRelationshipInstanceTuples().clear();
 				return;
-			case OMLPackage.DESCRIPTION_BOX__DATA_STRUCTURE_TUPLES:
-				getDataStructureTuples().clear();
-				return;
-			case OMLPackage.DESCRIPTION_BOX__SCALAR_DATA_PROPERTY_VALUES:
-				getScalarDataPropertyValues().clear();
-				return;
-			case OMLPackage.DESCRIPTION_BOX__STRUCTURED_DATA_PROPERTY_VALUES:
-				getStructuredDataPropertyValues().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -751,43 +550,8 @@ public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
 				return reifiedRelationshipInstanceRanges != null && !reifiedRelationshipInstanceRanges.isEmpty();
 			case OMLPackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES:
 				return unreifiedRelationshipInstanceTuples != null && !unreifiedRelationshipInstanceTuples.isEmpty();
-			case OMLPackage.DESCRIPTION_BOX__DATA_STRUCTURE_TUPLES:
-				return dataStructureTuples != null && !dataStructureTuples.isEmpty();
-			case OMLPackage.DESCRIPTION_BOX__SCALAR_DATA_PROPERTY_VALUES:
-				return scalarDataPropertyValues != null && !scalarDataPropertyValues.isEmpty();
-			case OMLPackage.DESCRIPTION_BOX__STRUCTURED_DATA_PROPERTY_VALUES:
-				return structuredDataPropertyValues != null && !structuredDataPropertyValues.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case OMLPackage.DESCRIPTION_BOX___ADD_CONCEPT_INSTANCES__ELIST:
-				return addConceptInstances((EList<ConceptInstance>)arguments.get(0));
-			case OMLPackage.DESCRIPTION_BOX___ADD_REIFIED_RELATIONSHIP_INSTANCES__ELIST:
-				return addReifiedRelationshipInstances((EList<ReifiedRelationshipInstance>)arguments.get(0));
-			case OMLPackage.DESCRIPTION_BOX___ADD_REIFIED_RELATIONSHIP_INSTANCE_DOMAINS__ELIST:
-				return addReifiedRelationshipInstanceDomains((EList<ReifiedRelationshipInstanceDomain>)arguments.get(0));
-			case OMLPackage.DESCRIPTION_BOX___ADD_REIFIED_RELATIONSHIP_INSTANCE_RANGES__ELIST:
-				return addReifiedRelationshipInstanceRanges((EList<ReifiedRelationshipInstanceRange>)arguments.get(0));
-			case OMLPackage.DESCRIPTION_BOX___ADD_UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES__ELIST:
-				return addUnreifiedRelationshipInstanceTuples((EList<UnreifiedRelationshipInstanceTuple>)arguments.get(0));
-			case OMLPackage.DESCRIPTION_BOX___ADD_DATA_STRUCTURE_TUPLES__ELIST:
-				return addDataStructureTuples((EList<DataStructureTuple>)arguments.get(0));
-			case OMLPackage.DESCRIPTION_BOX___ADD_SCALAR_DATA_PROPERTY_VALUES__ELIST:
-				return addScalarDataPropertyValues((EList<ScalarDataPropertyValue>)arguments.get(0));
-			case OMLPackage.DESCRIPTION_BOX___ADD_STRUCTURED_DATA_PROPERTY_VALUES__ELIST:
-				return addStructuredDataPropertyValues((EList<StructuredDataPropertyValue>)arguments.get(0));
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

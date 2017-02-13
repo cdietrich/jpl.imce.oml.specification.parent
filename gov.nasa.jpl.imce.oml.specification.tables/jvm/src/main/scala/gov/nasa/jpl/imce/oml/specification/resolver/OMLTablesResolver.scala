@@ -209,12 +209,12 @@ object OMLTablesResolver {
     val ns = resolver.context.nodes
     val byUUID =
       resolver.queue.aspects
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, aspects) => UUID.fromString(uuid) -> aspects }
 
     val (resolvable, unresolvable) =
       byUUID
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
 
     resolvable
       .foldLeft[HyperGraphV](Success(resolver.context.g))(seqopAspects(resolver.factory))
@@ -259,12 +259,12 @@ object OMLTablesResolver {
     val ns = resolver.context.nodes
     val byUUID =
       resolver.queue.concepts
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, concepts) => UUID.fromString(uuid) -> concepts }
 
     val (resolvable, unresolvable) =
       byUUID
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
 
     resolvable
       .foldLeft[HyperGraphV](Success(resolver.context.g))(seqopConcepts(resolver.factory))
@@ -308,12 +308,12 @@ object OMLTablesResolver {
     val ns = resolver.context.nodes
     val byUUID =
       resolver.queue.scalars
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, scalars) => UUID.fromString(uuid) -> scalars }
 
     val (resolvable, unresolvable) =
       byUUID
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
 
     resolvable
       .foldLeft[HyperGraphV](Success(resolver.context.g))(seqopScalars(resolver.factory))
@@ -356,12 +356,12 @@ object OMLTablesResolver {
     val ns = resolver.context.nodes
     val byUUID =
       resolver.queue.structures
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, structures) => UUID.fromString(uuid) -> structures }
 
     val (resolvable, unresolvable) =
       byUUID
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
 
     resolvable
       .foldLeft[HyperGraphV](Success(resolver.context.g))(seqopStructures(resolver.factory))
@@ -401,13 +401,13 @@ object OMLTablesResolver {
     val byUUID =
       resolver.queue.terminologyExtensionAxioms.par
         .map { tAxiom =>
-          (UUID.fromString(tAxiom.terminologyUUID), UUID.fromString(tAxiom.extendedTerminologyUUID)) -> tAxiom
+          (UUID.fromString(tAxiom.tboxUUID), UUID.fromString(tAxiom.extendedTerminologyUUID)) -> tAxiom
         }
 
     val (resolvable, unresolvable) =
       byUUID
-        .partition { case (graphUUIDPair, _) =>
-          ns.contains(graphUUIDPair._1) && ns.contains(graphUUIDPair._2)
+        .partition { case (tboxUUIDPair, _) =>
+          ns.contains(tboxUUIDPair._1) && ns.contains(tboxUUIDPair._2)
         }
 
     val g = resolvable.aggregate(resolver.context.g)(seqopTerminologyExtends(resolver.factory,ns), combopGraphs)
@@ -471,14 +471,14 @@ object OMLTablesResolver {
     : Seq[((tables.UUID, tables.UUID), tables.TerminologyNestingAxiom)]
     = resolver.queue.terminologyNestingAxioms
       .map { tAxiom =>
-        (tAxiom.terminologyUUID -> tAxiom.nestingContextUUID) -> tAxiom
+        (tAxiom.tboxUUID -> tAxiom.nestingContextUUID) -> tAxiom
       }
 
     val (resolvable, unresolvable) =
       byUUID
-        .partition { case (graphUUIDPair, tx) =>
-          ns.contains(graphUUIDPair._1) &&
-            referencableConcepts.get(graphUUIDPair._2).fold[Boolean](false){ case (c,tbox) =>
+        .partition { case (tboxUUIDPair, tx) =>
+          ns.contains(tboxUUIDPair._1) &&
+            referencableConcepts.get(tboxUUIDPair._2).fold[Boolean](false){ case (c,tbox) =>
                 tbox.uuid == UUID.fromString(tx.nestingTerminologyUUID)
             }
         }
@@ -548,14 +548,14 @@ object OMLTablesResolver {
     : Seq[((tables.UUID, tables.UUID), tables.ConceptDesignationTerminologyAxiom)]
     = resolver.queue.conceptDesignationTerminologyAxioms
       .map { tAxiom =>
-        (tAxiom.terminologyUUID -> tAxiom.designatedConceptUUID) -> tAxiom
+        (tAxiom.tboxUUID -> tAxiom.designatedConceptUUID) -> tAxiom
       }
 
     val (resolvable, unresolvable) =
       byUUID
-        .partition { case (graphUUIDPair, _) =>
-          ns.contains(graphUUIDPair._1) &&
-            referencableConcepts.contains(graphUUIDPair._2)
+        .partition { case (tboxUUIDPair, _) =>
+          ns.contains(tboxUUIDPair._1) &&
+            referencableConcepts.contains(tboxUUIDPair._2)
         }
 
     val g =
@@ -611,8 +611,8 @@ object OMLTablesResolver {
 
     val (resolvable, unresolvable) =
       byUUID
-        .partition { case (graphUUIDPair, _) =>
-          bs.contains(graphUUIDPair._1) && ns.contains(graphUUIDPair._2)
+        .partition { case (tboxUUIDPair, _) =>
+          bs.contains(tboxUUIDPair._1) && ns.contains(tboxUUIDPair._2)
         }
 
     val g = resolvable.aggregate(resolver.context.g)(
@@ -638,39 +638,39 @@ object OMLTablesResolver {
     val g = resolver.context.g
     val (r1, u1) =
       resolver.queue.binaryScalarRestrictions
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, ranges) => UUID.fromString(uuid) -> ranges }
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
     val (r2, u2) =
       resolver.queue.iriScalarRestrictions
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, ranges) => UUID.fromString(uuid) -> ranges }
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
     val (r3, u3) =
       resolver.queue.numericScalarRestrictions
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, ranges) => UUID.fromString(uuid) -> ranges }
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
     val (r4, u4) =
       resolver.queue.plainLiteralScalarRestrictions
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, ranges) => UUID.fromString(uuid) -> ranges }
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
     val (r5, u5) =
       resolver.queue.scalarOneOfRestrictions
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, ranges) => UUID.fromString(uuid) -> ranges }
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
     val (r6, u6) =
       resolver.queue.stringScalarRestrictions
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, ranges) => UUID.fromString(uuid) -> ranges }
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
     val (r7, u7) =
       resolver.queue.timeScalarRestrictions
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, ranges) => UUID.fromString(uuid) -> ranges }
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
 
     val worklist = DataRangesToResolve(
       binaryScalarRestrictions =
@@ -722,9 +722,9 @@ object OMLTablesResolver {
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.reifiedRelationships
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, ranges) => UUID.fromString(uuid) -> ranges }
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
 
     val r1 = resolver.copy(queue = resolver.queue.copy(reifiedRelationships = unresolved.flatMap(_._2).to[Seq]))
     resolveReifiedRelationships(r1, resolvable).map {
@@ -809,9 +809,9 @@ object OMLTablesResolver {
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.unreifiedRelationships
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, ranges) => UUID.fromString(uuid) -> ranges }
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
 
     val r1 = resolver.copy(queue = resolver.queue.copy(unreifiedRelationships = unresolved.flatMap(_._2).to[Seq]))
     resolveUnreifiedRelationships(r1, resolvable).map {
@@ -893,9 +893,9 @@ object OMLTablesResolver {
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.entityScalarDataProperties
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, ranges) => UUID.fromString(uuid) -> ranges }
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
 
     val r1 = resolver.copy(queue = resolver.queue.copy(entityScalarDataProperties = unresolved.flatMap(_._2).to[Seq]))
     resolveEntityScalarDataProperties(r1, resolvable).map {
@@ -974,9 +974,9 @@ object OMLTablesResolver {
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.entityStructuredDataProperties
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, ranges) => UUID.fromString(uuid) -> ranges }
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
 
     val r1 = resolver.copy(queue = resolver.queue.copy(entityStructuredDataProperties = unresolved.flatMap(_._2).to[Seq]))
     resolveEntityStructuredDataProperties(r1, resolvable).map {
@@ -1055,9 +1055,9 @@ object OMLTablesResolver {
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.scalarDataProperties
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, ranges) => UUID.fromString(uuid) -> ranges }
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
 
     val r1 = resolver.copy(queue = resolver.queue.copy(scalarDataProperties = unresolved.flatMap(_._2).to[Seq]))
     resolveScalarDataProperties(r1, resolvable).map {
@@ -1136,9 +1136,9 @@ object OMLTablesResolver {
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.structuredDataProperties
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, ranges) => UUID.fromString(uuid) -> ranges }
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
 
     val r1 = resolver.copy(queue = resolver.queue.copy(structuredDataProperties = unresolved.flatMap(_._2).to[Seq]))
     resolveStructuredDataProperties(r1, resolvable).map {
@@ -1212,9 +1212,9 @@ object OMLTablesResolver {
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.scalarOneOfLiteralAxioms
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, ranges) => UUID.fromString(uuid) -> ranges }
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
 
     val r1 = resolver.copy(queue = resolver.queue.copy(scalarOneOfLiteralAxioms = unresolved.flatMap(_._2).to[Seq]))
     resolveScalarOneOfLiteralAxioms(r1, resolvable).map {
@@ -1284,9 +1284,9 @@ object OMLTablesResolver {
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.entityExistentialRestrictionAxioms
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, ranges) => UUID.fromString(uuid) -> ranges }
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
 
     val r1 = resolver.copy(queue = resolver.queue.copy(entityExistentialRestrictionAxioms = unresolved.flatMap(_._2).to[Seq]))
     resolveEntityExistentialRestrictionAxioms(r1, resolvable).map {
@@ -1365,9 +1365,9 @@ object OMLTablesResolver {
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.entityUniversalRestrictionAxioms
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, ranges) => UUID.fromString(uuid) -> ranges }
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
 
     val r1 = resolver.copy(queue = resolver.queue.copy(entityUniversalRestrictionAxioms = unresolved.flatMap(_._2).to[Seq]))
     resolveEntityUniversalRestrictionAxioms(r1, resolvable).map {
@@ -1446,9 +1446,9 @@ object OMLTablesResolver {
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.entityScalarDataPropertyExistentialRestrictionAxioms
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, ranges) => UUID.fromString(uuid) -> ranges }
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
 
     val r1 = resolver.copy(queue = resolver.queue.copy(entityScalarDataPropertyExistentialRestrictionAxioms = unresolved.flatMap(_._2).to[Seq]))
     resolveEntityScalarDataPropertyExistentialRestrictionAxioms(r1, resolvable).map {
@@ -1532,9 +1532,9 @@ object OMLTablesResolver {
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.entityScalarDataPropertyParticularRestrictionAxioms
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, ranges) => UUID.fromString(uuid) -> ranges }
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
 
     val r1 = resolver.copy(queue = resolver.queue.copy(entityScalarDataPropertyParticularRestrictionAxioms = unresolved.flatMap(_._2).to[Seq]))
     resolveEntityScalarDataPropertyParticularRestrictionAxioms(r1, resolvable).map {
@@ -1613,9 +1613,9 @@ object OMLTablesResolver {
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.entityScalarDataPropertyUniversalRestrictionAxioms
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, ranges) => UUID.fromString(uuid) -> ranges }
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
 
     val r1 = resolver.copy(queue = resolver.queue.copy(entityScalarDataPropertyUniversalRestrictionAxioms = unresolved.flatMap(_._2).to[Seq]))
     resolveEntityScalarDataPropertyUniversalRestrictionAxioms(r1, resolvable).map {
@@ -1699,9 +1699,9 @@ object OMLTablesResolver {
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.aspectSpecializationAxioms
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, ranges) => UUID.fromString(uuid) -> ranges }
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
 
     val r1 = resolver.copy(queue = resolver.queue.copy(aspectSpecializationAxioms = unresolved.flatMap(_._2).to[Seq]))
     resolveAspectSpecializationAxioms(r1, resolvable).map {
@@ -1778,9 +1778,9 @@ object OMLTablesResolver {
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.conceptSpecializationAxioms
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, ranges) => UUID.fromString(uuid) -> ranges }
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
 
     val r1 = resolver.copy(queue = resolver.queue.copy(conceptSpecializationAxioms = unresolved.flatMap(_._2).to[Seq]))
     resolveConceptSpecializationAxioms(r1, resolvable).map {
@@ -1852,9 +1852,9 @@ object OMLTablesResolver {
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.reifiedRelationshipSpecializationAxioms
-        .groupBy(_.graphUUID)
+        .groupBy(_.tboxUUID)
         .map { case (uuid, ranges) => UUID.fromString(uuid) -> ranges }
-        .partition { case (graphUUID, _) => ns.contains(graphUUID) }
+        .partition { case (tboxUUID, _) => ns.contains(tboxUUID) }
 
     val r1 = resolver.copy(queue = resolver.queue.copy(reifiedRelationshipSpecializationAxioms = unresolved.flatMap(_._2).to[Seq]))
     resolveReifiedRelationshipSpecializationAxioms(r1, resolvable).map {
@@ -2254,9 +2254,9 @@ object OMLTablesResolver {
       // A: No, add the annotations to the (unresolved) tables.
 
       val u2 = as.foldLeft[AnnotationMapTables](u1) { case (ui, a) =>
-        val t_pre = ui.getOrElse(a.terminologyUUID, Map.empty)
+        val t_pre = ui.getOrElse(a.tboxUUID, Map.empty)
         val t_upd = t_pre.updated(ap, t_pre.getOrElse(ap, Seq.empty) :+ a)
-        ui.updated(a.terminologyUUID, t_upd)
+        ui.updated(a.tboxUUID, t_upd)
       }
 
       q1 -> u2
@@ -2268,23 +2268,23 @@ object OMLTablesResolver {
 
       // First, partition annotations in terms of assertions attributable to a known terminology
       val (t_resolvable: Seq[tables.AnnotationEntry], t_unresolved: Seq[tables.AnnotationEntry]) =
-        as.partition(a => subjects_by_terminology.contains(a.terminologyUUID))
+        as.partition(a => subjects_by_terminology.contains(a.tboxUUID))
 
       // Second, partition attributable annotations in terms of assertions about known subjects
       val (s_resolvable: Seq[tables.AnnotationEntry], s_unresolved: Seq[tables.AnnotationEntry]) =
         t_resolvable.partition { a =>
           subjects_by_terminology
-            .get(a.terminologyUUID)
+            .get(a.tboxUUID)
             .exists(_._2.contains(a.subjectUUID))
         }
 
       val q2: ResolvedAnnotationMap = s_resolvable.foldLeft[ResolvedAnnotationMap](q1) { case (qi, a) =>
         val annotations_by_prop
         : Map[api.AnnotationProperty, SortedSet[api.AnnotationEntry]]
-        = qi.getOrElse(a.terminologyUUID, Map.empty)
+        = qi.getOrElse(a.tboxUUID, Map.empty)
 
         subjects_by_terminology
-          .get(a.terminologyUUID)
+          .get(a.tboxUUID)
           .fold[ResolvedAnnotationMap](qi) { case (tbox, subjects) =>
           subjects
             .get(a.subjectUUID)
@@ -2295,7 +2295,7 @@ object OMLTablesResolver {
                 rap,
                 annotations_by_prop.getOrElse(rap, TreeSet.empty[api.AnnotationEntry]) +
                   factory.createAnnotationEntry(tbox, subject, a.value))
-            qi.updated(a.terminologyUUID, with_a)
+            qi.updated(a.tboxUUID, with_a)
           }
         }
       }

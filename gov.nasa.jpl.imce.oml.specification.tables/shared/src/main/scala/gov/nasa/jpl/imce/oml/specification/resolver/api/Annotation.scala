@@ -18,10 +18,16 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML Annotation maps to an [OWL2 Annotation] and is similarly
+ * a non-logical statement in an OML Context
+ * associating some information as the value of an
+ * OML AnnotationProperty for describing a subject (an OML TerminologyThing).
+ */
 trait Annotation
 {
 
-  val terminology: TerminologyBox
+  val context: Context
   val property: AnnotationProperty
   val subject: TerminologyThing
   val value: scala.Predef.String

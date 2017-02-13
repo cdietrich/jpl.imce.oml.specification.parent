@@ -20,7 +20,7 @@ package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
  * *
- * Semantics: OWL2 DataHasValue
+ * An OML EntityScalarDataPropertyParticularRestrictionAxiom maps to an OWL2 DataHasValue restriction.
  */
 trait EntityScalarDataPropertyParticularRestrictionAxiom
   extends EntityScalarDataPropertyRestrictionAxiom

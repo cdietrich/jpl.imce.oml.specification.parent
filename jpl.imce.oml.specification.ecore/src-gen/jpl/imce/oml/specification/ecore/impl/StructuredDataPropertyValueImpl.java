@@ -20,7 +20,6 @@ package jpl.imce.oml.specification.ecore.impl;
 
 import jpl.imce.oml.specification.ecore.DataRelationshipToStructure;
 import jpl.imce.oml.specification.ecore.DataStructureTuple;
-import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.SingletonInstance;
 import jpl.imce.oml.specification.ecore.StructuredDataPropertyValue;
@@ -44,7 +43,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link jpl.imce.oml.specification.ecore.impl.StructuredDataPropertyValueImpl#getDescriptionBox <em>Description Box</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.StructuredDataPropertyValueImpl#getSingletonInstance <em>Singleton Instance</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.StructuredDataPropertyValueImpl#getStructuredDataProperty <em>Structured Data Property</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.StructuredDataPropertyValueImpl#getStructuredPropertyTuple <em>Structured Property Tuple</em>}</li>
@@ -53,16 +51,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * @generated
  */
 public class StructuredDataPropertyValueImpl extends TerminologyInstanceAssertionImpl implements StructuredDataPropertyValue {
-	/**
-	 * The cached value of the '{@link #getSingletonInstance() <em>Singleton Instance</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSingletonInstance()
-	 * @generated
-	 * @ordered
-	 */
-	protected SingletonInstance singletonInstance;
-
 	/**
 	 * The cached value of the '{@link #getStructuredDataProperty() <em>Structured Data Property</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -107,67 +95,9 @@ public class StructuredDataPropertyValueImpl extends TerminologyInstanceAssertio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DescriptionBox getDescriptionBox() {
-		if (eContainerFeatureID() != OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__DESCRIPTION_BOX) return null;
-		return (DescriptionBox)eContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DescriptionBox basicGetDescriptionBox() {
-		if (eContainerFeatureID() != OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__DESCRIPTION_BOX) return null;
-		return (DescriptionBox)eInternalContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetDescriptionBox(DescriptionBox newDescriptionBox, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newDescriptionBox, OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__DESCRIPTION_BOX, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDescriptionBox(DescriptionBox newDescriptionBox) {
-		if (newDescriptionBox != eInternalContainer() || (eContainerFeatureID() != OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__DESCRIPTION_BOX && newDescriptionBox != null)) {
-			if (EcoreUtil.isAncestor(this, (EObject)newDescriptionBox))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newDescriptionBox != null)
-				msgs = ((InternalEObject)newDescriptionBox).eInverseAdd(this, OMLPackage.DESCRIPTION_BOX__STRUCTURED_DATA_PROPERTY_VALUES, DescriptionBox.class, msgs);
-			msgs = basicSetDescriptionBox(newDescriptionBox, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__DESCRIPTION_BOX, newDescriptionBox, newDescriptionBox));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public SingletonInstance getSingletonInstance() {
-		if (singletonInstance != null && ((EObject)singletonInstance).eIsProxy()) {
-			InternalEObject oldSingletonInstance = (InternalEObject)singletonInstance;
-			singletonInstance = (SingletonInstance)eResolveProxy(oldSingletonInstance);
-			if (singletonInstance != oldSingletonInstance) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE, oldSingletonInstance, singletonInstance));
-			}
-		}
-		return singletonInstance;
+		if (eContainerFeatureID() != OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE) return null;
+		return (SingletonInstance)eContainer();
 	}
 
 	/**
@@ -176,7 +106,18 @@ public class StructuredDataPropertyValueImpl extends TerminologyInstanceAssertio
 	 * @generated
 	 */
 	public SingletonInstance basicGetSingletonInstance() {
-		return singletonInstance;
+		if (eContainerFeatureID() != OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE) return null;
+		return (SingletonInstance)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSingletonInstance(SingletonInstance newSingletonInstance, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newSingletonInstance, OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE, msgs);
+		return msgs;
 	}
 
 	/**
@@ -185,10 +126,19 @@ public class StructuredDataPropertyValueImpl extends TerminologyInstanceAssertio
 	 * @generated
 	 */
 	public void setSingletonInstance(SingletonInstance newSingletonInstance) {
-		SingletonInstance oldSingletonInstance = singletonInstance;
-		singletonInstance = newSingletonInstance;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE, oldSingletonInstance, singletonInstance));
+		if (newSingletonInstance != eInternalContainer() || (eContainerFeatureID() != OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE && newSingletonInstance != null)) {
+			if (EcoreUtil.isAncestor(this, (EObject)newSingletonInstance))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newSingletonInstance != null)
+				msgs = ((InternalEObject)newSingletonInstance).eInverseAdd(this, OMLPackage.SINGLETON_INSTANCE__STRUCTURED_DATA_PROPERTY_VALUES, SingletonInstance.class, msgs);
+			msgs = basicSetSingletonInstance(newSingletonInstance, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE, newSingletonInstance, newSingletonInstance));
 	}
 
 	/**
@@ -260,11 +210,33 @@ public class StructuredDataPropertyValueImpl extends TerminologyInstanceAssertio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStructuredPropertyTuple(DataStructureTuple newStructuredPropertyTuple) {
+	public NotificationChain basicSetStructuredPropertyTuple(DataStructureTuple newStructuredPropertyTuple, NotificationChain msgs) {
 		DataStructureTuple oldStructuredPropertyTuple = structuredPropertyTuple;
 		structuredPropertyTuple = newStructuredPropertyTuple;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_PROPERTY_TUPLE, oldStructuredPropertyTuple, structuredPropertyTuple));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_PROPERTY_TUPLE, oldStructuredPropertyTuple, newStructuredPropertyTuple);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStructuredPropertyTuple(DataStructureTuple newStructuredPropertyTuple) {
+		if (newStructuredPropertyTuple != structuredPropertyTuple) {
+			NotificationChain msgs = null;
+			if (structuredPropertyTuple != null)
+				msgs = ((InternalEObject)structuredPropertyTuple).eInverseRemove(this, OMLPackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE, DataStructureTuple.class, msgs);
+			if (newStructuredPropertyTuple != null)
+				msgs = ((InternalEObject)newStructuredPropertyTuple).eInverseAdd(this, OMLPackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE, DataStructureTuple.class, msgs);
+			msgs = basicSetStructuredPropertyTuple(newStructuredPropertyTuple, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_PROPERTY_TUPLE, newStructuredPropertyTuple, newStructuredPropertyTuple));
 	}
 
 	/**
@@ -275,10 +247,14 @@ public class StructuredDataPropertyValueImpl extends TerminologyInstanceAssertio
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__DESCRIPTION_BOX:
+			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetDescriptionBox((DescriptionBox)otherEnd, msgs);
+				return basicSetSingletonInstance((SingletonInstance)otherEnd, msgs);
+			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_PROPERTY_TUPLE:
+				if (structuredPropertyTuple != null)
+					msgs = ((InternalEObject)structuredPropertyTuple).eInverseRemove(this, OMLPackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE, DataStructureTuple.class, msgs);
+				return basicSetStructuredPropertyTuple((DataStructureTuple)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -291,8 +267,10 @@ public class StructuredDataPropertyValueImpl extends TerminologyInstanceAssertio
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__DESCRIPTION_BOX:
-				return basicSetDescriptionBox(null, msgs);
+			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE:
+				return basicSetSingletonInstance(null, msgs);
+			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_PROPERTY_TUPLE:
+				return basicSetStructuredPropertyTuple(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -305,8 +283,8 @@ public class StructuredDataPropertyValueImpl extends TerminologyInstanceAssertio
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__DESCRIPTION_BOX:
-				return eInternalContainer().eInverseRemove(this, OMLPackage.DESCRIPTION_BOX__STRUCTURED_DATA_PROPERTY_VALUES, DescriptionBox.class, msgs);
+			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE:
+				return eInternalContainer().eInverseRemove(this, OMLPackage.SINGLETON_INSTANCE__STRUCTURED_DATA_PROPERTY_VALUES, SingletonInstance.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -319,9 +297,6 @@ public class StructuredDataPropertyValueImpl extends TerminologyInstanceAssertio
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__DESCRIPTION_BOX:
-				if (resolve) return getDescriptionBox();
-				return basicGetDescriptionBox();
 			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE:
 				if (resolve) return getSingletonInstance();
 				return basicGetSingletonInstance();
@@ -343,9 +318,6 @@ public class StructuredDataPropertyValueImpl extends TerminologyInstanceAssertio
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__DESCRIPTION_BOX:
-				setDescriptionBox((DescriptionBox)newValue);
-				return;
 			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE:
 				setSingletonInstance((SingletonInstance)newValue);
 				return;
@@ -367,9 +339,6 @@ public class StructuredDataPropertyValueImpl extends TerminologyInstanceAssertio
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__DESCRIPTION_BOX:
-				setDescriptionBox((DescriptionBox)null);
-				return;
 			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE:
 				setSingletonInstance((SingletonInstance)null);
 				return;
@@ -391,10 +360,8 @@ public class StructuredDataPropertyValueImpl extends TerminologyInstanceAssertio
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__DESCRIPTION_BOX:
-				return basicGetDescriptionBox() != null;
 			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE:
-				return singletonInstance != null;
+				return basicGetSingletonInstance() != null;
 			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_DATA_PROPERTY:
 				return structuredDataProperty != null;
 			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_PROPERTY_TUPLE:

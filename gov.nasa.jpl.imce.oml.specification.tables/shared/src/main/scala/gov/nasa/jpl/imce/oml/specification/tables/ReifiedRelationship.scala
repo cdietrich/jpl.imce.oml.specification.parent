@@ -25,12 +25,11 @@ import scala._
 import scala.Predef._
 
 /**
-  * @param graphUUID[1,1]
   * @param uuid[1,1]
+  * @param tboxUUID[1,1]
+  * @param sourceUUID[1,1]
+  * @param targetUUID[1,1]
   * @param isAbstract[1,1]
-  * @param name[1,1]
-  * @param unreifiedPropertyName[1,1]
-  * @param unreifiedInversePropertyName[0,1]
   * @param isAsymmetric[1,1]
   * @param isEssential[1,1]
   * @param isFunctional[1,1]
@@ -40,17 +39,17 @@ import scala.Predef._
   * @param isReflexive[1,1]
   * @param isSymmetric[1,1]
   * @param isTransitive[1,1]
-  * @param sourceUUID[1,1]
-  * @param targetUUID[1,1]
+  * @param name[1,1]
+  * @param unreifiedPropertyName[1,1]
+  * @param unreifiedInversePropertyName[0,1]
   */
 case class ReifiedRelationship
 (
-  @(JSExport @field) graphUUID: UUID,
   @(JSExport @field) uuid: UUID,
+  @(JSExport @field) tboxUUID: UUID,
+  @(JSExport @field) sourceUUID: UUID,
+  @(JSExport @field) targetUUID: UUID,
   @(JSExport @field) isAbstract: scala.Boolean,
-  @(JSExport @field) name: LocalName,
-  @(JSExport @field) unreifiedPropertyName: LocalName,
-  @(JSExport @field) unreifiedInversePropertyName: scala.Option[LocalName],
   @(JSExport @field) isAsymmetric: scala.Boolean,
   @(JSExport @field) isEssential: scala.Boolean,
   @(JSExport @field) isFunctional: scala.Boolean,
@@ -60,16 +59,17 @@ case class ReifiedRelationship
   @(JSExport @field) isReflexive: scala.Boolean,
   @(JSExport @field) isSymmetric: scala.Boolean,
   @(JSExport @field) isTransitive: scala.Boolean,
-  @(JSExport @field) sourceUUID: UUID,
-  @(JSExport @field) targetUUID: UUID
+  @(JSExport @field) name: LocalName,
+  @(JSExport @field) unreifiedPropertyName: LocalName,
+  @(JSExport @field) unreifiedInversePropertyName: scala.Option[LocalName]
 ) {
   @JSExport
   def this(
-    graphUUID: UUID,
     uuid: UUID,
+    tboxUUID: UUID,
+    sourceUUID: UUID,
+    targetUUID: UUID,
     isAbstract: scala.Boolean,
-    name: LocalName,
-    unreifiedPropertyName: LocalName,
     isAsymmetric: scala.Boolean,
     isEssential: scala.Boolean,
     isFunctional: scala.Boolean,
@@ -79,15 +79,14 @@ case class ReifiedRelationship
     isReflexive: scala.Boolean,
     isSymmetric: scala.Boolean,
     isTransitive: scala.Boolean,
-    sourceUUID: UUID,
-    targetUUID: UUID)
+    name: LocalName,
+    unreifiedPropertyName: LocalName)
   = this(
-      graphUUID,
       uuid,
+      tboxUUID,
+      sourceUUID,
+      targetUUID,
       isAbstract,
-      name,
-      unreifiedPropertyName,
-      None /* unreifiedInversePropertyName */,
       isAsymmetric,
       isEssential,
       isFunctional,
@@ -97,8 +96,9 @@ case class ReifiedRelationship
       isReflexive,
       isSymmetric,
       isTransitive,
-      sourceUUID,
-      targetUUID)
+      name,
+      unreifiedPropertyName,
+      None /* unreifiedInversePropertyName */)
 
   def withUnreifiedInversePropertyName(l: LocalName)	 
   : ReifiedRelationship
@@ -106,16 +106,15 @@ case class ReifiedRelationship
   
   override val hashCode
   : scala.Int 
-  = (graphUUID, uuid, isAbstract, name, unreifiedPropertyName, unreifiedInversePropertyName, isAsymmetric, isEssential, isFunctional, isInverseEssential, isInverseFunctional, isIrreflexive, isReflexive, isSymmetric, isTransitive, sourceUUID, targetUUID).##
+  = (uuid, tboxUUID, sourceUUID, targetUUID, isAbstract, isAsymmetric, isEssential, isFunctional, isInverseEssential, isInverseFunctional, isIrreflexive, isReflexive, isSymmetric, isTransitive, name, unreifiedPropertyName, unreifiedInversePropertyName).##
   
   override def equals(other: scala.Any): scala.Boolean = other match {
   	case that: ReifiedRelationship =>
-  	  (this.graphUUID == that.graphUUID) &&
   	  (this.uuid == that.uuid) &&
+  	  (this.tboxUUID == that.tboxUUID) &&
+  	  (this.sourceUUID == that.sourceUUID) &&
+  	  (this.targetUUID == that.targetUUID) &&
   	  (this.isAbstract == that.isAbstract) &&
-  	  (this.name == that.name) &&
-  	  (this.unreifiedPropertyName == that.unreifiedPropertyName) &&
-  	  (this.unreifiedInversePropertyName == that.unreifiedInversePropertyName) &&
   	  (this.isAsymmetric == that.isAsymmetric) &&
   	  (this.isEssential == that.isEssential) &&
   	  (this.isFunctional == that.isFunctional) &&
@@ -125,8 +124,9 @@ case class ReifiedRelationship
   	  (this.isReflexive == that.isReflexive) &&
   	  (this.isSymmetric == that.isSymmetric) &&
   	  (this.isTransitive == that.isTransitive) &&
-  	  (this.sourceUUID == that.sourceUUID) &&
-  	  (this.targetUUID == that.targetUUID)
+  	  (this.name == that.name) &&
+  	  (this.unreifiedPropertyName == that.unreifiedPropertyName) &&
+  	  (this.unreifiedInversePropertyName == that.unreifiedInversePropertyName)
     case _ =>
       false
   }

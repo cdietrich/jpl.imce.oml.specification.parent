@@ -19,13 +19,14 @@
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
- * Corresponds to an OWL2 DataRange defined in terms of some kind of restriction of some other DataRanges.
- * Instead of arbitrary OWL2 FacetRestrictionAxioms as constructors of OWL2 DataRanges,
- * the specializations of RestrictedDataRange correspond to the allowed restrictions in OWL2-DL datatype maps.
+ * An OML RestrictedDataRange corresponds to an [OWL2 DataRange] defined
+ * in terms of some kind of restriction of some other OML DataRange.
+ * The specializations of OML RestrictedDataRange correspond to
+ * the allowed restrictions in the [OWL2 Datatype Maps].
  * Node that the vocabulary of XSD fundamental facets is not included in OWL2-DL, consequently,
  * there is no support in OML for specifying datatype restrictions involving XSD fundamental facets as well.
- * @see https://www.w3.org/TR/owl2-syntax/#Data_Ranges
- * @see https://www.w3.org/TR/owl2-syntax/#Datatype_Maps
+ * Each specialization maps to an OWL2 Declaration of an [OWL2 Datatype] whose
+ * [OWL2 DataRange] corresponds to the OWL2 mapping of that specialized restriction.
  */
 trait RestrictedDataRange
   extends DataRange

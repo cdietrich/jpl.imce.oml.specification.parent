@@ -19,9 +19,9 @@
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
- * A TerminologyExtensionAxiom allows an extendingTerminology to
- * make references (via TerminologyStatements) to TerminologyThings
- * within the transitive closure of the extendedTerminlogy.
+ * An OML TerminologyExtensionAxiom allows an extendingTerminology to
+ * make references (via OML TerminologyBoxStatement(s)) to OML TerminologyThing(s)
+ * declared within the transitive closure of the extendedTerminlogy.
  */
 trait TerminologyExtensionAxiom
   extends TerminologyBoxAxiom

@@ -25,32 +25,35 @@ import scala._
 import scala.Predef._
 
 /**
-  * @param graphUUID[1,1]
   * @param uuid[1,1]
-  * @param name[1,1]
+  * @param tboxUUID[1,1]
   * @param domainUUID[1,1]
   * @param rangeUUID[1,1]
+  * @param isIdentityCriteria[1,1]
+  * @param name[1,1]
   */
 @JSExport
 case class EntityStructuredDataProperty
 (
-  @(JSExport @field) graphUUID: UUID,
   @(JSExport @field) uuid: UUID,
-  @(JSExport @field) name: LocalName,
+  @(JSExport @field) tboxUUID: UUID,
   @(JSExport @field) domainUUID: UUID,
-  @(JSExport @field) rangeUUID: UUID
+  @(JSExport @field) rangeUUID: UUID,
+  @(JSExport @field) isIdentityCriteria: scala.Boolean,
+  @(JSExport @field) name: LocalName
 ) {
   override val hashCode
   : scala.Int 
-  = (graphUUID, uuid, name, domainUUID, rangeUUID).##
+  = (uuid, tboxUUID, domainUUID, rangeUUID, isIdentityCriteria, name).##
   
   override def equals(other: scala.Any): scala.Boolean = other match {
   	case that: EntityStructuredDataProperty =>
-  	  (this.graphUUID == that.graphUUID) &&
   	  (this.uuid == that.uuid) &&
-  	  (this.name == that.name) &&
+  	  (this.tboxUUID == that.tboxUUID) &&
   	  (this.domainUUID == that.domainUUID) &&
-  	  (this.rangeUUID == that.rangeUUID)
+  	  (this.rangeUUID == that.rangeUUID) &&
+  	  (this.isIdentityCriteria == that.isIdentityCriteria) &&
+  	  (this.name == that.name)
     case _ =>
       false
   }

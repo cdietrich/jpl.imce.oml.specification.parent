@@ -59,34 +59,11 @@ public class StructuredDataPropertyValueItemProvider extends TerminologyInstance
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDescriptionBoxPropertyDescriptor(object);
 			addSingletonInstancePropertyDescriptor(object);
 			addStructuredDataPropertyPropertyDescriptor(object);
 			addStructuredPropertyTuplePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Description Box feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDescriptionBoxPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_StructuredDataPropertyValue_descriptionBox_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_StructuredDataPropertyValue_descriptionBox_feature", "_UI_StructuredDataPropertyValue_type"),
-				 OMLPackage.Literals.STRUCTURED_DATA_PROPERTY_VALUE__DESCRIPTION_BOX,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -174,7 +151,7 @@ public class StructuredDataPropertyValueItemProvider extends TerminologyInstance
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((StructuredDataPropertyValue)object).getUuid();
+		String label = ((StructuredDataPropertyValue)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_StructuredDataPropertyValue_type") :
 			getString("_UI_StructuredDataPropertyValue_type") + " " + label;

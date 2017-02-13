@@ -18,8 +18,12 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML TerminologyBundleStatement is a logical axiom about an OML TerminologyThing
+ * asserted in the context of an OML Bundle.
+ */
 trait TerminologyBundleStatement
-  extends TerminologyStatement
+  extends TerminologyThing
 {
 
   val bundle: Bundle

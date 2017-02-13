@@ -19,7 +19,7 @@
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
- * A data range that specifies how a scalar is a restricted set of literal values of another.
+ * An OML ScalarOneOfRestriction is a data range that specifies how a scalar is a restricted set of literal values of another.
  * Semantics: OWL2 DataOneOf
  */
 trait ScalarOneOfRestriction

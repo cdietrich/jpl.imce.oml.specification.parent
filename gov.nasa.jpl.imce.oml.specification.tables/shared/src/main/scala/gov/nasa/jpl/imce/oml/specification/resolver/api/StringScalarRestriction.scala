@@ -19,17 +19,23 @@
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
- * A data range that specifies how one string scalar adds facet restrictions to another.
- * Applies when the restricted scalar represents strings (OWL2: 4.3)
- * i.e., when it is one of the following scalars (or their transitively restricted ones):
- * xsd:string
- * xsd:normalizedString
- * xsd:token
- * xsd:language
- * xsd:Name
- * xsd:NCName
- * xsd:NMTOKEN
- * xsd:length, xsd:minLength, xsd:maxLength, xsd:pattern
+ * An OML StringScalarRestriction is a data range that specifies how one string scalar adds facet restrictions to another.
+ * Applicable when the restricted scalar represents [OWL2 Strings].
+ * 
+ * The restricted scalar must be directly or indirectly a restriction of:
+ * - [xsd:string]
+ * - [xsd:normalizedString]
+ * - [xsd:token]
+ * - [xsd:language]
+ * - [xsd:Name]
+ * - [xsd:NCName]
+ * - [xsd:NMTOKEN]
+ * 
+ * Facets:
+ * - [xsd:length]
+ * - [xsd:minLength]
+ * - [xsd:maxLength]
+ * - [xsd:pattern]
  */
 trait StringScalarRestriction
   extends RestrictedDataRange

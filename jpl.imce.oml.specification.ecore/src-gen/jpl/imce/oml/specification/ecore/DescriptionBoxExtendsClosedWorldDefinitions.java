@@ -25,7 +25,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML DescriptionBoxExtendsClosedWorldDefinitions specifies
+ * An OML DescriptionBoxExtendsClosedWorldDefinition specifies
  * an OML DescriptionBoxRelationship from an OML DescriptionBox
  * to an OML TerminologyBox such that an OML SingletonInstance defined in the
  * former can be an instance of an OML Term defined in the latter.

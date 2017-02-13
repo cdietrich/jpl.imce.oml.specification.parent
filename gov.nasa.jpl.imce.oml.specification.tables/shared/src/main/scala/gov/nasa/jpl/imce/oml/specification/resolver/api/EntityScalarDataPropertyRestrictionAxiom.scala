@@ -19,7 +19,8 @@
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
- * Semantics: OWL2 Data Property Restrictions
+ * An OML EntityScalarDataPropertyRestrictionAxiom maps to
+ * some kind of OWL2 Data Property Restriction.
  */
 trait EntityScalarDataPropertyRestrictionAxiom
   extends TermAxiom

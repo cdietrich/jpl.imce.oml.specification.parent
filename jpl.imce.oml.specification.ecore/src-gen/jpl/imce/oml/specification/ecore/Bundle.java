@@ -28,8 +28,8 @@ import org.eclipse.emf.common.util.EMap;
  *
  * <!-- begin-model-doc -->
  * An OML Bundle is an OML TerminologyBox that is
- * an acyclic logical aggregate of other OML TerminologyBoxes
- * and that logically assert OML TerminologyBundleStatements.
+ * an acyclic logical aggregate of other OML TerminologyBox(es)
+ * and that logically assert OML TerminologyBundleStatement(s).
  * <!-- end-model-doc -->
  *
  * <p>

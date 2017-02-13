@@ -25,64 +25,64 @@ import scala._
 import scala.Predef._
 
 /**
-  * @param graphUUID[1,1]
   * @param uuid[1,1]
-  * @param name[1,1]
-  * @param length[0,1]
-  * @param maxLength[0,1]
-  * @param minLength[0,1]
+  * @param tboxUUID[1,1]
   * @param restrictedRangeUUID[1,1]
+  * @param length[0,1]
+  * @param minLength[0,1]
+  * @param maxLength[0,1]
+  * @param name[1,1]
   */
 case class BinaryScalarRestriction
 (
-  @(JSExport @field) graphUUID: UUID,
   @(JSExport @field) uuid: UUID,
-  @(JSExport @field) name: LocalName,
+  @(JSExport @field) tboxUUID: UUID,
+  @(JSExport @field) restrictedRangeUUID: UUID,
   @(JSExport @field) length: scala.Option[scala.Int],
-  @(JSExport @field) maxLength: scala.Option[scala.Int],
   @(JSExport @field) minLength: scala.Option[scala.Int],
-  @(JSExport @field) restrictedRangeUUID: UUID
+  @(JSExport @field) maxLength: scala.Option[scala.Int],
+  @(JSExport @field) name: LocalName
 ) {
   @JSExport
   def this(
-    graphUUID: UUID,
     uuid: UUID,
-    name: LocalName,
-    restrictedRangeUUID: UUID)
+    tboxUUID: UUID,
+    restrictedRangeUUID: UUID,
+    name: LocalName)
   = this(
-      graphUUID,
       uuid,
-      name,
+      tboxUUID,
+      restrictedRangeUUID,
       None /* length */,
-      None /* maxLength */,
       None /* minLength */,
-      restrictedRangeUUID)
+      None /* maxLength */,
+      name)
 
   def withLength(l: scala.Int)	 
   : BinaryScalarRestriction
   = copy(length=Some(l))
   
-  def withMaxLength(l: scala.Int)	 
-  : BinaryScalarRestriction
-  = copy(maxLength=Some(l))
-  
   def withMinLength(l: scala.Int)	 
   : BinaryScalarRestriction
   = copy(minLength=Some(l))
   
+  def withMaxLength(l: scala.Int)	 
+  : BinaryScalarRestriction
+  = copy(maxLength=Some(l))
+  
   override val hashCode
   : scala.Int 
-  = (graphUUID, uuid, name, length, maxLength, minLength, restrictedRangeUUID).##
+  = (uuid, tboxUUID, restrictedRangeUUID, length, minLength, maxLength, name).##
   
   override def equals(other: scala.Any): scala.Boolean = other match {
   	case that: BinaryScalarRestriction =>
-  	  (this.graphUUID == that.graphUUID) &&
   	  (this.uuid == that.uuid) &&
-  	  (this.name == that.name) &&
+  	  (this.tboxUUID == that.tboxUUID) &&
+  	  (this.restrictedRangeUUID == that.restrictedRangeUUID) &&
   	  (this.length == that.length) &&
-  	  (this.maxLength == that.maxLength) &&
   	  (this.minLength == that.minLength) &&
-  	  (this.restrictedRangeUUID == that.restrictedRangeUUID)
+  	  (this.maxLength == that.maxLength) &&
+  	  (this.name == that.name)
     case _ =>
       false
   }

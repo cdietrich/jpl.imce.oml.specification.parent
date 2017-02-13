@@ -18,6 +18,10 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML EntityUniversalRestrictionAxiom maps
+ * to an [OWL2 Object Property Universal Restriction].
+ */
 trait EntityUniversalRestrictionAxiom
   extends EntityRestrictionAxiom
 {

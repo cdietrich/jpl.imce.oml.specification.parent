@@ -18,9 +18,21 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML DataRelationshipFromEntity is an OML DataRelationship
+ * whose domain is an OML Entity.
+ */
 trait DataRelationshipFromEntity
   extends DataRelationshipDomain
 {
 
   val domain: Entity
+  /*
+   * Specifies the OntoClean IdentityCriteria semantics of an OML DataRelationshipFromEntity:
+   * - +IC, if true; which means that every OML ConceptualEntity defined in a ClosedWorldDesignations OML Terminology
+   *   has an exact cardinality restriction of 1 for the possible values of the relationship, which is an
+   *   encoding in [OWL2-DL] of
+   * - ~IC, if false
+   */
+  val isIdentityCriteria: scala.Boolean
 }

@@ -22,8 +22,8 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class EntityScalarDataPropertyExistentialRestrictionAxiom private[impl] 
 (
- override val graph: TerminologyBox,
  override val uuid: java.util.UUID,
+ override val tbox: TerminologyBox,
  override val restrictedEntity: Entity,
  override val scalarProperty: EntityScalarDataProperty,
  override val scalarRestriction: DataRange
@@ -39,13 +39,13 @@ extends resolver.api.EntityScalarDataPropertyExistentialRestrictionAxiom
 
   override val hashCode
   : scala.Int
-  = (graph, uuid, restrictedEntity, scalarProperty, scalarRestriction).##
+  = (uuid, tbox, restrictedEntity, scalarProperty, scalarRestriction).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: EntityScalarDataPropertyExistentialRestrictionAxiom =>
 	    (that canEqual this) &&
-	    (this.graph == that.graph) &&
 	    (this.uuid == that.uuid) &&
+	    (this.tbox == that.tbox) &&
 	    (this.restrictedEntity == that.restrictedEntity) &&
 	    (this.scalarProperty == that.scalarProperty) &&
 	    (this.scalarRestriction == that.scalarRestriction)

@@ -137,6 +137,28 @@ class OMLUtilities {
 		}
 	}
 	
+	
+	static def String schemaColumnTypeName(ETypedElement feature) {
+		val type = feature.EType
+		switch (type.name) {
+			case "EInt": "Int"
+			case "EBoolean": "Boolean"
+			case "EString": "String"
+			case type instanceof EClass: "UUID (Foreign Key for: OML "+type.name+")"
+			case "UUID": "UUID (Primary Key)"
+			default: type.name
+		}
+	}
+	
+	
+	static def String schemaColumnTypeDescription(ETypedElement feature) {
+		val columnTypeName = feature.schemaColumnTypeName
+		if (feature.lowerBound == 0)
+		  "Option["+columnTypeName+"]"
+	    else
+	      columnTypeName
+	}
+	
 	static def String constructorTypeName(ETypedElement feature) {
 		val scalaType = feature.scalaTableTypeName
 		if (feature.lowerBound == 0)
@@ -392,29 +414,85 @@ class OMLUtilities {
 	static class OMLFeatureCompare implements Comparator<ETypedElement> {
 		
 		val knownAttributes = #[
-		"graphUUID",
 		"uuid", 
+		"tboxUUID",
+		"terminologyBundleUUID",
+		"bundledTerminologyUUID",
+		"extendedTerminologyUUID",
+		"nestingTerminologyUUID",
+		"nestingContextUUID",
+		"bundleUUID",
+		"contextUUID",
+		"descriptionBoxUUID",
+		"refiningDescriptionBoxUUID",
+		"singletonConceptClassifierUUID",
+		"singletonReifiedRelationshipClassifierUUID",
+		"dataStructureTypeUUID",
+		"superAspectUUID",
+		"subEntityUUID",
+		"superConceptUUID",
+		"subConceptUUID",
 		"axiomUUID",
-		"terminologyUUID",
 		"keyUUID",
 		"subjectUUID",
 		"propertyUUID",
+		"closedWorldDefinitionsUUID",
+		"refinedDescriptionBoxUUID",
+		"refiningDescriptionBoxUUID",
+		"dataStructureTypeUUID",
+		"structuredDataPropertyValueUUID",
+		"singletonInstanceUUID",
+		"structuredDataPropertyUUID",
+		"scalarDataPropertyUUID",
+		"structuredPropertyTupleUUID",
+		"singletonConceptClassifierUUID",
+		"singletonReifiedRelationshipClassifierUUID",
+		"reifiedRelationshipInstanceUUID",
+		"unreifiedRelationshipUUID",
+		"restrictedRelationUUID",
+		"restrictedDomainUUID",
+		"restrictedRangeUUID",
+		"restrictedEntityUUID",
+		"scalarPropertyUUID",
+		"scalarRestrictionUUID",
+		"domainUUID",
+		"rangeUUID",
+		"sourceUUID",
+		"targetUUID",
+		"superRelationshipUUID",
+		"subRelationshipUUID",
+		"rootUUID",
+		"disjointTaxonomyParentUUID",
+		"disjointLeafUUID",
 		"kind",
 		"isAbstract", 
-		"asymmetric", 
-		"essential", 
-		"functional",
-		"inverseEssential",
-		"inverseFunctional", 
-		"irreflexive", 
-		"reflexive",
-		"symmetric", 
-		"transitive",
+		"isAsymmetric", 
+		"isEssential", 
+		"isFunctional",
+		"isInverseEssential",
+		"isInverseFunctional", 
+		"isIrreflexive", 
+		"isReflexive",
+		"isSymmetric", 
+		"isTransitive",
+		"isIdentityCriteria",
+		"minExclusive",
+		"minInclusive",
+		"maxExclusive",
+		"maxInclusive",
+		"length",
+		"minLength",
+		"maxLength",
+		"nsPrefix",
 		"name",
+		"langRange",
+		"pattern",
 		"unreifiedPropertyName",
 		"unreifiedInversePropertyName",
 		"iri",
-		"value"
+		"value",
+		"scalarPropertyValue",
+		"literalValue"
 		]
 		override compare(ETypedElement o1, ETypedElement o2) {
 			val name1 = o1.columnName

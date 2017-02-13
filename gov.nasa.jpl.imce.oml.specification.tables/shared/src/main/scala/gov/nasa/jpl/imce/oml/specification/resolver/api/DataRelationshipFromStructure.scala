@@ -18,6 +18,10 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML DataRelationshipFromStructure is an OML DataRelationship
+ * whose domain is an OML Structure.
+ */
 trait DataRelationshipFromStructure
   extends DataRelationshipDomain
 {

@@ -18,6 +18,10 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML EntityScalarDataProperty is an OML DataRelationship
+ * whose domain is an OML Entity and range is an OML DataRange.
+ */
 trait EntityScalarDataProperty
   extends DataRelationship
   with DataRelationshipFromEntity

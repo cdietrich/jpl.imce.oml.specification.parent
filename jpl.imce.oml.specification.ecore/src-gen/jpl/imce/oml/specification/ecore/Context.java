@@ -28,8 +28,8 @@ import org.eclipse.emf.common.util.EMap;
  *
  * <!-- begin-model-doc -->
  * An OML Context maps to an [OWL2-DL Ontology];
- * it is a kind of OML Resource that is a logical container of OML TerminologyThings
- * and a non-logical container of OML Annotations.
+ * it is a kind of OML Resource that is a logical container of OML TerminologyThing(s)
+ * and a non-logical container of OML Annotation(s).
  * <!-- end-model-doc -->
  *
  * <p>

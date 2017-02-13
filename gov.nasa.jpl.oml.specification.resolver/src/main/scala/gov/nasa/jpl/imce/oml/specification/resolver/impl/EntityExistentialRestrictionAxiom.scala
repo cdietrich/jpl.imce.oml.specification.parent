@@ -22,11 +22,11 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class EntityExistentialRestrictionAxiom private[impl] 
 (
- override val graph: TerminologyBox,
  override val uuid: java.util.UUID,
+ override val tbox: TerminologyBox,
+ override val restrictedRelation: EntityRelationship,
  override val restrictedDomain: Entity,
- override val restrictedRange: Entity,
- override val restrictedRelation: ReifiedRelationship
+ override val restrictedRange: Entity
 )
 extends resolver.api.EntityExistentialRestrictionAxiom
   with EntityRestrictionAxiom
@@ -39,16 +39,16 @@ extends resolver.api.EntityExistentialRestrictionAxiom
 
   override val hashCode
   : scala.Int
-  = (graph, uuid, restrictedDomain, restrictedRange, restrictedRelation).##
+  = (uuid, tbox, restrictedRelation, restrictedDomain, restrictedRange).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: EntityExistentialRestrictionAxiom =>
 	    (that canEqual this) &&
-	    (this.graph == that.graph) &&
 	    (this.uuid == that.uuid) &&
+	    (this.tbox == that.tbox) &&
+	    (this.restrictedRelation == that.restrictedRelation) &&
 	    (this.restrictedDomain == that.restrictedDomain) &&
-	    (this.restrictedRange == that.restrictedRange) &&
-	    (this.restrictedRelation == that.restrictedRelation)
+	    (this.restrictedRange == that.restrictedRange)
 
 	  case _ =>
 	    false

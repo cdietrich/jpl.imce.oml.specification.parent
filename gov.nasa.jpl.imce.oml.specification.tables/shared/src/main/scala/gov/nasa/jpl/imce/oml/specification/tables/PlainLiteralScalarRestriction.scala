@@ -25,60 +25,60 @@ import scala._
 import scala.Predef._
 
 /**
-  * @param graphUUID[1,1]
   * @param uuid[1,1]
-  * @param name[1,1]
-  * @param language[0,1]
-  * @param length[0,1]
-  * @param maxLength[0,1]
-  * @param minLength[0,1]
-  * @param pattern[0,1]
+  * @param tboxUUID[1,1]
   * @param restrictedRangeUUID[1,1]
+  * @param length[0,1]
+  * @param minLength[0,1]
+  * @param maxLength[0,1]
+  * @param name[1,1]
+  * @param langRange[0,1]
+  * @param pattern[0,1]
   */
 case class PlainLiteralScalarRestriction
 (
-  @(JSExport @field) graphUUID: UUID,
   @(JSExport @field) uuid: UUID,
-  @(JSExport @field) name: LocalName,
-  @(JSExport @field) language: scala.Option[Language],
+  @(JSExport @field) tboxUUID: UUID,
+  @(JSExport @field) restrictedRangeUUID: UUID,
   @(JSExport @field) length: scala.Option[scala.Int],
-  @(JSExport @field) maxLength: scala.Option[scala.Int],
   @(JSExport @field) minLength: scala.Option[scala.Int],
-  @(JSExport @field) pattern: scala.Option[Pattern],
-  @(JSExport @field) restrictedRangeUUID: UUID
+  @(JSExport @field) maxLength: scala.Option[scala.Int],
+  @(JSExport @field) name: LocalName,
+  @(JSExport @field) langRange: scala.Option[LangRange],
+  @(JSExport @field) pattern: scala.Option[Pattern]
 ) {
   @JSExport
   def this(
-    graphUUID: UUID,
     uuid: UUID,
-    name: LocalName,
-    restrictedRangeUUID: UUID)
+    tboxUUID: UUID,
+    restrictedRangeUUID: UUID,
+    name: LocalName)
   = this(
-      graphUUID,
       uuid,
-      name,
-      None /* language */,
+      tboxUUID,
+      restrictedRangeUUID,
       None /* length */,
-      None /* maxLength */,
       None /* minLength */,
-      None /* pattern */,
-      restrictedRangeUUID)
+      None /* maxLength */,
+      name,
+      None /* langRange */,
+      None /* pattern */)
 
-  def withLanguage(l: Language)	 
-  : PlainLiteralScalarRestriction
-  = copy(language=Some(l))
-  
   def withLength(l: scala.Int)	 
   : PlainLiteralScalarRestriction
   = copy(length=Some(l))
+  
+  def withMinLength(l: scala.Int)	 
+  : PlainLiteralScalarRestriction
+  = copy(minLength=Some(l))
   
   def withMaxLength(l: scala.Int)	 
   : PlainLiteralScalarRestriction
   = copy(maxLength=Some(l))
   
-  def withMinLength(l: scala.Int)	 
+  def withLangRange(l: LangRange)	 
   : PlainLiteralScalarRestriction
-  = copy(minLength=Some(l))
+  = copy(langRange=Some(l))
   
   def withPattern(l: Pattern)	 
   : PlainLiteralScalarRestriction
@@ -86,19 +86,19 @@ case class PlainLiteralScalarRestriction
   
   override val hashCode
   : scala.Int 
-  = (graphUUID, uuid, name, language, length, maxLength, minLength, pattern, restrictedRangeUUID).##
+  = (uuid, tboxUUID, restrictedRangeUUID, length, minLength, maxLength, name, langRange, pattern).##
   
   override def equals(other: scala.Any): scala.Boolean = other match {
   	case that: PlainLiteralScalarRestriction =>
-  	  (this.graphUUID == that.graphUUID) &&
   	  (this.uuid == that.uuid) &&
-  	  (this.name == that.name) &&
-  	  (this.language == that.language) &&
+  	  (this.tboxUUID == that.tboxUUID) &&
+  	  (this.restrictedRangeUUID == that.restrictedRangeUUID) &&
   	  (this.length == that.length) &&
-  	  (this.maxLength == that.maxLength) &&
   	  (this.minLength == that.minLength) &&
-  	  (this.pattern == that.pattern) &&
-  	  (this.restrictedRangeUUID == that.restrictedRangeUUID)
+  	  (this.maxLength == that.maxLength) &&
+  	  (this.name == that.name) &&
+  	  (this.langRange == that.langRange) &&
+  	  (this.pattern == that.pattern)
     case _ =>
       false
   }

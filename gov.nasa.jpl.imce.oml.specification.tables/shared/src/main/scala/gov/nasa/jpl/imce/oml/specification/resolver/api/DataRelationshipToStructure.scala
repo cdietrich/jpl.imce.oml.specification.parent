@@ -18,6 +18,10 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML DataRelationshipToStructure is an OML DataRelationship
+ * whose range is an OML Structure.
+ */
 trait DataRelationshipToStructure
   extends DataRelationshipRange
 {

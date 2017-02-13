@@ -19,7 +19,7 @@
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
- * A SpecificDisjointConceptAxiom specifies a leaf in a taxonomy tree.
+ * An OML SpecificDisjointConceptAxiom specifies a leaf in a taxonomy tree.
  */
 trait SpecificDisjointConceptAxiom
   extends DisjointUnionOfConceptsAxiom

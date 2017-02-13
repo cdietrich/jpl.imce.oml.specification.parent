@@ -19,16 +19,17 @@
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
- * In the OML tabular interchange representation,
- * an AnnotationEntry (for a given AnnotationProperty) is a triple:
- * - the terminology in which the annotation appears
- * - the annotated terminology thing (subject)
- * - the value of the AnnotationProperty for that subject in that terminology
+ * For the OML tabular interchange representation,
+ * an OML AnnotationEntry (for a given OML AnnotationProperty) is a triple:
+ * - an OML Context in which the OML AnnotationEntry appears
+ * - an annotated OML TerminologyThing subject
+ * - a String value as the representation of some information
+ *   about the subject in that context.
  */
 trait AnnotationEntry
 {
 
-  val terminology: TerminologyBox
+  val context: Context
   val subject: TerminologyThing
   val value: scala.Predef.String
 }

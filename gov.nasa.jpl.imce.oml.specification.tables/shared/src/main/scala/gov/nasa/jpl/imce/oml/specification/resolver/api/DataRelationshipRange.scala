@@ -18,6 +18,10 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML DataRelationshipRange is an abstraction
+ * for the range of an OML DataRelationship
+ */
 trait DataRelationshipRange
 {
 }

@@ -19,15 +19,18 @@
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
- * A TerminologyBox is a logical container for a set of TerminologyBoxStatements.
+ * An OML TerminologyBox is an OML Context for defining a domain-specific vocabulary
+ * as a logical set of OML TerminologyBoxStatement(s),
+ * possibly by reuse of other vocabularies via OML TerminologyBoxAxiom(s).
+ * The semantics of an OML TerminologyBox domain-specific vocabulary is defined
+ * by the mapping to [OWL2-DL] of the other vocabularies it reuses, if any, and
+ * that of its OML TerminologyBoxAxiom(s) and OML TerminologyBoxStatement(s)
+ * according to its OML TerminologyGraphKind.
  */
 trait TerminologyBox
-  extends TerminologyThing
-  with Resource
+  extends Context
 {
 
-  override val iri: gov.nasa.jpl.imce.oml.specification.tables.IRI
-  val annotations: scala.collection.immutable.SortedSet[Annotation]
   val kind: gov.nasa.jpl.imce.oml.specification.tables.TerminologyGraphKind
   /*
    * The TerminologyBoxAxioms asserted in this TerminologyBox
@@ -38,18 +41,6 @@ trait TerminologyBox
    */
   val boxStatements: scala.collection.immutable.SortedSet[TerminologyBoxStatement]
 
-  def extent
-  (): TerminologyExtent
-  def calculateUUID
-  (): java.util.UUID
-  def nsPrefix
-  (): resolver.api.NamespacePrefix
-  def name
-  (): gov.nasa.jpl.imce.oml.specification.tables.LocalName
-  def annotationsByProperty
-  (): scala.collection.immutable.SortedSet[AnnotationPropertyTable]
-  def withAnnotations
-  (a: scala.collection.immutable.SortedSet[AnnotationPropertyTable]): TerminologyBox
   def withBoxStatements
   (s: scala.collection.immutable.SortedSet[TerminologyBoxStatement]): TerminologyBox
   /*

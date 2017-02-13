@@ -19,7 +19,6 @@
 package jpl.imce.oml.specification.ecore.impl;
 
 import jpl.imce.oml.specification.ecore.DataRelationshipToScalar;
-import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.ScalarDataPropertyValue;
 import jpl.imce.oml.specification.ecore.SingletonInstance;
@@ -43,7 +42,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link jpl.imce.oml.specification.ecore.impl.ScalarDataPropertyValueImpl#getDescriptionBox <em>Description Box</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.ScalarDataPropertyValueImpl#getSingletonInstance <em>Singleton Instance</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.ScalarDataPropertyValueImpl#getScalarDataProperty <em>Scalar Data Property</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.ScalarDataPropertyValueImpl#getScalarPropertyValue <em>Scalar Property Value</em>}</li>
@@ -52,16 +50,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * @generated
  */
 public class ScalarDataPropertyValueImpl extends TerminologyInstanceAssertionImpl implements ScalarDataPropertyValue {
-	/**
-	 * The cached value of the '{@link #getSingletonInstance() <em>Singleton Instance</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSingletonInstance()
-	 * @generated
-	 * @ordered
-	 */
-	protected SingletonInstance singletonInstance;
-
 	/**
 	 * The cached value of the '{@link #getScalarDataProperty() <em>Scalar Data Property</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -116,67 +104,9 @@ public class ScalarDataPropertyValueImpl extends TerminologyInstanceAssertionImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DescriptionBox getDescriptionBox() {
-		if (eContainerFeatureID() != OMLPackage.SCALAR_DATA_PROPERTY_VALUE__DESCRIPTION_BOX) return null;
-		return (DescriptionBox)eContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DescriptionBox basicGetDescriptionBox() {
-		if (eContainerFeatureID() != OMLPackage.SCALAR_DATA_PROPERTY_VALUE__DESCRIPTION_BOX) return null;
-		return (DescriptionBox)eInternalContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetDescriptionBox(DescriptionBox newDescriptionBox, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newDescriptionBox, OMLPackage.SCALAR_DATA_PROPERTY_VALUE__DESCRIPTION_BOX, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDescriptionBox(DescriptionBox newDescriptionBox) {
-		if (newDescriptionBox != eInternalContainer() || (eContainerFeatureID() != OMLPackage.SCALAR_DATA_PROPERTY_VALUE__DESCRIPTION_BOX && newDescriptionBox != null)) {
-			if (EcoreUtil.isAncestor(this, (EObject)newDescriptionBox))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newDescriptionBox != null)
-				msgs = ((InternalEObject)newDescriptionBox).eInverseAdd(this, OMLPackage.DESCRIPTION_BOX__SCALAR_DATA_PROPERTY_VALUES, DescriptionBox.class, msgs);
-			msgs = basicSetDescriptionBox(newDescriptionBox, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.SCALAR_DATA_PROPERTY_VALUE__DESCRIPTION_BOX, newDescriptionBox, newDescriptionBox));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public SingletonInstance getSingletonInstance() {
-		if (singletonInstance != null && ((EObject)singletonInstance).eIsProxy()) {
-			InternalEObject oldSingletonInstance = (InternalEObject)singletonInstance;
-			singletonInstance = (SingletonInstance)eResolveProxy(oldSingletonInstance);
-			if (singletonInstance != oldSingletonInstance) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.SCALAR_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE, oldSingletonInstance, singletonInstance));
-			}
-		}
-		return singletonInstance;
+		if (eContainerFeatureID() != OMLPackage.SCALAR_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE) return null;
+		return (SingletonInstance)eContainer();
 	}
 
 	/**
@@ -185,7 +115,18 @@ public class ScalarDataPropertyValueImpl extends TerminologyInstanceAssertionImp
 	 * @generated
 	 */
 	public SingletonInstance basicGetSingletonInstance() {
-		return singletonInstance;
+		if (eContainerFeatureID() != OMLPackage.SCALAR_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE) return null;
+		return (SingletonInstance)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSingletonInstance(SingletonInstance newSingletonInstance, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newSingletonInstance, OMLPackage.SCALAR_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE, msgs);
+		return msgs;
 	}
 
 	/**
@@ -194,10 +135,19 @@ public class ScalarDataPropertyValueImpl extends TerminologyInstanceAssertionImp
 	 * @generated
 	 */
 	public void setSingletonInstance(SingletonInstance newSingletonInstance) {
-		SingletonInstance oldSingletonInstance = singletonInstance;
-		singletonInstance = newSingletonInstance;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.SCALAR_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE, oldSingletonInstance, singletonInstance));
+		if (newSingletonInstance != eInternalContainer() || (eContainerFeatureID() != OMLPackage.SCALAR_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE && newSingletonInstance != null)) {
+			if (EcoreUtil.isAncestor(this, (EObject)newSingletonInstance))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newSingletonInstance != null)
+				msgs = ((InternalEObject)newSingletonInstance).eInverseAdd(this, OMLPackage.SINGLETON_INSTANCE__SCALAR_DATA_PROPERTY_VALUES, SingletonInstance.class, msgs);
+			msgs = basicSetSingletonInstance(newSingletonInstance, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.SCALAR_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE, newSingletonInstance, newSingletonInstance));
 	}
 
 	/**
@@ -267,10 +217,10 @@ public class ScalarDataPropertyValueImpl extends TerminologyInstanceAssertionImp
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.SCALAR_DATA_PROPERTY_VALUE__DESCRIPTION_BOX:
+			case OMLPackage.SCALAR_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetDescriptionBox((DescriptionBox)otherEnd, msgs);
+				return basicSetSingletonInstance((SingletonInstance)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -283,8 +233,8 @@ public class ScalarDataPropertyValueImpl extends TerminologyInstanceAssertionImp
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.SCALAR_DATA_PROPERTY_VALUE__DESCRIPTION_BOX:
-				return basicSetDescriptionBox(null, msgs);
+			case OMLPackage.SCALAR_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE:
+				return basicSetSingletonInstance(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -297,8 +247,8 @@ public class ScalarDataPropertyValueImpl extends TerminologyInstanceAssertionImp
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case OMLPackage.SCALAR_DATA_PROPERTY_VALUE__DESCRIPTION_BOX:
-				return eInternalContainer().eInverseRemove(this, OMLPackage.DESCRIPTION_BOX__SCALAR_DATA_PROPERTY_VALUES, DescriptionBox.class, msgs);
+			case OMLPackage.SCALAR_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE:
+				return eInternalContainer().eInverseRemove(this, OMLPackage.SINGLETON_INSTANCE__SCALAR_DATA_PROPERTY_VALUES, SingletonInstance.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -311,9 +261,6 @@ public class ScalarDataPropertyValueImpl extends TerminologyInstanceAssertionImp
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.SCALAR_DATA_PROPERTY_VALUE__DESCRIPTION_BOX:
-				if (resolve) return getDescriptionBox();
-				return basicGetDescriptionBox();
 			case OMLPackage.SCALAR_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE:
 				if (resolve) return getSingletonInstance();
 				return basicGetSingletonInstance();
@@ -334,9 +281,6 @@ public class ScalarDataPropertyValueImpl extends TerminologyInstanceAssertionImp
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.SCALAR_DATA_PROPERTY_VALUE__DESCRIPTION_BOX:
-				setDescriptionBox((DescriptionBox)newValue);
-				return;
 			case OMLPackage.SCALAR_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE:
 				setSingletonInstance((SingletonInstance)newValue);
 				return;
@@ -358,9 +302,6 @@ public class ScalarDataPropertyValueImpl extends TerminologyInstanceAssertionImp
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.SCALAR_DATA_PROPERTY_VALUE__DESCRIPTION_BOX:
-				setDescriptionBox((DescriptionBox)null);
-				return;
 			case OMLPackage.SCALAR_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE:
 				setSingletonInstance((SingletonInstance)null);
 				return;
@@ -382,10 +323,8 @@ public class ScalarDataPropertyValueImpl extends TerminologyInstanceAssertionImp
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.SCALAR_DATA_PROPERTY_VALUE__DESCRIPTION_BOX:
-				return basicGetDescriptionBox() != null;
 			case OMLPackage.SCALAR_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE:
-				return singletonInstance != null;
+				return basicGetSingletonInstance() != null;
 			case OMLPackage.SCALAR_DATA_PROPERTY_VALUE__SCALAR_DATA_PROPERTY:
 				return scalarDataProperty != null;
 			case OMLPackage.SCALAR_DATA_PROPERTY_VALUE__SCALAR_PROPERTY_VALUE:

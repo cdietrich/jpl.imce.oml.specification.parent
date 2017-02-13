@@ -24,8 +24,8 @@ case class SpecificDisjointConceptAxiom private[impl]
 (
  override val uuid: java.util.UUID,
  override val bundle: Bundle,
- override val disjointLeaf: Concept,
- override val disjointTaxonomyParent: ConceptTreeDisjunction
+ override val disjointTaxonomyParent: ConceptTreeDisjunction,
+ override val disjointLeaf: Concept
 )
 extends resolver.api.SpecificDisjointConceptAxiom
   with DisjointUnionOfConceptsAxiom
@@ -38,15 +38,15 @@ extends resolver.api.SpecificDisjointConceptAxiom
 
   override val hashCode
   : scala.Int
-  = (uuid, bundle, disjointLeaf, disjointTaxonomyParent).##
+  = (uuid, bundle, disjointTaxonomyParent, disjointLeaf).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: SpecificDisjointConceptAxiom =>
 	    (that canEqual this) &&
 	    (this.uuid == that.uuid) &&
 	    (this.bundle == that.bundle) &&
-	    (this.disjointLeaf == that.disjointLeaf) &&
-	    (this.disjointTaxonomyParent == that.disjointTaxonomyParent)
+	    (this.disjointTaxonomyParent == that.disjointTaxonomyParent) &&
+	    (this.disjointLeaf == that.disjointLeaf)
 
 	  case _ =>
 	    false

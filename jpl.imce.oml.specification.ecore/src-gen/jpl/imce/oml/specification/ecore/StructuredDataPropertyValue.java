@@ -33,7 +33,6 @@ package jpl.imce.oml.specification.ecore;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getDescriptionBox <em>Description Box</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getSingletonInstance <em>Singleton Instance</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getStructuredDataProperty <em>Structured Data Property</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getStructuredPropertyTuple <em>Structured Property Tuple</em>}</li>
@@ -45,54 +44,28 @@ package jpl.imce.oml.specification.ecore;
  */
 public interface StructuredDataPropertyValue extends TerminologyInstanceAssertion {
 	/**
-	 * Returns the value of the '<em><b>Description Box</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getStructuredDataPropertyValues <em>Structured Data Property Values</em>}'.
+	 * Returns the value of the '<em><b>Singleton Instance</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.SingletonInstance#getStructuredDataPropertyValues <em>Structured Data Property Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Description Box</em>' container reference isn't clear,
+	 * If the meaning of the '<em>Singleton Instance</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Description Box</em>' container reference.
-	 * @see #setDescriptionBox(DescriptionBox)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getStructuredDataPropertyValue_DescriptionBox()
-	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getStructuredDataPropertyValues
-	 * @model opposite="structuredDataPropertyValues" required="true" transient="false"
-	 * @generated
-	 */
-	DescriptionBox getDescriptionBox();
-
-	/**
-	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getDescriptionBox <em>Description Box</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description Box</em>' container reference.
-	 * @see #getDescriptionBox()
-	 * @generated
-	 */
-	void setDescriptionBox(DescriptionBox value);
-
-	/**
-	 * Returns the value of the '<em><b>Singleton Instance</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Singleton Instance</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Singleton Instance</em>' reference.
+	 * @return the value of the '<em>Singleton Instance</em>' container reference.
 	 * @see #setSingletonInstance(SingletonInstance)
 	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getStructuredDataPropertyValue_SingletonInstance()
-	 * @model required="true"
+	 * @see jpl.imce.oml.specification.ecore.SingletonInstance#getStructuredDataPropertyValues
+	 * @model opposite="structuredDataPropertyValues" required="true" transient="false"
 	 * @generated
 	 */
 	SingletonInstance getSingletonInstance();
 
 	/**
-	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getSingletonInstance <em>Singleton Instance</em>}' reference.
+	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getSingletonInstance <em>Singleton Instance</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Singleton Instance</em>' reference.
+	 * @param value the new value of the '<em>Singleton Instance</em>' container reference.
 	 * @see #getSingletonInstance()
 	 * @generated
 	 */
@@ -126,6 +99,7 @@ public interface StructuredDataPropertyValue extends TerminologyInstanceAssertio
 
 	/**
 	 * Returns the value of the '<em><b>Structured Property Tuple</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.DataStructureTuple#getStructuredDataPropertyValue <em>Structured Data Property Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Structured Property Tuple</em>' reference isn't clear,
@@ -135,7 +109,8 @@ public interface StructuredDataPropertyValue extends TerminologyInstanceAssertio
 	 * @return the value of the '<em>Structured Property Tuple</em>' reference.
 	 * @see #setStructuredPropertyTuple(DataStructureTuple)
 	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getStructuredDataPropertyValue_StructuredPropertyTuple()
-	 * @model required="true"
+	 * @see jpl.imce.oml.specification.ecore.DataStructureTuple#getStructuredDataPropertyValue
+	 * @model opposite="structuredDataPropertyValue" required="true"
 	 * @generated
 	 */
 	DataStructureTuple getStructuredPropertyTuple();

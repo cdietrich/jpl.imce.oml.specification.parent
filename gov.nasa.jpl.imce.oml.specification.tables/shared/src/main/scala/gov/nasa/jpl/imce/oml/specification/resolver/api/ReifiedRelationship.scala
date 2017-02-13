@@ -18,12 +18,19 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML ReifiedRelationship is an OML ConceptualEntity and a kind of OML EntityRelationship
+ * where an instance has an intrinsic identity. This means that
+ * an OML ReifiedRelationship can be involved as the domain or the
+ * range of another OML EntityRelationship as well as the
+ * domain of an OML DataRelationshipFromEntity.
+ */
 trait ReifiedRelationship
   extends EntityRelationship
   with Entity
+  with ConceptualEntity
 {
 
-  val isAbstract: scala.Boolean
   val unreifiedPropertyName: gov.nasa.jpl.imce.oml.specification.tables.LocalName
   val unreifiedInversePropertyName: scala.Option[gov.nasa.jpl.imce.oml.specification.tables.LocalName]
 }

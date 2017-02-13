@@ -19,7 +19,7 @@
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
- * A ConceptTreeDisjunction represents the root & non-leaf nodes of a concept taxonomy:
+ * An OML ConceptTreeDisjunction represents the root & non-leaf nodes of a concept taxonomy:
  * - Root node is a RootConceptTaxonomyAxiom.
  * - Non-leaf nodes are AnonymousConceptTaxonomyAxioms.
  */

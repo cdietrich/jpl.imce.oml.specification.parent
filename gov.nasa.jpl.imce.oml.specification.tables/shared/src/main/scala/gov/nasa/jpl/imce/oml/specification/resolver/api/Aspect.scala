@@ -18,6 +18,11 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML Aspect is a kind of OML Entity of OML UnaryTermKind.
+ * It is intended to be used as a specialization parent
+ * for one or more OML ConceptualEntity.
+ */
 trait Aspect
   extends Entity
   with UnaryTermKind

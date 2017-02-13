@@ -151,7 +151,7 @@ public class ReifiedRelationshipInstanceDomainItemProvider extends TerminologyIn
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ReifiedRelationshipInstanceDomain)object).getUuid();
+		String label = ((ReifiedRelationshipInstanceDomain)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ReifiedRelationshipInstanceDomain_type") :
 			getString("_UI_ReifiedRelationshipInstanceDomain_type") + " " + label;

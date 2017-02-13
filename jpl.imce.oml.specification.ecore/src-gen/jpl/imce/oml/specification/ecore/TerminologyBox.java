@@ -27,11 +27,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <!-- begin-model-doc -->
  * An OML TerminologyBox is an OML Context for defining a domain-specific vocabulary
- * as a logical set of OML TerminologyBoxStatements,
- * possibly by reuse of other vocabularies via OML TerminologyBoxAxioms.
+ * as a logical set of OML TerminologyBoxStatement(s),
+ * possibly by reuse of other vocabularies via OML TerminologyBoxAxiom(s).
  * The semantics of an OML TerminologyBox domain-specific vocabulary is defined
  * by the mapping to [OWL2-DL] of the other vocabularies it reuses, if any, and
- * that of its OML TerminologyBoxAxioms and OML TerminologyBoxStatements
+ * that of its OML TerminologyBoxAxiom(s) and OML TerminologyBoxStatement(s)
  * according to its OML TerminologyGraphKind.
  * <!-- end-model-doc -->
  *

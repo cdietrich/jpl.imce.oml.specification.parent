@@ -18,6 +18,11 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML DirectedBinaryRelationshipKind is an abstraction
+ * for the category of OML Term(s)
+ * that are relationships with arity 2
+ */
 trait DirectedBinaryRelationshipKind
 {
 

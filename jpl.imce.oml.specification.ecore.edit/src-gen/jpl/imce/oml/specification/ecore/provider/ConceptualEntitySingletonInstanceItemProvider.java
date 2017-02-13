@@ -23,12 +23,8 @@ import java.util.Collection;
 import java.util.List;
 
 import jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance;
-import jpl.imce.oml.specification.ecore.OMLPackage;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
@@ -59,54 +55,8 @@ public class ConceptualEntitySingletonInstanceItemProvider extends SingletonInst
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIdentifyingScalarValuesPropertyDescriptor(object);
-			addIdentifyingStructuredTuplesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Identifying Scalar Values feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIdentifyingScalarValuesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ConceptualEntitySingletonInstance_identifyingScalarValues_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConceptualEntitySingletonInstance_identifyingScalarValues_feature", "_UI_ConceptualEntitySingletonInstance_type"),
-				 OMLPackage.Literals.CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__IDENTIFYING_SCALAR_VALUES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Identifying Structured Tuples feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIdentifyingStructuredTuplesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ConceptualEntitySingletonInstance_identifyingStructuredTuples_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConceptualEntitySingletonInstance_identifyingStructuredTuples_feature", "_UI_ConceptualEntitySingletonInstance_type"),
-				 OMLPackage.Literals.CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__IDENTIFYING_STRUCTURED_TUPLES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -117,7 +67,7 @@ public class ConceptualEntitySingletonInstanceItemProvider extends SingletonInst
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ConceptualEntitySingletonInstance)object).getUuid();
+		String label = ((ConceptualEntitySingletonInstance)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ConceptualEntitySingletonInstance_type") :
 			getString("_UI_ConceptualEntitySingletonInstance_type") + " " + label;

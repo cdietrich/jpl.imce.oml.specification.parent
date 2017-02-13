@@ -18,6 +18,10 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML TerminologyThing is a logical abstraction for everything
+ * in a vocabulary that is globally identified by a UUID.
+ */
 trait TerminologyThing
 {
 

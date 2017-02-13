@@ -19,7 +19,7 @@
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
- * A TerminologyGraph is a kind of TerminologyBox with no statements our axioms involving Bundles.
+ * An OML TerminologyGraph is an OML TerminologyBox with no statements our axioms involving OML Bundle(s).
  */
 trait TerminologyGraph
   extends TerminologyBox

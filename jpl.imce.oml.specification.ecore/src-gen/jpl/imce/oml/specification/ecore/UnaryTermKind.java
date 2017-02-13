@@ -26,7 +26,7 @@ import org.eclipse.emf.cdo.CDOObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML UnaryTermKind is an abstraction for the category of OML Terms
+ * An OML UnaryTermKind is an abstraction for the category of OML Term(s)
  * that are relationships with arity 1
  * <!-- end-model-doc -->
  *

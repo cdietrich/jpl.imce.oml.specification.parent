@@ -19,7 +19,7 @@
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
- * A data range that is defined as a synonym for another (i.e. the restrictedRange).
+ * An OML SynonymScalarRestriction is a data range that is defined as a synonym for another (i.e. the restrictedRange).
  */
 trait SynonymScalarRestriction
   extends RestrictedDataRange

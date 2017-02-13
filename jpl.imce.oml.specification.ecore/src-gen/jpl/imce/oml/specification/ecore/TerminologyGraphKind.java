@@ -78,14 +78,14 @@ public enum TerminologyGraphKind implements Enumerator {
 	 * an [OWL2-DL Class]; that is, it classifies a set of individuals
 	 * that share the characteristics and capabilities encoded in the [OWL2-DL Class].
 	 * A well-formed OML SpecializationAxiom establishing a taxonomic relationship between
-	 * two OML Terms can be asserted arbitrarily in any OpenWorldDefinitions OML TerminologyBox
-	 * that directly or indirectly includes the related OML Terms.
-	 * For example, suppose that OML Concepts `A` and `B`
+	 * two OML Term(s) can be asserted arbitrarily in any OpenWorldDefinitions OML TerminologyBox
+	 * that directly or indirectly includes the related OML Term(s).
+	 * For example, suppose that OML Concept(s) `A` and `B`
 	 * are defined in OpenWorldDefinitions OML TerminologyBox `P` and `Q` respectively.
-	 * Suppose further that OpenWorldDefinitions OML TerminologyBoxes, `U` and `V`, each
+	 * Suppose further that OpenWorldDefinitions OML TerminologyBox(es), `U` and `V`, each
 	 * extend both `P` and `Q` where `U` asserts that `A` extends `B` while `V` asserts that `B` extends `A.
 	 * This is well-formed; furthermore, an OpenWorldDefinitions OML TerminologyBox extending both `U` and `V`
-	 * would force `A` and `B` to become equivalent OML Concepts per the open-world semantics of [OWL2-DL].
+	 * would force `A` and `B` to become equivalent OML Concept(s) per the open-world semantics of [OWL2-DL].
 	 * <!-- end-model-doc -->
 	 * @see #OPEN_WORLD_DEFINITIONS
 	 * @model name="OpenWorldDefinitions"
@@ -102,7 +102,7 @@ public enum TerminologyGraphKind implements Enumerator {
 	 * Each OML ConceptualEntity in a ClosedWorldDesignation terminology describes a unique thing
 	 * in the real world uniquely identifiable by the collection of its identifying OML DataRelationshipFromEntity properties
 	 * (e.g., serial numbers, unique identifiers, ...).
-	 * A well-formed ClosedWorldDesignations OML TerminologyBox is restricted to defining singleton OML ConceptualEntities, each as
+	 * A well-formed ClosedWorldDesignations OML TerminologyBox is restricted to defining singleton OML ConceptualEntity(-ies), each as
 	 * a specialization of at least one concrete OML ConceptualEntity defined  in an extended OpenWorldDefinitions OML TerminologyBox.
 	 * Each OML ConceptualEntity in a ClosedWorldDesignations OML TerminologyBox maps to
 	 * an [OWL2-DL Class] with an axiom asserting its equivalence to an exact cardinality restriction of 1 for

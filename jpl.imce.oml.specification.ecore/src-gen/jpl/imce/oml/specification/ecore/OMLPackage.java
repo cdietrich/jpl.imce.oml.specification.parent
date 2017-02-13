@@ -7129,40 +7129,13 @@ public interface OMLPackage extends EPackage {
 	int DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES = CONTEXT_FEATURE_COUNT + 8;
 
 	/**
-	 * The feature id for the '<em><b>Data Structure Tuples</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DESCRIPTION_BOX__DATA_STRUCTURE_TUPLES = CONTEXT_FEATURE_COUNT + 9;
-
-	/**
-	 * The feature id for the '<em><b>Scalar Data Property Values</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DESCRIPTION_BOX__SCALAR_DATA_PROPERTY_VALUES = CONTEXT_FEATURE_COUNT + 10;
-
-	/**
-	 * The feature id for the '<em><b>Structured Data Property Values</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DESCRIPTION_BOX__STRUCTURED_DATA_PROPERTY_VALUES = CONTEXT_FEATURE_COUNT + 11;
-
-	/**
 	 * The number of structural features of the '<em>Description Box</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX_FEATURE_COUNT = CONTEXT_FEATURE_COUNT + 12;
+	int DESCRIPTION_BOX_FEATURE_COUNT = CONTEXT_FEATURE_COUNT + 9;
 
 	/**
 	 * The operation id for the '<em>Extent</em>' operation.
@@ -7237,85 +7210,13 @@ public interface OMLPackage extends EPackage {
 	int DESCRIPTION_BOX___WITH_ANNOTATIONS__EMAP = CONTEXT___WITH_ANNOTATIONS__EMAP;
 
 	/**
-	 * The operation id for the '<em>Add Concept Instances</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DESCRIPTION_BOX___ADD_CONCEPT_INSTANCES__ELIST = CONTEXT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Add Reified Relationship Instances</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DESCRIPTION_BOX___ADD_REIFIED_RELATIONSHIP_INSTANCES__ELIST = CONTEXT_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Add Reified Relationship Instance Domains</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DESCRIPTION_BOX___ADD_REIFIED_RELATIONSHIP_INSTANCE_DOMAINS__ELIST = CONTEXT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Add Reified Relationship Instance Ranges</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DESCRIPTION_BOX___ADD_REIFIED_RELATIONSHIP_INSTANCE_RANGES__ELIST = CONTEXT_OPERATION_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Add Unreified Relationship Instance Tuples</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DESCRIPTION_BOX___ADD_UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES__ELIST = CONTEXT_OPERATION_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Add Data Structure Tuples</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DESCRIPTION_BOX___ADD_DATA_STRUCTURE_TUPLES__ELIST = CONTEXT_OPERATION_COUNT + 5;
-
-	/**
-	 * The operation id for the '<em>Add Scalar Data Property Values</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DESCRIPTION_BOX___ADD_SCALAR_DATA_PROPERTY_VALUES__ELIST = CONTEXT_OPERATION_COUNT + 6;
-
-	/**
-	 * The operation id for the '<em>Add Structured Data Property Values</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DESCRIPTION_BOX___ADD_STRUCTURED_DATA_PROPERTY_VALUES__ELIST = CONTEXT_OPERATION_COUNT + 7;
-
-	/**
 	 * The number of operations of the '<em>Description Box</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX_OPERATION_COUNT = CONTEXT_OPERATION_COUNT + 8;
+	int DESCRIPTION_BOX_OPERATION_COUNT = CONTEXT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxRelationshipImpl <em>Description Box Relationship</em>}' class.
@@ -7565,40 +7466,22 @@ public interface OMLPackage extends EPackage {
 	int TERMINOLOGY_INSTANCE_ASSERTION__UUID = TERMINOLOGY_THING__UUID;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINOLOGY_INSTANCE_ASSERTION__NAME = TERMINOLOGY_THING_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Terminology Instance Assertion</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT = TERMINOLOGY_THING_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Calculate UUID</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID = TERMINOLOGY_THING___CALCULATE_UUID;
-
-	/**
-	 * The operation id for the '<em>Iri</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TERMINOLOGY_INSTANCE_ASSERTION___IRI = TERMINOLOGY_THING_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TERMINOLOGY_INSTANCE_ASSERTION___NAME = TERMINOLOGY_THING_OPERATION_COUNT + 1;
+	int TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT = TERMINOLOGY_THING_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Description Box</em>' operation.
@@ -7610,13 +7493,40 @@ public interface OMLPackage extends EPackage {
 	int TERMINOLOGY_INSTANCE_ASSERTION___DESCRIPTION_BOX = TERMINOLOGY_THING_OPERATION_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Calculate UUID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID = TERMINOLOGY_THING_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Iri</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINOLOGY_INSTANCE_ASSERTION___IRI = TERMINOLOGY_THING_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINOLOGY_INSTANCE_ASSERTION___NAME = TERMINOLOGY_THING_OPERATION_COUNT + 5;
+
+	/**
 	 * The number of operations of the '<em>Terminology Instance Assertion</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_INSTANCE_ASSERTION_OPERATION_COUNT = TERMINOLOGY_THING_OPERATION_COUNT + 3;
+	int TERMINOLOGY_INSTANCE_ASSERTION_OPERATION_COUNT = TERMINOLOGY_THING_OPERATION_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.SingletonInstanceImpl <em>Singleton Instance</em>}' class.
@@ -7638,13 +7548,49 @@ public interface OMLPackage extends EPackage {
 	int SINGLETON_INSTANCE__UUID = TERMINOLOGY_INSTANCE_ASSERTION__UUID;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_INSTANCE__NAME = TERMINOLOGY_INSTANCE_ASSERTION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Scalar Data Property Values</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_INSTANCE__SCALAR_DATA_PROPERTY_VALUES = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Structured Data Property Values</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_INSTANCE__STRUCTURED_DATA_PROPERTY_VALUES = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Singleton Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLETON_INSTANCE_FEATURE_COUNT = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 0;
+	int SINGLETON_INSTANCE_FEATURE_COUNT = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Description Box</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_INSTANCE___DESCRIPTION_BOX = TERMINOLOGY_INSTANCE_ASSERTION___DESCRIPTION_BOX;
 
 	/**
 	 * The operation id for the '<em>Calculate UUID</em>' operation.
@@ -7672,15 +7618,6 @@ public interface OMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int SINGLETON_INSTANCE___NAME = TERMINOLOGY_INSTANCE_ASSERTION___NAME;
-
-	/**
-	 * The operation id for the '<em>Description Box</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SINGLETON_INSTANCE___DESCRIPTION_BOX = TERMINOLOGY_INSTANCE_ASSERTION___DESCRIPTION_BOX;
 
 	/**
 	 * The number of operations of the '<em>Singleton Instance</em>' class.
@@ -7711,22 +7648,22 @@ public interface OMLPackage extends EPackage {
 	int SCALAR_DATA_PROPERTY_VALUE__UUID = TERMINOLOGY_INSTANCE_ASSERTION__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Description Box</b></em>' container reference.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCALAR_DATA_PROPERTY_VALUE__DESCRIPTION_BOX = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 0;
+	int SCALAR_DATA_PROPERTY_VALUE__NAME = TERMINOLOGY_INSTANCE_ASSERTION__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Instance</b></em>' reference.
+	 * The feature id for the '<em><b>Singleton Instance</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCALAR_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 1;
+	int SCALAR_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Scalar Data Property</b></em>' reference.
@@ -7735,7 +7672,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCALAR_DATA_PROPERTY_VALUE__SCALAR_DATA_PROPERTY = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 2;
+	int SCALAR_DATA_PROPERTY_VALUE__SCALAR_DATA_PROPERTY = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Scalar Property Value</b></em>' attribute.
@@ -7744,7 +7681,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCALAR_DATA_PROPERTY_VALUE__SCALAR_PROPERTY_VALUE = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 3;
+	int SCALAR_DATA_PROPERTY_VALUE__SCALAR_PROPERTY_VALUE = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Scalar Data Property Value</em>' class.
@@ -7753,7 +7690,16 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCALAR_DATA_PROPERTY_VALUE_FEATURE_COUNT = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 4;
+	int SCALAR_DATA_PROPERTY_VALUE_FEATURE_COUNT = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Description Box</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCALAR_DATA_PROPERTY_VALUE___DESCRIPTION_BOX = TERMINOLOGY_INSTANCE_ASSERTION___DESCRIPTION_BOX;
 
 	/**
 	 * The operation id for the '<em>Calculate UUID</em>' operation.
@@ -7781,15 +7727,6 @@ public interface OMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int SCALAR_DATA_PROPERTY_VALUE___NAME = TERMINOLOGY_INSTANCE_ASSERTION___NAME;
-
-	/**
-	 * The operation id for the '<em>Description Box</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCALAR_DATA_PROPERTY_VALUE___DESCRIPTION_BOX = TERMINOLOGY_INSTANCE_ASSERTION___DESCRIPTION_BOX;
 
 	/**
 	 * The number of operations of the '<em>Scalar Data Property Value</em>' class.
@@ -7820,22 +7757,22 @@ public interface OMLPackage extends EPackage {
 	int STRUCTURED_DATA_PROPERTY_VALUE__UUID = TERMINOLOGY_INSTANCE_ASSERTION__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Description Box</b></em>' container reference.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_DATA_PROPERTY_VALUE__DESCRIPTION_BOX = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 0;
+	int STRUCTURED_DATA_PROPERTY_VALUE__NAME = TERMINOLOGY_INSTANCE_ASSERTION__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Instance</b></em>' reference.
+	 * The feature id for the '<em><b>Singleton Instance</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 1;
+	int STRUCTURED_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Structured Data Property</b></em>' reference.
@@ -7844,7 +7781,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_DATA_PROPERTY = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 2;
+	int STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_DATA_PROPERTY = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Structured Property Tuple</b></em>' reference.
@@ -7853,7 +7790,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_PROPERTY_TUPLE = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 3;
+	int STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_PROPERTY_TUPLE = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Structured Data Property Value</em>' class.
@@ -7862,7 +7799,16 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_DATA_PROPERTY_VALUE_FEATURE_COUNT = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 4;
+	int STRUCTURED_DATA_PROPERTY_VALUE_FEATURE_COUNT = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Description Box</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_DATA_PROPERTY_VALUE___DESCRIPTION_BOX = TERMINOLOGY_INSTANCE_ASSERTION___DESCRIPTION_BOX;
 
 	/**
 	 * The operation id for the '<em>Calculate UUID</em>' operation.
@@ -7890,15 +7836,6 @@ public interface OMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int STRUCTURED_DATA_PROPERTY_VALUE___NAME = TERMINOLOGY_INSTANCE_ASSERTION___NAME;
-
-	/**
-	 * The operation id for the '<em>Description Box</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURED_DATA_PROPERTY_VALUE___DESCRIPTION_BOX = TERMINOLOGY_INSTANCE_ASSERTION___DESCRIPTION_BOX;
 
 	/**
 	 * The number of operations of the '<em>Structured Data Property Value</em>' class.
@@ -7929,13 +7866,40 @@ public interface OMLPackage extends EPackage {
 	int DATA_STRUCTURE_TUPLE__UUID = SINGLETON_INSTANCE__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Description Box</b></em>' container reference.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_STRUCTURE_TUPLE__DESCRIPTION_BOX = SINGLETON_INSTANCE_FEATURE_COUNT + 0;
+	int DATA_STRUCTURE_TUPLE__NAME = SINGLETON_INSTANCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Scalar Data Property Values</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_STRUCTURE_TUPLE__SCALAR_DATA_PROPERTY_VALUES = SINGLETON_INSTANCE__SCALAR_DATA_PROPERTY_VALUES;
+
+	/**
+	 * The feature id for the '<em><b>Structured Data Property Values</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUES = SINGLETON_INSTANCE__STRUCTURED_DATA_PROPERTY_VALUES;
+
+	/**
+	 * The feature id for the '<em><b>Structured Data Property Value</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE = SINGLETON_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Data Structure Type</b></em>' reference.
@@ -7954,6 +7918,15 @@ public interface OMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_STRUCTURE_TUPLE_FEATURE_COUNT = SINGLETON_INSTANCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Description Box</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_STRUCTURE_TUPLE___DESCRIPTION_BOX = SINGLETON_INSTANCE___DESCRIPTION_BOX;
 
 	/**
 	 * The operation id for the '<em>Calculate UUID</em>' operation.
@@ -7981,15 +7954,6 @@ public interface OMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_STRUCTURE_TUPLE___NAME = SINGLETON_INSTANCE___NAME;
-
-	/**
-	 * The operation id for the '<em>Description Box</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_STRUCTURE_TUPLE___DESCRIPTION_BOX = SINGLETON_INSTANCE___DESCRIPTION_BOX;
 
 	/**
 	 * The number of operations of the '<em>Data Structure Tuple</em>' class.
@@ -8020,22 +7984,31 @@ public interface OMLPackage extends EPackage {
 	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__UUID = SINGLETON_INSTANCE__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Identifying Scalar Values</b></em>' reference list.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__IDENTIFYING_SCALAR_VALUES = SINGLETON_INSTANCE_FEATURE_COUNT + 0;
+	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__NAME = SINGLETON_INSTANCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Identifying Structured Tuples</b></em>' reference list.
+	 * The feature id for the '<em><b>Scalar Data Property Values</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__IDENTIFYING_STRUCTURED_TUPLES = SINGLETON_INSTANCE_FEATURE_COUNT + 1;
+	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__SCALAR_DATA_PROPERTY_VALUES = SINGLETON_INSTANCE__SCALAR_DATA_PROPERTY_VALUES;
+
+	/**
+	 * The feature id for the '<em><b>Structured Data Property Values</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__STRUCTURED_DATA_PROPERTY_VALUES = SINGLETON_INSTANCE__STRUCTURED_DATA_PROPERTY_VALUES;
 
 	/**
 	 * The number of structural features of the '<em>Conceptual Entity Singleton Instance</em>' class.
@@ -8044,7 +8017,16 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE_FEATURE_COUNT = SINGLETON_INSTANCE_FEATURE_COUNT + 2;
+	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE_FEATURE_COUNT = SINGLETON_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Description Box</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___DESCRIPTION_BOX = SINGLETON_INSTANCE___DESCRIPTION_BOX;
 
 	/**
 	 * The operation id for the '<em>Calculate UUID</em>' operation.
@@ -8074,15 +8056,6 @@ public interface OMLPackage extends EPackage {
 	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___NAME = SINGLETON_INSTANCE___NAME;
 
 	/**
-	 * The operation id for the '<em>Description Box</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___DESCRIPTION_BOX = SINGLETON_INSTANCE___DESCRIPTION_BOX;
-
-	/**
 	 * The operation id for the '<em>Conceptual Entity Singleton Classifier</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8092,13 +8065,31 @@ public interface OMLPackage extends EPackage {
 	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER = SINGLETON_INSTANCE_OPERATION_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Identifying Scalar Values</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___IDENTIFYING_SCALAR_VALUES = SINGLETON_INSTANCE_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Identifying Structured Tuples</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___IDENTIFYING_STRUCTURED_TUPLES = SINGLETON_INSTANCE_OPERATION_COUNT + 2;
+
+	/**
 	 * The number of operations of the '<em>Conceptual Entity Singleton Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE_OPERATION_COUNT = SINGLETON_INSTANCE_OPERATION_COUNT + 1;
+	int CONCEPTUAL_ENTITY_SINGLETON_INSTANCE_OPERATION_COUNT = SINGLETON_INSTANCE_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.ConceptInstanceImpl <em>Concept Instance</em>}' class.
@@ -8120,22 +8111,31 @@ public interface OMLPackage extends EPackage {
 	int CONCEPT_INSTANCE__UUID = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Identifying Scalar Values</b></em>' reference list.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONCEPT_INSTANCE__IDENTIFYING_SCALAR_VALUES = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__IDENTIFYING_SCALAR_VALUES;
+	int CONCEPT_INSTANCE__NAME = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Identifying Structured Tuples</b></em>' reference list.
+	 * The feature id for the '<em><b>Scalar Data Property Values</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONCEPT_INSTANCE__IDENTIFYING_STRUCTURED_TUPLES = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__IDENTIFYING_STRUCTURED_TUPLES;
+	int CONCEPT_INSTANCE__SCALAR_DATA_PROPERTY_VALUES = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__SCALAR_DATA_PROPERTY_VALUES;
+
+	/**
+	 * The feature id for the '<em><b>Structured Data Property Values</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_INSTANCE__STRUCTURED_DATA_PROPERTY_VALUES = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__STRUCTURED_DATA_PROPERTY_VALUES;
 
 	/**
 	 * The feature id for the '<em><b>Description Box</b></em>' container reference.
@@ -8165,6 +8165,15 @@ public interface OMLPackage extends EPackage {
 	int CONCEPT_INSTANCE_FEATURE_COUNT = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Description Box</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_INSTANCE___DESCRIPTION_BOX = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___DESCRIPTION_BOX;
+
+	/**
 	 * The operation id for the '<em>Calculate UUID</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8192,13 +8201,22 @@ public interface OMLPackage extends EPackage {
 	int CONCEPT_INSTANCE___NAME = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___NAME;
 
 	/**
-	 * The operation id for the '<em>Description Box</em>' operation.
+	 * The operation id for the '<em>Identifying Scalar Values</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONCEPT_INSTANCE___DESCRIPTION_BOX = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___DESCRIPTION_BOX;
+	int CONCEPT_INSTANCE___IDENTIFYING_SCALAR_VALUES = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___IDENTIFYING_SCALAR_VALUES;
+
+	/**
+	 * The operation id for the '<em>Identifying Structured Tuples</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT_INSTANCE___IDENTIFYING_STRUCTURED_TUPLES = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___IDENTIFYING_STRUCTURED_TUPLES;
 
 	/**
 	 * The operation id for the '<em>Conceptual Entity Singleton Classifier</em>' operation.
@@ -8238,22 +8256,31 @@ public interface OMLPackage extends EPackage {
 	int REIFIED_RELATIONSHIP_INSTANCE__UUID = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Identifying Scalar Values</b></em>' reference list.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REIFIED_RELATIONSHIP_INSTANCE__IDENTIFYING_SCALAR_VALUES = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__IDENTIFYING_SCALAR_VALUES;
+	int REIFIED_RELATIONSHIP_INSTANCE__NAME = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Identifying Structured Tuples</b></em>' reference list.
+	 * The feature id for the '<em><b>Scalar Data Property Values</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REIFIED_RELATIONSHIP_INSTANCE__IDENTIFYING_STRUCTURED_TUPLES = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__IDENTIFYING_STRUCTURED_TUPLES;
+	int REIFIED_RELATIONSHIP_INSTANCE__SCALAR_DATA_PROPERTY_VALUES = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__SCALAR_DATA_PROPERTY_VALUES;
+
+	/**
+	 * The feature id for the '<em><b>Structured Data Property Values</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE__STRUCTURED_DATA_PROPERTY_VALUES = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__STRUCTURED_DATA_PROPERTY_VALUES;
 
 	/**
 	 * The feature id for the '<em><b>Description Box</b></em>' container reference.
@@ -8283,6 +8310,15 @@ public interface OMLPackage extends EPackage {
 	int REIFIED_RELATIONSHIP_INSTANCE_FEATURE_COUNT = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Description Box</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE___DESCRIPTION_BOX = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___DESCRIPTION_BOX;
+
+	/**
 	 * The operation id for the '<em>Calculate UUID</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8310,13 +8346,22 @@ public interface OMLPackage extends EPackage {
 	int REIFIED_RELATIONSHIP_INSTANCE___NAME = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___NAME;
 
 	/**
-	 * The operation id for the '<em>Description Box</em>' operation.
+	 * The operation id for the '<em>Identifying Scalar Values</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REIFIED_RELATIONSHIP_INSTANCE___DESCRIPTION_BOX = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___DESCRIPTION_BOX;
+	int REIFIED_RELATIONSHIP_INSTANCE___IDENTIFYING_SCALAR_VALUES = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___IDENTIFYING_SCALAR_VALUES;
+
+	/**
+	 * The operation id for the '<em>Identifying Structured Tuples</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE___IDENTIFYING_STRUCTURED_TUPLES = CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___IDENTIFYING_STRUCTURED_TUPLES;
 
 	/**
 	 * The operation id for the '<em>Conceptual Entity Singleton Classifier</em>' operation.
@@ -8356,6 +8401,15 @@ public interface OMLPackage extends EPackage {
 	int REIFIED_RELATIONSHIP_INSTANCE_DOMAIN__UUID = TERMINOLOGY_INSTANCE_ASSERTION__UUID;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE_DOMAIN__NAME = TERMINOLOGY_INSTANCE_ASSERTION__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Description Box</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8392,6 +8446,15 @@ public interface OMLPackage extends EPackage {
 	int REIFIED_RELATIONSHIP_INSTANCE_DOMAIN_FEATURE_COUNT = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Description Box</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE_DOMAIN___DESCRIPTION_BOX = TERMINOLOGY_INSTANCE_ASSERTION___DESCRIPTION_BOX;
+
+	/**
 	 * The operation id for the '<em>Calculate UUID</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8417,15 +8480,6 @@ public interface OMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int REIFIED_RELATIONSHIP_INSTANCE_DOMAIN___NAME = TERMINOLOGY_INSTANCE_ASSERTION___NAME;
-
-	/**
-	 * The operation id for the '<em>Description Box</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REIFIED_RELATIONSHIP_INSTANCE_DOMAIN___DESCRIPTION_BOX = TERMINOLOGY_INSTANCE_ASSERTION___DESCRIPTION_BOX;
 
 	/**
 	 * The number of operations of the '<em>Reified Relationship Instance Domain</em>' class.
@@ -8454,6 +8508,15 @@ public interface OMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int REIFIED_RELATIONSHIP_INSTANCE_RANGE__UUID = TERMINOLOGY_INSTANCE_ASSERTION__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE_RANGE__NAME = TERMINOLOGY_INSTANCE_ASSERTION__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Description Box</b></em>' container reference.
@@ -8492,6 +8555,15 @@ public interface OMLPackage extends EPackage {
 	int REIFIED_RELATIONSHIP_INSTANCE_RANGE_FEATURE_COUNT = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Description Box</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REIFIED_RELATIONSHIP_INSTANCE_RANGE___DESCRIPTION_BOX = TERMINOLOGY_INSTANCE_ASSERTION___DESCRIPTION_BOX;
+
+	/**
 	 * The operation id for the '<em>Calculate UUID</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8517,15 +8589,6 @@ public interface OMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int REIFIED_RELATIONSHIP_INSTANCE_RANGE___NAME = TERMINOLOGY_INSTANCE_ASSERTION___NAME;
-
-	/**
-	 * The operation id for the '<em>Description Box</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REIFIED_RELATIONSHIP_INSTANCE_RANGE___DESCRIPTION_BOX = TERMINOLOGY_INSTANCE_ASSERTION___DESCRIPTION_BOX;
 
 	/**
 	 * The number of operations of the '<em>Reified Relationship Instance Range</em>' class.
@@ -8554,6 +8617,15 @@ public interface OMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__UUID = TERMINOLOGY_INSTANCE_ASSERTION__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__NAME = TERMINOLOGY_INSTANCE_ASSERTION__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Description Box</b></em>' container reference.
@@ -8601,6 +8673,15 @@ public interface OMLPackage extends EPackage {
 	int UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE_FEATURE_COUNT = TERMINOLOGY_INSTANCE_ASSERTION_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Description Box</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE___DESCRIPTION_BOX = TERMINOLOGY_INSTANCE_ASSERTION___DESCRIPTION_BOX;
+
+	/**
 	 * The operation id for the '<em>Calculate UUID</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8626,15 +8707,6 @@ public interface OMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE___NAME = TERMINOLOGY_INSTANCE_ASSERTION___NAME;
-
-	/**
-	 * The operation id for the '<em>Description Box</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE___DESCRIPTION_BOX = TERMINOLOGY_INSTANCE_ASSERTION___DESCRIPTION_BOX;
 
 	/**
 	 * The number of operations of the '<em>Unreified Relationship Instance Tuple</em>' class.
@@ -11534,119 +11606,6 @@ public interface OMLPackage extends EPackage {
 	EReference getDescriptionBox_UnreifiedRelationshipInstanceTuples();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getDataStructureTuples <em>Data Structure Tuples</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Data Structure Tuples</em>'.
-	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getDataStructureTuples()
-	 * @see #getDescriptionBox()
-	 * @generated
-	 */
-	EReference getDescriptionBox_DataStructureTuples();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getScalarDataPropertyValues <em>Scalar Data Property Values</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Scalar Data Property Values</em>'.
-	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getScalarDataPropertyValues()
-	 * @see #getDescriptionBox()
-	 * @generated
-	 */
-	EReference getDescriptionBox_ScalarDataPropertyValues();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getStructuredDataPropertyValues <em>Structured Data Property Values</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Structured Data Property Values</em>'.
-	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getStructuredDataPropertyValues()
-	 * @see #getDescriptionBox()
-	 * @generated
-	 */
-	EReference getDescriptionBox_StructuredDataPropertyValues();
-
-	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#addConceptInstances(org.eclipse.emf.common.util.EList) <em>Add Concept Instances</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Concept Instances</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#addConceptInstances(org.eclipse.emf.common.util.EList)
-	 * @generated
-	 */
-	EOperation getDescriptionBox__AddConceptInstances__EList();
-
-	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#addReifiedRelationshipInstances(org.eclipse.emf.common.util.EList) <em>Add Reified Relationship Instances</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Reified Relationship Instances</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#addReifiedRelationshipInstances(org.eclipse.emf.common.util.EList)
-	 * @generated
-	 */
-	EOperation getDescriptionBox__AddReifiedRelationshipInstances__EList();
-
-	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#addReifiedRelationshipInstanceDomains(org.eclipse.emf.common.util.EList) <em>Add Reified Relationship Instance Domains</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Reified Relationship Instance Domains</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#addReifiedRelationshipInstanceDomains(org.eclipse.emf.common.util.EList)
-	 * @generated
-	 */
-	EOperation getDescriptionBox__AddReifiedRelationshipInstanceDomains__EList();
-
-	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#addReifiedRelationshipInstanceRanges(org.eclipse.emf.common.util.EList) <em>Add Reified Relationship Instance Ranges</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Reified Relationship Instance Ranges</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#addReifiedRelationshipInstanceRanges(org.eclipse.emf.common.util.EList)
-	 * @generated
-	 */
-	EOperation getDescriptionBox__AddReifiedRelationshipInstanceRanges__EList();
-
-	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#addUnreifiedRelationshipInstanceTuples(org.eclipse.emf.common.util.EList) <em>Add Unreified Relationship Instance Tuples</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Unreified Relationship Instance Tuples</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#addUnreifiedRelationshipInstanceTuples(org.eclipse.emf.common.util.EList)
-	 * @generated
-	 */
-	EOperation getDescriptionBox__AddUnreifiedRelationshipInstanceTuples__EList();
-
-	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#addDataStructureTuples(org.eclipse.emf.common.util.EList) <em>Add Data Structure Tuples</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Data Structure Tuples</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#addDataStructureTuples(org.eclipse.emf.common.util.EList)
-	 * @generated
-	 */
-	EOperation getDescriptionBox__AddDataStructureTuples__EList();
-
-	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#addScalarDataPropertyValues(org.eclipse.emf.common.util.EList) <em>Add Scalar Data Property Values</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Scalar Data Property Values</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#addScalarDataPropertyValues(org.eclipse.emf.common.util.EList)
-	 * @generated
-	 */
-	EOperation getDescriptionBox__AddScalarDataPropertyValues__EList();
-
-	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#addStructuredDataPropertyValues(org.eclipse.emf.common.util.EList) <em>Add Structured Data Property Values</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Structured Data Property Values</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#addStructuredDataPropertyValues(org.eclipse.emf.common.util.EList)
-	 * @generated
-	 */
-	EOperation getDescriptionBox__AddStructuredDataPropertyValues__EList();
-
-	/**
 	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.DescriptionBoxRelationship <em>Description Box Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11791,6 +11750,17 @@ public interface OMLPackage extends EPackage {
 	EClass getTerminologyInstanceAssertion();
 
 	/**
+	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion#getName()
+	 * @see #getTerminologyInstanceAssertion()
+	 * @generated
+	 */
+	EAttribute getTerminologyInstanceAssertion_Name();
+
+	/**
 	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion#descriptionBox() <em>Description Box</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11799,6 +11769,36 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getTerminologyInstanceAssertion__DescriptionBox();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion#calculateUUID() <em>Calculate UUID</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Calculate UUID</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion#calculateUUID()
+	 * @generated
+	 */
+	EOperation getTerminologyInstanceAssertion__CalculateUUID();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion#iri() <em>Iri</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Iri</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion#iri()
+	 * @generated
+	 */
+	EOperation getTerminologyInstanceAssertion__Iri();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion#name() <em>Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Name</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion#name()
+	 * @generated
+	 */
+	EOperation getTerminologyInstanceAssertion__Name();
 
 	/**
 	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.SingletonInstance <em>Singleton Instance</em>}'.
@@ -11811,6 +11811,28 @@ public interface OMLPackage extends EPackage {
 	EClass getSingletonInstance();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link jpl.imce.oml.specification.ecore.SingletonInstance#getScalarDataPropertyValues <em>Scalar Data Property Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Scalar Data Property Values</em>'.
+	 * @see jpl.imce.oml.specification.ecore.SingletonInstance#getScalarDataPropertyValues()
+	 * @see #getSingletonInstance()
+	 * @generated
+	 */
+	EReference getSingletonInstance_ScalarDataPropertyValues();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link jpl.imce.oml.specification.ecore.SingletonInstance#getStructuredDataPropertyValues <em>Structured Data Property Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Structured Data Property Values</em>'.
+	 * @see jpl.imce.oml.specification.ecore.SingletonInstance#getStructuredDataPropertyValues()
+	 * @see #getSingletonInstance()
+	 * @generated
+	 */
+	EReference getSingletonInstance_StructuredDataPropertyValues();
+
+	/**
 	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.ScalarDataPropertyValue <em>Scalar Data Property Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11821,21 +11843,10 @@ public interface OMLPackage extends EPackage {
 	EClass getScalarDataPropertyValue();
 
 	/**
-	 * Returns the meta object for the container reference '{@link jpl.imce.oml.specification.ecore.ScalarDataPropertyValue#getDescriptionBox <em>Description Box</em>}'.
+	 * Returns the meta object for the container reference '{@link jpl.imce.oml.specification.ecore.ScalarDataPropertyValue#getSingletonInstance <em>Singleton Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Description Box</em>'.
-	 * @see jpl.imce.oml.specification.ecore.ScalarDataPropertyValue#getDescriptionBox()
-	 * @see #getScalarDataPropertyValue()
-	 * @generated
-	 */
-	EReference getScalarDataPropertyValue_DescriptionBox();
-
-	/**
-	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.ScalarDataPropertyValue#getSingletonInstance <em>Singleton Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Singleton Instance</em>'.
+	 * @return the meta object for the container reference '<em>Singleton Instance</em>'.
 	 * @see jpl.imce.oml.specification.ecore.ScalarDataPropertyValue#getSingletonInstance()
 	 * @see #getScalarDataPropertyValue()
 	 * @generated
@@ -11875,21 +11886,10 @@ public interface OMLPackage extends EPackage {
 	EClass getStructuredDataPropertyValue();
 
 	/**
-	 * Returns the meta object for the container reference '{@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getDescriptionBox <em>Description Box</em>}'.
+	 * Returns the meta object for the container reference '{@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getSingletonInstance <em>Singleton Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Description Box</em>'.
-	 * @see jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getDescriptionBox()
-	 * @see #getStructuredDataPropertyValue()
-	 * @generated
-	 */
-	EReference getStructuredDataPropertyValue_DescriptionBox();
-
-	/**
-	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getSingletonInstance <em>Singleton Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Singleton Instance</em>'.
+	 * @return the meta object for the container reference '<em>Singleton Instance</em>'.
 	 * @see jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getSingletonInstance()
 	 * @see #getStructuredDataPropertyValue()
 	 * @generated
@@ -11929,15 +11929,15 @@ public interface OMLPackage extends EPackage {
 	EClass getDataStructureTuple();
 
 	/**
-	 * Returns the meta object for the container reference '{@link jpl.imce.oml.specification.ecore.DataStructureTuple#getDescriptionBox <em>Description Box</em>}'.
+	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.DataStructureTuple#getStructuredDataPropertyValue <em>Structured Data Property Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Description Box</em>'.
-	 * @see jpl.imce.oml.specification.ecore.DataStructureTuple#getDescriptionBox()
+	 * @return the meta object for the reference '<em>Structured Data Property Value</em>'.
+	 * @see jpl.imce.oml.specification.ecore.DataStructureTuple#getStructuredDataPropertyValue()
 	 * @see #getDataStructureTuple()
 	 * @generated
 	 */
-	EReference getDataStructureTuple_DescriptionBox();
+	EReference getDataStructureTuple_StructuredDataPropertyValue();
 
 	/**
 	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.DataStructureTuple#getDataStructureType <em>Data Structure Type</em>}'.
@@ -11961,28 +11961,6 @@ public interface OMLPackage extends EPackage {
 	EClass getConceptualEntitySingletonInstance();
 
 	/**
-	 * Returns the meta object for the reference list '{@link jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance#getIdentifyingScalarValues <em>Identifying Scalar Values</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Identifying Scalar Values</em>'.
-	 * @see jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance#getIdentifyingScalarValues()
-	 * @see #getConceptualEntitySingletonInstance()
-	 * @generated
-	 */
-	EReference getConceptualEntitySingletonInstance_IdentifyingScalarValues();
-
-	/**
-	 * Returns the meta object for the reference list '{@link jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance#getIdentifyingStructuredTuples <em>Identifying Structured Tuples</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Identifying Structured Tuples</em>'.
-	 * @see jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance#getIdentifyingStructuredTuples()
-	 * @see #getConceptualEntitySingletonInstance()
-	 * @generated
-	 */
-	EReference getConceptualEntitySingletonInstance_IdentifyingStructuredTuples();
-
-	/**
 	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance#conceptualEntitySingletonClassifier() <em>Conceptual Entity Singleton Classifier</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11991,6 +11969,26 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getConceptualEntitySingletonInstance__ConceptualEntitySingletonClassifier();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance#identifyingScalarValues() <em>Identifying Scalar Values</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Identifying Scalar Values</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance#identifyingScalarValues()
+	 * @generated
+	 */
+	EOperation getConceptualEntitySingletonInstance__IdentifyingScalarValues();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance#identifyingStructuredTuples() <em>Identifying Structured Tuples</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Identifying Structured Tuples</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance#identifyingStructuredTuples()
+	 * @generated
+	 */
+	EOperation getConceptualEntitySingletonInstance__IdentifyingStructuredTuples();
 
 	/**
 	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.ConceptInstance <em>Concept Instance</em>}'.
@@ -14642,94 +14640,6 @@ public interface OMLPackage extends EPackage {
 		EReference DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES = eINSTANCE.getDescriptionBox_UnreifiedRelationshipInstanceTuples();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Structure Tuples</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DESCRIPTION_BOX__DATA_STRUCTURE_TUPLES = eINSTANCE.getDescriptionBox_DataStructureTuples();
-
-		/**
-		 * The meta object literal for the '<em><b>Scalar Data Property Values</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DESCRIPTION_BOX__SCALAR_DATA_PROPERTY_VALUES = eINSTANCE.getDescriptionBox_ScalarDataPropertyValues();
-
-		/**
-		 * The meta object literal for the '<em><b>Structured Data Property Values</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DESCRIPTION_BOX__STRUCTURED_DATA_PROPERTY_VALUES = eINSTANCE.getDescriptionBox_StructuredDataPropertyValues();
-
-		/**
-		 * The meta object literal for the '<em><b>Add Concept Instances</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DESCRIPTION_BOX___ADD_CONCEPT_INSTANCES__ELIST = eINSTANCE.getDescriptionBox__AddConceptInstances__EList();
-
-		/**
-		 * The meta object literal for the '<em><b>Add Reified Relationship Instances</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DESCRIPTION_BOX___ADD_REIFIED_RELATIONSHIP_INSTANCES__ELIST = eINSTANCE.getDescriptionBox__AddReifiedRelationshipInstances__EList();
-
-		/**
-		 * The meta object literal for the '<em><b>Add Reified Relationship Instance Domains</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DESCRIPTION_BOX___ADD_REIFIED_RELATIONSHIP_INSTANCE_DOMAINS__ELIST = eINSTANCE.getDescriptionBox__AddReifiedRelationshipInstanceDomains__EList();
-
-		/**
-		 * The meta object literal for the '<em><b>Add Reified Relationship Instance Ranges</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DESCRIPTION_BOX___ADD_REIFIED_RELATIONSHIP_INSTANCE_RANGES__ELIST = eINSTANCE.getDescriptionBox__AddReifiedRelationshipInstanceRanges__EList();
-
-		/**
-		 * The meta object literal for the '<em><b>Add Unreified Relationship Instance Tuples</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DESCRIPTION_BOX___ADD_UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES__ELIST = eINSTANCE.getDescriptionBox__AddUnreifiedRelationshipInstanceTuples__EList();
-
-		/**
-		 * The meta object literal for the '<em><b>Add Data Structure Tuples</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DESCRIPTION_BOX___ADD_DATA_STRUCTURE_TUPLES__ELIST = eINSTANCE.getDescriptionBox__AddDataStructureTuples__EList();
-
-		/**
-		 * The meta object literal for the '<em><b>Add Scalar Data Property Values</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DESCRIPTION_BOX___ADD_SCALAR_DATA_PROPERTY_VALUES__ELIST = eINSTANCE.getDescriptionBox__AddScalarDataPropertyValues__EList();
-
-		/**
-		 * The meta object literal for the '<em><b>Add Structured Data Property Values</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DESCRIPTION_BOX___ADD_STRUCTURED_DATA_PROPERTY_VALUES__ELIST = eINSTANCE.getDescriptionBox__AddStructuredDataPropertyValues__EList();
-
-		/**
 		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxRelationshipImpl <em>Description Box Relationship</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -14850,12 +14760,44 @@ public interface OMLPackage extends EPackage {
 		EClass TERMINOLOGY_INSTANCE_ASSERTION = eINSTANCE.getTerminologyInstanceAssertion();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TERMINOLOGY_INSTANCE_ASSERTION__NAME = eINSTANCE.getTerminologyInstanceAssertion_Name();
+
+		/**
 		 * The meta object literal for the '<em><b>Description Box</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EOperation TERMINOLOGY_INSTANCE_ASSERTION___DESCRIPTION_BOX = eINSTANCE.getTerminologyInstanceAssertion__DescriptionBox();
+
+		/**
+		 * The meta object literal for the '<em><b>Calculate UUID</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID = eINSTANCE.getTerminologyInstanceAssertion__CalculateUUID();
+
+		/**
+		 * The meta object literal for the '<em><b>Iri</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TERMINOLOGY_INSTANCE_ASSERTION___IRI = eINSTANCE.getTerminologyInstanceAssertion__Iri();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TERMINOLOGY_INSTANCE_ASSERTION___NAME = eINSTANCE.getTerminologyInstanceAssertion__Name();
 
 		/**
 		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.SingletonInstanceImpl <em>Singleton Instance</em>}' class.
@@ -14868,6 +14810,22 @@ public interface OMLPackage extends EPackage {
 		EClass SINGLETON_INSTANCE = eINSTANCE.getSingletonInstance();
 
 		/**
+		 * The meta object literal for the '<em><b>Scalar Data Property Values</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SINGLETON_INSTANCE__SCALAR_DATA_PROPERTY_VALUES = eINSTANCE.getSingletonInstance_ScalarDataPropertyValues();
+
+		/**
+		 * The meta object literal for the '<em><b>Structured Data Property Values</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SINGLETON_INSTANCE__STRUCTURED_DATA_PROPERTY_VALUES = eINSTANCE.getSingletonInstance_StructuredDataPropertyValues();
+
+		/**
 		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.ScalarDataPropertyValueImpl <em>Scalar Data Property Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -14878,15 +14836,7 @@ public interface OMLPackage extends EPackage {
 		EClass SCALAR_DATA_PROPERTY_VALUE = eINSTANCE.getScalarDataPropertyValue();
 
 		/**
-		 * The meta object literal for the '<em><b>Description Box</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SCALAR_DATA_PROPERTY_VALUE__DESCRIPTION_BOX = eINSTANCE.getScalarDataPropertyValue_DescriptionBox();
-
-		/**
-		 * The meta object literal for the '<em><b>Singleton Instance</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Singleton Instance</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -14920,15 +14870,7 @@ public interface OMLPackage extends EPackage {
 		EClass STRUCTURED_DATA_PROPERTY_VALUE = eINSTANCE.getStructuredDataPropertyValue();
 
 		/**
-		 * The meta object literal for the '<em><b>Description Box</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STRUCTURED_DATA_PROPERTY_VALUE__DESCRIPTION_BOX = eINSTANCE.getStructuredDataPropertyValue_DescriptionBox();
-
-		/**
-		 * The meta object literal for the '<em><b>Singleton Instance</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Singleton Instance</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -14962,12 +14904,12 @@ public interface OMLPackage extends EPackage {
 		EClass DATA_STRUCTURE_TUPLE = eINSTANCE.getDataStructureTuple();
 
 		/**
-		 * The meta object literal for the '<em><b>Description Box</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Structured Data Property Value</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DATA_STRUCTURE_TUPLE__DESCRIPTION_BOX = eINSTANCE.getDataStructureTuple_DescriptionBox();
+		EReference DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE = eINSTANCE.getDataStructureTuple_StructuredDataPropertyValue();
 
 		/**
 		 * The meta object literal for the '<em><b>Data Structure Type</b></em>' reference feature.
@@ -14988,28 +14930,28 @@ public interface OMLPackage extends EPackage {
 		EClass CONCEPTUAL_ENTITY_SINGLETON_INSTANCE = eINSTANCE.getConceptualEntitySingletonInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Identifying Scalar Values</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__IDENTIFYING_SCALAR_VALUES = eINSTANCE.getConceptualEntitySingletonInstance_IdentifyingScalarValues();
-
-		/**
-		 * The meta object literal for the '<em><b>Identifying Structured Tuples</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONCEPTUAL_ENTITY_SINGLETON_INSTANCE__IDENTIFYING_STRUCTURED_TUPLES = eINSTANCE.getConceptualEntitySingletonInstance_IdentifyingStructuredTuples();
-
-		/**
 		 * The meta object literal for the '<em><b>Conceptual Entity Singleton Classifier</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EOperation CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER = eINSTANCE.getConceptualEntitySingletonInstance__ConceptualEntitySingletonClassifier();
+
+		/**
+		 * The meta object literal for the '<em><b>Identifying Scalar Values</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___IDENTIFYING_SCALAR_VALUES = eINSTANCE.getConceptualEntitySingletonInstance__IdentifyingScalarValues();
+
+		/**
+		 * The meta object literal for the '<em><b>Identifying Structured Tuples</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___IDENTIFYING_STRUCTURED_TUPLES = eINSTANCE.getConceptualEntitySingletonInstance__IdentifyingStructuredTuples();
 
 		/**
 		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.ConceptInstanceImpl <em>Concept Instance</em>}' class.

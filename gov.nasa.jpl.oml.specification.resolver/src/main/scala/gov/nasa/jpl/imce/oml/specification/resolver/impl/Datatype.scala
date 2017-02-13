@@ -23,7 +23,6 @@ import gov.nasa.jpl.imce.oml.specification._
 trait Datatype
 extends resolver.api.Datatype
   with Term
-  with UnaryTermKind
 {
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {

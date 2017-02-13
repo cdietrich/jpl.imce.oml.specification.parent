@@ -52,6 +52,7 @@ task OMLLoadTest(type: JavaExec, dependsOn: jar) {
 	description 'Test loading the OML Spec'
 	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLLoadTest.xtend')
 	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLUtilities.xtend')
+	inputs.file rootDir.toPath().resolve('jpl.imce.oml.specification.ecore/model/OMLSpecification.xcore').toFile()
 	
 	// This will produce a lot of error messages due this bug:
 	// https://bugs.eclipse.org/bugs/show_bug.cgi?id=511875
@@ -72,6 +73,7 @@ task generateOMLSpecificationDoc(type: JavaExec, dependsOn: jar) {
 	description 'Generates documentation files for OML'
 	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLSpecificationDocGenerator.xtend')
 	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLUtilities.xtend')
+	inputs.file rootDir.toPath().resolve('jpl.imce.oml.specification.ecore/model/OMLSpecification.xcore').toFile()
 	outputs.dir rootDir.toPath().resolve('gov.nasa.jpl.imce.oml.specification.doc/docs').toFile()
 	
 	// Suppress output as a temporary workaround for this bug:
@@ -88,10 +90,11 @@ task generateOMLSpecificationDoc(type: JavaExec, dependsOn: jar) {
 	}
 }
 
-task generateOMLSpecificationTables(type: JavaExec, dependsOn: jar) {
+task generateOMLSpecificationTables(type: JavaExec, dependsOn: generateOMLSpecificationDoc) {
 	description 'Generates multi-language APIs & libraries for the OML tabular interchange representation for Java, JavaScript and Scala'
 	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLSpecificationTablesGenerator.xtend')
 	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLUtilities.xtend')
+	inputs.file rootDir.toPath().resolve('jpl.imce.oml.specification.ecore/model/OMLSpecification.xcore').toFile()
 	outputs.dir rootDir.toPath().resolve('gov.nasa.jpl.imce.oml.specification.tables/shared/src/main/scala/gov/nasa/jpl/imce/oml/specification/tables').toFile()
 	outputs.dir rootDir.toPath().resolve('gov.nasa.jpl.imce.oml.specification.tables/shared/src/main/scala/gov/nasa/jpl/imce/oml/provenance/oti').toFile()
 	
@@ -113,6 +116,7 @@ task generateOMLResolverAPI(type: JavaExec, dependsOn: generateOMLSpecificationT
 	description 'Generates the OML Resolver Scala API'
 	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLSpecificationResolverAPIGenerator.xtend')
 	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLUtilities.xtend')
+	inputs.file rootDir.toPath().resolve('jpl.imce.oml.specification.ecore/model/OMLSpecification.xcore').toFile()
 	outputs.files()
 	
 	// Suppress output as a temporary workaround for this bug:
@@ -133,6 +137,7 @@ task generateOMLResolverLibrary(type: JavaExec, dependsOn: generateOMLResolverAP
 	description 'Generates the OML Resolver Scala API'
 	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLSpecificationResolverLibraryGenerator.xtend')
 	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLUtilities.xtend')
+	inputs.file rootDir.toPath().resolve('jpl.imce.oml.specification.ecore/model/OMLSpecification.xcore').toFile()
 	outputs.files()
 	
 	// Suppress output as a temporary workaround for this bug:

@@ -151,7 +151,7 @@ public class ReifiedRelationshipInstanceRangeItemProvider extends TerminologyIns
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ReifiedRelationshipInstanceRange)object).getUuid();
+		String label = ((ReifiedRelationshipInstanceRange)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ReifiedRelationshipInstanceRange_type") :
 			getString("_UI_ReifiedRelationshipInstanceRange_type") + " " + label;

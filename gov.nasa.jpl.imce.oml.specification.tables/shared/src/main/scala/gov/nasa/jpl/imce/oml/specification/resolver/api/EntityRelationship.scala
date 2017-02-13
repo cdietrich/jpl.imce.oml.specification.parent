@@ -18,6 +18,11 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML EntityRelationship is a kind of OML Term that
+ * is an OML DirectedBinaryRelationshipKind between a
+ * domain OML Entity and a range OML Entity.
+ */
 trait EntityRelationship
   extends Term
   with DirectedBinaryRelationshipKind

@@ -19,9 +19,10 @@
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
- * Corresponds to an OWL2 Declaration of a Datatype with arity=1.
+ * An OML Scalar corresponds to an OWL2 Declaration of an [OWL2 DataRange] with arity=1.
  */
 trait Scalar
   extends DataRange
+  with UnaryTermKind
 {
 }

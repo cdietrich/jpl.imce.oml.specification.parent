@@ -23,7 +23,7 @@ import gov.nasa.jpl.imce.oml.specification._
 case class TerminologyExtensionAxiom private[impl] 
 (
  override val uuid: java.util.UUID,
- override val terminology: TerminologyBox,
+ override val tbox: TerminologyBox,
  override val extendedTerminology: TerminologyBox
 )
 extends resolver.api.TerminologyExtensionAxiom
@@ -41,7 +41,7 @@ extends resolver.api.TerminologyExtensionAxiom
   ()
   : TerminologyBox
   = {
-    terminology
+    getTbox
   }
   
   /*
@@ -51,7 +51,7 @@ extends resolver.api.TerminologyExtensionAxiom
   ()
   : TerminologyBox
   = {
-    terminology
+    getTbox
   }
   
   /*
@@ -72,13 +72,13 @@ extends resolver.api.TerminologyExtensionAxiom
 
   override val hashCode
   : scala.Int
-  = (uuid, terminology, extendedTerminology).##
+  = (uuid, tbox, extendedTerminology).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: TerminologyExtensionAxiom =>
 	    (that canEqual this) &&
 	    (this.uuid == that.uuid) &&
-	    (this.terminology == that.terminology) &&
+	    (this.tbox == that.tbox) &&
 	    (this.extendedTerminology == that.extendedTerminology)
 
 	  case _ =>

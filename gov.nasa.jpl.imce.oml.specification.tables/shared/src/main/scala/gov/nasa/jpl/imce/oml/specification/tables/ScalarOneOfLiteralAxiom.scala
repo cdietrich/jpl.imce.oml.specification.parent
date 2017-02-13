@@ -25,27 +25,27 @@ import scala._
 import scala.Predef._
 
 /**
-  * @param graphUUID[1,1]
   * @param uuid[1,1]
+  * @param tboxUUID[1,1]
   * @param axiomUUID[1,1]
   * @param value[1,1]
   */
 @JSExport
 case class ScalarOneOfLiteralAxiom
 (
-  @(JSExport @field) graphUUID: UUID,
   @(JSExport @field) uuid: UUID,
+  @(JSExport @field) tboxUUID: UUID,
   @(JSExport @field) axiomUUID: UUID,
   @(JSExport @field) value: LexicalValue
 ) {
   override val hashCode
   : scala.Int 
-  = (graphUUID, uuid, axiomUUID, value).##
+  = (uuid, tboxUUID, axiomUUID, value).##
   
   override def equals(other: scala.Any): scala.Boolean = other match {
   	case that: ScalarOneOfLiteralAxiom =>
-  	  (this.graphUUID == that.graphUUID) &&
   	  (this.uuid == that.uuid) &&
+  	  (this.tboxUUID == that.tboxUUID) &&
   	  (this.axiomUUID == that.axiomUUID) &&
   	  (this.value == that.value)
     case _ =>

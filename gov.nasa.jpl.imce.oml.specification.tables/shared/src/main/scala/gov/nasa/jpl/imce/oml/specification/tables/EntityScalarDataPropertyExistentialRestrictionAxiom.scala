@@ -25,8 +25,8 @@ import scala._
 import scala.Predef._
 
 /**
-  * @param graphUUID[1,1]
   * @param uuid[1,1]
+  * @param tboxUUID[1,1]
   * @param restrictedEntityUUID[1,1]
   * @param scalarPropertyUUID[1,1]
   * @param scalarRestrictionUUID[1,1]
@@ -34,20 +34,20 @@ import scala.Predef._
 @JSExport
 case class EntityScalarDataPropertyExistentialRestrictionAxiom
 (
-  @(JSExport @field) graphUUID: UUID,
   @(JSExport @field) uuid: UUID,
+  @(JSExport @field) tboxUUID: UUID,
   @(JSExport @field) restrictedEntityUUID: UUID,
   @(JSExport @field) scalarPropertyUUID: UUID,
   @(JSExport @field) scalarRestrictionUUID: UUID
 ) {
   override val hashCode
   : scala.Int 
-  = (graphUUID, uuid, restrictedEntityUUID, scalarPropertyUUID, scalarRestrictionUUID).##
+  = (uuid, tboxUUID, restrictedEntityUUID, scalarPropertyUUID, scalarRestrictionUUID).##
   
   override def equals(other: scala.Any): scala.Boolean = other match {
   	case that: EntityScalarDataPropertyExistentialRestrictionAxiom =>
-  	  (this.graphUUID == that.graphUUID) &&
   	  (this.uuid == that.uuid) &&
+  	  (this.tboxUUID == that.tboxUUID) &&
   	  (this.restrictedEntityUUID == that.restrictedEntityUUID) &&
   	  (this.scalarPropertyUUID == that.scalarPropertyUUID) &&
   	  (this.scalarRestrictionUUID == that.scalarRestrictionUUID)

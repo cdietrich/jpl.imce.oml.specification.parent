@@ -18,10 +18,12 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML Concept is an OML ConceptualEntity of OML UnaryTermKind.
+ */
 trait Concept
   extends Entity
+  with ConceptualEntity
   with UnaryTermKind
 {
-
-  val isAbstract: scala.Boolean
 }

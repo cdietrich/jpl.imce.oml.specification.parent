@@ -20,7 +20,8 @@ package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
  * For the OML tabular interchange representation,
- * each AnnotationProperty has a corresponding table of Annotations
+ * an OML AnnotationPropertyTable pairs an OML AnnotationProperty key
+ * with a set of OML AnnotationEntry values.
  */
 trait AnnotationPropertyTable
 {

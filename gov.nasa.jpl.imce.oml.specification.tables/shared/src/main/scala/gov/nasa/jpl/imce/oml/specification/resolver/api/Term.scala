@@ -18,6 +18,9 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML Term map to the declaration of an [OWL2-DL Entity] of some kind.
+ */
 trait Term
   extends TerminologyBoxStatement
   with Resource

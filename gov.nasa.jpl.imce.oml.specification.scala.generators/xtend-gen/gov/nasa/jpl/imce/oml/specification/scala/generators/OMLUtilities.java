@@ -94,7 +94,7 @@ public class OMLUtilities {
   }
   
   public static class OMLFeatureCompare implements Comparator<ETypedElement> {
-    private final List<String> knownAttributes = Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("graphUUID", "uuid", "axiomUUID", "terminologyUUID", "keyUUID", "subjectUUID", "propertyUUID", "kind", "isAbstract", "asymmetric", "essential", "functional", "inverseEssential", "inverseFunctional", "irreflexive", "reflexive", "symmetric", "transitive", "name", "unreifiedPropertyName", "unreifiedInversePropertyName", "iri", "value"));
+    private final List<String> knownAttributes = Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("uuid", "tboxUUID", "terminologyBundleUUID", "bundledTerminologyUUID", "extendedTerminologyUUID", "nestingTerminologyUUID", "nestingContextUUID", "bundleUUID", "contextUUID", "descriptionBoxUUID", "refiningDescriptionBoxUUID", "singletonConceptClassifierUUID", "singletonReifiedRelationshipClassifierUUID", "dataStructureTypeUUID", "superAspectUUID", "subEntityUUID", "superConceptUUID", "subConceptUUID", "axiomUUID", "keyUUID", "subjectUUID", "propertyUUID", "closedWorldDefinitionsUUID", "refinedDescriptionBoxUUID", "refiningDescriptionBoxUUID", "dataStructureTypeUUID", "structuredDataPropertyValueUUID", "singletonInstanceUUID", "structuredDataPropertyUUID", "scalarDataPropertyUUID", "structuredPropertyTupleUUID", "singletonConceptClassifierUUID", "singletonReifiedRelationshipClassifierUUID", "reifiedRelationshipInstanceUUID", "unreifiedRelationshipUUID", "restrictedRelationUUID", "restrictedDomainUUID", "restrictedRangeUUID", "restrictedEntityUUID", "scalarPropertyUUID", "scalarRestrictionUUID", "domainUUID", "rangeUUID", "sourceUUID", "targetUUID", "superRelationshipUUID", "subRelationshipUUID", "rootUUID", "disjointTaxonomyParentUUID", "disjointLeafUUID", "kind", "isAbstract", "isAsymmetric", "isEssential", "isFunctional", "isInverseEssential", "isInverseFunctional", "isIrreflexive", "isReflexive", "isSymmetric", "isTransitive", "isIdentityCriteria", "minExclusive", "minInclusive", "maxExclusive", "maxInclusive", "length", "minLength", "maxLength", "nsPrefix", "name", "langRange", "pattern", "unreifiedPropertyName", "unreifiedInversePropertyName", "iri", "value", "scalarPropertyValue", "literalValue"));
     
     @Override
     public int compare(final ETypedElement o1, final ETypedElement o2) {
@@ -433,6 +433,68 @@ public class OMLUtilities {
         _switchResult = ("resolver.api." + _name_1);
       }
       _xblockexpression = _switchResult;
+    }
+    return _xblockexpression;
+  }
+  
+  public static String schemaColumnTypeName(final ETypedElement feature) {
+    String _xblockexpression = null;
+    {
+      final EClassifier type = feature.getEType();
+      String _switchResult = null;
+      String _name = type.getName();
+      boolean _matched = false;
+      if (Objects.equal(_name, "EInt")) {
+        _matched=true;
+        _switchResult = "Int";
+      }
+      if (!_matched) {
+        if (Objects.equal(_name, "EBoolean")) {
+          _matched=true;
+          _switchResult = "Boolean";
+        }
+      }
+      if (!_matched) {
+        if (Objects.equal(_name, "EString")) {
+          _matched=true;
+          _switchResult = "String";
+        }
+      }
+      if (!_matched) {
+        if ((type instanceof EClass)) {
+          _matched=true;
+          String _name_1 = type.getName();
+          String _plus = ("UUID (Foreign Key for: OML " + _name_1);
+          _switchResult = (_plus + ")");
+        }
+      }
+      if (!_matched) {
+        if (Objects.equal(_name, "UUID")) {
+          _matched=true;
+          _switchResult = "UUID (Primary Key)";
+        }
+      }
+      if (!_matched) {
+        _switchResult = type.getName();
+      }
+      _xblockexpression = _switchResult;
+    }
+    return _xblockexpression;
+  }
+  
+  public static String schemaColumnTypeDescription(final ETypedElement feature) {
+    String _xblockexpression = null;
+    {
+      final String columnTypeName = OMLUtilities.schemaColumnTypeName(feature);
+      String _xifexpression = null;
+      int _lowerBound = feature.getLowerBound();
+      boolean _equals = (_lowerBound == 0);
+      if (_equals) {
+        _xifexpression = (("Option[" + columnTypeName) + "]");
+      } else {
+        _xifexpression = columnTypeName;
+      }
+      _xblockexpression = _xifexpression;
     }
     return _xblockexpression;
   }

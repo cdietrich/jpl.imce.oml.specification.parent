@@ -19,7 +19,7 @@
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
- * An axiom specifying a literal in a ScalarOneOfRestriction data range.
+ * An OML ScalarOneOfLiteralAxiom specifies a literal in a ScalarOneOfRestriction data range.
  */
 trait ScalarOneOfLiteralAxiom
   extends Axiom

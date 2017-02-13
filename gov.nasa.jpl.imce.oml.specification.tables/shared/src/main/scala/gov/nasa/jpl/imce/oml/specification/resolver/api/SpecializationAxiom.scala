@@ -18,18 +18,22 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML SpecializationAxiom is a logical axiom
+ * about a taxonomic relationship between a specific and a general OML Entity.
+ */
 trait SpecializationAxiom
   extends TermAxiom
 {
 
   /*
-   * Get the sub (child) term
+   * Get the sub (child) entity
    */
   def child
-  (): Term
+  (): Entity
   /*
-   * Get the super (parent) term
+   * Get the super (parent) entity
    */
   def parent
-  (): Term
+  (): Entity
 }

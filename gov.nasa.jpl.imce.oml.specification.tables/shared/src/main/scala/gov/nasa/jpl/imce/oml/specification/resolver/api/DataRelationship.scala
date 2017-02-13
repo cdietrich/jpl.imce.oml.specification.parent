@@ -18,6 +18,10 @@
 
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
+/*
+ * An OML DataRelationship is an OML DirectedBinaryRelationshipKind
+ * where the domain or the range is some kind of OML Datatype.
+ */
 trait DataRelationship
   extends Term
   with DirectedBinaryRelationshipKind
