@@ -52,7 +52,7 @@ public class NumericScalarRestrictionEmptyTest {
         Assert.assertEquals(t1, s1);
 
         NumericScalarRestriction r1 = NumericScalarRestrictionHelper.fromJSON(s1);
-        Assert.assertEquals(w1.graphUUID(), r1.graphUUID());
+        Assert.assertEquals(w1.tboxUUID(), r1.tboxUUID());
         Assert.assertEquals(w1.uuid(), r1.uuid());
         Assert.assertEquals(w1.name(), r1.name());
         Assert.assertEquals(w1.maxExclusive(), r1.maxExclusive());

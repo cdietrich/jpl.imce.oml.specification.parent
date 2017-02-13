@@ -134,7 +134,6 @@ case class OMLResolvedFactoryImpl() extends resolver.api.OMLResolvedFactory {
     iri: gov.nasa.jpl.imce.oml.specification.tables.IRI,
     annotations: scala.collection.immutable.SortedSet[Annotation],
     boxStatements: scala.collection.immutable.SortedSet[TerminologyBoxStatement],
-    bundleExtent: TerminologyExtent,
     bundleStatements: scala.collection.immutable.SortedSet[TerminologyBundleStatement],
     terminologyBoxAxioms: scala.collection.immutable.SortedSet[TerminologyBoxAxiom],
     terminologyBundleAxioms: scala.collection.immutable.SortedSet[TerminologyBundleAxiom])
@@ -145,7 +144,6 @@ case class OMLResolvedFactoryImpl() extends resolver.api.OMLResolvedFactory {
     iri,
     annotations,
     boxStatements,
-    bundleExtent,
     bundleStatements,
     terminologyBoxAxioms,
     terminologyBundleAxioms )
@@ -317,7 +315,7 @@ case class OMLResolvedFactoryImpl() extends resolver.api.OMLResolvedFactory {
   def createDescriptionBox
   ( uuid: java.util.UUID,
     closedWorldDefinitions: scala.collection.immutable.SortedSet[DescriptionBoxExtendsClosedWorldDefinitions],
-    kind: resolver.api.DescriptionKind,
+    kind: gov.nasa.jpl.imce.oml.specification.tables.DescriptionKind,
     iri: gov.nasa.jpl.imce.oml.specification.tables.IRI,
     annotations: scala.collection.immutable.SortedSet[Annotation],
     conceptInstances: scala.collection.immutable.SortedSet[ConceptInstance],
@@ -325,7 +323,6 @@ case class OMLResolvedFactoryImpl() extends resolver.api.OMLResolvedFactory {
     reifiedRelationshipInstanceDomains: scala.collection.immutable.SortedSet[ReifiedRelationshipInstanceDomain],
     reifiedRelationshipInstanceRanges: scala.collection.immutable.SortedSet[ReifiedRelationshipInstanceRange],
     reifiedRelationshipInstances: scala.collection.immutable.SortedSet[ReifiedRelationshipInstance],
-    terminologyExtent: TerminologyExtent,
     unreifiedRelationshipInstanceTuples: scala.collection.immutable.SortedSet[UnreifiedRelationshipInstanceTuple])
   : resolver.api.DescriptionBox
   = resolver.impl.DescriptionBox(
@@ -339,7 +336,6 @@ case class OMLResolvedFactoryImpl() extends resolver.api.OMLResolvedFactory {
     reifiedRelationshipInstanceDomains,
     reifiedRelationshipInstanceRanges,
     reifiedRelationshipInstances,
-    terminologyExtent,
     unreifiedRelationshipInstanceTuples )
   
   def copyDescriptionBox_closedWorldDefinitions
@@ -599,7 +595,7 @@ case class OMLResolvedFactoryImpl() extends resolver.api.OMLResolvedFactory {
     minLength: scala.Option[scala.Int],
     maxLength: scala.Option[scala.Int],
     name: gov.nasa.jpl.imce.oml.specification.tables.LocalName,
-    langRange: scala.Option[resolver.api.LangRange],
+    langRange: scala.Option[gov.nasa.jpl.imce.oml.specification.tables.LangRange],
     pattern: scala.Option[gov.nasa.jpl.imce.oml.specification.tables.Pattern])
   : resolver.api.PlainLiteralScalarRestriction
   = resolver.impl.PlainLiteralScalarRestriction(
@@ -1001,7 +997,6 @@ case class OMLResolvedFactoryImpl() extends resolver.api.OMLResolvedFactory {
     iri: gov.nasa.jpl.imce.oml.specification.tables.IRI,
     annotations: scala.collection.immutable.SortedSet[Annotation],
     boxStatements: scala.collection.immutable.SortedSet[TerminologyBoxStatement],
-    graphExtent: TerminologyExtent,
     terminologyBoxAxioms: scala.collection.immutable.SortedSet[TerminologyBoxAxiom])
   : resolver.api.TerminologyGraph
   = resolver.impl.TerminologyGraph(
@@ -1010,7 +1005,6 @@ case class OMLResolvedFactoryImpl() extends resolver.api.OMLResolvedFactory {
     iri,
     annotations,
     boxStatements,
-    graphExtent,
     terminologyBoxAxioms )
   
   // TerminologyNestingAxiom

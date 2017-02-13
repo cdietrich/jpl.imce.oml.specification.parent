@@ -29,7 +29,7 @@ case class PlainLiteralScalarRestriction private[impl]
  override val minLength: scala.Option[scala.Int],
  override val maxLength: scala.Option[scala.Int],
  override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName,
- override val langRange: scala.Option[resolver.api.LangRange],
+ override val langRange: scala.Option[gov.nasa.jpl.imce.oml.specification.tables.LangRange],
  override val pattern: scala.Option[gov.nasa.jpl.imce.oml.specification.tables.Pattern]
 )
 extends resolver.api.PlainLiteralScalarRestriction

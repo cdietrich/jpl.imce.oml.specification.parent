@@ -36,11 +36,35 @@ trait Context
   def calculateUUID
   (): java.util.UUID
   def nsPrefix
-  (): resolver.api.NamespacePrefix
+  (): gov.nasa.jpl.imce.oml.specification.tables.NamespacePrefix
   def name
   (): gov.nasa.jpl.imce.oml.specification.tables.LocalName
   def annotationsByProperty
   (): scala.collection.immutable.SortedSet[AnnotationPropertyTable]
   def withAnnotations
   (a: scala.collection.immutable.SortedSet[AnnotationPropertyTable]): Context
+  def entities
+  (): scala.collection.immutable.SortedSet[Entity]
+  def aspects
+  (): scala.collection.immutable.SortedSet[Aspect]
+  def concepts
+  (): scala.collection.immutable.SortedSet[Concept]
+  def reifiedRelationships
+  (): scala.collection.immutable.SortedSet[ReifiedRelationship]
+  def unreifiedRelationships
+  (): scala.collection.immutable.SortedSet[UnreifiedRelationship]
+  def dataRelationships
+  (): scala.collection.immutable.SortedSet[DataRelationship]
+  def entityScalarDataProperties
+  (): scala.collection.immutable.SortedSet[EntityScalarDataProperty]
+  def dataranges
+  (): scala.collection.immutable.SortedSet[DataRange]
+  def scalars
+  (): scala.collection.immutable.SortedSet[Scalar]
+  def structures
+  (): scala.collection.immutable.SortedSet[Structure]
+  def termAxioms
+  (): scala.collection.immutable.SortedSet[TermAxiom]
+  def everything
+  (): scala.collection.immutable.SortedSet[TerminologyThing]
 }

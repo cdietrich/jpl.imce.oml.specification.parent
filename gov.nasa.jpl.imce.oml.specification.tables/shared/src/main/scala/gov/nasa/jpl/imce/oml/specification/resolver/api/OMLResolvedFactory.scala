@@ -96,7 +96,6 @@ trait OMLResolvedFactory {
     iri: gov.nasa.jpl.imce.oml.specification.tables.IRI,
     annotations: scala.collection.immutable.SortedSet[Annotation],
     boxStatements: scala.collection.immutable.SortedSet[TerminologyBoxStatement],
-    bundleExtent: TerminologyExtent,
     bundleStatements: scala.collection.immutable.SortedSet[TerminologyBundleStatement],
     terminologyBoxAxioms: scala.collection.immutable.SortedSet[TerminologyBoxAxiom],
     terminologyBundleAxioms: scala.collection.immutable.SortedSet[TerminologyBundleAxiom] )
@@ -204,7 +203,7 @@ trait OMLResolvedFactory {
   def createDescriptionBox
   ( uuid: java.util.UUID,
     closedWorldDefinitions: scala.collection.immutable.SortedSet[DescriptionBoxExtendsClosedWorldDefinitions],
-    kind: resolver.api.DescriptionKind,
+    kind: gov.nasa.jpl.imce.oml.specification.tables.DescriptionKind,
     iri: gov.nasa.jpl.imce.oml.specification.tables.IRI,
     annotations: scala.collection.immutable.SortedSet[Annotation],
     conceptInstances: scala.collection.immutable.SortedSet[ConceptInstance],
@@ -212,7 +211,6 @@ trait OMLResolvedFactory {
     reifiedRelationshipInstanceDomains: scala.collection.immutable.SortedSet[ReifiedRelationshipInstanceDomain],
     reifiedRelationshipInstanceRanges: scala.collection.immutable.SortedSet[ReifiedRelationshipInstanceRange],
     reifiedRelationshipInstances: scala.collection.immutable.SortedSet[ReifiedRelationshipInstance],
-    terminologyExtent: TerminologyExtent,
     unreifiedRelationshipInstanceTuples: scala.collection.immutable.SortedSet[UnreifiedRelationshipInstanceTuple] )
   : DescriptionBox
   
@@ -375,7 +373,7 @@ trait OMLResolvedFactory {
     minLength: scala.Option[scala.Int],
     maxLength: scala.Option[scala.Int],
     name: gov.nasa.jpl.imce.oml.specification.tables.LocalName,
-    langRange: scala.Option[resolver.api.LangRange],
+    langRange: scala.Option[gov.nasa.jpl.imce.oml.specification.tables.LangRange],
     pattern: scala.Option[gov.nasa.jpl.imce.oml.specification.tables.Pattern] )
   : PlainLiteralScalarRestriction
   
@@ -619,7 +617,6 @@ trait OMLResolvedFactory {
     iri: gov.nasa.jpl.imce.oml.specification.tables.IRI,
     annotations: scala.collection.immutable.SortedSet[Annotation],
     boxStatements: scala.collection.immutable.SortedSet[TerminologyBoxStatement],
-    graphExtent: TerminologyExtent,
     terminologyBoxAxioms: scala.collection.immutable.SortedSet[TerminologyBoxAxiom] )
   : TerminologyGraph
   

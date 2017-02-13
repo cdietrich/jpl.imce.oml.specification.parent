@@ -26,8 +26,7 @@ trait DescriptionBox
   extends Context
 {
 
-  val kind: resolver.api.DescriptionKind
-  val terminologyExtent: TerminologyExtent
+  val kind: gov.nasa.jpl.imce.oml.specification.tables.DescriptionKind
   val closedWorldDefinitions: scala.collection.immutable.SortedSet[DescriptionBoxExtendsClosedWorldDefinitions]
   val descriptionBoxRefinements: scala.collection.immutable.SortedSet[DescriptionBoxRefinement]
   val conceptInstances: scala.collection.immutable.SortedSet[ConceptInstance]
@@ -35,4 +34,29 @@ trait DescriptionBox
   val reifiedRelationshipInstanceDomains: scala.collection.immutable.SortedSet[ReifiedRelationshipInstanceDomain]
   val reifiedRelationshipInstanceRanges: scala.collection.immutable.SortedSet[ReifiedRelationshipInstanceRange]
   val unreifiedRelationshipInstanceTuples: scala.collection.immutable.SortedSet[UnreifiedRelationshipInstanceTuple]
+
+  override def entities
+  (): scala.collection.immutable.SortedSet[Entity]
+  override def aspects
+  (): scala.collection.immutable.SortedSet[Aspect]
+  override def concepts
+  (): scala.collection.immutable.SortedSet[Concept]
+  override def reifiedRelationships
+  (): scala.collection.immutable.SortedSet[ReifiedRelationship]
+  override def unreifiedRelationships
+  (): scala.collection.immutable.SortedSet[UnreifiedRelationship]
+  override def dataRelationships
+  (): scala.collection.immutable.SortedSet[DataRelationship]
+  override def entityScalarDataProperties
+  (): scala.collection.immutable.SortedSet[EntityScalarDataProperty]
+  override def dataranges
+  (): scala.collection.immutable.SortedSet[DataRange]
+  override def scalars
+  (): scala.collection.immutable.SortedSet[Scalar]
+  override def structures
+  (): scala.collection.immutable.SortedSet[Structure]
+  override def termAxioms
+  (): scala.collection.immutable.SortedSet[TermAxiom]
+  override def everything
+  (): scala.collection.immutable.SortedSet[TerminologyThing]
 }

@@ -63,7 +63,7 @@ public class DescriptionBoxItemProvider
 			super.getPropertyDescriptors(object);
 
 			addKindPropertyDescriptor(object);
-			addTerminologyExtentPropertyDescriptor(object);
+			addDescriptionExtentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -91,19 +91,19 @@ public class DescriptionBoxItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Terminology Extent feature.
+	 * This adds a property descriptor for the Description Extent feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTerminologyExtentPropertyDescriptor(Object object) {
+	protected void addDescriptionExtentPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DescriptionBox_terminologyExtent_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionBox_terminologyExtent_feature", "_UI_DescriptionBox_type"),
-				 OMLPackage.Literals.DESCRIPTION_BOX__TERMINOLOGY_EXTENT,
+				 getString("_UI_DescriptionBox_descriptionExtent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionBox_descriptionExtent_feature", "_UI_DescriptionBox_type"),
+				 OMLPackage.Literals.DESCRIPTION_BOX__DESCRIPTION_EXTENT,
 				 true,
 				 false,
 				 true,

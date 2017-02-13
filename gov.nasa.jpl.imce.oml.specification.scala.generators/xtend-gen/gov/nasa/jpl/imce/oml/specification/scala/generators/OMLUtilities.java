@@ -375,15 +375,21 @@ public class OMLUtilities {
         }
       }
       if (!_matched) {
+        if (Objects.equal(_name, "DescriptionKind")) {
+          _matched=true;
+          _switchResult = "gov.nasa.jpl.imce.oml.specification.tables.DescriptionKind";
+        }
+      }
+      if (!_matched) {
         if (Objects.equal(_name, "IRI")) {
           _matched=true;
           _switchResult = "gov.nasa.jpl.imce.oml.specification.tables.IRI";
         }
       }
       if (!_matched) {
-        if (Objects.equal(_name, "Language")) {
+        if (Objects.equal(_name, "LangRange")) {
           _matched=true;
-          _switchResult = "gov.nasa.jpl.imce.oml.specification.tables.Language";
+          _switchResult = "gov.nasa.jpl.imce.oml.specification.tables.LangRange";
         }
       }
       if (!_matched) {
@@ -408,6 +414,12 @@ public class OMLUtilities {
         if (Objects.equal(_name, "LocalName")) {
           _matched=true;
           _switchResult = "gov.nasa.jpl.imce.oml.specification.tables.LocalName";
+        }
+      }
+      if (!_matched) {
+        if (Objects.equal(_name, "NamespacePrefix")) {
+          _matched=true;
+          _switchResult = "gov.nasa.jpl.imce.oml.specification.tables.NamespacePrefix";
         }
       }
       if (!_matched) {

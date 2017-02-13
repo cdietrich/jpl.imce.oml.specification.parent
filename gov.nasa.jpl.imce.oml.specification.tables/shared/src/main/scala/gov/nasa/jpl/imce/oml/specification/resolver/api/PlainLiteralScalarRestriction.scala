@@ -55,5 +55,5 @@ trait PlainLiteralScalarRestriction
   /*
    * The language of the plain literal (http://www.rfc-editor.org/rfc/bcp/bcp47.txt)
    */
-  val langRange: scala.Option[resolver.api.LangRange]
+  val langRange: scala.Option[gov.nasa.jpl.imce.oml.specification.tables.LangRange]
 }

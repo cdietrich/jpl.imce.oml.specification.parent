@@ -24,7 +24,7 @@ case class DescriptionBox private[impl]
 (
  override val uuid: java.util.UUID,
  override val closedWorldDefinitions: scala.collection.immutable.SortedSet[DescriptionBoxExtendsClosedWorldDefinitions],
- override val kind: resolver.api.DescriptionKind,
+ override val kind: gov.nasa.jpl.imce.oml.specification.tables.DescriptionKind,
  override val iri: gov.nasa.jpl.imce.oml.specification.tables.IRI,
  override val annotations: scala.collection.immutable.SortedSet[Annotation],
  override val conceptInstances: scala.collection.immutable.SortedSet[ConceptInstance],
@@ -32,12 +32,102 @@ case class DescriptionBox private[impl]
  override val reifiedRelationshipInstanceDomains: scala.collection.immutable.SortedSet[ReifiedRelationshipInstanceDomain],
  override val reifiedRelationshipInstanceRanges: scala.collection.immutable.SortedSet[ReifiedRelationshipInstanceRange],
  override val reifiedRelationshipInstances: scala.collection.immutable.SortedSet[ReifiedRelationshipInstance],
- override val terminologyExtent: TerminologyExtent,
  override val unreifiedRelationshipInstanceTuples: scala.collection.immutable.SortedSet[UnreifiedRelationshipInstanceTuple]
 )
 extends resolver.api.DescriptionBox
   with Context
 {
+  def extent
+  ()
+  : TerminologyExtent
+  = {
+    descriptionExtent
+  }
+  
+  override def entities
+  ()
+  : scala.collection.immutable.SortedSet[Entity]
+  = {
+    scala.collection.immutable.SortedSet.empty[Entity]
+  }
+  
+  override def aspects
+  ()
+  : scala.collection.immutable.SortedSet[Aspect]
+  = {
+    scala.collection.immutable.SortedSet.empty[Aspect]
+  }
+  
+  override def concepts
+  ()
+  : scala.collection.immutable.SortedSet[Concept]
+  = {
+    scala.collection.immutable.SortedSet.empty[Concept]
+  }
+  
+  override def reifiedRelationships
+  ()
+  : scala.collection.immutable.SortedSet[ReifiedRelationship]
+  = {
+    scala.collection.immutable.SortedSet.empty[ReifiedRelationship]
+  }
+  
+  override def unreifiedRelationships
+  ()
+  : scala.collection.immutable.SortedSet[UnreifiedRelationship]
+  = {
+    scala.collection.immutable.SortedSet.empty[UnreifiedRelationship]
+  }
+  
+  override def dataRelationships
+  ()
+  : scala.collection.immutable.SortedSet[DataRelationship]
+  = {
+    scala.collection.immutable.SortedSet.empty[DataRelationship]
+  }
+  
+  override def entityScalarDataProperties
+  ()
+  : scala.collection.immutable.SortedSet[EntityScalarDataProperty]
+  = {
+    scala.collection.immutable.SortedSet.empty[EntityScalarDataProperty]
+  }
+  
+  override def dataranges
+  ()
+  : scala.collection.immutable.SortedSet[DataRange]
+  = {
+    scala.collection.immutable.SortedSet.empty[DataRange]
+  }
+  
+  override def scalars
+  ()
+  : scala.collection.immutable.SortedSet[Scalar]
+  = {
+    scala.collection.immutable.SortedSet.empty[Scalar]
+  }
+  
+  override def structures
+  ()
+  : scala.collection.immutable.SortedSet[Structure]
+  = {
+    scala.collection.immutable.SortedSet.empty[Structure]
+  }
+  
+  override def termAxioms
+  ()
+  : scala.collection.immutable.SortedSet[TermAxiom]
+  = {
+    scala.collection.immutable.SortedSet.empty[TermAxiom]
+  }
+  
+  override def everything
+  ()
+  : scala.collection.immutable.SortedSet[TerminologyThing]
+  = {
+    scala.collection.immutable.SortedSet.empty[resolver.api.TerminologyThing] ++ conceptInstances + reifiedRelationshipInstances ++ reifiedRelationshipInstanceDomains ++ reifiedRelationshipInstanceRanges ++ unreifiedRelationshipInstanceTuples
+  }
+  
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: DescriptionBox => true
@@ -46,7 +136,7 @@ extends resolver.api.DescriptionBox
 
   override val hashCode
   : scala.Int
-  = (uuid, closedWorldDefinitions, kind, iri, annotations, conceptInstances, descriptionBoxRefinements, reifiedRelationshipInstanceDomains, reifiedRelationshipInstanceRanges, reifiedRelationshipInstances, terminologyExtent, unreifiedRelationshipInstanceTuples).##
+  = (uuid, closedWorldDefinitions, kind, iri, annotations, conceptInstances, descriptionBoxRefinements, reifiedRelationshipInstanceDomains, reifiedRelationshipInstanceRanges, reifiedRelationshipInstances, unreifiedRelationshipInstanceTuples).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: DescriptionBox =>
@@ -61,7 +151,6 @@ extends resolver.api.DescriptionBox
 	    (this.reifiedRelationshipInstanceDomains == that.reifiedRelationshipInstanceDomains) &&
 	    (this.reifiedRelationshipInstanceRanges == that.reifiedRelationshipInstanceRanges) &&
 	    (this.reifiedRelationshipInstances == that.reifiedRelationshipInstances) &&
-	    (this.terminologyExtent == that.terminologyExtent) &&
 	    (this.unreifiedRelationshipInstanceTuples == that.unreifiedRelationshipInstanceTuples)
 
 	  case _ =>

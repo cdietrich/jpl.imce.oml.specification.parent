@@ -72,11 +72,11 @@ object TerminologyEdge {
   : resolver.api.TerminologyAxiom
   = tAxiom match {
     case tx: resolver.api.TerminologyExtensionAxiom =>
-      factory.copyTerminologyExtensionAxiom_terminology(tx, thatSource)
+      factory.copyTerminologyExtensionAxiom_tbox(tx, thatSource)
     case tx: resolver.api.ConceptDesignationTerminologyAxiom =>
       thatSource match {
         case thatGraph: resolver.api.TerminologyGraph =>
-          factory.copyConceptDesignationTerminologyAxiom_terminology(tx, thatGraph)
+          factory.copyConceptDesignationTerminologyAxiom_tbox(tx, thatGraph)
         case _ =>
           throw new java.lang.IllegalArgumentException(
             "replaceAxiomSource for a ConceptualDesignationTerminologyAxiom must be a TerminologyGraph!")
@@ -84,7 +84,7 @@ object TerminologyEdge {
     case tx: resolver.api.TerminologyNestingAxiom =>
       thatSource match {
         case thatGraph: resolver.api.TerminologyGraph =>
-          factory.copyTerminologyNestingAxiom_terminology(tx, thatGraph)
+          factory.copyTerminologyNestingAxiom_tbox(tx, thatGraph)
         case _ =>
           throw new java.lang.IllegalArgumentException(
             "replaceAxiomSource for a TerminologyNestingAxiom must be a TerminologyGraph!")

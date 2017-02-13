@@ -41,7 +41,7 @@ extends resolver.api.Context
   
   def nsPrefix
   ()
-  : resolver.api.NamespacePrefix
+  : gov.nasa.jpl.imce.oml.specification.tables.NamespacePrefix
   = {
     <XFeatureCallImplCustom>.substring(<XBinaryOperationImplCustom>)/* default */
   }

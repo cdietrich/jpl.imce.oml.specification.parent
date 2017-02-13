@@ -664,13 +664,121 @@ public interface OMLPackage extends EPackage {
 	int CONTEXT___WITH_ANNOTATIONS__EMAP = TERMINOLOGY_THING_OPERATION_COUNT + 9;
 
 	/**
+	 * The operation id for the '<em>Entities</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT___ENTITIES = TERMINOLOGY_THING_OPERATION_COUNT + 10;
+
+	/**
+	 * The operation id for the '<em>Aspects</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT___ASPECTS = TERMINOLOGY_THING_OPERATION_COUNT + 11;
+
+	/**
+	 * The operation id for the '<em>Concepts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT___CONCEPTS = TERMINOLOGY_THING_OPERATION_COUNT + 12;
+
+	/**
+	 * The operation id for the '<em>Reified Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT___REIFIED_RELATIONSHIPS = TERMINOLOGY_THING_OPERATION_COUNT + 13;
+
+	/**
+	 * The operation id for the '<em>Unreified Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT___UNREIFIED_RELATIONSHIPS = TERMINOLOGY_THING_OPERATION_COUNT + 14;
+
+	/**
+	 * The operation id for the '<em>Data Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT___DATA_RELATIONSHIPS = TERMINOLOGY_THING_OPERATION_COUNT + 15;
+
+	/**
+	 * The operation id for the '<em>Entity Scalar Data Properties</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT___ENTITY_SCALAR_DATA_PROPERTIES = TERMINOLOGY_THING_OPERATION_COUNT + 16;
+
+	/**
+	 * The operation id for the '<em>Dataranges</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT___DATARANGES = TERMINOLOGY_THING_OPERATION_COUNT + 17;
+
+	/**
+	 * The operation id for the '<em>Scalars</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT___SCALARS = TERMINOLOGY_THING_OPERATION_COUNT + 18;
+
+	/**
+	 * The operation id for the '<em>Structures</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT___STRUCTURES = TERMINOLOGY_THING_OPERATION_COUNT + 19;
+
+	/**
+	 * The operation id for the '<em>Term Axioms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT___TERM_AXIOMS = TERMINOLOGY_THING_OPERATION_COUNT + 20;
+
+	/**
+	 * The operation id for the '<em>Everything</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT___EVERYTHING = TERMINOLOGY_THING_OPERATION_COUNT + 21;
+
+	/**
 	 * The number of operations of the '<em>Context</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_OPERATION_COUNT = TERMINOLOGY_THING_OPERATION_COUNT + 10;
+	int CONTEXT_OPERATION_COUNT = TERMINOLOGY_THING_OPERATION_COUNT + 22;
 
 	/**
 	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.TerminologyBoxImpl <em>Terminology Box</em>}' class.
@@ -7057,13 +7165,13 @@ public interface OMLPackage extends EPackage {
 	int DESCRIPTION_BOX__KIND = CONTEXT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Terminology Extent</b></em>' container reference.
+	 * The feature id for the '<em><b>Description Extent</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX__TERMINOLOGY_EXTENT = CONTEXT_FEATURE_COUNT + 1;
+	int DESCRIPTION_BOX__DESCRIPTION_EXTENT = CONTEXT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Closed World Definitions</b></em>' containment reference list.
@@ -7138,15 +7246,6 @@ public interface OMLPackage extends EPackage {
 	int DESCRIPTION_BOX_FEATURE_COUNT = CONTEXT_FEATURE_COUNT + 9;
 
 	/**
-	 * The operation id for the '<em>Extent</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DESCRIPTION_BOX___EXTENT = CONTEXT___EXTENT;
-
-	/**
 	 * The operation id for the '<em>Calculate UUID</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7210,13 +7309,130 @@ public interface OMLPackage extends EPackage {
 	int DESCRIPTION_BOX___WITH_ANNOTATIONS__EMAP = CONTEXT___WITH_ANNOTATIONS__EMAP;
 
 	/**
+	 * The operation id for the '<em>Extent</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX___EXTENT = CONTEXT_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Entities</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX___ENTITIES = CONTEXT_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Aspects</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX___ASPECTS = CONTEXT_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Concepts</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX___CONCEPTS = CONTEXT_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Reified Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX___REIFIED_RELATIONSHIPS = CONTEXT_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Unreified Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX___UNREIFIED_RELATIONSHIPS = CONTEXT_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Data Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX___DATA_RELATIONSHIPS = CONTEXT_OPERATION_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Entity Scalar Data Properties</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX___ENTITY_SCALAR_DATA_PROPERTIES = CONTEXT_OPERATION_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>Dataranges</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX___DATARANGES = CONTEXT_OPERATION_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>Scalars</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX___SCALARS = CONTEXT_OPERATION_COUNT + 9;
+
+	/**
+	 * The operation id for the '<em>Structures</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX___STRUCTURES = CONTEXT_OPERATION_COUNT + 10;
+
+	/**
+	 * The operation id for the '<em>Term Axioms</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX___TERM_AXIOMS = CONTEXT_OPERATION_COUNT + 11;
+
+	/**
+	 * The operation id for the '<em>Everything</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIPTION_BOX___EVERYTHING = CONTEXT_OPERATION_COUNT + 12;
+
+	/**
 	 * The number of operations of the '<em>Description Box</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX_OPERATION_COUNT = CONTEXT_OPERATION_COUNT + 0;
+	int DESCRIPTION_BOX_OPERATION_COUNT = CONTEXT_OPERATION_COUNT + 13;
 
 	/**
 	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxRelationshipImpl <em>Description Box Relationship</em>}' class.
@@ -9304,6 +9520,126 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getContext__WithAnnotations__EMap();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#entities() <em>Entities</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Entities</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.Context#entities()
+	 * @generated
+	 */
+	EOperation getContext__Entities();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#aspects() <em>Aspects</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Aspects</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.Context#aspects()
+	 * @generated
+	 */
+	EOperation getContext__Aspects();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#concepts() <em>Concepts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Concepts</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.Context#concepts()
+	 * @generated
+	 */
+	EOperation getContext__Concepts();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#reifiedRelationships() <em>Reified Relationships</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Reified Relationships</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.Context#reifiedRelationships()
+	 * @generated
+	 */
+	EOperation getContext__ReifiedRelationships();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#unreifiedRelationships() <em>Unreified Relationships</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Unreified Relationships</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.Context#unreifiedRelationships()
+	 * @generated
+	 */
+	EOperation getContext__UnreifiedRelationships();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#dataRelationships() <em>Data Relationships</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Data Relationships</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.Context#dataRelationships()
+	 * @generated
+	 */
+	EOperation getContext__DataRelationships();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#entityScalarDataProperties() <em>Entity Scalar Data Properties</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Entity Scalar Data Properties</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.Context#entityScalarDataProperties()
+	 * @generated
+	 */
+	EOperation getContext__EntityScalarDataProperties();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#dataranges() <em>Dataranges</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Dataranges</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.Context#dataranges()
+	 * @generated
+	 */
+	EOperation getContext__Dataranges();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#scalars() <em>Scalars</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Scalars</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.Context#scalars()
+	 * @generated
+	 */
+	EOperation getContext__Scalars();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#structures() <em>Structures</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Structures</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.Context#structures()
+	 * @generated
+	 */
+	EOperation getContext__Structures();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#termAxioms() <em>Term Axioms</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Term Axioms</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.Context#termAxioms()
+	 * @generated
+	 */
+	EOperation getContext__TermAxioms();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#everything() <em>Everything</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Everything</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.Context#everything()
+	 * @generated
+	 */
+	EOperation getContext__Everything();
 
 	/**
 	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.TerminologyBox <em>Terminology Box</em>}'.
@@ -11518,15 +11854,15 @@ public interface OMLPackage extends EPackage {
 	EAttribute getDescriptionBox_Kind();
 
 	/**
-	 * Returns the meta object for the container reference '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getTerminologyExtent <em>Terminology Extent</em>}'.
+	 * Returns the meta object for the container reference '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getDescriptionExtent <em>Description Extent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Terminology Extent</em>'.
-	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getTerminologyExtent()
+	 * @return the meta object for the container reference '<em>Description Extent</em>'.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getDescriptionExtent()
 	 * @see #getDescriptionBox()
 	 * @generated
 	 */
-	EReference getDescriptionBox_TerminologyExtent();
+	EReference getDescriptionBox_DescriptionExtent();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getClosedWorldDefinitions <em>Closed World Definitions</em>}'.
@@ -11604,6 +11940,136 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDescriptionBox_UnreifiedRelationshipInstanceTuples();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#extent() <em>Extent</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Extent</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#extent()
+	 * @generated
+	 */
+	EOperation getDescriptionBox__Extent();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#entities() <em>Entities</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Entities</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#entities()
+	 * @generated
+	 */
+	EOperation getDescriptionBox__Entities();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#aspects() <em>Aspects</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Aspects</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#aspects()
+	 * @generated
+	 */
+	EOperation getDescriptionBox__Aspects();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#concepts() <em>Concepts</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Concepts</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#concepts()
+	 * @generated
+	 */
+	EOperation getDescriptionBox__Concepts();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#reifiedRelationships() <em>Reified Relationships</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Reified Relationships</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#reifiedRelationships()
+	 * @generated
+	 */
+	EOperation getDescriptionBox__ReifiedRelationships();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#unreifiedRelationships() <em>Unreified Relationships</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Unreified Relationships</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#unreifiedRelationships()
+	 * @generated
+	 */
+	EOperation getDescriptionBox__UnreifiedRelationships();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#dataRelationships() <em>Data Relationships</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Data Relationships</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#dataRelationships()
+	 * @generated
+	 */
+	EOperation getDescriptionBox__DataRelationships();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#entityScalarDataProperties() <em>Entity Scalar Data Properties</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Entity Scalar Data Properties</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#entityScalarDataProperties()
+	 * @generated
+	 */
+	EOperation getDescriptionBox__EntityScalarDataProperties();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#dataranges() <em>Dataranges</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Dataranges</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#dataranges()
+	 * @generated
+	 */
+	EOperation getDescriptionBox__Dataranges();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#scalars() <em>Scalars</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Scalars</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#scalars()
+	 * @generated
+	 */
+	EOperation getDescriptionBox__Scalars();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#structures() <em>Structures</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Structures</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#structures()
+	 * @generated
+	 */
+	EOperation getDescriptionBox__Structures();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#termAxioms() <em>Term Axioms</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Term Axioms</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#termAxioms()
+	 * @generated
+	 */
+	EOperation getDescriptionBox__TermAxioms();
+
+	/**
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#everything() <em>Everything</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Everything</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#everything()
+	 * @generated
+	 */
+	EOperation getDescriptionBox__Everything();
 
 	/**
 	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.DescriptionBoxRelationship <em>Description Box Relationship</em>}'.
@@ -12738,6 +13204,102 @@ public interface OMLPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation CONTEXT___WITH_ANNOTATIONS__EMAP = eINSTANCE.getContext__WithAnnotations__EMap();
+
+		/**
+		 * The meta object literal for the '<em><b>Entities</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTEXT___ENTITIES = eINSTANCE.getContext__Entities();
+
+		/**
+		 * The meta object literal for the '<em><b>Aspects</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTEXT___ASPECTS = eINSTANCE.getContext__Aspects();
+
+		/**
+		 * The meta object literal for the '<em><b>Concepts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTEXT___CONCEPTS = eINSTANCE.getContext__Concepts();
+
+		/**
+		 * The meta object literal for the '<em><b>Reified Relationships</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTEXT___REIFIED_RELATIONSHIPS = eINSTANCE.getContext__ReifiedRelationships();
+
+		/**
+		 * The meta object literal for the '<em><b>Unreified Relationships</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTEXT___UNREIFIED_RELATIONSHIPS = eINSTANCE.getContext__UnreifiedRelationships();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Relationships</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTEXT___DATA_RELATIONSHIPS = eINSTANCE.getContext__DataRelationships();
+
+		/**
+		 * The meta object literal for the '<em><b>Entity Scalar Data Properties</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTEXT___ENTITY_SCALAR_DATA_PROPERTIES = eINSTANCE.getContext__EntityScalarDataProperties();
+
+		/**
+		 * The meta object literal for the '<em><b>Dataranges</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTEXT___DATARANGES = eINSTANCE.getContext__Dataranges();
+
+		/**
+		 * The meta object literal for the '<em><b>Scalars</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTEXT___SCALARS = eINSTANCE.getContext__Scalars();
+
+		/**
+		 * The meta object literal for the '<em><b>Structures</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTEXT___STRUCTURES = eINSTANCE.getContext__Structures();
+
+		/**
+		 * The meta object literal for the '<em><b>Term Axioms</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTEXT___TERM_AXIOMS = eINSTANCE.getContext__TermAxioms();
+
+		/**
+		 * The meta object literal for the '<em><b>Everything</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONTEXT___EVERYTHING = eINSTANCE.getContext__Everything();
 
 		/**
 		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.TerminologyBoxImpl <em>Terminology Box</em>}' class.
@@ -14576,12 +15138,12 @@ public interface OMLPackage extends EPackage {
 		EAttribute DESCRIPTION_BOX__KIND = eINSTANCE.getDescriptionBox_Kind();
 
 		/**
-		 * The meta object literal for the '<em><b>Terminology Extent</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Description Extent</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DESCRIPTION_BOX__TERMINOLOGY_EXTENT = eINSTANCE.getDescriptionBox_TerminologyExtent();
+		EReference DESCRIPTION_BOX__DESCRIPTION_EXTENT = eINSTANCE.getDescriptionBox_DescriptionExtent();
 
 		/**
 		 * The meta object literal for the '<em><b>Closed World Definitions</b></em>' containment reference list feature.
@@ -14638,6 +15200,110 @@ public interface OMLPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES = eINSTANCE.getDescriptionBox_UnreifiedRelationshipInstanceTuples();
+
+		/**
+		 * The meta object literal for the '<em><b>Extent</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DESCRIPTION_BOX___EXTENT = eINSTANCE.getDescriptionBox__Extent();
+
+		/**
+		 * The meta object literal for the '<em><b>Entities</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DESCRIPTION_BOX___ENTITIES = eINSTANCE.getDescriptionBox__Entities();
+
+		/**
+		 * The meta object literal for the '<em><b>Aspects</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DESCRIPTION_BOX___ASPECTS = eINSTANCE.getDescriptionBox__Aspects();
+
+		/**
+		 * The meta object literal for the '<em><b>Concepts</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DESCRIPTION_BOX___CONCEPTS = eINSTANCE.getDescriptionBox__Concepts();
+
+		/**
+		 * The meta object literal for the '<em><b>Reified Relationships</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DESCRIPTION_BOX___REIFIED_RELATIONSHIPS = eINSTANCE.getDescriptionBox__ReifiedRelationships();
+
+		/**
+		 * The meta object literal for the '<em><b>Unreified Relationships</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DESCRIPTION_BOX___UNREIFIED_RELATIONSHIPS = eINSTANCE.getDescriptionBox__UnreifiedRelationships();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Relationships</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DESCRIPTION_BOX___DATA_RELATIONSHIPS = eINSTANCE.getDescriptionBox__DataRelationships();
+
+		/**
+		 * The meta object literal for the '<em><b>Entity Scalar Data Properties</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DESCRIPTION_BOX___ENTITY_SCALAR_DATA_PROPERTIES = eINSTANCE.getDescriptionBox__EntityScalarDataProperties();
+
+		/**
+		 * The meta object literal for the '<em><b>Dataranges</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DESCRIPTION_BOX___DATARANGES = eINSTANCE.getDescriptionBox__Dataranges();
+
+		/**
+		 * The meta object literal for the '<em><b>Scalars</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DESCRIPTION_BOX___SCALARS = eINSTANCE.getDescriptionBox__Scalars();
+
+		/**
+		 * The meta object literal for the '<em><b>Structures</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DESCRIPTION_BOX___STRUCTURES = eINSTANCE.getDescriptionBox__Structures();
+
+		/**
+		 * The meta object literal for the '<em><b>Term Axioms</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DESCRIPTION_BOX___TERM_AXIOMS = eINSTANCE.getDescriptionBox__TermAxioms();
+
+		/**
+		 * The meta object literal for the '<em><b>Everything</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DESCRIPTION_BOX___EVERYTHING = eINSTANCE.getDescriptionBox__Everything();
 
 		/**
 		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxRelationshipImpl <em>Description Box Relationship</em>}' class.

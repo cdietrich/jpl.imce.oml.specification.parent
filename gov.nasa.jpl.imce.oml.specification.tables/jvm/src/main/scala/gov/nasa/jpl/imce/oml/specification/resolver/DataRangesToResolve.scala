@@ -88,7 +88,7 @@ object DataRangesToResolve {
         .foldLeft[Try[(OMLTablesResolver, DataRangesToResolve, Boolean)]](Success(Tuple3(r0, q0, f0))) {
         case (Success(Tuple3(ri, qi, fi)), (guuid, drs)) =>
           val gi = ri.context.g
-          val tbox = ri.context.nodes(guuid)
+          val tbox = ri.context.tboxes(guuid)
 
           val (restrictableDataRanges, available, remaining) =
             partitionRestrictableDataRanges[tables.BinaryScalarRestriction](ri, tbox, drs, _.restrictedRangeUUID)
@@ -100,13 +100,13 @@ object DataRangesToResolve {
             case (acc, (ruuid, dr)) =>
               acc +
                 ri.factory.createBinaryScalarRestriction(
-                  tbox,
                   UUID.fromString(dr.uuid),
-                  dr.name,
+                  tbox,
+                  restrictableDataRanges(ruuid.toString),
                   dr.length,
-                  dr.maxLength,
                   dr.minLength,
-                  restrictableDataRanges(ruuid.toString))
+                  dr.maxLength,
+                  dr.name)
           }
 
           TerminologyContext
@@ -125,7 +125,7 @@ object DataRangesToResolve {
         .foldLeft[Try[(OMLTablesResolver, DataRangesToResolve, Boolean)]](Success(step1)) {
         case (Success(Tuple3(ri, qi, fi)), (guuid, drs)) =>
           val gi = ri.context.g
-          val tbox = ri.context.nodes(guuid)
+          val tbox = ri.context.tboxes(guuid)
 
           val (restrictableDataRanges, available, remaining) =
             partitionRestrictableDataRanges[tables.IRIScalarRestriction](ri, tbox, drs, _.restrictedRangeUUID)
@@ -137,14 +137,14 @@ object DataRangesToResolve {
             case (acc, (ruuid, dr)) =>
               acc +
                 ri.factory.createIRIScalarRestriction(
-                  tbox,
                   UUID.fromString(dr.uuid),
-                  dr.name,
+                  tbox,
+                  restrictableDataRanges(ruuid.toString),
                   dr.length,
-                  dr.maxLength,
                   dr.minLength,
-                  dr.pattern,
-                  restrictableDataRanges(ruuid.toString))
+                  dr.maxLength,
+                  dr.name,
+                  dr.pattern)
           }
 
           TerminologyContext
@@ -163,7 +163,7 @@ object DataRangesToResolve {
         .foldLeft[Try[(OMLTablesResolver, DataRangesToResolve, Boolean)]](Success(step2)) {
         case (Success(Tuple3(ri, qi, fi)), (guuid, drs)) =>
           val gi = ri.context.g
-          val tbox = ri.context.nodes(guuid)
+          val tbox = ri.context.tboxes(guuid)
 
           val (restrictableDataRanges, available, remaining) =
             partitionRestrictableDataRanges[tables.NumericScalarRestriction](ri, tbox, drs, _.restrictedRangeUUID)
@@ -175,14 +175,14 @@ object DataRangesToResolve {
             case (acc, (ruuid, dr)) =>
               acc +
               ri.factory.createNumericScalarRestriction(
-                tbox,
                 UUID.fromString(dr.uuid),
-                dr.name,
-                dr.maxExclusive,
-                dr.maxInclusive,
+                tbox,
+                restrictableDataRanges(ruuid.toString),
                 dr.minExclusive,
                 dr.minInclusive,
-                restrictableDataRanges(ruuid.toString))
+                dr.maxExclusive,
+                dr.maxInclusive,
+                dr.name)
             }
 
           TerminologyContext
@@ -201,7 +201,7 @@ object DataRangesToResolve {
         .foldLeft[Try[(OMLTablesResolver, DataRangesToResolve, Boolean)]](Success(step3)) {
         case (Success(Tuple3(ri, qi, fi)), (guuid, drs)) =>
           val gi = ri.context.g
-          val tbox = ri.context.nodes(guuid)
+          val tbox = ri.context.tboxes(guuid)
 
           val (restrictableDataRanges, available, remaining) =
             partitionRestrictableDataRanges[tables.PlainLiteralScalarRestriction](ri, tbox, drs, _.restrictedRangeUUID)
@@ -213,15 +213,15 @@ object DataRangesToResolve {
             case (acc, (ruuid, dr)) =>
               acc +
               ri.factory.createPlainLiteralScalarRestriction(
-                tbox,
                 UUID.fromString(dr.uuid),
-                dr.name,
-                dr.language,
+                tbox,
+                restrictableDataRanges(ruuid.toString),
                 dr.length,
-                dr.maxLength,
                 dr.minLength,
-                dr.pattern,
-                restrictableDataRanges(ruuid.toString))
+                dr.maxLength,
+                dr.name,
+                dr.langRange,
+                dr.pattern)
             }
 
           TerminologyContext
@@ -240,7 +240,7 @@ object DataRangesToResolve {
         .foldLeft[Try[(OMLTablesResolver, DataRangesToResolve, Boolean)]](Success(step4)) {
         case (Success(Tuple3(ri, qi, fi)), (guuid, drs)) =>
           val gi = ri.context.g
-          val tbox = ri.context.nodes(guuid)
+          val tbox = ri.context.tboxes(guuid)
 
           val (restrictableDataRanges, available, remaining) =
             partitionRestrictableDataRanges[tables.ScalarOneOfRestriction](ri, tbox, drs, _.restrictedRangeUUID)
@@ -252,10 +252,10 @@ object DataRangesToResolve {
             case (acc, (ruuid, dr)) =>
               acc +
               ri.factory.createScalarOneOfRestriction(
-                tbox,
                 UUID.fromString(dr.uuid),
-                dr.name,
-                restrictableDataRanges(ruuid.toString))
+                tbox,
+                restrictableDataRanges(ruuid.toString),
+                dr.name)
             }
 
           TerminologyContext
@@ -274,7 +274,7 @@ object DataRangesToResolve {
         .foldLeft[Try[(OMLTablesResolver, DataRangesToResolve, Boolean)]](Success(step5)) {
         case (Success(Tuple3(ri, qi, fi)), (guuid, drs)) =>
           val gi = ri.context.g
-          val tbox = ri.context.nodes(guuid)
+          val tbox = ri.context.tboxes(guuid)
 
           val (restrictableDataRanges, available, remaining) =
             partitionRestrictableDataRanges[tables.StringScalarRestriction](ri, tbox, drs, _.restrictedRangeUUID)
@@ -286,14 +286,14 @@ object DataRangesToResolve {
             case (acc, (ruuid, dr)) =>
               acc +
               ri.factory.createStringScalarRestriction(
-                tbox,
                 UUID.fromString(dr.uuid),
-                dr.name,
+                tbox,
+                restrictableDataRanges(ruuid.toString),
                 dr.length,
-                dr.maxLength,
                 dr.minLength,
-                dr.pattern,
-                restrictableDataRanges(ruuid.toString))
+                dr.maxLength,
+                dr.name,
+                dr.pattern)
           }
 
           TerminologyContext
@@ -312,7 +312,7 @@ object DataRangesToResolve {
         .foldLeft[Try[(OMLTablesResolver, DataRangesToResolve, Boolean)]](Success(step6)) {
         case (Success(Tuple3(ri, qi, fi)), (guuid, drs)) =>
           val gi = ri.context.g
-          val tbox = ri.context.nodes(guuid)
+          val tbox = ri.context.tboxes(guuid)
 
           val (restrictableDataRanges, available, remaining) =
             partitionRestrictableDataRanges[tables.TimeScalarRestriction](ri, tbox, drs, _.restrictedRangeUUID)
@@ -324,14 +324,14 @@ object DataRangesToResolve {
             case (acc, (ruuid, dr)) =>
               acc +
               ri.factory.createTimeScalarRestriction(
-                tbox,
                 UUID.fromString(dr.uuid),
-                dr.name,
-                dr.maxExclusive,
-                dr.maxInclusive,
+                tbox,
+                restrictableDataRanges(ruuid.toString),
                 dr.minExclusive,
                 dr.minInclusive,
-                restrictableDataRanges(ruuid.toString))
+                dr.maxExclusive,
+                dr.maxInclusive,
+                dr.name)
           }
 
           TerminologyContext

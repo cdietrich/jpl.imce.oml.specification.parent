@@ -18,6 +18,8 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
 
 import jpl.imce.oml.specification.ecore.ConceptInstance;
@@ -56,7 +58,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxImpl#getKind <em>Kind</em>}</li>
- *   <li>{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxImpl#getTerminologyExtent <em>Terminology Extent</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxImpl#getDescriptionExtent <em>Description Extent</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxImpl#getClosedWorldDefinitions <em>Closed World Definitions</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxImpl#getDescriptionBoxRefinements <em>Description Box Refinements</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxImpl#getConceptInstances <em>Concept Instances</em>}</li>
@@ -204,8 +206,8 @@ public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TerminologyExtent getTerminologyExtent() {
-		if (eContainerFeatureID() != OMLPackage.DESCRIPTION_BOX__TERMINOLOGY_EXTENT) return null;
+	public TerminologyExtent getDescriptionExtent() {
+		if (eContainerFeatureID() != OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT) return null;
 		return (TerminologyExtent)eContainer();
 	}
 
@@ -214,8 +216,8 @@ public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TerminologyExtent basicGetTerminologyExtent() {
-		if (eContainerFeatureID() != OMLPackage.DESCRIPTION_BOX__TERMINOLOGY_EXTENT) return null;
+	public TerminologyExtent basicGetDescriptionExtent() {
+		if (eContainerFeatureID() != OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT) return null;
 		return (TerminologyExtent)eInternalContainer();
 	}
 
@@ -224,8 +226,8 @@ public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTerminologyExtent(TerminologyExtent newTerminologyExtent, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newTerminologyExtent, OMLPackage.DESCRIPTION_BOX__TERMINOLOGY_EXTENT, msgs);
+	public NotificationChain basicSetDescriptionExtent(TerminologyExtent newDescriptionExtent, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newDescriptionExtent, OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT, msgs);
 		return msgs;
 	}
 
@@ -234,20 +236,20 @@ public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTerminologyExtent(TerminologyExtent newTerminologyExtent) {
-		if (newTerminologyExtent != eInternalContainer() || (eContainerFeatureID() != OMLPackage.DESCRIPTION_BOX__TERMINOLOGY_EXTENT && newTerminologyExtent != null)) {
-			if (EcoreUtil.isAncestor(this, (EObject)newTerminologyExtent))
+	public void setDescriptionExtent(TerminologyExtent newDescriptionExtent) {
+		if (newDescriptionExtent != eInternalContainer() || (eContainerFeatureID() != OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT && newDescriptionExtent != null)) {
+			if (EcoreUtil.isAncestor(this, (EObject)newDescriptionExtent))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newTerminologyExtent != null)
-				msgs = ((InternalEObject)newTerminologyExtent).eInverseAdd(this, OMLPackage.TERMINOLOGY_EXTENT__DESCRIPTIONS, TerminologyExtent.class, msgs);
-			msgs = basicSetTerminologyExtent(newTerminologyExtent, msgs);
+			if (newDescriptionExtent != null)
+				msgs = ((InternalEObject)newDescriptionExtent).eInverseAdd(this, OMLPackage.TERMINOLOGY_EXTENT__DESCRIPTIONS, TerminologyExtent.class, msgs);
+			msgs = basicSetDescriptionExtent(newDescriptionExtent, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.DESCRIPTION_BOX__TERMINOLOGY_EXTENT, newTerminologyExtent, newTerminologyExtent));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT, newDescriptionExtent, newDescriptionExtent));
 	}
 
 	/**
@@ -339,14 +341,23 @@ public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public TerminologyExtent extent() {
+		return this.getDescriptionExtent();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.DESCRIPTION_BOX__TERMINOLOGY_EXTENT:
+			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetTerminologyExtent((TerminologyExtent)otherEnd, msgs);
+				return basicSetDescriptionExtent((TerminologyExtent)otherEnd, msgs);
 			case OMLPackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getClosedWorldDefinitions()).basicAdd(otherEnd, msgs);
 			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS:
@@ -373,8 +384,8 @@ public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.DESCRIPTION_BOX__TERMINOLOGY_EXTENT:
-				return basicSetTerminologyExtent(null, msgs);
+			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT:
+				return basicSetDescriptionExtent(null, msgs);
 			case OMLPackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS:
 				return ((InternalEList<?>)getClosedWorldDefinitions()).basicRemove(otherEnd, msgs);
 			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS:
@@ -401,7 +412,7 @@ public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case OMLPackage.DESCRIPTION_BOX__TERMINOLOGY_EXTENT:
+			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT:
 				return eInternalContainer().eInverseRemove(this, OMLPackage.TERMINOLOGY_EXTENT__DESCRIPTIONS, TerminologyExtent.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -417,9 +428,9 @@ public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
 		switch (featureID) {
 			case OMLPackage.DESCRIPTION_BOX__KIND:
 				return getKind();
-			case OMLPackage.DESCRIPTION_BOX__TERMINOLOGY_EXTENT:
-				if (resolve) return getTerminologyExtent();
-				return basicGetTerminologyExtent();
+			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT:
+				if (resolve) return getDescriptionExtent();
+				return basicGetDescriptionExtent();
 			case OMLPackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS:
 				return getClosedWorldDefinitions();
 			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS:
@@ -450,8 +461,8 @@ public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
 			case OMLPackage.DESCRIPTION_BOX__KIND:
 				setKind((DescriptionKind)newValue);
 				return;
-			case OMLPackage.DESCRIPTION_BOX__TERMINOLOGY_EXTENT:
-				setTerminologyExtent((TerminologyExtent)newValue);
+			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT:
+				setDescriptionExtent((TerminologyExtent)newValue);
 				return;
 			case OMLPackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS:
 				getClosedWorldDefinitions().clear();
@@ -496,8 +507,8 @@ public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
 			case OMLPackage.DESCRIPTION_BOX__KIND:
 				setKind(KIND_EDEFAULT);
 				return;
-			case OMLPackage.DESCRIPTION_BOX__TERMINOLOGY_EXTENT:
-				setTerminologyExtent((TerminologyExtent)null);
+			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT:
+				setDescriptionExtent((TerminologyExtent)null);
 				return;
 			case OMLPackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS:
 				getClosedWorldDefinitions().clear();
@@ -534,8 +545,8 @@ public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
 		switch (featureID) {
 			case OMLPackage.DESCRIPTION_BOX__KIND:
 				return kind != KIND_EDEFAULT;
-			case OMLPackage.DESCRIPTION_BOX__TERMINOLOGY_EXTENT:
-				return basicGetTerminologyExtent() != null;
+			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT:
+				return basicGetDescriptionExtent() != null;
 			case OMLPackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS:
 				return closedWorldDefinitions != null && !closedWorldDefinitions.isEmpty();
 			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS:
@@ -552,6 +563,20 @@ public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
 				return unreifiedRelationshipInstanceTuples != null && !unreifiedRelationshipInstanceTuples.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OMLPackage.DESCRIPTION_BOX___EXTENT:
+				return extent();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

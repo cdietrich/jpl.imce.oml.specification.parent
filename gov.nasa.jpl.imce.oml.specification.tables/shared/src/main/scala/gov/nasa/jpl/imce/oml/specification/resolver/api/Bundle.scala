@@ -27,7 +27,6 @@ trait Bundle
   extends TerminologyBox
 {
 
-  val bundleExtent: TerminologyExtent
   /*
    * The TerminologyBundleStatements asserted in this Bundle
    */
@@ -37,8 +36,6 @@ trait Bundle
    */
   val terminologyBundleAxioms: scala.collection.immutable.SortedSet[TerminologyBundleAxiom]
 
-  def extent
-  (): TerminologyExtent
   override def withAnnotations
   (a: scala.collection.immutable.SortedSet[AnnotationPropertyTable]): Bundle
   override def annotationsByProperty

@@ -110,7 +110,7 @@ public interface TerminologyExtent extends CDOObject {
 	/**
 	 * Returns the value of the '<em><b>Descriptions</b></em>' containment reference list.
 	 * The list contents are of type {@link jpl.imce.oml.specification.ecore.DescriptionBox}.
-	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getTerminologyExtent <em>Terminology Extent</em>}'.
+	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getDescriptionExtent <em>Description Extent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Descriptions</em>' containment reference list isn't clear,
@@ -119,8 +119,8 @@ public interface TerminologyExtent extends CDOObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Descriptions</em>' containment reference list.
 	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyExtent_Descriptions()
-	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getTerminologyExtent
-	 * @model opposite="terminologyExtent" containment="true"
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getDescriptionExtent
+	 * @model opposite="descriptionExtent" containment="true"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
 	 * @generated
 	 */

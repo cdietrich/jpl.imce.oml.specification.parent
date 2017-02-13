@@ -27,7 +27,7 @@ extends resolver.api.TerminologyBox
   /*
    * The subset of statements that are entities.
    */
-  def entities
+  override def entities
   ()
   : scala.collection.immutable.SortedSet[Entity]
   = {
@@ -37,7 +37,7 @@ extends resolver.api.TerminologyBox
   /*
    * The subset of statements that are aspects.
    */
-  def aspects
+  override def aspects
   ()
   : scala.collection.immutable.SortedSet[Aspect]
   = {
@@ -47,7 +47,7 @@ extends resolver.api.TerminologyBox
   /*
    * The subset of statements that are concepts.
    */
-  def concepts
+  override def concepts
   ()
   : scala.collection.immutable.SortedSet[Concept]
   = {
@@ -57,7 +57,7 @@ extends resolver.api.TerminologyBox
   /*
    * The subset of statements that are reified relationships.
    */
-  def reifiedRelationships
+  override def reifiedRelationships
   ()
   : scala.collection.immutable.SortedSet[ReifiedRelationship]
   = {
@@ -67,7 +67,7 @@ extends resolver.api.TerminologyBox
   /*
    * The subset of statements that are unreified relationships.
    */
-  def unreifiedRelationships
+  override def unreifiedRelationships
   ()
   : scala.collection.immutable.SortedSet[UnreifiedRelationship]
   = {
@@ -77,7 +77,7 @@ extends resolver.api.TerminologyBox
   /*
    * The subset of statements that are data relationships.
    */
-  def dataRelationships
+  override def dataRelationships
   ()
   : scala.collection.immutable.SortedSet[DataRelationship]
   = {
@@ -88,7 +88,7 @@ extends resolver.api.TerminologyBox
    * A map for the subset of statements that are
    * entity scalar data property terms indexed by their uuid.
    */
-  def entityScalarDataProperties
+  override def entityScalarDataProperties
   ()
   : scala.collection.immutable.SortedSet[EntityScalarDataProperty]
   = {
@@ -99,7 +99,7 @@ extends resolver.api.TerminologyBox
    * A map for the subset of statements that are
    * data range terms indexed by their uuid.
    */
-  def dataranges
+  override def dataranges
   ()
   : scala.collection.immutable.SortedSet[DataRange]
   = {
@@ -110,7 +110,7 @@ extends resolver.api.TerminologyBox
    * A map for the subset of statements that are
    * scalar datatype terms indexed by their uuid.
    */
-  def scalars
+  override def scalars
   ()
   : scala.collection.immutable.SortedSet[Scalar]
   = {
@@ -121,7 +121,7 @@ extends resolver.api.TerminologyBox
    * A map for the subset of statements that are
    * structured datatype terms indexed by their uuid.
    */
-  def structures
+  override def structures
   ()
   : scala.collection.immutable.SortedSet[Structure]
   = {
@@ -131,14 +131,14 @@ extends resolver.api.TerminologyBox
   /*
    * The subset of axioms about terms.
    */
-  def termAxioms
+  override def termAxioms
   ()
   : scala.collection.immutable.SortedSet[TermAxiom]
   = {
     boxStatements.selectByKindOf { case tx: TermAxiom => tx }
   }
   
-  def everything
+  override def everything
   ()
   : scala.collection.immutable.SortedSet[TerminologyThing]
   = {

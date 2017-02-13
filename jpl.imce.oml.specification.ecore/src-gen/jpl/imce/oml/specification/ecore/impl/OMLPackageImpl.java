@@ -1310,6 +1310,114 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getContext__Entities() {
+		return contextEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getContext__Aspects() {
+		return contextEClass.getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getContext__Concepts() {
+		return contextEClass.getEOperations().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getContext__ReifiedRelationships() {
+		return contextEClass.getEOperations().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getContext__UnreifiedRelationships() {
+		return contextEClass.getEOperations().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getContext__DataRelationships() {
+		return contextEClass.getEOperations().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getContext__EntityScalarDataProperties() {
+		return contextEClass.getEOperations().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getContext__Dataranges() {
+		return contextEClass.getEOperations().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getContext__Scalars() {
+		return contextEClass.getEOperations().get(16);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getContext__Structures() {
+		return contextEClass.getEOperations().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getContext__TermAxioms() {
+		return contextEClass.getEOperations().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getContext__Everything() {
+		return contextEClass.getEOperations().get(19);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTerminologyBox() {
 		return terminologyBoxEClass;
 	}
@@ -3227,7 +3335,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDescriptionBox_TerminologyExtent() {
+	public EReference getDescriptionBox_DescriptionExtent() {
 		return (EReference)descriptionBoxEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -3292,6 +3400,123 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 */
 	public EReference getDescriptionBox_UnreifiedRelationshipInstanceTuples() {
 		return (EReference)descriptionBoxEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDescriptionBox__Extent() {
+		return descriptionBoxEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDescriptionBox__Entities() {
+		return descriptionBoxEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDescriptionBox__Aspects() {
+		return descriptionBoxEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDescriptionBox__Concepts() {
+		return descriptionBoxEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDescriptionBox__ReifiedRelationships() {
+		return descriptionBoxEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDescriptionBox__UnreifiedRelationships() {
+		return descriptionBoxEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDescriptionBox__DataRelationships() {
+		return descriptionBoxEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDescriptionBox__EntityScalarDataProperties() {
+		return descriptionBoxEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDescriptionBox__Dataranges() {
+		return descriptionBoxEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDescriptionBox__Scalars() {
+		return descriptionBoxEClass.getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDescriptionBox__Structures() {
+		return descriptionBoxEClass.getEOperations().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDescriptionBox__TermAxioms() {
+		return descriptionBoxEClass.getEOperations().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDescriptionBox__Everything() {
+		return descriptionBoxEClass.getEOperations().get(12);
 	}
 
 	/**
@@ -4005,6 +4230,18 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		createEOperation(contextEClass, CONTEXT___ANNOTATIONS_BY_SUBJECT);
 		createEOperation(contextEClass, CONTEXT___ANNOTATIONS_BY_PROPERTY);
 		createEOperation(contextEClass, CONTEXT___WITH_ANNOTATIONS__EMAP);
+		createEOperation(contextEClass, CONTEXT___ENTITIES);
+		createEOperation(contextEClass, CONTEXT___ASPECTS);
+		createEOperation(contextEClass, CONTEXT___CONCEPTS);
+		createEOperation(contextEClass, CONTEXT___REIFIED_RELATIONSHIPS);
+		createEOperation(contextEClass, CONTEXT___UNREIFIED_RELATIONSHIPS);
+		createEOperation(contextEClass, CONTEXT___DATA_RELATIONSHIPS);
+		createEOperation(contextEClass, CONTEXT___ENTITY_SCALAR_DATA_PROPERTIES);
+		createEOperation(contextEClass, CONTEXT___DATARANGES);
+		createEOperation(contextEClass, CONTEXT___SCALARS);
+		createEOperation(contextEClass, CONTEXT___STRUCTURES);
+		createEOperation(contextEClass, CONTEXT___TERM_AXIOMS);
+		createEOperation(contextEClass, CONTEXT___EVERYTHING);
 
 		terminologyBoxEClass = createEClass(TERMINOLOGY_BOX);
 		createEAttribute(terminologyBoxEClass, TERMINOLOGY_BOX__KIND);
@@ -4284,7 +4521,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 
 		descriptionBoxEClass = createEClass(DESCRIPTION_BOX);
 		createEAttribute(descriptionBoxEClass, DESCRIPTION_BOX__KIND);
-		createEReference(descriptionBoxEClass, DESCRIPTION_BOX__TERMINOLOGY_EXTENT);
+		createEReference(descriptionBoxEClass, DESCRIPTION_BOX__DESCRIPTION_EXTENT);
 		createEReference(descriptionBoxEClass, DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS);
 		createEReference(descriptionBoxEClass, DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS);
 		createEReference(descriptionBoxEClass, DESCRIPTION_BOX__CONCEPT_INSTANCES);
@@ -4292,6 +4529,19 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		createEReference(descriptionBoxEClass, DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS);
 		createEReference(descriptionBoxEClass, DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES);
 		createEReference(descriptionBoxEClass, DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES);
+		createEOperation(descriptionBoxEClass, DESCRIPTION_BOX___EXTENT);
+		createEOperation(descriptionBoxEClass, DESCRIPTION_BOX___ENTITIES);
+		createEOperation(descriptionBoxEClass, DESCRIPTION_BOX___ASPECTS);
+		createEOperation(descriptionBoxEClass, DESCRIPTION_BOX___CONCEPTS);
+		createEOperation(descriptionBoxEClass, DESCRIPTION_BOX___REIFIED_RELATIONSHIPS);
+		createEOperation(descriptionBoxEClass, DESCRIPTION_BOX___UNREIFIED_RELATIONSHIPS);
+		createEOperation(descriptionBoxEClass, DESCRIPTION_BOX___DATA_RELATIONSHIPS);
+		createEOperation(descriptionBoxEClass, DESCRIPTION_BOX___ENTITY_SCALAR_DATA_PROPERTIES);
+		createEOperation(descriptionBoxEClass, DESCRIPTION_BOX___DATARANGES);
+		createEOperation(descriptionBoxEClass, DESCRIPTION_BOX___SCALARS);
+		createEOperation(descriptionBoxEClass, DESCRIPTION_BOX___STRUCTURES);
+		createEOperation(descriptionBoxEClass, DESCRIPTION_BOX___TERM_AXIOMS);
+		createEOperation(descriptionBoxEClass, DESCRIPTION_BOX___EVERYTHING);
 
 		descriptionBoxRelationshipEClass = createEClass(DESCRIPTION_BOX_RELATIONSHIP);
 		createEOperation(descriptionBoxRelationshipEClass, DESCRIPTION_BOX_RELATIONSHIP___DESCRIPTION_DOMAIN);
@@ -4521,7 +4771,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		initEClass(terminologyThingEClass, TerminologyThing.class, "TerminologyThing", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTerminologyThing_Uuid(), this.getUUID(), "uuid", null, 1, 1, TerminologyThing.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getTerminologyThing__CalculateUUID(), this.getUUID(), "calculateUUID", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getTerminologyThing__CalculateUUID(), this.getUUID(), "calculateUUID", 1, 1, !IS_UNIQUE, IS_ORDERED);
 
 		initEClass(annotationPropertyEClass, AnnotationProperty.class, "AnnotationProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAnnotationProperty_Iri(), this.getIRI(), "iri", null, 1, 1, AnnotationProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4556,7 +4806,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		initEReference(getTerminologyExtent_AnnotationProperties(), this.getAnnotationProperty(), null, "annotationProperties", null, 0, -1, TerminologyExtent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTerminologyExtent_TerminologyGraphs(), this.getTerminologyGraph(), this.getTerminologyGraph_GraphExtent(), "terminologyGraphs", null, 0, -1, TerminologyExtent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTerminologyExtent_Bundles(), this.getBundle(), this.getBundle_BundleExtent(), "bundles", null, 0, -1, TerminologyExtent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTerminologyExtent_Descriptions(), this.getDescriptionBox(), this.getDescriptionBox_TerminologyExtent(), "descriptions", null, 0, -1, TerminologyExtent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTerminologyExtent_Descriptions(), this.getDescriptionBox(), this.getDescriptionBox_DescriptionExtent(), "descriptions", null, 0, -1, TerminologyExtent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(contextEClass, Context.class, "Context", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContext_Iri(), this.getIRI(), "iri", null, 1, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4578,6 +4828,30 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 
 		EOperation op = initEOperation(getContext__WithAnnotations__EMap(), this.getContext(), "withAnnotations", 1, 1, !IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getAnnotationPropertyTable(), "a", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getContext__Entities(), this.getEntity(), "entities", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getContext__Aspects(), this.getAspect(), "aspects", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getContext__Concepts(), this.getConcept(), "concepts", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getContext__ReifiedRelationships(), this.getReifiedRelationship(), "reifiedRelationships", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getContext__UnreifiedRelationships(), this.getUnreifiedRelationship(), "unreifiedRelationships", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getContext__DataRelationships(), this.getDataRelationship(), "dataRelationships", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getContext__EntityScalarDataProperties(), this.getEntityScalarDataProperty(), "entityScalarDataProperties", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getContext__Dataranges(), this.getDataRange(), "dataranges", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getContext__Scalars(), this.getScalar(), "scalars", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getContext__Structures(), this.getStructure(), "structures", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getContext__TermAxioms(), this.getTermAxiom(), "termAxioms", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getContext__Everything(), this.getTerminologyThing(), "everything", 0, -1, !IS_UNIQUE, IS_ORDERED);
 
 		initEClass(terminologyBoxEClass, TerminologyBox.class, "TerminologyBox", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTerminologyBox_Kind(), this.getTerminologyGraphKind(), "kind", null, 1, 1, TerminologyBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4928,7 +5202,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 
 		initEClass(descriptionBoxEClass, DescriptionBox.class, "DescriptionBox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDescriptionBox_Kind(), this.getDescriptionKind(), "kind", null, 1, 1, DescriptionBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDescriptionBox_TerminologyExtent(), this.getTerminologyExtent(), this.getTerminologyExtent_Descriptions(), "terminologyExtent", null, 1, 1, DescriptionBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDescriptionBox_DescriptionExtent(), this.getTerminologyExtent(), this.getTerminologyExtent_Descriptions(), "descriptionExtent", null, 1, 1, DescriptionBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDescriptionBox_ClosedWorldDefinitions(), this.getDescriptionBoxExtendsClosedWorldDefinitions(), this.getDescriptionBoxExtendsClosedWorldDefinitions_DescriptionBox(), "closedWorldDefinitions", null, 0, -1, DescriptionBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDescriptionBox_DescriptionBoxRefinements(), this.getDescriptionBoxRefinement(), this.getDescriptionBoxRefinement_RefiningDescriptionBox(), "descriptionBoxRefinements", null, 0, -1, DescriptionBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDescriptionBox_ConceptInstances(), this.getConceptInstance(), this.getConceptInstance_DescriptionBox(), "conceptInstances", null, 0, -1, DescriptionBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4936,6 +5210,32 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		initEReference(getDescriptionBox_ReifiedRelationshipInstanceDomains(), this.getReifiedRelationshipInstanceDomain(), this.getReifiedRelationshipInstanceDomain_DescriptionBox(), "reifiedRelationshipInstanceDomains", null, 0, -1, DescriptionBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDescriptionBox_ReifiedRelationshipInstanceRanges(), this.getReifiedRelationshipInstanceRange(), this.getReifiedRelationshipInstanceRange_DescriptionBox(), "reifiedRelationshipInstanceRanges", null, 0, -1, DescriptionBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDescriptionBox_UnreifiedRelationshipInstanceTuples(), this.getUnreifiedRelationshipInstanceTuple(), this.getUnreifiedRelationshipInstanceTuple_DescriptionBox(), "unreifiedRelationshipInstanceTuples", null, 0, -1, DescriptionBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getDescriptionBox__Extent(), this.getTerminologyExtent(), "extent", 1, 1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getDescriptionBox__Entities(), this.getEntity(), "entities", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getDescriptionBox__Aspects(), this.getAspect(), "aspects", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getDescriptionBox__Concepts(), this.getConcept(), "concepts", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getDescriptionBox__ReifiedRelationships(), this.getReifiedRelationship(), "reifiedRelationships", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getDescriptionBox__UnreifiedRelationships(), this.getUnreifiedRelationship(), "unreifiedRelationships", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getDescriptionBox__DataRelationships(), this.getDataRelationship(), "dataRelationships", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getDescriptionBox__EntityScalarDataProperties(), this.getEntityScalarDataProperty(), "entityScalarDataProperties", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getDescriptionBox__Dataranges(), this.getDataRange(), "dataranges", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getDescriptionBox__Scalars(), this.getScalar(), "scalars", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getDescriptionBox__Structures(), this.getStructure(), "structures", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getDescriptionBox__TermAxioms(), this.getTermAxiom(), "termAxioms", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getDescriptionBox__Everything(), this.getTerminologyThing(), "everything", 0, -1, !IS_UNIQUE, IS_ORDERED);
 
 		initEClass(descriptionBoxRelationshipEClass, DescriptionBoxRelationship.class, "DescriptionBoxRelationship", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -5649,6 +5949,66 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		   new String[] {
 		   });	
 		addAnnotation
+		  (getContext__Entities(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getContext__Aspects(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getContext__Concepts(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getContext__ReifiedRelationships(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getContext__UnreifiedRelationships(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getContext__DataRelationships(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getContext__EntityScalarDataProperties(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getContext__Dataranges(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getContext__Scalars(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getContext__Structures(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getContext__TermAxioms(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getContext__Everything(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
 		  (getContext_Annotations(), 
 		   source, 
 		   new String[] {
@@ -6014,7 +6374,72 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getDescriptionBox_TerminologyExtent(), 
+		  (getDescriptionBox__Extent(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Entities(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Aspects(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Concepts(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox__ReifiedRelationships(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox__UnreifiedRelationships(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox__DataRelationships(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox__EntityScalarDataProperties(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Dataranges(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Scalars(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Structures(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox__TermAxioms(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Everything(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox_DescriptionExtent(), 
 		   source, 
 		   new String[] {
 		   });	
@@ -6206,6 +6631,78 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 			 "kind", "SortedSet"
 		   });	
 		addAnnotation
+		  (getContext__Entities(), 
+		   source, 
+		   new String[] {
+			 "kind", "SortedSet"
+		   });	
+		addAnnotation
+		  (getContext__Aspects(), 
+		   source, 
+		   new String[] {
+			 "kind", "SortedSet"
+		   });	
+		addAnnotation
+		  (getContext__Concepts(), 
+		   source, 
+		   new String[] {
+			 "kind", "SortedSet"
+		   });	
+		addAnnotation
+		  (getContext__ReifiedRelationships(), 
+		   source, 
+		   new String[] {
+			 "kind", "SortedSet"
+		   });	
+		addAnnotation
+		  (getContext__UnreifiedRelationships(), 
+		   source, 
+		   new String[] {
+			 "kind", "SortedSet"
+		   });	
+		addAnnotation
+		  (getContext__DataRelationships(), 
+		   source, 
+		   new String[] {
+			 "kind", "SortedSet"
+		   });	
+		addAnnotation
+		  (getContext__EntityScalarDataProperties(), 
+		   source, 
+		   new String[] {
+			 "kind", "SortedSet"
+		   });	
+		addAnnotation
+		  (getContext__Dataranges(), 
+		   source, 
+		   new String[] {
+			 "kind", "SortedSet"
+		   });	
+		addAnnotation
+		  (getContext__Scalars(), 
+		   source, 
+		   new String[] {
+			 "kind", "SortedSet"
+		   });	
+		addAnnotation
+		  (getContext__Structures(), 
+		   source, 
+		   new String[] {
+			 "kind", "SortedSet"
+		   });	
+		addAnnotation
+		  (getContext__TermAxioms(), 
+		   source, 
+		   new String[] {
+			 "kind", "SortedSet"
+		   });	
+		addAnnotation
+		  (getContext__Everything(), 
+		   source, 
+		   new String[] {
+			 "kind", "SortedSet"
+		   });	
+		addAnnotation
 		  (getContext_Annotations(), 
 		   source, 
 		   new String[] {
@@ -6362,6 +6859,78 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 			 "kind", "SortedSet"
 		   });	
 		addAnnotation
+		  (getDescriptionBox__Entities(), 
+		   source, 
+		   new String[] {
+			 "kind", "SortedSet"
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Aspects(), 
+		   source, 
+		   new String[] {
+			 "kind", "SortedSet"
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Concepts(), 
+		   source, 
+		   new String[] {
+			 "kind", "SortedSet"
+		   });	
+		addAnnotation
+		  (getDescriptionBox__ReifiedRelationships(), 
+		   source, 
+		   new String[] {
+			 "kind", "SortedSet"
+		   });	
+		addAnnotation
+		  (getDescriptionBox__UnreifiedRelationships(), 
+		   source, 
+		   new String[] {
+			 "kind", "SortedSet"
+		   });	
+		addAnnotation
+		  (getDescriptionBox__DataRelationships(), 
+		   source, 
+		   new String[] {
+			 "kind", "SortedSet"
+		   });	
+		addAnnotation
+		  (getDescriptionBox__EntityScalarDataProperties(), 
+		   source, 
+		   new String[] {
+			 "kind", "SortedSet"
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Dataranges(), 
+		   source, 
+		   new String[] {
+			 "kind", "SortedSet"
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Scalars(), 
+		   source, 
+		   new String[] {
+			 "kind", "SortedSet"
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Structures(), 
+		   source, 
+		   new String[] {
+			 "kind", "SortedSet"
+		   });	
+		addAnnotation
+		  (getDescriptionBox__TermAxioms(), 
+		   source, 
+		   new String[] {
+			 "kind", "SortedSet"
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Everything(), 
+		   source, 
+		   new String[] {
+			 "kind", "SortedSet"
+		   });	
+		addAnnotation
 		  (getDescriptionBox_ClosedWorldDefinitions(), 
 		   source, 
 		   new String[] {
@@ -6469,6 +7038,46 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		   });	
 		addAnnotation
 		  (getContext__AnnotationsBySubject(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getBundle__Extent(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getBundle_BundleExtent(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyGraph__Extent(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyGraph_GraphExtent(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerm__Name(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Extent(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox_DescriptionExtent(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyInstanceAssertion__Name(), 
 		   source, 
 		   new String[] {
 		   });
@@ -6589,6 +7198,66 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		String source = "http://imce.jpl.nasa.gov/oml/Override";	
 		addAnnotation
 		  (getContext_Iri(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__Entities(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__Aspects(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__Concepts(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__ReifiedRelationships(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__UnreifiedRelationships(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__DataRelationships(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__EntityScalarDataProperties(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__Dataranges(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__Scalars(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__Structures(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__TermAxioms(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getTerminologyBox__Everything(), 
 		   source, 
 		   new String[] {
 		   });	
@@ -6744,6 +7413,66 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		   });	
 		addAnnotation
 		  (getReifiedRelationshipSpecializationAxiom__Parent(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Entities(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Aspects(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Concepts(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox__ReifiedRelationships(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox__UnreifiedRelationships(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox__DataRelationships(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox__EntityScalarDataProperties(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Dataranges(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Scalars(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Structures(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox__TermAxioms(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Everything(), 
 		   source, 
 		   new String[] {
 		   });	
@@ -6914,6 +7643,78 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		   source, 
 		   new String[] {
 			 "code", "terminology match { case g: TerminologyGraph => g }"
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Entities(), 
+		   source, 
+		   new String[] {
+			 "code", "scala.collection.immutable.SortedSet.empty[Entity]"
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Aspects(), 
+		   source, 
+		   new String[] {
+			 "code", "scala.collection.immutable.SortedSet.empty[Aspect]"
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Concepts(), 
+		   source, 
+		   new String[] {
+			 "code", "scala.collection.immutable.SortedSet.empty[Concept]"
+		   });	
+		addAnnotation
+		  (getDescriptionBox__ReifiedRelationships(), 
+		   source, 
+		   new String[] {
+			 "code", "scala.collection.immutable.SortedSet.empty[ReifiedRelationship]"
+		   });	
+		addAnnotation
+		  (getDescriptionBox__UnreifiedRelationships(), 
+		   source, 
+		   new String[] {
+			 "code", "scala.collection.immutable.SortedSet.empty[UnreifiedRelationship]"
+		   });	
+		addAnnotation
+		  (getDescriptionBox__DataRelationships(), 
+		   source, 
+		   new String[] {
+			 "code", "scala.collection.immutable.SortedSet.empty[DataRelationship]"
+		   });	
+		addAnnotation
+		  (getDescriptionBox__EntityScalarDataProperties(), 
+		   source, 
+		   new String[] {
+			 "code", "scala.collection.immutable.SortedSet.empty[EntityScalarDataProperty]"
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Dataranges(), 
+		   source, 
+		   new String[] {
+			 "code", "scala.collection.immutable.SortedSet.empty[DataRange]"
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Scalars(), 
+		   source, 
+		   new String[] {
+			 "code", "scala.collection.immutable.SortedSet.empty[Scalar]"
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Structures(), 
+		   source, 
+		   new String[] {
+			 "code", "scala.collection.immutable.SortedSet.empty[Structure]"
+		   });	
+		addAnnotation
+		  (getDescriptionBox__TermAxioms(), 
+		   source, 
+		   new String[] {
+			 "code", "scala.collection.immutable.SortedSet.empty[TermAxiom]"
+		   });	
+		addAnnotation
+		  (getDescriptionBox__Everything(), 
+		   source, 
+		   new String[] {
+			 "code", "scala.collection.immutable.SortedSet.empty[resolver.api.TerminologyThing] ++ conceptInstances + reifiedRelationshipInstances ++ reifiedRelationshipInstanceDomains ++ reifiedRelationshipInstanceRanges ++ unreifiedRelationshipInstanceTuples"
 		   });	
 		addAnnotation
 		  (getTerminologyInstanceAssertion__Iri(), 

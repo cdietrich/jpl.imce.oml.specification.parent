@@ -50,10 +50,11 @@ object OMLTablesResolver {
               .foldLeft[SortedSet[resolver.api.AnnotationProperty]](TreeSet.empty[resolver.api.AnnotationProperty]) {
               case (acc, ap) =>
                 acc +
-                  factory.createAnnotationProperty(UUID.fromString(ap.uuid), ap.iri, ap.abbrevIRI)
+                  factory.createAnnotationProperty(ap.iri, ap.abbrevIRI)
             },
           bundles = TreeSet.empty[resolver.api.Bundle],
-          terminologyGraphs = TreeSet.empty[resolver.api.TerminologyGraph])),
+          terminologyGraphs = TreeSet.empty[resolver.api.TerminologyGraph],
+          descriptions = TreeSet.empty[resolver.api.DescriptionBox])),
       t,
       factory))
     // Terminologies
@@ -128,7 +129,7 @@ object OMLTablesResolver {
   = {
     val gN = resolver.queue.terminologyGraphs.foldLeft(resolver.context.g) { (gi, t) =>
       gi + resolver.factory.createTerminologyGraph(
-        java.util.UUID.fromString(t.uuid), t.kind, t.name, t.iri, t.nsPrefix,
+        java.util.UUID.fromString(t.uuid), t.kind, t.iri,
         annotations=TreeSet.empty[api.Annotation],
         boxStatements=TreeSet.empty[api.TerminologyBoxStatement],
         terminologyBoxAxioms=TreeSet.empty[api.TerminologyBoxAxiom])
@@ -145,7 +146,7 @@ object OMLTablesResolver {
   : Try[OMLTablesResolver]
   = {
     val gN = resolver.queue.bundles.foldLeft(resolver.context.g) { (gi, b) =>
-      gi + resolver.factory.createBundle(java.util.UUID.fromString(b.uuid), b.kind, b.name, b.iri, b.nsPrefix,
+      gi + resolver.factory.createBundle(java.util.UUID.fromString(b.uuid), b.kind, b.iri,
         annotations=TreeSet.empty[api.Annotation],
         boxStatements=TreeSet.empty[api.TerminologyBoxStatement],
         bundleStatements=TreeSet.empty[api.TerminologyBundleStatement],
@@ -170,12 +171,12 @@ object OMLTablesResolver {
   = s :+ entry._2
 
   def combopGraphs
-  (g1: Graph[api.TerminologyBox, TerminologyEdge],
-   g2: Graph[api.TerminologyBox, TerminologyEdge])
-  : Graph[api.TerminologyBox, TerminologyEdge]
+  (g1: Graph[api.Context, TerminologyEdge],
+   g2: Graph[api.Context, TerminologyEdge])
+  : Graph[api.Context, TerminologyEdge]
   = g1.union(g2)
 
-  type HyperGraphV = Try[Graph[api.TerminologyBox, TerminologyEdge]]
+  type HyperGraphV = Try[Graph[api.Context, TerminologyEdge]]
 
   def seqopAspects
   (factory: api.OMLResolvedFactory)
@@ -188,13 +189,17 @@ object OMLTablesResolver {
       .fold[HyperGraphV](
       Failure(new java.lang.Error(
         s"OMFSchemaResolver.seqopAspects: there should be a graph with UUID=${entry._1}"))
-    ) { n0 =>
+    ) {
+      case n0: api.TerminologyBox =>
 
       val s = entry
         ._2
         .foldLeft[SortedSet[api.TerminologyBoxStatement]](TreeSet.empty[api.TerminologyBoxStatement]) {
         case (acc, e) =>
-          acc + factory.createAspect(graph = n0, uuid = UUID.fromString(e.uuid), name = e.name)
+          acc + factory.createAspect(
+            uuid=UUID.fromString(e.uuid),
+            tbox=n0,
+            name=e.name)
       }
 
       val result = resolver.TerminologyContext.replaceNode(factory, g, n0, n0.withBoxStatements(s))
@@ -206,7 +211,7 @@ object OMLTablesResolver {
   (resolver: OMLTablesResolver)
   : Try[OMLTablesResolver]
   = {
-    val ns = resolver.context.nodes
+    val ns = resolver.context.tboxes
     val byUUID =
       resolver.queue.aspects
         .groupBy(_.tboxUUID)
@@ -237,14 +242,19 @@ object OMLTablesResolver {
       .fold[HyperGraphV](
       Failure(new java.lang.Error(
         s"OMFSchemaResolver.seqopConcepts: there should be a graph with UUID=${entry._1}"))
-    ) { n0 =>
+    ) {
+      case n0: api.TerminologyBox =>
 
       val s =
         entry
           ._2
           .foldLeft[SortedSet[api.TerminologyBoxStatement]](TreeSet.empty[api.TerminologyBoxStatement]) {
           case (acc, e) =>
-            acc + factory.createConcept(graph = n0, uuid = UUID.fromString(e.uuid), isAbstract = e.isAbstract, name = e.name)
+            acc + factory.createConcept(
+              uuid=UUID.fromString(e.uuid),
+              tbox=n0,
+              isAbstract=e.isAbstract,
+              name=e.name)
         }
 
       val result = resolver.TerminologyContext.replaceNode(factory, g, n0, n0.withBoxStatements(s))
@@ -256,7 +266,7 @@ object OMLTablesResolver {
   (resolver: OMLTablesResolver)
   : Try[OMLTablesResolver]
   = {
-    val ns = resolver.context.nodes
+    val ns = resolver.context.tboxes
     val byUUID =
       resolver.queue.concepts
         .groupBy(_.tboxUUID)
@@ -287,13 +297,17 @@ object OMLTablesResolver {
       .fold[HyperGraphV](
       Failure(new java.lang.Error(
         s"OMFSchemaResolver.seqopScalars: there should be a graph with UUID=${entry._1}"))
-    ) { n0 =>
+    ) {
+      case n0: api.TerminologyBox =>
 
       val s = entry
         ._2
         .foldLeft[SortedSet[api.TerminologyBoxStatement]](TreeSet.empty[api.TerminologyBoxStatement]) {
         case (acc, e) =>
-          acc + factory.createScalar(graph = n0, uuid = UUID.fromString(e.uuid), name = e.name)
+          acc + factory.createScalar(
+            uuid=UUID.fromString(e.uuid),
+            tbox=n0,
+            name=e.name)
       }
 
       val result = resolver.TerminologyContext.replaceNode(factory, g, n0, n0.withBoxStatements(s))
@@ -305,7 +319,7 @@ object OMLTablesResolver {
   (resolver: OMLTablesResolver)
   : Try[OMLTablesResolver]
   = {
-    val ns = resolver.context.nodes
+    val ns = resolver.context.tboxes
     val byUUID =
       resolver.queue.scalars
         .groupBy(_.tboxUUID)
@@ -336,12 +350,16 @@ object OMLTablesResolver {
       .fold[HyperGraphV](
       Failure(new java.lang.Error(
         s"OMFSchemaResolver.seqopStructures: there should be a graph with UUID=${entry._1}"))
-    ) { n0 =>
+    ) {
+      case n0: api.TerminologyBox =>
       val s = entry
         ._2
         .foldLeft[SortedSet[api.TerminologyBoxStatement]](TreeSet.empty[api.TerminologyBoxStatement]) {
         case (acc, e) =>
-          acc + factory.createStructure(graph = n0, uuid = UUID.fromString(e.uuid), name = e.name)
+          acc + factory.createStructure(
+            uuid=UUID.fromString(e.uuid),
+            tbox=n0,
+            name=e.name)
       }
 
       val result = resolver.TerminologyContext.replaceNode(factory, g, n0, n0.withBoxStatements(s))
@@ -353,7 +371,7 @@ object OMLTablesResolver {
   (resolver: OMLTablesResolver)
   : Try[OMLTablesResolver]
   = {
-    val ns = resolver.context.nodes
+    val ns = resolver.context.tboxes
     val byUUID =
       resolver.queue.structures
         .groupBy(_.tboxUUID)
@@ -376,9 +394,9 @@ object OMLTablesResolver {
   def seqopTerminologyExtends
   (factory: api.OMLResolvedFactory,
    nodes: Map[UUID, api.TerminologyBox])
-  (g: Graph[api.TerminologyBox, TerminologyEdge],
+  (g: Graph[api.Context, TerminologyEdge],
    entry: ((UUID, UUID), tables.TerminologyExtensionAxiom))
-  : Graph[api.TerminologyBox, TerminologyEdge]
+  : Graph[api.Context, TerminologyEdge]
   = {
     val extending = nodes(entry._1._1)
     val extended = nodes(entry._1._2)
@@ -386,9 +404,9 @@ object OMLTablesResolver {
     val result = g + resolver.TerminologyEdge(
       extending, extended,
       factory.createTerminologyExtensionAxiom(
-        uuid = UUID.fromString(entry._2.uuid),
-        terminology = extending,
-        extendedTerminology = extended))
+        uuid=UUID.fromString(entry._2.uuid),
+        tbox=extending,
+        extendedTerminology=extended))
 
     result
   }
@@ -397,7 +415,7 @@ object OMLTablesResolver {
   (resolver: OMLTablesResolver)
   : Try[OMLTablesResolver]
   = {
-    val ns = resolver.context.nodes
+    val ns = resolver.context.tboxes
     val byUUID =
       resolver.queue.terminologyExtensionAxioms.par
         .map { tAxiom =>
@@ -427,9 +445,9 @@ object OMLTablesResolver {
   (factory: api.OMLResolvedFactory,
    ns: Map[tables.UUID, api.TerminologyGraph],
    cs: Map[tables.UUID, (api.Concept, api.TerminologyBox)])
-  (g: Graph[api.TerminologyBox, TerminologyEdge],
+  (g: Graph[api.Context, TerminologyEdge],
    entry: ((tables.UUID, tables.UUID), tables.TerminologyNestingAxiom))
-  : Graph[api.TerminologyBox, TerminologyEdge]
+  : Graph[api.Context, TerminologyEdge]
   = {
     val nestedT = ns(entry._1._1)
     val (nestingC, nestingT) = cs(entry._1._2)
@@ -437,10 +455,10 @@ object OMLTablesResolver {
     val result = g + resolver.TerminologyEdge(
       nestedT, nestingT,
       factory.createTerminologyNestingAxiom(
-        uuid = UUID.fromString(entry._2.uuid),
-        terminology = nestedT,
-        nestingContext = nestingC,
-        nestingTerminology = nestingT))
+        uuid=UUID.fromString(entry._2.uuid),
+        tbox=nestedT,
+        nestingTerminology=nestingT,
+        nestingContext=nestingC))
     result
   }
 
@@ -450,17 +468,15 @@ object OMLTablesResolver {
   = {
     val ns
     : Map[tables.UUID, api.TerminologyGraph]
-    = resolver.context.nodes.flatMap {
+    = resolver.context.graphs.map {
       case (uuid, g: api.TerminologyGraph) =>
-        Some(uuid.toString -> g)
-      case _ =>
-        None
+        uuid.toString -> g
     }
 
     val referencableConcepts
     : Map[tables.UUID, (api.Concept, api.TerminologyBox)]
     = resolver.context.g.nodes.toOuter
-      .foldLeft[Map[tables.UUID, (api.Concept, api.TerminologyBox)]](Map.empty) { case (acc, t) =>
+      .foldLeft[Map[tables.UUID, (api.Concept, api.TerminologyBox)]](Map.empty) { case (acc, t: api.TerminologyBox) =>
       acc ++
       t.concepts().map { c =>
         c.uuid.toString -> (c -> t)
@@ -503,9 +519,9 @@ object OMLTablesResolver {
   (factory: api.OMLResolvedFactory,
    ns: Map[tables.UUID, api.TerminologyGraph],
    cs: Map[tables.UUID, (api.Concept, api.TerminologyBox)])
-  (g: Graph[api.TerminologyBox, TerminologyEdge],
+  (g: Graph[api.Context, TerminologyEdge],
    entry: ((tables.UUID, tables.UUID), tables.ConceptDesignationTerminologyAxiom))
-  : Graph[api.TerminologyBox, TerminologyEdge]
+  : Graph[api.Context, TerminologyEdge]
   = {
     val designationG = ns(entry._1._1)
     val (designatedC, designatedTBox) = cs(entry._1._2)
@@ -513,10 +529,10 @@ object OMLTablesResolver {
     val result = g + resolver.TerminologyEdge(
       designationG, designatedTBox,
       factory.createConceptDesignationTerminologyAxiom(
-        uuid = UUID.fromString(entry._2.uuid),
-        designatedConcept = designatedC,
-        designatedTerminology = designatedTBox,
-        terminology = designationG))
+        uuid=UUID.fromString(entry._2.uuid),
+        tbox=designationG,
+        designatedConcept=designatedC,
+        designatedTerminology=designatedTBox))
 
     result
   }
@@ -527,7 +543,7 @@ object OMLTablesResolver {
   = {
     val ns
     : Map[tables.UUID, api.TerminologyGraph]
-    = resolver.context.nodes.flatMap {
+    = resolver.context.tboxes.flatMap {
       case (uuid, g: api.TerminologyGraph) =>
         Some(uuid.toString -> g)
       case _ =>
@@ -537,7 +553,7 @@ object OMLTablesResolver {
     val referencableConcepts
     : Map[tables.UUID, (api.Concept, api.TerminologyBox)]
     = resolver.context.g.nodes.toOuter
-      .foldLeft[Map[tables.UUID, (api.Concept, api.TerminologyBox)]](Map.empty) { case (acc, t) =>
+      .foldLeft[Map[tables.UUID, (api.Concept, api.TerminologyBox)]](Map.empty) { case (acc, t: api.TerminologyBox) =>
       acc ++
         t.concepts().map { c =>
           c.uuid.toString -> (c -> t)
@@ -580,9 +596,9 @@ object OMLTablesResolver {
   (factory: api.OMLResolvedFactory,
    bundles: Map[UUID, api.Bundle],
    nodes: Map[UUID, api.TerminologyBox])
-  (g: Graph[api.TerminologyBox, TerminologyEdge],
+  (g: Graph[api.Context, TerminologyEdge],
    entry: ((UUID, UUID), tables.BundledTerminologyAxiom))
-  : Graph[api.TerminologyBox, TerminologyEdge]
+  : Graph[api.Context, TerminologyEdge]
   = {
     val bundling = bundles(entry._1._1)
     val bundled = nodes(entry._1._2)
@@ -602,7 +618,7 @@ object OMLTablesResolver {
   : Try[OMLTablesResolver]
   = {
     val bs = resolver.context.bundles
-    val ns = resolver.context.nodes
+    val ns = resolver.context.tboxes
     val byUUID =
       resolver.queue.bundledTerminologyAxioms.par
         .map { tAxiom =>
@@ -634,7 +650,7 @@ object OMLTablesResolver {
   (resolver: OMLTablesResolver)
   : Try[OMLTablesResolver]
   = {
-    val ns = resolver.context.nodes
+    val ns = resolver.context.tboxes
     val g = resolver.context.g
     val (r1, u1) =
       resolver.queue.binaryScalarRestrictions
@@ -718,7 +734,7 @@ object OMLTablesResolver {
   (resolver: OMLTablesResolver)
   : Try[OMLTablesResolver]
   = {
-    val ns = resolver.context.nodes
+    val ns = resolver.context.tboxes
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.reifiedRelationships
@@ -743,7 +759,7 @@ object OMLTablesResolver {
     ) {
       case (Success(Tuple3(ri, mi, fi)), (guuid, x)) =>
         val gi = ri.context.g
-        val tbox = ri.context.nodes(guuid)
+        val tbox = ri.context.tboxes(guuid)
 
         val referencableEntities
         : Map[tables.UUID, api.Entity]
@@ -761,12 +777,11 @@ object OMLTablesResolver {
           case (acc, rr) =>
             acc +
               ri.factory.createReifiedRelationship(
-                tbox,
                 UUID.fromString(rr.uuid),
+                tbox,
+                referencableEntities(rr.sourceUUID),
+                referencableEntities(rr.targetUUID),
                 rr.isAbstract,
-                rr.name,
-                rr.unreifiedPropertyName,
-                rr.unreifiedInversePropertyName,
                 rr.isAsymmetric,
                 rr.isEssential,
                 rr.isFunctional,
@@ -776,8 +791,9 @@ object OMLTablesResolver {
                 rr.isReflexive,
                 rr.isSymmetric,
                 rr.isTransitive,
-                referencableEntities(rr.sourceUUID),
-                referencableEntities(rr.targetUUID))
+                rr.name,
+                rr.unreifiedPropertyName,
+                rr.unreifiedInversePropertyName)
         }
 
         TerminologyContext
@@ -805,7 +821,7 @@ object OMLTablesResolver {
   (resolver: OMLTablesResolver)
   : Try[OMLTablesResolver]
   = {
-    val ns = resolver.context.nodes
+    val ns = resolver.context.tboxes
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.unreifiedRelationships
@@ -830,7 +846,7 @@ object OMLTablesResolver {
     ) {
       case (Success(Tuple3(ri, mi, fi)), (guuid, x)) =>
         val gi = ri.context.g
-        val tbox = ri.context.nodes(guuid)
+        val tbox = ri.context.tboxes(guuid)
 
         val referencableEntities
         : Map[tables.UUID, api.Entity]
@@ -848,9 +864,10 @@ object OMLTablesResolver {
           case (acc, ur) =>
             acc +
               ri.factory.createUnreifiedRelationship(
-                tbox,
                 UUID.fromString(ur.uuid),
-                ur.name,
+                tbox,
+                referencableEntities(ur.sourceUUID),
+                referencableEntities(ur.targetUUID),
                 ur.isAsymmetric,
                 ur.isEssential,
                 ur.isFunctional,
@@ -860,8 +877,7 @@ object OMLTablesResolver {
                 ur.isReflexive,
                 ur.isSymmetric,
                 ur.isTransitive,
-                referencableEntities(ur.sourceUUID),
-                referencableEntities(ur.targetUUID))
+                ur.name)
         }
 
         TerminologyContext
@@ -889,7 +905,7 @@ object OMLTablesResolver {
   (resolver: OMLTablesResolver)
   : Try[OMLTablesResolver]
   = {
-    val ns = resolver.context.nodes
+    val ns = resolver.context.tboxes
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.entityScalarDataProperties
@@ -914,7 +930,7 @@ object OMLTablesResolver {
     ) {
       case (Success(Tuple3(ri, mi, fi)), (guuid, x)) =>
         val gi = ri.context.g
-        val tbox = ri.context.nodes(guuid)
+        val tbox = ri.context.tboxes(guuid)
 
         val referencableEntities
         : Map[tables.UUID, api.Entity]
@@ -938,11 +954,12 @@ object OMLTablesResolver {
           case (acc, dr) =>
             acc +
               ri.factory.createEntityScalarDataProperty(
-                tbox,
                 UUID.fromString(dr.uuid),
-                dr.name,
+                tbox,
                 referencableEntities(dr.domainUUID),
-                referencableDataRanges(dr.rangeUUID))
+                referencableDataRanges(dr.rangeUUID),
+                dr.isIdentityCriteria,
+                dr.name)
         }
 
         TerminologyContext
@@ -970,7 +987,7 @@ object OMLTablesResolver {
   (resolver: OMLTablesResolver)
   : Try[OMLTablesResolver]
   = {
-    val ns = resolver.context.nodes
+    val ns = resolver.context.tboxes
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.entityStructuredDataProperties
@@ -995,7 +1012,7 @@ object OMLTablesResolver {
     ) {
       case (Success(Tuple3(ri, mi, fi)), (guuid, x)) =>
         val gi = ri.context.g
-        val tbox = ri.context.nodes(guuid)
+        val tbox = ri.context.tboxes(guuid)
 
         val referencableEntities
         : Map[tables.UUID, api.Entity]
@@ -1019,11 +1036,12 @@ object OMLTablesResolver {
           case (acc, dr) =>
             acc +
             ri.factory.createEntityStructuredDataProperty(
-              tbox,
               UUID.fromString(dr.uuid),
-              dr.name,
+              tbox,
               referencableEntities(dr.domainUUID),
-              referencableStructures(dr.rangeUUID))
+              referencableStructures(dr.rangeUUID),
+              dr.isIdentityCriteria,
+              dr.name)
         }
 
         TerminologyContext
@@ -1051,7 +1069,7 @@ object OMLTablesResolver {
   (resolver: OMLTablesResolver)
   : Try[OMLTablesResolver]
   = {
-    val ns = resolver.context.nodes
+    val ns = resolver.context.tboxes
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.scalarDataProperties
@@ -1076,7 +1094,7 @@ object OMLTablesResolver {
     ) {
       case (Success(Tuple3(ri, mi, fi)), (guuid, x)) =>
         val gi = ri.context.g
-        val tbox = ri.context.nodes(guuid)
+        val tbox = ri.context.tboxes(guuid)
 
         val referencableStructures
         : Map[tables.UUID, api.Structure]
@@ -1100,11 +1118,11 @@ object OMLTablesResolver {
           case (acc, dr) =>
             acc +
             ri.factory.createScalarDataProperty(
-              tbox,
               UUID.fromString(dr.uuid),
-              dr.name,
+              tbox,
               referencableStructures(dr.domainUUID),
-              referencableDataRanges(dr.rangeUUID))
+              referencableDataRanges(dr.rangeUUID),
+              dr.name)
         }
 
         TerminologyContext
@@ -1132,7 +1150,7 @@ object OMLTablesResolver {
   (resolver: OMLTablesResolver)
   : Try[OMLTablesResolver]
   = {
-    val ns = resolver.context.nodes
+    val ns = resolver.context.tboxes
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.structuredDataProperties
@@ -1157,7 +1175,7 @@ object OMLTablesResolver {
     ) {
       case (Success(Tuple3(ri, mi, fi)), (guuid, x)) =>
         val gi = ri.context.g
-        val tbox = ri.context.nodes(guuid)
+        val tbox = ri.context.tboxes(guuid)
 
         val referencableStructures
         : Map[tables.UUID, api.Structure]
@@ -1176,11 +1194,11 @@ object OMLTablesResolver {
           case (acc, dr) =>
             acc +
             ri.factory.createStructuredDataProperty(
-              tbox,
               UUID.fromString(dr.uuid),
-              dr.name,
+              tbox,
               referencableStructures(dr.domainUUID),
-              referencableStructures(dr.rangeUUID))
+              referencableStructures(dr.rangeUUID),
+              dr.name)
         }
 
         TerminologyContext
@@ -1208,7 +1226,7 @@ object OMLTablesResolver {
   (resolver: OMLTablesResolver)
   : Try[OMLTablesResolver]
   = {
-    val ns = resolver.context.nodes
+    val ns = resolver.context.tboxes
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.scalarOneOfLiteralAxioms
@@ -1232,13 +1250,20 @@ object OMLTablesResolver {
     ) {
       case (Success(Tuple3(ri, mi, fi)), (guuid, x)) =>
         val gi = ri.context.g
-        val tbox = ri.context.nodes(guuid)
-        val scalarOneOfRestrictions = gi.outerNodeTraverser(gi.get(tbox)).flatMap(_.boxStatements.flatMap {
-          case ax: api.ScalarOneOfRestriction =>
-            Some(ax.uuid -> ax)
-          case _ =>
-            None
-        }).toMap
+        val tbox = ri.context.tboxes(guuid)
+        val scalarOneOfRestrictions =
+          gi
+            .outerNodeTraverser(gi.get(tbox))
+            .flatMap {
+              case t: api.TerminologyBox =>
+                t.boxStatements.flatMap {
+                  case ax: api.ScalarOneOfRestriction =>
+                    Some(ax.uuid -> ax)
+                  case _ =>
+                    None
+                }
+            }
+            .toMap
         val (available, remaining) = x.partition { ax =>
           scalarOneOfRestrictions.contains(UUID.fromString(ax.axiomUUID))
         }
@@ -1249,8 +1274,8 @@ object OMLTablesResolver {
           case (acc, ax) =>
             acc +
               ri.factory.createScalarOneOfLiteralAxiom(
-                tbox,
                 UUID.fromString(ax.uuid),
+                tbox,
                 scalarOneOfRestrictions(UUID.fromString(ax.axiomUUID)),
                 ax.value)
         }
@@ -1280,7 +1305,7 @@ object OMLTablesResolver {
   (resolver: OMLTablesResolver)
   : Try[OMLTablesResolver]
   = {
-    val ns = resolver.context.nodes
+    val ns = resolver.context.tboxes
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.entityExistentialRestrictionAxioms
@@ -1304,7 +1329,7 @@ object OMLTablesResolver {
     ) {
       case (Success(Tuple3(ri, mi, fi)), (guuid, x)) =>
         val gi = ri.context.g
-        val tbox = ri.context.nodes(guuid)
+        val tbox = ri.context.tboxes(guuid)
 
         val referencableEntities
         : Map[tables.UUID, api.Entity]
@@ -1329,11 +1354,11 @@ object OMLTablesResolver {
           case (acc, ax) =>
             acc +
             ri.factory.createEntityExistentialRestrictionAxiom(
-              tbox,
               UUID.fromString(ax.uuid),
+              tbox,
+              referencableReifiedRelationships(ax.restrictedRelationUUID),
               referencableEntities(ax.restrictedDomainUUID),
-              referencableEntities(ax.restrictedRangeUUID),
-              referencableReifiedRelationships(ax.restrictedRelationUUID))
+              referencableEntities(ax.restrictedRangeUUID))
           }
 
         TerminologyContext
@@ -1361,7 +1386,7 @@ object OMLTablesResolver {
   (resolver: OMLTablesResolver)
   : Try[OMLTablesResolver]
   = {
-    val ns = resolver.context.nodes
+    val ns = resolver.context.tboxes
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.entityUniversalRestrictionAxioms
@@ -1385,7 +1410,7 @@ object OMLTablesResolver {
     ) {
       case (Success(Tuple3(ri, mi, fi)), (guuid, x)) =>
         val gi = ri.context.g
-        val tbox = ri.context.nodes(guuid)
+        val tbox = ri.context.tboxes(guuid)
 
         val referencableEntities
         : Map[tables.UUID, api.Entity]
@@ -1410,11 +1435,11 @@ object OMLTablesResolver {
           case (acc, ax) =>
             acc +
             ri.factory.createEntityUniversalRestrictionAxiom(
-              tbox,
               UUID.fromString(ax.uuid),
+              tbox,
+              referencableReifiedRelationships(ax.restrictedRelationUUID),
               referencableEntities(ax.restrictedDomainUUID),
-              referencableEntities(ax.restrictedRangeUUID),
-              referencableReifiedRelationships(ax.restrictedRelationUUID))
+              referencableEntities(ax.restrictedRangeUUID))
         }
 
         TerminologyContext
@@ -1442,7 +1467,7 @@ object OMLTablesResolver {
   (resolver: OMLTablesResolver)
   : Try[OMLTablesResolver]
   = {
-    val ns = resolver.context.nodes
+    val ns = resolver.context.tboxes
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.entityScalarDataPropertyExistentialRestrictionAxioms
@@ -1466,7 +1491,7 @@ object OMLTablesResolver {
     ) {
       case (Success(Tuple3(ri, mi, fi)), (guuid, x)) =>
         val gi = ri.context.g
-        val tbox = ri.context.nodes(guuid)
+        val tbox = ri.context.tboxes(guuid)
 
         val referencableEntities
         : Map[tables.UUID, api.Entity]
@@ -1496,8 +1521,8 @@ object OMLTablesResolver {
           case (acc, ax) =>
             acc +
               ri.factory.createEntityScalarDataPropertyExistentialRestrictionAxiom(
-                tbox,
                 UUID.fromString(ax.uuid),
+                tbox,
                 referencableEntities(ax.restrictedEntityUUID),
                 referencableEntityScalarDataProperty(ax.scalarPropertyUUID),
                 referencableDataRanges(ax.scalarRestrictionUUID))
@@ -1528,7 +1553,7 @@ object OMLTablesResolver {
   (resolver: OMLTablesResolver)
   : Try[OMLTablesResolver]
   = {
-    val ns = resolver.context.nodes
+    val ns = resolver.context.tboxes
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.entityScalarDataPropertyParticularRestrictionAxioms
@@ -1552,7 +1577,7 @@ object OMLTablesResolver {
     ) {
       case (Success(Tuple3(ri, mi, fi)), (guuid, x)) =>
         val gi = ri.context.g
-        val tbox = ri.context.nodes(guuid)
+        val tbox = ri.context.tboxes(guuid)
 
         val referencableEntities
         : Map[tables.UUID, api.Entity]
@@ -1577,11 +1602,11 @@ object OMLTablesResolver {
           case (acc, ax) =>
             acc +
             ri.factory.createEntityScalarDataPropertyParticularRestrictionAxiom(
-              tbox,
               UUID.fromString(ax.uuid),
-              ax.literalValue,
+              tbox,
               referencableEntities(ax.restrictedEntityUUID),
-              referencableEntityScalarDataProperty(ax.scalarPropertyUUID))
+              referencableEntityScalarDataProperty(ax.scalarPropertyUUID),
+              ax.literalValue)
         }
 
         TerminologyContext
@@ -1609,7 +1634,7 @@ object OMLTablesResolver {
   (resolver: OMLTablesResolver)
   : Try[OMLTablesResolver]
   = {
-    val ns = resolver.context.nodes
+    val ns = resolver.context.tboxes
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.entityScalarDataPropertyUniversalRestrictionAxioms
@@ -1633,7 +1658,7 @@ object OMLTablesResolver {
     ) {
       case (Success(Tuple3(ri, mi, fi)), (guuid, x)) =>
         val gi = ri.context.g
-        val tbox = ri.context.nodes(guuid)
+        val tbox = ri.context.tboxes(guuid)
 
         val referencableEntities
         : Map[tables.UUID, api.Entity]
@@ -1663,8 +1688,8 @@ object OMLTablesResolver {
           case (acc, ax) =>
             acc +
             ri.factory.createEntityScalarDataPropertyUniversalRestrictionAxiom(
-              tbox,
               UUID.fromString(ax.uuid),
+              tbox,
               referencableEntities(ax.restrictedEntityUUID),
               referencableEntityScalarDataProperty(ax.scalarPropertyUUID),
               referencableDataRanges(ax.scalarRestrictionUUID))
@@ -1695,7 +1720,7 @@ object OMLTablesResolver {
   (resolver: OMLTablesResolver)
   : Try[OMLTablesResolver]
   = {
-    val ns = resolver.context.nodes
+    val ns = resolver.context.tboxes
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.aspectSpecializationAxioms
@@ -1719,7 +1744,7 @@ object OMLTablesResolver {
     ) {
       case (Success(Tuple3(ri, mi, fi)), (guuid, x)) =>
         val gi = ri.context.g
-        val tbox = ri.context.nodes(guuid)
+        val tbox = ri.context.tboxes(guuid)
 
         val referencableEntities
         : Map[tables.UUID, api.Entity]
@@ -1743,10 +1768,10 @@ object OMLTablesResolver {
           case (acc, ax) =>
             acc +
               ri.factory.createAspectSpecializationAxiom(
-                tbox,
                 UUID.fromString(ax.uuid),
-                referencableEntities(ax.subEntityUUID),
-                referencableAspects(ax.superAspectUUID))
+                tbox,
+                referencableAspects(ax.superAspectUUID),
+                referencableEntities(ax.subEntityUUID))
         }
 
         TerminologyContext
@@ -1774,7 +1799,7 @@ object OMLTablesResolver {
   (resolver: OMLTablesResolver)
   : Try[OMLTablesResolver]
   = {
-    val ns = resolver.context.nodes
+    val ns = resolver.context.tboxes
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.conceptSpecializationAxioms
@@ -1798,7 +1823,7 @@ object OMLTablesResolver {
     ) {
       case (Success(Tuple3(ri, mi, fi)), (guuid, x)) =>
         val gi = ri.context.g
-        val tbox = ri.context.nodes(guuid)
+        val tbox = ri.context.tboxes(guuid)
 
         val referencableConcepts
         : Map[tables.UUID, api.Concept]
@@ -1817,10 +1842,10 @@ object OMLTablesResolver {
           case (acc, ax) =>
             acc +
               ri.factory.createConceptSpecializationAxiom(
-                tbox,
                 UUID.fromString(ax.uuid),
-                referencableConcepts(ax.subConceptUUID),
-                referencableConcepts(ax.superConceptUUID))
+                tbox,
+                referencableConcepts(ax.superConceptUUID),
+                referencableConcepts(ax.subConceptUUID))
         }
 
         TerminologyContext
@@ -1848,7 +1873,7 @@ object OMLTablesResolver {
   (resolver: OMLTablesResolver)
   : Try[OMLTablesResolver]
   = {
-    val ns = resolver.context.nodes
+    val ns = resolver.context.tboxes
     val g = resolver.context.g
     val (resolvable, unresolved) =
       resolver.queue.reifiedRelationshipSpecializationAxioms
@@ -1872,7 +1897,7 @@ object OMLTablesResolver {
     ) {
       case (Success(Tuple3(ri, mi, fi)), (guuid, x)) =>
         val gi = ri.context.g
-        val tbox = ri.context.nodes(guuid)
+        val tbox = ri.context.tboxes(guuid)
 
         val referencableReifiedRelationships
         : Map[tables.UUID, api.ReifiedRelationship]
@@ -1891,10 +1916,10 @@ object OMLTablesResolver {
           case (acc, ax) =>
             acc +
               ri.factory.createReifiedRelationshipSpecializationAxiom(
-                tbox,
                 UUID.fromString(ax.uuid),
-                referencableReifiedRelationships(ax.subRelationshipUUID),
-                referencableReifiedRelationships(ax.superRelationshipUUID))
+                tbox,
+                referencableReifiedRelationships(ax.superRelationshipUUID),
+                referencableReifiedRelationships(ax.subRelationshipUUID))
         }
 
         TerminologyContext
@@ -2142,8 +2167,8 @@ object OMLTablesResolver {
               ri.factory.createSpecificDisjointConceptAxiom(
                 UUID.fromString(ax.uuid),
                 bundle,
-                referencableConcepts(ax.disjointLeafUUID),
-                referencableConceptTreeDisjunctions(ax.disjointTaxonomyParentUUID))
+                referencableConceptTreeDisjunctions(ax.disjointTaxonomyParentUUID),
+                referencableConcepts(ax.disjointLeafUUID))
         }
 
         TerminologyContext
@@ -2254,9 +2279,9 @@ object OMLTablesResolver {
       // A: No, add the annotations to the (unresolved) tables.
 
       val u2 = as.foldLeft[AnnotationMapTables](u1) { case (ui, a) =>
-        val t_pre = ui.getOrElse(a.tboxUUID, Map.empty)
+        val t_pre = ui.getOrElse(a.contextUUID, Map.empty)
         val t_upd = t_pre.updated(ap, t_pre.getOrElse(ap, Seq.empty) :+ a)
-        ui.updated(a.tboxUUID, t_upd)
+        ui.updated(a.contextUUID, t_upd)
       }
 
       q1 -> u2
@@ -2268,23 +2293,23 @@ object OMLTablesResolver {
 
       // First, partition annotations in terms of assertions attributable to a known terminology
       val (t_resolvable: Seq[tables.AnnotationEntry], t_unresolved: Seq[tables.AnnotationEntry]) =
-        as.partition(a => subjects_by_terminology.contains(a.tboxUUID))
+        as.partition(a => subjects_by_terminology.contains(a.contextUUID))
 
       // Second, partition attributable annotations in terms of assertions about known subjects
       val (s_resolvable: Seq[tables.AnnotationEntry], s_unresolved: Seq[tables.AnnotationEntry]) =
         t_resolvable.partition { a =>
           subjects_by_terminology
-            .get(a.tboxUUID)
+            .get(a.contextUUID)
             .exists(_._2.contains(a.subjectUUID))
         }
 
       val q2: ResolvedAnnotationMap = s_resolvable.foldLeft[ResolvedAnnotationMap](q1) { case (qi, a) =>
         val annotations_by_prop
         : Map[api.AnnotationProperty, SortedSet[api.AnnotationEntry]]
-        = qi.getOrElse(a.tboxUUID, Map.empty)
+        = qi.getOrElse(a.contextUUID, Map.empty)
 
         subjects_by_terminology
-          .get(a.tboxUUID)
+          .get(a.contextUUID)
           .fold[ResolvedAnnotationMap](qi) { case (tbox, subjects) =>
           subjects
             .get(a.subjectUUID)
@@ -2295,7 +2320,7 @@ object OMLTablesResolver {
                 rap,
                 annotations_by_prop.getOrElse(rap, TreeSet.empty[api.AnnotationEntry]) +
                   factory.createAnnotationEntry(tbox, subject, a.value))
-            qi.updated(a.tboxUUID, with_a)
+            qi.updated(a.contextUUID, with_a)
           }
         }
       }
@@ -2313,7 +2338,7 @@ object OMLTablesResolver {
   (resolver: OMLTablesResolver)
   : Try[OMLTablesResolver]
   = {
-    val ns = resolver.context.nodes
+    val ns = resolver.context.tboxes
     val t2everything = ns.map { case (uuid, tbox) =>
         uuid.toString -> (tbox -> tbox.everything().map { e => e.uuid.toString -> e }.toMap)
     }
@@ -2335,7 +2360,7 @@ object OMLTablesResolver {
     val r1 = resolver.copy(queue = resolver.queue.copy(annotations = unresolved))
     val r2 = resolved.foldLeft[Try[OMLTablesResolver]](Success(r1)) { case (ri, (tUUID, annotations_by_property)) =>
       ri.flatMap { rj =>
-        val tbox = rj.context.nodes(UUID.fromString(tUUID))
+        val tbox = rj.context.tboxes(UUID.fromString(tUUID))
         val additions
         : SortedSet[api.AnnotationPropertyTable]
         = annotations_by_property
@@ -2369,7 +2394,7 @@ object OMLTablesResolver {
     ) {
       case (Success(Tuple3(ri, mi, fi)), (uuid, x)) =>
         val gi = ri.context.g
-        val tbox = ri.context.nodes(uuid)
+        val tbox = ri.context.tboxes(uuid)
         val statements = gi.outerNodeTraverser(gi.get(tbox))
           .foldLeft[Map[UUID, _ <: api.TerminologyBoxStatement]](Map.empty) { case (acc, box) =>
           acc ++ box.boxStatements.map(s => s.uuid -> s).toMap

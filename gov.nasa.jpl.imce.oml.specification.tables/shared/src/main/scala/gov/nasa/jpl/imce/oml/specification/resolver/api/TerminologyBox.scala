@@ -46,62 +46,62 @@ trait TerminologyBox
   /*
    * The subset of statements that are entities.
    */
-  def entities
+  override def entities
   (): scala.collection.immutable.SortedSet[Entity]
   /*
    * The subset of statements that are aspects.
    */
-  def aspects
+  override def aspects
   (): scala.collection.immutable.SortedSet[Aspect]
   /*
    * The subset of statements that are concepts.
    */
-  def concepts
+  override def concepts
   (): scala.collection.immutable.SortedSet[Concept]
   /*
    * The subset of statements that are reified relationships.
    */
-  def reifiedRelationships
+  override def reifiedRelationships
   (): scala.collection.immutable.SortedSet[ReifiedRelationship]
   /*
    * The subset of statements that are unreified relationships.
    */
-  def unreifiedRelationships
+  override def unreifiedRelationships
   (): scala.collection.immutable.SortedSet[UnreifiedRelationship]
   /*
    * The subset of statements that are data relationships.
    */
-  def dataRelationships
+  override def dataRelationships
   (): scala.collection.immutable.SortedSet[DataRelationship]
   /*
    * A map for the subset of statements that are
    * entity scalar data property terms indexed by their uuid.
    */
-  def entityScalarDataProperties
+  override def entityScalarDataProperties
   (): scala.collection.immutable.SortedSet[EntityScalarDataProperty]
   /*
    * A map for the subset of statements that are
    * data range terms indexed by their uuid.
    */
-  def dataranges
+  override def dataranges
   (): scala.collection.immutable.SortedSet[DataRange]
   /*
    * A map for the subset of statements that are
    * scalar datatype terms indexed by their uuid.
    */
-  def scalars
+  override def scalars
   (): scala.collection.immutable.SortedSet[Scalar]
   /*
    * A map for the subset of statements that are
    * structured datatype terms indexed by their uuid.
    */
-  def structures
+  override def structures
   (): scala.collection.immutable.SortedSet[Structure]
   /*
    * The subset of axioms about terms.
    */
-  def termAxioms
+  override def termAxioms
   (): scala.collection.immutable.SortedSet[TermAxiom]
-  def everything
+  override def everything
   (): scala.collection.immutable.SortedSet[TerminologyThing]
 }

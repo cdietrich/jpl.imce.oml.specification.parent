@@ -62,7 +62,7 @@ public interface TerminologyThing extends CDOObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="jpl.imce.oml.specification.ecore.UUID" unique="false"
+	 * @model dataType="jpl.imce.oml.specification.ecore.UUID" unique="false" required="true"
 	 * @generated
 	 */
 	String calculateUUID();

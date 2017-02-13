@@ -35,7 +35,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link jpl.imce.oml.specification.ecore.DescriptionBox#getKind <em>Kind</em>}</li>
- *   <li>{@link jpl.imce.oml.specification.ecore.DescriptionBox#getTerminologyExtent <em>Terminology Extent</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.DescriptionBox#getDescriptionExtent <em>Description Extent</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.DescriptionBox#getClosedWorldDefinitions <em>Closed World Definitions</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.DescriptionBox#getDescriptionBoxRefinements <em>Description Box Refinements</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.DescriptionBox#getConceptInstances <em>Concept Instances</em>}</li>
@@ -80,32 +80,32 @@ public interface DescriptionBox extends Context {
 	void setKind(DescriptionKind value);
 
 	/**
-	 * Returns the value of the '<em><b>Terminology Extent</b></em>' container reference.
+	 * Returns the value of the '<em><b>Description Extent</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.TerminologyExtent#getDescriptions <em>Descriptions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Terminology Extent</em>' container reference isn't clear,
+	 * If the meaning of the '<em>Description Extent</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Terminology Extent</em>' container reference.
-	 * @see #setTerminologyExtent(TerminologyExtent)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBox_TerminologyExtent()
+	 * @return the value of the '<em>Description Extent</em>' container reference.
+	 * @see #setDescriptionExtent(TerminologyExtent)
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBox_DescriptionExtent()
 	 * @see jpl.imce.oml.specification.ecore.TerminologyExtent#getDescriptions
 	 * @model opposite="descriptions" required="true" transient="false"
 	 * @generated
 	 */
-	TerminologyExtent getTerminologyExtent();
+	TerminologyExtent getDescriptionExtent();
 
 	/**
-	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getTerminologyExtent <em>Terminology Extent</em>}' container reference.
+	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.DescriptionBox#getDescriptionExtent <em>Description Extent</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Terminology Extent</em>' container reference.
-	 * @see #getTerminologyExtent()
+	 * @param value the new value of the '<em>Description Extent</em>' container reference.
+	 * @see #getDescriptionExtent()
 	 * @generated
 	 */
-	void setTerminologyExtent(TerminologyExtent value);
+	void setDescriptionExtent(TerminologyExtent value);
 
 	/**
 	 * Returns the value of the '<em><b>Closed World Definitions</b></em>' containment reference list.
@@ -239,5 +239,134 @@ public interface DescriptionBox extends Context {
 	 * @generated
 	 */
 	EList<UnreifiedRelationshipInstanceTuple> getUnreifiedRelationshipInstanceTuples();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getDescriptionExtent();'"
+	 * @generated
+	 */
+	TerminologyExtent extent();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[Entity]'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<Entity> entities();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[Aspect]'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<Aspect> aspects();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[Concept]'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<Concept> concepts();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[ReifiedRelationship]'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<ReifiedRelationship> reifiedRelationships();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[UnreifiedRelationship]'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<UnreifiedRelationship> unreifiedRelationships();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[DataRelationship]'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<DataRelationship> dataRelationships();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[EntityScalarDataProperty]'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<EntityScalarDataProperty> entityScalarDataProperties();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[DataRange]'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<DataRange> dataranges();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[Scalar]'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<Scalar> scalars();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[Structure]'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<Structure> structures();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[TermAxiom]'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<TermAxiom> termAxioms();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[resolver.api.TerminologyThing] ++ conceptInstances + reifiedRelationshipInstances ++ reifiedRelationshipInstanceDomains ++ reifiedRelationshipInstanceRanges ++ unreifiedRelationshipInstanceTuples'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<TerminologyThing> everything();
 
 } // DescriptionBox

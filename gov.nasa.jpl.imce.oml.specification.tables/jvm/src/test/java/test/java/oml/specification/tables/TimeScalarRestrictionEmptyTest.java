@@ -51,7 +51,7 @@ public class TimeScalarRestrictionEmptyTest {
         Assert.assertEquals(t1, s1);
 
         TimeScalarRestriction r1 = TimeScalarRestrictionHelper.fromJSON(s1);
-        Assert.assertEquals(w1.graphUUID(), r1.graphUUID());
+        Assert.assertEquals(w1.tboxUUID(), r1.tboxUUID());
         Assert.assertEquals(w1.uuid(), r1.uuid());
         Assert.assertEquals(w1.uuid(), r1.uuid());
         Assert.assertEquals(w1.name(), r1.name());

@@ -37,7 +37,7 @@ public class PlainLiteralScalarRestrictionEmptyTest {
 
         String s1 = PlainLiteralScalarRestrictionHelper.toJSON(w1);
 
-        String lan_s = (w1.language().isEmpty()) ? "[]" : w1.language().toString();
+        String lan_s = (w1.langRange().isEmpty()) ? "[]" : w1.langRange().toString();
 
         String ls = (w1.length().isEmpty()) ? "[]" : w1.length().toString();
 
@@ -48,12 +48,12 @@ public class PlainLiteralScalarRestrictionEmptyTest {
         String ps = (w1.pattern().isEmpty()) ? "[]" : w1.pattern().toString();
 
         String t1 = String.format(
-                "{\"graphUUID\":\"%s\",\"uuid\":\"%s\",\"name\":\"%s\",\"language\":%s,\"length\":%s,\"maxLength\":%s,\"minLength\":%s,\"pattern\":%s,\"restrictedRangeUUID\":\"%s\"}",
+                "{\"graphUUID\":\"%s\",\"uuid\":\"%s\",\"name\":\"%s\",\"langRange\":%s,\"length\":%s,\"maxLength\":%s,\"minLength\":%s,\"pattern\":%s,\"restrictedRangeUUID\":\"%s\"}",
                 graphUUID, uuid, name, lan_s, ls, maxL, minL, ps, restrictedRangeUUID);
         Assert.assertEquals(t1, s1);
 
         PlainLiteralScalarRestriction r1 = PlainLiteralScalarRestrictionHelper.fromJSON(s1);
-        Assert.assertEquals(w1.graphUUID(), r1.graphUUID());
+        Assert.assertEquals(w1.tboxUUID(), r1.tboxUUID());
         Assert.assertEquals(w1.uuid(), r1.uuid());
         Assert.assertEquals(w1.name(), r1.name());
         Assert.assertEquals(w1.length(), r1.length());

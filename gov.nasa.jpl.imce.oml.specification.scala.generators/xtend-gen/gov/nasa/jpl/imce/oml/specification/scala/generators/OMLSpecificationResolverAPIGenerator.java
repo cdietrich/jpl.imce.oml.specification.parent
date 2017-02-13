@@ -494,13 +494,13 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
   
   public static List<EStructuralFeature> getSortedAttributeSignature(final EClass eClass) {
     Iterable<EClass> _selfAndAllSupertypes = OMLUtilities.selfAndAllSupertypes(eClass);
-    final Function1<EClass, EList<EStructuralFeature>> _function = new Function1<EClass, EList<EStructuralFeature>>() {
+    final Function1<EClass, Iterable<EStructuralFeature>> _function = new Function1<EClass, Iterable<EStructuralFeature>>() {
       @Override
-      public EList<EStructuralFeature> apply(final EClass it) {
-        return it.getEStructuralFeatures();
+      public Iterable<EStructuralFeature> apply(final EClass it) {
+        return OMLSpecificationResolverAPIGenerator.APIStructuralFeatures(it);
       }
     };
-    Iterable<EList<EStructuralFeature>> _map = IterableExtensions.<EClass, EList<EStructuralFeature>>map(_selfAndAllSupertypes, _function);
+    Iterable<Iterable<EStructuralFeature>> _map = IterableExtensions.<EClass, Iterable<EStructuralFeature>>map(_selfAndAllSupertypes, _function);
     Iterable<EStructuralFeature> _flatten = Iterables.<EStructuralFeature>concat(_map);
     OMLUtilities.OMLFeatureCompare _oMLFeatureCompare = new OMLUtilities.OMLFeatureCompare();
     return IterableExtensions.<EStructuralFeature>sortWith(_flatten, _oMLFeatureCompare);

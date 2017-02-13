@@ -33,13 +33,13 @@ import scalax.collection.immutable.Graph
 
 case class TerminologyContext private[resolver]
 (extent: resolver.api.TerminologyExtent,
- g: Graph[resolver.api.TerminologyBox, TerminologyEdge] = Graph[resolver.api.TerminologyBox, TerminologyEdge]()) {
+ g: Graph[resolver.api.Context, TerminologyEdge] = Graph[resolver.api.Context, TerminologyEdge]()) {
 
   def topologicalOrder()
-  : Try[g.TopologicalOrder[resolver.api.TerminologyBox]]
+  : Try[g.TopologicalOrder[resolver.api.Context]]
   = g
     .topologicalSort()
-    .fold[Try[g.TopologicalOrder[resolver.api.TerminologyBox]]](
+    .fold[Try[g.TopologicalOrder[resolver.api.Context]]](
     (cycleNode: g.NodeT) =>
       Failure(new java.lang.IllegalArgumentException(
         s"TerminologyContext circularity on node: $cycleNode in graph $g")),
@@ -47,14 +47,25 @@ case class TerminologyContext private[resolver]
       Success(order.toOuter))
 
   def findFirstStartingFrom[T]
-  (b: resolver.api.TerminologyBox,
-   pf: PartialFunction[resolver.api.TerminologyBox, T])
+  (b: resolver.api.Context,
+   pf: PartialFunction[resolver.api.Context, T])
   : Option[T]
   = g.get(b).outerNodeTraverser.collectFirst(pf)
 
   val nodes
-  : Map[UUID, resolver.api.TerminologyBox]
+  : Map[UUID, resolver.api.Context]
   = g.nodes.toOuter.map(t => t.uuid -> t).toMap
+
+  val tboxes
+  : Map[UUID, resolver.api.TerminologyBox]
+  = g.nodes.toOuter
+    .flatMap {
+      case t: resolver.api.TerminologyBox =>
+        Some(t.uuid -> t)
+      case _ =>
+        None
+    }
+    .toMap
 
   val graphs
   : Map[UUID, resolver.api.TerminologyGraph]
@@ -78,12 +89,24 @@ case class TerminologyContext private[resolver]
     }
     .toMap
 
+  val descriptions
+  : Map[UUID, resolver.api.DescriptionBox]
+  = g.nodes.toOuter
+    .flatMap {
+      case t: resolver.api.DescriptionBox =>
+        Some(t.uuid -> t)
+      case _ =>
+        None
+    }
+    .toMap
+
+
   val bottomNodes
-  : Set[_ <: resolver.api.TerminologyBox]
+  : Set[_ <: resolver.api.Context]
   = g.nodes.filter(0 == _.inDegree).toOuterNodes.to[Set]
 
   val rootNodes
-  : Set[_ <: resolver.api.TerminologyBox]
+  : Set[_ <: resolver.api.Context]
   = g.nodes.filter(0 == _.outDegree).toOuterNodes.to[Set]
 
 }
@@ -92,31 +115,31 @@ object TerminologyContext {
 
   def replaceNode
   (factory: resolver.api.OMLResolvedFactory,
-   g: Graph[resolver.api.TerminologyBox, TerminologyEdge],
-   prev: resolver.api.TerminologyBox,
-   next: resolver.api.TerminologyBox)
-  : Try[Graph[resolver.api.TerminologyBox, TerminologyEdge]]
+   g: Graph[resolver.api.Context, TerminologyEdge],
+   prev: resolver.api.Context,
+   next: resolver.api.Context)
+  : Try[Graph[resolver.api.Context, TerminologyEdge]]
   = g
     .find(outerNode = prev)
-    .fold[Try[Graph[resolver.api.TerminologyBox, TerminologyEdge]]](
+    .fold[Try[Graph[resolver.api.Context, TerminologyEdge]]](
     Failure(new java.lang.IllegalArgumentException(s"prev node is not in the graph:\nprev:\n$prev\ngraph:\n$g"))
   ) { prevT =>
-    nonFatalCatch[Try[Graph[resolver.api.TerminologyBox, TerminologyEdge]]]
+    nonFatalCatch[Try[Graph[resolver.api.Context, TerminologyEdge]]]
       .withApply { (t: java.lang.Throwable) => Failure(t) }
       .apply {
-        val in: Set[TerminologyEdge[resolver.api.TerminologyBox]] = prevT.incoming.map { eT =>
+        val in: Set[TerminologyEdge[resolver.api.Context]] = prevT.incoming.map { eT =>
           val e = eT.toOuter
           require(e.target == prev)
-          e.copy[resolver.api.TerminologyBox](Tuple2(e.source, next))
+          e.copy[resolver.api.Context](Tuple2(e.source, next))
         }
-        val out: Set[TerminologyEdge[resolver.api.TerminologyBox]] = prevT.outgoing.map { eT =>
+        val out: Set[TerminologyEdge[resolver.api.Context]] = prevT.outgoing.map { eT =>
           val e = eT.toOuter
           require(e.source == prev)
-          e.copy[resolver.api.TerminologyBox](Tuple2(next, e.target))
+          e.copy[resolver.api.Context](Tuple2(next, e.target))
         }
 
-        val g1: Graph[resolver.api.TerminologyBox, TerminologyEdge] = g - prev + next
-        val g2: Graph[resolver.api.TerminologyBox, TerminologyEdge] = g1 ++ in ++ out
+        val g1: Graph[resolver.api.Context, TerminologyEdge] = g - prev + next
+        val g2: Graph[resolver.api.Context, TerminologyEdge] = g1 ++ in ++ out
         Success(g2)
       }
   }
@@ -127,6 +150,7 @@ object TerminologyContext {
   = TerminologyContext(
     factory.createTerminologyExtent(
       annotationProperties = TreeSet.empty[resolver.api.AnnotationProperty],
+      terminologyGraphs = TreeSet.empty[resolver.api.TerminologyGraph],
       bundles = TreeSet.empty[resolver.api.Bundle],
-      terminologyGraphs = TreeSet.empty[resolver.api.TerminologyGraph]))
+      descriptions = TreeSet.empty[resolver.api.DescriptionBox]))
 }

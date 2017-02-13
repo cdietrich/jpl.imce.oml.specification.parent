@@ -27,7 +27,6 @@ case class TerminologyGraph private[impl]
  override val iri: gov.nasa.jpl.imce.oml.specification.tables.IRI,
  override val annotations: scala.collection.immutable.SortedSet[Annotation],
  override val boxStatements: scala.collection.immutable.SortedSet[TerminologyBoxStatement],
- override val graphExtent: TerminologyExtent,
  override val terminologyBoxAxioms: scala.collection.immutable.SortedSet[TerminologyBoxAxiom]
 )
 extends resolver.api.TerminologyGraph
@@ -69,7 +68,7 @@ extends resolver.api.TerminologyGraph
 
   override val hashCode
   : scala.Int
-  = (uuid, kind, iri, annotations, boxStatements, graphExtent, terminologyBoxAxioms).##
+  = (uuid, kind, iri, annotations, boxStatements, terminologyBoxAxioms).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: TerminologyGraph =>
@@ -79,7 +78,6 @@ extends resolver.api.TerminologyGraph
 	    (this.iri == that.iri) &&
 	    (this.annotations == that.annotations) &&
 	    (this.boxStatements == that.boxStatements) &&
-	    (this.graphExtent == that.graphExtent) &&
 	    (this.terminologyBoxAxioms == that.terminologyBoxAxioms)
 
 	  case _ =>

@@ -160,4 +160,112 @@ public interface Context extends TerminologyThing, Resource {
 	 */
 	Context withAnnotations(EMap<AnnotationProperty, EList<AnnotationEntry>> a);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<Entity> entities();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<Aspect> aspects();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<Concept> concepts();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<ReifiedRelationship> reifiedRelationships();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<UnreifiedRelationship> unreifiedRelationships();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<DataRelationship> dataRelationships();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<EntityScalarDataProperty> entityScalarDataProperties();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<DataRange> dataranges();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<Scalar> scalars();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<Structure> structures();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<TermAxiom> termAxioms();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EList<TerminologyThing> everything();
+
 } // Context

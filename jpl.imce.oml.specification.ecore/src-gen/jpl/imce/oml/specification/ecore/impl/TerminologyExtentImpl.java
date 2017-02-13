@@ -159,7 +159,7 @@ public class TerminologyExtentImpl extends CDOObjectImpl implements TerminologyE
 	 */
 	public EList<DescriptionBox> getDescriptions() {
 		if (descriptions == null) {
-			descriptions = new EObjectContainmentWithInverseEList<DescriptionBox>(DescriptionBox.class, this, OMLPackage.TERMINOLOGY_EXTENT__DESCRIPTIONS, OMLPackage.DESCRIPTION_BOX__TERMINOLOGY_EXTENT);
+			descriptions = new EObjectContainmentWithInverseEList<DescriptionBox>(DescriptionBox.class, this, OMLPackage.TERMINOLOGY_EXTENT__DESCRIPTIONS, OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT);
 		}
 		return descriptions;
 	}

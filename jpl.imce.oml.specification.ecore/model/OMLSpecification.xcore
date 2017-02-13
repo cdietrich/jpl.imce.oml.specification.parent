@@ -157,7 +157,7 @@ abstract class TerminologyThing {
 	derived UUID[1] uuid get { calculateUUID() }
 	
 	@NotSchema
-	op UUID calculateUUID()
+	op UUID[1] calculateUUID()
 }
 
 /*
@@ -289,7 +289,7 @@ class TerminologyExtent {
 	
 	@CopyConstructor
 	@Collection(kind="SortedSet")
-	contains DescriptionBox[] descriptions opposite terminologyExtent
+	contains DescriptionBox[] descriptions opposite descriptionExtent
 }
 
 /*
@@ -335,6 +335,53 @@ abstract class Context extends TerminologyThing, Resource {
 	op Context[1] withAnnotations
 	(@Collection(kind="SortedSet") AnnotationPropertyTable[] a)
 	
+    @NotSchema
+	@Collection(kind="SortedSet")
+	op Entity[] entities()
+	
+    @NotSchema
+	@Collection(kind="SortedSet")
+	op Aspect[] aspects()
+	
+    @NotSchema
+	@Collection(kind="SortedSet")
+	op Concept[] concepts()
+	
+    @NotSchema
+	@Collection(kind="SortedSet")
+	op ReifiedRelationship[] reifiedRelationships()
+		
+    @NotSchema
+	@Collection(kind="SortedSet")
+	op UnreifiedRelationship[] unreifiedRelationships()
+	
+    @NotSchema
+	@Collection(kind="SortedSet")
+	op DataRelationship[] dataRelationships()
+	
+    @NotSchema
+	@Collection(kind="SortedSet")
+	op EntityScalarDataProperty[] entityScalarDataProperties()
+	
+    @NotSchema
+	@Collection(kind="SortedSet")
+	op DataRange[] dataranges()
+
+    @NotSchema
+	@Collection(kind="SortedSet")
+	op Scalar[] scalars()
+	
+    @NotSchema
+	@Collection(kind="SortedSet")
+	op Structure[] structures()
+	
+    @NotSchema
+	@Collection(kind="SortedSet")
+	op TermAxiom[] termAxioms()
+	
+	@NotSchema
+	@Collection(kind="SortedSet")
+	op TerminologyThing[] everything()
 }
 
 /*
@@ -375,6 +422,7 @@ abstract class TerminologyBox extends Context {
     @NotSchema
 	@Scala(code="boxStatements.selectByKindOf { case e: Entity => e }")
 	@Collection(kind="SortedSet")
+	@Override
 	op Entity[] entities()
 	
 	/*
@@ -383,6 +431,7 @@ abstract class TerminologyBox extends Context {
     @NotSchema
 	@Scala(code="boxStatements.selectByKindOf { case a: Aspect => a }")
 	@Collection(kind="SortedSet")
+	@Override
 	op Aspect[] aspects()
 	
 	/*
@@ -391,6 +440,7 @@ abstract class TerminologyBox extends Context {
     @NotSchema
 	@Scala(code="boxStatements.selectByKindOf { case c: Concept => c }")
 	@Collection(kind="SortedSet")
+	@Override
 	op Concept[] concepts()
 	
 	/*
@@ -399,6 +449,7 @@ abstract class TerminologyBox extends Context {
     @NotSchema
 	@Scala(code="boxStatements.selectByKindOf { case rr: ReifiedRelationship => rr }")
 	@Collection(kind="SortedSet")
+	@Override
 	op ReifiedRelationship[] reifiedRelationships()
 		
 	/*
@@ -407,6 +458,7 @@ abstract class TerminologyBox extends Context {
     @NotSchema
 	@Scala(code="boxStatements.selectByKindOf { case ur: UnreifiedRelationship => ur }")
 	@Collection(kind="SortedSet")
+	@Override
 	op UnreifiedRelationship[] unreifiedRelationships()
 	
 	/*
@@ -415,6 +467,7 @@ abstract class TerminologyBox extends Context {
     @NotSchema
 	@Scala(code="boxStatements.selectByKindOf { case dr: DataRelationship => dr }")
 	@Collection(kind="SortedSet")
+	@Override
 	op DataRelationship[] dataRelationships()
 	
 	/*
@@ -424,6 +477,7 @@ abstract class TerminologyBox extends Context {
     @NotSchema
 	@Scala(code="boxStatements.selectByKindOf { case dp: EntityScalarDataProperty => dp }")
 	@Collection(kind="SortedSet")
+	@Override
 	op EntityScalarDataProperty[] entityScalarDataProperties()
 	
 	/*
@@ -433,6 +487,7 @@ abstract class TerminologyBox extends Context {
     @NotSchema
 	@Scala(code="boxStatements.selectByKindOf { case dr: DataRange => dr }")
 	@Collection(kind="SortedSet")
+	@Override
 	op DataRange[] dataranges()
 	
 	/*
@@ -442,6 +497,7 @@ abstract class TerminologyBox extends Context {
     @NotSchema
 	@Scala(code="boxStatements.selectByKindOf { case s: Scalar => s }")
 	@Collection(kind="SortedSet")
+	@Override
 	op Scalar[] scalars()
 	
 	/*
@@ -451,6 +507,7 @@ abstract class TerminologyBox extends Context {
     @NotSchema
 	@Scala(code="boxStatements.selectByKindOf { case s: Structure => s }")
 	@Collection(kind="SortedSet")
+	@Override
 	op Structure[] structures()
 	
 	/*
@@ -459,11 +516,13 @@ abstract class TerminologyBox extends Context {
     @NotSchema
 	@Scala(code="boxStatements.selectByKindOf { case tx: TermAxiom => tx }")
 	@Collection(kind="SortedSet")
+	@Override
 	op TermAxiom[] termAxioms()
 	
 	@NotSchema
 	@Scala(code="scala.collection.immutable.SortedSet.empty[resolver.api.TerminologyThing] ++ boxStatements + this")
 	@Collection(kind="SortedSet")
+	@Override
 	op TerminologyThing[] everything()
 }
 
@@ -475,9 +534,11 @@ abstract class TerminologyBox extends Context {
 @Glossary
 class Bundle extends TerminologyBox {
 		
+	@NotFunctionalAPI
 	@NotSchema
 	op TerminologyExtent[1] extent() { bundleExtent }
 		
+	@NotFunctionalAPI
 	@NotSchema
 	container TerminologyExtent[1] bundleExtent opposite bundles
 	
@@ -576,9 +637,11 @@ enum TerminologyGraphKind {
 @Glossary
 class TerminologyGraph extends TerminologyBox {
 	
+	@NotFunctionalAPI
 	@NotSchema
 	op TerminologyExtent[1] extent() { graphExtent }
 		
+	@NotFunctionalAPI
 	@NotSchema
 	container TerminologyExtent[1] graphExtent opposite terminologyGraphs
 	
@@ -643,6 +706,7 @@ abstract class Term extends TerminologyBoxStatement, Resource {
 	@Override
 	id LocalName[1] name
 	
+	@NotFunctionalAPI
 	@NotSchema
 	op LocalName[1] name() { getName() }
 }
@@ -1662,8 +1726,13 @@ class DescriptionBox extends Context {
 	
 	DescriptionKind[1] kind
 	
+	@NotFunctionalAPI
 	@NotSchema
-	container TerminologyExtent[1] terminologyExtent opposite descriptions
+	op TerminologyExtent[1] extent() { descriptionExtent }
+	
+	@NotFunctionalAPI
+	@NotSchema
+	container TerminologyExtent[1] descriptionExtent opposite descriptions
 	
 	@CopyConstructor
 	@Collection(kind="SortedSet")
@@ -1692,6 +1761,78 @@ class DescriptionBox extends Context {
 	@CopyConstructor
 	@Collection(kind="SortedSet")
 	contains UnreifiedRelationshipInstanceTuple[] unreifiedRelationshipInstanceTuples opposite descriptionBox
+	
+    @NotSchema
+	@Scala(code="scala.collection.immutable.SortedSet.empty[Entity]")
+	@Collection(kind="SortedSet")
+	@Override
+	op Entity[] entities()
+	
+    @NotSchema
+	@Scala(code="scala.collection.immutable.SortedSet.empty[Aspect]")
+	@Collection(kind="SortedSet")
+	@Override
+	op Aspect[] aspects()
+	
+    @NotSchema
+	@Scala(code="scala.collection.immutable.SortedSet.empty[Concept]")
+	@Collection(kind="SortedSet")
+	@Override
+	op Concept[] concepts()
+	
+    @NotSchema
+	@Scala(code="scala.collection.immutable.SortedSet.empty[ReifiedRelationship]")
+	@Collection(kind="SortedSet")
+	@Override
+	op ReifiedRelationship[] reifiedRelationships()
+		
+    @NotSchema
+	@Scala(code="scala.collection.immutable.SortedSet.empty[UnreifiedRelationship]")
+	@Collection(kind="SortedSet")
+	@Override
+	op UnreifiedRelationship[] unreifiedRelationships()
+	
+    @NotSchema
+	@Scala(code="scala.collection.immutable.SortedSet.empty[DataRelationship]")
+	@Collection(kind="SortedSet")
+	@Override
+	op DataRelationship[] dataRelationships()
+	
+    @NotSchema
+	@Scala(code="scala.collection.immutable.SortedSet.empty[EntityScalarDataProperty]")
+	@Collection(kind="SortedSet")
+	@Override
+	op EntityScalarDataProperty[] entityScalarDataProperties()
+	
+    @NotSchema
+	@Scala(code="scala.collection.immutable.SortedSet.empty[DataRange]")
+	@Collection(kind="SortedSet")
+	@Override
+	op DataRange[] dataranges()
+	
+    @NotSchema
+	@Scala(code="scala.collection.immutable.SortedSet.empty[Scalar]")
+	@Collection(kind="SortedSet")
+	@Override
+	op Scalar[] scalars()
+	
+    @NotSchema
+	@Scala(code="scala.collection.immutable.SortedSet.empty[Structure]")
+	@Collection(kind="SortedSet")
+	@Override
+	op Structure[] structures()
+	
+    @NotSchema
+	@Scala(code="scala.collection.immutable.SortedSet.empty[TermAxiom]")
+	@Collection(kind="SortedSet")
+	@Override
+	op TermAxiom[] termAxioms()
+	
+	@NotSchema
+	@Scala(code="scala.collection.immutable.SortedSet.empty[resolver.api.TerminologyThing] ++ conceptInstances + reifiedRelationshipInstances ++ reifiedRelationshipInstanceDomains ++ reifiedRelationshipInstanceRanges ++ unreifiedRelationshipInstanceTuples")
+	@Collection(kind="SortedSet")
+	@Override
+	op TerminologyThing[] everything()
 }
 
 /*
@@ -1769,6 +1910,7 @@ abstract class TerminologyInstanceAssertion extends TerminologyThing, Resource {
 	@Override
 	id LocalName[1] name
 	
+	@NotFunctionalAPI
 	@NotSchema
 	op LocalName[1] name() { getName() }
 }

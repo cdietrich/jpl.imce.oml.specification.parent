@@ -31,11 +31,22 @@ import jpl.imce.oml.specification.ecore.Annotation;
 import jpl.imce.oml.specification.ecore.AnnotationEntry;
 import jpl.imce.oml.specification.ecore.AnnotationProperty;
 import jpl.imce.oml.specification.ecore.AnnotationSubjectPropertyValue;
+import jpl.imce.oml.specification.ecore.Aspect;
+import jpl.imce.oml.specification.ecore.Concept;
 import jpl.imce.oml.specification.ecore.Context;
+import jpl.imce.oml.specification.ecore.DataRange;
+import jpl.imce.oml.specification.ecore.DataRelationship;
+import jpl.imce.oml.specification.ecore.Entity;
+import jpl.imce.oml.specification.ecore.EntityScalarDataProperty;
 import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.ReifiedRelationship;
 import jpl.imce.oml.specification.ecore.Resource;
+import jpl.imce.oml.specification.ecore.Scalar;
+import jpl.imce.oml.specification.ecore.Structure;
+import jpl.imce.oml.specification.ecore.TermAxiom;
 import jpl.imce.oml.specification.ecore.TerminologyExtent;
 import jpl.imce.oml.specification.ecore.TerminologyThing;
+import jpl.imce.oml.specification.ecore.UnreifiedRelationship;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -240,6 +251,138 @@ public abstract class ContextImpl extends TerminologyThingImpl implements Contex
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Entity> entities() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Aspect> aspects() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Concept> concepts() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ReifiedRelationship> reifiedRelationships() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<UnreifiedRelationship> unreifiedRelationships() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<DataRelationship> dataRelationships() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<EntityScalarDataProperty> entityScalarDataProperties() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<DataRange> dataranges() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Scalar> scalars() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Structure> structures() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<TermAxiom> termAxioms() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<TerminologyThing> everything() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -382,6 +525,30 @@ public abstract class ContextImpl extends TerminologyThingImpl implements Contex
 				return annotationsByProperty();
 			case OMLPackage.CONTEXT___WITH_ANNOTATIONS__EMAP:
 				return withAnnotations((EMap<AnnotationProperty, EList<AnnotationEntry>>)arguments.get(0));
+			case OMLPackage.CONTEXT___ENTITIES:
+				return entities();
+			case OMLPackage.CONTEXT___ASPECTS:
+				return aspects();
+			case OMLPackage.CONTEXT___CONCEPTS:
+				return concepts();
+			case OMLPackage.CONTEXT___REIFIED_RELATIONSHIPS:
+				return reifiedRelationships();
+			case OMLPackage.CONTEXT___UNREIFIED_RELATIONSHIPS:
+				return unreifiedRelationships();
+			case OMLPackage.CONTEXT___DATA_RELATIONSHIPS:
+				return dataRelationships();
+			case OMLPackage.CONTEXT___ENTITY_SCALAR_DATA_PROPERTIES:
+				return entityScalarDataProperties();
+			case OMLPackage.CONTEXT___DATARANGES:
+				return dataranges();
+			case OMLPackage.CONTEXT___SCALARS:
+				return scalars();
+			case OMLPackage.CONTEXT___STRUCTURES:
+				return structures();
+			case OMLPackage.CONTEXT___TERM_AXIOMS:
+				return termAxioms();
+			case OMLPackage.CONTEXT___EVERYTHING:
+				return everything();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

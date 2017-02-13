@@ -156,7 +156,7 @@ class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
 	static def List<EStructuralFeature> getSortedAttributeSignature(EClass eClass) {
 		eClass
 		.selfAndAllSupertypes
-		.map[EStructuralFeatures]
+		.map[APIStructuralFeatures]
 		.flatten
 		.sortWith(new OMLFeatureCompare())
 	}
