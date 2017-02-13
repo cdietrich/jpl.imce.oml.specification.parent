@@ -32,7 +32,6 @@ public class OMLReferenceValueConverter extends AbstractValueConverter<String> {
     return "QNAME";
   }
   
-  @Override
   public String toString(final String value) {
     if ((value.startsWith("<") && value.endsWith(">"))) {
       return value;
@@ -42,7 +41,6 @@ public class OMLReferenceValueConverter extends AbstractValueConverter<String> {
     }
   }
   
-  @Override
   public String toValue(final String string, final INode node) throws ValueConverterException {
     if ((string.startsWith("<") && string.endsWith(">"))) {
       return string;

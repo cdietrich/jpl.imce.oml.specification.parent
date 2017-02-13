@@ -317,18 +317,10 @@ AspectSpecializationAxiom returns AspectSpecializationAxiom:
 	subEntity=[Entity|Reference] ASPECT_SPECIALIZATION_AXIOM_TOKEN superAspect=[Aspect|Reference];
 
 ConceptSpecializationAxiom returns ConceptSpecializationAxiom:
-	CONCEPT_SPECIALIZATION_AXIOM_TOKEN
-	LCURLY
-		'subConcept' subConcept=[Concept|Reference]
-		'superConcept' superConcept=[Concept|Reference]
-	RCURLY;
+	subConcept=[Concept|Reference] CONCEPT_SPECIALIZATION_AXIOM_TOKEN superConcept=[Concept|Reference];
 
 ReifiedRelationshipSpecializationAxiom returns ReifiedRelationshipSpecializationAxiom:
-	REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN
-	LCURLY
-		'subRelationship' subRelationship=[ReifiedRelationship|Reference]
-		'superRelationship' superRelationship=[ReifiedRelationship|Reference]
-	RCURLY;
+	subRelationship=[ReifiedRelationship|Reference] REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN superRelationship=[ReifiedRelationship|Reference];
 
 // 3 EntityScalarDataPropertyRestrictionAxioms
 
@@ -600,11 +592,11 @@ terminal ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN: 'entityExistentialRestricti
 
 terminal ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN: 'entityUniversalRestrictionAxiom';
 
-terminal CONCEPT_SPECIALIZATION_AXIOM_TOKEN: 'conceptSpecializationAxiom';
+terminal CONCEPT_SPECIALIZATION_AXIOM_TOKEN: 'extendsConcept';
 
 terminal ASPECT_SPECIALIZATION_AXIOM_TOKEN: 'extendsAspect';
 
-terminal REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN: 'reifiedRelationshipSpecializationAxiom';
+terminal REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN: 'extendsRelationship';
 
 terminal ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN: 'entityScalarDataPropertyExistentialRestrictionAxiom';
 
