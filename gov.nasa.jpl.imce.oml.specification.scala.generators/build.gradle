@@ -117,7 +117,7 @@ task generateOMLResolverAPI(type: JavaExec, dependsOn: generateOMLSpecificationT
 	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLSpecificationResolverAPIGenerator.xtend')
 	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLUtilities.xtend')
 	inputs.file rootDir.toPath().resolve('jpl.imce.oml.specification.ecore/model/OMLSpecification.xcore').toFile()
-	outputs.files()
+	outputs.dir rootDir.toPath().resolve('gov.nasa.jpl.imce.oml.specification.tables/shared/src/main/scala/gov/nasa/jpl/imce/oml/specification/resolver/api').toFile()
 	
 	// Suppress output as a temporary workaround for this bug:
 	// https://bugs.eclipse.org/bugs/show_bug.cgi?id=511875
@@ -138,7 +138,7 @@ task generateOMLResolverLibrary(type: JavaExec, dependsOn: generateOMLResolverAP
 	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLSpecificationResolverLibraryGenerator.xtend')
 	inputs.file new File('src/gov/nasa/jpl/imce/oml/specification/scala/generators/OMLUtilities.xtend')
 	inputs.file rootDir.toPath().resolve('jpl.imce.oml.specification.ecore/model/OMLSpecification.xcore').toFile()
-	outputs.files()
+	outputs.dir rootDir.toPath().resolve('gov.nasa.jpl.imce.oml.specification.tables/shared/src/main/scala/gov/nasa/jpl/imce/oml/specification/resolver/impl').toFile()
 	
 	// Suppress output as a temporary workaround for this bug:
 	// https://bugs.eclipse.org/bugs/show_bug.cgi?id=511875

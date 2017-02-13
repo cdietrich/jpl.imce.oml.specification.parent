@@ -18,7 +18,7 @@ buildscript {
 		}
 	}
 	dependencies {
-		classpath 'org.xtext:xtext-gradle-plugin:1.0.2'
+		classpath 'org.xtext:xtext-gradle-plugin:1.0.17'
 		classpath 'org.xtext:xtext-idea-gradle-plugin:1.0.2'
 		classpath 'plugins:com.gradleware.tooling.model:0.17.0.v20170103170240'
 	}
@@ -91,9 +91,33 @@ project.assembleTargetPlatform.inputs.file file('gradle.properties')
 subprojects { subproject ->
     if (!subproject.name.endsWith("doc") && 
 		!subproject.name.endsWith("feature") &&
-		!subproject.name.endsWith("reository") && 
-		!subproject.name.endsWith("target")) {
-        apply plugin: 'org.xtext.xtend'
+		!subproject.name.endsWith("target")) {    
+		
+		apply plugin: 'org.xtext.xtend'
+		apply plugin: 'java'
+		apply plugin: 'eclipse'
+		apply plugin: 'idea'
+		apply plugin: 'maven'
+		
+		sourceCompatibility = '1.8'
+		targetCompatibility = '1.8'
+		
+		eclipse {
+			classpath {
+			   downloadSources=true
+			   downloadJavadoc=true
+			}
+		}
+		
+		jar {
+			from('model') {
+				into('model')
+			}
+			manifest {
+				attributes 'Bundle-SymbolicName': project.name
+			}
+		}
+		
     }
 }
 
@@ -101,20 +125,13 @@ subprojects {
 
     // set the calculated version on all projects in the hierarchy
     version = rootProject.version
-    
+	
 	ext.xtextVersion = rootProject.xtextVersion
-
-	apply plugin: 'java'
+	
 	apply from: "${rootDir}/gradle/source-layout.gradle"
 	apply from: "${rootDir}/gradle/maven-deployment.gradle"
-	apply plugin: 'eclipse'
-	apply plugin: 'idea'
-	apply plugin: 'maven'
 	
 	group = 'jpl.imce.oml.specification'
-	
-	sourceCompatibility = '1.8'
-	targetCompatibility = '1.8'
 	
 	configurations.all {
 		exclude group: 'asm'
@@ -134,10 +151,4 @@ subprojects {
 	}
 	
     
-    eclipse {
-	    classpath {
-	       downloadSources=true
-	       downloadJavadoc=true
-	    }
-	}
 }

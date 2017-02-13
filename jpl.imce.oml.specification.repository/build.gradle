@@ -13,6 +13,9 @@ buildscript {
     }
 }
 
+generateXtext.onlyIf { false }
+
+
 def repositoryDir = new File(project.buildDir, 'repository')
 
 bintray {
@@ -68,3 +71,4 @@ dependencies {
 }
 
 bintrayUpload.dependsOn(createP2Repository)
+

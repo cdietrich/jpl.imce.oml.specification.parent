@@ -61,19 +61,16 @@ public class OMLSpecificationDocGenerator extends OMLUtilities {
   
   public void generate(final String targetDir) {
     final String omlXcore = "/model/OMLSpecification.xcore";
-    final Procedure1<Map<URI, URI>> _function = new Procedure1<Map<URI, URI>>() {
-      @Override
-      public void apply(final Map<URI, URI> uriMap) {
-        try {
-          URI _createURI = URI.createURI(("platform:/resource/jpl.imce.oml.specification.ecore" + omlXcore));
-          URL _resource = OMLPackage.class.getResource(omlXcore);
-          java.net.URI _uRI = _resource.toURI();
-          String _string = _uRI.toString();
-          URI _createURI_1 = URI.createURI(_string);
-          uriMap.put(_createURI, _createURI_1);
-        } catch (Throwable _e) {
-          throw Exceptions.sneakyThrow(_e);
-        }
+    final Procedure1<Map<URI, URI>> _function = (Map<URI, URI> uriMap) -> {
+      try {
+        URI _createURI = URI.createURI(("platform:/resource/jpl.imce.oml.specification.ecore" + omlXcore));
+        URL _resource = OMLPackage.class.getResource(omlXcore);
+        java.net.URI _uRI = _resource.toURI();
+        String _string = _uRI.toString();
+        URI _createURI_1 = URI.createURI(_string);
+        uriMap.put(_createURI, _createURI_1);
+      } catch (Throwable _e) {
+        throw Exceptions.sneakyThrow(_e);
       }
     };
     final XtextResourceSet set = OMLUtilities.createXcoreResourceSet(_function);
@@ -98,49 +95,31 @@ public class OMLSpecificationDocGenerator extends OMLUtilities {
       try {
         EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
         Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
-        final Function1<EClass, Boolean> _function = new Function1<EClass, Boolean>() {
-          @Override
-          public Boolean apply(final EClass it) {
-            return OMLUtilities.isGlossary(it);
-          }
+        final Function1<EClass, Boolean> _function = (EClass it) -> {
+          return OMLUtilities.isGlossary(it);
         };
         Iterable<EClass> _filter_1 = IterableExtensions.<EClass>filter(_filter, _function);
-        final Function1<EClass, String> _function_1 = new Function1<EClass, String>() {
-          @Override
-          public String apply(final EClass it) {
-            return it.getName();
-          }
+        final Function1<EClass, String> _function_1 = (EClass it) -> {
+          return it.getName();
         };
         final List<EClass> glossaryEntries = IterableExtensions.<EClass, String>sortBy(_filter_1, _function_1);
-        final Function1<EClass, Boolean> _function_2 = new Function1<EClass, Boolean>() {
-          @Override
-          public Boolean apply(final EClass it) {
-            return Boolean.valueOf(it.isAbstract());
-          }
+        final Function1<EClass, Boolean> _function_2 = (EClass it) -> {
+          return Boolean.valueOf(it.isAbstract());
         };
         final Map<Boolean, List<EClass>> entriesByAbstraction = IterableExtensions.<Boolean, EClass>groupBy(glossaryEntries, _function_2);
         List<EClass> _get = entriesByAbstraction.get(Boolean.valueOf(false));
-        final Function1<EClass, Boolean> _function_3 = new Function1<EClass, Boolean>() {
-          @Override
-          public Boolean apply(final EClass it) {
-            return OMLUtilities.isSchema(it);
-          }
+        final Function1<EClass, Boolean> _function_3 = (EClass it) -> {
+          return OMLUtilities.isSchema(it);
         };
         final Iterable<EClass> schemaEntries = IterableExtensions.<EClass>filter(_get, _function_3);
         List<EClass> _get_1 = entriesByAbstraction.get(Boolean.valueOf(false));
-        final Function1<EClass, Boolean> _function_4 = new Function1<EClass, Boolean>() {
-          @Override
-          public Boolean apply(final EClass it) {
-            return Boolean.valueOf(((OMLUtilities.isAPI(it)).booleanValue() && (!(OMLUtilities.isSchema(it)).booleanValue())));
-          }
+        final Function1<EClass, Boolean> _function_4 = (EClass it) -> {
+          return Boolean.valueOf(((OMLUtilities.isAPI(it)).booleanValue() && (!(OMLUtilities.isSchema(it)).booleanValue())));
         };
         final Iterable<EClass> apiEntries = IterableExtensions.<EClass>filter(_get_1, _function_4);
         List<EClass> _get_2 = entriesByAbstraction.get(Boolean.valueOf(false));
-        final Function1<EClass, Boolean> _function_5 = new Function1<EClass, Boolean>() {
-          @Override
-          public Boolean apply(final EClass it) {
-            return OMLUtilities.isOO(it);
-          }
+        final Function1<EClass, Boolean> _function_5 = (EClass it) -> {
+          return OMLUtilities.isOO(it);
         };
         final Iterable<EClass> ooEntries = IterableExtensions.<EClass>filter(_get_2, _function_5);
         StringConcatenation _builder = new StringConcatenation();
@@ -260,11 +239,8 @@ public class OMLSpecificationDocGenerator extends OMLUtilities {
         _builder.newLineIfNotEmpty();
         final StringBuffer b1 = new StringBuffer(_builder);
         List<EClass> _get_9 = entriesByAbstraction.get(Boolean.valueOf(true));
-        final Function2<StringBuffer, EClass, StringBuffer> _function_6 = new Function2<StringBuffer, EClass, StringBuffer>() {
-          @Override
-          public StringBuffer apply(final StringBuffer buffer, final EClass eClass) {
-            return OMLSpecificationDocGenerator.this.generateClassGlossaryContents(buffer, eClass);
-          }
+        final Function2<StringBuffer, EClass, StringBuffer> _function_6 = (StringBuffer buffer, EClass eClass) -> {
+          return this.generateClassGlossaryContents(buffer, eClass);
         };
         final StringBuffer b2 = IterableExtensions.<EClass, StringBuffer>fold(_get_9, b1, _function_6);
         StringConcatenation _builder_1 = new StringConcatenation();
@@ -286,11 +262,8 @@ public class OMLSpecificationDocGenerator extends OMLUtilities {
         b2.append(_plus_3);
         OMLUtilities.OMLTableCompare _oMLTableCompare = new OMLUtilities.OMLTableCompare();
         List<EClass> _sortWith = IterableExtensions.<EClass>sortWith(schemaEntries, _oMLTableCompare);
-        final Function2<StringBuffer, EClass, StringBuffer> _function_7 = new Function2<StringBuffer, EClass, StringBuffer>() {
-          @Override
-          public StringBuffer apply(final StringBuffer buffer, final EClass eClass) {
-            return OMLSpecificationDocGenerator.this.generateClassGlossaryContents(buffer, eClass);
-          }
+        final Function2<StringBuffer, EClass, StringBuffer> _function_7 = (StringBuffer buffer, EClass eClass) -> {
+          return this.generateClassGlossaryContents(buffer, eClass);
         };
         final StringBuffer b3 = IterableExtensions.<EClass, StringBuffer>fold(_sortWith, b2, _function_7);
         StringConcatenation _builder_3 = new StringConcatenation();
@@ -301,11 +274,8 @@ public class OMLSpecificationDocGenerator extends OMLUtilities {
         String _plus_4 = ("\n" + _builder_3);
         String _plus_5 = (_plus_4 + "\n");
         b3.append(_plus_5);
-        final Function2<StringBuffer, EClass, StringBuffer> _function_8 = new Function2<StringBuffer, EClass, StringBuffer>() {
-          @Override
-          public StringBuffer apply(final StringBuffer buffer, final EClass eClass) {
-            return OMLSpecificationDocGenerator.this.generateClassGlossaryContents(buffer, eClass);
-          }
+        final Function2<StringBuffer, EClass, StringBuffer> _function_8 = (StringBuffer buffer, EClass eClass) -> {
+          return this.generateClassGlossaryContents(buffer, eClass);
         };
         final StringBuffer b4 = IterableExtensions.<EClass, StringBuffer>fold(apiEntries, b3, _function_8);
         StringConcatenation _builder_4 = new StringConcatenation();
@@ -316,11 +286,8 @@ public class OMLSpecificationDocGenerator extends OMLUtilities {
         String _plus_6 = ("\n" + _builder_4);
         String _plus_7 = (_plus_6 + "\n");
         b4.append(_plus_7);
-        final Function2<StringBuffer, EClass, StringBuffer> _function_9 = new Function2<StringBuffer, EClass, StringBuffer>() {
-          @Override
-          public StringBuffer apply(final StringBuffer buffer, final EClass eClass) {
-            return OMLSpecificationDocGenerator.this.generateClassGlossaryContents(buffer, eClass);
-          }
+        final Function2<StringBuffer, EClass, StringBuffer> _function_9 = (StringBuffer buffer, EClass eClass) -> {
+          return this.generateClassGlossaryContents(buffer, eClass);
         };
         final StringBuffer b5 = IterableExtensions.<EClass, StringBuffer>fold(ooEntries, b4, _function_9);
         String _string = b5.toString();

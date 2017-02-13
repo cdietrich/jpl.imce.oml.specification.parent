@@ -9,15 +9,26 @@ if (name.endsWith(".tests")) {
 			resources.srcDirs = ['src', 'src-gen']
 			xtendOutputDir = 'xtend-gen'
 		}
+		all {
+			resources.exclude '**/*.g', '**/*.xtext', '**/*.mwe2', '**/*.xtend', '**/*._trace'
+		}
 	}
-} else if (name.endsWith(".feature") || name.endsWith(".repository") || name.endsWith(".doc")) {
+	
+} else if (name.endsWith(".repository")) {
 	sourceSets {
 		main {
 			java.srcDirs = []
 			resources.srcDirs = []
 		}
+		test {
+			java.srcDirs = []
+			resources.srcDirs = []
+		}
 	}
-} else {
+	
+} else if (!name.endsWith(".feature") &&
+		   !name.endsWith(".doc")) {
+	
 	sourceSets {
 		main {
 			java.srcDirs = ['src', 'src-gen']
@@ -28,20 +39,11 @@ if (name.endsWith(".tests")) {
 			java.srcDirs = []
 			resources.srcDirs = []
 		}
+		all {
+			resources.exclude '**/*.g', '**/*.xtext', '**/*.mwe2', '**/*.xtend', '**/*._trace'
+		}
 	}
-}
-
-sourceSets.all {
-	resources.exclude '**/*.g', '**/*.xtext', '**/*.mwe2', '**/*.xtend', '**/*._trace'
-}
-
-jar {
-	from('model') {
-		into('model')
-	}
-	manifest {
-		attributes 'Bundle-SymbolicName': project.name
-	}
+	
 }
 
 plugins.withId('war') {
