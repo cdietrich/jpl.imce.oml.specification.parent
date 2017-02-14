@@ -50,6 +50,7 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 
+@SuppressWarnings("all")
 public class OMLSpecificationTablesGenerator extends OMLUtilities {
   public static void main(final String[] args) {
     int _length = args.length;
