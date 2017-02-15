@@ -40,7 +40,6 @@ import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
-@SuppressWarnings("all")
 public class OMLLoadTest extends OMLUtilities {
   public static void main(final String[] args) {
     int _length = args.length;

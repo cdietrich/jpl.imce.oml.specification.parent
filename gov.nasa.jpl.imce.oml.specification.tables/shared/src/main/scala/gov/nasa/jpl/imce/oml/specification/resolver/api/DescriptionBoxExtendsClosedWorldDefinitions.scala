@@ -33,6 +33,6 @@ trait DescriptionBoxExtendsClosedWorldDefinitions
 
   def descriptionDomain
   (): DescriptionBox
-  def contextTarget
-  (): Context
+  def targetModule
+  (): Module
 }

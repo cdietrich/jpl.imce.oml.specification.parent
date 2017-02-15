@@ -424,7 +424,7 @@ class OMLUtilities {
 		"nestingTerminologyUUID",
 		"nestingContextUUID",
 		"bundleUUID",
-		"contextUUID",
+		"moduleUUID",
 		"descriptionBoxUUID",
 		"refiningDescriptionBoxUUID",
 		"singletonConceptClassifierUUID",

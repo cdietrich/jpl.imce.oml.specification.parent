@@ -281,13 +281,13 @@ public interface OMLPackage extends EPackage {
 	int ANNOTATION_ENTRY = 4;
 
 	/**
-	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * The feature id for the '<em><b>Module</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANNOTATION_ENTRY__CONTEXT = 0;
+	int ANNOTATION_ENTRY__MODULE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' reference.
@@ -428,13 +428,13 @@ public interface OMLPackage extends EPackage {
 	int ANNOTATION = 7;
 
 	/**
-	 * The feature id for the '<em><b>Context</b></em>' container reference.
+	 * The feature id for the '<em><b>Module</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANNOTATION__CONTEXT = 0;
+	int ANNOTATION__MODULE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' reference.
@@ -546,14 +546,14 @@ public interface OMLPackage extends EPackage {
 	int TERMINOLOGY_EXTENT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.ContextImpl <em>Context</em>}' class.
+	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.ModuleImpl <em>Module</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see jpl.imce.oml.specification.ecore.impl.ContextImpl
-	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getContext()
+	 * @see jpl.imce.oml.specification.ecore.impl.ModuleImpl
+	 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getModule()
 	 * @generated
 	 */
-	int CONTEXT = 9;
+	int MODULE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -562,7 +562,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT__UUID = TERMINOLOGY_THING__UUID;
+	int MODULE__UUID = TERMINOLOGY_THING__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Iri</b></em>' attribute.
@@ -571,7 +571,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT__IRI = TERMINOLOGY_THING_FEATURE_COUNT + 0;
+	int MODULE__IRI = TERMINOLOGY_THING_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -580,16 +580,16 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT__ANNOTATIONS = TERMINOLOGY_THING_FEATURE_COUNT + 1;
+	int MODULE__ANNOTATIONS = TERMINOLOGY_THING_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Context</em>' class.
+	 * The number of structural features of the '<em>Module</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_FEATURE_COUNT = TERMINOLOGY_THING_FEATURE_COUNT + 2;
+	int MODULE_FEATURE_COUNT = TERMINOLOGY_THING_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Extent</em>' operation.
@@ -598,7 +598,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT___EXTENT = TERMINOLOGY_THING_OPERATION_COUNT + 2;
+	int MODULE___EXTENT = TERMINOLOGY_THING_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Calculate UUID</em>' operation.
@@ -607,7 +607,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT___CALCULATE_UUID = TERMINOLOGY_THING_OPERATION_COUNT + 3;
+	int MODULE___CALCULATE_UUID = TERMINOLOGY_THING_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Iri</em>' operation.
@@ -616,7 +616,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT___IRI = TERMINOLOGY_THING_OPERATION_COUNT + 4;
+	int MODULE___IRI = TERMINOLOGY_THING_OPERATION_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Ns Prefix</em>' operation.
@@ -625,7 +625,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT___NS_PREFIX = TERMINOLOGY_THING_OPERATION_COUNT + 5;
+	int MODULE___NS_PREFIX = TERMINOLOGY_THING_OPERATION_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Name</em>' operation.
@@ -634,7 +634,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT___NAME = TERMINOLOGY_THING_OPERATION_COUNT + 6;
+	int MODULE___NAME = TERMINOLOGY_THING_OPERATION_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Annotations By Subject</em>' operation.
@@ -643,7 +643,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT___ANNOTATIONS_BY_SUBJECT = TERMINOLOGY_THING_OPERATION_COUNT + 7;
+	int MODULE___ANNOTATIONS_BY_SUBJECT = TERMINOLOGY_THING_OPERATION_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Annotations By Property</em>' operation.
@@ -652,7 +652,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT___ANNOTATIONS_BY_PROPERTY = TERMINOLOGY_THING_OPERATION_COUNT + 8;
+	int MODULE___ANNOTATIONS_BY_PROPERTY = TERMINOLOGY_THING_OPERATION_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>With Annotations</em>' operation.
@@ -661,7 +661,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT___WITH_ANNOTATIONS__EMAP = TERMINOLOGY_THING_OPERATION_COUNT + 9;
+	int MODULE___WITH_ANNOTATIONS__EMAP = TERMINOLOGY_THING_OPERATION_COUNT + 9;
 
 	/**
 	 * The operation id for the '<em>Entities</em>' operation.
@@ -670,7 +670,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT___ENTITIES = TERMINOLOGY_THING_OPERATION_COUNT + 10;
+	int MODULE___ENTITIES = TERMINOLOGY_THING_OPERATION_COUNT + 10;
 
 	/**
 	 * The operation id for the '<em>Aspects</em>' operation.
@@ -679,7 +679,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT___ASPECTS = TERMINOLOGY_THING_OPERATION_COUNT + 11;
+	int MODULE___ASPECTS = TERMINOLOGY_THING_OPERATION_COUNT + 11;
 
 	/**
 	 * The operation id for the '<em>Concepts</em>' operation.
@@ -688,7 +688,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT___CONCEPTS = TERMINOLOGY_THING_OPERATION_COUNT + 12;
+	int MODULE___CONCEPTS = TERMINOLOGY_THING_OPERATION_COUNT + 12;
 
 	/**
 	 * The operation id for the '<em>Reified Relationships</em>' operation.
@@ -697,7 +697,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT___REIFIED_RELATIONSHIPS = TERMINOLOGY_THING_OPERATION_COUNT + 13;
+	int MODULE___REIFIED_RELATIONSHIPS = TERMINOLOGY_THING_OPERATION_COUNT + 13;
 
 	/**
 	 * The operation id for the '<em>Unreified Relationships</em>' operation.
@@ -706,7 +706,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT___UNREIFIED_RELATIONSHIPS = TERMINOLOGY_THING_OPERATION_COUNT + 14;
+	int MODULE___UNREIFIED_RELATIONSHIPS = TERMINOLOGY_THING_OPERATION_COUNT + 14;
 
 	/**
 	 * The operation id for the '<em>Data Relationships</em>' operation.
@@ -715,7 +715,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT___DATA_RELATIONSHIPS = TERMINOLOGY_THING_OPERATION_COUNT + 15;
+	int MODULE___DATA_RELATIONSHIPS = TERMINOLOGY_THING_OPERATION_COUNT + 15;
 
 	/**
 	 * The operation id for the '<em>Entity Scalar Data Properties</em>' operation.
@@ -724,7 +724,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT___ENTITY_SCALAR_DATA_PROPERTIES = TERMINOLOGY_THING_OPERATION_COUNT + 16;
+	int MODULE___ENTITY_SCALAR_DATA_PROPERTIES = TERMINOLOGY_THING_OPERATION_COUNT + 16;
 
 	/**
 	 * The operation id for the '<em>Dataranges</em>' operation.
@@ -733,7 +733,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT___DATARANGES = TERMINOLOGY_THING_OPERATION_COUNT + 17;
+	int MODULE___DATARANGES = TERMINOLOGY_THING_OPERATION_COUNT + 17;
 
 	/**
 	 * The operation id for the '<em>Scalars</em>' operation.
@@ -742,7 +742,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT___SCALARS = TERMINOLOGY_THING_OPERATION_COUNT + 18;
+	int MODULE___SCALARS = TERMINOLOGY_THING_OPERATION_COUNT + 18;
 
 	/**
 	 * The operation id for the '<em>Structures</em>' operation.
@@ -751,7 +751,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT___STRUCTURES = TERMINOLOGY_THING_OPERATION_COUNT + 19;
+	int MODULE___STRUCTURES = TERMINOLOGY_THING_OPERATION_COUNT + 19;
 
 	/**
 	 * The operation id for the '<em>Term Axioms</em>' operation.
@@ -760,7 +760,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT___TERM_AXIOMS = TERMINOLOGY_THING_OPERATION_COUNT + 20;
+	int MODULE___TERM_AXIOMS = TERMINOLOGY_THING_OPERATION_COUNT + 20;
 
 	/**
 	 * The operation id for the '<em>Everything</em>' operation.
@@ -769,16 +769,16 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT___EVERYTHING = TERMINOLOGY_THING_OPERATION_COUNT + 21;
+	int MODULE___EVERYTHING = TERMINOLOGY_THING_OPERATION_COUNT + 21;
 
 	/**
-	 * The number of operations of the '<em>Context</em>' class.
+	 * The number of operations of the '<em>Module</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_OPERATION_COUNT = TERMINOLOGY_THING_OPERATION_COUNT + 22;
+	int MODULE_OPERATION_COUNT = TERMINOLOGY_THING_OPERATION_COUNT + 22;
 
 	/**
 	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.TerminologyBoxImpl <em>Terminology Box</em>}' class.
@@ -797,7 +797,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX__UUID = CONTEXT__UUID;
+	int TERMINOLOGY_BOX__UUID = MODULE__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Iri</b></em>' attribute.
@@ -806,7 +806,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX__IRI = CONTEXT__IRI;
+	int TERMINOLOGY_BOX__IRI = MODULE__IRI;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -815,7 +815,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX__ANNOTATIONS = CONTEXT__ANNOTATIONS;
+	int TERMINOLOGY_BOX__ANNOTATIONS = MODULE__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -824,7 +824,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX__KIND = CONTEXT_FEATURE_COUNT + 0;
+	int TERMINOLOGY_BOX__KIND = MODULE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Terminology Box Axioms</b></em>' containment reference list.
@@ -833,7 +833,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS = CONTEXT_FEATURE_COUNT + 1;
+	int TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS = MODULE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Box Statements</b></em>' containment reference list.
@@ -842,7 +842,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX__BOX_STATEMENTS = CONTEXT_FEATURE_COUNT + 2;
+	int TERMINOLOGY_BOX__BOX_STATEMENTS = MODULE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Terminology Box</em>' class.
@@ -851,7 +851,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX_FEATURE_COUNT = CONTEXT_FEATURE_COUNT + 3;
+	int TERMINOLOGY_BOX_FEATURE_COUNT = MODULE_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Extent</em>' operation.
@@ -860,7 +860,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX___EXTENT = CONTEXT___EXTENT;
+	int TERMINOLOGY_BOX___EXTENT = MODULE___EXTENT;
 
 	/**
 	 * The operation id for the '<em>Calculate UUID</em>' operation.
@@ -869,7 +869,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX___CALCULATE_UUID = CONTEXT___CALCULATE_UUID;
+	int TERMINOLOGY_BOX___CALCULATE_UUID = MODULE___CALCULATE_UUID;
 
 	/**
 	 * The operation id for the '<em>Iri</em>' operation.
@@ -878,7 +878,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX___IRI = CONTEXT___IRI;
+	int TERMINOLOGY_BOX___IRI = MODULE___IRI;
 
 	/**
 	 * The operation id for the '<em>Ns Prefix</em>' operation.
@@ -887,7 +887,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX___NS_PREFIX = CONTEXT___NS_PREFIX;
+	int TERMINOLOGY_BOX___NS_PREFIX = MODULE___NS_PREFIX;
 
 	/**
 	 * The operation id for the '<em>Name</em>' operation.
@@ -896,7 +896,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX___NAME = CONTEXT___NAME;
+	int TERMINOLOGY_BOX___NAME = MODULE___NAME;
 
 	/**
 	 * The operation id for the '<em>Annotations By Subject</em>' operation.
@@ -905,7 +905,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX___ANNOTATIONS_BY_SUBJECT = CONTEXT___ANNOTATIONS_BY_SUBJECT;
+	int TERMINOLOGY_BOX___ANNOTATIONS_BY_SUBJECT = MODULE___ANNOTATIONS_BY_SUBJECT;
 
 	/**
 	 * The operation id for the '<em>Annotations By Property</em>' operation.
@@ -914,7 +914,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX___ANNOTATIONS_BY_PROPERTY = CONTEXT___ANNOTATIONS_BY_PROPERTY;
+	int TERMINOLOGY_BOX___ANNOTATIONS_BY_PROPERTY = MODULE___ANNOTATIONS_BY_PROPERTY;
 
 	/**
 	 * The operation id for the '<em>With Annotations</em>' operation.
@@ -923,7 +923,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX___WITH_ANNOTATIONS__EMAP = CONTEXT___WITH_ANNOTATIONS__EMAP;
+	int TERMINOLOGY_BOX___WITH_ANNOTATIONS__EMAP = MODULE___WITH_ANNOTATIONS__EMAP;
 
 	/**
 	 * The operation id for the '<em>With Box Statements</em>' operation.
@@ -932,7 +932,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX___WITH_BOX_STATEMENTS__ELIST = CONTEXT_OPERATION_COUNT + 0;
+	int TERMINOLOGY_BOX___WITH_BOX_STATEMENTS__ELIST = MODULE_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Entities</em>' operation.
@@ -941,7 +941,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX___ENTITIES = CONTEXT_OPERATION_COUNT + 1;
+	int TERMINOLOGY_BOX___ENTITIES = MODULE_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Aspects</em>' operation.
@@ -950,7 +950,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX___ASPECTS = CONTEXT_OPERATION_COUNT + 2;
+	int TERMINOLOGY_BOX___ASPECTS = MODULE_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Concepts</em>' operation.
@@ -959,7 +959,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX___CONCEPTS = CONTEXT_OPERATION_COUNT + 3;
+	int TERMINOLOGY_BOX___CONCEPTS = MODULE_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Reified Relationships</em>' operation.
@@ -968,7 +968,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX___REIFIED_RELATIONSHIPS = CONTEXT_OPERATION_COUNT + 4;
+	int TERMINOLOGY_BOX___REIFIED_RELATIONSHIPS = MODULE_OPERATION_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Unreified Relationships</em>' operation.
@@ -977,7 +977,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX___UNREIFIED_RELATIONSHIPS = CONTEXT_OPERATION_COUNT + 5;
+	int TERMINOLOGY_BOX___UNREIFIED_RELATIONSHIPS = MODULE_OPERATION_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Data Relationships</em>' operation.
@@ -986,7 +986,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX___DATA_RELATIONSHIPS = CONTEXT_OPERATION_COUNT + 6;
+	int TERMINOLOGY_BOX___DATA_RELATIONSHIPS = MODULE_OPERATION_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Entity Scalar Data Properties</em>' operation.
@@ -995,7 +995,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX___ENTITY_SCALAR_DATA_PROPERTIES = CONTEXT_OPERATION_COUNT + 7;
+	int TERMINOLOGY_BOX___ENTITY_SCALAR_DATA_PROPERTIES = MODULE_OPERATION_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Dataranges</em>' operation.
@@ -1004,7 +1004,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX___DATARANGES = CONTEXT_OPERATION_COUNT + 8;
+	int TERMINOLOGY_BOX___DATARANGES = MODULE_OPERATION_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>Scalars</em>' operation.
@@ -1013,7 +1013,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX___SCALARS = CONTEXT_OPERATION_COUNT + 9;
+	int TERMINOLOGY_BOX___SCALARS = MODULE_OPERATION_COUNT + 9;
 
 	/**
 	 * The operation id for the '<em>Structures</em>' operation.
@@ -1022,7 +1022,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX___STRUCTURES = CONTEXT_OPERATION_COUNT + 10;
+	int TERMINOLOGY_BOX___STRUCTURES = MODULE_OPERATION_COUNT + 10;
 
 	/**
 	 * The operation id for the '<em>Term Axioms</em>' operation.
@@ -1031,7 +1031,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX___TERM_AXIOMS = CONTEXT_OPERATION_COUNT + 11;
+	int TERMINOLOGY_BOX___TERM_AXIOMS = MODULE_OPERATION_COUNT + 11;
 
 	/**
 	 * The operation id for the '<em>Everything</em>' operation.
@@ -1040,7 +1040,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX___EVERYTHING = CONTEXT_OPERATION_COUNT + 12;
+	int TERMINOLOGY_BOX___EVERYTHING = MODULE_OPERATION_COUNT + 12;
 
 	/**
 	 * The number of operations of the '<em>Terminology Box</em>' class.
@@ -1049,7 +1049,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINOLOGY_BOX_OPERATION_COUNT = CONTEXT_OPERATION_COUNT + 13;
+	int TERMINOLOGY_BOX_OPERATION_COUNT = MODULE_OPERATION_COUNT + 13;
 
 	/**
 	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.BundleImpl <em>Bundle</em>}' class.
@@ -7135,7 +7135,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX__UUID = CONTEXT__UUID;
+	int DESCRIPTION_BOX__UUID = MODULE__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Iri</b></em>' attribute.
@@ -7144,7 +7144,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX__IRI = CONTEXT__IRI;
+	int DESCRIPTION_BOX__IRI = MODULE__IRI;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -7153,7 +7153,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX__ANNOTATIONS = CONTEXT__ANNOTATIONS;
+	int DESCRIPTION_BOX__ANNOTATIONS = MODULE__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -7162,7 +7162,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX__KIND = CONTEXT_FEATURE_COUNT + 0;
+	int DESCRIPTION_BOX__KIND = MODULE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description Extent</b></em>' container reference.
@@ -7171,7 +7171,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX__DESCRIPTION_EXTENT = CONTEXT_FEATURE_COUNT + 1;
+	int DESCRIPTION_BOX__DESCRIPTION_EXTENT = MODULE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Closed World Definitions</b></em>' containment reference list.
@@ -7180,7 +7180,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS = CONTEXT_FEATURE_COUNT + 2;
+	int DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS = MODULE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Description Box Refinements</b></em>' containment reference list.
@@ -7189,7 +7189,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS = CONTEXT_FEATURE_COUNT + 3;
+	int DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS = MODULE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Concept Instances</b></em>' containment reference list.
@@ -7198,7 +7198,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX__CONCEPT_INSTANCES = CONTEXT_FEATURE_COUNT + 4;
+	int DESCRIPTION_BOX__CONCEPT_INSTANCES = MODULE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Reified Relationship Instances</b></em>' containment reference list.
@@ -7207,7 +7207,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES = CONTEXT_FEATURE_COUNT + 5;
+	int DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES = MODULE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Reified Relationship Instance Domains</b></em>' containment reference list.
@@ -7216,7 +7216,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS = CONTEXT_FEATURE_COUNT + 6;
+	int DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS = MODULE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Reified Relationship Instance Ranges</b></em>' containment reference list.
@@ -7225,7 +7225,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES = CONTEXT_FEATURE_COUNT + 7;
+	int DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES = MODULE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Unreified Relationship Instance Tuples</b></em>' containment reference list.
@@ -7234,7 +7234,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES = CONTEXT_FEATURE_COUNT + 8;
+	int DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES = MODULE_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Description Box</em>' class.
@@ -7243,7 +7243,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX_FEATURE_COUNT = CONTEXT_FEATURE_COUNT + 9;
+	int DESCRIPTION_BOX_FEATURE_COUNT = MODULE_FEATURE_COUNT + 9;
 
 	/**
 	 * The operation id for the '<em>Calculate UUID</em>' operation.
@@ -7252,7 +7252,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX___CALCULATE_UUID = CONTEXT___CALCULATE_UUID;
+	int DESCRIPTION_BOX___CALCULATE_UUID = MODULE___CALCULATE_UUID;
 
 	/**
 	 * The operation id for the '<em>Iri</em>' operation.
@@ -7261,7 +7261,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX___IRI = CONTEXT___IRI;
+	int DESCRIPTION_BOX___IRI = MODULE___IRI;
 
 	/**
 	 * The operation id for the '<em>Ns Prefix</em>' operation.
@@ -7270,7 +7270,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX___NS_PREFIX = CONTEXT___NS_PREFIX;
+	int DESCRIPTION_BOX___NS_PREFIX = MODULE___NS_PREFIX;
 
 	/**
 	 * The operation id for the '<em>Name</em>' operation.
@@ -7279,7 +7279,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX___NAME = CONTEXT___NAME;
+	int DESCRIPTION_BOX___NAME = MODULE___NAME;
 
 	/**
 	 * The operation id for the '<em>Annotations By Subject</em>' operation.
@@ -7288,7 +7288,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX___ANNOTATIONS_BY_SUBJECT = CONTEXT___ANNOTATIONS_BY_SUBJECT;
+	int DESCRIPTION_BOX___ANNOTATIONS_BY_SUBJECT = MODULE___ANNOTATIONS_BY_SUBJECT;
 
 	/**
 	 * The operation id for the '<em>Annotations By Property</em>' operation.
@@ -7297,7 +7297,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX___ANNOTATIONS_BY_PROPERTY = CONTEXT___ANNOTATIONS_BY_PROPERTY;
+	int DESCRIPTION_BOX___ANNOTATIONS_BY_PROPERTY = MODULE___ANNOTATIONS_BY_PROPERTY;
 
 	/**
 	 * The operation id for the '<em>With Annotations</em>' operation.
@@ -7306,7 +7306,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX___WITH_ANNOTATIONS__EMAP = CONTEXT___WITH_ANNOTATIONS__EMAP;
+	int DESCRIPTION_BOX___WITH_ANNOTATIONS__EMAP = MODULE___WITH_ANNOTATIONS__EMAP;
 
 	/**
 	 * The operation id for the '<em>Extent</em>' operation.
@@ -7315,7 +7315,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX___EXTENT = CONTEXT_OPERATION_COUNT + 0;
+	int DESCRIPTION_BOX___EXTENT = MODULE_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Entities</em>' operation.
@@ -7324,7 +7324,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX___ENTITIES = CONTEXT_OPERATION_COUNT + 1;
+	int DESCRIPTION_BOX___ENTITIES = MODULE_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Aspects</em>' operation.
@@ -7333,7 +7333,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX___ASPECTS = CONTEXT_OPERATION_COUNT + 2;
+	int DESCRIPTION_BOX___ASPECTS = MODULE_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Concepts</em>' operation.
@@ -7342,7 +7342,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX___CONCEPTS = CONTEXT_OPERATION_COUNT + 3;
+	int DESCRIPTION_BOX___CONCEPTS = MODULE_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Reified Relationships</em>' operation.
@@ -7351,7 +7351,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX___REIFIED_RELATIONSHIPS = CONTEXT_OPERATION_COUNT + 4;
+	int DESCRIPTION_BOX___REIFIED_RELATIONSHIPS = MODULE_OPERATION_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Unreified Relationships</em>' operation.
@@ -7360,7 +7360,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX___UNREIFIED_RELATIONSHIPS = CONTEXT_OPERATION_COUNT + 5;
+	int DESCRIPTION_BOX___UNREIFIED_RELATIONSHIPS = MODULE_OPERATION_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Data Relationships</em>' operation.
@@ -7369,7 +7369,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX___DATA_RELATIONSHIPS = CONTEXT_OPERATION_COUNT + 6;
+	int DESCRIPTION_BOX___DATA_RELATIONSHIPS = MODULE_OPERATION_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Entity Scalar Data Properties</em>' operation.
@@ -7378,7 +7378,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX___ENTITY_SCALAR_DATA_PROPERTIES = CONTEXT_OPERATION_COUNT + 7;
+	int DESCRIPTION_BOX___ENTITY_SCALAR_DATA_PROPERTIES = MODULE_OPERATION_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Dataranges</em>' operation.
@@ -7387,7 +7387,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX___DATARANGES = CONTEXT_OPERATION_COUNT + 8;
+	int DESCRIPTION_BOX___DATARANGES = MODULE_OPERATION_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>Scalars</em>' operation.
@@ -7396,7 +7396,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX___SCALARS = CONTEXT_OPERATION_COUNT + 9;
+	int DESCRIPTION_BOX___SCALARS = MODULE_OPERATION_COUNT + 9;
 
 	/**
 	 * The operation id for the '<em>Structures</em>' operation.
@@ -7405,7 +7405,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX___STRUCTURES = CONTEXT_OPERATION_COUNT + 10;
+	int DESCRIPTION_BOX___STRUCTURES = MODULE_OPERATION_COUNT + 10;
 
 	/**
 	 * The operation id for the '<em>Term Axioms</em>' operation.
@@ -7414,7 +7414,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX___TERM_AXIOMS = CONTEXT_OPERATION_COUNT + 11;
+	int DESCRIPTION_BOX___TERM_AXIOMS = MODULE_OPERATION_COUNT + 11;
 
 	/**
 	 * The operation id for the '<em>Everything</em>' operation.
@@ -7423,7 +7423,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX___EVERYTHING = CONTEXT_OPERATION_COUNT + 12;
+	int DESCRIPTION_BOX___EVERYTHING = MODULE_OPERATION_COUNT + 12;
 
 	/**
 	 * The number of operations of the '<em>Description Box</em>' class.
@@ -7432,7 +7432,7 @@ public interface OMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX_OPERATION_COUNT = CONTEXT_OPERATION_COUNT + 13;
+	int DESCRIPTION_BOX_OPERATION_COUNT = MODULE_OPERATION_COUNT + 13;
 
 	/**
 	 * The meta object id for the '{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxRelationshipImpl <em>Description Box Relationship</em>}' class.
@@ -7481,13 +7481,13 @@ public interface OMLPackage extends EPackage {
 	int DESCRIPTION_BOX_RELATIONSHIP___DESCRIPTION_DOMAIN = TERMINOLOGY_THING_OPERATION_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Context Target</em>' operation.
+	 * The operation id for the '<em>Target Module</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX_RELATIONSHIP___CONTEXT_TARGET = TERMINOLOGY_THING_OPERATION_COUNT + 1;
+	int DESCRIPTION_BOX_RELATIONSHIP___TARGET_MODULE = TERMINOLOGY_THING_OPERATION_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Description Box Relationship</em>' class.
@@ -7563,13 +7563,13 @@ public interface OMLPackage extends EPackage {
 	int DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS___DESCRIPTION_DOMAIN = DESCRIPTION_BOX_RELATIONSHIP_OPERATION_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Context Target</em>' operation.
+	 * The operation id for the '<em>Target Module</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS___CONTEXT_TARGET = DESCRIPTION_BOX_RELATIONSHIP_OPERATION_COUNT + 1;
+	int DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS___TARGET_MODULE = DESCRIPTION_BOX_RELATIONSHIP_OPERATION_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Description Box Extends Closed World Definitions</em>' class.
@@ -7645,13 +7645,13 @@ public interface OMLPackage extends EPackage {
 	int DESCRIPTION_BOX_REFINEMENT___DESCRIPTION_DOMAIN = DESCRIPTION_BOX_RELATIONSHIP_OPERATION_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Context Target</em>' operation.
+	 * The operation id for the '<em>Target Module</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DESCRIPTION_BOX_REFINEMENT___CONTEXT_TARGET = DESCRIPTION_BOX_RELATIONSHIP_OPERATION_COUNT + 1;
+	int DESCRIPTION_BOX_REFINEMENT___TARGET_MODULE = DESCRIPTION_BOX_RELATIONSHIP_OPERATION_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Description Box Refinement</em>' class.
@@ -9203,15 +9203,15 @@ public interface OMLPackage extends EPackage {
 	EClass getAnnotationEntry();
 
 	/**
-	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.AnnotationEntry#getContext <em>Context</em>}'.
+	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.AnnotationEntry#getModule <em>Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Context</em>'.
-	 * @see jpl.imce.oml.specification.ecore.AnnotationEntry#getContext()
+	 * @return the meta object for the reference '<em>Module</em>'.
+	 * @see jpl.imce.oml.specification.ecore.AnnotationEntry#getModule()
 	 * @see #getAnnotationEntry()
 	 * @generated
 	 */
-	EReference getAnnotationEntry_Context();
+	EReference getAnnotationEntry_Module();
 
 	/**
 	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.AnnotationEntry#getSubject <em>Subject</em>}'.
@@ -9312,15 +9312,15 @@ public interface OMLPackage extends EPackage {
 	EClass getAnnotation();
 
 	/**
-	 * Returns the meta object for the container reference '{@link jpl.imce.oml.specification.ecore.Annotation#getContext <em>Context</em>}'.
+	 * Returns the meta object for the container reference '{@link jpl.imce.oml.specification.ecore.Annotation#getModule <em>Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Context</em>'.
-	 * @see jpl.imce.oml.specification.ecore.Annotation#getContext()
+	 * @return the meta object for the container reference '<em>Module</em>'.
+	 * @see jpl.imce.oml.specification.ecore.Annotation#getModule()
 	 * @see #getAnnotation()
 	 * @generated
 	 */
-	EReference getAnnotation_Context();
+	EReference getAnnotation_Module();
 
 	/**
 	 * Returns the meta object for the reference '{@link jpl.imce.oml.specification.ecore.Annotation#getProperty <em>Property</em>}'.
@@ -9410,236 +9410,236 @@ public interface OMLPackage extends EPackage {
 	EReference getTerminologyExtent_Descriptions();
 
 	/**
-	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.Context <em>Context</em>}'.
+	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.Module <em>Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Context</em>'.
-	 * @see jpl.imce.oml.specification.ecore.Context
+	 * @return the meta object for class '<em>Module</em>'.
+	 * @see jpl.imce.oml.specification.ecore.Module
 	 * @generated
 	 */
-	EClass getContext();
+	EClass getModule();
 
 	/**
-	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.Context#getIri <em>Iri</em>}'.
+	 * Returns the meta object for the attribute '{@link jpl.imce.oml.specification.ecore.Module#getIri <em>Iri</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Iri</em>'.
-	 * @see jpl.imce.oml.specification.ecore.Context#getIri()
-	 * @see #getContext()
+	 * @see jpl.imce.oml.specification.ecore.Module#getIri()
+	 * @see #getModule()
 	 * @generated
 	 */
-	EAttribute getContext_Iri();
+	EAttribute getModule_Iri();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link jpl.imce.oml.specification.ecore.Context#getAnnotations <em>Annotations</em>}'.
+	 * Returns the meta object for the containment reference list '{@link jpl.imce.oml.specification.ecore.Module#getAnnotations <em>Annotations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Annotations</em>'.
-	 * @see jpl.imce.oml.specification.ecore.Context#getAnnotations()
-	 * @see #getContext()
+	 * @see jpl.imce.oml.specification.ecore.Module#getAnnotations()
+	 * @see #getModule()
 	 * @generated
 	 */
-	EReference getContext_Annotations();
+	EReference getModule_Annotations();
 
 	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#extent() <em>Extent</em>}' operation.
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Module#extent() <em>Extent</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Extent</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.Context#extent()
+	 * @see jpl.imce.oml.specification.ecore.Module#extent()
 	 * @generated
 	 */
-	EOperation getContext__Extent();
+	EOperation getModule__Extent();
 
 	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#calculateUUID() <em>Calculate UUID</em>}' operation.
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Module#calculateUUID() <em>Calculate UUID</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Calculate UUID</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.Context#calculateUUID()
+	 * @see jpl.imce.oml.specification.ecore.Module#calculateUUID()
 	 * @generated
 	 */
-	EOperation getContext__CalculateUUID();
+	EOperation getModule__CalculateUUID();
 
 	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#iri() <em>Iri</em>}' operation.
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Module#iri() <em>Iri</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Iri</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.Context#iri()
+	 * @see jpl.imce.oml.specification.ecore.Module#iri()
 	 * @generated
 	 */
-	EOperation getContext__Iri();
+	EOperation getModule__Iri();
 
 	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#nsPrefix() <em>Ns Prefix</em>}' operation.
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Module#nsPrefix() <em>Ns Prefix</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Ns Prefix</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.Context#nsPrefix()
+	 * @see jpl.imce.oml.specification.ecore.Module#nsPrefix()
 	 * @generated
 	 */
-	EOperation getContext__NsPrefix();
+	EOperation getModule__NsPrefix();
 
 	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#name() <em>Name</em>}' operation.
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Module#name() <em>Name</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Name</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.Context#name()
+	 * @see jpl.imce.oml.specification.ecore.Module#name()
 	 * @generated
 	 */
-	EOperation getContext__Name();
+	EOperation getModule__Name();
 
 	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#annotationsBySubject() <em>Annotations By Subject</em>}' operation.
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Module#annotationsBySubject() <em>Annotations By Subject</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Annotations By Subject</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.Context#annotationsBySubject()
+	 * @see jpl.imce.oml.specification.ecore.Module#annotationsBySubject()
 	 * @generated
 	 */
-	EOperation getContext__AnnotationsBySubject();
+	EOperation getModule__AnnotationsBySubject();
 
 	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#annotationsByProperty() <em>Annotations By Property</em>}' operation.
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Module#annotationsByProperty() <em>Annotations By Property</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Annotations By Property</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.Context#annotationsByProperty()
+	 * @see jpl.imce.oml.specification.ecore.Module#annotationsByProperty()
 	 * @generated
 	 */
-	EOperation getContext__AnnotationsByProperty();
+	EOperation getModule__AnnotationsByProperty();
 
 	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#withAnnotations(org.eclipse.emf.common.util.EMap) <em>With Annotations</em>}' operation.
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Module#withAnnotations(org.eclipse.emf.common.util.EMap) <em>With Annotations</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>With Annotations</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.Context#withAnnotations(org.eclipse.emf.common.util.EMap)
+	 * @see jpl.imce.oml.specification.ecore.Module#withAnnotations(org.eclipse.emf.common.util.EMap)
 	 * @generated
 	 */
-	EOperation getContext__WithAnnotations__EMap();
+	EOperation getModule__WithAnnotations__EMap();
 
 	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#entities() <em>Entities</em>}' operation.
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Module#entities() <em>Entities</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Entities</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.Context#entities()
+	 * @see jpl.imce.oml.specification.ecore.Module#entities()
 	 * @generated
 	 */
-	EOperation getContext__Entities();
+	EOperation getModule__Entities();
 
 	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#aspects() <em>Aspects</em>}' operation.
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Module#aspects() <em>Aspects</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Aspects</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.Context#aspects()
+	 * @see jpl.imce.oml.specification.ecore.Module#aspects()
 	 * @generated
 	 */
-	EOperation getContext__Aspects();
+	EOperation getModule__Aspects();
 
 	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#concepts() <em>Concepts</em>}' operation.
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Module#concepts() <em>Concepts</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Concepts</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.Context#concepts()
+	 * @see jpl.imce.oml.specification.ecore.Module#concepts()
 	 * @generated
 	 */
-	EOperation getContext__Concepts();
+	EOperation getModule__Concepts();
 
 	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#reifiedRelationships() <em>Reified Relationships</em>}' operation.
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Module#reifiedRelationships() <em>Reified Relationships</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Reified Relationships</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.Context#reifiedRelationships()
+	 * @see jpl.imce.oml.specification.ecore.Module#reifiedRelationships()
 	 * @generated
 	 */
-	EOperation getContext__ReifiedRelationships();
+	EOperation getModule__ReifiedRelationships();
 
 	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#unreifiedRelationships() <em>Unreified Relationships</em>}' operation.
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Module#unreifiedRelationships() <em>Unreified Relationships</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Unreified Relationships</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.Context#unreifiedRelationships()
+	 * @see jpl.imce.oml.specification.ecore.Module#unreifiedRelationships()
 	 * @generated
 	 */
-	EOperation getContext__UnreifiedRelationships();
+	EOperation getModule__UnreifiedRelationships();
 
 	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#dataRelationships() <em>Data Relationships</em>}' operation.
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Module#dataRelationships() <em>Data Relationships</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Data Relationships</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.Context#dataRelationships()
+	 * @see jpl.imce.oml.specification.ecore.Module#dataRelationships()
 	 * @generated
 	 */
-	EOperation getContext__DataRelationships();
+	EOperation getModule__DataRelationships();
 
 	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#entityScalarDataProperties() <em>Entity Scalar Data Properties</em>}' operation.
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Module#entityScalarDataProperties() <em>Entity Scalar Data Properties</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Entity Scalar Data Properties</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.Context#entityScalarDataProperties()
+	 * @see jpl.imce.oml.specification.ecore.Module#entityScalarDataProperties()
 	 * @generated
 	 */
-	EOperation getContext__EntityScalarDataProperties();
+	EOperation getModule__EntityScalarDataProperties();
 
 	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#dataranges() <em>Dataranges</em>}' operation.
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Module#dataranges() <em>Dataranges</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Dataranges</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.Context#dataranges()
+	 * @see jpl.imce.oml.specification.ecore.Module#dataranges()
 	 * @generated
 	 */
-	EOperation getContext__Dataranges();
+	EOperation getModule__Dataranges();
 
 	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#scalars() <em>Scalars</em>}' operation.
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Module#scalars() <em>Scalars</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Scalars</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.Context#scalars()
+	 * @see jpl.imce.oml.specification.ecore.Module#scalars()
 	 * @generated
 	 */
-	EOperation getContext__Scalars();
+	EOperation getModule__Scalars();
 
 	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#structures() <em>Structures</em>}' operation.
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Module#structures() <em>Structures</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Structures</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.Context#structures()
+	 * @see jpl.imce.oml.specification.ecore.Module#structures()
 	 * @generated
 	 */
-	EOperation getContext__Structures();
+	EOperation getModule__Structures();
 
 	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#termAxioms() <em>Term Axioms</em>}' operation.
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Module#termAxioms() <em>Term Axioms</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Term Axioms</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.Context#termAxioms()
+	 * @see jpl.imce.oml.specification.ecore.Module#termAxioms()
 	 * @generated
 	 */
-	EOperation getContext__TermAxioms();
+	EOperation getModule__TermAxioms();
 
 	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Context#everything() <em>Everything</em>}' operation.
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.Module#everything() <em>Everything</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Everything</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.Context#everything()
+	 * @see jpl.imce.oml.specification.ecore.Module#everything()
 	 * @generated
 	 */
-	EOperation getContext__Everything();
+	EOperation getModule__Everything();
 
 	/**
 	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.TerminologyBox <em>Terminology Box</em>}'.
@@ -12092,14 +12092,14 @@ public interface OMLPackage extends EPackage {
 	EOperation getDescriptionBoxRelationship__DescriptionDomain();
 
 	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBoxRelationship#contextTarget() <em>Context Target</em>}' operation.
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBoxRelationship#targetModule() <em>Target Module</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Context Target</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.DescriptionBoxRelationship#contextTarget()
+	 * @return the meta object for the '<em>Target Module</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBoxRelationship#targetModule()
 	 * @generated
 	 */
-	EOperation getDescriptionBoxRelationship__ContextTarget();
+	EOperation getDescriptionBoxRelationship__TargetModule();
 
 	/**
 	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions <em>Description Box Extends Closed World Definitions</em>}'.
@@ -12144,14 +12144,14 @@ public interface OMLPackage extends EPackage {
 	EOperation getDescriptionBoxExtendsClosedWorldDefinitions__DescriptionDomain();
 
 	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions#contextTarget() <em>Context Target</em>}' operation.
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions#targetModule() <em>Target Module</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Context Target</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions#contextTarget()
+	 * @return the meta object for the '<em>Target Module</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions#targetModule()
 	 * @generated
 	 */
-	EOperation getDescriptionBoxExtendsClosedWorldDefinitions__ContextTarget();
+	EOperation getDescriptionBoxExtendsClosedWorldDefinitions__TargetModule();
 
 	/**
 	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.DescriptionBoxRefinement <em>Description Box Refinement</em>}'.
@@ -12196,14 +12196,14 @@ public interface OMLPackage extends EPackage {
 	EOperation getDescriptionBoxRefinement__DescriptionDomain();
 
 	/**
-	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBoxRefinement#contextTarget() <em>Context Target</em>}' operation.
+	 * Returns the meta object for the '{@link jpl.imce.oml.specification.ecore.DescriptionBoxRefinement#targetModule() <em>Target Module</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Context Target</em>' operation.
-	 * @see jpl.imce.oml.specification.ecore.DescriptionBoxRefinement#contextTarget()
+	 * @return the meta object for the '<em>Target Module</em>' operation.
+	 * @see jpl.imce.oml.specification.ecore.DescriptionBoxRefinement#targetModule()
 	 * @generated
 	 */
-	EOperation getDescriptionBoxRefinement__ContextTarget();
+	EOperation getDescriptionBoxRefinement__TargetModule();
 
 	/**
 	 * Returns the meta object for class '{@link jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion <em>Terminology Instance Assertion</em>}'.
@@ -12956,12 +12956,12 @@ public interface OMLPackage extends EPackage {
 		EClass ANNOTATION_ENTRY = eINSTANCE.getAnnotationEntry();
 
 		/**
-		 * The meta object literal for the '<em><b>Context</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Module</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ANNOTATION_ENTRY__CONTEXT = eINSTANCE.getAnnotationEntry_Context();
+		EReference ANNOTATION_ENTRY__MODULE = eINSTANCE.getAnnotationEntry_Module();
 
 		/**
 		 * The meta object literal for the '<em><b>Subject</b></em>' reference feature.
@@ -13042,12 +13042,12 @@ public interface OMLPackage extends EPackage {
 		EClass ANNOTATION = eINSTANCE.getAnnotation();
 
 		/**
-		 * The meta object literal for the '<em><b>Context</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Module</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ANNOTATION__CONTEXT = eINSTANCE.getAnnotation_Context();
+		EReference ANNOTATION__MODULE = eINSTANCE.getAnnotation_Module();
 
 		/**
 		 * The meta object literal for the '<em><b>Property</b></em>' reference feature.
@@ -13116,14 +13116,14 @@ public interface OMLPackage extends EPackage {
 		EReference TERMINOLOGY_EXTENT__DESCRIPTIONS = eINSTANCE.getTerminologyExtent_Descriptions();
 
 		/**
-		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.ContextImpl <em>Context</em>}' class.
+		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.ModuleImpl <em>Module</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see jpl.imce.oml.specification.ecore.impl.ContextImpl
-		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getContext()
+		 * @see jpl.imce.oml.specification.ecore.impl.ModuleImpl
+		 * @see jpl.imce.oml.specification.ecore.impl.OMLPackageImpl#getModule()
 		 * @generated
 		 */
-		EClass CONTEXT = eINSTANCE.getContext();
+		EClass MODULE = eINSTANCE.getModule();
 
 		/**
 		 * The meta object literal for the '<em><b>Iri</b></em>' attribute feature.
@@ -13131,7 +13131,7 @@ public interface OMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTEXT__IRI = eINSTANCE.getContext_Iri();
+		EAttribute MODULE__IRI = eINSTANCE.getModule_Iri();
 
 		/**
 		 * The meta object literal for the '<em><b>Annotations</b></em>' containment reference list feature.
@@ -13139,7 +13139,7 @@ public interface OMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONTEXT__ANNOTATIONS = eINSTANCE.getContext_Annotations();
+		EReference MODULE__ANNOTATIONS = eINSTANCE.getModule_Annotations();
 
 		/**
 		 * The meta object literal for the '<em><b>Extent</b></em>' operation.
@@ -13147,7 +13147,7 @@ public interface OMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONTEXT___EXTENT = eINSTANCE.getContext__Extent();
+		EOperation MODULE___EXTENT = eINSTANCE.getModule__Extent();
 
 		/**
 		 * The meta object literal for the '<em><b>Calculate UUID</b></em>' operation.
@@ -13155,7 +13155,7 @@ public interface OMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONTEXT___CALCULATE_UUID = eINSTANCE.getContext__CalculateUUID();
+		EOperation MODULE___CALCULATE_UUID = eINSTANCE.getModule__CalculateUUID();
 
 		/**
 		 * The meta object literal for the '<em><b>Iri</b></em>' operation.
@@ -13163,7 +13163,7 @@ public interface OMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONTEXT___IRI = eINSTANCE.getContext__Iri();
+		EOperation MODULE___IRI = eINSTANCE.getModule__Iri();
 
 		/**
 		 * The meta object literal for the '<em><b>Ns Prefix</b></em>' operation.
@@ -13171,7 +13171,7 @@ public interface OMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONTEXT___NS_PREFIX = eINSTANCE.getContext__NsPrefix();
+		EOperation MODULE___NS_PREFIX = eINSTANCE.getModule__NsPrefix();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' operation.
@@ -13179,7 +13179,7 @@ public interface OMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONTEXT___NAME = eINSTANCE.getContext__Name();
+		EOperation MODULE___NAME = eINSTANCE.getModule__Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Annotations By Subject</b></em>' operation.
@@ -13187,7 +13187,7 @@ public interface OMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONTEXT___ANNOTATIONS_BY_SUBJECT = eINSTANCE.getContext__AnnotationsBySubject();
+		EOperation MODULE___ANNOTATIONS_BY_SUBJECT = eINSTANCE.getModule__AnnotationsBySubject();
 
 		/**
 		 * The meta object literal for the '<em><b>Annotations By Property</b></em>' operation.
@@ -13195,7 +13195,7 @@ public interface OMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONTEXT___ANNOTATIONS_BY_PROPERTY = eINSTANCE.getContext__AnnotationsByProperty();
+		EOperation MODULE___ANNOTATIONS_BY_PROPERTY = eINSTANCE.getModule__AnnotationsByProperty();
 
 		/**
 		 * The meta object literal for the '<em><b>With Annotations</b></em>' operation.
@@ -13203,7 +13203,7 @@ public interface OMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONTEXT___WITH_ANNOTATIONS__EMAP = eINSTANCE.getContext__WithAnnotations__EMap();
+		EOperation MODULE___WITH_ANNOTATIONS__EMAP = eINSTANCE.getModule__WithAnnotations__EMap();
 
 		/**
 		 * The meta object literal for the '<em><b>Entities</b></em>' operation.
@@ -13211,7 +13211,7 @@ public interface OMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONTEXT___ENTITIES = eINSTANCE.getContext__Entities();
+		EOperation MODULE___ENTITIES = eINSTANCE.getModule__Entities();
 
 		/**
 		 * The meta object literal for the '<em><b>Aspects</b></em>' operation.
@@ -13219,7 +13219,7 @@ public interface OMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONTEXT___ASPECTS = eINSTANCE.getContext__Aspects();
+		EOperation MODULE___ASPECTS = eINSTANCE.getModule__Aspects();
 
 		/**
 		 * The meta object literal for the '<em><b>Concepts</b></em>' operation.
@@ -13227,7 +13227,7 @@ public interface OMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONTEXT___CONCEPTS = eINSTANCE.getContext__Concepts();
+		EOperation MODULE___CONCEPTS = eINSTANCE.getModule__Concepts();
 
 		/**
 		 * The meta object literal for the '<em><b>Reified Relationships</b></em>' operation.
@@ -13235,7 +13235,7 @@ public interface OMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONTEXT___REIFIED_RELATIONSHIPS = eINSTANCE.getContext__ReifiedRelationships();
+		EOperation MODULE___REIFIED_RELATIONSHIPS = eINSTANCE.getModule__ReifiedRelationships();
 
 		/**
 		 * The meta object literal for the '<em><b>Unreified Relationships</b></em>' operation.
@@ -13243,7 +13243,7 @@ public interface OMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONTEXT___UNREIFIED_RELATIONSHIPS = eINSTANCE.getContext__UnreifiedRelationships();
+		EOperation MODULE___UNREIFIED_RELATIONSHIPS = eINSTANCE.getModule__UnreifiedRelationships();
 
 		/**
 		 * The meta object literal for the '<em><b>Data Relationships</b></em>' operation.
@@ -13251,7 +13251,7 @@ public interface OMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONTEXT___DATA_RELATIONSHIPS = eINSTANCE.getContext__DataRelationships();
+		EOperation MODULE___DATA_RELATIONSHIPS = eINSTANCE.getModule__DataRelationships();
 
 		/**
 		 * The meta object literal for the '<em><b>Entity Scalar Data Properties</b></em>' operation.
@@ -13259,7 +13259,7 @@ public interface OMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONTEXT___ENTITY_SCALAR_DATA_PROPERTIES = eINSTANCE.getContext__EntityScalarDataProperties();
+		EOperation MODULE___ENTITY_SCALAR_DATA_PROPERTIES = eINSTANCE.getModule__EntityScalarDataProperties();
 
 		/**
 		 * The meta object literal for the '<em><b>Dataranges</b></em>' operation.
@@ -13267,7 +13267,7 @@ public interface OMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONTEXT___DATARANGES = eINSTANCE.getContext__Dataranges();
+		EOperation MODULE___DATARANGES = eINSTANCE.getModule__Dataranges();
 
 		/**
 		 * The meta object literal for the '<em><b>Scalars</b></em>' operation.
@@ -13275,7 +13275,7 @@ public interface OMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONTEXT___SCALARS = eINSTANCE.getContext__Scalars();
+		EOperation MODULE___SCALARS = eINSTANCE.getModule__Scalars();
 
 		/**
 		 * The meta object literal for the '<em><b>Structures</b></em>' operation.
@@ -13283,7 +13283,7 @@ public interface OMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONTEXT___STRUCTURES = eINSTANCE.getContext__Structures();
+		EOperation MODULE___STRUCTURES = eINSTANCE.getModule__Structures();
 
 		/**
 		 * The meta object literal for the '<em><b>Term Axioms</b></em>' operation.
@@ -13291,7 +13291,7 @@ public interface OMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONTEXT___TERM_AXIOMS = eINSTANCE.getContext__TermAxioms();
+		EOperation MODULE___TERM_AXIOMS = eINSTANCE.getModule__TermAxioms();
 
 		/**
 		 * The meta object literal for the '<em><b>Everything</b></em>' operation.
@@ -13299,7 +13299,7 @@ public interface OMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONTEXT___EVERYTHING = eINSTANCE.getContext__Everything();
+		EOperation MODULE___EVERYTHING = eINSTANCE.getModule__Everything();
 
 		/**
 		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.TerminologyBoxImpl <em>Terminology Box</em>}' class.
@@ -15324,12 +15324,12 @@ public interface OMLPackage extends EPackage {
 		EOperation DESCRIPTION_BOX_RELATIONSHIP___DESCRIPTION_DOMAIN = eINSTANCE.getDescriptionBoxRelationship__DescriptionDomain();
 
 		/**
-		 * The meta object literal for the '<em><b>Context Target</b></em>' operation.
+		 * The meta object literal for the '<em><b>Target Module</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation DESCRIPTION_BOX_RELATIONSHIP___CONTEXT_TARGET = eINSTANCE.getDescriptionBoxRelationship__ContextTarget();
+		EOperation DESCRIPTION_BOX_RELATIONSHIP___TARGET_MODULE = eINSTANCE.getDescriptionBoxRelationship__TargetModule();
 
 		/**
 		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxExtendsClosedWorldDefinitionsImpl <em>Description Box Extends Closed World Definitions</em>}' class.
@@ -15366,12 +15366,12 @@ public interface OMLPackage extends EPackage {
 		EOperation DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS___DESCRIPTION_DOMAIN = eINSTANCE.getDescriptionBoxExtendsClosedWorldDefinitions__DescriptionDomain();
 
 		/**
-		 * The meta object literal for the '<em><b>Context Target</b></em>' operation.
+		 * The meta object literal for the '<em><b>Target Module</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS___CONTEXT_TARGET = eINSTANCE.getDescriptionBoxExtendsClosedWorldDefinitions__ContextTarget();
+		EOperation DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS___TARGET_MODULE = eINSTANCE.getDescriptionBoxExtendsClosedWorldDefinitions__TargetModule();
 
 		/**
 		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.DescriptionBoxRefinementImpl <em>Description Box Refinement</em>}' class.
@@ -15408,12 +15408,12 @@ public interface OMLPackage extends EPackage {
 		EOperation DESCRIPTION_BOX_REFINEMENT___DESCRIPTION_DOMAIN = eINSTANCE.getDescriptionBoxRefinement__DescriptionDomain();
 
 		/**
-		 * The meta object literal for the '<em><b>Context Target</b></em>' operation.
+		 * The meta object literal for the '<em><b>Target Module</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation DESCRIPTION_BOX_REFINEMENT___CONTEXT_TARGET = eINSTANCE.getDescriptionBoxRefinement__ContextTarget();
+		EOperation DESCRIPTION_BOX_REFINEMENT___TARGET_MODULE = eINSTANCE.getDescriptionBoxRefinement__TargetModule();
 
 		/**
 		 * The meta object literal for the '{@link jpl.imce.oml.specification.ecore.impl.TerminologyInstanceAssertionImpl <em>Terminology Instance Assertion</em>}' class.

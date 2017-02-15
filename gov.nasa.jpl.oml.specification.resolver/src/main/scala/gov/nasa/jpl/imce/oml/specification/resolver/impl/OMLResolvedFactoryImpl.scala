@@ -25,28 +25,28 @@ case class OMLResolvedFactoryImpl() extends resolver.api.OMLResolvedFactory {
   // Annotation
   
   def createAnnotation
-  ( context: Context,
-    subject: TerminologyThing,
+  ( subject: TerminologyThing,
     property: AnnotationProperty,
-    value: scala.Predef.String)
+    value: scala.Predef.String,
+    module: Module)
   : resolver.api.Annotation
   = resolver.impl.Annotation(
-    context,
     subject,
     property,
-    value )
+    value,
+    module )
   
   // AnnotationEntry
   
   def createAnnotationEntry
-  ( context: Context,
-    subject: TerminologyThing,
-    value: scala.Predef.String)
+  ( subject: TerminologyThing,
+    value: scala.Predef.String,
+    module: Module)
   : resolver.api.AnnotationEntry
   = resolver.impl.AnnotationEntry(
-    context,
     subject,
-    value )
+    value,
+    module )
   
   // AnnotationProperty
   

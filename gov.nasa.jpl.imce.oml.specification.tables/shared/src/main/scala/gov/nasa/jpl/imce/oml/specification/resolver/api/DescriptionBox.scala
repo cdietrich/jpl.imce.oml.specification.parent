@@ -23,7 +23,7 @@ package gov.nasa.jpl.imce.oml.specification.resolver.api
  * about [OWL2-DL NamedIndividuals] mapped from OML TerminologyInstanceAssertion(s).
  */
 trait DescriptionBox
-  extends Context
+  extends Module
 {
 
   val kind: gov.nasa.jpl.imce.oml.specification.tables.DescriptionKind

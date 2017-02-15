@@ -22,23 +22,23 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class AnnotationEntry private[impl] 
 (
- override val context: Context,
  override val subject: TerminologyThing,
- override val value: scala.Predef.String
+ override val value: scala.Predef.String,
+ override val module: Module
 )
 extends resolver.api.AnnotationEntry
 {
 
   override val hashCode
   : scala.Int
-  = (context, subject, value).##
+  = (subject, value, module).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: AnnotationEntry =>
 	    (that canEqual this) &&
-	    (this.context == that.context) &&
 	    (this.subject == that.subject) &&
-	    (this.value == that.value)
+	    (this.value == that.value) &&
+	    (this.module == that.module)
 
 	  case _ =>
 	    false

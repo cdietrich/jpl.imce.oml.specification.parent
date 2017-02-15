@@ -35,7 +35,7 @@ case class DescriptionBox private[impl]
  override val unreifiedRelationshipInstanceTuples: scala.collection.immutable.SortedSet[UnreifiedRelationshipInstanceTuple]
 )
 extends resolver.api.DescriptionBox
-  with Context
+  with Module
 {
   def extent
   ()

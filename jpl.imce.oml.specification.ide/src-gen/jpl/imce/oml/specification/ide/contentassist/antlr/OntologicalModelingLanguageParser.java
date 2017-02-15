@@ -232,10 +232,10 @@ public class OntologicalModelingLanguageParser extends AbstractContentAssistPars
 					put(grammarAccess.getEntityUniversalRestrictionAxiomAccess().getRestrictedDomainAssignment_7(), "rule__EntityUniversalRestrictionAxiom__RestrictedDomainAssignment_7");
 					put(grammarAccess.getAspectSpecializationAxiomAccess().getSubEntityAssignment_0(), "rule__AspectSpecializationAxiom__SubEntityAssignment_0");
 					put(grammarAccess.getAspectSpecializationAxiomAccess().getSuperAspectAssignment_2(), "rule__AspectSpecializationAxiom__SuperAspectAssignment_2");
-					put(grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptAssignment_3(), "rule__ConceptSpecializationAxiom__SubConceptAssignment_3");
-					put(grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptAssignment_5(), "rule__ConceptSpecializationAxiom__SuperConceptAssignment_5");
-					put(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipAssignment_3(), "rule__ReifiedRelationshipSpecializationAxiom__SubRelationshipAssignment_3");
-					put(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipAssignment_5(), "rule__ReifiedRelationshipSpecializationAxiom__SuperRelationshipAssignment_5");
+					put(grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptAssignment_0(), "rule__ConceptSpecializationAxiom__SubConceptAssignment_0");
+					put(grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptAssignment_2(), "rule__ConceptSpecializationAxiom__SuperConceptAssignment_2");
+					put(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipAssignment_0(), "rule__ReifiedRelationshipSpecializationAxiom__SubRelationshipAssignment_0");
+					put(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipAssignment_2(), "rule__ReifiedRelationshipSpecializationAxiom__SuperRelationshipAssignment_2");
 					put(grammarAccess.getEntityScalarDataPropertyExistentialRestrictionAxiomAccess().getRestrictedEntityAssignment_3(), "rule__EntityScalarDataPropertyExistentialRestrictionAxiom__RestrictedEntityAssignment_3");
 					put(grammarAccess.getEntityScalarDataPropertyExistentialRestrictionAxiomAccess().getScalarPropertyAssignment_5(), "rule__EntityScalarDataPropertyExistentialRestrictionAxiom__ScalarPropertyAssignment_5");
 					put(grammarAccess.getEntityScalarDataPropertyExistentialRestrictionAxiomAccess().getScalarRestrictionAssignment_7(), "rule__EntityScalarDataPropertyExistentialRestrictionAxiom__ScalarRestrictionAssignment_7");

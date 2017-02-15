@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalOntologicalModelingLanguageParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ANNOTATION_PROPERTY_TOKEN", "RULE_EQUAL", "RULE_IRI", "RULE_ANNOTATION_TOKEN", "RULE_STRING", "RULE_TERMINOLOGY_GRAPH_TOKEN", "RULE_LCURLY", "RULE_RCURLY", "RULE_BUNDLE_TOKEN", "RULE_ASPECT_TOKEN", "RULE_ID", "RULE_ABSTRACT_TOKEN", "RULE_CONCEPT_TOKEN", "RULE_REIFIED_RELATIONSHIP_TOKEN", "RULE_FUNCTIONAL_TOKEN", "RULE_INVERSE_FUNCTIONAL_TOKEN", "RULE_ESSENTIAL_TOKEN", "RULE_INVERSE_ESSENTIAL_TOKEN", "RULE_SYMMETRIC_TOKEN", "RULE_ASYMMETRIC_TOKEN", "RULE_REFLEXIVE_TOKEN", "RULE_IRREFLEXIVE_TOKEN", "RULE_TRANSITIVE_TOKEN", "RULE_UNREIFIED_TOKEN", "RULE_INVERSE_TOKEN", "RULE_SOURCE_TOKEN", "RULE_TARGET_TOKEN", "RULE_UNREIFIED_RELATIONSHIP_TOKEN", "RULE_SCALAR_TOKEN", "RULE_STRUCTURE_TOKEN", "RULE_DOMAIN_TOKEN", "RULE_RANGE_TOKEN", "RULE_ANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN", "RULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN", "RULE_SPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN", "RULE_BUNDLED_TERMINOLOGY_AXIOM_TOKEN", "RULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN", "RULE_EXTENDS_TOKEN", "RULE_TERMINOLOGY_NESTING_AXIOM_TOKEN", "RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN", "RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN", "RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN", "RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN", "RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN", "RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN", "RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN", "RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN", "RULE_BINARY_SCALAR_RESTRICTION_TOKEN", "RULE_INT", "RULE_IRI_SCALAR_RESTRICTION_TOKEN", "RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN", "RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN", "RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN", "RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN", "RULE_STRING_SCALAR_RESTRICTION_TOKEN", "RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN", "RULE_TIME_SCALAR_RESTRICTION_TOKEN", "RULE_DESCRIPTION_BOX_TOKEN", "RULE_REFINES_TOKEN", "RULE_KIND_TOKEN", "RULE_HEX_8DIGITS", "RULE_HEX_4DIGITS", "RULE_HEX_12DIGITS", "RULE_UUID", "RULE_HEX_DIGIT", "RULE_HEX", "RULE_DECIMAL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'entityStructuredDataProperty'", "'entityScalarDataProperty'", "'structuredDataProperty'", "'scalarDataProperty'", "'disjointTaxonomyParent'", "'root'", "'disjointLeaf'", "'bundledTerminology'", "'designatedTerminology'", "'designatedConcept'", "'nestingTerminology'", "'nestingContext'", "'restrictedRelation'", "'restrictedRange'", "'restrictedDomain'", "'subConcept'", "'superConcept'", "'subRelationship'", "'superRelationship'", "'restrictedEntity'", "'scalarProperty'", "'scalarRestriction'", "'literalValue'", "'length'", "'minLength'", "'maxLength'", "'pattern'", "'minInclusive'", "'maxInclusive'", "'minExclusive'", "'maxExclusive'", "'langRange'", "'value'", "'axiom'", "'ScalarDataPropertyValue'", "'scalarPropertyValue'", "'StructuredDataPropertyValue'", "'structuredPropertyTuple'", "'DataStructureTuple'", "'dataStructureType'", "'ConceptInstance'", "'singletonConceptClassifier'", "'ReifiedRelationshipInstance'", "'singletonReifiedRelationshipClassifier'", "'ReifiedRelationshipInstanceDomain'", "'reifiedRelationshipInstance'", "'ReifiedRelationshipInstanceRange'", "'UnreifiedRelationshipInstanceTuple'", "':'", "'open'", "'closed'", "'final'", "'partial'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ANNOTATION_PROPERTY_TOKEN", "RULE_EQUAL", "RULE_IRI", "RULE_ANNOTATION_TOKEN", "RULE_STRING", "RULE_TERMINOLOGY_GRAPH_TOKEN", "RULE_LCURLY", "RULE_RCURLY", "RULE_BUNDLE_TOKEN", "RULE_ASPECT_TOKEN", "RULE_ID", "RULE_ABSTRACT_TOKEN", "RULE_CONCEPT_TOKEN", "RULE_REIFIED_RELATIONSHIP_TOKEN", "RULE_FUNCTIONAL_TOKEN", "RULE_INVERSE_FUNCTIONAL_TOKEN", "RULE_ESSENTIAL_TOKEN", "RULE_INVERSE_ESSENTIAL_TOKEN", "RULE_SYMMETRIC_TOKEN", "RULE_ASYMMETRIC_TOKEN", "RULE_REFLEXIVE_TOKEN", "RULE_IRREFLEXIVE_TOKEN", "RULE_TRANSITIVE_TOKEN", "RULE_UNREIFIED_TOKEN", "RULE_INVERSE_TOKEN", "RULE_SOURCE_TOKEN", "RULE_TARGET_TOKEN", "RULE_UNREIFIED_RELATIONSHIP_TOKEN", "RULE_SCALAR_TOKEN", "RULE_STRUCTURE_TOKEN", "RULE_DOMAIN_TOKEN", "RULE_RANGE_TOKEN", "RULE_ANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN", "RULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN", "RULE_SPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN", "RULE_BUNDLED_TERMINOLOGY_AXIOM_TOKEN", "RULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN", "RULE_EXTENDS_TOKEN", "RULE_TERMINOLOGY_NESTING_AXIOM_TOKEN", "RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN", "RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN", "RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN", "RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN", "RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN", "RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN", "RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN", "RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN", "RULE_BINARY_SCALAR_RESTRICTION_TOKEN", "RULE_INT", "RULE_IRI_SCALAR_RESTRICTION_TOKEN", "RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN", "RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN", "RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN", "RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN", "RULE_STRING_SCALAR_RESTRICTION_TOKEN", "RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN", "RULE_TIME_SCALAR_RESTRICTION_TOKEN", "RULE_DESCRIPTION_BOX_TOKEN", "RULE_REFINES_TOKEN", "RULE_KIND_TOKEN", "RULE_HEX_8DIGITS", "RULE_HEX_4DIGITS", "RULE_HEX_12DIGITS", "RULE_UUID", "RULE_HEX_DIGIT", "RULE_HEX", "RULE_DECIMAL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'entityStructuredDataProperty'", "'entityScalarDataProperty'", "'structuredDataProperty'", "'scalarDataProperty'", "'disjointTaxonomyParent'", "'root'", "'disjointLeaf'", "'bundledTerminology'", "'designatedTerminology'", "'designatedConcept'", "'nestingTerminology'", "'nestingContext'", "'restrictedRelation'", "'restrictedRange'", "'restrictedDomain'", "'restrictedEntity'", "'scalarProperty'", "'scalarRestriction'", "'literalValue'", "'length'", "'minLength'", "'maxLength'", "'pattern'", "'minInclusive'", "'maxInclusive'", "'minExclusive'", "'maxExclusive'", "'langRange'", "'value'", "'axiom'", "'ScalarDataPropertyValue'", "'scalarPropertyValue'", "'StructuredDataPropertyValue'", "'structuredPropertyTuple'", "'DataStructureTuple'", "'dataStructureType'", "'ConceptInstance'", "'singletonConceptClassifier'", "'ReifiedRelationshipInstance'", "'singletonReifiedRelationshipClassifier'", "'ReifiedRelationshipInstanceDomain'", "'reifiedRelationshipInstance'", "'ReifiedRelationshipInstanceRange'", "'UnreifiedRelationshipInstanceTuple'", "':'", "'open'", "'closed'", "'final'", "'partial'"
     };
     public static final int RULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN=40;
     public static final int RULE_HEX=69;
@@ -43,11 +43,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
     public static final int RULE_UUID=67;
     public static final int RULE_INT=52;
     public static final int RULE_ML_COMMENT=71;
-    public static final int T__126=126;
-    public static final int T__125=125;
     public static final int RULE_REIFIED_RELATIONSHIP_TOKEN=17;
     public static final int RULE_INVERSE_TOKEN=28;
-    public static final int T__127=127;
     public static final int RULE_CONCEPT_TOKEN=16;
     public static final int RULE_IRI=6;
     public static final int RULE_BUNDLE_TOKEN=12;
@@ -92,7 +89,6 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
     public static final int RULE_RANGE_TOKEN=35;
     public static final int T__122=122;
     public static final int T__121=121;
-    public static final int T__124=124;
     public static final int T__123=123;
     public static final int RULE_UNREIFIED_TOKEN=27;
     public static final int T__120=120;
@@ -270,7 +266,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
                     alt1=1;
                     }
                     break;
-                case 124:
+                case 120:
                     {
                     int LA1_3 = input.LA(2);
 
@@ -284,7 +280,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
                     }
                     break;
-                case 125:
+                case 121:
                     {
                     int LA1_4 = input.LA(2);
 
@@ -298,8 +294,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
                     }
                     break;
-                case 126:
-                case 127:
+                case 122:
+                case 123:
                     {
                     alt1=4;
                     }
@@ -924,8 +920,6 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
                 case RULE_STRUCTURE_TOKEN:
                 case RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN:
                 case RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN:
-                case RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN:
-                case RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN:
                 case RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN:
                 case RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN:
                 case RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN:
@@ -1254,8 +1248,6 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
                 case RULE_STRUCTURE_TOKEN:
                 case RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN:
                 case RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN:
-                case RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN:
-                case RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN:
                 case RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN:
                 case RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN:
                 case RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN:
@@ -1723,7 +1715,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( (LA5_0==RULE_IRI||LA5_0==RULE_ID||(LA5_0>=RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN && LA5_0<=RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN)||(LA5_0>=RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN && LA5_0<=RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN)||LA5_0==RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN) ) {
+            if ( (LA5_0==RULE_IRI||LA5_0==RULE_ID||(LA5_0>=RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN && LA5_0<=RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN)||(LA5_0>=RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN && LA5_0<=RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN)||LA5_0==RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN) ) {
                 alt5=1;
             }
             else if ( (LA5_0==RULE_ASPECT_TOKEN||(LA5_0>=RULE_ABSTRACT_TOKEN && LA5_0<=RULE_REIFIED_RELATIONSHIP_TOKEN)||(LA5_0>=RULE_UNREIFIED_RELATIONSHIP_TOKEN && LA5_0<=RULE_STRUCTURE_TOKEN)||LA5_0==RULE_BINARY_SCALAR_RESTRICTION_TOKEN||(LA5_0>=RULE_IRI_SCALAR_RESTRICTION_TOKEN && LA5_0<=RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN)||(LA5_0>=RULE_STRING_SCALAR_RESTRICTION_TOKEN && LA5_0<=RULE_TIME_SCALAR_RESTRICTION_TOKEN)||(LA5_0>=75 && LA5_0<=78)) ) {
@@ -3044,7 +3036,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
             if ( (LA13_0==RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN) ) {
                 alt13=1;
             }
-            else if ( (LA13_0==RULE_IRI||LA13_0==RULE_ID||(LA13_0>=RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN && LA13_0<=RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN)||(LA13_0>=RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN && LA13_0<=RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN)) ) {
+            else if ( (LA13_0==RULE_IRI||LA13_0==RULE_ID||(LA13_0>=RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN && LA13_0<=RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN)||(LA13_0>=RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN && LA13_0<=RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN)) ) {
                 alt13=2;
             }
             else {
@@ -3185,8 +3177,6 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
                 break;
             case RULE_IRI:
             case RULE_ID:
-            case RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN:
-            case RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN:
                 {
                 alt14=3;
                 }
@@ -3617,30 +3607,101 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
             {
             // InternalOntologicalModelingLanguage.g:1207:2: (this_ConceptSpecializationAxiom_0= ruleConceptSpecializationAxiom | this_AspectSpecializationAxiom_1= ruleAspectSpecializationAxiom | this_ReifiedRelationshipSpecializationAxiom_2= ruleReifiedRelationshipSpecializationAxiom )
             int alt17=3;
-            switch ( input.LA(1) ) {
-            case RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN:
-                {
-                alt17=1;
+            int LA17_0 = input.LA(1);
+
+            if ( (LA17_0==RULE_IRI) ) {
+                switch ( input.LA(2) ) {
+                case RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN:
+                    {
+                    alt17=1;
+                    }
+                    break;
+                case RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN:
+                    {
+                    alt17=2;
+                    }
+                    break;
+                case RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN:
+                    {
+                    alt17=3;
+                    }
+                    break;
+                default:
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 17, 1, input);
+
+                    throw nvae;
                 }
-                break;
-            case RULE_IRI:
-            case RULE_ID:
-                {
-                alt17=2;
+
+            }
+            else if ( (LA17_0==RULE_ID) ) {
+                switch ( input.LA(2) ) {
+                case 119:
+                    {
+                    int LA17_6 = input.LA(3);
+
+                    if ( (LA17_6==RULE_ID) ) {
+                        switch ( input.LA(4) ) {
+                        case RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN:
+                            {
+                            alt17=1;
+                            }
+                            break;
+                        case RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN:
+                            {
+                            alt17=2;
+                            }
+                            break;
+                        case RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN:
+                            {
+                            alt17=3;
+                            }
+                            break;
+                        default:
+                            NoViableAltException nvae =
+                                new NoViableAltException("", 17, 7, input);
+
+                            throw nvae;
+                        }
+
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 17, 6, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN:
+                    {
+                    alt17=1;
+                    }
+                    break;
+                case RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN:
+                    {
+                    alt17=2;
+                    }
+                    break;
+                case RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN:
+                    {
+                    alt17=3;
+                    }
+                    break;
+                default:
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 17, 2, input);
+
+                    throw nvae;
                 }
-                break;
-            case RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN:
-                {
-                alt17=3;
-                }
-                break;
-            default:
+
+            }
+            else {
                 NoViableAltException nvae =
                     new NoViableAltException("", 17, 0, input);
 
                 throw nvae;
             }
-
             switch (alt17) {
                 case 1 :
                     // InternalOntologicalModelingLanguage.g:1208:3: this_ConceptSpecializationAxiom_0= ruleConceptSpecializationAxiom
@@ -7830,43 +7891,27 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleConceptSpecializationAxiom"
-    // InternalOntologicalModelingLanguage.g:3085:1: ruleConceptSpecializationAxiom returns [EObject current=null] : (this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_0= RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'subConcept' ( ( ruleReference ) ) otherlv_4= 'superConcept' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) ;
+    // InternalOntologicalModelingLanguage.g:3085:1: ruleConceptSpecializationAxiom returns [EObject current=null] : ( ( ( ruleReference ) ) this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_1= RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN ( ( ruleReference ) ) ) ;
     public final EObject ruleConceptSpecializationAxiom() throws RecognitionException {
         EObject current = null;
 
-        Token this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_0=null;
-        Token this_LCURLY_1=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        Token this_RCURLY_6=null;
+        Token this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_1=null;
 
 
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:3091:2: ( (this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_0= RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'subConcept' ( ( ruleReference ) ) otherlv_4= 'superConcept' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) )
-            // InternalOntologicalModelingLanguage.g:3092:2: (this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_0= RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'subConcept' ( ( ruleReference ) ) otherlv_4= 'superConcept' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:3091:2: ( ( ( ( ruleReference ) ) this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_1= RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN ( ( ruleReference ) ) ) )
+            // InternalOntologicalModelingLanguage.g:3092:2: ( ( ( ruleReference ) ) this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_1= RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN ( ( ruleReference ) ) )
             {
-            // InternalOntologicalModelingLanguage.g:3092:2: (this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_0= RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'subConcept' ( ( ruleReference ) ) otherlv_4= 'superConcept' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
-            // InternalOntologicalModelingLanguage.g:3093:3: this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_0= RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'subConcept' ( ( ruleReference ) ) otherlv_4= 'superConcept' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY
+            // InternalOntologicalModelingLanguage.g:3092:2: ( ( ( ruleReference ) ) this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_1= RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN ( ( ruleReference ) ) )
+            // InternalOntologicalModelingLanguage.g:3093:3: ( ( ruleReference ) ) this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_1= RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN ( ( ruleReference ) )
             {
-            this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_0=(Token)match(input,RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN,FOLLOW_9); 
-
-            			newLeafNode(this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_0, grammarAccess.getConceptSpecializationAxiomAccess().getCONCEPT_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_0());
-            		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_53); 
-
-            			newLeafNode(this_LCURLY_1, grammarAccess.getConceptSpecializationAxiomAccess().getLCURLYTerminalRuleCall_1());
-            		
-            otherlv_2=(Token)match(input,90,FOLLOW_27); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptKeyword_2());
-            		
-            // InternalOntologicalModelingLanguage.g:3105:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:3106:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3093:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:3094:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:3106:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:3107:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:3094:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3095:5: ruleReference
             {
 
             					if (current==null) {
@@ -7874,9 +7919,9 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
             					}
             				
 
-            					newCompositeNode(grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptConceptCrossReference_3_0());
+            					newCompositeNode(grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptConceptCrossReference_0_0());
             				
-            pushFollow(FOLLOW_54);
+            pushFollow(FOLLOW_53);
             ruleReference();
 
             state._fsp--;
@@ -7890,15 +7935,15 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            otherlv_4=(Token)match(input,91,FOLLOW_27); 
+            this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_1=(Token)match(input,RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN,FOLLOW_27); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptKeyword_4());
+            			newLeafNode(this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_1, grammarAccess.getConceptSpecializationAxiomAccess().getCONCEPT_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_1());
             		
-            // InternalOntologicalModelingLanguage.g:3125:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:3126:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3113:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:3114:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:3126:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:3127:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:3114:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3115:5: ruleReference
             {
 
             					if (current==null) {
@@ -7906,9 +7951,9 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
             					}
             				
 
-            					newCompositeNode(grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptConceptCrossReference_5_0());
+            					newCompositeNode(grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptConceptCrossReference_2_0());
             				
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_2);
             ruleReference();
 
             state._fsp--;
@@ -7922,10 +7967,6 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            this_RCURLY_6=(Token)match(input,RULE_RCURLY,FOLLOW_2); 
-
-            			newLeafNode(this_RCURLY_6, grammarAccess.getConceptSpecializationAxiomAccess().getRCURLYTerminalRuleCall_6());
-            		
 
             }
 
@@ -7949,7 +7990,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleReifiedRelationshipSpecializationAxiom"
-    // InternalOntologicalModelingLanguage.g:3149:1: entryRuleReifiedRelationshipSpecializationAxiom returns [EObject current=null] : iv_ruleReifiedRelationshipSpecializationAxiom= ruleReifiedRelationshipSpecializationAxiom EOF ;
+    // InternalOntologicalModelingLanguage.g:3133:1: entryRuleReifiedRelationshipSpecializationAxiom returns [EObject current=null] : iv_ruleReifiedRelationshipSpecializationAxiom= ruleReifiedRelationshipSpecializationAxiom EOF ;
     public final EObject entryRuleReifiedRelationshipSpecializationAxiom() throws RecognitionException {
         EObject current = null;
 
@@ -7957,8 +7998,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:3149:79: (iv_ruleReifiedRelationshipSpecializationAxiom= ruleReifiedRelationshipSpecializationAxiom EOF )
-            // InternalOntologicalModelingLanguage.g:3150:2: iv_ruleReifiedRelationshipSpecializationAxiom= ruleReifiedRelationshipSpecializationAxiom EOF
+            // InternalOntologicalModelingLanguage.g:3133:79: (iv_ruleReifiedRelationshipSpecializationAxiom= ruleReifiedRelationshipSpecializationAxiom EOF )
+            // InternalOntologicalModelingLanguage.g:3134:2: iv_ruleReifiedRelationshipSpecializationAxiom= ruleReifiedRelationshipSpecializationAxiom EOF
             {
              newCompositeNode(grammarAccess.getReifiedRelationshipSpecializationAxiomRule()); 
             pushFollow(FOLLOW_1);
@@ -7985,43 +8026,27 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleReifiedRelationshipSpecializationAxiom"
-    // InternalOntologicalModelingLanguage.g:3156:1: ruleReifiedRelationshipSpecializationAxiom returns [EObject current=null] : (this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_0= RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'subRelationship' ( ( ruleReference ) ) otherlv_4= 'superRelationship' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) ;
+    // InternalOntologicalModelingLanguage.g:3140:1: ruleReifiedRelationshipSpecializationAxiom returns [EObject current=null] : ( ( ( ruleReference ) ) this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_1= RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN ( ( ruleReference ) ) ) ;
     public final EObject ruleReifiedRelationshipSpecializationAxiom() throws RecognitionException {
         EObject current = null;
 
-        Token this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_0=null;
-        Token this_LCURLY_1=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        Token this_RCURLY_6=null;
+        Token this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_1=null;
 
 
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:3162:2: ( (this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_0= RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'subRelationship' ( ( ruleReference ) ) otherlv_4= 'superRelationship' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) )
-            // InternalOntologicalModelingLanguage.g:3163:2: (this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_0= RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'subRelationship' ( ( ruleReference ) ) otherlv_4= 'superRelationship' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:3146:2: ( ( ( ( ruleReference ) ) this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_1= RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN ( ( ruleReference ) ) ) )
+            // InternalOntologicalModelingLanguage.g:3147:2: ( ( ( ruleReference ) ) this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_1= RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN ( ( ruleReference ) ) )
             {
-            // InternalOntologicalModelingLanguage.g:3163:2: (this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_0= RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'subRelationship' ( ( ruleReference ) ) otherlv_4= 'superRelationship' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
-            // InternalOntologicalModelingLanguage.g:3164:3: this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_0= RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'subRelationship' ( ( ruleReference ) ) otherlv_4= 'superRelationship' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY
+            // InternalOntologicalModelingLanguage.g:3147:2: ( ( ( ruleReference ) ) this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_1= RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN ( ( ruleReference ) ) )
+            // InternalOntologicalModelingLanguage.g:3148:3: ( ( ruleReference ) ) this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_1= RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN ( ( ruleReference ) )
             {
-            this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_0=(Token)match(input,RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN,FOLLOW_9); 
-
-            			newLeafNode(this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_0, grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getREIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_0());
-            		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_55); 
-
-            			newLeafNode(this_LCURLY_1, grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getLCURLYTerminalRuleCall_1());
-            		
-            otherlv_2=(Token)match(input,92,FOLLOW_27); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipKeyword_2());
-            		
-            // InternalOntologicalModelingLanguage.g:3176:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:3177:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3148:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:3149:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:3177:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:3178:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:3149:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3150:5: ruleReference
             {
 
             					if (current==null) {
@@ -8029,9 +8054,9 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
             					}
             				
 
-            					newCompositeNode(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipReifiedRelationshipCrossReference_3_0());
+            					newCompositeNode(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipReifiedRelationshipCrossReference_0_0());
             				
-            pushFollow(FOLLOW_56);
+            pushFollow(FOLLOW_54);
             ruleReference();
 
             state._fsp--;
@@ -8045,15 +8070,15 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            otherlv_4=(Token)match(input,93,FOLLOW_27); 
+            this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_1=(Token)match(input,RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN,FOLLOW_27); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipKeyword_4());
+            			newLeafNode(this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_1, grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getREIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_1());
             		
-            // InternalOntologicalModelingLanguage.g:3196:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:3197:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3168:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:3169:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:3197:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:3198:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:3169:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3170:5: ruleReference
             {
 
             					if (current==null) {
@@ -8061,9 +8086,9 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
             					}
             				
 
-            					newCompositeNode(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipReifiedRelationshipCrossReference_5_0());
+            					newCompositeNode(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipReifiedRelationshipCrossReference_2_0());
             				
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_2);
             ruleReference();
 
             state._fsp--;
@@ -8077,10 +8102,6 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            this_RCURLY_6=(Token)match(input,RULE_RCURLY,FOLLOW_2); 
-
-            			newLeafNode(this_RCURLY_6, grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getRCURLYTerminalRuleCall_6());
-            		
 
             }
 
@@ -8104,7 +8125,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleEntityScalarDataPropertyExistentialRestrictionAxiom"
-    // InternalOntologicalModelingLanguage.g:3220:1: entryRuleEntityScalarDataPropertyExistentialRestrictionAxiom returns [EObject current=null] : iv_ruleEntityScalarDataPropertyExistentialRestrictionAxiom= ruleEntityScalarDataPropertyExistentialRestrictionAxiom EOF ;
+    // InternalOntologicalModelingLanguage.g:3188:1: entryRuleEntityScalarDataPropertyExistentialRestrictionAxiom returns [EObject current=null] : iv_ruleEntityScalarDataPropertyExistentialRestrictionAxiom= ruleEntityScalarDataPropertyExistentialRestrictionAxiom EOF ;
     public final EObject entryRuleEntityScalarDataPropertyExistentialRestrictionAxiom() throws RecognitionException {
         EObject current = null;
 
@@ -8112,8 +8133,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:3220:92: (iv_ruleEntityScalarDataPropertyExistentialRestrictionAxiom= ruleEntityScalarDataPropertyExistentialRestrictionAxiom EOF )
-            // InternalOntologicalModelingLanguage.g:3221:2: iv_ruleEntityScalarDataPropertyExistentialRestrictionAxiom= ruleEntityScalarDataPropertyExistentialRestrictionAxiom EOF
+            // InternalOntologicalModelingLanguage.g:3188:92: (iv_ruleEntityScalarDataPropertyExistentialRestrictionAxiom= ruleEntityScalarDataPropertyExistentialRestrictionAxiom EOF )
+            // InternalOntologicalModelingLanguage.g:3189:2: iv_ruleEntityScalarDataPropertyExistentialRestrictionAxiom= ruleEntityScalarDataPropertyExistentialRestrictionAxiom EOF
             {
              newCompositeNode(grammarAccess.getEntityScalarDataPropertyExistentialRestrictionAxiomRule()); 
             pushFollow(FOLLOW_1);
@@ -8140,7 +8161,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleEntityScalarDataPropertyExistentialRestrictionAxiom"
-    // InternalOntologicalModelingLanguage.g:3227:1: ruleEntityScalarDataPropertyExistentialRestrictionAxiom returns [EObject current=null] : (this_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY ) ;
+    // InternalOntologicalModelingLanguage.g:3195:1: ruleEntityScalarDataPropertyExistentialRestrictionAxiom returns [EObject current=null] : (this_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY ) ;
     public final EObject ruleEntityScalarDataPropertyExistentialRestrictionAxiom() throws RecognitionException {
         EObject current = null;
 
@@ -8155,29 +8176,29 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:3233:2: ( (this_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY ) )
-            // InternalOntologicalModelingLanguage.g:3234:2: (this_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:3201:2: ( (this_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY ) )
+            // InternalOntologicalModelingLanguage.g:3202:2: (this_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY )
             {
-            // InternalOntologicalModelingLanguage.g:3234:2: (this_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY )
-            // InternalOntologicalModelingLanguage.g:3235:3: this_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY
+            // InternalOntologicalModelingLanguage.g:3202:2: (this_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:3203:3: this_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY
             {
             this_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN_0=(Token)match(input,RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN,FOLLOW_9); 
 
             			newLeafNode(this_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN_0, grammarAccess.getEntityScalarDataPropertyExistentialRestrictionAxiomAccess().getENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKENTerminalRuleCall_0());
             		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_57); 
+            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_55); 
 
             			newLeafNode(this_LCURLY_1, grammarAccess.getEntityScalarDataPropertyExistentialRestrictionAxiomAccess().getLCURLYTerminalRuleCall_1());
             		
-            otherlv_2=(Token)match(input,94,FOLLOW_27); 
+            otherlv_2=(Token)match(input,90,FOLLOW_27); 
 
             			newLeafNode(otherlv_2, grammarAccess.getEntityScalarDataPropertyExistentialRestrictionAxiomAccess().getRestrictedEntityKeyword_2());
             		
-            // InternalOntologicalModelingLanguage.g:3247:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:3248:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3215:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:3216:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:3248:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:3249:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:3216:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3217:5: ruleReference
             {
 
             					if (current==null) {
@@ -8187,7 +8208,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             					newCompositeNode(grammarAccess.getEntityScalarDataPropertyExistentialRestrictionAxiomAccess().getRestrictedEntityEntityCrossReference_3_0());
             				
-            pushFollow(FOLLOW_58);
+            pushFollow(FOLLOW_56);
             ruleReference();
 
             state._fsp--;
@@ -8201,15 +8222,15 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            otherlv_4=(Token)match(input,95,FOLLOW_27); 
+            otherlv_4=(Token)match(input,91,FOLLOW_27); 
 
             			newLeafNode(otherlv_4, grammarAccess.getEntityScalarDataPropertyExistentialRestrictionAxiomAccess().getScalarPropertyKeyword_4());
             		
-            // InternalOntologicalModelingLanguage.g:3267:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:3268:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3235:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:3236:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:3268:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:3269:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:3236:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3237:5: ruleReference
             {
 
             					if (current==null) {
@@ -8219,7 +8240,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             					newCompositeNode(grammarAccess.getEntityScalarDataPropertyExistentialRestrictionAxiomAccess().getScalarPropertyEntityScalarDataPropertyCrossReference_5_0());
             				
-            pushFollow(FOLLOW_59);
+            pushFollow(FOLLOW_57);
             ruleReference();
 
             state._fsp--;
@@ -8233,15 +8254,15 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            otherlv_6=(Token)match(input,96,FOLLOW_27); 
+            otherlv_6=(Token)match(input,92,FOLLOW_27); 
 
             			newLeafNode(otherlv_6, grammarAccess.getEntityScalarDataPropertyExistentialRestrictionAxiomAccess().getScalarRestrictionKeyword_6());
             		
-            // InternalOntologicalModelingLanguage.g:3287:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:3288:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3255:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:3256:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:3288:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:3289:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:3256:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3257:5: ruleReference
             {
 
             					if (current==null) {
@@ -8292,7 +8313,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleEntityScalarDataPropertyParticularRestrictionAxiom"
-    // InternalOntologicalModelingLanguage.g:3311:1: entryRuleEntityScalarDataPropertyParticularRestrictionAxiom returns [EObject current=null] : iv_ruleEntityScalarDataPropertyParticularRestrictionAxiom= ruleEntityScalarDataPropertyParticularRestrictionAxiom EOF ;
+    // InternalOntologicalModelingLanguage.g:3279:1: entryRuleEntityScalarDataPropertyParticularRestrictionAxiom returns [EObject current=null] : iv_ruleEntityScalarDataPropertyParticularRestrictionAxiom= ruleEntityScalarDataPropertyParticularRestrictionAxiom EOF ;
     public final EObject entryRuleEntityScalarDataPropertyParticularRestrictionAxiom() throws RecognitionException {
         EObject current = null;
 
@@ -8300,8 +8321,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:3311:91: (iv_ruleEntityScalarDataPropertyParticularRestrictionAxiom= ruleEntityScalarDataPropertyParticularRestrictionAxiom EOF )
-            // InternalOntologicalModelingLanguage.g:3312:2: iv_ruleEntityScalarDataPropertyParticularRestrictionAxiom= ruleEntityScalarDataPropertyParticularRestrictionAxiom EOF
+            // InternalOntologicalModelingLanguage.g:3279:91: (iv_ruleEntityScalarDataPropertyParticularRestrictionAxiom= ruleEntityScalarDataPropertyParticularRestrictionAxiom EOF )
+            // InternalOntologicalModelingLanguage.g:3280:2: iv_ruleEntityScalarDataPropertyParticularRestrictionAxiom= ruleEntityScalarDataPropertyParticularRestrictionAxiom EOF
             {
              newCompositeNode(grammarAccess.getEntityScalarDataPropertyParticularRestrictionAxiomRule()); 
             pushFollow(FOLLOW_1);
@@ -8328,7 +8349,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleEntityScalarDataPropertyParticularRestrictionAxiom"
-    // InternalOntologicalModelingLanguage.g:3318:1: ruleEntityScalarDataPropertyParticularRestrictionAxiom returns [EObject current=null] : (this_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'literalValue' ( (lv_literalValue_7_0= RULE_STRING ) ) this_RCURLY_8= RULE_RCURLY ) ;
+    // InternalOntologicalModelingLanguage.g:3286:1: ruleEntityScalarDataPropertyParticularRestrictionAxiom returns [EObject current=null] : (this_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'literalValue' ( (lv_literalValue_7_0= RULE_STRING ) ) this_RCURLY_8= RULE_RCURLY ) ;
     public final EObject ruleEntityScalarDataPropertyParticularRestrictionAxiom() throws RecognitionException {
         EObject current = null;
 
@@ -8344,29 +8365,29 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:3324:2: ( (this_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'literalValue' ( (lv_literalValue_7_0= RULE_STRING ) ) this_RCURLY_8= RULE_RCURLY ) )
-            // InternalOntologicalModelingLanguage.g:3325:2: (this_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'literalValue' ( (lv_literalValue_7_0= RULE_STRING ) ) this_RCURLY_8= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:3292:2: ( (this_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'literalValue' ( (lv_literalValue_7_0= RULE_STRING ) ) this_RCURLY_8= RULE_RCURLY ) )
+            // InternalOntologicalModelingLanguage.g:3293:2: (this_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'literalValue' ( (lv_literalValue_7_0= RULE_STRING ) ) this_RCURLY_8= RULE_RCURLY )
             {
-            // InternalOntologicalModelingLanguage.g:3325:2: (this_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'literalValue' ( (lv_literalValue_7_0= RULE_STRING ) ) this_RCURLY_8= RULE_RCURLY )
-            // InternalOntologicalModelingLanguage.g:3326:3: this_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'literalValue' ( (lv_literalValue_7_0= RULE_STRING ) ) this_RCURLY_8= RULE_RCURLY
+            // InternalOntologicalModelingLanguage.g:3293:2: (this_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'literalValue' ( (lv_literalValue_7_0= RULE_STRING ) ) this_RCURLY_8= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:3294:3: this_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'literalValue' ( (lv_literalValue_7_0= RULE_STRING ) ) this_RCURLY_8= RULE_RCURLY
             {
             this_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN_0=(Token)match(input,RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN,FOLLOW_9); 
 
             			newLeafNode(this_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN_0, grammarAccess.getEntityScalarDataPropertyParticularRestrictionAxiomAccess().getENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKENTerminalRuleCall_0());
             		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_57); 
+            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_55); 
 
             			newLeafNode(this_LCURLY_1, grammarAccess.getEntityScalarDataPropertyParticularRestrictionAxiomAccess().getLCURLYTerminalRuleCall_1());
             		
-            otherlv_2=(Token)match(input,94,FOLLOW_27); 
+            otherlv_2=(Token)match(input,90,FOLLOW_27); 
 
             			newLeafNode(otherlv_2, grammarAccess.getEntityScalarDataPropertyParticularRestrictionAxiomAccess().getRestrictedEntityKeyword_2());
             		
-            // InternalOntologicalModelingLanguage.g:3338:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:3339:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3306:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:3307:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:3339:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:3340:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:3307:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3308:5: ruleReference
             {
 
             					if (current==null) {
@@ -8375,6 +8396,38 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
             				
 
             					newCompositeNode(grammarAccess.getEntityScalarDataPropertyParticularRestrictionAxiomAccess().getRestrictedEntityEntityCrossReference_3_0());
+            				
+            pushFollow(FOLLOW_56);
+            ruleReference();
+
+            state._fsp--;
+
+
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_4=(Token)match(input,91,FOLLOW_27); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getEntityScalarDataPropertyParticularRestrictionAxiomAccess().getScalarPropertyKeyword_4());
+            		
+            // InternalOntologicalModelingLanguage.g:3326:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:3327:4: ( ruleReference )
+            {
+            // InternalOntologicalModelingLanguage.g:3327:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3328:5: ruleReference
+            {
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getEntityScalarDataPropertyParticularRestrictionAxiomRule());
+            					}
+            				
+
+            					newCompositeNode(grammarAccess.getEntityScalarDataPropertyParticularRestrictionAxiomAccess().getScalarPropertyEntityScalarDataPropertyCrossReference_5_0());
             				
             pushFollow(FOLLOW_58);
             ruleReference();
@@ -8390,47 +8443,15 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            otherlv_4=(Token)match(input,95,FOLLOW_27); 
-
-            			newLeafNode(otherlv_4, grammarAccess.getEntityScalarDataPropertyParticularRestrictionAxiomAccess().getScalarPropertyKeyword_4());
-            		
-            // InternalOntologicalModelingLanguage.g:3358:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:3359:4: ( ruleReference )
-            {
-            // InternalOntologicalModelingLanguage.g:3359:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:3360:5: ruleReference
-            {
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getEntityScalarDataPropertyParticularRestrictionAxiomRule());
-            					}
-            				
-
-            					newCompositeNode(grammarAccess.getEntityScalarDataPropertyParticularRestrictionAxiomAccess().getScalarPropertyEntityScalarDataPropertyCrossReference_5_0());
-            				
-            pushFollow(FOLLOW_60);
-            ruleReference();
-
-            state._fsp--;
-
-
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            otherlv_6=(Token)match(input,97,FOLLOW_7); 
+            otherlv_6=(Token)match(input,93,FOLLOW_7); 
 
             			newLeafNode(otherlv_6, grammarAccess.getEntityScalarDataPropertyParticularRestrictionAxiomAccess().getLiteralValueKeyword_6());
             		
-            // InternalOntologicalModelingLanguage.g:3378:3: ( (lv_literalValue_7_0= RULE_STRING ) )
-            // InternalOntologicalModelingLanguage.g:3379:4: (lv_literalValue_7_0= RULE_STRING )
+            // InternalOntologicalModelingLanguage.g:3346:3: ( (lv_literalValue_7_0= RULE_STRING ) )
+            // InternalOntologicalModelingLanguage.g:3347:4: (lv_literalValue_7_0= RULE_STRING )
             {
-            // InternalOntologicalModelingLanguage.g:3379:4: (lv_literalValue_7_0= RULE_STRING )
-            // InternalOntologicalModelingLanguage.g:3380:5: lv_literalValue_7_0= RULE_STRING
+            // InternalOntologicalModelingLanguage.g:3347:4: (lv_literalValue_7_0= RULE_STRING )
+            // InternalOntologicalModelingLanguage.g:3348:5: lv_literalValue_7_0= RULE_STRING
             {
             lv_literalValue_7_0=(Token)match(input,RULE_STRING,FOLLOW_29); 
 
@@ -8479,7 +8500,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleEntityScalarDataPropertyUniversalRestrictionAxiom"
-    // InternalOntologicalModelingLanguage.g:3404:1: entryRuleEntityScalarDataPropertyUniversalRestrictionAxiom returns [EObject current=null] : iv_ruleEntityScalarDataPropertyUniversalRestrictionAxiom= ruleEntityScalarDataPropertyUniversalRestrictionAxiom EOF ;
+    // InternalOntologicalModelingLanguage.g:3372:1: entryRuleEntityScalarDataPropertyUniversalRestrictionAxiom returns [EObject current=null] : iv_ruleEntityScalarDataPropertyUniversalRestrictionAxiom= ruleEntityScalarDataPropertyUniversalRestrictionAxiom EOF ;
     public final EObject entryRuleEntityScalarDataPropertyUniversalRestrictionAxiom() throws RecognitionException {
         EObject current = null;
 
@@ -8487,8 +8508,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:3404:90: (iv_ruleEntityScalarDataPropertyUniversalRestrictionAxiom= ruleEntityScalarDataPropertyUniversalRestrictionAxiom EOF )
-            // InternalOntologicalModelingLanguage.g:3405:2: iv_ruleEntityScalarDataPropertyUniversalRestrictionAxiom= ruleEntityScalarDataPropertyUniversalRestrictionAxiom EOF
+            // InternalOntologicalModelingLanguage.g:3372:90: (iv_ruleEntityScalarDataPropertyUniversalRestrictionAxiom= ruleEntityScalarDataPropertyUniversalRestrictionAxiom EOF )
+            // InternalOntologicalModelingLanguage.g:3373:2: iv_ruleEntityScalarDataPropertyUniversalRestrictionAxiom= ruleEntityScalarDataPropertyUniversalRestrictionAxiom EOF
             {
              newCompositeNode(grammarAccess.getEntityScalarDataPropertyUniversalRestrictionAxiomRule()); 
             pushFollow(FOLLOW_1);
@@ -8515,7 +8536,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleEntityScalarDataPropertyUniversalRestrictionAxiom"
-    // InternalOntologicalModelingLanguage.g:3411:1: ruleEntityScalarDataPropertyUniversalRestrictionAxiom returns [EObject current=null] : (this_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY ) ;
+    // InternalOntologicalModelingLanguage.g:3379:1: ruleEntityScalarDataPropertyUniversalRestrictionAxiom returns [EObject current=null] : (this_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY ) ;
     public final EObject ruleEntityScalarDataPropertyUniversalRestrictionAxiom() throws RecognitionException {
         EObject current = null;
 
@@ -8530,29 +8551,29 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:3417:2: ( (this_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY ) )
-            // InternalOntologicalModelingLanguage.g:3418:2: (this_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:3385:2: ( (this_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY ) )
+            // InternalOntologicalModelingLanguage.g:3386:2: (this_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY )
             {
-            // InternalOntologicalModelingLanguage.g:3418:2: (this_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY )
-            // InternalOntologicalModelingLanguage.g:3419:3: this_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY
+            // InternalOntologicalModelingLanguage.g:3386:2: (this_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:3387:3: this_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY
             {
             this_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN_0=(Token)match(input,RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN,FOLLOW_9); 
 
             			newLeafNode(this_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN_0, grammarAccess.getEntityScalarDataPropertyUniversalRestrictionAxiomAccess().getENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKENTerminalRuleCall_0());
             		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_57); 
+            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_55); 
 
             			newLeafNode(this_LCURLY_1, grammarAccess.getEntityScalarDataPropertyUniversalRestrictionAxiomAccess().getLCURLYTerminalRuleCall_1());
             		
-            otherlv_2=(Token)match(input,94,FOLLOW_27); 
+            otherlv_2=(Token)match(input,90,FOLLOW_27); 
 
             			newLeafNode(otherlv_2, grammarAccess.getEntityScalarDataPropertyUniversalRestrictionAxiomAccess().getRestrictedEntityKeyword_2());
             		
-            // InternalOntologicalModelingLanguage.g:3431:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:3432:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3399:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:3400:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:3432:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:3433:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:3400:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3401:5: ruleReference
             {
 
             					if (current==null) {
@@ -8562,7 +8583,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             					newCompositeNode(grammarAccess.getEntityScalarDataPropertyUniversalRestrictionAxiomAccess().getRestrictedEntityEntityCrossReference_3_0());
             				
-            pushFollow(FOLLOW_58);
+            pushFollow(FOLLOW_56);
             ruleReference();
 
             state._fsp--;
@@ -8576,15 +8597,15 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            otherlv_4=(Token)match(input,95,FOLLOW_27); 
+            otherlv_4=(Token)match(input,91,FOLLOW_27); 
 
             			newLeafNode(otherlv_4, grammarAccess.getEntityScalarDataPropertyUniversalRestrictionAxiomAccess().getScalarPropertyKeyword_4());
             		
-            // InternalOntologicalModelingLanguage.g:3451:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:3452:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3419:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:3420:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:3452:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:3453:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:3420:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3421:5: ruleReference
             {
 
             					if (current==null) {
@@ -8594,7 +8615,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             					newCompositeNode(grammarAccess.getEntityScalarDataPropertyUniversalRestrictionAxiomAccess().getScalarPropertyEntityScalarDataPropertyCrossReference_5_0());
             				
-            pushFollow(FOLLOW_59);
+            pushFollow(FOLLOW_57);
             ruleReference();
 
             state._fsp--;
@@ -8608,15 +8629,15 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            otherlv_6=(Token)match(input,96,FOLLOW_27); 
+            otherlv_6=(Token)match(input,92,FOLLOW_27); 
 
             			newLeafNode(otherlv_6, grammarAccess.getEntityScalarDataPropertyUniversalRestrictionAxiomAccess().getScalarRestrictionKeyword_6());
             		
-            // InternalOntologicalModelingLanguage.g:3471:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:3472:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3439:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:3440:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:3472:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:3473:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:3440:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3441:5: ruleReference
             {
 
             					if (current==null) {
@@ -8667,7 +8688,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleBinaryScalarRestriction"
-    // InternalOntologicalModelingLanguage.g:3495:1: entryRuleBinaryScalarRestriction returns [EObject current=null] : iv_ruleBinaryScalarRestriction= ruleBinaryScalarRestriction EOF ;
+    // InternalOntologicalModelingLanguage.g:3463:1: entryRuleBinaryScalarRestriction returns [EObject current=null] : iv_ruleBinaryScalarRestriction= ruleBinaryScalarRestriction EOF ;
     public final EObject entryRuleBinaryScalarRestriction() throws RecognitionException {
         EObject current = null;
 
@@ -8675,8 +8696,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:3495:64: (iv_ruleBinaryScalarRestriction= ruleBinaryScalarRestriction EOF )
-            // InternalOntologicalModelingLanguage.g:3496:2: iv_ruleBinaryScalarRestriction= ruleBinaryScalarRestriction EOF
+            // InternalOntologicalModelingLanguage.g:3463:64: (iv_ruleBinaryScalarRestriction= ruleBinaryScalarRestriction EOF )
+            // InternalOntologicalModelingLanguage.g:3464:2: iv_ruleBinaryScalarRestriction= ruleBinaryScalarRestriction EOF
             {
              newCompositeNode(grammarAccess.getBinaryScalarRestrictionRule()); 
             pushFollow(FOLLOW_1);
@@ -8703,7 +8724,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleBinaryScalarRestriction"
-    // InternalOntologicalModelingLanguage.g:3502:1: ruleBinaryScalarRestriction returns [EObject current=null] : (this_BINARY_SCALAR_RESTRICTION_TOKEN_0= RULE_BINARY_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? otherlv_9= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_11= RULE_RCURLY ) ;
+    // InternalOntologicalModelingLanguage.g:3470:1: ruleBinaryScalarRestriction returns [EObject current=null] : (this_BINARY_SCALAR_RESTRICTION_TOKEN_0= RULE_BINARY_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? otherlv_9= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_11= RULE_RCURLY ) ;
     public final EObject ruleBinaryScalarRestriction() throws RecognitionException {
         EObject current = null;
 
@@ -8723,21 +8744,21 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:3508:2: ( (this_BINARY_SCALAR_RESTRICTION_TOKEN_0= RULE_BINARY_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? otherlv_9= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_11= RULE_RCURLY ) )
-            // InternalOntologicalModelingLanguage.g:3509:2: (this_BINARY_SCALAR_RESTRICTION_TOKEN_0= RULE_BINARY_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? otherlv_9= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_11= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:3476:2: ( (this_BINARY_SCALAR_RESTRICTION_TOKEN_0= RULE_BINARY_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? otherlv_9= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_11= RULE_RCURLY ) )
+            // InternalOntologicalModelingLanguage.g:3477:2: (this_BINARY_SCALAR_RESTRICTION_TOKEN_0= RULE_BINARY_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? otherlv_9= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_11= RULE_RCURLY )
             {
-            // InternalOntologicalModelingLanguage.g:3509:2: (this_BINARY_SCALAR_RESTRICTION_TOKEN_0= RULE_BINARY_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? otherlv_9= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_11= RULE_RCURLY )
-            // InternalOntologicalModelingLanguage.g:3510:3: this_BINARY_SCALAR_RESTRICTION_TOKEN_0= RULE_BINARY_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? otherlv_9= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_11= RULE_RCURLY
+            // InternalOntologicalModelingLanguage.g:3477:2: (this_BINARY_SCALAR_RESTRICTION_TOKEN_0= RULE_BINARY_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? otherlv_9= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_11= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:3478:3: this_BINARY_SCALAR_RESTRICTION_TOKEN_0= RULE_BINARY_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? otherlv_9= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_11= RULE_RCURLY
             {
             this_BINARY_SCALAR_RESTRICTION_TOKEN_0=(Token)match(input,RULE_BINARY_SCALAR_RESTRICTION_TOKEN,FOLLOW_4); 
 
             			newLeafNode(this_BINARY_SCALAR_RESTRICTION_TOKEN_0, grammarAccess.getBinaryScalarRestrictionAccess().getBINARY_SCALAR_RESTRICTION_TOKENTerminalRuleCall_0());
             		
-            // InternalOntologicalModelingLanguage.g:3514:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalOntologicalModelingLanguage.g:3515:4: (lv_name_1_0= RULE_ID )
+            // InternalOntologicalModelingLanguage.g:3482:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalOntologicalModelingLanguage.g:3483:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalOntologicalModelingLanguage.g:3515:4: (lv_name_1_0= RULE_ID )
-            // InternalOntologicalModelingLanguage.g:3516:5: lv_name_1_0= RULE_ID
+            // InternalOntologicalModelingLanguage.g:3483:4: (lv_name_1_0= RULE_ID )
+            // InternalOntologicalModelingLanguage.g:3484:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_9); 
 
@@ -8759,32 +8780,32 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            this_LCURLY_2=(Token)match(input,RULE_LCURLY,FOLLOW_61); 
+            this_LCURLY_2=(Token)match(input,RULE_LCURLY,FOLLOW_59); 
 
             			newLeafNode(this_LCURLY_2, grammarAccess.getBinaryScalarRestrictionAccess().getLCURLYTerminalRuleCall_2());
             		
-            // InternalOntologicalModelingLanguage.g:3536:3: (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )?
+            // InternalOntologicalModelingLanguage.g:3504:3: (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )?
             int alt40=2;
             int LA40_0 = input.LA(1);
 
-            if ( (LA40_0==98) ) {
+            if ( (LA40_0==94) ) {
                 alt40=1;
             }
             switch (alt40) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:3537:4: otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) )
+                    // InternalOntologicalModelingLanguage.g:3505:4: otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) )
                     {
-                    otherlv_3=(Token)match(input,98,FOLLOW_62); 
+                    otherlv_3=(Token)match(input,94,FOLLOW_60); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getBinaryScalarRestrictionAccess().getLengthKeyword_3_0());
                     			
-                    // InternalOntologicalModelingLanguage.g:3541:4: ( (lv_length_4_0= RULE_INT ) )
-                    // InternalOntologicalModelingLanguage.g:3542:5: (lv_length_4_0= RULE_INT )
+                    // InternalOntologicalModelingLanguage.g:3509:4: ( (lv_length_4_0= RULE_INT ) )
+                    // InternalOntologicalModelingLanguage.g:3510:5: (lv_length_4_0= RULE_INT )
                     {
-                    // InternalOntologicalModelingLanguage.g:3542:5: (lv_length_4_0= RULE_INT )
-                    // InternalOntologicalModelingLanguage.g:3543:6: lv_length_4_0= RULE_INT
+                    // InternalOntologicalModelingLanguage.g:3510:5: (lv_length_4_0= RULE_INT )
+                    // InternalOntologicalModelingLanguage.g:3511:6: lv_length_4_0= RULE_INT
                     {
-                    lv_length_4_0=(Token)match(input,RULE_INT,FOLLOW_63); 
+                    lv_length_4_0=(Token)match(input,RULE_INT,FOLLOW_61); 
 
                     						newLeafNode(lv_length_4_0, grammarAccess.getBinaryScalarRestrictionAccess().getLengthINTTerminalRuleCall_3_1_0());
                     					
@@ -8810,28 +8831,28 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            // InternalOntologicalModelingLanguage.g:3560:3: (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )?
+            // InternalOntologicalModelingLanguage.g:3528:3: (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )?
             int alt41=2;
             int LA41_0 = input.LA(1);
 
-            if ( (LA41_0==99) ) {
+            if ( (LA41_0==95) ) {
                 alt41=1;
             }
             switch (alt41) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:3561:4: otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) )
+                    // InternalOntologicalModelingLanguage.g:3529:4: otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) )
                     {
-                    otherlv_5=(Token)match(input,99,FOLLOW_62); 
+                    otherlv_5=(Token)match(input,95,FOLLOW_60); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getBinaryScalarRestrictionAccess().getMinLengthKeyword_4_0());
                     			
-                    // InternalOntologicalModelingLanguage.g:3565:4: ( (lv_minLength_6_0= RULE_INT ) )
-                    // InternalOntologicalModelingLanguage.g:3566:5: (lv_minLength_6_0= RULE_INT )
+                    // InternalOntologicalModelingLanguage.g:3533:4: ( (lv_minLength_6_0= RULE_INT ) )
+                    // InternalOntologicalModelingLanguage.g:3534:5: (lv_minLength_6_0= RULE_INT )
                     {
-                    // InternalOntologicalModelingLanguage.g:3566:5: (lv_minLength_6_0= RULE_INT )
-                    // InternalOntologicalModelingLanguage.g:3567:6: lv_minLength_6_0= RULE_INT
+                    // InternalOntologicalModelingLanguage.g:3534:5: (lv_minLength_6_0= RULE_INT )
+                    // InternalOntologicalModelingLanguage.g:3535:6: lv_minLength_6_0= RULE_INT
                     {
-                    lv_minLength_6_0=(Token)match(input,RULE_INT,FOLLOW_64); 
+                    lv_minLength_6_0=(Token)match(input,RULE_INT,FOLLOW_62); 
 
                     						newLeafNode(lv_minLength_6_0, grammarAccess.getBinaryScalarRestrictionAccess().getMinLengthINTTerminalRuleCall_4_1_0());
                     					
@@ -8857,26 +8878,26 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            // InternalOntologicalModelingLanguage.g:3584:3: (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )?
+            // InternalOntologicalModelingLanguage.g:3552:3: (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )?
             int alt42=2;
             int LA42_0 = input.LA(1);
 
-            if ( (LA42_0==100) ) {
+            if ( (LA42_0==96) ) {
                 alt42=1;
             }
             switch (alt42) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:3585:4: otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) )
+                    // InternalOntologicalModelingLanguage.g:3553:4: otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) )
                     {
-                    otherlv_7=(Token)match(input,100,FOLLOW_62); 
+                    otherlv_7=(Token)match(input,96,FOLLOW_60); 
 
                     				newLeafNode(otherlv_7, grammarAccess.getBinaryScalarRestrictionAccess().getMaxLengthKeyword_5_0());
                     			
-                    // InternalOntologicalModelingLanguage.g:3589:4: ( (lv_maxLength_8_0= RULE_INT ) )
-                    // InternalOntologicalModelingLanguage.g:3590:5: (lv_maxLength_8_0= RULE_INT )
+                    // InternalOntologicalModelingLanguage.g:3557:4: ( (lv_maxLength_8_0= RULE_INT ) )
+                    // InternalOntologicalModelingLanguage.g:3558:5: (lv_maxLength_8_0= RULE_INT )
                     {
-                    // InternalOntologicalModelingLanguage.g:3590:5: (lv_maxLength_8_0= RULE_INT )
-                    // InternalOntologicalModelingLanguage.g:3591:6: lv_maxLength_8_0= RULE_INT
+                    // InternalOntologicalModelingLanguage.g:3558:5: (lv_maxLength_8_0= RULE_INT )
+                    // InternalOntologicalModelingLanguage.g:3559:6: lv_maxLength_8_0= RULE_INT
                     {
                     lv_maxLength_8_0=(Token)match(input,RULE_INT,FOLLOW_50); 
 
@@ -8908,11 +8929,11 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             			newLeafNode(otherlv_9, grammarAccess.getBinaryScalarRestrictionAccess().getRestrictedRangeKeyword_6());
             		
-            // InternalOntologicalModelingLanguage.g:3612:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:3613:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3580:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:3581:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:3613:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:3614:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:3581:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3582:5: ruleReference
             {
 
             					if (current==null) {
@@ -8963,7 +8984,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleIRIScalarRestriction"
-    // InternalOntologicalModelingLanguage.g:3636:1: entryRuleIRIScalarRestriction returns [EObject current=null] : iv_ruleIRIScalarRestriction= ruleIRIScalarRestriction EOF ;
+    // InternalOntologicalModelingLanguage.g:3604:1: entryRuleIRIScalarRestriction returns [EObject current=null] : iv_ruleIRIScalarRestriction= ruleIRIScalarRestriction EOF ;
     public final EObject entryRuleIRIScalarRestriction() throws RecognitionException {
         EObject current = null;
 
@@ -8971,8 +8992,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:3636:61: (iv_ruleIRIScalarRestriction= ruleIRIScalarRestriction EOF )
-            // InternalOntologicalModelingLanguage.g:3637:2: iv_ruleIRIScalarRestriction= ruleIRIScalarRestriction EOF
+            // InternalOntologicalModelingLanguage.g:3604:61: (iv_ruleIRIScalarRestriction= ruleIRIScalarRestriction EOF )
+            // InternalOntologicalModelingLanguage.g:3605:2: iv_ruleIRIScalarRestriction= ruleIRIScalarRestriction EOF
             {
              newCompositeNode(grammarAccess.getIRIScalarRestrictionRule()); 
             pushFollow(FOLLOW_1);
@@ -8999,7 +9020,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleIRIScalarRestriction"
-    // InternalOntologicalModelingLanguage.g:3643:1: ruleIRIScalarRestriction returns [EObject current=null] : (this_IRI_SCALAR_RESTRICTION_TOKEN_0= RULE_IRI_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) ;
+    // InternalOntologicalModelingLanguage.g:3611:1: ruleIRIScalarRestriction returns [EObject current=null] : (this_IRI_SCALAR_RESTRICTION_TOKEN_0= RULE_IRI_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) ;
     public final EObject ruleIRIScalarRestriction() throws RecognitionException {
         EObject current = null;
 
@@ -9021,21 +9042,21 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:3649:2: ( (this_IRI_SCALAR_RESTRICTION_TOKEN_0= RULE_IRI_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) )
-            // InternalOntologicalModelingLanguage.g:3650:2: (this_IRI_SCALAR_RESTRICTION_TOKEN_0= RULE_IRI_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:3617:2: ( (this_IRI_SCALAR_RESTRICTION_TOKEN_0= RULE_IRI_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) )
+            // InternalOntologicalModelingLanguage.g:3618:2: (this_IRI_SCALAR_RESTRICTION_TOKEN_0= RULE_IRI_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
             {
-            // InternalOntologicalModelingLanguage.g:3650:2: (this_IRI_SCALAR_RESTRICTION_TOKEN_0= RULE_IRI_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
-            // InternalOntologicalModelingLanguage.g:3651:3: this_IRI_SCALAR_RESTRICTION_TOKEN_0= RULE_IRI_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY
+            // InternalOntologicalModelingLanguage.g:3618:2: (this_IRI_SCALAR_RESTRICTION_TOKEN_0= RULE_IRI_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:3619:3: this_IRI_SCALAR_RESTRICTION_TOKEN_0= RULE_IRI_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY
             {
             this_IRI_SCALAR_RESTRICTION_TOKEN_0=(Token)match(input,RULE_IRI_SCALAR_RESTRICTION_TOKEN,FOLLOW_4); 
 
             			newLeafNode(this_IRI_SCALAR_RESTRICTION_TOKEN_0, grammarAccess.getIRIScalarRestrictionAccess().getIRI_SCALAR_RESTRICTION_TOKENTerminalRuleCall_0());
             		
-            // InternalOntologicalModelingLanguage.g:3655:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalOntologicalModelingLanguage.g:3656:4: (lv_name_1_0= RULE_ID )
+            // InternalOntologicalModelingLanguage.g:3623:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalOntologicalModelingLanguage.g:3624:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalOntologicalModelingLanguage.g:3656:4: (lv_name_1_0= RULE_ID )
-            // InternalOntologicalModelingLanguage.g:3657:5: lv_name_1_0= RULE_ID
+            // InternalOntologicalModelingLanguage.g:3624:4: (lv_name_1_0= RULE_ID )
+            // InternalOntologicalModelingLanguage.g:3625:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_9); 
 
@@ -9057,32 +9078,32 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            this_LCURLY_2=(Token)match(input,RULE_LCURLY,FOLLOW_65); 
+            this_LCURLY_2=(Token)match(input,RULE_LCURLY,FOLLOW_63); 
 
             			newLeafNode(this_LCURLY_2, grammarAccess.getIRIScalarRestrictionAccess().getLCURLYTerminalRuleCall_2());
             		
-            // InternalOntologicalModelingLanguage.g:3677:3: (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )?
+            // InternalOntologicalModelingLanguage.g:3645:3: (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )?
             int alt43=2;
             int LA43_0 = input.LA(1);
 
-            if ( (LA43_0==98) ) {
+            if ( (LA43_0==94) ) {
                 alt43=1;
             }
             switch (alt43) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:3678:4: otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) )
+                    // InternalOntologicalModelingLanguage.g:3646:4: otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) )
                     {
-                    otherlv_3=(Token)match(input,98,FOLLOW_62); 
+                    otherlv_3=(Token)match(input,94,FOLLOW_60); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getIRIScalarRestrictionAccess().getLengthKeyword_3_0());
                     			
-                    // InternalOntologicalModelingLanguage.g:3682:4: ( (lv_length_4_0= RULE_INT ) )
-                    // InternalOntologicalModelingLanguage.g:3683:5: (lv_length_4_0= RULE_INT )
+                    // InternalOntologicalModelingLanguage.g:3650:4: ( (lv_length_4_0= RULE_INT ) )
+                    // InternalOntologicalModelingLanguage.g:3651:5: (lv_length_4_0= RULE_INT )
                     {
-                    // InternalOntologicalModelingLanguage.g:3683:5: (lv_length_4_0= RULE_INT )
-                    // InternalOntologicalModelingLanguage.g:3684:6: lv_length_4_0= RULE_INT
+                    // InternalOntologicalModelingLanguage.g:3651:5: (lv_length_4_0= RULE_INT )
+                    // InternalOntologicalModelingLanguage.g:3652:6: lv_length_4_0= RULE_INT
                     {
-                    lv_length_4_0=(Token)match(input,RULE_INT,FOLLOW_66); 
+                    lv_length_4_0=(Token)match(input,RULE_INT,FOLLOW_64); 
 
                     						newLeafNode(lv_length_4_0, grammarAccess.getIRIScalarRestrictionAccess().getLengthINTTerminalRuleCall_3_1_0());
                     					
@@ -9108,28 +9129,28 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            // InternalOntologicalModelingLanguage.g:3701:3: (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )?
+            // InternalOntologicalModelingLanguage.g:3669:3: (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )?
             int alt44=2;
             int LA44_0 = input.LA(1);
 
-            if ( (LA44_0==99) ) {
+            if ( (LA44_0==95) ) {
                 alt44=1;
             }
             switch (alt44) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:3702:4: otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) )
+                    // InternalOntologicalModelingLanguage.g:3670:4: otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) )
                     {
-                    otherlv_5=(Token)match(input,99,FOLLOW_62); 
+                    otherlv_5=(Token)match(input,95,FOLLOW_60); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getIRIScalarRestrictionAccess().getMinLengthKeyword_4_0());
                     			
-                    // InternalOntologicalModelingLanguage.g:3706:4: ( (lv_minLength_6_0= RULE_INT ) )
-                    // InternalOntologicalModelingLanguage.g:3707:5: (lv_minLength_6_0= RULE_INT )
+                    // InternalOntologicalModelingLanguage.g:3674:4: ( (lv_minLength_6_0= RULE_INT ) )
+                    // InternalOntologicalModelingLanguage.g:3675:5: (lv_minLength_6_0= RULE_INT )
                     {
-                    // InternalOntologicalModelingLanguage.g:3707:5: (lv_minLength_6_0= RULE_INT )
-                    // InternalOntologicalModelingLanguage.g:3708:6: lv_minLength_6_0= RULE_INT
+                    // InternalOntologicalModelingLanguage.g:3675:5: (lv_minLength_6_0= RULE_INT )
+                    // InternalOntologicalModelingLanguage.g:3676:6: lv_minLength_6_0= RULE_INT
                     {
-                    lv_minLength_6_0=(Token)match(input,RULE_INT,FOLLOW_67); 
+                    lv_minLength_6_0=(Token)match(input,RULE_INT,FOLLOW_65); 
 
                     						newLeafNode(lv_minLength_6_0, grammarAccess.getIRIScalarRestrictionAccess().getMinLengthINTTerminalRuleCall_4_1_0());
                     					
@@ -9155,28 +9176,28 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            // InternalOntologicalModelingLanguage.g:3725:3: (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )?
+            // InternalOntologicalModelingLanguage.g:3693:3: (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )?
             int alt45=2;
             int LA45_0 = input.LA(1);
 
-            if ( (LA45_0==100) ) {
+            if ( (LA45_0==96) ) {
                 alt45=1;
             }
             switch (alt45) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:3726:4: otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) )
+                    // InternalOntologicalModelingLanguage.g:3694:4: otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) )
                     {
-                    otherlv_7=(Token)match(input,100,FOLLOW_62); 
+                    otherlv_7=(Token)match(input,96,FOLLOW_60); 
 
                     				newLeafNode(otherlv_7, grammarAccess.getIRIScalarRestrictionAccess().getMaxLengthKeyword_5_0());
                     			
-                    // InternalOntologicalModelingLanguage.g:3730:4: ( (lv_maxLength_8_0= RULE_INT ) )
-                    // InternalOntologicalModelingLanguage.g:3731:5: (lv_maxLength_8_0= RULE_INT )
+                    // InternalOntologicalModelingLanguage.g:3698:4: ( (lv_maxLength_8_0= RULE_INT ) )
+                    // InternalOntologicalModelingLanguage.g:3699:5: (lv_maxLength_8_0= RULE_INT )
                     {
-                    // InternalOntologicalModelingLanguage.g:3731:5: (lv_maxLength_8_0= RULE_INT )
-                    // InternalOntologicalModelingLanguage.g:3732:6: lv_maxLength_8_0= RULE_INT
+                    // InternalOntologicalModelingLanguage.g:3699:5: (lv_maxLength_8_0= RULE_INT )
+                    // InternalOntologicalModelingLanguage.g:3700:6: lv_maxLength_8_0= RULE_INT
                     {
-                    lv_maxLength_8_0=(Token)match(input,RULE_INT,FOLLOW_68); 
+                    lv_maxLength_8_0=(Token)match(input,RULE_INT,FOLLOW_66); 
 
                     						newLeafNode(lv_maxLength_8_0, grammarAccess.getIRIScalarRestrictionAccess().getMaxLengthINTTerminalRuleCall_5_1_0());
                     					
@@ -9202,26 +9223,26 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            // InternalOntologicalModelingLanguage.g:3749:3: (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )?
+            // InternalOntologicalModelingLanguage.g:3717:3: (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )?
             int alt46=2;
             int LA46_0 = input.LA(1);
 
-            if ( (LA46_0==101) ) {
+            if ( (LA46_0==97) ) {
                 alt46=1;
             }
             switch (alt46) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:3750:4: otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) )
+                    // InternalOntologicalModelingLanguage.g:3718:4: otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) )
                     {
-                    otherlv_9=(Token)match(input,101,FOLLOW_7); 
+                    otherlv_9=(Token)match(input,97,FOLLOW_7); 
 
                     				newLeafNode(otherlv_9, grammarAccess.getIRIScalarRestrictionAccess().getPatternKeyword_6_0());
                     			
-                    // InternalOntologicalModelingLanguage.g:3754:4: ( (lv_pattern_10_0= RULE_STRING ) )
-                    // InternalOntologicalModelingLanguage.g:3755:5: (lv_pattern_10_0= RULE_STRING )
+                    // InternalOntologicalModelingLanguage.g:3722:4: ( (lv_pattern_10_0= RULE_STRING ) )
+                    // InternalOntologicalModelingLanguage.g:3723:5: (lv_pattern_10_0= RULE_STRING )
                     {
-                    // InternalOntologicalModelingLanguage.g:3755:5: (lv_pattern_10_0= RULE_STRING )
-                    // InternalOntologicalModelingLanguage.g:3756:6: lv_pattern_10_0= RULE_STRING
+                    // InternalOntologicalModelingLanguage.g:3723:5: (lv_pattern_10_0= RULE_STRING )
+                    // InternalOntologicalModelingLanguage.g:3724:6: lv_pattern_10_0= RULE_STRING
                     {
                     lv_pattern_10_0=(Token)match(input,RULE_STRING,FOLLOW_50); 
 
@@ -9253,11 +9274,11 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             			newLeafNode(otherlv_11, grammarAccess.getIRIScalarRestrictionAccess().getRestrictedRangeKeyword_7());
             		
-            // InternalOntologicalModelingLanguage.g:3777:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:3778:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3745:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:3746:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:3778:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:3779:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:3746:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3747:5: ruleReference
             {
 
             					if (current==null) {
@@ -9308,7 +9329,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleNumericScalarRestriction"
-    // InternalOntologicalModelingLanguage.g:3801:1: entryRuleNumericScalarRestriction returns [EObject current=null] : iv_ruleNumericScalarRestriction= ruleNumericScalarRestriction EOF ;
+    // InternalOntologicalModelingLanguage.g:3769:1: entryRuleNumericScalarRestriction returns [EObject current=null] : iv_ruleNumericScalarRestriction= ruleNumericScalarRestriction EOF ;
     public final EObject entryRuleNumericScalarRestriction() throws RecognitionException {
         EObject current = null;
 
@@ -9316,8 +9337,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:3801:65: (iv_ruleNumericScalarRestriction= ruleNumericScalarRestriction EOF )
-            // InternalOntologicalModelingLanguage.g:3802:2: iv_ruleNumericScalarRestriction= ruleNumericScalarRestriction EOF
+            // InternalOntologicalModelingLanguage.g:3769:65: (iv_ruleNumericScalarRestriction= ruleNumericScalarRestriction EOF )
+            // InternalOntologicalModelingLanguage.g:3770:2: iv_ruleNumericScalarRestriction= ruleNumericScalarRestriction EOF
             {
              newCompositeNode(grammarAccess.getNumericScalarRestrictionRule()); 
             pushFollow(FOLLOW_1);
@@ -9344,7 +9365,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleNumericScalarRestriction"
-    // InternalOntologicalModelingLanguage.g:3808:1: ruleNumericScalarRestriction returns [EObject current=null] : (this_NUMERIC_SCALAR_RESTRICTION_TOKEN_0= RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) ;
+    // InternalOntologicalModelingLanguage.g:3776:1: ruleNumericScalarRestriction returns [EObject current=null] : (this_NUMERIC_SCALAR_RESTRICTION_TOKEN_0= RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) ;
     public final EObject ruleNumericScalarRestriction() throws RecognitionException {
         EObject current = null;
 
@@ -9366,21 +9387,21 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:3814:2: ( (this_NUMERIC_SCALAR_RESTRICTION_TOKEN_0= RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) )
-            // InternalOntologicalModelingLanguage.g:3815:2: (this_NUMERIC_SCALAR_RESTRICTION_TOKEN_0= RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:3782:2: ( (this_NUMERIC_SCALAR_RESTRICTION_TOKEN_0= RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) )
+            // InternalOntologicalModelingLanguage.g:3783:2: (this_NUMERIC_SCALAR_RESTRICTION_TOKEN_0= RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
             {
-            // InternalOntologicalModelingLanguage.g:3815:2: (this_NUMERIC_SCALAR_RESTRICTION_TOKEN_0= RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
-            // InternalOntologicalModelingLanguage.g:3816:3: this_NUMERIC_SCALAR_RESTRICTION_TOKEN_0= RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY
+            // InternalOntologicalModelingLanguage.g:3783:2: (this_NUMERIC_SCALAR_RESTRICTION_TOKEN_0= RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:3784:3: this_NUMERIC_SCALAR_RESTRICTION_TOKEN_0= RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY
             {
             this_NUMERIC_SCALAR_RESTRICTION_TOKEN_0=(Token)match(input,RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN,FOLLOW_4); 
 
             			newLeafNode(this_NUMERIC_SCALAR_RESTRICTION_TOKEN_0, grammarAccess.getNumericScalarRestrictionAccess().getNUMERIC_SCALAR_RESTRICTION_TOKENTerminalRuleCall_0());
             		
-            // InternalOntologicalModelingLanguage.g:3820:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalOntologicalModelingLanguage.g:3821:4: (lv_name_1_0= RULE_ID )
+            // InternalOntologicalModelingLanguage.g:3788:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalOntologicalModelingLanguage.g:3789:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalOntologicalModelingLanguage.g:3821:4: (lv_name_1_0= RULE_ID )
-            // InternalOntologicalModelingLanguage.g:3822:5: lv_name_1_0= RULE_ID
+            // InternalOntologicalModelingLanguage.g:3789:4: (lv_name_1_0= RULE_ID )
+            // InternalOntologicalModelingLanguage.g:3790:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_9); 
 
@@ -9402,32 +9423,32 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            this_LCURLY_2=(Token)match(input,RULE_LCURLY,FOLLOW_69); 
+            this_LCURLY_2=(Token)match(input,RULE_LCURLY,FOLLOW_67); 
 
             			newLeafNode(this_LCURLY_2, grammarAccess.getNumericScalarRestrictionAccess().getLCURLYTerminalRuleCall_2());
             		
-            // InternalOntologicalModelingLanguage.g:3842:3: (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )?
+            // InternalOntologicalModelingLanguage.g:3810:3: (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )?
             int alt47=2;
             int LA47_0 = input.LA(1);
 
-            if ( (LA47_0==102) ) {
+            if ( (LA47_0==98) ) {
                 alt47=1;
             }
             switch (alt47) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:3843:4: otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) )
+                    // InternalOntologicalModelingLanguage.g:3811:4: otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) )
                     {
-                    otherlv_3=(Token)match(input,102,FOLLOW_7); 
+                    otherlv_3=(Token)match(input,98,FOLLOW_7); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getNumericScalarRestrictionAccess().getMinInclusiveKeyword_3_0());
                     			
-                    // InternalOntologicalModelingLanguage.g:3847:4: ( (lv_minInclusive_4_0= RULE_STRING ) )
-                    // InternalOntologicalModelingLanguage.g:3848:5: (lv_minInclusive_4_0= RULE_STRING )
+                    // InternalOntologicalModelingLanguage.g:3815:4: ( (lv_minInclusive_4_0= RULE_STRING ) )
+                    // InternalOntologicalModelingLanguage.g:3816:5: (lv_minInclusive_4_0= RULE_STRING )
                     {
-                    // InternalOntologicalModelingLanguage.g:3848:5: (lv_minInclusive_4_0= RULE_STRING )
-                    // InternalOntologicalModelingLanguage.g:3849:6: lv_minInclusive_4_0= RULE_STRING
+                    // InternalOntologicalModelingLanguage.g:3816:5: (lv_minInclusive_4_0= RULE_STRING )
+                    // InternalOntologicalModelingLanguage.g:3817:6: lv_minInclusive_4_0= RULE_STRING
                     {
-                    lv_minInclusive_4_0=(Token)match(input,RULE_STRING,FOLLOW_70); 
+                    lv_minInclusive_4_0=(Token)match(input,RULE_STRING,FOLLOW_68); 
 
                     						newLeafNode(lv_minInclusive_4_0, grammarAccess.getNumericScalarRestrictionAccess().getMinInclusiveSTRINGTerminalRuleCall_3_1_0());
                     					
@@ -9453,28 +9474,28 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            // InternalOntologicalModelingLanguage.g:3866:3: (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )?
+            // InternalOntologicalModelingLanguage.g:3834:3: (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )?
             int alt48=2;
             int LA48_0 = input.LA(1);
 
-            if ( (LA48_0==103) ) {
+            if ( (LA48_0==99) ) {
                 alt48=1;
             }
             switch (alt48) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:3867:4: otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) )
+                    // InternalOntologicalModelingLanguage.g:3835:4: otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) )
                     {
-                    otherlv_5=(Token)match(input,103,FOLLOW_7); 
+                    otherlv_5=(Token)match(input,99,FOLLOW_7); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getNumericScalarRestrictionAccess().getMaxInclusiveKeyword_4_0());
                     			
-                    // InternalOntologicalModelingLanguage.g:3871:4: ( (lv_maxInclusive_6_0= RULE_STRING ) )
-                    // InternalOntologicalModelingLanguage.g:3872:5: (lv_maxInclusive_6_0= RULE_STRING )
+                    // InternalOntologicalModelingLanguage.g:3839:4: ( (lv_maxInclusive_6_0= RULE_STRING ) )
+                    // InternalOntologicalModelingLanguage.g:3840:5: (lv_maxInclusive_6_0= RULE_STRING )
                     {
-                    // InternalOntologicalModelingLanguage.g:3872:5: (lv_maxInclusive_6_0= RULE_STRING )
-                    // InternalOntologicalModelingLanguage.g:3873:6: lv_maxInclusive_6_0= RULE_STRING
+                    // InternalOntologicalModelingLanguage.g:3840:5: (lv_maxInclusive_6_0= RULE_STRING )
+                    // InternalOntologicalModelingLanguage.g:3841:6: lv_maxInclusive_6_0= RULE_STRING
                     {
-                    lv_maxInclusive_6_0=(Token)match(input,RULE_STRING,FOLLOW_71); 
+                    lv_maxInclusive_6_0=(Token)match(input,RULE_STRING,FOLLOW_69); 
 
                     						newLeafNode(lv_maxInclusive_6_0, grammarAccess.getNumericScalarRestrictionAccess().getMaxInclusiveSTRINGTerminalRuleCall_4_1_0());
                     					
@@ -9500,28 +9521,28 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            // InternalOntologicalModelingLanguage.g:3890:3: (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )?
+            // InternalOntologicalModelingLanguage.g:3858:3: (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )?
             int alt49=2;
             int LA49_0 = input.LA(1);
 
-            if ( (LA49_0==104) ) {
+            if ( (LA49_0==100) ) {
                 alt49=1;
             }
             switch (alt49) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:3891:4: otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) )
+                    // InternalOntologicalModelingLanguage.g:3859:4: otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) )
                     {
-                    otherlv_7=(Token)match(input,104,FOLLOW_7); 
+                    otherlv_7=(Token)match(input,100,FOLLOW_7); 
 
                     				newLeafNode(otherlv_7, grammarAccess.getNumericScalarRestrictionAccess().getMinExclusiveKeyword_5_0());
                     			
-                    // InternalOntologicalModelingLanguage.g:3895:4: ( (lv_minExclusive_8_0= RULE_STRING ) )
-                    // InternalOntologicalModelingLanguage.g:3896:5: (lv_minExclusive_8_0= RULE_STRING )
+                    // InternalOntologicalModelingLanguage.g:3863:4: ( (lv_minExclusive_8_0= RULE_STRING ) )
+                    // InternalOntologicalModelingLanguage.g:3864:5: (lv_minExclusive_8_0= RULE_STRING )
                     {
-                    // InternalOntologicalModelingLanguage.g:3896:5: (lv_minExclusive_8_0= RULE_STRING )
-                    // InternalOntologicalModelingLanguage.g:3897:6: lv_minExclusive_8_0= RULE_STRING
+                    // InternalOntologicalModelingLanguage.g:3864:5: (lv_minExclusive_8_0= RULE_STRING )
+                    // InternalOntologicalModelingLanguage.g:3865:6: lv_minExclusive_8_0= RULE_STRING
                     {
-                    lv_minExclusive_8_0=(Token)match(input,RULE_STRING,FOLLOW_72); 
+                    lv_minExclusive_8_0=(Token)match(input,RULE_STRING,FOLLOW_70); 
 
                     						newLeafNode(lv_minExclusive_8_0, grammarAccess.getNumericScalarRestrictionAccess().getMinExclusiveSTRINGTerminalRuleCall_5_1_0());
                     					
@@ -9547,26 +9568,26 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            // InternalOntologicalModelingLanguage.g:3914:3: (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )?
+            // InternalOntologicalModelingLanguage.g:3882:3: (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )?
             int alt50=2;
             int LA50_0 = input.LA(1);
 
-            if ( (LA50_0==105) ) {
+            if ( (LA50_0==101) ) {
                 alt50=1;
             }
             switch (alt50) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:3915:4: otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) )
+                    // InternalOntologicalModelingLanguage.g:3883:4: otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) )
                     {
-                    otherlv_9=(Token)match(input,105,FOLLOW_7); 
+                    otherlv_9=(Token)match(input,101,FOLLOW_7); 
 
                     				newLeafNode(otherlv_9, grammarAccess.getNumericScalarRestrictionAccess().getMaxExclusiveKeyword_6_0());
                     			
-                    // InternalOntologicalModelingLanguage.g:3919:4: ( (lv_maxExclusive_10_0= RULE_STRING ) )
-                    // InternalOntologicalModelingLanguage.g:3920:5: (lv_maxExclusive_10_0= RULE_STRING )
+                    // InternalOntologicalModelingLanguage.g:3887:4: ( (lv_maxExclusive_10_0= RULE_STRING ) )
+                    // InternalOntologicalModelingLanguage.g:3888:5: (lv_maxExclusive_10_0= RULE_STRING )
                     {
-                    // InternalOntologicalModelingLanguage.g:3920:5: (lv_maxExclusive_10_0= RULE_STRING )
-                    // InternalOntologicalModelingLanguage.g:3921:6: lv_maxExclusive_10_0= RULE_STRING
+                    // InternalOntologicalModelingLanguage.g:3888:5: (lv_maxExclusive_10_0= RULE_STRING )
+                    // InternalOntologicalModelingLanguage.g:3889:6: lv_maxExclusive_10_0= RULE_STRING
                     {
                     lv_maxExclusive_10_0=(Token)match(input,RULE_STRING,FOLLOW_50); 
 
@@ -9598,11 +9619,11 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             			newLeafNode(otherlv_11, grammarAccess.getNumericScalarRestrictionAccess().getRestrictedRangeKeyword_7());
             		
-            // InternalOntologicalModelingLanguage.g:3942:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:3943:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3910:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:3911:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:3943:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:3944:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:3911:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:3912:5: ruleReference
             {
 
             					if (current==null) {
@@ -9653,7 +9674,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRulePlainLiteralScalarRestriction"
-    // InternalOntologicalModelingLanguage.g:3966:1: entryRulePlainLiteralScalarRestriction returns [EObject current=null] : iv_rulePlainLiteralScalarRestriction= rulePlainLiteralScalarRestriction EOF ;
+    // InternalOntologicalModelingLanguage.g:3934:1: entryRulePlainLiteralScalarRestriction returns [EObject current=null] : iv_rulePlainLiteralScalarRestriction= rulePlainLiteralScalarRestriction EOF ;
     public final EObject entryRulePlainLiteralScalarRestriction() throws RecognitionException {
         EObject current = null;
 
@@ -9661,8 +9682,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:3966:70: (iv_rulePlainLiteralScalarRestriction= rulePlainLiteralScalarRestriction EOF )
-            // InternalOntologicalModelingLanguage.g:3967:2: iv_rulePlainLiteralScalarRestriction= rulePlainLiteralScalarRestriction EOF
+            // InternalOntologicalModelingLanguage.g:3934:70: (iv_rulePlainLiteralScalarRestriction= rulePlainLiteralScalarRestriction EOF )
+            // InternalOntologicalModelingLanguage.g:3935:2: iv_rulePlainLiteralScalarRestriction= rulePlainLiteralScalarRestriction EOF
             {
              newCompositeNode(grammarAccess.getPlainLiteralScalarRestrictionRule()); 
             pushFollow(FOLLOW_1);
@@ -9689,7 +9710,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "rulePlainLiteralScalarRestriction"
-    // InternalOntologicalModelingLanguage.g:3973:1: rulePlainLiteralScalarRestriction returns [EObject current=null] : (this_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN_0= RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? (otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) ) )? otherlv_13= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_15= RULE_RCURLY ) ;
+    // InternalOntologicalModelingLanguage.g:3941:1: rulePlainLiteralScalarRestriction returns [EObject current=null] : (this_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN_0= RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? (otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) ) )? otherlv_13= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_15= RULE_RCURLY ) ;
     public final EObject rulePlainLiteralScalarRestriction() throws RecognitionException {
         EObject current = null;
 
@@ -9713,21 +9734,21 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:3979:2: ( (this_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN_0= RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? (otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) ) )? otherlv_13= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_15= RULE_RCURLY ) )
-            // InternalOntologicalModelingLanguage.g:3980:2: (this_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN_0= RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? (otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) ) )? otherlv_13= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_15= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:3947:2: ( (this_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN_0= RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? (otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) ) )? otherlv_13= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_15= RULE_RCURLY ) )
+            // InternalOntologicalModelingLanguage.g:3948:2: (this_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN_0= RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? (otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) ) )? otherlv_13= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_15= RULE_RCURLY )
             {
-            // InternalOntologicalModelingLanguage.g:3980:2: (this_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN_0= RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? (otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) ) )? otherlv_13= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_15= RULE_RCURLY )
-            // InternalOntologicalModelingLanguage.g:3981:3: this_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN_0= RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? (otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) ) )? otherlv_13= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_15= RULE_RCURLY
+            // InternalOntologicalModelingLanguage.g:3948:2: (this_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN_0= RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? (otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) ) )? otherlv_13= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_15= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:3949:3: this_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN_0= RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? (otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) ) )? otherlv_13= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_15= RULE_RCURLY
             {
             this_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN_0=(Token)match(input,RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN,FOLLOW_4); 
 
             			newLeafNode(this_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN_0, grammarAccess.getPlainLiteralScalarRestrictionAccess().getPLAIN_LITERAL_SCALAR_RESTRICTION_TOKENTerminalRuleCall_0());
             		
-            // InternalOntologicalModelingLanguage.g:3985:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalOntologicalModelingLanguage.g:3986:4: (lv_name_1_0= RULE_ID )
+            // InternalOntologicalModelingLanguage.g:3953:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalOntologicalModelingLanguage.g:3954:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalOntologicalModelingLanguage.g:3986:4: (lv_name_1_0= RULE_ID )
-            // InternalOntologicalModelingLanguage.g:3987:5: lv_name_1_0= RULE_ID
+            // InternalOntologicalModelingLanguage.g:3954:4: (lv_name_1_0= RULE_ID )
+            // InternalOntologicalModelingLanguage.g:3955:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_9); 
 
@@ -9749,32 +9770,32 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            this_LCURLY_2=(Token)match(input,RULE_LCURLY,FOLLOW_73); 
+            this_LCURLY_2=(Token)match(input,RULE_LCURLY,FOLLOW_71); 
 
             			newLeafNode(this_LCURLY_2, grammarAccess.getPlainLiteralScalarRestrictionAccess().getLCURLYTerminalRuleCall_2());
             		
-            // InternalOntologicalModelingLanguage.g:4007:3: (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )?
+            // InternalOntologicalModelingLanguage.g:3975:3: (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )?
             int alt51=2;
             int LA51_0 = input.LA(1);
 
-            if ( (LA51_0==98) ) {
+            if ( (LA51_0==94) ) {
                 alt51=1;
             }
             switch (alt51) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:4008:4: otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) )
+                    // InternalOntologicalModelingLanguage.g:3976:4: otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) )
                     {
-                    otherlv_3=(Token)match(input,98,FOLLOW_62); 
+                    otherlv_3=(Token)match(input,94,FOLLOW_60); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getPlainLiteralScalarRestrictionAccess().getLengthKeyword_3_0());
                     			
-                    // InternalOntologicalModelingLanguage.g:4012:4: ( (lv_length_4_0= RULE_INT ) )
-                    // InternalOntologicalModelingLanguage.g:4013:5: (lv_length_4_0= RULE_INT )
+                    // InternalOntologicalModelingLanguage.g:3980:4: ( (lv_length_4_0= RULE_INT ) )
+                    // InternalOntologicalModelingLanguage.g:3981:5: (lv_length_4_0= RULE_INT )
                     {
-                    // InternalOntologicalModelingLanguage.g:4013:5: (lv_length_4_0= RULE_INT )
-                    // InternalOntologicalModelingLanguage.g:4014:6: lv_length_4_0= RULE_INT
+                    // InternalOntologicalModelingLanguage.g:3981:5: (lv_length_4_0= RULE_INT )
+                    // InternalOntologicalModelingLanguage.g:3982:6: lv_length_4_0= RULE_INT
                     {
-                    lv_length_4_0=(Token)match(input,RULE_INT,FOLLOW_74); 
+                    lv_length_4_0=(Token)match(input,RULE_INT,FOLLOW_72); 
 
                     						newLeafNode(lv_length_4_0, grammarAccess.getPlainLiteralScalarRestrictionAccess().getLengthINTTerminalRuleCall_3_1_0());
                     					
@@ -9800,28 +9821,28 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            // InternalOntologicalModelingLanguage.g:4031:3: (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )?
+            // InternalOntologicalModelingLanguage.g:3999:3: (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )?
             int alt52=2;
             int LA52_0 = input.LA(1);
 
-            if ( (LA52_0==99) ) {
+            if ( (LA52_0==95) ) {
                 alt52=1;
             }
             switch (alt52) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:4032:4: otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) )
+                    // InternalOntologicalModelingLanguage.g:4000:4: otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) )
                     {
-                    otherlv_5=(Token)match(input,99,FOLLOW_62); 
+                    otherlv_5=(Token)match(input,95,FOLLOW_60); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getPlainLiteralScalarRestrictionAccess().getMinLengthKeyword_4_0());
                     			
-                    // InternalOntologicalModelingLanguage.g:4036:4: ( (lv_minLength_6_0= RULE_INT ) )
-                    // InternalOntologicalModelingLanguage.g:4037:5: (lv_minLength_6_0= RULE_INT )
+                    // InternalOntologicalModelingLanguage.g:4004:4: ( (lv_minLength_6_0= RULE_INT ) )
+                    // InternalOntologicalModelingLanguage.g:4005:5: (lv_minLength_6_0= RULE_INT )
                     {
-                    // InternalOntologicalModelingLanguage.g:4037:5: (lv_minLength_6_0= RULE_INT )
-                    // InternalOntologicalModelingLanguage.g:4038:6: lv_minLength_6_0= RULE_INT
+                    // InternalOntologicalModelingLanguage.g:4005:5: (lv_minLength_6_0= RULE_INT )
+                    // InternalOntologicalModelingLanguage.g:4006:6: lv_minLength_6_0= RULE_INT
                     {
-                    lv_minLength_6_0=(Token)match(input,RULE_INT,FOLLOW_75); 
+                    lv_minLength_6_0=(Token)match(input,RULE_INT,FOLLOW_73); 
 
                     						newLeafNode(lv_minLength_6_0, grammarAccess.getPlainLiteralScalarRestrictionAccess().getMinLengthINTTerminalRuleCall_4_1_0());
                     					
@@ -9847,28 +9868,28 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            // InternalOntologicalModelingLanguage.g:4055:3: (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )?
+            // InternalOntologicalModelingLanguage.g:4023:3: (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )?
             int alt53=2;
             int LA53_0 = input.LA(1);
 
-            if ( (LA53_0==100) ) {
+            if ( (LA53_0==96) ) {
                 alt53=1;
             }
             switch (alt53) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:4056:4: otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) )
+                    // InternalOntologicalModelingLanguage.g:4024:4: otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) )
                     {
-                    otherlv_7=(Token)match(input,100,FOLLOW_62); 
+                    otherlv_7=(Token)match(input,96,FOLLOW_60); 
 
                     				newLeafNode(otherlv_7, grammarAccess.getPlainLiteralScalarRestrictionAccess().getMaxLengthKeyword_5_0());
                     			
-                    // InternalOntologicalModelingLanguage.g:4060:4: ( (lv_maxLength_8_0= RULE_INT ) )
-                    // InternalOntologicalModelingLanguage.g:4061:5: (lv_maxLength_8_0= RULE_INT )
+                    // InternalOntologicalModelingLanguage.g:4028:4: ( (lv_maxLength_8_0= RULE_INT ) )
+                    // InternalOntologicalModelingLanguage.g:4029:5: (lv_maxLength_8_0= RULE_INT )
                     {
-                    // InternalOntologicalModelingLanguage.g:4061:5: (lv_maxLength_8_0= RULE_INT )
-                    // InternalOntologicalModelingLanguage.g:4062:6: lv_maxLength_8_0= RULE_INT
+                    // InternalOntologicalModelingLanguage.g:4029:5: (lv_maxLength_8_0= RULE_INT )
+                    // InternalOntologicalModelingLanguage.g:4030:6: lv_maxLength_8_0= RULE_INT
                     {
-                    lv_maxLength_8_0=(Token)match(input,RULE_INT,FOLLOW_76); 
+                    lv_maxLength_8_0=(Token)match(input,RULE_INT,FOLLOW_74); 
 
                     						newLeafNode(lv_maxLength_8_0, grammarAccess.getPlainLiteralScalarRestrictionAccess().getMaxLengthINTTerminalRuleCall_5_1_0());
                     					
@@ -9894,28 +9915,28 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            // InternalOntologicalModelingLanguage.g:4079:3: (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )?
+            // InternalOntologicalModelingLanguage.g:4047:3: (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )?
             int alt54=2;
             int LA54_0 = input.LA(1);
 
-            if ( (LA54_0==101) ) {
+            if ( (LA54_0==97) ) {
                 alt54=1;
             }
             switch (alt54) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:4080:4: otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) )
+                    // InternalOntologicalModelingLanguage.g:4048:4: otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) )
                     {
-                    otherlv_9=(Token)match(input,101,FOLLOW_7); 
+                    otherlv_9=(Token)match(input,97,FOLLOW_7); 
 
                     				newLeafNode(otherlv_9, grammarAccess.getPlainLiteralScalarRestrictionAccess().getPatternKeyword_6_0());
                     			
-                    // InternalOntologicalModelingLanguage.g:4084:4: ( (lv_pattern_10_0= RULE_STRING ) )
-                    // InternalOntologicalModelingLanguage.g:4085:5: (lv_pattern_10_0= RULE_STRING )
+                    // InternalOntologicalModelingLanguage.g:4052:4: ( (lv_pattern_10_0= RULE_STRING ) )
+                    // InternalOntologicalModelingLanguage.g:4053:5: (lv_pattern_10_0= RULE_STRING )
                     {
-                    // InternalOntologicalModelingLanguage.g:4085:5: (lv_pattern_10_0= RULE_STRING )
-                    // InternalOntologicalModelingLanguage.g:4086:6: lv_pattern_10_0= RULE_STRING
+                    // InternalOntologicalModelingLanguage.g:4053:5: (lv_pattern_10_0= RULE_STRING )
+                    // InternalOntologicalModelingLanguage.g:4054:6: lv_pattern_10_0= RULE_STRING
                     {
-                    lv_pattern_10_0=(Token)match(input,RULE_STRING,FOLLOW_77); 
+                    lv_pattern_10_0=(Token)match(input,RULE_STRING,FOLLOW_75); 
 
                     						newLeafNode(lv_pattern_10_0, grammarAccess.getPlainLiteralScalarRestrictionAccess().getPatternSTRINGTerminalRuleCall_6_1_0());
                     					
@@ -9941,26 +9962,26 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            // InternalOntologicalModelingLanguage.g:4103:3: (otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) ) )?
+            // InternalOntologicalModelingLanguage.g:4071:3: (otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) ) )?
             int alt55=2;
             int LA55_0 = input.LA(1);
 
-            if ( (LA55_0==106) ) {
+            if ( (LA55_0==102) ) {
                 alt55=1;
             }
             switch (alt55) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:4104:4: otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) )
+                    // InternalOntologicalModelingLanguage.g:4072:4: otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) )
                     {
-                    otherlv_11=(Token)match(input,106,FOLLOW_7); 
+                    otherlv_11=(Token)match(input,102,FOLLOW_7); 
 
                     				newLeafNode(otherlv_11, grammarAccess.getPlainLiteralScalarRestrictionAccess().getLangRangeKeyword_7_0());
                     			
-                    // InternalOntologicalModelingLanguage.g:4108:4: ( (lv_langRange_12_0= RULE_STRING ) )
-                    // InternalOntologicalModelingLanguage.g:4109:5: (lv_langRange_12_0= RULE_STRING )
+                    // InternalOntologicalModelingLanguage.g:4076:4: ( (lv_langRange_12_0= RULE_STRING ) )
+                    // InternalOntologicalModelingLanguage.g:4077:5: (lv_langRange_12_0= RULE_STRING )
                     {
-                    // InternalOntologicalModelingLanguage.g:4109:5: (lv_langRange_12_0= RULE_STRING )
-                    // InternalOntologicalModelingLanguage.g:4110:6: lv_langRange_12_0= RULE_STRING
+                    // InternalOntologicalModelingLanguage.g:4077:5: (lv_langRange_12_0= RULE_STRING )
+                    // InternalOntologicalModelingLanguage.g:4078:6: lv_langRange_12_0= RULE_STRING
                     {
                     lv_langRange_12_0=(Token)match(input,RULE_STRING,FOLLOW_50); 
 
@@ -9992,11 +10013,11 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             			newLeafNode(otherlv_13, grammarAccess.getPlainLiteralScalarRestrictionAccess().getRestrictedRangeKeyword_8());
             		
-            // InternalOntologicalModelingLanguage.g:4131:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:4132:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:4099:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:4100:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:4132:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:4133:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:4100:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:4101:5: ruleReference
             {
 
             					if (current==null) {
@@ -10047,7 +10068,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleScalarOneOfRestriction"
-    // InternalOntologicalModelingLanguage.g:4155:1: entryRuleScalarOneOfRestriction returns [EObject current=null] : iv_ruleScalarOneOfRestriction= ruleScalarOneOfRestriction EOF ;
+    // InternalOntologicalModelingLanguage.g:4123:1: entryRuleScalarOneOfRestriction returns [EObject current=null] : iv_ruleScalarOneOfRestriction= ruleScalarOneOfRestriction EOF ;
     public final EObject entryRuleScalarOneOfRestriction() throws RecognitionException {
         EObject current = null;
 
@@ -10055,8 +10076,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:4155:63: (iv_ruleScalarOneOfRestriction= ruleScalarOneOfRestriction EOF )
-            // InternalOntologicalModelingLanguage.g:4156:2: iv_ruleScalarOneOfRestriction= ruleScalarOneOfRestriction EOF
+            // InternalOntologicalModelingLanguage.g:4123:63: (iv_ruleScalarOneOfRestriction= ruleScalarOneOfRestriction EOF )
+            // InternalOntologicalModelingLanguage.g:4124:2: iv_ruleScalarOneOfRestriction= ruleScalarOneOfRestriction EOF
             {
              newCompositeNode(grammarAccess.getScalarOneOfRestrictionRule()); 
             pushFollow(FOLLOW_1);
@@ -10083,7 +10104,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleScalarOneOfRestriction"
-    // InternalOntologicalModelingLanguage.g:4162:1: ruleScalarOneOfRestriction returns [EObject current=null] : (this_SCALAR_ONE_OF_RESTRICTION_TOKEN_0= RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY ) ;
+    // InternalOntologicalModelingLanguage.g:4130:1: ruleScalarOneOfRestriction returns [EObject current=null] : (this_SCALAR_ONE_OF_RESTRICTION_TOKEN_0= RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY ) ;
     public final EObject ruleScalarOneOfRestriction() throws RecognitionException {
         EObject current = null;
 
@@ -10097,21 +10118,21 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:4168:2: ( (this_SCALAR_ONE_OF_RESTRICTION_TOKEN_0= RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY ) )
-            // InternalOntologicalModelingLanguage.g:4169:2: (this_SCALAR_ONE_OF_RESTRICTION_TOKEN_0= RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:4136:2: ( (this_SCALAR_ONE_OF_RESTRICTION_TOKEN_0= RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY ) )
+            // InternalOntologicalModelingLanguage.g:4137:2: (this_SCALAR_ONE_OF_RESTRICTION_TOKEN_0= RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY )
             {
-            // InternalOntologicalModelingLanguage.g:4169:2: (this_SCALAR_ONE_OF_RESTRICTION_TOKEN_0= RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY )
-            // InternalOntologicalModelingLanguage.g:4170:3: this_SCALAR_ONE_OF_RESTRICTION_TOKEN_0= RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY
+            // InternalOntologicalModelingLanguage.g:4137:2: (this_SCALAR_ONE_OF_RESTRICTION_TOKEN_0= RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:4138:3: this_SCALAR_ONE_OF_RESTRICTION_TOKEN_0= RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY
             {
             this_SCALAR_ONE_OF_RESTRICTION_TOKEN_0=(Token)match(input,RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN,FOLLOW_4); 
 
             			newLeafNode(this_SCALAR_ONE_OF_RESTRICTION_TOKEN_0, grammarAccess.getScalarOneOfRestrictionAccess().getSCALAR_ONE_OF_RESTRICTION_TOKENTerminalRuleCall_0());
             		
-            // InternalOntologicalModelingLanguage.g:4174:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalOntologicalModelingLanguage.g:4175:4: (lv_name_1_0= RULE_ID )
+            // InternalOntologicalModelingLanguage.g:4142:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalOntologicalModelingLanguage.g:4143:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalOntologicalModelingLanguage.g:4175:4: (lv_name_1_0= RULE_ID )
-            // InternalOntologicalModelingLanguage.g:4176:5: lv_name_1_0= RULE_ID
+            // InternalOntologicalModelingLanguage.g:4143:4: (lv_name_1_0= RULE_ID )
+            // InternalOntologicalModelingLanguage.g:4144:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_9); 
 
@@ -10141,11 +10162,11 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             			newLeafNode(otherlv_3, grammarAccess.getScalarOneOfRestrictionAccess().getRestrictedRangeKeyword_3());
             		
-            // InternalOntologicalModelingLanguage.g:4200:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:4201:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:4168:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:4169:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:4201:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:4202:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:4169:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:4170:5: ruleReference
             {
 
             					if (current==null) {
@@ -10196,7 +10217,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleScalarOneOfLiteralAxiom"
-    // InternalOntologicalModelingLanguage.g:4224:1: entryRuleScalarOneOfLiteralAxiom returns [EObject current=null] : iv_ruleScalarOneOfLiteralAxiom= ruleScalarOneOfLiteralAxiom EOF ;
+    // InternalOntologicalModelingLanguage.g:4192:1: entryRuleScalarOneOfLiteralAxiom returns [EObject current=null] : iv_ruleScalarOneOfLiteralAxiom= ruleScalarOneOfLiteralAxiom EOF ;
     public final EObject entryRuleScalarOneOfLiteralAxiom() throws RecognitionException {
         EObject current = null;
 
@@ -10204,8 +10225,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:4224:64: (iv_ruleScalarOneOfLiteralAxiom= ruleScalarOneOfLiteralAxiom EOF )
-            // InternalOntologicalModelingLanguage.g:4225:2: iv_ruleScalarOneOfLiteralAxiom= ruleScalarOneOfLiteralAxiom EOF
+            // InternalOntologicalModelingLanguage.g:4192:64: (iv_ruleScalarOneOfLiteralAxiom= ruleScalarOneOfLiteralAxiom EOF )
+            // InternalOntologicalModelingLanguage.g:4193:2: iv_ruleScalarOneOfLiteralAxiom= ruleScalarOneOfLiteralAxiom EOF
             {
              newCompositeNode(grammarAccess.getScalarOneOfLiteralAxiomRule()); 
             pushFollow(FOLLOW_1);
@@ -10232,7 +10253,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleScalarOneOfLiteralAxiom"
-    // InternalOntologicalModelingLanguage.g:4231:1: ruleScalarOneOfLiteralAxiom returns [EObject current=null] : (this_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN_0= RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'value' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= 'axiom' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) ;
+    // InternalOntologicalModelingLanguage.g:4199:1: ruleScalarOneOfLiteralAxiom returns [EObject current=null] : (this_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN_0= RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'value' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= 'axiom' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) ;
     public final EObject ruleScalarOneOfLiteralAxiom() throws RecognitionException {
         EObject current = null;
 
@@ -10247,31 +10268,31 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:4237:2: ( (this_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN_0= RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'value' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= 'axiom' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) )
-            // InternalOntologicalModelingLanguage.g:4238:2: (this_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN_0= RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'value' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= 'axiom' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:4205:2: ( (this_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN_0= RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'value' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= 'axiom' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) )
+            // InternalOntologicalModelingLanguage.g:4206:2: (this_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN_0= RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'value' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= 'axiom' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
             {
-            // InternalOntologicalModelingLanguage.g:4238:2: (this_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN_0= RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'value' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= 'axiom' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
-            // InternalOntologicalModelingLanguage.g:4239:3: this_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN_0= RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'value' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= 'axiom' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY
+            // InternalOntologicalModelingLanguage.g:4206:2: (this_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN_0= RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'value' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= 'axiom' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:4207:3: this_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN_0= RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'value' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= 'axiom' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY
             {
             this_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN_0=(Token)match(input,RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN,FOLLOW_9); 
 
             			newLeafNode(this_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN_0, grammarAccess.getScalarOneOfLiteralAxiomAccess().getSCALAR_ONE_OF_LITERAL_AXIOM_TOKENTerminalRuleCall_0());
             		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_78); 
+            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_76); 
 
             			newLeafNode(this_LCURLY_1, grammarAccess.getScalarOneOfLiteralAxiomAccess().getLCURLYTerminalRuleCall_1());
             		
-            otherlv_2=(Token)match(input,107,FOLLOW_7); 
+            otherlv_2=(Token)match(input,103,FOLLOW_7); 
 
             			newLeafNode(otherlv_2, grammarAccess.getScalarOneOfLiteralAxiomAccess().getValueKeyword_2());
             		
-            // InternalOntologicalModelingLanguage.g:4251:3: ( (lv_value_3_0= RULE_STRING ) )
-            // InternalOntologicalModelingLanguage.g:4252:4: (lv_value_3_0= RULE_STRING )
+            // InternalOntologicalModelingLanguage.g:4219:3: ( (lv_value_3_0= RULE_STRING ) )
+            // InternalOntologicalModelingLanguage.g:4220:4: (lv_value_3_0= RULE_STRING )
             {
-            // InternalOntologicalModelingLanguage.g:4252:4: (lv_value_3_0= RULE_STRING )
-            // InternalOntologicalModelingLanguage.g:4253:5: lv_value_3_0= RULE_STRING
+            // InternalOntologicalModelingLanguage.g:4220:4: (lv_value_3_0= RULE_STRING )
+            // InternalOntologicalModelingLanguage.g:4221:5: lv_value_3_0= RULE_STRING
             {
-            lv_value_3_0=(Token)match(input,RULE_STRING,FOLLOW_79); 
+            lv_value_3_0=(Token)match(input,RULE_STRING,FOLLOW_77); 
 
             					newLeafNode(lv_value_3_0, grammarAccess.getScalarOneOfLiteralAxiomAccess().getValueSTRINGTerminalRuleCall_3_0());
             				
@@ -10291,15 +10312,15 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            otherlv_4=(Token)match(input,108,FOLLOW_27); 
+            otherlv_4=(Token)match(input,104,FOLLOW_27); 
 
             			newLeafNode(otherlv_4, grammarAccess.getScalarOneOfLiteralAxiomAccess().getAxiomKeyword_4());
             		
-            // InternalOntologicalModelingLanguage.g:4273:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:4274:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:4241:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:4242:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:4274:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:4275:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:4242:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:4243:5: ruleReference
             {
 
             					if (current==null) {
@@ -10350,7 +10371,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleStringScalarRestriction"
-    // InternalOntologicalModelingLanguage.g:4297:1: entryRuleStringScalarRestriction returns [EObject current=null] : iv_ruleStringScalarRestriction= ruleStringScalarRestriction EOF ;
+    // InternalOntologicalModelingLanguage.g:4265:1: entryRuleStringScalarRestriction returns [EObject current=null] : iv_ruleStringScalarRestriction= ruleStringScalarRestriction EOF ;
     public final EObject entryRuleStringScalarRestriction() throws RecognitionException {
         EObject current = null;
 
@@ -10358,8 +10379,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:4297:64: (iv_ruleStringScalarRestriction= ruleStringScalarRestriction EOF )
-            // InternalOntologicalModelingLanguage.g:4298:2: iv_ruleStringScalarRestriction= ruleStringScalarRestriction EOF
+            // InternalOntologicalModelingLanguage.g:4265:64: (iv_ruleStringScalarRestriction= ruleStringScalarRestriction EOF )
+            // InternalOntologicalModelingLanguage.g:4266:2: iv_ruleStringScalarRestriction= ruleStringScalarRestriction EOF
             {
              newCompositeNode(grammarAccess.getStringScalarRestrictionRule()); 
             pushFollow(FOLLOW_1);
@@ -10386,7 +10407,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleStringScalarRestriction"
-    // InternalOntologicalModelingLanguage.g:4304:1: ruleStringScalarRestriction returns [EObject current=null] : (this_STRING_SCALAR_RESTRICTION_TOKEN_0= RULE_STRING_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) ;
+    // InternalOntologicalModelingLanguage.g:4272:1: ruleStringScalarRestriction returns [EObject current=null] : (this_STRING_SCALAR_RESTRICTION_TOKEN_0= RULE_STRING_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) ;
     public final EObject ruleStringScalarRestriction() throws RecognitionException {
         EObject current = null;
 
@@ -10408,21 +10429,21 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:4310:2: ( (this_STRING_SCALAR_RESTRICTION_TOKEN_0= RULE_STRING_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) )
-            // InternalOntologicalModelingLanguage.g:4311:2: (this_STRING_SCALAR_RESTRICTION_TOKEN_0= RULE_STRING_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:4278:2: ( (this_STRING_SCALAR_RESTRICTION_TOKEN_0= RULE_STRING_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) )
+            // InternalOntologicalModelingLanguage.g:4279:2: (this_STRING_SCALAR_RESTRICTION_TOKEN_0= RULE_STRING_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
             {
-            // InternalOntologicalModelingLanguage.g:4311:2: (this_STRING_SCALAR_RESTRICTION_TOKEN_0= RULE_STRING_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
-            // InternalOntologicalModelingLanguage.g:4312:3: this_STRING_SCALAR_RESTRICTION_TOKEN_0= RULE_STRING_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY
+            // InternalOntologicalModelingLanguage.g:4279:2: (this_STRING_SCALAR_RESTRICTION_TOKEN_0= RULE_STRING_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:4280:3: this_STRING_SCALAR_RESTRICTION_TOKEN_0= RULE_STRING_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY
             {
             this_STRING_SCALAR_RESTRICTION_TOKEN_0=(Token)match(input,RULE_STRING_SCALAR_RESTRICTION_TOKEN,FOLLOW_4); 
 
             			newLeafNode(this_STRING_SCALAR_RESTRICTION_TOKEN_0, grammarAccess.getStringScalarRestrictionAccess().getSTRING_SCALAR_RESTRICTION_TOKENTerminalRuleCall_0());
             		
-            // InternalOntologicalModelingLanguage.g:4316:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalOntologicalModelingLanguage.g:4317:4: (lv_name_1_0= RULE_ID )
+            // InternalOntologicalModelingLanguage.g:4284:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalOntologicalModelingLanguage.g:4285:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalOntologicalModelingLanguage.g:4317:4: (lv_name_1_0= RULE_ID )
-            // InternalOntologicalModelingLanguage.g:4318:5: lv_name_1_0= RULE_ID
+            // InternalOntologicalModelingLanguage.g:4285:4: (lv_name_1_0= RULE_ID )
+            // InternalOntologicalModelingLanguage.g:4286:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_9); 
 
@@ -10444,32 +10465,32 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            this_LCURLY_2=(Token)match(input,RULE_LCURLY,FOLLOW_65); 
+            this_LCURLY_2=(Token)match(input,RULE_LCURLY,FOLLOW_63); 
 
             			newLeafNode(this_LCURLY_2, grammarAccess.getStringScalarRestrictionAccess().getLCURLYTerminalRuleCall_2());
             		
-            // InternalOntologicalModelingLanguage.g:4338:3: (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )?
+            // InternalOntologicalModelingLanguage.g:4306:3: (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )?
             int alt56=2;
             int LA56_0 = input.LA(1);
 
-            if ( (LA56_0==98) ) {
+            if ( (LA56_0==94) ) {
                 alt56=1;
             }
             switch (alt56) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:4339:4: otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) )
+                    // InternalOntologicalModelingLanguage.g:4307:4: otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) )
                     {
-                    otherlv_3=(Token)match(input,98,FOLLOW_62); 
+                    otherlv_3=(Token)match(input,94,FOLLOW_60); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getStringScalarRestrictionAccess().getLengthKeyword_3_0());
                     			
-                    // InternalOntologicalModelingLanguage.g:4343:4: ( (lv_length_4_0= RULE_INT ) )
-                    // InternalOntologicalModelingLanguage.g:4344:5: (lv_length_4_0= RULE_INT )
+                    // InternalOntologicalModelingLanguage.g:4311:4: ( (lv_length_4_0= RULE_INT ) )
+                    // InternalOntologicalModelingLanguage.g:4312:5: (lv_length_4_0= RULE_INT )
                     {
-                    // InternalOntologicalModelingLanguage.g:4344:5: (lv_length_4_0= RULE_INT )
-                    // InternalOntologicalModelingLanguage.g:4345:6: lv_length_4_0= RULE_INT
+                    // InternalOntologicalModelingLanguage.g:4312:5: (lv_length_4_0= RULE_INT )
+                    // InternalOntologicalModelingLanguage.g:4313:6: lv_length_4_0= RULE_INT
                     {
-                    lv_length_4_0=(Token)match(input,RULE_INT,FOLLOW_66); 
+                    lv_length_4_0=(Token)match(input,RULE_INT,FOLLOW_64); 
 
                     						newLeafNode(lv_length_4_0, grammarAccess.getStringScalarRestrictionAccess().getLengthINTTerminalRuleCall_3_1_0());
                     					
@@ -10495,28 +10516,28 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            // InternalOntologicalModelingLanguage.g:4362:3: (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )?
+            // InternalOntologicalModelingLanguage.g:4330:3: (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )?
             int alt57=2;
             int LA57_0 = input.LA(1);
 
-            if ( (LA57_0==99) ) {
+            if ( (LA57_0==95) ) {
                 alt57=1;
             }
             switch (alt57) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:4363:4: otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) )
+                    // InternalOntologicalModelingLanguage.g:4331:4: otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) )
                     {
-                    otherlv_5=(Token)match(input,99,FOLLOW_62); 
+                    otherlv_5=(Token)match(input,95,FOLLOW_60); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getStringScalarRestrictionAccess().getMinLengthKeyword_4_0());
                     			
-                    // InternalOntologicalModelingLanguage.g:4367:4: ( (lv_minLength_6_0= RULE_INT ) )
-                    // InternalOntologicalModelingLanguage.g:4368:5: (lv_minLength_6_0= RULE_INT )
+                    // InternalOntologicalModelingLanguage.g:4335:4: ( (lv_minLength_6_0= RULE_INT ) )
+                    // InternalOntologicalModelingLanguage.g:4336:5: (lv_minLength_6_0= RULE_INT )
                     {
-                    // InternalOntologicalModelingLanguage.g:4368:5: (lv_minLength_6_0= RULE_INT )
-                    // InternalOntologicalModelingLanguage.g:4369:6: lv_minLength_6_0= RULE_INT
+                    // InternalOntologicalModelingLanguage.g:4336:5: (lv_minLength_6_0= RULE_INT )
+                    // InternalOntologicalModelingLanguage.g:4337:6: lv_minLength_6_0= RULE_INT
                     {
-                    lv_minLength_6_0=(Token)match(input,RULE_INT,FOLLOW_67); 
+                    lv_minLength_6_0=(Token)match(input,RULE_INT,FOLLOW_65); 
 
                     						newLeafNode(lv_minLength_6_0, grammarAccess.getStringScalarRestrictionAccess().getMinLengthINTTerminalRuleCall_4_1_0());
                     					
@@ -10542,28 +10563,28 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            // InternalOntologicalModelingLanguage.g:4386:3: (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )?
+            // InternalOntologicalModelingLanguage.g:4354:3: (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )?
             int alt58=2;
             int LA58_0 = input.LA(1);
 
-            if ( (LA58_0==100) ) {
+            if ( (LA58_0==96) ) {
                 alt58=1;
             }
             switch (alt58) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:4387:4: otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) )
+                    // InternalOntologicalModelingLanguage.g:4355:4: otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) )
                     {
-                    otherlv_7=(Token)match(input,100,FOLLOW_62); 
+                    otherlv_7=(Token)match(input,96,FOLLOW_60); 
 
                     				newLeafNode(otherlv_7, grammarAccess.getStringScalarRestrictionAccess().getMaxLengthKeyword_5_0());
                     			
-                    // InternalOntologicalModelingLanguage.g:4391:4: ( (lv_maxLength_8_0= RULE_INT ) )
-                    // InternalOntologicalModelingLanguage.g:4392:5: (lv_maxLength_8_0= RULE_INT )
+                    // InternalOntologicalModelingLanguage.g:4359:4: ( (lv_maxLength_8_0= RULE_INT ) )
+                    // InternalOntologicalModelingLanguage.g:4360:5: (lv_maxLength_8_0= RULE_INT )
                     {
-                    // InternalOntologicalModelingLanguage.g:4392:5: (lv_maxLength_8_0= RULE_INT )
-                    // InternalOntologicalModelingLanguage.g:4393:6: lv_maxLength_8_0= RULE_INT
+                    // InternalOntologicalModelingLanguage.g:4360:5: (lv_maxLength_8_0= RULE_INT )
+                    // InternalOntologicalModelingLanguage.g:4361:6: lv_maxLength_8_0= RULE_INT
                     {
-                    lv_maxLength_8_0=(Token)match(input,RULE_INT,FOLLOW_68); 
+                    lv_maxLength_8_0=(Token)match(input,RULE_INT,FOLLOW_66); 
 
                     						newLeafNode(lv_maxLength_8_0, grammarAccess.getStringScalarRestrictionAccess().getMaxLengthINTTerminalRuleCall_5_1_0());
                     					
@@ -10589,26 +10610,26 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            // InternalOntologicalModelingLanguage.g:4410:3: (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )?
+            // InternalOntologicalModelingLanguage.g:4378:3: (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )?
             int alt59=2;
             int LA59_0 = input.LA(1);
 
-            if ( (LA59_0==101) ) {
+            if ( (LA59_0==97) ) {
                 alt59=1;
             }
             switch (alt59) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:4411:4: otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) )
+                    // InternalOntologicalModelingLanguage.g:4379:4: otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) )
                     {
-                    otherlv_9=(Token)match(input,101,FOLLOW_7); 
+                    otherlv_9=(Token)match(input,97,FOLLOW_7); 
 
                     				newLeafNode(otherlv_9, grammarAccess.getStringScalarRestrictionAccess().getPatternKeyword_6_0());
                     			
-                    // InternalOntologicalModelingLanguage.g:4415:4: ( (lv_pattern_10_0= RULE_STRING ) )
-                    // InternalOntologicalModelingLanguage.g:4416:5: (lv_pattern_10_0= RULE_STRING )
+                    // InternalOntologicalModelingLanguage.g:4383:4: ( (lv_pattern_10_0= RULE_STRING ) )
+                    // InternalOntologicalModelingLanguage.g:4384:5: (lv_pattern_10_0= RULE_STRING )
                     {
-                    // InternalOntologicalModelingLanguage.g:4416:5: (lv_pattern_10_0= RULE_STRING )
-                    // InternalOntologicalModelingLanguage.g:4417:6: lv_pattern_10_0= RULE_STRING
+                    // InternalOntologicalModelingLanguage.g:4384:5: (lv_pattern_10_0= RULE_STRING )
+                    // InternalOntologicalModelingLanguage.g:4385:6: lv_pattern_10_0= RULE_STRING
                     {
                     lv_pattern_10_0=(Token)match(input,RULE_STRING,FOLLOW_50); 
 
@@ -10640,11 +10661,11 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             			newLeafNode(otherlv_11, grammarAccess.getStringScalarRestrictionAccess().getRestrictedRangeKeyword_7());
             		
-            // InternalOntologicalModelingLanguage.g:4438:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:4439:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:4406:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:4407:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:4439:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:4440:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:4407:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:4408:5: ruleReference
             {
 
             					if (current==null) {
@@ -10695,7 +10716,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleSynonymScalarRestriction"
-    // InternalOntologicalModelingLanguage.g:4462:1: entryRuleSynonymScalarRestriction returns [EObject current=null] : iv_ruleSynonymScalarRestriction= ruleSynonymScalarRestriction EOF ;
+    // InternalOntologicalModelingLanguage.g:4430:1: entryRuleSynonymScalarRestriction returns [EObject current=null] : iv_ruleSynonymScalarRestriction= ruleSynonymScalarRestriction EOF ;
     public final EObject entryRuleSynonymScalarRestriction() throws RecognitionException {
         EObject current = null;
 
@@ -10703,8 +10724,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:4462:65: (iv_ruleSynonymScalarRestriction= ruleSynonymScalarRestriction EOF )
-            // InternalOntologicalModelingLanguage.g:4463:2: iv_ruleSynonymScalarRestriction= ruleSynonymScalarRestriction EOF
+            // InternalOntologicalModelingLanguage.g:4430:65: (iv_ruleSynonymScalarRestriction= ruleSynonymScalarRestriction EOF )
+            // InternalOntologicalModelingLanguage.g:4431:2: iv_ruleSynonymScalarRestriction= ruleSynonymScalarRestriction EOF
             {
              newCompositeNode(grammarAccess.getSynonymScalarRestrictionRule()); 
             pushFollow(FOLLOW_1);
@@ -10731,7 +10752,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleSynonymScalarRestriction"
-    // InternalOntologicalModelingLanguage.g:4469:1: ruleSynonymScalarRestriction returns [EObject current=null] : (this_SYNONYM_SCALAR_RESTRICTION_TOKEN_0= RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY ) ;
+    // InternalOntologicalModelingLanguage.g:4437:1: ruleSynonymScalarRestriction returns [EObject current=null] : (this_SYNONYM_SCALAR_RESTRICTION_TOKEN_0= RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY ) ;
     public final EObject ruleSynonymScalarRestriction() throws RecognitionException {
         EObject current = null;
 
@@ -10745,21 +10766,21 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:4475:2: ( (this_SYNONYM_SCALAR_RESTRICTION_TOKEN_0= RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY ) )
-            // InternalOntologicalModelingLanguage.g:4476:2: (this_SYNONYM_SCALAR_RESTRICTION_TOKEN_0= RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:4443:2: ( (this_SYNONYM_SCALAR_RESTRICTION_TOKEN_0= RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY ) )
+            // InternalOntologicalModelingLanguage.g:4444:2: (this_SYNONYM_SCALAR_RESTRICTION_TOKEN_0= RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY )
             {
-            // InternalOntologicalModelingLanguage.g:4476:2: (this_SYNONYM_SCALAR_RESTRICTION_TOKEN_0= RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY )
-            // InternalOntologicalModelingLanguage.g:4477:3: this_SYNONYM_SCALAR_RESTRICTION_TOKEN_0= RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY
+            // InternalOntologicalModelingLanguage.g:4444:2: (this_SYNONYM_SCALAR_RESTRICTION_TOKEN_0= RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:4445:3: this_SYNONYM_SCALAR_RESTRICTION_TOKEN_0= RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY
             {
             this_SYNONYM_SCALAR_RESTRICTION_TOKEN_0=(Token)match(input,RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN,FOLLOW_4); 
 
             			newLeafNode(this_SYNONYM_SCALAR_RESTRICTION_TOKEN_0, grammarAccess.getSynonymScalarRestrictionAccess().getSYNONYM_SCALAR_RESTRICTION_TOKENTerminalRuleCall_0());
             		
-            // InternalOntologicalModelingLanguage.g:4481:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalOntologicalModelingLanguage.g:4482:4: (lv_name_1_0= RULE_ID )
+            // InternalOntologicalModelingLanguage.g:4449:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalOntologicalModelingLanguage.g:4450:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalOntologicalModelingLanguage.g:4482:4: (lv_name_1_0= RULE_ID )
-            // InternalOntologicalModelingLanguage.g:4483:5: lv_name_1_0= RULE_ID
+            // InternalOntologicalModelingLanguage.g:4450:4: (lv_name_1_0= RULE_ID )
+            // InternalOntologicalModelingLanguage.g:4451:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_9); 
 
@@ -10789,11 +10810,11 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             			newLeafNode(otherlv_3, grammarAccess.getSynonymScalarRestrictionAccess().getRestrictedRangeKeyword_3());
             		
-            // InternalOntologicalModelingLanguage.g:4507:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:4508:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:4475:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:4476:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:4508:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:4509:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:4476:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:4477:5: ruleReference
             {
 
             					if (current==null) {
@@ -10844,7 +10865,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleTimeScalarRestriction"
-    // InternalOntologicalModelingLanguage.g:4531:1: entryRuleTimeScalarRestriction returns [EObject current=null] : iv_ruleTimeScalarRestriction= ruleTimeScalarRestriction EOF ;
+    // InternalOntologicalModelingLanguage.g:4499:1: entryRuleTimeScalarRestriction returns [EObject current=null] : iv_ruleTimeScalarRestriction= ruleTimeScalarRestriction EOF ;
     public final EObject entryRuleTimeScalarRestriction() throws RecognitionException {
         EObject current = null;
 
@@ -10852,8 +10873,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:4531:62: (iv_ruleTimeScalarRestriction= ruleTimeScalarRestriction EOF )
-            // InternalOntologicalModelingLanguage.g:4532:2: iv_ruleTimeScalarRestriction= ruleTimeScalarRestriction EOF
+            // InternalOntologicalModelingLanguage.g:4499:62: (iv_ruleTimeScalarRestriction= ruleTimeScalarRestriction EOF )
+            // InternalOntologicalModelingLanguage.g:4500:2: iv_ruleTimeScalarRestriction= ruleTimeScalarRestriction EOF
             {
              newCompositeNode(grammarAccess.getTimeScalarRestrictionRule()); 
             pushFollow(FOLLOW_1);
@@ -10880,7 +10901,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleTimeScalarRestriction"
-    // InternalOntologicalModelingLanguage.g:4538:1: ruleTimeScalarRestriction returns [EObject current=null] : (this_TIME_SCALAR_RESTRICTION_TOKEN_0= RULE_TIME_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) ;
+    // InternalOntologicalModelingLanguage.g:4506:1: ruleTimeScalarRestriction returns [EObject current=null] : (this_TIME_SCALAR_RESTRICTION_TOKEN_0= RULE_TIME_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) ;
     public final EObject ruleTimeScalarRestriction() throws RecognitionException {
         EObject current = null;
 
@@ -10902,21 +10923,21 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:4544:2: ( (this_TIME_SCALAR_RESTRICTION_TOKEN_0= RULE_TIME_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) )
-            // InternalOntologicalModelingLanguage.g:4545:2: (this_TIME_SCALAR_RESTRICTION_TOKEN_0= RULE_TIME_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:4512:2: ( (this_TIME_SCALAR_RESTRICTION_TOKEN_0= RULE_TIME_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) )
+            // InternalOntologicalModelingLanguage.g:4513:2: (this_TIME_SCALAR_RESTRICTION_TOKEN_0= RULE_TIME_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
             {
-            // InternalOntologicalModelingLanguage.g:4545:2: (this_TIME_SCALAR_RESTRICTION_TOKEN_0= RULE_TIME_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
-            // InternalOntologicalModelingLanguage.g:4546:3: this_TIME_SCALAR_RESTRICTION_TOKEN_0= RULE_TIME_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY
+            // InternalOntologicalModelingLanguage.g:4513:2: (this_TIME_SCALAR_RESTRICTION_TOKEN_0= RULE_TIME_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:4514:3: this_TIME_SCALAR_RESTRICTION_TOKEN_0= RULE_TIME_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY
             {
             this_TIME_SCALAR_RESTRICTION_TOKEN_0=(Token)match(input,RULE_TIME_SCALAR_RESTRICTION_TOKEN,FOLLOW_4); 
 
             			newLeafNode(this_TIME_SCALAR_RESTRICTION_TOKEN_0, grammarAccess.getTimeScalarRestrictionAccess().getTIME_SCALAR_RESTRICTION_TOKENTerminalRuleCall_0());
             		
-            // InternalOntologicalModelingLanguage.g:4550:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalOntologicalModelingLanguage.g:4551:4: (lv_name_1_0= RULE_ID )
+            // InternalOntologicalModelingLanguage.g:4518:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalOntologicalModelingLanguage.g:4519:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalOntologicalModelingLanguage.g:4551:4: (lv_name_1_0= RULE_ID )
-            // InternalOntologicalModelingLanguage.g:4552:5: lv_name_1_0= RULE_ID
+            // InternalOntologicalModelingLanguage.g:4519:4: (lv_name_1_0= RULE_ID )
+            // InternalOntologicalModelingLanguage.g:4520:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_9); 
 
@@ -10938,32 +10959,32 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            this_LCURLY_2=(Token)match(input,RULE_LCURLY,FOLLOW_69); 
+            this_LCURLY_2=(Token)match(input,RULE_LCURLY,FOLLOW_67); 
 
             			newLeafNode(this_LCURLY_2, grammarAccess.getTimeScalarRestrictionAccess().getLCURLYTerminalRuleCall_2());
             		
-            // InternalOntologicalModelingLanguage.g:4572:3: (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )?
+            // InternalOntologicalModelingLanguage.g:4540:3: (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )?
             int alt60=2;
             int LA60_0 = input.LA(1);
 
-            if ( (LA60_0==102) ) {
+            if ( (LA60_0==98) ) {
                 alt60=1;
             }
             switch (alt60) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:4573:4: otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) )
+                    // InternalOntologicalModelingLanguage.g:4541:4: otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) )
                     {
-                    otherlv_3=(Token)match(input,102,FOLLOW_7); 
+                    otherlv_3=(Token)match(input,98,FOLLOW_7); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getTimeScalarRestrictionAccess().getMinInclusiveKeyword_3_0());
                     			
-                    // InternalOntologicalModelingLanguage.g:4577:4: ( (lv_minInclusive_4_0= RULE_STRING ) )
-                    // InternalOntologicalModelingLanguage.g:4578:5: (lv_minInclusive_4_0= RULE_STRING )
+                    // InternalOntologicalModelingLanguage.g:4545:4: ( (lv_minInclusive_4_0= RULE_STRING ) )
+                    // InternalOntologicalModelingLanguage.g:4546:5: (lv_minInclusive_4_0= RULE_STRING )
                     {
-                    // InternalOntologicalModelingLanguage.g:4578:5: (lv_minInclusive_4_0= RULE_STRING )
-                    // InternalOntologicalModelingLanguage.g:4579:6: lv_minInclusive_4_0= RULE_STRING
+                    // InternalOntologicalModelingLanguage.g:4546:5: (lv_minInclusive_4_0= RULE_STRING )
+                    // InternalOntologicalModelingLanguage.g:4547:6: lv_minInclusive_4_0= RULE_STRING
                     {
-                    lv_minInclusive_4_0=(Token)match(input,RULE_STRING,FOLLOW_70); 
+                    lv_minInclusive_4_0=(Token)match(input,RULE_STRING,FOLLOW_68); 
 
                     						newLeafNode(lv_minInclusive_4_0, grammarAccess.getTimeScalarRestrictionAccess().getMinInclusiveSTRINGTerminalRuleCall_3_1_0());
                     					
@@ -10989,28 +11010,28 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            // InternalOntologicalModelingLanguage.g:4596:3: (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )?
+            // InternalOntologicalModelingLanguage.g:4564:3: (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )?
             int alt61=2;
             int LA61_0 = input.LA(1);
 
-            if ( (LA61_0==103) ) {
+            if ( (LA61_0==99) ) {
                 alt61=1;
             }
             switch (alt61) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:4597:4: otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) )
+                    // InternalOntologicalModelingLanguage.g:4565:4: otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) )
                     {
-                    otherlv_5=(Token)match(input,103,FOLLOW_7); 
+                    otherlv_5=(Token)match(input,99,FOLLOW_7); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getTimeScalarRestrictionAccess().getMaxInclusiveKeyword_4_0());
                     			
-                    // InternalOntologicalModelingLanguage.g:4601:4: ( (lv_maxInclusive_6_0= RULE_STRING ) )
-                    // InternalOntologicalModelingLanguage.g:4602:5: (lv_maxInclusive_6_0= RULE_STRING )
+                    // InternalOntologicalModelingLanguage.g:4569:4: ( (lv_maxInclusive_6_0= RULE_STRING ) )
+                    // InternalOntologicalModelingLanguage.g:4570:5: (lv_maxInclusive_6_0= RULE_STRING )
                     {
-                    // InternalOntologicalModelingLanguage.g:4602:5: (lv_maxInclusive_6_0= RULE_STRING )
-                    // InternalOntologicalModelingLanguage.g:4603:6: lv_maxInclusive_6_0= RULE_STRING
+                    // InternalOntologicalModelingLanguage.g:4570:5: (lv_maxInclusive_6_0= RULE_STRING )
+                    // InternalOntologicalModelingLanguage.g:4571:6: lv_maxInclusive_6_0= RULE_STRING
                     {
-                    lv_maxInclusive_6_0=(Token)match(input,RULE_STRING,FOLLOW_71); 
+                    lv_maxInclusive_6_0=(Token)match(input,RULE_STRING,FOLLOW_69); 
 
                     						newLeafNode(lv_maxInclusive_6_0, grammarAccess.getTimeScalarRestrictionAccess().getMaxInclusiveSTRINGTerminalRuleCall_4_1_0());
                     					
@@ -11036,28 +11057,28 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            // InternalOntologicalModelingLanguage.g:4620:3: (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )?
+            // InternalOntologicalModelingLanguage.g:4588:3: (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )?
             int alt62=2;
             int LA62_0 = input.LA(1);
 
-            if ( (LA62_0==104) ) {
+            if ( (LA62_0==100) ) {
                 alt62=1;
             }
             switch (alt62) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:4621:4: otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) )
+                    // InternalOntologicalModelingLanguage.g:4589:4: otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) )
                     {
-                    otherlv_7=(Token)match(input,104,FOLLOW_7); 
+                    otherlv_7=(Token)match(input,100,FOLLOW_7); 
 
                     				newLeafNode(otherlv_7, grammarAccess.getTimeScalarRestrictionAccess().getMinExclusiveKeyword_5_0());
                     			
-                    // InternalOntologicalModelingLanguage.g:4625:4: ( (lv_minExclusive_8_0= RULE_STRING ) )
-                    // InternalOntologicalModelingLanguage.g:4626:5: (lv_minExclusive_8_0= RULE_STRING )
+                    // InternalOntologicalModelingLanguage.g:4593:4: ( (lv_minExclusive_8_0= RULE_STRING ) )
+                    // InternalOntologicalModelingLanguage.g:4594:5: (lv_minExclusive_8_0= RULE_STRING )
                     {
-                    // InternalOntologicalModelingLanguage.g:4626:5: (lv_minExclusive_8_0= RULE_STRING )
-                    // InternalOntologicalModelingLanguage.g:4627:6: lv_minExclusive_8_0= RULE_STRING
+                    // InternalOntologicalModelingLanguage.g:4594:5: (lv_minExclusive_8_0= RULE_STRING )
+                    // InternalOntologicalModelingLanguage.g:4595:6: lv_minExclusive_8_0= RULE_STRING
                     {
-                    lv_minExclusive_8_0=(Token)match(input,RULE_STRING,FOLLOW_72); 
+                    lv_minExclusive_8_0=(Token)match(input,RULE_STRING,FOLLOW_70); 
 
                     						newLeafNode(lv_minExclusive_8_0, grammarAccess.getTimeScalarRestrictionAccess().getMinExclusiveSTRINGTerminalRuleCall_5_1_0());
                     					
@@ -11083,26 +11104,26 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            // InternalOntologicalModelingLanguage.g:4644:3: (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )?
+            // InternalOntologicalModelingLanguage.g:4612:3: (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )?
             int alt63=2;
             int LA63_0 = input.LA(1);
 
-            if ( (LA63_0==105) ) {
+            if ( (LA63_0==101) ) {
                 alt63=1;
             }
             switch (alt63) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:4645:4: otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) )
+                    // InternalOntologicalModelingLanguage.g:4613:4: otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) )
                     {
-                    otherlv_9=(Token)match(input,105,FOLLOW_7); 
+                    otherlv_9=(Token)match(input,101,FOLLOW_7); 
 
                     				newLeafNode(otherlv_9, grammarAccess.getTimeScalarRestrictionAccess().getMaxExclusiveKeyword_6_0());
                     			
-                    // InternalOntologicalModelingLanguage.g:4649:4: ( (lv_maxExclusive_10_0= RULE_STRING ) )
-                    // InternalOntologicalModelingLanguage.g:4650:5: (lv_maxExclusive_10_0= RULE_STRING )
+                    // InternalOntologicalModelingLanguage.g:4617:4: ( (lv_maxExclusive_10_0= RULE_STRING ) )
+                    // InternalOntologicalModelingLanguage.g:4618:5: (lv_maxExclusive_10_0= RULE_STRING )
                     {
-                    // InternalOntologicalModelingLanguage.g:4650:5: (lv_maxExclusive_10_0= RULE_STRING )
-                    // InternalOntologicalModelingLanguage.g:4651:6: lv_maxExclusive_10_0= RULE_STRING
+                    // InternalOntologicalModelingLanguage.g:4618:5: (lv_maxExclusive_10_0= RULE_STRING )
+                    // InternalOntologicalModelingLanguage.g:4619:6: lv_maxExclusive_10_0= RULE_STRING
                     {
                     lv_maxExclusive_10_0=(Token)match(input,RULE_STRING,FOLLOW_50); 
 
@@ -11134,11 +11155,11 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             			newLeafNode(otherlv_11, grammarAccess.getTimeScalarRestrictionAccess().getRestrictedRangeKeyword_7());
             		
-            // InternalOntologicalModelingLanguage.g:4672:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:4673:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:4640:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:4641:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:4673:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:4674:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:4641:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:4642:5: ruleReference
             {
 
             					if (current==null) {
@@ -11189,7 +11210,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleDescriptionBox"
-    // InternalOntologicalModelingLanguage.g:4696:1: entryRuleDescriptionBox returns [EObject current=null] : iv_ruleDescriptionBox= ruleDescriptionBox EOF ;
+    // InternalOntologicalModelingLanguage.g:4664:1: entryRuleDescriptionBox returns [EObject current=null] : iv_ruleDescriptionBox= ruleDescriptionBox EOF ;
     public final EObject entryRuleDescriptionBox() throws RecognitionException {
         EObject current = null;
 
@@ -11197,8 +11218,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:4696:55: (iv_ruleDescriptionBox= ruleDescriptionBox EOF )
-            // InternalOntologicalModelingLanguage.g:4697:2: iv_ruleDescriptionBox= ruleDescriptionBox EOF
+            // InternalOntologicalModelingLanguage.g:4664:55: (iv_ruleDescriptionBox= ruleDescriptionBox EOF )
+            // InternalOntologicalModelingLanguage.g:4665:2: iv_ruleDescriptionBox= ruleDescriptionBox EOF
             {
              newCompositeNode(grammarAccess.getDescriptionBoxRule()); 
             pushFollow(FOLLOW_1);
@@ -11225,7 +11246,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleDescriptionBox"
-    // InternalOntologicalModelingLanguage.g:4703:1: ruleDescriptionBox returns [EObject current=null] : ( ( (lv_kind_0_0= ruleDescriptionKind ) ) this_DESCRIPTION_BOX_TOKEN_1= RULE_DESCRIPTION_BOX_TOKEN ( (lv_iri_2_0= RULE_IRI ) ) this_LCURLY_3= RULE_LCURLY ( ( (lv_annotations_4_0= ruleAnnotation ) ) | ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) ) | ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) ) | ( (lv_conceptInstances_7_0= ruleConceptInstance ) ) | ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) ) | ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) ) | ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) ) | ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) ) )* this_RCURLY_12= RULE_RCURLY ) ;
+    // InternalOntologicalModelingLanguage.g:4671:1: ruleDescriptionBox returns [EObject current=null] : ( ( (lv_kind_0_0= ruleDescriptionKind ) ) this_DESCRIPTION_BOX_TOKEN_1= RULE_DESCRIPTION_BOX_TOKEN ( (lv_iri_2_0= RULE_IRI ) ) this_LCURLY_3= RULE_LCURLY ( ( (lv_annotations_4_0= ruleAnnotation ) ) | ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) ) | ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) ) | ( (lv_conceptInstances_7_0= ruleConceptInstance ) ) | ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) ) | ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) ) | ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) ) | ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) ) )* this_RCURLY_12= RULE_RCURLY ) ;
     public final EObject ruleDescriptionBox() throws RecognitionException {
         EObject current = null;
 
@@ -11256,22 +11277,22 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:4709:2: ( ( ( (lv_kind_0_0= ruleDescriptionKind ) ) this_DESCRIPTION_BOX_TOKEN_1= RULE_DESCRIPTION_BOX_TOKEN ( (lv_iri_2_0= RULE_IRI ) ) this_LCURLY_3= RULE_LCURLY ( ( (lv_annotations_4_0= ruleAnnotation ) ) | ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) ) | ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) ) | ( (lv_conceptInstances_7_0= ruleConceptInstance ) ) | ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) ) | ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) ) | ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) ) | ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) ) )* this_RCURLY_12= RULE_RCURLY ) )
-            // InternalOntologicalModelingLanguage.g:4710:2: ( ( (lv_kind_0_0= ruleDescriptionKind ) ) this_DESCRIPTION_BOX_TOKEN_1= RULE_DESCRIPTION_BOX_TOKEN ( (lv_iri_2_0= RULE_IRI ) ) this_LCURLY_3= RULE_LCURLY ( ( (lv_annotations_4_0= ruleAnnotation ) ) | ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) ) | ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) ) | ( (lv_conceptInstances_7_0= ruleConceptInstance ) ) | ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) ) | ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) ) | ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) ) | ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) ) )* this_RCURLY_12= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:4677:2: ( ( ( (lv_kind_0_0= ruleDescriptionKind ) ) this_DESCRIPTION_BOX_TOKEN_1= RULE_DESCRIPTION_BOX_TOKEN ( (lv_iri_2_0= RULE_IRI ) ) this_LCURLY_3= RULE_LCURLY ( ( (lv_annotations_4_0= ruleAnnotation ) ) | ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) ) | ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) ) | ( (lv_conceptInstances_7_0= ruleConceptInstance ) ) | ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) ) | ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) ) | ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) ) | ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) ) )* this_RCURLY_12= RULE_RCURLY ) )
+            // InternalOntologicalModelingLanguage.g:4678:2: ( ( (lv_kind_0_0= ruleDescriptionKind ) ) this_DESCRIPTION_BOX_TOKEN_1= RULE_DESCRIPTION_BOX_TOKEN ( (lv_iri_2_0= RULE_IRI ) ) this_LCURLY_3= RULE_LCURLY ( ( (lv_annotations_4_0= ruleAnnotation ) ) | ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) ) | ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) ) | ( (lv_conceptInstances_7_0= ruleConceptInstance ) ) | ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) ) | ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) ) | ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) ) | ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) ) )* this_RCURLY_12= RULE_RCURLY )
             {
-            // InternalOntologicalModelingLanguage.g:4710:2: ( ( (lv_kind_0_0= ruleDescriptionKind ) ) this_DESCRIPTION_BOX_TOKEN_1= RULE_DESCRIPTION_BOX_TOKEN ( (lv_iri_2_0= RULE_IRI ) ) this_LCURLY_3= RULE_LCURLY ( ( (lv_annotations_4_0= ruleAnnotation ) ) | ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) ) | ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) ) | ( (lv_conceptInstances_7_0= ruleConceptInstance ) ) | ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) ) | ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) ) | ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) ) | ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) ) )* this_RCURLY_12= RULE_RCURLY )
-            // InternalOntologicalModelingLanguage.g:4711:3: ( (lv_kind_0_0= ruleDescriptionKind ) ) this_DESCRIPTION_BOX_TOKEN_1= RULE_DESCRIPTION_BOX_TOKEN ( (lv_iri_2_0= RULE_IRI ) ) this_LCURLY_3= RULE_LCURLY ( ( (lv_annotations_4_0= ruleAnnotation ) ) | ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) ) | ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) ) | ( (lv_conceptInstances_7_0= ruleConceptInstance ) ) | ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) ) | ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) ) | ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) ) | ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) ) )* this_RCURLY_12= RULE_RCURLY
+            // InternalOntologicalModelingLanguage.g:4678:2: ( ( (lv_kind_0_0= ruleDescriptionKind ) ) this_DESCRIPTION_BOX_TOKEN_1= RULE_DESCRIPTION_BOX_TOKEN ( (lv_iri_2_0= RULE_IRI ) ) this_LCURLY_3= RULE_LCURLY ( ( (lv_annotations_4_0= ruleAnnotation ) ) | ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) ) | ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) ) | ( (lv_conceptInstances_7_0= ruleConceptInstance ) ) | ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) ) | ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) ) | ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) ) | ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) ) )* this_RCURLY_12= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:4679:3: ( (lv_kind_0_0= ruleDescriptionKind ) ) this_DESCRIPTION_BOX_TOKEN_1= RULE_DESCRIPTION_BOX_TOKEN ( (lv_iri_2_0= RULE_IRI ) ) this_LCURLY_3= RULE_LCURLY ( ( (lv_annotations_4_0= ruleAnnotation ) ) | ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) ) | ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) ) | ( (lv_conceptInstances_7_0= ruleConceptInstance ) ) | ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) ) | ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) ) | ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) ) | ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) ) )* this_RCURLY_12= RULE_RCURLY
             {
-            // InternalOntologicalModelingLanguage.g:4711:3: ( (lv_kind_0_0= ruleDescriptionKind ) )
-            // InternalOntologicalModelingLanguage.g:4712:4: (lv_kind_0_0= ruleDescriptionKind )
+            // InternalOntologicalModelingLanguage.g:4679:3: ( (lv_kind_0_0= ruleDescriptionKind ) )
+            // InternalOntologicalModelingLanguage.g:4680:4: (lv_kind_0_0= ruleDescriptionKind )
             {
-            // InternalOntologicalModelingLanguage.g:4712:4: (lv_kind_0_0= ruleDescriptionKind )
-            // InternalOntologicalModelingLanguage.g:4713:5: lv_kind_0_0= ruleDescriptionKind
+            // InternalOntologicalModelingLanguage.g:4680:4: (lv_kind_0_0= ruleDescriptionKind )
+            // InternalOntologicalModelingLanguage.g:4681:5: lv_kind_0_0= ruleDescriptionKind
             {
 
             					newCompositeNode(grammarAccess.getDescriptionBoxAccess().getKindDescriptionKindEnumRuleCall_0_0());
             				
-            pushFollow(FOLLOW_80);
+            pushFollow(FOLLOW_78);
             lv_kind_0_0=ruleDescriptionKind();
 
             state._fsp--;
@@ -11297,11 +11318,11 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             			newLeafNode(this_DESCRIPTION_BOX_TOKEN_1, grammarAccess.getDescriptionBoxAccess().getDESCRIPTION_BOX_TOKENTerminalRuleCall_1());
             		
-            // InternalOntologicalModelingLanguage.g:4734:3: ( (lv_iri_2_0= RULE_IRI ) )
-            // InternalOntologicalModelingLanguage.g:4735:4: (lv_iri_2_0= RULE_IRI )
+            // InternalOntologicalModelingLanguage.g:4702:3: ( (lv_iri_2_0= RULE_IRI ) )
+            // InternalOntologicalModelingLanguage.g:4703:4: (lv_iri_2_0= RULE_IRI )
             {
-            // InternalOntologicalModelingLanguage.g:4735:4: (lv_iri_2_0= RULE_IRI )
-            // InternalOntologicalModelingLanguage.g:4736:5: lv_iri_2_0= RULE_IRI
+            // InternalOntologicalModelingLanguage.g:4703:4: (lv_iri_2_0= RULE_IRI )
+            // InternalOntologicalModelingLanguage.g:4704:5: lv_iri_2_0= RULE_IRI
             {
             lv_iri_2_0=(Token)match(input,RULE_IRI,FOLLOW_9); 
 
@@ -11323,11 +11344,11 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            this_LCURLY_3=(Token)match(input,RULE_LCURLY,FOLLOW_81); 
+            this_LCURLY_3=(Token)match(input,RULE_LCURLY,FOLLOW_79); 
 
             			newLeafNode(this_LCURLY_3, grammarAccess.getDescriptionBoxAccess().getLCURLYTerminalRuleCall_3());
             		
-            // InternalOntologicalModelingLanguage.g:4756:3: ( ( (lv_annotations_4_0= ruleAnnotation ) ) | ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) ) | ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) ) | ( (lv_conceptInstances_7_0= ruleConceptInstance ) ) | ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) ) | ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) ) | ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) ) | ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) ) )*
+            // InternalOntologicalModelingLanguage.g:4724:3: ( ( (lv_annotations_4_0= ruleAnnotation ) ) | ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) ) | ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) ) | ( (lv_conceptInstances_7_0= ruleConceptInstance ) ) | ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) ) | ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) ) | ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) ) | ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) ) )*
             loop64:
             do {
                 int alt64=9;
@@ -11347,27 +11368,27 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
                     alt64=3;
                     }
                     break;
-                case 115:
+                case 111:
                     {
                     alt64=4;
                     }
                     break;
-                case 117:
+                case 113:
                     {
                     alt64=5;
                     }
                     break;
-                case 119:
+                case 115:
                     {
                     alt64=6;
                     }
                     break;
-                case 121:
+                case 117:
                     {
                     alt64=7;
                     }
                     break;
-                case 122:
+                case 118:
                     {
                     alt64=8;
                     }
@@ -11377,18 +11398,18 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
                 switch (alt64) {
             	case 1 :
-            	    // InternalOntologicalModelingLanguage.g:4757:4: ( (lv_annotations_4_0= ruleAnnotation ) )
+            	    // InternalOntologicalModelingLanguage.g:4725:4: ( (lv_annotations_4_0= ruleAnnotation ) )
             	    {
-            	    // InternalOntologicalModelingLanguage.g:4757:4: ( (lv_annotations_4_0= ruleAnnotation ) )
-            	    // InternalOntologicalModelingLanguage.g:4758:5: (lv_annotations_4_0= ruleAnnotation )
+            	    // InternalOntologicalModelingLanguage.g:4725:4: ( (lv_annotations_4_0= ruleAnnotation ) )
+            	    // InternalOntologicalModelingLanguage.g:4726:5: (lv_annotations_4_0= ruleAnnotation )
             	    {
-            	    // InternalOntologicalModelingLanguage.g:4758:5: (lv_annotations_4_0= ruleAnnotation )
-            	    // InternalOntologicalModelingLanguage.g:4759:6: lv_annotations_4_0= ruleAnnotation
+            	    // InternalOntologicalModelingLanguage.g:4726:5: (lv_annotations_4_0= ruleAnnotation )
+            	    // InternalOntologicalModelingLanguage.g:4727:6: lv_annotations_4_0= ruleAnnotation
             	    {
 
             	    						newCompositeNode(grammarAccess.getDescriptionBoxAccess().getAnnotationsAnnotationParserRuleCall_4_0_0());
             	    					
-            	    pushFollow(FOLLOW_81);
+            	    pushFollow(FOLLOW_79);
             	    lv_annotations_4_0=ruleAnnotation();
 
             	    state._fsp--;
@@ -11414,18 +11435,18 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
             	    }
             	    break;
             	case 2 :
-            	    // InternalOntologicalModelingLanguage.g:4777:4: ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) )
+            	    // InternalOntologicalModelingLanguage.g:4745:4: ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) )
             	    {
-            	    // InternalOntologicalModelingLanguage.g:4777:4: ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) )
-            	    // InternalOntologicalModelingLanguage.g:4778:5: (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions )
+            	    // InternalOntologicalModelingLanguage.g:4745:4: ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) )
+            	    // InternalOntologicalModelingLanguage.g:4746:5: (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions )
             	    {
-            	    // InternalOntologicalModelingLanguage.g:4778:5: (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions )
-            	    // InternalOntologicalModelingLanguage.g:4779:6: lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions
+            	    // InternalOntologicalModelingLanguage.g:4746:5: (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions )
+            	    // InternalOntologicalModelingLanguage.g:4747:6: lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions
             	    {
 
             	    						newCompositeNode(grammarAccess.getDescriptionBoxAccess().getClosedWorldDefinitionsDescriptionBoxExtendsClosedWorldDefinitionsParserRuleCall_4_1_0());
             	    					
-            	    pushFollow(FOLLOW_81);
+            	    pushFollow(FOLLOW_79);
             	    lv_closedWorldDefinitions_5_0=ruleDescriptionBoxExtendsClosedWorldDefinitions();
 
             	    state._fsp--;
@@ -11451,18 +11472,18 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
             	    }
             	    break;
             	case 3 :
-            	    // InternalOntologicalModelingLanguage.g:4797:4: ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) )
+            	    // InternalOntologicalModelingLanguage.g:4765:4: ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) )
             	    {
-            	    // InternalOntologicalModelingLanguage.g:4797:4: ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) )
-            	    // InternalOntologicalModelingLanguage.g:4798:5: (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement )
+            	    // InternalOntologicalModelingLanguage.g:4765:4: ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) )
+            	    // InternalOntologicalModelingLanguage.g:4766:5: (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement )
             	    {
-            	    // InternalOntologicalModelingLanguage.g:4798:5: (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement )
-            	    // InternalOntologicalModelingLanguage.g:4799:6: lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement
+            	    // InternalOntologicalModelingLanguage.g:4766:5: (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement )
+            	    // InternalOntologicalModelingLanguage.g:4767:6: lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement
             	    {
 
             	    						newCompositeNode(grammarAccess.getDescriptionBoxAccess().getDescriptionBoxRefinementsDescriptionBoxRefinementParserRuleCall_4_2_0());
             	    					
-            	    pushFollow(FOLLOW_81);
+            	    pushFollow(FOLLOW_79);
             	    lv_descriptionBoxRefinements_6_0=ruleDescriptionBoxRefinement();
 
             	    state._fsp--;
@@ -11488,18 +11509,18 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
             	    }
             	    break;
             	case 4 :
-            	    // InternalOntologicalModelingLanguage.g:4817:4: ( (lv_conceptInstances_7_0= ruleConceptInstance ) )
+            	    // InternalOntologicalModelingLanguage.g:4785:4: ( (lv_conceptInstances_7_0= ruleConceptInstance ) )
             	    {
-            	    // InternalOntologicalModelingLanguage.g:4817:4: ( (lv_conceptInstances_7_0= ruleConceptInstance ) )
-            	    // InternalOntologicalModelingLanguage.g:4818:5: (lv_conceptInstances_7_0= ruleConceptInstance )
+            	    // InternalOntologicalModelingLanguage.g:4785:4: ( (lv_conceptInstances_7_0= ruleConceptInstance ) )
+            	    // InternalOntologicalModelingLanguage.g:4786:5: (lv_conceptInstances_7_0= ruleConceptInstance )
             	    {
-            	    // InternalOntologicalModelingLanguage.g:4818:5: (lv_conceptInstances_7_0= ruleConceptInstance )
-            	    // InternalOntologicalModelingLanguage.g:4819:6: lv_conceptInstances_7_0= ruleConceptInstance
+            	    // InternalOntologicalModelingLanguage.g:4786:5: (lv_conceptInstances_7_0= ruleConceptInstance )
+            	    // InternalOntologicalModelingLanguage.g:4787:6: lv_conceptInstances_7_0= ruleConceptInstance
             	    {
 
             	    						newCompositeNode(grammarAccess.getDescriptionBoxAccess().getConceptInstancesConceptInstanceParserRuleCall_4_3_0());
             	    					
-            	    pushFollow(FOLLOW_81);
+            	    pushFollow(FOLLOW_79);
             	    lv_conceptInstances_7_0=ruleConceptInstance();
 
             	    state._fsp--;
@@ -11525,18 +11546,18 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
             	    }
             	    break;
             	case 5 :
-            	    // InternalOntologicalModelingLanguage.g:4837:4: ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) )
+            	    // InternalOntologicalModelingLanguage.g:4805:4: ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) )
             	    {
-            	    // InternalOntologicalModelingLanguage.g:4837:4: ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) )
-            	    // InternalOntologicalModelingLanguage.g:4838:5: (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance )
+            	    // InternalOntologicalModelingLanguage.g:4805:4: ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) )
+            	    // InternalOntologicalModelingLanguage.g:4806:5: (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance )
             	    {
-            	    // InternalOntologicalModelingLanguage.g:4838:5: (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance )
-            	    // InternalOntologicalModelingLanguage.g:4839:6: lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance
+            	    // InternalOntologicalModelingLanguage.g:4806:5: (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance )
+            	    // InternalOntologicalModelingLanguage.g:4807:6: lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance
             	    {
 
             	    						newCompositeNode(grammarAccess.getDescriptionBoxAccess().getReifiedRelationshipInstancesReifiedRelationshipInstanceParserRuleCall_4_4_0());
             	    					
-            	    pushFollow(FOLLOW_81);
+            	    pushFollow(FOLLOW_79);
             	    lv_reifiedRelationshipInstances_8_0=ruleReifiedRelationshipInstance();
 
             	    state._fsp--;
@@ -11562,18 +11583,18 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
             	    }
             	    break;
             	case 6 :
-            	    // InternalOntologicalModelingLanguage.g:4857:4: ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) )
+            	    // InternalOntologicalModelingLanguage.g:4825:4: ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) )
             	    {
-            	    // InternalOntologicalModelingLanguage.g:4857:4: ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) )
-            	    // InternalOntologicalModelingLanguage.g:4858:5: (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain )
+            	    // InternalOntologicalModelingLanguage.g:4825:4: ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) )
+            	    // InternalOntologicalModelingLanguage.g:4826:5: (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain )
             	    {
-            	    // InternalOntologicalModelingLanguage.g:4858:5: (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain )
-            	    // InternalOntologicalModelingLanguage.g:4859:6: lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain
+            	    // InternalOntologicalModelingLanguage.g:4826:5: (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain )
+            	    // InternalOntologicalModelingLanguage.g:4827:6: lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain
             	    {
 
             	    						newCompositeNode(grammarAccess.getDescriptionBoxAccess().getReifiedRelationshipInstanceDomainsReifiedRelationshipInstanceDomainParserRuleCall_4_5_0());
             	    					
-            	    pushFollow(FOLLOW_81);
+            	    pushFollow(FOLLOW_79);
             	    lv_reifiedRelationshipInstanceDomains_9_0=ruleReifiedRelationshipInstanceDomain();
 
             	    state._fsp--;
@@ -11599,18 +11620,18 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
             	    }
             	    break;
             	case 7 :
-            	    // InternalOntologicalModelingLanguage.g:4877:4: ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) )
+            	    // InternalOntologicalModelingLanguage.g:4845:4: ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) )
             	    {
-            	    // InternalOntologicalModelingLanguage.g:4877:4: ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) )
-            	    // InternalOntologicalModelingLanguage.g:4878:5: (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange )
+            	    // InternalOntologicalModelingLanguage.g:4845:4: ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) )
+            	    // InternalOntologicalModelingLanguage.g:4846:5: (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange )
             	    {
-            	    // InternalOntologicalModelingLanguage.g:4878:5: (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange )
-            	    // InternalOntologicalModelingLanguage.g:4879:6: lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange
+            	    // InternalOntologicalModelingLanguage.g:4846:5: (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange )
+            	    // InternalOntologicalModelingLanguage.g:4847:6: lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange
             	    {
 
             	    						newCompositeNode(grammarAccess.getDescriptionBoxAccess().getReifiedRelationshipInstanceRangesReifiedRelationshipInstanceRangeParserRuleCall_4_6_0());
             	    					
-            	    pushFollow(FOLLOW_81);
+            	    pushFollow(FOLLOW_79);
             	    lv_reifiedRelationshipInstanceRanges_10_0=ruleReifiedRelationshipInstanceRange();
 
             	    state._fsp--;
@@ -11636,18 +11657,18 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
             	    }
             	    break;
             	case 8 :
-            	    // InternalOntologicalModelingLanguage.g:4897:4: ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) )
+            	    // InternalOntologicalModelingLanguage.g:4865:4: ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) )
             	    {
-            	    // InternalOntologicalModelingLanguage.g:4897:4: ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) )
-            	    // InternalOntologicalModelingLanguage.g:4898:5: (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple )
+            	    // InternalOntologicalModelingLanguage.g:4865:4: ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) )
+            	    // InternalOntologicalModelingLanguage.g:4866:5: (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple )
             	    {
-            	    // InternalOntologicalModelingLanguage.g:4898:5: (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple )
-            	    // InternalOntologicalModelingLanguage.g:4899:6: lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple
+            	    // InternalOntologicalModelingLanguage.g:4866:5: (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple )
+            	    // InternalOntologicalModelingLanguage.g:4867:6: lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple
             	    {
 
             	    						newCompositeNode(grammarAccess.getDescriptionBoxAccess().getUnreifiedRelationshipInstanceTuplesUnreifiedRelationshipInstanceTupleParserRuleCall_4_7_0());
             	    					
-            	    pushFollow(FOLLOW_81);
+            	    pushFollow(FOLLOW_79);
             	    lv_unreifiedRelationshipInstanceTuples_11_0=ruleUnreifiedRelationshipInstanceTuple();
 
             	    state._fsp--;
@@ -11705,7 +11726,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleDescriptionBoxExtendsClosedWorldDefinitions"
-    // InternalOntologicalModelingLanguage.g:4925:1: entryRuleDescriptionBoxExtendsClosedWorldDefinitions returns [EObject current=null] : iv_ruleDescriptionBoxExtendsClosedWorldDefinitions= ruleDescriptionBoxExtendsClosedWorldDefinitions EOF ;
+    // InternalOntologicalModelingLanguage.g:4893:1: entryRuleDescriptionBoxExtendsClosedWorldDefinitions returns [EObject current=null] : iv_ruleDescriptionBoxExtendsClosedWorldDefinitions= ruleDescriptionBoxExtendsClosedWorldDefinitions EOF ;
     public final EObject entryRuleDescriptionBoxExtendsClosedWorldDefinitions() throws RecognitionException {
         EObject current = null;
 
@@ -11713,8 +11734,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:4925:84: (iv_ruleDescriptionBoxExtendsClosedWorldDefinitions= ruleDescriptionBoxExtendsClosedWorldDefinitions EOF )
-            // InternalOntologicalModelingLanguage.g:4926:2: iv_ruleDescriptionBoxExtendsClosedWorldDefinitions= ruleDescriptionBoxExtendsClosedWorldDefinitions EOF
+            // InternalOntologicalModelingLanguage.g:4893:84: (iv_ruleDescriptionBoxExtendsClosedWorldDefinitions= ruleDescriptionBoxExtendsClosedWorldDefinitions EOF )
+            // InternalOntologicalModelingLanguage.g:4894:2: iv_ruleDescriptionBoxExtendsClosedWorldDefinitions= ruleDescriptionBoxExtendsClosedWorldDefinitions EOF
             {
              newCompositeNode(grammarAccess.getDescriptionBoxExtendsClosedWorldDefinitionsRule()); 
             pushFollow(FOLLOW_1);
@@ -11741,7 +11762,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleDescriptionBoxExtendsClosedWorldDefinitions"
-    // InternalOntologicalModelingLanguage.g:4932:1: ruleDescriptionBoxExtendsClosedWorldDefinitions returns [EObject current=null] : (this_EXTENDS_TOKEN_0= RULE_EXTENDS_TOKEN ( ( ruleReference ) ) ) ;
+    // InternalOntologicalModelingLanguage.g:4900:1: ruleDescriptionBoxExtendsClosedWorldDefinitions returns [EObject current=null] : (this_EXTENDS_TOKEN_0= RULE_EXTENDS_TOKEN ( ( ruleReference ) ) ) ;
     public final EObject ruleDescriptionBoxExtendsClosedWorldDefinitions() throws RecognitionException {
         EObject current = null;
 
@@ -11751,21 +11772,21 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:4938:2: ( (this_EXTENDS_TOKEN_0= RULE_EXTENDS_TOKEN ( ( ruleReference ) ) ) )
-            // InternalOntologicalModelingLanguage.g:4939:2: (this_EXTENDS_TOKEN_0= RULE_EXTENDS_TOKEN ( ( ruleReference ) ) )
+            // InternalOntologicalModelingLanguage.g:4906:2: ( (this_EXTENDS_TOKEN_0= RULE_EXTENDS_TOKEN ( ( ruleReference ) ) ) )
+            // InternalOntologicalModelingLanguage.g:4907:2: (this_EXTENDS_TOKEN_0= RULE_EXTENDS_TOKEN ( ( ruleReference ) ) )
             {
-            // InternalOntologicalModelingLanguage.g:4939:2: (this_EXTENDS_TOKEN_0= RULE_EXTENDS_TOKEN ( ( ruleReference ) ) )
-            // InternalOntologicalModelingLanguage.g:4940:3: this_EXTENDS_TOKEN_0= RULE_EXTENDS_TOKEN ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:4907:2: (this_EXTENDS_TOKEN_0= RULE_EXTENDS_TOKEN ( ( ruleReference ) ) )
+            // InternalOntologicalModelingLanguage.g:4908:3: this_EXTENDS_TOKEN_0= RULE_EXTENDS_TOKEN ( ( ruleReference ) )
             {
             this_EXTENDS_TOKEN_0=(Token)match(input,RULE_EXTENDS_TOKEN,FOLLOW_27); 
 
             			newLeafNode(this_EXTENDS_TOKEN_0, grammarAccess.getDescriptionBoxExtendsClosedWorldDefinitionsAccess().getEXTENDS_TOKENTerminalRuleCall_0());
             		
-            // InternalOntologicalModelingLanguage.g:4944:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:4945:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:4912:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:4913:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:4945:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:4946:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:4913:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:4914:5: ruleReference
             {
 
             					if (current==null) {
@@ -11812,7 +11833,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleDescriptionBoxRefinement"
-    // InternalOntologicalModelingLanguage.g:4964:1: entryRuleDescriptionBoxRefinement returns [EObject current=null] : iv_ruleDescriptionBoxRefinement= ruleDescriptionBoxRefinement EOF ;
+    // InternalOntologicalModelingLanguage.g:4932:1: entryRuleDescriptionBoxRefinement returns [EObject current=null] : iv_ruleDescriptionBoxRefinement= ruleDescriptionBoxRefinement EOF ;
     public final EObject entryRuleDescriptionBoxRefinement() throws RecognitionException {
         EObject current = null;
 
@@ -11820,8 +11841,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:4964:65: (iv_ruleDescriptionBoxRefinement= ruleDescriptionBoxRefinement EOF )
-            // InternalOntologicalModelingLanguage.g:4965:2: iv_ruleDescriptionBoxRefinement= ruleDescriptionBoxRefinement EOF
+            // InternalOntologicalModelingLanguage.g:4932:65: (iv_ruleDescriptionBoxRefinement= ruleDescriptionBoxRefinement EOF )
+            // InternalOntologicalModelingLanguage.g:4933:2: iv_ruleDescriptionBoxRefinement= ruleDescriptionBoxRefinement EOF
             {
              newCompositeNode(grammarAccess.getDescriptionBoxRefinementRule()); 
             pushFollow(FOLLOW_1);
@@ -11848,7 +11869,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleDescriptionBoxRefinement"
-    // InternalOntologicalModelingLanguage.g:4971:1: ruleDescriptionBoxRefinement returns [EObject current=null] : (this_REFINES_TOKEN_0= RULE_REFINES_TOKEN ( ( ruleReference ) ) ) ;
+    // InternalOntologicalModelingLanguage.g:4939:1: ruleDescriptionBoxRefinement returns [EObject current=null] : (this_REFINES_TOKEN_0= RULE_REFINES_TOKEN ( ( ruleReference ) ) ) ;
     public final EObject ruleDescriptionBoxRefinement() throws RecognitionException {
         EObject current = null;
 
@@ -11858,21 +11879,21 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:4977:2: ( (this_REFINES_TOKEN_0= RULE_REFINES_TOKEN ( ( ruleReference ) ) ) )
-            // InternalOntologicalModelingLanguage.g:4978:2: (this_REFINES_TOKEN_0= RULE_REFINES_TOKEN ( ( ruleReference ) ) )
+            // InternalOntologicalModelingLanguage.g:4945:2: ( (this_REFINES_TOKEN_0= RULE_REFINES_TOKEN ( ( ruleReference ) ) ) )
+            // InternalOntologicalModelingLanguage.g:4946:2: (this_REFINES_TOKEN_0= RULE_REFINES_TOKEN ( ( ruleReference ) ) )
             {
-            // InternalOntologicalModelingLanguage.g:4978:2: (this_REFINES_TOKEN_0= RULE_REFINES_TOKEN ( ( ruleReference ) ) )
-            // InternalOntologicalModelingLanguage.g:4979:3: this_REFINES_TOKEN_0= RULE_REFINES_TOKEN ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:4946:2: (this_REFINES_TOKEN_0= RULE_REFINES_TOKEN ( ( ruleReference ) ) )
+            // InternalOntologicalModelingLanguage.g:4947:3: this_REFINES_TOKEN_0= RULE_REFINES_TOKEN ( ( ruleReference ) )
             {
             this_REFINES_TOKEN_0=(Token)match(input,RULE_REFINES_TOKEN,FOLLOW_27); 
 
             			newLeafNode(this_REFINES_TOKEN_0, grammarAccess.getDescriptionBoxRefinementAccess().getREFINES_TOKENTerminalRuleCall_0());
             		
-            // InternalOntologicalModelingLanguage.g:4983:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:4984:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:4951:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:4952:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:4984:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:4985:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:4952:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:4953:5: ruleReference
             {
 
             					if (current==null) {
@@ -11919,7 +11940,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleScalarDataPropertyValue"
-    // InternalOntologicalModelingLanguage.g:5003:1: entryRuleScalarDataPropertyValue returns [EObject current=null] : iv_ruleScalarDataPropertyValue= ruleScalarDataPropertyValue EOF ;
+    // InternalOntologicalModelingLanguage.g:4971:1: entryRuleScalarDataPropertyValue returns [EObject current=null] : iv_ruleScalarDataPropertyValue= ruleScalarDataPropertyValue EOF ;
     public final EObject entryRuleScalarDataPropertyValue() throws RecognitionException {
         EObject current = null;
 
@@ -11927,8 +11948,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:5003:64: (iv_ruleScalarDataPropertyValue= ruleScalarDataPropertyValue EOF )
-            // InternalOntologicalModelingLanguage.g:5004:2: iv_ruleScalarDataPropertyValue= ruleScalarDataPropertyValue EOF
+            // InternalOntologicalModelingLanguage.g:4971:64: (iv_ruleScalarDataPropertyValue= ruleScalarDataPropertyValue EOF )
+            // InternalOntologicalModelingLanguage.g:4972:2: iv_ruleScalarDataPropertyValue= ruleScalarDataPropertyValue EOF
             {
              newCompositeNode(grammarAccess.getScalarDataPropertyValueRule()); 
             pushFollow(FOLLOW_1);
@@ -11955,7 +11976,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleScalarDataPropertyValue"
-    // InternalOntologicalModelingLanguage.g:5010:1: ruleScalarDataPropertyValue returns [EObject current=null] : (otherlv_0= 'ScalarDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'scalarPropertyValue' ( (lv_scalarPropertyValue_3_0= ruleReference ) ) otherlv_4= 'scalarDataProperty' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) ;
+    // InternalOntologicalModelingLanguage.g:4978:1: ruleScalarDataPropertyValue returns [EObject current=null] : (otherlv_0= 'ScalarDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'scalarPropertyValue' ( (lv_scalarPropertyValue_3_0= ruleReference ) ) otherlv_4= 'scalarDataProperty' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) ;
     public final EObject ruleScalarDataPropertyValue() throws RecognitionException {
         EObject current = null;
 
@@ -11971,34 +11992,34 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:5016:2: ( (otherlv_0= 'ScalarDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'scalarPropertyValue' ( (lv_scalarPropertyValue_3_0= ruleReference ) ) otherlv_4= 'scalarDataProperty' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) )
-            // InternalOntologicalModelingLanguage.g:5017:2: (otherlv_0= 'ScalarDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'scalarPropertyValue' ( (lv_scalarPropertyValue_3_0= ruleReference ) ) otherlv_4= 'scalarDataProperty' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:4984:2: ( (otherlv_0= 'ScalarDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'scalarPropertyValue' ( (lv_scalarPropertyValue_3_0= ruleReference ) ) otherlv_4= 'scalarDataProperty' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) )
+            // InternalOntologicalModelingLanguage.g:4985:2: (otherlv_0= 'ScalarDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'scalarPropertyValue' ( (lv_scalarPropertyValue_3_0= ruleReference ) ) otherlv_4= 'scalarDataProperty' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
             {
-            // InternalOntologicalModelingLanguage.g:5017:2: (otherlv_0= 'ScalarDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'scalarPropertyValue' ( (lv_scalarPropertyValue_3_0= ruleReference ) ) otherlv_4= 'scalarDataProperty' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
-            // InternalOntologicalModelingLanguage.g:5018:3: otherlv_0= 'ScalarDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'scalarPropertyValue' ( (lv_scalarPropertyValue_3_0= ruleReference ) ) otherlv_4= 'scalarDataProperty' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY
+            // InternalOntologicalModelingLanguage.g:4985:2: (otherlv_0= 'ScalarDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'scalarPropertyValue' ( (lv_scalarPropertyValue_3_0= ruleReference ) ) otherlv_4= 'scalarDataProperty' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:4986:3: otherlv_0= 'ScalarDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'scalarPropertyValue' ( (lv_scalarPropertyValue_3_0= ruleReference ) ) otherlv_4= 'scalarDataProperty' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY
             {
-            otherlv_0=(Token)match(input,109,FOLLOW_9); 
+            otherlv_0=(Token)match(input,105,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getScalarDataPropertyValueAccess().getScalarDataPropertyValueKeyword_0());
             		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_82); 
+            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_80); 
 
             			newLeafNode(this_LCURLY_1, grammarAccess.getScalarDataPropertyValueAccess().getLCURLYTerminalRuleCall_1());
             		
-            otherlv_2=(Token)match(input,110,FOLLOW_27); 
+            otherlv_2=(Token)match(input,106,FOLLOW_27); 
 
             			newLeafNode(otherlv_2, grammarAccess.getScalarDataPropertyValueAccess().getScalarPropertyValueKeyword_2());
             		
-            // InternalOntologicalModelingLanguage.g:5030:3: ( (lv_scalarPropertyValue_3_0= ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:5031:4: (lv_scalarPropertyValue_3_0= ruleReference )
+            // InternalOntologicalModelingLanguage.g:4998:3: ( (lv_scalarPropertyValue_3_0= ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:4999:4: (lv_scalarPropertyValue_3_0= ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:5031:4: (lv_scalarPropertyValue_3_0= ruleReference )
-            // InternalOntologicalModelingLanguage.g:5032:5: lv_scalarPropertyValue_3_0= ruleReference
+            // InternalOntologicalModelingLanguage.g:4999:4: (lv_scalarPropertyValue_3_0= ruleReference )
+            // InternalOntologicalModelingLanguage.g:5000:5: lv_scalarPropertyValue_3_0= ruleReference
             {
 
             					newCompositeNode(grammarAccess.getScalarDataPropertyValueAccess().getScalarPropertyValueReferenceParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_83);
+            pushFollow(FOLLOW_81);
             lv_scalarPropertyValue_3_0=ruleReference();
 
             state._fsp--;
@@ -12024,11 +12045,11 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             			newLeafNode(otherlv_4, grammarAccess.getScalarDataPropertyValueAccess().getScalarDataPropertyKeyword_4());
             		
-            // InternalOntologicalModelingLanguage.g:5053:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:5054:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:5021:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:5022:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:5054:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:5055:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:5022:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:5023:5: ruleReference
             {
 
             					if (current==null) {
@@ -12079,7 +12100,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleStructuredDataPropertyValue"
-    // InternalOntologicalModelingLanguage.g:5077:1: entryRuleStructuredDataPropertyValue returns [EObject current=null] : iv_ruleStructuredDataPropertyValue= ruleStructuredDataPropertyValue EOF ;
+    // InternalOntologicalModelingLanguage.g:5045:1: entryRuleStructuredDataPropertyValue returns [EObject current=null] : iv_ruleStructuredDataPropertyValue= ruleStructuredDataPropertyValue EOF ;
     public final EObject entryRuleStructuredDataPropertyValue() throws RecognitionException {
         EObject current = null;
 
@@ -12087,8 +12108,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:5077:68: (iv_ruleStructuredDataPropertyValue= ruleStructuredDataPropertyValue EOF )
-            // InternalOntologicalModelingLanguage.g:5078:2: iv_ruleStructuredDataPropertyValue= ruleStructuredDataPropertyValue EOF
+            // InternalOntologicalModelingLanguage.g:5045:68: (iv_ruleStructuredDataPropertyValue= ruleStructuredDataPropertyValue EOF )
+            // InternalOntologicalModelingLanguage.g:5046:2: iv_ruleStructuredDataPropertyValue= ruleStructuredDataPropertyValue EOF
             {
              newCompositeNode(grammarAccess.getStructuredDataPropertyValueRule()); 
             pushFollow(FOLLOW_1);
@@ -12115,7 +12136,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleStructuredDataPropertyValue"
-    // InternalOntologicalModelingLanguage.g:5084:1: ruleStructuredDataPropertyValue returns [EObject current=null] : (otherlv_0= 'StructuredDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'structuredDataProperty' ( ( ruleReference ) ) otherlv_4= 'structuredPropertyTuple' ( (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple ) ) this_RCURLY_6= RULE_RCURLY ) ;
+    // InternalOntologicalModelingLanguage.g:5052:1: ruleStructuredDataPropertyValue returns [EObject current=null] : (otherlv_0= 'StructuredDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'structuredDataProperty' ( ( ruleReference ) ) otherlv_4= 'structuredPropertyTuple' ( (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple ) ) this_RCURLY_6= RULE_RCURLY ) ;
     public final EObject ruleStructuredDataPropertyValue() throws RecognitionException {
         EObject current = null;
 
@@ -12131,17 +12152,17 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:5090:2: ( (otherlv_0= 'StructuredDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'structuredDataProperty' ( ( ruleReference ) ) otherlv_4= 'structuredPropertyTuple' ( (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple ) ) this_RCURLY_6= RULE_RCURLY ) )
-            // InternalOntologicalModelingLanguage.g:5091:2: (otherlv_0= 'StructuredDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'structuredDataProperty' ( ( ruleReference ) ) otherlv_4= 'structuredPropertyTuple' ( (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple ) ) this_RCURLY_6= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:5058:2: ( (otherlv_0= 'StructuredDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'structuredDataProperty' ( ( ruleReference ) ) otherlv_4= 'structuredPropertyTuple' ( (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple ) ) this_RCURLY_6= RULE_RCURLY ) )
+            // InternalOntologicalModelingLanguage.g:5059:2: (otherlv_0= 'StructuredDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'structuredDataProperty' ( ( ruleReference ) ) otherlv_4= 'structuredPropertyTuple' ( (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple ) ) this_RCURLY_6= RULE_RCURLY )
             {
-            // InternalOntologicalModelingLanguage.g:5091:2: (otherlv_0= 'StructuredDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'structuredDataProperty' ( ( ruleReference ) ) otherlv_4= 'structuredPropertyTuple' ( (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple ) ) this_RCURLY_6= RULE_RCURLY )
-            // InternalOntologicalModelingLanguage.g:5092:3: otherlv_0= 'StructuredDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'structuredDataProperty' ( ( ruleReference ) ) otherlv_4= 'structuredPropertyTuple' ( (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple ) ) this_RCURLY_6= RULE_RCURLY
+            // InternalOntologicalModelingLanguage.g:5059:2: (otherlv_0= 'StructuredDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'structuredDataProperty' ( ( ruleReference ) ) otherlv_4= 'structuredPropertyTuple' ( (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple ) ) this_RCURLY_6= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:5060:3: otherlv_0= 'StructuredDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'structuredDataProperty' ( ( ruleReference ) ) otherlv_4= 'structuredPropertyTuple' ( (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple ) ) this_RCURLY_6= RULE_RCURLY
             {
-            otherlv_0=(Token)match(input,111,FOLLOW_9); 
+            otherlv_0=(Token)match(input,107,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getStructuredDataPropertyValueAccess().getStructuredDataPropertyValueKeyword_0());
             		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_84); 
+            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_82); 
 
             			newLeafNode(this_LCURLY_1, grammarAccess.getStructuredDataPropertyValueAccess().getLCURLYTerminalRuleCall_1());
             		
@@ -12149,11 +12170,11 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             			newLeafNode(otherlv_2, grammarAccess.getStructuredDataPropertyValueAccess().getStructuredDataPropertyKeyword_2());
             		
-            // InternalOntologicalModelingLanguage.g:5104:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:5105:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:5072:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:5073:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:5105:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:5106:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:5073:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:5074:5: ruleReference
             {
 
             					if (current==null) {
@@ -12163,7 +12184,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             					newCompositeNode(grammarAccess.getStructuredDataPropertyValueAccess().getStructuredDataPropertyDataRelationshipToStructureCrossReference_3_0());
             				
-            pushFollow(FOLLOW_85);
+            pushFollow(FOLLOW_83);
             ruleReference();
 
             state._fsp--;
@@ -12177,15 +12198,15 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             }
 
-            otherlv_4=(Token)match(input,112,FOLLOW_86); 
+            otherlv_4=(Token)match(input,108,FOLLOW_84); 
 
             			newLeafNode(otherlv_4, grammarAccess.getStructuredDataPropertyValueAccess().getStructuredPropertyTupleKeyword_4());
             		
-            // InternalOntologicalModelingLanguage.g:5124:3: ( (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple ) )
-            // InternalOntologicalModelingLanguage.g:5125:4: (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple )
+            // InternalOntologicalModelingLanguage.g:5092:3: ( (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple ) )
+            // InternalOntologicalModelingLanguage.g:5093:4: (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple )
             {
-            // InternalOntologicalModelingLanguage.g:5125:4: (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple )
-            // InternalOntologicalModelingLanguage.g:5126:5: lv_structuredPropertyTuple_5_0= ruleDataStructureTuple
+            // InternalOntologicalModelingLanguage.g:5093:4: (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple )
+            // InternalOntologicalModelingLanguage.g:5094:5: lv_structuredPropertyTuple_5_0= ruleDataStructureTuple
             {
 
             					newCompositeNode(grammarAccess.getStructuredDataPropertyValueAccess().getStructuredPropertyTupleDataStructureTupleParserRuleCall_5_0());
@@ -12239,7 +12260,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleDataStructureTuple"
-    // InternalOntologicalModelingLanguage.g:5151:1: entryRuleDataStructureTuple returns [EObject current=null] : iv_ruleDataStructureTuple= ruleDataStructureTuple EOF ;
+    // InternalOntologicalModelingLanguage.g:5119:1: entryRuleDataStructureTuple returns [EObject current=null] : iv_ruleDataStructureTuple= ruleDataStructureTuple EOF ;
     public final EObject entryRuleDataStructureTuple() throws RecognitionException {
         EObject current = null;
 
@@ -12247,8 +12268,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:5151:59: (iv_ruleDataStructureTuple= ruleDataStructureTuple EOF )
-            // InternalOntologicalModelingLanguage.g:5152:2: iv_ruleDataStructureTuple= ruleDataStructureTuple EOF
+            // InternalOntologicalModelingLanguage.g:5119:59: (iv_ruleDataStructureTuple= ruleDataStructureTuple EOF )
+            // InternalOntologicalModelingLanguage.g:5120:2: iv_ruleDataStructureTuple= ruleDataStructureTuple EOF
             {
              newCompositeNode(grammarAccess.getDataStructureTupleRule()); 
             pushFollow(FOLLOW_1);
@@ -12275,7 +12296,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleDataStructureTuple"
-    // InternalOntologicalModelingLanguage.g:5158:1: ruleDataStructureTuple returns [EObject current=null] : (otherlv_0= 'DataStructureTuple' this_LCURLY_1= RULE_LCURLY otherlv_2= 'dataStructureType' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY ) ;
+    // InternalOntologicalModelingLanguage.g:5126:1: ruleDataStructureTuple returns [EObject current=null] : (otherlv_0= 'DataStructureTuple' this_LCURLY_1= RULE_LCURLY otherlv_2= 'dataStructureType' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY ) ;
     public final EObject ruleDataStructureTuple() throws RecognitionException {
         EObject current = null;
 
@@ -12288,29 +12309,29 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:5164:2: ( (otherlv_0= 'DataStructureTuple' this_LCURLY_1= RULE_LCURLY otherlv_2= 'dataStructureType' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY ) )
-            // InternalOntologicalModelingLanguage.g:5165:2: (otherlv_0= 'DataStructureTuple' this_LCURLY_1= RULE_LCURLY otherlv_2= 'dataStructureType' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:5132:2: ( (otherlv_0= 'DataStructureTuple' this_LCURLY_1= RULE_LCURLY otherlv_2= 'dataStructureType' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY ) )
+            // InternalOntologicalModelingLanguage.g:5133:2: (otherlv_0= 'DataStructureTuple' this_LCURLY_1= RULE_LCURLY otherlv_2= 'dataStructureType' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY )
             {
-            // InternalOntologicalModelingLanguage.g:5165:2: (otherlv_0= 'DataStructureTuple' this_LCURLY_1= RULE_LCURLY otherlv_2= 'dataStructureType' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY )
-            // InternalOntologicalModelingLanguage.g:5166:3: otherlv_0= 'DataStructureTuple' this_LCURLY_1= RULE_LCURLY otherlv_2= 'dataStructureType' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY
+            // InternalOntologicalModelingLanguage.g:5133:2: (otherlv_0= 'DataStructureTuple' this_LCURLY_1= RULE_LCURLY otherlv_2= 'dataStructureType' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:5134:3: otherlv_0= 'DataStructureTuple' this_LCURLY_1= RULE_LCURLY otherlv_2= 'dataStructureType' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY
             {
-            otherlv_0=(Token)match(input,113,FOLLOW_9); 
+            otherlv_0=(Token)match(input,109,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getDataStructureTupleAccess().getDataStructureTupleKeyword_0());
             		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_87); 
+            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_85); 
 
             			newLeafNode(this_LCURLY_1, grammarAccess.getDataStructureTupleAccess().getLCURLYTerminalRuleCall_1());
             		
-            otherlv_2=(Token)match(input,114,FOLLOW_27); 
+            otherlv_2=(Token)match(input,110,FOLLOW_27); 
 
             			newLeafNode(otherlv_2, grammarAccess.getDataStructureTupleAccess().getDataStructureTypeKeyword_2());
             		
-            // InternalOntologicalModelingLanguage.g:5178:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:5179:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:5146:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:5147:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:5179:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:5180:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:5147:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:5148:5: ruleReference
             {
 
             					if (current==null) {
@@ -12361,7 +12382,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleConceptInstance"
-    // InternalOntologicalModelingLanguage.g:5202:1: entryRuleConceptInstance returns [EObject current=null] : iv_ruleConceptInstance= ruleConceptInstance EOF ;
+    // InternalOntologicalModelingLanguage.g:5170:1: entryRuleConceptInstance returns [EObject current=null] : iv_ruleConceptInstance= ruleConceptInstance EOF ;
     public final EObject entryRuleConceptInstance() throws RecognitionException {
         EObject current = null;
 
@@ -12369,8 +12390,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:5202:56: (iv_ruleConceptInstance= ruleConceptInstance EOF )
-            // InternalOntologicalModelingLanguage.g:5203:2: iv_ruleConceptInstance= ruleConceptInstance EOF
+            // InternalOntologicalModelingLanguage.g:5170:56: (iv_ruleConceptInstance= ruleConceptInstance EOF )
+            // InternalOntologicalModelingLanguage.g:5171:2: iv_ruleConceptInstance= ruleConceptInstance EOF
             {
              newCompositeNode(grammarAccess.getConceptInstanceRule()); 
             pushFollow(FOLLOW_1);
@@ -12397,7 +12418,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleConceptInstance"
-    // InternalOntologicalModelingLanguage.g:5209:1: ruleConceptInstance returns [EObject current=null] : (otherlv_0= 'ConceptInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonConceptClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY ) ;
+    // InternalOntologicalModelingLanguage.g:5177:1: ruleConceptInstance returns [EObject current=null] : (otherlv_0= 'ConceptInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonConceptClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY ) ;
     public final EObject ruleConceptInstance() throws RecognitionException {
         EObject current = null;
 
@@ -12410,29 +12431,29 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:5215:2: ( (otherlv_0= 'ConceptInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonConceptClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY ) )
-            // InternalOntologicalModelingLanguage.g:5216:2: (otherlv_0= 'ConceptInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonConceptClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:5183:2: ( (otherlv_0= 'ConceptInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonConceptClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY ) )
+            // InternalOntologicalModelingLanguage.g:5184:2: (otherlv_0= 'ConceptInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonConceptClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY )
             {
-            // InternalOntologicalModelingLanguage.g:5216:2: (otherlv_0= 'ConceptInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonConceptClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY )
-            // InternalOntologicalModelingLanguage.g:5217:3: otherlv_0= 'ConceptInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonConceptClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY
+            // InternalOntologicalModelingLanguage.g:5184:2: (otherlv_0= 'ConceptInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonConceptClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:5185:3: otherlv_0= 'ConceptInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonConceptClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY
             {
-            otherlv_0=(Token)match(input,115,FOLLOW_9); 
+            otherlv_0=(Token)match(input,111,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getConceptInstanceAccess().getConceptInstanceKeyword_0());
             		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_88); 
+            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_86); 
 
             			newLeafNode(this_LCURLY_1, grammarAccess.getConceptInstanceAccess().getLCURLYTerminalRuleCall_1());
             		
-            otherlv_2=(Token)match(input,116,FOLLOW_27); 
+            otherlv_2=(Token)match(input,112,FOLLOW_27); 
 
             			newLeafNode(otherlv_2, grammarAccess.getConceptInstanceAccess().getSingletonConceptClassifierKeyword_2());
             		
-            // InternalOntologicalModelingLanguage.g:5229:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:5230:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:5197:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:5198:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:5230:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:5231:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:5198:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:5199:5: ruleReference
             {
 
             					if (current==null) {
@@ -12483,7 +12504,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleReifiedRelationshipInstance"
-    // InternalOntologicalModelingLanguage.g:5253:1: entryRuleReifiedRelationshipInstance returns [EObject current=null] : iv_ruleReifiedRelationshipInstance= ruleReifiedRelationshipInstance EOF ;
+    // InternalOntologicalModelingLanguage.g:5221:1: entryRuleReifiedRelationshipInstance returns [EObject current=null] : iv_ruleReifiedRelationshipInstance= ruleReifiedRelationshipInstance EOF ;
     public final EObject entryRuleReifiedRelationshipInstance() throws RecognitionException {
         EObject current = null;
 
@@ -12491,8 +12512,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:5253:68: (iv_ruleReifiedRelationshipInstance= ruleReifiedRelationshipInstance EOF )
-            // InternalOntologicalModelingLanguage.g:5254:2: iv_ruleReifiedRelationshipInstance= ruleReifiedRelationshipInstance EOF
+            // InternalOntologicalModelingLanguage.g:5221:68: (iv_ruleReifiedRelationshipInstance= ruleReifiedRelationshipInstance EOF )
+            // InternalOntologicalModelingLanguage.g:5222:2: iv_ruleReifiedRelationshipInstance= ruleReifiedRelationshipInstance EOF
             {
              newCompositeNode(grammarAccess.getReifiedRelationshipInstanceRule()); 
             pushFollow(FOLLOW_1);
@@ -12519,7 +12540,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleReifiedRelationshipInstance"
-    // InternalOntologicalModelingLanguage.g:5260:1: ruleReifiedRelationshipInstance returns [EObject current=null] : (otherlv_0= 'ReifiedRelationshipInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonReifiedRelationshipClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY ) ;
+    // InternalOntologicalModelingLanguage.g:5228:1: ruleReifiedRelationshipInstance returns [EObject current=null] : (otherlv_0= 'ReifiedRelationshipInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonReifiedRelationshipClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY ) ;
     public final EObject ruleReifiedRelationshipInstance() throws RecognitionException {
         EObject current = null;
 
@@ -12532,29 +12553,29 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:5266:2: ( (otherlv_0= 'ReifiedRelationshipInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonReifiedRelationshipClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY ) )
-            // InternalOntologicalModelingLanguage.g:5267:2: (otherlv_0= 'ReifiedRelationshipInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonReifiedRelationshipClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:5234:2: ( (otherlv_0= 'ReifiedRelationshipInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonReifiedRelationshipClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY ) )
+            // InternalOntologicalModelingLanguage.g:5235:2: (otherlv_0= 'ReifiedRelationshipInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonReifiedRelationshipClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY )
             {
-            // InternalOntologicalModelingLanguage.g:5267:2: (otherlv_0= 'ReifiedRelationshipInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonReifiedRelationshipClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY )
-            // InternalOntologicalModelingLanguage.g:5268:3: otherlv_0= 'ReifiedRelationshipInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonReifiedRelationshipClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY
+            // InternalOntologicalModelingLanguage.g:5235:2: (otherlv_0= 'ReifiedRelationshipInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonReifiedRelationshipClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:5236:3: otherlv_0= 'ReifiedRelationshipInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonReifiedRelationshipClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY
             {
-            otherlv_0=(Token)match(input,117,FOLLOW_9); 
+            otherlv_0=(Token)match(input,113,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getReifiedRelationshipInstanceAccess().getReifiedRelationshipInstanceKeyword_0());
             		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_89); 
+            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_87); 
 
             			newLeafNode(this_LCURLY_1, grammarAccess.getReifiedRelationshipInstanceAccess().getLCURLYTerminalRuleCall_1());
             		
-            otherlv_2=(Token)match(input,118,FOLLOW_27); 
+            otherlv_2=(Token)match(input,114,FOLLOW_27); 
 
             			newLeafNode(otherlv_2, grammarAccess.getReifiedRelationshipInstanceAccess().getSingletonReifiedRelationshipClassifierKeyword_2());
             		
-            // InternalOntologicalModelingLanguage.g:5280:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:5281:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:5248:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:5249:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:5281:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:5282:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:5249:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:5250:5: ruleReference
             {
 
             					if (current==null) {
@@ -12605,7 +12626,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleReifiedRelationshipInstanceDomain"
-    // InternalOntologicalModelingLanguage.g:5304:1: entryRuleReifiedRelationshipInstanceDomain returns [EObject current=null] : iv_ruleReifiedRelationshipInstanceDomain= ruleReifiedRelationshipInstanceDomain EOF ;
+    // InternalOntologicalModelingLanguage.g:5272:1: entryRuleReifiedRelationshipInstanceDomain returns [EObject current=null] : iv_ruleReifiedRelationshipInstanceDomain= ruleReifiedRelationshipInstanceDomain EOF ;
     public final EObject entryRuleReifiedRelationshipInstanceDomain() throws RecognitionException {
         EObject current = null;
 
@@ -12613,8 +12634,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:5304:74: (iv_ruleReifiedRelationshipInstanceDomain= ruleReifiedRelationshipInstanceDomain EOF )
-            // InternalOntologicalModelingLanguage.g:5305:2: iv_ruleReifiedRelationshipInstanceDomain= ruleReifiedRelationshipInstanceDomain EOF
+            // InternalOntologicalModelingLanguage.g:5272:74: (iv_ruleReifiedRelationshipInstanceDomain= ruleReifiedRelationshipInstanceDomain EOF )
+            // InternalOntologicalModelingLanguage.g:5273:2: iv_ruleReifiedRelationshipInstanceDomain= ruleReifiedRelationshipInstanceDomain EOF
             {
              newCompositeNode(grammarAccess.getReifiedRelationshipInstanceDomainRule()); 
             pushFollow(FOLLOW_1);
@@ -12641,7 +12662,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleReifiedRelationshipInstanceDomain"
-    // InternalOntologicalModelingLanguage.g:5311:1: ruleReifiedRelationshipInstanceDomain returns [EObject current=null] : (otherlv_0= 'ReifiedRelationshipInstanceDomain' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) ;
+    // InternalOntologicalModelingLanguage.g:5279:1: ruleReifiedRelationshipInstanceDomain returns [EObject current=null] : (otherlv_0= 'ReifiedRelationshipInstanceDomain' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) ;
     public final EObject ruleReifiedRelationshipInstanceDomain() throws RecognitionException {
         EObject current = null;
 
@@ -12655,29 +12676,29 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:5317:2: ( (otherlv_0= 'ReifiedRelationshipInstanceDomain' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) )
-            // InternalOntologicalModelingLanguage.g:5318:2: (otherlv_0= 'ReifiedRelationshipInstanceDomain' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:5285:2: ( (otherlv_0= 'ReifiedRelationshipInstanceDomain' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) )
+            // InternalOntologicalModelingLanguage.g:5286:2: (otherlv_0= 'ReifiedRelationshipInstanceDomain' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
             {
-            // InternalOntologicalModelingLanguage.g:5318:2: (otherlv_0= 'ReifiedRelationshipInstanceDomain' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
-            // InternalOntologicalModelingLanguage.g:5319:3: otherlv_0= 'ReifiedRelationshipInstanceDomain' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY
+            // InternalOntologicalModelingLanguage.g:5286:2: (otherlv_0= 'ReifiedRelationshipInstanceDomain' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:5287:3: otherlv_0= 'ReifiedRelationshipInstanceDomain' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY
             {
-            otherlv_0=(Token)match(input,119,FOLLOW_9); 
+            otherlv_0=(Token)match(input,115,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getReifiedRelationshipInstanceDomainAccess().getReifiedRelationshipInstanceDomainKeyword_0());
             		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_90); 
+            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_88); 
 
             			newLeafNode(this_LCURLY_1, grammarAccess.getReifiedRelationshipInstanceDomainAccess().getLCURLYTerminalRuleCall_1());
             		
-            otherlv_2=(Token)match(input,120,FOLLOW_27); 
+            otherlv_2=(Token)match(input,116,FOLLOW_27); 
 
             			newLeafNode(otherlv_2, grammarAccess.getReifiedRelationshipInstanceDomainAccess().getReifiedRelationshipInstanceKeyword_2());
             		
-            // InternalOntologicalModelingLanguage.g:5331:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:5332:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:5299:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:5300:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:5332:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:5333:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:5300:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:5301:5: ruleReference
             {
 
             					if (current==null) {
@@ -12705,11 +12726,11 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             			newLeafNode(this_DOMAIN_TOKEN_4, grammarAccess.getReifiedRelationshipInstanceDomainAccess().getDOMAIN_TOKENTerminalRuleCall_4());
             		
-            // InternalOntologicalModelingLanguage.g:5351:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:5352:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:5319:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:5320:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:5352:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:5353:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:5320:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:5321:5: ruleReference
             {
 
             					if (current==null) {
@@ -12760,7 +12781,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleReifiedRelationshipInstanceRange"
-    // InternalOntologicalModelingLanguage.g:5375:1: entryRuleReifiedRelationshipInstanceRange returns [EObject current=null] : iv_ruleReifiedRelationshipInstanceRange= ruleReifiedRelationshipInstanceRange EOF ;
+    // InternalOntologicalModelingLanguage.g:5343:1: entryRuleReifiedRelationshipInstanceRange returns [EObject current=null] : iv_ruleReifiedRelationshipInstanceRange= ruleReifiedRelationshipInstanceRange EOF ;
     public final EObject entryRuleReifiedRelationshipInstanceRange() throws RecognitionException {
         EObject current = null;
 
@@ -12768,8 +12789,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:5375:73: (iv_ruleReifiedRelationshipInstanceRange= ruleReifiedRelationshipInstanceRange EOF )
-            // InternalOntologicalModelingLanguage.g:5376:2: iv_ruleReifiedRelationshipInstanceRange= ruleReifiedRelationshipInstanceRange EOF
+            // InternalOntologicalModelingLanguage.g:5343:73: (iv_ruleReifiedRelationshipInstanceRange= ruleReifiedRelationshipInstanceRange EOF )
+            // InternalOntologicalModelingLanguage.g:5344:2: iv_ruleReifiedRelationshipInstanceRange= ruleReifiedRelationshipInstanceRange EOF
             {
              newCompositeNode(grammarAccess.getReifiedRelationshipInstanceRangeRule()); 
             pushFollow(FOLLOW_1);
@@ -12796,7 +12817,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleReifiedRelationshipInstanceRange"
-    // InternalOntologicalModelingLanguage.g:5382:1: ruleReifiedRelationshipInstanceRange returns [EObject current=null] : (otherlv_0= 'ReifiedRelationshipInstanceRange' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_RANGE_TOKEN_4= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) ;
+    // InternalOntologicalModelingLanguage.g:5350:1: ruleReifiedRelationshipInstanceRange returns [EObject current=null] : (otherlv_0= 'ReifiedRelationshipInstanceRange' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_RANGE_TOKEN_4= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) ;
     public final EObject ruleReifiedRelationshipInstanceRange() throws RecognitionException {
         EObject current = null;
 
@@ -12810,29 +12831,29 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:5388:2: ( (otherlv_0= 'ReifiedRelationshipInstanceRange' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_RANGE_TOKEN_4= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) )
-            // InternalOntologicalModelingLanguage.g:5389:2: (otherlv_0= 'ReifiedRelationshipInstanceRange' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_RANGE_TOKEN_4= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:5356:2: ( (otherlv_0= 'ReifiedRelationshipInstanceRange' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_RANGE_TOKEN_4= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) )
+            // InternalOntologicalModelingLanguage.g:5357:2: (otherlv_0= 'ReifiedRelationshipInstanceRange' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_RANGE_TOKEN_4= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
             {
-            // InternalOntologicalModelingLanguage.g:5389:2: (otherlv_0= 'ReifiedRelationshipInstanceRange' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_RANGE_TOKEN_4= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
-            // InternalOntologicalModelingLanguage.g:5390:3: otherlv_0= 'ReifiedRelationshipInstanceRange' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_RANGE_TOKEN_4= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY
+            // InternalOntologicalModelingLanguage.g:5357:2: (otherlv_0= 'ReifiedRelationshipInstanceRange' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_RANGE_TOKEN_4= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:5358:3: otherlv_0= 'ReifiedRelationshipInstanceRange' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_RANGE_TOKEN_4= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY
             {
-            otherlv_0=(Token)match(input,121,FOLLOW_9); 
+            otherlv_0=(Token)match(input,117,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getReifiedRelationshipInstanceRangeAccess().getReifiedRelationshipInstanceRangeKeyword_0());
             		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_90); 
+            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_88); 
 
             			newLeafNode(this_LCURLY_1, grammarAccess.getReifiedRelationshipInstanceRangeAccess().getLCURLYTerminalRuleCall_1());
             		
-            otherlv_2=(Token)match(input,120,FOLLOW_27); 
+            otherlv_2=(Token)match(input,116,FOLLOW_27); 
 
             			newLeafNode(otherlv_2, grammarAccess.getReifiedRelationshipInstanceRangeAccess().getReifiedRelationshipInstanceKeyword_2());
             		
-            // InternalOntologicalModelingLanguage.g:5402:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:5403:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:5370:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:5371:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:5403:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:5404:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:5371:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:5372:5: ruleReference
             {
 
             					if (current==null) {
@@ -12860,11 +12881,11 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             			newLeafNode(this_RANGE_TOKEN_4, grammarAccess.getReifiedRelationshipInstanceRangeAccess().getRANGE_TOKENTerminalRuleCall_4());
             		
-            // InternalOntologicalModelingLanguage.g:5422:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:5423:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:5390:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:5391:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:5423:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:5424:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:5391:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:5392:5: ruleReference
             {
 
             					if (current==null) {
@@ -12915,7 +12936,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleUnreifiedRelationshipInstanceTuple"
-    // InternalOntologicalModelingLanguage.g:5446:1: entryRuleUnreifiedRelationshipInstanceTuple returns [EObject current=null] : iv_ruleUnreifiedRelationshipInstanceTuple= ruleUnreifiedRelationshipInstanceTuple EOF ;
+    // InternalOntologicalModelingLanguage.g:5414:1: entryRuleUnreifiedRelationshipInstanceTuple returns [EObject current=null] : iv_ruleUnreifiedRelationshipInstanceTuple= ruleUnreifiedRelationshipInstanceTuple EOF ;
     public final EObject entryRuleUnreifiedRelationshipInstanceTuple() throws RecognitionException {
         EObject current = null;
 
@@ -12923,8 +12944,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:5446:75: (iv_ruleUnreifiedRelationshipInstanceTuple= ruleUnreifiedRelationshipInstanceTuple EOF )
-            // InternalOntologicalModelingLanguage.g:5447:2: iv_ruleUnreifiedRelationshipInstanceTuple= ruleUnreifiedRelationshipInstanceTuple EOF
+            // InternalOntologicalModelingLanguage.g:5414:75: (iv_ruleUnreifiedRelationshipInstanceTuple= ruleUnreifiedRelationshipInstanceTuple EOF )
+            // InternalOntologicalModelingLanguage.g:5415:2: iv_ruleUnreifiedRelationshipInstanceTuple= ruleUnreifiedRelationshipInstanceTuple EOF
             {
              newCompositeNode(grammarAccess.getUnreifiedRelationshipInstanceTupleRule()); 
             pushFollow(FOLLOW_1);
@@ -12951,7 +12972,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleUnreifiedRelationshipInstanceTuple"
-    // InternalOntologicalModelingLanguage.g:5453:1: ruleUnreifiedRelationshipInstanceTuple returns [EObject current=null] : (otherlv_0= 'UnreifiedRelationshipInstanceTuple' this_LCURLY_1= RULE_LCURLY this_UNREIFIED_RELATIONSHIP_TOKEN_2= RULE_UNREIFIED_RELATIONSHIP_TOKEN ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RANGE_TOKEN_6= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY ) ;
+    // InternalOntologicalModelingLanguage.g:5421:1: ruleUnreifiedRelationshipInstanceTuple returns [EObject current=null] : (otherlv_0= 'UnreifiedRelationshipInstanceTuple' this_LCURLY_1= RULE_LCURLY this_UNREIFIED_RELATIONSHIP_TOKEN_2= RULE_UNREIFIED_RELATIONSHIP_TOKEN ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RANGE_TOKEN_6= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY ) ;
     public final EObject ruleUnreifiedRelationshipInstanceTuple() throws RecognitionException {
         EObject current = null;
 
@@ -12966,17 +12987,17 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:5459:2: ( (otherlv_0= 'UnreifiedRelationshipInstanceTuple' this_LCURLY_1= RULE_LCURLY this_UNREIFIED_RELATIONSHIP_TOKEN_2= RULE_UNREIFIED_RELATIONSHIP_TOKEN ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RANGE_TOKEN_6= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY ) )
-            // InternalOntologicalModelingLanguage.g:5460:2: (otherlv_0= 'UnreifiedRelationshipInstanceTuple' this_LCURLY_1= RULE_LCURLY this_UNREIFIED_RELATIONSHIP_TOKEN_2= RULE_UNREIFIED_RELATIONSHIP_TOKEN ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RANGE_TOKEN_6= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:5427:2: ( (otherlv_0= 'UnreifiedRelationshipInstanceTuple' this_LCURLY_1= RULE_LCURLY this_UNREIFIED_RELATIONSHIP_TOKEN_2= RULE_UNREIFIED_RELATIONSHIP_TOKEN ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RANGE_TOKEN_6= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY ) )
+            // InternalOntologicalModelingLanguage.g:5428:2: (otherlv_0= 'UnreifiedRelationshipInstanceTuple' this_LCURLY_1= RULE_LCURLY this_UNREIFIED_RELATIONSHIP_TOKEN_2= RULE_UNREIFIED_RELATIONSHIP_TOKEN ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RANGE_TOKEN_6= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY )
             {
-            // InternalOntologicalModelingLanguage.g:5460:2: (otherlv_0= 'UnreifiedRelationshipInstanceTuple' this_LCURLY_1= RULE_LCURLY this_UNREIFIED_RELATIONSHIP_TOKEN_2= RULE_UNREIFIED_RELATIONSHIP_TOKEN ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RANGE_TOKEN_6= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY )
-            // InternalOntologicalModelingLanguage.g:5461:3: otherlv_0= 'UnreifiedRelationshipInstanceTuple' this_LCURLY_1= RULE_LCURLY this_UNREIFIED_RELATIONSHIP_TOKEN_2= RULE_UNREIFIED_RELATIONSHIP_TOKEN ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RANGE_TOKEN_6= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY
+            // InternalOntologicalModelingLanguage.g:5428:2: (otherlv_0= 'UnreifiedRelationshipInstanceTuple' this_LCURLY_1= RULE_LCURLY this_UNREIFIED_RELATIONSHIP_TOKEN_2= RULE_UNREIFIED_RELATIONSHIP_TOKEN ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RANGE_TOKEN_6= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY )
+            // InternalOntologicalModelingLanguage.g:5429:3: otherlv_0= 'UnreifiedRelationshipInstanceTuple' this_LCURLY_1= RULE_LCURLY this_UNREIFIED_RELATIONSHIP_TOKEN_2= RULE_UNREIFIED_RELATIONSHIP_TOKEN ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RANGE_TOKEN_6= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY
             {
-            otherlv_0=(Token)match(input,122,FOLLOW_9); 
+            otherlv_0=(Token)match(input,118,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getUnreifiedRelationshipInstanceTupleKeyword_0());
             		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_91); 
+            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_89); 
 
             			newLeafNode(this_LCURLY_1, grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getLCURLYTerminalRuleCall_1());
             		
@@ -12984,11 +13005,11 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             			newLeafNode(this_UNREIFIED_RELATIONSHIP_TOKEN_2, grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getUNREIFIED_RELATIONSHIP_TOKENTerminalRuleCall_2());
             		
-            // InternalOntologicalModelingLanguage.g:5473:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:5474:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:5441:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:5442:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:5474:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:5475:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:5442:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:5443:5: ruleReference
             {
 
             					if (current==null) {
@@ -13016,11 +13037,11 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             			newLeafNode(this_DOMAIN_TOKEN_4, grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getDOMAIN_TOKENTerminalRuleCall_4());
             		
-            // InternalOntologicalModelingLanguage.g:5493:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:5494:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:5461:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:5462:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:5494:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:5495:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:5462:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:5463:5: ruleReference
             {
 
             					if (current==null) {
@@ -13048,11 +13069,11 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             			newLeafNode(this_RANGE_TOKEN_6, grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getRANGE_TOKENTerminalRuleCall_6());
             		
-            // InternalOntologicalModelingLanguage.g:5513:3: ( ( ruleReference ) )
-            // InternalOntologicalModelingLanguage.g:5514:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:5481:3: ( ( ruleReference ) )
+            // InternalOntologicalModelingLanguage.g:5482:4: ( ruleReference )
             {
-            // InternalOntologicalModelingLanguage.g:5514:4: ( ruleReference )
-            // InternalOntologicalModelingLanguage.g:5515:5: ruleReference
+            // InternalOntologicalModelingLanguage.g:5482:4: ( ruleReference )
+            // InternalOntologicalModelingLanguage.g:5483:5: ruleReference
             {
 
             					if (current==null) {
@@ -13103,7 +13124,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleReference"
-    // InternalOntologicalModelingLanguage.g:5537:1: entryRuleReference returns [String current=null] : iv_ruleReference= ruleReference EOF ;
+    // InternalOntologicalModelingLanguage.g:5505:1: entryRuleReference returns [String current=null] : iv_ruleReference= ruleReference EOF ;
     public final String entryRuleReference() throws RecognitionException {
         String current = null;
 
@@ -13111,8 +13132,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:5537:49: (iv_ruleReference= ruleReference EOF )
-            // InternalOntologicalModelingLanguage.g:5538:2: iv_ruleReference= ruleReference EOF
+            // InternalOntologicalModelingLanguage.g:5505:49: (iv_ruleReference= ruleReference EOF )
+            // InternalOntologicalModelingLanguage.g:5506:2: iv_ruleReference= ruleReference EOF
             {
              newCompositeNode(grammarAccess.getReferenceRule()); 
             pushFollow(FOLLOW_1);
@@ -13139,7 +13160,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleReference"
-    // InternalOntologicalModelingLanguage.g:5544:1: ruleReference returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_IRI_0= RULE_IRI | this_QNAME_1= ruleQNAME ) ;
+    // InternalOntologicalModelingLanguage.g:5512:1: ruleReference returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_IRI_0= RULE_IRI | this_QNAME_1= ruleQNAME ) ;
     public final AntlrDatatypeRuleToken ruleReference() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -13151,10 +13172,10 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:5550:2: ( (this_IRI_0= RULE_IRI | this_QNAME_1= ruleQNAME ) )
-            // InternalOntologicalModelingLanguage.g:5551:2: (this_IRI_0= RULE_IRI | this_QNAME_1= ruleQNAME )
+            // InternalOntologicalModelingLanguage.g:5518:2: ( (this_IRI_0= RULE_IRI | this_QNAME_1= ruleQNAME ) )
+            // InternalOntologicalModelingLanguage.g:5519:2: (this_IRI_0= RULE_IRI | this_QNAME_1= ruleQNAME )
             {
-            // InternalOntologicalModelingLanguage.g:5551:2: (this_IRI_0= RULE_IRI | this_QNAME_1= ruleQNAME )
+            // InternalOntologicalModelingLanguage.g:5519:2: (this_IRI_0= RULE_IRI | this_QNAME_1= ruleQNAME )
             int alt65=2;
             int LA65_0 = input.LA(1);
 
@@ -13172,7 +13193,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
             }
             switch (alt65) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:5552:3: this_IRI_0= RULE_IRI
+                    // InternalOntologicalModelingLanguage.g:5520:3: this_IRI_0= RULE_IRI
                     {
                     this_IRI_0=(Token)match(input,RULE_IRI,FOLLOW_2); 
 
@@ -13185,7 +13206,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
                     }
                     break;
                 case 2 :
-                    // InternalOntologicalModelingLanguage.g:5560:3: this_QNAME_1= ruleQNAME
+                    // InternalOntologicalModelingLanguage.g:5528:3: this_QNAME_1= ruleQNAME
                     {
 
                     			newCompositeNode(grammarAccess.getReferenceAccess().getQNAMEParserRuleCall_1());
@@ -13227,7 +13248,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleQNAME"
-    // InternalOntologicalModelingLanguage.g:5574:1: entryRuleQNAME returns [String current=null] : iv_ruleQNAME= ruleQNAME EOF ;
+    // InternalOntologicalModelingLanguage.g:5542:1: entryRuleQNAME returns [String current=null] : iv_ruleQNAME= ruleQNAME EOF ;
     public final String entryRuleQNAME() throws RecognitionException {
         String current = null;
 
@@ -13235,8 +13256,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:5574:45: (iv_ruleQNAME= ruleQNAME EOF )
-            // InternalOntologicalModelingLanguage.g:5575:2: iv_ruleQNAME= ruleQNAME EOF
+            // InternalOntologicalModelingLanguage.g:5542:45: (iv_ruleQNAME= ruleQNAME EOF )
+            // InternalOntologicalModelingLanguage.g:5543:2: iv_ruleQNAME= ruleQNAME EOF
             {
              newCompositeNode(grammarAccess.getQNAMERule()); 
             pushFollow(FOLLOW_1);
@@ -13263,7 +13284,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleQNAME"
-    // InternalOntologicalModelingLanguage.g:5581:1: ruleQNAME returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ABBREV_IRI_0= ruleABBREV_IRI | this_ValidID_1= ruleValidID ) ;
+    // InternalOntologicalModelingLanguage.g:5549:1: ruleQNAME returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ABBREV_IRI_0= ruleABBREV_IRI | this_ValidID_1= ruleValidID ) ;
     public final AntlrDatatypeRuleToken ruleQNAME() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -13276,20 +13297,20 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:5587:2: ( (this_ABBREV_IRI_0= ruleABBREV_IRI | this_ValidID_1= ruleValidID ) )
-            // InternalOntologicalModelingLanguage.g:5588:2: (this_ABBREV_IRI_0= ruleABBREV_IRI | this_ValidID_1= ruleValidID )
+            // InternalOntologicalModelingLanguage.g:5555:2: ( (this_ABBREV_IRI_0= ruleABBREV_IRI | this_ValidID_1= ruleValidID ) )
+            // InternalOntologicalModelingLanguage.g:5556:2: (this_ABBREV_IRI_0= ruleABBREV_IRI | this_ValidID_1= ruleValidID )
             {
-            // InternalOntologicalModelingLanguage.g:5588:2: (this_ABBREV_IRI_0= ruleABBREV_IRI | this_ValidID_1= ruleValidID )
+            // InternalOntologicalModelingLanguage.g:5556:2: (this_ABBREV_IRI_0= ruleABBREV_IRI | this_ValidID_1= ruleValidID )
             int alt66=2;
             int LA66_0 = input.LA(1);
 
             if ( (LA66_0==RULE_ID) ) {
                 int LA66_1 = input.LA(2);
 
-                if ( (LA66_1==123) ) {
+                if ( (LA66_1==119) ) {
                     alt66=1;
                 }
-                else if ( (LA66_1==EOF||(LA66_1>=RULE_IRI && LA66_1<=RULE_ANNOTATION_TOKEN)||LA66_1==RULE_RCURLY||(LA66_1>=RULE_ASPECT_TOKEN && LA66_1<=RULE_REIFIED_RELATIONSHIP_TOKEN)||(LA66_1>=RULE_TARGET_TOKEN && LA66_1<=RULE_BINARY_SCALAR_RESTRICTION_TOKEN)||(LA66_1>=RULE_IRI_SCALAR_RESTRICTION_TOKEN && LA66_1<=RULE_TIME_SCALAR_RESTRICTION_TOKEN)||LA66_1==RULE_REFINES_TOKEN||(LA66_1>=75 && LA66_1<=78)||LA66_1==81||LA66_1==84||LA66_1==86||(LA66_1>=88 && LA66_1<=89)||LA66_1==91||LA66_1==93||(LA66_1>=95 && LA66_1<=97)||LA66_1==112||LA66_1==115||LA66_1==117||LA66_1==119||(LA66_1>=121 && LA66_1<=122)) ) {
+                else if ( (LA66_1==EOF||(LA66_1>=RULE_IRI && LA66_1<=RULE_ANNOTATION_TOKEN)||LA66_1==RULE_RCURLY||(LA66_1>=RULE_ASPECT_TOKEN && LA66_1<=RULE_REIFIED_RELATIONSHIP_TOKEN)||(LA66_1>=RULE_TARGET_TOKEN && LA66_1<=RULE_BINARY_SCALAR_RESTRICTION_TOKEN)||(LA66_1>=RULE_IRI_SCALAR_RESTRICTION_TOKEN && LA66_1<=RULE_TIME_SCALAR_RESTRICTION_TOKEN)||LA66_1==RULE_REFINES_TOKEN||(LA66_1>=75 && LA66_1<=78)||LA66_1==81||LA66_1==84||LA66_1==86||(LA66_1>=88 && LA66_1<=89)||(LA66_1>=91 && LA66_1<=93)||LA66_1==108||LA66_1==111||LA66_1==113||LA66_1==115||(LA66_1>=117 && LA66_1<=118)) ) {
                     alt66=2;
                 }
                 else {
@@ -13307,7 +13328,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
             }
             switch (alt66) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:5589:3: this_ABBREV_IRI_0= ruleABBREV_IRI
+                    // InternalOntologicalModelingLanguage.g:5557:3: this_ABBREV_IRI_0= ruleABBREV_IRI
                     {
 
                     			newCompositeNode(grammarAccess.getQNAMEAccess().getABBREV_IRIParserRuleCall_0());
@@ -13327,7 +13348,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
                     }
                     break;
                 case 2 :
-                    // InternalOntologicalModelingLanguage.g:5600:3: this_ValidID_1= ruleValidID
+                    // InternalOntologicalModelingLanguage.g:5568:3: this_ValidID_1= ruleValidID
                     {
 
                     			newCompositeNode(grammarAccess.getQNAMEAccess().getValidIDParserRuleCall_1());
@@ -13369,7 +13390,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleABBREV_IRI"
-    // InternalOntologicalModelingLanguage.g:5614:1: entryRuleABBREV_IRI returns [String current=null] : iv_ruleABBREV_IRI= ruleABBREV_IRI EOF ;
+    // InternalOntologicalModelingLanguage.g:5582:1: entryRuleABBREV_IRI returns [String current=null] : iv_ruleABBREV_IRI= ruleABBREV_IRI EOF ;
     public final String entryRuleABBREV_IRI() throws RecognitionException {
         String current = null;
 
@@ -13377,8 +13398,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:5614:50: (iv_ruleABBREV_IRI= ruleABBREV_IRI EOF )
-            // InternalOntologicalModelingLanguage.g:5615:2: iv_ruleABBREV_IRI= ruleABBREV_IRI EOF
+            // InternalOntologicalModelingLanguage.g:5582:50: (iv_ruleABBREV_IRI= ruleABBREV_IRI EOF )
+            // InternalOntologicalModelingLanguage.g:5583:2: iv_ruleABBREV_IRI= ruleABBREV_IRI EOF
             {
              newCompositeNode(grammarAccess.getABBREV_IRIRule()); 
             pushFollow(FOLLOW_1);
@@ -13405,7 +13426,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleABBREV_IRI"
-    // InternalOntologicalModelingLanguage.g:5621:1: ruleABBREV_IRI returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ValidID_0= ruleValidID kw= ':' this_ValidID_2= ruleValidID ) ;
+    // InternalOntologicalModelingLanguage.g:5589:1: ruleABBREV_IRI returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ValidID_0= ruleValidID kw= ':' this_ValidID_2= ruleValidID ) ;
     public final AntlrDatatypeRuleToken ruleABBREV_IRI() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -13419,16 +13440,16 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:5627:2: ( (this_ValidID_0= ruleValidID kw= ':' this_ValidID_2= ruleValidID ) )
-            // InternalOntologicalModelingLanguage.g:5628:2: (this_ValidID_0= ruleValidID kw= ':' this_ValidID_2= ruleValidID )
+            // InternalOntologicalModelingLanguage.g:5595:2: ( (this_ValidID_0= ruleValidID kw= ':' this_ValidID_2= ruleValidID ) )
+            // InternalOntologicalModelingLanguage.g:5596:2: (this_ValidID_0= ruleValidID kw= ':' this_ValidID_2= ruleValidID )
             {
-            // InternalOntologicalModelingLanguage.g:5628:2: (this_ValidID_0= ruleValidID kw= ':' this_ValidID_2= ruleValidID )
-            // InternalOntologicalModelingLanguage.g:5629:3: this_ValidID_0= ruleValidID kw= ':' this_ValidID_2= ruleValidID
+            // InternalOntologicalModelingLanguage.g:5596:2: (this_ValidID_0= ruleValidID kw= ':' this_ValidID_2= ruleValidID )
+            // InternalOntologicalModelingLanguage.g:5597:3: this_ValidID_0= ruleValidID kw= ':' this_ValidID_2= ruleValidID
             {
 
             			newCompositeNode(grammarAccess.getABBREV_IRIAccess().getValidIDParserRuleCall_0());
             		
-            pushFollow(FOLLOW_92);
+            pushFollow(FOLLOW_90);
             this_ValidID_0=ruleValidID();
 
             state._fsp--;
@@ -13439,7 +13460,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
             			afterParserOrEnumRuleCall();
             		
-            kw=(Token)match(input,123,FOLLOW_4); 
+            kw=(Token)match(input,119,FOLLOW_4); 
 
             			current.merge(kw);
             			newLeafNode(kw, grammarAccess.getABBREV_IRIAccess().getColonKeyword_1());
@@ -13481,7 +13502,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "entryRuleValidID"
-    // InternalOntologicalModelingLanguage.g:5658:1: entryRuleValidID returns [String current=null] : iv_ruleValidID= ruleValidID EOF ;
+    // InternalOntologicalModelingLanguage.g:5626:1: entryRuleValidID returns [String current=null] : iv_ruleValidID= ruleValidID EOF ;
     public final String entryRuleValidID() throws RecognitionException {
         String current = null;
 
@@ -13489,8 +13510,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
         try {
-            // InternalOntologicalModelingLanguage.g:5658:47: (iv_ruleValidID= ruleValidID EOF )
-            // InternalOntologicalModelingLanguage.g:5659:2: iv_ruleValidID= ruleValidID EOF
+            // InternalOntologicalModelingLanguage.g:5626:47: (iv_ruleValidID= ruleValidID EOF )
+            // InternalOntologicalModelingLanguage.g:5627:2: iv_ruleValidID= ruleValidID EOF
             {
              newCompositeNode(grammarAccess.getValidIDRule()); 
             pushFollow(FOLLOW_1);
@@ -13517,7 +13538,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleValidID"
-    // InternalOntologicalModelingLanguage.g:5665:1: ruleValidID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_ID_0= RULE_ID ;
+    // InternalOntologicalModelingLanguage.g:5633:1: ruleValidID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_ID_0= RULE_ID ;
     public final AntlrDatatypeRuleToken ruleValidID() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -13527,8 +13548,8 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:5671:2: (this_ID_0= RULE_ID )
-            // InternalOntologicalModelingLanguage.g:5672:2: this_ID_0= RULE_ID
+            // InternalOntologicalModelingLanguage.g:5639:2: (this_ID_0= RULE_ID )
+            // InternalOntologicalModelingLanguage.g:5640:2: this_ID_0= RULE_ID
             {
             this_ID_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -13557,7 +13578,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleTerminologyGraphKind"
-    // InternalOntologicalModelingLanguage.g:5682:1: ruleTerminologyGraphKind returns [Enumerator current=null] : ( (enumLiteral_0= 'open' ) | (enumLiteral_1= 'closed' ) ) ;
+    // InternalOntologicalModelingLanguage.g:5650:1: ruleTerminologyGraphKind returns [Enumerator current=null] : ( (enumLiteral_0= 'open' ) | (enumLiteral_1= 'closed' ) ) ;
     public final Enumerator ruleTerminologyGraphKind() throws RecognitionException {
         Enumerator current = null;
 
@@ -13568,17 +13589,17 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:5688:2: ( ( (enumLiteral_0= 'open' ) | (enumLiteral_1= 'closed' ) ) )
-            // InternalOntologicalModelingLanguage.g:5689:2: ( (enumLiteral_0= 'open' ) | (enumLiteral_1= 'closed' ) )
+            // InternalOntologicalModelingLanguage.g:5656:2: ( ( (enumLiteral_0= 'open' ) | (enumLiteral_1= 'closed' ) ) )
+            // InternalOntologicalModelingLanguage.g:5657:2: ( (enumLiteral_0= 'open' ) | (enumLiteral_1= 'closed' ) )
             {
-            // InternalOntologicalModelingLanguage.g:5689:2: ( (enumLiteral_0= 'open' ) | (enumLiteral_1= 'closed' ) )
+            // InternalOntologicalModelingLanguage.g:5657:2: ( (enumLiteral_0= 'open' ) | (enumLiteral_1= 'closed' ) )
             int alt67=2;
             int LA67_0 = input.LA(1);
 
-            if ( (LA67_0==124) ) {
+            if ( (LA67_0==120) ) {
                 alt67=1;
             }
-            else if ( (LA67_0==125) ) {
+            else if ( (LA67_0==121) ) {
                 alt67=2;
             }
             else {
@@ -13589,12 +13610,12 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
             }
             switch (alt67) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:5690:3: (enumLiteral_0= 'open' )
+                    // InternalOntologicalModelingLanguage.g:5658:3: (enumLiteral_0= 'open' )
                     {
-                    // InternalOntologicalModelingLanguage.g:5690:3: (enumLiteral_0= 'open' )
-                    // InternalOntologicalModelingLanguage.g:5691:4: enumLiteral_0= 'open'
+                    // InternalOntologicalModelingLanguage.g:5658:3: (enumLiteral_0= 'open' )
+                    // InternalOntologicalModelingLanguage.g:5659:4: enumLiteral_0= 'open'
                     {
-                    enumLiteral_0=(Token)match(input,124,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,120,FOLLOW_2); 
 
                     				current = grammarAccess.getTerminologyGraphKindAccess().getOpenWorldDefinitionsEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getTerminologyGraphKindAccess().getOpenWorldDefinitionsEnumLiteralDeclaration_0());
@@ -13606,12 +13627,12 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
                     }
                     break;
                 case 2 :
-                    // InternalOntologicalModelingLanguage.g:5698:3: (enumLiteral_1= 'closed' )
+                    // InternalOntologicalModelingLanguage.g:5666:3: (enumLiteral_1= 'closed' )
                     {
-                    // InternalOntologicalModelingLanguage.g:5698:3: (enumLiteral_1= 'closed' )
-                    // InternalOntologicalModelingLanguage.g:5699:4: enumLiteral_1= 'closed'
+                    // InternalOntologicalModelingLanguage.g:5666:3: (enumLiteral_1= 'closed' )
+                    // InternalOntologicalModelingLanguage.g:5667:4: enumLiteral_1= 'closed'
                     {
-                    enumLiteral_1=(Token)match(input,125,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,121,FOLLOW_2); 
 
                     				current = grammarAccess.getTerminologyGraphKindAccess().getClosedWorldDesignationsEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getTerminologyGraphKindAccess().getClosedWorldDesignationsEnumLiteralDeclaration_1());
@@ -13645,7 +13666,7 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
 
     // $ANTLR start "ruleDescriptionKind"
-    // InternalOntologicalModelingLanguage.g:5709:1: ruleDescriptionKind returns [Enumerator current=null] : ( (enumLiteral_0= 'final' ) | (enumLiteral_1= 'partial' ) ) ;
+    // InternalOntologicalModelingLanguage.g:5677:1: ruleDescriptionKind returns [Enumerator current=null] : ( (enumLiteral_0= 'final' ) | (enumLiteral_1= 'partial' ) ) ;
     public final Enumerator ruleDescriptionKind() throws RecognitionException {
         Enumerator current = null;
 
@@ -13656,17 +13677,17 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
         	enterRule();
 
         try {
-            // InternalOntologicalModelingLanguage.g:5715:2: ( ( (enumLiteral_0= 'final' ) | (enumLiteral_1= 'partial' ) ) )
-            // InternalOntologicalModelingLanguage.g:5716:2: ( (enumLiteral_0= 'final' ) | (enumLiteral_1= 'partial' ) )
+            // InternalOntologicalModelingLanguage.g:5683:2: ( ( (enumLiteral_0= 'final' ) | (enumLiteral_1= 'partial' ) ) )
+            // InternalOntologicalModelingLanguage.g:5684:2: ( (enumLiteral_0= 'final' ) | (enumLiteral_1= 'partial' ) )
             {
-            // InternalOntologicalModelingLanguage.g:5716:2: ( (enumLiteral_0= 'final' ) | (enumLiteral_1= 'partial' ) )
+            // InternalOntologicalModelingLanguage.g:5684:2: ( (enumLiteral_0= 'final' ) | (enumLiteral_1= 'partial' ) )
             int alt68=2;
             int LA68_0 = input.LA(1);
 
-            if ( (LA68_0==126) ) {
+            if ( (LA68_0==122) ) {
                 alt68=1;
             }
-            else if ( (LA68_0==127) ) {
+            else if ( (LA68_0==123) ) {
                 alt68=2;
             }
             else {
@@ -13677,12 +13698,12 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
             }
             switch (alt68) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:5717:3: (enumLiteral_0= 'final' )
+                    // InternalOntologicalModelingLanguage.g:5685:3: (enumLiteral_0= 'final' )
                     {
-                    // InternalOntologicalModelingLanguage.g:5717:3: (enumLiteral_0= 'final' )
-                    // InternalOntologicalModelingLanguage.g:5718:4: enumLiteral_0= 'final'
+                    // InternalOntologicalModelingLanguage.g:5685:3: (enumLiteral_0= 'final' )
+                    // InternalOntologicalModelingLanguage.g:5686:4: enumLiteral_0= 'final'
                     {
-                    enumLiteral_0=(Token)match(input,126,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,122,FOLLOW_2); 
 
                     				current = grammarAccess.getDescriptionKindAccess().getFinalEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getDescriptionKindAccess().getFinalEnumLiteralDeclaration_0());
@@ -13694,12 +13715,12 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
                     }
                     break;
                 case 2 :
-                    // InternalOntologicalModelingLanguage.g:5725:3: (enumLiteral_1= 'partial' )
+                    // InternalOntologicalModelingLanguage.g:5693:3: (enumLiteral_1= 'partial' )
                     {
-                    // InternalOntologicalModelingLanguage.g:5725:3: (enumLiteral_1= 'partial' )
-                    // InternalOntologicalModelingLanguage.g:5726:4: enumLiteral_1= 'partial'
+                    // InternalOntologicalModelingLanguage.g:5693:3: (enumLiteral_1= 'partial' )
+                    // InternalOntologicalModelingLanguage.g:5694:4: enumLiteral_1= 'partial'
                     {
-                    enumLiteral_1=(Token)match(input,127,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,123,FOLLOW_2); 
 
                     				current = grammarAccess.getDescriptionKindAccess().getPartialEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getDescriptionKindAccess().getPartialEnumLiteralDeclaration_1());
@@ -13738,16 +13759,16 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000012L,0xF000000000000000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000012L,0x0F00000000000000L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000100L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000200L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x1FEFDF038003E8C0L,0x0000000000007800L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x1FEF1F038003E8C0L,0x0000000000007800L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x1FEFDFF38003E8C0L,0x0000000000007800L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x1FEF1FF38003E8C0L,0x0000000000007800L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x000000000FFC0000L});
@@ -13788,45 +13809,43 @@ public class InternalOntologicalModelingLanguageParser extends AbstractInternalA
     public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
     public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0000000000000000L,0x0000000002000000L});
     public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
-    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0000000000000000L,0x0000000008000000L});
-    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0000000000000000L,0x0000000010000000L});
-    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L});
-    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0000000000000000L,0x0000000100000000L});
-    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0000000000000000L,0x0000000200000000L});
-    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0000000000000000L,0x0000001C01000000L});
-    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0010000000000000L});
-    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x0000000000000000L,0x0000001801000000L});
-    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0000000000000000L,0x0000001001000000L});
-    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x0000000000000000L,0x0000003C01000000L});
-    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x0000000000000000L,0x0000003801000000L});
-    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x0000000000000000L,0x0000003001000000L});
-    public static final BitSet FOLLOW_68 = new BitSet(new long[]{0x0000000000000000L,0x0000002001000000L});
-    public static final BitSet FOLLOW_69 = new BitSet(new long[]{0x0000000000000000L,0x000003C001000000L});
-    public static final BitSet FOLLOW_70 = new BitSet(new long[]{0x0000000000000000L,0x0000038001000000L});
-    public static final BitSet FOLLOW_71 = new BitSet(new long[]{0x0000000000000000L,0x0000030001000000L});
-    public static final BitSet FOLLOW_72 = new BitSet(new long[]{0x0000000000000000L,0x0000020001000000L});
-    public static final BitSet FOLLOW_73 = new BitSet(new long[]{0x0000000000000000L,0x0000043C01000000L});
-    public static final BitSet FOLLOW_74 = new BitSet(new long[]{0x0000000000000000L,0x0000043801000000L});
-    public static final BitSet FOLLOW_75 = new BitSet(new long[]{0x0000000000000000L,0x0000043001000000L});
-    public static final BitSet FOLLOW_76 = new BitSet(new long[]{0x0000000000000000L,0x0000042001000000L});
-    public static final BitSet FOLLOW_77 = new BitSet(new long[]{0x0000000000000000L,0x0000040001000000L});
-    public static final BitSet FOLLOW_78 = new BitSet(new long[]{0x0000000000000000L,0x0000080000000000L});
-    public static final BitSet FOLLOW_79 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-    public static final BitSet FOLLOW_80 = new BitSet(new long[]{0x2000000000000000L});
-    public static final BitSet FOLLOW_81 = new BitSet(new long[]{0x4000020000000880L,0x06A8000000000000L});
-    public static final BitSet FOLLOW_82 = new BitSet(new long[]{0x0000000000000000L,0x0000400000000000L});
-    public static final BitSet FOLLOW_83 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_84 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
-    public static final BitSet FOLLOW_85 = new BitSet(new long[]{0x0000000000000000L,0x0001000000000000L});
-    public static final BitSet FOLLOW_86 = new BitSet(new long[]{0x0000000000000000L,0x0002000000000000L});
+    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
+    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0000000000000000L,0x0000000008000000L});
+    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0000000000000000L,0x0000000010000000L});
+    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0000000000000000L,0x00000001C1000000L});
+    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0010000000000000L});
+    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0000000000000000L,0x0000000181000000L});
+    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0000000000000000L,0x0000000101000000L});
+    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x0000000000000000L,0x00000003C1000000L});
+    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0000000000000000L,0x0000000381000000L});
+    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x0000000000000000L,0x0000000301000000L});
+    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x0000000000000000L,0x0000000201000000L});
+    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x0000000000000000L,0x0000003C01000000L});
+    public static final BitSet FOLLOW_68 = new BitSet(new long[]{0x0000000000000000L,0x0000003801000000L});
+    public static final BitSet FOLLOW_69 = new BitSet(new long[]{0x0000000000000000L,0x0000003001000000L});
+    public static final BitSet FOLLOW_70 = new BitSet(new long[]{0x0000000000000000L,0x0000002001000000L});
+    public static final BitSet FOLLOW_71 = new BitSet(new long[]{0x0000000000000000L,0x00000043C1000000L});
+    public static final BitSet FOLLOW_72 = new BitSet(new long[]{0x0000000000000000L,0x0000004381000000L});
+    public static final BitSet FOLLOW_73 = new BitSet(new long[]{0x0000000000000000L,0x0000004301000000L});
+    public static final BitSet FOLLOW_74 = new BitSet(new long[]{0x0000000000000000L,0x0000004201000000L});
+    public static final BitSet FOLLOW_75 = new BitSet(new long[]{0x0000000000000000L,0x0000004001000000L});
+    public static final BitSet FOLLOW_76 = new BitSet(new long[]{0x0000000000000000L,0x0000008000000000L});
+    public static final BitSet FOLLOW_77 = new BitSet(new long[]{0x0000000000000000L,0x0000010000000000L});
+    public static final BitSet FOLLOW_78 = new BitSet(new long[]{0x2000000000000000L});
+    public static final BitSet FOLLOW_79 = new BitSet(new long[]{0x4000020000000880L,0x006A800000000000L});
+    public static final BitSet FOLLOW_80 = new BitSet(new long[]{0x0000000000000000L,0x0000040000000000L});
+    public static final BitSet FOLLOW_81 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_82 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
+    public static final BitSet FOLLOW_83 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
+    public static final BitSet FOLLOW_84 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_85 = new BitSet(new long[]{0x0000000000000000L,0x0000400000000000L});
+    public static final BitSet FOLLOW_86 = new BitSet(new long[]{0x0000000000000000L,0x0001000000000000L});
     public static final BitSet FOLLOW_87 = new BitSet(new long[]{0x0000000000000000L,0x0004000000000000L});
     public static final BitSet FOLLOW_88 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-    public static final BitSet FOLLOW_89 = new BitSet(new long[]{0x0000000000000000L,0x0040000000000000L});
-    public static final BitSet FOLLOW_90 = new BitSet(new long[]{0x0000000000000000L,0x0100000000000000L});
-    public static final BitSet FOLLOW_91 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_92 = new BitSet(new long[]{0x0000000000000000L,0x0800000000000000L});
+    public static final BitSet FOLLOW_89 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_90 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
 
 }

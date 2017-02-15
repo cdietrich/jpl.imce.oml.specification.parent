@@ -49,7 +49,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface DescriptionBox extends Context {
+public interface DescriptionBox extends Module {
 	/**
 	 * Returns the value of the '<em><b>Kind</b></em>' attribute.
 	 * The literals are from the enumeration {@link jpl.imce.oml.specification.ecore.DescriptionKind}.

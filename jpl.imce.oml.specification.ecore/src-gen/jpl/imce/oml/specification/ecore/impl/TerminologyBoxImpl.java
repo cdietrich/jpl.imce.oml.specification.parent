@@ -56,7 +56,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public abstract class TerminologyBoxImpl extends ContextImpl implements TerminologyBox {
+public abstract class TerminologyBoxImpl extends ModuleImpl implements TerminologyBox {
 	/**
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->

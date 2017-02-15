@@ -171,12 +171,12 @@ object OMLTablesResolver {
   = s :+ entry._2
 
   def combopGraphs
-  (g1: Graph[api.Context, TerminologyEdge],
-   g2: Graph[api.Context, TerminologyEdge])
-  : Graph[api.Context, TerminologyEdge]
+  (g1: Graph[api.Module, TerminologyEdge],
+   g2: Graph[api.Module, TerminologyEdge])
+  : Graph[api.Module, TerminologyEdge]
   = g1.union(g2)
 
-  type HyperGraphV = Try[Graph[api.Context, TerminologyEdge]]
+  type HyperGraphV = Try[Graph[api.Module, TerminologyEdge]]
 
   def seqopAspects
   (factory: api.OMLResolvedFactory)
@@ -394,9 +394,9 @@ object OMLTablesResolver {
   def seqopTerminologyExtends
   (factory: api.OMLResolvedFactory,
    nodes: Map[UUID, api.TerminologyBox])
-  (g: Graph[api.Context, TerminologyEdge],
+  (g: Graph[api.Module, TerminologyEdge],
    entry: ((UUID, UUID), tables.TerminologyExtensionAxiom))
-  : Graph[api.Context, TerminologyEdge]
+  : Graph[api.Module, TerminologyEdge]
   = {
     val extending = nodes(entry._1._1)
     val extended = nodes(entry._1._2)
@@ -445,9 +445,9 @@ object OMLTablesResolver {
   (factory: api.OMLResolvedFactory,
    ns: Map[tables.UUID, api.TerminologyGraph],
    cs: Map[tables.UUID, (api.Concept, api.TerminologyBox)])
-  (g: Graph[api.Context, TerminologyEdge],
+  (g: Graph[api.Module, TerminologyEdge],
    entry: ((tables.UUID, tables.UUID), tables.TerminologyNestingAxiom))
-  : Graph[api.Context, TerminologyEdge]
+  : Graph[api.Module, TerminologyEdge]
   = {
     val nestedT = ns(entry._1._1)
     val (nestingC, nestingT) = cs(entry._1._2)
@@ -519,9 +519,9 @@ object OMLTablesResolver {
   (factory: api.OMLResolvedFactory,
    ns: Map[tables.UUID, api.TerminologyGraph],
    cs: Map[tables.UUID, (api.Concept, api.TerminologyBox)])
-  (g: Graph[api.Context, TerminologyEdge],
+  (g: Graph[api.Module, TerminologyEdge],
    entry: ((tables.UUID, tables.UUID), tables.ConceptDesignationTerminologyAxiom))
-  : Graph[api.Context, TerminologyEdge]
+  : Graph[api.Module, TerminologyEdge]
   = {
     val designationG = ns(entry._1._1)
     val (designatedC, designatedTBox) = cs(entry._1._2)
@@ -596,9 +596,9 @@ object OMLTablesResolver {
   (factory: api.OMLResolvedFactory,
    bundles: Map[UUID, api.Bundle],
    nodes: Map[UUID, api.TerminologyBox])
-  (g: Graph[api.Context, TerminologyEdge],
+  (g: Graph[api.Module, TerminologyEdge],
    entry: ((UUID, UUID), tables.BundledTerminologyAxiom))
-  : Graph[api.Context, TerminologyEdge]
+  : Graph[api.Module, TerminologyEdge]
   = {
     val bundling = bundles(entry._1._1)
     val bundled = nodes(entry._1._2)
@@ -2279,9 +2279,9 @@ object OMLTablesResolver {
       // A: No, add the annotations to the (unresolved) tables.
 
       val u2 = as.foldLeft[AnnotationMapTables](u1) { case (ui, a) =>
-        val t_pre = ui.getOrElse(a.contextUUID, Map.empty)
+        val t_pre = ui.getOrElse(a.moduleUUID, Map.empty)
         val t_upd = t_pre.updated(ap, t_pre.getOrElse(ap, Seq.empty) :+ a)
-        ui.updated(a.contextUUID, t_upd)
+        ui.updated(a.moduleUUID, t_upd)
       }
 
       q1 -> u2
@@ -2293,23 +2293,23 @@ object OMLTablesResolver {
 
       // First, partition annotations in terms of assertions attributable to a known terminology
       val (t_resolvable: Seq[tables.AnnotationEntry], t_unresolved: Seq[tables.AnnotationEntry]) =
-        as.partition(a => subjects_by_terminology.contains(a.contextUUID))
+        as.partition(a => subjects_by_terminology.contains(a.moduleUUID))
 
       // Second, partition attributable annotations in terms of assertions about known subjects
       val (s_resolvable: Seq[tables.AnnotationEntry], s_unresolved: Seq[tables.AnnotationEntry]) =
         t_resolvable.partition { a =>
           subjects_by_terminology
-            .get(a.contextUUID)
+            .get(a.moduleUUID)
             .exists(_._2.contains(a.subjectUUID))
         }
 
       val q2: ResolvedAnnotationMap = s_resolvable.foldLeft[ResolvedAnnotationMap](q1) { case (qi, a) =>
         val annotations_by_prop
         : Map[api.AnnotationProperty, SortedSet[api.AnnotationEntry]]
-        = qi.getOrElse(a.contextUUID, Map.empty)
+        = qi.getOrElse(a.moduleUUID, Map.empty)
 
         subjects_by_terminology
-          .get(a.contextUUID)
+          .get(a.moduleUUID)
           .fold[ResolvedAnnotationMap](qi) { case (tbox, subjects) =>
           subjects
             .get(a.subjectUUID)
@@ -2320,7 +2320,7 @@ object OMLTablesResolver {
                 rap,
                 annotations_by_prop.getOrElse(rap, TreeSet.empty[api.AnnotationEntry]) +
                   factory.createAnnotationEntry(tbox, subject, a.value))
-            qi.updated(a.contextUUID, with_a)
+            qi.updated(a.moduleUUID, with_a)
           }
         }
       }

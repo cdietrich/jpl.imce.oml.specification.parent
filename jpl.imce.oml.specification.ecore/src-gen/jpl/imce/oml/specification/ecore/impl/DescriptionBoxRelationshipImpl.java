@@ -20,9 +20,9 @@ package jpl.imce.oml.specification.ecore.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
-import jpl.imce.oml.specification.ecore.Context;
 import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.DescriptionBoxRelationship;
+import jpl.imce.oml.specification.ecore.Module;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 
 import org.eclipse.emf.common.util.EList;
@@ -72,7 +72,7 @@ public abstract class DescriptionBoxRelationshipImpl extends TerminologyThingImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Context contextTarget() {
+	public Module targetModule() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -88,8 +88,8 @@ public abstract class DescriptionBoxRelationshipImpl extends TerminologyThingImp
 		switch (operationID) {
 			case OMLPackage.DESCRIPTION_BOX_RELATIONSHIP___DESCRIPTION_DOMAIN:
 				return descriptionDomain();
-			case OMLPackage.DESCRIPTION_BOX_RELATIONSHIP___CONTEXT_TARGET:
-				return contextTarget();
+			case OMLPackage.DESCRIPTION_BOX_RELATIONSHIP___TARGET_MODULE:
+				return targetModule();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

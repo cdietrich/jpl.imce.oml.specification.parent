@@ -26,7 +26,7 @@ package jpl.imce.oml.specification.ecore;
  *
  * <!-- begin-model-doc -->
  * An OML TerminologyBoxStatement is a logical axiom about an OML TerminologyThing
- * asserted in the context of an OML TerminologyBox.
+ * in an OML TerminologyBox.
  * <!-- end-model-doc -->
  *
  * <p>

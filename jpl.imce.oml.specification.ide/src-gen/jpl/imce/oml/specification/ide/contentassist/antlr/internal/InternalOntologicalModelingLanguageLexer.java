@@ -31,11 +31,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
     public static final int RULE_UUID=67;
     public static final int RULE_INT=62;
     public static final int RULE_ML_COMMENT=71;
-    public static final int T__126=126;
-    public static final int T__125=125;
     public static final int RULE_REIFIED_RELATIONSHIP_TOKEN=15;
     public static final int RULE_INVERSE_TOKEN=19;
-    public static final int T__127=127;
     public static final int RULE_CONCEPT_TOKEN=14;
     public static final int RULE_IRI=5;
     public static final int RULE_BUNDLE_TOKEN=12;
@@ -80,7 +77,6 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
     public static final int RULE_RANGE_TOKEN=24;
     public static final int T__122=122;
     public static final int T__121=121;
-    public static final int T__124=124;
     public static final int T__123=123;
     public static final int RULE_UNREIFIED_TOKEN=16;
     public static final int T__120=120;
@@ -555,10 +551,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__94;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:30:7: ( 'subConcept' )
-            // InternalOntologicalModelingLanguage.g:30:9: 'subConcept'
+            // InternalOntologicalModelingLanguage.g:30:7: ( 'restrictedEntity' )
+            // InternalOntologicalModelingLanguage.g:30:9: 'restrictedEntity'
             {
-            match("subConcept"); 
+            match("restrictedEntity"); 
 
 
             }
@@ -576,10 +572,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__95;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:31:7: ( 'superConcept' )
-            // InternalOntologicalModelingLanguage.g:31:9: 'superConcept'
+            // InternalOntologicalModelingLanguage.g:31:7: ( 'scalarProperty' )
+            // InternalOntologicalModelingLanguage.g:31:9: 'scalarProperty'
             {
-            match("superConcept"); 
+            match("scalarProperty"); 
 
 
             }
@@ -597,10 +593,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__96;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:32:7: ( 'subRelationship' )
-            // InternalOntologicalModelingLanguage.g:32:9: 'subRelationship'
+            // InternalOntologicalModelingLanguage.g:32:7: ( 'scalarRestriction' )
+            // InternalOntologicalModelingLanguage.g:32:9: 'scalarRestriction'
             {
-            match("subRelationship"); 
+            match("scalarRestriction"); 
 
 
             }
@@ -618,10 +614,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__97;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:33:7: ( 'superRelationship' )
-            // InternalOntologicalModelingLanguage.g:33:9: 'superRelationship'
+            // InternalOntologicalModelingLanguage.g:33:7: ( 'literalValue' )
+            // InternalOntologicalModelingLanguage.g:33:9: 'literalValue'
             {
-            match("superRelationship"); 
+            match("literalValue"); 
 
 
             }
@@ -639,10 +635,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__98;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:34:7: ( 'restrictedEntity' )
-            // InternalOntologicalModelingLanguage.g:34:9: 'restrictedEntity'
+            // InternalOntologicalModelingLanguage.g:34:7: ( 'length' )
+            // InternalOntologicalModelingLanguage.g:34:9: 'length'
             {
-            match("restrictedEntity"); 
+            match("length"); 
 
 
             }
@@ -660,10 +656,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__99;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:35:7: ( 'scalarProperty' )
-            // InternalOntologicalModelingLanguage.g:35:9: 'scalarProperty'
+            // InternalOntologicalModelingLanguage.g:35:7: ( 'minLength' )
+            // InternalOntologicalModelingLanguage.g:35:9: 'minLength'
             {
-            match("scalarProperty"); 
+            match("minLength"); 
 
 
             }
@@ -681,10 +677,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__100;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:36:8: ( 'scalarRestriction' )
-            // InternalOntologicalModelingLanguage.g:36:10: 'scalarRestriction'
+            // InternalOntologicalModelingLanguage.g:36:8: ( 'maxLength' )
+            // InternalOntologicalModelingLanguage.g:36:10: 'maxLength'
             {
-            match("scalarRestriction"); 
+            match("maxLength"); 
 
 
             }
@@ -702,10 +698,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__101;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:37:8: ( 'literalValue' )
-            // InternalOntologicalModelingLanguage.g:37:10: 'literalValue'
+            // InternalOntologicalModelingLanguage.g:37:8: ( 'pattern' )
+            // InternalOntologicalModelingLanguage.g:37:10: 'pattern'
             {
-            match("literalValue"); 
+            match("pattern"); 
 
 
             }
@@ -723,10 +719,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__102;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:38:8: ( 'length' )
-            // InternalOntologicalModelingLanguage.g:38:10: 'length'
+            // InternalOntologicalModelingLanguage.g:38:8: ( 'minInclusive' )
+            // InternalOntologicalModelingLanguage.g:38:10: 'minInclusive'
             {
-            match("length"); 
+            match("minInclusive"); 
 
 
             }
@@ -744,10 +740,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__103;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:39:8: ( 'minLength' )
-            // InternalOntologicalModelingLanguage.g:39:10: 'minLength'
+            // InternalOntologicalModelingLanguage.g:39:8: ( 'maxInclusive' )
+            // InternalOntologicalModelingLanguage.g:39:10: 'maxInclusive'
             {
-            match("minLength"); 
+            match("maxInclusive"); 
 
 
             }
@@ -765,10 +761,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__104;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:40:8: ( 'maxLength' )
-            // InternalOntologicalModelingLanguage.g:40:10: 'maxLength'
+            // InternalOntologicalModelingLanguage.g:40:8: ( 'minExclusive' )
+            // InternalOntologicalModelingLanguage.g:40:10: 'minExclusive'
             {
-            match("maxLength"); 
+            match("minExclusive"); 
 
 
             }
@@ -786,10 +782,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__105;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:41:8: ( 'pattern' )
-            // InternalOntologicalModelingLanguage.g:41:10: 'pattern'
+            // InternalOntologicalModelingLanguage.g:41:8: ( 'maxExclusive' )
+            // InternalOntologicalModelingLanguage.g:41:10: 'maxExclusive'
             {
-            match("pattern"); 
+            match("maxExclusive"); 
 
 
             }
@@ -807,10 +803,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__106;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:42:8: ( 'minInclusive' )
-            // InternalOntologicalModelingLanguage.g:42:10: 'minInclusive'
+            // InternalOntologicalModelingLanguage.g:42:8: ( 'langRange' )
+            // InternalOntologicalModelingLanguage.g:42:10: 'langRange'
             {
-            match("minInclusive"); 
+            match("langRange"); 
 
 
             }
@@ -828,10 +824,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__107;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:43:8: ( 'maxInclusive' )
-            // InternalOntologicalModelingLanguage.g:43:10: 'maxInclusive'
+            // InternalOntologicalModelingLanguage.g:43:8: ( 'value' )
+            // InternalOntologicalModelingLanguage.g:43:10: 'value'
             {
-            match("maxInclusive"); 
+            match("value"); 
 
 
             }
@@ -849,10 +845,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__108;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:44:8: ( 'minExclusive' )
-            // InternalOntologicalModelingLanguage.g:44:10: 'minExclusive'
+            // InternalOntologicalModelingLanguage.g:44:8: ( 'axiom' )
+            // InternalOntologicalModelingLanguage.g:44:10: 'axiom'
             {
-            match("minExclusive"); 
+            match("axiom"); 
 
 
             }
@@ -870,10 +866,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__109;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:45:8: ( 'maxExclusive' )
-            // InternalOntologicalModelingLanguage.g:45:10: 'maxExclusive'
+            // InternalOntologicalModelingLanguage.g:45:8: ( 'ScalarDataPropertyValue' )
+            // InternalOntologicalModelingLanguage.g:45:10: 'ScalarDataPropertyValue'
             {
-            match("maxExclusive"); 
+            match("ScalarDataPropertyValue"); 
 
 
             }
@@ -891,10 +887,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__110;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:46:8: ( 'langRange' )
-            // InternalOntologicalModelingLanguage.g:46:10: 'langRange'
+            // InternalOntologicalModelingLanguage.g:46:8: ( 'scalarPropertyValue' )
+            // InternalOntologicalModelingLanguage.g:46:10: 'scalarPropertyValue'
             {
-            match("langRange"); 
+            match("scalarPropertyValue"); 
 
 
             }
@@ -912,10 +908,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__111;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:47:8: ( 'value' )
-            // InternalOntologicalModelingLanguage.g:47:10: 'value'
+            // InternalOntologicalModelingLanguage.g:47:8: ( 'StructuredDataPropertyValue' )
+            // InternalOntologicalModelingLanguage.g:47:10: 'StructuredDataPropertyValue'
             {
-            match("value"); 
+            match("StructuredDataPropertyValue"); 
 
 
             }
@@ -933,10 +929,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__112;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:48:8: ( 'axiom' )
-            // InternalOntologicalModelingLanguage.g:48:10: 'axiom'
+            // InternalOntologicalModelingLanguage.g:48:8: ( 'structuredPropertyTuple' )
+            // InternalOntologicalModelingLanguage.g:48:10: 'structuredPropertyTuple'
             {
-            match("axiom"); 
+            match("structuredPropertyTuple"); 
 
 
             }
@@ -954,10 +950,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__113;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:49:8: ( 'ScalarDataPropertyValue' )
-            // InternalOntologicalModelingLanguage.g:49:10: 'ScalarDataPropertyValue'
+            // InternalOntologicalModelingLanguage.g:49:8: ( 'DataStructureTuple' )
+            // InternalOntologicalModelingLanguage.g:49:10: 'DataStructureTuple'
             {
-            match("ScalarDataPropertyValue"); 
+            match("DataStructureTuple"); 
 
 
             }
@@ -975,10 +971,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__114;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:50:8: ( 'scalarPropertyValue' )
-            // InternalOntologicalModelingLanguage.g:50:10: 'scalarPropertyValue'
+            // InternalOntologicalModelingLanguage.g:50:8: ( 'dataStructureType' )
+            // InternalOntologicalModelingLanguage.g:50:10: 'dataStructureType'
             {
-            match("scalarPropertyValue"); 
+            match("dataStructureType"); 
 
 
             }
@@ -996,10 +992,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__115;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:51:8: ( 'StructuredDataPropertyValue' )
-            // InternalOntologicalModelingLanguage.g:51:10: 'StructuredDataPropertyValue'
+            // InternalOntologicalModelingLanguage.g:51:8: ( 'ConceptInstance' )
+            // InternalOntologicalModelingLanguage.g:51:10: 'ConceptInstance'
             {
-            match("StructuredDataPropertyValue"); 
+            match("ConceptInstance"); 
 
 
             }
@@ -1017,10 +1013,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__116;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:52:8: ( 'structuredPropertyTuple' )
-            // InternalOntologicalModelingLanguage.g:52:10: 'structuredPropertyTuple'
+            // InternalOntologicalModelingLanguage.g:52:8: ( 'singletonConceptClassifier' )
+            // InternalOntologicalModelingLanguage.g:52:10: 'singletonConceptClassifier'
             {
-            match("structuredPropertyTuple"); 
+            match("singletonConceptClassifier"); 
 
 
             }
@@ -1038,10 +1034,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__117;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:53:8: ( 'DataStructureTuple' )
-            // InternalOntologicalModelingLanguage.g:53:10: 'DataStructureTuple'
+            // InternalOntologicalModelingLanguage.g:53:8: ( 'ReifiedRelationshipInstance' )
+            // InternalOntologicalModelingLanguage.g:53:10: 'ReifiedRelationshipInstance'
             {
-            match("DataStructureTuple"); 
+            match("ReifiedRelationshipInstance"); 
 
 
             }
@@ -1059,10 +1055,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__118;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:54:8: ( 'dataStructureType' )
-            // InternalOntologicalModelingLanguage.g:54:10: 'dataStructureType'
+            // InternalOntologicalModelingLanguage.g:54:8: ( 'singletonReifiedRelationshipClassifier' )
+            // InternalOntologicalModelingLanguage.g:54:10: 'singletonReifiedRelationshipClassifier'
             {
-            match("dataStructureType"); 
+            match("singletonReifiedRelationshipClassifier"); 
 
 
             }
@@ -1080,10 +1076,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__119;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:55:8: ( 'ConceptInstance' )
-            // InternalOntologicalModelingLanguage.g:55:10: 'ConceptInstance'
+            // InternalOntologicalModelingLanguage.g:55:8: ( 'ReifiedRelationshipInstanceDomain' )
+            // InternalOntologicalModelingLanguage.g:55:10: 'ReifiedRelationshipInstanceDomain'
             {
-            match("ConceptInstance"); 
+            match("ReifiedRelationshipInstanceDomain"); 
 
 
             }
@@ -1101,10 +1097,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__120;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:56:8: ( 'singletonConceptClassifier' )
-            // InternalOntologicalModelingLanguage.g:56:10: 'singletonConceptClassifier'
+            // InternalOntologicalModelingLanguage.g:56:8: ( 'reifiedRelationshipInstance' )
+            // InternalOntologicalModelingLanguage.g:56:10: 'reifiedRelationshipInstance'
             {
-            match("singletonConceptClassifier"); 
+            match("reifiedRelationshipInstance"); 
 
 
             }
@@ -1122,10 +1118,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__121;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:57:8: ( 'ReifiedRelationshipInstance' )
-            // InternalOntologicalModelingLanguage.g:57:10: 'ReifiedRelationshipInstance'
+            // InternalOntologicalModelingLanguage.g:57:8: ( 'ReifiedRelationshipInstanceRange' )
+            // InternalOntologicalModelingLanguage.g:57:10: 'ReifiedRelationshipInstanceRange'
             {
-            match("ReifiedRelationshipInstance"); 
+            match("ReifiedRelationshipInstanceRange"); 
 
 
             }
@@ -1143,10 +1139,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__122;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:58:8: ( 'singletonReifiedRelationshipClassifier' )
-            // InternalOntologicalModelingLanguage.g:58:10: 'singletonReifiedRelationshipClassifier'
+            // InternalOntologicalModelingLanguage.g:58:8: ( 'UnreifiedRelationshipInstanceTuple' )
+            // InternalOntologicalModelingLanguage.g:58:10: 'UnreifiedRelationshipInstanceTuple'
             {
-            match("singletonReifiedRelationshipClassifier"); 
+            match("UnreifiedRelationshipInstanceTuple"); 
 
 
             }
@@ -1164,92 +1160,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = T__123;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:59:8: ( 'ReifiedRelationshipInstanceDomain' )
-            // InternalOntologicalModelingLanguage.g:59:10: 'ReifiedRelationshipInstanceDomain'
-            {
-            match("ReifiedRelationshipInstanceDomain"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__123"
-
-    // $ANTLR start "T__124"
-    public final void mT__124() throws RecognitionException {
-        try {
-            int _type = T__124;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:60:8: ( 'reifiedRelationshipInstance' )
-            // InternalOntologicalModelingLanguage.g:60:10: 'reifiedRelationshipInstance'
-            {
-            match("reifiedRelationshipInstance"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__124"
-
-    // $ANTLR start "T__125"
-    public final void mT__125() throws RecognitionException {
-        try {
-            int _type = T__125;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:61:8: ( 'ReifiedRelationshipInstanceRange' )
-            // InternalOntologicalModelingLanguage.g:61:10: 'ReifiedRelationshipInstanceRange'
-            {
-            match("ReifiedRelationshipInstanceRange"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__125"
-
-    // $ANTLR start "T__126"
-    public final void mT__126() throws RecognitionException {
-        try {
-            int _type = T__126;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:62:8: ( 'UnreifiedRelationshipInstanceTuple' )
-            // InternalOntologicalModelingLanguage.g:62:10: 'UnreifiedRelationshipInstanceTuple'
-            {
-            match("UnreifiedRelationshipInstanceTuple"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__126"
-
-    // $ANTLR start "T__127"
-    public final void mT__127() throws RecognitionException {
-        try {
-            int _type = T__127;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:63:8: ( ':' )
-            // InternalOntologicalModelingLanguage.g:63:10: ':'
+            // InternalOntologicalModelingLanguage.g:59:8: ( ':' )
+            // InternalOntologicalModelingLanguage.g:59:10: ':'
             {
             match(':'); 
 
@@ -1261,15 +1173,15 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__127"
+    // $ANTLR end "T__123"
 
     // $ANTLR start "RULE_ANNOTATION_PROPERTY_TOKEN"
     public final void mRULE_ANNOTATION_PROPERTY_TOKEN() throws RecognitionException {
         try {
             int _type = RULE_ANNOTATION_PROPERTY_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16028:32: ( 'annotationProperty' )
-            // InternalOntologicalModelingLanguage.g:16028:34: 'annotationProperty'
+            // InternalOntologicalModelingLanguage.g:15812:32: ( 'annotationProperty' )
+            // InternalOntologicalModelingLanguage.g:15812:34: 'annotationProperty'
             {
             match("annotationProperty"); 
 
@@ -1289,8 +1201,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ANNOTATION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16030:23: ( '@' )
-            // InternalOntologicalModelingLanguage.g:16030:25: '@'
+            // InternalOntologicalModelingLanguage.g:15814:23: ( '@' )
+            // InternalOntologicalModelingLanguage.g:15814:25: '@'
             {
             match('@'); 
 
@@ -1309,8 +1221,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_TERMINOLOGY_GRAPH_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16032:30: ( 'terminology' )
-            // InternalOntologicalModelingLanguage.g:16032:32: 'terminology'
+            // InternalOntologicalModelingLanguage.g:15816:30: ( 'terminology' )
+            // InternalOntologicalModelingLanguage.g:15816:32: 'terminology'
             {
             match("terminology"); 
 
@@ -1330,8 +1242,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_BUNDLE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16034:19: ( 'bundle' )
-            // InternalOntologicalModelingLanguage.g:16034:21: 'bundle'
+            // InternalOntologicalModelingLanguage.g:15818:19: ( 'bundle' )
+            // InternalOntologicalModelingLanguage.g:15818:21: 'bundle'
             {
             match("bundle"); 
 
@@ -1351,8 +1263,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_KIND_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16036:17: ( 'kind' )
-            // InternalOntologicalModelingLanguage.g:16036:19: 'kind'
+            // InternalOntologicalModelingLanguage.g:15820:17: ( 'kind' )
+            // InternalOntologicalModelingLanguage.g:15820:19: 'kind'
             {
             match("kind"); 
 
@@ -1372,8 +1284,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ASPECT_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16038:19: ( 'aspect' )
-            // InternalOntologicalModelingLanguage.g:16038:21: 'aspect'
+            // InternalOntologicalModelingLanguage.g:15822:19: ( 'aspect' )
+            // InternalOntologicalModelingLanguage.g:15822:21: 'aspect'
             {
             match("aspect"); 
 
@@ -1393,8 +1305,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ABSTRACT_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16040:21: ( 'abstract' )
-            // InternalOntologicalModelingLanguage.g:16040:23: 'abstract'
+            // InternalOntologicalModelingLanguage.g:15824:21: ( 'abstract' )
+            // InternalOntologicalModelingLanguage.g:15824:23: 'abstract'
             {
             match("abstract"); 
 
@@ -1414,8 +1326,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_CONCEPT_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16042:20: ( 'concept' )
-            // InternalOntologicalModelingLanguage.g:16042:22: 'concept'
+            // InternalOntologicalModelingLanguage.g:15826:20: ( 'concept' )
+            // InternalOntologicalModelingLanguage.g:15826:22: 'concept'
             {
             match("concept"); 
 
@@ -1435,8 +1347,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_REIFIED_RELATIONSHIP_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16044:33: ( 'reifiedRelationship' )
-            // InternalOntologicalModelingLanguage.g:16044:35: 'reifiedRelationship'
+            // InternalOntologicalModelingLanguage.g:15828:33: ( 'reifiedRelationship' )
+            // InternalOntologicalModelingLanguage.g:15828:35: 'reifiedRelationship'
             {
             match("reifiedRelationship"); 
 
@@ -1456,8 +1368,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_UNREIFIED_RELATIONSHIP_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16046:35: ( 'unreifiedRelationship' )
-            // InternalOntologicalModelingLanguage.g:16046:37: 'unreifiedRelationship'
+            // InternalOntologicalModelingLanguage.g:15830:35: ( 'unreifiedRelationship' )
+            // InternalOntologicalModelingLanguage.g:15830:37: 'unreifiedRelationship'
             {
             match("unreifiedRelationship"); 
 
@@ -1477,8 +1389,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_FUNCTIONAL_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16048:23: ( 'functional' )
-            // InternalOntologicalModelingLanguage.g:16048:25: 'functional'
+            // InternalOntologicalModelingLanguage.g:15832:23: ( 'functional' )
+            // InternalOntologicalModelingLanguage.g:15832:25: 'functional'
             {
             match("functional"); 
 
@@ -1498,8 +1410,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_INVERSE_FUNCTIONAL_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16050:31: ( 'inverseFunctional' )
-            // InternalOntologicalModelingLanguage.g:16050:33: 'inverseFunctional'
+            // InternalOntologicalModelingLanguage.g:15834:31: ( 'inverseFunctional' )
+            // InternalOntologicalModelingLanguage.g:15834:33: 'inverseFunctional'
             {
             match("inverseFunctional"); 
 
@@ -1519,8 +1431,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ESSENTIAL_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16052:22: ( 'essential' )
-            // InternalOntologicalModelingLanguage.g:16052:24: 'essential'
+            // InternalOntologicalModelingLanguage.g:15836:22: ( 'essential' )
+            // InternalOntologicalModelingLanguage.g:15836:24: 'essential'
             {
             match("essential"); 
 
@@ -1540,8 +1452,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_INVERSE_ESSENTIAL_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16054:30: ( 'inverseEssential' )
-            // InternalOntologicalModelingLanguage.g:16054:32: 'inverseEssential'
+            // InternalOntologicalModelingLanguage.g:15838:30: ( 'inverseEssential' )
+            // InternalOntologicalModelingLanguage.g:15838:32: 'inverseEssential'
             {
             match("inverseEssential"); 
 
@@ -1561,8 +1473,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SYMMETRIC_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16056:22: ( 'symmetric' )
-            // InternalOntologicalModelingLanguage.g:16056:24: 'symmetric'
+            // InternalOntologicalModelingLanguage.g:15840:22: ( 'symmetric' )
+            // InternalOntologicalModelingLanguage.g:15840:24: 'symmetric'
             {
             match("symmetric"); 
 
@@ -1582,8 +1494,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ASYMMETRIC_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16058:23: ( 'asymmetric' )
-            // InternalOntologicalModelingLanguage.g:16058:25: 'asymmetric'
+            // InternalOntologicalModelingLanguage.g:15842:23: ( 'asymmetric' )
+            // InternalOntologicalModelingLanguage.g:15842:25: 'asymmetric'
             {
             match("asymmetric"); 
 
@@ -1603,8 +1515,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_REFLEXIVE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16060:22: ( 'reflexive' )
-            // InternalOntologicalModelingLanguage.g:16060:24: 'reflexive'
+            // InternalOntologicalModelingLanguage.g:15844:22: ( 'reflexive' )
+            // InternalOntologicalModelingLanguage.g:15844:24: 'reflexive'
             {
             match("reflexive"); 
 
@@ -1624,8 +1536,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_IRREFLEXIVE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16062:24: ( 'irreflexive' )
-            // InternalOntologicalModelingLanguage.g:16062:26: 'irreflexive'
+            // InternalOntologicalModelingLanguage.g:15846:24: ( 'irreflexive' )
+            // InternalOntologicalModelingLanguage.g:15846:26: 'irreflexive'
             {
             match("irreflexive"); 
 
@@ -1645,8 +1557,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_TRANSITIVE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16064:23: ( 'transitive' )
-            // InternalOntologicalModelingLanguage.g:16064:25: 'transitive'
+            // InternalOntologicalModelingLanguage.g:15848:23: ( 'transitive' )
+            // InternalOntologicalModelingLanguage.g:15848:25: 'transitive'
             {
             match("transitive"); 
 
@@ -1666,8 +1578,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_UNREIFIED_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16066:22: ( 'unreified' )
-            // InternalOntologicalModelingLanguage.g:16066:24: 'unreified'
+            // InternalOntologicalModelingLanguage.g:15850:22: ( 'unreified' )
+            // InternalOntologicalModelingLanguage.g:15850:24: 'unreified'
             {
             match("unreified"); 
 
@@ -1687,8 +1599,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_INVERSE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16068:20: ( 'inverse' )
-            // InternalOntologicalModelingLanguage.g:16068:22: 'inverse'
+            // InternalOntologicalModelingLanguage.g:15852:20: ( 'inverse' )
+            // InternalOntologicalModelingLanguage.g:15852:22: 'inverse'
             {
             match("inverse"); 
 
@@ -1708,8 +1620,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SOURCE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16070:19: ( 'source' )
-            // InternalOntologicalModelingLanguage.g:16070:21: 'source'
+            // InternalOntologicalModelingLanguage.g:15854:19: ( 'source' )
+            // InternalOntologicalModelingLanguage.g:15854:21: 'source'
             {
             match("source"); 
 
@@ -1729,8 +1641,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_TARGET_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16072:19: ( 'target' )
-            // InternalOntologicalModelingLanguage.g:16072:21: 'target'
+            // InternalOntologicalModelingLanguage.g:15856:19: ( 'target' )
+            // InternalOntologicalModelingLanguage.g:15856:21: 'target'
             {
             match("target"); 
 
@@ -1750,8 +1662,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SCALAR_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16074:19: ( 'scalar' )
-            // InternalOntologicalModelingLanguage.g:16074:21: 'scalar'
+            // InternalOntologicalModelingLanguage.g:15858:19: ( 'scalar' )
+            // InternalOntologicalModelingLanguage.g:15858:21: 'scalar'
             {
             match("scalar"); 
 
@@ -1771,8 +1683,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_STRUCTURE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16076:22: ( 'structure' )
-            // InternalOntologicalModelingLanguage.g:16076:24: 'structure'
+            // InternalOntologicalModelingLanguage.g:15860:22: ( 'structure' )
+            // InternalOntologicalModelingLanguage.g:15860:24: 'structure'
             {
             match("structure"); 
 
@@ -1792,8 +1704,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_DOMAIN_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16078:19: ( 'domain' )
-            // InternalOntologicalModelingLanguage.g:16078:21: 'domain'
+            // InternalOntologicalModelingLanguage.g:15862:19: ( 'domain' )
+            // InternalOntologicalModelingLanguage.g:15862:21: 'domain'
             {
             match("domain"); 
 
@@ -1813,8 +1725,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_RANGE_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16080:18: ( 'range' )
-            // InternalOntologicalModelingLanguage.g:16080:20: 'range'
+            // InternalOntologicalModelingLanguage.g:15864:18: ( 'range' )
+            // InternalOntologicalModelingLanguage.g:15864:20: 'range'
             {
             match("range"); 
 
@@ -1834,8 +1746,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_EXTENDS_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16082:20: ( 'extends' )
-            // InternalOntologicalModelingLanguage.g:16082:22: 'extends'
+            // InternalOntologicalModelingLanguage.g:15866:20: ( 'extends' )
+            // InternalOntologicalModelingLanguage.g:15866:22: 'extends'
             {
             match("extends"); 
 
@@ -1855,8 +1767,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_REFINES_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16084:20: ( 'refines' )
-            // InternalOntologicalModelingLanguage.g:16084:22: 'refines'
+            // InternalOntologicalModelingLanguage.g:15868:20: ( 'refines' )
+            // InternalOntologicalModelingLanguage.g:15868:22: 'refines'
             {
             match("refines"); 
 
@@ -1876,8 +1788,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16086:40: ( 'rootConceptTaxonomyAxiom' )
-            // InternalOntologicalModelingLanguage.g:16086:42: 'rootConceptTaxonomyAxiom'
+            // InternalOntologicalModelingLanguage.g:15870:40: ( 'rootConceptTaxonomyAxiom' )
+            // InternalOntologicalModelingLanguage.g:15870:42: 'rootConceptTaxonomyAxiom'
             {
             match("rootConceptTaxonomyAxiom"); 
 
@@ -1897,8 +1809,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16088:44: ( 'specificDisjointConceptAxiom' )
-            // InternalOntologicalModelingLanguage.g:16088:46: 'specificDisjointConceptAxiom'
+            // InternalOntologicalModelingLanguage.g:15872:44: ( 'specificDisjointConceptAxiom' )
+            // InternalOntologicalModelingLanguage.g:15872:46: 'specificDisjointConceptAxiom'
             {
             match("specificDisjointConceptAxiom"); 
 
@@ -1918,8 +1830,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16090:45: ( 'anonymousConceptTaxonomyAxiom' )
-            // InternalOntologicalModelingLanguage.g:16090:47: 'anonymousConceptTaxonomyAxiom'
+            // InternalOntologicalModelingLanguage.g:15874:45: ( 'anonymousConceptTaxonomyAxiom' )
+            // InternalOntologicalModelingLanguage.g:15874:47: 'anonymousConceptTaxonomyAxiom'
             {
             match("anonymousConceptTaxonomyAxiom"); 
 
@@ -1939,8 +1851,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_BUNDLED_TERMINOLOGY_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16092:38: ( 'bundledTerminologyAxiom' )
-            // InternalOntologicalModelingLanguage.g:16092:40: 'bundledTerminologyAxiom'
+            // InternalOntologicalModelingLanguage.g:15876:38: ( 'bundledTerminologyAxiom' )
+            // InternalOntologicalModelingLanguage.g:15876:40: 'bundledTerminologyAxiom'
             {
             match("bundledTerminologyAxiom"); 
 
@@ -1960,8 +1872,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16094:50: ( 'conceptDesignationTerminologyAxiom' )
-            // InternalOntologicalModelingLanguage.g:16094:52: 'conceptDesignationTerminologyAxiom'
+            // InternalOntologicalModelingLanguage.g:15878:50: ( 'conceptDesignationTerminologyAxiom' )
+            // InternalOntologicalModelingLanguage.g:15878:52: 'conceptDesignationTerminologyAxiom'
             {
             match("conceptDesignationTerminologyAxiom"); 
 
@@ -1981,8 +1893,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_TERMINOLOGY_NESTING_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16096:38: ( 'terminologyNestingAxiom' )
-            // InternalOntologicalModelingLanguage.g:16096:40: 'terminologyNestingAxiom'
+            // InternalOntologicalModelingLanguage.g:15880:38: ( 'terminologyNestingAxiom' )
+            // InternalOntologicalModelingLanguage.g:15880:40: 'terminologyNestingAxiom'
             {
             match("terminologyNestingAxiom"); 
 
@@ -2002,8 +1914,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16098:49: ( 'entityExistentialRestrictionAxiom' )
-            // InternalOntologicalModelingLanguage.g:16098:51: 'entityExistentialRestrictionAxiom'
+            // InternalOntologicalModelingLanguage.g:15882:49: ( 'entityExistentialRestrictionAxiom' )
+            // InternalOntologicalModelingLanguage.g:15882:51: 'entityExistentialRestrictionAxiom'
             {
             match("entityExistentialRestrictionAxiom"); 
 
@@ -2023,8 +1935,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16100:47: ( 'entityUniversalRestrictionAxiom' )
-            // InternalOntologicalModelingLanguage.g:16100:49: 'entityUniversalRestrictionAxiom'
+            // InternalOntologicalModelingLanguage.g:15884:47: ( 'entityUniversalRestrictionAxiom' )
+            // InternalOntologicalModelingLanguage.g:15884:49: 'entityUniversalRestrictionAxiom'
             {
             match("entityUniversalRestrictionAxiom"); 
 
@@ -2044,10 +1956,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16102:41: ( 'conceptSpecializationAxiom' )
-            // InternalOntologicalModelingLanguage.g:16102:43: 'conceptSpecializationAxiom'
+            // InternalOntologicalModelingLanguage.g:15886:41: ( 'extendsConcept' )
+            // InternalOntologicalModelingLanguage.g:15886:43: 'extendsConcept'
             {
-            match("conceptSpecializationAxiom"); 
+            match("extendsConcept"); 
 
 
             }
@@ -2065,8 +1977,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16104:40: ( 'extendsAspect' )
-            // InternalOntologicalModelingLanguage.g:16104:42: 'extendsAspect'
+            // InternalOntologicalModelingLanguage.g:15888:40: ( 'extendsAspect' )
+            // InternalOntologicalModelingLanguage.g:15888:42: 'extendsAspect'
             {
             match("extendsAspect"); 
 
@@ -2086,10 +1998,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16106:54: ( 'reifiedRelationshipSpecializationAxiom' )
-            // InternalOntologicalModelingLanguage.g:16106:56: 'reifiedRelationshipSpecializationAxiom'
+            // InternalOntologicalModelingLanguage.g:15890:54: ( 'extendsRelationship' )
+            // InternalOntologicalModelingLanguage.g:15890:56: 'extendsRelationship'
             {
-            match("reifiedRelationshipSpecializationAxiom"); 
+            match("extendsRelationship"); 
 
 
             }
@@ -2107,8 +2019,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16108:70: ( 'entityScalarDataPropertyExistentialRestrictionAxiom' )
-            // InternalOntologicalModelingLanguage.g:16108:72: 'entityScalarDataPropertyExistentialRestrictionAxiom'
+            // InternalOntologicalModelingLanguage.g:15892:70: ( 'entityScalarDataPropertyExistentialRestrictionAxiom' )
+            // InternalOntologicalModelingLanguage.g:15892:72: 'entityScalarDataPropertyExistentialRestrictionAxiom'
             {
             match("entityScalarDataPropertyExistentialRestrictionAxiom"); 
 
@@ -2128,8 +2040,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16110:68: ( 'entityScalarDataPropertyUniversalRestrictionAxiom' )
-            // InternalOntologicalModelingLanguage.g:16110:70: 'entityScalarDataPropertyUniversalRestrictionAxiom'
+            // InternalOntologicalModelingLanguage.g:15894:68: ( 'entityScalarDataPropertyUniversalRestrictionAxiom' )
+            // InternalOntologicalModelingLanguage.g:15894:70: 'entityScalarDataPropertyUniversalRestrictionAxiom'
             {
             match("entityScalarDataPropertyUniversalRestrictionAxiom"); 
 
@@ -2149,8 +2061,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16112:69: ( 'entityScalarDataPropertyParticularRestrictionAxiom' )
-            // InternalOntologicalModelingLanguage.g:16112:71: 'entityScalarDataPropertyParticularRestrictionAxiom'
+            // InternalOntologicalModelingLanguage.g:15896:69: ( 'entityScalarDataPropertyParticularRestrictionAxiom' )
+            // InternalOntologicalModelingLanguage.g:15896:71: 'entityScalarDataPropertyParticularRestrictionAxiom'
             {
             match("entityScalarDataPropertyParticularRestrictionAxiom"); 
 
@@ -2170,8 +2082,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16114:39: ( 'synonymScalarRestriction' )
-            // InternalOntologicalModelingLanguage.g:16114:41: 'synonymScalarRestriction'
+            // InternalOntologicalModelingLanguage.g:15898:39: ( 'synonymScalarRestriction' )
+            // InternalOntologicalModelingLanguage.g:15898:41: 'synonymScalarRestriction'
             {
             match("synonymScalarRestriction"); 
 
@@ -2191,8 +2103,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16116:39: ( 'numericScalarRestriction' )
-            // InternalOntologicalModelingLanguage.g:16116:41: 'numericScalarRestriction'
+            // InternalOntologicalModelingLanguage.g:15900:39: ( 'numericScalarRestriction' )
+            // InternalOntologicalModelingLanguage.g:15900:41: 'numericScalarRestriction'
             {
             match("numericScalarRestriction"); 
 
@@ -2212,8 +2124,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_STRING_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16118:38: ( 'stringScalarRestriction' )
-            // InternalOntologicalModelingLanguage.g:16118:40: 'stringScalarRestriction'
+            // InternalOntologicalModelingLanguage.g:15902:38: ( 'stringScalarRestriction' )
+            // InternalOntologicalModelingLanguage.g:15902:40: 'stringScalarRestriction'
             {
             match("stringScalarRestriction"); 
 
@@ -2233,8 +2145,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16120:45: ( 'plainLiteralScalarRestriction' )
-            // InternalOntologicalModelingLanguage.g:16120:47: 'plainLiteralScalarRestriction'
+            // InternalOntologicalModelingLanguage.g:15904:45: ( 'plainLiteralScalarRestriction' )
+            // InternalOntologicalModelingLanguage.g:15904:47: 'plainLiteralScalarRestriction'
             {
             match("plainLiteralScalarRestriction"); 
 
@@ -2254,8 +2166,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_BINARY_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16122:38: ( 'binaryScalarRestriction' )
-            // InternalOntologicalModelingLanguage.g:16122:40: 'binaryScalarRestriction'
+            // InternalOntologicalModelingLanguage.g:15906:38: ( 'binaryScalarRestriction' )
+            // InternalOntologicalModelingLanguage.g:15906:40: 'binaryScalarRestriction'
             {
             match("binaryScalarRestriction"); 
 
@@ -2275,8 +2187,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_IRI_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16124:35: ( 'iriScalarRestriction' )
-            // InternalOntologicalModelingLanguage.g:16124:37: 'iriScalarRestriction'
+            // InternalOntologicalModelingLanguage.g:15908:35: ( 'iriScalarRestriction' )
+            // InternalOntologicalModelingLanguage.g:15908:37: 'iriScalarRestriction'
             {
             match("iriScalarRestriction"); 
 
@@ -2296,8 +2208,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_TIME_SCALAR_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16126:36: ( 'timeScalarRestriction' )
-            // InternalOntologicalModelingLanguage.g:16126:38: 'timeScalarRestriction'
+            // InternalOntologicalModelingLanguage.g:15910:36: ( 'timeScalarRestriction' )
+            // InternalOntologicalModelingLanguage.g:15910:38: 'timeScalarRestriction'
             {
             match("timeScalarRestriction"); 
 
@@ -2317,8 +2229,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16128:38: ( 'scalarOneOfRestriction' )
-            // InternalOntologicalModelingLanguage.g:16128:40: 'scalarOneOfRestriction'
+            // InternalOntologicalModelingLanguage.g:15912:38: ( 'scalarOneOfRestriction' )
+            // InternalOntologicalModelingLanguage.g:15912:40: 'scalarOneOfRestriction'
             {
             match("scalarOneOfRestriction"); 
 
@@ -2338,8 +2250,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16130:40: ( 'scalarOneOfLiteralAxiom' )
-            // InternalOntologicalModelingLanguage.g:16130:42: 'scalarOneOfLiteralAxiom'
+            // InternalOntologicalModelingLanguage.g:15914:40: ( 'scalarOneOfLiteralAxiom' )
+            // InternalOntologicalModelingLanguage.g:15914:42: 'scalarOneOfLiteralAxiom'
             {
             match("scalarOneOfLiteralAxiom"); 
 
@@ -2359,8 +2271,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_DESCRIPTION_BOX_TOKEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16132:28: ( 'DescriptionBox' )
-            // InternalOntologicalModelingLanguage.g:16132:30: 'DescriptionBox'
+            // InternalOntologicalModelingLanguage.g:15916:28: ( 'DescriptionBox' )
+            // InternalOntologicalModelingLanguage.g:15916:30: 'DescriptionBox'
             {
             match("DescriptionBox"); 
 
@@ -2380,8 +2292,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_LCURLY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16134:13: ( '{' )
-            // InternalOntologicalModelingLanguage.g:16134:15: '{'
+            // InternalOntologicalModelingLanguage.g:15918:13: ( '{' )
+            // InternalOntologicalModelingLanguage.g:15918:15: '{'
             {
             match('{'); 
 
@@ -2400,8 +2312,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_RCURLY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16136:13: ( '}' )
-            // InternalOntologicalModelingLanguage.g:16136:15: '}'
+            // InternalOntologicalModelingLanguage.g:15920:13: ( '}' )
+            // InternalOntologicalModelingLanguage.g:15920:15: '}'
             {
             match('}'); 
 
@@ -2420,8 +2332,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16138:12: ( '=' )
-            // InternalOntologicalModelingLanguage.g:16138:14: '='
+            // InternalOntologicalModelingLanguage.g:15922:12: ( '=' )
+            // InternalOntologicalModelingLanguage.g:15922:14: '='
             {
             match('='); 
 
@@ -2440,10 +2352,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16140:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? ) )
-            // InternalOntologicalModelingLanguage.g:16140:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
+            // InternalOntologicalModelingLanguage.g:15924:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? ) )
+            // InternalOntologicalModelingLanguage.g:15924:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
             {
-            // InternalOntologicalModelingLanguage.g:16140:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
+            // InternalOntologicalModelingLanguage.g:15924:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -2461,10 +2373,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:16140:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )?
+                    // InternalOntologicalModelingLanguage.g:15924:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )?
                     {
                     match('\"'); 
-                    // InternalOntologicalModelingLanguage.g:16140:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalOntologicalModelingLanguage.g:15924:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop1:
                     do {
                         int alt1=3;
@@ -2480,7 +2392,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
 
                         switch (alt1) {
                     	case 1 :
-                    	    // InternalOntologicalModelingLanguage.g:16140:21: '\\\\' .
+                    	    // InternalOntologicalModelingLanguage.g:15924:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2488,7 +2400,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalOntologicalModelingLanguage.g:16140:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalOntologicalModelingLanguage.g:15924:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2508,7 +2420,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                         }
                     } while (true);
 
-                    // InternalOntologicalModelingLanguage.g:16140:44: ( '\"' )?
+                    // InternalOntologicalModelingLanguage.g:15924:44: ( '\"' )?
                     int alt2=2;
                     int LA2_0 = input.LA(1);
 
@@ -2517,7 +2429,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     switch (alt2) {
                         case 1 :
-                            // InternalOntologicalModelingLanguage.g:16140:44: '\"'
+                            // InternalOntologicalModelingLanguage.g:15924:44: '\"'
                             {
                             match('\"'); 
 
@@ -2530,10 +2442,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalOntologicalModelingLanguage.g:16140:49: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )?
+                    // InternalOntologicalModelingLanguage.g:15924:49: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )?
                     {
                     match('\''); 
-                    // InternalOntologicalModelingLanguage.g:16140:54: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalOntologicalModelingLanguage.g:15924:54: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop3:
                     do {
                         int alt3=3;
@@ -2549,7 +2461,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // InternalOntologicalModelingLanguage.g:16140:55: '\\\\' .
+                    	    // InternalOntologicalModelingLanguage.g:15924:55: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2557,7 +2469,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalOntologicalModelingLanguage.g:16140:62: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalOntologicalModelingLanguage.g:15924:62: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2577,7 +2489,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                         }
                     } while (true);
 
-                    // InternalOntologicalModelingLanguage.g:16140:79: ( '\\'' )?
+                    // InternalOntologicalModelingLanguage.g:15924:79: ( '\\'' )?
                     int alt4=2;
                     int LA4_0 = input.LA(1);
 
@@ -2586,7 +2498,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     switch (alt4) {
                         case 1 :
-                            // InternalOntologicalModelingLanguage.g:16140:79: '\\''
+                            // InternalOntologicalModelingLanguage.g:15924:79: '\\''
                             {
                             match('\''); 
 
@@ -2617,11 +2529,11 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_IRI;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16142:10: ( '<' (~ ( '>' ) )* '>' )
-            // InternalOntologicalModelingLanguage.g:16142:12: '<' (~ ( '>' ) )* '>'
+            // InternalOntologicalModelingLanguage.g:15926:10: ( '<' (~ ( '>' ) )* '>' )
+            // InternalOntologicalModelingLanguage.g:15926:12: '<' (~ ( '>' ) )* '>'
             {
             match('<'); 
-            // InternalOntologicalModelingLanguage.g:16142:16: (~ ( '>' ) )*
+            // InternalOntologicalModelingLanguage.g:15926:16: (~ ( '>' ) )*
             loop6:
             do {
                 int alt6=2;
@@ -2634,7 +2546,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalOntologicalModelingLanguage.g:16142:16: ~ ( '>' )
+            	    // InternalOntologicalModelingLanguage.g:15926:16: ~ ( '>' )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='=')||(input.LA(1)>='?' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2671,10 +2583,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16144:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // InternalOntologicalModelingLanguage.g:16144:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // InternalOntologicalModelingLanguage.g:15928:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // InternalOntologicalModelingLanguage.g:15928:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // InternalOntologicalModelingLanguage.g:16144:11: ( '^' )?
+            // InternalOntologicalModelingLanguage.g:15928:11: ( '^' )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2683,7 +2595,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:16144:11: '^'
+                    // InternalOntologicalModelingLanguage.g:15928:11: '^'
                     {
                     match('^'); 
 
@@ -2701,7 +2613,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalOntologicalModelingLanguage.g:16144:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // InternalOntologicalModelingLanguage.g:15928:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop8:
             do {
                 int alt8=2;
@@ -2750,8 +2662,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_UUID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16146:11: ( RULE_HEX_8DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_12DIGITS )
-            // InternalOntologicalModelingLanguage.g:16146:13: RULE_HEX_8DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_12DIGITS
+            // InternalOntologicalModelingLanguage.g:15930:11: ( RULE_HEX_8DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_12DIGITS )
+            // InternalOntologicalModelingLanguage.g:15930:13: RULE_HEX_8DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_4DIGITS '-' RULE_HEX_12DIGITS
             {
             mRULE_HEX_8DIGITS(); 
             match('-'); 
@@ -2776,8 +2688,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
     // $ANTLR start "RULE_HEX_12DIGITS"
     public final void mRULE_HEX_12DIGITS() throws RecognitionException {
         try {
-            // InternalOntologicalModelingLanguage.g:16148:28: ( RULE_HEX_8DIGITS RULE_HEX_4DIGITS )
-            // InternalOntologicalModelingLanguage.g:16148:30: RULE_HEX_8DIGITS RULE_HEX_4DIGITS
+            // InternalOntologicalModelingLanguage.g:15932:28: ( RULE_HEX_8DIGITS RULE_HEX_4DIGITS )
+            // InternalOntologicalModelingLanguage.g:15932:30: RULE_HEX_8DIGITS RULE_HEX_4DIGITS
             {
             mRULE_HEX_8DIGITS(); 
             mRULE_HEX_4DIGITS(); 
@@ -2793,8 +2705,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
     // $ANTLR start "RULE_HEX_8DIGITS"
     public final void mRULE_HEX_8DIGITS() throws RecognitionException {
         try {
-            // InternalOntologicalModelingLanguage.g:16150:27: ( RULE_HEX_4DIGITS RULE_HEX_4DIGITS )
-            // InternalOntologicalModelingLanguage.g:16150:29: RULE_HEX_4DIGITS RULE_HEX_4DIGITS
+            // InternalOntologicalModelingLanguage.g:15934:27: ( RULE_HEX_4DIGITS RULE_HEX_4DIGITS )
+            // InternalOntologicalModelingLanguage.g:15934:29: RULE_HEX_4DIGITS RULE_HEX_4DIGITS
             {
             mRULE_HEX_4DIGITS(); 
             mRULE_HEX_4DIGITS(); 
@@ -2810,8 +2722,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
     // $ANTLR start "RULE_HEX_4DIGITS"
     public final void mRULE_HEX_4DIGITS() throws RecognitionException {
         try {
-            // InternalOntologicalModelingLanguage.g:16152:27: ( RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT )
-            // InternalOntologicalModelingLanguage.g:16152:29: RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT
+            // InternalOntologicalModelingLanguage.g:15936:27: ( RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT )
+            // InternalOntologicalModelingLanguage.g:15936:29: RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT RULE_HEX_DIGIT
             {
             mRULE_HEX_DIGIT(); 
             mRULE_HEX_DIGIT(); 
@@ -2829,8 +2741,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
     // $ANTLR start "RULE_HEX_DIGIT"
     public final void mRULE_HEX_DIGIT() throws RecognitionException {
         try {
-            // InternalOntologicalModelingLanguage.g:16154:25: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
-            // InternalOntologicalModelingLanguage.g:16154:27: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
+            // InternalOntologicalModelingLanguage.g:15938:25: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
+            // InternalOntologicalModelingLanguage.g:15938:27: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
             {
             if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f') ) {
                 input.consume();
@@ -2855,10 +2767,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16156:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // InternalOntologicalModelingLanguage.g:16156:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // InternalOntologicalModelingLanguage.g:15940:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // InternalOntologicalModelingLanguage.g:15940:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // InternalOntologicalModelingLanguage.g:16156:12: ( '0x' | '0X' )
+            // InternalOntologicalModelingLanguage.g:15940:12: ( '0x' | '0X' )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2886,7 +2798,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:16156:13: '0x'
+                    // InternalOntologicalModelingLanguage.g:15940:13: '0x'
                     {
                     match("0x"); 
 
@@ -2894,7 +2806,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalOntologicalModelingLanguage.g:16156:18: '0X'
+                    // InternalOntologicalModelingLanguage.g:15940:18: '0X'
                     {
                     match("0X"); 
 
@@ -2904,7 +2816,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
 
             }
 
-            // InternalOntologicalModelingLanguage.g:16156:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // InternalOntologicalModelingLanguage.g:15940:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt10=0;
             loop10:
             do {
@@ -2942,7 +2854,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                 cnt10++;
             } while (true);
 
-            // InternalOntologicalModelingLanguage.g:16156:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // InternalOntologicalModelingLanguage.g:15940:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -2951,10 +2863,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:16156:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // InternalOntologicalModelingLanguage.g:15940:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // InternalOntologicalModelingLanguage.g:16156:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // InternalOntologicalModelingLanguage.g:15940:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -2972,7 +2884,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // InternalOntologicalModelingLanguage.g:16156:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // InternalOntologicalModelingLanguage.g:15940:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -2996,7 +2908,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // InternalOntologicalModelingLanguage.g:16156:84: ( 'l' | 'L' )
+                            // InternalOntologicalModelingLanguage.g:15940:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -3035,11 +2947,11 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16158:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // InternalOntologicalModelingLanguage.g:16158:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // InternalOntologicalModelingLanguage.g:15942:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // InternalOntologicalModelingLanguage.g:15942:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // InternalOntologicalModelingLanguage.g:16158:21: ( '0' .. '9' | '_' )*
+            // InternalOntologicalModelingLanguage.g:15942:21: ( '0' .. '9' | '_' )*
             loop13:
             do {
                 int alt13=2;
@@ -3088,11 +3000,11 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16160:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // InternalOntologicalModelingLanguage.g:16160:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // InternalOntologicalModelingLanguage.g:15944:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // InternalOntologicalModelingLanguage.g:15944:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // InternalOntologicalModelingLanguage.g:16160:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // InternalOntologicalModelingLanguage.g:15944:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -3101,7 +3013,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt15) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:16160:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // InternalOntologicalModelingLanguage.g:15944:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -3112,7 +3024,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // InternalOntologicalModelingLanguage.g:16160:36: ( '+' | '-' )?
+                    // InternalOntologicalModelingLanguage.g:15944:36: ( '+' | '-' )?
                     int alt14=2;
                     int LA14_0 = input.LA(1);
 
@@ -3145,7 +3057,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
 
             }
 
-            // InternalOntologicalModelingLanguage.g:16160:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // InternalOntologicalModelingLanguage.g:15944:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt16=3;
             int LA16_0 = input.LA(1);
 
@@ -3157,7 +3069,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt16) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:16160:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // InternalOntologicalModelingLanguage.g:15944:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -3181,7 +3093,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalOntologicalModelingLanguage.g:16160:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // InternalOntologicalModelingLanguage.g:15944:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -3214,12 +3126,12 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16162:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalOntologicalModelingLanguage.g:16162:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalOntologicalModelingLanguage.g:15946:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalOntologicalModelingLanguage.g:15946:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalOntologicalModelingLanguage.g:16162:24: ( options {greedy=false; } : . )*
+            // InternalOntologicalModelingLanguage.g:15946:24: ( options {greedy=false; } : . )*
             loop17:
             do {
                 int alt17=2;
@@ -3244,7 +3156,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
 
                 switch (alt17) {
             	case 1 :
-            	    // InternalOntologicalModelingLanguage.g:16162:52: .
+            	    // InternalOntologicalModelingLanguage.g:15946:52: .
             	    {
             	    matchAny(); 
 
@@ -3274,12 +3186,12 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16164:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalOntologicalModelingLanguage.g:16164:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalOntologicalModelingLanguage.g:15948:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalOntologicalModelingLanguage.g:15948:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalOntologicalModelingLanguage.g:16164:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalOntologicalModelingLanguage.g:15948:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop18:
             do {
                 int alt18=2;
@@ -3292,7 +3204,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
 
                 switch (alt18) {
             	case 1 :
-            	    // InternalOntologicalModelingLanguage.g:16164:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalOntologicalModelingLanguage.g:15948:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -3312,7 +3224,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalOntologicalModelingLanguage.g:16164:40: ( ( '\\r' )? '\\n' )?
+            // InternalOntologicalModelingLanguage.g:15948:40: ( ( '\\r' )? '\\n' )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -3321,9 +3233,9 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             }
             switch (alt20) {
                 case 1 :
-                    // InternalOntologicalModelingLanguage.g:16164:41: ( '\\r' )? '\\n'
+                    // InternalOntologicalModelingLanguage.g:15948:41: ( '\\r' )? '\\n'
                     {
-                    // InternalOntologicalModelingLanguage.g:16164:41: ( '\\r' )?
+                    // InternalOntologicalModelingLanguage.g:15948:41: ( '\\r' )?
                     int alt19=2;
                     int LA19_0 = input.LA(1);
 
@@ -3332,7 +3244,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                     }
                     switch (alt19) {
                         case 1 :
-                            // InternalOntologicalModelingLanguage.g:16164:41: '\\r'
+                            // InternalOntologicalModelingLanguage.g:15948:41: '\\r'
                             {
                             match('\r'); 
 
@@ -3364,10 +3276,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16166:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalOntologicalModelingLanguage.g:16166:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalOntologicalModelingLanguage.g:15950:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalOntologicalModelingLanguage.g:15950:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalOntologicalModelingLanguage.g:16166:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalOntologicalModelingLanguage.g:15950:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt21=0;
             loop21:
             do {
@@ -3421,8 +3333,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOntologicalModelingLanguage.g:16168:16: ( . )
-            // InternalOntologicalModelingLanguage.g:16168:18: .
+            // InternalOntologicalModelingLanguage.g:15952:16: ( . )
+            // InternalOntologicalModelingLanguage.g:15952:18: .
             {
             matchAny(); 
 
@@ -3437,8 +3349,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // InternalOntologicalModelingLanguage.g:1:8: ( T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | RULE_ANNOTATION_PROPERTY_TOKEN | RULE_ANNOTATION_TOKEN | RULE_TERMINOLOGY_GRAPH_TOKEN | RULE_BUNDLE_TOKEN | RULE_KIND_TOKEN | RULE_ASPECT_TOKEN | RULE_ABSTRACT_TOKEN | RULE_CONCEPT_TOKEN | RULE_REIFIED_RELATIONSHIP_TOKEN | RULE_UNREIFIED_RELATIONSHIP_TOKEN | RULE_FUNCTIONAL_TOKEN | RULE_INVERSE_FUNCTIONAL_TOKEN | RULE_ESSENTIAL_TOKEN | RULE_INVERSE_ESSENTIAL_TOKEN | RULE_SYMMETRIC_TOKEN | RULE_ASYMMETRIC_TOKEN | RULE_REFLEXIVE_TOKEN | RULE_IRREFLEXIVE_TOKEN | RULE_TRANSITIVE_TOKEN | RULE_UNREIFIED_TOKEN | RULE_INVERSE_TOKEN | RULE_SOURCE_TOKEN | RULE_TARGET_TOKEN | RULE_SCALAR_TOKEN | RULE_STRUCTURE_TOKEN | RULE_DOMAIN_TOKEN | RULE_RANGE_TOKEN | RULE_EXTENDS_TOKEN | RULE_REFINES_TOKEN | RULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN | RULE_SPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN | RULE_ANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN | RULE_BUNDLED_TERMINOLOGY_AXIOM_TOKEN | RULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN | RULE_TERMINOLOGY_NESTING_AXIOM_TOKEN | RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN | RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN | RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN | RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN | RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN | RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN | RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN | RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN | RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN | RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN | RULE_STRING_SCALAR_RESTRICTION_TOKEN | RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN | RULE_BINARY_SCALAR_RESTRICTION_TOKEN | RULE_IRI_SCALAR_RESTRICTION_TOKEN | RULE_TIME_SCALAR_RESTRICTION_TOKEN | RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN | RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN | RULE_DESCRIPTION_BOX_TOKEN | RULE_LCURLY | RULE_RCURLY | RULE_EQUAL | RULE_STRING | RULE_IRI | RULE_ID | RULE_UUID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt22=120;
+        // InternalOntologicalModelingLanguage.g:1:8: ( T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | RULE_ANNOTATION_PROPERTY_TOKEN | RULE_ANNOTATION_TOKEN | RULE_TERMINOLOGY_GRAPH_TOKEN | RULE_BUNDLE_TOKEN | RULE_KIND_TOKEN | RULE_ASPECT_TOKEN | RULE_ABSTRACT_TOKEN | RULE_CONCEPT_TOKEN | RULE_REIFIED_RELATIONSHIP_TOKEN | RULE_UNREIFIED_RELATIONSHIP_TOKEN | RULE_FUNCTIONAL_TOKEN | RULE_INVERSE_FUNCTIONAL_TOKEN | RULE_ESSENTIAL_TOKEN | RULE_INVERSE_ESSENTIAL_TOKEN | RULE_SYMMETRIC_TOKEN | RULE_ASYMMETRIC_TOKEN | RULE_REFLEXIVE_TOKEN | RULE_IRREFLEXIVE_TOKEN | RULE_TRANSITIVE_TOKEN | RULE_UNREIFIED_TOKEN | RULE_INVERSE_TOKEN | RULE_SOURCE_TOKEN | RULE_TARGET_TOKEN | RULE_SCALAR_TOKEN | RULE_STRUCTURE_TOKEN | RULE_DOMAIN_TOKEN | RULE_RANGE_TOKEN | RULE_EXTENDS_TOKEN | RULE_REFINES_TOKEN | RULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN | RULE_SPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN | RULE_ANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN | RULE_BUNDLED_TERMINOLOGY_AXIOM_TOKEN | RULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN | RULE_TERMINOLOGY_NESTING_AXIOM_TOKEN | RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN | RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN | RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN | RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN | RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN | RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN | RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN | RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN | RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN | RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN | RULE_STRING_SCALAR_RESTRICTION_TOKEN | RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN | RULE_BINARY_SCALAR_RESTRICTION_TOKEN | RULE_IRI_SCALAR_RESTRICTION_TOKEN | RULE_TIME_SCALAR_RESTRICTION_TOKEN | RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN | RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN | RULE_DESCRIPTION_BOX_TOKEN | RULE_LCURLY | RULE_RCURLY | RULE_EQUAL | RULE_STRING | RULE_IRI | RULE_ID | RULE_UUID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt22=116;
         alt22 = dfa22.predict(input);
         switch (alt22) {
             case 1 :
@@ -3785,497 +3697,469 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                 }
                 break;
             case 50 :
-                // InternalOntologicalModelingLanguage.g:1:328: T__124
-                {
-                mT__124(); 
-
-                }
-                break;
-            case 51 :
-                // InternalOntologicalModelingLanguage.g:1:335: T__125
-                {
-                mT__125(); 
-
-                }
-                break;
-            case 52 :
-                // InternalOntologicalModelingLanguage.g:1:342: T__126
-                {
-                mT__126(); 
-
-                }
-                break;
-            case 53 :
-                // InternalOntologicalModelingLanguage.g:1:349: T__127
-                {
-                mT__127(); 
-
-                }
-                break;
-            case 54 :
-                // InternalOntologicalModelingLanguage.g:1:356: RULE_ANNOTATION_PROPERTY_TOKEN
+                // InternalOntologicalModelingLanguage.g:1:328: RULE_ANNOTATION_PROPERTY_TOKEN
                 {
                 mRULE_ANNOTATION_PROPERTY_TOKEN(); 
 
                 }
                 break;
-            case 55 :
-                // InternalOntologicalModelingLanguage.g:1:387: RULE_ANNOTATION_TOKEN
+            case 51 :
+                // InternalOntologicalModelingLanguage.g:1:359: RULE_ANNOTATION_TOKEN
                 {
                 mRULE_ANNOTATION_TOKEN(); 
 
                 }
                 break;
-            case 56 :
-                // InternalOntologicalModelingLanguage.g:1:409: RULE_TERMINOLOGY_GRAPH_TOKEN
+            case 52 :
+                // InternalOntologicalModelingLanguage.g:1:381: RULE_TERMINOLOGY_GRAPH_TOKEN
                 {
                 mRULE_TERMINOLOGY_GRAPH_TOKEN(); 
 
                 }
                 break;
-            case 57 :
-                // InternalOntologicalModelingLanguage.g:1:438: RULE_BUNDLE_TOKEN
+            case 53 :
+                // InternalOntologicalModelingLanguage.g:1:410: RULE_BUNDLE_TOKEN
                 {
                 mRULE_BUNDLE_TOKEN(); 
 
                 }
                 break;
-            case 58 :
-                // InternalOntologicalModelingLanguage.g:1:456: RULE_KIND_TOKEN
+            case 54 :
+                // InternalOntologicalModelingLanguage.g:1:428: RULE_KIND_TOKEN
                 {
                 mRULE_KIND_TOKEN(); 
 
                 }
                 break;
-            case 59 :
-                // InternalOntologicalModelingLanguage.g:1:472: RULE_ASPECT_TOKEN
+            case 55 :
+                // InternalOntologicalModelingLanguage.g:1:444: RULE_ASPECT_TOKEN
                 {
                 mRULE_ASPECT_TOKEN(); 
 
                 }
                 break;
-            case 60 :
-                // InternalOntologicalModelingLanguage.g:1:490: RULE_ABSTRACT_TOKEN
+            case 56 :
+                // InternalOntologicalModelingLanguage.g:1:462: RULE_ABSTRACT_TOKEN
                 {
                 mRULE_ABSTRACT_TOKEN(); 
 
                 }
                 break;
-            case 61 :
-                // InternalOntologicalModelingLanguage.g:1:510: RULE_CONCEPT_TOKEN
+            case 57 :
+                // InternalOntologicalModelingLanguage.g:1:482: RULE_CONCEPT_TOKEN
                 {
                 mRULE_CONCEPT_TOKEN(); 
 
                 }
                 break;
-            case 62 :
-                // InternalOntologicalModelingLanguage.g:1:529: RULE_REIFIED_RELATIONSHIP_TOKEN
+            case 58 :
+                // InternalOntologicalModelingLanguage.g:1:501: RULE_REIFIED_RELATIONSHIP_TOKEN
                 {
                 mRULE_REIFIED_RELATIONSHIP_TOKEN(); 
 
                 }
                 break;
-            case 63 :
-                // InternalOntologicalModelingLanguage.g:1:561: RULE_UNREIFIED_RELATIONSHIP_TOKEN
+            case 59 :
+                // InternalOntologicalModelingLanguage.g:1:533: RULE_UNREIFIED_RELATIONSHIP_TOKEN
                 {
                 mRULE_UNREIFIED_RELATIONSHIP_TOKEN(); 
 
                 }
                 break;
-            case 64 :
-                // InternalOntologicalModelingLanguage.g:1:595: RULE_FUNCTIONAL_TOKEN
+            case 60 :
+                // InternalOntologicalModelingLanguage.g:1:567: RULE_FUNCTIONAL_TOKEN
                 {
                 mRULE_FUNCTIONAL_TOKEN(); 
 
                 }
                 break;
-            case 65 :
-                // InternalOntologicalModelingLanguage.g:1:617: RULE_INVERSE_FUNCTIONAL_TOKEN
+            case 61 :
+                // InternalOntologicalModelingLanguage.g:1:589: RULE_INVERSE_FUNCTIONAL_TOKEN
                 {
                 mRULE_INVERSE_FUNCTIONAL_TOKEN(); 
 
                 }
                 break;
-            case 66 :
-                // InternalOntologicalModelingLanguage.g:1:647: RULE_ESSENTIAL_TOKEN
+            case 62 :
+                // InternalOntologicalModelingLanguage.g:1:619: RULE_ESSENTIAL_TOKEN
                 {
                 mRULE_ESSENTIAL_TOKEN(); 
 
                 }
                 break;
-            case 67 :
-                // InternalOntologicalModelingLanguage.g:1:668: RULE_INVERSE_ESSENTIAL_TOKEN
+            case 63 :
+                // InternalOntologicalModelingLanguage.g:1:640: RULE_INVERSE_ESSENTIAL_TOKEN
                 {
                 mRULE_INVERSE_ESSENTIAL_TOKEN(); 
 
                 }
                 break;
-            case 68 :
-                // InternalOntologicalModelingLanguage.g:1:697: RULE_SYMMETRIC_TOKEN
+            case 64 :
+                // InternalOntologicalModelingLanguage.g:1:669: RULE_SYMMETRIC_TOKEN
                 {
                 mRULE_SYMMETRIC_TOKEN(); 
 
                 }
                 break;
-            case 69 :
-                // InternalOntologicalModelingLanguage.g:1:718: RULE_ASYMMETRIC_TOKEN
+            case 65 :
+                // InternalOntologicalModelingLanguage.g:1:690: RULE_ASYMMETRIC_TOKEN
                 {
                 mRULE_ASYMMETRIC_TOKEN(); 
 
                 }
                 break;
-            case 70 :
-                // InternalOntologicalModelingLanguage.g:1:740: RULE_REFLEXIVE_TOKEN
+            case 66 :
+                // InternalOntologicalModelingLanguage.g:1:712: RULE_REFLEXIVE_TOKEN
                 {
                 mRULE_REFLEXIVE_TOKEN(); 
 
                 }
                 break;
-            case 71 :
-                // InternalOntologicalModelingLanguage.g:1:761: RULE_IRREFLEXIVE_TOKEN
+            case 67 :
+                // InternalOntologicalModelingLanguage.g:1:733: RULE_IRREFLEXIVE_TOKEN
                 {
                 mRULE_IRREFLEXIVE_TOKEN(); 
 
                 }
                 break;
-            case 72 :
-                // InternalOntologicalModelingLanguage.g:1:784: RULE_TRANSITIVE_TOKEN
+            case 68 :
+                // InternalOntologicalModelingLanguage.g:1:756: RULE_TRANSITIVE_TOKEN
                 {
                 mRULE_TRANSITIVE_TOKEN(); 
 
                 }
                 break;
-            case 73 :
-                // InternalOntologicalModelingLanguage.g:1:806: RULE_UNREIFIED_TOKEN
+            case 69 :
+                // InternalOntologicalModelingLanguage.g:1:778: RULE_UNREIFIED_TOKEN
                 {
                 mRULE_UNREIFIED_TOKEN(); 
 
                 }
                 break;
-            case 74 :
-                // InternalOntologicalModelingLanguage.g:1:827: RULE_INVERSE_TOKEN
+            case 70 :
+                // InternalOntologicalModelingLanguage.g:1:799: RULE_INVERSE_TOKEN
                 {
                 mRULE_INVERSE_TOKEN(); 
 
                 }
                 break;
-            case 75 :
-                // InternalOntologicalModelingLanguage.g:1:846: RULE_SOURCE_TOKEN
+            case 71 :
+                // InternalOntologicalModelingLanguage.g:1:818: RULE_SOURCE_TOKEN
                 {
                 mRULE_SOURCE_TOKEN(); 
 
                 }
                 break;
-            case 76 :
-                // InternalOntologicalModelingLanguage.g:1:864: RULE_TARGET_TOKEN
+            case 72 :
+                // InternalOntologicalModelingLanguage.g:1:836: RULE_TARGET_TOKEN
                 {
                 mRULE_TARGET_TOKEN(); 
 
                 }
                 break;
-            case 77 :
-                // InternalOntologicalModelingLanguage.g:1:882: RULE_SCALAR_TOKEN
+            case 73 :
+                // InternalOntologicalModelingLanguage.g:1:854: RULE_SCALAR_TOKEN
                 {
                 mRULE_SCALAR_TOKEN(); 
 
                 }
                 break;
-            case 78 :
-                // InternalOntologicalModelingLanguage.g:1:900: RULE_STRUCTURE_TOKEN
+            case 74 :
+                // InternalOntologicalModelingLanguage.g:1:872: RULE_STRUCTURE_TOKEN
                 {
                 mRULE_STRUCTURE_TOKEN(); 
 
                 }
                 break;
-            case 79 :
-                // InternalOntologicalModelingLanguage.g:1:921: RULE_DOMAIN_TOKEN
+            case 75 :
+                // InternalOntologicalModelingLanguage.g:1:893: RULE_DOMAIN_TOKEN
                 {
                 mRULE_DOMAIN_TOKEN(); 
 
                 }
                 break;
-            case 80 :
-                // InternalOntologicalModelingLanguage.g:1:939: RULE_RANGE_TOKEN
+            case 76 :
+                // InternalOntologicalModelingLanguage.g:1:911: RULE_RANGE_TOKEN
                 {
                 mRULE_RANGE_TOKEN(); 
 
                 }
                 break;
-            case 81 :
-                // InternalOntologicalModelingLanguage.g:1:956: RULE_EXTENDS_TOKEN
+            case 77 :
+                // InternalOntologicalModelingLanguage.g:1:928: RULE_EXTENDS_TOKEN
                 {
                 mRULE_EXTENDS_TOKEN(); 
 
                 }
                 break;
-            case 82 :
-                // InternalOntologicalModelingLanguage.g:1:975: RULE_REFINES_TOKEN
+            case 78 :
+                // InternalOntologicalModelingLanguage.g:1:947: RULE_REFINES_TOKEN
                 {
                 mRULE_REFINES_TOKEN(); 
 
                 }
                 break;
-            case 83 :
-                // InternalOntologicalModelingLanguage.g:1:994: RULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN
+            case 79 :
+                // InternalOntologicalModelingLanguage.g:1:966: RULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN
                 {
                 mRULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 84 :
-                // InternalOntologicalModelingLanguage.g:1:1033: RULE_SPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN
+            case 80 :
+                // InternalOntologicalModelingLanguage.g:1:1005: RULE_SPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN
                 {
                 mRULE_SPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 85 :
-                // InternalOntologicalModelingLanguage.g:1:1076: RULE_ANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN
+            case 81 :
+                // InternalOntologicalModelingLanguage.g:1:1048: RULE_ANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN
                 {
                 mRULE_ANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 86 :
-                // InternalOntologicalModelingLanguage.g:1:1120: RULE_BUNDLED_TERMINOLOGY_AXIOM_TOKEN
+            case 82 :
+                // InternalOntologicalModelingLanguage.g:1:1092: RULE_BUNDLED_TERMINOLOGY_AXIOM_TOKEN
                 {
                 mRULE_BUNDLED_TERMINOLOGY_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 87 :
-                // InternalOntologicalModelingLanguage.g:1:1157: RULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN
+            case 83 :
+                // InternalOntologicalModelingLanguage.g:1:1129: RULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN
                 {
                 mRULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 88 :
-                // InternalOntologicalModelingLanguage.g:1:1206: RULE_TERMINOLOGY_NESTING_AXIOM_TOKEN
+            case 84 :
+                // InternalOntologicalModelingLanguage.g:1:1178: RULE_TERMINOLOGY_NESTING_AXIOM_TOKEN
                 {
                 mRULE_TERMINOLOGY_NESTING_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 89 :
-                // InternalOntologicalModelingLanguage.g:1:1243: RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN
+            case 85 :
+                // InternalOntologicalModelingLanguage.g:1:1215: RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN
                 {
                 mRULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 90 :
-                // InternalOntologicalModelingLanguage.g:1:1291: RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN
+            case 86 :
+                // InternalOntologicalModelingLanguage.g:1:1263: RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN
                 {
                 mRULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 91 :
-                // InternalOntologicalModelingLanguage.g:1:1337: RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN
+            case 87 :
+                // InternalOntologicalModelingLanguage.g:1:1309: RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN
                 {
                 mRULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 92 :
-                // InternalOntologicalModelingLanguage.g:1:1377: RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN
+            case 88 :
+                // InternalOntologicalModelingLanguage.g:1:1349: RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN
                 {
                 mRULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 93 :
-                // InternalOntologicalModelingLanguage.g:1:1416: RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN
+            case 89 :
+                // InternalOntologicalModelingLanguage.g:1:1388: RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN
                 {
                 mRULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 94 :
-                // InternalOntologicalModelingLanguage.g:1:1469: RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN
+            case 90 :
+                // InternalOntologicalModelingLanguage.g:1:1441: RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN
                 {
                 mRULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 95 :
-                // InternalOntologicalModelingLanguage.g:1:1538: RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN
+            case 91 :
+                // InternalOntologicalModelingLanguage.g:1:1510: RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN
                 {
                 mRULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 96 :
-                // InternalOntologicalModelingLanguage.g:1:1605: RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN
+            case 92 :
+                // InternalOntologicalModelingLanguage.g:1:1577: RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN
                 {
                 mRULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 97 :
-                // InternalOntologicalModelingLanguage.g:1:1673: RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN
+            case 93 :
+                // InternalOntologicalModelingLanguage.g:1:1645: RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN
                 {
                 mRULE_SYNONYM_SCALAR_RESTRICTION_TOKEN(); 
 
                 }
                 break;
-            case 98 :
-                // InternalOntologicalModelingLanguage.g:1:1711: RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN
+            case 94 :
+                // InternalOntologicalModelingLanguage.g:1:1683: RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN
                 {
                 mRULE_NUMERIC_SCALAR_RESTRICTION_TOKEN(); 
 
                 }
                 break;
-            case 99 :
-                // InternalOntologicalModelingLanguage.g:1:1749: RULE_STRING_SCALAR_RESTRICTION_TOKEN
+            case 95 :
+                // InternalOntologicalModelingLanguage.g:1:1721: RULE_STRING_SCALAR_RESTRICTION_TOKEN
                 {
                 mRULE_STRING_SCALAR_RESTRICTION_TOKEN(); 
 
                 }
                 break;
-            case 100 :
-                // InternalOntologicalModelingLanguage.g:1:1786: RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN
+            case 96 :
+                // InternalOntologicalModelingLanguage.g:1:1758: RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN
                 {
                 mRULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN(); 
 
                 }
                 break;
-            case 101 :
-                // InternalOntologicalModelingLanguage.g:1:1830: RULE_BINARY_SCALAR_RESTRICTION_TOKEN
+            case 97 :
+                // InternalOntologicalModelingLanguage.g:1:1802: RULE_BINARY_SCALAR_RESTRICTION_TOKEN
                 {
                 mRULE_BINARY_SCALAR_RESTRICTION_TOKEN(); 
 
                 }
                 break;
-            case 102 :
-                // InternalOntologicalModelingLanguage.g:1:1867: RULE_IRI_SCALAR_RESTRICTION_TOKEN
+            case 98 :
+                // InternalOntologicalModelingLanguage.g:1:1839: RULE_IRI_SCALAR_RESTRICTION_TOKEN
                 {
                 mRULE_IRI_SCALAR_RESTRICTION_TOKEN(); 
 
                 }
                 break;
-            case 103 :
-                // InternalOntologicalModelingLanguage.g:1:1901: RULE_TIME_SCALAR_RESTRICTION_TOKEN
+            case 99 :
+                // InternalOntologicalModelingLanguage.g:1:1873: RULE_TIME_SCALAR_RESTRICTION_TOKEN
                 {
                 mRULE_TIME_SCALAR_RESTRICTION_TOKEN(); 
 
                 }
                 break;
-            case 104 :
-                // InternalOntologicalModelingLanguage.g:1:1936: RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN
+            case 100 :
+                // InternalOntologicalModelingLanguage.g:1:1908: RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN
                 {
                 mRULE_SCALAR_ONE_OF_RESTRICTION_TOKEN(); 
 
                 }
                 break;
-            case 105 :
-                // InternalOntologicalModelingLanguage.g:1:1973: RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN
+            case 101 :
+                // InternalOntologicalModelingLanguage.g:1:1945: RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN
                 {
                 mRULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN(); 
 
                 }
                 break;
-            case 106 :
-                // InternalOntologicalModelingLanguage.g:1:2012: RULE_DESCRIPTION_BOX_TOKEN
+            case 102 :
+                // InternalOntologicalModelingLanguage.g:1:1984: RULE_DESCRIPTION_BOX_TOKEN
                 {
                 mRULE_DESCRIPTION_BOX_TOKEN(); 
 
                 }
                 break;
-            case 107 :
-                // InternalOntologicalModelingLanguage.g:1:2039: RULE_LCURLY
+            case 103 :
+                // InternalOntologicalModelingLanguage.g:1:2011: RULE_LCURLY
                 {
                 mRULE_LCURLY(); 
 
                 }
                 break;
-            case 108 :
-                // InternalOntologicalModelingLanguage.g:1:2051: RULE_RCURLY
+            case 104 :
+                // InternalOntologicalModelingLanguage.g:1:2023: RULE_RCURLY
                 {
                 mRULE_RCURLY(); 
 
                 }
                 break;
-            case 109 :
-                // InternalOntologicalModelingLanguage.g:1:2063: RULE_EQUAL
+            case 105 :
+                // InternalOntologicalModelingLanguage.g:1:2035: RULE_EQUAL
                 {
                 mRULE_EQUAL(); 
 
                 }
                 break;
-            case 110 :
-                // InternalOntologicalModelingLanguage.g:1:2074: RULE_STRING
+            case 106 :
+                // InternalOntologicalModelingLanguage.g:1:2046: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 111 :
-                // InternalOntologicalModelingLanguage.g:1:2086: RULE_IRI
+            case 107 :
+                // InternalOntologicalModelingLanguage.g:1:2058: RULE_IRI
                 {
                 mRULE_IRI(); 
 
                 }
                 break;
-            case 112 :
-                // InternalOntologicalModelingLanguage.g:1:2095: RULE_ID
+            case 108 :
+                // InternalOntologicalModelingLanguage.g:1:2067: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 113 :
-                // InternalOntologicalModelingLanguage.g:1:2103: RULE_UUID
+            case 109 :
+                // InternalOntologicalModelingLanguage.g:1:2075: RULE_UUID
                 {
                 mRULE_UUID(); 
 
                 }
                 break;
-            case 114 :
-                // InternalOntologicalModelingLanguage.g:1:2113: RULE_HEX
+            case 110 :
+                // InternalOntologicalModelingLanguage.g:1:2085: RULE_HEX
                 {
                 mRULE_HEX(); 
 
                 }
                 break;
-            case 115 :
-                // InternalOntologicalModelingLanguage.g:1:2122: RULE_INT
+            case 111 :
+                // InternalOntologicalModelingLanguage.g:1:2094: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 116 :
-                // InternalOntologicalModelingLanguage.g:1:2131: RULE_DECIMAL
+            case 112 :
+                // InternalOntologicalModelingLanguage.g:1:2103: RULE_DECIMAL
                 {
                 mRULE_DECIMAL(); 
 
                 }
                 break;
-            case 117 :
-                // InternalOntologicalModelingLanguage.g:1:2144: RULE_ML_COMMENT
+            case 113 :
+                // InternalOntologicalModelingLanguage.g:1:2116: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 118 :
-                // InternalOntologicalModelingLanguage.g:1:2160: RULE_SL_COMMENT
+            case 114 :
+                // InternalOntologicalModelingLanguage.g:1:2132: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 119 :
-                // InternalOntologicalModelingLanguage.g:1:2176: RULE_WS
+            case 115 :
+                // InternalOntologicalModelingLanguage.g:1:2148: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 120 :
-                // InternalOntologicalModelingLanguage.g:1:2184: RULE_ANY_OTHER
+            case 116 :
+                // InternalOntologicalModelingLanguage.g:1:2156: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -4289,17 +4173,17 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
 
     protected DFA22 dfa22 = new DFA22(this);
     static final String DFA22_eotS =
-        "\1\uffff\23\51\2\uffff\4\51\5\uffff\2\47\1\51\1\uffff\2\147\1\47\2\uffff\1\51\1\uffff\55\51\2\uffff\10\51\7\uffff\2\147\2\uffff\1\156\5\uffff\76\51\1\147\2\uffff\3\156\1\u0102\32\51\1\u011e\44\51\1\u0143\4\51\1\147\2\uffff\4\156\1\uffff\3\51\1\u0152\27\51\1\uffff\4\51\1\u016f\15\51\1\u017d\1\u017e\20\51\1\uffff\4\51\1\147\2\uffff\4\156\1\u019a\2\51\1\uffff\11\51\1\u01ac\7\51\1\u01b4\4\51\1\u01b9\5\51\1\uffff\1\u01c0\4\51\1\u01c5\7\51\2\uffff\2\51\1\u01cf\13\51\1\u01db\5\51\1\147\2\uffff\4\156\1\uffff\1\u01ea\2\51\1\u01ed\1\u01ee\5\51\1\u01f6\6\51\1\uffff\7\51\1\uffff\4\51\1\uffff\4\51\1\u020c\1\51\1\uffff\4\51\1\uffff\11\51\1\uffff\13\51\1\uffff\2\51\1\u022b\2\51\1\147\2\uffff\4\156\2\51\1\uffff\2\51\2\uffff\7\51\1\uffff\25\51\1\uffff\20\51\1\u0265\15\51\1\uffff\2\51\1\147\2\uffff\4\156\10\51\1\u027e\1\51\1\u0281\12\51\1\u028d\11\51\1\u0297\6\51\1\u029e\1\u029f\2\51\1\u02a2\5\51\1\uffff\12\51\1\u02b3\4\51\1\uffff\2\51\1\u02bb\5\51\1\uffff\2\51\1\uffff\5\51\1\u02c9\5\51\1\uffff\11\51\1\uffff\6\51\2\uffff\2\51\1\uffff\4\51\1\u02e7\10\51\1\u02f0\2\51\1\uffff\4\51\1\156\2\51\1\uffff\15\51\1\uffff\35\51\1\uffff\7\51\1\u0330\1\uffff\4\51\1\u0335\1\51\1\156\1\uffff\1\156\21\51\1\u034c\6\51\1\u0353\16\51\1\u0362\1\u0363\1\u0364\1\u0365\1\u0366\12\51\1\uffff\4\51\1\uffff\1\51\1\uffff\3\156\7\51\1\u0381\11\51\1\uffff\6\51\1\uffff\16\51\5\uffff\17\51\1\156\1\uffff\2\156\7\51\1\uffff\4\51\1\u03ba\26\51\1\u03d1\6\51\1\u03d8\25\51\1\uffff\3\51\1\u03f1\13\51\1\u03fd\6\51\1\uffff\6\51\1\uffff\1\u040a\27\51\1\uffff\13\51\1\uffff\1\u042d\1\u042e\12\51\1\uffff\6\51\1\u043f\15\51\1\u044d\2\51\1\u0450\6\51\1\u0457\1\u0458\2\51\2\uffff\17\51\1\u046a\1\uffff\13\51\1\u0476\1\51\1\uffff\2\51\1\uffff\6\51\2\uffff\1\51\1\u0481\1\51\1\u0484\1\51\1\u0486\1\51\1\u0488\3\51\1\u048c\5\51\1\uffff\13\51\1\uffff\1\u049d\11\51\1\uffff\1\u04a9\1\51\1\uffff\1\51\1\uffff\1\51\1\uffff\3\51\1\uffff\20\51\1\uffff\13\51\1\uffff\13\51\1\u04d6\21\51\1\u04e8\14\51\1\u04f5\1\u04f6\1\uffff\7\51\1\u04fe\2\51\1\u0501\5\51\1\u0507\1\uffff\14\51\2\uffff\7\51\1\uffff\1\u051b\1\u051c\1\uffff\1\u051d\4\51\1\uffff\3\51\1\u0525\1\u0526\2\51\1\u0529\3\51\1\u052d\4\51\1\u0535\2\51\3\uffff\2\51\1\u053a\1\51\1\u053c\2\51\2\uffff\1\u053f\1\51\1\uffff\3\51\1\uffff\7\51\1\uffff\4\51\1\uffff\1\51\1\uffff\2\51\1\uffff\5\51\1\u0557\7\51\1\u055f\11\51\1\uffff\7\51\1\uffff\2\51\1\u0572\2\51\1\u0575\1\u0578\3\51\1\u057c\6\51\1\u0583\1\uffff\2\51\1\uffff\2\51\1\uffff\2\51\1\u058a\1\uffff\6\51\1\uffff\1\51\1\u0592\4\51\1\uffff\7\51\1\uffff\10\51\1\u05a6\12\51\1\uffff\3\51\1\u05b4\5\51\1\u05ba\2\51\1\u05bd\1\uffff\1\51\1\u05bf\3\51\1\uffff\2\51\1\uffff\1\u05c5\1\uffff\5\51\1\uffff\15\51\1\u05d8\1\u05d9\3\51\2\uffff\34\51\1\u05f9\2\51\1\uffff\1\u05fc\1\u05fd\2\uffff";
+        "\1\uffff\23\51\2\uffff\4\51\5\uffff\2\47\1\51\1\uffff\2\147\1\47\2\uffff\1\51\1\uffff\54\51\2\uffff\10\51\6\uffff\1\147\1\uffff\1\147\2\uffff\1\155\5\uffff\74\51\2\uffff\1\155\1\147\2\155\1\u00fc\27\51\1\u0115\44\51\1\u013a\4\51\2\155\2\uffff\1\155\1\147\1\155\1\uffff\3\51\1\u0149\24\51\1\uffff\4\51\1\u0162\15\51\1\u0170\1\u0171\20\51\1\uffff\4\51\1\155\1\uffff\3\155\1\uffff\1\147\1\u018d\2\51\1\uffff\11\51\1\u019f\3\51\1\u01a3\4\51\1\u01a8\5\51\1\uffff\1\u01af\4\51\1\u01b4\7\51\2\uffff\2\51\1\u01be\13\51\1\u01ca\5\51\1\uffff\4\155\1\uffff\1\147\1\uffff\1\u01d8\2\51\1\u01db\1\u01dc\5\51\1\u01e6\6\51\1\uffff\3\51\1\uffff\4\51\1\uffff\4\51\1\u01f8\1\51\1\uffff\4\51\1\uffff\11\51\1\uffff\13\51\1\uffff\2\51\1\u0217\2\51\1\155\1\uffff\3\155\1\uffff\1\147\1\51\1\uffff\2\51\2\uffff\11\51\1\uffff\21\51\1\uffff\20\51\1\u024e\15\51\1\uffff\2\51\1\155\1\uffff\3\155\1\uffff\1\147\7\51\1\u0266\3\51\1\u026b\6\51\1\u0273\11\51\1\u027d\6\51\1\u0284\1\u0285\2\51\1\u0288\5\51\1\uffff\12\51\1\u0299\4\51\1\uffff\1\51\1\u02a0\5\51\1\uffff\4\51\1\uffff\7\51\1\uffff\11\51\1\uffff\6\51\2\uffff\2\51\1\uffff\4\51\1\u02ca\10\51\1\u02d3\2\51\1\uffff\4\51\1\155\1\51\1\uffff\51\51\1\uffff\7\51\1\u0311\1\uffff\4\51\1\u0316\1\51\1\155\1\uffff\1\155\26\51\1\u0332\16\51\1\u0341\1\u0342\1\u0343\1\u0344\1\u0345\12\51\1\uffff\4\51\1\uffff\1\51\1\uffff\3\155\7\51\1\u0360\16\51\1\uffff\16\51\5\uffff\17\51\1\155\1\uffff\2\155\6\51\1\u0392\1\uffff\5\51\1\u0399\24\51\1\u03ae\6\51\1\u03b5\17\51\1\uffff\6\51\1\uffff\15\51\1\u03d8\6\51\1\uffff\6\51\1\uffff\1\u03e5\41\51\1\uffff\1\u0407\1\u0408\12\51\1\uffff\6\51\1\u0419\15\51\1\u0427\10\51\1\u0430\1\u0431\2\51\2\uffff\17\51\1\u0443\1\uffff\13\51\1\u044f\1\51\1\uffff\10\51\2\uffff\1\51\1\u045a\1\51\1\u045d\1\51\1\u045f\1\51\1\u0461\3\51\1\u0465\5\51\1\uffff\7\51\1\u0472\3\51\1\uffff\1\u0476\11\51\1\uffff\1\u0481\1\51\1\uffff\1\51\1\uffff\1\51\1\uffff\3\51\1\uffff\14\51\1\uffff\3\51\1\uffff\12\51\1\uffff\13\51\1\u04ac\20\51\1\u04bd\13\51\1\u04c9\1\u04ca\1\uffff\6\51\1\u04d1\2\51\1\u04d4\5\51\1\u04da\1\uffff\13\51\2\uffff\6\51\1\uffff\1\u04ec\1\u04ed\1\uffff\1\u04ee\4\51\1\uffff\2\51\1\u04f5\1\u04f6\2\51\1\u04f9\3\51\1\u04fd\3\51\1\u0504\2\51\3\uffff\2\51\1\u0509\1\51\1\u050b\1\51\2\uffff\1\u050d\1\51\1\uffff\3\51\1\uffff\6\51\1\uffff\4\51\1\uffff\1\51\1\uffff\1\51\1\uffff\14\51\1\u052a\17\51\1\uffff\2\51\1\u053c\1\51\1\u053e\1\u0541\3\51\1\u0545\6\51\1\u054c\1\uffff\1\51\1\uffff\2\51\1\uffff\2\51\1\u0552\1\uffff\6\51\1\uffff\1\u0559\4\51\1\uffff\6\51\1\uffff\10\51\1\u056c\11\51\1\uffff\2\51\1\u0578\5\51\1\u057e\1\51\1\u0580\1\uffff\1\51\1\u0582\3\51\1\uffff\1\51\1\uffff\1\u0587\1\uffff\4\51\1\uffff\13\51\1\u0597\3\51\1\uffff\34\51\1\u05b7\2\51\1\uffff\1\u05ba\1\u05bb\2\uffff";
     static final String DFA22_eofS =
-        "\u05fe\uffff";
+        "\u05bc\uffff";
     static final String DFA22_minS =
-        "\1\0\1\160\2\60\1\141\1\60\1\143\1\60\1\141\1\60\1\145\3\141\1\60\1\143\2\60\1\145\1\156\2\uffff\1\141\1\151\2\156\5\uffff\1\0\1\44\1\60\1\uffff\2\60\1\52\2\uffff\1\145\1\uffff\1\157\1\156\1\60\2\156\1\162\1\141\1\164\1\163\1\164\1\162\1\141\1\142\1\156\1\155\1\165\1\145\1\163\2\60\1\155\1\157\1\146\3\156\1\163\1\155\1\164\3\156\1\170\1\154\1\151\1\156\1\160\1\60\1\141\1\162\2\60\1\156\1\151\1\162\2\uffff\1\162\1\141\1\162\1\155\1\156\1\162\1\166\1\151\7\uffff\2\60\1\53\2\60\5\uffff\1\156\1\163\1\143\1\60\1\141\1\143\2\164\2\151\2\145\1\151\1\154\1\103\1\145\1\147\1\155\1\157\1\162\1\143\1\152\1\151\2\141\2\164\1\146\1\151\1\147\1\144\1\141\1\164\2\145\2\147\2\105\1\165\2\157\1\156\1\145\1\155\1\164\1\154\1\165\1\141\2\143\1\146\1\145\1\155\1\156\1\147\1\145\1\144\3\145\1\123\1\60\1\53\4\60\1\44\2\145\1\60\1\154\1\164\1\151\1\145\1\156\1\164\2\156\1\143\1\156\1\141\1\157\1\145\1\162\1\154\1\145\1\156\1\143\1\151\1\157\1\147\1\123\1\151\1\44\1\162\1\151\1\145\1\156\1\145\1\154\1\162\1\151\2\162\1\164\1\122\1\145\1\156\1\170\1\145\1\156\1\170\1\145\1\155\1\164\1\171\1\143\1\155\1\162\1\141\1\143\1\123\1\162\1\145\3\151\1\163\1\145\1\123\1\44\1\151\1\162\1\146\1\143\1\60\1\53\5\60\1\uffff\1\144\1\160\1\60\1\44\1\151\1\141\1\162\1\114\1\171\1\164\1\144\1\164\1\147\1\162\1\156\1\154\1\103\1\145\1\164\1\171\1\145\1\146\1\151\1\156\1\164\1\156\1\157\1\uffff\1\151\1\145\1\170\1\145\1\44\1\145\1\171\1\156\1\151\1\141\1\150\1\141\1\156\2\143\1\156\2\143\2\44\1\141\1\155\1\164\1\145\1\141\1\162\2\164\1\151\1\160\1\145\1\146\1\156\1\151\1\164\1\143\1\uffff\1\146\1\163\1\154\1\141\1\60\1\53\5\60\1\44\1\164\1\60\1\uffff\1\157\1\154\1\156\1\151\1\105\1\151\1\163\1\165\1\123\1\44\1\143\1\141\1\157\1\145\1\164\1\162\1\155\1\44\1\151\1\156\1\141\1\162\1\44\1\156\1\143\1\144\1\151\1\163\1\uffff\1\44\1\123\1\147\1\143\1\154\1\44\1\156\1\147\2\154\1\147\2\154\2\uffff\1\164\1\157\1\44\1\164\1\143\1\104\1\165\1\162\1\160\1\164\1\144\1\151\1\157\1\164\1\44\1\141\1\151\2\145\1\154\1\60\1\53\5\60\1\uffff\1\44\1\60\1\156\2\44\1\164\1\143\1\170\1\156\1\141\1\44\1\162\1\143\1\141\1\162\1\145\1\156\1\uffff\1\145\1\164\1\156\1\154\1\157\1\151\1\123\1\uffff\1\143\2\164\1\165\1\uffff\1\143\1\164\1\122\1\166\1\44\1\124\1\uffff\1\143\1\103\1\123\1\126\1\uffff\1\147\1\164\2\165\1\164\2\165\1\151\1\165\1\uffff\1\162\1\164\1\141\1\162\1\165\1\164\1\111\1\122\1\145\1\154\1\151\1\uffff\1\154\1\145\1\44\1\170\1\141\1\60\1\53\5\60\1\145\1\160\1\uffff\1\55\1\141\2\uffff\1\145\1\162\1\141\2\151\1\154\1\163\1\uffff\1\145\1\141\1\164\1\157\1\163\1\145\1\160\1\151\1\143\1\141\1\156\2\143\1\104\1\114\1\145\1\143\4\145\1\uffff\1\145\1\141\1\145\1\157\1\143\1\141\1\145\1\150\2\163\1\150\2\163\1\157\1\163\1\151\1\44\1\164\1\145\1\143\1\151\1\156\1\145\1\144\1\157\1\166\1\141\1\144\1\165\1\163\1\uffff\1\151\1\162\1\55\1\53\5\55\1\163\1\145\1\154\1\162\1\165\1\154\1\163\1\166\1\44\1\160\1\44\1\154\1\141\1\160\1\164\1\117\1\164\1\157\1\145\1\164\1\103\1\44\1\141\1\151\1\141\1\145\1\144\1\164\1\160\1\144\1\154\1\44\1\162\1\154\1\162\1\156\1\141\1\154\2\44\2\151\1\44\2\151\1\156\1\103\1\143\1\uffff\1\141\1\144\1\164\1\157\1\163\1\154\1\122\1\147\1\145\1\162\1\44\1\156\1\163\1\166\1\122\1\60\1\151\1\143\1\44\1\141\1\143\1\141\1\164\1\145\1\uffff\1\145\1\104\1\uffff\1\141\1\120\1\145\1\162\1\146\1\44\1\156\1\160\1\151\1\157\1\145\1\uffff\1\154\1\163\1\170\1\141\1\103\1\165\1\164\1\104\1\141\1\uffff\1\155\1\141\1\155\1\164\1\154\1\165\2\uffff\2\166\1\uffff\2\166\1\120\1\157\1\44\1\120\1\104\1\165\1\156\1\164\1\141\1\145\1\171\1\44\1\122\1\145\1\uffff\1\143\3\145\1\60\1\147\1\151\1\uffff\1\154\1\164\1\162\1\145\1\162\1\143\1\141\4\162\1\151\1\114\1\uffff\1\163\1\164\1\157\1\156\1\151\1\141\1\152\1\157\1\146\1\145\1\157\1\162\1\124\1\141\1\157\1\156\1\164\1\151\1\162\1\151\1\145\1\141\5\145\1\162\1\156\1\uffff\1\162\1\141\1\162\1\102\1\141\1\164\1\154\1\44\1\uffff\1\145\1\154\1\164\1\156\1\44\1\163\3\60\1\156\1\141\1\123\1\165\1\104\1\156\1\163\2\164\1\157\1\122\1\157\1\164\1\143\1\145\1\151\1\150\1\44\1\156\1\143\1\146\1\162\1\157\1\156\1\44\1\162\1\156\1\145\1\141\1\154\1\156\1\155\1\164\1\151\1\156\1\122\1\156\1\170\1\162\5\44\1\157\1\143\1\157\1\164\1\145\1\157\1\156\1\151\1\141\1\145\1\uffff\1\163\1\141\1\151\1\164\1\uffff\1\164\4\60\1\141\1\154\1\143\1\162\1\141\1\164\1\141\1\44\1\141\1\160\1\145\1\160\1\171\1\164\1\163\1\164\1\151\1\uffff\1\163\1\145\1\151\1\122\1\151\1\157\1\uffff\1\155\1\143\1\124\1\170\1\141\1\147\1\141\1\151\2\157\1\145\1\157\1\164\1\122\5\uffff\1\160\1\145\1\160\1\141\1\124\1\170\1\143\1\157\1\164\1\163\2\164\1\157\1\151\1\162\4\55\1\164\1\151\1\141\1\145\1\164\1\151\1\154\1\uffff\1\120\1\145\1\163\1\145\1\44\1\151\1\164\1\145\1\160\1\150\1\160\2\145\1\156\1\155\1\151\1\145\1\171\1\157\1\164\1\145\1\151\1\164\1\156\1\154\1\163\1\154\1\44\2\145\1\160\1\145\1\120\1\165\1\44\1\145\1\156\1\151\1\164\1\162\1\151\1\156\1\141\2\151\1\172\1\154\1\144\2\141\1\122\2\162\1\164\1\162\1\141\1\uffff\1\157\2\162\1\44\1\151\1\164\1\144\1\163\1\164\1\171\1\156\2\160\1\156\1\151\1\44\1\156\1\171\1\163\1\157\1\164\1\157\1\uffff\1\163\1\162\1\164\2\162\1\160\1\uffff\1\44\1\163\1\157\2\151\1\157\1\141\1\154\1\143\1\157\2\141\1\104\1\120\1\154\1\145\1\157\1\164\1\162\1\164\1\154\1\156\1\151\1\141\1\uffff\1\160\1\103\1\122\1\164\1\103\1\120\1\157\1\164\1\145\2\157\1\uffff\2\44\1\150\1\147\1\162\1\147\2\164\1\124\1\164\1\157\1\154\1\uffff\1\150\2\156\1\143\1\156\1\154\1\44\1\164\1\156\1\164\1\162\1\141\1\162\1\122\1\163\1\160\1\171\1\151\1\171\1\165\1\44\1\143\1\154\1\44\1\154\1\145\1\162\1\157\1\141\1\154\2\44\1\155\1\156\2\uffff\1\151\1\171\1\151\1\171\1\162\1\171\1\141\1\171\1\160\1\145\1\151\1\163\1\147\1\164\1\163\1\44\1\uffff\1\151\1\124\1\151\1\122\1\164\1\157\1\145\1\164\1\145\1\124\1\143\1\44\1\145\1\uffff\1\164\1\101\1\uffff\1\141\1\154\1\151\1\156\1\162\1\157\2\uffff\1\171\1\44\1\160\1\44\1\143\1\44\1\151\1\44\1\170\1\126\1\145\1\44\1\160\1\150\1\101\1\151\1\150\1\uffff\1\157\1\145\1\157\1\145\1\141\1\160\1\163\2\162\1\165\1\164\1\uffff\1\44\1\151\1\170\1\163\1\141\2\143\1\145\1\147\1\101\1\uffff\1\44\1\170\1\uffff\1\164\1\uffff\1\143\1\uffff\1\157\1\141\1\162\1\uffff\1\111\1\151\1\170\1\157\1\151\1\156\1\162\1\156\1\163\1\120\1\145\1\164\1\151\1\164\1\160\1\151\1\uffff\1\157\1\151\1\163\2\164\1\145\1\156\1\171\1\170\1\156\1\160\1\uffff\2\151\1\164\1\156\1\154\1\164\1\156\1\160\1\151\1\156\1\160\1\44\1\155\1\101\1\164\3\162\1\143\1\171\1\154\1\157\1\156\1\157\3\151\1\160\1\164\1\44\1\151\1\163\1\145\2\157\1\151\1\157\1\165\1\171\1\163\1\111\1\157\2\44\1\uffff\1\151\1\170\1\162\1\157\1\164\1\151\1\164\1\44\1\145\1\156\1\44\1\155\1\146\2\157\1\164\1\44\1\uffff\1\157\1\164\1\143\1\155\1\156\1\157\1\155\1\145\1\126\1\164\1\156\1\155\2\uffff\1\156\2\151\1\160\1\171\1\143\1\151\1\uffff\2\44\1\uffff\1\44\1\151\2\156\1\101\1\uffff\1\155\1\141\1\151\2\44\1\156\1\171\1\44\2\141\1\163\1\44\2\157\1\143\1\145\1\44\1\164\1\157\3\uffff\1\145\1\163\1\44\1\170\1\44\1\156\1\141\2\uffff\1\44\1\101\1\uffff\1\154\1\156\1\164\1\uffff\1\154\1\155\1\164\1\162\1\170\1\156\1\141\1\uffff\1\151\1\156\1\162\1\150\1\uffff\1\151\1\uffff\1\143\1\154\1\uffff\1\170\1\165\1\143\1\141\1\157\1\44\1\151\1\164\2\151\1\162\1\157\1\101\1\44\1\151\1\157\1\145\2\151\2\145\1\156\1\147\1\uffff\1\157\1\171\1\163\1\166\1\164\1\156\1\170\1\uffff\1\160\1\155\1\44\1\172\1\157\2\44\1\143\1\171\1\156\1\44\1\164\1\145\1\151\1\101\1\151\1\103\1\44\1\uffff\1\141\1\155\1\uffff\1\157\1\141\1\uffff\1\145\1\101\1\44\1\uffff\1\145\1\162\1\143\1\170\1\157\1\154\1\uffff\1\164\1\44\1\155\1\156\1\124\1\170\1\uffff\1\156\1\163\1\165\1\151\1\155\1\141\1\151\1\uffff\1\141\1\147\1\165\1\151\1\164\1\141\1\154\1\157\1\44\1\163\1\157\1\151\1\145\1\160\1\157\1\151\1\154\1\141\1\155\1\uffff\1\163\2\156\1\44\1\154\1\155\1\141\1\122\1\162\1\44\1\151\1\101\1\44\1\uffff\1\145\1\44\1\154\1\145\1\122\1\uffff\1\146\1\170\1\uffff\1\44\1\uffff\1\122\1\163\1\145\2\151\1\uffff\1\145\1\164\1\163\1\145\1\157\1\163\1\162\1\164\1\162\1\155\1\164\1\151\1\162\2\44\1\162\1\143\1\151\2\uffff\1\151\1\164\2\143\1\151\2\164\1\157\2\151\1\156\2\157\1\101\2\156\1\170\2\101\1\151\2\170\1\157\2\151\1\155\2\157\1\44\2\155\1\uffff\2\44\2\uffff";
+        "\1\0\1\160\2\60\1\141\1\60\1\143\1\60\1\141\1\60\1\145\3\141\1\60\1\143\2\60\1\145\1\156\2\uffff\1\141\1\151\2\156\5\uffff\1\0\1\44\1\60\1\uffff\2\60\1\52\2\uffff\1\145\1\uffff\1\157\1\156\1\60\2\156\1\162\1\141\1\164\1\163\1\164\1\162\1\141\1\156\1\155\1\165\1\145\1\163\2\60\1\155\1\157\1\146\3\156\1\163\1\155\1\164\3\156\1\170\1\154\1\151\1\156\1\160\1\60\1\141\1\162\2\60\1\156\1\151\1\162\2\uffff\1\162\1\141\1\162\1\155\1\156\1\162\1\166\1\151\6\uffff\1\60\1\uffff\1\60\1\53\2\60\5\uffff\1\156\1\163\1\143\1\60\1\141\1\143\2\164\2\151\2\145\1\151\1\154\1\147\1\155\1\157\1\162\1\143\1\152\1\151\2\141\2\164\1\146\1\151\1\147\1\144\1\141\1\164\2\145\2\147\2\105\1\165\2\157\1\156\1\145\1\155\1\164\1\154\1\165\1\141\2\143\1\146\1\145\1\155\1\156\1\147\1\145\1\144\3\145\1\123\1\53\5\60\1\44\2\145\1\60\1\154\1\164\1\151\1\145\1\156\1\164\2\156\1\143\1\156\1\141\1\154\1\145\1\156\1\143\1\151\1\157\1\147\1\123\1\151\1\44\1\162\1\151\1\145\1\156\1\145\1\154\1\162\1\151\2\162\1\164\1\122\1\145\1\156\1\170\1\145\1\156\1\170\1\145\1\155\1\164\1\171\1\143\1\155\1\162\1\141\1\143\1\123\1\162\1\145\3\151\1\163\1\145\1\123\1\44\1\151\1\162\1\146\1\143\2\60\1\53\4\60\1\uffff\1\144\1\160\1\60\1\44\1\151\1\141\1\162\1\114\1\171\1\164\1\144\1\164\1\147\1\162\1\145\1\164\1\171\1\145\1\146\1\151\1\156\1\164\1\156\1\157\1\uffff\1\151\1\145\1\170\1\145\1\44\1\145\1\171\1\156\1\151\1\141\1\150\1\141\1\156\2\143\1\156\2\143\2\44\1\141\1\155\1\164\1\145\1\141\1\162\2\164\1\151\1\160\1\145\1\146\1\156\1\151\1\164\1\143\1\uffff\1\146\1\163\1\154\1\141\5\60\1\53\1\60\1\44\1\164\1\60\1\uffff\1\157\1\154\1\156\1\151\1\105\1\151\1\163\1\165\1\123\1\44\1\164\1\162\1\155\1\44\1\151\1\156\1\141\1\162\1\44\1\156\1\143\1\144\1\151\1\163\1\uffff\1\44\1\123\1\147\1\143\1\154\1\44\1\156\1\147\2\154\1\147\2\154\2\uffff\1\164\1\157\1\44\1\164\1\143\1\104\1\165\1\162\1\160\1\164\1\144\1\151\1\157\1\164\1\44\1\141\1\151\2\145\1\154\5\60\1\53\1\60\1\uffff\1\44\1\60\1\156\2\44\1\164\1\143\1\170\1\156\1\141\1\44\1\162\1\143\1\141\1\162\1\145\1\156\1\uffff\1\157\1\151\1\123\1\uffff\1\143\2\164\1\165\1\uffff\1\143\1\164\1\122\1\166\1\44\1\124\1\uffff\1\143\1\103\1\123\1\126\1\uffff\1\147\1\164\2\165\1\164\2\165\1\151\1\165\1\uffff\1\162\1\164\1\141\1\162\1\165\1\164\1\111\1\122\1\145\1\154\1\151\1\uffff\1\154\1\145\1\44\1\170\1\141\5\60\1\53\1\60\1\145\1\uffff\1\55\1\141\2\uffff\1\145\1\162\1\141\2\151\1\154\1\157\1\163\1\145\1\uffff\1\145\1\141\1\164\1\157\1\163\1\145\1\156\2\143\1\104\1\114\1\145\1\143\4\145\1\uffff\1\145\1\141\1\145\1\157\1\143\1\141\1\145\1\150\2\163\1\150\2\163\1\157\1\163\1\151\1\44\1\164\1\145\1\143\1\151\1\156\1\145\1\144\1\157\1\166\1\141\1\144\1\165\1\163\1\uffff\1\151\1\162\5\55\1\53\1\55\1\163\1\154\1\162\1\165\1\154\1\163\1\166\1\44\1\156\1\160\1\154\1\44\1\154\1\141\1\160\1\164\1\117\1\103\1\44\1\141\1\151\1\141\1\145\1\144\1\164\1\160\1\144\1\154\1\44\1\162\1\154\1\162\1\156\1\141\1\154\2\44\2\151\1\44\2\151\1\156\1\103\1\143\1\uffff\1\141\1\144\1\164\1\157\1\163\1\154\1\122\1\147\1\145\1\162\1\44\1\156\1\163\1\166\1\122\1\60\1\151\1\44\1\141\1\143\1\141\1\164\1\145\1\uffff\1\143\1\145\1\141\1\104\1\uffff\1\141\1\120\1\145\1\162\1\146\1\157\1\145\1\uffff\1\154\1\163\1\170\1\141\1\103\1\165\1\164\1\104\1\141\1\uffff\1\155\1\141\1\155\1\164\1\154\1\165\2\uffff\2\166\1\uffff\2\166\1\120\1\157\1\44\1\120\1\104\1\165\1\156\1\164\1\141\1\145\1\171\1\44\1\122\1\145\1\uffff\1\143\3\145\1\60\1\147\1\uffff\1\154\1\164\1\162\1\145\1\162\1\145\1\143\1\164\1\141\4\162\1\151\1\114\1\156\1\151\1\141\1\152\1\157\1\146\1\145\1\157\1\162\1\124\1\141\1\157\1\156\1\164\1\151\1\162\1\151\1\145\1\141\5\145\1\162\1\156\1\uffff\1\162\1\141\1\162\1\102\1\141\1\164\1\154\1\44\1\uffff\1\145\1\154\1\164\1\156\1\44\1\163\3\60\1\156\1\123\1\165\1\104\1\156\1\163\1\160\1\164\1\151\1\164\1\157\1\122\1\157\1\164\1\143\1\145\1\151\1\143\1\146\1\162\1\157\1\156\1\44\1\162\1\156\1\145\1\141\1\154\1\156\1\155\1\164\1\151\1\156\1\122\1\156\1\170\1\162\5\44\1\157\1\143\1\157\1\164\1\145\1\157\1\156\1\151\1\141\1\145\1\uffff\1\163\1\141\1\151\1\164\1\uffff\1\164\4\60\1\141\1\143\1\162\1\141\1\164\1\141\1\164\1\44\1\157\1\141\1\160\1\145\1\160\1\171\1\164\1\163\1\164\1\145\1\151\1\122\1\151\1\157\1\uffff\1\155\1\143\1\124\1\170\1\141\1\147\1\141\1\151\2\157\1\145\1\157\1\164\1\122\5\uffff\1\160\1\145\1\160\1\141\1\124\1\170\1\143\1\157\1\164\1\163\2\164\1\157\1\151\1\162\4\55\1\164\1\141\1\145\1\164\1\151\1\154\1\44\1\uffff\1\156\1\120\1\145\1\163\1\145\1\44\1\151\1\164\1\145\1\160\2\145\1\156\1\155\1\151\1\145\1\171\1\157\1\164\1\145\1\151\1\164\1\156\1\154\1\163\1\154\1\44\2\145\1\160\1\145\1\120\1\165\1\44\1\145\1\156\1\151\1\164\1\162\1\151\1\156\1\141\2\151\1\154\1\144\2\141\1\122\1\uffff\1\163\2\162\1\164\1\162\1\141\1\uffff\1\157\2\162\1\164\1\144\1\163\1\164\1\171\1\156\2\160\1\156\1\151\1\44\1\156\1\171\1\163\1\157\1\164\1\157\1\uffff\1\163\1\162\1\164\2\162\1\160\1\uffff\1\44\1\163\1\157\2\151\1\157\1\141\1\154\1\143\1\157\1\141\1\104\1\120\1\154\1\145\1\150\1\157\1\164\1\162\1\164\1\154\1\156\1\151\1\141\1\103\1\122\1\164\1\103\1\120\1\157\1\164\1\145\2\157\1\uffff\2\44\1\150\1\147\1\162\1\147\2\164\1\124\1\164\1\157\1\154\1\uffff\1\150\2\156\1\143\1\156\1\154\1\44\1\164\1\156\1\162\1\141\1\162\1\122\1\163\1\151\1\160\1\171\1\151\1\171\1\165\1\44\1\143\2\154\1\145\1\162\1\157\1\141\1\154\2\44\1\155\1\156\2\uffff\1\151\1\171\1\151\1\171\1\162\1\171\1\141\1\171\1\160\1\145\1\151\1\163\1\147\1\164\1\163\1\44\1\uffff\1\151\1\124\1\122\1\164\1\157\1\145\1\164\1\160\1\145\1\124\1\143\1\44\1\145\1\uffff\1\164\1\101\1\141\1\154\1\151\1\156\1\162\1\157\2\uffff\1\171\1\44\1\160\1\44\1\143\1\44\1\151\1\44\1\170\1\126\1\145\1\44\1\160\1\150\1\101\1\151\1\150\1\uffff\1\157\2\145\1\141\1\160\1\163\1\162\1\44\1\162\1\165\1\164\1\uffff\1\44\1\151\1\170\1\163\1\141\2\143\1\145\1\147\1\101\1\uffff\1\44\1\170\1\uffff\1\164\1\uffff\1\143\1\uffff\1\157\1\141\1\162\1\uffff\1\111\1\151\1\170\1\157\1\151\1\156\1\162\1\163\1\120\1\145\1\164\1\151\1\uffff\1\164\1\160\1\151\1\uffff\1\157\1\151\1\163\2\164\1\145\1\156\1\171\1\170\1\156\1\uffff\2\151\1\164\1\156\1\154\1\164\1\156\1\160\1\151\1\156\1\160\1\44\1\155\1\164\3\162\1\143\1\171\1\154\1\157\1\156\1\157\3\151\1\160\1\164\1\44\1\151\1\163\2\157\1\151\1\157\1\165\1\171\1\163\1\111\1\157\2\44\1\uffff\1\151\1\162\1\157\1\164\1\151\1\164\1\44\1\145\1\156\1\44\1\155\1\146\2\157\1\164\1\44\1\uffff\1\157\1\164\1\155\1\156\1\157\1\155\1\145\1\126\1\164\1\156\1\155\2\uffff\1\156\1\151\1\160\1\171\1\143\1\151\1\uffff\2\44\1\uffff\1\44\1\151\2\156\1\101\1\uffff\1\155\1\141\2\44\1\156\1\171\1\44\2\141\1\163\1\44\1\157\1\143\1\145\1\44\1\164\1\157\3\uffff\1\145\1\163\1\44\1\170\1\44\1\156\2\uffff\1\44\1\101\1\uffff\1\154\1\156\1\164\1\uffff\1\154\1\164\1\162\1\170\1\156\1\141\1\uffff\1\151\1\156\1\162\1\150\1\uffff\1\151\1\uffff\1\143\1\uffff\1\170\1\165\1\143\1\141\1\157\1\151\1\164\2\151\1\162\1\157\1\101\1\44\1\151\1\157\1\145\1\151\2\145\1\156\1\147\1\157\1\171\1\163\1\166\1\164\1\156\1\170\1\uffff\1\160\1\155\1\44\1\157\2\44\1\143\1\171\1\156\1\44\1\164\1\145\1\151\1\101\1\151\1\103\1\44\1\uffff\1\155\1\uffff\1\157\1\141\1\uffff\1\145\1\101\1\44\1\uffff\1\145\1\162\1\143\1\170\1\157\1\154\1\uffff\1\44\1\155\1\156\1\124\1\170\1\uffff\1\156\1\163\1\165\1\151\1\155\1\141\1\uffff\1\141\1\147\1\165\1\151\1\164\1\141\1\154\1\157\1\44\1\163\1\151\1\145\1\160\1\157\1\151\1\154\1\141\1\155\1\uffff\1\163\1\156\1\44\1\154\1\155\1\141\1\122\1\162\1\44\1\151\1\44\1\uffff\1\145\1\44\1\154\1\145\1\122\1\uffff\1\146\1\uffff\1\44\1\uffff\1\122\1\163\1\145\1\151\1\uffff\1\145\1\164\1\163\1\145\1\163\1\162\1\164\1\162\1\164\1\151\1\162\1\44\1\162\1\143\1\151\1\uffff\1\151\1\164\2\143\1\151\2\164\1\157\2\151\1\156\2\157\1\101\2\156\1\170\2\101\1\151\2\170\1\157\2\151\1\155\2\157\1\44\2\155\1\uffff\2\44\2\uffff";
     static final String DFA22_maxS =
-        "\1\uffff\1\160\1\157\1\165\1\154\1\170\1\171\2\157\2\165\2\151\1\141\1\170\1\164\1\146\1\157\1\145\1\156\2\uffff\1\162\1\151\1\156\1\162\5\uffff\1\uffff\1\172\1\146\1\uffff\1\170\1\154\1\57\2\uffff\1\145\1\uffff\1\157\1\156\1\146\2\156\1\164\1\141\1\164\1\163\1\164\1\162\1\141\1\160\2\156\1\165\1\145\2\163\1\164\1\155\1\157\1\163\3\156\1\163\1\155\1\164\3\156\1\170\1\154\1\151\1\157\1\171\1\163\1\141\1\162\1\164\1\163\1\156\1\151\1\162\2\uffff\1\162\1\141\1\162\1\155\1\156\1\162\1\166\1\162\7\uffff\2\154\1\146\1\151\1\146\5\uffff\1\156\1\163\1\143\1\146\1\141\1\143\2\164\2\151\2\145\1\165\1\154\1\122\1\145\1\147\1\155\1\157\1\162\1\143\1\152\1\151\2\141\2\164\1\146\1\154\1\147\1\144\1\141\1\164\2\145\2\147\2\114\1\165\2\157\1\156\1\145\1\155\1\164\1\154\1\165\1\141\2\143\1\146\1\145\1\155\1\156\1\147\1\145\1\144\3\145\1\123\1\154\1\146\1\151\3\146\1\172\2\145\1\146\1\154\1\164\1\151\1\145\1\156\1\164\2\156\1\143\1\156\1\141\1\157\1\145\1\162\1\154\1\145\1\156\1\143\1\151\1\157\1\147\1\123\1\151\1\172\1\162\1\151\1\145\1\156\1\145\1\154\1\162\1\151\2\162\1\164\1\122\1\145\1\156\1\170\1\145\1\156\1\170\1\145\1\155\1\164\1\171\1\143\1\155\1\162\1\141\1\143\1\123\1\162\1\145\3\151\1\163\1\145\1\123\1\172\1\151\1\162\1\146\1\143\1\154\1\146\1\151\4\146\1\uffff\1\144\1\160\1\146\1\172\1\151\1\141\1\162\1\114\1\171\1\164\1\144\1\164\1\147\1\162\1\156\1\154\1\122\1\145\1\164\1\171\1\145\1\146\1\151\1\156\1\164\1\156\1\157\1\uffff\1\151\1\145\1\170\1\145\1\172\1\145\1\171\1\156\1\151\1\141\1\150\1\141\1\156\2\143\1\156\2\143\2\172\1\141\1\155\1\164\1\145\1\141\1\162\2\164\1\151\1\160\1\145\1\146\1\156\1\151\1\164\1\143\1\uffff\1\146\1\163\1\154\1\141\1\154\1\146\1\151\4\146\1\172\1\164\1\146\1\uffff\1\157\1\154\1\156\1\151\1\125\1\151\1\163\1\165\1\123\1\172\1\143\1\141\1\157\1\145\1\164\1\162\1\155\1\172\1\151\1\156\1\141\1\162\1\172\1\156\1\143\1\144\1\151\1\163\1\uffff\1\172\1\123\1\147\1\143\1\154\1\172\1\156\1\147\2\154\1\147\2\154\2\uffff\1\164\1\157\1\172\1\164\1\143\1\104\1\165\1\162\1\160\1\164\1\144\1\151\1\157\1\164\1\172\1\141\1\151\2\145\2\154\1\146\1\151\4\146\1\uffff\1\172\1\146\1\156\2\172\2\164\1\170\1\156\1\141\1\172\1\162\1\143\1\141\1\162\1\145\1\156\1\uffff\1\145\1\164\1\156\1\154\1\157\1\151\1\123\1\uffff\1\143\2\164\1\165\1\uffff\1\143\1\164\1\122\1\166\1\172\1\124\1\uffff\1\143\1\124\1\123\1\126\1\uffff\1\147\1\164\2\165\1\164\2\165\1\151\1\165\1\uffff\1\162\1\164\1\141\1\162\1\165\1\164\1\111\1\122\1\145\1\154\1\151\1\uffff\1\154\1\145\1\172\1\170\1\141\1\154\1\146\1\151\4\146\1\145\1\160\1\uffff\1\55\1\141\2\uffff\1\145\1\162\1\141\2\151\1\154\1\163\1\uffff\1\145\1\141\1\164\1\157\1\163\1\145\1\160\1\151\1\143\1\141\1\156\2\143\1\104\1\124\1\145\1\143\4\145\1\uffff\1\145\1\141\1\145\1\157\1\143\1\141\1\145\1\150\2\163\1\150\2\163\1\157\1\163\1\151\1\172\1\164\1\145\1\143\1\151\1\156\1\145\1\144\1\157\1\166\1\141\1\144\1\165\1\163\1\uffff\1\151\1\162\1\154\1\71\1\151\4\55\1\163\1\145\1\154\1\162\1\165\1\154\1\163\1\166\1\172\1\160\1\172\1\154\1\141\1\160\1\164\1\117\1\164\1\157\1\145\1\164\1\122\1\172\1\141\1\151\1\141\1\145\1\144\1\164\1\160\1\144\1\154\1\172\1\162\1\154\1\162\1\156\1\141\1\154\2\172\2\151\1\172\2\151\1\156\1\103\1\143\1\uffff\1\141\1\144\1\164\1\157\1\163\1\154\1\122\1\147\1\145\1\162\1\172\1\156\1\163\1\166\1\122\1\146\1\151\1\143\1\172\1\141\1\143\1\141\1\164\1\145\1\uffff\1\145\1\120\1\uffff\1\141\1\120\1\145\1\162\1\146\1\172\1\156\1\160\1\151\1\157\1\145\1\uffff\1\154\1\163\1\170\1\141\1\124\1\165\1\164\1\122\1\141\1\uffff\1\155\1\141\1\155\1\164\1\154\1\165\2\uffff\2\166\1\uffff\2\166\1\120\1\157\1\172\1\120\1\104\1\165\1\156\1\164\1\141\1\145\1\171\1\172\1\122\1\145\1\uffff\1\143\3\145\1\146\1\147\1\151\1\uffff\1\154\1\164\1\162\1\145\1\162\1\143\1\141\4\162\1\151\1\122\1\uffff\1\163\1\164\1\157\1\156\1\151\1\141\1\152\1\157\1\146\1\145\1\157\1\162\1\124\1\145\1\157\1\156\1\164\1\151\1\162\1\151\1\145\1\141\5\145\1\162\1\156\1\uffff\1\162\1\141\1\162\1\102\1\141\1\164\1\154\1\172\1\uffff\1\145\1\154\1\164\1\156\1\172\1\163\1\146\1\151\1\146\1\156\1\141\1\123\1\165\1\104\1\156\1\163\2\164\1\157\1\122\1\157\1\164\1\143\1\145\1\151\1\150\1\172\1\156\1\143\1\146\1\162\1\157\1\156\1\172\1\162\1\156\1\145\1\141\1\154\1\156\1\155\1\164\1\151\1\156\1\122\1\156\1\170\1\162\5\172\1\157\1\143\1\157\1\164\1\145\1\157\1\156\1\151\1\141\1\145\1\uffff\1\163\1\141\1\151\1\164\1\uffff\1\164\1\151\3\146\1\141\1\154\1\143\1\162\1\141\1\164\1\141\1\172\1\141\1\160\1\145\1\160\1\171\1\164\1\163\1\164\1\151\1\uffff\1\163\1\145\1\151\1\122\1\151\1\157\1\uffff\1\155\1\143\1\124\1\170\1\141\1\147\1\141\1\151\2\157\1\145\1\157\1\164\1\122\5\uffff\1\160\1\145\1\160\1\141\1\124\1\170\1\143\1\157\1\164\1\163\2\164\1\157\1\151\1\162\1\55\1\151\2\55\1\164\1\151\1\141\1\145\1\164\1\151\1\154\1\uffff\1\120\1\145\1\163\1\145\1\172\1\151\1\164\1\145\1\160\1\150\1\160\2\145\1\156\1\155\1\151\1\145\1\171\1\157\1\164\1\145\1\151\1\164\1\156\1\154\1\163\1\154\1\172\2\145\1\160\1\145\1\120\1\165\1\172\1\145\1\156\1\151\1\164\1\162\1\151\1\156\1\141\2\151\1\172\1\154\1\144\2\141\1\122\2\162\1\164\1\162\1\141\1\uffff\1\157\2\162\1\172\1\151\1\164\1\144\1\163\1\164\1\171\1\156\2\160\1\156\1\151\1\172\1\156\1\171\1\163\1\157\1\164\1\157\1\uffff\1\163\1\162\1\164\2\162\1\160\1\uffff\1\172\1\163\1\157\2\151\1\157\1\141\1\154\1\143\1\157\2\141\1\104\1\120\1\154\1\145\1\157\1\164\1\162\1\164\1\154\1\156\1\151\1\141\1\uffff\1\160\1\103\1\122\1\164\1\103\1\120\1\157\1\164\1\145\2\157\1\uffff\2\172\1\150\1\147\1\162\1\147\2\164\1\124\1\164\1\157\1\154\1\uffff\1\150\2\156\1\143\1\156\1\154\1\172\1\164\1\156\1\164\1\162\1\141\1\162\1\122\1\163\1\160\1\171\1\151\1\171\1\165\1\172\1\143\1\154\1\172\1\154\1\145\1\162\1\157\1\141\1\154\2\172\1\155\1\156\2\uffff\1\151\1\171\1\151\1\171\1\162\1\171\1\141\1\171\1\160\1\145\1\151\1\163\1\147\1\164\1\163\1\172\1\uffff\1\151\1\124\1\151\1\122\1\164\1\157\1\145\1\164\1\145\1\124\1\143\1\172\1\145\1\uffff\1\164\1\101\1\uffff\1\141\1\154\1\151\1\156\1\162\1\157\2\uffff\1\171\1\172\1\160\1\172\1\143\1\172\1\151\1\172\1\170\1\126\1\145\1\172\1\160\1\150\1\101\1\151\1\150\1\uffff\1\157\1\145\1\157\1\145\1\141\1\160\1\163\2\162\1\165\1\164\1\uffff\1\172\1\151\1\170\1\163\1\141\2\143\1\145\1\147\1\101\1\uffff\1\172\1\170\1\uffff\1\164\1\uffff\1\143\1\uffff\1\157\1\141\1\162\1\uffff\1\111\1\151\1\170\1\157\1\151\1\156\1\162\1\156\1\163\1\120\1\145\1\164\1\151\1\164\1\160\1\151\1\uffff\1\157\1\151\1\163\2\164\1\145\1\156\1\171\1\170\1\156\1\160\1\uffff\2\151\1\164\1\156\1\154\1\164\1\156\1\160\1\151\1\156\1\160\1\172\1\155\1\101\1\164\3\162\1\143\1\171\1\154\1\157\1\156\1\157\3\151\1\160\1\164\1\172\1\151\1\163\1\145\2\157\1\151\1\157\1\165\1\171\1\163\1\111\1\157\2\172\1\uffff\1\151\1\170\1\162\1\157\1\164\1\151\1\164\1\172\1\145\1\156\1\172\1\155\1\146\2\157\1\164\1\172\1\uffff\1\157\1\164\1\143\1\155\1\156\1\157\1\155\1\145\1\126\1\164\1\156\1\155\2\uffff\1\156\2\151\1\160\1\171\1\143\1\151\1\uffff\2\172\1\uffff\1\172\1\151\2\156\1\101\1\uffff\1\155\1\141\1\151\2\172\1\156\1\171\1\172\2\141\1\163\1\172\2\157\1\143\1\145\1\172\1\164\1\157\3\uffff\1\145\1\163\1\172\1\170\1\172\1\156\1\141\2\uffff\1\172\1\101\1\uffff\1\154\1\156\1\164\1\uffff\1\154\1\155\1\164\1\162\1\170\1\156\1\141\1\uffff\1\151\1\156\1\162\1\150\1\uffff\1\151\1\uffff\1\143\1\154\1\uffff\1\170\1\165\1\143\1\141\1\157\1\172\1\151\1\164\2\151\1\162\1\157\1\101\1\172\1\151\1\157\1\145\2\151\2\145\1\156\1\147\1\uffff\1\157\1\171\1\163\1\166\1\164\1\156\1\170\1\uffff\1\160\1\155\2\172\1\157\2\172\1\143\1\171\1\156\1\172\1\164\1\145\1\151\1\101\1\151\1\103\1\172\1\uffff\1\141\1\155\1\uffff\1\157\1\141\1\uffff\1\145\1\101\1\172\1\uffff\1\145\1\162\1\143\1\170\1\157\1\154\1\uffff\1\164\1\172\1\155\1\156\1\124\1\170\1\uffff\1\156\1\163\1\165\1\151\1\155\1\141\1\151\1\uffff\1\141\1\147\1\165\1\151\1\164\1\141\1\154\1\157\1\172\1\163\1\157\1\151\1\145\1\160\1\157\1\151\1\154\1\141\1\155\1\uffff\1\163\2\156\1\172\1\154\1\155\1\141\1\122\1\162\1\172\1\151\1\101\1\172\1\uffff\1\145\1\172\1\154\1\145\1\122\1\uffff\1\146\1\170\1\uffff\1\172\1\uffff\1\122\1\163\1\145\2\151\1\uffff\1\145\1\164\1\163\1\145\1\157\1\163\1\162\1\164\1\162\1\155\1\164\1\151\1\162\2\172\1\162\1\143\1\151\2\uffff\1\151\1\164\2\143\1\151\2\164\1\157\2\151\1\156\2\157\1\101\2\156\1\170\2\101\1\151\2\170\1\157\2\151\1\155\2\157\1\172\2\155\1\uffff\2\172\2\uffff";
+        "\1\uffff\1\160\1\157\1\165\1\154\1\170\1\171\2\157\2\165\2\151\1\141\1\170\1\164\1\146\1\157\1\145\1\156\2\uffff\1\162\1\151\1\156\1\162\5\uffff\1\uffff\1\172\1\146\1\uffff\1\170\1\154\1\57\2\uffff\1\145\1\uffff\1\157\1\156\1\146\2\156\1\164\1\141\1\164\1\163\1\164\1\162\1\141\2\156\1\165\1\145\2\163\1\164\1\155\1\157\1\163\3\156\1\163\1\155\1\164\3\156\1\170\1\154\1\151\1\157\1\171\1\163\1\141\1\162\1\164\1\163\1\156\1\151\1\162\2\uffff\1\162\1\141\1\162\1\155\1\156\1\162\1\166\1\162\6\uffff\1\154\1\uffff\1\154\1\146\1\151\1\146\5\uffff\1\156\1\163\1\143\1\146\1\141\1\143\2\164\2\151\2\145\1\165\1\154\1\147\1\155\1\157\1\162\1\143\1\152\1\151\2\141\2\164\1\146\1\154\1\147\1\144\1\141\1\164\2\145\2\147\2\114\1\165\2\157\1\156\1\145\1\155\1\164\1\154\1\165\1\141\2\143\1\146\1\145\1\155\1\156\1\147\1\145\1\144\3\145\1\123\1\146\1\151\1\146\1\154\2\146\1\172\2\145\1\146\1\154\1\164\1\151\1\145\1\156\1\164\2\156\1\143\1\156\1\141\1\154\1\145\1\156\1\143\1\151\1\157\1\147\1\123\1\151\1\172\1\162\1\151\1\145\1\156\1\145\1\154\1\162\1\151\2\162\1\164\1\122\1\145\1\156\1\170\1\145\1\156\1\170\1\145\1\155\1\164\1\171\1\143\1\155\1\162\1\141\1\143\1\123\1\162\1\145\3\151\1\163\1\145\1\123\1\172\1\151\1\162\1\146\1\143\3\146\1\151\1\146\1\154\1\146\1\uffff\1\144\1\160\1\146\1\172\1\151\1\141\1\162\1\114\1\171\1\164\1\144\1\164\1\147\1\162\1\145\1\164\1\171\1\145\1\146\1\151\1\156\1\164\1\156\1\157\1\uffff\1\151\1\145\1\170\1\145\1\172\1\145\1\171\1\156\1\151\1\141\1\150\1\141\1\156\2\143\1\156\2\143\2\172\1\141\1\155\1\164\1\145\1\141\1\162\2\164\1\151\1\160\1\145\1\146\1\156\1\151\1\164\1\143\1\uffff\1\146\1\163\1\154\1\141\1\146\1\151\4\146\1\154\1\172\1\164\1\146\1\uffff\1\157\1\154\1\156\1\151\1\125\1\151\1\163\1\165\1\123\1\172\1\164\1\162\1\155\1\172\1\151\1\156\1\141\1\162\1\172\1\156\1\143\1\144\1\151\1\163\1\uffff\1\172\1\123\1\147\1\143\1\154\1\172\1\156\1\147\2\154\1\147\2\154\2\uffff\1\164\1\157\1\172\1\164\1\143\1\104\1\165\1\162\1\160\1\164\1\144\1\151\1\157\1\164\1\172\1\141\1\151\2\145\1\154\1\151\5\146\1\154\1\uffff\1\172\1\146\1\156\2\172\2\164\1\170\1\156\1\141\1\172\1\162\1\143\1\141\1\162\1\145\1\156\1\uffff\1\157\1\151\1\123\1\uffff\1\143\2\164\1\165\1\uffff\1\143\1\164\1\122\1\166\1\172\1\124\1\uffff\1\143\1\124\1\123\1\126\1\uffff\1\147\1\164\2\165\1\164\2\165\1\151\1\165\1\uffff\1\162\1\164\1\141\1\162\1\165\1\164\1\111\1\122\1\145\1\154\1\151\1\uffff\1\154\1\145\1\172\1\170\1\141\1\146\1\151\4\146\1\154\1\145\1\uffff\1\55\1\141\2\uffff\1\145\1\162\1\141\2\151\1\154\1\157\1\163\1\145\1\uffff\1\145\1\141\1\164\1\157\1\163\1\145\1\156\2\143\1\104\1\124\1\145\1\143\4\145\1\uffff\1\145\1\141\1\145\1\157\1\143\1\141\1\145\1\150\2\163\1\150\2\163\1\157\1\163\1\151\1\172\1\164\1\145\1\143\1\151\1\156\1\145\1\144\1\157\1\166\1\141\1\144\1\165\1\163\1\uffff\1\151\1\162\1\55\1\151\3\55\1\71\1\154\1\163\1\154\1\162\1\165\1\154\1\163\1\166\1\172\1\156\1\160\1\154\1\172\1\154\1\141\1\160\1\164\1\117\1\122\1\172\1\141\1\151\1\141\1\145\1\144\1\164\1\160\1\144\1\154\1\172\1\162\1\154\1\162\1\156\1\141\1\154\2\172\2\151\1\172\2\151\1\156\1\103\1\143\1\uffff\1\141\1\144\1\164\1\157\1\163\1\154\1\122\1\147\1\145\1\162\1\172\1\156\1\163\1\166\1\122\1\146\1\151\1\172\1\141\1\143\1\141\1\164\1\145\1\uffff\1\143\1\145\1\141\1\120\1\uffff\1\141\1\120\1\145\1\162\1\146\1\157\1\145\1\uffff\1\154\1\163\1\170\1\141\1\124\1\165\1\164\1\122\1\141\1\uffff\1\155\1\141\1\155\1\164\1\154\1\165\2\uffff\2\166\1\uffff\2\166\1\120\1\157\1\172\1\120\1\104\1\165\1\156\1\164\1\141\1\145\1\171\1\172\1\122\1\145\1\uffff\1\143\3\145\1\146\1\147\1\uffff\1\154\1\164\1\162\1\145\1\162\1\145\1\143\1\164\1\141\4\162\1\151\1\122\1\156\1\151\1\141\1\152\1\157\1\146\1\145\1\157\1\162\1\124\1\145\1\157\1\156\1\164\1\151\1\162\1\151\1\145\1\141\5\145\1\162\1\156\1\uffff\1\162\1\141\1\162\1\102\1\141\1\164\1\154\1\172\1\uffff\1\145\1\154\1\164\1\156\1\172\1\163\1\146\1\151\1\146\1\156\1\123\1\165\1\104\1\156\1\163\1\160\1\164\1\151\1\164\1\157\1\122\1\157\1\164\1\143\1\145\1\151\1\143\1\146\1\162\1\157\1\156\1\172\1\162\1\156\1\145\1\141\1\154\1\156\1\155\1\164\1\151\1\156\1\122\1\156\1\170\1\162\5\172\1\157\1\143\1\157\1\164\1\145\1\157\1\156\1\151\1\141\1\145\1\uffff\1\163\1\141\1\151\1\164\1\uffff\1\164\1\151\3\146\1\141\1\143\1\162\1\141\1\164\1\141\1\164\1\172\1\157\1\141\1\160\1\145\1\160\1\171\1\164\1\163\1\164\1\145\1\151\1\122\1\151\1\157\1\uffff\1\155\1\143\1\124\1\170\1\141\1\147\1\141\1\151\2\157\1\145\1\157\1\164\1\122\5\uffff\1\160\1\145\1\160\1\141\1\124\1\170\1\143\1\157\1\164\1\163\2\164\1\157\1\151\1\162\1\55\1\151\2\55\1\164\1\141\1\145\1\164\1\151\1\154\1\172\1\uffff\1\156\1\120\1\145\1\163\1\145\1\172\1\151\1\164\1\145\1\160\2\145\1\156\1\155\1\151\1\145\1\171\1\157\1\164\1\145\1\151\1\164\1\156\1\154\1\163\1\154\1\172\2\145\1\160\1\145\1\120\1\165\1\172\1\145\1\156\1\151\1\164\1\162\1\151\1\156\1\141\2\151\1\154\1\144\2\141\1\122\1\uffff\1\163\2\162\1\164\1\162\1\141\1\uffff\1\157\2\162\1\164\1\144\1\163\1\164\1\171\1\156\2\160\1\156\1\151\1\172\1\156\1\171\1\163\1\157\1\164\1\157\1\uffff\1\163\1\162\1\164\2\162\1\160\1\uffff\1\172\1\163\1\157\2\151\1\157\1\141\1\154\1\143\1\157\1\141\1\104\1\120\1\154\1\145\1\150\1\157\1\164\1\162\1\164\1\154\1\156\1\151\1\141\1\103\1\122\1\164\1\103\1\120\1\157\1\164\1\145\2\157\1\uffff\2\172\1\150\1\147\1\162\1\147\2\164\1\124\1\164\1\157\1\154\1\uffff\1\150\2\156\1\143\1\156\1\154\1\172\1\164\1\156\1\162\1\141\1\162\1\122\1\163\1\151\1\160\1\171\1\151\1\171\1\165\1\172\1\143\2\154\1\145\1\162\1\157\1\141\1\154\2\172\1\155\1\156\2\uffff\1\151\1\171\1\151\1\171\1\162\1\171\1\141\1\171\1\160\1\145\1\151\1\163\1\147\1\164\1\163\1\172\1\uffff\1\151\1\124\1\122\1\164\1\157\1\145\1\164\1\160\1\145\1\124\1\143\1\172\1\145\1\uffff\1\164\1\101\1\141\1\154\1\151\1\156\1\162\1\157\2\uffff\1\171\1\172\1\160\1\172\1\143\1\172\1\151\1\172\1\170\1\126\1\145\1\172\1\160\1\150\1\101\1\151\1\150\1\uffff\1\157\2\145\1\141\1\160\1\163\1\162\1\172\1\162\1\165\1\164\1\uffff\1\172\1\151\1\170\1\163\1\141\2\143\1\145\1\147\1\101\1\uffff\1\172\1\170\1\uffff\1\164\1\uffff\1\143\1\uffff\1\157\1\141\1\162\1\uffff\1\111\1\151\1\170\1\157\1\151\1\156\1\162\1\163\1\120\1\145\1\164\1\151\1\uffff\1\164\1\160\1\151\1\uffff\1\157\1\151\1\163\2\164\1\145\1\156\1\171\1\170\1\156\1\uffff\2\151\1\164\1\156\1\154\1\164\1\156\1\160\1\151\1\156\1\160\1\172\1\155\1\164\3\162\1\143\1\171\1\154\1\157\1\156\1\157\3\151\1\160\1\164\1\172\1\151\1\163\2\157\1\151\1\157\1\165\1\171\1\163\1\111\1\157\2\172\1\uffff\1\151\1\162\1\157\1\164\1\151\1\164\1\172\1\145\1\156\1\172\1\155\1\146\2\157\1\164\1\172\1\uffff\1\157\1\164\1\155\1\156\1\157\1\155\1\145\1\126\1\164\1\156\1\155\2\uffff\1\156\1\151\1\160\1\171\1\143\1\151\1\uffff\2\172\1\uffff\1\172\1\151\2\156\1\101\1\uffff\1\155\1\141\2\172\1\156\1\171\1\172\2\141\1\163\1\172\1\157\1\143\1\145\1\172\1\164\1\157\3\uffff\1\145\1\163\1\172\1\170\1\172\1\156\2\uffff\1\172\1\101\1\uffff\1\154\1\156\1\164\1\uffff\1\154\1\164\1\162\1\170\1\156\1\141\1\uffff\1\151\1\156\1\162\1\150\1\uffff\1\151\1\uffff\1\143\1\uffff\1\170\1\165\1\143\1\141\1\157\1\151\1\164\2\151\1\162\1\157\1\101\1\172\1\151\1\157\1\145\1\151\2\145\1\156\1\147\1\157\1\171\1\163\1\166\1\164\1\156\1\170\1\uffff\1\160\1\155\1\172\1\157\2\172\1\143\1\171\1\156\1\172\1\164\1\145\1\151\1\101\1\151\1\103\1\172\1\uffff\1\155\1\uffff\1\157\1\141\1\uffff\1\145\1\101\1\172\1\uffff\1\145\1\162\1\143\1\170\1\157\1\154\1\uffff\1\172\1\155\1\156\1\124\1\170\1\uffff\1\156\1\163\1\165\1\151\1\155\1\141\1\uffff\1\141\1\147\1\165\1\151\1\164\1\141\1\154\1\157\1\172\1\163\1\151\1\145\1\160\1\157\1\151\1\154\1\141\1\155\1\uffff\1\163\1\156\1\172\1\154\1\155\1\141\1\122\1\162\1\172\1\151\1\172\1\uffff\1\145\1\172\1\154\1\145\1\122\1\uffff\1\146\1\uffff\1\172\1\uffff\1\122\1\163\1\145\1\151\1\uffff\1\145\1\164\1\163\1\145\1\163\1\162\1\164\1\162\1\164\1\151\1\162\1\172\1\162\1\143\1\151\1\uffff\1\151\1\164\2\143\1\151\2\164\1\157\2\151\1\156\2\157\1\101\2\156\1\170\2\101\1\151\2\170\1\157\2\151\1\155\2\157\1\172\2\155\1\uffff\2\172\2\uffff";
     static final String DFA22_acceptS =
-        "\24\uffff\1\65\1\67\4\uffff\1\153\1\154\1\155\2\156\3\uffff\1\160\3\uffff\1\167\1\170\1\uffff\1\160\55\uffff\1\65\1\67\10\uffff\1\153\1\154\1\155\1\156\1\157\1\162\1\163\5\uffff\1\161\1\164\1\165\1\166\1\167\u0090\uffff\1\1\33\uffff\1\12\44\uffff\1\72\16\uffff\1\3\34\uffff\1\120\15\uffff\1\45\1\46\33\uffff\1\2\21\uffff\1\115\7\uffff\1\113\4\uffff\1\117\6\uffff\1\71\4\uffff\1\34\11\uffff\1\73\13\uffff\1\114\16\uffff\1\75\2\uffff\1\4\1\37\7\uffff\1\121\25\uffff\1\122\36\uffff\1\112\71\uffff\1\74\30\uffff\1\102\2\uffff\1\116\13\uffff\1\104\11\uffff\1\106\6\uffff\1\44\1\35\2\uffff\1\36\20\uffff\1\111\7\uffff\1\100\15\uffff\1\24\35\uffff\1\105\10\uffff\1\110\77\uffff\1\70\4\uffff\1\107\26\uffff\1\25\6\uffff\1\13\16\uffff\1\33\1\40\1\42\1\41\1\43\32\uffff\1\134\70\uffff\1\31\26\uffff\1\20\6\uffff\1\152\30\uffff\1\26\13\uffff\1\22\14\uffff\1\55\42\uffff\1\23\1\30\20\uffff\1\103\15\uffff\1\32\2\uffff\1\27\6\uffff\1\16\1\54\21\uffff\1\101\13\uffff\1\10\12\uffff\1\21\2\uffff\1\14\1\uffff\1\17\1\uffff\1\66\3\uffff\1\53\20\uffff\1\50\13\uffff\1\76\54\uffff\1\146\21\uffff\1\15\14\uffff\1\147\1\77\7\uffff\1\7\2\uffff\1\150\5\uffff\1\11\23\uffff\1\52\1\143\1\151\7\uffff\1\126\1\145\2\uffff\1\47\3\uffff\1\130\7\uffff\1\6\4\uffff\1\141\1\uffff\1\123\2\uffff\1\142\27\uffff\1\133\7\uffff\1\56\22\uffff\1\62\2\uffff\1\51\2\uffff\1\57\3\uffff\1\5\6\uffff\1\124\6\uffff\1\144\7\uffff\1\125\23\uffff\1\132\15\uffff\1\63\5\uffff\1\131\2\uffff\1\61\1\uffff\1\127\5\uffff\1\64\22\uffff\1\60\1\135\37\uffff\1\137\2\uffff\1\140\1\136";
+        "\24\uffff\1\61\1\63\4\uffff\1\147\1\150\1\151\2\152\3\uffff\1\154\3\uffff\1\163\1\164\1\uffff\1\154\54\uffff\1\61\1\63\10\uffff\1\147\1\150\1\151\1\152\1\153\1\156\1\uffff\1\157\4\uffff\1\155\1\160\1\161\1\162\1\163\u008b\uffff\1\1\30\uffff\1\12\44\uffff\1\66\16\uffff\1\3\30\uffff\1\114\15\uffff\1\41\1\42\33\uffff\1\2\21\uffff\1\111\3\uffff\1\107\4\uffff\1\113\6\uffff\1\65\4\uffff\1\30\11\uffff\1\67\13\uffff\1\110\15\uffff\1\71\2\uffff\1\4\1\33\11\uffff\1\115\21\uffff\1\116\36\uffff\1\106\66\uffff\1\70\27\uffff\1\76\4\uffff\1\112\7\uffff\1\100\11\uffff\1\102\6\uffff\1\40\1\31\2\uffff\1\32\20\uffff\1\105\6\uffff\1\74\51\uffff\1\101\10\uffff\1\104\75\uffff\1\64\4\uffff\1\103\33\uffff\1\13\16\uffff\1\27\1\34\1\36\1\35\1\37\32\uffff\1\130\61\uffff\1\127\6\uffff\1\25\24\uffff\1\20\6\uffff\1\146\42\uffff\1\22\14\uffff\1\51\41\uffff\1\23\1\24\20\uffff\1\77\15\uffff\1\26\10\uffff\1\16\1\50\21\uffff\1\75\13\uffff\1\10\12\uffff\1\21\2\uffff\1\14\1\uffff\1\17\1\uffff\1\62\3\uffff\1\47\14\uffff\1\131\3\uffff\1\44\12\uffff\1\72\52\uffff\1\142\20\uffff\1\15\13\uffff\1\143\1\73\6\uffff\1\7\2\uffff\1\144\5\uffff\1\11\21\uffff\1\46\1\137\1\145\6\uffff\1\122\1\141\2\uffff\1\43\3\uffff\1\124\6\uffff\1\6\4\uffff\1\135\1\uffff\1\117\1\uffff\1\136\34\uffff\1\52\21\uffff\1\56\1\uffff\1\45\2\uffff\1\53\3\uffff\1\5\6\uffff\1\120\5\uffff\1\140\6\uffff\1\121\22\uffff\1\126\13\uffff\1\57\5\uffff\1\125\1\uffff\1\55\1\uffff\1\123\4\uffff\1\60\17\uffff\1\54\37\uffff\1\133\2\uffff\1\134\1\132";
     static final String DFA22_specialS =
-        "\1\0\36\uffff\1\1\u05de\uffff}>";
+        "\1\1\36\uffff\1\0\u059c\uffff}>";
     static final String[] DFA22_transitionS = {
             "\11\47\2\46\2\47\1\46\22\47\1\46\1\47\1\35\1\47\1\42\2\47\1\36\7\47\1\45\1\43\11\44\1\24\1\47\1\37\1\34\2\47\1\25\2\41\1\21\1\20\2\41\13\42\1\22\1\17\1\42\1\23\5\42\3\47\1\40\1\42\1\47\1\16\1\11\1\2\1\7\1\5\1\3\2\42\1\31\1\42\1\27\1\13\1\14\1\12\1\1\1\4\1\42\1\10\1\6\1\26\1\30\1\15\4\42\1\32\1\47\1\33\uff82\47",
             "\1\50",
@@ -4307,65 +4191,67 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\12\54\7\uffff\6\54\32\uffff\6\54\2\uffff\1\55\13\uffff\1\56",
             "\1\57\12\uffff\1\60",
             "\12\54\7\uffff\6\54\32\uffff\6\54\7\uffff\1\61\4\uffff\1\62\4\uffff\1\63",
-            "\1\65\5\uffff\1\67\5\uffff\1\71\1\72\3\uffff\1\64\1\66\3\uffff\1\70",
-            "\12\54\7\uffff\6\54\32\uffff\1\75\3\54\1\74\1\54\2\uffff\1\73\5\uffff\1\76",
-            "\1\101\3\uffff\1\100\11\uffff\1\77",
-            "\12\54\7\uffff\6\54\32\uffff\6\54\2\uffff\1\103\13\uffff\1\102",
-            "\1\104\17\uffff\1\105",
-            "\1\110\3\uffff\1\107\3\uffff\1\106",
-            "\1\112\7\uffff\1\111",
-            "\1\113",
-            "\12\54\7\uffff\6\54\32\uffff\1\54\1\117\4\54\7\uffff\1\115\4\uffff\1\116\4\uffff\1\114",
-            "\1\120\20\uffff\1\121",
-            "\12\54\7\uffff\6\54\32\uffff\1\122\3\54\1\123\1\54",
-            "\12\54\7\uffff\6\54\32\uffff\6\54\10\uffff\1\124",
+            "\1\65\5\uffff\1\66\5\uffff\1\70\1\71\3\uffff\1\64\4\uffff\1\67",
+            "\12\54\7\uffff\6\54\32\uffff\1\74\3\54\1\73\1\54\2\uffff\1\72\5\uffff\1\75",
+            "\1\100\3\uffff\1\77\11\uffff\1\76",
+            "\12\54\7\uffff\6\54\32\uffff\6\54\2\uffff\1\102\13\uffff\1\101",
+            "\1\103\17\uffff\1\104",
+            "\1\107\3\uffff\1\106\3\uffff\1\105",
+            "\1\111\7\uffff\1\110",
+            "\1\112",
+            "\12\54\7\uffff\6\54\32\uffff\1\54\1\116\4\54\7\uffff\1\114\4\uffff\1\115\4\uffff\1\113",
+            "\1\117\20\uffff\1\120",
+            "\12\54\7\uffff\6\54\32\uffff\1\121\3\54\1\122\1\54",
+            "\12\54\7\uffff\6\54\32\uffff\6\54\10\uffff\1\123",
+            "\1\124",
             "\1\125",
-            "\1\126",
             "",
             "",
-            "\1\133\3\uffff\1\131\3\uffff\1\134\10\uffff\1\132",
+            "\1\132\3\uffff\1\130\3\uffff\1\133\10\uffff\1\131",
+            "\1\134",
             "\1\135",
-            "\1\136",
-            "\1\137\3\uffff\1\140",
+            "\1\136\3\uffff\1\137",
             "",
             "",
             "",
             "",
             "",
-            "\0\145",
+            "\0\144",
             "\1\51\34\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\12\54\7\uffff\6\54\32\uffff\6\54",
             "",
-            "\12\150\7\uffff\1\155\1\153\1\155\1\154\1\152\1\154\5\uffff\1\156\13\uffff\1\146\6\uffff\1\151\1\uffff\1\155\1\153\1\155\1\154\1\152\1\154\5\uffff\1\156\13\uffff\1\146",
-            "\12\150\7\uffff\1\155\1\153\1\155\1\154\1\152\1\154\5\uffff\1\156\22\uffff\1\151\1\uffff\1\155\1\153\1\155\1\154\1\152\1\154\5\uffff\1\156",
-            "\1\157\4\uffff\1\160",
+            "\12\146\7\uffff\1\154\1\152\1\154\1\153\1\151\1\153\5\uffff\1\155\13\uffff\1\145\6\uffff\1\150\1\uffff\1\154\1\152\1\154\1\153\1\151\1\153\5\uffff\1\155\13\uffff\1\145",
+            "\12\146\7\uffff\1\154\1\152\1\154\1\153\1\151\1\153\5\uffff\1\155\22\uffff\1\150\1\uffff\1\154\1\152\1\154\1\153\1\151\1\153\5\uffff\1\155",
+            "\1\156\4\uffff\1\157",
             "",
+            "",
+            "\1\161",
             "",
             "\1\162",
-            "",
             "\1\163",
-            "\1\164",
-            "\12\165\7\uffff\6\165\32\uffff\6\165",
+            "\12\164\7\uffff\6\164\32\uffff\6\164",
+            "\1\165",
             "\1\166",
-            "\1\167",
-            "\1\170\1\uffff\1\171",
+            "\1\167\1\uffff\1\170",
+            "\1\171",
             "\1\172",
             "\1\173",
             "\1\174",
             "\1\175",
             "\1\176",
             "\1\177",
-            "\1\u0080\15\uffff\1\u0081",
+            "\1\u0080\1\u0081",
             "\1\u0082",
-            "\1\u0083\1\u0084",
-            "\1\u0085",
-            "\1\u0086",
+            "\1\u0083",
+            "\1\u0084",
+            "\12\164\7\uffff\6\164\32\uffff\6\164\14\uffff\1\u0085",
+            "\12\164\7\uffff\6\164\32\uffff\6\164\15\uffff\1\u0086",
             "\1\u0087",
-            "\12\165\7\uffff\6\165\32\uffff\6\165\14\uffff\1\u0088",
-            "\12\165\7\uffff\6\165\32\uffff\6\165\15\uffff\1\u0089",
-            "\1\u008a",
-            "\1\u008b",
-            "\1\u008e\2\uffff\1\u008d\11\uffff\1\u008c",
+            "\1\u0088",
+            "\1\u008b\2\uffff\1\u008a\11\uffff\1\u0089",
+            "\1\u008c",
+            "\1\u008d",
+            "\1\u008e",
             "\1\u008f",
             "\1\u0090",
             "\1\u0091",
@@ -4375,61 +4261,62 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u0095",
             "\1\u0096",
             "\1\u0097",
-            "\1\u0098",
-            "\1\u0099",
-            "\1\u009a",
-            "\1\u009b\1\u009c",
-            "\1\u009d\10\uffff\1\u009e",
-            "\12\165\7\uffff\6\165\32\uffff\6\165\14\uffff\1\u009f",
-            "\1\u00a0",
+            "\1\u0098\1\u0099",
+            "\1\u009a\10\uffff\1\u009b",
+            "\12\164\7\uffff\6\164\32\uffff\6\164\14\uffff\1\u009c",
+            "\1\u009d",
+            "\1\u009e",
+            "\12\164\7\uffff\6\164\32\uffff\6\164\15\uffff\1\u009f",
+            "\12\164\7\uffff\6\164\32\uffff\6\164\14\uffff\1\u00a0",
             "\1\u00a1",
-            "\12\165\7\uffff\6\165\32\uffff\6\165\15\uffff\1\u00a2",
-            "\12\165\7\uffff\6\165\32\uffff\6\165\14\uffff\1\u00a3",
+            "\1\u00a2",
+            "\1\u00a3",
+            "",
+            "",
             "\1\u00a4",
             "\1\u00a5",
             "\1\u00a6",
-            "",
-            "",
             "\1\u00a7",
             "\1\u00a8",
             "\1\u00a9",
             "\1\u00aa",
-            "\1\u00ab",
-            "\1\u00ac",
-            "\1\u00ad",
-            "\1\u00af\10\uffff\1\u00ae",
+            "\1\u00ac\10\uffff\1\u00ab",
             "",
             "",
             "",
             "",
             "",
             "",
+            "\12\u00b0\7\uffff\1\154\1\u00ae\1\154\1\u00af\1\u00ad\1\u00af\5\uffff\1\155\22\uffff\1\150\1\uffff\1\154\1\u00ae\1\154\1\u00af\1\u00ad\1\u00af\5\uffff\1\155",
             "",
-            "\12\u00b0\7\uffff\1\155\1\u00b2\1\155\1\u00b3\1\u00b1\1\u00b3\5\uffff\1\156\22\uffff\1\151\1\uffff\1\155\1\u00b2\1\155\1\u00b3\1\u00b1\1\u00b3\5\uffff\1\156",
-            "\12\151\10\uffff\1\156\1\uffff\3\156\5\uffff\1\156\22\uffff\1\151\2\uffff\1\156\1\uffff\3\156\5\uffff\1\156",
-            "\1\156\1\uffff\1\156\2\uffff\12\u00b4\7\uffff\6\155\32\uffff\6\155",
-            "\12\155\7\uffff\3\155\1\u00b5\2\155\2\uffff\1\156\27\uffff\3\155\1\u00b5\2\155\2\uffff\1\156",
-            "\12\155\7\uffff\6\155\32\uffff\6\155",
-            "",
-            "",
+            "\12\150\10\uffff\1\155\1\uffff\3\155\5\uffff\1\155\22\uffff\1\150\2\uffff\1\155\1\uffff\3\155\5\uffff\1\155",
+            "\1\155\1\uffff\1\155\2\uffff\12\u00b1\7\uffff\6\154\32\uffff\6\154",
+            "\12\154\7\uffff\3\154\1\u00b2\2\154\2\uffff\1\155\27\uffff\3\154\1\u00b2\2\154\2\uffff\1\155",
+            "\12\154\7\uffff\6\154\32\uffff\6\154",
             "",
             "",
             "",
-            "\1\u00b6",
+            "",
+            "",
+            "\1\u00b3",
+            "\1\u00b4",
+            "\1\u00b5",
+            "\12\u00b6\7\uffff\6\u00b6\32\uffff\6\u00b6",
             "\1\u00b7",
             "\1\u00b8",
-            "\12\u00b9\7\uffff\6\u00b9\32\uffff\6\u00b9",
+            "\1\u00b9",
             "\1\u00ba",
             "\1\u00bb",
             "\1\u00bc",
             "\1\u00bd",
             "\1\u00be",
-            "\1\u00bf",
-            "\1\u00c0",
+            "\1\u00c0\13\uffff\1\u00bf",
             "\1\u00c1",
-            "\1\u00c3\13\uffff\1\u00c2",
+            "\1\u00c2",
+            "\1\u00c3",
             "\1\u00c4",
-            "\1\u00c5\16\uffff\1\u00c6",
+            "\1\u00c5",
+            "\1\u00c6",
             "\1\u00c7",
             "\1\u00c8",
             "\1\u00c9",
@@ -4437,23 +4324,23 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u00cb",
             "\1\u00cc",
             "\1\u00cd",
-            "\1\u00ce",
-            "\1\u00cf",
+            "\1\u00cf\2\uffff\1\u00ce",
             "\1\u00d0",
             "\1\u00d1",
             "\1\u00d2",
             "\1\u00d3",
-            "\1\u00d5\2\uffff\1\u00d4",
+            "\1\u00d4",
+            "\1\u00d5",
             "\1\u00d6",
             "\1\u00d7",
-            "\1\u00d8",
-            "\1\u00d9",
-            "\1\u00da",
-            "\1\u00db",
-            "\1\u00dc",
-            "\1\u00dd",
-            "\1\u00e0\3\uffff\1\u00df\2\uffff\1\u00de",
-            "\1\u00e3\3\uffff\1\u00e2\2\uffff\1\u00e1",
+            "\1\u00da\3\uffff\1\u00d9\2\uffff\1\u00d8",
+            "\1\u00dd\3\uffff\1\u00dc\2\uffff\1\u00db",
+            "\1\u00de",
+            "\1\u00df",
+            "\1\u00e0",
+            "\1\u00e1",
+            "\1\u00e2",
+            "\1\u00e3",
             "\1\u00e4",
             "\1\u00e5",
             "\1\u00e6",
@@ -4471,22 +4358,22 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u00f2",
             "\1\u00f3",
             "\1\u00f4",
-            "\1\u00f5",
-            "\1\u00f6",
-            "\1\u00f7",
-            "\1\u00f8",
-            "\1\u00f9",
-            "\1\u00fa",
-            "\12\u00fb\7\uffff\1\155\1\u00fd\1\155\1\u00fe\1\u00fc\1\u00fe\5\uffff\1\156\22\uffff\1\151\1\uffff\1\155\1\u00fd\1\155\1\u00fe\1\u00fc\1\u00fe\5\uffff\1\156",
-            "\1\156\1\uffff\1\156\2\uffff\12\u00ff\7\uffff\6\155\32\uffff\6\155",
-            "\12\155\7\uffff\3\155\1\u0100\2\155\2\uffff\1\156\27\uffff\3\155\1\u0100\2\155\2\uffff\1\156",
-            "\12\155\7\uffff\6\155\32\uffff\6\155",
-            "\12\u0101\7\uffff\1\155\1\u00fd\1\155\1\u00fe\1\155\1\u00fe\32\uffff\1\155\1\u00fd\1\155\1\u00fe\1\155\1\u00fe",
-            "\12\155\7\uffff\6\155\32\uffff\6\155",
+            "\1\155\1\uffff\1\155\2\uffff\12\u00f5\7\uffff\6\154\32\uffff\6\154",
+            "\12\154\7\uffff\3\154\1\u00f6\2\154\2\uffff\1\155\27\uffff\3\154\1\u00f6\2\154\2\uffff\1\155",
+            "\12\154\7\uffff\6\154\32\uffff\6\154",
+            "\12\u00fa\7\uffff\1\154\1\u00f8\1\154\1\u00f9\1\u00f7\1\u00f9\5\uffff\1\155\22\uffff\1\150\1\uffff\1\154\1\u00f8\1\154\1\u00f9\1\u00f7\1\u00f9\5\uffff\1\155",
+            "\12\u00fb\7\uffff\1\154\1\u00f8\1\154\1\u00f9\1\154\1\u00f9\32\uffff\1\154\1\u00f8\1\154\1\u00f9\1\154\1\u00f9",
+            "\12\154\7\uffff\6\154\32\uffff\6\154",
             "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u00fd",
+            "\1\u00fe",
+            "\12\u00ff\7\uffff\6\u00ff\32\uffff\6\u00ff",
+            "\1\u0100",
+            "\1\u0101",
+            "\1\u0102",
             "\1\u0103",
             "\1\u0104",
-            "\12\u0105\7\uffff\6\u0105\32\uffff\6\u0105",
+            "\1\u0105",
             "\1\u0106",
             "\1\u0107",
             "\1\u0108",
@@ -4501,8 +4388,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u0111",
             "\1\u0112",
             "\1\u0113",
-            "\1\u0114",
-            "\1\u0115",
+            "\1\51\13\uffff\12\51\7\uffff\2\51\1\u0114\27\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u0116",
             "\1\u0117",
             "\1\u0118",
@@ -4510,7 +4396,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u011a",
             "\1\u011b",
             "\1\u011c",
-            "\1\51\13\uffff\12\51\7\uffff\2\51\1\u011d\27\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u011d",
+            "\1\u011e",
             "\1\u011f",
             "\1\u0120",
             "\1\u0121",
@@ -4538,32 +4425,32 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u0137",
             "\1\u0138",
             "\1\u0139",
-            "\1\u013a",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u013b",
             "\1\u013c",
             "\1\u013d",
             "\1\u013e",
-            "\1\u013f",
-            "\1\u0140",
-            "\1\u0141",
-            "\1\u0142",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\u0144",
-            "\1\u0145",
+            "\12\u013f\7\uffff\1\154\1\u0140\1\154\1\u0141\1\154\1\u0141\32\uffff\1\154\1\u0140\1\154\1\u0141\1\154\1\u0141",
+            "\12\154\7\uffff\6\154\32\uffff\6\154",
+            "\1\155\1\uffff\1\155\2\uffff\12\u0142\7\uffff\6\154\32\uffff\6\154",
+            "\12\154\7\uffff\3\154\1\u0143\2\154\2\uffff\1\155\27\uffff\3\154\1\u0143\2\154\2\uffff\1\155",
+            "\12\154\7\uffff\6\154\32\uffff\6\154",
+            "\12\u0145\7\uffff\1\154\1\u0140\1\154\1\u0141\1\u0144\1\u0141\5\uffff\1\155\22\uffff\1\150\1\uffff\1\154\1\u0140\1\154\1\u0141\1\u0144\1\u0141\5\uffff\1\155",
+            "\12\u013f\7\uffff\1\154\1\u0140\1\154\1\u0141\1\154\1\u0141\32\uffff\1\154\1\u0140\1\154\1\u0141\1\154\1\u0141",
+            "",
             "\1\u0146",
             "\1\u0147",
-            "\12\u0148\7\uffff\1\155\1\u014a\1\155\1\u014b\1\u0149\1\u014b\5\uffff\1\156\22\uffff\1\151\1\uffff\1\155\1\u014a\1\155\1\u014b\1\u0149\1\u014b\5\uffff\1\156",
-            "\1\156\1\uffff\1\156\2\uffff\12\u014c\7\uffff\6\155\32\uffff\6\155",
-            "\12\155\7\uffff\3\155\1\u014d\2\155\2\uffff\1\156\27\uffff\3\155\1\u014d\2\155\2\uffff\1\156",
-            "\12\155\7\uffff\6\155\32\uffff\6\155",
-            "\12\u014e\7\uffff\1\155\1\u014a\1\155\1\u014b\1\155\1\u014b\32\uffff\1\155\1\u014a\1\155\1\u014b\1\155\1\u014b",
-            "\12\155\7\uffff\6\155\32\uffff\6\155",
-            "\12\u014e\7\uffff\1\155\1\u014a\1\155\1\u014b\1\155\1\u014b\32\uffff\1\155\1\u014a\1\155\1\u014b\1\155\1\u014b",
-            "",
+            "\12\u0148\7\uffff\6\u0148\32\uffff\6\u0148",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u014a",
+            "\1\u014b",
+            "\1\u014c",
+            "\1\u014d",
+            "\1\u014e",
             "\1\u014f",
             "\1\u0150",
-            "\12\u0151\7\uffff\6\u0151\32\uffff\6\u0151",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u0151",
+            "\1\u0152",
             "\1\u0153",
             "\1\u0154",
             "\1\u0155",
@@ -4575,10 +4462,12 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u015b",
             "\1\u015c",
             "\1\u015d",
+            "",
             "\1\u015e",
-            "\1\u015f\16\uffff\1\u0160",
+            "\1\u015f",
+            "\1\u0160",
             "\1\u0161",
-            "\1\u0162",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u0163",
             "\1\u0164",
             "\1\u0165",
@@ -4587,14 +4476,13 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u0168",
             "\1\u0169",
             "\1\u016a",
-            "",
             "\1\u016b",
             "\1\u016c",
             "\1\u016d",
             "\1\u016e",
+            "\1\u016f",
             "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\u0170",
-            "\1\u0171",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u0172",
             "\1\u0173",
             "\1\u0174",
@@ -4606,53 +4494,53 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u017a",
             "\1\u017b",
             "\1\u017c",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u017d",
+            "\1\u017e",
             "\1\u017f",
             "\1\u0180",
             "\1\u0181",
+            "",
             "\1\u0182",
             "\1\u0183",
             "\1\u0184",
             "\1\u0185",
-            "\1\u0186",
-            "\1\u0187",
-            "\1\u0188",
-            "\1\u0189",
-            "\1\u018a",
-            "\1\u018b",
-            "\1\u018c",
-            "\1\u018d",
+            "\12\u0188\7\uffff\1\154\1\u0186\1\154\1\u0187\1\154\1\u0187\32\uffff\1\154\1\u0186\1\154\1\u0187\1\154\1\u0187",
+            "\12\154\7\uffff\3\154\1\u0189\2\154\2\uffff\1\155\27\uffff\3\154\1\u0189\2\154\2\uffff\1\155",
+            "\12\154\7\uffff\6\154\32\uffff\6\154",
+            "\12\u0188\7\uffff\1\154\1\u0186\1\154\1\u0187\1\154\1\u0187\32\uffff\1\154\1\u0186\1\154\1\u0187\1\154\1\u0187",
+            "\12\154\7\uffff\6\154\32\uffff\6\154",
+            "\1\155\1\uffff\1\155\2\uffff\12\u018a\7\uffff\6\154\32\uffff\6\154",
+            "\12\u018c\7\uffff\1\154\1\u0186\1\154\1\u0187\1\u018b\1\u0187\5\uffff\1\155\22\uffff\1\150\1\uffff\1\154\1\u0186\1\154\1\u0187\1\u018b\1\u0187\5\uffff\1\155",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u018e",
+            "\12\u018f\7\uffff\6\u018f\32\uffff\6\u018f",
             "",
-            "\1\u018f",
             "\1\u0190",
             "\1\u0191",
             "\1\u0192",
-            "\12\u0193\7\uffff\1\155\1\u0195\1\155\1\u0196\1\u0194\1\u0196\5\uffff\1\156\22\uffff\1\151\1\uffff\1\155\1\u0195\1\155\1\u0196\1\u0194\1\u0196\5\uffff\1\156",
-            "\1\156\1\uffff\1\156\2\uffff\12\u0197\7\uffff\6\155\32\uffff\6\155",
-            "\12\155\7\uffff\3\155\1\u0198\2\155\2\uffff\1\156\27\uffff\3\155\1\u0198\2\155\2\uffff\1\156",
-            "\12\155\7\uffff\6\155\32\uffff\6\155",
-            "\12\u0199\7\uffff\1\155\1\u0195\1\155\1\u0196\1\155\1\u0196\32\uffff\1\155\1\u0195\1\155\1\u0196\1\155\1\u0196",
-            "\12\155\7\uffff\6\155\32\uffff\6\155",
-            "\12\u0199\7\uffff\1\155\1\u0195\1\155\1\u0196\1\155\1\u0196\32\uffff\1\155\1\u0195\1\155\1\u0196\1\155\1\u0196",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\u019b",
-            "\12\u019c\7\uffff\6\u019c\32\uffff\6\u019c",
-            "",
-            "\1\u019d",
-            "\1\u019e",
-            "\1\u019f",
+            "\1\u0193",
+            "\1\u0195\15\uffff\1\u0194\1\uffff\1\u0196",
+            "\1\u0197",
+            "\1\u0198",
+            "\1\u0199",
+            "\1\u019a",
+            "\1\51\13\uffff\12\51\7\uffff\3\51\1\u019b\12\51\1\u019e\1\u019c\1\51\1\u019d\10\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u01a0",
-            "\1\u01a2\15\uffff\1\u01a1\1\uffff\1\u01a3",
+            "\1\u01a1",
+            "\1\u01a2",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u01a4",
             "\1\u01a5",
             "\1\u01a6",
             "\1\u01a7",
-            "\1\51\13\uffff\12\51\7\uffff\3\51\1\u01a8\12\51\1\u01ab\1\u01a9\1\51\1\u01aa\10\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u01a9",
+            "\1\u01aa",
+            "\1\u01ab",
+            "\1\u01ac",
             "\1\u01ad",
-            "\1\u01ae",
-            "\1\u01af",
+            "",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\3\51\1\u01ae\26\51",
             "\1\u01b0",
             "\1\u01b1",
             "\1\u01b2",
@@ -4662,82 +4550,83 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u01b6",
             "\1\u01b7",
             "\1\u01b8",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u01b9",
             "\1\u01ba",
             "\1\u01bb",
+            "",
+            "",
             "\1\u01bc",
             "\1\u01bd",
-            "\1\u01be",
-            "",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\3\51\1\u01bf\26\51",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u01bf",
+            "\1\u01c0",
             "\1\u01c1",
             "\1\u01c2",
             "\1\u01c3",
             "\1\u01c4",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u01c5",
             "\1\u01c6",
             "\1\u01c7",
             "\1\u01c8",
             "\1\u01c9",
-            "\1\u01ca",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u01cb",
             "\1\u01cc",
-            "",
-            "",
             "\1\u01cd",
             "\1\u01ce",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\u01d0",
-            "\1\u01d1",
-            "\1\u01d2",
-            "\1\u01d3",
-            "\1\u01d4",
-            "\1\u01d5",
-            "\1\u01d6",
-            "\1\u01d7",
-            "\1\u01d8",
-            "\1\u01d9",
+            "\1\u01cf",
+            "\12\154\7\uffff\3\154\1\u01d0\2\154\2\uffff\1\155\27\uffff\3\154\1\u01d0\2\154\2\uffff\1\155",
+            "\12\154\7\uffff\6\154\32\uffff\6\154",
+            "\12\u01d3\7\uffff\1\154\1\u01d1\1\154\1\u01d2\1\154\1\u01d2\32\uffff\1\154\1\u01d1\1\154\1\u01d2\1\154\1\u01d2",
+            "\12\154\7\uffff\6\154\32\uffff\6\154",
+            "\12\u01d3\7\uffff\1\154\1\u01d1\1\154\1\u01d2\1\154\1\u01d2\32\uffff\1\154\1\u01d1\1\154\1\u01d2\1\154\1\u01d2",
+            "\1\155\1\uffff\1\155\2\uffff\12\u01d4\7\uffff\6\154\32\uffff\6\154",
+            "\12\u01d6\7\uffff\1\154\1\u01d1\1\154\1\u01d2\1\u01d5\1\u01d2\5\uffff\1\155\22\uffff\1\150\1\uffff\1\154\1\u01d1\1\154\1\u01d2\1\u01d5\1\u01d2\5\uffff\1\155",
+            "",
+            "\1\51\13\uffff\12\51\7\uffff\3\51\1\u01d7\26\51\4\uffff\1\51\1\uffff\32\51",
+            "\12\u01d9\7\uffff\6\u01d9\32\uffff\6\u01d9",
             "\1\u01da",
             "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\u01dc",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u01dd",
-            "\1\u01de",
-            "\1\u01df",
+            "\1\u01df\20\uffff\1\u01de",
             "\1\u01e0",
-            "\12\u01e1\7\uffff\1\155\1\u01e3\1\155\1\u01e4\1\u01e2\1\u01e4\5\uffff\1\156\22\uffff\1\151\1\uffff\1\155\1\u01e3\1\155\1\u01e4\1\u01e2\1\u01e4\5\uffff\1\156",
-            "\1\156\1\uffff\1\156\2\uffff\12\u01e5\7\uffff\6\155\32\uffff\6\155",
-            "\12\155\7\uffff\3\155\1\u01e6\2\155\2\uffff\1\156\27\uffff\3\155\1\u01e6\2\155\2\uffff\1\156",
-            "\12\155\7\uffff\6\155\32\uffff\6\155",
-            "\12\u01e7\7\uffff\1\155\1\u01e3\1\155\1\u01e4\1\155\1\u01e4\32\uffff\1\155\1\u01e3\1\155\1\u01e4\1\155\1\u01e4",
-            "\12\155\7\uffff\6\155\32\uffff\6\155",
-            "\12\u01e7\7\uffff\1\155\1\u01e3\1\155\1\u01e4\1\155\1\u01e4\32\uffff\1\155\1\u01e3\1\155\1\u01e4\1\155\1\u01e4",
-            "",
-            "\1\51\13\uffff\12\51\7\uffff\3\51\1\u01e8\16\51\1\u01e9\7\51\4\uffff\1\51\1\uffff\32\51",
-            "\12\u01eb\7\uffff\6\u01eb\32\uffff\6\u01eb",
+            "\1\u01e1",
+            "\1\u01e2",
+            "\1\51\13\uffff\12\51\7\uffff\1\u01e4\1\51\1\u01e3\16\51\1\u01e5\10\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u01e7",
+            "\1\u01e8",
+            "\1\u01e9",
+            "\1\u01ea",
+            "\1\u01eb",
             "\1\u01ec",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "",
+            "\1\u01ed",
+            "\1\u01ee",
             "\1\u01ef",
-            "\1\u01f1\20\uffff\1\u01f0",
+            "",
+            "\1\u01f0",
+            "\1\u01f1",
             "\1\u01f2",
             "\1\u01f3",
-            "\1\u01f4",
-            "\1\51\13\uffff\12\51\7\uffff\1\u01f5\31\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\u01f7",
-            "\1\u01f8",
-            "\1\u01f9",
-            "\1\u01fa",
-            "\1\u01fb",
-            "\1\u01fc",
             "",
+            "\1\u01f4",
+            "\1\u01f5",
+            "\1\u01f6",
+            "\1\u01f7",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u01f9",
+            "",
+            "\1\u01fa",
+            "\1\u01fc\20\uffff\1\u01fb",
             "\1\u01fd",
             "\1\u01fe",
+            "",
             "\1\u01ff",
             "\1\u0200",
             "\1\u0201",
             "\1\u0202",
             "\1\u0203",
-            "",
             "\1\u0204",
             "\1\u0205",
             "\1\u0206",
@@ -4747,63 +4636,61 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u0209",
             "\1\u020a",
             "\1\u020b",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u020c",
             "\1\u020d",
-            "",
             "\1\u020e",
-            "\1\u0210\20\uffff\1\u020f",
+            "\1\u020f",
+            "\1\u0210",
             "\1\u0211",
             "\1\u0212",
             "",
             "\1\u0213",
             "\1\u0214",
-            "\1\u0215",
-            "\1\u0216",
-            "\1\u0217",
+            "\1\51\13\uffff\12\51\7\uffff\4\51\1\u0216\1\u0215\24\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u0218",
             "\1\u0219",
-            "\1\u021a",
-            "\1\u021b",
-            "",
-            "\1\u021c",
-            "\1\u021d",
-            "\1\u021e",
-            "\1\u021f",
-            "\1\u0220",
+            "\12\154\7\uffff\6\154\32\uffff\6\154",
+            "\12\154\7\uffff\3\154\1\u021a\2\154\2\uffff\1\155\27\uffff\3\154\1\u021a\2\154\2\uffff\1\155",
+            "\12\154\7\uffff\6\154\32\uffff\6\154",
+            "\12\u021d\7\uffff\1\154\1\u021b\1\154\1\u021c\1\154\1\u021c\32\uffff\1\154\1\u021b\1\154\1\u021c\1\154\1\u021c",
+            "\12\u021d\7\uffff\1\154\1\u021b\1\154\1\u021c\1\154\1\u021c\32\uffff\1\154\1\u021b\1\154\1\u021c\1\154\1\u021c",
+            "\1\155\1\uffff\1\155\2\uffff\12\u021e\7\uffff\6\154\32\uffff\6\154",
+            "\12\u0220\7\uffff\1\154\1\u021b\1\154\1\u021c\1\u021f\1\u021c\5\uffff\1\155\22\uffff\1\150\1\uffff\1\154\1\u021b\1\154\1\u021c\1\u021f\1\u021c\5\uffff\1\155",
             "\1\u0221",
+            "",
+            "\1\154",
             "\1\u0222",
+            "",
+            "",
             "\1\u0223",
             "\1\u0224",
             "\1\u0225",
             "\1\u0226",
-            "",
             "\1\u0227",
             "\1\u0228",
-            "\1\51\13\uffff\12\51\7\uffff\4\51\1\u022a\1\u0229\24\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u0229",
+            "\1\u022a",
+            "\1\u022b",
+            "",
             "\1\u022c",
             "\1\u022d",
-            "\12\u022e\7\uffff\1\155\1\u0230\1\155\1\u0231\1\u022f\1\u0231\5\uffff\1\156\22\uffff\1\151\1\uffff\1\155\1\u0230\1\155\1\u0231\1\u022f\1\u0231\5\uffff\1\156",
-            "\1\156\1\uffff\1\156\2\uffff\12\u0232\7\uffff\6\155\32\uffff\6\155",
-            "\12\155\7\uffff\3\155\1\u0233\2\155\2\uffff\1\156\27\uffff\3\155\1\u0233\2\155\2\uffff\1\156",
-            "\12\155\7\uffff\6\155\32\uffff\6\155",
-            "\12\u0234\7\uffff\1\155\1\u0230\1\155\1\u0231\1\155\1\u0231\32\uffff\1\155\1\u0230\1\155\1\u0231\1\155\1\u0231",
-            "\12\155\7\uffff\6\155\32\uffff\6\155",
-            "\12\u0234\7\uffff\1\155\1\u0230\1\155\1\u0231\1\155\1\u0231\32\uffff\1\155\1\u0230\1\155\1\u0231\1\155\1\u0231",
+            "\1\u022e",
+            "\1\u022f",
+            "\1\u0230",
+            "\1\u0231",
+            "\1\u0232",
+            "\1\u0233",
+            "\1\u0234",
             "\1\u0235",
-            "\1\u0236",
-            "",
-            "\1\155",
-            "\1\u0237",
-            "",
-            "",
+            "\1\u0237\7\uffff\1\u0236",
             "\1\u0238",
             "\1\u0239",
             "\1\u023a",
             "\1\u023b",
             "\1\u023c",
             "\1\u023d",
-            "\1\u023e",
             "",
+            "\1\u023e",
             "\1\u023f",
             "\1\u0240",
             "\1\u0241",
@@ -4818,14 +4705,14 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u024a",
             "\1\u024b",
             "\1\u024c",
-            "\1\u024e\7\uffff\1\u024d",
+            "\1\u024d",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u024f",
             "\1\u0250",
             "\1\u0251",
             "\1\u0252",
             "\1\u0253",
             "\1\u0254",
-            "",
             "\1\u0255",
             "\1\u0256",
             "\1\u0257",
@@ -4833,39 +4720,37 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u0259",
             "\1\u025a",
             "\1\u025b",
+            "",
             "\1\u025c",
             "\1\u025d",
-            "\1\u025e",
+            "\1\154",
+            "\1\154\26\uffff\1\155\4\uffff\1\155\32\uffff\1\155\4\uffff\1\155",
+            "\1\154",
+            "\1\154",
+            "\1\154",
+            "\1\155\1\uffff\1\u025e\2\uffff\12\155",
+            "\1\154\2\uffff\12\150\10\uffff\1\155\1\uffff\3\155\5\uffff\1\155\22\uffff\1\150\2\uffff\1\155\1\uffff\3\155\5\uffff\1\155",
             "\1\u025f",
             "\1\u0260",
             "\1\u0261",
             "\1\u0262",
             "\1\u0263",
             "\1\u0264",
+            "\1\u0265",
             "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\u0266",
             "\1\u0267",
             "\1\u0268",
             "\1\u0269",
-            "\1\u026a",
-            "\1\u026b",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\3\51\1\u026a\26\51",
             "\1\u026c",
             "\1\u026d",
             "\1\u026e",
             "\1\u026f",
             "\1\u0270",
-            "\1\u0271",
-            "\1\u0272",
-            "",
-            "\1\u0273",
+            "\1\u0271\16\uffff\1\u0272",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u0274",
-            "\1\155\2\uffff\12\151\10\uffff\1\156\1\uffff\3\156\5\uffff\1\156\22\uffff\1\151\2\uffff\1\156\1\uffff\3\156\5\uffff\1\156",
-            "\1\156\1\uffff\1\u0275\2\uffff\12\156",
-            "\1\155\26\uffff\1\156\4\uffff\1\156\32\uffff\1\156\4\uffff\1\156",
-            "\1\155",
-            "\1\155",
-            "\1\155",
-            "\1\155",
+            "\1\u0275",
             "\1\u0276",
             "\1\u0277",
             "\1\u0278",
@@ -4873,21 +4758,24 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u027a",
             "\1\u027b",
             "\1\u027c",
-            "\1\u027d",
             "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u027e",
             "\1\u027f",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\3\51\1\u0280\26\51",
+            "\1\u0280",
+            "\1\u0281",
             "\1\u0282",
             "\1\u0283",
-            "\1\u0284",
-            "\1\u0285",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u0286",
             "\1\u0287",
-            "\1\u0288",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u0289",
             "\1\u028a",
-            "\1\u028b\16\uffff\1\u028c",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u028b",
+            "\1\u028c",
+            "\1\u028d",
+            "",
             "\1\u028e",
             "\1\u028f",
             "\1\u0290",
@@ -4897,27 +4785,26 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u0294",
             "\1\u0295",
             "\1\u0296",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\u0298",
-            "\1\u0299",
+            "\1\u0297",
+            "\1\51\13\uffff\12\51\7\uffff\21\51\1\u0298\10\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u029a",
             "\1\u029b",
             "\1\u029c",
             "\1\u029d",
+            "\12\u029e\7\uffff\6\154\32\uffff\6\154",
+            "\1\u029f",
             "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\u02a0",
             "\1\u02a1",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u02a2",
             "\1\u02a3",
             "\1\u02a4",
             "\1\u02a5",
+            "",
             "\1\u02a6",
             "\1\u02a7",
-            "",
             "\1\u02a8",
-            "\1\u02a9",
-            "\1\u02aa",
+            "\1\u02a9\13\uffff\1\u02aa",
+            "",
             "\1\u02ab",
             "\1\u02ac",
             "\1\u02ad",
@@ -4925,82 +4812,80 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u02af",
             "\1\u02b0",
             "\1\u02b1",
-            "\1\51\13\uffff\12\51\7\uffff\21\51\1\u02b2\10\51\4\uffff\1\51\1\uffff\32\51",
+            "",
+            "\1\u02b2",
+            "\1\u02b3",
             "\1\u02b4",
             "\1\u02b5",
-            "\1\u02b6",
-            "\1\u02b7",
-            "\12\u02b8\7\uffff\6\155\32\uffff\6\155",
+            "\1\u02b7\20\uffff\1\u02b6",
+            "\1\u02b8",
             "\1\u02b9",
-            "\1\u02ba",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\u02bc",
+            "\1\u02bb\1\u02bc\14\uffff\1\u02ba",
             "\1\u02bd",
+            "",
             "\1\u02be",
             "\1\u02bf",
             "\1\u02c0",
-            "",
             "\1\u02c1",
-            "\1\u02c2\13\uffff\1\u02c3",
+            "\1\u02c2",
+            "\1\u02c3",
+            "",
             "",
             "\1\u02c4",
             "\1\u02c5",
+            "",
             "\1\u02c6",
             "\1\u02c7",
             "\1\u02c8",
+            "\1\u02c9",
             "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\u02ca",
             "\1\u02cb",
             "\1\u02cc",
             "\1\u02cd",
             "\1\u02ce",
-            "",
             "\1\u02cf",
             "\1\u02d0",
             "\1\u02d1",
             "\1\u02d2",
-            "\1\u02d4\20\uffff\1\u02d3",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u02d4",
             "\1\u02d5",
-            "\1\u02d6",
-            "\1\u02d8\1\u02d9\14\uffff\1\u02d7",
-            "\1\u02da",
             "",
-            "\1\u02db",
-            "\1\u02dc",
+            "\1\u02d6",
+            "\1\u02d7",
+            "\1\u02d8",
+            "\1\u02d9",
+            "\12\u02da\7\uffff\1\154\1\u02db\1\154\1\u02dc\1\154\1\u02dc\32\uffff\1\154\1\u02db\1\154\1\u02dc\1\154\1\u02dc",
             "\1\u02dd",
+            "",
             "\1\u02de",
             "\1\u02df",
             "\1\u02e0",
-            "",
-            "",
             "\1\u02e1",
             "\1\u02e2",
-            "",
             "\1\u02e3",
             "\1\u02e4",
             "\1\u02e5",
             "\1\u02e6",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u02e7",
             "\1\u02e8",
             "\1\u02e9",
             "\1\u02ea",
             "\1\u02eb",
-            "\1\u02ec",
-            "\1\u02ed",
+            "\1\u02ed\5\uffff\1\u02ec",
             "\1\u02ee",
             "\1\u02ef",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u02f0",
             "\1\u02f1",
             "\1\u02f2",
-            "",
             "\1\u02f3",
             "\1\u02f4",
             "\1\u02f5",
             "\1\u02f6",
-            "\12\u02f7\7\uffff\1\155\1\u02f8\1\155\1\u02f9\1\155\1\u02f9\32\uffff\1\155\1\u02f8\1\155\1\u02f9\1\155\1\u02f9",
+            "\1\u02f7",
+            "\1\u02f9\3\uffff\1\u02f8",
             "\1\u02fa",
             "\1\u02fb",
-            "",
             "\1\u02fc",
             "\1\u02fd",
             "\1\u02fe",
@@ -5013,25 +4898,26 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u0305",
             "\1\u0306",
             "\1\u0307",
-            "\1\u0309\5\uffff\1\u0308",
+            "\1\u0308",
             "",
+            "\1\u0309",
             "\1\u030a",
             "\1\u030b",
             "\1\u030c",
             "\1\u030d",
             "\1\u030e",
             "\1\u030f",
-            "\1\u0310",
-            "\1\u0311",
+            "\1\51\13\uffff\12\51\7\uffff\15\51\1\u0310\14\51\4\uffff\1\51\1\uffff\32\51",
+            "",
             "\1\u0312",
             "\1\u0313",
             "\1\u0314",
             "\1\u0315",
-            "\1\u0316",
-            "\1\u0318\3\uffff\1\u0317",
-            "\1\u0319",
-            "\1\u031a",
-            "\1\u031b",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u0317",
+            "\12\u031a\7\uffff\1\154\1\u0318\1\154\1\u0319\1\154\1\u0319\32\uffff\1\154\1\u0318\1\154\1\u0319\1\154\1\u0319",
+            "\12\154\7\uffff\3\154\1\u031b\2\154\2\uffff\1\155\27\uffff\3\154\1\u031b\2\154\2\uffff\1\155",
+            "\12\154\7\uffff\6\154\32\uffff\6\154",
             "\1\u031c",
             "\1\u031d",
             "\1\u031e",
@@ -5044,7 +4930,6 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u0325",
             "\1\u0326",
             "\1\u0327",
-            "",
             "\1\u0328",
             "\1\u0329",
             "\1\u032a",
@@ -5052,47 +4937,50 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u032c",
             "\1\u032d",
             "\1\u032e",
-            "\1\51\13\uffff\12\51\7\uffff\15\51\1\u032f\14\51\4\uffff\1\51\1\uffff\32\51",
-            "",
+            "\1\u032f",
+            "\1\u0330",
             "\1\u0331",
-            "\1\u0332",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u0333",
             "\1\u0334",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u0335",
             "\1\u0336",
-            "\12\u0339\7\uffff\1\155\1\u0337\1\155\1\u0338\1\155\1\u0338\32\uffff\1\155\1\u0337\1\155\1\u0338\1\155\1\u0338",
-            "\12\155\7\uffff\3\155\1\u033a\2\155\2\uffff\1\156\27\uffff\3\155\1\u033a\2\155\2\uffff\1\156",
-            "\12\155\7\uffff\6\155\32\uffff\6\155",
+            "\1\u0337",
+            "\1\u0338",
+            "\1\u0339",
+            "\1\u033a",
             "\1\u033b",
             "\1\u033c",
             "\1\u033d",
             "\1\u033e",
             "\1\u033f",
             "\1\u0340",
-            "\1\u0341",
-            "\1\u0342",
-            "\1\u0343",
-            "\1\u0344",
-            "\1\u0345",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u0346",
             "\1\u0347",
             "\1\u0348",
             "\1\u0349",
             "\1\u034a",
             "\1\u034b",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u034c",
             "\1\u034d",
             "\1\u034e",
             "\1\u034f",
+            "",
             "\1\u0350",
             "\1\u0351",
             "\1\u0352",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u0353",
+            "",
             "\1\u0354",
-            "\1\u0355",
-            "\1\u0356",
-            "\1\u0357",
-            "\1\u0358",
+            "\12\154\7\uffff\3\154\1\u0355\2\154\2\uffff\1\155\27\uffff\3\154\1\u0355\2\154\2\uffff\1\155",
+            "\12\154\7\uffff\6\154\32\uffff\6\154",
+            "\12\u0358\7\uffff\1\154\1\u0356\1\154\1\u0357\1\154\1\u0357\32\uffff\1\154\1\u0356\1\154\1\u0357\1\154\1\u0357",
+            "\12\154\7\uffff\6\154\32\uffff\6\154",
             "\1\u0359",
             "\1\u035a",
             "\1\u035b",
@@ -5100,13 +4988,13 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u035d",
             "\1\u035e",
             "\1\u035f",
-            "\1\u0360",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u0361",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u0362",
+            "\1\u0363",
+            "\1\u0364",
+            "\1\u0365",
+            "\1\u0366",
             "\1\u0367",
             "\1\u0368",
             "\1\u0369",
@@ -5115,27 +5003,31 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u036c",
             "\1\u036d",
             "\1\u036e",
+            "",
             "\1\u036f",
             "\1\u0370",
-            "",
             "\1\u0371",
             "\1\u0372",
             "\1\u0373",
             "\1\u0374",
-            "",
             "\1\u0375",
-            "\12\155\7\uffff\3\155\1\u0376\2\155\2\uffff\1\156\27\uffff\3\155\1\u0376\2\155\2\uffff\1\156",
-            "\12\155\7\uffff\6\155\32\uffff\6\155",
-            "\12\u0379\7\uffff\1\155\1\u0377\1\155\1\u0378\1\155\1\u0378\32\uffff\1\155\1\u0377\1\155\1\u0378\1\155\1\u0378",
-            "\12\155\7\uffff\6\155\32\uffff\6\155",
+            "\1\u0376",
+            "\1\u0377",
+            "\1\u0378",
+            "\1\u0379",
             "\1\u037a",
             "\1\u037b",
             "\1\u037c",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\u037d",
             "\1\u037e",
             "\1\u037f",
             "\1\u0380",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u0381",
             "\1\u0382",
             "\1\u0383",
             "\1\u0384",
@@ -5145,33 +5037,30 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u0388",
             "\1\u0389",
             "\1\u038a",
-            "",
             "\1\u038b",
+            "\1\154",
+            "\1\154\26\uffff\1\155\4\uffff\1\155\32\uffff\1\155\4\uffff\1\155",
+            "\1\154",
+            "\1\154",
             "\1\u038c",
             "\1\u038d",
             "\1\u038e",
             "\1\u038f",
             "\1\u0390",
-            "",
             "\1\u0391",
-            "\1\u0392",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "",
             "\1\u0393",
             "\1\u0394",
             "\1\u0395",
             "\1\u0396",
             "\1\u0397",
-            "\1\u0398",
-            "\1\u0399",
+            "\1\51\13\uffff\12\51\7\uffff\25\51\1\u0398\4\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u039a",
             "\1\u039b",
             "\1\u039c",
             "\1\u039d",
             "\1\u039e",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\u039f",
             "\1\u03a0",
             "\1\u03a1",
@@ -5187,23 +5076,19 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u03ab",
             "\1\u03ac",
             "\1\u03ad",
-            "\1\155",
-            "\1\155\26\uffff\1\156\4\uffff\1\156\32\uffff\1\156\4\uffff\1\156",
-            "\1\155",
-            "\1\155",
-            "\1\u03ae",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u03af",
             "\1\u03b0",
             "\1\u03b1",
             "\1\u03b2",
             "\1\u03b3",
             "\1\u03b4",
-            "",
-            "\1\u03b5",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u03b6",
             "\1\u03b7",
             "\1\u03b8",
-            "\1\51\13\uffff\12\51\7\uffff\25\51\1\u03b9\4\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u03b9",
+            "\1\u03ba",
             "\1\u03bb",
             "\1\u03bc",
             "\1\u03bd",
@@ -5214,19 +5099,21 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u03c2",
             "\1\u03c3",
             "\1\u03c4",
+            "",
             "\1\u03c5",
             "\1\u03c6",
             "\1\u03c7",
             "\1\u03c8",
             "\1\u03c9",
             "\1\u03ca",
+            "",
             "\1\u03cb",
             "\1\u03cc",
             "\1\u03cd",
             "\1\u03ce",
             "\1\u03cf",
             "\1\u03d0",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u03d1",
             "\1\u03d2",
             "\1\u03d3",
             "\1\u03d4",
@@ -5240,13 +5127,15 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u03dc",
             "\1\u03dd",
             "\1\u03de",
+            "",
             "\1\u03df",
             "\1\u03e0",
             "\1\u03e1",
             "\1\u03e2",
             "\1\u03e3",
             "\1\u03e4",
-            "\1\u03e5",
+            "",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u03e6",
             "\1\u03e7",
             "\1\u03e8",
@@ -5255,11 +5144,10 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u03eb",
             "\1\u03ec",
             "\1\u03ed",
-            "",
             "\1\u03ee",
             "\1\u03ef",
             "\1\u03f0",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u03f1",
             "\1\u03f2",
             "\1\u03f3",
             "\1\u03f4",
@@ -5271,22 +5159,21 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u03fa",
             "\1\u03fb",
             "\1\u03fc",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u03fd",
             "\1\u03fe",
             "\1\u03ff",
             "\1\u0400",
             "\1\u0401",
             "\1\u0402",
             "\1\u0403",
-            "",
             "\1\u0404",
             "\1\u0405",
             "\1\u0406",
-            "\1\u0407",
-            "\1\u0408",
-            "\1\u0409",
             "",
             "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u0409",
+            "\1\u040a",
             "\1\u040b",
             "\1\u040c",
             "\1\u040d",
@@ -5295,13 +5182,14 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u0410",
             "\1\u0411",
             "\1\u0412",
+            "",
             "\1\u0413",
             "\1\u0414",
             "\1\u0415",
             "\1\u0416",
             "\1\u0417",
             "\1\u0418",
-            "\1\u0419",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u041a",
             "\1\u041b",
             "\1\u041c",
@@ -5310,43 +5198,43 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u041f",
             "\1\u0420",
             "\1\u0421",
-            "",
             "\1\u0422",
             "\1\u0423",
             "\1\u0424",
             "\1\u0425",
             "\1\u0426",
-            "\1\u0427",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u0428",
             "\1\u0429",
             "\1\u042a",
             "\1\u042b",
             "\1\u042c",
-            "",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u042d",
+            "\1\u042e",
             "\1\u042f",
-            "\1\u0430",
-            "\1\u0431",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u0432",
             "\1\u0433",
+            "",
+            "",
             "\1\u0434",
             "\1\u0435",
             "\1\u0436",
             "\1\u0437",
             "\1\u0438",
-            "",
             "\1\u0439",
             "\1\u043a",
             "\1\u043b",
             "\1\u043c",
             "\1\u043d",
             "\1\u043e",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u043f",
             "\1\u0440",
             "\1\u0441",
             "\1\u0442",
-            "\1\u0443",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "",
             "\1\u0444",
             "\1\u0445",
             "\1\u0446",
@@ -5356,38 +5244,38 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u044a",
             "\1\u044b",
             "\1\u044c",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u044d",
             "\1\u044e",
-            "\1\u044f",
             "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u0450",
+            "",
             "\1\u0451",
             "\1\u0452",
             "\1\u0453",
             "\1\u0454",
             "\1\u0455",
             "\1\u0456",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u0457",
+            "\1\u0458",
+            "",
+            "",
             "\1\u0459",
-            "\1\u045a",
-            "",
-            "",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u045b",
-            "\1\u045c",
-            "\1\u045d",
+            "\1\51\13\uffff\12\51\7\uffff\1\u045c\31\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u045e",
-            "\1\u045f",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u0460",
-            "\1\u0461",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u0462",
             "\1\u0463",
             "\1\u0464",
-            "\1\u0465",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u0466",
             "\1\u0467",
             "\1\u0468",
             "\1\u0469",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u046a",
             "",
             "\1\u046b",
             "\1\u046c",
@@ -5396,16 +5284,15 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u046f",
             "\1\u0470",
             "\1\u0471",
-            "\1\u0472",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u0473",
             "\1\u0474",
             "\1\u0475",
+            "",
             "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u0477",
-            "",
             "\1\u0478",
             "\1\u0479",
-            "",
             "\1\u047a",
             "\1\u047b",
             "\1\u047c",
@@ -5413,59 +5300,60 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u047e",
             "\1\u047f",
             "",
-            "",
-            "\1\u0480",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\51\13\uffff\12\51\7\uffff\10\51\1\u0480\21\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u0482",
-            "\1\51\13\uffff\12\51\7\uffff\1\u0483\31\51\4\uffff\1\51\1\uffff\32\51",
+            "",
+            "\1\u0483",
+            "",
+            "\1\u0484",
+            "",
             "\1\u0485",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u0486",
             "\1\u0487",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "",
+            "\1\u0488",
             "\1\u0489",
             "\1\u048a",
             "\1\u048b",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u048c",
             "\1\u048d",
             "\1\u048e",
             "\1\u048f",
             "\1\u0490",
             "\1\u0491",
-            "",
             "\1\u0492",
             "\1\u0493",
+            "",
             "\1\u0494",
             "\1\u0495",
             "\1\u0496",
+            "",
             "\1\u0497",
             "\1\u0498",
             "\1\u0499",
             "\1\u049a",
             "\1\u049b",
             "\1\u049c",
-            "",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u049d",
             "\1\u049e",
             "\1\u049f",
             "\1\u04a0",
+            "",
             "\1\u04a1",
             "\1\u04a2",
             "\1\u04a3",
             "\1\u04a4",
             "\1\u04a5",
             "\1\u04a6",
-            "",
-            "\1\51\13\uffff\12\51\7\uffff\10\51\1\u04a7\11\51\1\u04a8\7\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u04a7",
+            "\1\u04a8",
+            "\1\u04a9",
             "\1\u04aa",
-            "",
             "\1\u04ab",
-            "",
-            "\1\u04ac",
-            "",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u04ad",
             "\1\u04ae",
             "\1\u04af",
-            "",
             "\1\u04b0",
             "\1\u04b1",
             "\1\u04b2",
@@ -5479,10 +5367,9 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u04ba",
             "\1\u04bb",
             "\1\u04bc",
-            "\1\u04bd",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u04be",
             "\1\u04bf",
-            "",
             "\1\u04c0",
             "\1\u04c1",
             "\1\u04c2",
@@ -5492,8 +5379,8 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u04c6",
             "\1\u04c7",
             "\1\u04c8",
-            "\1\u04c9",
-            "\1\u04ca",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "",
             "\1\u04cb",
             "\1\u04cc",
@@ -5501,16 +5388,17 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u04ce",
             "\1\u04cf",
             "\1\u04d0",
-            "\1\u04d1",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u04d2",
             "\1\u04d3",
-            "\1\u04d4",
-            "\1\u04d5",
             "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u04d5",
+            "\1\u04d6",
             "\1\u04d7",
             "\1\u04d8",
             "\1\u04d9",
-            "\1\u04da",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "",
             "\1\u04db",
             "\1\u04dc",
             "\1\u04dd",
@@ -5522,212 +5410,216 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u04e3",
             "\1\u04e4",
             "\1\u04e5",
+            "",
+            "",
             "\1\u04e6",
             "\1\u04e7",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u04e8",
             "\1\u04e9",
             "\1\u04ea",
             "\1\u04eb",
-            "\1\u04ec",
-            "\1\u04ed",
-            "\1\u04ee",
+            "",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u04ef",
             "\1\u04f0",
             "\1\u04f1",
             "\1\u04f2",
+            "",
             "\1\u04f3",
             "\1\u04f4",
             "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "",
             "\1\u04f7",
             "\1\u04f8",
-            "\1\u04f9",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u04fa",
             "\1\u04fb",
             "\1\u04fc",
-            "\1\u04fd",
             "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u04fe",
             "\1\u04ff",
             "\1\u0500",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\u0502",
-            "\1\u0503",
-            "\1\u0504",
+            "\1\51\13\uffff\12\51\7\uffff\4\51\1\u0501\12\51\1\u0503\4\51\1\u0502\5\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u0505",
             "\1\u0506",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "",
+            "",
+            "",
+            "\1\u0507",
             "\1\u0508",
-            "\1\u0509",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u050a",
-            "\1\u050b",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u050c",
-            "\1\u050d",
+            "",
+            "",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u050e",
+            "",
             "\1\u050f",
             "\1\u0510",
             "\1\u0511",
+            "",
             "\1\u0512",
             "\1\u0513",
-            "",
-            "",
             "\1\u0514",
             "\1\u0515",
             "\1\u0516",
             "\1\u0517",
+            "",
             "\1\u0518",
             "\1\u0519",
             "\1\u051a",
+            "\1\u051b",
             "",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u051c",
             "",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u051d",
+            "",
             "\1\u051e",
             "\1\u051f",
             "\1\u0520",
             "\1\u0521",
-            "",
             "\1\u0522",
             "\1\u0523",
             "\1\u0524",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u0525",
+            "\1\u0526",
             "\1\u0527",
             "\1\u0528",
+            "\1\u0529",
             "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\u052a",
             "\1\u052b",
             "\1\u052c",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u052d",
             "\1\u052e",
             "\1\u052f",
             "\1\u0530",
             "\1\u0531",
-            "\1\51\13\uffff\12\51\7\uffff\4\51\1\u0532\12\51\1\u0534\4\51\1\u0533\5\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u0532",
+            "\1\u0533",
+            "\1\u0534",
+            "\1\u0535",
             "\1\u0536",
             "\1\u0537",
-            "",
-            "",
-            "",
             "\1\u0538",
             "\1\u0539",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "",
+            "\1\u053a",
             "\1\u053b",
             "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u053d",
-            "\1\u053e",
-            "",
-            "",
             "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\u0540",
-            "",
-            "\1\u0541",
+            "\1\51\13\uffff\12\51\7\uffff\3\51\1\u053f\15\51\1\u0540\10\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u0542",
             "\1\u0543",
-            "",
             "\1\u0544",
-            "\1\u0545",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u0546",
             "\1\u0547",
             "\1\u0548",
             "\1\u0549",
             "\1\u054a",
-            "",
             "\1\u054b",
-            "\1\u054c",
-            "\1\u054d",
-            "\1\u054e",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "",
+            "\1\u054d",
+            "",
+            "\1\u054e",
             "\1\u054f",
             "",
             "\1\u0550",
             "\1\u0551",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "",
-            "\1\u0552",
             "\1\u0553",
             "\1\u0554",
             "\1\u0555",
             "\1\u0556",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u0557",
             "\1\u0558",
-            "\1\u0559",
+            "",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u055a",
             "\1\u055b",
             "\1\u055c",
             "\1\u055d",
+            "",
             "\1\u055e",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u055f",
             "\1\u0560",
             "\1\u0561",
             "\1\u0562",
             "\1\u0563",
+            "",
             "\1\u0564",
             "\1\u0565",
             "\1\u0566",
             "\1\u0567",
             "\1\u0568",
-            "",
             "\1\u0569",
             "\1\u056a",
             "\1\u056b",
-            "\1\u056c",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u056d",
             "\1\u056e",
             "\1\u056f",
-            "",
             "\1\u0570",
             "\1\u0571",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u0572",
             "\1\u0573",
             "\1\u0574",
+            "\1\u0575",
+            "",
+            "\1\u0576",
+            "\1\u0577",
             "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\51\13\uffff\12\51\7\uffff\3\51\1\u0576\15\51\1\u0577\10\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u0579",
             "\1\u057a",
             "\1\u057b",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u057c",
             "\1\u057d",
-            "\1\u057e",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u057f",
-            "\1\u0580",
-            "\1\u0581",
-            "\1\u0582",
             "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "",
+            "\1\u0581",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u0583",
             "\1\u0584",
             "\1\u0585",
             "",
             "\1\u0586",
-            "\1\u0587",
+            "",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "",
             "\1\u0588",
             "\1\u0589",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "",
+            "\1\u058a",
             "\1\u058b",
+            "",
             "\1\u058c",
             "\1\u058d",
             "\1\u058e",
             "\1\u058f",
             "\1\u0590",
-            "",
             "\1\u0591",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u0592",
             "\1\u0593",
             "\1\u0594",
             "\1\u0595",
             "\1\u0596",
-            "",
-            "\1\u0597",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u0598",
             "\1\u0599",
             "\1\u059a",
+            "",
             "\1\u059b",
             "\1\u059c",
             "\1\u059d",
-            "",
             "\1\u059e",
             "\1\u059f",
             "\1\u05a0",
@@ -5736,7 +5628,7 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u05a3",
             "\1\u05a4",
             "\1\u05a5",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u05a6",
             "\1\u05a7",
             "\1\u05a8",
             "\1\u05a9",
@@ -5747,89 +5639,15 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             "\1\u05ae",
             "\1\u05af",
             "\1\u05b0",
-            "",
             "\1\u05b1",
             "\1\u05b2",
             "\1\u05b3",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u05b4",
             "\1\u05b5",
             "\1\u05b6",
-            "\1\u05b7",
+            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\u05b8",
             "\1\u05b9",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\u05bb",
-            "\1\u05bc",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "",
-            "\1\u05be",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\u05c0",
-            "\1\u05c1",
-            "\1\u05c2",
-            "",
-            "\1\u05c3",
-            "\1\u05c4",
-            "",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "",
-            "\1\u05c6",
-            "\1\u05c7",
-            "\1\u05c8",
-            "\1\u05c9",
-            "\1\u05ca",
-            "",
-            "\1\u05cb",
-            "\1\u05cc",
-            "\1\u05cd",
-            "\1\u05ce",
-            "\1\u05cf",
-            "\1\u05d0",
-            "\1\u05d1",
-            "\1\u05d2",
-            "\1\u05d3",
-            "\1\u05d4",
-            "\1\u05d5",
-            "\1\u05d6",
-            "\1\u05d7",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\u05da",
-            "\1\u05db",
-            "\1\u05dc",
-            "",
-            "",
-            "\1\u05dd",
-            "\1\u05de",
-            "\1\u05df",
-            "\1\u05e0",
-            "\1\u05e1",
-            "\1\u05e2",
-            "\1\u05e3",
-            "\1\u05e4",
-            "\1\u05e5",
-            "\1\u05e6",
-            "\1\u05e7",
-            "\1\u05e8",
-            "\1\u05e9",
-            "\1\u05ea",
-            "\1\u05eb",
-            "\1\u05ec",
-            "\1\u05ed",
-            "\1\u05ee",
-            "\1\u05ef",
-            "\1\u05f0",
-            "\1\u05f1",
-            "\1\u05f2",
-            "\1\u05f3",
-            "\1\u05f4",
-            "\1\u05f5",
-            "\1\u05f6",
-            "\1\u05f7",
-            "\1\u05f8",
-            "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\u05fa",
-            "\1\u05fb",
             "",
             "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\1\51\13\uffff\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
@@ -5867,13 +5685,23 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
             this.transition = DFA22_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | RULE_ANNOTATION_PROPERTY_TOKEN | RULE_ANNOTATION_TOKEN | RULE_TERMINOLOGY_GRAPH_TOKEN | RULE_BUNDLE_TOKEN | RULE_KIND_TOKEN | RULE_ASPECT_TOKEN | RULE_ABSTRACT_TOKEN | RULE_CONCEPT_TOKEN | RULE_REIFIED_RELATIONSHIP_TOKEN | RULE_UNREIFIED_RELATIONSHIP_TOKEN | RULE_FUNCTIONAL_TOKEN | RULE_INVERSE_FUNCTIONAL_TOKEN | RULE_ESSENTIAL_TOKEN | RULE_INVERSE_ESSENTIAL_TOKEN | RULE_SYMMETRIC_TOKEN | RULE_ASYMMETRIC_TOKEN | RULE_REFLEXIVE_TOKEN | RULE_IRREFLEXIVE_TOKEN | RULE_TRANSITIVE_TOKEN | RULE_UNREIFIED_TOKEN | RULE_INVERSE_TOKEN | RULE_SOURCE_TOKEN | RULE_TARGET_TOKEN | RULE_SCALAR_TOKEN | RULE_STRUCTURE_TOKEN | RULE_DOMAIN_TOKEN | RULE_RANGE_TOKEN | RULE_EXTENDS_TOKEN | RULE_REFINES_TOKEN | RULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN | RULE_SPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN | RULE_ANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN | RULE_BUNDLED_TERMINOLOGY_AXIOM_TOKEN | RULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN | RULE_TERMINOLOGY_NESTING_AXIOM_TOKEN | RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN | RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN | RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN | RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN | RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN | RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN | RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN | RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN | RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN | RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN | RULE_STRING_SCALAR_RESTRICTION_TOKEN | RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN | RULE_BINARY_SCALAR_RESTRICTION_TOKEN | RULE_IRI_SCALAR_RESTRICTION_TOKEN | RULE_TIME_SCALAR_RESTRICTION_TOKEN | RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN | RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN | RULE_DESCRIPTION_BOX_TOKEN | RULE_LCURLY | RULE_RCURLY | RULE_EQUAL | RULE_STRING | RULE_IRI | RULE_ID | RULE_UUID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | RULE_ANNOTATION_PROPERTY_TOKEN | RULE_ANNOTATION_TOKEN | RULE_TERMINOLOGY_GRAPH_TOKEN | RULE_BUNDLE_TOKEN | RULE_KIND_TOKEN | RULE_ASPECT_TOKEN | RULE_ABSTRACT_TOKEN | RULE_CONCEPT_TOKEN | RULE_REIFIED_RELATIONSHIP_TOKEN | RULE_UNREIFIED_RELATIONSHIP_TOKEN | RULE_FUNCTIONAL_TOKEN | RULE_INVERSE_FUNCTIONAL_TOKEN | RULE_ESSENTIAL_TOKEN | RULE_INVERSE_ESSENTIAL_TOKEN | RULE_SYMMETRIC_TOKEN | RULE_ASYMMETRIC_TOKEN | RULE_REFLEXIVE_TOKEN | RULE_IRREFLEXIVE_TOKEN | RULE_TRANSITIVE_TOKEN | RULE_UNREIFIED_TOKEN | RULE_INVERSE_TOKEN | RULE_SOURCE_TOKEN | RULE_TARGET_TOKEN | RULE_SCALAR_TOKEN | RULE_STRUCTURE_TOKEN | RULE_DOMAIN_TOKEN | RULE_RANGE_TOKEN | RULE_EXTENDS_TOKEN | RULE_REFINES_TOKEN | RULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN | RULE_SPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN | RULE_ANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN | RULE_BUNDLED_TERMINOLOGY_AXIOM_TOKEN | RULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN | RULE_TERMINOLOGY_NESTING_AXIOM_TOKEN | RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN | RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN | RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN | RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN | RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN | RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN | RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN | RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN | RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN | RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN | RULE_STRING_SCALAR_RESTRICTION_TOKEN | RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN | RULE_BINARY_SCALAR_RESTRICTION_TOKEN | RULE_IRI_SCALAR_RESTRICTION_TOKEN | RULE_TIME_SCALAR_RESTRICTION_TOKEN | RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN | RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN | RULE_DESCRIPTION_BOX_TOKEN | RULE_LCURLY | RULE_RCURLY | RULE_EQUAL | RULE_STRING | RULE_IRI | RULE_ID | RULE_UUID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
+                        int LA22_31 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA22_31>='\u0000' && LA22_31<='\uFFFF')) ) {s = 100;}
+
+                        else s = 39;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
                         int LA22_0 = input.LA(1);
 
                         s = -1;
@@ -5954,16 +5782,6 @@ public class InternalOntologicalModelingLanguageLexer extends Lexer {
                         else if ( ((LA22_0>='\t' && LA22_0<='\n')||LA22_0=='\r'||LA22_0==' ') ) {s = 38;}
 
                         else if ( ((LA22_0>='\u0000' && LA22_0<='\b')||(LA22_0>='\u000B' && LA22_0<='\f')||(LA22_0>='\u000E' && LA22_0<='\u001F')||LA22_0=='!'||LA22_0=='#'||(LA22_0>='%' && LA22_0<='&')||(LA22_0>='(' && LA22_0<='.')||LA22_0==';'||(LA22_0>='>' && LA22_0<='?')||(LA22_0>='[' && LA22_0<=']')||LA22_0=='`'||LA22_0=='|'||(LA22_0>='~' && LA22_0<='\uFFFF')) ) {s = 39;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA22_31 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA22_31>='\u0000' && LA22_31<='\uFFFF')) ) {s = 101;}
-
-                        else s = 39;
 
                         if ( s>=0 ) return s;
                         break;

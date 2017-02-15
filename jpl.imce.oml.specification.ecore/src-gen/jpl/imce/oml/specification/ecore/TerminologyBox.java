@@ -26,7 +26,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML TerminologyBox is an OML Context for defining a domain-specific vocabulary
+ * An OML TerminologyBox is an OML Module for defining a domain-specific vocabulary
  * as a logical set of OML TerminologyBoxStatement(s),
  * possibly by reuse of other vocabularies via OML TerminologyBoxAxiom(s).
  * The semantics of an OML TerminologyBox domain-specific vocabulary is defined
@@ -48,7 +48,7 @@ import org.eclipse.emf.common.util.EList;
  * @model abstract="true"
  * @generated
  */
-public interface TerminologyBox extends Context {
+public interface TerminologyBox extends Module {
 	/**
 	 * Returns the value of the '<em><b>Kind</b></em>' attribute.
 	 * The literals are from the enumeration {@link jpl.imce.oml.specification.ecore.TerminologyGraphKind}.

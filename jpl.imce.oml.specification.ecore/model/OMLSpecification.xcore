@@ -163,7 +163,7 @@ abstract class TerminologyThing {
 /*
  * An OML AnnotationProperty maps to an [OWL2 AnnotationProperty] 
  * and is similarly a non-logical property for associating some information
- * to any OML TerminologyThing in an OML Context.
+ * to any OML TerminologyThing in an OML Module.
  */
 @Glossary
 class AnnotationProperty {
@@ -195,17 +195,17 @@ class AnnotationPropertyTable wraps java.util.Map$Entry {
 /*
  * For the OML tabular interchange representation,
  * an OML AnnotationEntry (for a given OML AnnotationProperty) is a triple:
- * - an OML Context in which the OML AnnotationEntry appears 
+ * - an OML Module in which the OML AnnotationEntry appears 
  * - an annotated OML TerminologyThing subject
  * - a String value as the representation of some information
- *   about the subject in that context.
+ *   about the subject in that module.
  */
 @Glossary
 @ValueTable
 class AnnotationEntry {
 	
 	@IsOrderingKey
-	refers Context[1] context
+	refers Module[1] module
 	
 	@IsOrderingKey 
 	refers TerminologyThing[1] subject
@@ -242,7 +242,7 @@ class AnnotationSubjectPropertyValue {
 
 /*
  * An OML Annotation maps to an [OWL2 Annotation] and is similarly
- * a non-logical statement in an OML Context
+ * a non-logical statement in an OML Module
  * associating some information as the value of an
  * OML AnnotationProperty for describing a subject (an OML TerminologyThing).
  */
@@ -251,7 +251,7 @@ class AnnotationSubjectPropertyValue {
 class Annotation {
 	
 	@IsOrderingKey
-	container Context[1] context opposite annotations
+	container Module[1] module opposite annotations
 	
 	@IsOrderingKey
 	refers AnnotationProperty[1] property
@@ -265,7 +265,7 @@ class Annotation {
 
 /*
  * An OML TerminologyExtent defines an in-memory tuple
- * about each OML Context involved in modeling and reasoning about domain-specific
+ * about each OML Module involved in modeling and reasoning about domain-specific
  * vocabularies and systems descriptions using such vocabularies:
  * - An OML TerminologyGraph for defining a vocabulary about a domain or a description of a system in a domain;
  * - An OML Bundle for aggregating OML TerminologyBox(es) for as modular [OWL2-DL Ontologies] for monotonic refinement and reasoning;
@@ -293,12 +293,12 @@ class TerminologyExtent {
 }
 
 /*
- * An OML Context maps to an [OWL2-DL Ontology];
+ * An OML Module maps to an [OWL2-DL Ontology];
  * it is a kind of OML Resource that is a logical container of OML TerminologyThing(s)
  * and a non-logical container of OML Annotation(s).
  */
 @Glossary
-abstract class Context extends TerminologyThing, Resource {
+abstract class Module extends TerminologyThing, Resource {
 
 	@NotSchema
 	op TerminologyExtent[1] extent()
@@ -322,7 +322,7 @@ abstract class Context extends TerminologyThing, Resource {
 	
 	@NotSchema
 	@Collection(kind="SortedSet")
-	contains Annotation[] annotations opposite context
+	contains Annotation[] annotations opposite module
 	
 	@NotFunctionalAPI
 	op AnnotationSubjectTable[] annotationsBySubject()
@@ -332,7 +332,7 @@ abstract class Context extends TerminologyThing, Resource {
 	op AnnotationPropertyTable[] annotationsByProperty()
 	
 	@NotSchema
-	op Context[1] withAnnotations
+	op Module[1] withAnnotations
 	(@Collection(kind="SortedSet") AnnotationPropertyTable[] a)
 	
     @NotSchema
@@ -385,7 +385,7 @@ abstract class Context extends TerminologyThing, Resource {
 }
 
 /*
- * An OML TerminologyBox is an OML Context for defining a domain-specific vocabulary
+ * An OML TerminologyBox is an OML Module for defining a domain-specific vocabulary
  * as a logical set of OML TerminologyBoxStatement(s), 
  * possibly by reuse of other vocabularies via OML TerminologyBoxAxiom(s).
  * The semantics of an OML TerminologyBox domain-specific vocabulary is defined
@@ -394,7 +394,7 @@ abstract class Context extends TerminologyThing, Resource {
  * according to its OML TerminologyGraphKind. 
  */
 @Glossary
-abstract class TerminologyBox extends Context {
+abstract class TerminologyBox extends Module {
 	
 	TerminologyGraphKind[1] kind
 	
@@ -666,7 +666,7 @@ class TerminologyGraph extends TerminologyBox {
 
 /*
  * An OML TerminologyBoxStatement is a logical axiom about an OML TerminologyThing
- * asserted in the context of an OML TerminologyBox.
+ * in an OML TerminologyBox.
  */
 @Glossary
 abstract class TerminologyBoxStatement extends TerminologyThing {
@@ -676,7 +676,7 @@ abstract class TerminologyBoxStatement extends TerminologyThing {
 
 /*
  * An OML TerminologyBundleStatement is a logical axiom about an OML TerminologyThing
- * asserted in the context of an OML Bundle.
+ * in an OML Bundle.
  */
 @Glossary
 abstract class TerminologyBundleStatement extends TerminologyThing {
@@ -1063,7 +1063,7 @@ abstract class TerminologyBoxAxiom extends TerminologyAxiom {
 }
 
 /*
- * An OML TerminologyBundleAxiom is a TerminologyAxiom that asserts a logical statement in the context of a Bundle.
+ * An OML TerminologyBundleAxiom is a TerminologyAxiom that asserts a logical statement in an OML Bundle.
  */
 @Glossary
 abstract class TerminologyBundleAxiom extends TerminologyAxiom {
@@ -1114,7 +1114,7 @@ class SpecificDisjointConceptAxiom extends DisjointUnionOfConceptsAxiom {
 class AnonymousConceptTaxonomyAxiom extends DisjointUnionOfConceptsAxiom, ConceptTreeDisjunction {}
 
 /*
- * An OML RootConceptTaxonomyAxiom asserts that, in the context of a Bundle, a particular Entity
+ * An OML RootConceptTaxonomyAxiom asserts that, in the scope of a Bundle, a particular Entity
  * is the root of a taxonomy of specializations of that Entity.
  */
 @Glossary
@@ -1227,9 +1227,10 @@ class TerminologyExtensionAxiom extends TerminologyBoxAxiom {
 
 /*
  * An OML TerminologyNestingAxiom provides support for relating
- * a white-box OML TerminologyGraph as a nested terminology 
- * providing details about a black-box OML Concept defined
- * in a nesting OML TerminologyBox.
+ * a white-box nested OML TerminologyGraph used for describing internal
+ * details about a nesting OML Concept defined in a nesting OML TerminologyBox. 
+ * This nesting OML Concept specifies the context for the internal details
+ * defined in the nested OML TerminologyGraph.
  */
 @Glossary
 class TerminologyNestingAxiom extends TerminologyBoxAxiom {
@@ -1722,7 +1723,7 @@ enum DescriptionKind {
  * about [OWL2-DL NamedIndividuals] mapped from OML TerminologyInstanceAssertion(s).
  */
 @Glossary
-class DescriptionBox extends Context {
+class DescriptionBox extends Module {
 	
 	DescriptionKind[1] kind
 	
@@ -1837,7 +1838,7 @@ class DescriptionBox extends Context {
 
 /*
  * An OML DescriptionBoxRelationship is a directed binary relationship
- * from an OML DescriptionBox source to an OML Context target.
+ * from an OML DescriptionBox source to an OML Module target.
  */
 @Glossary
 abstract class DescriptionBoxRelationship extends TerminologyThing {
@@ -1846,7 +1847,7 @@ abstract class DescriptionBoxRelationship extends TerminologyThing {
 	op DescriptionBox[1] descriptionDomain()
 	
 	@NotSchema
-	op Context[1] contextTarget()
+	op Module[1] targetModule()
 }
 
 /*
@@ -1865,7 +1866,7 @@ class DescriptionBoxExtendsClosedWorldDefinitions extends DescriptionBoxRelation
 	refers TerminologyBox[1] closedWorldDefinitions
 	
 	@NotSchema
-	op Context[1] contextTarget() { closedWorldDefinitions }
+	op Module[1] targetModule() { closedWorldDefinitions }
 }
 
 /*
@@ -1883,7 +1884,7 @@ class DescriptionBoxRefinement extends DescriptionBoxRelationship {
 	refers DescriptionBox[1] refinedDescriptionBox
 	
 	@NotSchema
-	op Context[1] contextTarget() { refinedDescriptionBox }
+	op Module[1] targetModule() { refinedDescriptionBox }
 }
 
 /*

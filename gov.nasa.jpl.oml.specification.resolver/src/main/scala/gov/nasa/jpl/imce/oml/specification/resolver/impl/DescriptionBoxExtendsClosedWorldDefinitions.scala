@@ -36,9 +36,9 @@ extends resolver.api.DescriptionBoxExtendsClosedWorldDefinitions
     descriptionBox
   }
   
-  def contextTarget
+  def targetModule
   ()
-  : Context
+  : Module
   = {
     closedWorldDefinitions
   }

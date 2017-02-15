@@ -20,8 +20,8 @@ package gov.nasa.jpl.imce.oml.specification.resolver.impl
 
 import gov.nasa.jpl.imce.oml.specification._
 
-trait Context
-extends resolver.api.Context
+trait Module
+extends resolver.api.Module
   with TerminologyThing
   with Resource
 {
@@ -55,7 +55,7 @@ extends resolver.api.Context
   
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
-  	case _: Context => true
+  	case _: Module => true
   	case _ => false
   }
 }

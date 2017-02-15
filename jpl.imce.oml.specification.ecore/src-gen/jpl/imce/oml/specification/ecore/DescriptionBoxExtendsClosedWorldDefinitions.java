@@ -114,6 +114,6 @@ public interface DescriptionBoxExtendsClosedWorldDefinitions extends Description
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getClosedWorldDefinitions();'"
 	 * @generated
 	 */
-	Context contextTarget();
+	Module targetModule();
 
 } // DescriptionBoxExtendsClosedWorldDefinitions

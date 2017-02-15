@@ -113,6 +113,6 @@ public interface DescriptionBoxRefinement extends DescriptionBoxRelationship {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getRefinedDescriptionBox();'"
 	 * @generated
 	 */
-	Context contextTarget();
+	Module targetModule();
 
 } // DescriptionBoxRefinement

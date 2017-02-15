@@ -22,7 +22,7 @@ package jpl.imce.oml.specification.ecore.provider;
 import java.util.Collection;
 import java.util.List;
 
-import jpl.imce.oml.specification.ecore.Context;
+import jpl.imce.oml.specification.ecore.Module;
 import jpl.imce.oml.specification.ecore.OMLFactory;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 
@@ -37,19 +37,19 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link jpl.imce.oml.specification.ecore.Context} object.
+ * This is the item provider adapter for a {@link jpl.imce.oml.specification.ecore.Module} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ContextItemProvider extends TerminologyThingItemProvider {
+public class ModuleItemProvider extends TerminologyThingItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ContextItemProvider(AdapterFactory adapterFactory) {
+	public ModuleItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -80,9 +80,9 @@ public class ContextItemProvider extends TerminologyThingItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Context_iri_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Context_iri_feature", "_UI_Context_type"),
-				 OMLPackage.Literals.CONTEXT__IRI,
+				 getString("_UI_Module_iri_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Module_iri_feature", "_UI_Module_type"),
+				 OMLPackage.Literals.MODULE__IRI,
 				 true,
 				 false,
 				 false,
@@ -103,7 +103,7 @@ public class ContextItemProvider extends TerminologyThingItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OMLPackage.Literals.CONTEXT__ANNOTATIONS);
+			childrenFeatures.add(OMLPackage.Literals.MODULE__ANNOTATIONS);
 		}
 		return childrenFeatures;
 	}
@@ -129,10 +129,10 @@ public class ContextItemProvider extends TerminologyThingItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Context)object).getUuid();
+		String label = ((Module)object).getUuid();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Context_type") :
-			getString("_UI_Context_type") + " " + label;
+			getString("_UI_Module_type") :
+			getString("_UI_Module_type") + " " + label;
 	}
 	
 
@@ -147,11 +147,11 @@ public class ContextItemProvider extends TerminologyThingItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Context.class)) {
-			case OMLPackage.CONTEXT__IRI:
+		switch (notification.getFeatureID(Module.class)) {
+			case OMLPackage.MODULE__IRI:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case OMLPackage.CONTEXT__ANNOTATIONS:
+			case OMLPackage.MODULE__ANNOTATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -171,7 +171,7 @@ public class ContextItemProvider extends TerminologyThingItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.CONTEXT__ANNOTATIONS,
+				(OMLPackage.Literals.MODULE__ANNOTATIONS,
 				 OMLFactory.eINSTANCE.createAnnotation()));
 	}
 

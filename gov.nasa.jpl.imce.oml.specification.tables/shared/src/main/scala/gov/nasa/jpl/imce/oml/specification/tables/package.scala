@@ -45,12 +45,12 @@ package object tables {
   = new scala.Ordering[AnnotationEntry] {
   	def compare(x: AnnotationEntry, y: AnnotationEntry)
   	: scala.Int
-  	= x.contextUUID.compareTo(y.contextUUID) match {
-  	 	case c_contextUUID if 0 != c_contextUUID => c_contextUUID
-  	 	case 0 => x.subjectUUID.compareTo(y.subjectUUID) match {
+  	= x.subjectUUID.compareTo(y.subjectUUID) match {
   	 	case c_subjectUUID if 0 != c_subjectUUID => c_subjectUUID
   	 	case 0 => x.value.compareTo(y.value) match {
   	 	case c_value if 0 != c_value => c_value
+  	 	case 0 => x.moduleUUID.compareTo(y.moduleUUID) match {
+  	 	case c_moduleUUID if 0 != c_moduleUUID => c_moduleUUID
   	 	case 0 => 0 } } }
   }
   

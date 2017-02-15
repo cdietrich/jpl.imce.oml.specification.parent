@@ -32,6 +32,6 @@ trait DescriptionBoxRefinement
 
   def descriptionDomain
   (): DescriptionBox
-  def contextTarget
-  (): Context
+  def targetModule
+  (): Module
 }

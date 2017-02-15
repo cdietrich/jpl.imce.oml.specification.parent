@@ -19,7 +19,7 @@
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
- * An OML TerminologyBundleAxiom is a TerminologyAxiom that asserts a logical statement in the context of a Bundle.
+ * An OML TerminologyBundleAxiom is a TerminologyAxiom that asserts a logical statement in an OML Bundle.
  */
 trait TerminologyBundleAxiom
   extends TerminologyAxiom

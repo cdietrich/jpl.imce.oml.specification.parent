@@ -22,7 +22,7 @@ import gov.nasa.jpl.imce.oml.specification._
 
 trait TerminologyBox
 extends resolver.api.TerminologyBox
-  with Context
+  with Module
 {
   /*
    * The subset of statements that are entities.

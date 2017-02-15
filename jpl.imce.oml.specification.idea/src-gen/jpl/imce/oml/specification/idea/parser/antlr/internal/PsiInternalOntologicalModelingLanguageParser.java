@@ -18,7 +18,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ANNOTATION_PROPERTY_TOKEN", "RULE_EQUAL", "RULE_IRI", "RULE_ANNOTATION_TOKEN", "RULE_STRING", "RULE_TERMINOLOGY_GRAPH_TOKEN", "RULE_LCURLY", "RULE_RCURLY", "RULE_BUNDLE_TOKEN", "RULE_ASPECT_TOKEN", "RULE_ID", "RULE_ABSTRACT_TOKEN", "RULE_CONCEPT_TOKEN", "RULE_REIFIED_RELATIONSHIP_TOKEN", "RULE_FUNCTIONAL_TOKEN", "RULE_INVERSE_FUNCTIONAL_TOKEN", "RULE_ESSENTIAL_TOKEN", "RULE_INVERSE_ESSENTIAL_TOKEN", "RULE_SYMMETRIC_TOKEN", "RULE_ASYMMETRIC_TOKEN", "RULE_REFLEXIVE_TOKEN", "RULE_IRREFLEXIVE_TOKEN", "RULE_TRANSITIVE_TOKEN", "RULE_UNREIFIED_TOKEN", "RULE_INVERSE_TOKEN", "RULE_SOURCE_TOKEN", "RULE_TARGET_TOKEN", "RULE_UNREIFIED_RELATIONSHIP_TOKEN", "RULE_SCALAR_TOKEN", "RULE_STRUCTURE_TOKEN", "RULE_DOMAIN_TOKEN", "RULE_RANGE_TOKEN", "RULE_ANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN", "RULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN", "RULE_SPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN", "RULE_BUNDLED_TERMINOLOGY_AXIOM_TOKEN", "RULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN", "RULE_EXTENDS_TOKEN", "RULE_TERMINOLOGY_NESTING_AXIOM_TOKEN", "RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN", "RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN", "RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN", "RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN", "RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN", "RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN", "RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN", "RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN", "RULE_BINARY_SCALAR_RESTRICTION_TOKEN", "RULE_INT", "RULE_IRI_SCALAR_RESTRICTION_TOKEN", "RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN", "RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN", "RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN", "RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN", "RULE_STRING_SCALAR_RESTRICTION_TOKEN", "RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN", "RULE_TIME_SCALAR_RESTRICTION_TOKEN", "RULE_DESCRIPTION_BOX_TOKEN", "RULE_REFINES_TOKEN", "RULE_KIND_TOKEN", "RULE_HEX_8DIGITS", "RULE_HEX_4DIGITS", "RULE_HEX_12DIGITS", "RULE_UUID", "RULE_HEX_DIGIT", "RULE_HEX", "RULE_DECIMAL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'entityStructuredDataProperty'", "'entityScalarDataProperty'", "'structuredDataProperty'", "'scalarDataProperty'", "'disjointTaxonomyParent'", "'root'", "'disjointLeaf'", "'bundledTerminology'", "'designatedTerminology'", "'designatedConcept'", "'nestingTerminology'", "'nestingContext'", "'restrictedRelation'", "'restrictedRange'", "'restrictedDomain'", "'subConcept'", "'superConcept'", "'subRelationship'", "'superRelationship'", "'restrictedEntity'", "'scalarProperty'", "'scalarRestriction'", "'literalValue'", "'length'", "'minLength'", "'maxLength'", "'pattern'", "'minInclusive'", "'maxInclusive'", "'minExclusive'", "'maxExclusive'", "'langRange'", "'value'", "'axiom'", "'ScalarDataPropertyValue'", "'scalarPropertyValue'", "'StructuredDataPropertyValue'", "'structuredPropertyTuple'", "'DataStructureTuple'", "'dataStructureType'", "'ConceptInstance'", "'singletonConceptClassifier'", "'ReifiedRelationshipInstance'", "'singletonReifiedRelationshipClassifier'", "'ReifiedRelationshipInstanceDomain'", "'reifiedRelationshipInstance'", "'ReifiedRelationshipInstanceRange'", "'UnreifiedRelationshipInstanceTuple'", "':'", "'open'", "'closed'", "'final'", "'partial'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ANNOTATION_PROPERTY_TOKEN", "RULE_EQUAL", "RULE_IRI", "RULE_ANNOTATION_TOKEN", "RULE_STRING", "RULE_TERMINOLOGY_GRAPH_TOKEN", "RULE_LCURLY", "RULE_RCURLY", "RULE_BUNDLE_TOKEN", "RULE_ASPECT_TOKEN", "RULE_ID", "RULE_ABSTRACT_TOKEN", "RULE_CONCEPT_TOKEN", "RULE_REIFIED_RELATIONSHIP_TOKEN", "RULE_FUNCTIONAL_TOKEN", "RULE_INVERSE_FUNCTIONAL_TOKEN", "RULE_ESSENTIAL_TOKEN", "RULE_INVERSE_ESSENTIAL_TOKEN", "RULE_SYMMETRIC_TOKEN", "RULE_ASYMMETRIC_TOKEN", "RULE_REFLEXIVE_TOKEN", "RULE_IRREFLEXIVE_TOKEN", "RULE_TRANSITIVE_TOKEN", "RULE_UNREIFIED_TOKEN", "RULE_INVERSE_TOKEN", "RULE_SOURCE_TOKEN", "RULE_TARGET_TOKEN", "RULE_UNREIFIED_RELATIONSHIP_TOKEN", "RULE_SCALAR_TOKEN", "RULE_STRUCTURE_TOKEN", "RULE_DOMAIN_TOKEN", "RULE_RANGE_TOKEN", "RULE_ANONYMOUS_CONCEPT_TAXONOMY_AXIOM_TOKEN", "RULE_ROOT_CONCEPT_TAXONOMY_AXIOM_TOKEN", "RULE_SPECIFIC_DISJOINT_CONCEPT_AXIOM_TOKEN", "RULE_BUNDLED_TERMINOLOGY_AXIOM_TOKEN", "RULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN", "RULE_EXTENDS_TOKEN", "RULE_TERMINOLOGY_NESTING_AXIOM_TOKEN", "RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN", "RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN", "RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN", "RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN", "RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN", "RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN", "RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN", "RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN", "RULE_BINARY_SCALAR_RESTRICTION_TOKEN", "RULE_INT", "RULE_IRI_SCALAR_RESTRICTION_TOKEN", "RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN", "RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN", "RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN", "RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN", "RULE_STRING_SCALAR_RESTRICTION_TOKEN", "RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN", "RULE_TIME_SCALAR_RESTRICTION_TOKEN", "RULE_DESCRIPTION_BOX_TOKEN", "RULE_REFINES_TOKEN", "RULE_KIND_TOKEN", "RULE_HEX_8DIGITS", "RULE_HEX_4DIGITS", "RULE_HEX_12DIGITS", "RULE_UUID", "RULE_HEX_DIGIT", "RULE_HEX", "RULE_DECIMAL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'entityStructuredDataProperty'", "'entityScalarDataProperty'", "'structuredDataProperty'", "'scalarDataProperty'", "'disjointTaxonomyParent'", "'root'", "'disjointLeaf'", "'bundledTerminology'", "'designatedTerminology'", "'designatedConcept'", "'nestingTerminology'", "'nestingContext'", "'restrictedRelation'", "'restrictedRange'", "'restrictedDomain'", "'restrictedEntity'", "'scalarProperty'", "'scalarRestriction'", "'literalValue'", "'length'", "'minLength'", "'maxLength'", "'pattern'", "'minInclusive'", "'maxInclusive'", "'minExclusive'", "'maxExclusive'", "'langRange'", "'value'", "'axiom'", "'ScalarDataPropertyValue'", "'scalarPropertyValue'", "'StructuredDataPropertyValue'", "'structuredPropertyTuple'", "'DataStructureTuple'", "'dataStructureType'", "'ConceptInstance'", "'singletonConceptClassifier'", "'ReifiedRelationshipInstance'", "'singletonReifiedRelationshipClassifier'", "'ReifiedRelationshipInstanceDomain'", "'reifiedRelationshipInstance'", "'ReifiedRelationshipInstanceRange'", "'UnreifiedRelationshipInstanceTuple'", "':'", "'open'", "'closed'", "'final'", "'partial'"
     };
     public static final int RULE_CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM_TOKEN=40;
     public static final int RULE_HEX=69;
@@ -39,11 +39,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
     public static final int RULE_UUID=67;
     public static final int RULE_INT=52;
     public static final int RULE_ML_COMMENT=71;
-    public static final int T__126=126;
-    public static final int T__125=125;
     public static final int RULE_REIFIED_RELATIONSHIP_TOKEN=17;
     public static final int RULE_INVERSE_TOKEN=28;
-    public static final int T__127=127;
     public static final int RULE_CONCEPT_TOKEN=16;
     public static final int RULE_IRI=6;
     public static final int RULE_BUNDLE_TOKEN=12;
@@ -88,7 +85,6 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
     public static final int RULE_RANGE_TOKEN=35;
     public static final int T__122=122;
     public static final int T__121=121;
-    public static final int T__124=124;
     public static final int T__123=123;
     public static final int RULE_UNREIFIED_TOKEN=27;
     public static final int T__120=120;
@@ -260,7 +256,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
                     alt1=1;
                     }
                     break;
-                case 124:
+                case 120:
                     {
                     int LA1_3 = input.LA(2);
 
@@ -274,7 +270,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
                     }
                     break;
-                case 125:
+                case 121:
                     {
                     int LA1_4 = input.LA(2);
 
@@ -288,8 +284,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
                     }
                     break;
-                case 126:
-                case 127:
+                case 122:
+                case 123:
                     {
                     alt1=4;
                     }
@@ -882,8 +878,6 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
                 case RULE_STRUCTURE_TOKEN:
                 case RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN:
                 case RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN:
-                case RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN:
-                case RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN:
                 case RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN:
                 case RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN:
                 case RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN:
@@ -1196,8 +1190,6 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
                 case RULE_STRUCTURE_TOKEN:
                 case RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN:
                 case RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN:
-                case RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN:
-                case RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN:
                 case RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN:
                 case RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN:
                 case RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN:
@@ -1632,7 +1624,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( (LA5_0==RULE_IRI||LA5_0==RULE_ID||(LA5_0>=RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN && LA5_0<=RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN)||(LA5_0>=RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN && LA5_0<=RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN)||LA5_0==RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN) ) {
+            if ( (LA5_0==RULE_IRI||LA5_0==RULE_ID||(LA5_0>=RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN && LA5_0<=RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN)||(LA5_0>=RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN && LA5_0<=RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN)||LA5_0==RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN) ) {
                 alt5=1;
             }
             else if ( (LA5_0==RULE_ASPECT_TOKEN||(LA5_0>=RULE_ABSTRACT_TOKEN && LA5_0<=RULE_REIFIED_RELATIONSHIP_TOKEN)||(LA5_0>=RULE_UNREIFIED_RELATIONSHIP_TOKEN && LA5_0<=RULE_STRUCTURE_TOKEN)||LA5_0==RULE_BINARY_SCALAR_RESTRICTION_TOKEN||(LA5_0>=RULE_IRI_SCALAR_RESTRICTION_TOKEN && LA5_0<=RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN)||(LA5_0>=RULE_STRING_SCALAR_RESTRICTION_TOKEN && LA5_0<=RULE_TIME_SCALAR_RESTRICTION_TOKEN)||(LA5_0>=75 && LA5_0<=78)) ) {
@@ -2889,7 +2881,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
             if ( (LA13_0==RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN) ) {
                 alt13=1;
             }
-            else if ( (LA13_0==RULE_IRI||LA13_0==RULE_ID||(LA13_0>=RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN && LA13_0<=RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN)||(LA13_0>=RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN && LA13_0<=RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN)) ) {
+            else if ( (LA13_0==RULE_IRI||LA13_0==RULE_ID||(LA13_0>=RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN && LA13_0<=RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN)||(LA13_0>=RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN && LA13_0<=RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN)) ) {
                 alt13=2;
             }
             else {
@@ -3022,8 +3014,6 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
                 break;
             case RULE_IRI:
             case RULE_ID:
-            case RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN:
-            case RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN:
                 {
                 alt14=3;
                 }
@@ -3430,30 +3420,101 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
             {
             // PsiInternalOntologicalModelingLanguage.g:1066:2: (this_ConceptSpecializationAxiom_0= ruleConceptSpecializationAxiom | this_AspectSpecializationAxiom_1= ruleAspectSpecializationAxiom | this_ReifiedRelationshipSpecializationAxiom_2= ruleReifiedRelationshipSpecializationAxiom )
             int alt17=3;
-            switch ( input.LA(1) ) {
-            case RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN:
-                {
-                alt17=1;
+            int LA17_0 = input.LA(1);
+
+            if ( (LA17_0==RULE_IRI) ) {
+                switch ( input.LA(2) ) {
+                case RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN:
+                    {
+                    alt17=2;
+                    }
+                    break;
+                case RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN:
+                    {
+                    alt17=1;
+                    }
+                    break;
+                case RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN:
+                    {
+                    alt17=3;
+                    }
+                    break;
+                default:
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 17, 1, input);
+
+                    throw nvae;
                 }
-                break;
-            case RULE_IRI:
-            case RULE_ID:
-                {
-                alt17=2;
+
+            }
+            else if ( (LA17_0==RULE_ID) ) {
+                switch ( input.LA(2) ) {
+                case RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN:
+                    {
+                    alt17=3;
+                    }
+                    break;
+                case 119:
+                    {
+                    int LA17_6 = input.LA(3);
+
+                    if ( (LA17_6==RULE_ID) ) {
+                        switch ( input.LA(4) ) {
+                        case RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN:
+                            {
+                            alt17=2;
+                            }
+                            break;
+                        case RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN:
+                            {
+                            alt17=1;
+                            }
+                            break;
+                        case RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN:
+                            {
+                            alt17=3;
+                            }
+                            break;
+                        default:
+                            NoViableAltException nvae =
+                                new NoViableAltException("", 17, 7, input);
+
+                            throw nvae;
+                        }
+
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 17, 6, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN:
+                    {
+                    alt17=2;
+                    }
+                    break;
+                case RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN:
+                    {
+                    alt17=1;
+                    }
+                    break;
+                default:
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 17, 2, input);
+
+                    throw nvae;
                 }
-                break;
-            case RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN:
-                {
-                alt17=3;
-                }
-                break;
-            default:
+
+            }
+            else {
                 NoViableAltException nvae =
                     new NoViableAltException("", 17, 0, input);
 
                 throw nvae;
             }
-
             switch (alt17) {
                 case 1 :
                     // PsiInternalOntologicalModelingLanguage.g:1067:3: this_ConceptSpecializationAxiom_0= ruleConceptSpecializationAxiom
@@ -7709,49 +7770,24 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleConceptSpecializationAxiom"
-    // PsiInternalOntologicalModelingLanguage.g:3081:1: ruleConceptSpecializationAxiom returns [Boolean current=false] : (this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_0= RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'subConcept' ( ( ruleReference ) ) otherlv_4= 'superConcept' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) ;
+    // PsiInternalOntologicalModelingLanguage.g:3081:1: ruleConceptSpecializationAxiom returns [Boolean current=false] : ( ( ( ruleReference ) ) this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_1= RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN ( ( ruleReference ) ) ) ;
     public final Boolean ruleConceptSpecializationAxiom() throws RecognitionException {
         Boolean current = false;
 
-        Token this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_0=null;
-        Token this_LCURLY_1=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        Token this_RCURLY_6=null;
+        Token this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_1=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:3082:1: ( (this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_0= RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'subConcept' ( ( ruleReference ) ) otherlv_4= 'superConcept' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) )
-            // PsiInternalOntologicalModelingLanguage.g:3083:2: (this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_0= RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'subConcept' ( ( ruleReference ) ) otherlv_4= 'superConcept' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:3082:1: ( ( ( ( ruleReference ) ) this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_1= RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN ( ( ruleReference ) ) ) )
+            // PsiInternalOntologicalModelingLanguage.g:3083:2: ( ( ( ruleReference ) ) this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_1= RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN ( ( ruleReference ) ) )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3083:2: (this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_0= RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'subConcept' ( ( ruleReference ) ) otherlv_4= 'superConcept' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
-            // PsiInternalOntologicalModelingLanguage.g:3084:3: this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_0= RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'subConcept' ( ( ruleReference ) ) otherlv_4= 'superConcept' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY
+            // PsiInternalOntologicalModelingLanguage.g:3083:2: ( ( ( ruleReference ) ) this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_1= RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN ( ( ruleReference ) ) )
+            // PsiInternalOntologicalModelingLanguage.g:3084:3: ( ( ruleReference ) ) this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_1= RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN ( ( ruleReference ) )
             {
-
-            			markLeaf(elementTypeProvider.getConceptSpecializationAxiom_CONCEPT_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_0ElementType());
-            		
-            this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_0=(Token)match(input,RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN,FOLLOW_9); 
-
-            			doneLeaf(this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_0);
-            		
-
-            			markLeaf(elementTypeProvider.getConceptSpecializationAxiom_LCURLYTerminalRuleCall_1ElementType());
-            		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_53); 
-
-            			doneLeaf(this_LCURLY_1);
-            		
-
-            			markLeaf(elementTypeProvider.getConceptSpecializationAxiom_SubConceptKeyword_2ElementType());
-            		
-            otherlv_2=(Token)match(input,90,FOLLOW_27); 
-
-            			doneLeaf(otherlv_2);
-            		
-            // PsiInternalOntologicalModelingLanguage.g:3105:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:3106:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3084:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:3085:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3106:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:3107:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:3085:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3086:5: ruleReference
             {
 
             					if (!current) {
@@ -7760,9 +7796,9 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
             					}
             				
 
-            					markComposite(elementTypeProvider.getConceptSpecializationAxiom_SubConceptConceptCrossReference_3_0ElementType());
+            					markComposite(elementTypeProvider.getConceptSpecializationAxiom_SubConceptConceptCrossReference_0_0ElementType());
             				
-            pushFollow(FOLLOW_54);
+            pushFollow(FOLLOW_53);
             ruleReference();
 
             state._fsp--;
@@ -7777,17 +7813,17 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
             }
 
 
-            			markLeaf(elementTypeProvider.getConceptSpecializationAxiom_SuperConceptKeyword_4ElementType());
+            			markLeaf(elementTypeProvider.getConceptSpecializationAxiom_CONCEPT_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_1ElementType());
             		
-            otherlv_4=(Token)match(input,91,FOLLOW_27); 
+            this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_1=(Token)match(input,RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN,FOLLOW_27); 
 
-            			doneLeaf(otherlv_4);
+            			doneLeaf(this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_1);
             		
-            // PsiInternalOntologicalModelingLanguage.g:3129:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:3130:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3108:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:3109:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3130:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:3131:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:3109:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3110:5: ruleReference
             {
 
             					if (!current) {
@@ -7796,9 +7832,9 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
             					}
             				
 
-            					markComposite(elementTypeProvider.getConceptSpecializationAxiom_SuperConceptConceptCrossReference_5_0ElementType());
+            					markComposite(elementTypeProvider.getConceptSpecializationAxiom_SuperConceptConceptCrossReference_2_0ElementType());
             				
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_2);
             ruleReference();
 
             state._fsp--;
@@ -7812,13 +7848,6 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             }
 
-
-            			markLeaf(elementTypeProvider.getConceptSpecializationAxiom_RCURLYTerminalRuleCall_6ElementType());
-            		
-            this_RCURLY_6=(Token)match(input,RULE_RCURLY,FOLLOW_2); 
-
-            			doneLeaf(this_RCURLY_6);
-            		
 
             }
 
@@ -7838,7 +7867,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleReifiedRelationshipSpecializationAxiom"
-    // PsiInternalOntologicalModelingLanguage.g:3157:1: entryRuleReifiedRelationshipSpecializationAxiom returns [Boolean current=false] : iv_ruleReifiedRelationshipSpecializationAxiom= ruleReifiedRelationshipSpecializationAxiom EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:3129:1: entryRuleReifiedRelationshipSpecializationAxiom returns [Boolean current=false] : iv_ruleReifiedRelationshipSpecializationAxiom= ruleReifiedRelationshipSpecializationAxiom EOF ;
     public final Boolean entryRuleReifiedRelationshipSpecializationAxiom() throws RecognitionException {
         Boolean current = false;
 
@@ -7846,8 +7875,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:3157:80: (iv_ruleReifiedRelationshipSpecializationAxiom= ruleReifiedRelationshipSpecializationAxiom EOF )
-            // PsiInternalOntologicalModelingLanguage.g:3158:2: iv_ruleReifiedRelationshipSpecializationAxiom= ruleReifiedRelationshipSpecializationAxiom EOF
+            // PsiInternalOntologicalModelingLanguage.g:3129:80: (iv_ruleReifiedRelationshipSpecializationAxiom= ruleReifiedRelationshipSpecializationAxiom EOF )
+            // PsiInternalOntologicalModelingLanguage.g:3130:2: iv_ruleReifiedRelationshipSpecializationAxiom= ruleReifiedRelationshipSpecializationAxiom EOF
             {
              markComposite(elementTypeProvider.getReifiedRelationshipSpecializationAxiomElementType()); 
             pushFollow(FOLLOW_1);
@@ -7873,49 +7902,24 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleReifiedRelationshipSpecializationAxiom"
-    // PsiInternalOntologicalModelingLanguage.g:3164:1: ruleReifiedRelationshipSpecializationAxiom returns [Boolean current=false] : (this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_0= RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'subRelationship' ( ( ruleReference ) ) otherlv_4= 'superRelationship' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) ;
+    // PsiInternalOntologicalModelingLanguage.g:3136:1: ruleReifiedRelationshipSpecializationAxiom returns [Boolean current=false] : ( ( ( ruleReference ) ) this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_1= RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN ( ( ruleReference ) ) ) ;
     public final Boolean ruleReifiedRelationshipSpecializationAxiom() throws RecognitionException {
         Boolean current = false;
 
-        Token this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_0=null;
-        Token this_LCURLY_1=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        Token this_RCURLY_6=null;
+        Token this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_1=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:3165:1: ( (this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_0= RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'subRelationship' ( ( ruleReference ) ) otherlv_4= 'superRelationship' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) )
-            // PsiInternalOntologicalModelingLanguage.g:3166:2: (this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_0= RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'subRelationship' ( ( ruleReference ) ) otherlv_4= 'superRelationship' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:3137:1: ( ( ( ( ruleReference ) ) this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_1= RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN ( ( ruleReference ) ) ) )
+            // PsiInternalOntologicalModelingLanguage.g:3138:2: ( ( ( ruleReference ) ) this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_1= RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN ( ( ruleReference ) ) )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3166:2: (this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_0= RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'subRelationship' ( ( ruleReference ) ) otherlv_4= 'superRelationship' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
-            // PsiInternalOntologicalModelingLanguage.g:3167:3: this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_0= RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'subRelationship' ( ( ruleReference ) ) otherlv_4= 'superRelationship' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY
+            // PsiInternalOntologicalModelingLanguage.g:3138:2: ( ( ( ruleReference ) ) this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_1= RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN ( ( ruleReference ) ) )
+            // PsiInternalOntologicalModelingLanguage.g:3139:3: ( ( ruleReference ) ) this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_1= RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN ( ( ruleReference ) )
             {
-
-            			markLeaf(elementTypeProvider.getReifiedRelationshipSpecializationAxiom_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_0ElementType());
-            		
-            this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_0=(Token)match(input,RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN,FOLLOW_9); 
-
-            			doneLeaf(this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_0);
-            		
-
-            			markLeaf(elementTypeProvider.getReifiedRelationshipSpecializationAxiom_LCURLYTerminalRuleCall_1ElementType());
-            		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_55); 
-
-            			doneLeaf(this_LCURLY_1);
-            		
-
-            			markLeaf(elementTypeProvider.getReifiedRelationshipSpecializationAxiom_SubRelationshipKeyword_2ElementType());
-            		
-            otherlv_2=(Token)match(input,92,FOLLOW_27); 
-
-            			doneLeaf(otherlv_2);
-            		
-            // PsiInternalOntologicalModelingLanguage.g:3188:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:3189:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3139:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:3140:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3189:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:3190:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:3140:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3141:5: ruleReference
             {
 
             					if (!current) {
@@ -7924,9 +7928,9 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
             					}
             				
 
-            					markComposite(elementTypeProvider.getReifiedRelationshipSpecializationAxiom_SubRelationshipReifiedRelationshipCrossReference_3_0ElementType());
+            					markComposite(elementTypeProvider.getReifiedRelationshipSpecializationAxiom_SubRelationshipReifiedRelationshipCrossReference_0_0ElementType());
             				
-            pushFollow(FOLLOW_56);
+            pushFollow(FOLLOW_54);
             ruleReference();
 
             state._fsp--;
@@ -7941,17 +7945,17 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
             }
 
 
-            			markLeaf(elementTypeProvider.getReifiedRelationshipSpecializationAxiom_SuperRelationshipKeyword_4ElementType());
+            			markLeaf(elementTypeProvider.getReifiedRelationshipSpecializationAxiom_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_1ElementType());
             		
-            otherlv_4=(Token)match(input,93,FOLLOW_27); 
+            this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_1=(Token)match(input,RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN,FOLLOW_27); 
 
-            			doneLeaf(otherlv_4);
+            			doneLeaf(this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_1);
             		
-            // PsiInternalOntologicalModelingLanguage.g:3212:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:3213:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3163:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:3164:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3213:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:3214:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:3164:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3165:5: ruleReference
             {
 
             					if (!current) {
@@ -7960,9 +7964,9 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
             					}
             				
 
-            					markComposite(elementTypeProvider.getReifiedRelationshipSpecializationAxiom_SuperRelationshipReifiedRelationshipCrossReference_5_0ElementType());
+            					markComposite(elementTypeProvider.getReifiedRelationshipSpecializationAxiom_SuperRelationshipReifiedRelationshipCrossReference_2_0ElementType());
             				
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_2);
             ruleReference();
 
             state._fsp--;
@@ -7976,13 +7980,6 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             }
 
-
-            			markLeaf(elementTypeProvider.getReifiedRelationshipSpecializationAxiom_RCURLYTerminalRuleCall_6ElementType());
-            		
-            this_RCURLY_6=(Token)match(input,RULE_RCURLY,FOLLOW_2); 
-
-            			doneLeaf(this_RCURLY_6);
-            		
 
             }
 
@@ -8002,7 +7999,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleEntityScalarDataPropertyExistentialRestrictionAxiom"
-    // PsiInternalOntologicalModelingLanguage.g:3240:1: entryRuleEntityScalarDataPropertyExistentialRestrictionAxiom returns [Boolean current=false] : iv_ruleEntityScalarDataPropertyExistentialRestrictionAxiom= ruleEntityScalarDataPropertyExistentialRestrictionAxiom EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:3184:1: entryRuleEntityScalarDataPropertyExistentialRestrictionAxiom returns [Boolean current=false] : iv_ruleEntityScalarDataPropertyExistentialRestrictionAxiom= ruleEntityScalarDataPropertyExistentialRestrictionAxiom EOF ;
     public final Boolean entryRuleEntityScalarDataPropertyExistentialRestrictionAxiom() throws RecognitionException {
         Boolean current = false;
 
@@ -8010,8 +8007,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:3240:93: (iv_ruleEntityScalarDataPropertyExistentialRestrictionAxiom= ruleEntityScalarDataPropertyExistentialRestrictionAxiom EOF )
-            // PsiInternalOntologicalModelingLanguage.g:3241:2: iv_ruleEntityScalarDataPropertyExistentialRestrictionAxiom= ruleEntityScalarDataPropertyExistentialRestrictionAxiom EOF
+            // PsiInternalOntologicalModelingLanguage.g:3184:93: (iv_ruleEntityScalarDataPropertyExistentialRestrictionAxiom= ruleEntityScalarDataPropertyExistentialRestrictionAxiom EOF )
+            // PsiInternalOntologicalModelingLanguage.g:3185:2: iv_ruleEntityScalarDataPropertyExistentialRestrictionAxiom= ruleEntityScalarDataPropertyExistentialRestrictionAxiom EOF
             {
              markComposite(elementTypeProvider.getEntityScalarDataPropertyExistentialRestrictionAxiomElementType()); 
             pushFollow(FOLLOW_1);
@@ -8037,7 +8034,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleEntityScalarDataPropertyExistentialRestrictionAxiom"
-    // PsiInternalOntologicalModelingLanguage.g:3247:1: ruleEntityScalarDataPropertyExistentialRestrictionAxiom returns [Boolean current=false] : (this_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY ) ;
+    // PsiInternalOntologicalModelingLanguage.g:3191:1: ruleEntityScalarDataPropertyExistentialRestrictionAxiom returns [Boolean current=false] : (this_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY ) ;
     public final Boolean ruleEntityScalarDataPropertyExistentialRestrictionAxiom() throws RecognitionException {
         Boolean current = false;
 
@@ -8049,11 +8046,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
         Token this_RCURLY_8=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:3248:1: ( (this_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY ) )
-            // PsiInternalOntologicalModelingLanguage.g:3249:2: (this_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:3192:1: ( (this_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY ) )
+            // PsiInternalOntologicalModelingLanguage.g:3193:2: (this_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3249:2: (this_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY )
-            // PsiInternalOntologicalModelingLanguage.g:3250:3: this_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY
+            // PsiInternalOntologicalModelingLanguage.g:3193:2: (this_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:3194:3: this_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY
             {
 
             			markLeaf(elementTypeProvider.getEntityScalarDataPropertyExistentialRestrictionAxiom_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKENTerminalRuleCall_0ElementType());
@@ -8065,22 +8062,22 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			markLeaf(elementTypeProvider.getEntityScalarDataPropertyExistentialRestrictionAxiom_LCURLYTerminalRuleCall_1ElementType());
             		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_57); 
+            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_55); 
 
             			doneLeaf(this_LCURLY_1);
             		
 
             			markLeaf(elementTypeProvider.getEntityScalarDataPropertyExistentialRestrictionAxiom_RestrictedEntityKeyword_2ElementType());
             		
-            otherlv_2=(Token)match(input,94,FOLLOW_27); 
+            otherlv_2=(Token)match(input,90,FOLLOW_27); 
 
             			doneLeaf(otherlv_2);
             		
-            // PsiInternalOntologicalModelingLanguage.g:3271:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:3272:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3215:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:3216:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3272:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:3273:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:3216:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3217:5: ruleReference
             {
 
             					if (!current) {
@@ -8091,7 +8088,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             					markComposite(elementTypeProvider.getEntityScalarDataPropertyExistentialRestrictionAxiom_RestrictedEntityEntityCrossReference_3_0ElementType());
             				
-            pushFollow(FOLLOW_58);
+            pushFollow(FOLLOW_56);
             ruleReference();
 
             state._fsp--;
@@ -8108,15 +8105,15 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			markLeaf(elementTypeProvider.getEntityScalarDataPropertyExistentialRestrictionAxiom_ScalarPropertyKeyword_4ElementType());
             		
-            otherlv_4=(Token)match(input,95,FOLLOW_27); 
+            otherlv_4=(Token)match(input,91,FOLLOW_27); 
 
             			doneLeaf(otherlv_4);
             		
-            // PsiInternalOntologicalModelingLanguage.g:3295:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:3296:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3239:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:3240:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3296:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:3297:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:3240:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3241:5: ruleReference
             {
 
             					if (!current) {
@@ -8127,7 +8124,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             					markComposite(elementTypeProvider.getEntityScalarDataPropertyExistentialRestrictionAxiom_ScalarPropertyEntityScalarDataPropertyCrossReference_5_0ElementType());
             				
-            pushFollow(FOLLOW_59);
+            pushFollow(FOLLOW_57);
             ruleReference();
 
             state._fsp--;
@@ -8144,15 +8141,15 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			markLeaf(elementTypeProvider.getEntityScalarDataPropertyExistentialRestrictionAxiom_ScalarRestrictionKeyword_6ElementType());
             		
-            otherlv_6=(Token)match(input,96,FOLLOW_27); 
+            otherlv_6=(Token)match(input,92,FOLLOW_27); 
 
             			doneLeaf(otherlv_6);
             		
-            // PsiInternalOntologicalModelingLanguage.g:3319:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:3320:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3263:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:3264:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3320:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:3321:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:3264:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3265:5: ruleReference
             {
 
             					if (!current) {
@@ -8203,7 +8200,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleEntityScalarDataPropertyParticularRestrictionAxiom"
-    // PsiInternalOntologicalModelingLanguage.g:3347:1: entryRuleEntityScalarDataPropertyParticularRestrictionAxiom returns [Boolean current=false] : iv_ruleEntityScalarDataPropertyParticularRestrictionAxiom= ruleEntityScalarDataPropertyParticularRestrictionAxiom EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:3291:1: entryRuleEntityScalarDataPropertyParticularRestrictionAxiom returns [Boolean current=false] : iv_ruleEntityScalarDataPropertyParticularRestrictionAxiom= ruleEntityScalarDataPropertyParticularRestrictionAxiom EOF ;
     public final Boolean entryRuleEntityScalarDataPropertyParticularRestrictionAxiom() throws RecognitionException {
         Boolean current = false;
 
@@ -8211,8 +8208,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:3347:92: (iv_ruleEntityScalarDataPropertyParticularRestrictionAxiom= ruleEntityScalarDataPropertyParticularRestrictionAxiom EOF )
-            // PsiInternalOntologicalModelingLanguage.g:3348:2: iv_ruleEntityScalarDataPropertyParticularRestrictionAxiom= ruleEntityScalarDataPropertyParticularRestrictionAxiom EOF
+            // PsiInternalOntologicalModelingLanguage.g:3291:92: (iv_ruleEntityScalarDataPropertyParticularRestrictionAxiom= ruleEntityScalarDataPropertyParticularRestrictionAxiom EOF )
+            // PsiInternalOntologicalModelingLanguage.g:3292:2: iv_ruleEntityScalarDataPropertyParticularRestrictionAxiom= ruleEntityScalarDataPropertyParticularRestrictionAxiom EOF
             {
              markComposite(elementTypeProvider.getEntityScalarDataPropertyParticularRestrictionAxiomElementType()); 
             pushFollow(FOLLOW_1);
@@ -8238,7 +8235,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleEntityScalarDataPropertyParticularRestrictionAxiom"
-    // PsiInternalOntologicalModelingLanguage.g:3354:1: ruleEntityScalarDataPropertyParticularRestrictionAxiom returns [Boolean current=false] : (this_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'literalValue' ( (lv_literalValue_7_0= RULE_STRING ) ) this_RCURLY_8= RULE_RCURLY ) ;
+    // PsiInternalOntologicalModelingLanguage.g:3298:1: ruleEntityScalarDataPropertyParticularRestrictionAxiom returns [Boolean current=false] : (this_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'literalValue' ( (lv_literalValue_7_0= RULE_STRING ) ) this_RCURLY_8= RULE_RCURLY ) ;
     public final Boolean ruleEntityScalarDataPropertyParticularRestrictionAxiom() throws RecognitionException {
         Boolean current = false;
 
@@ -8251,11 +8248,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
         Token this_RCURLY_8=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:3355:1: ( (this_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'literalValue' ( (lv_literalValue_7_0= RULE_STRING ) ) this_RCURLY_8= RULE_RCURLY ) )
-            // PsiInternalOntologicalModelingLanguage.g:3356:2: (this_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'literalValue' ( (lv_literalValue_7_0= RULE_STRING ) ) this_RCURLY_8= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:3299:1: ( (this_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'literalValue' ( (lv_literalValue_7_0= RULE_STRING ) ) this_RCURLY_8= RULE_RCURLY ) )
+            // PsiInternalOntologicalModelingLanguage.g:3300:2: (this_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'literalValue' ( (lv_literalValue_7_0= RULE_STRING ) ) this_RCURLY_8= RULE_RCURLY )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3356:2: (this_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'literalValue' ( (lv_literalValue_7_0= RULE_STRING ) ) this_RCURLY_8= RULE_RCURLY )
-            // PsiInternalOntologicalModelingLanguage.g:3357:3: this_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'literalValue' ( (lv_literalValue_7_0= RULE_STRING ) ) this_RCURLY_8= RULE_RCURLY
+            // PsiInternalOntologicalModelingLanguage.g:3300:2: (this_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'literalValue' ( (lv_literalValue_7_0= RULE_STRING ) ) this_RCURLY_8= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:3301:3: this_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'literalValue' ( (lv_literalValue_7_0= RULE_STRING ) ) this_RCURLY_8= RULE_RCURLY
             {
 
             			markLeaf(elementTypeProvider.getEntityScalarDataPropertyParticularRestrictionAxiom_ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM_TOKENTerminalRuleCall_0ElementType());
@@ -8267,22 +8264,22 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			markLeaf(elementTypeProvider.getEntityScalarDataPropertyParticularRestrictionAxiom_LCURLYTerminalRuleCall_1ElementType());
             		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_57); 
+            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_55); 
 
             			doneLeaf(this_LCURLY_1);
             		
 
             			markLeaf(elementTypeProvider.getEntityScalarDataPropertyParticularRestrictionAxiom_RestrictedEntityKeyword_2ElementType());
             		
-            otherlv_2=(Token)match(input,94,FOLLOW_27); 
+            otherlv_2=(Token)match(input,90,FOLLOW_27); 
 
             			doneLeaf(otherlv_2);
             		
-            // PsiInternalOntologicalModelingLanguage.g:3378:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:3379:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3322:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:3323:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3379:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:3380:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:3323:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3324:5: ruleReference
             {
 
             					if (!current) {
@@ -8293,7 +8290,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             					markComposite(elementTypeProvider.getEntityScalarDataPropertyParticularRestrictionAxiom_RestrictedEntityEntityCrossReference_3_0ElementType());
             				
-            pushFollow(FOLLOW_58);
+            pushFollow(FOLLOW_56);
             ruleReference();
 
             state._fsp--;
@@ -8310,15 +8307,15 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			markLeaf(elementTypeProvider.getEntityScalarDataPropertyParticularRestrictionAxiom_ScalarPropertyKeyword_4ElementType());
             		
-            otherlv_4=(Token)match(input,95,FOLLOW_27); 
+            otherlv_4=(Token)match(input,91,FOLLOW_27); 
 
             			doneLeaf(otherlv_4);
             		
-            // PsiInternalOntologicalModelingLanguage.g:3402:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:3403:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3346:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:3347:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3403:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:3404:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:3347:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3348:5: ruleReference
             {
 
             					if (!current) {
@@ -8329,7 +8326,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             					markComposite(elementTypeProvider.getEntityScalarDataPropertyParticularRestrictionAxiom_ScalarPropertyEntityScalarDataPropertyCrossReference_5_0ElementType());
             				
-            pushFollow(FOLLOW_60);
+            pushFollow(FOLLOW_58);
             ruleReference();
 
             state._fsp--;
@@ -8346,15 +8343,15 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			markLeaf(elementTypeProvider.getEntityScalarDataPropertyParticularRestrictionAxiom_LiteralValueKeyword_6ElementType());
             		
-            otherlv_6=(Token)match(input,97,FOLLOW_7); 
+            otherlv_6=(Token)match(input,93,FOLLOW_7); 
 
             			doneLeaf(otherlv_6);
             		
-            // PsiInternalOntologicalModelingLanguage.g:3426:3: ( (lv_literalValue_7_0= RULE_STRING ) )
-            // PsiInternalOntologicalModelingLanguage.g:3427:4: (lv_literalValue_7_0= RULE_STRING )
+            // PsiInternalOntologicalModelingLanguage.g:3370:3: ( (lv_literalValue_7_0= RULE_STRING ) )
+            // PsiInternalOntologicalModelingLanguage.g:3371:4: (lv_literalValue_7_0= RULE_STRING )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3427:4: (lv_literalValue_7_0= RULE_STRING )
-            // PsiInternalOntologicalModelingLanguage.g:3428:5: lv_literalValue_7_0= RULE_STRING
+            // PsiInternalOntologicalModelingLanguage.g:3371:4: (lv_literalValue_7_0= RULE_STRING )
+            // PsiInternalOntologicalModelingLanguage.g:3372:5: lv_literalValue_7_0= RULE_STRING
             {
 
             					markLeaf(elementTypeProvider.getEntityScalarDataPropertyParticularRestrictionAxiom_LiteralValueSTRINGTerminalRuleCall_7_0ElementType());
@@ -8401,7 +8398,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleEntityScalarDataPropertyUniversalRestrictionAxiom"
-    // PsiInternalOntologicalModelingLanguage.g:3454:1: entryRuleEntityScalarDataPropertyUniversalRestrictionAxiom returns [Boolean current=false] : iv_ruleEntityScalarDataPropertyUniversalRestrictionAxiom= ruleEntityScalarDataPropertyUniversalRestrictionAxiom EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:3398:1: entryRuleEntityScalarDataPropertyUniversalRestrictionAxiom returns [Boolean current=false] : iv_ruleEntityScalarDataPropertyUniversalRestrictionAxiom= ruleEntityScalarDataPropertyUniversalRestrictionAxiom EOF ;
     public final Boolean entryRuleEntityScalarDataPropertyUniversalRestrictionAxiom() throws RecognitionException {
         Boolean current = false;
 
@@ -8409,8 +8406,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:3454:91: (iv_ruleEntityScalarDataPropertyUniversalRestrictionAxiom= ruleEntityScalarDataPropertyUniversalRestrictionAxiom EOF )
-            // PsiInternalOntologicalModelingLanguage.g:3455:2: iv_ruleEntityScalarDataPropertyUniversalRestrictionAxiom= ruleEntityScalarDataPropertyUniversalRestrictionAxiom EOF
+            // PsiInternalOntologicalModelingLanguage.g:3398:91: (iv_ruleEntityScalarDataPropertyUniversalRestrictionAxiom= ruleEntityScalarDataPropertyUniversalRestrictionAxiom EOF )
+            // PsiInternalOntologicalModelingLanguage.g:3399:2: iv_ruleEntityScalarDataPropertyUniversalRestrictionAxiom= ruleEntityScalarDataPropertyUniversalRestrictionAxiom EOF
             {
              markComposite(elementTypeProvider.getEntityScalarDataPropertyUniversalRestrictionAxiomElementType()); 
             pushFollow(FOLLOW_1);
@@ -8436,7 +8433,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleEntityScalarDataPropertyUniversalRestrictionAxiom"
-    // PsiInternalOntologicalModelingLanguage.g:3461:1: ruleEntityScalarDataPropertyUniversalRestrictionAxiom returns [Boolean current=false] : (this_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY ) ;
+    // PsiInternalOntologicalModelingLanguage.g:3405:1: ruleEntityScalarDataPropertyUniversalRestrictionAxiom returns [Boolean current=false] : (this_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY ) ;
     public final Boolean ruleEntityScalarDataPropertyUniversalRestrictionAxiom() throws RecognitionException {
         Boolean current = false;
 
@@ -8448,11 +8445,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
         Token this_RCURLY_8=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:3462:1: ( (this_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY ) )
-            // PsiInternalOntologicalModelingLanguage.g:3463:2: (this_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:3406:1: ( (this_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY ) )
+            // PsiInternalOntologicalModelingLanguage.g:3407:2: (this_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3463:2: (this_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY )
-            // PsiInternalOntologicalModelingLanguage.g:3464:3: this_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY
+            // PsiInternalOntologicalModelingLanguage.g:3407:2: (this_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:3408:3: this_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN_0= RULE_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'restrictedEntity' ( ( ruleReference ) ) otherlv_4= 'scalarProperty' ( ( ruleReference ) ) otherlv_6= 'scalarRestriction' ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY
             {
 
             			markLeaf(elementTypeProvider.getEntityScalarDataPropertyUniversalRestrictionAxiom_ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM_TOKENTerminalRuleCall_0ElementType());
@@ -8464,22 +8461,22 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			markLeaf(elementTypeProvider.getEntityScalarDataPropertyUniversalRestrictionAxiom_LCURLYTerminalRuleCall_1ElementType());
             		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_57); 
+            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_55); 
 
             			doneLeaf(this_LCURLY_1);
             		
 
             			markLeaf(elementTypeProvider.getEntityScalarDataPropertyUniversalRestrictionAxiom_RestrictedEntityKeyword_2ElementType());
             		
-            otherlv_2=(Token)match(input,94,FOLLOW_27); 
+            otherlv_2=(Token)match(input,90,FOLLOW_27); 
 
             			doneLeaf(otherlv_2);
             		
-            // PsiInternalOntologicalModelingLanguage.g:3485:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:3486:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3429:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:3430:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3486:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:3487:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:3430:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3431:5: ruleReference
             {
 
             					if (!current) {
@@ -8490,7 +8487,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             					markComposite(elementTypeProvider.getEntityScalarDataPropertyUniversalRestrictionAxiom_RestrictedEntityEntityCrossReference_3_0ElementType());
             				
-            pushFollow(FOLLOW_58);
+            pushFollow(FOLLOW_56);
             ruleReference();
 
             state._fsp--;
@@ -8507,15 +8504,15 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			markLeaf(elementTypeProvider.getEntityScalarDataPropertyUniversalRestrictionAxiom_ScalarPropertyKeyword_4ElementType());
             		
-            otherlv_4=(Token)match(input,95,FOLLOW_27); 
+            otherlv_4=(Token)match(input,91,FOLLOW_27); 
 
             			doneLeaf(otherlv_4);
             		
-            // PsiInternalOntologicalModelingLanguage.g:3509:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:3510:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3453:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:3454:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3510:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:3511:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:3454:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3455:5: ruleReference
             {
 
             					if (!current) {
@@ -8526,7 +8523,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             					markComposite(elementTypeProvider.getEntityScalarDataPropertyUniversalRestrictionAxiom_ScalarPropertyEntityScalarDataPropertyCrossReference_5_0ElementType());
             				
-            pushFollow(FOLLOW_59);
+            pushFollow(FOLLOW_57);
             ruleReference();
 
             state._fsp--;
@@ -8543,15 +8540,15 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			markLeaf(elementTypeProvider.getEntityScalarDataPropertyUniversalRestrictionAxiom_ScalarRestrictionKeyword_6ElementType());
             		
-            otherlv_6=(Token)match(input,96,FOLLOW_27); 
+            otherlv_6=(Token)match(input,92,FOLLOW_27); 
 
             			doneLeaf(otherlv_6);
             		
-            // PsiInternalOntologicalModelingLanguage.g:3533:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:3534:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3477:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:3478:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3534:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:3535:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:3478:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3479:5: ruleReference
             {
 
             					if (!current) {
@@ -8602,7 +8599,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleBinaryScalarRestriction"
-    // PsiInternalOntologicalModelingLanguage.g:3561:1: entryRuleBinaryScalarRestriction returns [Boolean current=false] : iv_ruleBinaryScalarRestriction= ruleBinaryScalarRestriction EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:3505:1: entryRuleBinaryScalarRestriction returns [Boolean current=false] : iv_ruleBinaryScalarRestriction= ruleBinaryScalarRestriction EOF ;
     public final Boolean entryRuleBinaryScalarRestriction() throws RecognitionException {
         Boolean current = false;
 
@@ -8610,8 +8607,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:3561:65: (iv_ruleBinaryScalarRestriction= ruleBinaryScalarRestriction EOF )
-            // PsiInternalOntologicalModelingLanguage.g:3562:2: iv_ruleBinaryScalarRestriction= ruleBinaryScalarRestriction EOF
+            // PsiInternalOntologicalModelingLanguage.g:3505:65: (iv_ruleBinaryScalarRestriction= ruleBinaryScalarRestriction EOF )
+            // PsiInternalOntologicalModelingLanguage.g:3506:2: iv_ruleBinaryScalarRestriction= ruleBinaryScalarRestriction EOF
             {
              markComposite(elementTypeProvider.getBinaryScalarRestrictionElementType()); 
             pushFollow(FOLLOW_1);
@@ -8637,7 +8634,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleBinaryScalarRestriction"
-    // PsiInternalOntologicalModelingLanguage.g:3568:1: ruleBinaryScalarRestriction returns [Boolean current=false] : (this_BINARY_SCALAR_RESTRICTION_TOKEN_0= RULE_BINARY_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? otherlv_9= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_11= RULE_RCURLY ) ;
+    // PsiInternalOntologicalModelingLanguage.g:3512:1: ruleBinaryScalarRestriction returns [Boolean current=false] : (this_BINARY_SCALAR_RESTRICTION_TOKEN_0= RULE_BINARY_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? otherlv_9= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_11= RULE_RCURLY ) ;
     public final Boolean ruleBinaryScalarRestriction() throws RecognitionException {
         Boolean current = false;
 
@@ -8654,11 +8651,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
         Token this_RCURLY_11=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:3569:1: ( (this_BINARY_SCALAR_RESTRICTION_TOKEN_0= RULE_BINARY_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? otherlv_9= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_11= RULE_RCURLY ) )
-            // PsiInternalOntologicalModelingLanguage.g:3570:2: (this_BINARY_SCALAR_RESTRICTION_TOKEN_0= RULE_BINARY_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? otherlv_9= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_11= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:3513:1: ( (this_BINARY_SCALAR_RESTRICTION_TOKEN_0= RULE_BINARY_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? otherlv_9= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_11= RULE_RCURLY ) )
+            // PsiInternalOntologicalModelingLanguage.g:3514:2: (this_BINARY_SCALAR_RESTRICTION_TOKEN_0= RULE_BINARY_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? otherlv_9= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_11= RULE_RCURLY )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3570:2: (this_BINARY_SCALAR_RESTRICTION_TOKEN_0= RULE_BINARY_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? otherlv_9= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_11= RULE_RCURLY )
-            // PsiInternalOntologicalModelingLanguage.g:3571:3: this_BINARY_SCALAR_RESTRICTION_TOKEN_0= RULE_BINARY_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? otherlv_9= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_11= RULE_RCURLY
+            // PsiInternalOntologicalModelingLanguage.g:3514:2: (this_BINARY_SCALAR_RESTRICTION_TOKEN_0= RULE_BINARY_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? otherlv_9= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_11= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:3515:3: this_BINARY_SCALAR_RESTRICTION_TOKEN_0= RULE_BINARY_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? otherlv_9= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_11= RULE_RCURLY
             {
 
             			markLeaf(elementTypeProvider.getBinaryScalarRestriction_BINARY_SCALAR_RESTRICTION_TOKENTerminalRuleCall_0ElementType());
@@ -8667,11 +8664,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(this_BINARY_SCALAR_RESTRICTION_TOKEN_0);
             		
-            // PsiInternalOntologicalModelingLanguage.g:3578:3: ( (lv_name_1_0= RULE_ID ) )
-            // PsiInternalOntologicalModelingLanguage.g:3579:4: (lv_name_1_0= RULE_ID )
+            // PsiInternalOntologicalModelingLanguage.g:3522:3: ( (lv_name_1_0= RULE_ID ) )
+            // PsiInternalOntologicalModelingLanguage.g:3523:4: (lv_name_1_0= RULE_ID )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3579:4: (lv_name_1_0= RULE_ID )
-            // PsiInternalOntologicalModelingLanguage.g:3580:5: lv_name_1_0= RULE_ID
+            // PsiInternalOntologicalModelingLanguage.g:3523:4: (lv_name_1_0= RULE_ID )
+            // PsiInternalOntologicalModelingLanguage.g:3524:5: lv_name_1_0= RULE_ID
             {
 
             					markLeaf(elementTypeProvider.getBinaryScalarRestriction_NameIDTerminalRuleCall_1_0ElementType());
@@ -8695,38 +8692,38 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			markLeaf(elementTypeProvider.getBinaryScalarRestriction_LCURLYTerminalRuleCall_2ElementType());
             		
-            this_LCURLY_2=(Token)match(input,RULE_LCURLY,FOLLOW_61); 
+            this_LCURLY_2=(Token)match(input,RULE_LCURLY,FOLLOW_59); 
 
             			doneLeaf(this_LCURLY_2);
             		
-            // PsiInternalOntologicalModelingLanguage.g:3602:3: (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:3546:3: (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )?
             int alt40=2;
             int LA40_0 = input.LA(1);
 
-            if ( (LA40_0==98) ) {
+            if ( (LA40_0==94) ) {
                 alt40=1;
             }
             switch (alt40) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:3603:4: otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) )
+                    // PsiInternalOntologicalModelingLanguage.g:3547:4: otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) )
                     {
 
                     				markLeaf(elementTypeProvider.getBinaryScalarRestriction_LengthKeyword_3_0ElementType());
                     			
-                    otherlv_3=(Token)match(input,98,FOLLOW_62); 
+                    otherlv_3=(Token)match(input,94,FOLLOW_60); 
 
                     				doneLeaf(otherlv_3);
                     			
-                    // PsiInternalOntologicalModelingLanguage.g:3610:4: ( (lv_length_4_0= RULE_INT ) )
-                    // PsiInternalOntologicalModelingLanguage.g:3611:5: (lv_length_4_0= RULE_INT )
+                    // PsiInternalOntologicalModelingLanguage.g:3554:4: ( (lv_length_4_0= RULE_INT ) )
+                    // PsiInternalOntologicalModelingLanguage.g:3555:5: (lv_length_4_0= RULE_INT )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:3611:5: (lv_length_4_0= RULE_INT )
-                    // PsiInternalOntologicalModelingLanguage.g:3612:6: lv_length_4_0= RULE_INT
+                    // PsiInternalOntologicalModelingLanguage.g:3555:5: (lv_length_4_0= RULE_INT )
+                    // PsiInternalOntologicalModelingLanguage.g:3556:6: lv_length_4_0= RULE_INT
                     {
 
                     						markLeaf(elementTypeProvider.getBinaryScalarRestriction_LengthINTTerminalRuleCall_3_1_0ElementType());
                     					
-                    lv_length_4_0=(Token)match(input,RULE_INT,FOLLOW_63); 
+                    lv_length_4_0=(Token)match(input,RULE_INT,FOLLOW_61); 
 
                     						if(!current) {
                     							associateWithSemanticElement();
@@ -8748,34 +8745,34 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             }
 
-            // PsiInternalOntologicalModelingLanguage.g:3628:3: (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:3572:3: (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )?
             int alt41=2;
             int LA41_0 = input.LA(1);
 
-            if ( (LA41_0==99) ) {
+            if ( (LA41_0==95) ) {
                 alt41=1;
             }
             switch (alt41) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:3629:4: otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) )
+                    // PsiInternalOntologicalModelingLanguage.g:3573:4: otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) )
                     {
 
                     				markLeaf(elementTypeProvider.getBinaryScalarRestriction_MinLengthKeyword_4_0ElementType());
                     			
-                    otherlv_5=(Token)match(input,99,FOLLOW_62); 
+                    otherlv_5=(Token)match(input,95,FOLLOW_60); 
 
                     				doneLeaf(otherlv_5);
                     			
-                    // PsiInternalOntologicalModelingLanguage.g:3636:4: ( (lv_minLength_6_0= RULE_INT ) )
-                    // PsiInternalOntologicalModelingLanguage.g:3637:5: (lv_minLength_6_0= RULE_INT )
+                    // PsiInternalOntologicalModelingLanguage.g:3580:4: ( (lv_minLength_6_0= RULE_INT ) )
+                    // PsiInternalOntologicalModelingLanguage.g:3581:5: (lv_minLength_6_0= RULE_INT )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:3637:5: (lv_minLength_6_0= RULE_INT )
-                    // PsiInternalOntologicalModelingLanguage.g:3638:6: lv_minLength_6_0= RULE_INT
+                    // PsiInternalOntologicalModelingLanguage.g:3581:5: (lv_minLength_6_0= RULE_INT )
+                    // PsiInternalOntologicalModelingLanguage.g:3582:6: lv_minLength_6_0= RULE_INT
                     {
 
                     						markLeaf(elementTypeProvider.getBinaryScalarRestriction_MinLengthINTTerminalRuleCall_4_1_0ElementType());
                     					
-                    lv_minLength_6_0=(Token)match(input,RULE_INT,FOLLOW_64); 
+                    lv_minLength_6_0=(Token)match(input,RULE_INT,FOLLOW_62); 
 
                     						if(!current) {
                     							associateWithSemanticElement();
@@ -8797,29 +8794,29 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             }
 
-            // PsiInternalOntologicalModelingLanguage.g:3654:3: (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:3598:3: (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )?
             int alt42=2;
             int LA42_0 = input.LA(1);
 
-            if ( (LA42_0==100) ) {
+            if ( (LA42_0==96) ) {
                 alt42=1;
             }
             switch (alt42) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:3655:4: otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) )
+                    // PsiInternalOntologicalModelingLanguage.g:3599:4: otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) )
                     {
 
                     				markLeaf(elementTypeProvider.getBinaryScalarRestriction_MaxLengthKeyword_5_0ElementType());
                     			
-                    otherlv_7=(Token)match(input,100,FOLLOW_62); 
+                    otherlv_7=(Token)match(input,96,FOLLOW_60); 
 
                     				doneLeaf(otherlv_7);
                     			
-                    // PsiInternalOntologicalModelingLanguage.g:3662:4: ( (lv_maxLength_8_0= RULE_INT ) )
-                    // PsiInternalOntologicalModelingLanguage.g:3663:5: (lv_maxLength_8_0= RULE_INT )
+                    // PsiInternalOntologicalModelingLanguage.g:3606:4: ( (lv_maxLength_8_0= RULE_INT ) )
+                    // PsiInternalOntologicalModelingLanguage.g:3607:5: (lv_maxLength_8_0= RULE_INT )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:3663:5: (lv_maxLength_8_0= RULE_INT )
-                    // PsiInternalOntologicalModelingLanguage.g:3664:6: lv_maxLength_8_0= RULE_INT
+                    // PsiInternalOntologicalModelingLanguage.g:3607:5: (lv_maxLength_8_0= RULE_INT )
+                    // PsiInternalOntologicalModelingLanguage.g:3608:6: lv_maxLength_8_0= RULE_INT
                     {
 
                     						markLeaf(elementTypeProvider.getBinaryScalarRestriction_MaxLengthINTTerminalRuleCall_5_1_0ElementType());
@@ -8853,11 +8850,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(otherlv_9);
             		
-            // PsiInternalOntologicalModelingLanguage.g:3687:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:3688:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3631:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:3632:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3688:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:3689:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:3632:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3633:5: ruleReference
             {
 
             					if (!current) {
@@ -8908,7 +8905,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleIRIScalarRestriction"
-    // PsiInternalOntologicalModelingLanguage.g:3715:1: entryRuleIRIScalarRestriction returns [Boolean current=false] : iv_ruleIRIScalarRestriction= ruleIRIScalarRestriction EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:3659:1: entryRuleIRIScalarRestriction returns [Boolean current=false] : iv_ruleIRIScalarRestriction= ruleIRIScalarRestriction EOF ;
     public final Boolean entryRuleIRIScalarRestriction() throws RecognitionException {
         Boolean current = false;
 
@@ -8916,8 +8913,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:3715:62: (iv_ruleIRIScalarRestriction= ruleIRIScalarRestriction EOF )
-            // PsiInternalOntologicalModelingLanguage.g:3716:2: iv_ruleIRIScalarRestriction= ruleIRIScalarRestriction EOF
+            // PsiInternalOntologicalModelingLanguage.g:3659:62: (iv_ruleIRIScalarRestriction= ruleIRIScalarRestriction EOF )
+            // PsiInternalOntologicalModelingLanguage.g:3660:2: iv_ruleIRIScalarRestriction= ruleIRIScalarRestriction EOF
             {
              markComposite(elementTypeProvider.getIRIScalarRestrictionElementType()); 
             pushFollow(FOLLOW_1);
@@ -8943,7 +8940,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleIRIScalarRestriction"
-    // PsiInternalOntologicalModelingLanguage.g:3722:1: ruleIRIScalarRestriction returns [Boolean current=false] : (this_IRI_SCALAR_RESTRICTION_TOKEN_0= RULE_IRI_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) ;
+    // PsiInternalOntologicalModelingLanguage.g:3666:1: ruleIRIScalarRestriction returns [Boolean current=false] : (this_IRI_SCALAR_RESTRICTION_TOKEN_0= RULE_IRI_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) ;
     public final Boolean ruleIRIScalarRestriction() throws RecognitionException {
         Boolean current = false;
 
@@ -8962,11 +8959,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
         Token this_RCURLY_13=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:3723:1: ( (this_IRI_SCALAR_RESTRICTION_TOKEN_0= RULE_IRI_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) )
-            // PsiInternalOntologicalModelingLanguage.g:3724:2: (this_IRI_SCALAR_RESTRICTION_TOKEN_0= RULE_IRI_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:3667:1: ( (this_IRI_SCALAR_RESTRICTION_TOKEN_0= RULE_IRI_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) )
+            // PsiInternalOntologicalModelingLanguage.g:3668:2: (this_IRI_SCALAR_RESTRICTION_TOKEN_0= RULE_IRI_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3724:2: (this_IRI_SCALAR_RESTRICTION_TOKEN_0= RULE_IRI_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
-            // PsiInternalOntologicalModelingLanguage.g:3725:3: this_IRI_SCALAR_RESTRICTION_TOKEN_0= RULE_IRI_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY
+            // PsiInternalOntologicalModelingLanguage.g:3668:2: (this_IRI_SCALAR_RESTRICTION_TOKEN_0= RULE_IRI_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:3669:3: this_IRI_SCALAR_RESTRICTION_TOKEN_0= RULE_IRI_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY
             {
 
             			markLeaf(elementTypeProvider.getIRIScalarRestriction_IRI_SCALAR_RESTRICTION_TOKENTerminalRuleCall_0ElementType());
@@ -8975,11 +8972,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(this_IRI_SCALAR_RESTRICTION_TOKEN_0);
             		
-            // PsiInternalOntologicalModelingLanguage.g:3732:3: ( (lv_name_1_0= RULE_ID ) )
-            // PsiInternalOntologicalModelingLanguage.g:3733:4: (lv_name_1_0= RULE_ID )
+            // PsiInternalOntologicalModelingLanguage.g:3676:3: ( (lv_name_1_0= RULE_ID ) )
+            // PsiInternalOntologicalModelingLanguage.g:3677:4: (lv_name_1_0= RULE_ID )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3733:4: (lv_name_1_0= RULE_ID )
-            // PsiInternalOntologicalModelingLanguage.g:3734:5: lv_name_1_0= RULE_ID
+            // PsiInternalOntologicalModelingLanguage.g:3677:4: (lv_name_1_0= RULE_ID )
+            // PsiInternalOntologicalModelingLanguage.g:3678:5: lv_name_1_0= RULE_ID
             {
 
             					markLeaf(elementTypeProvider.getIRIScalarRestriction_NameIDTerminalRuleCall_1_0ElementType());
@@ -9003,38 +9000,38 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			markLeaf(elementTypeProvider.getIRIScalarRestriction_LCURLYTerminalRuleCall_2ElementType());
             		
-            this_LCURLY_2=(Token)match(input,RULE_LCURLY,FOLLOW_65); 
+            this_LCURLY_2=(Token)match(input,RULE_LCURLY,FOLLOW_63); 
 
             			doneLeaf(this_LCURLY_2);
             		
-            // PsiInternalOntologicalModelingLanguage.g:3756:3: (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:3700:3: (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )?
             int alt43=2;
             int LA43_0 = input.LA(1);
 
-            if ( (LA43_0==98) ) {
+            if ( (LA43_0==94) ) {
                 alt43=1;
             }
             switch (alt43) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:3757:4: otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) )
+                    // PsiInternalOntologicalModelingLanguage.g:3701:4: otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) )
                     {
 
                     				markLeaf(elementTypeProvider.getIRIScalarRestriction_LengthKeyword_3_0ElementType());
                     			
-                    otherlv_3=(Token)match(input,98,FOLLOW_62); 
+                    otherlv_3=(Token)match(input,94,FOLLOW_60); 
 
                     				doneLeaf(otherlv_3);
                     			
-                    // PsiInternalOntologicalModelingLanguage.g:3764:4: ( (lv_length_4_0= RULE_INT ) )
-                    // PsiInternalOntologicalModelingLanguage.g:3765:5: (lv_length_4_0= RULE_INT )
+                    // PsiInternalOntologicalModelingLanguage.g:3708:4: ( (lv_length_4_0= RULE_INT ) )
+                    // PsiInternalOntologicalModelingLanguage.g:3709:5: (lv_length_4_0= RULE_INT )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:3765:5: (lv_length_4_0= RULE_INT )
-                    // PsiInternalOntologicalModelingLanguage.g:3766:6: lv_length_4_0= RULE_INT
+                    // PsiInternalOntologicalModelingLanguage.g:3709:5: (lv_length_4_0= RULE_INT )
+                    // PsiInternalOntologicalModelingLanguage.g:3710:6: lv_length_4_0= RULE_INT
                     {
 
                     						markLeaf(elementTypeProvider.getIRIScalarRestriction_LengthINTTerminalRuleCall_3_1_0ElementType());
                     					
-                    lv_length_4_0=(Token)match(input,RULE_INT,FOLLOW_66); 
+                    lv_length_4_0=(Token)match(input,RULE_INT,FOLLOW_64); 
 
                     						if(!current) {
                     							associateWithSemanticElement();
@@ -9056,34 +9053,34 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             }
 
-            // PsiInternalOntologicalModelingLanguage.g:3782:3: (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:3726:3: (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )?
             int alt44=2;
             int LA44_0 = input.LA(1);
 
-            if ( (LA44_0==99) ) {
+            if ( (LA44_0==95) ) {
                 alt44=1;
             }
             switch (alt44) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:3783:4: otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) )
+                    // PsiInternalOntologicalModelingLanguage.g:3727:4: otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) )
                     {
 
                     				markLeaf(elementTypeProvider.getIRIScalarRestriction_MinLengthKeyword_4_0ElementType());
                     			
-                    otherlv_5=(Token)match(input,99,FOLLOW_62); 
+                    otherlv_5=(Token)match(input,95,FOLLOW_60); 
 
                     				doneLeaf(otherlv_5);
                     			
-                    // PsiInternalOntologicalModelingLanguage.g:3790:4: ( (lv_minLength_6_0= RULE_INT ) )
-                    // PsiInternalOntologicalModelingLanguage.g:3791:5: (lv_minLength_6_0= RULE_INT )
+                    // PsiInternalOntologicalModelingLanguage.g:3734:4: ( (lv_minLength_6_0= RULE_INT ) )
+                    // PsiInternalOntologicalModelingLanguage.g:3735:5: (lv_minLength_6_0= RULE_INT )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:3791:5: (lv_minLength_6_0= RULE_INT )
-                    // PsiInternalOntologicalModelingLanguage.g:3792:6: lv_minLength_6_0= RULE_INT
+                    // PsiInternalOntologicalModelingLanguage.g:3735:5: (lv_minLength_6_0= RULE_INT )
+                    // PsiInternalOntologicalModelingLanguage.g:3736:6: lv_minLength_6_0= RULE_INT
                     {
 
                     						markLeaf(elementTypeProvider.getIRIScalarRestriction_MinLengthINTTerminalRuleCall_4_1_0ElementType());
                     					
-                    lv_minLength_6_0=(Token)match(input,RULE_INT,FOLLOW_67); 
+                    lv_minLength_6_0=(Token)match(input,RULE_INT,FOLLOW_65); 
 
                     						if(!current) {
                     							associateWithSemanticElement();
@@ -9105,34 +9102,34 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             }
 
-            // PsiInternalOntologicalModelingLanguage.g:3808:3: (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:3752:3: (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )?
             int alt45=2;
             int LA45_0 = input.LA(1);
 
-            if ( (LA45_0==100) ) {
+            if ( (LA45_0==96) ) {
                 alt45=1;
             }
             switch (alt45) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:3809:4: otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) )
+                    // PsiInternalOntologicalModelingLanguage.g:3753:4: otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) )
                     {
 
                     				markLeaf(elementTypeProvider.getIRIScalarRestriction_MaxLengthKeyword_5_0ElementType());
                     			
-                    otherlv_7=(Token)match(input,100,FOLLOW_62); 
+                    otherlv_7=(Token)match(input,96,FOLLOW_60); 
 
                     				doneLeaf(otherlv_7);
                     			
-                    // PsiInternalOntologicalModelingLanguage.g:3816:4: ( (lv_maxLength_8_0= RULE_INT ) )
-                    // PsiInternalOntologicalModelingLanguage.g:3817:5: (lv_maxLength_8_0= RULE_INT )
+                    // PsiInternalOntologicalModelingLanguage.g:3760:4: ( (lv_maxLength_8_0= RULE_INT ) )
+                    // PsiInternalOntologicalModelingLanguage.g:3761:5: (lv_maxLength_8_0= RULE_INT )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:3817:5: (lv_maxLength_8_0= RULE_INT )
-                    // PsiInternalOntologicalModelingLanguage.g:3818:6: lv_maxLength_8_0= RULE_INT
+                    // PsiInternalOntologicalModelingLanguage.g:3761:5: (lv_maxLength_8_0= RULE_INT )
+                    // PsiInternalOntologicalModelingLanguage.g:3762:6: lv_maxLength_8_0= RULE_INT
                     {
 
                     						markLeaf(elementTypeProvider.getIRIScalarRestriction_MaxLengthINTTerminalRuleCall_5_1_0ElementType());
                     					
-                    lv_maxLength_8_0=(Token)match(input,RULE_INT,FOLLOW_68); 
+                    lv_maxLength_8_0=(Token)match(input,RULE_INT,FOLLOW_66); 
 
                     						if(!current) {
                     							associateWithSemanticElement();
@@ -9154,29 +9151,29 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             }
 
-            // PsiInternalOntologicalModelingLanguage.g:3834:3: (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:3778:3: (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )?
             int alt46=2;
             int LA46_0 = input.LA(1);
 
-            if ( (LA46_0==101) ) {
+            if ( (LA46_0==97) ) {
                 alt46=1;
             }
             switch (alt46) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:3835:4: otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) )
+                    // PsiInternalOntologicalModelingLanguage.g:3779:4: otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) )
                     {
 
                     				markLeaf(elementTypeProvider.getIRIScalarRestriction_PatternKeyword_6_0ElementType());
                     			
-                    otherlv_9=(Token)match(input,101,FOLLOW_7); 
+                    otherlv_9=(Token)match(input,97,FOLLOW_7); 
 
                     				doneLeaf(otherlv_9);
                     			
-                    // PsiInternalOntologicalModelingLanguage.g:3842:4: ( (lv_pattern_10_0= RULE_STRING ) )
-                    // PsiInternalOntologicalModelingLanguage.g:3843:5: (lv_pattern_10_0= RULE_STRING )
+                    // PsiInternalOntologicalModelingLanguage.g:3786:4: ( (lv_pattern_10_0= RULE_STRING ) )
+                    // PsiInternalOntologicalModelingLanguage.g:3787:5: (lv_pattern_10_0= RULE_STRING )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:3843:5: (lv_pattern_10_0= RULE_STRING )
-                    // PsiInternalOntologicalModelingLanguage.g:3844:6: lv_pattern_10_0= RULE_STRING
+                    // PsiInternalOntologicalModelingLanguage.g:3787:5: (lv_pattern_10_0= RULE_STRING )
+                    // PsiInternalOntologicalModelingLanguage.g:3788:6: lv_pattern_10_0= RULE_STRING
                     {
 
                     						markLeaf(elementTypeProvider.getIRIScalarRestriction_PatternSTRINGTerminalRuleCall_6_1_0ElementType());
@@ -9210,11 +9207,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(otherlv_11);
             		
-            // PsiInternalOntologicalModelingLanguage.g:3867:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:3868:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3811:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:3812:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3868:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:3869:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:3812:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3813:5: ruleReference
             {
 
             					if (!current) {
@@ -9265,7 +9262,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleNumericScalarRestriction"
-    // PsiInternalOntologicalModelingLanguage.g:3895:1: entryRuleNumericScalarRestriction returns [Boolean current=false] : iv_ruleNumericScalarRestriction= ruleNumericScalarRestriction EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:3839:1: entryRuleNumericScalarRestriction returns [Boolean current=false] : iv_ruleNumericScalarRestriction= ruleNumericScalarRestriction EOF ;
     public final Boolean entryRuleNumericScalarRestriction() throws RecognitionException {
         Boolean current = false;
 
@@ -9273,8 +9270,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:3895:66: (iv_ruleNumericScalarRestriction= ruleNumericScalarRestriction EOF )
-            // PsiInternalOntologicalModelingLanguage.g:3896:2: iv_ruleNumericScalarRestriction= ruleNumericScalarRestriction EOF
+            // PsiInternalOntologicalModelingLanguage.g:3839:66: (iv_ruleNumericScalarRestriction= ruleNumericScalarRestriction EOF )
+            // PsiInternalOntologicalModelingLanguage.g:3840:2: iv_ruleNumericScalarRestriction= ruleNumericScalarRestriction EOF
             {
              markComposite(elementTypeProvider.getNumericScalarRestrictionElementType()); 
             pushFollow(FOLLOW_1);
@@ -9300,7 +9297,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleNumericScalarRestriction"
-    // PsiInternalOntologicalModelingLanguage.g:3902:1: ruleNumericScalarRestriction returns [Boolean current=false] : (this_NUMERIC_SCALAR_RESTRICTION_TOKEN_0= RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) ;
+    // PsiInternalOntologicalModelingLanguage.g:3846:1: ruleNumericScalarRestriction returns [Boolean current=false] : (this_NUMERIC_SCALAR_RESTRICTION_TOKEN_0= RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) ;
     public final Boolean ruleNumericScalarRestriction() throws RecognitionException {
         Boolean current = false;
 
@@ -9319,11 +9316,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
         Token this_RCURLY_13=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:3903:1: ( (this_NUMERIC_SCALAR_RESTRICTION_TOKEN_0= RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) )
-            // PsiInternalOntologicalModelingLanguage.g:3904:2: (this_NUMERIC_SCALAR_RESTRICTION_TOKEN_0= RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:3847:1: ( (this_NUMERIC_SCALAR_RESTRICTION_TOKEN_0= RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) )
+            // PsiInternalOntologicalModelingLanguage.g:3848:2: (this_NUMERIC_SCALAR_RESTRICTION_TOKEN_0= RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3904:2: (this_NUMERIC_SCALAR_RESTRICTION_TOKEN_0= RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
-            // PsiInternalOntologicalModelingLanguage.g:3905:3: this_NUMERIC_SCALAR_RESTRICTION_TOKEN_0= RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY
+            // PsiInternalOntologicalModelingLanguage.g:3848:2: (this_NUMERIC_SCALAR_RESTRICTION_TOKEN_0= RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:3849:3: this_NUMERIC_SCALAR_RESTRICTION_TOKEN_0= RULE_NUMERIC_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY
             {
 
             			markLeaf(elementTypeProvider.getNumericScalarRestriction_NUMERIC_SCALAR_RESTRICTION_TOKENTerminalRuleCall_0ElementType());
@@ -9332,11 +9329,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(this_NUMERIC_SCALAR_RESTRICTION_TOKEN_0);
             		
-            // PsiInternalOntologicalModelingLanguage.g:3912:3: ( (lv_name_1_0= RULE_ID ) )
-            // PsiInternalOntologicalModelingLanguage.g:3913:4: (lv_name_1_0= RULE_ID )
+            // PsiInternalOntologicalModelingLanguage.g:3856:3: ( (lv_name_1_0= RULE_ID ) )
+            // PsiInternalOntologicalModelingLanguage.g:3857:4: (lv_name_1_0= RULE_ID )
             {
-            // PsiInternalOntologicalModelingLanguage.g:3913:4: (lv_name_1_0= RULE_ID )
-            // PsiInternalOntologicalModelingLanguage.g:3914:5: lv_name_1_0= RULE_ID
+            // PsiInternalOntologicalModelingLanguage.g:3857:4: (lv_name_1_0= RULE_ID )
+            // PsiInternalOntologicalModelingLanguage.g:3858:5: lv_name_1_0= RULE_ID
             {
 
             					markLeaf(elementTypeProvider.getNumericScalarRestriction_NameIDTerminalRuleCall_1_0ElementType());
@@ -9360,38 +9357,38 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			markLeaf(elementTypeProvider.getNumericScalarRestriction_LCURLYTerminalRuleCall_2ElementType());
             		
-            this_LCURLY_2=(Token)match(input,RULE_LCURLY,FOLLOW_69); 
+            this_LCURLY_2=(Token)match(input,RULE_LCURLY,FOLLOW_67); 
 
             			doneLeaf(this_LCURLY_2);
             		
-            // PsiInternalOntologicalModelingLanguage.g:3936:3: (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:3880:3: (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )?
             int alt47=2;
             int LA47_0 = input.LA(1);
 
-            if ( (LA47_0==102) ) {
+            if ( (LA47_0==98) ) {
                 alt47=1;
             }
             switch (alt47) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:3937:4: otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) )
+                    // PsiInternalOntologicalModelingLanguage.g:3881:4: otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) )
                     {
 
                     				markLeaf(elementTypeProvider.getNumericScalarRestriction_MinInclusiveKeyword_3_0ElementType());
                     			
-                    otherlv_3=(Token)match(input,102,FOLLOW_7); 
+                    otherlv_3=(Token)match(input,98,FOLLOW_7); 
 
                     				doneLeaf(otherlv_3);
                     			
-                    // PsiInternalOntologicalModelingLanguage.g:3944:4: ( (lv_minInclusive_4_0= RULE_STRING ) )
-                    // PsiInternalOntologicalModelingLanguage.g:3945:5: (lv_minInclusive_4_0= RULE_STRING )
+                    // PsiInternalOntologicalModelingLanguage.g:3888:4: ( (lv_minInclusive_4_0= RULE_STRING ) )
+                    // PsiInternalOntologicalModelingLanguage.g:3889:5: (lv_minInclusive_4_0= RULE_STRING )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:3945:5: (lv_minInclusive_4_0= RULE_STRING )
-                    // PsiInternalOntologicalModelingLanguage.g:3946:6: lv_minInclusive_4_0= RULE_STRING
+                    // PsiInternalOntologicalModelingLanguage.g:3889:5: (lv_minInclusive_4_0= RULE_STRING )
+                    // PsiInternalOntologicalModelingLanguage.g:3890:6: lv_minInclusive_4_0= RULE_STRING
                     {
 
                     						markLeaf(elementTypeProvider.getNumericScalarRestriction_MinInclusiveSTRINGTerminalRuleCall_3_1_0ElementType());
                     					
-                    lv_minInclusive_4_0=(Token)match(input,RULE_STRING,FOLLOW_70); 
+                    lv_minInclusive_4_0=(Token)match(input,RULE_STRING,FOLLOW_68); 
 
                     						if(!current) {
                     							associateWithSemanticElement();
@@ -9413,34 +9410,34 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             }
 
-            // PsiInternalOntologicalModelingLanguage.g:3962:3: (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:3906:3: (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )?
             int alt48=2;
             int LA48_0 = input.LA(1);
 
-            if ( (LA48_0==103) ) {
+            if ( (LA48_0==99) ) {
                 alt48=1;
             }
             switch (alt48) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:3963:4: otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) )
+                    // PsiInternalOntologicalModelingLanguage.g:3907:4: otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) )
                     {
 
                     				markLeaf(elementTypeProvider.getNumericScalarRestriction_MaxInclusiveKeyword_4_0ElementType());
                     			
-                    otherlv_5=(Token)match(input,103,FOLLOW_7); 
+                    otherlv_5=(Token)match(input,99,FOLLOW_7); 
 
                     				doneLeaf(otherlv_5);
                     			
-                    // PsiInternalOntologicalModelingLanguage.g:3970:4: ( (lv_maxInclusive_6_0= RULE_STRING ) )
-                    // PsiInternalOntologicalModelingLanguage.g:3971:5: (lv_maxInclusive_6_0= RULE_STRING )
+                    // PsiInternalOntologicalModelingLanguage.g:3914:4: ( (lv_maxInclusive_6_0= RULE_STRING ) )
+                    // PsiInternalOntologicalModelingLanguage.g:3915:5: (lv_maxInclusive_6_0= RULE_STRING )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:3971:5: (lv_maxInclusive_6_0= RULE_STRING )
-                    // PsiInternalOntologicalModelingLanguage.g:3972:6: lv_maxInclusive_6_0= RULE_STRING
+                    // PsiInternalOntologicalModelingLanguage.g:3915:5: (lv_maxInclusive_6_0= RULE_STRING )
+                    // PsiInternalOntologicalModelingLanguage.g:3916:6: lv_maxInclusive_6_0= RULE_STRING
                     {
 
                     						markLeaf(elementTypeProvider.getNumericScalarRestriction_MaxInclusiveSTRINGTerminalRuleCall_4_1_0ElementType());
                     					
-                    lv_maxInclusive_6_0=(Token)match(input,RULE_STRING,FOLLOW_71); 
+                    lv_maxInclusive_6_0=(Token)match(input,RULE_STRING,FOLLOW_69); 
 
                     						if(!current) {
                     							associateWithSemanticElement();
@@ -9462,34 +9459,34 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             }
 
-            // PsiInternalOntologicalModelingLanguage.g:3988:3: (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:3932:3: (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )?
             int alt49=2;
             int LA49_0 = input.LA(1);
 
-            if ( (LA49_0==104) ) {
+            if ( (LA49_0==100) ) {
                 alt49=1;
             }
             switch (alt49) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:3989:4: otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) )
+                    // PsiInternalOntologicalModelingLanguage.g:3933:4: otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) )
                     {
 
                     				markLeaf(elementTypeProvider.getNumericScalarRestriction_MinExclusiveKeyword_5_0ElementType());
                     			
-                    otherlv_7=(Token)match(input,104,FOLLOW_7); 
+                    otherlv_7=(Token)match(input,100,FOLLOW_7); 
 
                     				doneLeaf(otherlv_7);
                     			
-                    // PsiInternalOntologicalModelingLanguage.g:3996:4: ( (lv_minExclusive_8_0= RULE_STRING ) )
-                    // PsiInternalOntologicalModelingLanguage.g:3997:5: (lv_minExclusive_8_0= RULE_STRING )
+                    // PsiInternalOntologicalModelingLanguage.g:3940:4: ( (lv_minExclusive_8_0= RULE_STRING ) )
+                    // PsiInternalOntologicalModelingLanguage.g:3941:5: (lv_minExclusive_8_0= RULE_STRING )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:3997:5: (lv_minExclusive_8_0= RULE_STRING )
-                    // PsiInternalOntologicalModelingLanguage.g:3998:6: lv_minExclusive_8_0= RULE_STRING
+                    // PsiInternalOntologicalModelingLanguage.g:3941:5: (lv_minExclusive_8_0= RULE_STRING )
+                    // PsiInternalOntologicalModelingLanguage.g:3942:6: lv_minExclusive_8_0= RULE_STRING
                     {
 
                     						markLeaf(elementTypeProvider.getNumericScalarRestriction_MinExclusiveSTRINGTerminalRuleCall_5_1_0ElementType());
                     					
-                    lv_minExclusive_8_0=(Token)match(input,RULE_STRING,FOLLOW_72); 
+                    lv_minExclusive_8_0=(Token)match(input,RULE_STRING,FOLLOW_70); 
 
                     						if(!current) {
                     							associateWithSemanticElement();
@@ -9511,29 +9508,29 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             }
 
-            // PsiInternalOntologicalModelingLanguage.g:4014:3: (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:3958:3: (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )?
             int alt50=2;
             int LA50_0 = input.LA(1);
 
-            if ( (LA50_0==105) ) {
+            if ( (LA50_0==101) ) {
                 alt50=1;
             }
             switch (alt50) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:4015:4: otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) )
+                    // PsiInternalOntologicalModelingLanguage.g:3959:4: otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) )
                     {
 
                     				markLeaf(elementTypeProvider.getNumericScalarRestriction_MaxExclusiveKeyword_6_0ElementType());
                     			
-                    otherlv_9=(Token)match(input,105,FOLLOW_7); 
+                    otherlv_9=(Token)match(input,101,FOLLOW_7); 
 
                     				doneLeaf(otherlv_9);
                     			
-                    // PsiInternalOntologicalModelingLanguage.g:4022:4: ( (lv_maxExclusive_10_0= RULE_STRING ) )
-                    // PsiInternalOntologicalModelingLanguage.g:4023:5: (lv_maxExclusive_10_0= RULE_STRING )
+                    // PsiInternalOntologicalModelingLanguage.g:3966:4: ( (lv_maxExclusive_10_0= RULE_STRING ) )
+                    // PsiInternalOntologicalModelingLanguage.g:3967:5: (lv_maxExclusive_10_0= RULE_STRING )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:4023:5: (lv_maxExclusive_10_0= RULE_STRING )
-                    // PsiInternalOntologicalModelingLanguage.g:4024:6: lv_maxExclusive_10_0= RULE_STRING
+                    // PsiInternalOntologicalModelingLanguage.g:3967:5: (lv_maxExclusive_10_0= RULE_STRING )
+                    // PsiInternalOntologicalModelingLanguage.g:3968:6: lv_maxExclusive_10_0= RULE_STRING
                     {
 
                     						markLeaf(elementTypeProvider.getNumericScalarRestriction_MaxExclusiveSTRINGTerminalRuleCall_6_1_0ElementType());
@@ -9567,11 +9564,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(otherlv_11);
             		
-            // PsiInternalOntologicalModelingLanguage.g:4047:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:4048:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3991:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:3992:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:4048:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:4049:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:3992:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:3993:5: ruleReference
             {
 
             					if (!current) {
@@ -9622,7 +9619,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRulePlainLiteralScalarRestriction"
-    // PsiInternalOntologicalModelingLanguage.g:4075:1: entryRulePlainLiteralScalarRestriction returns [Boolean current=false] : iv_rulePlainLiteralScalarRestriction= rulePlainLiteralScalarRestriction EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:4019:1: entryRulePlainLiteralScalarRestriction returns [Boolean current=false] : iv_rulePlainLiteralScalarRestriction= rulePlainLiteralScalarRestriction EOF ;
     public final Boolean entryRulePlainLiteralScalarRestriction() throws RecognitionException {
         Boolean current = false;
 
@@ -9630,8 +9627,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:4075:71: (iv_rulePlainLiteralScalarRestriction= rulePlainLiteralScalarRestriction EOF )
-            // PsiInternalOntologicalModelingLanguage.g:4076:2: iv_rulePlainLiteralScalarRestriction= rulePlainLiteralScalarRestriction EOF
+            // PsiInternalOntologicalModelingLanguage.g:4019:71: (iv_rulePlainLiteralScalarRestriction= rulePlainLiteralScalarRestriction EOF )
+            // PsiInternalOntologicalModelingLanguage.g:4020:2: iv_rulePlainLiteralScalarRestriction= rulePlainLiteralScalarRestriction EOF
             {
              markComposite(elementTypeProvider.getPlainLiteralScalarRestrictionElementType()); 
             pushFollow(FOLLOW_1);
@@ -9657,7 +9654,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "rulePlainLiteralScalarRestriction"
-    // PsiInternalOntologicalModelingLanguage.g:4082:1: rulePlainLiteralScalarRestriction returns [Boolean current=false] : (this_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN_0= RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? (otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) ) )? otherlv_13= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_15= RULE_RCURLY ) ;
+    // PsiInternalOntologicalModelingLanguage.g:4026:1: rulePlainLiteralScalarRestriction returns [Boolean current=false] : (this_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN_0= RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? (otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) ) )? otherlv_13= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_15= RULE_RCURLY ) ;
     public final Boolean rulePlainLiteralScalarRestriction() throws RecognitionException {
         Boolean current = false;
 
@@ -9678,11 +9675,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
         Token this_RCURLY_15=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:4083:1: ( (this_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN_0= RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? (otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) ) )? otherlv_13= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_15= RULE_RCURLY ) )
-            // PsiInternalOntologicalModelingLanguage.g:4084:2: (this_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN_0= RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? (otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) ) )? otherlv_13= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_15= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:4027:1: ( (this_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN_0= RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? (otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) ) )? otherlv_13= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_15= RULE_RCURLY ) )
+            // PsiInternalOntologicalModelingLanguage.g:4028:2: (this_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN_0= RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? (otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) ) )? otherlv_13= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_15= RULE_RCURLY )
             {
-            // PsiInternalOntologicalModelingLanguage.g:4084:2: (this_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN_0= RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? (otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) ) )? otherlv_13= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_15= RULE_RCURLY )
-            // PsiInternalOntologicalModelingLanguage.g:4085:3: this_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN_0= RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? (otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) ) )? otherlv_13= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_15= RULE_RCURLY
+            // PsiInternalOntologicalModelingLanguage.g:4028:2: (this_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN_0= RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? (otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) ) )? otherlv_13= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_15= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:4029:3: this_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN_0= RULE_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? (otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) ) )? otherlv_13= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_15= RULE_RCURLY
             {
 
             			markLeaf(elementTypeProvider.getPlainLiteralScalarRestriction_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKENTerminalRuleCall_0ElementType());
@@ -9691,11 +9688,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(this_PLAIN_LITERAL_SCALAR_RESTRICTION_TOKEN_0);
             		
-            // PsiInternalOntologicalModelingLanguage.g:4092:3: ( (lv_name_1_0= RULE_ID ) )
-            // PsiInternalOntologicalModelingLanguage.g:4093:4: (lv_name_1_0= RULE_ID )
+            // PsiInternalOntologicalModelingLanguage.g:4036:3: ( (lv_name_1_0= RULE_ID ) )
+            // PsiInternalOntologicalModelingLanguage.g:4037:4: (lv_name_1_0= RULE_ID )
             {
-            // PsiInternalOntologicalModelingLanguage.g:4093:4: (lv_name_1_0= RULE_ID )
-            // PsiInternalOntologicalModelingLanguage.g:4094:5: lv_name_1_0= RULE_ID
+            // PsiInternalOntologicalModelingLanguage.g:4037:4: (lv_name_1_0= RULE_ID )
+            // PsiInternalOntologicalModelingLanguage.g:4038:5: lv_name_1_0= RULE_ID
             {
 
             					markLeaf(elementTypeProvider.getPlainLiteralScalarRestriction_NameIDTerminalRuleCall_1_0ElementType());
@@ -9719,38 +9716,38 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			markLeaf(elementTypeProvider.getPlainLiteralScalarRestriction_LCURLYTerminalRuleCall_2ElementType());
             		
-            this_LCURLY_2=(Token)match(input,RULE_LCURLY,FOLLOW_73); 
+            this_LCURLY_2=(Token)match(input,RULE_LCURLY,FOLLOW_71); 
 
             			doneLeaf(this_LCURLY_2);
             		
-            // PsiInternalOntologicalModelingLanguage.g:4116:3: (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:4060:3: (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )?
             int alt51=2;
             int LA51_0 = input.LA(1);
 
-            if ( (LA51_0==98) ) {
+            if ( (LA51_0==94) ) {
                 alt51=1;
             }
             switch (alt51) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:4117:4: otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4061:4: otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) )
                     {
 
                     				markLeaf(elementTypeProvider.getPlainLiteralScalarRestriction_LengthKeyword_3_0ElementType());
                     			
-                    otherlv_3=(Token)match(input,98,FOLLOW_62); 
+                    otherlv_3=(Token)match(input,94,FOLLOW_60); 
 
                     				doneLeaf(otherlv_3);
                     			
-                    // PsiInternalOntologicalModelingLanguage.g:4124:4: ( (lv_length_4_0= RULE_INT ) )
-                    // PsiInternalOntologicalModelingLanguage.g:4125:5: (lv_length_4_0= RULE_INT )
+                    // PsiInternalOntologicalModelingLanguage.g:4068:4: ( (lv_length_4_0= RULE_INT ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4069:5: (lv_length_4_0= RULE_INT )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:4125:5: (lv_length_4_0= RULE_INT )
-                    // PsiInternalOntologicalModelingLanguage.g:4126:6: lv_length_4_0= RULE_INT
+                    // PsiInternalOntologicalModelingLanguage.g:4069:5: (lv_length_4_0= RULE_INT )
+                    // PsiInternalOntologicalModelingLanguage.g:4070:6: lv_length_4_0= RULE_INT
                     {
 
                     						markLeaf(elementTypeProvider.getPlainLiteralScalarRestriction_LengthINTTerminalRuleCall_3_1_0ElementType());
                     					
-                    lv_length_4_0=(Token)match(input,RULE_INT,FOLLOW_74); 
+                    lv_length_4_0=(Token)match(input,RULE_INT,FOLLOW_72); 
 
                     						if(!current) {
                     							associateWithSemanticElement();
@@ -9772,34 +9769,34 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             }
 
-            // PsiInternalOntologicalModelingLanguage.g:4142:3: (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:4086:3: (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )?
             int alt52=2;
             int LA52_0 = input.LA(1);
 
-            if ( (LA52_0==99) ) {
+            if ( (LA52_0==95) ) {
                 alt52=1;
             }
             switch (alt52) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:4143:4: otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4087:4: otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) )
                     {
 
                     				markLeaf(elementTypeProvider.getPlainLiteralScalarRestriction_MinLengthKeyword_4_0ElementType());
                     			
-                    otherlv_5=(Token)match(input,99,FOLLOW_62); 
+                    otherlv_5=(Token)match(input,95,FOLLOW_60); 
 
                     				doneLeaf(otherlv_5);
                     			
-                    // PsiInternalOntologicalModelingLanguage.g:4150:4: ( (lv_minLength_6_0= RULE_INT ) )
-                    // PsiInternalOntologicalModelingLanguage.g:4151:5: (lv_minLength_6_0= RULE_INT )
+                    // PsiInternalOntologicalModelingLanguage.g:4094:4: ( (lv_minLength_6_0= RULE_INT ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4095:5: (lv_minLength_6_0= RULE_INT )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:4151:5: (lv_minLength_6_0= RULE_INT )
-                    // PsiInternalOntologicalModelingLanguage.g:4152:6: lv_minLength_6_0= RULE_INT
+                    // PsiInternalOntologicalModelingLanguage.g:4095:5: (lv_minLength_6_0= RULE_INT )
+                    // PsiInternalOntologicalModelingLanguage.g:4096:6: lv_minLength_6_0= RULE_INT
                     {
 
                     						markLeaf(elementTypeProvider.getPlainLiteralScalarRestriction_MinLengthINTTerminalRuleCall_4_1_0ElementType());
                     					
-                    lv_minLength_6_0=(Token)match(input,RULE_INT,FOLLOW_75); 
+                    lv_minLength_6_0=(Token)match(input,RULE_INT,FOLLOW_73); 
 
                     						if(!current) {
                     							associateWithSemanticElement();
@@ -9821,34 +9818,34 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             }
 
-            // PsiInternalOntologicalModelingLanguage.g:4168:3: (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:4112:3: (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )?
             int alt53=2;
             int LA53_0 = input.LA(1);
 
-            if ( (LA53_0==100) ) {
+            if ( (LA53_0==96) ) {
                 alt53=1;
             }
             switch (alt53) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:4169:4: otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4113:4: otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) )
                     {
 
                     				markLeaf(elementTypeProvider.getPlainLiteralScalarRestriction_MaxLengthKeyword_5_0ElementType());
                     			
-                    otherlv_7=(Token)match(input,100,FOLLOW_62); 
+                    otherlv_7=(Token)match(input,96,FOLLOW_60); 
 
                     				doneLeaf(otherlv_7);
                     			
-                    // PsiInternalOntologicalModelingLanguage.g:4176:4: ( (lv_maxLength_8_0= RULE_INT ) )
-                    // PsiInternalOntologicalModelingLanguage.g:4177:5: (lv_maxLength_8_0= RULE_INT )
+                    // PsiInternalOntologicalModelingLanguage.g:4120:4: ( (lv_maxLength_8_0= RULE_INT ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4121:5: (lv_maxLength_8_0= RULE_INT )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:4177:5: (lv_maxLength_8_0= RULE_INT )
-                    // PsiInternalOntologicalModelingLanguage.g:4178:6: lv_maxLength_8_0= RULE_INT
+                    // PsiInternalOntologicalModelingLanguage.g:4121:5: (lv_maxLength_8_0= RULE_INT )
+                    // PsiInternalOntologicalModelingLanguage.g:4122:6: lv_maxLength_8_0= RULE_INT
                     {
 
                     						markLeaf(elementTypeProvider.getPlainLiteralScalarRestriction_MaxLengthINTTerminalRuleCall_5_1_0ElementType());
                     					
-                    lv_maxLength_8_0=(Token)match(input,RULE_INT,FOLLOW_76); 
+                    lv_maxLength_8_0=(Token)match(input,RULE_INT,FOLLOW_74); 
 
                     						if(!current) {
                     							associateWithSemanticElement();
@@ -9870,34 +9867,34 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             }
 
-            // PsiInternalOntologicalModelingLanguage.g:4194:3: (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:4138:3: (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )?
             int alt54=2;
             int LA54_0 = input.LA(1);
 
-            if ( (LA54_0==101) ) {
+            if ( (LA54_0==97) ) {
                 alt54=1;
             }
             switch (alt54) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:4195:4: otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4139:4: otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) )
                     {
 
                     				markLeaf(elementTypeProvider.getPlainLiteralScalarRestriction_PatternKeyword_6_0ElementType());
                     			
-                    otherlv_9=(Token)match(input,101,FOLLOW_7); 
+                    otherlv_9=(Token)match(input,97,FOLLOW_7); 
 
                     				doneLeaf(otherlv_9);
                     			
-                    // PsiInternalOntologicalModelingLanguage.g:4202:4: ( (lv_pattern_10_0= RULE_STRING ) )
-                    // PsiInternalOntologicalModelingLanguage.g:4203:5: (lv_pattern_10_0= RULE_STRING )
+                    // PsiInternalOntologicalModelingLanguage.g:4146:4: ( (lv_pattern_10_0= RULE_STRING ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4147:5: (lv_pattern_10_0= RULE_STRING )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:4203:5: (lv_pattern_10_0= RULE_STRING )
-                    // PsiInternalOntologicalModelingLanguage.g:4204:6: lv_pattern_10_0= RULE_STRING
+                    // PsiInternalOntologicalModelingLanguage.g:4147:5: (lv_pattern_10_0= RULE_STRING )
+                    // PsiInternalOntologicalModelingLanguage.g:4148:6: lv_pattern_10_0= RULE_STRING
                     {
 
                     						markLeaf(elementTypeProvider.getPlainLiteralScalarRestriction_PatternSTRINGTerminalRuleCall_6_1_0ElementType());
                     					
-                    lv_pattern_10_0=(Token)match(input,RULE_STRING,FOLLOW_77); 
+                    lv_pattern_10_0=(Token)match(input,RULE_STRING,FOLLOW_75); 
 
                     						if(!current) {
                     							associateWithSemanticElement();
@@ -9919,29 +9916,29 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             }
 
-            // PsiInternalOntologicalModelingLanguage.g:4220:3: (otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:4164:3: (otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) ) )?
             int alt55=2;
             int LA55_0 = input.LA(1);
 
-            if ( (LA55_0==106) ) {
+            if ( (LA55_0==102) ) {
                 alt55=1;
             }
             switch (alt55) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:4221:4: otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4165:4: otherlv_11= 'langRange' ( (lv_langRange_12_0= RULE_STRING ) )
                     {
 
                     				markLeaf(elementTypeProvider.getPlainLiteralScalarRestriction_LangRangeKeyword_7_0ElementType());
                     			
-                    otherlv_11=(Token)match(input,106,FOLLOW_7); 
+                    otherlv_11=(Token)match(input,102,FOLLOW_7); 
 
                     				doneLeaf(otherlv_11);
                     			
-                    // PsiInternalOntologicalModelingLanguage.g:4228:4: ( (lv_langRange_12_0= RULE_STRING ) )
-                    // PsiInternalOntologicalModelingLanguage.g:4229:5: (lv_langRange_12_0= RULE_STRING )
+                    // PsiInternalOntologicalModelingLanguage.g:4172:4: ( (lv_langRange_12_0= RULE_STRING ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4173:5: (lv_langRange_12_0= RULE_STRING )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:4229:5: (lv_langRange_12_0= RULE_STRING )
-                    // PsiInternalOntologicalModelingLanguage.g:4230:6: lv_langRange_12_0= RULE_STRING
+                    // PsiInternalOntologicalModelingLanguage.g:4173:5: (lv_langRange_12_0= RULE_STRING )
+                    // PsiInternalOntologicalModelingLanguage.g:4174:6: lv_langRange_12_0= RULE_STRING
                     {
 
                     						markLeaf(elementTypeProvider.getPlainLiteralScalarRestriction_LangRangeSTRINGTerminalRuleCall_7_1_0ElementType());
@@ -9975,11 +9972,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(otherlv_13);
             		
-            // PsiInternalOntologicalModelingLanguage.g:4253:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:4254:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:4197:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:4198:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:4254:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:4255:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:4198:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:4199:5: ruleReference
             {
 
             					if (!current) {
@@ -10030,7 +10027,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleScalarOneOfRestriction"
-    // PsiInternalOntologicalModelingLanguage.g:4281:1: entryRuleScalarOneOfRestriction returns [Boolean current=false] : iv_ruleScalarOneOfRestriction= ruleScalarOneOfRestriction EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:4225:1: entryRuleScalarOneOfRestriction returns [Boolean current=false] : iv_ruleScalarOneOfRestriction= ruleScalarOneOfRestriction EOF ;
     public final Boolean entryRuleScalarOneOfRestriction() throws RecognitionException {
         Boolean current = false;
 
@@ -10038,8 +10035,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:4281:64: (iv_ruleScalarOneOfRestriction= ruleScalarOneOfRestriction EOF )
-            // PsiInternalOntologicalModelingLanguage.g:4282:2: iv_ruleScalarOneOfRestriction= ruleScalarOneOfRestriction EOF
+            // PsiInternalOntologicalModelingLanguage.g:4225:64: (iv_ruleScalarOneOfRestriction= ruleScalarOneOfRestriction EOF )
+            // PsiInternalOntologicalModelingLanguage.g:4226:2: iv_ruleScalarOneOfRestriction= ruleScalarOneOfRestriction EOF
             {
              markComposite(elementTypeProvider.getScalarOneOfRestrictionElementType()); 
             pushFollow(FOLLOW_1);
@@ -10065,7 +10062,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleScalarOneOfRestriction"
-    // PsiInternalOntologicalModelingLanguage.g:4288:1: ruleScalarOneOfRestriction returns [Boolean current=false] : (this_SCALAR_ONE_OF_RESTRICTION_TOKEN_0= RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY ) ;
+    // PsiInternalOntologicalModelingLanguage.g:4232:1: ruleScalarOneOfRestriction returns [Boolean current=false] : (this_SCALAR_ONE_OF_RESTRICTION_TOKEN_0= RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY ) ;
     public final Boolean ruleScalarOneOfRestriction() throws RecognitionException {
         Boolean current = false;
 
@@ -10076,11 +10073,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
         Token this_RCURLY_5=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:4289:1: ( (this_SCALAR_ONE_OF_RESTRICTION_TOKEN_0= RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY ) )
-            // PsiInternalOntologicalModelingLanguage.g:4290:2: (this_SCALAR_ONE_OF_RESTRICTION_TOKEN_0= RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:4233:1: ( (this_SCALAR_ONE_OF_RESTRICTION_TOKEN_0= RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY ) )
+            // PsiInternalOntologicalModelingLanguage.g:4234:2: (this_SCALAR_ONE_OF_RESTRICTION_TOKEN_0= RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY )
             {
-            // PsiInternalOntologicalModelingLanguage.g:4290:2: (this_SCALAR_ONE_OF_RESTRICTION_TOKEN_0= RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY )
-            // PsiInternalOntologicalModelingLanguage.g:4291:3: this_SCALAR_ONE_OF_RESTRICTION_TOKEN_0= RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY
+            // PsiInternalOntologicalModelingLanguage.g:4234:2: (this_SCALAR_ONE_OF_RESTRICTION_TOKEN_0= RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:4235:3: this_SCALAR_ONE_OF_RESTRICTION_TOKEN_0= RULE_SCALAR_ONE_OF_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY
             {
 
             			markLeaf(elementTypeProvider.getScalarOneOfRestriction_SCALAR_ONE_OF_RESTRICTION_TOKENTerminalRuleCall_0ElementType());
@@ -10089,11 +10086,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(this_SCALAR_ONE_OF_RESTRICTION_TOKEN_0);
             		
-            // PsiInternalOntologicalModelingLanguage.g:4298:3: ( (lv_name_1_0= RULE_ID ) )
-            // PsiInternalOntologicalModelingLanguage.g:4299:4: (lv_name_1_0= RULE_ID )
+            // PsiInternalOntologicalModelingLanguage.g:4242:3: ( (lv_name_1_0= RULE_ID ) )
+            // PsiInternalOntologicalModelingLanguage.g:4243:4: (lv_name_1_0= RULE_ID )
             {
-            // PsiInternalOntologicalModelingLanguage.g:4299:4: (lv_name_1_0= RULE_ID )
-            // PsiInternalOntologicalModelingLanguage.g:4300:5: lv_name_1_0= RULE_ID
+            // PsiInternalOntologicalModelingLanguage.g:4243:4: (lv_name_1_0= RULE_ID )
+            // PsiInternalOntologicalModelingLanguage.g:4244:5: lv_name_1_0= RULE_ID
             {
 
             					markLeaf(elementTypeProvider.getScalarOneOfRestriction_NameIDTerminalRuleCall_1_0ElementType());
@@ -10128,11 +10125,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(otherlv_3);
             		
-            // PsiInternalOntologicalModelingLanguage.g:4329:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:4330:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:4273:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:4274:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:4330:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:4331:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:4274:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:4275:5: ruleReference
             {
 
             					if (!current) {
@@ -10183,7 +10180,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleScalarOneOfLiteralAxiom"
-    // PsiInternalOntologicalModelingLanguage.g:4357:1: entryRuleScalarOneOfLiteralAxiom returns [Boolean current=false] : iv_ruleScalarOneOfLiteralAxiom= ruleScalarOneOfLiteralAxiom EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:4301:1: entryRuleScalarOneOfLiteralAxiom returns [Boolean current=false] : iv_ruleScalarOneOfLiteralAxiom= ruleScalarOneOfLiteralAxiom EOF ;
     public final Boolean entryRuleScalarOneOfLiteralAxiom() throws RecognitionException {
         Boolean current = false;
 
@@ -10191,8 +10188,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:4357:65: (iv_ruleScalarOneOfLiteralAxiom= ruleScalarOneOfLiteralAxiom EOF )
-            // PsiInternalOntologicalModelingLanguage.g:4358:2: iv_ruleScalarOneOfLiteralAxiom= ruleScalarOneOfLiteralAxiom EOF
+            // PsiInternalOntologicalModelingLanguage.g:4301:65: (iv_ruleScalarOneOfLiteralAxiom= ruleScalarOneOfLiteralAxiom EOF )
+            // PsiInternalOntologicalModelingLanguage.g:4302:2: iv_ruleScalarOneOfLiteralAxiom= ruleScalarOneOfLiteralAxiom EOF
             {
              markComposite(elementTypeProvider.getScalarOneOfLiteralAxiomElementType()); 
             pushFollow(FOLLOW_1);
@@ -10218,7 +10215,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleScalarOneOfLiteralAxiom"
-    // PsiInternalOntologicalModelingLanguage.g:4364:1: ruleScalarOneOfLiteralAxiom returns [Boolean current=false] : (this_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN_0= RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'value' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= 'axiom' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) ;
+    // PsiInternalOntologicalModelingLanguage.g:4308:1: ruleScalarOneOfLiteralAxiom returns [Boolean current=false] : (this_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN_0= RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'value' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= 'axiom' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) ;
     public final Boolean ruleScalarOneOfLiteralAxiom() throws RecognitionException {
         Boolean current = false;
 
@@ -10230,11 +10227,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
         Token this_RCURLY_6=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:4365:1: ( (this_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN_0= RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'value' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= 'axiom' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) )
-            // PsiInternalOntologicalModelingLanguage.g:4366:2: (this_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN_0= RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'value' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= 'axiom' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:4309:1: ( (this_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN_0= RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'value' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= 'axiom' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) )
+            // PsiInternalOntologicalModelingLanguage.g:4310:2: (this_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN_0= RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'value' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= 'axiom' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
             {
-            // PsiInternalOntologicalModelingLanguage.g:4366:2: (this_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN_0= RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'value' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= 'axiom' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
-            // PsiInternalOntologicalModelingLanguage.g:4367:3: this_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN_0= RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'value' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= 'axiom' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY
+            // PsiInternalOntologicalModelingLanguage.g:4310:2: (this_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN_0= RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'value' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= 'axiom' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:4311:3: this_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN_0= RULE_SCALAR_ONE_OF_LITERAL_AXIOM_TOKEN this_LCURLY_1= RULE_LCURLY otherlv_2= 'value' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= 'axiom' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY
             {
 
             			markLeaf(elementTypeProvider.getScalarOneOfLiteralAxiom_SCALAR_ONE_OF_LITERAL_AXIOM_TOKENTerminalRuleCall_0ElementType());
@@ -10246,27 +10243,27 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			markLeaf(elementTypeProvider.getScalarOneOfLiteralAxiom_LCURLYTerminalRuleCall_1ElementType());
             		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_78); 
+            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_76); 
 
             			doneLeaf(this_LCURLY_1);
             		
 
             			markLeaf(elementTypeProvider.getScalarOneOfLiteralAxiom_ValueKeyword_2ElementType());
             		
-            otherlv_2=(Token)match(input,107,FOLLOW_7); 
+            otherlv_2=(Token)match(input,103,FOLLOW_7); 
 
             			doneLeaf(otherlv_2);
             		
-            // PsiInternalOntologicalModelingLanguage.g:4388:3: ( (lv_value_3_0= RULE_STRING ) )
-            // PsiInternalOntologicalModelingLanguage.g:4389:4: (lv_value_3_0= RULE_STRING )
+            // PsiInternalOntologicalModelingLanguage.g:4332:3: ( (lv_value_3_0= RULE_STRING ) )
+            // PsiInternalOntologicalModelingLanguage.g:4333:4: (lv_value_3_0= RULE_STRING )
             {
-            // PsiInternalOntologicalModelingLanguage.g:4389:4: (lv_value_3_0= RULE_STRING )
-            // PsiInternalOntologicalModelingLanguage.g:4390:5: lv_value_3_0= RULE_STRING
+            // PsiInternalOntologicalModelingLanguage.g:4333:4: (lv_value_3_0= RULE_STRING )
+            // PsiInternalOntologicalModelingLanguage.g:4334:5: lv_value_3_0= RULE_STRING
             {
 
             					markLeaf(elementTypeProvider.getScalarOneOfLiteralAxiom_ValueSTRINGTerminalRuleCall_3_0ElementType());
             				
-            lv_value_3_0=(Token)match(input,RULE_STRING,FOLLOW_79); 
+            lv_value_3_0=(Token)match(input,RULE_STRING,FOLLOW_77); 
 
             					if(!current) {
             						associateWithSemanticElement();
@@ -10285,15 +10282,15 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			markLeaf(elementTypeProvider.getScalarOneOfLiteralAxiom_AxiomKeyword_4ElementType());
             		
-            otherlv_4=(Token)match(input,108,FOLLOW_27); 
+            otherlv_4=(Token)match(input,104,FOLLOW_27); 
 
             			doneLeaf(otherlv_4);
             		
-            // PsiInternalOntologicalModelingLanguage.g:4412:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:4413:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:4356:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:4357:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:4413:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:4414:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:4357:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:4358:5: ruleReference
             {
 
             					if (!current) {
@@ -10344,7 +10341,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleStringScalarRestriction"
-    // PsiInternalOntologicalModelingLanguage.g:4440:1: entryRuleStringScalarRestriction returns [Boolean current=false] : iv_ruleStringScalarRestriction= ruleStringScalarRestriction EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:4384:1: entryRuleStringScalarRestriction returns [Boolean current=false] : iv_ruleStringScalarRestriction= ruleStringScalarRestriction EOF ;
     public final Boolean entryRuleStringScalarRestriction() throws RecognitionException {
         Boolean current = false;
 
@@ -10352,8 +10349,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:4440:65: (iv_ruleStringScalarRestriction= ruleStringScalarRestriction EOF )
-            // PsiInternalOntologicalModelingLanguage.g:4441:2: iv_ruleStringScalarRestriction= ruleStringScalarRestriction EOF
+            // PsiInternalOntologicalModelingLanguage.g:4384:65: (iv_ruleStringScalarRestriction= ruleStringScalarRestriction EOF )
+            // PsiInternalOntologicalModelingLanguage.g:4385:2: iv_ruleStringScalarRestriction= ruleStringScalarRestriction EOF
             {
              markComposite(elementTypeProvider.getStringScalarRestrictionElementType()); 
             pushFollow(FOLLOW_1);
@@ -10379,7 +10376,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleStringScalarRestriction"
-    // PsiInternalOntologicalModelingLanguage.g:4447:1: ruleStringScalarRestriction returns [Boolean current=false] : (this_STRING_SCALAR_RESTRICTION_TOKEN_0= RULE_STRING_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) ;
+    // PsiInternalOntologicalModelingLanguage.g:4391:1: ruleStringScalarRestriction returns [Boolean current=false] : (this_STRING_SCALAR_RESTRICTION_TOKEN_0= RULE_STRING_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) ;
     public final Boolean ruleStringScalarRestriction() throws RecognitionException {
         Boolean current = false;
 
@@ -10398,11 +10395,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
         Token this_RCURLY_13=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:4448:1: ( (this_STRING_SCALAR_RESTRICTION_TOKEN_0= RULE_STRING_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) )
-            // PsiInternalOntologicalModelingLanguage.g:4449:2: (this_STRING_SCALAR_RESTRICTION_TOKEN_0= RULE_STRING_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:4392:1: ( (this_STRING_SCALAR_RESTRICTION_TOKEN_0= RULE_STRING_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) )
+            // PsiInternalOntologicalModelingLanguage.g:4393:2: (this_STRING_SCALAR_RESTRICTION_TOKEN_0= RULE_STRING_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
             {
-            // PsiInternalOntologicalModelingLanguage.g:4449:2: (this_STRING_SCALAR_RESTRICTION_TOKEN_0= RULE_STRING_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
-            // PsiInternalOntologicalModelingLanguage.g:4450:3: this_STRING_SCALAR_RESTRICTION_TOKEN_0= RULE_STRING_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY
+            // PsiInternalOntologicalModelingLanguage.g:4393:2: (this_STRING_SCALAR_RESTRICTION_TOKEN_0= RULE_STRING_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:4394:3: this_STRING_SCALAR_RESTRICTION_TOKEN_0= RULE_STRING_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )? (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )? (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )? (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY
             {
 
             			markLeaf(elementTypeProvider.getStringScalarRestriction_STRING_SCALAR_RESTRICTION_TOKENTerminalRuleCall_0ElementType());
@@ -10411,11 +10408,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(this_STRING_SCALAR_RESTRICTION_TOKEN_0);
             		
-            // PsiInternalOntologicalModelingLanguage.g:4457:3: ( (lv_name_1_0= RULE_ID ) )
-            // PsiInternalOntologicalModelingLanguage.g:4458:4: (lv_name_1_0= RULE_ID )
+            // PsiInternalOntologicalModelingLanguage.g:4401:3: ( (lv_name_1_0= RULE_ID ) )
+            // PsiInternalOntologicalModelingLanguage.g:4402:4: (lv_name_1_0= RULE_ID )
             {
-            // PsiInternalOntologicalModelingLanguage.g:4458:4: (lv_name_1_0= RULE_ID )
-            // PsiInternalOntologicalModelingLanguage.g:4459:5: lv_name_1_0= RULE_ID
+            // PsiInternalOntologicalModelingLanguage.g:4402:4: (lv_name_1_0= RULE_ID )
+            // PsiInternalOntologicalModelingLanguage.g:4403:5: lv_name_1_0= RULE_ID
             {
 
             					markLeaf(elementTypeProvider.getStringScalarRestriction_NameIDTerminalRuleCall_1_0ElementType());
@@ -10439,38 +10436,38 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			markLeaf(elementTypeProvider.getStringScalarRestriction_LCURLYTerminalRuleCall_2ElementType());
             		
-            this_LCURLY_2=(Token)match(input,RULE_LCURLY,FOLLOW_65); 
+            this_LCURLY_2=(Token)match(input,RULE_LCURLY,FOLLOW_63); 
 
             			doneLeaf(this_LCURLY_2);
             		
-            // PsiInternalOntologicalModelingLanguage.g:4481:3: (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:4425:3: (otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) ) )?
             int alt56=2;
             int LA56_0 = input.LA(1);
 
-            if ( (LA56_0==98) ) {
+            if ( (LA56_0==94) ) {
                 alt56=1;
             }
             switch (alt56) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:4482:4: otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4426:4: otherlv_3= 'length' ( (lv_length_4_0= RULE_INT ) )
                     {
 
                     				markLeaf(elementTypeProvider.getStringScalarRestriction_LengthKeyword_3_0ElementType());
                     			
-                    otherlv_3=(Token)match(input,98,FOLLOW_62); 
+                    otherlv_3=(Token)match(input,94,FOLLOW_60); 
 
                     				doneLeaf(otherlv_3);
                     			
-                    // PsiInternalOntologicalModelingLanguage.g:4489:4: ( (lv_length_4_0= RULE_INT ) )
-                    // PsiInternalOntologicalModelingLanguage.g:4490:5: (lv_length_4_0= RULE_INT )
+                    // PsiInternalOntologicalModelingLanguage.g:4433:4: ( (lv_length_4_0= RULE_INT ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4434:5: (lv_length_4_0= RULE_INT )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:4490:5: (lv_length_4_0= RULE_INT )
-                    // PsiInternalOntologicalModelingLanguage.g:4491:6: lv_length_4_0= RULE_INT
+                    // PsiInternalOntologicalModelingLanguage.g:4434:5: (lv_length_4_0= RULE_INT )
+                    // PsiInternalOntologicalModelingLanguage.g:4435:6: lv_length_4_0= RULE_INT
                     {
 
                     						markLeaf(elementTypeProvider.getStringScalarRestriction_LengthINTTerminalRuleCall_3_1_0ElementType());
                     					
-                    lv_length_4_0=(Token)match(input,RULE_INT,FOLLOW_66); 
+                    lv_length_4_0=(Token)match(input,RULE_INT,FOLLOW_64); 
 
                     						if(!current) {
                     							associateWithSemanticElement();
@@ -10492,34 +10489,34 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             }
 
-            // PsiInternalOntologicalModelingLanguage.g:4507:3: (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:4451:3: (otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) ) )?
             int alt57=2;
             int LA57_0 = input.LA(1);
 
-            if ( (LA57_0==99) ) {
+            if ( (LA57_0==95) ) {
                 alt57=1;
             }
             switch (alt57) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:4508:4: otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4452:4: otherlv_5= 'minLength' ( (lv_minLength_6_0= RULE_INT ) )
                     {
 
                     				markLeaf(elementTypeProvider.getStringScalarRestriction_MinLengthKeyword_4_0ElementType());
                     			
-                    otherlv_5=(Token)match(input,99,FOLLOW_62); 
+                    otherlv_5=(Token)match(input,95,FOLLOW_60); 
 
                     				doneLeaf(otherlv_5);
                     			
-                    // PsiInternalOntologicalModelingLanguage.g:4515:4: ( (lv_minLength_6_0= RULE_INT ) )
-                    // PsiInternalOntologicalModelingLanguage.g:4516:5: (lv_minLength_6_0= RULE_INT )
+                    // PsiInternalOntologicalModelingLanguage.g:4459:4: ( (lv_minLength_6_0= RULE_INT ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4460:5: (lv_minLength_6_0= RULE_INT )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:4516:5: (lv_minLength_6_0= RULE_INT )
-                    // PsiInternalOntologicalModelingLanguage.g:4517:6: lv_minLength_6_0= RULE_INT
+                    // PsiInternalOntologicalModelingLanguage.g:4460:5: (lv_minLength_6_0= RULE_INT )
+                    // PsiInternalOntologicalModelingLanguage.g:4461:6: lv_minLength_6_0= RULE_INT
                     {
 
                     						markLeaf(elementTypeProvider.getStringScalarRestriction_MinLengthINTTerminalRuleCall_4_1_0ElementType());
                     					
-                    lv_minLength_6_0=(Token)match(input,RULE_INT,FOLLOW_67); 
+                    lv_minLength_6_0=(Token)match(input,RULE_INT,FOLLOW_65); 
 
                     						if(!current) {
                     							associateWithSemanticElement();
@@ -10541,34 +10538,34 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             }
 
-            // PsiInternalOntologicalModelingLanguage.g:4533:3: (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:4477:3: (otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) ) )?
             int alt58=2;
             int LA58_0 = input.LA(1);
 
-            if ( (LA58_0==100) ) {
+            if ( (LA58_0==96) ) {
                 alt58=1;
             }
             switch (alt58) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:4534:4: otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4478:4: otherlv_7= 'maxLength' ( (lv_maxLength_8_0= RULE_INT ) )
                     {
 
                     				markLeaf(elementTypeProvider.getStringScalarRestriction_MaxLengthKeyword_5_0ElementType());
                     			
-                    otherlv_7=(Token)match(input,100,FOLLOW_62); 
+                    otherlv_7=(Token)match(input,96,FOLLOW_60); 
 
                     				doneLeaf(otherlv_7);
                     			
-                    // PsiInternalOntologicalModelingLanguage.g:4541:4: ( (lv_maxLength_8_0= RULE_INT ) )
-                    // PsiInternalOntologicalModelingLanguage.g:4542:5: (lv_maxLength_8_0= RULE_INT )
+                    // PsiInternalOntologicalModelingLanguage.g:4485:4: ( (lv_maxLength_8_0= RULE_INT ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4486:5: (lv_maxLength_8_0= RULE_INT )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:4542:5: (lv_maxLength_8_0= RULE_INT )
-                    // PsiInternalOntologicalModelingLanguage.g:4543:6: lv_maxLength_8_0= RULE_INT
+                    // PsiInternalOntologicalModelingLanguage.g:4486:5: (lv_maxLength_8_0= RULE_INT )
+                    // PsiInternalOntologicalModelingLanguage.g:4487:6: lv_maxLength_8_0= RULE_INT
                     {
 
                     						markLeaf(elementTypeProvider.getStringScalarRestriction_MaxLengthINTTerminalRuleCall_5_1_0ElementType());
                     					
-                    lv_maxLength_8_0=(Token)match(input,RULE_INT,FOLLOW_68); 
+                    lv_maxLength_8_0=(Token)match(input,RULE_INT,FOLLOW_66); 
 
                     						if(!current) {
                     							associateWithSemanticElement();
@@ -10590,29 +10587,29 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             }
 
-            // PsiInternalOntologicalModelingLanguage.g:4559:3: (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:4503:3: (otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) ) )?
             int alt59=2;
             int LA59_0 = input.LA(1);
 
-            if ( (LA59_0==101) ) {
+            if ( (LA59_0==97) ) {
                 alt59=1;
             }
             switch (alt59) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:4560:4: otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4504:4: otherlv_9= 'pattern' ( (lv_pattern_10_0= RULE_STRING ) )
                     {
 
                     				markLeaf(elementTypeProvider.getStringScalarRestriction_PatternKeyword_6_0ElementType());
                     			
-                    otherlv_9=(Token)match(input,101,FOLLOW_7); 
+                    otherlv_9=(Token)match(input,97,FOLLOW_7); 
 
                     				doneLeaf(otherlv_9);
                     			
-                    // PsiInternalOntologicalModelingLanguage.g:4567:4: ( (lv_pattern_10_0= RULE_STRING ) )
-                    // PsiInternalOntologicalModelingLanguage.g:4568:5: (lv_pattern_10_0= RULE_STRING )
+                    // PsiInternalOntologicalModelingLanguage.g:4511:4: ( (lv_pattern_10_0= RULE_STRING ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4512:5: (lv_pattern_10_0= RULE_STRING )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:4568:5: (lv_pattern_10_0= RULE_STRING )
-                    // PsiInternalOntologicalModelingLanguage.g:4569:6: lv_pattern_10_0= RULE_STRING
+                    // PsiInternalOntologicalModelingLanguage.g:4512:5: (lv_pattern_10_0= RULE_STRING )
+                    // PsiInternalOntologicalModelingLanguage.g:4513:6: lv_pattern_10_0= RULE_STRING
                     {
 
                     						markLeaf(elementTypeProvider.getStringScalarRestriction_PatternSTRINGTerminalRuleCall_6_1_0ElementType());
@@ -10646,11 +10643,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(otherlv_11);
             		
-            // PsiInternalOntologicalModelingLanguage.g:4592:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:4593:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:4536:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:4537:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:4593:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:4594:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:4537:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:4538:5: ruleReference
             {
 
             					if (!current) {
@@ -10701,7 +10698,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleSynonymScalarRestriction"
-    // PsiInternalOntologicalModelingLanguage.g:4620:1: entryRuleSynonymScalarRestriction returns [Boolean current=false] : iv_ruleSynonymScalarRestriction= ruleSynonymScalarRestriction EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:4564:1: entryRuleSynonymScalarRestriction returns [Boolean current=false] : iv_ruleSynonymScalarRestriction= ruleSynonymScalarRestriction EOF ;
     public final Boolean entryRuleSynonymScalarRestriction() throws RecognitionException {
         Boolean current = false;
 
@@ -10709,8 +10706,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:4620:66: (iv_ruleSynonymScalarRestriction= ruleSynonymScalarRestriction EOF )
-            // PsiInternalOntologicalModelingLanguage.g:4621:2: iv_ruleSynonymScalarRestriction= ruleSynonymScalarRestriction EOF
+            // PsiInternalOntologicalModelingLanguage.g:4564:66: (iv_ruleSynonymScalarRestriction= ruleSynonymScalarRestriction EOF )
+            // PsiInternalOntologicalModelingLanguage.g:4565:2: iv_ruleSynonymScalarRestriction= ruleSynonymScalarRestriction EOF
             {
              markComposite(elementTypeProvider.getSynonymScalarRestrictionElementType()); 
             pushFollow(FOLLOW_1);
@@ -10736,7 +10733,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleSynonymScalarRestriction"
-    // PsiInternalOntologicalModelingLanguage.g:4627:1: ruleSynonymScalarRestriction returns [Boolean current=false] : (this_SYNONYM_SCALAR_RESTRICTION_TOKEN_0= RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY ) ;
+    // PsiInternalOntologicalModelingLanguage.g:4571:1: ruleSynonymScalarRestriction returns [Boolean current=false] : (this_SYNONYM_SCALAR_RESTRICTION_TOKEN_0= RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY ) ;
     public final Boolean ruleSynonymScalarRestriction() throws RecognitionException {
         Boolean current = false;
 
@@ -10747,11 +10744,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
         Token this_RCURLY_5=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:4628:1: ( (this_SYNONYM_SCALAR_RESTRICTION_TOKEN_0= RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY ) )
-            // PsiInternalOntologicalModelingLanguage.g:4629:2: (this_SYNONYM_SCALAR_RESTRICTION_TOKEN_0= RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:4572:1: ( (this_SYNONYM_SCALAR_RESTRICTION_TOKEN_0= RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY ) )
+            // PsiInternalOntologicalModelingLanguage.g:4573:2: (this_SYNONYM_SCALAR_RESTRICTION_TOKEN_0= RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY )
             {
-            // PsiInternalOntologicalModelingLanguage.g:4629:2: (this_SYNONYM_SCALAR_RESTRICTION_TOKEN_0= RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY )
-            // PsiInternalOntologicalModelingLanguage.g:4630:3: this_SYNONYM_SCALAR_RESTRICTION_TOKEN_0= RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY
+            // PsiInternalOntologicalModelingLanguage.g:4573:2: (this_SYNONYM_SCALAR_RESTRICTION_TOKEN_0= RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:4574:3: this_SYNONYM_SCALAR_RESTRICTION_TOKEN_0= RULE_SYNONYM_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY otherlv_3= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_5= RULE_RCURLY
             {
 
             			markLeaf(elementTypeProvider.getSynonymScalarRestriction_SYNONYM_SCALAR_RESTRICTION_TOKENTerminalRuleCall_0ElementType());
@@ -10760,11 +10757,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(this_SYNONYM_SCALAR_RESTRICTION_TOKEN_0);
             		
-            // PsiInternalOntologicalModelingLanguage.g:4637:3: ( (lv_name_1_0= RULE_ID ) )
-            // PsiInternalOntologicalModelingLanguage.g:4638:4: (lv_name_1_0= RULE_ID )
+            // PsiInternalOntologicalModelingLanguage.g:4581:3: ( (lv_name_1_0= RULE_ID ) )
+            // PsiInternalOntologicalModelingLanguage.g:4582:4: (lv_name_1_0= RULE_ID )
             {
-            // PsiInternalOntologicalModelingLanguage.g:4638:4: (lv_name_1_0= RULE_ID )
-            // PsiInternalOntologicalModelingLanguage.g:4639:5: lv_name_1_0= RULE_ID
+            // PsiInternalOntologicalModelingLanguage.g:4582:4: (lv_name_1_0= RULE_ID )
+            // PsiInternalOntologicalModelingLanguage.g:4583:5: lv_name_1_0= RULE_ID
             {
 
             					markLeaf(elementTypeProvider.getSynonymScalarRestriction_NameIDTerminalRuleCall_1_0ElementType());
@@ -10799,11 +10796,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(otherlv_3);
             		
-            // PsiInternalOntologicalModelingLanguage.g:4668:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:4669:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:4612:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:4613:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:4669:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:4670:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:4613:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:4614:5: ruleReference
             {
 
             					if (!current) {
@@ -10854,7 +10851,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleTimeScalarRestriction"
-    // PsiInternalOntologicalModelingLanguage.g:4696:1: entryRuleTimeScalarRestriction returns [Boolean current=false] : iv_ruleTimeScalarRestriction= ruleTimeScalarRestriction EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:4640:1: entryRuleTimeScalarRestriction returns [Boolean current=false] : iv_ruleTimeScalarRestriction= ruleTimeScalarRestriction EOF ;
     public final Boolean entryRuleTimeScalarRestriction() throws RecognitionException {
         Boolean current = false;
 
@@ -10862,8 +10859,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:4696:63: (iv_ruleTimeScalarRestriction= ruleTimeScalarRestriction EOF )
-            // PsiInternalOntologicalModelingLanguage.g:4697:2: iv_ruleTimeScalarRestriction= ruleTimeScalarRestriction EOF
+            // PsiInternalOntologicalModelingLanguage.g:4640:63: (iv_ruleTimeScalarRestriction= ruleTimeScalarRestriction EOF )
+            // PsiInternalOntologicalModelingLanguage.g:4641:2: iv_ruleTimeScalarRestriction= ruleTimeScalarRestriction EOF
             {
              markComposite(elementTypeProvider.getTimeScalarRestrictionElementType()); 
             pushFollow(FOLLOW_1);
@@ -10889,7 +10886,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleTimeScalarRestriction"
-    // PsiInternalOntologicalModelingLanguage.g:4703:1: ruleTimeScalarRestriction returns [Boolean current=false] : (this_TIME_SCALAR_RESTRICTION_TOKEN_0= RULE_TIME_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) ;
+    // PsiInternalOntologicalModelingLanguage.g:4647:1: ruleTimeScalarRestriction returns [Boolean current=false] : (this_TIME_SCALAR_RESTRICTION_TOKEN_0= RULE_TIME_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) ;
     public final Boolean ruleTimeScalarRestriction() throws RecognitionException {
         Boolean current = false;
 
@@ -10908,11 +10905,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
         Token this_RCURLY_13=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:4704:1: ( (this_TIME_SCALAR_RESTRICTION_TOKEN_0= RULE_TIME_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) )
-            // PsiInternalOntologicalModelingLanguage.g:4705:2: (this_TIME_SCALAR_RESTRICTION_TOKEN_0= RULE_TIME_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:4648:1: ( (this_TIME_SCALAR_RESTRICTION_TOKEN_0= RULE_TIME_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY ) )
+            // PsiInternalOntologicalModelingLanguage.g:4649:2: (this_TIME_SCALAR_RESTRICTION_TOKEN_0= RULE_TIME_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
             {
-            // PsiInternalOntologicalModelingLanguage.g:4705:2: (this_TIME_SCALAR_RESTRICTION_TOKEN_0= RULE_TIME_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
-            // PsiInternalOntologicalModelingLanguage.g:4706:3: this_TIME_SCALAR_RESTRICTION_TOKEN_0= RULE_TIME_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY
+            // PsiInternalOntologicalModelingLanguage.g:4649:2: (this_TIME_SCALAR_RESTRICTION_TOKEN_0= RULE_TIME_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:4650:3: this_TIME_SCALAR_RESTRICTION_TOKEN_0= RULE_TIME_SCALAR_RESTRICTION_TOKEN ( (lv_name_1_0= RULE_ID ) ) this_LCURLY_2= RULE_LCURLY (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )? (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )? (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )? (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )? otherlv_11= 'restrictedRange' ( ( ruleReference ) ) this_RCURLY_13= RULE_RCURLY
             {
 
             			markLeaf(elementTypeProvider.getTimeScalarRestriction_TIME_SCALAR_RESTRICTION_TOKENTerminalRuleCall_0ElementType());
@@ -10921,11 +10918,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(this_TIME_SCALAR_RESTRICTION_TOKEN_0);
             		
-            // PsiInternalOntologicalModelingLanguage.g:4713:3: ( (lv_name_1_0= RULE_ID ) )
-            // PsiInternalOntologicalModelingLanguage.g:4714:4: (lv_name_1_0= RULE_ID )
+            // PsiInternalOntologicalModelingLanguage.g:4657:3: ( (lv_name_1_0= RULE_ID ) )
+            // PsiInternalOntologicalModelingLanguage.g:4658:4: (lv_name_1_0= RULE_ID )
             {
-            // PsiInternalOntologicalModelingLanguage.g:4714:4: (lv_name_1_0= RULE_ID )
-            // PsiInternalOntologicalModelingLanguage.g:4715:5: lv_name_1_0= RULE_ID
+            // PsiInternalOntologicalModelingLanguage.g:4658:4: (lv_name_1_0= RULE_ID )
+            // PsiInternalOntologicalModelingLanguage.g:4659:5: lv_name_1_0= RULE_ID
             {
 
             					markLeaf(elementTypeProvider.getTimeScalarRestriction_NameIDTerminalRuleCall_1_0ElementType());
@@ -10949,38 +10946,38 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			markLeaf(elementTypeProvider.getTimeScalarRestriction_LCURLYTerminalRuleCall_2ElementType());
             		
-            this_LCURLY_2=(Token)match(input,RULE_LCURLY,FOLLOW_69); 
+            this_LCURLY_2=(Token)match(input,RULE_LCURLY,FOLLOW_67); 
 
             			doneLeaf(this_LCURLY_2);
             		
-            // PsiInternalOntologicalModelingLanguage.g:4737:3: (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:4681:3: (otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) ) )?
             int alt60=2;
             int LA60_0 = input.LA(1);
 
-            if ( (LA60_0==102) ) {
+            if ( (LA60_0==98) ) {
                 alt60=1;
             }
             switch (alt60) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:4738:4: otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4682:4: otherlv_3= 'minInclusive' ( (lv_minInclusive_4_0= RULE_STRING ) )
                     {
 
                     				markLeaf(elementTypeProvider.getTimeScalarRestriction_MinInclusiveKeyword_3_0ElementType());
                     			
-                    otherlv_3=(Token)match(input,102,FOLLOW_7); 
+                    otherlv_3=(Token)match(input,98,FOLLOW_7); 
 
                     				doneLeaf(otherlv_3);
                     			
-                    // PsiInternalOntologicalModelingLanguage.g:4745:4: ( (lv_minInclusive_4_0= RULE_STRING ) )
-                    // PsiInternalOntologicalModelingLanguage.g:4746:5: (lv_minInclusive_4_0= RULE_STRING )
+                    // PsiInternalOntologicalModelingLanguage.g:4689:4: ( (lv_minInclusive_4_0= RULE_STRING ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4690:5: (lv_minInclusive_4_0= RULE_STRING )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:4746:5: (lv_minInclusive_4_0= RULE_STRING )
-                    // PsiInternalOntologicalModelingLanguage.g:4747:6: lv_minInclusive_4_0= RULE_STRING
+                    // PsiInternalOntologicalModelingLanguage.g:4690:5: (lv_minInclusive_4_0= RULE_STRING )
+                    // PsiInternalOntologicalModelingLanguage.g:4691:6: lv_minInclusive_4_0= RULE_STRING
                     {
 
                     						markLeaf(elementTypeProvider.getTimeScalarRestriction_MinInclusiveSTRINGTerminalRuleCall_3_1_0ElementType());
                     					
-                    lv_minInclusive_4_0=(Token)match(input,RULE_STRING,FOLLOW_70); 
+                    lv_minInclusive_4_0=(Token)match(input,RULE_STRING,FOLLOW_68); 
 
                     						if(!current) {
                     							associateWithSemanticElement();
@@ -11002,34 +10999,34 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             }
 
-            // PsiInternalOntologicalModelingLanguage.g:4763:3: (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:4707:3: (otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) ) )?
             int alt61=2;
             int LA61_0 = input.LA(1);
 
-            if ( (LA61_0==103) ) {
+            if ( (LA61_0==99) ) {
                 alt61=1;
             }
             switch (alt61) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:4764:4: otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4708:4: otherlv_5= 'maxInclusive' ( (lv_maxInclusive_6_0= RULE_STRING ) )
                     {
 
                     				markLeaf(elementTypeProvider.getTimeScalarRestriction_MaxInclusiveKeyword_4_0ElementType());
                     			
-                    otherlv_5=(Token)match(input,103,FOLLOW_7); 
+                    otherlv_5=(Token)match(input,99,FOLLOW_7); 
 
                     				doneLeaf(otherlv_5);
                     			
-                    // PsiInternalOntologicalModelingLanguage.g:4771:4: ( (lv_maxInclusive_6_0= RULE_STRING ) )
-                    // PsiInternalOntologicalModelingLanguage.g:4772:5: (lv_maxInclusive_6_0= RULE_STRING )
+                    // PsiInternalOntologicalModelingLanguage.g:4715:4: ( (lv_maxInclusive_6_0= RULE_STRING ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4716:5: (lv_maxInclusive_6_0= RULE_STRING )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:4772:5: (lv_maxInclusive_6_0= RULE_STRING )
-                    // PsiInternalOntologicalModelingLanguage.g:4773:6: lv_maxInclusive_6_0= RULE_STRING
+                    // PsiInternalOntologicalModelingLanguage.g:4716:5: (lv_maxInclusive_6_0= RULE_STRING )
+                    // PsiInternalOntologicalModelingLanguage.g:4717:6: lv_maxInclusive_6_0= RULE_STRING
                     {
 
                     						markLeaf(elementTypeProvider.getTimeScalarRestriction_MaxInclusiveSTRINGTerminalRuleCall_4_1_0ElementType());
                     					
-                    lv_maxInclusive_6_0=(Token)match(input,RULE_STRING,FOLLOW_71); 
+                    lv_maxInclusive_6_0=(Token)match(input,RULE_STRING,FOLLOW_69); 
 
                     						if(!current) {
                     							associateWithSemanticElement();
@@ -11051,34 +11048,34 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             }
 
-            // PsiInternalOntologicalModelingLanguage.g:4789:3: (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:4733:3: (otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) ) )?
             int alt62=2;
             int LA62_0 = input.LA(1);
 
-            if ( (LA62_0==104) ) {
+            if ( (LA62_0==100) ) {
                 alt62=1;
             }
             switch (alt62) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:4790:4: otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4734:4: otherlv_7= 'minExclusive' ( (lv_minExclusive_8_0= RULE_STRING ) )
                     {
 
                     				markLeaf(elementTypeProvider.getTimeScalarRestriction_MinExclusiveKeyword_5_0ElementType());
                     			
-                    otherlv_7=(Token)match(input,104,FOLLOW_7); 
+                    otherlv_7=(Token)match(input,100,FOLLOW_7); 
 
                     				doneLeaf(otherlv_7);
                     			
-                    // PsiInternalOntologicalModelingLanguage.g:4797:4: ( (lv_minExclusive_8_0= RULE_STRING ) )
-                    // PsiInternalOntologicalModelingLanguage.g:4798:5: (lv_minExclusive_8_0= RULE_STRING )
+                    // PsiInternalOntologicalModelingLanguage.g:4741:4: ( (lv_minExclusive_8_0= RULE_STRING ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4742:5: (lv_minExclusive_8_0= RULE_STRING )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:4798:5: (lv_minExclusive_8_0= RULE_STRING )
-                    // PsiInternalOntologicalModelingLanguage.g:4799:6: lv_minExclusive_8_0= RULE_STRING
+                    // PsiInternalOntologicalModelingLanguage.g:4742:5: (lv_minExclusive_8_0= RULE_STRING )
+                    // PsiInternalOntologicalModelingLanguage.g:4743:6: lv_minExclusive_8_0= RULE_STRING
                     {
 
                     						markLeaf(elementTypeProvider.getTimeScalarRestriction_MinExclusiveSTRINGTerminalRuleCall_5_1_0ElementType());
                     					
-                    lv_minExclusive_8_0=(Token)match(input,RULE_STRING,FOLLOW_72); 
+                    lv_minExclusive_8_0=(Token)match(input,RULE_STRING,FOLLOW_70); 
 
                     						if(!current) {
                     							associateWithSemanticElement();
@@ -11100,29 +11097,29 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             }
 
-            // PsiInternalOntologicalModelingLanguage.g:4815:3: (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )?
+            // PsiInternalOntologicalModelingLanguage.g:4759:3: (otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) ) )?
             int alt63=2;
             int LA63_0 = input.LA(1);
 
-            if ( (LA63_0==105) ) {
+            if ( (LA63_0==101) ) {
                 alt63=1;
             }
             switch (alt63) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:4816:4: otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4760:4: otherlv_9= 'maxExclusive' ( (lv_maxExclusive_10_0= RULE_STRING ) )
                     {
 
                     				markLeaf(elementTypeProvider.getTimeScalarRestriction_MaxExclusiveKeyword_6_0ElementType());
                     			
-                    otherlv_9=(Token)match(input,105,FOLLOW_7); 
+                    otherlv_9=(Token)match(input,101,FOLLOW_7); 
 
                     				doneLeaf(otherlv_9);
                     			
-                    // PsiInternalOntologicalModelingLanguage.g:4823:4: ( (lv_maxExclusive_10_0= RULE_STRING ) )
-                    // PsiInternalOntologicalModelingLanguage.g:4824:5: (lv_maxExclusive_10_0= RULE_STRING )
+                    // PsiInternalOntologicalModelingLanguage.g:4767:4: ( (lv_maxExclusive_10_0= RULE_STRING ) )
+                    // PsiInternalOntologicalModelingLanguage.g:4768:5: (lv_maxExclusive_10_0= RULE_STRING )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:4824:5: (lv_maxExclusive_10_0= RULE_STRING )
-                    // PsiInternalOntologicalModelingLanguage.g:4825:6: lv_maxExclusive_10_0= RULE_STRING
+                    // PsiInternalOntologicalModelingLanguage.g:4768:5: (lv_maxExclusive_10_0= RULE_STRING )
+                    // PsiInternalOntologicalModelingLanguage.g:4769:6: lv_maxExclusive_10_0= RULE_STRING
                     {
 
                     						markLeaf(elementTypeProvider.getTimeScalarRestriction_MaxExclusiveSTRINGTerminalRuleCall_6_1_0ElementType());
@@ -11156,11 +11153,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(otherlv_11);
             		
-            // PsiInternalOntologicalModelingLanguage.g:4848:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:4849:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:4792:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:4793:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:4849:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:4850:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:4793:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:4794:5: ruleReference
             {
 
             					if (!current) {
@@ -11211,7 +11208,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleDescriptionBox"
-    // PsiInternalOntologicalModelingLanguage.g:4876:1: entryRuleDescriptionBox returns [Boolean current=false] : iv_ruleDescriptionBox= ruleDescriptionBox EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:4820:1: entryRuleDescriptionBox returns [Boolean current=false] : iv_ruleDescriptionBox= ruleDescriptionBox EOF ;
     public final Boolean entryRuleDescriptionBox() throws RecognitionException {
         Boolean current = false;
 
@@ -11219,8 +11216,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:4876:56: (iv_ruleDescriptionBox= ruleDescriptionBox EOF )
-            // PsiInternalOntologicalModelingLanguage.g:4877:2: iv_ruleDescriptionBox= ruleDescriptionBox EOF
+            // PsiInternalOntologicalModelingLanguage.g:4820:56: (iv_ruleDescriptionBox= ruleDescriptionBox EOF )
+            // PsiInternalOntologicalModelingLanguage.g:4821:2: iv_ruleDescriptionBox= ruleDescriptionBox EOF
             {
              markComposite(elementTypeProvider.getDescriptionBoxElementType()); 
             pushFollow(FOLLOW_1);
@@ -11246,7 +11243,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleDescriptionBox"
-    // PsiInternalOntologicalModelingLanguage.g:4883:1: ruleDescriptionBox returns [Boolean current=false] : ( ( (lv_kind_0_0= ruleDescriptionKind ) ) this_DESCRIPTION_BOX_TOKEN_1= RULE_DESCRIPTION_BOX_TOKEN ( (lv_iri_2_0= RULE_IRI ) ) this_LCURLY_3= RULE_LCURLY ( ( (lv_annotations_4_0= ruleAnnotation ) ) | ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) ) | ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) ) | ( (lv_conceptInstances_7_0= ruleConceptInstance ) ) | ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) ) | ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) ) | ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) ) | ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) ) )* this_RCURLY_12= RULE_RCURLY ) ;
+    // PsiInternalOntologicalModelingLanguage.g:4827:1: ruleDescriptionBox returns [Boolean current=false] : ( ( (lv_kind_0_0= ruleDescriptionKind ) ) this_DESCRIPTION_BOX_TOKEN_1= RULE_DESCRIPTION_BOX_TOKEN ( (lv_iri_2_0= RULE_IRI ) ) this_LCURLY_3= RULE_LCURLY ( ( (lv_annotations_4_0= ruleAnnotation ) ) | ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) ) | ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) ) | ( (lv_conceptInstances_7_0= ruleConceptInstance ) ) | ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) ) | ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) ) | ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) ) | ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) ) )* this_RCURLY_12= RULE_RCURLY ) ;
     public final Boolean ruleDescriptionBox() throws RecognitionException {
         Boolean current = false;
 
@@ -11274,22 +11271,22 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:4884:1: ( ( ( (lv_kind_0_0= ruleDescriptionKind ) ) this_DESCRIPTION_BOX_TOKEN_1= RULE_DESCRIPTION_BOX_TOKEN ( (lv_iri_2_0= RULE_IRI ) ) this_LCURLY_3= RULE_LCURLY ( ( (lv_annotations_4_0= ruleAnnotation ) ) | ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) ) | ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) ) | ( (lv_conceptInstances_7_0= ruleConceptInstance ) ) | ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) ) | ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) ) | ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) ) | ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) ) )* this_RCURLY_12= RULE_RCURLY ) )
-            // PsiInternalOntologicalModelingLanguage.g:4885:2: ( ( (lv_kind_0_0= ruleDescriptionKind ) ) this_DESCRIPTION_BOX_TOKEN_1= RULE_DESCRIPTION_BOX_TOKEN ( (lv_iri_2_0= RULE_IRI ) ) this_LCURLY_3= RULE_LCURLY ( ( (lv_annotations_4_0= ruleAnnotation ) ) | ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) ) | ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) ) | ( (lv_conceptInstances_7_0= ruleConceptInstance ) ) | ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) ) | ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) ) | ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) ) | ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) ) )* this_RCURLY_12= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:4828:1: ( ( ( (lv_kind_0_0= ruleDescriptionKind ) ) this_DESCRIPTION_BOX_TOKEN_1= RULE_DESCRIPTION_BOX_TOKEN ( (lv_iri_2_0= RULE_IRI ) ) this_LCURLY_3= RULE_LCURLY ( ( (lv_annotations_4_0= ruleAnnotation ) ) | ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) ) | ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) ) | ( (lv_conceptInstances_7_0= ruleConceptInstance ) ) | ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) ) | ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) ) | ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) ) | ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) ) )* this_RCURLY_12= RULE_RCURLY ) )
+            // PsiInternalOntologicalModelingLanguage.g:4829:2: ( ( (lv_kind_0_0= ruleDescriptionKind ) ) this_DESCRIPTION_BOX_TOKEN_1= RULE_DESCRIPTION_BOX_TOKEN ( (lv_iri_2_0= RULE_IRI ) ) this_LCURLY_3= RULE_LCURLY ( ( (lv_annotations_4_0= ruleAnnotation ) ) | ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) ) | ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) ) | ( (lv_conceptInstances_7_0= ruleConceptInstance ) ) | ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) ) | ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) ) | ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) ) | ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) ) )* this_RCURLY_12= RULE_RCURLY )
             {
-            // PsiInternalOntologicalModelingLanguage.g:4885:2: ( ( (lv_kind_0_0= ruleDescriptionKind ) ) this_DESCRIPTION_BOX_TOKEN_1= RULE_DESCRIPTION_BOX_TOKEN ( (lv_iri_2_0= RULE_IRI ) ) this_LCURLY_3= RULE_LCURLY ( ( (lv_annotations_4_0= ruleAnnotation ) ) | ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) ) | ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) ) | ( (lv_conceptInstances_7_0= ruleConceptInstance ) ) | ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) ) | ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) ) | ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) ) | ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) ) )* this_RCURLY_12= RULE_RCURLY )
-            // PsiInternalOntologicalModelingLanguage.g:4886:3: ( (lv_kind_0_0= ruleDescriptionKind ) ) this_DESCRIPTION_BOX_TOKEN_1= RULE_DESCRIPTION_BOX_TOKEN ( (lv_iri_2_0= RULE_IRI ) ) this_LCURLY_3= RULE_LCURLY ( ( (lv_annotations_4_0= ruleAnnotation ) ) | ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) ) | ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) ) | ( (lv_conceptInstances_7_0= ruleConceptInstance ) ) | ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) ) | ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) ) | ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) ) | ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) ) )* this_RCURLY_12= RULE_RCURLY
+            // PsiInternalOntologicalModelingLanguage.g:4829:2: ( ( (lv_kind_0_0= ruleDescriptionKind ) ) this_DESCRIPTION_BOX_TOKEN_1= RULE_DESCRIPTION_BOX_TOKEN ( (lv_iri_2_0= RULE_IRI ) ) this_LCURLY_3= RULE_LCURLY ( ( (lv_annotations_4_0= ruleAnnotation ) ) | ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) ) | ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) ) | ( (lv_conceptInstances_7_0= ruleConceptInstance ) ) | ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) ) | ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) ) | ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) ) | ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) ) )* this_RCURLY_12= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:4830:3: ( (lv_kind_0_0= ruleDescriptionKind ) ) this_DESCRIPTION_BOX_TOKEN_1= RULE_DESCRIPTION_BOX_TOKEN ( (lv_iri_2_0= RULE_IRI ) ) this_LCURLY_3= RULE_LCURLY ( ( (lv_annotations_4_0= ruleAnnotation ) ) | ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) ) | ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) ) | ( (lv_conceptInstances_7_0= ruleConceptInstance ) ) | ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) ) | ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) ) | ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) ) | ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) ) )* this_RCURLY_12= RULE_RCURLY
             {
-            // PsiInternalOntologicalModelingLanguage.g:4886:3: ( (lv_kind_0_0= ruleDescriptionKind ) )
-            // PsiInternalOntologicalModelingLanguage.g:4887:4: (lv_kind_0_0= ruleDescriptionKind )
+            // PsiInternalOntologicalModelingLanguage.g:4830:3: ( (lv_kind_0_0= ruleDescriptionKind ) )
+            // PsiInternalOntologicalModelingLanguage.g:4831:4: (lv_kind_0_0= ruleDescriptionKind )
             {
-            // PsiInternalOntologicalModelingLanguage.g:4887:4: (lv_kind_0_0= ruleDescriptionKind )
-            // PsiInternalOntologicalModelingLanguage.g:4888:5: lv_kind_0_0= ruleDescriptionKind
+            // PsiInternalOntologicalModelingLanguage.g:4831:4: (lv_kind_0_0= ruleDescriptionKind )
+            // PsiInternalOntologicalModelingLanguage.g:4832:5: lv_kind_0_0= ruleDescriptionKind
             {
 
             					markComposite(elementTypeProvider.getDescriptionBox_KindDescriptionKindEnumRuleCall_0_0ElementType());
             				
-            pushFollow(FOLLOW_80);
+            pushFollow(FOLLOW_78);
             lv_kind_0_0=ruleDescriptionKind();
 
             state._fsp--;
@@ -11314,11 +11311,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(this_DESCRIPTION_BOX_TOKEN_1);
             		
-            // PsiInternalOntologicalModelingLanguage.g:4908:3: ( (lv_iri_2_0= RULE_IRI ) )
-            // PsiInternalOntologicalModelingLanguage.g:4909:4: (lv_iri_2_0= RULE_IRI )
+            // PsiInternalOntologicalModelingLanguage.g:4852:3: ( (lv_iri_2_0= RULE_IRI ) )
+            // PsiInternalOntologicalModelingLanguage.g:4853:4: (lv_iri_2_0= RULE_IRI )
             {
-            // PsiInternalOntologicalModelingLanguage.g:4909:4: (lv_iri_2_0= RULE_IRI )
-            // PsiInternalOntologicalModelingLanguage.g:4910:5: lv_iri_2_0= RULE_IRI
+            // PsiInternalOntologicalModelingLanguage.g:4853:4: (lv_iri_2_0= RULE_IRI )
+            // PsiInternalOntologicalModelingLanguage.g:4854:5: lv_iri_2_0= RULE_IRI
             {
 
             					markLeaf(elementTypeProvider.getDescriptionBox_IriIRITerminalRuleCall_2_0ElementType());
@@ -11342,11 +11339,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			markLeaf(elementTypeProvider.getDescriptionBox_LCURLYTerminalRuleCall_3ElementType());
             		
-            this_LCURLY_3=(Token)match(input,RULE_LCURLY,FOLLOW_81); 
+            this_LCURLY_3=(Token)match(input,RULE_LCURLY,FOLLOW_79); 
 
             			doneLeaf(this_LCURLY_3);
             		
-            // PsiInternalOntologicalModelingLanguage.g:4932:3: ( ( (lv_annotations_4_0= ruleAnnotation ) ) | ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) ) | ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) ) | ( (lv_conceptInstances_7_0= ruleConceptInstance ) ) | ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) ) | ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) ) | ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) ) | ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) ) )*
+            // PsiInternalOntologicalModelingLanguage.g:4876:3: ( ( (lv_annotations_4_0= ruleAnnotation ) ) | ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) ) | ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) ) | ( (lv_conceptInstances_7_0= ruleConceptInstance ) ) | ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) ) | ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) ) | ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) ) | ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) ) )*
             loop64:
             do {
                 int alt64=9;
@@ -11366,27 +11363,27 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
                     alt64=3;
                     }
                     break;
-                case 115:
+                case 111:
                     {
                     alt64=4;
                     }
                     break;
-                case 117:
+                case 113:
                     {
                     alt64=5;
                     }
                     break;
-                case 119:
+                case 115:
                     {
                     alt64=6;
                     }
                     break;
-                case 121:
+                case 117:
                     {
                     alt64=7;
                     }
                     break;
-                case 122:
+                case 118:
                     {
                     alt64=8;
                     }
@@ -11396,18 +11393,18 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
                 switch (alt64) {
             	case 1 :
-            	    // PsiInternalOntologicalModelingLanguage.g:4933:4: ( (lv_annotations_4_0= ruleAnnotation ) )
+            	    // PsiInternalOntologicalModelingLanguage.g:4877:4: ( (lv_annotations_4_0= ruleAnnotation ) )
             	    {
-            	    // PsiInternalOntologicalModelingLanguage.g:4933:4: ( (lv_annotations_4_0= ruleAnnotation ) )
-            	    // PsiInternalOntologicalModelingLanguage.g:4934:5: (lv_annotations_4_0= ruleAnnotation )
+            	    // PsiInternalOntologicalModelingLanguage.g:4877:4: ( (lv_annotations_4_0= ruleAnnotation ) )
+            	    // PsiInternalOntologicalModelingLanguage.g:4878:5: (lv_annotations_4_0= ruleAnnotation )
             	    {
-            	    // PsiInternalOntologicalModelingLanguage.g:4934:5: (lv_annotations_4_0= ruleAnnotation )
-            	    // PsiInternalOntologicalModelingLanguage.g:4935:6: lv_annotations_4_0= ruleAnnotation
+            	    // PsiInternalOntologicalModelingLanguage.g:4878:5: (lv_annotations_4_0= ruleAnnotation )
+            	    // PsiInternalOntologicalModelingLanguage.g:4879:6: lv_annotations_4_0= ruleAnnotation
             	    {
 
             	    						markComposite(elementTypeProvider.getDescriptionBox_AnnotationsAnnotationParserRuleCall_4_0_0ElementType());
             	    					
-            	    pushFollow(FOLLOW_81);
+            	    pushFollow(FOLLOW_79);
             	    lv_annotations_4_0=ruleAnnotation();
 
             	    state._fsp--;
@@ -11429,18 +11426,18 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
             	    }
             	    break;
             	case 2 :
-            	    // PsiInternalOntologicalModelingLanguage.g:4949:4: ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) )
+            	    // PsiInternalOntologicalModelingLanguage.g:4893:4: ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) )
             	    {
-            	    // PsiInternalOntologicalModelingLanguage.g:4949:4: ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) )
-            	    // PsiInternalOntologicalModelingLanguage.g:4950:5: (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions )
+            	    // PsiInternalOntologicalModelingLanguage.g:4893:4: ( (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions ) )
+            	    // PsiInternalOntologicalModelingLanguage.g:4894:5: (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions )
             	    {
-            	    // PsiInternalOntologicalModelingLanguage.g:4950:5: (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions )
-            	    // PsiInternalOntologicalModelingLanguage.g:4951:6: lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions
+            	    // PsiInternalOntologicalModelingLanguage.g:4894:5: (lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions )
+            	    // PsiInternalOntologicalModelingLanguage.g:4895:6: lv_closedWorldDefinitions_5_0= ruleDescriptionBoxExtendsClosedWorldDefinitions
             	    {
 
             	    						markComposite(elementTypeProvider.getDescriptionBox_ClosedWorldDefinitionsDescriptionBoxExtendsClosedWorldDefinitionsParserRuleCall_4_1_0ElementType());
             	    					
-            	    pushFollow(FOLLOW_81);
+            	    pushFollow(FOLLOW_79);
             	    lv_closedWorldDefinitions_5_0=ruleDescriptionBoxExtendsClosedWorldDefinitions();
 
             	    state._fsp--;
@@ -11462,18 +11459,18 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
             	    }
             	    break;
             	case 3 :
-            	    // PsiInternalOntologicalModelingLanguage.g:4965:4: ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) )
+            	    // PsiInternalOntologicalModelingLanguage.g:4909:4: ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) )
             	    {
-            	    // PsiInternalOntologicalModelingLanguage.g:4965:4: ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) )
-            	    // PsiInternalOntologicalModelingLanguage.g:4966:5: (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement )
+            	    // PsiInternalOntologicalModelingLanguage.g:4909:4: ( (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement ) )
+            	    // PsiInternalOntologicalModelingLanguage.g:4910:5: (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement )
             	    {
-            	    // PsiInternalOntologicalModelingLanguage.g:4966:5: (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement )
-            	    // PsiInternalOntologicalModelingLanguage.g:4967:6: lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement
+            	    // PsiInternalOntologicalModelingLanguage.g:4910:5: (lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement )
+            	    // PsiInternalOntologicalModelingLanguage.g:4911:6: lv_descriptionBoxRefinements_6_0= ruleDescriptionBoxRefinement
             	    {
 
             	    						markComposite(elementTypeProvider.getDescriptionBox_DescriptionBoxRefinementsDescriptionBoxRefinementParserRuleCall_4_2_0ElementType());
             	    					
-            	    pushFollow(FOLLOW_81);
+            	    pushFollow(FOLLOW_79);
             	    lv_descriptionBoxRefinements_6_0=ruleDescriptionBoxRefinement();
 
             	    state._fsp--;
@@ -11495,18 +11492,18 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
             	    }
             	    break;
             	case 4 :
-            	    // PsiInternalOntologicalModelingLanguage.g:4981:4: ( (lv_conceptInstances_7_0= ruleConceptInstance ) )
+            	    // PsiInternalOntologicalModelingLanguage.g:4925:4: ( (lv_conceptInstances_7_0= ruleConceptInstance ) )
             	    {
-            	    // PsiInternalOntologicalModelingLanguage.g:4981:4: ( (lv_conceptInstances_7_0= ruleConceptInstance ) )
-            	    // PsiInternalOntologicalModelingLanguage.g:4982:5: (lv_conceptInstances_7_0= ruleConceptInstance )
+            	    // PsiInternalOntologicalModelingLanguage.g:4925:4: ( (lv_conceptInstances_7_0= ruleConceptInstance ) )
+            	    // PsiInternalOntologicalModelingLanguage.g:4926:5: (lv_conceptInstances_7_0= ruleConceptInstance )
             	    {
-            	    // PsiInternalOntologicalModelingLanguage.g:4982:5: (lv_conceptInstances_7_0= ruleConceptInstance )
-            	    // PsiInternalOntologicalModelingLanguage.g:4983:6: lv_conceptInstances_7_0= ruleConceptInstance
+            	    // PsiInternalOntologicalModelingLanguage.g:4926:5: (lv_conceptInstances_7_0= ruleConceptInstance )
+            	    // PsiInternalOntologicalModelingLanguage.g:4927:6: lv_conceptInstances_7_0= ruleConceptInstance
             	    {
 
             	    						markComposite(elementTypeProvider.getDescriptionBox_ConceptInstancesConceptInstanceParserRuleCall_4_3_0ElementType());
             	    					
-            	    pushFollow(FOLLOW_81);
+            	    pushFollow(FOLLOW_79);
             	    lv_conceptInstances_7_0=ruleConceptInstance();
 
             	    state._fsp--;
@@ -11528,18 +11525,18 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
             	    }
             	    break;
             	case 5 :
-            	    // PsiInternalOntologicalModelingLanguage.g:4997:4: ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) )
+            	    // PsiInternalOntologicalModelingLanguage.g:4941:4: ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) )
             	    {
-            	    // PsiInternalOntologicalModelingLanguage.g:4997:4: ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) )
-            	    // PsiInternalOntologicalModelingLanguage.g:4998:5: (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance )
+            	    // PsiInternalOntologicalModelingLanguage.g:4941:4: ( (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance ) )
+            	    // PsiInternalOntologicalModelingLanguage.g:4942:5: (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance )
             	    {
-            	    // PsiInternalOntologicalModelingLanguage.g:4998:5: (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance )
-            	    // PsiInternalOntologicalModelingLanguage.g:4999:6: lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance
+            	    // PsiInternalOntologicalModelingLanguage.g:4942:5: (lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance )
+            	    // PsiInternalOntologicalModelingLanguage.g:4943:6: lv_reifiedRelationshipInstances_8_0= ruleReifiedRelationshipInstance
             	    {
 
             	    						markComposite(elementTypeProvider.getDescriptionBox_ReifiedRelationshipInstancesReifiedRelationshipInstanceParserRuleCall_4_4_0ElementType());
             	    					
-            	    pushFollow(FOLLOW_81);
+            	    pushFollow(FOLLOW_79);
             	    lv_reifiedRelationshipInstances_8_0=ruleReifiedRelationshipInstance();
 
             	    state._fsp--;
@@ -11561,18 +11558,18 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
             	    }
             	    break;
             	case 6 :
-            	    // PsiInternalOntologicalModelingLanguage.g:5013:4: ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) )
+            	    // PsiInternalOntologicalModelingLanguage.g:4957:4: ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) )
             	    {
-            	    // PsiInternalOntologicalModelingLanguage.g:5013:4: ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) )
-            	    // PsiInternalOntologicalModelingLanguage.g:5014:5: (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain )
+            	    // PsiInternalOntologicalModelingLanguage.g:4957:4: ( (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain ) )
+            	    // PsiInternalOntologicalModelingLanguage.g:4958:5: (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain )
             	    {
-            	    // PsiInternalOntologicalModelingLanguage.g:5014:5: (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain )
-            	    // PsiInternalOntologicalModelingLanguage.g:5015:6: lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain
+            	    // PsiInternalOntologicalModelingLanguage.g:4958:5: (lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain )
+            	    // PsiInternalOntologicalModelingLanguage.g:4959:6: lv_reifiedRelationshipInstanceDomains_9_0= ruleReifiedRelationshipInstanceDomain
             	    {
 
             	    						markComposite(elementTypeProvider.getDescriptionBox_ReifiedRelationshipInstanceDomainsReifiedRelationshipInstanceDomainParserRuleCall_4_5_0ElementType());
             	    					
-            	    pushFollow(FOLLOW_81);
+            	    pushFollow(FOLLOW_79);
             	    lv_reifiedRelationshipInstanceDomains_9_0=ruleReifiedRelationshipInstanceDomain();
 
             	    state._fsp--;
@@ -11594,18 +11591,18 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
             	    }
             	    break;
             	case 7 :
-            	    // PsiInternalOntologicalModelingLanguage.g:5029:4: ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) )
+            	    // PsiInternalOntologicalModelingLanguage.g:4973:4: ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) )
             	    {
-            	    // PsiInternalOntologicalModelingLanguage.g:5029:4: ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) )
-            	    // PsiInternalOntologicalModelingLanguage.g:5030:5: (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange )
+            	    // PsiInternalOntologicalModelingLanguage.g:4973:4: ( (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange ) )
+            	    // PsiInternalOntologicalModelingLanguage.g:4974:5: (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange )
             	    {
-            	    // PsiInternalOntologicalModelingLanguage.g:5030:5: (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange )
-            	    // PsiInternalOntologicalModelingLanguage.g:5031:6: lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange
+            	    // PsiInternalOntologicalModelingLanguage.g:4974:5: (lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange )
+            	    // PsiInternalOntologicalModelingLanguage.g:4975:6: lv_reifiedRelationshipInstanceRanges_10_0= ruleReifiedRelationshipInstanceRange
             	    {
 
             	    						markComposite(elementTypeProvider.getDescriptionBox_ReifiedRelationshipInstanceRangesReifiedRelationshipInstanceRangeParserRuleCall_4_6_0ElementType());
             	    					
-            	    pushFollow(FOLLOW_81);
+            	    pushFollow(FOLLOW_79);
             	    lv_reifiedRelationshipInstanceRanges_10_0=ruleReifiedRelationshipInstanceRange();
 
             	    state._fsp--;
@@ -11627,18 +11624,18 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
             	    }
             	    break;
             	case 8 :
-            	    // PsiInternalOntologicalModelingLanguage.g:5045:4: ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) )
+            	    // PsiInternalOntologicalModelingLanguage.g:4989:4: ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) )
             	    {
-            	    // PsiInternalOntologicalModelingLanguage.g:5045:4: ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) )
-            	    // PsiInternalOntologicalModelingLanguage.g:5046:5: (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple )
+            	    // PsiInternalOntologicalModelingLanguage.g:4989:4: ( (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple ) )
+            	    // PsiInternalOntologicalModelingLanguage.g:4990:5: (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple )
             	    {
-            	    // PsiInternalOntologicalModelingLanguage.g:5046:5: (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple )
-            	    // PsiInternalOntologicalModelingLanguage.g:5047:6: lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple
+            	    // PsiInternalOntologicalModelingLanguage.g:4990:5: (lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple )
+            	    // PsiInternalOntologicalModelingLanguage.g:4991:6: lv_unreifiedRelationshipInstanceTuples_11_0= ruleUnreifiedRelationshipInstanceTuple
             	    {
 
             	    						markComposite(elementTypeProvider.getDescriptionBox_UnreifiedRelationshipInstanceTuplesUnreifiedRelationshipInstanceTupleParserRuleCall_4_7_0ElementType());
             	    					
-            	    pushFollow(FOLLOW_81);
+            	    pushFollow(FOLLOW_79);
             	    lv_unreifiedRelationshipInstanceTuples_11_0=ruleUnreifiedRelationshipInstanceTuple();
 
             	    state._fsp--;
@@ -11691,7 +11688,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleDescriptionBoxExtendsClosedWorldDefinitions"
-    // PsiInternalOntologicalModelingLanguage.g:5072:1: entryRuleDescriptionBoxExtendsClosedWorldDefinitions returns [Boolean current=false] : iv_ruleDescriptionBoxExtendsClosedWorldDefinitions= ruleDescriptionBoxExtendsClosedWorldDefinitions EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:5016:1: entryRuleDescriptionBoxExtendsClosedWorldDefinitions returns [Boolean current=false] : iv_ruleDescriptionBoxExtendsClosedWorldDefinitions= ruleDescriptionBoxExtendsClosedWorldDefinitions EOF ;
     public final Boolean entryRuleDescriptionBoxExtendsClosedWorldDefinitions() throws RecognitionException {
         Boolean current = false;
 
@@ -11699,8 +11696,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5072:85: (iv_ruleDescriptionBoxExtendsClosedWorldDefinitions= ruleDescriptionBoxExtendsClosedWorldDefinitions EOF )
-            // PsiInternalOntologicalModelingLanguage.g:5073:2: iv_ruleDescriptionBoxExtendsClosedWorldDefinitions= ruleDescriptionBoxExtendsClosedWorldDefinitions EOF
+            // PsiInternalOntologicalModelingLanguage.g:5016:85: (iv_ruleDescriptionBoxExtendsClosedWorldDefinitions= ruleDescriptionBoxExtendsClosedWorldDefinitions EOF )
+            // PsiInternalOntologicalModelingLanguage.g:5017:2: iv_ruleDescriptionBoxExtendsClosedWorldDefinitions= ruleDescriptionBoxExtendsClosedWorldDefinitions EOF
             {
              markComposite(elementTypeProvider.getDescriptionBoxExtendsClosedWorldDefinitionsElementType()); 
             pushFollow(FOLLOW_1);
@@ -11726,18 +11723,18 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleDescriptionBoxExtendsClosedWorldDefinitions"
-    // PsiInternalOntologicalModelingLanguage.g:5079:1: ruleDescriptionBoxExtendsClosedWorldDefinitions returns [Boolean current=false] : (this_EXTENDS_TOKEN_0= RULE_EXTENDS_TOKEN ( ( ruleReference ) ) ) ;
+    // PsiInternalOntologicalModelingLanguage.g:5023:1: ruleDescriptionBoxExtendsClosedWorldDefinitions returns [Boolean current=false] : (this_EXTENDS_TOKEN_0= RULE_EXTENDS_TOKEN ( ( ruleReference ) ) ) ;
     public final Boolean ruleDescriptionBoxExtendsClosedWorldDefinitions() throws RecognitionException {
         Boolean current = false;
 
         Token this_EXTENDS_TOKEN_0=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5080:1: ( (this_EXTENDS_TOKEN_0= RULE_EXTENDS_TOKEN ( ( ruleReference ) ) ) )
-            // PsiInternalOntologicalModelingLanguage.g:5081:2: (this_EXTENDS_TOKEN_0= RULE_EXTENDS_TOKEN ( ( ruleReference ) ) )
+            // PsiInternalOntologicalModelingLanguage.g:5024:1: ( (this_EXTENDS_TOKEN_0= RULE_EXTENDS_TOKEN ( ( ruleReference ) ) ) )
+            // PsiInternalOntologicalModelingLanguage.g:5025:2: (this_EXTENDS_TOKEN_0= RULE_EXTENDS_TOKEN ( ( ruleReference ) ) )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5081:2: (this_EXTENDS_TOKEN_0= RULE_EXTENDS_TOKEN ( ( ruleReference ) ) )
-            // PsiInternalOntologicalModelingLanguage.g:5082:3: this_EXTENDS_TOKEN_0= RULE_EXTENDS_TOKEN ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:5025:2: (this_EXTENDS_TOKEN_0= RULE_EXTENDS_TOKEN ( ( ruleReference ) ) )
+            // PsiInternalOntologicalModelingLanguage.g:5026:3: this_EXTENDS_TOKEN_0= RULE_EXTENDS_TOKEN ( ( ruleReference ) )
             {
 
             			markLeaf(elementTypeProvider.getDescriptionBoxExtendsClosedWorldDefinitions_EXTENDS_TOKENTerminalRuleCall_0ElementType());
@@ -11746,11 +11743,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(this_EXTENDS_TOKEN_0);
             		
-            // PsiInternalOntologicalModelingLanguage.g:5089:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:5090:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5033:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:5034:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5090:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:5091:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:5034:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5035:5: ruleReference
             {
 
             					if (!current) {
@@ -11794,7 +11791,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleDescriptionBoxRefinement"
-    // PsiInternalOntologicalModelingLanguage.g:5110:1: entryRuleDescriptionBoxRefinement returns [Boolean current=false] : iv_ruleDescriptionBoxRefinement= ruleDescriptionBoxRefinement EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:5054:1: entryRuleDescriptionBoxRefinement returns [Boolean current=false] : iv_ruleDescriptionBoxRefinement= ruleDescriptionBoxRefinement EOF ;
     public final Boolean entryRuleDescriptionBoxRefinement() throws RecognitionException {
         Boolean current = false;
 
@@ -11802,8 +11799,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5110:66: (iv_ruleDescriptionBoxRefinement= ruleDescriptionBoxRefinement EOF )
-            // PsiInternalOntologicalModelingLanguage.g:5111:2: iv_ruleDescriptionBoxRefinement= ruleDescriptionBoxRefinement EOF
+            // PsiInternalOntologicalModelingLanguage.g:5054:66: (iv_ruleDescriptionBoxRefinement= ruleDescriptionBoxRefinement EOF )
+            // PsiInternalOntologicalModelingLanguage.g:5055:2: iv_ruleDescriptionBoxRefinement= ruleDescriptionBoxRefinement EOF
             {
              markComposite(elementTypeProvider.getDescriptionBoxRefinementElementType()); 
             pushFollow(FOLLOW_1);
@@ -11829,18 +11826,18 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleDescriptionBoxRefinement"
-    // PsiInternalOntologicalModelingLanguage.g:5117:1: ruleDescriptionBoxRefinement returns [Boolean current=false] : (this_REFINES_TOKEN_0= RULE_REFINES_TOKEN ( ( ruleReference ) ) ) ;
+    // PsiInternalOntologicalModelingLanguage.g:5061:1: ruleDescriptionBoxRefinement returns [Boolean current=false] : (this_REFINES_TOKEN_0= RULE_REFINES_TOKEN ( ( ruleReference ) ) ) ;
     public final Boolean ruleDescriptionBoxRefinement() throws RecognitionException {
         Boolean current = false;
 
         Token this_REFINES_TOKEN_0=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5118:1: ( (this_REFINES_TOKEN_0= RULE_REFINES_TOKEN ( ( ruleReference ) ) ) )
-            // PsiInternalOntologicalModelingLanguage.g:5119:2: (this_REFINES_TOKEN_0= RULE_REFINES_TOKEN ( ( ruleReference ) ) )
+            // PsiInternalOntologicalModelingLanguage.g:5062:1: ( (this_REFINES_TOKEN_0= RULE_REFINES_TOKEN ( ( ruleReference ) ) ) )
+            // PsiInternalOntologicalModelingLanguage.g:5063:2: (this_REFINES_TOKEN_0= RULE_REFINES_TOKEN ( ( ruleReference ) ) )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5119:2: (this_REFINES_TOKEN_0= RULE_REFINES_TOKEN ( ( ruleReference ) ) )
-            // PsiInternalOntologicalModelingLanguage.g:5120:3: this_REFINES_TOKEN_0= RULE_REFINES_TOKEN ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:5063:2: (this_REFINES_TOKEN_0= RULE_REFINES_TOKEN ( ( ruleReference ) ) )
+            // PsiInternalOntologicalModelingLanguage.g:5064:3: this_REFINES_TOKEN_0= RULE_REFINES_TOKEN ( ( ruleReference ) )
             {
 
             			markLeaf(elementTypeProvider.getDescriptionBoxRefinement_REFINES_TOKENTerminalRuleCall_0ElementType());
@@ -11849,11 +11846,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(this_REFINES_TOKEN_0);
             		
-            // PsiInternalOntologicalModelingLanguage.g:5127:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:5128:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5071:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:5072:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5128:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:5129:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:5072:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5073:5: ruleReference
             {
 
             					if (!current) {
@@ -11897,7 +11894,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleScalarDataPropertyValue"
-    // PsiInternalOntologicalModelingLanguage.g:5148:1: entryRuleScalarDataPropertyValue returns [Boolean current=false] : iv_ruleScalarDataPropertyValue= ruleScalarDataPropertyValue EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:5092:1: entryRuleScalarDataPropertyValue returns [Boolean current=false] : iv_ruleScalarDataPropertyValue= ruleScalarDataPropertyValue EOF ;
     public final Boolean entryRuleScalarDataPropertyValue() throws RecognitionException {
         Boolean current = false;
 
@@ -11905,8 +11902,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5148:65: (iv_ruleScalarDataPropertyValue= ruleScalarDataPropertyValue EOF )
-            // PsiInternalOntologicalModelingLanguage.g:5149:2: iv_ruleScalarDataPropertyValue= ruleScalarDataPropertyValue EOF
+            // PsiInternalOntologicalModelingLanguage.g:5092:65: (iv_ruleScalarDataPropertyValue= ruleScalarDataPropertyValue EOF )
+            // PsiInternalOntologicalModelingLanguage.g:5093:2: iv_ruleScalarDataPropertyValue= ruleScalarDataPropertyValue EOF
             {
              markComposite(elementTypeProvider.getScalarDataPropertyValueElementType()); 
             pushFollow(FOLLOW_1);
@@ -11932,7 +11929,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleScalarDataPropertyValue"
-    // PsiInternalOntologicalModelingLanguage.g:5155:1: ruleScalarDataPropertyValue returns [Boolean current=false] : (otherlv_0= 'ScalarDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'scalarPropertyValue' ( (lv_scalarPropertyValue_3_0= ruleReference ) ) otherlv_4= 'scalarDataProperty' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) ;
+    // PsiInternalOntologicalModelingLanguage.g:5099:1: ruleScalarDataPropertyValue returns [Boolean current=false] : (otherlv_0= 'ScalarDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'scalarPropertyValue' ( (lv_scalarPropertyValue_3_0= ruleReference ) ) otherlv_4= 'scalarDataProperty' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) ;
     public final Boolean ruleScalarDataPropertyValue() throws RecognitionException {
         Boolean current = false;
 
@@ -11945,43 +11942,43 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5156:1: ( (otherlv_0= 'ScalarDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'scalarPropertyValue' ( (lv_scalarPropertyValue_3_0= ruleReference ) ) otherlv_4= 'scalarDataProperty' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) )
-            // PsiInternalOntologicalModelingLanguage.g:5157:2: (otherlv_0= 'ScalarDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'scalarPropertyValue' ( (lv_scalarPropertyValue_3_0= ruleReference ) ) otherlv_4= 'scalarDataProperty' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:5100:1: ( (otherlv_0= 'ScalarDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'scalarPropertyValue' ( (lv_scalarPropertyValue_3_0= ruleReference ) ) otherlv_4= 'scalarDataProperty' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) )
+            // PsiInternalOntologicalModelingLanguage.g:5101:2: (otherlv_0= 'ScalarDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'scalarPropertyValue' ( (lv_scalarPropertyValue_3_0= ruleReference ) ) otherlv_4= 'scalarDataProperty' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5157:2: (otherlv_0= 'ScalarDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'scalarPropertyValue' ( (lv_scalarPropertyValue_3_0= ruleReference ) ) otherlv_4= 'scalarDataProperty' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
-            // PsiInternalOntologicalModelingLanguage.g:5158:3: otherlv_0= 'ScalarDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'scalarPropertyValue' ( (lv_scalarPropertyValue_3_0= ruleReference ) ) otherlv_4= 'scalarDataProperty' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY
+            // PsiInternalOntologicalModelingLanguage.g:5101:2: (otherlv_0= 'ScalarDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'scalarPropertyValue' ( (lv_scalarPropertyValue_3_0= ruleReference ) ) otherlv_4= 'scalarDataProperty' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:5102:3: otherlv_0= 'ScalarDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'scalarPropertyValue' ( (lv_scalarPropertyValue_3_0= ruleReference ) ) otherlv_4= 'scalarDataProperty' ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY
             {
 
             			markLeaf(elementTypeProvider.getScalarDataPropertyValue_ScalarDataPropertyValueKeyword_0ElementType());
             		
-            otherlv_0=(Token)match(input,109,FOLLOW_9); 
+            otherlv_0=(Token)match(input,105,FOLLOW_9); 
 
             			doneLeaf(otherlv_0);
             		
 
             			markLeaf(elementTypeProvider.getScalarDataPropertyValue_LCURLYTerminalRuleCall_1ElementType());
             		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_82); 
+            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_80); 
 
             			doneLeaf(this_LCURLY_1);
             		
 
             			markLeaf(elementTypeProvider.getScalarDataPropertyValue_ScalarPropertyValueKeyword_2ElementType());
             		
-            otherlv_2=(Token)match(input,110,FOLLOW_27); 
+            otherlv_2=(Token)match(input,106,FOLLOW_27); 
 
             			doneLeaf(otherlv_2);
             		
-            // PsiInternalOntologicalModelingLanguage.g:5179:3: ( (lv_scalarPropertyValue_3_0= ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:5180:4: (lv_scalarPropertyValue_3_0= ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5123:3: ( (lv_scalarPropertyValue_3_0= ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:5124:4: (lv_scalarPropertyValue_3_0= ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5180:4: (lv_scalarPropertyValue_3_0= ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:5181:5: lv_scalarPropertyValue_3_0= ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:5124:4: (lv_scalarPropertyValue_3_0= ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5125:5: lv_scalarPropertyValue_3_0= ruleReference
             {
 
             					markComposite(elementTypeProvider.getScalarDataPropertyValue_ScalarPropertyValueReferenceParserRuleCall_3_0ElementType());
             				
-            pushFollow(FOLLOW_83);
+            pushFollow(FOLLOW_81);
             lv_scalarPropertyValue_3_0=ruleReference();
 
             state._fsp--;
@@ -12006,11 +12003,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(otherlv_4);
             		
-            // PsiInternalOntologicalModelingLanguage.g:5201:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:5202:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5145:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:5146:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5202:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:5203:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:5146:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5147:5: ruleReference
             {
 
             					if (!current) {
@@ -12061,7 +12058,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleStructuredDataPropertyValue"
-    // PsiInternalOntologicalModelingLanguage.g:5229:1: entryRuleStructuredDataPropertyValue returns [Boolean current=false] : iv_ruleStructuredDataPropertyValue= ruleStructuredDataPropertyValue EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:5173:1: entryRuleStructuredDataPropertyValue returns [Boolean current=false] : iv_ruleStructuredDataPropertyValue= ruleStructuredDataPropertyValue EOF ;
     public final Boolean entryRuleStructuredDataPropertyValue() throws RecognitionException {
         Boolean current = false;
 
@@ -12069,8 +12066,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5229:69: (iv_ruleStructuredDataPropertyValue= ruleStructuredDataPropertyValue EOF )
-            // PsiInternalOntologicalModelingLanguage.g:5230:2: iv_ruleStructuredDataPropertyValue= ruleStructuredDataPropertyValue EOF
+            // PsiInternalOntologicalModelingLanguage.g:5173:69: (iv_ruleStructuredDataPropertyValue= ruleStructuredDataPropertyValue EOF )
+            // PsiInternalOntologicalModelingLanguage.g:5174:2: iv_ruleStructuredDataPropertyValue= ruleStructuredDataPropertyValue EOF
             {
              markComposite(elementTypeProvider.getStructuredDataPropertyValueElementType()); 
             pushFollow(FOLLOW_1);
@@ -12096,7 +12093,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleStructuredDataPropertyValue"
-    // PsiInternalOntologicalModelingLanguage.g:5236:1: ruleStructuredDataPropertyValue returns [Boolean current=false] : (otherlv_0= 'StructuredDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'structuredDataProperty' ( ( ruleReference ) ) otherlv_4= 'structuredPropertyTuple' ( (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple ) ) this_RCURLY_6= RULE_RCURLY ) ;
+    // PsiInternalOntologicalModelingLanguage.g:5180:1: ruleStructuredDataPropertyValue returns [Boolean current=false] : (otherlv_0= 'StructuredDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'structuredDataProperty' ( ( ruleReference ) ) otherlv_4= 'structuredPropertyTuple' ( (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple ) ) this_RCURLY_6= RULE_RCURLY ) ;
     public final Boolean ruleStructuredDataPropertyValue() throws RecognitionException {
         Boolean current = false;
 
@@ -12109,23 +12106,23 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5237:1: ( (otherlv_0= 'StructuredDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'structuredDataProperty' ( ( ruleReference ) ) otherlv_4= 'structuredPropertyTuple' ( (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple ) ) this_RCURLY_6= RULE_RCURLY ) )
-            // PsiInternalOntologicalModelingLanguage.g:5238:2: (otherlv_0= 'StructuredDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'structuredDataProperty' ( ( ruleReference ) ) otherlv_4= 'structuredPropertyTuple' ( (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple ) ) this_RCURLY_6= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:5181:1: ( (otherlv_0= 'StructuredDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'structuredDataProperty' ( ( ruleReference ) ) otherlv_4= 'structuredPropertyTuple' ( (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple ) ) this_RCURLY_6= RULE_RCURLY ) )
+            // PsiInternalOntologicalModelingLanguage.g:5182:2: (otherlv_0= 'StructuredDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'structuredDataProperty' ( ( ruleReference ) ) otherlv_4= 'structuredPropertyTuple' ( (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple ) ) this_RCURLY_6= RULE_RCURLY )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5238:2: (otherlv_0= 'StructuredDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'structuredDataProperty' ( ( ruleReference ) ) otherlv_4= 'structuredPropertyTuple' ( (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple ) ) this_RCURLY_6= RULE_RCURLY )
-            // PsiInternalOntologicalModelingLanguage.g:5239:3: otherlv_0= 'StructuredDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'structuredDataProperty' ( ( ruleReference ) ) otherlv_4= 'structuredPropertyTuple' ( (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple ) ) this_RCURLY_6= RULE_RCURLY
+            // PsiInternalOntologicalModelingLanguage.g:5182:2: (otherlv_0= 'StructuredDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'structuredDataProperty' ( ( ruleReference ) ) otherlv_4= 'structuredPropertyTuple' ( (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple ) ) this_RCURLY_6= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:5183:3: otherlv_0= 'StructuredDataPropertyValue' this_LCURLY_1= RULE_LCURLY otherlv_2= 'structuredDataProperty' ( ( ruleReference ) ) otherlv_4= 'structuredPropertyTuple' ( (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple ) ) this_RCURLY_6= RULE_RCURLY
             {
 
             			markLeaf(elementTypeProvider.getStructuredDataPropertyValue_StructuredDataPropertyValueKeyword_0ElementType());
             		
-            otherlv_0=(Token)match(input,111,FOLLOW_9); 
+            otherlv_0=(Token)match(input,107,FOLLOW_9); 
 
             			doneLeaf(otherlv_0);
             		
 
             			markLeaf(elementTypeProvider.getStructuredDataPropertyValue_LCURLYTerminalRuleCall_1ElementType());
             		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_84); 
+            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_82); 
 
             			doneLeaf(this_LCURLY_1);
             		
@@ -12136,11 +12133,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(otherlv_2);
             		
-            // PsiInternalOntologicalModelingLanguage.g:5260:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:5261:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5204:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:5205:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5261:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:5262:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:5205:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5206:5: ruleReference
             {
 
             					if (!current) {
@@ -12151,7 +12148,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             					markComposite(elementTypeProvider.getStructuredDataPropertyValue_StructuredDataPropertyDataRelationshipToStructureCrossReference_3_0ElementType());
             				
-            pushFollow(FOLLOW_85);
+            pushFollow(FOLLOW_83);
             ruleReference();
 
             state._fsp--;
@@ -12168,15 +12165,15 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			markLeaf(elementTypeProvider.getStructuredDataPropertyValue_StructuredPropertyTupleKeyword_4ElementType());
             		
-            otherlv_4=(Token)match(input,112,FOLLOW_86); 
+            otherlv_4=(Token)match(input,108,FOLLOW_84); 
 
             			doneLeaf(otherlv_4);
             		
-            // PsiInternalOntologicalModelingLanguage.g:5284:3: ( (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple ) )
-            // PsiInternalOntologicalModelingLanguage.g:5285:4: (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple )
+            // PsiInternalOntologicalModelingLanguage.g:5228:3: ( (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple ) )
+            // PsiInternalOntologicalModelingLanguage.g:5229:4: (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5285:4: (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple )
-            // PsiInternalOntologicalModelingLanguage.g:5286:5: lv_structuredPropertyTuple_5_0= ruleDataStructureTuple
+            // PsiInternalOntologicalModelingLanguage.g:5229:4: (lv_structuredPropertyTuple_5_0= ruleDataStructureTuple )
+            // PsiInternalOntologicalModelingLanguage.g:5230:5: lv_structuredPropertyTuple_5_0= ruleDataStructureTuple
             {
 
             					markComposite(elementTypeProvider.getStructuredDataPropertyValue_StructuredPropertyTupleDataStructureTupleParserRuleCall_5_0ElementType());
@@ -12225,7 +12222,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleDataStructureTuple"
-    // PsiInternalOntologicalModelingLanguage.g:5310:1: entryRuleDataStructureTuple returns [Boolean current=false] : iv_ruleDataStructureTuple= ruleDataStructureTuple EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:5254:1: entryRuleDataStructureTuple returns [Boolean current=false] : iv_ruleDataStructureTuple= ruleDataStructureTuple EOF ;
     public final Boolean entryRuleDataStructureTuple() throws RecognitionException {
         Boolean current = false;
 
@@ -12233,8 +12230,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5310:60: (iv_ruleDataStructureTuple= ruleDataStructureTuple EOF )
-            // PsiInternalOntologicalModelingLanguage.g:5311:2: iv_ruleDataStructureTuple= ruleDataStructureTuple EOF
+            // PsiInternalOntologicalModelingLanguage.g:5254:60: (iv_ruleDataStructureTuple= ruleDataStructureTuple EOF )
+            // PsiInternalOntologicalModelingLanguage.g:5255:2: iv_ruleDataStructureTuple= ruleDataStructureTuple EOF
             {
              markComposite(elementTypeProvider.getDataStructureTupleElementType()); 
             pushFollow(FOLLOW_1);
@@ -12260,7 +12257,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleDataStructureTuple"
-    // PsiInternalOntologicalModelingLanguage.g:5317:1: ruleDataStructureTuple returns [Boolean current=false] : (otherlv_0= 'DataStructureTuple' this_LCURLY_1= RULE_LCURLY otherlv_2= 'dataStructureType' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY ) ;
+    // PsiInternalOntologicalModelingLanguage.g:5261:1: ruleDataStructureTuple returns [Boolean current=false] : (otherlv_0= 'DataStructureTuple' this_LCURLY_1= RULE_LCURLY otherlv_2= 'dataStructureType' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY ) ;
     public final Boolean ruleDataStructureTuple() throws RecognitionException {
         Boolean current = false;
 
@@ -12270,38 +12267,38 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
         Token this_RCURLY_4=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5318:1: ( (otherlv_0= 'DataStructureTuple' this_LCURLY_1= RULE_LCURLY otherlv_2= 'dataStructureType' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY ) )
-            // PsiInternalOntologicalModelingLanguage.g:5319:2: (otherlv_0= 'DataStructureTuple' this_LCURLY_1= RULE_LCURLY otherlv_2= 'dataStructureType' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:5262:1: ( (otherlv_0= 'DataStructureTuple' this_LCURLY_1= RULE_LCURLY otherlv_2= 'dataStructureType' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY ) )
+            // PsiInternalOntologicalModelingLanguage.g:5263:2: (otherlv_0= 'DataStructureTuple' this_LCURLY_1= RULE_LCURLY otherlv_2= 'dataStructureType' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5319:2: (otherlv_0= 'DataStructureTuple' this_LCURLY_1= RULE_LCURLY otherlv_2= 'dataStructureType' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY )
-            // PsiInternalOntologicalModelingLanguage.g:5320:3: otherlv_0= 'DataStructureTuple' this_LCURLY_1= RULE_LCURLY otherlv_2= 'dataStructureType' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY
+            // PsiInternalOntologicalModelingLanguage.g:5263:2: (otherlv_0= 'DataStructureTuple' this_LCURLY_1= RULE_LCURLY otherlv_2= 'dataStructureType' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:5264:3: otherlv_0= 'DataStructureTuple' this_LCURLY_1= RULE_LCURLY otherlv_2= 'dataStructureType' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY
             {
 
             			markLeaf(elementTypeProvider.getDataStructureTuple_DataStructureTupleKeyword_0ElementType());
             		
-            otherlv_0=(Token)match(input,113,FOLLOW_9); 
+            otherlv_0=(Token)match(input,109,FOLLOW_9); 
 
             			doneLeaf(otherlv_0);
             		
 
             			markLeaf(elementTypeProvider.getDataStructureTuple_LCURLYTerminalRuleCall_1ElementType());
             		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_87); 
+            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_85); 
 
             			doneLeaf(this_LCURLY_1);
             		
 
             			markLeaf(elementTypeProvider.getDataStructureTuple_DataStructureTypeKeyword_2ElementType());
             		
-            otherlv_2=(Token)match(input,114,FOLLOW_27); 
+            otherlv_2=(Token)match(input,110,FOLLOW_27); 
 
             			doneLeaf(otherlv_2);
             		
-            // PsiInternalOntologicalModelingLanguage.g:5341:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:5342:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5285:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:5286:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5342:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:5343:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:5286:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5287:5: ruleReference
             {
 
             					if (!current) {
@@ -12352,7 +12349,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleConceptInstance"
-    // PsiInternalOntologicalModelingLanguage.g:5369:1: entryRuleConceptInstance returns [Boolean current=false] : iv_ruleConceptInstance= ruleConceptInstance EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:5313:1: entryRuleConceptInstance returns [Boolean current=false] : iv_ruleConceptInstance= ruleConceptInstance EOF ;
     public final Boolean entryRuleConceptInstance() throws RecognitionException {
         Boolean current = false;
 
@@ -12360,8 +12357,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5369:57: (iv_ruleConceptInstance= ruleConceptInstance EOF )
-            // PsiInternalOntologicalModelingLanguage.g:5370:2: iv_ruleConceptInstance= ruleConceptInstance EOF
+            // PsiInternalOntologicalModelingLanguage.g:5313:57: (iv_ruleConceptInstance= ruleConceptInstance EOF )
+            // PsiInternalOntologicalModelingLanguage.g:5314:2: iv_ruleConceptInstance= ruleConceptInstance EOF
             {
              markComposite(elementTypeProvider.getConceptInstanceElementType()); 
             pushFollow(FOLLOW_1);
@@ -12387,7 +12384,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleConceptInstance"
-    // PsiInternalOntologicalModelingLanguage.g:5376:1: ruleConceptInstance returns [Boolean current=false] : (otherlv_0= 'ConceptInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonConceptClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY ) ;
+    // PsiInternalOntologicalModelingLanguage.g:5320:1: ruleConceptInstance returns [Boolean current=false] : (otherlv_0= 'ConceptInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonConceptClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY ) ;
     public final Boolean ruleConceptInstance() throws RecognitionException {
         Boolean current = false;
 
@@ -12397,38 +12394,38 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
         Token this_RCURLY_4=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5377:1: ( (otherlv_0= 'ConceptInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonConceptClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY ) )
-            // PsiInternalOntologicalModelingLanguage.g:5378:2: (otherlv_0= 'ConceptInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonConceptClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:5321:1: ( (otherlv_0= 'ConceptInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonConceptClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY ) )
+            // PsiInternalOntologicalModelingLanguage.g:5322:2: (otherlv_0= 'ConceptInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonConceptClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5378:2: (otherlv_0= 'ConceptInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonConceptClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY )
-            // PsiInternalOntologicalModelingLanguage.g:5379:3: otherlv_0= 'ConceptInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonConceptClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY
+            // PsiInternalOntologicalModelingLanguage.g:5322:2: (otherlv_0= 'ConceptInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonConceptClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:5323:3: otherlv_0= 'ConceptInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonConceptClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY
             {
 
             			markLeaf(elementTypeProvider.getConceptInstance_ConceptInstanceKeyword_0ElementType());
             		
-            otherlv_0=(Token)match(input,115,FOLLOW_9); 
+            otherlv_0=(Token)match(input,111,FOLLOW_9); 
 
             			doneLeaf(otherlv_0);
             		
 
             			markLeaf(elementTypeProvider.getConceptInstance_LCURLYTerminalRuleCall_1ElementType());
             		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_88); 
+            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_86); 
 
             			doneLeaf(this_LCURLY_1);
             		
 
             			markLeaf(elementTypeProvider.getConceptInstance_SingletonConceptClassifierKeyword_2ElementType());
             		
-            otherlv_2=(Token)match(input,116,FOLLOW_27); 
+            otherlv_2=(Token)match(input,112,FOLLOW_27); 
 
             			doneLeaf(otherlv_2);
             		
-            // PsiInternalOntologicalModelingLanguage.g:5400:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:5401:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5344:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:5345:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5401:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:5402:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:5345:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5346:5: ruleReference
             {
 
             					if (!current) {
@@ -12479,7 +12476,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleReifiedRelationshipInstance"
-    // PsiInternalOntologicalModelingLanguage.g:5428:1: entryRuleReifiedRelationshipInstance returns [Boolean current=false] : iv_ruleReifiedRelationshipInstance= ruleReifiedRelationshipInstance EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:5372:1: entryRuleReifiedRelationshipInstance returns [Boolean current=false] : iv_ruleReifiedRelationshipInstance= ruleReifiedRelationshipInstance EOF ;
     public final Boolean entryRuleReifiedRelationshipInstance() throws RecognitionException {
         Boolean current = false;
 
@@ -12487,8 +12484,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5428:69: (iv_ruleReifiedRelationshipInstance= ruleReifiedRelationshipInstance EOF )
-            // PsiInternalOntologicalModelingLanguage.g:5429:2: iv_ruleReifiedRelationshipInstance= ruleReifiedRelationshipInstance EOF
+            // PsiInternalOntologicalModelingLanguage.g:5372:69: (iv_ruleReifiedRelationshipInstance= ruleReifiedRelationshipInstance EOF )
+            // PsiInternalOntologicalModelingLanguage.g:5373:2: iv_ruleReifiedRelationshipInstance= ruleReifiedRelationshipInstance EOF
             {
              markComposite(elementTypeProvider.getReifiedRelationshipInstanceElementType()); 
             pushFollow(FOLLOW_1);
@@ -12514,7 +12511,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleReifiedRelationshipInstance"
-    // PsiInternalOntologicalModelingLanguage.g:5435:1: ruleReifiedRelationshipInstance returns [Boolean current=false] : (otherlv_0= 'ReifiedRelationshipInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonReifiedRelationshipClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY ) ;
+    // PsiInternalOntologicalModelingLanguage.g:5379:1: ruleReifiedRelationshipInstance returns [Boolean current=false] : (otherlv_0= 'ReifiedRelationshipInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonReifiedRelationshipClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY ) ;
     public final Boolean ruleReifiedRelationshipInstance() throws RecognitionException {
         Boolean current = false;
 
@@ -12524,38 +12521,38 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
         Token this_RCURLY_4=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5436:1: ( (otherlv_0= 'ReifiedRelationshipInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonReifiedRelationshipClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY ) )
-            // PsiInternalOntologicalModelingLanguage.g:5437:2: (otherlv_0= 'ReifiedRelationshipInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonReifiedRelationshipClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:5380:1: ( (otherlv_0= 'ReifiedRelationshipInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonReifiedRelationshipClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY ) )
+            // PsiInternalOntologicalModelingLanguage.g:5381:2: (otherlv_0= 'ReifiedRelationshipInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonReifiedRelationshipClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5437:2: (otherlv_0= 'ReifiedRelationshipInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonReifiedRelationshipClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY )
-            // PsiInternalOntologicalModelingLanguage.g:5438:3: otherlv_0= 'ReifiedRelationshipInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonReifiedRelationshipClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY
+            // PsiInternalOntologicalModelingLanguage.g:5381:2: (otherlv_0= 'ReifiedRelationshipInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonReifiedRelationshipClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:5382:3: otherlv_0= 'ReifiedRelationshipInstance' this_LCURLY_1= RULE_LCURLY otherlv_2= 'singletonReifiedRelationshipClassifier' ( ( ruleReference ) ) this_RCURLY_4= RULE_RCURLY
             {
 
             			markLeaf(elementTypeProvider.getReifiedRelationshipInstance_ReifiedRelationshipInstanceKeyword_0ElementType());
             		
-            otherlv_0=(Token)match(input,117,FOLLOW_9); 
+            otherlv_0=(Token)match(input,113,FOLLOW_9); 
 
             			doneLeaf(otherlv_0);
             		
 
             			markLeaf(elementTypeProvider.getReifiedRelationshipInstance_LCURLYTerminalRuleCall_1ElementType());
             		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_89); 
+            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_87); 
 
             			doneLeaf(this_LCURLY_1);
             		
 
             			markLeaf(elementTypeProvider.getReifiedRelationshipInstance_SingletonReifiedRelationshipClassifierKeyword_2ElementType());
             		
-            otherlv_2=(Token)match(input,118,FOLLOW_27); 
+            otherlv_2=(Token)match(input,114,FOLLOW_27); 
 
             			doneLeaf(otherlv_2);
             		
-            // PsiInternalOntologicalModelingLanguage.g:5459:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:5460:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5403:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:5404:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5460:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:5461:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:5404:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5405:5: ruleReference
             {
 
             					if (!current) {
@@ -12606,7 +12603,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleReifiedRelationshipInstanceDomain"
-    // PsiInternalOntologicalModelingLanguage.g:5487:1: entryRuleReifiedRelationshipInstanceDomain returns [Boolean current=false] : iv_ruleReifiedRelationshipInstanceDomain= ruleReifiedRelationshipInstanceDomain EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:5431:1: entryRuleReifiedRelationshipInstanceDomain returns [Boolean current=false] : iv_ruleReifiedRelationshipInstanceDomain= ruleReifiedRelationshipInstanceDomain EOF ;
     public final Boolean entryRuleReifiedRelationshipInstanceDomain() throws RecognitionException {
         Boolean current = false;
 
@@ -12614,8 +12611,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5487:75: (iv_ruleReifiedRelationshipInstanceDomain= ruleReifiedRelationshipInstanceDomain EOF )
-            // PsiInternalOntologicalModelingLanguage.g:5488:2: iv_ruleReifiedRelationshipInstanceDomain= ruleReifiedRelationshipInstanceDomain EOF
+            // PsiInternalOntologicalModelingLanguage.g:5431:75: (iv_ruleReifiedRelationshipInstanceDomain= ruleReifiedRelationshipInstanceDomain EOF )
+            // PsiInternalOntologicalModelingLanguage.g:5432:2: iv_ruleReifiedRelationshipInstanceDomain= ruleReifiedRelationshipInstanceDomain EOF
             {
              markComposite(elementTypeProvider.getReifiedRelationshipInstanceDomainElementType()); 
             pushFollow(FOLLOW_1);
@@ -12641,7 +12638,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleReifiedRelationshipInstanceDomain"
-    // PsiInternalOntologicalModelingLanguage.g:5494:1: ruleReifiedRelationshipInstanceDomain returns [Boolean current=false] : (otherlv_0= 'ReifiedRelationshipInstanceDomain' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) ;
+    // PsiInternalOntologicalModelingLanguage.g:5438:1: ruleReifiedRelationshipInstanceDomain returns [Boolean current=false] : (otherlv_0= 'ReifiedRelationshipInstanceDomain' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) ;
     public final Boolean ruleReifiedRelationshipInstanceDomain() throws RecognitionException {
         Boolean current = false;
 
@@ -12652,38 +12649,38 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
         Token this_RCURLY_6=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5495:1: ( (otherlv_0= 'ReifiedRelationshipInstanceDomain' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) )
-            // PsiInternalOntologicalModelingLanguage.g:5496:2: (otherlv_0= 'ReifiedRelationshipInstanceDomain' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:5439:1: ( (otherlv_0= 'ReifiedRelationshipInstanceDomain' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) )
+            // PsiInternalOntologicalModelingLanguage.g:5440:2: (otherlv_0= 'ReifiedRelationshipInstanceDomain' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5496:2: (otherlv_0= 'ReifiedRelationshipInstanceDomain' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
-            // PsiInternalOntologicalModelingLanguage.g:5497:3: otherlv_0= 'ReifiedRelationshipInstanceDomain' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY
+            // PsiInternalOntologicalModelingLanguage.g:5440:2: (otherlv_0= 'ReifiedRelationshipInstanceDomain' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:5441:3: otherlv_0= 'ReifiedRelationshipInstanceDomain' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY
             {
 
             			markLeaf(elementTypeProvider.getReifiedRelationshipInstanceDomain_ReifiedRelationshipInstanceDomainKeyword_0ElementType());
             		
-            otherlv_0=(Token)match(input,119,FOLLOW_9); 
+            otherlv_0=(Token)match(input,115,FOLLOW_9); 
 
             			doneLeaf(otherlv_0);
             		
 
             			markLeaf(elementTypeProvider.getReifiedRelationshipInstanceDomain_LCURLYTerminalRuleCall_1ElementType());
             		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_90); 
+            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_88); 
 
             			doneLeaf(this_LCURLY_1);
             		
 
             			markLeaf(elementTypeProvider.getReifiedRelationshipInstanceDomain_ReifiedRelationshipInstanceKeyword_2ElementType());
             		
-            otherlv_2=(Token)match(input,120,FOLLOW_27); 
+            otherlv_2=(Token)match(input,116,FOLLOW_27); 
 
             			doneLeaf(otherlv_2);
             		
-            // PsiInternalOntologicalModelingLanguage.g:5518:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:5519:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5462:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:5463:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5519:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:5520:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:5463:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5464:5: ruleReference
             {
 
             					if (!current) {
@@ -12715,11 +12712,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(this_DOMAIN_TOKEN_4);
             		
-            // PsiInternalOntologicalModelingLanguage.g:5542:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:5543:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5486:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:5487:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5543:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:5544:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:5487:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5488:5: ruleReference
             {
 
             					if (!current) {
@@ -12770,7 +12767,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleReifiedRelationshipInstanceRange"
-    // PsiInternalOntologicalModelingLanguage.g:5570:1: entryRuleReifiedRelationshipInstanceRange returns [Boolean current=false] : iv_ruleReifiedRelationshipInstanceRange= ruleReifiedRelationshipInstanceRange EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:5514:1: entryRuleReifiedRelationshipInstanceRange returns [Boolean current=false] : iv_ruleReifiedRelationshipInstanceRange= ruleReifiedRelationshipInstanceRange EOF ;
     public final Boolean entryRuleReifiedRelationshipInstanceRange() throws RecognitionException {
         Boolean current = false;
 
@@ -12778,8 +12775,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5570:74: (iv_ruleReifiedRelationshipInstanceRange= ruleReifiedRelationshipInstanceRange EOF )
-            // PsiInternalOntologicalModelingLanguage.g:5571:2: iv_ruleReifiedRelationshipInstanceRange= ruleReifiedRelationshipInstanceRange EOF
+            // PsiInternalOntologicalModelingLanguage.g:5514:74: (iv_ruleReifiedRelationshipInstanceRange= ruleReifiedRelationshipInstanceRange EOF )
+            // PsiInternalOntologicalModelingLanguage.g:5515:2: iv_ruleReifiedRelationshipInstanceRange= ruleReifiedRelationshipInstanceRange EOF
             {
              markComposite(elementTypeProvider.getReifiedRelationshipInstanceRangeElementType()); 
             pushFollow(FOLLOW_1);
@@ -12805,7 +12802,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleReifiedRelationshipInstanceRange"
-    // PsiInternalOntologicalModelingLanguage.g:5577:1: ruleReifiedRelationshipInstanceRange returns [Boolean current=false] : (otherlv_0= 'ReifiedRelationshipInstanceRange' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_RANGE_TOKEN_4= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) ;
+    // PsiInternalOntologicalModelingLanguage.g:5521:1: ruleReifiedRelationshipInstanceRange returns [Boolean current=false] : (otherlv_0= 'ReifiedRelationshipInstanceRange' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_RANGE_TOKEN_4= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) ;
     public final Boolean ruleReifiedRelationshipInstanceRange() throws RecognitionException {
         Boolean current = false;
 
@@ -12816,38 +12813,38 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
         Token this_RCURLY_6=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5578:1: ( (otherlv_0= 'ReifiedRelationshipInstanceRange' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_RANGE_TOKEN_4= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) )
-            // PsiInternalOntologicalModelingLanguage.g:5579:2: (otherlv_0= 'ReifiedRelationshipInstanceRange' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_RANGE_TOKEN_4= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:5522:1: ( (otherlv_0= 'ReifiedRelationshipInstanceRange' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_RANGE_TOKEN_4= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY ) )
+            // PsiInternalOntologicalModelingLanguage.g:5523:2: (otherlv_0= 'ReifiedRelationshipInstanceRange' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_RANGE_TOKEN_4= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5579:2: (otherlv_0= 'ReifiedRelationshipInstanceRange' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_RANGE_TOKEN_4= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
-            // PsiInternalOntologicalModelingLanguage.g:5580:3: otherlv_0= 'ReifiedRelationshipInstanceRange' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_RANGE_TOKEN_4= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY
+            // PsiInternalOntologicalModelingLanguage.g:5523:2: (otherlv_0= 'ReifiedRelationshipInstanceRange' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_RANGE_TOKEN_4= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:5524:3: otherlv_0= 'ReifiedRelationshipInstanceRange' this_LCURLY_1= RULE_LCURLY otherlv_2= 'reifiedRelationshipInstance' ( ( ruleReference ) ) this_RANGE_TOKEN_4= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_6= RULE_RCURLY
             {
 
             			markLeaf(elementTypeProvider.getReifiedRelationshipInstanceRange_ReifiedRelationshipInstanceRangeKeyword_0ElementType());
             		
-            otherlv_0=(Token)match(input,121,FOLLOW_9); 
+            otherlv_0=(Token)match(input,117,FOLLOW_9); 
 
             			doneLeaf(otherlv_0);
             		
 
             			markLeaf(elementTypeProvider.getReifiedRelationshipInstanceRange_LCURLYTerminalRuleCall_1ElementType());
             		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_90); 
+            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_88); 
 
             			doneLeaf(this_LCURLY_1);
             		
 
             			markLeaf(elementTypeProvider.getReifiedRelationshipInstanceRange_ReifiedRelationshipInstanceKeyword_2ElementType());
             		
-            otherlv_2=(Token)match(input,120,FOLLOW_27); 
+            otherlv_2=(Token)match(input,116,FOLLOW_27); 
 
             			doneLeaf(otherlv_2);
             		
-            // PsiInternalOntologicalModelingLanguage.g:5601:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:5602:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5545:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:5546:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5602:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:5603:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:5546:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5547:5: ruleReference
             {
 
             					if (!current) {
@@ -12879,11 +12876,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(this_RANGE_TOKEN_4);
             		
-            // PsiInternalOntologicalModelingLanguage.g:5625:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:5626:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5569:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:5570:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5626:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:5627:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:5570:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5571:5: ruleReference
             {
 
             					if (!current) {
@@ -12934,7 +12931,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleUnreifiedRelationshipInstanceTuple"
-    // PsiInternalOntologicalModelingLanguage.g:5653:1: entryRuleUnreifiedRelationshipInstanceTuple returns [Boolean current=false] : iv_ruleUnreifiedRelationshipInstanceTuple= ruleUnreifiedRelationshipInstanceTuple EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:5597:1: entryRuleUnreifiedRelationshipInstanceTuple returns [Boolean current=false] : iv_ruleUnreifiedRelationshipInstanceTuple= ruleUnreifiedRelationshipInstanceTuple EOF ;
     public final Boolean entryRuleUnreifiedRelationshipInstanceTuple() throws RecognitionException {
         Boolean current = false;
 
@@ -12942,8 +12939,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5653:76: (iv_ruleUnreifiedRelationshipInstanceTuple= ruleUnreifiedRelationshipInstanceTuple EOF )
-            // PsiInternalOntologicalModelingLanguage.g:5654:2: iv_ruleUnreifiedRelationshipInstanceTuple= ruleUnreifiedRelationshipInstanceTuple EOF
+            // PsiInternalOntologicalModelingLanguage.g:5597:76: (iv_ruleUnreifiedRelationshipInstanceTuple= ruleUnreifiedRelationshipInstanceTuple EOF )
+            // PsiInternalOntologicalModelingLanguage.g:5598:2: iv_ruleUnreifiedRelationshipInstanceTuple= ruleUnreifiedRelationshipInstanceTuple EOF
             {
              markComposite(elementTypeProvider.getUnreifiedRelationshipInstanceTupleElementType()); 
             pushFollow(FOLLOW_1);
@@ -12969,7 +12966,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleUnreifiedRelationshipInstanceTuple"
-    // PsiInternalOntologicalModelingLanguage.g:5660:1: ruleUnreifiedRelationshipInstanceTuple returns [Boolean current=false] : (otherlv_0= 'UnreifiedRelationshipInstanceTuple' this_LCURLY_1= RULE_LCURLY this_UNREIFIED_RELATIONSHIP_TOKEN_2= RULE_UNREIFIED_RELATIONSHIP_TOKEN ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RANGE_TOKEN_6= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY ) ;
+    // PsiInternalOntologicalModelingLanguage.g:5604:1: ruleUnreifiedRelationshipInstanceTuple returns [Boolean current=false] : (otherlv_0= 'UnreifiedRelationshipInstanceTuple' this_LCURLY_1= RULE_LCURLY this_UNREIFIED_RELATIONSHIP_TOKEN_2= RULE_UNREIFIED_RELATIONSHIP_TOKEN ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RANGE_TOKEN_6= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY ) ;
     public final Boolean ruleUnreifiedRelationshipInstanceTuple() throws RecognitionException {
         Boolean current = false;
 
@@ -12981,23 +12978,23 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
         Token this_RCURLY_8=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5661:1: ( (otherlv_0= 'UnreifiedRelationshipInstanceTuple' this_LCURLY_1= RULE_LCURLY this_UNREIFIED_RELATIONSHIP_TOKEN_2= RULE_UNREIFIED_RELATIONSHIP_TOKEN ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RANGE_TOKEN_6= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY ) )
-            // PsiInternalOntologicalModelingLanguage.g:5662:2: (otherlv_0= 'UnreifiedRelationshipInstanceTuple' this_LCURLY_1= RULE_LCURLY this_UNREIFIED_RELATIONSHIP_TOKEN_2= RULE_UNREIFIED_RELATIONSHIP_TOKEN ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RANGE_TOKEN_6= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:5605:1: ( (otherlv_0= 'UnreifiedRelationshipInstanceTuple' this_LCURLY_1= RULE_LCURLY this_UNREIFIED_RELATIONSHIP_TOKEN_2= RULE_UNREIFIED_RELATIONSHIP_TOKEN ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RANGE_TOKEN_6= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY ) )
+            // PsiInternalOntologicalModelingLanguage.g:5606:2: (otherlv_0= 'UnreifiedRelationshipInstanceTuple' this_LCURLY_1= RULE_LCURLY this_UNREIFIED_RELATIONSHIP_TOKEN_2= RULE_UNREIFIED_RELATIONSHIP_TOKEN ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RANGE_TOKEN_6= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5662:2: (otherlv_0= 'UnreifiedRelationshipInstanceTuple' this_LCURLY_1= RULE_LCURLY this_UNREIFIED_RELATIONSHIP_TOKEN_2= RULE_UNREIFIED_RELATIONSHIP_TOKEN ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RANGE_TOKEN_6= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY )
-            // PsiInternalOntologicalModelingLanguage.g:5663:3: otherlv_0= 'UnreifiedRelationshipInstanceTuple' this_LCURLY_1= RULE_LCURLY this_UNREIFIED_RELATIONSHIP_TOKEN_2= RULE_UNREIFIED_RELATIONSHIP_TOKEN ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RANGE_TOKEN_6= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY
+            // PsiInternalOntologicalModelingLanguage.g:5606:2: (otherlv_0= 'UnreifiedRelationshipInstanceTuple' this_LCURLY_1= RULE_LCURLY this_UNREIFIED_RELATIONSHIP_TOKEN_2= RULE_UNREIFIED_RELATIONSHIP_TOKEN ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RANGE_TOKEN_6= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY )
+            // PsiInternalOntologicalModelingLanguage.g:5607:3: otherlv_0= 'UnreifiedRelationshipInstanceTuple' this_LCURLY_1= RULE_LCURLY this_UNREIFIED_RELATIONSHIP_TOKEN_2= RULE_UNREIFIED_RELATIONSHIP_TOKEN ( ( ruleReference ) ) this_DOMAIN_TOKEN_4= RULE_DOMAIN_TOKEN ( ( ruleReference ) ) this_RANGE_TOKEN_6= RULE_RANGE_TOKEN ( ( ruleReference ) ) this_RCURLY_8= RULE_RCURLY
             {
 
             			markLeaf(elementTypeProvider.getUnreifiedRelationshipInstanceTuple_UnreifiedRelationshipInstanceTupleKeyword_0ElementType());
             		
-            otherlv_0=(Token)match(input,122,FOLLOW_9); 
+            otherlv_0=(Token)match(input,118,FOLLOW_9); 
 
             			doneLeaf(otherlv_0);
             		
 
             			markLeaf(elementTypeProvider.getUnreifiedRelationshipInstanceTuple_LCURLYTerminalRuleCall_1ElementType());
             		
-            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_91); 
+            this_LCURLY_1=(Token)match(input,RULE_LCURLY,FOLLOW_89); 
 
             			doneLeaf(this_LCURLY_1);
             		
@@ -13008,11 +13005,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(this_UNREIFIED_RELATIONSHIP_TOKEN_2);
             		
-            // PsiInternalOntologicalModelingLanguage.g:5684:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:5685:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5628:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:5629:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5685:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:5686:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:5629:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5630:5: ruleReference
             {
 
             					if (!current) {
@@ -13044,11 +13041,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(this_DOMAIN_TOKEN_4);
             		
-            // PsiInternalOntologicalModelingLanguage.g:5708:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:5709:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5652:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:5653:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5709:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:5710:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:5653:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5654:5: ruleReference
             {
 
             					if (!current) {
@@ -13080,11 +13077,11 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			doneLeaf(this_RANGE_TOKEN_6);
             		
-            // PsiInternalOntologicalModelingLanguage.g:5732:3: ( ( ruleReference ) )
-            // PsiInternalOntologicalModelingLanguage.g:5733:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5676:3: ( ( ruleReference ) )
+            // PsiInternalOntologicalModelingLanguage.g:5677:4: ( ruleReference )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5733:4: ( ruleReference )
-            // PsiInternalOntologicalModelingLanguage.g:5734:5: ruleReference
+            // PsiInternalOntologicalModelingLanguage.g:5677:4: ( ruleReference )
+            // PsiInternalOntologicalModelingLanguage.g:5678:5: ruleReference
             {
 
             					if (!current) {
@@ -13135,7 +13132,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleReference"
-    // PsiInternalOntologicalModelingLanguage.g:5760:1: entryRuleReference returns [Boolean current=false] : iv_ruleReference= ruleReference EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:5704:1: entryRuleReference returns [Boolean current=false] : iv_ruleReference= ruleReference EOF ;
     public final Boolean entryRuleReference() throws RecognitionException {
         Boolean current = false;
 
@@ -13143,8 +13140,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5760:51: (iv_ruleReference= ruleReference EOF )
-            // PsiInternalOntologicalModelingLanguage.g:5761:2: iv_ruleReference= ruleReference EOF
+            // PsiInternalOntologicalModelingLanguage.g:5704:51: (iv_ruleReference= ruleReference EOF )
+            // PsiInternalOntologicalModelingLanguage.g:5705:2: iv_ruleReference= ruleReference EOF
             {
              markComposite(elementTypeProvider.getReferenceElementType()); 
             pushFollow(FOLLOW_1);
@@ -13170,17 +13167,17 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleReference"
-    // PsiInternalOntologicalModelingLanguage.g:5767:1: ruleReference returns [Boolean current=false] : (this_IRI_0= RULE_IRI | ruleQNAME ) ;
+    // PsiInternalOntologicalModelingLanguage.g:5711:1: ruleReference returns [Boolean current=false] : (this_IRI_0= RULE_IRI | ruleQNAME ) ;
     public final Boolean ruleReference() throws RecognitionException {
         Boolean current = false;
 
         Token this_IRI_0=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5768:1: ( (this_IRI_0= RULE_IRI | ruleQNAME ) )
-            // PsiInternalOntologicalModelingLanguage.g:5769:2: (this_IRI_0= RULE_IRI | ruleQNAME )
+            // PsiInternalOntologicalModelingLanguage.g:5712:1: ( (this_IRI_0= RULE_IRI | ruleQNAME ) )
+            // PsiInternalOntologicalModelingLanguage.g:5713:2: (this_IRI_0= RULE_IRI | ruleQNAME )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5769:2: (this_IRI_0= RULE_IRI | ruleQNAME )
+            // PsiInternalOntologicalModelingLanguage.g:5713:2: (this_IRI_0= RULE_IRI | ruleQNAME )
             int alt65=2;
             int LA65_0 = input.LA(1);
 
@@ -13198,7 +13195,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
             }
             switch (alt65) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:5770:3: this_IRI_0= RULE_IRI
+                    // PsiInternalOntologicalModelingLanguage.g:5714:3: this_IRI_0= RULE_IRI
                     {
 
                     			markLeaf(elementTypeProvider.getReference_IRITerminalRuleCall_0ElementType());
@@ -13211,7 +13208,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
                     }
                     break;
                 case 2 :
-                    // PsiInternalOntologicalModelingLanguage.g:5778:3: ruleQNAME
+                    // PsiInternalOntologicalModelingLanguage.g:5722:3: ruleQNAME
                     {
 
                     			markComposite(elementTypeProvider.getReference_QNAMEParserRuleCall_1ElementType());
@@ -13246,7 +13243,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleQNAME"
-    // PsiInternalOntologicalModelingLanguage.g:5789:1: entryRuleQNAME returns [Boolean current=false] : iv_ruleQNAME= ruleQNAME EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:5733:1: entryRuleQNAME returns [Boolean current=false] : iv_ruleQNAME= ruleQNAME EOF ;
     public final Boolean entryRuleQNAME() throws RecognitionException {
         Boolean current = false;
 
@@ -13254,8 +13251,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5789:47: (iv_ruleQNAME= ruleQNAME EOF )
-            // PsiInternalOntologicalModelingLanguage.g:5790:2: iv_ruleQNAME= ruleQNAME EOF
+            // PsiInternalOntologicalModelingLanguage.g:5733:47: (iv_ruleQNAME= ruleQNAME EOF )
+            // PsiInternalOntologicalModelingLanguage.g:5734:2: iv_ruleQNAME= ruleQNAME EOF
             {
              markComposite(elementTypeProvider.getQNAMEElementType()); 
             pushFollow(FOLLOW_1);
@@ -13281,25 +13278,25 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleQNAME"
-    // PsiInternalOntologicalModelingLanguage.g:5796:1: ruleQNAME returns [Boolean current=false] : ( ruleABBREV_IRI | ruleValidID ) ;
+    // PsiInternalOntologicalModelingLanguage.g:5740:1: ruleQNAME returns [Boolean current=false] : ( ruleABBREV_IRI | ruleValidID ) ;
     public final Boolean ruleQNAME() throws RecognitionException {
         Boolean current = false;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5797:1: ( ( ruleABBREV_IRI | ruleValidID ) )
-            // PsiInternalOntologicalModelingLanguage.g:5798:2: ( ruleABBREV_IRI | ruleValidID )
+            // PsiInternalOntologicalModelingLanguage.g:5741:1: ( ( ruleABBREV_IRI | ruleValidID ) )
+            // PsiInternalOntologicalModelingLanguage.g:5742:2: ( ruleABBREV_IRI | ruleValidID )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5798:2: ( ruleABBREV_IRI | ruleValidID )
+            // PsiInternalOntologicalModelingLanguage.g:5742:2: ( ruleABBREV_IRI | ruleValidID )
             int alt66=2;
             int LA66_0 = input.LA(1);
 
             if ( (LA66_0==RULE_ID) ) {
                 int LA66_1 = input.LA(2);
 
-                if ( (LA66_1==EOF||(LA66_1>=RULE_IRI && LA66_1<=RULE_ANNOTATION_TOKEN)||LA66_1==RULE_RCURLY||(LA66_1>=RULE_ASPECT_TOKEN && LA66_1<=RULE_REIFIED_RELATIONSHIP_TOKEN)||(LA66_1>=RULE_TARGET_TOKEN && LA66_1<=RULE_BINARY_SCALAR_RESTRICTION_TOKEN)||(LA66_1>=RULE_IRI_SCALAR_RESTRICTION_TOKEN && LA66_1<=RULE_TIME_SCALAR_RESTRICTION_TOKEN)||LA66_1==RULE_REFINES_TOKEN||(LA66_1>=75 && LA66_1<=78)||LA66_1==81||LA66_1==84||LA66_1==86||(LA66_1>=88 && LA66_1<=89)||LA66_1==91||LA66_1==93||(LA66_1>=95 && LA66_1<=97)||LA66_1==112||LA66_1==115||LA66_1==117||LA66_1==119||(LA66_1>=121 && LA66_1<=122)) ) {
+                if ( (LA66_1==EOF||(LA66_1>=RULE_IRI && LA66_1<=RULE_ANNOTATION_TOKEN)||LA66_1==RULE_RCURLY||(LA66_1>=RULE_ASPECT_TOKEN && LA66_1<=RULE_REIFIED_RELATIONSHIP_TOKEN)||(LA66_1>=RULE_TARGET_TOKEN && LA66_1<=RULE_BINARY_SCALAR_RESTRICTION_TOKEN)||(LA66_1>=RULE_IRI_SCALAR_RESTRICTION_TOKEN && LA66_1<=RULE_TIME_SCALAR_RESTRICTION_TOKEN)||LA66_1==RULE_REFINES_TOKEN||(LA66_1>=75 && LA66_1<=78)||LA66_1==81||LA66_1==84||LA66_1==86||(LA66_1>=88 && LA66_1<=89)||(LA66_1>=91 && LA66_1<=93)||LA66_1==108||LA66_1==111||LA66_1==113||LA66_1==115||(LA66_1>=117 && LA66_1<=118)) ) {
                     alt66=2;
                 }
-                else if ( (LA66_1==123) ) {
+                else if ( (LA66_1==119) ) {
                     alt66=1;
                 }
                 else {
@@ -13317,7 +13314,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
             }
             switch (alt66) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:5799:3: ruleABBREV_IRI
+                    // PsiInternalOntologicalModelingLanguage.g:5743:3: ruleABBREV_IRI
                     {
 
                     			markComposite(elementTypeProvider.getQNAME_ABBREV_IRIParserRuleCall_0ElementType());
@@ -13334,7 +13331,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
                     }
                     break;
                 case 2 :
-                    // PsiInternalOntologicalModelingLanguage.g:5807:3: ruleValidID
+                    // PsiInternalOntologicalModelingLanguage.g:5751:3: ruleValidID
                     {
 
                     			markComposite(elementTypeProvider.getQNAME_ValidIDParserRuleCall_1ElementType());
@@ -13369,7 +13366,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleABBREV_IRI"
-    // PsiInternalOntologicalModelingLanguage.g:5818:1: entryRuleABBREV_IRI returns [Boolean current=false] : iv_ruleABBREV_IRI= ruleABBREV_IRI EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:5762:1: entryRuleABBREV_IRI returns [Boolean current=false] : iv_ruleABBREV_IRI= ruleABBREV_IRI EOF ;
     public final Boolean entryRuleABBREV_IRI() throws RecognitionException {
         Boolean current = false;
 
@@ -13377,8 +13374,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5818:52: (iv_ruleABBREV_IRI= ruleABBREV_IRI EOF )
-            // PsiInternalOntologicalModelingLanguage.g:5819:2: iv_ruleABBREV_IRI= ruleABBREV_IRI EOF
+            // PsiInternalOntologicalModelingLanguage.g:5762:52: (iv_ruleABBREV_IRI= ruleABBREV_IRI EOF )
+            // PsiInternalOntologicalModelingLanguage.g:5763:2: iv_ruleABBREV_IRI= ruleABBREV_IRI EOF
             {
              markComposite(elementTypeProvider.getABBREV_IRIElementType()); 
             pushFollow(FOLLOW_1);
@@ -13404,23 +13401,23 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleABBREV_IRI"
-    // PsiInternalOntologicalModelingLanguage.g:5825:1: ruleABBREV_IRI returns [Boolean current=false] : ( ruleValidID kw= ':' ruleValidID ) ;
+    // PsiInternalOntologicalModelingLanguage.g:5769:1: ruleABBREV_IRI returns [Boolean current=false] : ( ruleValidID kw= ':' ruleValidID ) ;
     public final Boolean ruleABBREV_IRI() throws RecognitionException {
         Boolean current = false;
 
         Token kw=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5826:1: ( ( ruleValidID kw= ':' ruleValidID ) )
-            // PsiInternalOntologicalModelingLanguage.g:5827:2: ( ruleValidID kw= ':' ruleValidID )
+            // PsiInternalOntologicalModelingLanguage.g:5770:1: ( ( ruleValidID kw= ':' ruleValidID ) )
+            // PsiInternalOntologicalModelingLanguage.g:5771:2: ( ruleValidID kw= ':' ruleValidID )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5827:2: ( ruleValidID kw= ':' ruleValidID )
-            // PsiInternalOntologicalModelingLanguage.g:5828:3: ruleValidID kw= ':' ruleValidID
+            // PsiInternalOntologicalModelingLanguage.g:5771:2: ( ruleValidID kw= ':' ruleValidID )
+            // PsiInternalOntologicalModelingLanguage.g:5772:3: ruleValidID kw= ':' ruleValidID
             {
 
             			markComposite(elementTypeProvider.getABBREV_IRI_ValidIDParserRuleCall_0ElementType());
             		
-            pushFollow(FOLLOW_92);
+            pushFollow(FOLLOW_90);
             ruleValidID();
 
             state._fsp--;
@@ -13431,7 +13428,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
             			markLeaf(elementTypeProvider.getABBREV_IRI_ColonKeyword_1ElementType());
             		
-            kw=(Token)match(input,123,FOLLOW_4); 
+            kw=(Token)match(input,119,FOLLOW_4); 
 
             			doneLeaf(kw);
             		
@@ -13465,7 +13462,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "entryRuleValidID"
-    // PsiInternalOntologicalModelingLanguage.g:5853:1: entryRuleValidID returns [Boolean current=false] : iv_ruleValidID= ruleValidID EOF ;
+    // PsiInternalOntologicalModelingLanguage.g:5797:1: entryRuleValidID returns [Boolean current=false] : iv_ruleValidID= ruleValidID EOF ;
     public final Boolean entryRuleValidID() throws RecognitionException {
         Boolean current = false;
 
@@ -13473,8 +13470,8 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5853:49: (iv_ruleValidID= ruleValidID EOF )
-            // PsiInternalOntologicalModelingLanguage.g:5854:2: iv_ruleValidID= ruleValidID EOF
+            // PsiInternalOntologicalModelingLanguage.g:5797:49: (iv_ruleValidID= ruleValidID EOF )
+            // PsiInternalOntologicalModelingLanguage.g:5798:2: iv_ruleValidID= ruleValidID EOF
             {
              markComposite(elementTypeProvider.getValidIDElementType()); 
             pushFollow(FOLLOW_1);
@@ -13500,15 +13497,15 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleValidID"
-    // PsiInternalOntologicalModelingLanguage.g:5860:1: ruleValidID returns [Boolean current=false] : this_ID_0= RULE_ID ;
+    // PsiInternalOntologicalModelingLanguage.g:5804:1: ruleValidID returns [Boolean current=false] : this_ID_0= RULE_ID ;
     public final Boolean ruleValidID() throws RecognitionException {
         Boolean current = false;
 
         Token this_ID_0=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5861:1: (this_ID_0= RULE_ID )
-            // PsiInternalOntologicalModelingLanguage.g:5862:2: this_ID_0= RULE_ID
+            // PsiInternalOntologicalModelingLanguage.g:5805:1: (this_ID_0= RULE_ID )
+            // PsiInternalOntologicalModelingLanguage.g:5806:2: this_ID_0= RULE_ID
             {
 
             		markLeaf(elementTypeProvider.getValidID_IDTerminalRuleCallElementType());
@@ -13533,7 +13530,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleTerminologyGraphKind"
-    // PsiInternalOntologicalModelingLanguage.g:5872:1: ruleTerminologyGraphKind returns [Boolean current=false] : ( (enumLiteral_0= 'open' ) | (enumLiteral_1= 'closed' ) ) ;
+    // PsiInternalOntologicalModelingLanguage.g:5816:1: ruleTerminologyGraphKind returns [Boolean current=false] : ( (enumLiteral_0= 'open' ) | (enumLiteral_1= 'closed' ) ) ;
     public final Boolean ruleTerminologyGraphKind() throws RecognitionException {
         Boolean current = false;
 
@@ -13541,17 +13538,17 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
         Token enumLiteral_1=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5873:1: ( ( (enumLiteral_0= 'open' ) | (enumLiteral_1= 'closed' ) ) )
-            // PsiInternalOntologicalModelingLanguage.g:5874:2: ( (enumLiteral_0= 'open' ) | (enumLiteral_1= 'closed' ) )
+            // PsiInternalOntologicalModelingLanguage.g:5817:1: ( ( (enumLiteral_0= 'open' ) | (enumLiteral_1= 'closed' ) ) )
+            // PsiInternalOntologicalModelingLanguage.g:5818:2: ( (enumLiteral_0= 'open' ) | (enumLiteral_1= 'closed' ) )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5874:2: ( (enumLiteral_0= 'open' ) | (enumLiteral_1= 'closed' ) )
+            // PsiInternalOntologicalModelingLanguage.g:5818:2: ( (enumLiteral_0= 'open' ) | (enumLiteral_1= 'closed' ) )
             int alt67=2;
             int LA67_0 = input.LA(1);
 
-            if ( (LA67_0==124) ) {
+            if ( (LA67_0==120) ) {
                 alt67=1;
             }
-            else if ( (LA67_0==125) ) {
+            else if ( (LA67_0==121) ) {
                 alt67=2;
             }
             else {
@@ -13562,15 +13559,15 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
             }
             switch (alt67) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:5875:3: (enumLiteral_0= 'open' )
+                    // PsiInternalOntologicalModelingLanguage.g:5819:3: (enumLiteral_0= 'open' )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:5875:3: (enumLiteral_0= 'open' )
-                    // PsiInternalOntologicalModelingLanguage.g:5876:4: enumLiteral_0= 'open'
+                    // PsiInternalOntologicalModelingLanguage.g:5819:3: (enumLiteral_0= 'open' )
+                    // PsiInternalOntologicalModelingLanguage.g:5820:4: enumLiteral_0= 'open'
                     {
 
                     				markLeaf(elementTypeProvider.getTerminologyGraphKind_OpenWorldDefinitionsEnumLiteralDeclaration_0ElementType());
                     			
-                    enumLiteral_0=(Token)match(input,124,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,120,FOLLOW_2); 
 
                     				doneLeaf(enumLiteral_0);
                     			
@@ -13581,15 +13578,15 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
                     }
                     break;
                 case 2 :
-                    // PsiInternalOntologicalModelingLanguage.g:5885:3: (enumLiteral_1= 'closed' )
+                    // PsiInternalOntologicalModelingLanguage.g:5829:3: (enumLiteral_1= 'closed' )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:5885:3: (enumLiteral_1= 'closed' )
-                    // PsiInternalOntologicalModelingLanguage.g:5886:4: enumLiteral_1= 'closed'
+                    // PsiInternalOntologicalModelingLanguage.g:5829:3: (enumLiteral_1= 'closed' )
+                    // PsiInternalOntologicalModelingLanguage.g:5830:4: enumLiteral_1= 'closed'
                     {
 
                     				markLeaf(elementTypeProvider.getTerminologyGraphKind_ClosedWorldDesignationsEnumLiteralDeclaration_1ElementType());
                     			
-                    enumLiteral_1=(Token)match(input,125,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,121,FOLLOW_2); 
 
                     				doneLeaf(enumLiteral_1);
                     			
@@ -13618,7 +13615,7 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
 
     // $ANTLR start "ruleDescriptionKind"
-    // PsiInternalOntologicalModelingLanguage.g:5898:1: ruleDescriptionKind returns [Boolean current=false] : ( (enumLiteral_0= 'final' ) | (enumLiteral_1= 'partial' ) ) ;
+    // PsiInternalOntologicalModelingLanguage.g:5842:1: ruleDescriptionKind returns [Boolean current=false] : ( (enumLiteral_0= 'final' ) | (enumLiteral_1= 'partial' ) ) ;
     public final Boolean ruleDescriptionKind() throws RecognitionException {
         Boolean current = false;
 
@@ -13626,17 +13623,17 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
         Token enumLiteral_1=null;
 
         try {
-            // PsiInternalOntologicalModelingLanguage.g:5899:1: ( ( (enumLiteral_0= 'final' ) | (enumLiteral_1= 'partial' ) ) )
-            // PsiInternalOntologicalModelingLanguage.g:5900:2: ( (enumLiteral_0= 'final' ) | (enumLiteral_1= 'partial' ) )
+            // PsiInternalOntologicalModelingLanguage.g:5843:1: ( ( (enumLiteral_0= 'final' ) | (enumLiteral_1= 'partial' ) ) )
+            // PsiInternalOntologicalModelingLanguage.g:5844:2: ( (enumLiteral_0= 'final' ) | (enumLiteral_1= 'partial' ) )
             {
-            // PsiInternalOntologicalModelingLanguage.g:5900:2: ( (enumLiteral_0= 'final' ) | (enumLiteral_1= 'partial' ) )
+            // PsiInternalOntologicalModelingLanguage.g:5844:2: ( (enumLiteral_0= 'final' ) | (enumLiteral_1= 'partial' ) )
             int alt68=2;
             int LA68_0 = input.LA(1);
 
-            if ( (LA68_0==126) ) {
+            if ( (LA68_0==122) ) {
                 alt68=1;
             }
-            else if ( (LA68_0==127) ) {
+            else if ( (LA68_0==123) ) {
                 alt68=2;
             }
             else {
@@ -13647,15 +13644,15 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
             }
             switch (alt68) {
                 case 1 :
-                    // PsiInternalOntologicalModelingLanguage.g:5901:3: (enumLiteral_0= 'final' )
+                    // PsiInternalOntologicalModelingLanguage.g:5845:3: (enumLiteral_0= 'final' )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:5901:3: (enumLiteral_0= 'final' )
-                    // PsiInternalOntologicalModelingLanguage.g:5902:4: enumLiteral_0= 'final'
+                    // PsiInternalOntologicalModelingLanguage.g:5845:3: (enumLiteral_0= 'final' )
+                    // PsiInternalOntologicalModelingLanguage.g:5846:4: enumLiteral_0= 'final'
                     {
 
                     				markLeaf(elementTypeProvider.getDescriptionKind_FinalEnumLiteralDeclaration_0ElementType());
                     			
-                    enumLiteral_0=(Token)match(input,126,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,122,FOLLOW_2); 
 
                     				doneLeaf(enumLiteral_0);
                     			
@@ -13666,15 +13663,15 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
                     }
                     break;
                 case 2 :
-                    // PsiInternalOntologicalModelingLanguage.g:5911:3: (enumLiteral_1= 'partial' )
+                    // PsiInternalOntologicalModelingLanguage.g:5855:3: (enumLiteral_1= 'partial' )
                     {
-                    // PsiInternalOntologicalModelingLanguage.g:5911:3: (enumLiteral_1= 'partial' )
-                    // PsiInternalOntologicalModelingLanguage.g:5912:4: enumLiteral_1= 'partial'
+                    // PsiInternalOntologicalModelingLanguage.g:5855:3: (enumLiteral_1= 'partial' )
+                    // PsiInternalOntologicalModelingLanguage.g:5856:4: enumLiteral_1= 'partial'
                     {
 
                     				markLeaf(elementTypeProvider.getDescriptionKind_PartialEnumLiteralDeclaration_1ElementType());
                     			
-                    enumLiteral_1=(Token)match(input,127,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,123,FOLLOW_2); 
 
                     				doneLeaf(enumLiteral_1);
                     			
@@ -13708,16 +13705,16 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000012L,0xF000000000000000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000012L,0x0F00000000000000L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000100L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000200L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x1FEFDF038003E8C0L,0x0000000000007800L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x1FEF1F038003E8C0L,0x0000000000007800L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x1FEFDFF38003E8C0L,0x0000000000007800L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x1FEF1FF38003E8C0L,0x0000000000007800L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x000000000FFC0000L});
@@ -13758,45 +13755,43 @@ public class PsiInternalOntologicalModelingLanguageParser extends AbstractPsiAnt
     public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
     public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0000000000000000L,0x0000000002000000L});
     public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
-    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0000000000000000L,0x0000000008000000L});
-    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0000000000000000L,0x0000000010000000L});
-    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L});
-    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0000000000000000L,0x0000000100000000L});
-    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0000000000000000L,0x0000000200000000L});
-    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0000000000000000L,0x0000001C01000000L});
-    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0010000000000000L});
-    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x0000000000000000L,0x0000001801000000L});
-    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0000000000000000L,0x0000001001000000L});
-    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x0000000000000000L,0x0000003C01000000L});
-    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x0000000000000000L,0x0000003801000000L});
-    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x0000000000000000L,0x0000003001000000L});
-    public static final BitSet FOLLOW_68 = new BitSet(new long[]{0x0000000000000000L,0x0000002001000000L});
-    public static final BitSet FOLLOW_69 = new BitSet(new long[]{0x0000000000000000L,0x000003C001000000L});
-    public static final BitSet FOLLOW_70 = new BitSet(new long[]{0x0000000000000000L,0x0000038001000000L});
-    public static final BitSet FOLLOW_71 = new BitSet(new long[]{0x0000000000000000L,0x0000030001000000L});
-    public static final BitSet FOLLOW_72 = new BitSet(new long[]{0x0000000000000000L,0x0000020001000000L});
-    public static final BitSet FOLLOW_73 = new BitSet(new long[]{0x0000000000000000L,0x0000043C01000000L});
-    public static final BitSet FOLLOW_74 = new BitSet(new long[]{0x0000000000000000L,0x0000043801000000L});
-    public static final BitSet FOLLOW_75 = new BitSet(new long[]{0x0000000000000000L,0x0000043001000000L});
-    public static final BitSet FOLLOW_76 = new BitSet(new long[]{0x0000000000000000L,0x0000042001000000L});
-    public static final BitSet FOLLOW_77 = new BitSet(new long[]{0x0000000000000000L,0x0000040001000000L});
-    public static final BitSet FOLLOW_78 = new BitSet(new long[]{0x0000000000000000L,0x0000080000000000L});
-    public static final BitSet FOLLOW_79 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-    public static final BitSet FOLLOW_80 = new BitSet(new long[]{0x2000000000000000L});
-    public static final BitSet FOLLOW_81 = new BitSet(new long[]{0x4000020000000880L,0x06A8000000000000L});
-    public static final BitSet FOLLOW_82 = new BitSet(new long[]{0x0000000000000000L,0x0000400000000000L});
-    public static final BitSet FOLLOW_83 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_84 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
-    public static final BitSet FOLLOW_85 = new BitSet(new long[]{0x0000000000000000L,0x0001000000000000L});
-    public static final BitSet FOLLOW_86 = new BitSet(new long[]{0x0000000000000000L,0x0002000000000000L});
+    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
+    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0000000000000000L,0x0000000008000000L});
+    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0000000000000000L,0x0000000010000000L});
+    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0000000000000000L,0x00000001C1000000L});
+    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0010000000000000L});
+    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0000000000000000L,0x0000000181000000L});
+    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0000000000000000L,0x0000000101000000L});
+    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x0000000000000000L,0x00000003C1000000L});
+    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0000000000000000L,0x0000000381000000L});
+    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x0000000000000000L,0x0000000301000000L});
+    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x0000000000000000L,0x0000000201000000L});
+    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x0000000000000000L,0x0000003C01000000L});
+    public static final BitSet FOLLOW_68 = new BitSet(new long[]{0x0000000000000000L,0x0000003801000000L});
+    public static final BitSet FOLLOW_69 = new BitSet(new long[]{0x0000000000000000L,0x0000003001000000L});
+    public static final BitSet FOLLOW_70 = new BitSet(new long[]{0x0000000000000000L,0x0000002001000000L});
+    public static final BitSet FOLLOW_71 = new BitSet(new long[]{0x0000000000000000L,0x00000043C1000000L});
+    public static final BitSet FOLLOW_72 = new BitSet(new long[]{0x0000000000000000L,0x0000004381000000L});
+    public static final BitSet FOLLOW_73 = new BitSet(new long[]{0x0000000000000000L,0x0000004301000000L});
+    public static final BitSet FOLLOW_74 = new BitSet(new long[]{0x0000000000000000L,0x0000004201000000L});
+    public static final BitSet FOLLOW_75 = new BitSet(new long[]{0x0000000000000000L,0x0000004001000000L});
+    public static final BitSet FOLLOW_76 = new BitSet(new long[]{0x0000000000000000L,0x0000008000000000L});
+    public static final BitSet FOLLOW_77 = new BitSet(new long[]{0x0000000000000000L,0x0000010000000000L});
+    public static final BitSet FOLLOW_78 = new BitSet(new long[]{0x2000000000000000L});
+    public static final BitSet FOLLOW_79 = new BitSet(new long[]{0x4000020000000880L,0x006A800000000000L});
+    public static final BitSet FOLLOW_80 = new BitSet(new long[]{0x0000000000000000L,0x0000040000000000L});
+    public static final BitSet FOLLOW_81 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_82 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
+    public static final BitSet FOLLOW_83 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
+    public static final BitSet FOLLOW_84 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_85 = new BitSet(new long[]{0x0000000000000000L,0x0000400000000000L});
+    public static final BitSet FOLLOW_86 = new BitSet(new long[]{0x0000000000000000L,0x0001000000000000L});
     public static final BitSet FOLLOW_87 = new BitSet(new long[]{0x0000000000000000L,0x0004000000000000L});
     public static final BitSet FOLLOW_88 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-    public static final BitSet FOLLOW_89 = new BitSet(new long[]{0x0000000000000000L,0x0040000000000000L});
-    public static final BitSet FOLLOW_90 = new BitSet(new long[]{0x0000000000000000L,0x0100000000000000L});
-    public static final BitSet FOLLOW_91 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_92 = new BitSet(new long[]{0x0000000000000000L,0x0800000000000000L});
+    public static final BitSet FOLLOW_89 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_90 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
 
 }

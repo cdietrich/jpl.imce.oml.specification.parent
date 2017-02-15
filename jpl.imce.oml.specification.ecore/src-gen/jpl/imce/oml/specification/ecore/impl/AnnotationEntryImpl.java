@@ -19,7 +19,7 @@
 package jpl.imce.oml.specification.ecore.impl;
 
 import jpl.imce.oml.specification.ecore.AnnotationEntry;
-import jpl.imce.oml.specification.ecore.Context;
+import jpl.imce.oml.specification.ecore.Module;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.TerminologyThing;
 
@@ -41,7 +41,7 @@ import org.eclipse.emf.internal.cdo.CDOObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link jpl.imce.oml.specification.ecore.impl.AnnotationEntryImpl#getContext <em>Context</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.impl.AnnotationEntryImpl#getModule <em>Module</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.AnnotationEntryImpl#getSubject <em>Subject</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.AnnotationEntryImpl#getValue <em>Value</em>}</li>
  * </ul>
@@ -50,14 +50,14 @@ import org.eclipse.emf.internal.cdo.CDOObjectImpl;
  */
 public class AnnotationEntryImpl extends CDOObjectImpl implements AnnotationEntry {
 	/**
-	 * The cached value of the '{@link #getContext() <em>Context</em>}' reference.
+	 * The cached value of the '{@link #getModule() <em>Module</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getContext()
+	 * @see #getModule()
 	 * @generated
 	 * @ordered
 	 */
-	protected Context context;
+	protected Module module;
 
 	/**
 	 * The cached value of the '{@link #getSubject() <em>Subject</em>}' reference.
@@ -113,16 +113,16 @@ public class AnnotationEntryImpl extends CDOObjectImpl implements AnnotationEntr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Context getContext() {
-		if (context != null && ((EObject)context).eIsProxy()) {
-			InternalEObject oldContext = (InternalEObject)context;
-			context = (Context)eResolveProxy(oldContext);
-			if (context != oldContext) {
+	public Module getModule() {
+		if (module != null && ((EObject)module).eIsProxy()) {
+			InternalEObject oldModule = (InternalEObject)module;
+			module = (Module)eResolveProxy(oldModule);
+			if (module != oldModule) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.ANNOTATION_ENTRY__CONTEXT, oldContext, context));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.ANNOTATION_ENTRY__MODULE, oldModule, module));
 			}
 		}
-		return context;
+		return module;
 	}
 
 	/**
@@ -130,8 +130,8 @@ public class AnnotationEntryImpl extends CDOObjectImpl implements AnnotationEntr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Context basicGetContext() {
-		return context;
+	public Module basicGetModule() {
+		return module;
 	}
 
 	/**
@@ -139,11 +139,11 @@ public class AnnotationEntryImpl extends CDOObjectImpl implements AnnotationEntr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setContext(Context newContext) {
-		Context oldContext = context;
-		context = newContext;
+	public void setModule(Module newModule) {
+		Module oldModule = module;
+		module = newModule;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ANNOTATION_ENTRY__CONTEXT, oldContext, context));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ANNOTATION_ENTRY__MODULE, oldModule, module));
 	}
 
 	/**
@@ -213,9 +213,9 @@ public class AnnotationEntryImpl extends CDOObjectImpl implements AnnotationEntr
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.ANNOTATION_ENTRY__CONTEXT:
-				if (resolve) return getContext();
-				return basicGetContext();
+			case OMLPackage.ANNOTATION_ENTRY__MODULE:
+				if (resolve) return getModule();
+				return basicGetModule();
 			case OMLPackage.ANNOTATION_ENTRY__SUBJECT:
 				if (resolve) return getSubject();
 				return basicGetSubject();
@@ -233,8 +233,8 @@ public class AnnotationEntryImpl extends CDOObjectImpl implements AnnotationEntr
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.ANNOTATION_ENTRY__CONTEXT:
-				setContext((Context)newValue);
+			case OMLPackage.ANNOTATION_ENTRY__MODULE:
+				setModule((Module)newValue);
 				return;
 			case OMLPackage.ANNOTATION_ENTRY__SUBJECT:
 				setSubject((TerminologyThing)newValue);
@@ -254,8 +254,8 @@ public class AnnotationEntryImpl extends CDOObjectImpl implements AnnotationEntr
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.ANNOTATION_ENTRY__CONTEXT:
-				setContext((Context)null);
+			case OMLPackage.ANNOTATION_ENTRY__MODULE:
+				setModule((Module)null);
 				return;
 			case OMLPackage.ANNOTATION_ENTRY__SUBJECT:
 				setSubject((TerminologyThing)null);
@@ -275,8 +275,8 @@ public class AnnotationEntryImpl extends CDOObjectImpl implements AnnotationEntr
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.ANNOTATION_ENTRY__CONTEXT:
-				return context != null;
+			case OMLPackage.ANNOTATION_ENTRY__MODULE:
+				return module != null;
 			case OMLPackage.ANNOTATION_ENTRY__SUBJECT:
 				return subject != null;
 			case OMLPackage.ANNOTATION_ENTRY__VALUE:

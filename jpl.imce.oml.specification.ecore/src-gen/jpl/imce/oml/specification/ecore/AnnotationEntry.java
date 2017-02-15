@@ -28,17 +28,17 @@ import org.eclipse.emf.cdo.CDOObject;
  * <!-- begin-model-doc -->
  * For the OML tabular interchange representation,
  * an OML AnnotationEntry (for a given OML AnnotationProperty) is a triple:
- * - an OML Context in which the OML AnnotationEntry appears
+ * - an OML Module in which the OML AnnotationEntry appears
  * - an annotated OML TerminologyThing subject
  * - a String value as the representation of some information
- *   about the subject in that context.
+ *   about the subject in that module.
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link jpl.imce.oml.specification.ecore.AnnotationEntry#getContext <em>Context</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.AnnotationEntry#getModule <em>Module</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.AnnotationEntry#getSubject <em>Subject</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.AnnotationEntry#getValue <em>Value</em>}</li>
  * </ul>
@@ -50,30 +50,30 @@ import org.eclipse.emf.cdo.CDOObject;
  */
 public interface AnnotationEntry extends CDOObject {
 	/**
-	 * Returns the value of the '<em><b>Context</b></em>' reference.
+	 * Returns the value of the '<em><b>Module</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Context</em>' reference isn't clear,
+	 * If the meaning of the '<em>Module</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Context</em>' reference.
-	 * @see #setContext(Context)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getAnnotationEntry_Context()
+	 * @return the value of the '<em>Module</em>' reference.
+	 * @see #setModule(Module)
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getAnnotationEntry_Module()
 	 * @model required="true"
 	 * @generated
 	 */
-	Context getContext();
+	Module getModule();
 
 	/**
-	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.AnnotationEntry#getContext <em>Context</em>}' reference.
+	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.AnnotationEntry#getModule <em>Module</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Context</em>' reference.
-	 * @see #getContext()
+	 * @param value the new value of the '<em>Module</em>' reference.
+	 * @see #getModule()
 	 * @generated
 	 */
-	void setContext(Context value);
+	void setModule(Module value);
 
 	/**
 	 * Returns the value of the '<em><b>Subject</b></em>' reference.

@@ -476,8 +476,8 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.Literals.CONCEPT_SPECIALIZATION_AXIOM__SUPER_CONCEPT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptConceptReferenceParserRuleCall_3_0_1(), semanticObject.getSubConcept());
-		feeder.accept(grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptConceptReferenceParserRuleCall_5_0_1(), semanticObject.getSuperConcept());
+		feeder.accept(grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptConceptReferenceParserRuleCall_0_0_1(), semanticObject.getSubConcept());
+		feeder.accept(grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptConceptReferenceParserRuleCall_2_0_1(), semanticObject.getSuperConcept());
 		feeder.finish();
 	}
 	
@@ -926,8 +926,8 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.Literals.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUPER_RELATIONSHIP));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipReifiedRelationshipReferenceParserRuleCall_3_0_1(), semanticObject.getSubRelationship());
-		feeder.accept(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipReifiedRelationshipReferenceParserRuleCall_5_0_1(), semanticObject.getSuperRelationship());
+		feeder.accept(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipReifiedRelationshipReferenceParserRuleCall_0_0_1(), semanticObject.getSubRelationship());
+		feeder.accept(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipReifiedRelationshipReferenceParserRuleCall_2_0_1(), semanticObject.getSuperRelationship());
 		feeder.finish();
 	}
 	

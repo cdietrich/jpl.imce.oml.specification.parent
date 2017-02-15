@@ -19,7 +19,7 @@
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
- * An OML TerminologyBox is an OML Context for defining a domain-specific vocabulary
+ * An OML TerminologyBox is an OML Module for defining a domain-specific vocabulary
  * as a logical set of OML TerminologyBoxStatement(s),
  * possibly by reuse of other vocabularies via OML TerminologyBoxAxiom(s).
  * The semantics of an OML TerminologyBox domain-specific vocabulary is defined
@@ -28,7 +28,7 @@ package gov.nasa.jpl.imce.oml.specification.resolver.api
  * according to its OML TerminologyGraphKind.
  */
 trait TerminologyBox
-  extends Context
+  extends Module
 {
 
   val kind: gov.nasa.jpl.imce.oml.specification.tables.TerminologyGraphKind

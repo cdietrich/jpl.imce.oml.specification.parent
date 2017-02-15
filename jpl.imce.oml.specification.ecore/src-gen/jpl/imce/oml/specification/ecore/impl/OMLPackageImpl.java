@@ -38,7 +38,6 @@ import jpl.imce.oml.specification.ecore.ConceptSpecializationAxiom;
 import jpl.imce.oml.specification.ecore.ConceptTreeDisjunction;
 import jpl.imce.oml.specification.ecore.ConceptualEntity;
 import jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance;
-import jpl.imce.oml.specification.ecore.Context;
 import jpl.imce.oml.specification.ecore.DataRange;
 import jpl.imce.oml.specification.ecore.DataRelationship;
 import jpl.imce.oml.specification.ecore.DataRelationshipDomain;
@@ -68,6 +67,7 @@ import jpl.imce.oml.specification.ecore.EntityScalarDataPropertyUniversalRestric
 import jpl.imce.oml.specification.ecore.EntityStructuredDataProperty;
 import jpl.imce.oml.specification.ecore.EntityUniversalRestrictionAxiom;
 import jpl.imce.oml.specification.ecore.IRIScalarRestriction;
+import jpl.imce.oml.specification.ecore.Module;
 import jpl.imce.oml.specification.ecore.NumericScalarRestriction;
 import jpl.imce.oml.specification.ecore.OMLFactory;
 import jpl.imce.oml.specification.ecore.OMLPackage;
@@ -199,7 +199,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass contextEClass = null;
+	private EClass moduleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1040,7 +1040,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAnnotationEntry_Context() {
+	public EReference getAnnotationEntry_Module() {
 		return (EReference)annotationEntryEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1130,7 +1130,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAnnotation_Context() {
+	public EReference getAnnotation_Module() {
 		return (EReference)annotationEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1211,8 +1211,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getContext() {
-		return contextEClass;
+	public EClass getModule() {
+		return moduleEClass;
 	}
 
 	/**
@@ -1220,8 +1220,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContext_Iri() {
-		return (EAttribute)contextEClass.getEStructuralFeatures().get(0);
+	public EAttribute getModule_Iri() {
+		return (EAttribute)moduleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1229,8 +1229,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getContext_Annotations() {
-		return (EReference)contextEClass.getEStructuralFeatures().get(1);
+	public EReference getModule_Annotations() {
+		return (EReference)moduleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1238,8 +1238,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getContext__Extent() {
-		return contextEClass.getEOperations().get(0);
+	public EOperation getModule__Extent() {
+		return moduleEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1247,8 +1247,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getContext__CalculateUUID() {
-		return contextEClass.getEOperations().get(1);
+	public EOperation getModule__CalculateUUID() {
+		return moduleEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -1256,8 +1256,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getContext__Iri() {
-		return contextEClass.getEOperations().get(2);
+	public EOperation getModule__Iri() {
+		return moduleEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -1265,8 +1265,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getContext__NsPrefix() {
-		return contextEClass.getEOperations().get(3);
+	public EOperation getModule__NsPrefix() {
+		return moduleEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -1274,8 +1274,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getContext__Name() {
-		return contextEClass.getEOperations().get(4);
+	public EOperation getModule__Name() {
+		return moduleEClass.getEOperations().get(4);
 	}
 
 	/**
@@ -1283,8 +1283,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getContext__AnnotationsBySubject() {
-		return contextEClass.getEOperations().get(5);
+	public EOperation getModule__AnnotationsBySubject() {
+		return moduleEClass.getEOperations().get(5);
 	}
 
 	/**
@@ -1292,8 +1292,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getContext__AnnotationsByProperty() {
-		return contextEClass.getEOperations().get(6);
+	public EOperation getModule__AnnotationsByProperty() {
+		return moduleEClass.getEOperations().get(6);
 	}
 
 	/**
@@ -1301,8 +1301,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getContext__WithAnnotations__EMap() {
-		return contextEClass.getEOperations().get(7);
+	public EOperation getModule__WithAnnotations__EMap() {
+		return moduleEClass.getEOperations().get(7);
 	}
 
 	/**
@@ -1310,8 +1310,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getContext__Entities() {
-		return contextEClass.getEOperations().get(8);
+	public EOperation getModule__Entities() {
+		return moduleEClass.getEOperations().get(8);
 	}
 
 	/**
@@ -1319,8 +1319,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getContext__Aspects() {
-		return contextEClass.getEOperations().get(9);
+	public EOperation getModule__Aspects() {
+		return moduleEClass.getEOperations().get(9);
 	}
 
 	/**
@@ -1328,8 +1328,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getContext__Concepts() {
-		return contextEClass.getEOperations().get(10);
+	public EOperation getModule__Concepts() {
+		return moduleEClass.getEOperations().get(10);
 	}
 
 	/**
@@ -1337,8 +1337,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getContext__ReifiedRelationships() {
-		return contextEClass.getEOperations().get(11);
+	public EOperation getModule__ReifiedRelationships() {
+		return moduleEClass.getEOperations().get(11);
 	}
 
 	/**
@@ -1346,8 +1346,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getContext__UnreifiedRelationships() {
-		return contextEClass.getEOperations().get(12);
+	public EOperation getModule__UnreifiedRelationships() {
+		return moduleEClass.getEOperations().get(12);
 	}
 
 	/**
@@ -1355,8 +1355,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getContext__DataRelationships() {
-		return contextEClass.getEOperations().get(13);
+	public EOperation getModule__DataRelationships() {
+		return moduleEClass.getEOperations().get(13);
 	}
 
 	/**
@@ -1364,8 +1364,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getContext__EntityScalarDataProperties() {
-		return contextEClass.getEOperations().get(14);
+	public EOperation getModule__EntityScalarDataProperties() {
+		return moduleEClass.getEOperations().get(14);
 	}
 
 	/**
@@ -1373,8 +1373,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getContext__Dataranges() {
-		return contextEClass.getEOperations().get(15);
+	public EOperation getModule__Dataranges() {
+		return moduleEClass.getEOperations().get(15);
 	}
 
 	/**
@@ -1382,8 +1382,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getContext__Scalars() {
-		return contextEClass.getEOperations().get(16);
+	public EOperation getModule__Scalars() {
+		return moduleEClass.getEOperations().get(16);
 	}
 
 	/**
@@ -1391,8 +1391,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getContext__Structures() {
-		return contextEClass.getEOperations().get(17);
+	public EOperation getModule__Structures() {
+		return moduleEClass.getEOperations().get(17);
 	}
 
 	/**
@@ -1400,8 +1400,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getContext__TermAxioms() {
-		return contextEClass.getEOperations().get(18);
+	public EOperation getModule__TermAxioms() {
+		return moduleEClass.getEOperations().get(18);
 	}
 
 	/**
@@ -1409,8 +1409,8 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getContext__Everything() {
-		return contextEClass.getEOperations().get(19);
+	public EOperation getModule__Everything() {
+		return moduleEClass.getEOperations().get(19);
 	}
 
 	/**
@@ -3542,7 +3542,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getDescriptionBoxRelationship__ContextTarget() {
+	public EOperation getDescriptionBoxRelationship__TargetModule() {
 		return descriptionBoxRelationshipEClass.getEOperations().get(1);
 	}
 
@@ -3587,7 +3587,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getDescriptionBoxExtendsClosedWorldDefinitions__ContextTarget() {
+	public EOperation getDescriptionBoxExtendsClosedWorldDefinitions__TargetModule() {
 		return descriptionBoxExtendsClosedWorldDefinitionsEClass.getEOperations().get(1);
 	}
 
@@ -3632,7 +3632,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getDescriptionBoxRefinement__ContextTarget() {
+	public EOperation getDescriptionBoxRefinement__TargetModule() {
 		return descriptionBoxRefinementEClass.getEOperations().get(1);
 	}
 
@@ -4195,7 +4195,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		createEReference(annotationPropertyTableEClass, ANNOTATION_PROPERTY_TABLE__VALUE);
 
 		annotationEntryEClass = createEClass(ANNOTATION_ENTRY);
-		createEReference(annotationEntryEClass, ANNOTATION_ENTRY__CONTEXT);
+		createEReference(annotationEntryEClass, ANNOTATION_ENTRY__MODULE);
 		createEReference(annotationEntryEClass, ANNOTATION_ENTRY__SUBJECT);
 		createEAttribute(annotationEntryEClass, ANNOTATION_ENTRY__VALUE);
 
@@ -4208,7 +4208,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		createEAttribute(annotationSubjectPropertyValueEClass, ANNOTATION_SUBJECT_PROPERTY_VALUE__VALUE);
 
 		annotationEClass = createEClass(ANNOTATION);
-		createEReference(annotationEClass, ANNOTATION__CONTEXT);
+		createEReference(annotationEClass, ANNOTATION__MODULE);
 		createEReference(annotationEClass, ANNOTATION__PROPERTY);
 		createEReference(annotationEClass, ANNOTATION__SUBJECT);
 		createEAttribute(annotationEClass, ANNOTATION__VALUE);
@@ -4219,29 +4219,29 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		createEReference(terminologyExtentEClass, TERMINOLOGY_EXTENT__BUNDLES);
 		createEReference(terminologyExtentEClass, TERMINOLOGY_EXTENT__DESCRIPTIONS);
 
-		contextEClass = createEClass(CONTEXT);
-		createEAttribute(contextEClass, CONTEXT__IRI);
-		createEReference(contextEClass, CONTEXT__ANNOTATIONS);
-		createEOperation(contextEClass, CONTEXT___EXTENT);
-		createEOperation(contextEClass, CONTEXT___CALCULATE_UUID);
-		createEOperation(contextEClass, CONTEXT___IRI);
-		createEOperation(contextEClass, CONTEXT___NS_PREFIX);
-		createEOperation(contextEClass, CONTEXT___NAME);
-		createEOperation(contextEClass, CONTEXT___ANNOTATIONS_BY_SUBJECT);
-		createEOperation(contextEClass, CONTEXT___ANNOTATIONS_BY_PROPERTY);
-		createEOperation(contextEClass, CONTEXT___WITH_ANNOTATIONS__EMAP);
-		createEOperation(contextEClass, CONTEXT___ENTITIES);
-		createEOperation(contextEClass, CONTEXT___ASPECTS);
-		createEOperation(contextEClass, CONTEXT___CONCEPTS);
-		createEOperation(contextEClass, CONTEXT___REIFIED_RELATIONSHIPS);
-		createEOperation(contextEClass, CONTEXT___UNREIFIED_RELATIONSHIPS);
-		createEOperation(contextEClass, CONTEXT___DATA_RELATIONSHIPS);
-		createEOperation(contextEClass, CONTEXT___ENTITY_SCALAR_DATA_PROPERTIES);
-		createEOperation(contextEClass, CONTEXT___DATARANGES);
-		createEOperation(contextEClass, CONTEXT___SCALARS);
-		createEOperation(contextEClass, CONTEXT___STRUCTURES);
-		createEOperation(contextEClass, CONTEXT___TERM_AXIOMS);
-		createEOperation(contextEClass, CONTEXT___EVERYTHING);
+		moduleEClass = createEClass(MODULE);
+		createEAttribute(moduleEClass, MODULE__IRI);
+		createEReference(moduleEClass, MODULE__ANNOTATIONS);
+		createEOperation(moduleEClass, MODULE___EXTENT);
+		createEOperation(moduleEClass, MODULE___CALCULATE_UUID);
+		createEOperation(moduleEClass, MODULE___IRI);
+		createEOperation(moduleEClass, MODULE___NS_PREFIX);
+		createEOperation(moduleEClass, MODULE___NAME);
+		createEOperation(moduleEClass, MODULE___ANNOTATIONS_BY_SUBJECT);
+		createEOperation(moduleEClass, MODULE___ANNOTATIONS_BY_PROPERTY);
+		createEOperation(moduleEClass, MODULE___WITH_ANNOTATIONS__EMAP);
+		createEOperation(moduleEClass, MODULE___ENTITIES);
+		createEOperation(moduleEClass, MODULE___ASPECTS);
+		createEOperation(moduleEClass, MODULE___CONCEPTS);
+		createEOperation(moduleEClass, MODULE___REIFIED_RELATIONSHIPS);
+		createEOperation(moduleEClass, MODULE___UNREIFIED_RELATIONSHIPS);
+		createEOperation(moduleEClass, MODULE___DATA_RELATIONSHIPS);
+		createEOperation(moduleEClass, MODULE___ENTITY_SCALAR_DATA_PROPERTIES);
+		createEOperation(moduleEClass, MODULE___DATARANGES);
+		createEOperation(moduleEClass, MODULE___SCALARS);
+		createEOperation(moduleEClass, MODULE___STRUCTURES);
+		createEOperation(moduleEClass, MODULE___TERM_AXIOMS);
+		createEOperation(moduleEClass, MODULE___EVERYTHING);
 
 		terminologyBoxEClass = createEClass(TERMINOLOGY_BOX);
 		createEAttribute(terminologyBoxEClass, TERMINOLOGY_BOX__KIND);
@@ -4545,19 +4545,19 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 
 		descriptionBoxRelationshipEClass = createEClass(DESCRIPTION_BOX_RELATIONSHIP);
 		createEOperation(descriptionBoxRelationshipEClass, DESCRIPTION_BOX_RELATIONSHIP___DESCRIPTION_DOMAIN);
-		createEOperation(descriptionBoxRelationshipEClass, DESCRIPTION_BOX_RELATIONSHIP___CONTEXT_TARGET);
+		createEOperation(descriptionBoxRelationshipEClass, DESCRIPTION_BOX_RELATIONSHIP___TARGET_MODULE);
 
 		descriptionBoxExtendsClosedWorldDefinitionsEClass = createEClass(DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS);
 		createEReference(descriptionBoxExtendsClosedWorldDefinitionsEClass, DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX);
 		createEReference(descriptionBoxExtendsClosedWorldDefinitionsEClass, DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__CLOSED_WORLD_DEFINITIONS);
 		createEOperation(descriptionBoxExtendsClosedWorldDefinitionsEClass, DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS___DESCRIPTION_DOMAIN);
-		createEOperation(descriptionBoxExtendsClosedWorldDefinitionsEClass, DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS___CONTEXT_TARGET);
+		createEOperation(descriptionBoxExtendsClosedWorldDefinitionsEClass, DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS___TARGET_MODULE);
 
 		descriptionBoxRefinementEClass = createEClass(DESCRIPTION_BOX_REFINEMENT);
 		createEReference(descriptionBoxRefinementEClass, DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX);
 		createEReference(descriptionBoxRefinementEClass, DESCRIPTION_BOX_REFINEMENT__REFINED_DESCRIPTION_BOX);
 		createEOperation(descriptionBoxRefinementEClass, DESCRIPTION_BOX_REFINEMENT___DESCRIPTION_DOMAIN);
-		createEOperation(descriptionBoxRefinementEClass, DESCRIPTION_BOX_REFINEMENT___CONTEXT_TARGET);
+		createEOperation(descriptionBoxRefinementEClass, DESCRIPTION_BOX_REFINEMENT___TARGET_MODULE);
 
 		terminologyInstanceAssertionEClass = createEClass(TERMINOLOGY_INSTANCE_ASSERTION);
 		createEAttribute(terminologyInstanceAssertionEClass, TERMINOLOGY_INSTANCE_ASSERTION__NAME);
@@ -4663,9 +4663,9 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		contextEClass.getESuperTypes().add(this.getTerminologyThing());
-		contextEClass.getESuperTypes().add(this.getResource());
-		terminologyBoxEClass.getESuperTypes().add(this.getContext());
+		moduleEClass.getESuperTypes().add(this.getTerminologyThing());
+		moduleEClass.getESuperTypes().add(this.getResource());
+		terminologyBoxEClass.getESuperTypes().add(this.getModule());
 		bundleEClass.getESuperTypes().add(this.getTerminologyBox());
 		terminologyGraphEClass.getESuperTypes().add(this.getTerminologyBox());
 		terminologyBoxStatementEClass.getESuperTypes().add(this.getTerminologyThing());
@@ -4744,7 +4744,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		synonymScalarRestrictionEClass.getESuperTypes().add(this.getRestrictedDataRange());
 		scalarOneOfRestrictionEClass.getESuperTypes().add(this.getRestrictedDataRange());
 		scalarOneOfLiteralAxiomEClass.getESuperTypes().add(this.getAxiom());
-		descriptionBoxEClass.getESuperTypes().add(this.getContext());
+		descriptionBoxEClass.getESuperTypes().add(this.getModule());
 		descriptionBoxRelationshipEClass.getESuperTypes().add(this.getTerminologyThing());
 		descriptionBoxExtendsClosedWorldDefinitionsEClass.getESuperTypes().add(this.getDescriptionBoxRelationship());
 		descriptionBoxRefinementEClass.getESuperTypes().add(this.getDescriptionBoxRelationship());
@@ -4784,7 +4784,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		initEReference(getAnnotationPropertyTable_Value(), this.getAnnotationEntry(), null, "value", null, 0, -1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(annotationEntryEClass, AnnotationEntry.class, "AnnotationEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAnnotationEntry_Context(), this.getContext(), null, "context", null, 1, 1, AnnotationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAnnotationEntry_Module(), this.getModule(), null, "module", null, 1, 1, AnnotationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAnnotationEntry_Subject(), this.getTerminologyThing(), null, "subject", null, 1, 1, AnnotationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAnnotationEntry_Value(), theEcorePackage.getEString(), "value", null, 1, 1, AnnotationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -4797,7 +4797,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		initEAttribute(getAnnotationSubjectPropertyValue_Value(), theEcorePackage.getEString(), "value", null, 1, 1, AnnotationSubjectPropertyValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(annotationEClass, Annotation.class, "Annotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAnnotation_Context(), this.getContext(), this.getContext_Annotations(), "context", null, 1, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAnnotation_Module(), this.getModule(), this.getModule_Annotations(), "module", null, 1, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAnnotation_Property(), this.getAnnotationProperty(), null, "property", null, 1, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAnnotation_Subject(), this.getTerminologyThing(), null, "subject", null, 1, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAnnotation_Value(), theEcorePackage.getEString(), "value", null, 1, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4808,50 +4808,50 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		initEReference(getTerminologyExtent_Bundles(), this.getBundle(), this.getBundle_BundleExtent(), "bundles", null, 0, -1, TerminologyExtent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTerminologyExtent_Descriptions(), this.getDescriptionBox(), this.getDescriptionBox_DescriptionExtent(), "descriptions", null, 0, -1, TerminologyExtent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(contextEClass, Context.class, "Context", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getContext_Iri(), this.getIRI(), "iri", null, 1, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getContext_Annotations(), this.getAnnotation(), this.getAnnotation_Context(), "annotations", null, 0, -1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(moduleEClass, Module.class, "Module", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getModule_Iri(), this.getIRI(), "iri", null, 1, 1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModule_Annotations(), this.getAnnotation(), this.getAnnotation_Module(), "annotations", null, 0, -1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getContext__Extent(), this.getTerminologyExtent(), "extent", 1, 1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getModule__Extent(), this.getTerminologyExtent(), "extent", 1, 1, !IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getContext__CalculateUUID(), this.getUUID(), "calculateUUID", 1, 1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getModule__CalculateUUID(), this.getUUID(), "calculateUUID", 1, 1, !IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getContext__Iri(), this.getIRI(), "iri", 1, 1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getModule__Iri(), this.getIRI(), "iri", 1, 1, !IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getContext__NsPrefix(), this.getNamespacePrefix(), "nsPrefix", 1, 1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getModule__NsPrefix(), this.getNamespacePrefix(), "nsPrefix", 1, 1, !IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getContext__Name(), this.getLocalName(), "name", 1, 1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getModule__Name(), this.getLocalName(), "name", 1, 1, !IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getContext__AnnotationsBySubject(), this.getAnnotationSubjectTable(), "annotationsBySubject", 0, -1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getModule__AnnotationsBySubject(), this.getAnnotationSubjectTable(), "annotationsBySubject", 0, -1, !IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getContext__AnnotationsByProperty(), this.getAnnotationPropertyTable(), "annotationsByProperty", 0, -1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getModule__AnnotationsByProperty(), this.getAnnotationPropertyTable(), "annotationsByProperty", 0, -1, !IS_UNIQUE, IS_ORDERED);
 
-		EOperation op = initEOperation(getContext__WithAnnotations__EMap(), this.getContext(), "withAnnotations", 1, 1, !IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getModule__WithAnnotations__EMap(), this.getModule(), "withAnnotations", 1, 1, !IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getAnnotationPropertyTable(), "a", 0, -1, !IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getContext__Entities(), this.getEntity(), "entities", 0, -1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getModule__Entities(), this.getEntity(), "entities", 0, -1, !IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getContext__Aspects(), this.getAspect(), "aspects", 0, -1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getModule__Aspects(), this.getAspect(), "aspects", 0, -1, !IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getContext__Concepts(), this.getConcept(), "concepts", 0, -1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getModule__Concepts(), this.getConcept(), "concepts", 0, -1, !IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getContext__ReifiedRelationships(), this.getReifiedRelationship(), "reifiedRelationships", 0, -1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getModule__ReifiedRelationships(), this.getReifiedRelationship(), "reifiedRelationships", 0, -1, !IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getContext__UnreifiedRelationships(), this.getUnreifiedRelationship(), "unreifiedRelationships", 0, -1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getModule__UnreifiedRelationships(), this.getUnreifiedRelationship(), "unreifiedRelationships", 0, -1, !IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getContext__DataRelationships(), this.getDataRelationship(), "dataRelationships", 0, -1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getModule__DataRelationships(), this.getDataRelationship(), "dataRelationships", 0, -1, !IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getContext__EntityScalarDataProperties(), this.getEntityScalarDataProperty(), "entityScalarDataProperties", 0, -1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getModule__EntityScalarDataProperties(), this.getEntityScalarDataProperty(), "entityScalarDataProperties", 0, -1, !IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getContext__Dataranges(), this.getDataRange(), "dataranges", 0, -1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getModule__Dataranges(), this.getDataRange(), "dataranges", 0, -1, !IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getContext__Scalars(), this.getScalar(), "scalars", 0, -1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getModule__Scalars(), this.getScalar(), "scalars", 0, -1, !IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getContext__Structures(), this.getStructure(), "structures", 0, -1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getModule__Structures(), this.getStructure(), "structures", 0, -1, !IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getContext__TermAxioms(), this.getTermAxiom(), "termAxioms", 0, -1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getModule__TermAxioms(), this.getTermAxiom(), "termAxioms", 0, -1, !IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getContext__Everything(), this.getTerminologyThing(), "everything", 0, -1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getModule__Everything(), this.getTerminologyThing(), "everything", 0, -1, !IS_UNIQUE, IS_ORDERED);
 
 		initEClass(terminologyBoxEClass, TerminologyBox.class, "TerminologyBox", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTerminologyBox_Kind(), this.getTerminologyGraphKind(), "kind", null, 1, 1, TerminologyBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5241,7 +5241,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 
 		initEOperation(getDescriptionBoxRelationship__DescriptionDomain(), this.getDescriptionBox(), "descriptionDomain", 1, 1, !IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getDescriptionBoxRelationship__ContextTarget(), this.getContext(), "contextTarget", 1, 1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDescriptionBoxRelationship__TargetModule(), this.getModule(), "targetModule", 1, 1, !IS_UNIQUE, IS_ORDERED);
 
 		initEClass(descriptionBoxExtendsClosedWorldDefinitionsEClass, DescriptionBoxExtendsClosedWorldDefinitions.class, "DescriptionBoxExtendsClosedWorldDefinitions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDescriptionBoxExtendsClosedWorldDefinitions_DescriptionBox(), this.getDescriptionBox(), this.getDescriptionBox_ClosedWorldDefinitions(), "descriptionBox", null, 1, 1, DescriptionBoxExtendsClosedWorldDefinitions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5249,7 +5249,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 
 		initEOperation(getDescriptionBoxExtendsClosedWorldDefinitions__DescriptionDomain(), this.getDescriptionBox(), "descriptionDomain", 1, 1, !IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getDescriptionBoxExtendsClosedWorldDefinitions__ContextTarget(), this.getContext(), "contextTarget", 1, 1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDescriptionBoxExtendsClosedWorldDefinitions__TargetModule(), this.getModule(), "targetModule", 1, 1, !IS_UNIQUE, IS_ORDERED);
 
 		initEClass(descriptionBoxRefinementEClass, DescriptionBoxRefinement.class, "DescriptionBoxRefinement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDescriptionBoxRefinement_RefiningDescriptionBox(), this.getDescriptionBox(), this.getDescriptionBox_DescriptionBoxRefinements(), "refiningDescriptionBox", null, 1, 1, DescriptionBoxRefinement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5257,7 +5257,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 
 		initEOperation(getDescriptionBoxRefinement__DescriptionDomain(), this.getDescriptionBox(), "descriptionDomain", 1, 1, !IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getDescriptionBoxRefinement__ContextTarget(), this.getContext(), "contextTarget", 1, 1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDescriptionBoxRefinement__TargetModule(), this.getModule(), "targetModule", 1, 1, !IS_UNIQUE, IS_ORDERED);
 
 		initEClass(terminologyInstanceAssertionEClass, TerminologyInstanceAssertion.class, "TerminologyInstanceAssertion", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTerminologyInstanceAssertion_Name(), this.getLocalName(), "name", null, 1, 1, TerminologyInstanceAssertion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5449,7 +5449,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		   new String[] {
 		   });	
 		addAnnotation
-		  (contextEClass, 
+		  (moduleEClass, 
 		   source, 
 		   new String[] {
 		   });	
@@ -5919,97 +5919,97 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getContext__Extent(), 
+		  (getModule__Extent(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getContext__CalculateUUID(), 
+		  (getModule__CalculateUUID(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getContext__NsPrefix(), 
+		  (getModule__NsPrefix(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getContext__Name(), 
+		  (getModule__Name(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getContext__AnnotationsByProperty(), 
+		  (getModule__AnnotationsByProperty(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getContext__WithAnnotations__EMap(), 
+		  (getModule__WithAnnotations__EMap(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getContext__Entities(), 
+		  (getModule__Entities(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getContext__Aspects(), 
+		  (getModule__Aspects(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getContext__Concepts(), 
+		  (getModule__Concepts(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getContext__ReifiedRelationships(), 
+		  (getModule__ReifiedRelationships(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getContext__UnreifiedRelationships(), 
+		  (getModule__UnreifiedRelationships(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getContext__DataRelationships(), 
+		  (getModule__DataRelationships(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getContext__EntityScalarDataProperties(), 
+		  (getModule__EntityScalarDataProperties(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getContext__Dataranges(), 
+		  (getModule__Dataranges(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getContext__Scalars(), 
+		  (getModule__Scalars(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getContext__Structures(), 
+		  (getModule__Structures(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getContext__TermAxioms(), 
+		  (getModule__TermAxioms(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getContext__Everything(), 
+		  (getModule__Everything(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getContext_Annotations(), 
+		  (getModule_Annotations(), 
 		   source, 
 		   new String[] {
 		   });	
@@ -6449,7 +6449,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getDescriptionBoxRelationship__ContextTarget(), 
+		  (getDescriptionBoxRelationship__TargetModule(), 
 		   source, 
 		   new String[] {
 		   });	
@@ -6459,7 +6459,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getDescriptionBoxExtendsClosedWorldDefinitions__ContextTarget(), 
+		  (getDescriptionBoxExtendsClosedWorldDefinitions__TargetModule(), 
 		   source, 
 		   new String[] {
 		   });	
@@ -6469,7 +6469,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getDescriptionBoxRefinement__ContextTarget(), 
+		  (getDescriptionBoxRefinement__TargetModule(), 
 		   source, 
 		   new String[] {
 		   });	
@@ -6544,7 +6544,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getAnnotationEntry_Context(), 
+		  (getAnnotationEntry_Module(), 
 		   source, 
 		   new String[] {
 		   });	
@@ -6559,7 +6559,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getAnnotation_Context(), 
+		  (getAnnotation_Module(), 
 		   source, 
 		   new String[] {
 		   });	
@@ -6619,91 +6619,91 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 			 "kind", "SortedSet"
 		   });	
 		addAnnotation
-		  (getContext__AnnotationsByProperty(), 
+		  (getModule__AnnotationsByProperty(), 
 		   source, 
 		   new String[] {
 			 "kind", "SortedSet"
 		   });	
 		addAnnotation
-		  ((getContext__WithAnnotations__EMap()).getEParameters().get(0), 
+		  ((getModule__WithAnnotations__EMap()).getEParameters().get(0), 
 		   source, 
 		   new String[] {
 			 "kind", "SortedSet"
 		   });	
 		addAnnotation
-		  (getContext__Entities(), 
+		  (getModule__Entities(), 
 		   source, 
 		   new String[] {
 			 "kind", "SortedSet"
 		   });	
 		addAnnotation
-		  (getContext__Aspects(), 
+		  (getModule__Aspects(), 
 		   source, 
 		   new String[] {
 			 "kind", "SortedSet"
 		   });	
 		addAnnotation
-		  (getContext__Concepts(), 
+		  (getModule__Concepts(), 
 		   source, 
 		   new String[] {
 			 "kind", "SortedSet"
 		   });	
 		addAnnotation
-		  (getContext__ReifiedRelationships(), 
+		  (getModule__ReifiedRelationships(), 
 		   source, 
 		   new String[] {
 			 "kind", "SortedSet"
 		   });	
 		addAnnotation
-		  (getContext__UnreifiedRelationships(), 
+		  (getModule__UnreifiedRelationships(), 
 		   source, 
 		   new String[] {
 			 "kind", "SortedSet"
 		   });	
 		addAnnotation
-		  (getContext__DataRelationships(), 
+		  (getModule__DataRelationships(), 
 		   source, 
 		   new String[] {
 			 "kind", "SortedSet"
 		   });	
 		addAnnotation
-		  (getContext__EntityScalarDataProperties(), 
+		  (getModule__EntityScalarDataProperties(), 
 		   source, 
 		   new String[] {
 			 "kind", "SortedSet"
 		   });	
 		addAnnotation
-		  (getContext__Dataranges(), 
+		  (getModule__Dataranges(), 
 		   source, 
 		   new String[] {
 			 "kind", "SortedSet"
 		   });	
 		addAnnotation
-		  (getContext__Scalars(), 
+		  (getModule__Scalars(), 
 		   source, 
 		   new String[] {
 			 "kind", "SortedSet"
 		   });	
 		addAnnotation
-		  (getContext__Structures(), 
+		  (getModule__Structures(), 
 		   source, 
 		   new String[] {
 			 "kind", "SortedSet"
 		   });	
 		addAnnotation
-		  (getContext__TermAxioms(), 
+		  (getModule__TermAxioms(), 
 		   source, 
 		   new String[] {
 			 "kind", "SortedSet"
 		   });	
 		addAnnotation
-		  (getContext__Everything(), 
+		  (getModule__Everything(), 
 		   source, 
 		   new String[] {
 			 "kind", "SortedSet"
 		   });	
 		addAnnotation
-		  (getContext_Annotations(), 
+		  (getModule_Annotations(), 
 		   source, 
 		   new String[] {
 			 "kind", "SortedSet"
@@ -7032,12 +7032,12 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getContext__Iri(), 
+		  (getModule__Iri(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getContext__AnnotationsBySubject(), 
+		  (getModule__AnnotationsBySubject(), 
 		   source, 
 		   new String[] {
 		   });	
@@ -7197,7 +7197,7 @@ public class OMLPackageImpl extends EPackageImpl implements OMLPackage {
 	protected void createOverrideAnnotations() {
 		String source = "http://imce.jpl.nasa.gov/oml/Override";	
 		addAnnotation
-		  (getContext_Iri(), 
+		  (getModule_Iri(), 
 		   source, 
 		   new String[] {
 		   });	

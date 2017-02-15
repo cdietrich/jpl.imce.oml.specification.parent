@@ -36,9 +36,9 @@ extends resolver.api.DescriptionBoxRefinement
     refiningDescriptionBox
   }
   
-  def contextTarget
+  def targetModule
   ()
-  : Context
+  : Module
   = {
     refinedDescriptionBox
   }

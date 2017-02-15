@@ -23,18 +23,18 @@ trait OMLResolvedFactory {
   // Annotation
   
   def createAnnotation
-  ( context: Context,
-    subject: TerminologyThing,
+  ( subject: TerminologyThing,
     property: AnnotationProperty,
-    value: scala.Predef.String )
+    value: scala.Predef.String,
+    module: Module )
   : Annotation
   
   // AnnotationEntry
   
   def createAnnotationEntry
-  ( context: Context,
-    subject: TerminologyThing,
-    value: scala.Predef.String )
+  ( subject: TerminologyThing,
+    value: scala.Predef.String,
+    module: Module )
   : AnnotationEntry
   
   // AnnotationProperty

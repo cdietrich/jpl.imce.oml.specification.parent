@@ -20,9 +20,9 @@ package jpl.imce.oml.specification.ecore.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
-import jpl.imce.oml.specification.ecore.Context;
 import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions;
+import jpl.imce.oml.specification.ecore.Module;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.TerminologyBox;
 
@@ -186,7 +186,7 @@ public class DescriptionBoxExtendsClosedWorldDefinitionsImpl extends Description
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Context contextTarget() {
+	public Module targetModule() {
 		return this.getClosedWorldDefinitions();
 	}
 
@@ -314,8 +314,8 @@ public class DescriptionBoxExtendsClosedWorldDefinitionsImpl extends Description
 		switch (operationID) {
 			case OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS___DESCRIPTION_DOMAIN:
 				return descriptionDomain();
-			case OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS___CONTEXT_TARGET:
-				return contextTarget();
+			case OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS___TARGET_MODULE:
+				return targetModule();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -23,11 +23,11 @@ import org.eclipse.emf.common.util.EMap;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Context</b></em>'.
+ * A representation of the model object '<em><b>Module</b></em>'.
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML Context maps to an [OWL2-DL Ontology];
+ * An OML Module maps to an [OWL2-DL Ontology];
  * it is a kind of OML Resource that is a logical container of OML TerminologyThing(s)
  * and a non-logical container of OML Annotation(s).
  * <!-- end-model-doc -->
@@ -36,15 +36,15 @@ import org.eclipse.emf.common.util.EMap;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link jpl.imce.oml.specification.ecore.Context#getIri <em>Iri</em>}</li>
- *   <li>{@link jpl.imce.oml.specification.ecore.Context#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.Module#getIri <em>Iri</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.Module#getAnnotations <em>Annotations</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getContext()
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getModule()
  * @model abstract="true"
  * @generated
  */
-public interface Context extends TerminologyThing, Resource {
+public interface Module extends TerminologyThing, Resource {
 	/**
 	 * Returns the value of the '<em><b>Iri</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -55,14 +55,14 @@ public interface Context extends TerminologyThing, Resource {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Iri</em>' attribute.
 	 * @see #setIri(String)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getContext_Iri()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getModule_Iri()
 	 * @model unique="false" id="true" dataType="jpl.imce.oml.specification.ecore.IRI" required="true"
 	 * @generated
 	 */
 	String getIri();
 
 	/**
-	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.Context#getIri <em>Iri</em>}' attribute.
+	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.Module#getIri <em>Iri</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Iri</em>' attribute.
@@ -74,7 +74,7 @@ public interface Context extends TerminologyThing, Resource {
 	/**
 	 * Returns the value of the '<em><b>Annotations</b></em>' containment reference list.
 	 * The list contents are of type {@link jpl.imce.oml.specification.ecore.Annotation}.
-	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.Annotation#getContext <em>Context</em>}'.
+	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.Annotation#getModule <em>Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Annotations</em>' containment reference list isn't clear,
@@ -82,9 +82,9 @@ public interface Context extends TerminologyThing, Resource {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Annotations</em>' containment reference list.
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getContext_Annotations()
-	 * @see jpl.imce.oml.specification.ecore.Annotation#getContext
-	 * @model opposite="context" containment="true"
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getModule_Annotations()
+	 * @see jpl.imce.oml.specification.ecore.Annotation#getModule
+	 * @model opposite="module" containment="true"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
 	 * @generated
 	 */
@@ -158,7 +158,7 @@ public interface Context extends TerminologyThing, Resource {
 	 *        aAnnotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
 	 * @generated
 	 */
-	Context withAnnotations(EMap<AnnotationProperty, EList<AnnotationEntry>> a);
+	Module withAnnotations(EMap<AnnotationProperty, EList<AnnotationEntry>> a);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -268,4 +268,4 @@ public interface Context extends TerminologyThing, Resource {
 	 */
 	EList<TerminologyThing> everything();
 
-} // Context
+} // Module

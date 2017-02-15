@@ -140,18 +140,18 @@ public class OMLSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OMLPackage.CONTEXT: {
-				Context context = (Context)theEObject;
-				T result = caseContext(context);
-				if (result == null) result = caseTerminologyThing(context);
-				if (result == null) result = caseResource(context);
+			case OMLPackage.MODULE: {
+				Module module = (Module)theEObject;
+				T result = caseModule(module);
+				if (result == null) result = caseTerminologyThing(module);
+				if (result == null) result = caseResource(module);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case OMLPackage.TERMINOLOGY_BOX: {
 				TerminologyBox terminologyBox = (TerminologyBox)theEObject;
 				T result = caseTerminologyBox(terminologyBox);
-				if (result == null) result = caseContext(terminologyBox);
+				if (result == null) result = caseModule(terminologyBox);
 				if (result == null) result = caseTerminologyThing(terminologyBox);
 				if (result == null) result = caseResource(terminologyBox);
 				if (result == null) result = defaultCase(theEObject);
@@ -161,7 +161,7 @@ public class OMLSwitch<T> extends Switch<T> {
 				Bundle bundle = (Bundle)theEObject;
 				T result = caseBundle(bundle);
 				if (result == null) result = caseTerminologyBox(bundle);
-				if (result == null) result = caseContext(bundle);
+				if (result == null) result = caseModule(bundle);
 				if (result == null) result = caseTerminologyThing(bundle);
 				if (result == null) result = caseResource(bundle);
 				if (result == null) result = defaultCase(theEObject);
@@ -171,7 +171,7 @@ public class OMLSwitch<T> extends Switch<T> {
 				TerminologyGraph terminologyGraph = (TerminologyGraph)theEObject;
 				T result = caseTerminologyGraph(terminologyGraph);
 				if (result == null) result = caseTerminologyBox(terminologyGraph);
-				if (result == null) result = caseContext(terminologyGraph);
+				if (result == null) result = caseModule(terminologyGraph);
 				if (result == null) result = caseTerminologyThing(terminologyGraph);
 				if (result == null) result = caseResource(terminologyGraph);
 				if (result == null) result = defaultCase(theEObject);
@@ -815,7 +815,7 @@ public class OMLSwitch<T> extends Switch<T> {
 			case OMLPackage.DESCRIPTION_BOX: {
 				DescriptionBox descriptionBox = (DescriptionBox)theEObject;
 				T result = caseDescriptionBox(descriptionBox);
-				if (result == null) result = caseContext(descriptionBox);
+				if (result == null) result = caseModule(descriptionBox);
 				if (result == null) result = caseTerminologyThing(descriptionBox);
 				if (result == null) result = caseResource(descriptionBox);
 				if (result == null) result = defaultCase(theEObject);
@@ -1088,17 +1088,17 @@ public class OMLSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Context</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Module</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Context</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Module</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseContext(Context object) {
+	public T caseModule(Module object) {
 		return null;
 	}
 

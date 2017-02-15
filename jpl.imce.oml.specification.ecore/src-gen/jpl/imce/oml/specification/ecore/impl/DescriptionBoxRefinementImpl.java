@@ -20,9 +20,9 @@ package jpl.imce.oml.specification.ecore.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
-import jpl.imce.oml.specification.ecore.Context;
 import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.DescriptionBoxRefinement;
+import jpl.imce.oml.specification.ecore.Module;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -185,7 +185,7 @@ public class DescriptionBoxRefinementImpl extends DescriptionBoxRelationshipImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Context contextTarget() {
+	public Module targetModule() {
 		return this.getRefinedDescriptionBox();
 	}
 
@@ -313,8 +313,8 @@ public class DescriptionBoxRefinementImpl extends DescriptionBoxRelationshipImpl
 		switch (operationID) {
 			case OMLPackage.DESCRIPTION_BOX_REFINEMENT___DESCRIPTION_DOMAIN:
 				return descriptionDomain();
-			case OMLPackage.DESCRIPTION_BOX_REFINEMENT___CONTEXT_TARGET:
-				return contextTarget();
+			case OMLPackage.DESCRIPTION_BOX_REFINEMENT___TARGET_MODULE:
+				return targetModule();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -70,7 +70,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
+public class DescriptionBoxImpl extends ModuleImpl implements DescriptionBox {
 	/**
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
