@@ -17,16 +17,71 @@ See [jpl.imce.oml.specification.repository/README.md](jpl.imce.oml.specification
 
 ## Developer Notes
 
-This project is developed using the Eclipse Neon.2 Modeling IDE augmented with:
-- XText SDK
-- XCore
-- CDO
-- Buildship (for Eclipse gradle support)
+This project is developed using two IDEs: Eclipse & Intellij IDEA Ultimate.
+It would be nice if a single IDE could handle all the requirements.
+ 
+### Eclipse Neon.2 
 
-### Caveats
+Specifically, the Eclipse Neon.2 Modeling package which includes EMF, CDO, EGIT augmented with the following:
+- XText Complete SDK (2.10.0)
+- Modeling/EMF - Eclipse Modeling Framework Xcore SDK (1.4.0)
+- Modeling/Sirus * (4.1.2)
+- Buildship Gradle Integration 2.0
+- Scala IDE (4.5.0)
 
+In principle, it should be possible to use Eclipse Oomph to configure
+a package with the above; in practice, it is unfortunately not obvious
+how to do this despite several attempts. 
+
+### Intellij IDEA Ultimate
+
+All the SBT build configuration was developed using IDEA.
+The [gov.nasa.jpl.imce.oml.specification.tables] module is a polyglot functional API 
+for the normalized relational table schema of the Ontological Modeling Language.
+This API is written in Scala; however, it is cross-compiled for both the JVM and Node/JavaScript.
+Correspondingly, this SBT project has two sub-projects, `tablesJVM` and `tablesJS` respectively.
+Most of the Scala source code is shared; however, some Scala source code is specific to `tablesJVM`
+and other to `tablesJS`. There is also some source code in Java and JavaScript.
+
+### Benefits of SBT
+
+It handles a lot of the continuous integration paradigms used across several projects
+(see https://github.com/JPL-IMCE). In particular:
+
+- Third-party dependencies are aggregated in a big zip archive.
+
+  In principle, this could be avoided using a powerful Maven repository like Artifactory
+  that can be configured for proxying selected artifacts from other repositories.
+  In practice, it is still an advanced topic, one that seems to be restricted to a 
+  non-public deployment of Artifactory. 
+  
+  This aggregation in SBT is a simple idea enables Continuous Integration on https://travis-ci.org/jpl-imce.
+
+- Cross building
+
+- Compile-time type checking of build scripts
+
+### Benefits of Gradle
+
+Thanks to the Gradle-based Eclipse Buildship, it is possible to:
+- construct a local Mavenized repository from specific Eclipse feature target dependencies
+- run all the Xtext/Xtend/Xcore-based code generation 
+- build the Eclipse-based projects plugins, features & p2 repos 
+- execute the unit tests
+
+However, there are some caveats.
+
+### Caveats about Gradle
+
+Although Gradle is conceptually very similar to SBT (i.e., execution of a graph of tasks based on their dependencies),
+the fact that Gradle is dynamically typed and SBT is statically typed means that:
+- Gradle scripting looses the benefits that SBT scripting enjoys with static, compile-time checking. 
+- It can be difficult to understand what a particular Gradle script really does because the runtime dependency injection
+  that ultimately determines the actual runtime behavior can be difficult to find.
+  
 Following the suggestion from [Bugzilla – Bug 469287 (CLOSED WONTFIX)](https://bugs.eclipse.org/bugs/show_bug.cgi?id=469287),
 this project includes a copy of the internal gradle plugins that Eclipse buildship uses for building/publishing.
+Several Eclipse test-related scripts were deleted because of errors.
 
 However, following [Eclipse buildship developer setup instructions](https://github.com/eclipse/buildship/blob/master/docs/development/Setup.md) 
 turns out to be a non-trivial affair:
@@ -38,10 +93,21 @@ turns out to be a non-trivial affair:
 - The Eclipse buildship support can add gradle nature; however, it doesn't add Gradle 3.3 to the project classpath.
   This means that there is no JDT support for editing gradle scripts!
 
-- Debugging gradle scripts is a mystery.
+- Debugging gradle scripts is tedious with Eclipse Buildship.
 
-All of this makes editing gradle scripts very tedious; still, it is overall better than the alternative (i.e. Maven/Tycho)
-because Gradle feels like SBT without compile-time type checking and operates in a manner that is functionally similar to SBT.
+Intellij IDEA (2017.1 EAP) provides very good support for gradle projects.
+
+- IDEA can run/debug gradle tasks easily like anything else JVM-based.
+
+### Caveats about Eclipse Xtext/Xtend/Xcore
+
+Currently, this project uses the Eclipse-based tooling.
+The generated code is currently in GIT; however, there is some code generation noise that
+causes frivolous changes:
+- the `@Override` annotation is sometimes generated; sometimes not.
+- the generated `ecore.ecore` from the Xcore metamodel varies, primarily due to variations in serialization order
+- the generated `.classpath` files have platform-specific paths -- it is unclear whether these files can be
+  ignored in GIT and re-generated properly.
 
 ## Continuous Integration
 
@@ -74,17 +140,22 @@ This should produce something like this:
 	Root project
 	------------------------------------------------------------
 	
-	Root project 'jpl.imce.oml.specification.parent'jpl.imce.oml.specification/pom.xml
-	+--- Project ':jpl.imce.oml.specification'
-	+--- Project ':jpl.imce.oml.specification.ecore'
-	+--- Project ':jpl.imce.oml.specification.ecore.edit'
-	+--- Project ':jpl.imce.oml.specification.ecore.editor'
-	+--- Project ':jpl.imce.oml.specification.feature'
-	+--- Project ':jpl.imce.oml.specification.ide'
-	+--- Project ':jpl.imce.oml.specification.idea'
-	+--- Project ':jpl.imce.oml.specification.tests'
-	\--- Project ':jpl.imce.oml.specification.web'
-	
+    Root project 'jpl.imce.oml.specification.parent'
+    +--- Project ':gov.nasa.jpl.imce.oml.specification.doc'
+    +--- Project ':gov.nasa.jpl.imce.oml.specification.scala.generators'
+    +--- Project ':jpl.imce.oml.specification'
+    +--- Project ':jpl.imce.oml.specification.ecore'
+    +--- Project ':jpl.imce.oml.specification.ecore.edit'
+    +--- Project ':jpl.imce.oml.specification.ecore.editor'
+    +--- Project ':jpl.imce.oml.specification.feature'
+    +--- Project ':jpl.imce.oml.specification.ide'
+    +--- Project ':jpl.imce.oml.specification.idea'
+    +--- Project ':jpl.imce.oml.specification.repository'
+    +--- Project ':jpl.imce.oml.specification.tests'
+    +--- Project ':jpl.imce.oml.specification.ui'
+    +--- Project ':jpl.imce.oml.specification.ui.tests'
+    \--- Project ':jpl.imce.oml.specification.web'
+
 	To see a list of the tasks of a project, run gradle <project-path>:tasks
 	For example, try running gradle :jpl.imce.oml.specification:tasks
 	
