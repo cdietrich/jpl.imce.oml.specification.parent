@@ -26,7 +26,7 @@ package gov.nasa.jpl.imce.oml.specification.resolver.api
 trait DirectedBinaryRelationshipKind
 {
 
-  def relationshipSubject
+  def relationDomain
   (): Term
   def relationRange
   (): Term

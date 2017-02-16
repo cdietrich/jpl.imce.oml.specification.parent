@@ -125,4 +125,23 @@ public interface StructuredDataPropertyValue extends TerminologyInstanceAssertio
 	 */
 	void setStructuredPropertyTuple(DataStructureTuple value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model dataType="jpl.imce.oml.specification.ecore.UUID" unique="false" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%java.lang.String%> _xblockexpression = null;\n{\n\t<%jpl.imce.oml.specification.ecore.SingletonInstance%> _singletonInstance = this.getSingletonInstance();\n\t<%java.lang.String%> _uuid = _singletonInstance.getUuid();\n\t<%java.lang.String%> _plus = (\"StructuredDataPropertyValue(singletonInstance=\" + _uuid);\n\t<%java.lang.String%> _plus_1 = (_plus + \",structuredDataProperty=\");\n\t<%jpl.imce.oml.specification.ecore.DataRelationshipToStructure%> _structuredDataProperty = this.getStructuredDataProperty();\n\t<%java.lang.String%> _calculateUUID = _structuredDataProperty.calculateUUID();\n\t<%java.lang.String%> _plus_2 = (_plus_1 + _calculateUUID);\n\t<%java.lang.String%> _plus_3 = (_plus_2 + \",structuredPropertyTuple=\");\n\t<%jpl.imce.oml.specification.ecore.DataStructureTuple%> _structuredPropertyTuple = this.getStructuredPropertyTuple();\n\t<%java.lang.String%> _uuid_1 = _structuredPropertyTuple.getUuid();\n\t<%java.lang.String%> _plus_4 = (_plus_3 + _uuid_1);\n\tfinal <%java.lang.String%> namespace = (_plus_4 + \")\");\n\t<%com.fasterxml.uuid.impl.NameBasedGenerator%> _nameBasedGenerator = <%com.fasterxml.uuid.Generators%>.nameBasedGenerator(<%com.fasterxml.uuid.impl.NameBasedGenerator%>.NAMESPACE_URL);\n\t<%java.util.UUID%> _generate = _nameBasedGenerator.generate(namespace);\n\t_xblockexpression = _generate.toString();\n}\nreturn _xblockexpression;'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='\n\tval namespace = \"StructuredDataPropertyValue(singletonInstance=\" + singletonInstance.uuid + \",structuredDataProperty=\"+structuredDataProperty.calculateUUID()+ \",structuredPropertyTuple=\"+structuredPropertyTuple.uuid+\")\"\n\tcom.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)'"
+	 * @generated
+	 */
+	String calculateUUID();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%jpl.imce.oml.specification.ecore.SingletonInstance%> _singletonInstance = this.getSingletonInstance();\nreturn _singletonInstance.descriptionBox();'"
+	 * @generated
+	 */
+	DescriptionBox descriptionBox();
+
 } // StructuredDataPropertyValue

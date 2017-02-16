@@ -18,14 +18,26 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import com.fasterxml.uuid.Generators;
+
+import com.fasterxml.uuid.impl.NameBasedGenerator;
+
+import java.lang.reflect.InvocationTargetException;
+
+import java.util.UUID;
+
 import jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance;
 import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.ReifiedRelationshipInstance;
 import jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceDomain;
+import jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion;
+import jpl.imce.oml.specification.ecore.TerminologyThing;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -87,7 +99,7 @@ public class ReifiedRelationshipInstanceDomainImpl extends TerminologyInstanceAs
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.REIFIED_RELATIONSHIP_INSTANCE_DOMAIN;
+		return OMLPackage.eINSTANCE.getReifiedRelationshipInstanceDomain();
 	}
 
 	/**
@@ -222,6 +234,33 @@ public class ReifiedRelationshipInstanceDomainImpl extends TerminologyInstanceAs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String calculateUUID() {
+		String _xblockexpression = null;
+		{
+			DescriptionBox _descriptionBox = this.descriptionBox();
+			String _uuid = _descriptionBox.getUuid();
+			String _plus = ("ReifiedRelationshipInstanceDomain(descriptionBox=" + _uuid);
+			String _plus_1 = (_plus + ",reifiedRelationshipInstance=");
+			ReifiedRelationshipInstance _reifiedRelationshipInstance = this.getReifiedRelationshipInstance();
+			String _uuid_1 = _reifiedRelationshipInstance.getUuid();
+			String _plus_2 = (_plus_1 + _uuid_1);
+			String _plus_3 = (_plus_2 + ",domain=");
+			ConceptualEntitySingletonInstance _domain = this.getDomain();
+			String _uuid_2 = _domain.getUuid();
+			String _plus_4 = (_plus_3 + _uuid_2);
+			final String namespace = (_plus_4 + ")");
+			NameBasedGenerator _nameBasedGenerator = Generators.nameBasedGenerator(NameBasedGenerator.NAMESPACE_URL);
+			UUID _generate = _nameBasedGenerator.generate(namespace);
+			_xblockexpression = _generate.toString();
+		}
+		return _xblockexpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -340,6 +379,42 @@ public class ReifiedRelationshipInstanceDomainImpl extends TerminologyInstanceAs
 				return domain != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == TerminologyThing.class) {
+			switch (baseOperationID) {
+				case OMLPackage.TERMINOLOGY_THING___CALCULATE_UUID: return OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_DOMAIN___CALCULATE_UUID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		if (baseClass == TerminologyInstanceAssertion.class) {
+			switch (baseOperationID) {
+				case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID: return OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_DOMAIN___CALCULATE_UUID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_DOMAIN___CALCULATE_UUID:
+				return calculateUUID();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //ReifiedRelationshipInstanceDomainImpl

@@ -22,10 +22,9 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class UnreifiedRelationship private[impl] 
 (
- override val uuid: java.util.UUID,
- override val tbox: TerminologyBox,
- override val source: Entity,
- override val target: Entity,
+ override val tbox: resolver.api.TerminologyBox,
+ override val source: resolver.api.Entity,
+ override val target: resolver.api.Entity,
  override val isAsymmetric: scala.Boolean,
  override val isEssential: scala.Boolean,
  override val isFunctional: scala.Boolean,
@@ -40,6 +39,14 @@ case class UnreifiedRelationship private[impl]
 extends resolver.api.UnreifiedRelationship
   with EntityRelationship
 {
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: UnreifiedRelationship => true

@@ -113,7 +113,7 @@ public class TerminologyExtentImpl extends CDOObjectImpl implements TerminologyE
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.TERMINOLOGY_EXTENT;
+		return OMLPackage.eINSTANCE.getTerminologyExtent();
 	}
 
 	/**

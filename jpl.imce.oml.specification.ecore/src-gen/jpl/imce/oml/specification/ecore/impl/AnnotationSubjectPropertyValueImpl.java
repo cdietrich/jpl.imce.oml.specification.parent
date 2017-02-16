@@ -93,7 +93,7 @@ public class AnnotationSubjectPropertyValueImpl extends CDOObjectImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.ANNOTATION_SUBJECT_PROPERTY_VALUE;
+		return OMLPackage.eINSTANCE.getAnnotationSubjectPropertyValue();
 	}
 
 	/**

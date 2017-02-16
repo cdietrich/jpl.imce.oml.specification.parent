@@ -22,16 +22,32 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class UnreifiedRelationshipInstanceTuple private[impl] 
 (
- override val uuid: java.util.UUID,
- override val descriptionBox: DescriptionBox,
- override val unreifiedRelationship: UnreifiedRelationship,
- override val domain: ConceptualEntitySingletonInstance,
- override val range: ConceptualEntitySingletonInstance,
+ override val descriptionBox: resolver.api.DescriptionBox,
+ override val unreifiedRelationship: resolver.api.UnreifiedRelationship,
+ override val domain: resolver.api.ConceptualEntitySingletonInstance,
+ override val range: resolver.api.ConceptualEntitySingletonInstance,
  override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName
 )
 extends resolver.api.UnreifiedRelationshipInstanceTuple
   with TerminologyInstanceAssertion
 {
+  override def calculateUUID
+  ()
+  : java.util.UUID
+  = {
+    
+    	val namespace = "UnreifiedRelationshipInstanceTuple(descriptionBox=" + descriptionBox.uuid + ",unreifiedRelationship="+unreifiedRelationship.uuid+ ",domain="+domain.uuid+ ",range="+range.uuid+")"
+    	com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)
+  }
+  
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: UnreifiedRelationshipInstanceTuple => true

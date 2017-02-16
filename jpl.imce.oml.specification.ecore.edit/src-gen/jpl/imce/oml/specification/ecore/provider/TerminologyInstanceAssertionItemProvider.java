@@ -77,7 +77,7 @@ public class TerminologyInstanceAssertionItemProvider extends TerminologyThingIt
 				 getResourceLocator(),
 				 getString("_UI_TerminologyInstanceAssertion_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TerminologyInstanceAssertion_name_feature", "_UI_TerminologyInstanceAssertion_type"),
-				 OMLPackage.Literals.TERMINOLOGY_INSTANCE_ASSERTION__NAME,
+				 OMLPackage.eINSTANCE.getTerminologyInstanceAssertion_Name(),
 				 true,
 				 false,
 				 false,

@@ -113,7 +113,7 @@ public abstract class TerminologyBoxImpl extends ModuleImpl implements Terminolo
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.TERMINOLOGY_BOX;
+		return OMLPackage.eINSTANCE.getTerminologyBox();
 	}
 
 	/**

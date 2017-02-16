@@ -1,5 +1,6 @@
 .boot
 .gradle
+.idea
 .ivy
 .sbtboot
 *.log

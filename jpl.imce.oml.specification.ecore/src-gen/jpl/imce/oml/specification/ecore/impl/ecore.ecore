@@ -1,0 +1,1765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ecore" nsURI="jpl.imce.oml.specification.ecore" nsPrefix="ecore">
+  <eAnnotations source="http://www.eclipse.org/emf/2011/Xcore">
+    <details key="Collection" value="http://imce.jpl.nasa.gov/oml/Collection"/>
+    <details key="Override" value="http://imce.jpl.nasa.gov/oml/Override"/>
+    <details key="NotFunctionalAPI" value="http://imce.jpl.nasa.gov/oml/NotFunctionalAPI"/>
+    <details key="FunctionalInterface" value="http://imce.jpl.nasa.gov/oml/FunctionalInterface"/>
+    <details key="NotSchema" value="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    <details key="ValueTable" value="http://imce.jpl.nasa.gov/oml/ValueTable"/>
+    <details key="Scala" value="http://imce.jpl.nasa.gov/oml/Scala"/>
+    <details key="IsOrderingKey" value="http://imce.jpl.nasa.gov/oml/IsOrderingKey"/>
+    <details key="CopyConstructor" value="http://imce.jpl.nasa.gov/oml/CopyConstructor"/>
+    <details key="Glossary" value="http://imce.jpl.nasa.gov/oml/Glossary"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EDataType" name="IRI" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="LocalName" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="LexicalValue" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="LexicalNumber" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="LexicalTime" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Pattern" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="UUID" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="LangRange" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="AbbrevIRI" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="NamespacePrefix" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Resource" abstract="true">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="iri" unique="false" lowerBound="1" eType="#//IRI">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eOperations name="name" unique="false" lowerBound="1" eType="#//LocalName">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TerminologyThing" abstract="true">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" unique="false" lowerBound="1"
+        eType="#//UUID" changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="calculateUUID()"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/IsOrderingKey"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnnotationProperty">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="uuid" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="java.util.UUID.fromString(iri)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/IsOrderingKey"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iri" unique="false" lowerBound="1"
+        eType="#//IRI"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="abbrevIRI" unique="false"
+        lowerBound="1" eType="#//AbbrevIRI" iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnnotationPropertyTable" instanceClassName="java.util.Map$Entry">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="key" lowerBound="1" eType="#//AnnotationProperty">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/IsOrderingKey"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" upperBound="-1"
+        eType="#//AnnotationEntry" containment="true" resolveProxies="false">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnnotationEntry">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/ValueTable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="module" lowerBound="1"
+        eType="#//Module">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/IsOrderingKey"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subject" lowerBound="1"
+        eType="#//TerminologyThing">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/IsOrderingKey"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" unique="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/IsOrderingKey"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnnotationSubjectTable" instanceClassName="java.util.Map$Entry">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotFunctionalAPI"/>
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="key" lowerBound="1" eType="#//TerminologyThing"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" upperBound="-1"
+        eType="#//AnnotationSubjectPropertyValue" containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnnotationSubjectPropertyValue">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotFunctionalAPI"/>
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="property" lowerBound="1"
+        eType="#//AnnotationProperty"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" unique="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Annotation">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="module" lowerBound="1"
+        eType="#//Module" eOpposite="#//Module/annotations">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/IsOrderingKey"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="property" lowerBound="1"
+        eType="#//AnnotationProperty">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/IsOrderingKey"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subject" lowerBound="1"
+        eType="#//TerminologyThing">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/IsOrderingKey"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" unique="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/IsOrderingKey"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TerminologyExtent">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="annotationProperties" upperBound="-1"
+        eType="#//AnnotationProperty" containment="true" resolveProxies="false">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/CopyConstructor"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="terminologyGraphs" upperBound="-1"
+        eType="#//TerminologyGraph" containment="true" resolveProxies="false" eOpposite="#//TerminologyGraph/graphExtent">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/CopyConstructor"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bundles" upperBound="-1"
+        eType="#//Bundle" containment="true" resolveProxies="false" eOpposite="#//Bundle/bundleExtent">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/CopyConstructor"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="descriptions" upperBound="-1"
+        eType="#//DescriptionBox" containment="true" resolveProxies="false" eOpposite="#//DescriptionBox/descriptionExtent">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/CopyConstructor"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Module" abstract="true" eSuperTypes="#//TerminologyThing #//Resource">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="extent" unique="false" lowerBound="1" eType="#//TerminologyExtent">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(iri)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="iri" unique="false" lowerBound="1" eType="#//IRI">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotFunctionalAPI"/>
+    </eOperations>
+    <eOperations name="nsPrefix" unique="false" lowerBound="1" eType="#//NamespacePrefix">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="iri.substring(1+iri.lastIndexOf('/'))"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eOperations name="name" unique="false" lowerBound="1" eType="#//LocalName">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eOperations name="annotationsBySubject" unique="false" upperBound="-1" eType="#//AnnotationSubjectTable">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotFunctionalAPI"/>
+    </eOperations>
+    <eOperations name="annotationsByProperty" unique="false" upperBound="-1" eType="#//AnnotationPropertyTable">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="withAnnotations" unique="false" lowerBound="1" eType="#//Module">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eParameters name="a" unique="false" upperBound="-1" eType="#//AnnotationPropertyTable">
+        <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+          <details key="kind" value="SortedSet"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="entities" unique="false" upperBound="-1" eType="#//Entity">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="aspects" unique="false" upperBound="-1" eType="#//Aspect">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="concepts" unique="false" upperBound="-1" eType="#//Concept">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="reifiedRelationships" unique="false" upperBound="-1" eType="#//ReifiedRelationship">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="unreifiedRelationships" unique="false" upperBound="-1" eType="#//UnreifiedRelationship">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="dataRelationships" unique="false" upperBound="-1" eType="#//DataRelationship">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="entityScalarDataProperties" unique="false" upperBound="-1"
+        eType="#//EntityScalarDataProperty">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="dataranges" unique="false" upperBound="-1" eType="#//DataRange">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="scalars" unique="false" upperBound="-1" eType="#//Scalar">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="structures" unique="false" upperBound="-1" eType="#//Structure">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="termAxioms" unique="false" upperBound="-1" eType="#//TermAxiom">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="everything" unique="false" upperBound="-1" eType="#//TerminologyThing">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iri" unique="false" lowerBound="1"
+        eType="#//IRI" iD="true">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
+        eType="#//Annotation" containment="true" resolveProxies="false" eOpposite="#//Annotation/module">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TerminologyBox" abstract="true" eSuperTypes="#//Module">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="withBoxStatements" unique="false" lowerBound="1" eType="#//TerminologyBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eParameters name="s" unique="false" upperBound="-1" eType="#//TerminologyBoxStatement">
+        <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+          <details key="kind" value="SortedSet"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="entities" unique="false" upperBound="-1" eType="#//Entity">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="boxStatements.selectByKindOf { case e: Entity => e }"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="aspects" unique="false" upperBound="-1" eType="#//Aspect">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="boxStatements.selectByKindOf { case a: Aspect => a }"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="concepts" unique="false" upperBound="-1" eType="#//Concept">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="boxStatements.selectByKindOf { case c: Concept => c }"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="reifiedRelationships" unique="false" upperBound="-1" eType="#//ReifiedRelationship">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="boxStatements.selectByKindOf { case rr: ReifiedRelationship => rr }"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="unreifiedRelationships" unique="false" upperBound="-1" eType="#//UnreifiedRelationship">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="boxStatements.selectByKindOf { case ur: UnreifiedRelationship => ur }"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="dataRelationships" unique="false" upperBound="-1" eType="#//DataRelationship">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="boxStatements.selectByKindOf { case dr: DataRelationship => dr }"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="entityScalarDataProperties" unique="false" upperBound="-1"
+        eType="#//EntityScalarDataProperty">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="boxStatements.selectByKindOf { case dp: EntityScalarDataProperty => dp }"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="dataranges" unique="false" upperBound="-1" eType="#//DataRange">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="boxStatements.selectByKindOf { case dr: DataRange => dr }"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="scalars" unique="false" upperBound="-1" eType="#//Scalar">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="boxStatements.selectByKindOf { case s: Scalar => s }"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="structures" unique="false" upperBound="-1" eType="#//Structure">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="boxStatements.selectByKindOf { case s: Structure => s }"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="termAxioms" unique="false" upperBound="-1" eType="#//TermAxiom">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="boxStatements.selectByKindOf { case tx: TermAxiom => tx }"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="everything" unique="false" upperBound="-1" eType="#//TerminologyThing">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="scala.collection.immutable.SortedSet.empty[resolver.api.TerminologyThing] ++ boxStatements + this"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" unique="false" lowerBound="1"
+        eType="#//TerminologyGraphKind"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="terminologyBoxAxioms" upperBound="-1"
+        eType="#//TerminologyBoxAxiom" containment="true" resolveProxies="false" eOpposite="#//TerminologyBoxAxiom/tbox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="boxStatements" upperBound="-1"
+        eType="#//TerminologyBoxStatement" containment="true" resolveProxies="false"
+        eOpposite="#//TerminologyBoxStatement/tbox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bundle" eSuperTypes="#//TerminologyBox">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="extent" unique="false" lowerBound="1" eType="#//TerminologyExtent">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eOperations name="withAnnotations" unique="false" lowerBound="1" eType="#//Bundle">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="copy(annotations = this.annotations ++ resolver.convertToAnnotations(a))"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+      <eParameters name="a" unique="false" upperBound="-1" eType="#//AnnotationPropertyTable">
+        <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+          <details key="kind" value="SortedSet"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="annotationsByProperty" unique="false" upperBound="-1" eType="#//AnnotationPropertyTable">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="resolver.groupAnnotationsByProperty(annotations)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="withBundleStatements" unique="false" lowerBound="1" eType="#//Bundle">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="copy(bundleStatements = this.bundleStatements ++ s)"/>
+      </eAnnotations>
+      <eParameters name="s" unique="false" upperBound="-1" eType="#//TerminologyBundleStatement">
+        <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+          <details key="kind" value="SortedSet"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="withBoxStatements" unique="false" lowerBound="1" eType="#//Bundle">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="copy(boxStatements = this.boxStatements ++ s)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+      <eParameters name="s" unique="false" upperBound="-1" eType="#//TerminologyBoxStatement">
+        <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+          <details key="kind" value="SortedSet"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="everything" unique="false" upperBound="-1" eType="#//TerminologyThing">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="super.everything() ++ bundleStatements + this"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bundleExtent" lowerBound="1"
+        eType="#//TerminologyExtent" eOpposite="#//TerminologyExtent/bundles">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bundleStatements" upperBound="-1"
+        eType="#//TerminologyBundleStatement" containment="true" resolveProxies="false"
+        eOpposite="#//TerminologyBundleStatement/bundle">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="terminologyBundleAxioms"
+        upperBound="-1" eType="#//TerminologyBundleAxiom" containment="true" resolveProxies="false"
+        eOpposite="#//TerminologyBundleAxiom/terminologyBundle">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TerminologyGraphKind">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eLiterals name="OpenWorldDefinitions"/>
+    <eLiterals name="ClosedWorldDesignations"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TerminologyGraph" eSuperTypes="#//TerminologyBox">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="extent" unique="false" lowerBound="1" eType="#//TerminologyExtent">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eOperations name="withAnnotations" unique="false" lowerBound="1" eType="#//TerminologyGraph">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="copy(annotations = this.annotations ++ resolver.convertToAnnotations(a))"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+      <eParameters name="a" unique="false" upperBound="-1" eType="#//AnnotationPropertyTable">
+        <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+          <details key="kind" value="SortedSet"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="annotationsByProperty" unique="false" upperBound="-1" eType="#//AnnotationPropertyTable">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="resolver.groupAnnotationsByProperty(annotations)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="withBoxStatements" unique="false" lowerBound="1" eType="#//TerminologyGraph">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="copy(boxStatements = this.boxStatements ++ s)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+      <eParameters name="s" unique="false" upperBound="-1" eType="#//TerminologyBoxStatement">
+        <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+          <details key="kind" value="SortedSet"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="graphExtent" lowerBound="1"
+        eType="#//TerminologyExtent" eOpposite="#//TerminologyExtent/terminologyGraphs">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TerminologyBoxStatement" abstract="true"
+      eSuperTypes="#//TerminologyThing">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tbox" lowerBound="1" eType="#//TerminologyBox"
+        eOpposite="#//TerminologyBox/boxStatements"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TerminologyBundleStatement" abstract="true"
+      eSuperTypes="#//TerminologyThing">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bundle" lowerBound="1"
+        eType="#//Bundle" eOpposite="#//Bundle/bundleStatements"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Term" abstract="true" eSuperTypes="#//TerminologyBoxStatement #//Resource">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(iri())"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="iri" unique="false" lowerBound="1" eType="#//IRI">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="tbox.iri + &quot;#&quot; + name"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="name" unique="false" lowerBound="1" eType="#//LocalName">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotFunctionalAPI"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" lowerBound="1"
+        eType="#//LocalName" iD="true">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnaryTermKind" abstract="true">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DirectedBinaryRelationshipKind" abstract="true">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="relationDomain" unique="false" lowerBound="1" eType="#//Term">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eOperations name="relationRange" unique="false" lowerBound="1" eType="#//Term">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Entity" abstract="true" eSuperTypes="#//Term">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConceptualEntity" abstract="true">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAbstract" unique="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Aspect" eSuperTypes="#//Entity #//UnaryTermKind">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Concept" eSuperTypes="#//Entity #//ConceptualEntity #//UnaryTermKind">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityRelationship" abstract="true"
+      eSuperTypes="#//Term #//DirectedBinaryRelationshipKind">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="relationDomain" unique="false" lowerBound="1" eType="#//Term">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="relationRange" unique="false" lowerBound="1" eType="#//Term">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isFunctional" unique="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isInverseFunctional" unique="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isEssential" unique="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isInverseEssential" unique="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSymmetric" unique="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAsymmetric" unique="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReflexive" unique="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isIrreflexive" unique="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isTransitive" unique="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReifiedRelationship" eSuperTypes="#//EntityRelationship #//Entity #//ConceptualEntity">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unreifiedPropertyName"
+        unique="false" lowerBound="1" eType="#//LocalName"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unreifiedInversePropertyName"
+        unique="false" eType="#//LocalName"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnreifiedRelationship" eSuperTypes="#//EntityRelationship">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Datatype" abstract="true" eSuperTypes="#//Term">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataRange" abstract="true" eSuperTypes="#//Datatype">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Scalar" eSuperTypes="#//DataRange #//UnaryTermKind">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataRelationship" abstract="true" eSuperTypes="#//Term #//DirectedBinaryRelationshipKind">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="source" unique="false" lowerBound="1" eType="#//Term">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eOperations name="relationDomain" unique="false" lowerBound="1" eType="#//Term">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="target" unique="false" lowerBound="1" eType="#//Datatype">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eOperations name="relationRange" unique="false" lowerBound="1" eType="#//Term">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataRelationshipDomain" abstract="true">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/FunctionalInterface"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataRelationshipFromEntity" abstract="true"
+      eSuperTypes="#//DataRelationshipDomain">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domain" lowerBound="1"
+        eType="#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isIdentityCriteria" unique="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataRelationshipFromStructure" abstract="true"
+      eSuperTypes="#//DataRelationshipDomain">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domain" lowerBound="1"
+        eType="#//Structure"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataRelationshipRange" abstract="true">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/FunctionalInterface"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataRelationshipToScalar" abstract="true"
+      eSuperTypes="#//DataRelationshipRange">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="range" lowerBound="1" eType="#//DataRange"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataRelationshipToStructure" abstract="true"
+      eSuperTypes="#//DataRelationshipRange">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="range" lowerBound="1" eType="#//Structure"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityStructuredDataProperty" eSuperTypes="#//DataRelationship #//DataRelationshipFromEntity #//DataRelationshipToStructure">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="source" unique="false" lowerBound="1" eType="#//Term">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="target" unique="false" lowerBound="1" eType="#//Datatype">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityScalarDataProperty" eSuperTypes="#//DataRelationship #//DataRelationshipFromEntity #//DataRelationshipToScalar">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="source" unique="false" lowerBound="1" eType="#//Term">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="target" unique="false" lowerBound="1" eType="#//Datatype">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StructuredDataProperty" eSuperTypes="#//DataRelationship #//DataRelationshipFromStructure #//DataRelationshipToStructure">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="source" unique="false" lowerBound="1" eType="#//Term">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="target" unique="false" lowerBound="1" eType="#//Datatype">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScalarDataProperty" eSuperTypes="#//DataRelationship #//DataRelationshipFromStructure #//DataRelationshipToScalar">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="source" unique="false" lowerBound="1" eType="#//Term">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="target" unique="false" lowerBound="1" eType="#//Datatype">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Structure" eSuperTypes="#//Datatype #//UnaryTermKind">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Axiom" abstract="true" eSuperTypes="#//TerminologyBoxStatement">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TerminologyAxiom" abstract="true" eSuperTypes="#//TerminologyThing">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="source" unique="false" lowerBound="1" eType="#//TerminologyBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eOperations name="target" unique="false" lowerBound="1" eType="#//TerminologyBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TerminologyBoxAxiom" abstract="true"
+      eSuperTypes="#//TerminologyAxiom">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tbox" lowerBound="1" eType="#//TerminologyBox"
+        eOpposite="#//TerminologyBox/terminologyBoxAxioms">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/CopyConstructor"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TerminologyBundleAxiom" abstract="true"
+      eSuperTypes="#//TerminologyAxiom">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="terminologyBundle" lowerBound="1"
+        eType="#//Bundle" eOpposite="#//Bundle/terminologyBundleAxioms">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/CopyConstructor"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConceptTreeDisjunction" abstract="true">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/FunctionalInterface"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DisjointUnionOfConceptsAxiom" abstract="true"
+      eSuperTypes="#//TerminologyBundleStatement">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="disjointTaxonomyParent"
+        lowerBound="1" eType="#//ConceptTreeDisjunction"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SpecificDisjointConceptAxiom" eSuperTypes="#//DisjointUnionOfConceptsAxiom">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;SpecificDisjointConceptAxiom(bundle=&quot; + bundle.uuid + &quot;,disjointLeaf=&quot;+disjointLeaf.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="disjointLeaf" lowerBound="1"
+        eType="#//Concept"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnonymousConceptTaxonomyAxiom" eSuperTypes="#//DisjointUnionOfConceptsAxiom #//ConceptTreeDisjunction">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;AnonymousConceptTaxonomyAxiom(bundle=&quot; + bundle.uuid + &quot;,disjointTaxonomyParent=&quot;+disjointTaxonomyParent.calculateUUID()+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RootConceptTaxonomyAxiom" eSuperTypes="#//TerminologyBundleStatement #//ConceptTreeDisjunction">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;RootConceptTaxonomyAxiom(bundle=&quot; + bundle.uuid + &quot;,root=&quot;+root.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="root" lowerBound="1" eType="#//Concept"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BundledTerminologyAxiom" eSuperTypes="#//TerminologyBundleAxiom">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;BundledTerminologyAxiom(terminologyBundle=&quot; + terminologyBundle.uuid + &quot;,bundledTerminology=&quot;+bundledTerminology.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="source" unique="false" lowerBound="1" eType="#//TerminologyBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="target" unique="false" lowerBound="1" eType="#//TerminologyBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bundledTerminology" lowerBound="1"
+        eType="#//TerminologyBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/CopyConstructor"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConceptDesignationTerminologyAxiom"
+      eSuperTypes="#//TerminologyBoxAxiom">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;ConceptDesignationTerminologyAxiom(designationTerminologyGraph=&quot; + tbox.uuid + &quot;,designatedConcept=&quot;+designatedConcept.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="designationTerminologyGraph" unique="false" lowerBound="1"
+        eType="#//TerminologyGraph">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="tbox match { case g: TerminologyGraph => g }"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="source" unique="false" lowerBound="1" eType="#//TerminologyBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="tbox"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="target" unique="false" lowerBound="1" eType="#//TerminologyBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="designatedTerminology"
+        lowerBound="1" eType="#//TerminologyBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/CopyConstructor"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="designatedConcept" lowerBound="1"
+        eType="#//Concept"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TerminologyExtensionAxiom" eSuperTypes="#//TerminologyBoxAxiom">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;TerminologyExtensionAxiom(source=&quot; + source.uuid + &quot;,target=&quot;+target.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="extendingTerminology" unique="false" lowerBound="1" eType="#//TerminologyBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="tbox"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eOperations name="source" unique="false" lowerBound="1" eType="#//TerminologyBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="tbox"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="target" unique="false" lowerBound="1" eType="#//TerminologyBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extendedTerminology" lowerBound="1"
+        eType="#//TerminologyBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/CopyConstructor"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TerminologyNestingAxiom" eSuperTypes="#//TerminologyBoxAxiom">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;TerminologyNestingAxiom(source=&quot; + source.uuid + &quot;,target=&quot;+target.uuid + &quot;,nestingContext=&quot;+nestingContext.uuid + &quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="nestedTerminology" unique="false" lowerBound="1" eType="#//TerminologyGraph">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="tbox match { case g: TerminologyGraph => g }"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="source" unique="false" lowerBound="1" eType="#//TerminologyBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="tbox"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="target" unique="false" lowerBound="1" eType="#//TerminologyBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nestingTerminology" lowerBound="1"
+        eType="#//TerminologyBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/CopyConstructor"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nestingContext" lowerBound="1"
+        eType="#//Concept"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TermAxiom" abstract="true" eSuperTypes="#//Axiom">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityRestrictionAxiom" abstract="true"
+      eSuperTypes="#//TermAxiom">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="restrictedRelation" lowerBound="1"
+        eType="#//EntityRelationship"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="restrictedRange" lowerBound="1"
+        eType="#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="restrictedDomain" lowerBound="1"
+        eType="#//Entity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityExistentialRestrictionAxiom" eSuperTypes="#//EntityRestrictionAxiom">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;EntityExistentialRestrictionAxiom(restrictedDomain=&quot; + restrictedDomain.uuid + &quot;,restrictedRelation=&quot;+restrictedRelation.uuid + &quot;,restrictedRange=&quot;+restrictedRange.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityUniversalRestrictionAxiom" eSuperTypes="#//EntityRestrictionAxiom">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;EntityUniversalRestrictionAxiom(restrictedDomain=&quot; + restrictedDomain.uuid + &quot;,restrictedRelation=&quot;+restrictedRelation.uuid + &quot;,restrictedRange=&quot;+restrictedRange.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SpecializationAxiom" abstract="true"
+      eSuperTypes="#//TermAxiom">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="child" unique="false" lowerBound="1" eType="#//Entity">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eOperations name="parent" unique="false" lowerBound="1" eType="#//Entity">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AspectSpecializationAxiom" eSuperTypes="#//SpecializationAxiom">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;AspectSpecializationAxiom(subEntity=&quot; + subEntity.uuid + &quot;,superAspect=&quot;+superAspect.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="child" unique="false" lowerBound="1" eType="#//Entity">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="parent" unique="false" lowerBound="1" eType="#//Entity">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subEntity" lowerBound="1"
+        eType="#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superAspect" lowerBound="1"
+        eType="#//Aspect"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConceptSpecializationAxiom" eSuperTypes="#//SpecializationAxiom">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;ConceptSpecializationAxiom(subConcept=&quot; + subConcept.uuid + &quot;,superConcept=&quot;+superConcept.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="child" unique="false" lowerBound="1" eType="#//Entity">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="parent" unique="false" lowerBound="1" eType="#//Entity">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subConcept" lowerBound="1"
+        eType="#//Concept"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superConcept" lowerBound="1"
+        eType="#//Concept"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReifiedRelationshipSpecializationAxiom"
+      eSuperTypes="#//SpecializationAxiom">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;ReifiedRelationshipSpecializationAxiom(subRelationship=&quot; + subRelationship.uuid + &quot;,superRelationship=&quot;+superRelationship.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="child" unique="false" lowerBound="1" eType="#//Entity">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="parent" unique="false" lowerBound="1" eType="#//Entity">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subRelationship" lowerBound="1"
+        eType="#//ReifiedRelationship"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superRelationship" lowerBound="1"
+        eType="#//ReifiedRelationship"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityScalarDataPropertyRestrictionAxiom"
+      abstract="true" eSuperTypes="#//TermAxiom">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="restrictedEntity" lowerBound="1"
+        eType="#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scalarProperty" lowerBound="1"
+        eType="#//EntityScalarDataProperty"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityScalarDataPropertyExistentialRestrictionAxiom"
+      eSuperTypes="#//EntityScalarDataPropertyRestrictionAxiom">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;EntityScalarDataPropertyExistentialRestrictionAxiom(restrictedEntity=&quot;+restrictedEntity.uuid+&quot;,scalarProperty=&quot;+scalarProperty.calculateUUID()+&quot;,scalarRestriction=&quot;+scalarRestriction.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scalarRestriction" lowerBound="1"
+        eType="#//DataRange"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityScalarDataPropertyUniversalRestrictionAxiom"
+      eSuperTypes="#//EntityScalarDataPropertyRestrictionAxiom">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;EntityScalarDataPropertyUniversalRestrictionAxiom(restrictedEntity=&quot;+restrictedEntity.uuid+&quot;,scalarProperty=&quot;+scalarProperty.calculateUUID()+&quot;,scalarRestriction=&quot;+scalarRestriction.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scalarRestriction" lowerBound="1"
+        eType="#//DataRange"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityScalarDataPropertyParticularRestrictionAxiom"
+      eSuperTypes="#//EntityScalarDataPropertyRestrictionAxiom">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;EntityScalarDataPropertyParticularRestrictionAxiom(restrictedEntity=&quot;+restrictedEntity.uuid+&quot;,scalarProperty=&quot;+scalarProperty.calculateUUID()+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="literalValue" unique="false"
+        lowerBound="1" eType="#//LexicalValue"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RestrictedDataRange" abstract="true"
+      eSuperTypes="#//DataRange">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="restrictedRange" lowerBound="1"
+        eType="#//DataRange"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BinaryScalarRestriction" eSuperTypes="#//RestrictedDataRange">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;BinaryScalarRestriction(restrictedRange=&quot;+restrictedRange.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minLength" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxLength" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IRIScalarRestriction" eSuperTypes="#//RestrictedDataRange">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;IRIScalarRestriction(restrictedRange=&quot;+restrictedRange.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minLength" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxLength" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pattern" unique="false"
+        eType="#//Pattern"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NumericScalarRestriction" eSuperTypes="#//RestrictedDataRange">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;NumericScalarRestriction(restrictedRange=&quot;+restrictedRange.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minInclusive" unique="false"
+        eType="#//LexicalNumber"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxInclusive" unique="false"
+        eType="#//LexicalNumber"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minExclusive" unique="false"
+        eType="#//LexicalNumber"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxExclusive" unique="false"
+        eType="#//LexicalNumber"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PlainLiteralScalarRestriction" eSuperTypes="#//RestrictedDataRange">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;PlainLiteralScalarRestriction(restrictedRange=&quot;+restrictedRange.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minLength" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxLength" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pattern" unique="false"
+        eType="#//Pattern"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="langRange" unique="false"
+        eType="#//LangRange"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringScalarRestriction" eSuperTypes="#//RestrictedDataRange">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;StringScalarRestriction(restrictedRange=&quot;+restrictedRange.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minLength" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxLength" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pattern" unique="false"
+        eType="#//Pattern"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeScalarRestriction" eSuperTypes="#//RestrictedDataRange">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;TimeScalarRestriction(restrictedRange=&quot;+restrictedRange.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minInclusive" unique="false"
+        eType="#//LexicalTime"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxInclusive" unique="false"
+        eType="#//LexicalTime"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minExclusive" unique="false"
+        eType="#//LexicalTime"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxExclusive" unique="false"
+        eType="#//LexicalTime"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SynonymScalarRestriction" eSuperTypes="#//RestrictedDataRange">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;SynonymScalarRestriction(restrictedRange=&quot;+restrictedRange.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScalarOneOfRestriction" eSuperTypes="#//RestrictedDataRange">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;ScalarOneOfRestriction(restrictedRange=&quot;+restrictedRange.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScalarOneOfLiteralAxiom" eSuperTypes="#//Axiom">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;ScalarOneOfLiteralAxiom(scalarOneOfRestriction=&quot;+axiom.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="axiom" lowerBound="1" eType="#//ScalarOneOfRestriction"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" unique="false" lowerBound="1"
+        eType="#//LexicalValue"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DescriptionKind">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eLiterals name="Final"/>
+    <eLiterals name="Partial"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DescriptionBox" eSuperTypes="#//Module">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="withAnnotations" unique="false" lowerBound="1" eType="#//DescriptionBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="copy(annotations = this.annotations ++ resolver.convertToAnnotations(a))"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+      <eParameters name="a" unique="false" upperBound="-1" eType="#//AnnotationPropertyTable">
+        <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+          <details key="kind" value="SortedSet"/>
+        </eAnnotations>
+      </eParameters>
+    </eOperations>
+    <eOperations name="annotationsByProperty" unique="false" upperBound="-1" eType="#//AnnotationPropertyTable">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="resolver.groupAnnotationsByProperty(annotations)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="extent" unique="false" lowerBound="1" eType="#//TerminologyExtent">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eOperations name="entities" unique="false" upperBound="-1" eType="#//Entity">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="scala.collection.immutable.SortedSet.empty[resolver.api.Entity]"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="aspects" unique="false" upperBound="-1" eType="#//Aspect">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="scala.collection.immutable.SortedSet.empty[resolver.api.Aspect]"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="concepts" unique="false" upperBound="-1" eType="#//Concept">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="scala.collection.immutable.SortedSet.empty[resolver.api.Concept]"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="reifiedRelationships" unique="false" upperBound="-1" eType="#//ReifiedRelationship">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="scala.collection.immutable.SortedSet.empty[resolver.api.ReifiedRelationship]"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="unreifiedRelationships" unique="false" upperBound="-1" eType="#//UnreifiedRelationship">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="scala.collection.immutable.SortedSet.empty[resolver.api.UnreifiedRelationship]"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="dataRelationships" unique="false" upperBound="-1" eType="#//DataRelationship">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="scala.collection.immutable.SortedSet.empty[resolver.api.DataRelationship]"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="entityScalarDataProperties" unique="false" upperBound="-1"
+        eType="#//EntityScalarDataProperty">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="scala.collection.immutable.SortedSet.empty[resolver.api.EntityScalarDataProperty]"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="dataranges" unique="false" upperBound="-1" eType="#//DataRange">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="scala.collection.immutable.SortedSet.empty[resolver.api.DataRange]"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="scalars" unique="false" upperBound="-1" eType="#//Scalar">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="scala.collection.immutable.SortedSet.empty[resolver.api.Scalar]"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="structures" unique="false" upperBound="-1" eType="#//Structure">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="scala.collection.immutable.SortedSet.empty[resolver.api.Structure]"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="termAxioms" unique="false" upperBound="-1" eType="#//TermAxiom">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="scala.collection.immutable.SortedSet.empty[resolver.api.TermAxiom]"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="everything" unique="false" upperBound="-1" eType="#//TerminologyThing">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="scala.collection.immutable.SortedSet.empty[resolver.api.TerminologyThing] ++ &#xA;&#x9;conceptInstances ++&#xA;&#x9;reifiedRelationshipInstances ++ &#xA;&#x9;reifiedRelationshipInstanceDomains ++ &#xA;&#x9;reifiedRelationshipInstanceRanges ++ &#xA;&#x9;unreifiedRelationshipInstanceTuples"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" unique="false" lowerBound="1"
+        eType="#//DescriptionKind"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="descriptionExtent" lowerBound="1"
+        eType="#//TerminologyExtent" eOpposite="#//TerminologyExtent/descriptions">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="closedWorldDefinitions"
+        upperBound="-1" eType="#//DescriptionBoxExtendsClosedWorldDefinitions" containment="true"
+        resolveProxies="false" eOpposite="#//DescriptionBoxExtendsClosedWorldDefinitions/descriptionBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/CopyConstructor"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="descriptionBoxRefinements"
+        upperBound="-1" eType="#//DescriptionBoxRefinement" containment="true" resolveProxies="false"
+        eOpposite="#//DescriptionBoxRefinement/refiningDescriptionBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/CopyConstructor"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conceptInstances" upperBound="-1"
+        eType="#//ConceptInstance" containment="true" resolveProxies="false" eOpposite="#//ConceptInstance/descriptionBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/CopyConstructor"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reifiedRelationshipInstances"
+        upperBound="-1" eType="#//ReifiedRelationshipInstance" containment="true"
+        resolveProxies="false" eOpposite="#//ReifiedRelationshipInstance/descriptionBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/CopyConstructor"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reifiedRelationshipInstanceDomains"
+        upperBound="-1" eType="#//ReifiedRelationshipInstanceDomain" containment="true"
+        resolveProxies="false" eOpposite="#//ReifiedRelationshipInstanceDomain/descriptionBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/CopyConstructor"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reifiedRelationshipInstanceRanges"
+        upperBound="-1" eType="#//ReifiedRelationshipInstanceRange" containment="true"
+        resolveProxies="false" eOpposite="#//ReifiedRelationshipInstanceRange/descriptionBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/CopyConstructor"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unreifiedRelationshipInstanceTuples"
+        upperBound="-1" eType="#//UnreifiedRelationshipInstanceTuple" containment="true"
+        resolveProxies="false" eOpposite="#//UnreifiedRelationshipInstanceTuple/descriptionBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/CopyConstructor"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DescriptionBoxRelationship" abstract="true"
+      eSuperTypes="#//TerminologyThing">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="descriptionDomain" unique="false" lowerBound="1" eType="#//DescriptionBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eOperations name="targetModule" unique="false" lowerBound="1" eType="#//Module">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DescriptionBoxExtendsClosedWorldDefinitions"
+      eSuperTypes="#//DescriptionBoxRelationship">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;DescriptionBoxExtendsClosedWorldDefinitions(descriptionBox=&quot; + descriptionBox.uuid + &quot;,closedWorldDefinitions=&quot;+closedWorldDefinitions.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="descriptionDomain" unique="false" lowerBound="1" eType="#//DescriptionBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eOperations name="targetModule" unique="false" lowerBound="1" eType="#//Module">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="descriptionBox" lowerBound="1"
+        eType="#//DescriptionBox" eOpposite="#//DescriptionBox/closedWorldDefinitions"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="closedWorldDefinitions"
+        lowerBound="1" eType="#//TerminologyBox"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DescriptionBoxRefinement" eSuperTypes="#//DescriptionBoxRelationship">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;DescriptionBoxRefinement(refiningDescriptionBox=&quot; + refiningDescriptionBox.uuid + &quot;,refinedDescriptionBox=&quot;+refinedDescriptionBox.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="descriptionDomain" unique="false" lowerBound="1" eType="#//DescriptionBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eOperations name="targetModule" unique="false" lowerBound="1" eType="#//Module">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refiningDescriptionBox"
+        lowerBound="1" eType="#//DescriptionBox" eOpposite="#//DescriptionBox/descriptionBoxRefinements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refinedDescriptionBox"
+        lowerBound="1" eType="#//DescriptionBox"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TerminologyInstanceAssertion" abstract="true"
+      eSuperTypes="#//TerminologyThing #//Resource">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="descriptionBox" unique="false" lowerBound="1" eType="#//DescriptionBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(iri())"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="iri" unique="false" lowerBound="1" eType="#//IRI">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="descriptionBox.iri + &quot;#&quot; + name"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="name" unique="false" lowerBound="1" eType="#//LocalName">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotFunctionalAPI"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" lowerBound="1"
+        eType="#//LocalName" iD="true">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SingletonInstance" abstract="true" eSuperTypes="#//TerminologyInstanceAssertion">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scalarDataPropertyValues"
+        upperBound="-1" eType="#//ScalarDataPropertyValue" containment="true" resolveProxies="false"
+        eOpposite="#//ScalarDataPropertyValue/singletonInstance">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/CopyConstructor"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="structuredDataPropertyValues"
+        upperBound="-1" eType="#//StructuredDataPropertyValue" containment="true"
+        resolveProxies="false" eOpposite="#//StructuredDataPropertyValue/singletonInstance">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/CopyConstructor"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScalarDataPropertyValue" eSuperTypes="#//TerminologyInstanceAssertion">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;ScalarDataPropertyValue(singletonInstance=&quot; + singletonInstance.uuid + &quot;,scalarDataProperty=&quot;+scalarDataProperty.calculateUUID()+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="descriptionBox" unique="false" lowerBound="1" eType="#//DescriptionBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="singletonInstance" lowerBound="1"
+        eType="#//SingletonInstance" eOpposite="#//SingletonInstance/scalarDataPropertyValues"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scalarDataProperty" lowerBound="1"
+        eType="#//DataRelationshipToScalar"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scalarPropertyValue" unique="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StructuredDataPropertyValue" eSuperTypes="#//TerminologyInstanceAssertion">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;StructuredDataPropertyValue(singletonInstance=&quot; + singletonInstance.uuid + &quot;,structuredDataProperty=&quot;+structuredDataProperty.calculateUUID()+ &quot;,structuredPropertyTuple=&quot;+structuredPropertyTuple.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="descriptionBox" unique="false" lowerBound="1" eType="#//DescriptionBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="singletonInstance" lowerBound="1"
+        eType="#//SingletonInstance" eOpposite="#//SingletonInstance/structuredDataPropertyValues"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="structuredDataProperty"
+        lowerBound="1" eType="#//DataRelationshipToStructure"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="structuredPropertyTuple"
+        lowerBound="1" eType="#//DataStructureTuple" containment="true" resolveProxies="false"
+        eOpposite="#//DataStructureTuple/structuredDataPropertyValue"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataStructureTuple" eSuperTypes="#//SingletonInstance">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;DataStructureTuple(structuredDataPropertyValue=&quot; + structuredDataPropertyValue.uuid + &quot;,dataStructureType=&quot;+dataStructureType.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="descriptionBox" unique="false" lowerBound="1" eType="#//DescriptionBox">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="structuredDataPropertyValue"
+        lowerBound="1" eType="#//StructuredDataPropertyValue" eOpposite="#//StructuredDataPropertyValue/structuredPropertyTuple"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataStructureType" lowerBound="1"
+        eType="#//Structure"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConceptualEntitySingletonInstance" abstract="true"
+      eSuperTypes="#//SingletonInstance">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="conceptualEntitySingletonClassifier" unique="false" lowerBound="1"
+        eType="#//ConceptualEntity">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+    </eOperations>
+    <eOperations name="identifyingScalarValues" unique="false" upperBound="-1" eType="#//ScalarDataPropertyValue">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="scalarDataPropertyValues.filter{ v =>&#xA;&#x9;  v.scalarDataProperty match {&#xA;&#x9;    case ep: EntityScalarDataProperty =>&#xA;&#x9;&#x9;  ep.isIdentityCriteria&#xA;&#x9;    case _ =>&#xA;&#x9;      false&#xA;&#x9;  }}"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="identifyingStructuredTuples" unique="false" upperBound="-1"
+        eType="#//StructuredDataPropertyValue">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="structuredDataPropertyValues.filter{ v =>&#xA;&#x9;  v.structuredDataProperty match {&#xA;&#x9;    case ep: EntityStructuredDataProperty =>&#xA;&#x9;&#x9;  ep.isIdentityCriteria&#xA;&#x9;    case _ =>&#xA;&#x9;      false&#xA;&#x9;  }}"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Collection">
+        <details key="kind" value="SortedSet"/>
+      </eAnnotations>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConceptInstance" eSuperTypes="#//ConceptualEntitySingletonInstance">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;ConceptInstance(descriptionBox=&quot; + descriptionBox.uuid + &quot;,singletonConceptClassifier=&quot;+singletonConceptClassifier.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="conceptualEntitySingletonClassifier" unique="false" lowerBound="1"
+        eType="#//ConceptualEntity">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="descriptionBox" lowerBound="1"
+        eType="#//DescriptionBox" eOpposite="#//DescriptionBox/conceptInstances"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="singletonConceptClassifier"
+        lowerBound="1" eType="#//Concept"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReifiedRelationshipInstance" eSuperTypes="#//ConceptualEntitySingletonInstance">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;ReifiedRelationshipInstance(descriptionBox=&quot; + descriptionBox.uuid + &quot;,singletonReifiedRelationshipClassifier=&quot;+singletonReifiedRelationshipClassifier.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eOperations name="conceptualEntitySingletonClassifier" unique="false" lowerBound="1"
+        eType="#//ConceptualEntity">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="descriptionBox" lowerBound="1"
+        eType="#//DescriptionBox" eOpposite="#//DescriptionBox/reifiedRelationshipInstances"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="singletonReifiedRelationshipClassifier"
+        lowerBound="1" eType="#//ReifiedRelationship"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReifiedRelationshipInstanceDomain" eSuperTypes="#//TerminologyInstanceAssertion">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;ReifiedRelationshipInstanceDomain(descriptionBox=&quot; + descriptionBox.uuid + &quot;,reifiedRelationshipInstance=&quot;+reifiedRelationshipInstance.uuid+ &quot;,domain=&quot;+domain.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="descriptionBox" lowerBound="1"
+        eType="#//DescriptionBox" eOpposite="#//DescriptionBox/reifiedRelationshipInstanceDomains"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reifiedRelationshipInstance"
+        lowerBound="1" eType="#//ReifiedRelationshipInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domain" lowerBound="1"
+        eType="#//ConceptualEntitySingletonInstance"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReifiedRelationshipInstanceRange" eSuperTypes="#//TerminologyInstanceAssertion">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;ReifiedRelationshipInstanceRange(descriptionBox=&quot; + descriptionBox.uuid + &quot;,reifiedRelationshipInstance=&quot;+reifiedRelationshipInstance.uuid+ &quot;,range=&quot;+range.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="descriptionBox" lowerBound="1"
+        eType="#//DescriptionBox" eOpposite="#//DescriptionBox/reifiedRelationshipInstanceRanges"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reifiedRelationshipInstance"
+        lowerBound="1" eType="#//ReifiedRelationshipInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="range" lowerBound="1" eType="#//ConceptualEntitySingletonInstance"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnreifiedRelationshipInstanceTuple"
+      eSuperTypes="#//TerminologyInstanceAssertion">
+    <eAnnotations source="http://imce.jpl.nasa.gov/oml/Glossary"/>
+    <eOperations name="calculateUUID" unique="false" lowerBound="1" eType="#//UUID">
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Scala">
+        <details key="code" value="&#xA;&#x9;val namespace = &quot;UnreifiedRelationshipInstanceTuple(descriptionBox=&quot; + descriptionBox.uuid + &quot;,unreifiedRelationship=&quot;+unreifiedRelationship.uuid+ &quot;,domain=&quot;+domain.uuid+ &quot;,range=&quot;+range.uuid+&quot;)&quot;&#xA;&#x9;com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)"/>
+      </eAnnotations>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/NotSchema"/>
+      <eAnnotations source="http://imce.jpl.nasa.gov/oml/Override"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="descriptionBox" lowerBound="1"
+        eType="#//DescriptionBox" eOpposite="#//DescriptionBox/unreifiedRelationshipInstanceTuples"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unreifiedRelationship"
+        lowerBound="1" eType="#//UnreifiedRelationship"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domain" lowerBound="1"
+        eType="#//ConceptualEntitySingletonInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="range" lowerBound="1" eType="#//ConceptualEntitySingletonInstance"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -47,7 +47,7 @@ public class StructureImpl extends DatatypeImpl implements Structure {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.STRUCTURE;
+		return OMLPackage.eINSTANCE.getStructure();
 	}
 
 } //StructureImpl

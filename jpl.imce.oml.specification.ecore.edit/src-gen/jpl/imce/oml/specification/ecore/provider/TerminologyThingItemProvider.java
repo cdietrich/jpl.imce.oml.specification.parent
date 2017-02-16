@@ -96,7 +96,7 @@ public class TerminologyThingItemProvider
 				 getResourceLocator(),
 				 getString("_UI_TerminologyThing_uuid_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TerminologyThing_uuid_feature", "_UI_TerminologyThing_type"),
-				 OMLPackage.Literals.TERMINOLOGY_THING__UUID,
+				 OMLPackage.eINSTANCE.getTerminologyThing_Uuid(),
 				 false,
 				 false,
 				 false,

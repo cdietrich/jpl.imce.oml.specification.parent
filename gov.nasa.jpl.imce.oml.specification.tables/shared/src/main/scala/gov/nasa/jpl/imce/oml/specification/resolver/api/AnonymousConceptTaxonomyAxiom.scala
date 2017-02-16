@@ -25,4 +25,7 @@ trait AnonymousConceptTaxonomyAxiom
   extends DisjointUnionOfConceptsAxiom
   with ConceptTreeDisjunction
 {
+
+  override def calculateUUID
+  (): java.util.UUID
 }

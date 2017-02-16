@@ -77,7 +77,7 @@ public class RestrictedDataRangeItemProvider extends DataRangeItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_RestrictedDataRange_restrictedRange_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_RestrictedDataRange_restrictedRange_feature", "_UI_RestrictedDataRange_type"),
-				 OMLPackage.Literals.RESTRICTED_DATA_RANGE__RESTRICTED_RANGE,
+				 OMLPackage.eINSTANCE.getRestrictedDataRange_RestrictedRange(),
 				 true,
 				 false,
 				 true,

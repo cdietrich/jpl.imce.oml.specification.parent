@@ -22,23 +22,39 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class ReifiedRelationshipInstance private[impl] 
 (
- override val uuid: java.util.UUID,
- override val descriptionBox: DescriptionBox,
- override val singletonReifiedRelationshipClassifier: ReifiedRelationship,
+ override val descriptionBox: resolver.api.DescriptionBox,
+ override val singletonReifiedRelationshipClassifier: resolver.api.ReifiedRelationship,
  override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName,
- override val scalarDataPropertyValues: scala.collection.immutable.SortedSet[ScalarDataPropertyValue],
- override val structuredDataPropertyValues: scala.collection.immutable.SortedSet[StructuredDataPropertyValue]
+ override val scalarDataPropertyValues: scala.collection.immutable.SortedSet[resolver.api.ScalarDataPropertyValue],
+ override val structuredDataPropertyValues: scala.collection.immutable.SortedSet[resolver.api.StructuredDataPropertyValue]
 )
 extends resolver.api.ReifiedRelationshipInstance
   with ConceptualEntitySingletonInstance
 {
+  override def calculateUUID
+  ()
+  : java.util.UUID
+  = {
+    
+    	val namespace = "ReifiedRelationshipInstance(descriptionBox=" + descriptionBox.uuid + ",singletonReifiedRelationshipClassifier="+singletonReifiedRelationshipClassifier.uuid+")"
+    	com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)
+  }
+  
   override def conceptualEntitySingletonClassifier
   ()
-  : ConceptualEntity
+  : resolver.api.ConceptualEntity
   = {
     singletonReifiedRelationshipClassifier
   }
   
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: ReifiedRelationshipInstance => true

@@ -29,4 +29,7 @@ trait SpecificDisjointConceptAxiom
    * A Concept that is a disjoint leaf in a taxonomy tree.
    */
   val disjointLeaf: Concept
+
+  override def calculateUUID
+  (): java.util.UUID
 }

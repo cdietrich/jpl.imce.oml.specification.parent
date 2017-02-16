@@ -123,7 +123,7 @@ public abstract class ModuleImpl extends TerminologyThingImpl implements Module 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.MODULE;
+		return OMLPackage.eINSTANCE.getModule();
 	}
 
 	/**

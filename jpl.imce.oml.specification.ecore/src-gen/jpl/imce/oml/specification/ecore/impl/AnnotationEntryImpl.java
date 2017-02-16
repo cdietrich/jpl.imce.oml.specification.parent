@@ -105,7 +105,7 @@ public class AnnotationEntryImpl extends CDOObjectImpl implements AnnotationEntr
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.ANNOTATION_ENTRY;
+		return OMLPackage.eINSTANCE.getAnnotationEntry();
 	}
 
 	/**

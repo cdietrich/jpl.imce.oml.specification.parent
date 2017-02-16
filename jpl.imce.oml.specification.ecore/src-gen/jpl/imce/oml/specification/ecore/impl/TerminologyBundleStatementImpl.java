@@ -63,7 +63,7 @@ public abstract class TerminologyBundleStatementImpl extends TerminologyThingImp
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.TERMINOLOGY_BUNDLE_STATEMENT;
+		return OMLPackage.eINSTANCE.getTerminologyBundleStatement();
 	}
 
 	/**

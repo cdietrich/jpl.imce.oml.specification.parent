@@ -25,6 +25,14 @@ extends resolver.api.EntityRestrictionAxiom
   with TermAxiom
 {
 
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
+
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: EntityRestrictionAxiom => true
   	case _ => false

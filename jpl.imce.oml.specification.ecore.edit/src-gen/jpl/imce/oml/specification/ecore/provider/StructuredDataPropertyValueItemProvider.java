@@ -81,7 +81,7 @@ public class StructuredDataPropertyValueItemProvider extends TerminologyInstance
 				 getResourceLocator(),
 				 getString("_UI_StructuredDataPropertyValue_singletonInstance_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_StructuredDataPropertyValue_singletonInstance_feature", "_UI_StructuredDataPropertyValue_type"),
-				 OMLPackage.Literals.STRUCTURED_DATA_PROPERTY_VALUE__SINGLETON_INSTANCE,
+				 OMLPackage.eINSTANCE.getStructuredDataPropertyValue_SingletonInstance(),
 				 true,
 				 false,
 				 true,
@@ -103,7 +103,7 @@ public class StructuredDataPropertyValueItemProvider extends TerminologyInstance
 				 getResourceLocator(),
 				 getString("_UI_StructuredDataPropertyValue_structuredDataProperty_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_StructuredDataPropertyValue_structuredDataProperty_feature", "_UI_StructuredDataPropertyValue_type"),
-				 OMLPackage.Literals.STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_DATA_PROPERTY,
+				 OMLPackage.eINSTANCE.getStructuredDataPropertyValue_StructuredDataProperty(),
 				 true,
 				 false,
 				 true,
@@ -124,7 +124,7 @@ public class StructuredDataPropertyValueItemProvider extends TerminologyInstance
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OMLPackage.Literals.STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_PROPERTY_TUPLE);
+			childrenFeatures.add(OMLPackage.eINSTANCE.getStructuredDataPropertyValue_StructuredPropertyTuple());
 		}
 		return childrenFeatures;
 	}
@@ -200,7 +200,7 @@ public class StructuredDataPropertyValueItemProvider extends TerminologyInstance
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_PROPERTY_TUPLE,
+				(OMLPackage.eINSTANCE.getStructuredDataPropertyValue_StructuredPropertyTuple(),
 				 OMLFactory.eINSTANCE.createDataStructureTuple()));
 	}
 

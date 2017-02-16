@@ -74,6 +74,7 @@ public interface Term extends TerminologyBoxStatement, Resource {
 	 * <!-- end-model-doc -->
 	 * @model dataType="jpl.imce.oml.specification.ecore.UUID" unique="false" required="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%com.fasterxml.uuid.impl.NameBasedGenerator%> _nameBasedGenerator = <%com.fasterxml.uuid.Generators%>.nameBasedGenerator(<%com.fasterxml.uuid.impl.NameBasedGenerator%>.NAMESPACE_URL);\n<%java.lang.String%> _iri = this.iri();\n<%java.util.UUID%> _generate = _nameBasedGenerator.generate(_iri);\nreturn _generate.toString();'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(iri())'"
 	 * @generated
 	 */
 	String calculateUUID();
@@ -83,7 +84,7 @@ public interface Term extends TerminologyBoxStatement, Resource {
 	 * <!-- end-user-doc -->
 	 * @model dataType="jpl.imce.oml.specification.ecore.IRI" unique="false" required="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%jpl.imce.oml.specification.ecore.TerminologyBox%> _tbox = this.getTbox();\n<%java.lang.String%> _iri = _tbox.iri();\n<%java.lang.String%> _plus = (_iri + \"#\");\n<%java.lang.String%> _name = this.name();\nreturn (_plus + _name);'"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='graph.iri + \"#\" + name'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='tbox.iri + \"#\" + name'"
 	 * @generated
 	 */
 	String iri();

@@ -22,14 +22,30 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class ScalarOneOfRestriction private[impl] 
 (
- override val uuid: java.util.UUID,
- override val tbox: TerminologyBox,
- override val restrictedRange: DataRange,
+ override val tbox: resolver.api.TerminologyBox,
+ override val restrictedRange: resolver.api.DataRange,
  override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName
 )
 extends resolver.api.ScalarOneOfRestriction
   with RestrictedDataRange
 {
+  override def calculateUUID
+  ()
+  : java.util.UUID
+  = {
+    
+    	val namespace = "ScalarOneOfRestriction(restrictedRange="+restrictedRange.uuid+")"
+    	com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)
+  }
+  
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: ScalarOneOfRestriction => true

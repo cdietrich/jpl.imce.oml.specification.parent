@@ -110,7 +110,7 @@ public class AnnotationImpl extends CDOObjectImpl implements Annotation {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.ANNOTATION;
+		return OMLPackage.eINSTANCE.getAnnotation();
 	}
 
 	/**

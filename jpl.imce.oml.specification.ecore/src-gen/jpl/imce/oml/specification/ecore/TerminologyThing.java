@@ -54,6 +54,7 @@ public interface TerminologyThing extends CDOObject {
 	 * @return the value of the '<em>Uuid</em>' attribute.
 	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyThing_Uuid()
 	 * @model unique="false" dataType="jpl.imce.oml.specification.ecore.UUID" required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='calculateUUID()'"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='return this.calculateUUID();'"
 	 * @generated
 	 */

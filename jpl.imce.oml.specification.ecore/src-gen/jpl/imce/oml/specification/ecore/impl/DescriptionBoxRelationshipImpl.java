@@ -53,7 +53,7 @@ public abstract class DescriptionBoxRelationshipImpl extends TerminologyThingImp
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.DESCRIPTION_BOX_RELATIONSHIP;
+		return OMLPackage.eINSTANCE.getDescriptionBoxRelationship();
 	}
 
 	/**

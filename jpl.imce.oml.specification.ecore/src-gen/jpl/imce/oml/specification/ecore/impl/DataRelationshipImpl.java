@@ -54,7 +54,7 @@ public abstract class DataRelationshipImpl extends TermImpl implements DataRelat
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.DATA_RELATIONSHIP;
+		return OMLPackage.eINSTANCE.getDataRelationship();
 	}
 
 	/**
@@ -102,22 +102,11 @@ public abstract class DataRelationshipImpl extends TermImpl implements DataRelat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Term relationshipSubject() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == DirectedBinaryRelationshipKind.class) {
 			switch (baseOperationID) {
-				case OMLPackage.DIRECTED_BINARY_RELATIONSHIP_KIND___RELATIONSHIP_SUBJECT: return OMLPackage.DATA_RELATIONSHIP___RELATIONSHIP_SUBJECT;
+				case OMLPackage.DIRECTED_BINARY_RELATIONSHIP_KIND___RELATION_DOMAIN: return OMLPackage.DATA_RELATIONSHIP___RELATION_DOMAIN;
 				case OMLPackage.DIRECTED_BINARY_RELATIONSHIP_KIND___RELATION_RANGE: return OMLPackage.DATA_RELATIONSHIP___RELATION_RANGE;
 				default: return -1;
 			}
@@ -141,8 +130,6 @@ public abstract class DataRelationshipImpl extends TermImpl implements DataRelat
 				return target();
 			case OMLPackage.DATA_RELATIONSHIP___RELATION_RANGE:
 				return relationRange();
-			case OMLPackage.DATA_RELATIONSHIP___RELATIONSHIP_SUBJECT:
-				return relationshipSubject();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

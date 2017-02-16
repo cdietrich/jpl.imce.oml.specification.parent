@@ -71,7 +71,7 @@ public class TerminologyGraphImpl extends TerminologyBoxImpl implements Terminol
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.TERMINOLOGY_GRAPH;
+		return OMLPackage.eINSTANCE.getTerminologyGraph();
 	}
 
 	/**

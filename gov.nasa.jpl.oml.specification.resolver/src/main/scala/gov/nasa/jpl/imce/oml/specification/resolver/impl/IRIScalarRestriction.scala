@@ -22,9 +22,8 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class IRIScalarRestriction private[impl] 
 (
- override val uuid: java.util.UUID,
- override val tbox: TerminologyBox,
- override val restrictedRange: DataRange,
+ override val tbox: resolver.api.TerminologyBox,
+ override val restrictedRange: resolver.api.DataRange,
  override val length: scala.Option[scala.Int],
  override val minLength: scala.Option[scala.Int],
  override val maxLength: scala.Option[scala.Int],
@@ -34,6 +33,23 @@ case class IRIScalarRestriction private[impl]
 extends resolver.api.IRIScalarRestriction
   with RestrictedDataRange
 {
+  override def calculateUUID
+  ()
+  : java.util.UUID
+  = {
+    
+    	val namespace = "IRIScalarRestriction(restrictedRange="+restrictedRange.uuid+")"
+    	com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)
+  }
+  
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: IRIScalarRestriction => true

@@ -37,4 +37,12 @@ import org.eclipse.emf.cdo.CDOObject;
  * @generated
  */
 public interface DataRelationshipDomain extends CDOObject {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model dataType="jpl.imce.oml.specification.ecore.UUID" unique="false" required="true"
+	 * @generated
+	 */
+	String calculateUUID();
+
 } // DataRelationshipDomain

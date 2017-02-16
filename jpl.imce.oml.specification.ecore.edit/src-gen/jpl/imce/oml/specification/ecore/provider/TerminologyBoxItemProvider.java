@@ -82,7 +82,7 @@ public class TerminologyBoxItemProvider extends ModuleItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_TerminologyBox_kind_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TerminologyBox_kind_feature", "_UI_TerminologyBox_type"),
-				 OMLPackage.Literals.TERMINOLOGY_BOX__KIND,
+				 OMLPackage.eINSTANCE.getTerminologyBox_Kind(),
 				 true,
 				 false,
 				 false,
@@ -103,8 +103,8 @@ public class TerminologyBoxItemProvider extends ModuleItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OMLPackage.Literals.TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS);
-			childrenFeatures.add(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS);
+			childrenFeatures.add(OMLPackage.eINSTANCE.getTerminologyBox_TerminologyBoxAxioms());
+			childrenFeatures.add(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements());
 		}
 		return childrenFeatures;
 	}
@@ -173,152 +173,152 @@ public class TerminologyBoxItemProvider extends ModuleItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_TerminologyBoxAxioms(),
 				 OMLFactory.eINSTANCE.createConceptDesignationTerminologyAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_TerminologyBoxAxioms(),
 				 OMLFactory.eINSTANCE.createTerminologyExtensionAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_TerminologyBoxAxioms(),
 				 OMLFactory.eINSTANCE.createTerminologyNestingAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createAspect()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createConcept()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createReifiedRelationship()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createUnreifiedRelationship()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createScalar()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createEntityStructuredDataProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createEntityScalarDataProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createStructuredDataProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createScalarDataProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createStructure()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createEntityExistentialRestrictionAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createEntityUniversalRestrictionAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createAspectSpecializationAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createConceptSpecializationAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createReifiedRelationshipSpecializationAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createEntityScalarDataPropertyExistentialRestrictionAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createEntityScalarDataPropertyUniversalRestrictionAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createEntityScalarDataPropertyParticularRestrictionAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createBinaryScalarRestriction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createIRIScalarRestriction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createNumericScalarRestriction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createPlainLiteralScalarRestriction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createStringScalarRestriction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createTimeScalarRestriction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createSynonymScalarRestriction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createScalarOneOfRestriction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_BOX__BOX_STATEMENTS,
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
 				 OMLFactory.eINSTANCE.createScalarOneOfLiteralAxiom()));
 	}
 

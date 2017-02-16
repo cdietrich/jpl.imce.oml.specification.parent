@@ -73,6 +73,7 @@ public interface TerminologyExtensionAxiom extends TerminologyBoxAxiom {
 	 * <!-- end-user-doc -->
 	 * @model dataType="jpl.imce.oml.specification.ecore.UUID" unique="false" required="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%java.lang.String%> _xblockexpression = null;\n{\n\t<%jpl.imce.oml.specification.ecore.TerminologyBox%> _source = this.source();\n\t<%java.lang.String%> _uuid = _source.getUuid();\n\t<%java.lang.String%> _plus = (\"TerminologyExtensionAxiom(source=\" + _uuid);\n\t<%java.lang.String%> _plus_1 = (_plus + \",target=\");\n\t<%jpl.imce.oml.specification.ecore.TerminologyBox%> _target = this.target();\n\t<%java.lang.String%> _uuid_1 = _target.getUuid();\n\t<%java.lang.String%> _plus_2 = (_plus_1 + _uuid_1);\n\tfinal <%java.lang.String%> namespace = (_plus_2 + \")\");\n\t<%com.fasterxml.uuid.impl.NameBasedGenerator%> _nameBasedGenerator = <%com.fasterxml.uuid.Generators%>.nameBasedGenerator(<%com.fasterxml.uuid.impl.NameBasedGenerator%>.NAMESPACE_URL);\n\t<%java.util.UUID%> _generate = _nameBasedGenerator.generate(namespace);\n\t_xblockexpression = _generate.toString();\n}\nreturn _xblockexpression;'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='\n\tval namespace = \"TerminologyExtensionAxiom(source=\" + source.uuid + \",target=\"+target.uuid+\")\"\n\tcom.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)'"
 	 * @generated
 	 */
 	String calculateUUID();
@@ -82,6 +83,7 @@ public interface TerminologyExtensionAxiom extends TerminologyBoxAxiom {
 	 * <!-- end-user-doc -->
 	 * @model unique="false" required="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getTbox();'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='tbox'"
 	 * @generated
 	 */
 	TerminologyBox extendingTerminology();
@@ -94,6 +96,7 @@ public interface TerminologyExtensionAxiom extends TerminologyBoxAxiom {
 	 * <!-- end-model-doc -->
 	 * @model unique="false" required="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getTbox();'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='tbox'"
 	 * @generated
 	 */
 	TerminologyBox source();

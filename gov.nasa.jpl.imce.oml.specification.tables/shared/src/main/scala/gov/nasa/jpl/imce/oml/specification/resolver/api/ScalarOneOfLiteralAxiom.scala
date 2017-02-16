@@ -30,4 +30,7 @@ trait ScalarOneOfLiteralAxiom
    * The value of the literal from the restrictedScalar datatype
    */
   val value: gov.nasa.jpl.imce.oml.specification.tables.LexicalValue
+
+  override def calculateUUID
+  (): java.util.UUID
 }

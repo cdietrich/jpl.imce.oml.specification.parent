@@ -25,4 +25,7 @@ package gov.nasa.jpl.imce.oml.specification.resolver.api
 trait EntityUniversalRestrictionAxiom
   extends EntityRestrictionAxiom
 {
+
+  override def calculateUUID
+  (): java.util.UUID
 }

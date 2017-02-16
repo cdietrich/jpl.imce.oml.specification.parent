@@ -82,7 +82,7 @@ public class ModuleItemProvider extends TerminologyThingItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Module_iri_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Module_iri_feature", "_UI_Module_type"),
-				 OMLPackage.Literals.MODULE__IRI,
+				 OMLPackage.eINSTANCE.getModule_Iri(),
 				 true,
 				 false,
 				 false,
@@ -103,7 +103,7 @@ public class ModuleItemProvider extends TerminologyThingItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OMLPackage.Literals.MODULE__ANNOTATIONS);
+			childrenFeatures.add(OMLPackage.eINSTANCE.getModule_Annotations());
 		}
 		return childrenFeatures;
 	}
@@ -171,7 +171,7 @@ public class ModuleItemProvider extends TerminologyThingItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.MODULE__ANNOTATIONS,
+				(OMLPackage.eINSTANCE.getModule_Annotations(),
 				 OMLFactory.eINSTANCE.createAnnotation()));
 	}
 

@@ -22,15 +22,31 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class EntityExistentialRestrictionAxiom private[impl] 
 (
- override val uuid: java.util.UUID,
- override val tbox: TerminologyBox,
- override val restrictedRelation: EntityRelationship,
- override val restrictedDomain: Entity,
- override val restrictedRange: Entity
+ override val tbox: resolver.api.TerminologyBox,
+ override val restrictedRelation: resolver.api.EntityRelationship,
+ override val restrictedDomain: resolver.api.Entity,
+ override val restrictedRange: resolver.api.Entity
 )
 extends resolver.api.EntityExistentialRestrictionAxiom
   with EntityRestrictionAxiom
 {
+  override def calculateUUID
+  ()
+  : java.util.UUID
+  = {
+    
+    	val namespace = "EntityExistentialRestrictionAxiom(restrictedDomain=" + restrictedDomain.uuid + ",restrictedRelation="+restrictedRelation.uuid + ",restrictedRange="+restrictedRange.uuid+")"
+    	com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)
+  }
+  
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: EntityExistentialRestrictionAxiom => true

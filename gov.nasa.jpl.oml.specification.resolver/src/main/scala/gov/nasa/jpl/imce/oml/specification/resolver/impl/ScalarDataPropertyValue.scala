@@ -22,15 +22,38 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class ScalarDataPropertyValue private[impl] 
 (
- override val uuid: java.util.UUID,
- override val singletonInstance: SingletonInstance,
- override val scalarDataProperty: DataRelationshipToScalar,
+ override val singletonInstance: resolver.api.SingletonInstance,
+ override val scalarDataProperty: resolver.api.DataRelationshipToScalar,
  override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName,
  override val scalarPropertyValue: scala.Predef.String
 )
 extends resolver.api.ScalarDataPropertyValue
   with TerminologyInstanceAssertion
 {
+  override def calculateUUID
+  ()
+  : java.util.UUID
+  = {
+    
+    	val namespace = "ScalarDataPropertyValue(singletonInstance=" + singletonInstance.uuid + ",scalarDataProperty="+scalarDataProperty.calculateUUID()+")"
+    	com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)
+  }
+  
+  def descriptionBox
+  ()
+  : resolver.api.DescriptionBox
+  = {
+    singletonInstance.descriptionBox()
+  }
+  
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: ScalarDataPropertyValue => true

@@ -86,7 +86,7 @@ public abstract class SingletonInstanceImpl extends TerminologyInstanceAssertion
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.SINGLETON_INSTANCE;
+		return OMLPackage.eINSTANCE.getSingletonInstance();
 	}
 
 	/**

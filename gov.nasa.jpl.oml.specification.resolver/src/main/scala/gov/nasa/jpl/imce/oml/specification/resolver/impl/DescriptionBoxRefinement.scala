@@ -22,27 +22,43 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class DescriptionBoxRefinement private[impl] 
 (
- override val uuid: java.util.UUID,
- override val refiningDescriptionBox: DescriptionBox,
- override val refinedDescriptionBox: DescriptionBox
+ override val refiningDescriptionBox: resolver.api.DescriptionBox,
+ override val refinedDescriptionBox: resolver.api.DescriptionBox
 )
 extends resolver.api.DescriptionBoxRefinement
   with DescriptionBoxRelationship
 {
+  override def calculateUUID
+  ()
+  : java.util.UUID
+  = {
+    
+    	val namespace = "DescriptionBoxRefinement(refiningDescriptionBox=" + refiningDescriptionBox.uuid + ",refinedDescriptionBox="+refinedDescriptionBox.uuid+")"
+    	com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)
+  }
+  
   def descriptionDomain
   ()
-  : DescriptionBox
+  : resolver.api.DescriptionBox
   = {
     refiningDescriptionBox
   }
   
   def targetModule
   ()
-  : Module
+  : resolver.api.Module
   = {
     refinedDescriptionBox
   }
   
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: DescriptionBoxRefinement => true

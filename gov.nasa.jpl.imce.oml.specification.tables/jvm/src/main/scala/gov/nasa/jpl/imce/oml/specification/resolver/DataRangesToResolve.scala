@@ -22,7 +22,7 @@ import java.util.UUID
 
 import gov.nasa.jpl.imce.oml.specification._
 
-import scala.{Boolean, Tuple2, Tuple3}
+import scala.{Boolean, StringContext, Tuple2, Tuple3}
 import scala.collection.immutable.{Map, Seq, SortedSet, TreeSet}
 import scala.util.{Failure, Success, Try}
 import scala.Predef.ArrowAssoc
@@ -98,15 +98,17 @@ object DataRangesToResolve {
           = available
             .foldLeft[SortedSet[api.TerminologyBoxStatement]](TreeSet.empty[api.TerminologyBoxStatement]) {
             case (acc, (ruuid, dr)) =>
-              acc +
+              val x =
                 ri.factory.createBinaryScalarRestriction(
-                  UUID.fromString(dr.uuid),
                   tbox,
                   restrictableDataRanges(ruuid.toString),
                   dr.length,
                   dr.minLength,
                   dr.maxLength,
                   dr.name)
+              if (x.uuid.toString != dr.uuid)
+                throw new java.lang.IllegalArgumentException(s"DataRangteResolver.BinaryScalarRestriction UUID mismatch: read: $dr, created: $x")
+              acc + x
           }
 
           TerminologyContext
@@ -135,9 +137,7 @@ object DataRangesToResolve {
           = available
               .foldLeft[SortedSet[api.TerminologyBoxStatement]](TreeSet.empty[api.TerminologyBoxStatement]) {
             case (acc, (ruuid, dr)) =>
-              acc +
-                ri.factory.createIRIScalarRestriction(
-                  UUID.fromString(dr.uuid),
+              val x = ri.factory.createIRIScalarRestriction(
                   tbox,
                   restrictableDataRanges(ruuid.toString),
                   dr.length,
@@ -145,6 +145,9 @@ object DataRangesToResolve {
                   dr.maxLength,
                   dr.name,
                   dr.pattern)
+              if (x.uuid.toString != dr.uuid)
+                throw new java.lang.IllegalArgumentException(s"DataRangteResolver.IRIScalarRestriction UUID mismatch: read: $dr, created: $x")
+              acc + x
           }
 
           TerminologyContext
@@ -173,9 +176,8 @@ object DataRangesToResolve {
           = available
             .foldLeft[SortedSet[api.TerminologyBoxStatement]](TreeSet.empty[api.TerminologyBoxStatement]) {
             case (acc, (ruuid, dr)) =>
-              acc +
+              val x =
               ri.factory.createNumericScalarRestriction(
-                UUID.fromString(dr.uuid),
                 tbox,
                 restrictableDataRanges(ruuid.toString),
                 dr.minExclusive,
@@ -183,6 +185,9 @@ object DataRangesToResolve {
                 dr.maxExclusive,
                 dr.maxInclusive,
                 dr.name)
+              if (x.uuid.toString != dr.uuid)
+                throw new java.lang.IllegalArgumentException(s"DataRangteResolver.NumericScalarRestriction UUID mismatch: read: $dr, created: $x")
+              acc + x
             }
 
           TerminologyContext
@@ -211,9 +216,8 @@ object DataRangesToResolve {
           = available
             .foldLeft[SortedSet[api.TerminologyBoxStatement]](TreeSet.empty[api.TerminologyBoxStatement]) {
             case (acc, (ruuid, dr)) =>
-              acc +
+              val x =
               ri.factory.createPlainLiteralScalarRestriction(
-                UUID.fromString(dr.uuid),
                 tbox,
                 restrictableDataRanges(ruuid.toString),
                 dr.length,
@@ -222,6 +226,9 @@ object DataRangesToResolve {
                 dr.name,
                 dr.langRange,
                 dr.pattern)
+              if (x.uuid.toString != dr.uuid)
+                throw new java.lang.IllegalArgumentException(s"DataRangteResolver.PlainLiteralScalarRestriction UUID mismatch: read: $dr, created: $x")
+              acc + x
             }
 
           TerminologyContext
@@ -250,12 +257,14 @@ object DataRangesToResolve {
           = available
             .foldLeft[SortedSet[api.TerminologyBoxStatement]](TreeSet.empty[api.TerminologyBoxStatement]) {
             case (acc, (ruuid, dr)) =>
-              acc +
+              val x =
               ri.factory.createScalarOneOfRestriction(
-                UUID.fromString(dr.uuid),
                 tbox,
                 restrictableDataRanges(ruuid.toString),
                 dr.name)
+              if (x.uuid.toString != dr.uuid)
+                throw new java.lang.IllegalArgumentException(s"DataRangteResolver.ScalarOneOfRestriction UUID mismatch: read: $dr, created: $x")
+              acc + x
             }
 
           TerminologyContext
@@ -284,9 +293,8 @@ object DataRangesToResolve {
           = available
             .foldLeft[SortedSet[api.TerminologyBoxStatement]](TreeSet.empty[api.TerminologyBoxStatement]) {
             case (acc, (ruuid, dr)) =>
-              acc +
+              val x =
               ri.factory.createStringScalarRestriction(
-                UUID.fromString(dr.uuid),
                 tbox,
                 restrictableDataRanges(ruuid.toString),
                 dr.length,
@@ -294,6 +302,9 @@ object DataRangesToResolve {
                 dr.maxLength,
                 dr.name,
                 dr.pattern)
+              if (x.uuid.toString != dr.uuid)
+                throw new java.lang.IllegalArgumentException(s"DataRangteResolver.StringScalarRestriction UUID mismatch: read: $dr, created: $x")
+              acc + x
           }
 
           TerminologyContext
@@ -322,9 +333,8 @@ object DataRangesToResolve {
           = available
             .foldLeft[SortedSet[api.TerminologyBoxStatement]](TreeSet.empty[api.TerminologyBoxStatement]) {
             case (acc, (ruuid, dr)) =>
-              acc +
+              val x =
               ri.factory.createTimeScalarRestriction(
-                UUID.fromString(dr.uuid),
                 tbox,
                 restrictableDataRanges(ruuid.toString),
                 dr.minExclusive,
@@ -332,6 +342,9 @@ object DataRangesToResolve {
                 dr.maxExclusive,
                 dr.maxInclusive,
                 dr.name)
+              if (x.uuid.toString != dr.uuid)
+                throw new java.lang.IllegalArgumentException(s"DataRangteResolver.TimeScalarRestriction UUID mismatch: read: $dr, created: $x")
+              acc + x
           }
 
           TerminologyContext

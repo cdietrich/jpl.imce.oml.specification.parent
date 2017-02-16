@@ -26,14 +26,14 @@ package object api {
   = new scala.Ordering[Annotation] {
   	def compare(x: Annotation, y: Annotation)
   	: scala.Int
-  	= terminologyThingOrdering.compare(x.subject,y.subject) match {
+  	= moduleOrdering.compare(x.module,y.module) match {
+  	 	case c_module if 0 != c_module => c_module
+  	 	case 0 => terminologyThingOrdering.compare(x.subject,y.subject) match {
   	 	case c_subject if 0 != c_subject => c_subject
   	 	case 0 => annotationPropertyOrdering.compare(x.property,y.property) match {
   	 	case c_property if 0 != c_property => c_property
   	 	case 0 => x.value.compareTo(y.value) match {
   	 	case c_value if 0 != c_value => c_value
-  	 	case 0 => moduleOrdering.compare(x.module,y.module) match {
-  	 	case c_module if 0 != c_module => c_module
   	 	case 0 => 0 } } } }
   }
   
@@ -42,12 +42,12 @@ package object api {
   = new scala.Ordering[AnnotationEntry] {
   	def compare(x: AnnotationEntry, y: AnnotationEntry)
   	: scala.Int
-  	= terminologyThingOrdering.compare(x.subject,y.subject) match {
+  	= moduleOrdering.compare(x.module,y.module) match {
+  	 	case c_module if 0 != c_module => c_module
+  	 	case 0 => terminologyThingOrdering.compare(x.subject,y.subject) match {
   	 	case c_subject if 0 != c_subject => c_subject
   	 	case 0 => x.value.compareTo(y.value) match {
   	 	case c_value if 0 != c_value => c_value
-  	 	case 0 => moduleOrdering.compare(x.module,y.module) match {
-  	 	case c_module if 0 != c_module => c_module
   	 	case 0 => 0 } } }
   }
   

@@ -22,9 +22,8 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class TimeScalarRestriction private[impl] 
 (
- override val uuid: java.util.UUID,
- override val tbox: TerminologyBox,
- override val restrictedRange: DataRange,
+ override val tbox: resolver.api.TerminologyBox,
+ override val restrictedRange: resolver.api.DataRange,
  override val minExclusive: scala.Option[gov.nasa.jpl.imce.oml.specification.tables.LexicalTime],
  override val minInclusive: scala.Option[gov.nasa.jpl.imce.oml.specification.tables.LexicalTime],
  override val maxExclusive: scala.Option[gov.nasa.jpl.imce.oml.specification.tables.LexicalTime],
@@ -34,6 +33,23 @@ case class TimeScalarRestriction private[impl]
 extends resolver.api.TimeScalarRestriction
   with RestrictedDataRange
 {
+  override def calculateUUID
+  ()
+  : java.util.UUID
+  = {
+    
+    	val namespace = "TimeScalarRestriction(restrictedRange="+restrictedRange.uuid+")"
+    	com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)
+  }
+  
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: TimeScalarRestriction => true

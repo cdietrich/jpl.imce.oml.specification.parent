@@ -22,11 +22,13 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class AnnotationPropertyTable private[impl] 
 (
- override val key: AnnotationProperty,
- override val value: scala.collection.immutable.SortedSet[AnnotationEntry]
+ override val key: resolver.api.AnnotationProperty,
+ override val value: scala.collection.immutable.SortedSet[resolver.api.AnnotationEntry]
 )
 extends resolver.api.AnnotationPropertyTable
 {
+
+
 
   override val hashCode
   : scala.Int

@@ -23,4 +23,6 @@ import gov.nasa.jpl.imce.oml.specification._
 trait ConceptTreeDisjunction
 extends resolver.api.ConceptTreeDisjunction
 {
+
+
 }

@@ -77,7 +77,7 @@ public class RootConceptTaxonomyAxiomItemProvider extends TerminologyBundleState
 				 getResourceLocator(),
 				 getString("_UI_RootConceptTaxonomyAxiom_root_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_RootConceptTaxonomyAxiom_root_feature", "_UI_RootConceptTaxonomyAxiom_type"),
-				 OMLPackage.Literals.ROOT_CONCEPT_TAXONOMY_AXIOM__ROOT,
+				 OMLPackage.eINSTANCE.getRootConceptTaxonomyAxiom_Root(),
 				 true,
 				 false,
 				 true,

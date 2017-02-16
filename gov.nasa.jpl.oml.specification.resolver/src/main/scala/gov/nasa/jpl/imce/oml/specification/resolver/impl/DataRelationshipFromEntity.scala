@@ -24,4 +24,6 @@ trait DataRelationshipFromEntity
 extends resolver.api.DataRelationshipFromEntity
   with DataRelationshipDomain
 {
+
+
 }

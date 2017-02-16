@@ -22,19 +22,27 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class ConceptDesignationTerminologyAxiom private[impl] 
 (
- override val uuid: java.util.UUID,
- override val tbox: TerminologyBox,
- override val designatedConcept: Concept,
- override val designatedTerminology: TerminologyBox
+ override val tbox: resolver.api.TerminologyBox,
+ override val designatedConcept: resolver.api.Concept,
+ override val designatedTerminology: resolver.api.TerminologyBox
 )
 extends resolver.api.ConceptDesignationTerminologyAxiom
   with TerminologyBoxAxiom
 {
+  override def calculateUUID
+  ()
+  : java.util.UUID
+  = {
+    
+    	val namespace = "ConceptDesignationTerminologyAxiom(designationTerminologyGraph=" + tbox.uuid + ",designatedConcept="+designatedConcept.uuid+")"
+    	com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)
+  }
+  
   def designationTerminologyGraph
   ()
-  : TerminologyGraph
+  : resolver.api.TerminologyGraph
   = {
-    terminology match { case g: TerminologyGraph => g }
+    tbox match { case g: TerminologyGraph => g }
   }
   
   /*
@@ -42,9 +50,9 @@ extends resolver.api.ConceptDesignationTerminologyAxiom
    */
   override def source
   ()
-  : TerminologyBox
+  : resolver.api.TerminologyBox
   = {
-    getTbox
+    tbox
   }
   
   /*
@@ -52,11 +60,19 @@ extends resolver.api.ConceptDesignationTerminologyAxiom
    */
   override def target
   ()
-  : TerminologyBox
+  : resolver.api.TerminologyBox
   = {
     designatedTerminology
   }
   
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: ConceptDesignationTerminologyAxiom => true

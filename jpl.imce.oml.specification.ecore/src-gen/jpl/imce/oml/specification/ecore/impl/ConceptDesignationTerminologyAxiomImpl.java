@@ -18,7 +18,13 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import com.fasterxml.uuid.Generators;
+
+import com.fasterxml.uuid.impl.NameBasedGenerator;
+
 import java.lang.reflect.InvocationTargetException;
+
+import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.Concept;
 import jpl.imce.oml.specification.ecore.ConceptDesignationTerminologyAxiom;
@@ -87,7 +93,7 @@ public class ConceptDesignationTerminologyAxiomImpl extends TerminologyBoxAxiomI
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM;
+		return OMLPackage.eINSTANCE.getConceptDesignationTerminologyAxiom();
 	}
 
 	/**
@@ -171,10 +177,39 @@ public class ConceptDesignationTerminologyAxiomImpl extends TerminologyBoxAxiomI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String calculateUUID() {
+		String _xblockexpression = null;
+		{
+			TerminologyBox _tbox = this.getTbox();
+			String _uuid = _tbox.getUuid();
+			String _plus = ("ConceptDesignationTerminologyAxiom(designationTerminologyGraph=" + _uuid);
+			String _plus_1 = (_plus + ",designatedConcept=");
+			Concept _designatedConcept = this.getDesignatedConcept();
+			String _uuid_1 = _designatedConcept.getUuid();
+			String _plus_2 = (_plus_1 + _uuid_1);
+			final String namespace = (_plus_2 + ")");
+			NameBasedGenerator _nameBasedGenerator = Generators.nameBasedGenerator(NameBasedGenerator.NAMESPACE_URL);
+			UUID _generate = _nameBasedGenerator.generate(namespace);
+			_xblockexpression = _generate.toString();
+		}
+		return _xblockexpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public TerminologyGraph designationTerminologyGraph() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		TerminologyGraph _switchResult = null;
+		TerminologyBox _tbox = this.getTbox();
+		boolean _matched = false;
+		if (_tbox instanceof TerminologyGraph) {
+			_matched=true;
+			TerminologyBox _tbox_1 = this.getTbox();
+			_switchResult = ((TerminologyGraph) _tbox_1);
+		}
+		return _switchResult;
 	}
 
 	/**
@@ -273,6 +308,8 @@ public class ConceptDesignationTerminologyAxiomImpl extends TerminologyBoxAxiomI
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+			case OMLPackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM___CALCULATE_UUID:
+				return calculateUUID();
 			case OMLPackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM___DESIGNATION_TERMINOLOGY_GRAPH:
 				return designationTerminologyGraph();
 			case OMLPackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM___SOURCE:

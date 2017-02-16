@@ -47,7 +47,7 @@ public abstract class DataRangeImpl extends DatatypeImpl implements DataRange {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.DATA_RANGE;
+		return OMLPackage.eINSTANCE.getDataRange();
 	}
 
 } //DataRangeImpl

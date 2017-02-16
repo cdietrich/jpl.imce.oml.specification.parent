@@ -36,6 +36,13 @@ import org.eclipse.xtext.resource.XtextResource
 import java.util.Map
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1
 import org.eclipse.emf.ecore.xcore.XcoreStandaloneSetup
+import org.eclipse.xtext.xbase.XExpression
+import org.eclipse.emf.ecore.xcore.mappings.XcoreMapper
+import org.eclipse.emf.ecore.EStructuralFeature
+import org.eclipse.xtext.xbase.XFeatureCall
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils
+import org.eclipse.emf.ecore.EPackage
+import org.eclipse.xtext.xbase.XMemberFeatureCall
 
 class OMLUtilities {
 		
@@ -71,14 +78,14 @@ class OMLUtilities {
 		set
 	}
 	
-	static def String queryResolverName(EOperation op) {
+	static def String queryResolverName(EOperation op, String typePrefix) {
 		val kind = "def"
 		val decl = if (null !== op.getEAnnotation("http://imce.jpl.nasa.gov/oml/Override")) "override "+kind else kind
-		val args = '''«FOR p : op.EParameters SEPARATOR ",\n  "»«p.name»: «p.queryResolverType»«ENDFOR»'''
+		val args = '''«FOR p : op.EParameters SEPARATOR ",\n  "»«p.name»: «p.queryResolverType(typePrefix)»«ENDFOR»'''
 		decl+" "+op.name+"\n  ("+args+")"
 	}
 	
-	static def String queryResolverType(ETypedElement feature) {
+	static def String queryResolverType(ETypedElement feature, String typePrefix) {
 		val type = feature.EType
 		val scalaType = feature.scalaResolverTypeName
 		switch type {
@@ -94,26 +101,26 @@ class OMLUtilities {
 						switch ann?.get("kind") ?: "" {
 						case "Map(Seq)": {
 							val key=ann.get("key")
-							"scala.collection.immutable.Map["+key+", scala.collection.immutable.Seq["+type.name+"]]"				
+							"scala.collection.immutable.Map["+key+", scala.collection.immutable.Seq["+typePrefix+type.name+"]]"				
 						}
 						case "Map": {
 							val key=ann.get("key")
-							"scala.collection.immutable.Map["+key+", "+type.name+"]"				
+							"scala.collection.immutable.Map["+key+", "+typePrefix+type.name+"]"				
 						}
 						case "Set": 
-							"scala.collection.immutable.Set[_ <: "+type.name+"]"		
+							"scala.collection.immutable.Set[_ <: "+typePrefix+type.name+"]"		
 					
 						case "SortedSet": 
-							"scala.collection.immutable.SortedSet["+type.name+"]"		
+							"scala.collection.immutable.SortedSet["+typePrefix+type.name+"]"		
 						}
 					}
 					else
-						"scala.Option["+type.name+"]"
+						"scala.Option["+typePrefix+type.name+"]"
 				}
 				else
-					type.name
+					typePrefix+type.name
 			default:
-				type.name+"//Default"
+				typePrefix+type.name+"//Default"
 		}
 	}
 	
@@ -210,6 +217,10 @@ class OMLUtilities {
 		}
 	}
 	
+	static def Iterable<EClass> FunctionalAPIClasses(EPackage ePkg) {
+		ePkg.EClassifiers.filter(EClass).filter[isAPI]
+	}
+	
 	static def Boolean isFunctionalAPIWithOrderingKeys(EClass eClass) {
 		if (!eClass.isFunctionalAPI)
 			return false
@@ -235,7 +246,7 @@ class OMLUtilities {
 	static def Iterable<ETypedElement> functionalAPIOrOrderingKeyAttributes(EClass eClass) {
 		eClass
 		.functionalAPIOrOrderingKeyFeatures
-		.filter[isAttributeOrReferenceOrContainer || isOrderingKey]
+		.filter[!isInterface && (isAttributeOrReferenceOrContainer || isOrderingKey)]
 	}
 	
 	static def Iterable<ETypedElement> functionalAPIOrOrderingKeyFeatures(EClass eClass) {
@@ -272,6 +283,116 @@ class OMLUtilities {
 		eClass.EPackage.EClassifiers.filter(EClass).filter[ESuperTypes.contains(eClass)].sortBy[name]
 	}
 	
+	static def Iterable<EStructuralFeature> APIStructuralFeatures(EClass eClass) {
+		eClass.EStructuralFeatures.filter[isAPI]
+	}
+    
+	static def Boolean isRootHierarchyClass(EClass eClass) {
+		eClass.isAbstract && eClass.ESuperTypes.isEmpty && !eClass.orderingKeys.isEmpty
+	}
+	
+	static def Boolean isSpecializationOfRootClass(EClass eClass) {
+		!eClass.ESuperTypes.isEmpty && eClass.selfAndAllSupertypes.exists[isRootHierarchyClass]
+	}
+	
+	static def Iterable<EOperation> APIOperations(EClass eClass) {
+		eClass.EOperations.filter[isAPI]
+	}
+    
+	static def Boolean isAttributeOrReferenceOrContainer(EStructuralFeature f) {
+		switch f {
+			EReference: 
+				! f.containment
+			default: true
+		}
+	}
+	
+	static def Iterable<EStructuralFeature> getSortedDerivedAttributeSignature(EClass eClass) {
+		eClass
+		.getSortedAttributeSignature
+		.filter[derived]
+	}
+	
+	static def Iterable<EStructuralFeature> getSortedAttributeSignatureExceptDerived(EClass eClass) {
+		eClass
+		.getSortedAttributeSignature
+		.filter[!derived]
+	}
+	
+	static def Iterable<EStructuralFeature> getSortedAttributeSignature(EClass eClass) {
+		eClass
+		.selfAndAllSupertypes
+		.map[APIStructuralFeatures]
+		.flatten
+		.sortWith(new OMLFeatureCompare())
+	}
+	
+	static def Iterable<EStructuralFeature> lookupCopyConstructorArguments(EClass eClass) {
+		eClass.getSortedAttributeSignature.filter[isCopyConstructorArgument]
+	}
+	
+	static def Boolean isCopyConstructorArgument(EStructuralFeature attribute) {
+		null !== attribute.getEAnnotation("http://imce.jpl.nasa.gov/oml/CopyConstructor")
+	}
+	
+	static def Iterable<EOperation> ScalaOperations(EClass eClass) {
+		eClass.APIOperations.filter(op | op.isScala || null !== op.xExpressions) 
+	}
+	
+    static def Iterable<XExpression> xExpressions(EOperation op) {
+    	(new XcoreMapper()).getXOperation(op)?.body?.expressions
+    }
+    
+	static def String queryBody(EOperation op) {
+		val scalaCode = op.scalaAnnotation
+		val xExpressions = op.xExpressions
+		if (null !== scalaCode)
+'''{
+  «scalaCode»
+}'''
+		else if (null !== xExpressions)
+			'''«FOR exp: xExpressions BEFORE "{\n  " SEPARATOR "\n  " AFTER "\n}"»«exp.toScala»«ENDFOR»'''
+	}
+    
+	/*
+	 * Transform an XText base XExpression to an equivalent Scala expression in concrete syntax (String).
+	 */
+	static def String toScala(XExpression exp) {
+		val result = switch exp {
+			XFeatureCall: {
+			    val n = NodeModelUtils.findActualNodeFor(exp)
+			    val s = NodeModelUtils.getTokenText(n)
+				s
+			}
+				
+			XMemberFeatureCall: {
+				val rF = exp.actualReceiver
+				val rS = rF.toScala
+				
+				if (!exp.actualArguments.empty)
+					throw new java.lang.IllegalArgumentException(".toScala can only handle an XMemberFeatureCall for calling an operation with 0 arguments.")
+				
+				val tF = exp.feature
+				val tS = tF.simpleName
+			    val s = rS+"."+tS+"()"
+			    s
+			}
+
+			default:
+				exp.toString + "/* default(debug) */"
+		}
+		result
+	}
+	
+	static def String queryBody(EStructuralFeature f) {
+		val scalaCode = f.scalaAnnotation
+		if (null !== scalaCode)
+'''{
+  «scalaCode»
+}'''
+		else '''// N/A'''
+	}
+    
 	static def Boolean isFunctionalAPIOrOrderingKey(ENamedElement e) {
 	 	e.isFunctionalAPI || e.isOrderingKey
 	}
@@ -305,16 +426,29 @@ class OMLUtilities {
 		}
 	}
 	
+	static def Boolean isClassFeature(ETypedElement feature) {
+		val type = feature.EType
+		type instanceof EClass
+	}
+	
     static def Boolean isOrderingKey(ENamedElement e) {
     	null !== e.getEAnnotation("http://imce.jpl.nasa.gov/oml/IsOrderingKey")
     }
     
+	static def Boolean isOverride(ETypedElement feature) {
+		null !== feature.getEAnnotation("http://imce.jpl.nasa.gov/oml/Override")
+	}
+	
     static def Boolean isOO(ENamedElement e) {
     	null !== e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotFunctionalAPI")
     }
     
+    static def Boolean isInterface(ENamedElement e) {
+    		null !== e.getEAnnotation("http://imce.jpl.nasa.gov/oml/FunctionalInterface")
+    }
+    
     static def Boolean isAPI(ENamedElement e) {
-    	null === e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotFunctionalAPI")
+    		null === e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotFunctionalAPI")
     }
     
     static def Boolean isGlossary(ENamedElement e) {
@@ -325,6 +459,10 @@ class OMLUtilities {
     	null !== e.getEAnnotation("http://imce.jpl.nasa.gov/oml/Scala")
     }
     
+    static def String scalaAnnotation(ETypedElement f) {
+    	f.getEAnnotation("http://imce.jpl.nasa.gov/oml/Scala")?.details?.get("code")
+    }
+		
     static def Boolean isSchema(ENamedElement e) {
     	null === e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotSchema")
     }
@@ -418,6 +556,9 @@ class OMLUtilities {
 		val knownAttributes = #[
 		"uuid", 
 		"tboxUUID",
+		"bundleExtentUUID",
+		"graphExtentUUID",
+		"descriptionExtentUUID",
 		"terminologyBundleUUID",
 		"bundledTerminologyUUID",
 		"extendedTerminologyUUID",

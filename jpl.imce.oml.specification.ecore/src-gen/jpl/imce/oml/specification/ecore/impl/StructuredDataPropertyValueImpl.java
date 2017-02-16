@@ -18,14 +18,27 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import com.fasterxml.uuid.Generators;
+
+import com.fasterxml.uuid.impl.NameBasedGenerator;
+
+import java.lang.reflect.InvocationTargetException;
+
+import java.util.UUID;
+
 import jpl.imce.oml.specification.ecore.DataRelationshipToStructure;
 import jpl.imce.oml.specification.ecore.DataStructureTuple;
+import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.SingletonInstance;
 import jpl.imce.oml.specification.ecore.StructuredDataPropertyValue;
+import jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion;
+import jpl.imce.oml.specification.ecore.TerminologyThing;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -87,7 +100,7 @@ public class StructuredDataPropertyValueImpl extends TerminologyInstanceAssertio
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.STRUCTURED_DATA_PROPERTY_VALUE;
+		return OMLPackage.eINSTANCE.getStructuredDataPropertyValue();
 	}
 
 	/**
@@ -227,6 +240,43 @@ public class StructuredDataPropertyValueImpl extends TerminologyInstanceAssertio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String calculateUUID() {
+		String _xblockexpression = null;
+		{
+			SingletonInstance _singletonInstance = this.getSingletonInstance();
+			String _uuid = _singletonInstance.getUuid();
+			String _plus = ("StructuredDataPropertyValue(singletonInstance=" + _uuid);
+			String _plus_1 = (_plus + ",structuredDataProperty=");
+			DataRelationshipToStructure _structuredDataProperty = this.getStructuredDataProperty();
+			String _calculateUUID = _structuredDataProperty.calculateUUID();
+			String _plus_2 = (_plus_1 + _calculateUUID);
+			String _plus_3 = (_plus_2 + ",structuredPropertyTuple=");
+			DataStructureTuple _structuredPropertyTuple = this.getStructuredPropertyTuple();
+			String _uuid_1 = _structuredPropertyTuple.getUuid();
+			String _plus_4 = (_plus_3 + _uuid_1);
+			final String namespace = (_plus_4 + ")");
+			NameBasedGenerator _nameBasedGenerator = Generators.nameBasedGenerator(NameBasedGenerator.NAMESPACE_URL);
+			UUID _generate = _nameBasedGenerator.generate(namespace);
+			_xblockexpression = _generate.toString();
+		}
+		return _xblockexpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DescriptionBox descriptionBox() {
+		SingletonInstance _singletonInstance = this.getSingletonInstance();
+		return _singletonInstance.descriptionBox();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -350,6 +400,45 @@ public class StructuredDataPropertyValueImpl extends TerminologyInstanceAssertio
 				return structuredPropertyTuple != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == TerminologyThing.class) {
+			switch (baseOperationID) {
+				case OMLPackage.TERMINOLOGY_THING___CALCULATE_UUID: return OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE___CALCULATE_UUID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		if (baseClass == TerminologyInstanceAssertion.class) {
+			switch (baseOperationID) {
+				case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___DESCRIPTION_BOX: return OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE___DESCRIPTION_BOX;
+				case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID: return OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE___CALCULATE_UUID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE___CALCULATE_UUID:
+				return calculateUUID();
+			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE___DESCRIPTION_BOX:
+				return descriptionBox();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //StructuredDataPropertyValueImpl

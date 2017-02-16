@@ -31,4 +31,7 @@ trait RootConceptTaxonomyAxiom
    * The Concept that is at the root of a taxonomy of disjunctions.
    */
   val root: Concept
+
+  override def calculateUUID
+  (): java.util.UUID
 }

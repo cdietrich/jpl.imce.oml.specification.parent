@@ -93,7 +93,7 @@ public class AnnotationPropertyTableImpl extends CDOObjectImpl implements BasicE
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.ANNOTATION_PROPERTY_TABLE;
+		return OMLPackage.eINSTANCE.getAnnotationPropertyTable();
 	}
 
 	/**

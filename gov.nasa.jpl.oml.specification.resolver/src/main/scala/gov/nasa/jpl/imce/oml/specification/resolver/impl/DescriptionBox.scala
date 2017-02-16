@@ -22,112 +22,139 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class DescriptionBox private[impl] 
 (
- override val uuid: java.util.UUID,
- override val closedWorldDefinitions: scala.collection.immutable.SortedSet[DescriptionBoxExtendsClosedWorldDefinitions],
+ override val descriptionExtent: resolver.api.TerminologyExtent,
+ override val closedWorldDefinitions: scala.collection.immutable.SortedSet[resolver.api.DescriptionBoxExtendsClosedWorldDefinitions],
  override val kind: gov.nasa.jpl.imce.oml.specification.tables.DescriptionKind,
  override val iri: gov.nasa.jpl.imce.oml.specification.tables.IRI,
- override val annotations: scala.collection.immutable.SortedSet[Annotation],
- override val conceptInstances: scala.collection.immutable.SortedSet[ConceptInstance],
- override val descriptionBoxRefinements: scala.collection.immutable.SortedSet[DescriptionBoxRefinement],
- override val reifiedRelationshipInstanceDomains: scala.collection.immutable.SortedSet[ReifiedRelationshipInstanceDomain],
- override val reifiedRelationshipInstanceRanges: scala.collection.immutable.SortedSet[ReifiedRelationshipInstanceRange],
- override val reifiedRelationshipInstances: scala.collection.immutable.SortedSet[ReifiedRelationshipInstance],
- override val unreifiedRelationshipInstanceTuples: scala.collection.immutable.SortedSet[UnreifiedRelationshipInstanceTuple]
+ override val annotations: scala.collection.immutable.SortedSet[resolver.api.Annotation],
+ override val conceptInstances: scala.collection.immutable.SortedSet[resolver.api.ConceptInstance],
+ override val descriptionBoxRefinements: scala.collection.immutable.SortedSet[resolver.api.DescriptionBoxRefinement],
+ override val reifiedRelationshipInstanceDomains: scala.collection.immutable.SortedSet[resolver.api.ReifiedRelationshipInstanceDomain],
+ override val reifiedRelationshipInstanceRanges: scala.collection.immutable.SortedSet[resolver.api.ReifiedRelationshipInstanceRange],
+ override val reifiedRelationshipInstances: scala.collection.immutable.SortedSet[resolver.api.ReifiedRelationshipInstance],
+ override val unreifiedRelationshipInstanceTuples: scala.collection.immutable.SortedSet[resolver.api.UnreifiedRelationshipInstanceTuple]
 )
 extends resolver.api.DescriptionBox
   with Module
 {
+  override def withAnnotations
+  (a: scala.collection.immutable.SortedSet[resolver.api.AnnotationPropertyTable])
+  : resolver.api.DescriptionBox
+  = {
+    copy(annotations = this.annotations ++ resolver.convertToAnnotations(a))
+  }
+  
+  override def annotationsByProperty
+  ()
+  : scala.collection.immutable.SortedSet[resolver.api.AnnotationPropertyTable]
+  = {
+    resolver.groupAnnotationsByProperty(annotations)
+  }
+  
   def extent
   ()
-  : TerminologyExtent
+  : resolver.api.TerminologyExtent
   = {
     descriptionExtent
   }
   
   override def entities
   ()
-  : scala.collection.immutable.SortedSet[Entity]
+  : scala.collection.immutable.SortedSet[resolver.api.Entity]
   = {
-    scala.collection.immutable.SortedSet.empty[Entity]
+    scala.collection.immutable.SortedSet.empty[resolver.api.Entity]
   }
   
   override def aspects
   ()
-  : scala.collection.immutable.SortedSet[Aspect]
+  : scala.collection.immutable.SortedSet[resolver.api.Aspect]
   = {
-    scala.collection.immutable.SortedSet.empty[Aspect]
+    scala.collection.immutable.SortedSet.empty[resolver.api.Aspect]
   }
   
   override def concepts
   ()
-  : scala.collection.immutable.SortedSet[Concept]
+  : scala.collection.immutable.SortedSet[resolver.api.Concept]
   = {
-    scala.collection.immutable.SortedSet.empty[Concept]
+    scala.collection.immutable.SortedSet.empty[resolver.api.Concept]
   }
   
   override def reifiedRelationships
   ()
-  : scala.collection.immutable.SortedSet[ReifiedRelationship]
+  : scala.collection.immutable.SortedSet[resolver.api.ReifiedRelationship]
   = {
-    scala.collection.immutable.SortedSet.empty[ReifiedRelationship]
+    scala.collection.immutable.SortedSet.empty[resolver.api.ReifiedRelationship]
   }
   
   override def unreifiedRelationships
   ()
-  : scala.collection.immutable.SortedSet[UnreifiedRelationship]
+  : scala.collection.immutable.SortedSet[resolver.api.UnreifiedRelationship]
   = {
-    scala.collection.immutable.SortedSet.empty[UnreifiedRelationship]
+    scala.collection.immutable.SortedSet.empty[resolver.api.UnreifiedRelationship]
   }
   
   override def dataRelationships
   ()
-  : scala.collection.immutable.SortedSet[DataRelationship]
+  : scala.collection.immutable.SortedSet[resolver.api.DataRelationship]
   = {
-    scala.collection.immutable.SortedSet.empty[DataRelationship]
+    scala.collection.immutable.SortedSet.empty[resolver.api.DataRelationship]
   }
   
   override def entityScalarDataProperties
   ()
-  : scala.collection.immutable.SortedSet[EntityScalarDataProperty]
+  : scala.collection.immutable.SortedSet[resolver.api.EntityScalarDataProperty]
   = {
-    scala.collection.immutable.SortedSet.empty[EntityScalarDataProperty]
+    scala.collection.immutable.SortedSet.empty[resolver.api.EntityScalarDataProperty]
   }
   
   override def dataranges
   ()
-  : scala.collection.immutable.SortedSet[DataRange]
+  : scala.collection.immutable.SortedSet[resolver.api.DataRange]
   = {
-    scala.collection.immutable.SortedSet.empty[DataRange]
+    scala.collection.immutable.SortedSet.empty[resolver.api.DataRange]
   }
   
   override def scalars
   ()
-  : scala.collection.immutable.SortedSet[Scalar]
+  : scala.collection.immutable.SortedSet[resolver.api.Scalar]
   = {
-    scala.collection.immutable.SortedSet.empty[Scalar]
+    scala.collection.immutable.SortedSet.empty[resolver.api.Scalar]
   }
   
   override def structures
   ()
-  : scala.collection.immutable.SortedSet[Structure]
+  : scala.collection.immutable.SortedSet[resolver.api.Structure]
   = {
-    scala.collection.immutable.SortedSet.empty[Structure]
+    scala.collection.immutable.SortedSet.empty[resolver.api.Structure]
   }
   
   override def termAxioms
   ()
-  : scala.collection.immutable.SortedSet[TermAxiom]
+  : scala.collection.immutable.SortedSet[resolver.api.TermAxiom]
   = {
-    scala.collection.immutable.SortedSet.empty[TermAxiom]
+    scala.collection.immutable.SortedSet.empty[resolver.api.TermAxiom]
   }
   
   override def everything
   ()
-  : scala.collection.immutable.SortedSet[TerminologyThing]
+  : scala.collection.immutable.SortedSet[resolver.api.TerminologyThing]
   = {
-    scala.collection.immutable.SortedSet.empty[resolver.api.TerminologyThing] ++ conceptInstances + reifiedRelationshipInstances ++ reifiedRelationshipInstanceDomains ++ reifiedRelationshipInstanceRanges ++ unreifiedRelationshipInstanceTuples
+    scala.collection.immutable.SortedSet.empty[resolver.api.TerminologyThing] ++ 
+    	conceptInstances ++
+    	reifiedRelationshipInstances ++ 
+    	reifiedRelationshipInstanceDomains ++ 
+    	reifiedRelationshipInstanceRanges ++ 
+    	unreifiedRelationshipInstanceTuples
   }
   
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: DescriptionBox => true
@@ -136,12 +163,13 @@ extends resolver.api.DescriptionBox
 
   override val hashCode
   : scala.Int
-  = (uuid, closedWorldDefinitions, kind, iri, annotations, conceptInstances, descriptionBoxRefinements, reifiedRelationshipInstanceDomains, reifiedRelationshipInstanceRanges, reifiedRelationshipInstances, unreifiedRelationshipInstanceTuples).##
+  = (uuid, descriptionExtent, closedWorldDefinitions, kind, iri, annotations, conceptInstances, descriptionBoxRefinements, reifiedRelationshipInstanceDomains, reifiedRelationshipInstanceRanges, reifiedRelationshipInstances, unreifiedRelationshipInstanceTuples).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: DescriptionBox =>
 	    (that canEqual this) &&
 	    (this.uuid == that.uuid) &&
+	    (this.descriptionExtent == that.descriptionExtent) &&
 	    (this.closedWorldDefinitions == that.closedWorldDefinitions) &&
 	    (this.kind == that.kind) &&
 	    (this.iri == that.iri) &&

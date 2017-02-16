@@ -23,18 +23,18 @@ trait OMLResolvedFactory {
   // Annotation
   
   def createAnnotation
-  ( subject: TerminologyThing,
+  ( module: Module,
+    subject: TerminologyThing,
     property: AnnotationProperty,
-    value: scala.Predef.String,
-    module: Module )
+    value: scala.Predef.String )
   : Annotation
   
   // AnnotationEntry
   
   def createAnnotationEntry
-  ( subject: TerminologyThing,
-    value: scala.Predef.String,
-    module: Module )
+  ( module: Module,
+    subject: TerminologyThing,
+    value: scala.Predef.String )
   : AnnotationEntry
   
   // AnnotationProperty
@@ -54,24 +54,21 @@ trait OMLResolvedFactory {
   // AnonymousConceptTaxonomyAxiom
   
   def createAnonymousConceptTaxonomyAxiom
-  ( uuid: java.util.UUID,
-    bundle: Bundle,
+  ( bundle: Bundle,
     disjointTaxonomyParent: ConceptTreeDisjunction )
   : AnonymousConceptTaxonomyAxiom
   
   // Aspect
   
   def createAspect
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     name: gov.nasa.jpl.imce.oml.specification.tables.LocalName )
   : Aspect
   
   // AspectSpecializationAxiom
   
   def createAspectSpecializationAxiom
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     superAspect: Aspect,
     subEntity: Entity )
   : AspectSpecializationAxiom
@@ -79,8 +76,7 @@ trait OMLResolvedFactory {
   // BinaryScalarRestriction
   
   def createBinaryScalarRestriction
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     restrictedRange: DataRange,
     length: scala.Option[scala.Int],
     minLength: scala.Option[scala.Int],
@@ -91,7 +87,7 @@ trait OMLResolvedFactory {
   // Bundle
   
   def createBundle
-  ( uuid: java.util.UUID,
+  ( bundleExtent: TerminologyExtent,
     kind: gov.nasa.jpl.imce.oml.specification.tables.TerminologyGraphKind,
     iri: gov.nasa.jpl.imce.oml.specification.tables.IRI,
     annotations: scala.collection.immutable.SortedSet[Annotation],
@@ -104,8 +100,7 @@ trait OMLResolvedFactory {
   // BundledTerminologyAxiom
   
   def createBundledTerminologyAxiom
-  ( uuid: java.util.UUID,
-    terminologyBundle: Bundle,
+  ( terminologyBundle: Bundle,
     bundledTerminology: TerminologyBox )
   : BundledTerminologyAxiom
   
@@ -122,8 +117,7 @@ trait OMLResolvedFactory {
   // Concept
   
   def createConcept
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     isAbstract: scala.Boolean,
     name: gov.nasa.jpl.imce.oml.specification.tables.LocalName )
   : Concept
@@ -131,8 +125,7 @@ trait OMLResolvedFactory {
   // ConceptDesignationTerminologyAxiom
   
   def createConceptDesignationTerminologyAxiom
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     designatedConcept: Concept,
     designatedTerminology: TerminologyBox )
   : ConceptDesignationTerminologyAxiom
@@ -150,8 +143,7 @@ trait OMLResolvedFactory {
   // ConceptInstance
   
   def createConceptInstance
-  ( uuid: java.util.UUID,
-    descriptionBox: DescriptionBox,
+  ( descriptionBox: DescriptionBox,
     singletonConceptClassifier: Concept,
     name: gov.nasa.jpl.imce.oml.specification.tables.LocalName,
     scalarDataPropertyValues: scala.collection.immutable.SortedSet[ScalarDataPropertyValue],
@@ -171,8 +163,7 @@ trait OMLResolvedFactory {
   // ConceptSpecializationAxiom
   
   def createConceptSpecializationAxiom
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     superConcept: Concept,
     subConcept: Concept )
   : ConceptSpecializationAxiom
@@ -180,8 +171,7 @@ trait OMLResolvedFactory {
   // DataStructureTuple
   
   def createDataStructureTuple
-  ( uuid: java.util.UUID,
-    dataStructureType: Structure,
+  ( dataStructureType: Structure,
     structuredDataPropertyValue: StructuredDataPropertyValue,
     name: gov.nasa.jpl.imce.oml.specification.tables.LocalName,
     scalarDataPropertyValues: scala.collection.immutable.SortedSet[ScalarDataPropertyValue],
@@ -201,7 +191,7 @@ trait OMLResolvedFactory {
   // DescriptionBox
   
   def createDescriptionBox
-  ( uuid: java.util.UUID,
+  ( descriptionExtent: TerminologyExtent,
     closedWorldDefinitions: scala.collection.immutable.SortedSet[DescriptionBoxExtendsClosedWorldDefinitions],
     kind: gov.nasa.jpl.imce.oml.specification.tables.DescriptionKind,
     iri: gov.nasa.jpl.imce.oml.specification.tables.IRI,
@@ -252,24 +242,21 @@ trait OMLResolvedFactory {
   // DescriptionBoxExtendsClosedWorldDefinitions
   
   def createDescriptionBoxExtendsClosedWorldDefinitions
-  ( uuid: java.util.UUID,
-    descriptionBox: DescriptionBox,
+  ( descriptionBox: DescriptionBox,
     closedWorldDefinitions: TerminologyBox )
   : DescriptionBoxExtendsClosedWorldDefinitions
   
   // DescriptionBoxRefinement
   
   def createDescriptionBoxRefinement
-  ( uuid: java.util.UUID,
-    refiningDescriptionBox: DescriptionBox,
+  ( refiningDescriptionBox: DescriptionBox,
     refinedDescriptionBox: DescriptionBox )
   : DescriptionBoxRefinement
   
   // EntityExistentialRestrictionAxiom
   
   def createEntityExistentialRestrictionAxiom
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     restrictedRelation: EntityRelationship,
     restrictedDomain: Entity,
     restrictedRange: Entity )
@@ -278,8 +265,7 @@ trait OMLResolvedFactory {
   // EntityScalarDataProperty
   
   def createEntityScalarDataProperty
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     domain: Entity,
     range: DataRange,
     isIdentityCriteria: scala.Boolean,
@@ -289,8 +275,7 @@ trait OMLResolvedFactory {
   // EntityScalarDataPropertyExistentialRestrictionAxiom
   
   def createEntityScalarDataPropertyExistentialRestrictionAxiom
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     restrictedEntity: Entity,
     scalarProperty: EntityScalarDataProperty,
     scalarRestriction: DataRange )
@@ -299,8 +284,7 @@ trait OMLResolvedFactory {
   // EntityScalarDataPropertyParticularRestrictionAxiom
   
   def createEntityScalarDataPropertyParticularRestrictionAxiom
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     restrictedEntity: Entity,
     scalarProperty: EntityScalarDataProperty,
     literalValue: gov.nasa.jpl.imce.oml.specification.tables.LexicalValue )
@@ -309,8 +293,7 @@ trait OMLResolvedFactory {
   // EntityScalarDataPropertyUniversalRestrictionAxiom
   
   def createEntityScalarDataPropertyUniversalRestrictionAxiom
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     restrictedEntity: Entity,
     scalarProperty: EntityScalarDataProperty,
     scalarRestriction: DataRange )
@@ -319,8 +302,7 @@ trait OMLResolvedFactory {
   // EntityStructuredDataProperty
   
   def createEntityStructuredDataProperty
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     domain: Entity,
     range: Structure,
     isIdentityCriteria: scala.Boolean,
@@ -330,8 +312,7 @@ trait OMLResolvedFactory {
   // EntityUniversalRestrictionAxiom
   
   def createEntityUniversalRestrictionAxiom
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     restrictedRelation: EntityRelationship,
     restrictedDomain: Entity,
     restrictedRange: Entity )
@@ -340,8 +321,7 @@ trait OMLResolvedFactory {
   // IRIScalarRestriction
   
   def createIRIScalarRestriction
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     restrictedRange: DataRange,
     length: scala.Option[scala.Int],
     minLength: scala.Option[scala.Int],
@@ -353,8 +333,7 @@ trait OMLResolvedFactory {
   // NumericScalarRestriction
   
   def createNumericScalarRestriction
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     restrictedRange: DataRange,
     minExclusive: scala.Option[gov.nasa.jpl.imce.oml.specification.tables.LexicalNumber],
     minInclusive: scala.Option[gov.nasa.jpl.imce.oml.specification.tables.LexicalNumber],
@@ -366,8 +345,7 @@ trait OMLResolvedFactory {
   // PlainLiteralScalarRestriction
   
   def createPlainLiteralScalarRestriction
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     restrictedRange: DataRange,
     length: scala.Option[scala.Int],
     minLength: scala.Option[scala.Int],
@@ -380,8 +358,7 @@ trait OMLResolvedFactory {
   // ReifiedRelationship
   
   def createReifiedRelationship
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     source: Entity,
     target: Entity,
     isAbstract: scala.Boolean,
@@ -402,8 +379,7 @@ trait OMLResolvedFactory {
   // ReifiedRelationshipInstance
   
   def createReifiedRelationshipInstance
-  ( uuid: java.util.UUID,
-    descriptionBox: DescriptionBox,
+  ( descriptionBox: DescriptionBox,
     singletonReifiedRelationshipClassifier: ReifiedRelationship,
     name: gov.nasa.jpl.imce.oml.specification.tables.LocalName,
     scalarDataPropertyValues: scala.collection.immutable.SortedSet[ScalarDataPropertyValue],
@@ -423,8 +399,7 @@ trait OMLResolvedFactory {
   // ReifiedRelationshipInstanceDomain
   
   def createReifiedRelationshipInstanceDomain
-  ( uuid: java.util.UUID,
-    descriptionBox: DescriptionBox,
+  ( descriptionBox: DescriptionBox,
     reifiedRelationshipInstance: ReifiedRelationshipInstance,
     domain: ConceptualEntitySingletonInstance,
     name: gov.nasa.jpl.imce.oml.specification.tables.LocalName )
@@ -433,8 +408,7 @@ trait OMLResolvedFactory {
   // ReifiedRelationshipInstanceRange
   
   def createReifiedRelationshipInstanceRange
-  ( uuid: java.util.UUID,
-    descriptionBox: DescriptionBox,
+  ( descriptionBox: DescriptionBox,
     reifiedRelationshipInstance: ReifiedRelationshipInstance,
     range: ConceptualEntitySingletonInstance,
     name: gov.nasa.jpl.imce.oml.specification.tables.LocalName )
@@ -443,8 +417,7 @@ trait OMLResolvedFactory {
   // ReifiedRelationshipSpecializationAxiom
   
   def createReifiedRelationshipSpecializationAxiom
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     superRelationship: ReifiedRelationship,
     subRelationship: ReifiedRelationship )
   : ReifiedRelationshipSpecializationAxiom
@@ -452,24 +425,21 @@ trait OMLResolvedFactory {
   // RootConceptTaxonomyAxiom
   
   def createRootConceptTaxonomyAxiom
-  ( uuid: java.util.UUID,
-    bundle: Bundle,
+  ( bundle: Bundle,
     root: Concept )
   : RootConceptTaxonomyAxiom
   
   // Scalar
   
   def createScalar
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     name: gov.nasa.jpl.imce.oml.specification.tables.LocalName )
   : Scalar
   
   // ScalarDataProperty
   
   def createScalarDataProperty
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     domain: Structure,
     range: DataRange,
     name: gov.nasa.jpl.imce.oml.specification.tables.LocalName )
@@ -478,8 +448,7 @@ trait OMLResolvedFactory {
   // ScalarDataPropertyValue
   
   def createScalarDataPropertyValue
-  ( uuid: java.util.UUID,
-    singletonInstance: SingletonInstance,
+  ( singletonInstance: SingletonInstance,
     scalarDataProperty: DataRelationshipToScalar,
     name: gov.nasa.jpl.imce.oml.specification.tables.LocalName,
     scalarPropertyValue: scala.Predef.String )
@@ -488,8 +457,7 @@ trait OMLResolvedFactory {
   // ScalarOneOfLiteralAxiom
   
   def createScalarOneOfLiteralAxiom
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     axiom: ScalarOneOfRestriction,
     value: gov.nasa.jpl.imce.oml.specification.tables.LexicalValue )
   : ScalarOneOfLiteralAxiom
@@ -497,8 +465,7 @@ trait OMLResolvedFactory {
   // ScalarOneOfRestriction
   
   def createScalarOneOfRestriction
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     restrictedRange: DataRange,
     name: gov.nasa.jpl.imce.oml.specification.tables.LocalName )
   : ScalarOneOfRestriction
@@ -506,8 +473,7 @@ trait OMLResolvedFactory {
   // SpecificDisjointConceptAxiom
   
   def createSpecificDisjointConceptAxiom
-  ( uuid: java.util.UUID,
-    bundle: Bundle,
+  ( bundle: Bundle,
     disjointTaxonomyParent: ConceptTreeDisjunction,
     disjointLeaf: Concept )
   : SpecificDisjointConceptAxiom
@@ -515,8 +481,7 @@ trait OMLResolvedFactory {
   // StringScalarRestriction
   
   def createStringScalarRestriction
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     restrictedRange: DataRange,
     length: scala.Option[scala.Int],
     minLength: scala.Option[scala.Int],
@@ -528,16 +493,14 @@ trait OMLResolvedFactory {
   // Structure
   
   def createStructure
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     name: gov.nasa.jpl.imce.oml.specification.tables.LocalName )
   : Structure
   
   // StructuredDataProperty
   
   def createStructuredDataProperty
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     domain: Structure,
     range: Structure,
     name: gov.nasa.jpl.imce.oml.specification.tables.LocalName )
@@ -546,8 +509,7 @@ trait OMLResolvedFactory {
   // StructuredDataPropertyValue
   
   def createStructuredDataPropertyValue
-  ( uuid: java.util.UUID,
-    singletonInstance: SingletonInstance,
+  ( singletonInstance: SingletonInstance,
     structuredDataProperty: DataRelationshipToStructure,
     structuredPropertyTuple: DataStructureTuple,
     name: gov.nasa.jpl.imce.oml.specification.tables.LocalName )
@@ -556,8 +518,7 @@ trait OMLResolvedFactory {
   // SynonymScalarRestriction
   
   def createSynonymScalarRestriction
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     restrictedRange: DataRange,
     name: gov.nasa.jpl.imce.oml.specification.tables.LocalName )
   : SynonymScalarRestriction
@@ -565,8 +526,7 @@ trait OMLResolvedFactory {
   // TerminologyExtensionAxiom
   
   def createTerminologyExtensionAxiom
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     extendedTerminology: TerminologyBox )
   : TerminologyExtensionAxiom
   
@@ -612,7 +572,7 @@ trait OMLResolvedFactory {
   // TerminologyGraph
   
   def createTerminologyGraph
-  ( uuid: java.util.UUID,
+  ( graphExtent: TerminologyExtent,
     kind: gov.nasa.jpl.imce.oml.specification.tables.TerminologyGraphKind,
     iri: gov.nasa.jpl.imce.oml.specification.tables.IRI,
     annotations: scala.collection.immutable.SortedSet[Annotation],
@@ -623,8 +583,7 @@ trait OMLResolvedFactory {
   // TerminologyNestingAxiom
   
   def createTerminologyNestingAxiom
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     nestingTerminology: TerminologyBox,
     nestingContext: Concept )
   : TerminologyNestingAxiom
@@ -642,8 +601,7 @@ trait OMLResolvedFactory {
   // TimeScalarRestriction
   
   def createTimeScalarRestriction
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     restrictedRange: DataRange,
     minExclusive: scala.Option[gov.nasa.jpl.imce.oml.specification.tables.LexicalTime],
     minInclusive: scala.Option[gov.nasa.jpl.imce.oml.specification.tables.LexicalTime],
@@ -655,8 +613,7 @@ trait OMLResolvedFactory {
   // UnreifiedRelationship
   
   def createUnreifiedRelationship
-  ( uuid: java.util.UUID,
-    tbox: TerminologyBox,
+  ( tbox: TerminologyBox,
     source: Entity,
     target: Entity,
     isAsymmetric: scala.Boolean,
@@ -674,8 +631,7 @@ trait OMLResolvedFactory {
   // UnreifiedRelationshipInstanceTuple
   
   def createUnreifiedRelationshipInstanceTuple
-  ( uuid: java.util.UUID,
-    descriptionBox: DescriptionBox,
+  ( descriptionBox: DescriptionBox,
     unreifiedRelationship: UnreifiedRelationship,
     domain: ConceptualEntitySingletonInstance,
     range: ConceptualEntitySingletonInstance,

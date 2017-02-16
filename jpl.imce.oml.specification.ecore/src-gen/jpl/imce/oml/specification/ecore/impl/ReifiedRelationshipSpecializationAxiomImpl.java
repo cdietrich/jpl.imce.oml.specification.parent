@@ -18,7 +18,13 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import com.fasterxml.uuid.Generators;
+
+import com.fasterxml.uuid.impl.NameBasedGenerator;
+
 import java.lang.reflect.InvocationTargetException;
+
+import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.Entity;
 import jpl.imce.oml.specification.ecore.OMLPackage;
@@ -86,7 +92,7 @@ public class ReifiedRelationshipSpecializationAxiomImpl extends SpecializationAx
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM;
+		return OMLPackage.eINSTANCE.getReifiedRelationshipSpecializationAxiom();
 	}
 
 	/**
@@ -163,6 +169,29 @@ public class ReifiedRelationshipSpecializationAxiomImpl extends SpecializationAx
 		superRelationship = newSuperRelationship;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUPER_RELATIONSHIP, oldSuperRelationship, superRelationship));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String calculateUUID() {
+		String _xblockexpression = null;
+		{
+			ReifiedRelationship _subRelationship = this.getSubRelationship();
+			String _uuid = _subRelationship.getUuid();
+			String _plus = ("ReifiedRelationshipSpecializationAxiom(subRelationship=" + _uuid);
+			String _plus_1 = (_plus + ",superRelationship=");
+			ReifiedRelationship _superRelationship = this.getSuperRelationship();
+			String _uuid_1 = _superRelationship.getUuid();
+			String _plus_2 = (_plus_1 + _uuid_1);
+			final String namespace = (_plus_2 + ")");
+			NameBasedGenerator _nameBasedGenerator = Generators.nameBasedGenerator(NameBasedGenerator.NAMESPACE_URL);
+			UUID _generate = _nameBasedGenerator.generate(namespace);
+			_xblockexpression = _generate.toString();
+		}
+		return _xblockexpression;
 	}
 
 	/**
@@ -261,6 +290,8 @@ public class ReifiedRelationshipSpecializationAxiomImpl extends SpecializationAx
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+			case OMLPackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM___CALCULATE_UUID:
+				return calculateUUID();
 			case OMLPackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM___CHILD:
 				return child();
 			case OMLPackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM___PARENT:

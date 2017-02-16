@@ -96,7 +96,7 @@ public class ConceptualEntityItemProvider
 				 getResourceLocator(),
 				 getString("_UI_ConceptualEntity_isAbstract_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ConceptualEntity_isAbstract_feature", "_UI_ConceptualEntity_type"),
-				 OMLPackage.Literals.CONCEPTUAL_ENTITY__IS_ABSTRACT,
+				 OMLPackage.eINSTANCE.getConceptualEntity_IsAbstract(),
 				 true,
 				 false,
 				 false,

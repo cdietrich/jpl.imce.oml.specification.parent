@@ -28,6 +28,8 @@ trait ReifiedRelationshipInstance
   val descriptionBox: DescriptionBox
   val singletonReifiedRelationshipClassifier: ReifiedRelationship
 
+  override def calculateUUID
+  (): java.util.UUID
   override def conceptualEntitySingletonClassifier
   (): ConceptualEntity
 }

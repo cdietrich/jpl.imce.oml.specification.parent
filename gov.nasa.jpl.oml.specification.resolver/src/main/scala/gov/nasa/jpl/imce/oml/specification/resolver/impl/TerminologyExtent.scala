@@ -22,13 +22,15 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class TerminologyExtent private[impl] 
 (
- override val annotationProperties: scala.collection.immutable.SortedSet[AnnotationProperty],
- override val bundles: scala.collection.immutable.SortedSet[Bundle],
- override val descriptions: scala.collection.immutable.SortedSet[DescriptionBox],
- override val terminologyGraphs: scala.collection.immutable.SortedSet[TerminologyGraph]
+ override val annotationProperties: scala.collection.immutable.SortedSet[resolver.api.AnnotationProperty],
+ override val bundles: scala.collection.immutable.SortedSet[resolver.api.Bundle],
+ override val descriptions: scala.collection.immutable.SortedSet[resolver.api.DescriptionBox],
+ override val terminologyGraphs: scala.collection.immutable.SortedSet[resolver.api.TerminologyGraph]
 )
 extends resolver.api.TerminologyExtent
 {
+
+
 
   override val hashCode
   : scala.Int

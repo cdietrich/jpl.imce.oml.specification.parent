@@ -27,4 +27,9 @@ trait DataStructureTuple
 
   val structuredDataPropertyValue: StructuredDataPropertyValue
   val dataStructureType: Structure
+
+  override def calculateUUID
+  (): java.util.UUID
+  def descriptionBox
+  (): DescriptionBox
 }

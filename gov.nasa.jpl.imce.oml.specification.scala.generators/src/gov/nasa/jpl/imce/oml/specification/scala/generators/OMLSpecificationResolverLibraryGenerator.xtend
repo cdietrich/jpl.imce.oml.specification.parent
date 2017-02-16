@@ -24,15 +24,8 @@ import java.util.Map
 import jpl.imce.oml.specification.ecore.OMLPackage
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.EClass
-import org.eclipse.emf.ecore.EOperation
 import org.eclipse.emf.ecore.EPackage
-import org.eclipse.emf.ecore.EReference
-import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.emf.ecore.util.EcoreUtil
-import org.eclipse.emf.ecore.xcore.mappings.XcoreMapper
-import org.eclipse.xtext.nodemodel.util.NodeModelUtils
-import org.eclipse.xtext.xbase.XExpression
-import org.eclipse.xtext.xbase.XFeatureCall
 
 class OMLSpecificationResolverLibraryGenerator extends OMLUtilities {
 	
@@ -70,7 +63,7 @@ class OMLSpecificationResolverLibraryGenerator extends OMLUtilities {
 	def generate(EPackage ePackage, String targetFolder) {
 		val factoryFile = new FileOutputStream(new File(targetFolder + File::separator + "OMLResolvedFactoryImpl.scala"))
 		factoryFile.write(generateFactoryFile(ePackage, "gov.nasa.jpl.imce.oml.specification.resolver.impl").bytes)
-		for(eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPIClass])  {
+		for(eClass : ePackage.FunctionalAPIClasses)  {
 			val classFile = new FileOutputStream(new File(targetFolder + File::separator + eClass.name + ".scala"))
 			classFile.write(generateClassFile(eClass).bytes)
 		}
@@ -88,14 +81,14 @@ class OMLSpecificationResolverLibraryGenerator extends OMLUtilities {
 		  // «eClass.name»
 		  
 		  def create«eClass.name»
-		  «FOR attr : eClass.getSortedAttributeSignature BEFORE "(" SEPARATOR ",\n " AFTER ")"» «attr.name»: «attr.queryResolverType»«ENDFOR»
+		  «FOR attr : eClass.getSortedAttributeSignatureExceptDerived BEFORE "(" SEPARATOR ",\n " AFTER ")"» «attr.name»: «attr.queryResolverType('resolver.api.')»«ENDFOR»
 		  : resolver.api.«eClass.name»
-		  = resolver.impl.«eClass.name»«FOR attr : eClass.getSortedAttributeSignature BEFORE "(\n" SEPARATOR ",\n" AFTER " )"»  «attr.name»«ENDFOR»
+		  = resolver.impl.«eClass.name»«FOR attr : eClass.getSortedAttributeSignatureExceptDerived BEFORE "(\n" SEPARATOR ",\n" AFTER " )"»  «attr.name»«ENDFOR»
 		  
 		  «FOR attr: eClass.lookupCopyConstructorArguments»
 		  def copy«eClass.name»_«attr.name»
 		  ( that: resolver.api.«eClass.name»,
-		    «attr.name»: «attr.queryResolverType» )
+		    «attr.name»: «attr.queryResolverType('resolver.api.')» )
 		  : resolver.api.«eClass.name»
 		  = that match {
 		  	case x: resolver.impl.«eClass.name» =>
@@ -115,11 +108,18 @@ class OMLSpecificationResolverLibraryGenerator extends OMLUtilities {
 		
 		«IF (eClass.abstract)»trait «ELSE»case class «ENDIF»«eClass.classDeclaration»
 		{
-		«FOR op : eClass.ScalaOperations»  «op.doc("  ")»«op.queryResolverName»
-		  : «op.queryResolverType»
+		«FOR op : eClass.ScalaOperations»  «op.doc("  ")»«op.queryResolverName('resolver.api.')»
+		  : «op.queryResolverType('resolver.api.')»
 		  = «op.queryBody»
 		  
 		«ENDFOR»		  
+		
+		«FOR sf : eClass.getSortedDerivedAttributeSignature»  «sf.doc("  ")»override val «sf.name»
+		  : «sf.queryResolverType('resolver.api.')»
+		  = «sf.queryBody»
+		  
+		«ENDFOR»	
+		
 		«IF (eClass.isSpecializationOfRootClass)»
 		
 		  override def canEqual(that: scala.Any): scala.Boolean = that match {
@@ -145,112 +145,16 @@ class OMLSpecificationResolverLibraryGenerator extends OMLUtilities {
 		}
 	'''
 	
-	/*
-	 * Transform an XText base XExpression to an equivalent Scala expression in concrete syntax (String).
-	 */
-	static def String toScala(XExpression exp) {
-		val result = switch exp {
-			XFeatureCall: {
-			    val n = NodeModelUtils.findActualNodeFor(exp)
-			    val s = NodeModelUtils.getTokenText(n)
-				s
-			}
-				
-			//XMemberFeatureCall:
-			//	exp.actualReceiver.toScala+"."+exp.feature.simpleName
-			// in xcore: "a.b", then: "a.getB"
-			// it is difficult to retrieve "a.b"
-			 
-			default:
-				exp.toString + "/* default */"
-		}
-		result
-	}
-	
 	static def String classDeclaration(EClass eClass) '''
 		«eClass.name»«IF (!eClass.abstract)» private[impl] 
 		(
-		 «FOR attr : eClass.getSortedAttributeSignature SEPARATOR ","»
-		 override val «attr.name»: «attr.queryResolverType»
+		 «FOR attr : eClass.getSortedAttributeSignatureExceptDerived SEPARATOR ","»
+		 override val «attr.name»: «attr.queryResolverType('resolver.api.')»
 		 «ENDFOR»
 		)«ENDIF»
 		extends resolver.api.«eClass.name»
 		«FOR parent : eClass.ESuperTypes BEFORE "  with " SEPARATOR "\n  with "»«parent.name»«ENDFOR»
 	'''
 	
-	static def Iterable<EStructuralFeature> getSortedAttributeSignature(EClass eClass) {
-		eClass
-		.selfAndAllSupertypes
-		.map[APIStructuralFeatures]
-		.flatten
-		.sortWith(new OMLFeatureCompare())
-	}
 	
-	static def Boolean isAttributeOrReferenceOrContainer(EStructuralFeature f) {
-		switch f {
-			EReference: 
-				! f.containment
-			default: true
-		}
-	}
-	
-	static def String queryName(EStructuralFeature feature) {
-		feature.name
-	}
-	
-	static def Iterable<EStructuralFeature> lookupCopyConstructorArguments(EClass eClass) {
-		eClass.getSortedAttributeSignature.filter[isCopyConstructorArgument]
-	}
-	
-	static def Boolean isCopyConstructorArgument(EStructuralFeature attribute) {
-		null !== attribute.getEAnnotation("http://imce.jpl.nasa.gov/oml/CopyConstructor")
-	}
-	
-	static def Iterable<EStructuralFeature> APIStructuralFeatures(EClass eClass) {
-		eClass.EStructuralFeatures.filter[isAPI]
-	}
-     
-	static def Iterable<EClass> FunctionalAPIClasses(EPackage ePkg) {
-		ePkg.EClassifiers.filter(EClass).filter[isFunctionalAPIClass]
-	}
-	
-    static def Boolean isFunctionalAPIClass(EClass c) {
-    	null === c.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotFunctionalAPI")
-    }
-    
-	static def Boolean isRootHierarchyClass(EClass eClass) {
-		eClass.isAbstract && eClass.ESuperTypes.isEmpty && !eClass.orderingKeys.isEmpty
-	}
-	
-	static def Boolean isSpecializationOfRootClass(EClass eClass) {
-		!eClass.ESuperTypes.isEmpty && eClass.selfAndAllSupertypes.exists[isRootHierarchyClass]
-	}
-	
-	static def Iterable<EOperation> APIOperations(EClass eClass) {
-		eClass.EOperations.filter[isAPI]
-	}
-    
-	static def Iterable<EOperation> ScalaOperations(EClass eClass) {
-		eClass.EOperations.filter(op | op.isScala || null !== op.xExpressions) 
-	}
-    
-    static def String scalaAnnotation(EOperation op) {
-    	op.getEAnnotation("http://imce.jpl.nasa.gov/oml/Scala")?.details?.get("code")
-    }
-    
-    static def Iterable<XExpression> xExpressions(EOperation op) {
-    	(new XcoreMapper()).getXOperation(op)?.body?.expressions
-    }
-		
-	static def String queryBody(EOperation op) {
-		val scalaCode = op.scalaAnnotation
-		val xExpressions = op.xExpressions
-		if (null !== scalaCode)
-'''{
-  «scalaCode»
-}'''
-		else if (null !== xExpressions)
-			'''«FOR exp: xExpressions BEFORE "{\n  " SEPARATOR "\n  " AFTER "\n}"»«exp.toScala»«ENDFOR»'''
-	}
-    
 }

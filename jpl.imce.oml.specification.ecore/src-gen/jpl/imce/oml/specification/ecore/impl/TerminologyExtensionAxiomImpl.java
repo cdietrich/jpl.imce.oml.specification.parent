@@ -80,7 +80,7 @@ public class TerminologyExtensionAxiomImpl extends TerminologyBoxAxiomImpl imple
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.TERMINOLOGY_EXTENSION_AXIOM;
+		return OMLPackage.eINSTANCE.getTerminologyExtensionAxiom();
 	}
 
 	/**

@@ -92,7 +92,7 @@ public class ScalarDataPropertyImpl extends DataRelationshipImpl implements Scal
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.SCALAR_DATA_PROPERTY;
+		return OMLPackage.eINSTANCE.getScalarDataProperty();
 	}
 
 	/**

@@ -25,6 +25,14 @@ extends resolver.api.TerminologyBundleAxiom
   with TerminologyAxiom
 {
 
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
+
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: TerminologyBundleAxiom => true
   	case _ => false

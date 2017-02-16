@@ -113,7 +113,7 @@ public class EntityStructuredDataPropertyImpl extends DataRelationshipImpl imple
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.ENTITY_STRUCTURED_DATA_PROPERTY;
+		return OMLPackage.eINSTANCE.getEntityStructuredDataProperty();
 	}
 
 	/**

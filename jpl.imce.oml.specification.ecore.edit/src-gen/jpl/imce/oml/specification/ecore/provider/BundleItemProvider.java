@@ -81,7 +81,7 @@ public class BundleItemProvider extends TerminologyBoxItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Bundle_bundleExtent_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Bundle_bundleExtent_feature", "_UI_Bundle_type"),
-				 OMLPackage.Literals.BUNDLE__BUNDLE_EXTENT,
+				 OMLPackage.eINSTANCE.getBundle_BundleExtent(),
 				 true,
 				 false,
 				 true,
@@ -102,8 +102,8 @@ public class BundleItemProvider extends TerminologyBoxItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OMLPackage.Literals.BUNDLE__BUNDLE_STATEMENTS);
-			childrenFeatures.add(OMLPackage.Literals.BUNDLE__TERMINOLOGY_BUNDLE_AXIOMS);
+			childrenFeatures.add(OMLPackage.eINSTANCE.getBundle_BundleStatements());
+			childrenFeatures.add(OMLPackage.eINSTANCE.getBundle_TerminologyBundleAxioms());
 		}
 		return childrenFeatures;
 	}
@@ -180,22 +180,22 @@ public class BundleItemProvider extends TerminologyBoxItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.BUNDLE__BUNDLE_STATEMENTS,
+				(OMLPackage.eINSTANCE.getBundle_BundleStatements(),
 				 OMLFactory.eINSTANCE.createSpecificDisjointConceptAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.BUNDLE__BUNDLE_STATEMENTS,
+				(OMLPackage.eINSTANCE.getBundle_BundleStatements(),
 				 OMLFactory.eINSTANCE.createAnonymousConceptTaxonomyAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.BUNDLE__BUNDLE_STATEMENTS,
+				(OMLPackage.eINSTANCE.getBundle_BundleStatements(),
 				 OMLFactory.eINSTANCE.createRootConceptTaxonomyAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.BUNDLE__TERMINOLOGY_BUNDLE_AXIOMS,
+				(OMLPackage.eINSTANCE.getBundle_TerminologyBundleAxioms(),
 				 OMLFactory.eINSTANCE.createBundledTerminologyAxiom()));
 	}
 

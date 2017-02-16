@@ -31,6 +31,8 @@ trait DescriptionBoxExtendsClosedWorldDefinitions
   val descriptionBox: DescriptionBox
   val closedWorldDefinitions: TerminologyBox
 
+  override def calculateUUID
+  (): java.util.UUID
   def descriptionDomain
   (): DescriptionBox
   def targetModule

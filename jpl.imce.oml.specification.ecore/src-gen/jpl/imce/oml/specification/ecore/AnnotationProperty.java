@@ -102,6 +102,7 @@ public interface AnnotationProperty extends CDOObject {
 	 * <!-- end-user-doc -->
 	 * @model dataType="jpl.imce.oml.specification.ecore.UUID" unique="false" required="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%java.lang.String%> _iri = this.getIri();\n<%java.util.UUID%> _fromString = <%java.util.UUID%>.fromString(_iri);\nreturn _fromString.toString();'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='java.util.UUID.fromString(iri)'"
 	 * @generated
 	 */
 	String uuid();

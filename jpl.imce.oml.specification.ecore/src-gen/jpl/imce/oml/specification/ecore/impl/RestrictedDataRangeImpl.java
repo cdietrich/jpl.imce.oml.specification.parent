@@ -70,7 +70,7 @@ public abstract class RestrictedDataRangeImpl extends DataRangeImpl implements R
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.RESTRICTED_DATA_RANGE;
+		return OMLPackage.eINSTANCE.getRestrictedDataRange();
 	}
 
 	/**

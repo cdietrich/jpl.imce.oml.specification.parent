@@ -23,4 +23,12 @@ import gov.nasa.jpl.imce.oml.specification._
 trait TerminologyThing
 extends resolver.api.TerminologyThing
 {
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 }

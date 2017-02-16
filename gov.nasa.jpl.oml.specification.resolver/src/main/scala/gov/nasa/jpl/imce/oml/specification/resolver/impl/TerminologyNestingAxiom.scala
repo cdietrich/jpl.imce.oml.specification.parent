@@ -22,19 +22,27 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class TerminologyNestingAxiom private[impl] 
 (
- override val uuid: java.util.UUID,
- override val tbox: TerminologyBox,
- override val nestingTerminology: TerminologyBox,
- override val nestingContext: Concept
+ override val tbox: resolver.api.TerminologyBox,
+ override val nestingTerminology: resolver.api.TerminologyBox,
+ override val nestingContext: resolver.api.Concept
 )
 extends resolver.api.TerminologyNestingAxiom
   with TerminologyBoxAxiom
 {
+  override def calculateUUID
+  ()
+  : java.util.UUID
+  = {
+    
+    	val namespace = "TerminologyNestingAxiom(source=" + source.uuid + ",target="+target.uuid + ",nestingContext="+nestingContext.uuid + ")"
+    	com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)
+  }
+  
   def nestedTerminology
   ()
-  : TerminologyGraph
+  : resolver.api.TerminologyGraph
   = {
-    terminology match { case g: TerminologyGraph => g }
+    tbox match { case g: TerminologyGraph => g }
   }
   
   /*
@@ -42,9 +50,9 @@ extends resolver.api.TerminologyNestingAxiom
    */
   override def source
   ()
-  : TerminologyBox
+  : resolver.api.TerminologyBox
   = {
-    getTbox
+    tbox
   }
   
   /*
@@ -52,11 +60,19 @@ extends resolver.api.TerminologyNestingAxiom
    */
   override def target
   ()
-  : TerminologyBox
+  : resolver.api.TerminologyBox
   = {
     nestingTerminology
   }
   
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: TerminologyNestingAxiom => true

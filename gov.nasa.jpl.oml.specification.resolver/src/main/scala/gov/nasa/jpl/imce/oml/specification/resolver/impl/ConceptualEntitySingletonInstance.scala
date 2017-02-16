@@ -26,7 +26,7 @@ extends resolver.api.ConceptualEntitySingletonInstance
 {
   def identifyingScalarValues
   ()
-  : scala.collection.immutable.SortedSet[ScalarDataPropertyValue]
+  : scala.collection.immutable.SortedSet[resolver.api.ScalarDataPropertyValue]
   = {
     scalarDataPropertyValues.filter{ v =>
     	  v.scalarDataProperty match {
@@ -39,7 +39,7 @@ extends resolver.api.ConceptualEntitySingletonInstance
   
   def identifyingStructuredTuples
   ()
-  : scala.collection.immutable.SortedSet[StructuredDataPropertyValue]
+  : scala.collection.immutable.SortedSet[resolver.api.StructuredDataPropertyValue]
   = {
     structuredDataPropertyValues.filter{ v =>
     	  v.structuredDataProperty match {
@@ -50,6 +50,14 @@ extends resolver.api.ConceptualEntitySingletonInstance
     	  }}
   }
   
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: ConceptualEntitySingletonInstance => true

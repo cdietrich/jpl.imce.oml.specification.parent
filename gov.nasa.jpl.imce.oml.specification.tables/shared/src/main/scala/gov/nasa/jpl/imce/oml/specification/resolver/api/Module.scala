@@ -33,7 +33,7 @@ trait Module
 
   def extent
   (): TerminologyExtent
-  def calculateUUID
+  override def calculateUUID
   (): java.util.UUID
   def nsPrefix
   (): gov.nasa.jpl.imce.oml.specification.tables.NamespacePrefix

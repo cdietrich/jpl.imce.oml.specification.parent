@@ -47,7 +47,7 @@ public abstract class DatatypeImpl extends TermImpl implements Datatype {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.DATATYPE;
+		return OMLPackage.eINSTANCE.getDatatype();
 	}
 
 } //DatatypeImpl

@@ -92,7 +92,7 @@ public class AspectSpecializationAxiomImpl extends SpecializationAxiomImpl imple
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.ASPECT_SPECIALIZATION_AXIOM;
+		return OMLPackage.eINSTANCE.getAspectSpecializationAxiom();
 	}
 
 	/**

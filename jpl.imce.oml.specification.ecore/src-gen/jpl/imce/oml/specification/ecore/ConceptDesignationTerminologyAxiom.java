@@ -100,8 +100,19 @@ public interface ConceptDesignationTerminologyAxiom extends TerminologyBoxAxiom 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model dataType="jpl.imce.oml.specification.ecore.UUID" unique="false" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%java.lang.String%> _xblockexpression = null;\n{\n\t<%jpl.imce.oml.specification.ecore.TerminologyBox%> _tbox = this.getTbox();\n\t<%java.lang.String%> _uuid = _tbox.getUuid();\n\t<%java.lang.String%> _plus = (\"ConceptDesignationTerminologyAxiom(designationTerminologyGraph=\" + _uuid);\n\t<%java.lang.String%> _plus_1 = (_plus + \",designatedConcept=\");\n\t<%jpl.imce.oml.specification.ecore.Concept%> _designatedConcept = this.getDesignatedConcept();\n\t<%java.lang.String%> _uuid_1 = _designatedConcept.getUuid();\n\t<%java.lang.String%> _plus_2 = (_plus_1 + _uuid_1);\n\tfinal <%java.lang.String%> namespace = (_plus_2 + \")\");\n\t<%com.fasterxml.uuid.impl.NameBasedGenerator%> _nameBasedGenerator = <%com.fasterxml.uuid.Generators%>.nameBasedGenerator(<%com.fasterxml.uuid.impl.NameBasedGenerator%>.NAMESPACE_URL);\n\t<%java.util.UUID%> _generate = _nameBasedGenerator.generate(namespace);\n\t_xblockexpression = _generate.toString();\n}\nreturn _xblockexpression;'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='\n\tval namespace = \"ConceptDesignationTerminologyAxiom(designationTerminologyGraph=\" + tbox.uuid + \",designatedConcept=\"+designatedConcept.uuid+\")\"\n\tcom.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)'"
+	 * @generated
+	 */
+	String calculateUUID();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model unique="false" required="true"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='terminology match { case g: TerminologyGraph => g }'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%jpl.imce.oml.specification.ecore.TerminologyGraph%> _switchResult = null;\n<%jpl.imce.oml.specification.ecore.TerminologyBox%> _tbox = this.getTbox();\nboolean _matched = false;\nif (_tbox instanceof <%jpl.imce.oml.specification.ecore.TerminologyGraph%>)\n{\n\t_matched=true;\n\t<%jpl.imce.oml.specification.ecore.TerminologyBox%> _tbox_1 = this.getTbox();\n\t_switchResult = ((<%jpl.imce.oml.specification.ecore.TerminologyGraph%>) _tbox_1);\n}\nreturn _switchResult;'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='tbox match { case g: TerminologyGraph => g }'"
 	 * @generated
 	 */
 	TerminologyGraph designationTerminologyGraph();
@@ -114,6 +125,7 @@ public interface ConceptDesignationTerminologyAxiom extends TerminologyBoxAxiom 
 	 * <!-- end-model-doc -->
 	 * @model unique="false" required="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getTbox();'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='tbox'"
 	 * @generated
 	 */
 	TerminologyBox source();

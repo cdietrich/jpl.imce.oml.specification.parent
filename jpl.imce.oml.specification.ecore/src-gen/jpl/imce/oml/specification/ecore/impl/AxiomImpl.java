@@ -47,7 +47,7 @@ public abstract class AxiomImpl extends TerminologyBoxStatementImpl implements A
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.AXIOM;
+		return OMLPackage.eINSTANCE.getAxiom();
 	}
 
 } //AxiomImpl

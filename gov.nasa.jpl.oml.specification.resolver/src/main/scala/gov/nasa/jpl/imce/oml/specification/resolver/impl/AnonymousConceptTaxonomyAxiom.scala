@@ -22,14 +22,30 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class AnonymousConceptTaxonomyAxiom private[impl] 
 (
- override val uuid: java.util.UUID,
- override val bundle: Bundle,
- override val disjointTaxonomyParent: ConceptTreeDisjunction
+ override val bundle: resolver.api.Bundle,
+ override val disjointTaxonomyParent: resolver.api.ConceptTreeDisjunction
 )
 extends resolver.api.AnonymousConceptTaxonomyAxiom
   with DisjointUnionOfConceptsAxiom
   with ConceptTreeDisjunction
 {
+  override def calculateUUID
+  ()
+  : java.util.UUID
+  = {
+    
+    	val namespace = "AnonymousConceptTaxonomyAxiom(bundle=" + bundle.uuid + ",disjointTaxonomyParent="+disjointTaxonomyParent.calculateUUID()+")"
+    	com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)
+  }
+  
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: AnonymousConceptTaxonomyAxiom => true

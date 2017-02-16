@@ -18,10 +18,23 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import com.fasterxml.uuid.Generators;
+
+import com.fasterxml.uuid.impl.NameBasedGenerator;
+
+import java.lang.reflect.InvocationTargetException;
+
+import java.util.UUID;
+
 import jpl.imce.oml.specification.ecore.BinaryScalarRestriction;
+import jpl.imce.oml.specification.ecore.DataRange;
 import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.Term;
+import jpl.imce.oml.specification.ecore.TerminologyThing;
 
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -119,7 +132,7 @@ public class BinaryScalarRestrictionImpl extends RestrictedDataRangeImpl impleme
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.BINARY_SCALAR_RESTRICTION;
+		return OMLPackage.eINSTANCE.getBinaryScalarRestriction();
 	}
 
 	/**
@@ -183,6 +196,25 @@ public class BinaryScalarRestrictionImpl extends RestrictedDataRangeImpl impleme
 		maxLength = newMaxLength;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.BINARY_SCALAR_RESTRICTION__MAX_LENGTH, oldMaxLength, maxLength));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String calculateUUID() {
+		String _xblockexpression = null;
+		{
+			DataRange _restrictedRange = this.getRestrictedRange();
+			String _uuid = _restrictedRange.getUuid();
+			String _plus = ("BinaryScalarRestriction(restrictedRange=" + _uuid);
+			final String namespace = (_plus + ")");
+			NameBasedGenerator _nameBasedGenerator = Generators.nameBasedGenerator(NameBasedGenerator.NAMESPACE_URL);
+			UUID _generate = _nameBasedGenerator.generate(namespace);
+			_xblockexpression = _generate.toString();
+		}
+		return _xblockexpression;
 	}
 
 	/**
@@ -261,6 +293,42 @@ public class BinaryScalarRestrictionImpl extends RestrictedDataRangeImpl impleme
 				return maxLength != MAX_LENGTH_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == TerminologyThing.class) {
+			switch (baseOperationID) {
+				case OMLPackage.TERMINOLOGY_THING___CALCULATE_UUID: return OMLPackage.BINARY_SCALAR_RESTRICTION___CALCULATE_UUID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		if (baseClass == Term.class) {
+			switch (baseOperationID) {
+				case OMLPackage.TERM___CALCULATE_UUID: return OMLPackage.BINARY_SCALAR_RESTRICTION___CALCULATE_UUID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OMLPackage.BINARY_SCALAR_RESTRICTION___CALCULATE_UUID:
+				return calculateUUID();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

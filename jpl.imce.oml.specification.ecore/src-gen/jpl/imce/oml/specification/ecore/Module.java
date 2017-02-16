@@ -103,6 +103,7 @@ public interface Module extends TerminologyThing, Resource {
 	 * <!-- end-user-doc -->
 	 * @model dataType="jpl.imce.oml.specification.ecore.UUID" unique="false" required="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%com.fasterxml.uuid.impl.NameBasedGenerator%> _nameBasedGenerator = <%com.fasterxml.uuid.Generators%>.nameBasedGenerator(<%com.fasterxml.uuid.impl.NameBasedGenerator%>.NAMESPACE_URL);\n<%java.lang.String%> _iri = this.iri();\n<%java.util.UUID%> _generate = _nameBasedGenerator.generate(_iri);\nreturn _generate.toString();'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(iri)'"
 	 * @generated
 	 */
 	String calculateUUID();
@@ -121,6 +122,7 @@ public interface Module extends TerminologyThing, Resource {
 	 * <!-- end-user-doc -->
 	 * @model dataType="jpl.imce.oml.specification.ecore.NamespacePrefix" unique="false" required="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%java.lang.String%> _iri = this.getIri();\n<%java.lang.String%> _iri_1 = this.getIri();\nint _lastIndexOf = _iri_1.lastIndexOf(\"/\");\nint _plus = (1 + _lastIndexOf);\nreturn _iri.substring(_plus);'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='iri.substring(1+iri.lastIndexOf(\'/\'))'"
 	 * @generated
 	 */
 	String nsPrefix();

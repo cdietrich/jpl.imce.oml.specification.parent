@@ -18,8 +18,12 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import java.lang.reflect.InvocationTargetException;
+
 import jpl.imce.oml.specification.ecore.ConceptTreeDisjunction;
 import jpl.imce.oml.specification.ecore.OMLPackage;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -49,7 +53,32 @@ public abstract class ConceptTreeDisjunctionImpl extends CDOObjectImpl implement
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.CONCEPT_TREE_DISJUNCTION;
+		return OMLPackage.eINSTANCE.getConceptTreeDisjunction();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String calculateUUID() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OMLPackage.CONCEPT_TREE_DISJUNCTION___CALCULATE_UUID:
+				return calculateUUID();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //ConceptTreeDisjunctionImpl

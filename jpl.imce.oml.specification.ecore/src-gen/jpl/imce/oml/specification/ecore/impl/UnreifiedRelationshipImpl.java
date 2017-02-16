@@ -47,7 +47,7 @@ public class UnreifiedRelationshipImpl extends EntityRelationshipImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.UNREIFIED_RELATIONSHIP;
+		return OMLPackage.eINSTANCE.getUnreifiedRelationship();
 	}
 
 } //UnreifiedRelationshipImpl

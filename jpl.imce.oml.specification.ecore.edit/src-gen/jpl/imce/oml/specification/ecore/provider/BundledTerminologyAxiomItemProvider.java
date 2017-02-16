@@ -77,7 +77,7 @@ public class BundledTerminologyAxiomItemProvider extends TerminologyBundleAxiomI
 				 getResourceLocator(),
 				 getString("_UI_BundledTerminologyAxiom_bundledTerminology_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_BundledTerminologyAxiom_bundledTerminology_feature", "_UI_BundledTerminologyAxiom_type"),
-				 OMLPackage.Literals.BUNDLED_TERMINOLOGY_AXIOM__BUNDLED_TERMINOLOGY,
+				 OMLPackage.eINSTANCE.getBundledTerminologyAxiom_BundledTerminology(),
 				 true,
 				 false,
 				 true,

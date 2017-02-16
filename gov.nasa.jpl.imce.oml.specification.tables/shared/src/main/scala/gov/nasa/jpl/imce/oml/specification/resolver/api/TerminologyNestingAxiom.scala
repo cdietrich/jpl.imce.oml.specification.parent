@@ -32,6 +32,8 @@ trait TerminologyNestingAxiom
   val nestingTerminology: TerminologyBox
   val nestingContext: Concept
 
+  override def calculateUUID
+  (): java.util.UUID
   def nestedTerminology
   (): TerminologyGraph
   /*

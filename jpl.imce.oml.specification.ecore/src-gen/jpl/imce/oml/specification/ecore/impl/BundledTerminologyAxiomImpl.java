@@ -18,8 +18,15 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import com.fasterxml.uuid.Generators;
+
+import com.fasterxml.uuid.impl.NameBasedGenerator;
+
 import java.lang.reflect.InvocationTargetException;
 
+import java.util.UUID;
+
+import jpl.imce.oml.specification.ecore.Bundle;
 import jpl.imce.oml.specification.ecore.BundledTerminologyAxiom;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.TerminologyBox;
@@ -74,7 +81,7 @@ public class BundledTerminologyAxiomImpl extends TerminologyBundleAxiomImpl impl
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.BUNDLED_TERMINOLOGY_AXIOM;
+		return OMLPackage.eINSTANCE.getBundledTerminologyAxiom();
 	}
 
 	/**
@@ -113,6 +120,29 @@ public class BundledTerminologyAxiomImpl extends TerminologyBundleAxiomImpl impl
 		bundledTerminology = newBundledTerminology;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.BUNDLED_TERMINOLOGY_AXIOM__BUNDLED_TERMINOLOGY, oldBundledTerminology, bundledTerminology));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String calculateUUID() {
+		String _xblockexpression = null;
+		{
+			Bundle _terminologyBundle = this.getTerminologyBundle();
+			String _uuid = _terminologyBundle.getUuid();
+			String _plus = ("BundledTerminologyAxiom(terminologyBundle=" + _uuid);
+			String _plus_1 = (_plus + ",bundledTerminology=");
+			TerminologyBox _bundledTerminology = this.getBundledTerminology();
+			String _uuid_1 = _bundledTerminology.getUuid();
+			String _plus_2 = (_plus_1 + _uuid_1);
+			final String namespace = (_plus_2 + ")");
+			NameBasedGenerator _nameBasedGenerator = Generators.nameBasedGenerator(NameBasedGenerator.NAMESPACE_URL);
+			UUID _generate = _nameBasedGenerator.generate(namespace);
+			_xblockexpression = _generate.toString();
+		}
+		return _xblockexpression;
 	}
 
 	/**
@@ -200,6 +230,8 @@ public class BundledTerminologyAxiomImpl extends TerminologyBundleAxiomImpl impl
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+			case OMLPackage.BUNDLED_TERMINOLOGY_AXIOM___CALCULATE_UUID:
+				return calculateUUID();
 			case OMLPackage.BUNDLED_TERMINOLOGY_AXIOM___SOURCE:
 				return source();
 			case OMLPackage.BUNDLED_TERMINOLOGY_AXIOM___TARGET:

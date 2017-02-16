@@ -52,7 +52,7 @@ public abstract class SpecializationAxiomImpl extends TermAxiomImpl implements S
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.SPECIALIZATION_AXIOM;
+		return OMLPackage.eINSTANCE.getSpecializationAxiom();
 	}
 
 	/**

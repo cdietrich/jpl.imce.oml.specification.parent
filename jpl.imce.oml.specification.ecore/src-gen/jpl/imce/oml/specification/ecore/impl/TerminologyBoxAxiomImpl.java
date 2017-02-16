@@ -63,7 +63,7 @@ public abstract class TerminologyBoxAxiomImpl extends TerminologyAxiomImpl imple
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.TERMINOLOGY_BOX_AXIOM;
+		return OMLPackage.eINSTANCE.getTerminologyBoxAxiom();
 	}
 
 	/**

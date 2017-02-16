@@ -47,7 +47,7 @@ public abstract class TermAxiomImpl extends AxiomImpl implements TermAxiom {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.TERM_AXIOM;
+		return OMLPackage.eINSTANCE.getTermAxiom();
 	}
 
 } //TermAxiomImpl

@@ -22,26 +22,26 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class TerminologyExtensionAxiom private[impl] 
 (
- override val uuid: java.util.UUID,
- override val tbox: TerminologyBox,
- override val extendedTerminology: TerminologyBox
+ override val tbox: resolver.api.TerminologyBox,
+ override val extendedTerminology: resolver.api.TerminologyBox
 )
 extends resolver.api.TerminologyExtensionAxiom
   with TerminologyBoxAxiom
 {
-  def calculateUUID
+  override def calculateUUID
   ()
   : java.util.UUID
   = {
-    val namespace/* default */
-    <XMemberFeatureCallImplCustom>.toString/* default */
+    
+    	val namespace = "TerminologyExtensionAxiom(source=" + source.uuid + ",target="+target.uuid+")"
+    	com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)
   }
   
   def extendingTerminology
   ()
-  : TerminologyBox
+  : resolver.api.TerminologyBox
   = {
-    getTbox
+    tbox
   }
   
   /*
@@ -49,9 +49,9 @@ extends resolver.api.TerminologyExtensionAxiom
    */
   override def source
   ()
-  : TerminologyBox
+  : resolver.api.TerminologyBox
   = {
-    getTbox
+    tbox
   }
   
   /*
@@ -59,11 +59,19 @@ extends resolver.api.TerminologyExtensionAxiom
    */
   override def target
   ()
-  : TerminologyBox
+  : resolver.api.TerminologyBox
   = {
     extendedTerminology
   }
   
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: TerminologyExtensionAxiom => true

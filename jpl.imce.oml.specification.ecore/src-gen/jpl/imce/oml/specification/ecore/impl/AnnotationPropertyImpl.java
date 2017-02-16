@@ -106,7 +106,7 @@ public class AnnotationPropertyImpl extends CDOObjectImpl implements AnnotationP
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.ANNOTATION_PROPERTY;
+		return OMLPackage.eINSTANCE.getAnnotationProperty();
 	}
 
 	/**

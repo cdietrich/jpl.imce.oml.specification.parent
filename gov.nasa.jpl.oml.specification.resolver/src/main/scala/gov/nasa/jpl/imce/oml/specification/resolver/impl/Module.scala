@@ -25,25 +25,18 @@ extends resolver.api.Module
   with TerminologyThing
   with Resource
 {
-  def calculateUUID
+  override def calculateUUID
   ()
   : java.util.UUID
   = {
-    <XMemberFeatureCallImplCustom>.toString/* default */
-  }
-  
-  def iri
-  ()
-  : gov.nasa.jpl.imce.oml.specification.tables.IRI
-  = {
-    getIri()
+    com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(iri)
   }
   
   def nsPrefix
   ()
   : gov.nasa.jpl.imce.oml.specification.tables.NamespacePrefix
   = {
-    <XFeatureCallImplCustom>.substring(<XBinaryOperationImplCustom>)/* default */
+    iri.substring(1+iri.lastIndexOf('/'))
   }
   
   def name
@@ -53,6 +46,14 @@ extends resolver.api.Module
     nsPrefix
   }
   
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: Module => true

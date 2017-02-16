@@ -18,11 +18,21 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import com.fasterxml.uuid.Generators;
+
+import com.fasterxml.uuid.impl.NameBasedGenerator;
+
+import java.lang.reflect.InvocationTargetException;
+
+import java.util.UUID;
+
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.ScalarOneOfLiteralAxiom;
 import jpl.imce.oml.specification.ecore.ScalarOneOfRestriction;
 
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -91,7 +101,7 @@ public class ScalarOneOfLiteralAxiomImpl extends AxiomImpl implements ScalarOneO
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.SCALAR_ONE_OF_LITERAL_AXIOM;
+		return OMLPackage.eINSTANCE.getScalarOneOfLiteralAxiom();
 	}
 
 	/**
@@ -151,6 +161,25 @@ public class ScalarOneOfLiteralAxiomImpl extends AxiomImpl implements ScalarOneO
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.SCALAR_ONE_OF_LITERAL_AXIOM__VALUE, oldValue, value));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String calculateUUID() {
+		String _xblockexpression = null;
+		{
+			ScalarOneOfRestriction _axiom = this.getAxiom();
+			String _uuid = _axiom.getUuid();
+			String _plus = ("ScalarOneOfLiteralAxiom(scalarOneOfRestriction=" + _uuid);
+			final String namespace = (_plus + ")");
+			NameBasedGenerator _nameBasedGenerator = Generators.nameBasedGenerator(NameBasedGenerator.NAMESPACE_URL);
+			UUID _generate = _nameBasedGenerator.generate(namespace);
+			_xblockexpression = _generate.toString();
+		}
+		return _xblockexpression;
 	}
 
 	/**
@@ -220,6 +249,20 @@ public class ScalarOneOfLiteralAxiomImpl extends AxiomImpl implements ScalarOneO
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OMLPackage.SCALAR_ONE_OF_LITERAL_AXIOM___CALCULATE_UUID:
+				return calculateUUID();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

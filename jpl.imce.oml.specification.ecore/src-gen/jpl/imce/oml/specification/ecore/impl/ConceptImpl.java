@@ -79,7 +79,7 @@ public class ConceptImpl extends EntityImpl implements Concept {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.CONCEPT;
+		return OMLPackage.eINSTANCE.getConcept();
 	}
 
 	/**

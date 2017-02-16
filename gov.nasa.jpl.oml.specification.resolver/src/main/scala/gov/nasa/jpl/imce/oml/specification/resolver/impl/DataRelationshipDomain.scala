@@ -23,4 +23,6 @@ import gov.nasa.jpl.imce.oml.specification._
 trait DataRelationshipDomain
 extends resolver.api.DataRelationshipDomain
 {
+
+
 }

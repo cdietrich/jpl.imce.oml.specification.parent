@@ -1,3 +1,4 @@
 .classpath
+/src-gen/**/.gitignore
 /build/
 /target/

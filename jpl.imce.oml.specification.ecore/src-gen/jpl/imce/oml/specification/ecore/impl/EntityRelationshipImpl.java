@@ -276,7 +276,7 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.ENTITY_RELATIONSHIP;
+		return OMLPackage.eINSTANCE.getEntityRelationship();
 	}
 
 	/**
@@ -567,17 +567,6 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Term relationshipSubject() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -742,7 +731,7 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == DirectedBinaryRelationshipKind.class) {
 			switch (baseOperationID) {
-				case OMLPackage.DIRECTED_BINARY_RELATIONSHIP_KIND___RELATIONSHIP_SUBJECT: return OMLPackage.ENTITY_RELATIONSHIP___RELATIONSHIP_SUBJECT;
+				case OMLPackage.DIRECTED_BINARY_RELATIONSHIP_KIND___RELATION_DOMAIN: return OMLPackage.ENTITY_RELATIONSHIP___RELATION_DOMAIN;
 				case OMLPackage.DIRECTED_BINARY_RELATIONSHIP_KIND___RELATION_RANGE: return OMLPackage.ENTITY_RELATIONSHIP___RELATION_RANGE;
 				default: return -1;
 			}
@@ -762,8 +751,6 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 				return relationDomain();
 			case OMLPackage.ENTITY_RELATIONSHIP___RELATION_RANGE:
 				return relationRange();
-			case OMLPackage.ENTITY_RELATIONSHIP___RELATIONSHIP_SUBJECT:
-				return relationshipSubject();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

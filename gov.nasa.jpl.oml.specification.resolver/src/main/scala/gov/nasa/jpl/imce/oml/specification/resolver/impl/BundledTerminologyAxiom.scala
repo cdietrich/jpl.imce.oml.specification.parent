@@ -22,19 +22,27 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class BundledTerminologyAxiom private[impl] 
 (
- override val uuid: java.util.UUID,
- override val terminologyBundle: Bundle,
- override val bundledTerminology: TerminologyBox
+ override val terminologyBundle: resolver.api.Bundle,
+ override val bundledTerminology: resolver.api.TerminologyBox
 )
 extends resolver.api.BundledTerminologyAxiom
   with TerminologyBundleAxiom
 {
+  override def calculateUUID
+  ()
+  : java.util.UUID
+  = {
+    
+    	val namespace = "BundledTerminologyAxiom(terminologyBundle=" + terminologyBundle.uuid + ",bundledTerminology="+bundledTerminology.uuid+")"
+    	com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)
+  }
+  
   /*
    * The bundle is the source
    */
   override def source
   ()
-  : TerminologyBox
+  : resolver.api.TerminologyBox
   = {
     terminologyBundle
   }
@@ -44,11 +52,19 @@ extends resolver.api.BundledTerminologyAxiom
    */
   override def target
   ()
-  : TerminologyBox
+  : resolver.api.TerminologyBox
   = {
     bundledTerminology
   }
   
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: BundledTerminologyAxiom => true

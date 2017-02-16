@@ -68,4 +68,7 @@ trait NumericScalarRestriction
    * The exclusive maximum value in the range
    */
   val maxExclusive: scala.Option[gov.nasa.jpl.imce.oml.specification.tables.LexicalNumber]
+
+  override def calculateUUID
+  (): java.util.UUID
 }

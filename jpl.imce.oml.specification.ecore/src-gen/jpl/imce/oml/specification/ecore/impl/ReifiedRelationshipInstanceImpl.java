@@ -18,13 +18,22 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import com.fasterxml.uuid.Generators;
+
+import com.fasterxml.uuid.impl.NameBasedGenerator;
+
 import java.lang.reflect.InvocationTargetException;
 
+import java.util.UUID;
+
 import jpl.imce.oml.specification.ecore.ConceptualEntity;
+import jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance;
 import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.ReifiedRelationship;
 import jpl.imce.oml.specification.ecore.ReifiedRelationshipInstance;
+import jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion;
+import jpl.imce.oml.specification.ecore.TerminologyThing;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -80,7 +89,7 @@ public class ReifiedRelationshipInstanceImpl extends ConceptualEntitySingletonIn
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.REIFIED_RELATIONSHIP_INSTANCE;
+		return OMLPackage.eINSTANCE.getReifiedRelationshipInstance();
 	}
 
 	/**
@@ -170,6 +179,29 @@ public class ReifiedRelationshipInstanceImpl extends ConceptualEntitySingletonIn
 		singletonReifiedRelationshipClassifier = newSingletonReifiedRelationshipClassifier;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.REIFIED_RELATIONSHIP_INSTANCE__SINGLETON_REIFIED_RELATIONSHIP_CLASSIFIER, oldSingletonReifiedRelationshipClassifier, singletonReifiedRelationshipClassifier));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String calculateUUID() {
+		String _xblockexpression = null;
+		{
+			DescriptionBox _descriptionBox = this.descriptionBox();
+			String _uuid = _descriptionBox.getUuid();
+			String _plus = ("ReifiedRelationshipInstance(descriptionBox=" + _uuid);
+			String _plus_1 = (_plus + ",singletonReifiedRelationshipClassifier=");
+			ReifiedRelationship _singletonReifiedRelationshipClassifier = this.getSingletonReifiedRelationshipClassifier();
+			String _uuid_1 = _singletonReifiedRelationshipClassifier.getUuid();
+			String _plus_2 = (_plus_1 + _uuid_1);
+			final String namespace = (_plus_2 + ")");
+			NameBasedGenerator _nameBasedGenerator = Generators.nameBasedGenerator(NameBasedGenerator.NAMESPACE_URL);
+			UUID _generate = _nameBasedGenerator.generate(namespace);
+			_xblockexpression = _generate.toString();
+		}
+		return _xblockexpression;
 	}
 
 	/**
@@ -301,8 +333,38 @@ public class ReifiedRelationshipInstanceImpl extends ConceptualEntitySingletonIn
 	 * @generated
 	 */
 	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == TerminologyThing.class) {
+			switch (baseOperationID) {
+				case OMLPackage.TERMINOLOGY_THING___CALCULATE_UUID: return OMLPackage.REIFIED_RELATIONSHIP_INSTANCE___CALCULATE_UUID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		if (baseClass == TerminologyInstanceAssertion.class) {
+			switch (baseOperationID) {
+				case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID: return OMLPackage.REIFIED_RELATIONSHIP_INSTANCE___CALCULATE_UUID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		if (baseClass == ConceptualEntitySingletonInstance.class) {
+			switch (baseOperationID) {
+				case OMLPackage.CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER: return OMLPackage.REIFIED_RELATIONSHIP_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE___CALCULATE_UUID:
+				return calculateUUID();
 			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER:
 				return conceptualEntitySingletonClassifier();
 		}

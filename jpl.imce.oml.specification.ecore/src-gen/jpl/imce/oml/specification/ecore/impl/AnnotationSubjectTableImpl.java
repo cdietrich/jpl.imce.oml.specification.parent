@@ -93,7 +93,7 @@ public class AnnotationSubjectTableImpl extends CDOObjectImpl implements BasicEM
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.ANNOTATION_SUBJECT_TABLE;
+		return OMLPackage.eINSTANCE.getAnnotationSubjectTable();
 	}
 
 	/**
