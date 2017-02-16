@@ -47,7 +47,7 @@ public class AspectImpl extends EntityImpl implements Aspect {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.ASPECT;
+		return OMLPackage.eINSTANCE.getAspect();
 	}
 
 } //AspectImpl

@@ -23,4 +23,6 @@ import gov.nasa.jpl.imce.oml.specification._
 trait ConceptualEntity
 extends resolver.api.ConceptualEntity
 {
+
+
 }

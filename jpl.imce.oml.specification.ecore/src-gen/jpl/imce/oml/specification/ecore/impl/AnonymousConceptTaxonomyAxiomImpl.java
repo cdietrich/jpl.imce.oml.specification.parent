@@ -18,8 +18,20 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import com.fasterxml.uuid.Generators;
+
+import com.fasterxml.uuid.impl.NameBasedGenerator;
+
+import java.lang.reflect.InvocationTargetException;
+
+import java.util.UUID;
+
 import jpl.imce.oml.specification.ecore.AnonymousConceptTaxonomyAxiom;
+import jpl.imce.oml.specification.ecore.Bundle;
+import jpl.imce.oml.specification.ecore.ConceptTreeDisjunction;
 import jpl.imce.oml.specification.ecore.OMLPackage;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -47,7 +59,44 @@ public class AnonymousConceptTaxonomyAxiomImpl extends DisjointUnionOfConceptsAx
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.ANONYMOUS_CONCEPT_TAXONOMY_AXIOM;
+		return OMLPackage.eINSTANCE.getAnonymousConceptTaxonomyAxiom();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String calculateUUID() {
+		String _xblockexpression = null;
+		{
+			Bundle _bundle = this.getBundle();
+			String _uuid = _bundle.getUuid();
+			String _plus = ("AnonymousConceptTaxonomyAxiom(bundle=" + _uuid);
+			String _plus_1 = (_plus + ",disjointTaxonomyParent=");
+			ConceptTreeDisjunction _disjointTaxonomyParent = this.getDisjointTaxonomyParent();
+			String _calculateUUID = _disjointTaxonomyParent.calculateUUID();
+			String _plus_2 = (_plus_1 + _calculateUUID);
+			final String namespace = (_plus_2 + ")");
+			NameBasedGenerator _nameBasedGenerator = Generators.nameBasedGenerator(NameBasedGenerator.NAMESPACE_URL);
+			UUID _generate = _nameBasedGenerator.generate(namespace);
+			_xblockexpression = _generate.toString();
+		}
+		return _xblockexpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OMLPackage.ANONYMOUS_CONCEPT_TAXONOMY_AXIOM___CALCULATE_UUID:
+				return calculateUUID();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //AnonymousConceptTaxonomyAxiomImpl

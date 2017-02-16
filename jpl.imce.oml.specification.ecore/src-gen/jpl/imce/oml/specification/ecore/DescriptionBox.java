@@ -19,6 +19,7 @@
 package jpl.imce.oml.specification.ecore;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,7 +50,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface DescriptionBox extends Context {
+public interface DescriptionBox extends Module {
 	/**
 	 * Returns the value of the '<em><b>Kind</b></em>' attribute.
 	 * The literals are from the enumeration {@link jpl.imce.oml.specification.ecore.DescriptionKind}.
@@ -243,6 +244,26 @@ public interface DescriptionBox extends Context {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model unique="false" required="true" aMapType="jpl.imce.oml.specification.ecore.AnnotationPropertyTable<jpl.imce.oml.specification.ecore.AnnotationProperty, jpl.imce.oml.specification.ecore.AnnotationEntry>"
+	 *        aAnnotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='copy(annotations = this.annotations ++ resolver.convertToAnnotations(a))'"
+	 * @generated
+	 */
+	DescriptionBox withAnnotations(EMap<AnnotationProperty, EList<AnnotationEntry>> a);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model mapType="jpl.imce.oml.specification.ecore.AnnotationPropertyTable<jpl.imce.oml.specification.ecore.AnnotationProperty, jpl.imce.oml.specification.ecore.AnnotationEntry>"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='resolver.groupAnnotationsByProperty(annotations)'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
+	 * @generated
+	 */
+	EMap<AnnotationProperty, EList<AnnotationEntry>> annotationsByProperty();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model unique="false" required="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getDescriptionExtent();'"
 	 * @generated
@@ -253,7 +274,7 @@ public interface DescriptionBox extends Context {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model unique="false"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[Entity]'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[resolver.api.Entity]'"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
 	 * @generated
 	 */
@@ -263,7 +284,7 @@ public interface DescriptionBox extends Context {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model unique="false"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[Aspect]'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[resolver.api.Aspect]'"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
 	 * @generated
 	 */
@@ -273,7 +294,7 @@ public interface DescriptionBox extends Context {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model unique="false"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[Concept]'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[resolver.api.Concept]'"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
 	 * @generated
 	 */
@@ -283,7 +304,7 @@ public interface DescriptionBox extends Context {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model unique="false"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[ReifiedRelationship]'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[resolver.api.ReifiedRelationship]'"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
 	 * @generated
 	 */
@@ -293,7 +314,7 @@ public interface DescriptionBox extends Context {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model unique="false"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[UnreifiedRelationship]'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[resolver.api.UnreifiedRelationship]'"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
 	 * @generated
 	 */
@@ -303,7 +324,7 @@ public interface DescriptionBox extends Context {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model unique="false"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[DataRelationship]'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[resolver.api.DataRelationship]'"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
 	 * @generated
 	 */
@@ -313,7 +334,7 @@ public interface DescriptionBox extends Context {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model unique="false"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[EntityScalarDataProperty]'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[resolver.api.EntityScalarDataProperty]'"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
 	 * @generated
 	 */
@@ -323,7 +344,7 @@ public interface DescriptionBox extends Context {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model unique="false"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[DataRange]'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[resolver.api.DataRange]'"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
 	 * @generated
 	 */
@@ -333,7 +354,7 @@ public interface DescriptionBox extends Context {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model unique="false"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[Scalar]'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[resolver.api.Scalar]'"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
 	 * @generated
 	 */
@@ -343,7 +364,7 @@ public interface DescriptionBox extends Context {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model unique="false"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[Structure]'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[resolver.api.Structure]'"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
 	 * @generated
 	 */
@@ -353,7 +374,7 @@ public interface DescriptionBox extends Context {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model unique="false"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[TermAxiom]'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[resolver.api.TermAxiom]'"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
 	 * @generated
 	 */
@@ -363,7 +384,7 @@ public interface DescriptionBox extends Context {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model unique="false"
-	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[resolver.api.TerminologyThing] ++ conceptInstances + reifiedRelationshipInstances ++ reifiedRelationshipInstanceDomains ++ reifiedRelationshipInstanceRanges ++ unreifiedRelationshipInstanceTuples'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='scala.collection.immutable.SortedSet.empty[resolver.api.TerminologyThing] ++ \n\tconceptInstances ++\n\treifiedRelationshipInstances ++ \n\treifiedRelationshipInstanceDomains ++ \n\treifiedRelationshipInstanceRanges ++ \n\tunreifiedRelationshipInstanceTuples'"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
 	 * @generated
 	 */

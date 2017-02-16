@@ -91,7 +91,7 @@ public abstract class DataRelationshipFromEntityImpl extends DataRelationshipDom
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.DATA_RELATIONSHIP_FROM_ENTITY;
+		return OMLPackage.eINSTANCE.getDataRelationshipFromEntity();
 	}
 
 	/**

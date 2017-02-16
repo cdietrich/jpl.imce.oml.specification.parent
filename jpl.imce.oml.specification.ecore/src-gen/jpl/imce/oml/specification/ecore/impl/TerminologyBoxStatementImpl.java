@@ -63,7 +63,7 @@ public abstract class TerminologyBoxStatementImpl extends TerminologyThingImpl i
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.TERMINOLOGY_BOX_STATEMENT;
+		return OMLPackage.eINSTANCE.getTerminologyBoxStatement();
 	}
 
 	/**

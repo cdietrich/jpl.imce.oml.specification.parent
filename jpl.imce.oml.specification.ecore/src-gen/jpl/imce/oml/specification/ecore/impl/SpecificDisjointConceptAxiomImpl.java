@@ -18,11 +18,22 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import com.fasterxml.uuid.Generators;
+
+import com.fasterxml.uuid.impl.NameBasedGenerator;
+
+import java.lang.reflect.InvocationTargetException;
+
+import java.util.UUID;
+
+import jpl.imce.oml.specification.ecore.Bundle;
 import jpl.imce.oml.specification.ecore.Concept;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.SpecificDisjointConceptAxiom;
 
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -70,7 +81,7 @@ public class SpecificDisjointConceptAxiomImpl extends DisjointUnionOfConceptsAxi
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.SPECIFIC_DISJOINT_CONCEPT_AXIOM;
+		return OMLPackage.eINSTANCE.getSpecificDisjointConceptAxiom();
 	}
 
 	/**
@@ -109,6 +120,29 @@ public class SpecificDisjointConceptAxiomImpl extends DisjointUnionOfConceptsAxi
 		disjointLeaf = newDisjointLeaf;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.SPECIFIC_DISJOINT_CONCEPT_AXIOM__DISJOINT_LEAF, oldDisjointLeaf, disjointLeaf));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String calculateUUID() {
+		String _xblockexpression = null;
+		{
+			Bundle _bundle = this.getBundle();
+			String _uuid = _bundle.getUuid();
+			String _plus = ("SpecificDisjointConceptAxiom(bundle=" + _uuid);
+			String _plus_1 = (_plus + ",disjointLeaf=");
+			Concept _disjointLeaf = this.getDisjointLeaf();
+			String _uuid_1 = _disjointLeaf.getUuid();
+			String _plus_2 = (_plus_1 + _uuid_1);
+			final String namespace = (_plus_2 + ")");
+			NameBasedGenerator _nameBasedGenerator = Generators.nameBasedGenerator(NameBasedGenerator.NAMESPACE_URL);
+			UUID _generate = _nameBasedGenerator.generate(namespace);
+			_xblockexpression = _generate.toString();
+		}
+		return _xblockexpression;
 	}
 
 	/**
@@ -168,6 +202,20 @@ public class SpecificDisjointConceptAxiomImpl extends DisjointUnionOfConceptsAxi
 				return disjointLeaf != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OMLPackage.SPECIFIC_DISJOINT_CONCEPT_AXIOM___CALCULATE_UUID:
+				return calculateUUID();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //SpecificDisjointConceptAxiomImpl

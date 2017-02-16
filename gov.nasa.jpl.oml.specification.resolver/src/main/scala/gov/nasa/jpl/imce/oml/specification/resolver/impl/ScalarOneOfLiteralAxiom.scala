@@ -22,14 +22,30 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class ScalarOneOfLiteralAxiom private[impl] 
 (
- override val uuid: java.util.UUID,
- override val tbox: TerminologyBox,
- override val axiom: ScalarOneOfRestriction,
+ override val tbox: resolver.api.TerminologyBox,
+ override val axiom: resolver.api.ScalarOneOfRestriction,
  override val value: gov.nasa.jpl.imce.oml.specification.tables.LexicalValue
 )
 extends resolver.api.ScalarOneOfLiteralAxiom
   with Axiom
 {
+  override def calculateUUID
+  ()
+  : java.util.UUID
+  = {
+    
+    	val namespace = "ScalarOneOfLiteralAxiom(scalarOneOfRestriction="+axiom.uuid+")"
+    	com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)
+  }
+  
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: ScalarOneOfLiteralAxiom => true

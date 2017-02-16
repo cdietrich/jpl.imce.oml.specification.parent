@@ -32,4 +32,7 @@ trait ReifiedRelationshipInstanceRange
   val descriptionBox: DescriptionBox
   val reifiedRelationshipInstance: ReifiedRelationshipInstance
   val range: ConceptualEntitySingletonInstance
+
+  override def calculateUUID
+  (): java.util.UUID
 }

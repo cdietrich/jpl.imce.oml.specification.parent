@@ -23,10 +23,11 @@ package gov.nasa.jpl.imce.oml.specification.resolver.api
  * about [OWL2-DL NamedIndividuals] mapped from OML TerminologyInstanceAssertion(s).
  */
 trait DescriptionBox
-  extends Context
+  extends Module
 {
 
   val kind: gov.nasa.jpl.imce.oml.specification.tables.DescriptionKind
+  val descriptionExtent: TerminologyExtent
   val closedWorldDefinitions: scala.collection.immutable.SortedSet[DescriptionBoxExtendsClosedWorldDefinitions]
   val descriptionBoxRefinements: scala.collection.immutable.SortedSet[DescriptionBoxRefinement]
   val conceptInstances: scala.collection.immutable.SortedSet[ConceptInstance]
@@ -35,6 +36,12 @@ trait DescriptionBox
   val reifiedRelationshipInstanceRanges: scala.collection.immutable.SortedSet[ReifiedRelationshipInstanceRange]
   val unreifiedRelationshipInstanceTuples: scala.collection.immutable.SortedSet[UnreifiedRelationshipInstanceTuple]
 
+  override def withAnnotations
+  (a: scala.collection.immutable.SortedSet[AnnotationPropertyTable]): DescriptionBox
+  override def annotationsByProperty
+  (): scala.collection.immutable.SortedSet[AnnotationPropertyTable]
+  def extent
+  (): TerminologyExtent
   override def entities
   (): scala.collection.immutable.SortedSet[Entity]
   override def aspects

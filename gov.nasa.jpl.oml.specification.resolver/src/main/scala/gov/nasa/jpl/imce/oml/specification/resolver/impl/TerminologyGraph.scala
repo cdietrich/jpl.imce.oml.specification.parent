@@ -22,44 +22,52 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class TerminologyGraph private[impl] 
 (
- override val uuid: java.util.UUID,
+ override val graphExtent: resolver.api.TerminologyExtent,
  override val kind: gov.nasa.jpl.imce.oml.specification.tables.TerminologyGraphKind,
  override val iri: gov.nasa.jpl.imce.oml.specification.tables.IRI,
- override val annotations: scala.collection.immutable.SortedSet[Annotation],
- override val boxStatements: scala.collection.immutable.SortedSet[TerminologyBoxStatement],
- override val terminologyBoxAxioms: scala.collection.immutable.SortedSet[TerminologyBoxAxiom]
+ override val annotations: scala.collection.immutable.SortedSet[resolver.api.Annotation],
+ override val boxStatements: scala.collection.immutable.SortedSet[resolver.api.TerminologyBoxStatement],
+ override val terminologyBoxAxioms: scala.collection.immutable.SortedSet[resolver.api.TerminologyBoxAxiom]
 )
 extends resolver.api.TerminologyGraph
   with TerminologyBox
 {
   def extent
   ()
-  : TerminologyExtent
+  : resolver.api.TerminologyExtent
   = {
     graphExtent
   }
   
   override def withAnnotations
-  (a: scala.collection.immutable.SortedSet[AnnotationPropertyTable])
-  : TerminologyGraph
+  (a: scala.collection.immutable.SortedSet[resolver.api.AnnotationPropertyTable])
+  : resolver.api.TerminologyGraph
   = {
     copy(annotations = this.annotations ++ resolver.convertToAnnotations(a))
   }
   
   override def annotationsByProperty
   ()
-  : scala.collection.immutable.SortedSet[AnnotationPropertyTable]
+  : scala.collection.immutable.SortedSet[resolver.api.AnnotationPropertyTable]
   = {
     resolver.groupAnnotationsByProperty(annotations)
   }
   
   override def withBoxStatements
-  (s: scala.collection.immutable.SortedSet[TerminologyBoxStatement])
-  : TerminologyGraph
+  (s: scala.collection.immutable.SortedSet[resolver.api.TerminologyBoxStatement])
+  : resolver.api.TerminologyGraph
   = {
     copy(boxStatements = this.boxStatements ++ s)
   }
   
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: TerminologyGraph => true
@@ -68,12 +76,13 @@ extends resolver.api.TerminologyGraph
 
   override val hashCode
   : scala.Int
-  = (uuid, kind, iri, annotations, boxStatements, terminologyBoxAxioms).##
+  = (uuid, graphExtent, kind, iri, annotations, boxStatements, terminologyBoxAxioms).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: TerminologyGraph =>
 	    (that canEqual this) &&
 	    (this.uuid == that.uuid) &&
+	    (this.graphExtent == that.graphExtent) &&
 	    (this.kind == that.kind) &&
 	    (this.iri == that.iri) &&
 	    (this.annotations == that.annotations) &&

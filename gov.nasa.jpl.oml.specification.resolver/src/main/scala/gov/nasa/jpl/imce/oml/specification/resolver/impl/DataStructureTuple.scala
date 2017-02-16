@@ -22,16 +22,39 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class DataStructureTuple private[impl] 
 (
- override val uuid: java.util.UUID,
- override val dataStructureType: Structure,
- override val structuredDataPropertyValue: StructuredDataPropertyValue,
+ override val dataStructureType: resolver.api.Structure,
+ override val structuredDataPropertyValue: resolver.api.StructuredDataPropertyValue,
  override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName,
- override val scalarDataPropertyValues: scala.collection.immutable.SortedSet[ScalarDataPropertyValue],
- override val structuredDataPropertyValues: scala.collection.immutable.SortedSet[StructuredDataPropertyValue]
+ override val scalarDataPropertyValues: scala.collection.immutable.SortedSet[resolver.api.ScalarDataPropertyValue],
+ override val structuredDataPropertyValues: scala.collection.immutable.SortedSet[resolver.api.StructuredDataPropertyValue]
 )
 extends resolver.api.DataStructureTuple
   with SingletonInstance
 {
+  override def calculateUUID
+  ()
+  : java.util.UUID
+  = {
+    
+    	val namespace = "DataStructureTuple(structuredDataPropertyValue=" + structuredDataPropertyValue.uuid + ",dataStructureType="+dataStructureType.uuid+")"
+    	com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)
+  }
+  
+  def descriptionBox
+  ()
+  : resolver.api.DescriptionBox
+  = {
+    structuredDataPropertyValue.descriptionBox()
+  }
+  
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: DataStructureTuple => true

@@ -77,7 +77,7 @@ public class TerminologyExtensionAxiomItemProvider extends TerminologyBoxAxiomIt
 				 getResourceLocator(),
 				 getString("_UI_TerminologyExtensionAxiom_extendedTerminology_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TerminologyExtensionAxiom_extendedTerminology_feature", "_UI_TerminologyExtensionAxiom_type"),
-				 OMLPackage.Literals.TERMINOLOGY_EXTENSION_AXIOM__EXTENDED_TERMINOLOGY,
+				 OMLPackage.eINSTANCE.getTerminologyExtensionAxiom_ExtendedTerminology(),
 				 true,
 				 false,
 				 true,

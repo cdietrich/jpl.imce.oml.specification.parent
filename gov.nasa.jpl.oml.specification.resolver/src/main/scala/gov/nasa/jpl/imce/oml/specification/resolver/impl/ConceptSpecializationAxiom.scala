@@ -22,20 +22,28 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class ConceptSpecializationAxiom private[impl] 
 (
- override val uuid: java.util.UUID,
- override val tbox: TerminologyBox,
- override val superConcept: Concept,
- override val subConcept: Concept
+ override val tbox: resolver.api.TerminologyBox,
+ override val superConcept: resolver.api.Concept,
+ override val subConcept: resolver.api.Concept
 )
 extends resolver.api.ConceptSpecializationAxiom
   with SpecializationAxiom
 {
+  override def calculateUUID
+  ()
+  : java.util.UUID
+  = {
+    
+    	val namespace = "ConceptSpecializationAxiom(subConcept=" + subConcept.uuid + ",superConcept="+superConcept.uuid+")"
+    	com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)
+  }
+  
   /*
    * Get the sub (child) entity
    */
   override def child
   ()
-  : Entity
+  : resolver.api.Entity
   = {
     subConcept
   }
@@ -45,11 +53,19 @@ extends resolver.api.ConceptSpecializationAxiom
    */
   override def parent
   ()
-  : Entity
+  : resolver.api.Entity
   = {
     superConcept
   }
   
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: ConceptSpecializationAxiom => true

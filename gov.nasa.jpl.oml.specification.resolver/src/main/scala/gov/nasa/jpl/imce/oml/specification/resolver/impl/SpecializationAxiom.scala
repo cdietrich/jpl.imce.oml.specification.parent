@@ -25,6 +25,14 @@ extends resolver.api.SpecializationAxiom
   with TermAxiom
 {
 
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
+
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: SpecializationAxiom => true
   	case _ => false

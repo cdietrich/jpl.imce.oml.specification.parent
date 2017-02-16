@@ -24,4 +24,6 @@ trait DataRelationshipFromStructure
 extends resolver.api.DataRelationshipFromStructure
   with DataRelationshipDomain
 {
+
+
 }

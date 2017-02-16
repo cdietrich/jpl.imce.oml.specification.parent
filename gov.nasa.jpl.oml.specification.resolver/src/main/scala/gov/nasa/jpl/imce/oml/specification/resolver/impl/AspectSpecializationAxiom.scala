@@ -22,20 +22,20 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class AspectSpecializationAxiom private[impl] 
 (
- override val uuid: java.util.UUID,
- override val tbox: TerminologyBox,
- override val superAspect: Aspect,
- override val subEntity: Entity
+ override val tbox: resolver.api.TerminologyBox,
+ override val superAspect: resolver.api.Aspect,
+ override val subEntity: resolver.api.Entity
 )
 extends resolver.api.AspectSpecializationAxiom
   with SpecializationAxiom
 {
-  def calculateUUID
+  override def calculateUUID
   ()
   : java.util.UUID
   = {
-    val namespace/* default */
-    <XMemberFeatureCallImplCustom>.toString/* default */
+    
+    	val namespace = "AspectSpecializationAxiom(subEntity=" + subEntity.uuid + ",superAspect="+superAspect.uuid+")"
+    	com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)
   }
   
   /*
@@ -43,7 +43,7 @@ extends resolver.api.AspectSpecializationAxiom
    */
   override def child
   ()
-  : Entity
+  : resolver.api.Entity
   = {
     subEntity
   }
@@ -53,11 +53,19 @@ extends resolver.api.AspectSpecializationAxiom
    */
   override def parent
   ()
-  : Entity
+  : resolver.api.Entity
   = {
     superAspect
   }
   
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: AspectSpecializationAxiom => true

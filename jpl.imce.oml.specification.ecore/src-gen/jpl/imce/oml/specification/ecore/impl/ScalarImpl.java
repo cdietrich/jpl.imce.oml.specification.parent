@@ -47,7 +47,7 @@ public class ScalarImpl extends DataRangeImpl implements Scalar {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.SCALAR;
+		return OMLPackage.eINSTANCE.getScalar();
 	}
 
 } //ScalarImpl

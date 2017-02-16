@@ -70,7 +70,7 @@ public abstract class DataRelationshipToScalarImpl extends DataRelationshipRange
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.DATA_RELATIONSHIP_TO_SCALAR;
+		return OMLPackage.eINSTANCE.getDataRelationshipToScalar();
 	}
 
 	/**

@@ -22,27 +22,43 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class DescriptionBoxExtendsClosedWorldDefinitions private[impl] 
 (
- override val uuid: java.util.UUID,
- override val descriptionBox: DescriptionBox,
- override val closedWorldDefinitions: TerminologyBox
+ override val descriptionBox: resolver.api.DescriptionBox,
+ override val closedWorldDefinitions: resolver.api.TerminologyBox
 )
 extends resolver.api.DescriptionBoxExtendsClosedWorldDefinitions
   with DescriptionBoxRelationship
 {
+  override def calculateUUID
+  ()
+  : java.util.UUID
+  = {
+    
+    	val namespace = "DescriptionBoxExtendsClosedWorldDefinitions(descriptionBox=" + descriptionBox.uuid + ",closedWorldDefinitions="+closedWorldDefinitions.uuid+")"
+    	com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)
+  }
+  
   def descriptionDomain
   ()
-  : DescriptionBox
+  : resolver.api.DescriptionBox
   = {
     descriptionBox
   }
   
-  def contextTarget
+  def targetModule
   ()
-  : Context
+  : resolver.api.Module
   = {
     closedWorldDefinitions
   }
   
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: DescriptionBoxExtendsClosedWorldDefinitions => true

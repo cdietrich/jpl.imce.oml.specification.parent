@@ -25,6 +25,14 @@ extends resolver.api.SingletonInstance
   with TerminologyInstanceAssertion
 {
 
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
+
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: SingletonInstance => true
   	case _ => false

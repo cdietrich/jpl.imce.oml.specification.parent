@@ -99,7 +99,7 @@ public class BundleImpl extends TerminologyBoxImpl implements Bundle {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.BUNDLE;
+		return OMLPackage.eINSTANCE.getBundle();
 	}
 
 	/**

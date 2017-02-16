@@ -34,4 +34,7 @@ trait UnreifiedRelationshipInstanceTuple
   val unreifiedRelationship: UnreifiedRelationship
   val domain: ConceptualEntitySingletonInstance
   val range: ConceptualEntitySingletonInstance
+
+  override def calculateUUID
+  (): java.util.UUID
 }

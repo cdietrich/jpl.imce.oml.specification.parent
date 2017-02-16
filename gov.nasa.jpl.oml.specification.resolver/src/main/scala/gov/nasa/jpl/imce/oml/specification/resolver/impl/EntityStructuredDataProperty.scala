@@ -22,10 +22,9 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class EntityStructuredDataProperty private[impl] 
 (
- override val uuid: java.util.UUID,
- override val tbox: TerminologyBox,
- override val domain: Entity,
- override val range: Structure,
+ override val tbox: resolver.api.TerminologyBox,
+ override val domain: resolver.api.Entity,
+ override val range: resolver.api.Structure,
  override val isIdentityCriteria: scala.Boolean,
  override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName
 )
@@ -36,18 +35,26 @@ extends resolver.api.EntityStructuredDataProperty
 {
   override def source
   ()
-  : Term
+  : resolver.api.Term
   = {
     domain
   }
   
   override def target
   ()
-  : Datatype
+  : resolver.api.Datatype
   = {
     range
   }
   
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: EntityStructuredDataProperty => true

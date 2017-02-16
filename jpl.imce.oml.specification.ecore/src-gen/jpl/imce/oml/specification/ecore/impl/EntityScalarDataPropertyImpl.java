@@ -113,7 +113,7 @@ public class EntityScalarDataPropertyImpl extends DataRelationshipImpl implement
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.ENTITY_SCALAR_DATA_PROPERTY;
+		return OMLPackage.eINSTANCE.getEntityScalarDataProperty();
 	}
 
 	/**

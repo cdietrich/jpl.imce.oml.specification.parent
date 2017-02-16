@@ -26,7 +26,7 @@ package jpl.imce.oml.specification.ecore;
  *
  * <!-- begin-model-doc -->
  * An OML TerminologyBundleStatement is a logical axiom about an OML TerminologyThing
- * asserted in the context of an OML Bundle.
+ * in an OML Bundle.
  * <!-- end-model-doc -->
  *
  * <p>

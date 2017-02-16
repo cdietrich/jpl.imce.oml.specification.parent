@@ -18,10 +18,22 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import com.fasterxml.uuid.Generators;
+
+import com.fasterxml.uuid.impl.NameBasedGenerator;
+
+import java.lang.reflect.InvocationTargetException;
+
+import java.util.UUID;
+
+import jpl.imce.oml.specification.ecore.Entity;
+import jpl.imce.oml.specification.ecore.EntityScalarDataProperty;
 import jpl.imce.oml.specification.ecore.EntityScalarDataPropertyParticularRestrictionAxiom;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -77,7 +89,7 @@ public class EntityScalarDataPropertyParticularRestrictionAxiomImpl extends Enti
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM;
+		return OMLPackage.eINSTANCE.getEntityScalarDataPropertyParticularRestrictionAxiom();
 	}
 
 	/**
@@ -99,6 +111,29 @@ public class EntityScalarDataPropertyParticularRestrictionAxiomImpl extends Enti
 		literalValue = newLiteralValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM__LITERAL_VALUE, oldLiteralValue, literalValue));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String calculateUUID() {
+		String _xblockexpression = null;
+		{
+			Entity _restrictedEntity = this.getRestrictedEntity();
+			String _uuid = _restrictedEntity.getUuid();
+			String _plus = ("EntityScalarDataPropertyParticularRestrictionAxiom(restrictedEntity=" + _uuid);
+			String _plus_1 = (_plus + ",scalarProperty=");
+			EntityScalarDataProperty _scalarProperty = this.getScalarProperty();
+			String _calculateUUID = _scalarProperty.calculateUUID();
+			String _plus_2 = (_plus_1 + _calculateUUID);
+			final String namespace = (_plus_2 + ")");
+			NameBasedGenerator _nameBasedGenerator = Generators.nameBasedGenerator(NameBasedGenerator.NAMESPACE_URL);
+			UUID _generate = _nameBasedGenerator.generate(namespace);
+			_xblockexpression = _generate.toString();
+		}
+		return _xblockexpression;
 	}
 
 	/**
@@ -157,6 +192,20 @@ public class EntityScalarDataPropertyParticularRestrictionAxiomImpl extends Enti
 				return LITERAL_VALUE_EDEFAULT == null ? literalValue != null : !LITERAL_VALUE_EDEFAULT.equals(literalValue);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM___CALCULATE_UUID:
+				return calculateUUID();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

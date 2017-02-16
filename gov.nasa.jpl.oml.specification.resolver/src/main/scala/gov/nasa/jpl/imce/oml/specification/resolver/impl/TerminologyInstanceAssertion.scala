@@ -28,11 +28,11 @@ extends resolver.api.TerminologyInstanceAssertion
   /*
    * The UUID of a Term is a Version5 namespace UUID based on the term's IRI.
    */
-  def calculateUUID
+  override def calculateUUID
   ()
   : java.util.UUID
   = {
-    <XMemberFeatureCallImplCustom>.toString/* default */
+    com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(iri())
   }
   
   override def iri
@@ -42,13 +42,14 @@ extends resolver.api.TerminologyInstanceAssertion
     descriptionBox.iri + "#" + name
   }
   
-  def name
-  ()
-  : gov.nasa.jpl.imce.oml.specification.tables.LocalName
+
+  override val uuid
+  : java.util.UUID
   = {
-    getName()
+    calculateUUID()
   }
   
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: TerminologyInstanceAssertion => true

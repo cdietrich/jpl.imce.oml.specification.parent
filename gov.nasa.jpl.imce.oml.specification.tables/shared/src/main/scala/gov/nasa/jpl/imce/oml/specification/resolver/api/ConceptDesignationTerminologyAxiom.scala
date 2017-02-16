@@ -32,6 +32,8 @@ trait ConceptDesignationTerminologyAxiom
   val designatedTerminology: TerminologyBox
   val designatedConcept: Concept
 
+  override def calculateUUID
+  (): java.util.UUID
   def designationTerminologyGraph
   (): TerminologyGraph
   /*

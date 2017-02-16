@@ -18,7 +18,13 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import com.fasterxml.uuid.Generators;
+
+import com.fasterxml.uuid.impl.NameBasedGenerator;
+
 import java.lang.reflect.InvocationTargetException;
+
+import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.Concept;
 import jpl.imce.oml.specification.ecore.OMLPackage;
@@ -87,7 +93,7 @@ public class TerminologyNestingAxiomImpl extends TerminologyBoxAxiomImpl impleme
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.TERMINOLOGY_NESTING_AXIOM;
+		return OMLPackage.eINSTANCE.getTerminologyNestingAxiom();
 	}
 
 	/**
@@ -171,10 +177,43 @@ public class TerminologyNestingAxiomImpl extends TerminologyBoxAxiomImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String calculateUUID() {
+		String _xblockexpression = null;
+		{
+			TerminologyBox _source = this.source();
+			String _uuid = _source.getUuid();
+			String _plus = ("TerminologyNestingAxiom(source=" + _uuid);
+			String _plus_1 = (_plus + ",target=");
+			TerminologyBox _target = this.target();
+			String _uuid_1 = _target.getUuid();
+			String _plus_2 = (_plus_1 + _uuid_1);
+			String _plus_3 = (_plus_2 + ",nestingContext=");
+			Concept _nestingContext = this.getNestingContext();
+			String _uuid_2 = _nestingContext.getUuid();
+			String _plus_4 = (_plus_3 + _uuid_2);
+			final String namespace = (_plus_4 + ")");
+			NameBasedGenerator _nameBasedGenerator = Generators.nameBasedGenerator(NameBasedGenerator.NAMESPACE_URL);
+			UUID _generate = _nameBasedGenerator.generate(namespace);
+			_xblockexpression = _generate.toString();
+		}
+		return _xblockexpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public TerminologyGraph nestedTerminology() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		TerminologyGraph _switchResult = null;
+		TerminologyBox _tbox = this.getTbox();
+		boolean _matched = false;
+		if (_tbox instanceof TerminologyGraph) {
+			_matched=true;
+			TerminologyBox _tbox_1 = this.getTbox();
+			_switchResult = ((TerminologyGraph) _tbox_1);
+		}
+		return _switchResult;
 	}
 
 	/**
@@ -273,6 +312,8 @@ public class TerminologyNestingAxiomImpl extends TerminologyBoxAxiomImpl impleme
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+			case OMLPackage.TERMINOLOGY_NESTING_AXIOM___CALCULATE_UUID:
+				return calculateUUID();
 			case OMLPackage.TERMINOLOGY_NESTING_AXIOM___NESTED_TERMINOLOGY:
 				return nestedTerminology();
 			case OMLPackage.TERMINOLOGY_NESTING_AXIOM___SOURCE:

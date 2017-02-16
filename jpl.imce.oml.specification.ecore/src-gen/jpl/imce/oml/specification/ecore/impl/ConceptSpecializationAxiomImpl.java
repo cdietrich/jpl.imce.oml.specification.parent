@@ -18,7 +18,13 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import com.fasterxml.uuid.Generators;
+
+import com.fasterxml.uuid.impl.NameBasedGenerator;
+
 import java.lang.reflect.InvocationTargetException;
+
+import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.Concept;
 import jpl.imce.oml.specification.ecore.ConceptSpecializationAxiom;
@@ -86,7 +92,7 @@ public class ConceptSpecializationAxiomImpl extends SpecializationAxiomImpl impl
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.CONCEPT_SPECIALIZATION_AXIOM;
+		return OMLPackage.eINSTANCE.getConceptSpecializationAxiom();
 	}
 
 	/**
@@ -163,6 +169,29 @@ public class ConceptSpecializationAxiomImpl extends SpecializationAxiomImpl impl
 		superConcept = newSuperConcept;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.CONCEPT_SPECIALIZATION_AXIOM__SUPER_CONCEPT, oldSuperConcept, superConcept));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String calculateUUID() {
+		String _xblockexpression = null;
+		{
+			Concept _subConcept = this.getSubConcept();
+			String _uuid = _subConcept.getUuid();
+			String _plus = ("ConceptSpecializationAxiom(subConcept=" + _uuid);
+			String _plus_1 = (_plus + ",superConcept=");
+			Concept _superConcept = this.getSuperConcept();
+			String _uuid_1 = _superConcept.getUuid();
+			String _plus_2 = (_plus_1 + _uuid_1);
+			final String namespace = (_plus_2 + ")");
+			NameBasedGenerator _nameBasedGenerator = Generators.nameBasedGenerator(NameBasedGenerator.NAMESPACE_URL);
+			UUID _generate = _nameBasedGenerator.generate(namespace);
+			_xblockexpression = _generate.toString();
+		}
+		return _xblockexpression;
 	}
 
 	/**
@@ -261,6 +290,8 @@ public class ConceptSpecializationAxiomImpl extends SpecializationAxiomImpl impl
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+			case OMLPackage.CONCEPT_SPECIALIZATION_AXIOM___CALCULATE_UUID:
+				return calculateUUID();
 			case OMLPackage.CONCEPT_SPECIALIZATION_AXIOM___CHILD:
 				return child();
 			case OMLPackage.CONCEPT_SPECIALIZATION_AXIOM___PARENT:

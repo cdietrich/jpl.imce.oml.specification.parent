@@ -22,15 +22,31 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class EntityScalarDataPropertyUniversalRestrictionAxiom private[impl] 
 (
- override val uuid: java.util.UUID,
- override val tbox: TerminologyBox,
- override val restrictedEntity: Entity,
- override val scalarProperty: EntityScalarDataProperty,
- override val scalarRestriction: DataRange
+ override val tbox: resolver.api.TerminologyBox,
+ override val restrictedEntity: resolver.api.Entity,
+ override val scalarProperty: resolver.api.EntityScalarDataProperty,
+ override val scalarRestriction: resolver.api.DataRange
 )
 extends resolver.api.EntityScalarDataPropertyUniversalRestrictionAxiom
   with EntityScalarDataPropertyRestrictionAxiom
 {
+  override def calculateUUID
+  ()
+  : java.util.UUID
+  = {
+    
+    	val namespace = "EntityScalarDataPropertyUniversalRestrictionAxiom(restrictedEntity="+restrictedEntity.uuid+",scalarProperty="+scalarProperty.calculateUUID()+",scalarRestriction="+scalarRestriction.uuid+")"
+    	com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)
+  }
+  
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: EntityScalarDataPropertyUniversalRestrictionAxiom => true

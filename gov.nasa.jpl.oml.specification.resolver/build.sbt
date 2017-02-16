@@ -12,7 +12,7 @@ import scala.util.control.Exception._
 
 import ProjectRefHelper._
 
-lazy val core = Project("oml-specification-resolver", file("."))
+lazy val resolver = Project("oml-specification-resolver", file("."))
   .enablePlugins(IMCEGitPlugin)
   .enablePlugins(IMCEReleasePlugin)
   .settings(dynamicScriptsResourceSettings(Settings.name))

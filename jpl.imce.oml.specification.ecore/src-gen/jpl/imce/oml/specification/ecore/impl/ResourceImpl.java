@@ -53,7 +53,7 @@ public abstract class ResourceImpl extends CDOObjectImpl implements Resource {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.RESOURCE;
+		return OMLPackage.eINSTANCE.getResource();
 	}
 
 	/**

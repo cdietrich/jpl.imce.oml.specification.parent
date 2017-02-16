@@ -3081,26 +3081,29 @@ entryRuleConceptSpecializationAxiom returns [Boolean current=false]:
 ruleConceptSpecializationAxiom returns [Boolean current=false]
 :
 	(
+		(
+			(
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+				{
+					markComposite(elementTypeProvider.getConceptSpecializationAxiom_SubConceptConceptCrossReference_0_0ElementType());
+				}
+				ruleReference
+				{
+					doneComposite();
+				}
+			)
+		)
 		{
-			markLeaf(elementTypeProvider.getConceptSpecializationAxiom_CONCEPT_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_0ElementType());
+			markLeaf(elementTypeProvider.getConceptSpecializationAxiom_CONCEPT_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_1ElementType());
 		}
-		this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_0=RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN
+		this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_1=RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN
 		{
-			doneLeaf(this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_0);
-		}
-		{
-			markLeaf(elementTypeProvider.getConceptSpecializationAxiom_LCURLYTerminalRuleCall_1ElementType());
-		}
-		this_LCURLY_1=RULE_LCURLY
-		{
-			doneLeaf(this_LCURLY_1);
-		}
-		{
-			markLeaf(elementTypeProvider.getConceptSpecializationAxiom_SubConceptKeyword_2ElementType());
-		}
-		otherlv_2='subConcept'
-		{
-			doneLeaf(otherlv_2);
+			doneLeaf(this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_1);
 		}
 		(
 			(
@@ -3111,7 +3114,7 @@ ruleConceptSpecializationAxiom returns [Boolean current=false]
 					}
 				}
 				{
-					markComposite(elementTypeProvider.getConceptSpecializationAxiom_SubConceptConceptCrossReference_3_0ElementType());
+					markComposite(elementTypeProvider.getConceptSpecializationAxiom_SuperConceptConceptCrossReference_2_0ElementType());
 				}
 				ruleReference
 				{
@@ -3119,37 +3122,6 @@ ruleConceptSpecializationAxiom returns [Boolean current=false]
 				}
 			)
 		)
-		{
-			markLeaf(elementTypeProvider.getConceptSpecializationAxiom_SuperConceptKeyword_4ElementType());
-		}
-		otherlv_4='superConcept'
-		{
-			doneLeaf(otherlv_4);
-		}
-		(
-			(
-				{
-					if (!$current) {
-						associateWithSemanticElement();
-						$current = true;
-					}
-				}
-				{
-					markComposite(elementTypeProvider.getConceptSpecializationAxiom_SuperConceptConceptCrossReference_5_0ElementType());
-				}
-				ruleReference
-				{
-					doneComposite();
-				}
-			)
-		)
-		{
-			markLeaf(elementTypeProvider.getConceptSpecializationAxiom_RCURLYTerminalRuleCall_6ElementType());
-		}
-		this_RCURLY_6=RULE_RCURLY
-		{
-			doneLeaf(this_RCURLY_6);
-		}
 	)
 ;
 
@@ -3164,26 +3136,29 @@ entryRuleReifiedRelationshipSpecializationAxiom returns [Boolean current=false]:
 ruleReifiedRelationshipSpecializationAxiom returns [Boolean current=false]
 :
 	(
+		(
+			(
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+				{
+					markComposite(elementTypeProvider.getReifiedRelationshipSpecializationAxiom_SubRelationshipReifiedRelationshipCrossReference_0_0ElementType());
+				}
+				ruleReference
+				{
+					doneComposite();
+				}
+			)
+		)
 		{
-			markLeaf(elementTypeProvider.getReifiedRelationshipSpecializationAxiom_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_0ElementType());
+			markLeaf(elementTypeProvider.getReifiedRelationshipSpecializationAxiom_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_1ElementType());
 		}
-		this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_0=RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN
+		this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_1=RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN
 		{
-			doneLeaf(this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_0);
-		}
-		{
-			markLeaf(elementTypeProvider.getReifiedRelationshipSpecializationAxiom_LCURLYTerminalRuleCall_1ElementType());
-		}
-		this_LCURLY_1=RULE_LCURLY
-		{
-			doneLeaf(this_LCURLY_1);
-		}
-		{
-			markLeaf(elementTypeProvider.getReifiedRelationshipSpecializationAxiom_SubRelationshipKeyword_2ElementType());
-		}
-		otherlv_2='subRelationship'
-		{
-			doneLeaf(otherlv_2);
+			doneLeaf(this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_1);
 		}
 		(
 			(
@@ -3194,7 +3169,7 @@ ruleReifiedRelationshipSpecializationAxiom returns [Boolean current=false]
 					}
 				}
 				{
-					markComposite(elementTypeProvider.getReifiedRelationshipSpecializationAxiom_SubRelationshipReifiedRelationshipCrossReference_3_0ElementType());
+					markComposite(elementTypeProvider.getReifiedRelationshipSpecializationAxiom_SuperRelationshipReifiedRelationshipCrossReference_2_0ElementType());
 				}
 				ruleReference
 				{
@@ -3202,37 +3177,6 @@ ruleReifiedRelationshipSpecializationAxiom returns [Boolean current=false]
 				}
 			)
 		)
-		{
-			markLeaf(elementTypeProvider.getReifiedRelationshipSpecializationAxiom_SuperRelationshipKeyword_4ElementType());
-		}
-		otherlv_4='superRelationship'
-		{
-			doneLeaf(otherlv_4);
-		}
-		(
-			(
-				{
-					if (!$current) {
-						associateWithSemanticElement();
-						$current = true;
-					}
-				}
-				{
-					markComposite(elementTypeProvider.getReifiedRelationshipSpecializationAxiom_SuperRelationshipReifiedRelationshipCrossReference_5_0ElementType());
-				}
-				ruleReference
-				{
-					doneComposite();
-				}
-			)
-		)
-		{
-			markLeaf(elementTypeProvider.getReifiedRelationshipSpecializationAxiom_RCURLYTerminalRuleCall_6ElementType());
-		}
-		this_RCURLY_6=RULE_RCURLY
-		{
-			doneLeaf(this_RCURLY_6);
-		}
 	)
 ;
 
@@ -5994,11 +5938,11 @@ RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN : 'entityExistentialRestrictionA
 
 RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN : 'entityUniversalRestrictionAxiom';
 
-RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN : 'conceptSpecializationAxiom';
+RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN : 'extendsConcept';
 
 RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN : 'extendsAspect';
 
-RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN : 'reifiedRelationshipSpecializationAxiom';
+RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN : 'extendsRelationship';
 
 RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN : 'entityScalarDataPropertyExistentialRestrictionAxiom';
 

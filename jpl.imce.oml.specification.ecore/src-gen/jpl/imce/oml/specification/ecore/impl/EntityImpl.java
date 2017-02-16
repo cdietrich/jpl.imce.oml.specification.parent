@@ -47,7 +47,7 @@ public abstract class EntityImpl extends TermImpl implements Entity {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.ENTITY;
+		return OMLPackage.eINSTANCE.getEntity();
 	}
 
 } //EntityImpl

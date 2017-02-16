@@ -77,7 +77,7 @@ public class TerminologyGraphItemProvider extends TerminologyBoxItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_TerminologyGraph_graphExtent_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TerminologyGraph_graphExtent_feature", "_UI_TerminologyGraph_type"),
-				 OMLPackage.Literals.TERMINOLOGY_GRAPH__GRAPH_EXTENT,
+				 OMLPackage.eINSTANCE.getTerminologyGraph_GraphExtent(),
 				 true,
 				 false,
 				 true,

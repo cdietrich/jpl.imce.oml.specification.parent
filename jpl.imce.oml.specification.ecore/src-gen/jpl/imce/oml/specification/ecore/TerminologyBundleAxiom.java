@@ -25,7 +25,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An OML TerminologyBundleAxiom is a TerminologyAxiom that asserts a logical statement in the context of a Bundle.
+ * An OML TerminologyBundleAxiom is a TerminologyAxiom that asserts a logical statement in an OML Bundle.
  * <!-- end-model-doc -->
  *
  * <p>

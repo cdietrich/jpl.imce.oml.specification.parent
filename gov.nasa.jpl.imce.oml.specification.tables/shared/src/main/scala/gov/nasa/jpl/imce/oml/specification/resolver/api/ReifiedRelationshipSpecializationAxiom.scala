@@ -36,6 +36,8 @@ trait ReifiedRelationshipSpecializationAxiom
    */
   val superRelationship: ReifiedRelationship
 
+  override def calculateUUID
+  (): java.util.UUID
   /*
    * Get the sub (child) entity
    */

@@ -63,7 +63,7 @@ public abstract class TerminologyBundleAxiomImpl extends TerminologyAxiomImpl im
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.TERMINOLOGY_BUNDLE_AXIOM;
+		return OMLPackage.eINSTANCE.getTerminologyBundleAxiom();
 	}
 
 	/**

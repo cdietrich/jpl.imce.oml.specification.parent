@@ -18,8 +18,20 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import com.fasterxml.uuid.Generators;
+
+import com.fasterxml.uuid.impl.NameBasedGenerator;
+
+import java.lang.reflect.InvocationTargetException;
+
+import java.util.UUID;
+
+import jpl.imce.oml.specification.ecore.Entity;
 import jpl.imce.oml.specification.ecore.EntityExistentialRestrictionAxiom;
+import jpl.imce.oml.specification.ecore.EntityRelationship;
 import jpl.imce.oml.specification.ecore.OMLPackage;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -47,7 +59,48 @@ public class EntityExistentialRestrictionAxiomImpl extends EntityRestrictionAxio
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.ENTITY_EXISTENTIAL_RESTRICTION_AXIOM;
+		return OMLPackage.eINSTANCE.getEntityExistentialRestrictionAxiom();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String calculateUUID() {
+		String _xblockexpression = null;
+		{
+			Entity _restrictedDomain = this.getRestrictedDomain();
+			String _uuid = _restrictedDomain.getUuid();
+			String _plus = ("EntityExistentialRestrictionAxiom(restrictedDomain=" + _uuid);
+			String _plus_1 = (_plus + ",restrictedRelation=");
+			EntityRelationship _restrictedRelation = this.getRestrictedRelation();
+			String _uuid_1 = _restrictedRelation.getUuid();
+			String _plus_2 = (_plus_1 + _uuid_1);
+			String _plus_3 = (_plus_2 + ",restrictedRange=");
+			Entity _restrictedRange = this.getRestrictedRange();
+			String _uuid_2 = _restrictedRange.getUuid();
+			String _plus_4 = (_plus_3 + _uuid_2);
+			final String namespace = (_plus_4 + ")");
+			NameBasedGenerator _nameBasedGenerator = Generators.nameBasedGenerator(NameBasedGenerator.NAMESPACE_URL);
+			UUID _generate = _nameBasedGenerator.generate(namespace);
+			_xblockexpression = _generate.toString();
+		}
+		return _xblockexpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OMLPackage.ENTITY_EXISTENTIAL_RESTRICTION_AXIOM___CALCULATE_UUID:
+				return calculateUUID();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //EntityExistentialRestrictionAxiomImpl

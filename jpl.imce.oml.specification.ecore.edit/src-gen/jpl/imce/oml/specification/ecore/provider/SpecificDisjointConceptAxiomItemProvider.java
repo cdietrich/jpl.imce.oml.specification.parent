@@ -77,7 +77,7 @@ public class SpecificDisjointConceptAxiomItemProvider extends DisjointUnionOfCon
 				 getResourceLocator(),
 				 getString("_UI_SpecificDisjointConceptAxiom_disjointLeaf_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SpecificDisjointConceptAxiom_disjointLeaf_feature", "_UI_SpecificDisjointConceptAxiom_type"),
-				 OMLPackage.Literals.SPECIFIC_DISJOINT_CONCEPT_AXIOM__DISJOINT_LEAF,
+				 OMLPackage.eINSTANCE.getSpecificDisjointConceptAxiom_DisjointLeaf(),
 				 true,
 				 false,
 				 true,

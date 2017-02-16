@@ -52,7 +52,7 @@ class OMLScopeExtensions {
 	 */
 	def scope_Annotation_property(Annotation annotation, EReference eRef) {
 		Scopes.scopeFor(
-			annotation.context.extent.annotationProperties,
+			annotation.module.extent.annotationProperties,
 			[ qnc.toQualifiedName(it.abbrevIRI) ],
 			IScope.NULLSCOPE)	
 	}

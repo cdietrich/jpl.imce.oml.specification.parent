@@ -22,14 +22,14 @@ import gov.nasa.jpl.imce.oml.specification._
 
 trait TerminologyBox
 extends resolver.api.TerminologyBox
-  with Context
+  with Module
 {
   /*
    * The subset of statements that are entities.
    */
   override def entities
   ()
-  : scala.collection.immutable.SortedSet[Entity]
+  : scala.collection.immutable.SortedSet[resolver.api.Entity]
   = {
     boxStatements.selectByKindOf { case e: Entity => e }
   }
@@ -39,7 +39,7 @@ extends resolver.api.TerminologyBox
    */
   override def aspects
   ()
-  : scala.collection.immutable.SortedSet[Aspect]
+  : scala.collection.immutable.SortedSet[resolver.api.Aspect]
   = {
     boxStatements.selectByKindOf { case a: Aspect => a }
   }
@@ -49,7 +49,7 @@ extends resolver.api.TerminologyBox
    */
   override def concepts
   ()
-  : scala.collection.immutable.SortedSet[Concept]
+  : scala.collection.immutable.SortedSet[resolver.api.Concept]
   = {
     boxStatements.selectByKindOf { case c: Concept => c }
   }
@@ -59,7 +59,7 @@ extends resolver.api.TerminologyBox
    */
   override def reifiedRelationships
   ()
-  : scala.collection.immutable.SortedSet[ReifiedRelationship]
+  : scala.collection.immutable.SortedSet[resolver.api.ReifiedRelationship]
   = {
     boxStatements.selectByKindOf { case rr: ReifiedRelationship => rr }
   }
@@ -69,7 +69,7 @@ extends resolver.api.TerminologyBox
    */
   override def unreifiedRelationships
   ()
-  : scala.collection.immutable.SortedSet[UnreifiedRelationship]
+  : scala.collection.immutable.SortedSet[resolver.api.UnreifiedRelationship]
   = {
     boxStatements.selectByKindOf { case ur: UnreifiedRelationship => ur }
   }
@@ -79,7 +79,7 @@ extends resolver.api.TerminologyBox
    */
   override def dataRelationships
   ()
-  : scala.collection.immutable.SortedSet[DataRelationship]
+  : scala.collection.immutable.SortedSet[resolver.api.DataRelationship]
   = {
     boxStatements.selectByKindOf { case dr: DataRelationship => dr }
   }
@@ -90,7 +90,7 @@ extends resolver.api.TerminologyBox
    */
   override def entityScalarDataProperties
   ()
-  : scala.collection.immutable.SortedSet[EntityScalarDataProperty]
+  : scala.collection.immutable.SortedSet[resolver.api.EntityScalarDataProperty]
   = {
     boxStatements.selectByKindOf { case dp: EntityScalarDataProperty => dp }
   }
@@ -101,7 +101,7 @@ extends resolver.api.TerminologyBox
    */
   override def dataranges
   ()
-  : scala.collection.immutable.SortedSet[DataRange]
+  : scala.collection.immutable.SortedSet[resolver.api.DataRange]
   = {
     boxStatements.selectByKindOf { case dr: DataRange => dr }
   }
@@ -112,7 +112,7 @@ extends resolver.api.TerminologyBox
    */
   override def scalars
   ()
-  : scala.collection.immutable.SortedSet[Scalar]
+  : scala.collection.immutable.SortedSet[resolver.api.Scalar]
   = {
     boxStatements.selectByKindOf { case s: Scalar => s }
   }
@@ -123,7 +123,7 @@ extends resolver.api.TerminologyBox
    */
   override def structures
   ()
-  : scala.collection.immutable.SortedSet[Structure]
+  : scala.collection.immutable.SortedSet[resolver.api.Structure]
   = {
     boxStatements.selectByKindOf { case s: Structure => s }
   }
@@ -133,18 +133,26 @@ extends resolver.api.TerminologyBox
    */
   override def termAxioms
   ()
-  : scala.collection.immutable.SortedSet[TermAxiom]
+  : scala.collection.immutable.SortedSet[resolver.api.TermAxiom]
   = {
     boxStatements.selectByKindOf { case tx: TermAxiom => tx }
   }
   
   override def everything
   ()
-  : scala.collection.immutable.SortedSet[TerminologyThing]
+  : scala.collection.immutable.SortedSet[resolver.api.TerminologyThing]
   = {
     scala.collection.immutable.SortedSet.empty[resolver.api.TerminologyThing] ++ boxStatements + this
   }
   
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: TerminologyBox => true

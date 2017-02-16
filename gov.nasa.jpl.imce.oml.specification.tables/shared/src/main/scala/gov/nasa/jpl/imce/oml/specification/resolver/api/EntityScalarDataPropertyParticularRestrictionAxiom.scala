@@ -27,4 +27,7 @@ trait EntityScalarDataPropertyParticularRestrictionAxiom
 {
 
   val literalValue: gov.nasa.jpl.imce.oml.specification.tables.LexicalValue
+
+  override def calculateUUID
+  (): java.util.UUID
 }

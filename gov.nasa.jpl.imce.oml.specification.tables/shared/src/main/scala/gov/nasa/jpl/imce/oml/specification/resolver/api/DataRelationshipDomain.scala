@@ -24,4 +24,7 @@ package gov.nasa.jpl.imce.oml.specification.resolver.api
  */
 trait DataRelationshipDomain
 {
+
+  def calculateUUID
+  (): java.util.UUID
 }

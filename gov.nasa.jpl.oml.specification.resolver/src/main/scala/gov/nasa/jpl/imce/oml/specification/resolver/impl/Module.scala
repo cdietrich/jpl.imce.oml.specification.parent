@@ -20,30 +20,23 @@ package gov.nasa.jpl.imce.oml.specification.resolver.impl
 
 import gov.nasa.jpl.imce.oml.specification._
 
-trait Context
-extends resolver.api.Context
+trait Module
+extends resolver.api.Module
   with TerminologyThing
   with Resource
 {
-  def calculateUUID
+  override def calculateUUID
   ()
   : java.util.UUID
   = {
-    <XMemberFeatureCallImplCustom>.toString/* default */
-  }
-  
-  def iri
-  ()
-  : gov.nasa.jpl.imce.oml.specification.tables.IRI
-  = {
-    getIri()
+    com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(iri)
   }
   
   def nsPrefix
   ()
   : gov.nasa.jpl.imce.oml.specification.tables.NamespacePrefix
   = {
-    <XFeatureCallImplCustom>.substring(<XBinaryOperationImplCustom>)/* default */
+    iri.substring(1+iri.lastIndexOf('/'))
   }
   
   def name
@@ -54,8 +47,16 @@ extends resolver.api.Context
   }
   
 
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
+
   override def canEqual(that: scala.Any): scala.Boolean = that match {
-  	case _: Context => true
+  	case _: Module => true
   	case _ => false
   }
 }

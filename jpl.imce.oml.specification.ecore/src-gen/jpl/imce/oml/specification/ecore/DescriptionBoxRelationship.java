@@ -26,7 +26,7 @@ package jpl.imce.oml.specification.ecore;
  *
  * <!-- begin-model-doc -->
  * An OML DescriptionBoxRelationship is a directed binary relationship
- * from an OML DescriptionBox source to an OML Context target.
+ * from an OML DescriptionBox source to an OML Module target.
  * <!-- end-model-doc -->
  *
  *
@@ -49,6 +49,6 @@ public interface DescriptionBoxRelationship extends TerminologyThing {
 	 * @model unique="false" required="true"
 	 * @generated
 	 */
-	Context contextTarget();
+	Module targetModule();
 
 } // DescriptionBoxRelationship

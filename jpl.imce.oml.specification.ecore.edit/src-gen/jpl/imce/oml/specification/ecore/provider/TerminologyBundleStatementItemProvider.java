@@ -77,7 +77,7 @@ public class TerminologyBundleStatementItemProvider extends TerminologyThingItem
 				 getResourceLocator(),
 				 getString("_UI_TerminologyBundleStatement_bundle_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TerminologyBundleStatement_bundle_feature", "_UI_TerminologyBundleStatement_type"),
-				 OMLPackage.Literals.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE,
+				 OMLPackage.eINSTANCE.getTerminologyBundleStatement_Bundle(),
 				 true,
 				 false,
 				 true,

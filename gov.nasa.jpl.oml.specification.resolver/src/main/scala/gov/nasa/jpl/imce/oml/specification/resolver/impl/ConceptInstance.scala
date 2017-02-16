@@ -22,23 +22,39 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class ConceptInstance private[impl] 
 (
- override val uuid: java.util.UUID,
- override val descriptionBox: DescriptionBox,
- override val singletonConceptClassifier: Concept,
+ override val descriptionBox: resolver.api.DescriptionBox,
+ override val singletonConceptClassifier: resolver.api.Concept,
  override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName,
- override val scalarDataPropertyValues: scala.collection.immutable.SortedSet[ScalarDataPropertyValue],
- override val structuredDataPropertyValues: scala.collection.immutable.SortedSet[StructuredDataPropertyValue]
+ override val scalarDataPropertyValues: scala.collection.immutable.SortedSet[resolver.api.ScalarDataPropertyValue],
+ override val structuredDataPropertyValues: scala.collection.immutable.SortedSet[resolver.api.StructuredDataPropertyValue]
 )
 extends resolver.api.ConceptInstance
   with ConceptualEntitySingletonInstance
 {
+  override def calculateUUID
+  ()
+  : java.util.UUID
+  = {
+    
+    	val namespace = "ConceptInstance(descriptionBox=" + descriptionBox.uuid + ",singletonConceptClassifier="+singletonConceptClassifier.uuid+")"
+    	com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)
+  }
+  
   override def conceptualEntitySingletonClassifier
   ()
-  : ConceptualEntity
+  : resolver.api.ConceptualEntity
   = {
     singletonConceptClassifier
   }
   
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: ConceptInstance => true

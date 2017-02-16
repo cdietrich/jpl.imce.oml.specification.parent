@@ -78,7 +78,7 @@ public class AnnotationEntryItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addContextPropertyDescriptor(object);
+			addModulePropertyDescriptor(object);
 			addSubjectPropertyDescriptor(object);
 			addValuePropertyDescriptor(object);
 		}
@@ -86,19 +86,19 @@ public class AnnotationEntryItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Context feature.
+	 * This adds a property descriptor for the Module feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addContextPropertyDescriptor(Object object) {
+	protected void addModulePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AnnotationEntry_context_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationEntry_context_feature", "_UI_AnnotationEntry_type"),
-				 OMLPackage.Literals.ANNOTATION_ENTRY__CONTEXT,
+				 getString("_UI_AnnotationEntry_module_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationEntry_module_feature", "_UI_AnnotationEntry_type"),
+				 OMLPackage.eINSTANCE.getAnnotationEntry_Module(),
 				 true,
 				 false,
 				 true,
@@ -120,7 +120,7 @@ public class AnnotationEntryItemProvider
 				 getResourceLocator(),
 				 getString("_UI_AnnotationEntry_subject_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationEntry_subject_feature", "_UI_AnnotationEntry_type"),
-				 OMLPackage.Literals.ANNOTATION_ENTRY__SUBJECT,
+				 OMLPackage.eINSTANCE.getAnnotationEntry_Subject(),
 				 true,
 				 false,
 				 true,
@@ -142,7 +142,7 @@ public class AnnotationEntryItemProvider
 				 getResourceLocator(),
 				 getString("_UI_AnnotationEntry_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationEntry_value_feature", "_UI_AnnotationEntry_type"),
-				 OMLPackage.Literals.ANNOTATION_ENTRY__VALUE,
+				 OMLPackage.eINSTANCE.getAnnotationEntry_Value(),
 				 true,
 				 false,
 				 false,

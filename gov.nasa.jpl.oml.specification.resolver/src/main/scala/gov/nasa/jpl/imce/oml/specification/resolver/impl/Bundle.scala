@@ -22,60 +22,68 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class Bundle private[impl] 
 (
- override val uuid: java.util.UUID,
+ override val bundleExtent: resolver.api.TerminologyExtent,
  override val kind: gov.nasa.jpl.imce.oml.specification.tables.TerminologyGraphKind,
  override val iri: gov.nasa.jpl.imce.oml.specification.tables.IRI,
- override val annotations: scala.collection.immutable.SortedSet[Annotation],
- override val boxStatements: scala.collection.immutable.SortedSet[TerminologyBoxStatement],
- override val bundleStatements: scala.collection.immutable.SortedSet[TerminologyBundleStatement],
- override val terminologyBoxAxioms: scala.collection.immutable.SortedSet[TerminologyBoxAxiom],
- override val terminologyBundleAxioms: scala.collection.immutable.SortedSet[TerminologyBundleAxiom]
+ override val annotations: scala.collection.immutable.SortedSet[resolver.api.Annotation],
+ override val boxStatements: scala.collection.immutable.SortedSet[resolver.api.TerminologyBoxStatement],
+ override val bundleStatements: scala.collection.immutable.SortedSet[resolver.api.TerminologyBundleStatement],
+ override val terminologyBoxAxioms: scala.collection.immutable.SortedSet[resolver.api.TerminologyBoxAxiom],
+ override val terminologyBundleAxioms: scala.collection.immutable.SortedSet[resolver.api.TerminologyBundleAxiom]
 )
 extends resolver.api.Bundle
   with TerminologyBox
 {
   def extent
   ()
-  : TerminologyExtent
+  : resolver.api.TerminologyExtent
   = {
     bundleExtent
   }
   
   override def withAnnotations
-  (a: scala.collection.immutable.SortedSet[AnnotationPropertyTable])
-  : Bundle
+  (a: scala.collection.immutable.SortedSet[resolver.api.AnnotationPropertyTable])
+  : resolver.api.Bundle
   = {
     copy(annotations = this.annotations ++ resolver.convertToAnnotations(a))
   }
   
   override def annotationsByProperty
   ()
-  : scala.collection.immutable.SortedSet[AnnotationPropertyTable]
+  : scala.collection.immutable.SortedSet[resolver.api.AnnotationPropertyTable]
   = {
     resolver.groupAnnotationsByProperty(annotations)
   }
   
   def withBundleStatements
-  (s: scala.collection.immutable.SortedSet[TerminologyBundleStatement])
-  : Bundle
+  (s: scala.collection.immutable.SortedSet[resolver.api.TerminologyBundleStatement])
+  : resolver.api.Bundle
   = {
     copy(bundleStatements = this.bundleStatements ++ s)
   }
   
   override def withBoxStatements
-  (s: scala.collection.immutable.SortedSet[TerminologyBoxStatement])
-  : Bundle
+  (s: scala.collection.immutable.SortedSet[resolver.api.TerminologyBoxStatement])
+  : resolver.api.Bundle
   = {
     copy(boxStatements = this.boxStatements ++ s)
   }
   
   override def everything
   ()
-  : scala.collection.immutable.SortedSet[TerminologyThing]
+  : scala.collection.immutable.SortedSet[resolver.api.TerminologyThing]
   = {
     super.everything() ++ bundleStatements + this
   }
   
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: Bundle => true
@@ -84,12 +92,13 @@ extends resolver.api.Bundle
 
   override val hashCode
   : scala.Int
-  = (uuid, kind, iri, annotations, boxStatements, bundleStatements, terminologyBoxAxioms, terminologyBundleAxioms).##
+  = (uuid, bundleExtent, kind, iri, annotations, boxStatements, bundleStatements, terminologyBoxAxioms, terminologyBundleAxioms).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: Bundle =>
 	    (that canEqual this) &&
 	    (this.uuid == that.uuid) &&
+	    (this.bundleExtent == that.bundleExtent) &&
 	    (this.kind == that.kind) &&
 	    (this.iri == that.iri) &&
 	    (this.annotations == that.annotations) &&

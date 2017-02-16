@@ -18,11 +18,23 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import com.fasterxml.uuid.Generators;
+
+import com.fasterxml.uuid.impl.NameBasedGenerator;
+
+import java.lang.reflect.InvocationTargetException;
+
+import java.util.UUID;
+
 import jpl.imce.oml.specification.ecore.DataRange;
+import jpl.imce.oml.specification.ecore.Entity;
+import jpl.imce.oml.specification.ecore.EntityScalarDataProperty;
 import jpl.imce.oml.specification.ecore.EntityScalarDataPropertyExistentialRestrictionAxiom;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -70,7 +82,7 @@ public class EntityScalarDataPropertyExistentialRestrictionAxiomImpl extends Ent
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM;
+		return OMLPackage.eINSTANCE.getEntityScalarDataPropertyExistentialRestrictionAxiom();
 	}
 
 	/**
@@ -109,6 +121,33 @@ public class EntityScalarDataPropertyExistentialRestrictionAxiomImpl extends Ent
 		scalarRestriction = newScalarRestriction;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM__SCALAR_RESTRICTION, oldScalarRestriction, scalarRestriction));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String calculateUUID() {
+		String _xblockexpression = null;
+		{
+			Entity _restrictedEntity = this.getRestrictedEntity();
+			String _uuid = _restrictedEntity.getUuid();
+			String _plus = ("EntityScalarDataPropertyExistentialRestrictionAxiom(restrictedEntity=" + _uuid);
+			String _plus_1 = (_plus + ",scalarProperty=");
+			EntityScalarDataProperty _scalarProperty = this.getScalarProperty();
+			String _calculateUUID = _scalarProperty.calculateUUID();
+			String _plus_2 = (_plus_1 + _calculateUUID);
+			String _plus_3 = (_plus_2 + ",scalarRestriction=");
+			DataRange _scalarRestriction = this.getScalarRestriction();
+			String _uuid_1 = _scalarRestriction.getUuid();
+			String _plus_4 = (_plus_3 + _uuid_1);
+			final String namespace = (_plus_4 + ")");
+			NameBasedGenerator _nameBasedGenerator = Generators.nameBasedGenerator(NameBasedGenerator.NAMESPACE_URL);
+			UUID _generate = _nameBasedGenerator.generate(namespace);
+			_xblockexpression = _generate.toString();
+		}
+		return _xblockexpression;
 	}
 
 	/**
@@ -168,6 +207,20 @@ public class EntityScalarDataPropertyExistentialRestrictionAxiomImpl extends Ent
 				return scalarRestriction != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM___CALCULATE_UUID:
+				return calculateUUID();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //EntityScalarDataPropertyExistentialRestrictionAxiomImpl

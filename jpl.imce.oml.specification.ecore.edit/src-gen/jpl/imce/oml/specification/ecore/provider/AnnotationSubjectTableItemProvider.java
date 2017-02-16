@@ -98,7 +98,7 @@ public class AnnotationSubjectTableItemProvider
 				 getResourceLocator(),
 				 getString("_UI_AnnotationSubjectTable_key_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationSubjectTable_key_feature", "_UI_AnnotationSubjectTable_type"),
-				 OMLPackage.Literals.ANNOTATION_SUBJECT_TABLE__KEY,
+				 OMLPackage.eINSTANCE.getAnnotationSubjectTable_Key(),
 				 true,
 				 false,
 				 true,
@@ -119,7 +119,7 @@ public class AnnotationSubjectTableItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OMLPackage.Literals.ANNOTATION_SUBJECT_TABLE__VALUE);
+			childrenFeatures.add(OMLPackage.eINSTANCE.getAnnotationSubjectTable_Value());
 		}
 		return childrenFeatures;
 	}
@@ -193,7 +193,7 @@ public class AnnotationSubjectTableItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.ANNOTATION_SUBJECT_TABLE__VALUE,
+				(OMLPackage.eINSTANCE.getAnnotationSubjectTable_Value(),
 				 OMLFactory.eINSTANCE.createAnnotationSubjectPropertyValue()));
 	}
 

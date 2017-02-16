@@ -18,14 +18,26 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import com.fasterxml.uuid.Generators;
+
+import com.fasterxml.uuid.impl.NameBasedGenerator;
+
+import java.lang.reflect.InvocationTargetException;
+
+import java.util.UUID;
+
 import jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance;
 import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion;
+import jpl.imce.oml.specification.ecore.TerminologyThing;
 import jpl.imce.oml.specification.ecore.UnreifiedRelationship;
 import jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -98,7 +110,7 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE;
+		return OMLPackage.eINSTANCE.getUnreifiedRelationshipInstanceTuple();
 	}
 
 	/**
@@ -271,6 +283,37 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String calculateUUID() {
+		String _xblockexpression = null;
+		{
+			DescriptionBox _descriptionBox = this.descriptionBox();
+			String _uuid = _descriptionBox.getUuid();
+			String _plus = ("UnreifiedRelationshipInstanceTuple(descriptionBox=" + _uuid);
+			String _plus_1 = (_plus + ",unreifiedRelationship=");
+			UnreifiedRelationship _unreifiedRelationship = this.getUnreifiedRelationship();
+			String _uuid_1 = _unreifiedRelationship.getUuid();
+			String _plus_2 = (_plus_1 + _uuid_1);
+			String _plus_3 = (_plus_2 + ",domain=");
+			ConceptualEntitySingletonInstance _domain = this.getDomain();
+			String _uuid_2 = _domain.getUuid();
+			String _plus_4 = (_plus_3 + _uuid_2);
+			String _plus_5 = (_plus_4 + ",range=");
+			ConceptualEntitySingletonInstance _range = this.getRange();
+			String _uuid_3 = _range.getUuid();
+			String _plus_6 = (_plus_5 + _uuid_3);
+			final String namespace = (_plus_6 + ")");
+			NameBasedGenerator _nameBasedGenerator = Generators.nameBasedGenerator(NameBasedGenerator.NAMESPACE_URL);
+			UUID _generate = _nameBasedGenerator.generate(namespace);
+			_xblockexpression = _generate.toString();
+		}
+		return _xblockexpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -400,6 +443,42 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 				return range != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == TerminologyThing.class) {
+			switch (baseOperationID) {
+				case OMLPackage.TERMINOLOGY_THING___CALCULATE_UUID: return OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE___CALCULATE_UUID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		if (baseClass == TerminologyInstanceAssertion.class) {
+			switch (baseOperationID) {
+				case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID: return OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE___CALCULATE_UUID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE___CALCULATE_UUID:
+				return calculateUUID();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //UnreifiedRelationshipInstanceTupleImpl

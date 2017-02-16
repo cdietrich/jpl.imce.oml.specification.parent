@@ -20,9 +20,10 @@ package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
  * An OML TerminologyNestingAxiom provides support for relating
- * a white-box OML TerminologyGraph as a nested terminology
- * providing details about a black-box OML Concept defined
- * in a nesting OML TerminologyBox.
+ * a white-box nested OML TerminologyGraph used for describing internal
+ * details about a nesting OML Concept defined in a nesting OML TerminologyBox.
+ * This nesting OML Concept specifies the context for the internal details
+ * defined in the nested OML TerminologyGraph.
  */
 trait TerminologyNestingAxiom
   extends TerminologyBoxAxiom
@@ -31,6 +32,8 @@ trait TerminologyNestingAxiom
   val nestingTerminology: TerminologyBox
   val nestingContext: Concept
 
+  override def calculateUUID
+  (): java.util.UUID
   def nestedTerminology
   (): TerminologyGraph
   /*

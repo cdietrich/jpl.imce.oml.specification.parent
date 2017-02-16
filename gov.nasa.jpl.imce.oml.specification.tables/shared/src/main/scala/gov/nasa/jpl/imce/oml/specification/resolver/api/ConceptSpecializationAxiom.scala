@@ -30,6 +30,8 @@ trait ConceptSpecializationAxiom
   val subConcept: Concept
   val superConcept: Concept
 
+  override def calculateUUID
+  (): java.util.UUID
   /*
    * Get the sub (child) entity
    */

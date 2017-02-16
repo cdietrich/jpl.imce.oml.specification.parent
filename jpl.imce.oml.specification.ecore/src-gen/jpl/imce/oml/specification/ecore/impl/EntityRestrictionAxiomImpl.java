@@ -93,7 +93,7 @@ public abstract class EntityRestrictionAxiomImpl extends TermAxiomImpl implement
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.ENTITY_RESTRICTION_AXIOM;
+		return OMLPackage.eINSTANCE.getEntityRestrictionAxiom();
 	}
 
 	/**

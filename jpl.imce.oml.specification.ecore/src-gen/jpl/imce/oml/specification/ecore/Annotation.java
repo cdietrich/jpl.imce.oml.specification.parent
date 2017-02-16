@@ -27,7 +27,7 @@ import org.eclipse.emf.cdo.CDOObject;
  *
  * <!-- begin-model-doc -->
  * An OML Annotation maps to an [OWL2 Annotation] and is similarly
- * a non-logical statement in an OML Context
+ * a non-logical statement in an OML Module
  * associating some information as the value of an
  * OML AnnotationProperty for describing a subject (an OML TerminologyThing).
  * <!-- end-model-doc -->
@@ -36,7 +36,7 @@ import org.eclipse.emf.cdo.CDOObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link jpl.imce.oml.specification.ecore.Annotation#getContext <em>Context</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.Annotation#getModule <em>Module</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.Annotation#getProperty <em>Property</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.Annotation#getSubject <em>Subject</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.Annotation#getValue <em>Value</em>}</li>
@@ -49,32 +49,32 @@ import org.eclipse.emf.cdo.CDOObject;
  */
 public interface Annotation extends CDOObject {
 	/**
-	 * Returns the value of the '<em><b>Context</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.Context#getAnnotations <em>Annotations</em>}'.
+	 * Returns the value of the '<em><b>Module</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link jpl.imce.oml.specification.ecore.Module#getAnnotations <em>Annotations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Context</em>' container reference isn't clear,
+	 * If the meaning of the '<em>Module</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Context</em>' container reference.
-	 * @see #setContext(Context)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getAnnotation_Context()
-	 * @see jpl.imce.oml.specification.ecore.Context#getAnnotations
+	 * @return the value of the '<em>Module</em>' container reference.
+	 * @see #setModule(Module)
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getAnnotation_Module()
+	 * @see jpl.imce.oml.specification.ecore.Module#getAnnotations
 	 * @model opposite="annotations" required="true" transient="false"
 	 * @generated
 	 */
-	Context getContext();
+	Module getModule();
 
 	/**
-	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.Annotation#getContext <em>Context</em>}' container reference.
+	 * Sets the value of the '{@link jpl.imce.oml.specification.ecore.Annotation#getModule <em>Module</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Context</em>' container reference.
-	 * @see #getContext()
+	 * @param value the new value of the '<em>Module</em>' container reference.
+	 * @see #getModule()
 	 * @generated
 	 */
-	void setContext(Context value);
+	void setModule(Module value);
 
 	/**
 	 * Returns the value of the '<em><b>Property</b></em>' reference.

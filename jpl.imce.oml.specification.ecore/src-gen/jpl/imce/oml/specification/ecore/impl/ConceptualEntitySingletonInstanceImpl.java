@@ -65,7 +65,7 @@ public abstract class ConceptualEntitySingletonInstanceImpl extends SingletonIns
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.CONCEPTUAL_ENTITY_SINGLETON_INSTANCE;
+		return OMLPackage.eINSTANCE.getConceptualEntitySingletonInstance();
 	}
 
 	/**

@@ -79,7 +79,7 @@ public class TermItemProvider extends TerminologyBoxStatementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Term_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Term_name_feature", "_UI_Term_type"),
-				 OMLPackage.Literals.TERM__NAME,
+				 OMLPackage.eINSTANCE.getTerm_Name(),
 				 true,
 				 false,
 				 false,

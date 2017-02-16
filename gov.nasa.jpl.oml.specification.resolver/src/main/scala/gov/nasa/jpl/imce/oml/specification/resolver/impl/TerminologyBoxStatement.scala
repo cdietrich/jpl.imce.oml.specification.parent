@@ -25,6 +25,14 @@ extends resolver.api.TerminologyBoxStatement
   with TerminologyThing
 {
 
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
+
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: TerminologyBoxStatement => true
   	case _ => false

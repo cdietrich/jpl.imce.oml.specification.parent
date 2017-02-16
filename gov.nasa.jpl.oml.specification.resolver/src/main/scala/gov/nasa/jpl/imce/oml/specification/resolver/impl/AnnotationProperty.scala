@@ -31,9 +31,11 @@ extends resolver.api.AnnotationProperty
   ()
   : java.util.UUID
   = {
-    <XMemberFeatureCallImplCustom>.toString/* default */
+    java.util.UUID.fromString(iri)
   }
   
+
+
 
   override val hashCode
   : scala.Int

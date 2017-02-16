@@ -22,20 +22,28 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class ReifiedRelationshipSpecializationAxiom private[impl] 
 (
- override val uuid: java.util.UUID,
- override val tbox: TerminologyBox,
- override val superRelationship: ReifiedRelationship,
- override val subRelationship: ReifiedRelationship
+ override val tbox: resolver.api.TerminologyBox,
+ override val superRelationship: resolver.api.ReifiedRelationship,
+ override val subRelationship: resolver.api.ReifiedRelationship
 )
 extends resolver.api.ReifiedRelationshipSpecializationAxiom
   with SpecializationAxiom
 {
+  override def calculateUUID
+  ()
+  : java.util.UUID
+  = {
+    
+    	val namespace = "ReifiedRelationshipSpecializationAxiom(subRelationship=" + subRelationship.uuid + ",superRelationship="+superRelationship.uuid+")"
+    	com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)
+  }
+  
   /*
    * Get the sub (child) entity
    */
   override def child
   ()
-  : Entity
+  : resolver.api.Entity
   = {
     subRelationship
   }
@@ -45,11 +53,19 @@ extends resolver.api.ReifiedRelationshipSpecializationAxiom
    */
   override def parent
   ()
-  : Entity
+  : resolver.api.Entity
   = {
     superRelationship
   }
   
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: ReifiedRelationshipSpecializationAxiom => true

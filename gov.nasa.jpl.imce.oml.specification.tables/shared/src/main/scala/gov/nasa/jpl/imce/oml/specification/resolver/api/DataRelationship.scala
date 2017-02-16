@@ -29,10 +29,10 @@ trait DataRelationship
 
   def source
   (): Term
-  def relationDomain
+  override def relationDomain
   (): Term
   def target
   (): Datatype
-  def relationRange
+  override def relationRange
   (): Term
 }

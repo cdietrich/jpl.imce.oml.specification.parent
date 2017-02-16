@@ -67,8 +67,8 @@ trait EntityRelationship
    */
   val isTransitive: scala.Boolean
 
-  def relationDomain
+  override def relationDomain
   (): Term
-  def relationRange
+  override def relationRange
   (): Term
 }

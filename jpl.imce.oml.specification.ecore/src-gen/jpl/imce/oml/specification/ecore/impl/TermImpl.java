@@ -90,7 +90,7 @@ public abstract class TermImpl extends TerminologyBoxStatementImpl implements Te
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.TERM;
+		return OMLPackage.eINSTANCE.getTerm();
 	}
 
 	/**

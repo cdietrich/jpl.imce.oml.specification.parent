@@ -70,7 +70,7 @@ public abstract class DataRelationshipToStructureImpl extends DataRelationshipRa
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.DATA_RELATIONSHIP_TO_STRUCTURE;
+		return OMLPackage.eINSTANCE.getDataRelationshipToStructure();
 	}
 
 	/**

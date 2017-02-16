@@ -77,7 +77,7 @@ public class TerminologyBoxStatementItemProvider extends TerminologyThingItemPro
 				 getResourceLocator(),
 				 getString("_UI_TerminologyBoxStatement_tbox_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TerminologyBoxStatement_tbox_feature", "_UI_TerminologyBoxStatement_type"),
-				 OMLPackage.Literals.TERMINOLOGY_BOX_STATEMENT__TBOX,
+				 OMLPackage.eINSTANCE.getTerminologyBoxStatement_Tbox(),
 				 true,
 				 false,
 				 true,

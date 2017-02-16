@@ -75,8 +75,8 @@ public class SingletonInstanceItemProvider extends TerminologyInstanceAssertionI
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OMLPackage.Literals.SINGLETON_INSTANCE__SCALAR_DATA_PROPERTY_VALUES);
-			childrenFeatures.add(OMLPackage.Literals.SINGLETON_INSTANCE__STRUCTURED_DATA_PROPERTY_VALUES);
+			childrenFeatures.add(OMLPackage.eINSTANCE.getSingletonInstance_ScalarDataPropertyValues());
+			childrenFeatures.add(OMLPackage.eINSTANCE.getSingletonInstance_StructuredDataPropertyValues());
 		}
 		return childrenFeatures;
 	}
@@ -142,12 +142,12 @@ public class SingletonInstanceItemProvider extends TerminologyInstanceAssertionI
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.SINGLETON_INSTANCE__SCALAR_DATA_PROPERTY_VALUES,
+				(OMLPackage.eINSTANCE.getSingletonInstance_ScalarDataPropertyValues(),
 				 OMLFactory.eINSTANCE.createScalarDataPropertyValue()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.SINGLETON_INSTANCE__STRUCTURED_DATA_PROPERTY_VALUES,
+				(OMLPackage.eINSTANCE.getSingletonInstance_StructuredDataPropertyValues(),
 				 OMLFactory.eINSTANCE.createStructuredDataPropertyValue()));
 	}
 

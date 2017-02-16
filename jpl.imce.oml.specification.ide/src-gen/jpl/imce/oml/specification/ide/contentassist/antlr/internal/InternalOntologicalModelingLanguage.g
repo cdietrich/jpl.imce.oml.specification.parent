@@ -7043,9 +7043,9 @@ rule__ConceptSpecializationAxiom__Group__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getConceptSpecializationAxiomAccess().getCONCEPT_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_0()); }
-	RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN
-	{ after(grammarAccess.getConceptSpecializationAxiomAccess().getCONCEPT_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_0()); }
+	{ before(grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptAssignment_0()); }
+	(rule__ConceptSpecializationAxiom__SubConceptAssignment_0)
+	{ after(grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptAssignment_0()); }
 )
 ;
 finally {
@@ -7070,9 +7070,9 @@ rule__ConceptSpecializationAxiom__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getConceptSpecializationAxiomAccess().getLCURLYTerminalRuleCall_1()); }
-	RULE_LCURLY
-	{ after(grammarAccess.getConceptSpecializationAxiomAccess().getLCURLYTerminalRuleCall_1()); }
+	{ before(grammarAccess.getConceptSpecializationAxiomAccess().getCONCEPT_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_1()); }
+	RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN
+	{ after(grammarAccess.getConceptSpecializationAxiomAccess().getCONCEPT_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_1()); }
 )
 ;
 finally {
@@ -7085,7 +7085,6 @@ rule__ConceptSpecializationAxiom__Group__2
 	}
 :
 	rule__ConceptSpecializationAxiom__Group__2__Impl
-	rule__ConceptSpecializationAxiom__Group__3
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -7097,116 +7096,9 @@ rule__ConceptSpecializationAxiom__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptKeyword_2()); }
-	'subConcept'
-	{ after(grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptKeyword_2()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ConceptSpecializationAxiom__Group__3
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__ConceptSpecializationAxiom__Group__3__Impl
-	rule__ConceptSpecializationAxiom__Group__4
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ConceptSpecializationAxiom__Group__3__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptAssignment_3()); }
-	(rule__ConceptSpecializationAxiom__SubConceptAssignment_3)
-	{ after(grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptAssignment_3()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ConceptSpecializationAxiom__Group__4
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__ConceptSpecializationAxiom__Group__4__Impl
-	rule__ConceptSpecializationAxiom__Group__5
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ConceptSpecializationAxiom__Group__4__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptKeyword_4()); }
-	'superConcept'
-	{ after(grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptKeyword_4()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ConceptSpecializationAxiom__Group__5
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__ConceptSpecializationAxiom__Group__5__Impl
-	rule__ConceptSpecializationAxiom__Group__6
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ConceptSpecializationAxiom__Group__5__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptAssignment_5()); }
-	(rule__ConceptSpecializationAxiom__SuperConceptAssignment_5)
-	{ after(grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptAssignment_5()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ConceptSpecializationAxiom__Group__6
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__ConceptSpecializationAxiom__Group__6__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ConceptSpecializationAxiom__Group__6__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getConceptSpecializationAxiomAccess().getRCURLYTerminalRuleCall_6()); }
-	RULE_RCURLY
-	{ after(grammarAccess.getConceptSpecializationAxiomAccess().getRCURLYTerminalRuleCall_6()); }
+	{ before(grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptAssignment_2()); }
+	(rule__ConceptSpecializationAxiom__SuperConceptAssignment_2)
+	{ after(grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptAssignment_2()); }
 )
 ;
 finally {
@@ -7232,9 +7124,9 @@ rule__ReifiedRelationshipSpecializationAxiom__Group__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getREIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_0()); }
-	RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN
-	{ after(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getREIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_0()); }
+	{ before(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipAssignment_0()); }
+	(rule__ReifiedRelationshipSpecializationAxiom__SubRelationshipAssignment_0)
+	{ after(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipAssignment_0()); }
 )
 ;
 finally {
@@ -7259,9 +7151,9 @@ rule__ReifiedRelationshipSpecializationAxiom__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getLCURLYTerminalRuleCall_1()); }
-	RULE_LCURLY
-	{ after(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getLCURLYTerminalRuleCall_1()); }
+	{ before(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getREIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_1()); }
+	RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN
+	{ after(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getREIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_1()); }
 )
 ;
 finally {
@@ -7274,7 +7166,6 @@ rule__ReifiedRelationshipSpecializationAxiom__Group__2
 	}
 :
 	rule__ReifiedRelationshipSpecializationAxiom__Group__2__Impl
-	rule__ReifiedRelationshipSpecializationAxiom__Group__3
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -7286,116 +7177,9 @@ rule__ReifiedRelationshipSpecializationAxiom__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipKeyword_2()); }
-	'subRelationship'
-	{ after(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipKeyword_2()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ReifiedRelationshipSpecializationAxiom__Group__3
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__ReifiedRelationshipSpecializationAxiom__Group__3__Impl
-	rule__ReifiedRelationshipSpecializationAxiom__Group__4
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ReifiedRelationshipSpecializationAxiom__Group__3__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipAssignment_3()); }
-	(rule__ReifiedRelationshipSpecializationAxiom__SubRelationshipAssignment_3)
-	{ after(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipAssignment_3()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ReifiedRelationshipSpecializationAxiom__Group__4
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__ReifiedRelationshipSpecializationAxiom__Group__4__Impl
-	rule__ReifiedRelationshipSpecializationAxiom__Group__5
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ReifiedRelationshipSpecializationAxiom__Group__4__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipKeyword_4()); }
-	'superRelationship'
-	{ after(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipKeyword_4()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ReifiedRelationshipSpecializationAxiom__Group__5
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__ReifiedRelationshipSpecializationAxiom__Group__5__Impl
-	rule__ReifiedRelationshipSpecializationAxiom__Group__6
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ReifiedRelationshipSpecializationAxiom__Group__5__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipAssignment_5()); }
-	(rule__ReifiedRelationshipSpecializationAxiom__SuperRelationshipAssignment_5)
-	{ after(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipAssignment_5()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ReifiedRelationshipSpecializationAxiom__Group__6
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__ReifiedRelationshipSpecializationAxiom__Group__6__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ReifiedRelationshipSpecializationAxiom__Group__6__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getRCURLYTerminalRuleCall_6()); }
-	RULE_RCURLY
-	{ after(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getRCURLYTerminalRuleCall_6()); }
+	{ before(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipAssignment_2()); }
+	(rule__ReifiedRelationshipSpecializationAxiom__SuperRelationshipAssignment_2)
+	{ after(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipAssignment_2()); }
 )
 ;
 finally {
@@ -14670,76 +14454,76 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ConceptSpecializationAxiom__SubConceptAssignment_3
+rule__ConceptSpecializationAxiom__SubConceptAssignment_0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptConceptCrossReference_3_0()); }
+		{ before(grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptConceptCrossReference_0_0()); }
 		(
-			{ before(grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptConceptReferenceParserRuleCall_3_0_1()); }
+			{ before(grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptConceptReferenceParserRuleCall_0_0_1()); }
 			ruleReference
-			{ after(grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptConceptReferenceParserRuleCall_3_0_1()); }
+			{ after(grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptConceptReferenceParserRuleCall_0_0_1()); }
 		)
-		{ after(grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptConceptCrossReference_3_0()); }
+		{ after(grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptConceptCrossReference_0_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ConceptSpecializationAxiom__SuperConceptAssignment_5
+rule__ConceptSpecializationAxiom__SuperConceptAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptConceptCrossReference_5_0()); }
+		{ before(grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptConceptCrossReference_2_0()); }
 		(
-			{ before(grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptConceptReferenceParserRuleCall_5_0_1()); }
+			{ before(grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptConceptReferenceParserRuleCall_2_0_1()); }
 			ruleReference
-			{ after(grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptConceptReferenceParserRuleCall_5_0_1()); }
+			{ after(grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptConceptReferenceParserRuleCall_2_0_1()); }
 		)
-		{ after(grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptConceptCrossReference_5_0()); }
+		{ after(grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptConceptCrossReference_2_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ReifiedRelationshipSpecializationAxiom__SubRelationshipAssignment_3
+rule__ReifiedRelationshipSpecializationAxiom__SubRelationshipAssignment_0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipReifiedRelationshipCrossReference_3_0()); }
+		{ before(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipReifiedRelationshipCrossReference_0_0()); }
 		(
-			{ before(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipReifiedRelationshipReferenceParserRuleCall_3_0_1()); }
+			{ before(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipReifiedRelationshipReferenceParserRuleCall_0_0_1()); }
 			ruleReference
-			{ after(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipReifiedRelationshipReferenceParserRuleCall_3_0_1()); }
+			{ after(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipReifiedRelationshipReferenceParserRuleCall_0_0_1()); }
 		)
-		{ after(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipReifiedRelationshipCrossReference_3_0()); }
+		{ after(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipReifiedRelationshipCrossReference_0_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ReifiedRelationshipSpecializationAxiom__SuperRelationshipAssignment_5
+rule__ReifiedRelationshipSpecializationAxiom__SuperRelationshipAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipReifiedRelationshipCrossReference_5_0()); }
+		{ before(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipReifiedRelationshipCrossReference_2_0()); }
 		(
-			{ before(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipReifiedRelationshipReferenceParserRuleCall_5_0_1()); }
+			{ before(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipReifiedRelationshipReferenceParserRuleCall_2_0_1()); }
 			ruleReference
-			{ after(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipReifiedRelationshipReferenceParserRuleCall_5_0_1()); }
+			{ after(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipReifiedRelationshipReferenceParserRuleCall_2_0_1()); }
 		)
-		{ after(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipReifiedRelationshipCrossReference_5_0()); }
+		{ after(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipReifiedRelationshipCrossReference_2_0()); }
 	)
 ;
 finally {
@@ -16099,11 +15883,11 @@ RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN : 'entityExistentialRestrictionA
 
 RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN : 'entityUniversalRestrictionAxiom';
 
-RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN : 'conceptSpecializationAxiom';
+RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN : 'extendsConcept';
 
 RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN : 'extendsAspect';
 
-RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN : 'reifiedRelationshipSpecializationAxiom';
+RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN : 'extendsRelationship';
 
 RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN : 'entityScalarDataPropertyExistentialRestrictionAxiom';
 

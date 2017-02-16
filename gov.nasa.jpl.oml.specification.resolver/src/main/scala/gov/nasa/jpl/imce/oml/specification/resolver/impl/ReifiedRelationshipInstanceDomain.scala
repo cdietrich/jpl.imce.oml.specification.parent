@@ -22,15 +22,31 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class ReifiedRelationshipInstanceDomain private[impl] 
 (
- override val uuid: java.util.UUID,
- override val descriptionBox: DescriptionBox,
- override val reifiedRelationshipInstance: ReifiedRelationshipInstance,
- override val domain: ConceptualEntitySingletonInstance,
+ override val descriptionBox: resolver.api.DescriptionBox,
+ override val reifiedRelationshipInstance: resolver.api.ReifiedRelationshipInstance,
+ override val domain: resolver.api.ConceptualEntitySingletonInstance,
  override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName
 )
 extends resolver.api.ReifiedRelationshipInstanceDomain
   with TerminologyInstanceAssertion
 {
+  override def calculateUUID
+  ()
+  : java.util.UUID
+  = {
+    
+    	val namespace = "ReifiedRelationshipInstanceDomain(descriptionBox=" + descriptionBox.uuid + ",reifiedRelationshipInstance="+reifiedRelationshipInstance.uuid+ ",domain="+domain.uuid+")"
+    	com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)
+  }
+  
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: ReifiedRelationshipInstanceDomain => true

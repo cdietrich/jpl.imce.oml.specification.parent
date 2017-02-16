@@ -90,7 +90,7 @@ public abstract class TerminologyInstanceAssertionImpl extends TerminologyThingI
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.TERMINOLOGY_INSTANCE_ASSERTION;
+		return OMLPackage.eINSTANCE.getTerminologyInstanceAssertion();
 	}
 
 	/**

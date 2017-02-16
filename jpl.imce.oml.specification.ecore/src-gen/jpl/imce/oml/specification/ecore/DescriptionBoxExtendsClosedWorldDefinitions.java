@@ -101,6 +101,16 @@ public interface DescriptionBoxExtendsClosedWorldDefinitions extends Description
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model dataType="jpl.imce.oml.specification.ecore.UUID" unique="false" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%java.lang.String%> _xblockexpression = null;\n{\n\t<%jpl.imce.oml.specification.ecore.DescriptionBox%> _descriptionBox = this.getDescriptionBox();\n\t<%java.lang.String%> _uuid = _descriptionBox.getUuid();\n\t<%java.lang.String%> _plus = (\"DescriptionBoxExtendsClosedWorldDefinitions(descriptionBox=\" + _uuid);\n\t<%java.lang.String%> _plus_1 = (_plus + \",closedWorldDefinitions=\");\n\t<%jpl.imce.oml.specification.ecore.TerminologyBox%> _closedWorldDefinitions = this.getClosedWorldDefinitions();\n\t<%java.lang.String%> _uuid_1 = _closedWorldDefinitions.getUuid();\n\t<%java.lang.String%> _plus_2 = (_plus_1 + _uuid_1);\n\tfinal <%java.lang.String%> namespace = (_plus_2 + \")\");\n\t<%com.fasterxml.uuid.impl.NameBasedGenerator%> _nameBasedGenerator = <%com.fasterxml.uuid.Generators%>.nameBasedGenerator(<%com.fasterxml.uuid.impl.NameBasedGenerator%>.NAMESPACE_URL);\n\t<%java.util.UUID%> _generate = _nameBasedGenerator.generate(namespace);\n\t_xblockexpression = _generate.toString();\n}\nreturn _xblockexpression;'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='\n\tval namespace = \"DescriptionBoxExtendsClosedWorldDefinitions(descriptionBox=\" + descriptionBox.uuid + \",closedWorldDefinitions=\"+closedWorldDefinitions.uuid+\")\"\n\tcom.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)'"
+	 * @generated
+	 */
+	String calculateUUID();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model unique="false" required="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getDescriptionBox();'"
 	 * @generated
@@ -114,6 +124,6 @@ public interface DescriptionBoxExtendsClosedWorldDefinitions extends Description
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return this.getClosedWorldDefinitions();'"
 	 * @generated
 	 */
-	Context contextTarget();
+	Module targetModule();
 
 } // DescriptionBoxExtendsClosedWorldDefinitions

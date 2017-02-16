@@ -27,4 +27,7 @@ trait EntityScalarDataPropertyExistentialRestrictionAxiom
 {
 
   val scalarRestriction: DataRange
+
+  override def calculateUUID
+  (): java.util.UUID
 }

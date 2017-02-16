@@ -252,12 +252,12 @@ public class OntologicalModelingLanguageSyntacticSequencer extends AbstractSynta
 	}
 	
 	/**
-	 * terminal CONCEPT_SPECIALIZATION_AXIOM_TOKEN: 'conceptSpecializationAxiom';
+	 * terminal CONCEPT_SPECIALIZATION_AXIOM_TOKEN: 'extendsConcept';
 	 */
 	protected String getCONCEPT_SPECIALIZATION_AXIOM_TOKENToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
-		return "conceptSpecializationAxiom";
+		return "extendsConcept";
 	}
 	
 	/**
@@ -477,12 +477,12 @@ public class OntologicalModelingLanguageSyntacticSequencer extends AbstractSynta
 	}
 	
 	/**
-	 * terminal REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN: 'reifiedRelationshipSpecializationAxiom';
+	 * terminal REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN: 'extendsRelationship';
 	 */
 	protected String getREIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKENToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
-		return "reifiedRelationshipSpecializationAxiom";
+		return "extendsRelationship";
 	}
 	
 	/**

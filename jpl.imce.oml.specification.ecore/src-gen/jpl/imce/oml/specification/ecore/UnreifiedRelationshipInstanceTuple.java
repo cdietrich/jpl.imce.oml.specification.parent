@@ -154,4 +154,14 @@ public interface UnreifiedRelationshipInstanceTuple extends TerminologyInstanceA
 	 */
 	void setRange(ConceptualEntitySingletonInstance value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model dataType="jpl.imce.oml.specification.ecore.UUID" unique="false" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%java.lang.String%> _xblockexpression = null;\n{\n\t<%jpl.imce.oml.specification.ecore.DescriptionBox%> _descriptionBox = this.descriptionBox();\n\t<%java.lang.String%> _uuid = _descriptionBox.getUuid();\n\t<%java.lang.String%> _plus = (\"UnreifiedRelationshipInstanceTuple(descriptionBox=\" + _uuid);\n\t<%java.lang.String%> _plus_1 = (_plus + \",unreifiedRelationship=\");\n\t<%jpl.imce.oml.specification.ecore.UnreifiedRelationship%> _unreifiedRelationship = this.getUnreifiedRelationship();\n\t<%java.lang.String%> _uuid_1 = _unreifiedRelationship.getUuid();\n\t<%java.lang.String%> _plus_2 = (_plus_1 + _uuid_1);\n\t<%java.lang.String%> _plus_3 = (_plus_2 + \",domain=\");\n\t<%jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance%> _domain = this.getDomain();\n\t<%java.lang.String%> _uuid_2 = _domain.getUuid();\n\t<%java.lang.String%> _plus_4 = (_plus_3 + _uuid_2);\n\t<%java.lang.String%> _plus_5 = (_plus_4 + \",range=\");\n\t<%jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance%> _range = this.getRange();\n\t<%java.lang.String%> _uuid_3 = _range.getUuid();\n\t<%java.lang.String%> _plus_6 = (_plus_5 + _uuid_3);\n\tfinal <%java.lang.String%> namespace = (_plus_6 + \")\");\n\t<%com.fasterxml.uuid.impl.NameBasedGenerator%> _nameBasedGenerator = <%com.fasterxml.uuid.Generators%>.nameBasedGenerator(<%com.fasterxml.uuid.impl.NameBasedGenerator%>.NAMESPACE_URL);\n\t<%java.util.UUID%> _generate = _nameBasedGenerator.generate(namespace);\n\t_xblockexpression = _generate.toString();\n}\nreturn _xblockexpression;'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='\n\tval namespace = \"UnreifiedRelationshipInstanceTuple(descriptionBox=\" + descriptionBox.uuid + \",unreifiedRelationship=\"+unreifiedRelationship.uuid+ \",domain=\"+domain.uuid+ \",range=\"+range.uuid+\")\"\n\tcom.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)'"
+	 * @generated
+	 */
+	String calculateUUID();
+
 } // UnreifiedRelationshipInstanceTuple

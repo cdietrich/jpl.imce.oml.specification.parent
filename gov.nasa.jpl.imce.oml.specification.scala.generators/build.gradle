@@ -62,7 +62,7 @@ task OMLLoadTest(type: JavaExec, dependsOn: jar) {
 	classpath sourceSets.main.runtimeClasspath
 	
 	main = "gov.nasa.jpl.imce.oml.specification.scala.generators.OMLLoadTest"
-	args new File('../gov.nasa.jpl.imce.oml.specification.tables2').absolutePath
+	args += new File('../gov.nasa.jpl.imce.oml.specification.tables2').absolutePath
 	
 	doLast {
 		project.logger.warn("# OMLLoadTest: Finished")
@@ -83,7 +83,7 @@ task generateOMLSpecificationDoc(type: JavaExec, dependsOn: jar) {
 	classpath sourceSets.main.runtimeClasspath
 	
 	main = "gov.nasa.jpl.imce.oml.specification.scala.generators.OMLSpecificationDocGenerator"
-	args rootDir.toPath().resolve('gov.nasa.jpl.imce.oml.specification.doc/docs').toFile().absolutePath
+	args += rootDir.toPath().resolve('gov.nasa.jpl.imce.oml.specification.doc/docs').toFile().absolutePath
 	
 	doLast {
 		project.logger.warn("# generateOMLSpecificationDoc: Finished")
@@ -105,7 +105,7 @@ task generateOMLSpecificationTables(type: JavaExec, dependsOn: generateOMLSpecif
 	classpath sourceSets.main.runtimeClasspath
 	
 	main = "gov.nasa.jpl.imce.oml.specification.scala.generators.OMLSpecificationTablesGenerator"
-	args rootDir.toPath().resolve('gov.nasa.jpl.imce.oml.specification.tables').toFile().absolutePath
+	args += rootDir.toPath().resolve('gov.nasa.jpl.imce.oml.specification.tables').toFile().absolutePath
 	
 	doLast {
 		project.logger.warn("# generateOMLSpecificationTables: Finished")
@@ -126,7 +126,7 @@ task generateOMLResolverAPI(type: JavaExec, dependsOn: generateOMLSpecificationT
 	classpath sourceSets.main.runtimeClasspath
 	
 	main = "gov.nasa.jpl.imce.oml.specification.scala.generators.OMLSpecificationResolverAPIGenerator"
-	args rootDir.toPath().resolve('gov.nasa.jpl.imce.oml.specification.tables').toFile()
+	args += rootDir.toPath().resolve('gov.nasa.jpl.imce.oml.specification.tables').toFile()
 	
 	doLast {
 		project.logger.warn("# generateOMLResolverAPI: Finished")
@@ -147,7 +147,7 @@ task generateOMLResolverLibrary(type: JavaExec, dependsOn: generateOMLResolverAP
 	classpath sourceSets.main.runtimeClasspath
 	
 	main = "gov.nasa.jpl.imce.oml.specification.scala.generators.OMLSpecificationResolverLibraryGenerator"
-	args rootDir.toPath().resolve('gov.nasa.jpl.oml.specification.resolver').toFile().absolutePath
+	args += rootDir.toPath().resolve('gov.nasa.jpl.oml.specification.resolver').toFile().absolutePath
 	
 	doLast {
 		project.logger.warn("# generateOMLResolverLibrary: Finished")

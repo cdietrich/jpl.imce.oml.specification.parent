@@ -35,4 +35,14 @@ package jpl.imce.oml.specification.ecore;
  * @generated
  */
 public interface EntityUniversalRestrictionAxiom extends EntityRestrictionAxiom {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model dataType="jpl.imce.oml.specification.ecore.UUID" unique="false" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%java.lang.String%> _xblockexpression = null;\n{\n\t<%jpl.imce.oml.specification.ecore.Entity%> _restrictedDomain = this.getRestrictedDomain();\n\t<%java.lang.String%> _uuid = _restrictedDomain.getUuid();\n\t<%java.lang.String%> _plus = (\"EntityUniversalRestrictionAxiom(restrictedDomain=\" + _uuid);\n\t<%java.lang.String%> _plus_1 = (_plus + \",restrictedRelation=\");\n\t<%jpl.imce.oml.specification.ecore.EntityRelationship%> _restrictedRelation = this.getRestrictedRelation();\n\t<%java.lang.String%> _uuid_1 = _restrictedRelation.getUuid();\n\t<%java.lang.String%> _plus_2 = (_plus_1 + _uuid_1);\n\t<%java.lang.String%> _plus_3 = (_plus_2 + \",restrictedRange=\");\n\t<%jpl.imce.oml.specification.ecore.Entity%> _restrictedRange = this.getRestrictedRange();\n\t<%java.lang.String%> _uuid_2 = _restrictedRange.getUuid();\n\t<%java.lang.String%> _plus_4 = (_plus_3 + _uuid_2);\n\tfinal <%java.lang.String%> namespace = (_plus_4 + \")\");\n\t<%com.fasterxml.uuid.impl.NameBasedGenerator%> _nameBasedGenerator = <%com.fasterxml.uuid.Generators%>.nameBasedGenerator(<%com.fasterxml.uuid.impl.NameBasedGenerator%>.NAMESPACE_URL);\n\t<%java.util.UUID%> _generate = _nameBasedGenerator.generate(namespace);\n\t_xblockexpression = _generate.toString();\n}\nreturn _xblockexpression;'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='\n\tval namespace = \"EntityUniversalRestrictionAxiom(restrictedDomain=\" + restrictedDomain.uuid + \",restrictedRelation=\"+restrictedRelation.uuid + \",restrictedRange=\"+restrictedRange.uuid+\")\"\n\tcom.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)'"
+	 * @generated
+	 */
+	String calculateUUID();
+
 } // EntityUniversalRestrictionAxiom

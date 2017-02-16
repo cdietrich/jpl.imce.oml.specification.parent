@@ -40,7 +40,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class DescriptionBoxItemProvider 
-	extends ContextItemProvider {
+	extends ModuleItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -81,7 +81,7 @@ public class DescriptionBoxItemProvider
 				 getResourceLocator(),
 				 getString("_UI_DescriptionBox_kind_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionBox_kind_feature", "_UI_DescriptionBox_type"),
-				 OMLPackage.Literals.DESCRIPTION_BOX__KIND,
+				 OMLPackage.eINSTANCE.getDescriptionBox_Kind(),
 				 true,
 				 false,
 				 false,
@@ -103,7 +103,7 @@ public class DescriptionBoxItemProvider
 				 getResourceLocator(),
 				 getString("_UI_DescriptionBox_descriptionExtent_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionBox_descriptionExtent_feature", "_UI_DescriptionBox_type"),
-				 OMLPackage.Literals.DESCRIPTION_BOX__DESCRIPTION_EXTENT,
+				 OMLPackage.eINSTANCE.getDescriptionBox_DescriptionExtent(),
 				 true,
 				 false,
 				 true,
@@ -124,13 +124,13 @@ public class DescriptionBoxItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OMLPackage.Literals.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS);
-			childrenFeatures.add(OMLPackage.Literals.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS);
-			childrenFeatures.add(OMLPackage.Literals.DESCRIPTION_BOX__CONCEPT_INSTANCES);
-			childrenFeatures.add(OMLPackage.Literals.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES);
-			childrenFeatures.add(OMLPackage.Literals.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS);
-			childrenFeatures.add(OMLPackage.Literals.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES);
-			childrenFeatures.add(OMLPackage.Literals.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES);
+			childrenFeatures.add(OMLPackage.eINSTANCE.getDescriptionBox_ClosedWorldDefinitions());
+			childrenFeatures.add(OMLPackage.eINSTANCE.getDescriptionBox_DescriptionBoxRefinements());
+			childrenFeatures.add(OMLPackage.eINSTANCE.getDescriptionBox_ConceptInstances());
+			childrenFeatures.add(OMLPackage.eINSTANCE.getDescriptionBox_ReifiedRelationshipInstances());
+			childrenFeatures.add(OMLPackage.eINSTANCE.getDescriptionBox_ReifiedRelationshipInstanceDomains());
+			childrenFeatures.add(OMLPackage.eINSTANCE.getDescriptionBox_ReifiedRelationshipInstanceRanges());
+			childrenFeatures.add(OMLPackage.eINSTANCE.getDescriptionBox_UnreifiedRelationshipInstanceTuples());
 		}
 		return childrenFeatures;
 	}
@@ -215,37 +215,37 @@ public class DescriptionBoxItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS,
+				(OMLPackage.eINSTANCE.getDescriptionBox_ClosedWorldDefinitions(),
 				 OMLFactory.eINSTANCE.createDescriptionBoxExtendsClosedWorldDefinitions()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS,
+				(OMLPackage.eINSTANCE.getDescriptionBox_DescriptionBoxRefinements(),
 				 OMLFactory.eINSTANCE.createDescriptionBoxRefinement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.DESCRIPTION_BOX__CONCEPT_INSTANCES,
+				(OMLPackage.eINSTANCE.getDescriptionBox_ConceptInstances(),
 				 OMLFactory.eINSTANCE.createConceptInstance()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES,
+				(OMLPackage.eINSTANCE.getDescriptionBox_ReifiedRelationshipInstances(),
 				 OMLFactory.eINSTANCE.createReifiedRelationshipInstance()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS,
+				(OMLPackage.eINSTANCE.getDescriptionBox_ReifiedRelationshipInstanceDomains(),
 				 OMLFactory.eINSTANCE.createReifiedRelationshipInstanceDomain()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES,
+				(OMLPackage.eINSTANCE.getDescriptionBox_ReifiedRelationshipInstanceRanges(),
 				 OMLFactory.eINSTANCE.createReifiedRelationshipInstanceRange()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES,
+				(OMLPackage.eINSTANCE.getDescriptionBox_UnreifiedRelationshipInstanceTuples(),
 				 OMLFactory.eINSTANCE.createUnreifiedRelationshipInstanceTuple()));
 	}
 

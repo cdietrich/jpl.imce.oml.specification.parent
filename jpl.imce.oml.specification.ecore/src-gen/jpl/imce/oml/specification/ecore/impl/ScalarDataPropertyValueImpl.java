@@ -18,13 +18,26 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import com.fasterxml.uuid.Generators;
+
+import com.fasterxml.uuid.impl.NameBasedGenerator;
+
+import java.lang.reflect.InvocationTargetException;
+
+import java.util.UUID;
+
 import jpl.imce.oml.specification.ecore.DataRelationshipToScalar;
+import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.ScalarDataPropertyValue;
 import jpl.imce.oml.specification.ecore.SingletonInstance;
+import jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion;
+import jpl.imce.oml.specification.ecore.TerminologyThing;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -96,7 +109,7 @@ public class ScalarDataPropertyValueImpl extends TerminologyInstanceAssertionImp
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.SCALAR_DATA_PROPERTY_VALUE;
+		return OMLPackage.eINSTANCE.getScalarDataPropertyValue();
 	}
 
 	/**
@@ -207,6 +220,39 @@ public class ScalarDataPropertyValueImpl extends TerminologyInstanceAssertionImp
 		scalarPropertyValue = newScalarPropertyValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.SCALAR_DATA_PROPERTY_VALUE__SCALAR_PROPERTY_VALUE, oldScalarPropertyValue, scalarPropertyValue));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String calculateUUID() {
+		String _xblockexpression = null;
+		{
+			SingletonInstance _singletonInstance = this.getSingletonInstance();
+			String _uuid = _singletonInstance.getUuid();
+			String _plus = ("ScalarDataPropertyValue(singletonInstance=" + _uuid);
+			String _plus_1 = (_plus + ",scalarDataProperty=");
+			DataRelationshipToScalar _scalarDataProperty = this.getScalarDataProperty();
+			String _calculateUUID = _scalarDataProperty.calculateUUID();
+			String _plus_2 = (_plus_1 + _calculateUUID);
+			final String namespace = (_plus_2 + ")");
+			NameBasedGenerator _nameBasedGenerator = Generators.nameBasedGenerator(NameBasedGenerator.NAMESPACE_URL);
+			UUID _generate = _nameBasedGenerator.generate(namespace);
+			_xblockexpression = _generate.toString();
+		}
+		return _xblockexpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DescriptionBox descriptionBox() {
+		SingletonInstance _singletonInstance = this.getSingletonInstance();
+		return _singletonInstance.descriptionBox();
 	}
 
 	/**
@@ -331,6 +377,45 @@ public class ScalarDataPropertyValueImpl extends TerminologyInstanceAssertionImp
 				return SCALAR_PROPERTY_VALUE_EDEFAULT == null ? scalarPropertyValue != null : !SCALAR_PROPERTY_VALUE_EDEFAULT.equals(scalarPropertyValue);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == TerminologyThing.class) {
+			switch (baseOperationID) {
+				case OMLPackage.TERMINOLOGY_THING___CALCULATE_UUID: return OMLPackage.SCALAR_DATA_PROPERTY_VALUE___CALCULATE_UUID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		if (baseClass == TerminologyInstanceAssertion.class) {
+			switch (baseOperationID) {
+				case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___DESCRIPTION_BOX: return OMLPackage.SCALAR_DATA_PROPERTY_VALUE___DESCRIPTION_BOX;
+				case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID: return OMLPackage.SCALAR_DATA_PROPERTY_VALUE___CALCULATE_UUID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OMLPackage.SCALAR_DATA_PROPERTY_VALUE___CALCULATE_UUID:
+				return calculateUUID();
+			case OMLPackage.SCALAR_DATA_PROPERTY_VALUE___DESCRIPTION_BOX:
+				return descriptionBox();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

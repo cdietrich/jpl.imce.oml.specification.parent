@@ -69,6 +69,7 @@ public class OWLLinkingService extends DefaultLinkingService {
   @Inject
   private IQualifiedNameConverter qualifiedNameConverter;
   
+  @Override
   public List<EObject> getLinkedObjects(final EObject context, final EReference ref, final INode node) throws IllegalNodeException {
     EClass requiredType = ref.getEReferenceType();
     boolean _equals = Objects.equal(requiredType, null);

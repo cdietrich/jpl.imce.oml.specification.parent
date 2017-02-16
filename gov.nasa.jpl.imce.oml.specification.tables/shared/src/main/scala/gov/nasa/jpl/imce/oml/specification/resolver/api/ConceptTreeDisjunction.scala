@@ -25,4 +25,7 @@ package gov.nasa.jpl.imce.oml.specification.resolver.api
  */
 trait ConceptTreeDisjunction
 {
+
+  def calculateUUID
+  (): java.util.UUID
 }

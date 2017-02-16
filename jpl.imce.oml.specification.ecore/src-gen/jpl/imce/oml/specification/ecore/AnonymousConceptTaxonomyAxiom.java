@@ -34,4 +34,14 @@ package jpl.imce.oml.specification.ecore;
  * @generated
  */
 public interface AnonymousConceptTaxonomyAxiom extends DisjointUnionOfConceptsAxiom, ConceptTreeDisjunction {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model dataType="jpl.imce.oml.specification.ecore.UUID" unique="false" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%java.lang.String%> _xblockexpression = null;\n{\n\t<%jpl.imce.oml.specification.ecore.Bundle%> _bundle = this.getBundle();\n\t<%java.lang.String%> _uuid = _bundle.getUuid();\n\t<%java.lang.String%> _plus = (\"AnonymousConceptTaxonomyAxiom(bundle=\" + _uuid);\n\t<%java.lang.String%> _plus_1 = (_plus + \",disjointTaxonomyParent=\");\n\t<%jpl.imce.oml.specification.ecore.ConceptTreeDisjunction%> _disjointTaxonomyParent = this.getDisjointTaxonomyParent();\n\t<%java.lang.String%> _calculateUUID = _disjointTaxonomyParent.calculateUUID();\n\t<%java.lang.String%> _plus_2 = (_plus_1 + _calculateUUID);\n\tfinal <%java.lang.String%> namespace = (_plus_2 + \")\");\n\t<%com.fasterxml.uuid.impl.NameBasedGenerator%> _nameBasedGenerator = <%com.fasterxml.uuid.Generators%>.nameBasedGenerator(<%com.fasterxml.uuid.impl.NameBasedGenerator%>.NAMESPACE_URL);\n\t<%java.util.UUID%> _generate = _nameBasedGenerator.generate(namespace);\n\t_xblockexpression = _generate.toString();\n}\nreturn _xblockexpression;'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='\n\tval namespace = \"AnonymousConceptTaxonomyAxiom(bundle=\" + bundle.uuid + \",disjointTaxonomyParent=\"+disjointTaxonomyParent.calculateUUID()+\")\"\n\tcom.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)'"
+	 * @generated
+	 */
+	String calculateUUID();
+
 } // AnonymousConceptTaxonomyAxiom

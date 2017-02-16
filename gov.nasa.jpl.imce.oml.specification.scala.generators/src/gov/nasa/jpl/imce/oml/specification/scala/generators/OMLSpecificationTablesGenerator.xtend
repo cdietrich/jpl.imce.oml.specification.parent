@@ -133,21 +133,21 @@ class OMLSpecificationTablesGenerator extends OMLUtilities {
 		
 		case class «tableName» private[tables]
 		«IF 'OMLSpecificationTables' == tableName»
-		«FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare()) BEFORE "(\n  " SEPARATOR ",\n  " AFTER ","»«eClass.tableVariable»«ENDFOR»
+		«FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isInterface && !isValueTable].sortWith(new OMLTableCompare()) BEFORE "(\n  " SEPARATOR ",\n  " AFTER ","»«eClass.tableVariable»«ENDFOR»
 		  annotations: Map[AnnotationProperty, Seq[AnnotationEntry]] = Map.empty)
 		«ELSE»
-		«FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare()) BEFORE "(\n  " SEPARATOR ",\n  " AFTER "\n)"»«eClass.tableVariable»«ENDFOR» 
+		«FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isInterface && !isValueTable].sortWith(new OMLTableCompare()) BEFORE "(\n  " SEPARATOR ",\n  " AFTER "\n)"»«eClass.tableVariable»«ENDFOR» 
 		«ENDIF»
 		{
-		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare())»
+		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isInterface && !isValueTable].sortWith(new OMLTableCompare())»
 		  «eClass.tableReader(tableName)»
 		  «ENDFOR»
 		  
 		  def isEmpty: Boolean
 		  «IF 'OMLSpecificationTables' == tableName»
-		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare()) BEFORE "= " SEPARATOR " &&\n  " AFTER " &&\n  annotations.isEmpty"»«eClass.tableVariableName».isEmpty«ENDFOR»
+		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isInterface && !isValueTable].sortWith(new OMLTableCompare()) BEFORE "= " SEPARATOR " &&\n  " AFTER " &&\n  annotations.isEmpty"»«eClass.tableVariableName».isEmpty«ENDFOR»
 		  «ELSE»
-		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare()) BEFORE "= " SEPARATOR " &&\n  "»«eClass.tableVariableName».isEmpty«ENDFOR»
+		  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isInterface && !isValueTable].sortWith(new OMLTableCompare()) BEFORE "= " SEPARATOR " &&\n  "»«eClass.tableVariableName».isEmpty«ENDFOR»
 		  «ENDIF»
 		}
 		
@@ -181,9 +181,9 @@ class OMLSpecificationTablesGenerator extends OMLUtilities {
 		  (t1: «tableName», t2: «tableName»)
 		  : «tableName»
 		  «IF 'OMLSpecificationTables' == tableName»
-		  = «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare()) BEFORE tableName + "(\n    " SEPARATOR ",\n    " AFTER ",\n    annotations = t1.annotations ++ t2.annotations)"»«eClass.tableVariableName» = t1.«eClass.tableVariableName» ++ t2.«eClass.tableVariableName»«ENDFOR»
+		  = «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isInterface && !isValueTable].sortWith(new OMLTableCompare()) BEFORE tableName + "(\n    " SEPARATOR ",\n    " AFTER ",\n    annotations = t1.annotations ++ t2.annotations)"»«eClass.tableVariableName» = t1.«eClass.tableVariableName» ++ t2.«eClass.tableVariableName»«ENDFOR»
 		  «ELSE» 
-		  = «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare()) BEFORE tableName + "(\n    " SEPARATOR ",\n    " AFTER ")"»«eClass.tableVariableName» = t1.«eClass.tableVariableName» ++ t2.«eClass.tableVariableName»«ENDFOR» 
+		  = «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isInterface && !isValueTable].sortWith(new OMLTableCompare()) BEFORE tableName + "(\n    " SEPARATOR ",\n    " AFTER ")"»«eClass.tableVariableName» = t1.«eClass.tableVariableName» ++ t2.«eClass.tableVariableName»«ENDFOR» 
 		  «ENDIF»
 		  
 		  private[tables] def readZipArchive
@@ -193,7 +193,7 @@ class OMLSpecificationTablesGenerator extends OMLUtilities {
 		  = {
 		  	val is = zipFile.getInputStream(ze)
 		  	ze.getName match {
-		  	  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare())»
+		  	  «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isInterface && !isValueTable].sortWith(new OMLTableCompare())»
 		  	  case «eClass.name»Helper.TABLE_JSON_FILENAME =>
 		  	    tables.«eClass.tableReaderName»(is)
 		      «ENDFOR»
@@ -229,7 +229,7 @@ class OMLSpecificationTablesGenerator extends OMLUtilities {
 		  
 		  	  zos.setMethod(java.util.zip.ZipOutputStream.DEFLATED)
 		  
-		      «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isValueTable].sortWith(new OMLTableCompare())»
+		      «FOR eClass : ePackage.EClassifiers.filter(EClass).filter[isFunctionalAPI && !isInterface && !isValueTable].sortWith(new OMLTableCompare())»
 		      zos.putNextEntry(new java.util.zip.ZipEntry(«eClass.name»Helper.TABLE_JSON_FILENAME))
 		      tables.«eClass.tableVariableName».foreach { t =>
 		         val line = «eClass.name»Helper.toJSON(t)+"\n"

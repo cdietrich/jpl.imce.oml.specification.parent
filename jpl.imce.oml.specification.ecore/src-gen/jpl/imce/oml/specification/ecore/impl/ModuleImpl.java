@@ -33,11 +33,11 @@ import jpl.imce.oml.specification.ecore.AnnotationProperty;
 import jpl.imce.oml.specification.ecore.AnnotationSubjectPropertyValue;
 import jpl.imce.oml.specification.ecore.Aspect;
 import jpl.imce.oml.specification.ecore.Concept;
-import jpl.imce.oml.specification.ecore.Context;
 import jpl.imce.oml.specification.ecore.DataRange;
 import jpl.imce.oml.specification.ecore.DataRelationship;
 import jpl.imce.oml.specification.ecore.Entity;
 import jpl.imce.oml.specification.ecore.EntityScalarDataProperty;
+import jpl.imce.oml.specification.ecore.Module;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.ReifiedRelationship;
 import jpl.imce.oml.specification.ecore.Resource;
@@ -64,19 +64,19 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Context</b></em>'.
+ * An implementation of the model object '<em><b>Module</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link jpl.imce.oml.specification.ecore.impl.ContextImpl#getIri <em>Iri</em>}</li>
- *   <li>{@link jpl.imce.oml.specification.ecore.impl.ContextImpl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.impl.ModuleImpl#getIri <em>Iri</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.impl.ModuleImpl#getAnnotations <em>Annotations</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class ContextImpl extends TerminologyThingImpl implements Context {
+public abstract class ModuleImpl extends TerminologyThingImpl implements Module {
 	/**
 	 * The default value of the '{@link #getIri() <em>Iri</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -112,7 +112,7 @@ public abstract class ContextImpl extends TerminologyThingImpl implements Contex
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ContextImpl() {
+	protected ModuleImpl() {
 		super();
 	}
 
@@ -123,7 +123,7 @@ public abstract class ContextImpl extends TerminologyThingImpl implements Contex
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.CONTEXT;
+		return OMLPackage.eINSTANCE.getModule();
 	}
 
 	/**
@@ -144,7 +144,7 @@ public abstract class ContextImpl extends TerminologyThingImpl implements Contex
 		String oldIri = iri;
 		iri = newIri;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.CONTEXT__IRI, oldIri, iri));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.MODULE__IRI, oldIri, iri));
 	}
 
 	/**
@@ -154,7 +154,7 @@ public abstract class ContextImpl extends TerminologyThingImpl implements Contex
 	 */
 	public EList<Annotation> getAnnotations() {
 		if (annotations == null) {
-			annotations = new EObjectContainmentWithInverseEList<Annotation>(Annotation.class, this, OMLPackage.CONTEXT__ANNOTATIONS, OMLPackage.ANNOTATION__CONTEXT);
+			annotations = new EObjectContainmentWithInverseEList<Annotation>(Annotation.class, this, OMLPackage.MODULE__ANNOTATIONS, OMLPackage.ANNOTATION__MODULE);
 		}
 		return annotations;
 	}
@@ -240,7 +240,7 @@ public abstract class ContextImpl extends TerminologyThingImpl implements Contex
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Context withAnnotations(EMap<AnnotationProperty, EList<AnnotationEntry>> a) {
+	public Module withAnnotations(EMap<AnnotationProperty, EList<AnnotationEntry>> a) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -387,7 +387,7 @@ public abstract class ContextImpl extends TerminologyThingImpl implements Contex
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.CONTEXT__ANNOTATIONS:
+			case OMLPackage.MODULE__ANNOTATIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAnnotations()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -401,7 +401,7 @@ public abstract class ContextImpl extends TerminologyThingImpl implements Contex
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.CONTEXT__ANNOTATIONS:
+			case OMLPackage.MODULE__ANNOTATIONS:
 				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -415,9 +415,9 @@ public abstract class ContextImpl extends TerminologyThingImpl implements Contex
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.CONTEXT__IRI:
+			case OMLPackage.MODULE__IRI:
 				return getIri();
-			case OMLPackage.CONTEXT__ANNOTATIONS:
+			case OMLPackage.MODULE__ANNOTATIONS:
 				return getAnnotations();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -432,10 +432,10 @@ public abstract class ContextImpl extends TerminologyThingImpl implements Contex
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.CONTEXT__IRI:
+			case OMLPackage.MODULE__IRI:
 				setIri((String)newValue);
 				return;
-			case OMLPackage.CONTEXT__ANNOTATIONS:
+			case OMLPackage.MODULE__ANNOTATIONS:
 				getAnnotations().clear();
 				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
@@ -451,10 +451,10 @@ public abstract class ContextImpl extends TerminologyThingImpl implements Contex
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.CONTEXT__IRI:
+			case OMLPackage.MODULE__IRI:
 				setIri(IRI_EDEFAULT);
 				return;
-			case OMLPackage.CONTEXT__ANNOTATIONS:
+			case OMLPackage.MODULE__ANNOTATIONS:
 				getAnnotations().clear();
 				return;
 		}
@@ -469,9 +469,9 @@ public abstract class ContextImpl extends TerminologyThingImpl implements Contex
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.CONTEXT__IRI:
+			case OMLPackage.MODULE__IRI:
 				return IRI_EDEFAULT == null ? iri != null : !IRI_EDEFAULT.equals(iri);
-			case OMLPackage.CONTEXT__ANNOTATIONS:
+			case OMLPackage.MODULE__ANNOTATIONS:
 				return annotations != null && !annotations.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -486,14 +486,14 @@ public abstract class ContextImpl extends TerminologyThingImpl implements Contex
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == TerminologyThing.class) {
 			switch (baseOperationID) {
-				case OMLPackage.TERMINOLOGY_THING___CALCULATE_UUID: return OMLPackage.CONTEXT___CALCULATE_UUID;
+				case OMLPackage.TERMINOLOGY_THING___CALCULATE_UUID: return OMLPackage.MODULE___CALCULATE_UUID;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
 		if (baseClass == Resource.class) {
 			switch (baseOperationID) {
-				case OMLPackage.RESOURCE___IRI: return OMLPackage.CONTEXT___IRI;
-				case OMLPackage.RESOURCE___NAME: return OMLPackage.CONTEXT___NAME;
+				case OMLPackage.RESOURCE___IRI: return OMLPackage.MODULE___IRI;
+				case OMLPackage.RESOURCE___NAME: return OMLPackage.MODULE___NAME;
 				default: return -1;
 			}
 		}
@@ -509,45 +509,45 @@ public abstract class ContextImpl extends TerminologyThingImpl implements Contex
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.CONTEXT___EXTENT:
+			case OMLPackage.MODULE___EXTENT:
 				return extent();
-			case OMLPackage.CONTEXT___CALCULATE_UUID:
+			case OMLPackage.MODULE___CALCULATE_UUID:
 				return calculateUUID();
-			case OMLPackage.CONTEXT___IRI:
+			case OMLPackage.MODULE___IRI:
 				return iri();
-			case OMLPackage.CONTEXT___NS_PREFIX:
+			case OMLPackage.MODULE___NS_PREFIX:
 				return nsPrefix();
-			case OMLPackage.CONTEXT___NAME:
+			case OMLPackage.MODULE___NAME:
 				return name();
-			case OMLPackage.CONTEXT___ANNOTATIONS_BY_SUBJECT:
+			case OMLPackage.MODULE___ANNOTATIONS_BY_SUBJECT:
 				return annotationsBySubject();
-			case OMLPackage.CONTEXT___ANNOTATIONS_BY_PROPERTY:
+			case OMLPackage.MODULE___ANNOTATIONS_BY_PROPERTY:
 				return annotationsByProperty();
-			case OMLPackage.CONTEXT___WITH_ANNOTATIONS__EMAP:
+			case OMLPackage.MODULE___WITH_ANNOTATIONS__EMAP:
 				return withAnnotations((EMap<AnnotationProperty, EList<AnnotationEntry>>)arguments.get(0));
-			case OMLPackage.CONTEXT___ENTITIES:
+			case OMLPackage.MODULE___ENTITIES:
 				return entities();
-			case OMLPackage.CONTEXT___ASPECTS:
+			case OMLPackage.MODULE___ASPECTS:
 				return aspects();
-			case OMLPackage.CONTEXT___CONCEPTS:
+			case OMLPackage.MODULE___CONCEPTS:
 				return concepts();
-			case OMLPackage.CONTEXT___REIFIED_RELATIONSHIPS:
+			case OMLPackage.MODULE___REIFIED_RELATIONSHIPS:
 				return reifiedRelationships();
-			case OMLPackage.CONTEXT___UNREIFIED_RELATIONSHIPS:
+			case OMLPackage.MODULE___UNREIFIED_RELATIONSHIPS:
 				return unreifiedRelationships();
-			case OMLPackage.CONTEXT___DATA_RELATIONSHIPS:
+			case OMLPackage.MODULE___DATA_RELATIONSHIPS:
 				return dataRelationships();
-			case OMLPackage.CONTEXT___ENTITY_SCALAR_DATA_PROPERTIES:
+			case OMLPackage.MODULE___ENTITY_SCALAR_DATA_PROPERTIES:
 				return entityScalarDataProperties();
-			case OMLPackage.CONTEXT___DATARANGES:
+			case OMLPackage.MODULE___DATARANGES:
 				return dataranges();
-			case OMLPackage.CONTEXT___SCALARS:
+			case OMLPackage.MODULE___SCALARS:
 				return scalars();
-			case OMLPackage.CONTEXT___STRUCTURES:
+			case OMLPackage.MODULE___STRUCTURES:
 				return structures();
-			case OMLPackage.CONTEXT___TERM_AXIOMS:
+			case OMLPackage.MODULE___TERM_AXIOMS:
 				return termAxioms();
-			case OMLPackage.CONTEXT___EVERYTHING:
+			case OMLPackage.MODULE___EVERYTHING:
 				return everything();
 		}
 		return super.eInvoke(operationID, arguments);
@@ -569,4 +569,4 @@ public abstract class ContextImpl extends TerminologyThingImpl implements Contex
 		return result.toString();
 	}
 
-} //ContextImpl
+} //ModuleImpl

@@ -79,7 +79,7 @@ public class EntityScalarDataPropertyParticularRestrictionAxiomItemProvider exte
 				 getResourceLocator(),
 				 getString("_UI_EntityScalarDataPropertyParticularRestrictionAxiom_literalValue_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityScalarDataPropertyParticularRestrictionAxiom_literalValue_feature", "_UI_EntityScalarDataPropertyParticularRestrictionAxiom_type"),
-				 OMLPackage.Literals.ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM__LITERAL_VALUE,
+				 OMLPackage.eINSTANCE.getEntityScalarDataPropertyParticularRestrictionAxiom_LiteralValue(),
 				 true,
 				 false,
 				 false,

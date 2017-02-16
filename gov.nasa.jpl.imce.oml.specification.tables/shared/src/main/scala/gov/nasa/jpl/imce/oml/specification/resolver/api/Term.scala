@@ -31,7 +31,7 @@ trait Term
   /*
    * The UUID of a Term is a Version5 namespace UUID based on the term's IRI.
    */
-  def calculateUUID
+  override def calculateUUID
   (): java.util.UUID
   override def iri
   (): gov.nasa.jpl.imce.oml.specification.tables.IRI

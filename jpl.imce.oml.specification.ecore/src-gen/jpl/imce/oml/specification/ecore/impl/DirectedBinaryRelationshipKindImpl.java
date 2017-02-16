@@ -54,7 +54,7 @@ public abstract class DirectedBinaryRelationshipKindImpl extends CDOObjectImpl i
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.DIRECTED_BINARY_RELATIONSHIP_KIND;
+		return OMLPackage.eINSTANCE.getDirectedBinaryRelationshipKind();
 	}
 
 	/**
@@ -62,7 +62,7 @@ public abstract class DirectedBinaryRelationshipKindImpl extends CDOObjectImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Term relationshipSubject() {
+	public Term relationDomain() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -87,8 +87,8 @@ public abstract class DirectedBinaryRelationshipKindImpl extends CDOObjectImpl i
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.DIRECTED_BINARY_RELATIONSHIP_KIND___RELATIONSHIP_SUBJECT:
-				return relationshipSubject();
+			case OMLPackage.DIRECTED_BINARY_RELATIONSHIP_KIND___RELATION_DOMAIN:
+				return relationDomain();
 			case OMLPackage.DIRECTED_BINARY_RELATIONSHIP_KIND___RELATION_RANGE:
 				return relationRange();
 		}

@@ -29,13 +29,11 @@ import java.util.Map;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -49,7 +47,6 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 
-@SuppressWarnings("all")
 public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
   public static void main(final String[] args) {
     int _length = args.length;
@@ -164,7 +161,7 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
     _builder.append("\t");
     _builder.newLine();
     {
-      Iterable<EClass> _FunctionalAPIClasses = OMLSpecificationResolverAPIGenerator.FunctionalAPIClasses(ePackage);
+      Iterable<EClass> _FunctionalAPIClasses = OMLUtilities.FunctionalAPIClasses(ePackage);
       final Function1<EClass, Boolean> _function = (EClass it) -> {
         Iterable<ETypedElement> _orderingKeys = OMLUtilities.orderingKeys(it);
         boolean _isEmpty = IterableExtensions.isEmpty(_orderingKeys);
@@ -216,7 +213,7 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
           Iterable<ETypedElement> _orderingKeys = OMLUtilities.orderingKeys(eClass);
           for(final ETypedElement keyFeature : _orderingKeys) {
             {
-              Boolean _isClassFeature = OMLSpecificationResolverAPIGenerator.isClassFeature(keyFeature);
+              Boolean _isClassFeature = OMLUtilities.isClassFeature(keyFeature);
               if ((_isClassFeature).booleanValue()) {
                 EClassifier _eType = keyFeature.getEType();
                 String _name_5 = _eType.getName();
@@ -299,7 +296,7 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
     _builder.append("\t");
     _builder.newLine();
     {
-      Iterable<EClass> _FunctionalAPIClasses = OMLSpecificationResolverAPIGenerator.FunctionalAPIClasses(ePackage);
+      Iterable<EClass> _FunctionalAPIClasses = OMLUtilities.FunctionalAPIClasses(ePackage);
       final Function1<EClass, Boolean> _function = (EClass it) -> {
         boolean _isAbstract = it.isAbstract();
         return Boolean.valueOf((!_isAbstract));
@@ -324,9 +321,9 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
         _builder.newLineIfNotEmpty();
         _builder.append("  ");
         {
-          List<EStructuralFeature> _sortedAttributeSignature = OMLSpecificationResolverAPIGenerator.getSortedAttributeSignature(eClass);
+          Iterable<EStructuralFeature> _sortedAttributeSignatureExceptDerived = OMLUtilities.getSortedAttributeSignatureExceptDerived(eClass);
           boolean _hasElements = false;
-          for(final EStructuralFeature attr : _sortedAttributeSignature) {
+          for(final EStructuralFeature attr : _sortedAttributeSignatureExceptDerived) {
             if (!_hasElements) {
               _hasElements = true;
               _builder.append("(", "  ");
@@ -337,7 +334,7 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
             String _name_2 = attr.getName();
             _builder.append(_name_2, "  ");
             _builder.append(": ");
-            String _queryResolverType = OMLUtilities.queryResolverType(attr);
+            String _queryResolverType = OMLUtilities.queryResolverType(attr, "");
             _builder.append(_queryResolverType, "  ");
           }
           if (_hasElements) {
@@ -353,7 +350,7 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
         _builder.append("  ");
         _builder.newLine();
         {
-          Iterable<EStructuralFeature> _lookupCopyConstructorArguments = OMLSpecificationResolverAPIGenerator.lookupCopyConstructorArguments(eClass);
+          Iterable<EStructuralFeature> _lookupCopyConstructorArguments = OMLUtilities.lookupCopyConstructorArguments(eClass);
           for(final EStructuralFeature attr_1 : _lookupCopyConstructorArguments) {
             _builder.append("  ");
             _builder.append("def copy");
@@ -374,7 +371,7 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
             String _name_7 = attr_1.getName();
             _builder.append(_name_7, "    ");
             _builder.append(": ");
-            String _queryResolverType_1 = OMLUtilities.queryResolverType(attr_1);
+            String _queryResolverType_1 = OMLUtilities.queryResolverType(attr_1, "");
             _builder.append(_queryResolverType_1, "    ");
             _builder.append(" )");
             _builder.newLineIfNotEmpty();
@@ -410,7 +407,7 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
     _builder.append("{");
     _builder.newLine();
     {
-      Iterable<EStructuralFeature> _APIStructuralFeatures = OMLSpecificationResolverAPIGenerator.APIStructuralFeatures(eClass);
+      Iterable<EStructuralFeature> _APIStructuralFeatures = OMLUtilities.APIStructuralFeatures(eClass);
       boolean _hasElements = false;
       for(final EStructuralFeature f : _APIStructuralFeatures) {
         if (!_hasElements) {
@@ -422,7 +419,7 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
         String _doc_1 = OMLUtilities.doc(f, "  ");
         _builder.append(_doc_1, "");
         {
-          Boolean _isOverride = OMLSpecificationResolverAPIGenerator.isOverride(f);
+          Boolean _isOverride = OMLUtilities.isOverride(f);
           if ((_isOverride).booleanValue()) {
             _builder.append("override ");
           }
@@ -431,7 +428,7 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
         String _name = f.getName();
         _builder.append(_name, "");
         _builder.append(": ");
-        String _queryResolverType = OMLUtilities.queryResolverType(f);
+        String _queryResolverType = OMLUtilities.queryResolverType(f, "");
         _builder.append(_queryResolverType, "");
       }
       if (_hasElements) {
@@ -440,7 +437,7 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
     }
     _builder.newLineIfNotEmpty();
     {
-      Iterable<EOperation> _APIOperations = OMLSpecificationResolverAPIGenerator.APIOperations(eClass);
+      Iterable<EOperation> _APIOperations = OMLUtilities.APIOperations(eClass);
       boolean _hasElements_1 = false;
       for(final EOperation op : _APIOperations) {
         if (!_hasElements_1) {
@@ -451,10 +448,10 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
         }
         String _doc_2 = OMLUtilities.doc(op, "  ");
         _builder.append(_doc_2, "");
-        String _queryResolverName = OMLUtilities.queryResolverName(op);
+        String _queryResolverName = OMLUtilities.queryResolverName(op, "");
         _builder.append(_queryResolverName, "");
         _builder.append(": ");
-        String _queryResolverType_1 = OMLUtilities.queryResolverType(op);
+        String _queryResolverType_1 = OMLUtilities.queryResolverType(op, "");
         _builder.append(_queryResolverType_1, "");
       }
       if (_hasElements_1) {
@@ -463,7 +460,7 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
     }
     _builder.newLineIfNotEmpty();
     {
-      Boolean _isRootHierarchyClass = OMLSpecificationResolverAPIGenerator.isRootHierarchyClass(eClass);
+      Boolean _isRootHierarchyClass = OMLUtilities.isRootHierarchyClass(eClass);
       if ((_isRootHierarchyClass).booleanValue()) {
         _builder.newLine();
         _builder.append("def canEqual(that: scala.Any): scala.Boolean");
@@ -473,46 +470,6 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
     _builder.append("}");
     _builder.newLine();
     return _builder.toString();
-  }
-  
-  public static List<EStructuralFeature> getSortedAttributeSignature(final EClass eClass) {
-    Iterable<EClass> _selfAndAllSupertypes = OMLUtilities.selfAndAllSupertypes(eClass);
-    final Function1<EClass, Iterable<EStructuralFeature>> _function = (EClass it) -> {
-      return OMLSpecificationResolverAPIGenerator.APIStructuralFeatures(it);
-    };
-    Iterable<Iterable<EStructuralFeature>> _map = IterableExtensions.<EClass, Iterable<EStructuralFeature>>map(_selfAndAllSupertypes, _function);
-    Iterable<EStructuralFeature> _flatten = Iterables.<EStructuralFeature>concat(_map);
-    OMLUtilities.OMLFeatureCompare _oMLFeatureCompare = new OMLUtilities.OMLFeatureCompare();
-    return IterableExtensions.<EStructuralFeature>sortWith(_flatten, _oMLFeatureCompare);
-  }
-  
-  public static List<EStructuralFeature> getSortedAttributes(final EClass eClass) {
-    Iterable<EClass> _selfAndAllSupertypes = OMLUtilities.selfAndAllSupertypes(eClass);
-    final Function1<EClass, EList<EStructuralFeature>> _function = (EClass it) -> {
-      return it.getEStructuralFeatures();
-    };
-    Iterable<EList<EStructuralFeature>> _map = IterableExtensions.<EClass, EList<EStructuralFeature>>map(_selfAndAllSupertypes, _function);
-    Iterable<EStructuralFeature> _flatten = Iterables.<EStructuralFeature>concat(_map);
-    final Function1<EStructuralFeature, Boolean> _function_1 = (EStructuralFeature f) -> {
-      return Boolean.valueOf(((OMLSpecificationResolverAPIGenerator.isAttributeOrReferenceOrContainer(f)).booleanValue() && (OMLUtilities.isSchema(f)).booleanValue()));
-    };
-    Iterable<EStructuralFeature> _filter = IterableExtensions.<EStructuralFeature>filter(_flatten, _function_1);
-    OMLUtilities.OMLFeatureCompare _oMLFeatureCompare = new OMLUtilities.OMLFeatureCompare();
-    return IterableExtensions.<EStructuralFeature>sortWith(_filter, _oMLFeatureCompare);
-  }
-  
-  public static Boolean isAuxiliaryClass(final EClass eClass) {
-    return Boolean.valueOf(((eClass.isAbstract() && eClass.getESuperTypes().isEmpty()) && eClass.getEStructuralFeatures().isEmpty()));
-  }
-  
-  public static Boolean isRootHierarchyClass(final EClass eClass) {
-    return Boolean.valueOf(((eClass.isAbstract() && eClass.getESuperTypes().isEmpty()) && (!IterableExtensions.isEmpty(OMLUtilities.orderingKeys(eClass)))));
-  }
-  
-  public static Boolean isSpecializationOfRootClass(final EClass eClass) {
-    return Boolean.valueOf(((!eClass.getESuperTypes().isEmpty()) && IterableExtensions.<EClass>exists(OMLUtilities.selfAndAllSupertypes(eClass), ((Function1<EClass, Boolean>) (EClass it) -> {
-      return OMLSpecificationResolverAPIGenerator.isRootHierarchyClass(it);
-    }))));
   }
   
   public static String traitDeclaration(final EClass eClass) {
@@ -537,75 +494,5 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
     }
     _builder.newLineIfNotEmpty();
     return _builder.toString();
-  }
-  
-  public static Boolean isAttributeOrReferenceOrContainer(final EStructuralFeature f) {
-    boolean _switchResult = false;
-    boolean _matched = false;
-    if (f instanceof EReference) {
-      _matched=true;
-      boolean _isContainment = ((EReference)f).isContainment();
-      _switchResult = (!_isContainment);
-    }
-    if (!_matched) {
-      _switchResult = true;
-    }
-    return Boolean.valueOf(_switchResult);
-  }
-  
-  public static String queryName(final EStructuralFeature feature) {
-    return feature.getName();
-  }
-  
-  public static Boolean isClassFeature(final ETypedElement feature) {
-    boolean _xblockexpression = false;
-    {
-      final EClassifier type = feature.getEType();
-      _xblockexpression = (type instanceof EClass);
-    }
-    return Boolean.valueOf(_xblockexpression);
-  }
-  
-  public static Boolean isOverride(final ETypedElement feature) {
-    EAnnotation _eAnnotation = feature.getEAnnotation("http://imce.jpl.nasa.gov/oml/Override");
-    return Boolean.valueOf((null != _eAnnotation));
-  }
-  
-  public static Iterable<EStructuralFeature> lookupCopyConstructorArguments(final EClass eClass) {
-    List<EStructuralFeature> _sortedAttributeSignature = OMLSpecificationResolverAPIGenerator.getSortedAttributeSignature(eClass);
-    final Function1<EStructuralFeature, Boolean> _function = (EStructuralFeature it) -> {
-      return OMLSpecificationResolverAPIGenerator.isCopyConstructorArgument(it);
-    };
-    return IterableExtensions.<EStructuralFeature>filter(_sortedAttributeSignature, _function);
-  }
-  
-  public static Boolean isCopyConstructorArgument(final EStructuralFeature attribute) {
-    EAnnotation _eAnnotation = attribute.getEAnnotation("http://imce.jpl.nasa.gov/oml/CopyConstructor");
-    return Boolean.valueOf((null != _eAnnotation));
-  }
-  
-  public static Iterable<EStructuralFeature> APIStructuralFeatures(final EClass eClass) {
-    EList<EStructuralFeature> _eStructuralFeatures = eClass.getEStructuralFeatures();
-    final Function1<EStructuralFeature, Boolean> _function = (EStructuralFeature it) -> {
-      return OMLUtilities.isAPI(it);
-    };
-    return IterableExtensions.<EStructuralFeature>filter(_eStructuralFeatures, _function);
-  }
-  
-  public static Iterable<EClass> FunctionalAPIClasses(final EPackage ePkg) {
-    EList<EClassifier> _eClassifiers = ePkg.getEClassifiers();
-    Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
-    final Function1<EClass, Boolean> _function = (EClass it) -> {
-      return OMLUtilities.isAPI(it);
-    };
-    return IterableExtensions.<EClass>filter(_filter, _function);
-  }
-  
-  public static Iterable<EOperation> APIOperations(final EClass eClass) {
-    EList<EOperation> _eOperations = eClass.getEOperations();
-    final Function1<EOperation, Boolean> _function = (EOperation it) -> {
-      return OMLUtilities.isAPI(it);
-    };
-    return IterableExtensions.<EOperation>filter(_eOperations, _function);
   }
 }

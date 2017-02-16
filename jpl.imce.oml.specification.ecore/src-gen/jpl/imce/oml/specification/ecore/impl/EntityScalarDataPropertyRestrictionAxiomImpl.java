@@ -82,7 +82,7 @@ public abstract class EntityScalarDataPropertyRestrictionAxiomImpl extends TermA
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM;
+		return OMLPackage.eINSTANCE.getEntityScalarDataPropertyRestrictionAxiom();
 	}
 
 	/**

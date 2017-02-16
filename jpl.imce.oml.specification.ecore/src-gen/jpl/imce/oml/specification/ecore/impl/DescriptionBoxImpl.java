@@ -22,6 +22,8 @@ import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
 
+import jpl.imce.oml.specification.ecore.AnnotationEntry;
+import jpl.imce.oml.specification.ecore.AnnotationProperty;
 import jpl.imce.oml.specification.ecore.ConceptInstance;
 import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions;
@@ -38,6 +40,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -70,7 +73,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
+public class DescriptionBoxImpl extends ModuleImpl implements DescriptionBox {
 	/**
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -177,7 +180,7 @@ public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.DESCRIPTION_BOX;
+		return OMLPackage.eINSTANCE.getDescriptionBox();
 	}
 
 	/**
@@ -334,6 +337,17 @@ public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
 			unreifiedRelationshipInstanceTuples = new EObjectContainmentWithInverseEList<UnreifiedRelationshipInstanceTuple>(UnreifiedRelationshipInstanceTuple.class, this, OMLPackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES, OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX);
 		}
 		return unreifiedRelationshipInstanceTuples;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DescriptionBox withAnnotations(EMap<AnnotationProperty, EList<AnnotationEntry>> a) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -571,8 +585,11 @@ public class DescriptionBoxImpl extends ContextImpl implements DescriptionBox {
 	 * @generated
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+			case OMLPackage.DESCRIPTION_BOX___WITH_ANNOTATIONS__EMAP:
+				return withAnnotations((EMap<AnnotationProperty, EList<AnnotationEntry>>)arguments.get(0));
 			case OMLPackage.DESCRIPTION_BOX___EXTENT:
 				return extent();
 		}

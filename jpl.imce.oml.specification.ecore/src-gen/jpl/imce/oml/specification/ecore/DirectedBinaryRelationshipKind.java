@@ -44,7 +44,7 @@ public interface DirectedBinaryRelationshipKind extends CDOObject {
 	 * @model unique="false" required="true"
 	 * @generated
 	 */
-	Term relationshipSubject();
+	Term relationDomain();
 
 	/**
 	 * <!-- begin-user-doc -->

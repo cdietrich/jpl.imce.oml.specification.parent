@@ -76,7 +76,7 @@ public class DataRelationshipToScalarItemProvider extends DataRelationshipRangeI
 				 getResourceLocator(),
 				 getString("_UI_DataRelationshipToScalar_range_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataRelationshipToScalar_range_feature", "_UI_DataRelationshipToScalar_type"),
-				 OMLPackage.Literals.DATA_RELATIONSHIP_TO_SCALAR__RANGE,
+				 OMLPackage.eINSTANCE.getDataRelationshipToScalar_Range(),
 				 true,
 				 false,
 				 true,

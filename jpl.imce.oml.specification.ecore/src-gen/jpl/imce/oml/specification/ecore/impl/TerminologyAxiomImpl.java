@@ -52,7 +52,7 @@ public abstract class TerminologyAxiomImpl extends TerminologyThingImpl implemen
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.TERMINOLOGY_AXIOM;
+		return OMLPackage.eINSTANCE.getTerminologyAxiom();
 	}
 
 	/**

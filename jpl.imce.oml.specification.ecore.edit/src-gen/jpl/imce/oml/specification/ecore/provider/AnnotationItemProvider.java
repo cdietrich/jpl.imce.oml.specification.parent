@@ -78,7 +78,7 @@ public class AnnotationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addContextPropertyDescriptor(object);
+			addModulePropertyDescriptor(object);
 			addPropertyPropertyDescriptor(object);
 			addSubjectPropertyDescriptor(object);
 			addValuePropertyDescriptor(object);
@@ -87,19 +87,19 @@ public class AnnotationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Context feature.
+	 * This adds a property descriptor for the Module feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addContextPropertyDescriptor(Object object) {
+	protected void addModulePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Annotation_context_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Annotation_context_feature", "_UI_Annotation_type"),
-				 OMLPackage.Literals.ANNOTATION__CONTEXT,
+				 getString("_UI_Annotation_module_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Annotation_module_feature", "_UI_Annotation_type"),
+				 OMLPackage.eINSTANCE.getAnnotation_Module(),
 				 true,
 				 false,
 				 true,
@@ -121,7 +121,7 @@ public class AnnotationItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Annotation_property_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Annotation_property_feature", "_UI_Annotation_type"),
-				 OMLPackage.Literals.ANNOTATION__PROPERTY,
+				 OMLPackage.eINSTANCE.getAnnotation_Property(),
 				 true,
 				 false,
 				 true,
@@ -143,7 +143,7 @@ public class AnnotationItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Annotation_subject_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Annotation_subject_feature", "_UI_Annotation_type"),
-				 OMLPackage.Literals.ANNOTATION__SUBJECT,
+				 OMLPackage.eINSTANCE.getAnnotation_Subject(),
 				 true,
 				 false,
 				 true,
@@ -165,7 +165,7 @@ public class AnnotationItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Annotation_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Annotation_value_feature", "_UI_Annotation_type"),
-				 OMLPackage.Literals.ANNOTATION__VALUE,
+				 OMLPackage.eINSTANCE.getAnnotation_Value(),
 				 true,
 				 false,
 				 false,

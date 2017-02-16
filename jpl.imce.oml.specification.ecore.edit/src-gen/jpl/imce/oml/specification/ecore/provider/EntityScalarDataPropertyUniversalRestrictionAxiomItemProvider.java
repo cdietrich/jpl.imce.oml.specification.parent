@@ -77,7 +77,7 @@ public class EntityScalarDataPropertyUniversalRestrictionAxiomItemProvider exten
 				 getResourceLocator(),
 				 getString("_UI_EntityScalarDataPropertyUniversalRestrictionAxiom_scalarRestriction_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityScalarDataPropertyUniversalRestrictionAxiom_scalarRestriction_feature", "_UI_EntityScalarDataPropertyUniversalRestrictionAxiom_type"),
-				 OMLPackage.Literals.ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM__SCALAR_RESTRICTION,
+				 OMLPackage.eINSTANCE.getEntityScalarDataPropertyUniversalRestrictionAxiom_ScalarRestriction(),
 				 true,
 				 false,
 				 true,

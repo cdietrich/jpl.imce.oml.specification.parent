@@ -67,4 +67,14 @@ public interface EntityScalarDataPropertyExistentialRestrictionAxiom extends Ent
 	 */
 	void setScalarRestriction(DataRange value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model dataType="jpl.imce.oml.specification.ecore.UUID" unique="false" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%java.lang.String%> _xblockexpression = null;\n{\n\t<%jpl.imce.oml.specification.ecore.Entity%> _restrictedEntity = this.getRestrictedEntity();\n\t<%java.lang.String%> _uuid = _restrictedEntity.getUuid();\n\t<%java.lang.String%> _plus = (\"EntityScalarDataPropertyExistentialRestrictionAxiom(restrictedEntity=\" + _uuid);\n\t<%java.lang.String%> _plus_1 = (_plus + \",scalarProperty=\");\n\t<%jpl.imce.oml.specification.ecore.EntityScalarDataProperty%> _scalarProperty = this.getScalarProperty();\n\t<%java.lang.String%> _calculateUUID = _scalarProperty.calculateUUID();\n\t<%java.lang.String%> _plus_2 = (_plus_1 + _calculateUUID);\n\t<%java.lang.String%> _plus_3 = (_plus_2 + \",scalarRestriction=\");\n\t<%jpl.imce.oml.specification.ecore.DataRange%> _scalarRestriction = this.getScalarRestriction();\n\t<%java.lang.String%> _uuid_1 = _scalarRestriction.getUuid();\n\t<%java.lang.String%> _plus_4 = (_plus_3 + _uuid_1);\n\tfinal <%java.lang.String%> namespace = (_plus_4 + \")\");\n\t<%com.fasterxml.uuid.impl.NameBasedGenerator%> _nameBasedGenerator = <%com.fasterxml.uuid.Generators%>.nameBasedGenerator(<%com.fasterxml.uuid.impl.NameBasedGenerator%>.NAMESPACE_URL);\n\t<%java.util.UUID%> _generate = _nameBasedGenerator.generate(namespace);\n\t_xblockexpression = _generate.toString();\n}\nreturn _xblockexpression;'"
+	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='\n\tval namespace = \"EntityScalarDataPropertyExistentialRestrictionAxiom(restrictedEntity=\"+restrictedEntity.uuid+\",scalarProperty=\"+scalarProperty.calculateUUID()+\",scalarRestriction=\"+scalarRestriction.uuid+\")\"\n\tcom.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)'"
+	 * @generated
+	 */
+	String calculateUUID();
+
 } // EntityScalarDataPropertyExistentialRestrictionAxiom

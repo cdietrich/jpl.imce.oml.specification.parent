@@ -69,7 +69,7 @@ public abstract class TerminologyThingImpl extends CDOObjectImpl implements Term
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.TERMINOLOGY_THING;
+		return OMLPackage.eINSTANCE.getTerminologyThing();
 	}
 
 	/**

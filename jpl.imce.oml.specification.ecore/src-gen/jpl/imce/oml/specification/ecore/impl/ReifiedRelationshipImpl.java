@@ -121,7 +121,7 @@ public class ReifiedRelationshipImpl extends EntityRelationshipImpl implements R
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.REIFIED_RELATIONSHIP;
+		return OMLPackage.eINSTANCE.getReifiedRelationship();
 	}
 
 	/**

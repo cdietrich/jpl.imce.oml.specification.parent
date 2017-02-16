@@ -28,6 +28,8 @@ trait ConceptInstance
   val descriptionBox: DescriptionBox
   val singletonConceptClassifier: Concept
 
+  override def calculateUUID
+  (): java.util.UUID
   override def conceptualEntitySingletonClassifier
   (): ConceptualEntity
 }

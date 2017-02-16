@@ -49,7 +49,7 @@ public abstract class UnaryTermKindImpl extends CDOObjectImpl implements UnaryTe
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.UNARY_TERM_KIND;
+		return OMLPackage.eINSTANCE.getUnaryTermKind();
 	}
 
 } //UnaryTermKindImpl

@@ -32,6 +32,7 @@ public class OMLQNAMEValueConverter extends AbstractValueConverter<String> {
     return "ValidID";
   }
   
+  @Override
   public String toString(final String value) {
     boolean _contains = value.contains(":");
     if (_contains) {
@@ -58,6 +59,7 @@ public class OMLQNAMEValueConverter extends AbstractValueConverter<String> {
     }
   }
   
+  @Override
   public String toValue(final String string, final INode node) throws ValueConverterException {
     boolean _contains = string.contains(":");
     if (_contains) {

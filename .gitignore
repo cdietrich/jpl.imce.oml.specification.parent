@@ -1,9 +1,11 @@
 .boot
 .gradle
+.idea
 .ivy
 .sbtboot
 *.log
 *._trace
 *.xtendbin
+.DS_Store
 build
 target

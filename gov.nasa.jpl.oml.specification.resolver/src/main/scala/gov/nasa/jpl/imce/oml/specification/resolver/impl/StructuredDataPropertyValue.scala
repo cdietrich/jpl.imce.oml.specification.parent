@@ -22,15 +22,38 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class StructuredDataPropertyValue private[impl] 
 (
- override val uuid: java.util.UUID,
- override val singletonInstance: SingletonInstance,
- override val structuredDataProperty: DataRelationshipToStructure,
- override val structuredPropertyTuple: DataStructureTuple,
+ override val singletonInstance: resolver.api.SingletonInstance,
+ override val structuredDataProperty: resolver.api.DataRelationshipToStructure,
+ override val structuredPropertyTuple: resolver.api.DataStructureTuple,
  override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName
 )
 extends resolver.api.StructuredDataPropertyValue
   with TerminologyInstanceAssertion
 {
+  override def calculateUUID
+  ()
+  : java.util.UUID
+  = {
+    
+    	val namespace = "StructuredDataPropertyValue(singletonInstance=" + singletonInstance.uuid + ",structuredDataProperty="+structuredDataProperty.calculateUUID()+ ",structuredPropertyTuple="+structuredPropertyTuple.uuid+")"
+    	com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)
+  }
+  
+  def descriptionBox
+  ()
+  : resolver.api.DescriptionBox
+  = {
+    singletonInstance.descriptionBox()
+  }
+  
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: StructuredDataPropertyValue => true

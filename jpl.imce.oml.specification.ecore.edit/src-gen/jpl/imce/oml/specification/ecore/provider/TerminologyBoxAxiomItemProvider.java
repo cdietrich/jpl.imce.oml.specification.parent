@@ -77,7 +77,7 @@ public class TerminologyBoxAxiomItemProvider extends TerminologyAxiomItemProvide
 				 getResourceLocator(),
 				 getString("_UI_TerminologyBoxAxiom_tbox_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TerminologyBoxAxiom_tbox_feature", "_UI_TerminologyBoxAxiom_type"),
-				 OMLPackage.Literals.TERMINOLOGY_BOX_AXIOM__TBOX,
+				 OMLPackage.eINSTANCE.getTerminologyBoxAxiom_Tbox(),
 				 true,
 				 false,
 				 true,

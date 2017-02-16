@@ -20,7 +20,7 @@ package jpl.imce.oml.specification.ecore.impl;
 
 import jpl.imce.oml.specification.ecore.Annotation;
 import jpl.imce.oml.specification.ecore.AnnotationProperty;
-import jpl.imce.oml.specification.ecore.Context;
+import jpl.imce.oml.specification.ecore.Module;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.TerminologyThing;
 
@@ -45,7 +45,7 @@ import org.eclipse.emf.internal.cdo.CDOObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link jpl.imce.oml.specification.ecore.impl.AnnotationImpl#getContext <em>Context</em>}</li>
+ *   <li>{@link jpl.imce.oml.specification.ecore.impl.AnnotationImpl#getModule <em>Module</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.AnnotationImpl#getProperty <em>Property</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.AnnotationImpl#getSubject <em>Subject</em>}</li>
  *   <li>{@link jpl.imce.oml.specification.ecore.impl.AnnotationImpl#getValue <em>Value</em>}</li>
@@ -110,7 +110,7 @@ public class AnnotationImpl extends CDOObjectImpl implements Annotation {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.ANNOTATION;
+		return OMLPackage.eINSTANCE.getAnnotation();
 	}
 
 	/**
@@ -118,9 +118,9 @@ public class AnnotationImpl extends CDOObjectImpl implements Annotation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Context getContext() {
-		if (eContainerFeatureID() != OMLPackage.ANNOTATION__CONTEXT) return null;
-		return (Context)eContainer();
+	public Module getModule() {
+		if (eContainerFeatureID() != OMLPackage.ANNOTATION__MODULE) return null;
+		return (Module)eContainer();
 	}
 
 	/**
@@ -128,9 +128,9 @@ public class AnnotationImpl extends CDOObjectImpl implements Annotation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Context basicGetContext() {
-		if (eContainerFeatureID() != OMLPackage.ANNOTATION__CONTEXT) return null;
-		return (Context)eInternalContainer();
+	public Module basicGetModule() {
+		if (eContainerFeatureID() != OMLPackage.ANNOTATION__MODULE) return null;
+		return (Module)eInternalContainer();
 	}
 
 	/**
@@ -138,8 +138,8 @@ public class AnnotationImpl extends CDOObjectImpl implements Annotation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetContext(Context newContext, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newContext, OMLPackage.ANNOTATION__CONTEXT, msgs);
+	public NotificationChain basicSetModule(Module newModule, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newModule, OMLPackage.ANNOTATION__MODULE, msgs);
 		return msgs;
 	}
 
@@ -148,20 +148,20 @@ public class AnnotationImpl extends CDOObjectImpl implements Annotation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setContext(Context newContext) {
-		if (newContext != eInternalContainer() || (eContainerFeatureID() != OMLPackage.ANNOTATION__CONTEXT && newContext != null)) {
-			if (EcoreUtil.isAncestor(this, (EObject)newContext))
+	public void setModule(Module newModule) {
+		if (newModule != eInternalContainer() || (eContainerFeatureID() != OMLPackage.ANNOTATION__MODULE && newModule != null)) {
+			if (EcoreUtil.isAncestor(this, (EObject)newModule))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newContext != null)
-				msgs = ((InternalEObject)newContext).eInverseAdd(this, OMLPackage.CONTEXT__ANNOTATIONS, Context.class, msgs);
-			msgs = basicSetContext(newContext, msgs);
+			if (newModule != null)
+				msgs = ((InternalEObject)newModule).eInverseAdd(this, OMLPackage.MODULE__ANNOTATIONS, Module.class, msgs);
+			msgs = basicSetModule(newModule, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ANNOTATION__CONTEXT, newContext, newContext));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ANNOTATION__MODULE, newModule, newModule));
 	}
 
 	/**
@@ -269,10 +269,10 @@ public class AnnotationImpl extends CDOObjectImpl implements Annotation {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.ANNOTATION__CONTEXT:
+			case OMLPackage.ANNOTATION__MODULE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetContext((Context)otherEnd, msgs);
+				return basicSetModule((Module)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -285,8 +285,8 @@ public class AnnotationImpl extends CDOObjectImpl implements Annotation {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.ANNOTATION__CONTEXT:
-				return basicSetContext(null, msgs);
+			case OMLPackage.ANNOTATION__MODULE:
+				return basicSetModule(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -299,8 +299,8 @@ public class AnnotationImpl extends CDOObjectImpl implements Annotation {
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case OMLPackage.ANNOTATION__CONTEXT:
-				return eInternalContainer().eInverseRemove(this, OMLPackage.CONTEXT__ANNOTATIONS, Context.class, msgs);
+			case OMLPackage.ANNOTATION__MODULE:
+				return eInternalContainer().eInverseRemove(this, OMLPackage.MODULE__ANNOTATIONS, Module.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -313,9 +313,9 @@ public class AnnotationImpl extends CDOObjectImpl implements Annotation {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.ANNOTATION__CONTEXT:
-				if (resolve) return getContext();
-				return basicGetContext();
+			case OMLPackage.ANNOTATION__MODULE:
+				if (resolve) return getModule();
+				return basicGetModule();
 			case OMLPackage.ANNOTATION__PROPERTY:
 				if (resolve) return getProperty();
 				return basicGetProperty();
@@ -336,8 +336,8 @@ public class AnnotationImpl extends CDOObjectImpl implements Annotation {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.ANNOTATION__CONTEXT:
-				setContext((Context)newValue);
+			case OMLPackage.ANNOTATION__MODULE:
+				setModule((Module)newValue);
 				return;
 			case OMLPackage.ANNOTATION__PROPERTY:
 				setProperty((AnnotationProperty)newValue);
@@ -360,8 +360,8 @@ public class AnnotationImpl extends CDOObjectImpl implements Annotation {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.ANNOTATION__CONTEXT:
-				setContext((Context)null);
+			case OMLPackage.ANNOTATION__MODULE:
+				setModule((Module)null);
 				return;
 			case OMLPackage.ANNOTATION__PROPERTY:
 				setProperty((AnnotationProperty)null);
@@ -384,8 +384,8 @@ public class AnnotationImpl extends CDOObjectImpl implements Annotation {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.ANNOTATION__CONTEXT:
-				return basicGetContext() != null;
+			case OMLPackage.ANNOTATION__MODULE:
+				return basicGetModule() != null;
 			case OMLPackage.ANNOTATION__PROPERTY:
 				return property != null;
 			case OMLPackage.ANNOTATION__SUBJECT:

@@ -30,6 +30,8 @@ trait BundledTerminologyAxiom
 
   val bundledTerminology: TerminologyBox
 
+  override def calculateUUID
+  (): java.util.UUID
   /*
    * The bundle is the source
    */

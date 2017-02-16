@@ -124,8 +124,8 @@ public class OMLAdapterFactory extends AdapterFactoryImpl {
 				return createTerminologyExtentAdapter();
 			}
 			@Override
-			public Adapter caseContext(Context object) {
-				return createContextAdapter();
+			public Adapter caseModule(Module object) {
+				return createModuleAdapter();
 			}
 			@Override
 			public Adapter caseTerminologyBox(TerminologyBox object) {
@@ -594,16 +594,16 @@ public class OMLAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.Context <em>Context</em>}'.
+	 * Creates a new adapter for an object of class '{@link jpl.imce.oml.specification.ecore.Module <em>Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see jpl.imce.oml.specification.ecore.Context
+	 * @see jpl.imce.oml.specification.ecore.Module
 	 * @generated
 	 */
-	public Adapter createContextAdapter() {
+	public Adapter createModuleAdapter() {
 		return null;
 	}
 

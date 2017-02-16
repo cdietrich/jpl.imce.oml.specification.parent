@@ -18,13 +18,26 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import com.fasterxml.uuid.Generators;
+
+import com.fasterxml.uuid.impl.NameBasedGenerator;
+
+import java.lang.reflect.InvocationTargetException;
+
+import java.util.UUID;
+
 import jpl.imce.oml.specification.ecore.DataStructureTuple;
+import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.Structure;
 import jpl.imce.oml.specification.ecore.StructuredDataPropertyValue;
+import jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion;
+import jpl.imce.oml.specification.ecore.TerminologyThing;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -75,7 +88,7 @@ public class DataStructureTupleImpl extends SingletonInstanceImpl implements Dat
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.DATA_STRUCTURE_TUPLE;
+		return OMLPackage.eINSTANCE.getDataStructureTuple();
 	}
 
 	/**
@@ -165,6 +178,39 @@ public class DataStructureTupleImpl extends SingletonInstanceImpl implements Dat
 		dataStructureType = newDataStructureType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.DATA_STRUCTURE_TUPLE__DATA_STRUCTURE_TYPE, oldDataStructureType, dataStructureType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String calculateUUID() {
+		String _xblockexpression = null;
+		{
+			StructuredDataPropertyValue _structuredDataPropertyValue = this.getStructuredDataPropertyValue();
+			String _uuid = _structuredDataPropertyValue.getUuid();
+			String _plus = ("DataStructureTuple(structuredDataPropertyValue=" + _uuid);
+			String _plus_1 = (_plus + ",dataStructureType=");
+			Structure _dataStructureType = this.getDataStructureType();
+			String _uuid_1 = _dataStructureType.getUuid();
+			String _plus_2 = (_plus_1 + _uuid_1);
+			final String namespace = (_plus_2 + ")");
+			NameBasedGenerator _nameBasedGenerator = Generators.nameBasedGenerator(NameBasedGenerator.NAMESPACE_URL);
+			UUID _generate = _nameBasedGenerator.generate(namespace);
+			_xblockexpression = _generate.toString();
+		}
+		return _xblockexpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DescriptionBox descriptionBox() {
+		StructuredDataPropertyValue _structuredDataPropertyValue = this.getStructuredDataPropertyValue();
+		return _structuredDataPropertyValue.descriptionBox();
 	}
 
 	/**
@@ -279,6 +325,45 @@ public class DataStructureTupleImpl extends SingletonInstanceImpl implements Dat
 				return dataStructureType != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == TerminologyThing.class) {
+			switch (baseOperationID) {
+				case OMLPackage.TERMINOLOGY_THING___CALCULATE_UUID: return OMLPackage.DATA_STRUCTURE_TUPLE___CALCULATE_UUID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		if (baseClass == TerminologyInstanceAssertion.class) {
+			switch (baseOperationID) {
+				case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___DESCRIPTION_BOX: return OMLPackage.DATA_STRUCTURE_TUPLE___DESCRIPTION_BOX;
+				case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID: return OMLPackage.DATA_STRUCTURE_TUPLE___CALCULATE_UUID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OMLPackage.DATA_STRUCTURE_TUPLE___CALCULATE_UUID:
+				return calculateUUID();
+			case OMLPackage.DATA_STRUCTURE_TUPLE___DESCRIPTION_BOX:
+				return descriptionBox();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //DataStructureTupleImpl

@@ -22,14 +22,30 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class RootConceptTaxonomyAxiom private[impl] 
 (
- override val uuid: java.util.UUID,
- override val bundle: Bundle,
- override val root: Concept
+ override val bundle: resolver.api.Bundle,
+ override val root: resolver.api.Concept
 )
 extends resolver.api.RootConceptTaxonomyAxiom
   with TerminologyBundleStatement
   with ConceptTreeDisjunction
 {
+  override def calculateUUID
+  ()
+  : java.util.UUID
+  = {
+    
+    	val namespace = "RootConceptTaxonomyAxiom(bundle=" + bundle.uuid + ",root="+root.uuid+")"
+    	com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)
+  }
+  
+
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
 
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: RootConceptTaxonomyAxiom => true

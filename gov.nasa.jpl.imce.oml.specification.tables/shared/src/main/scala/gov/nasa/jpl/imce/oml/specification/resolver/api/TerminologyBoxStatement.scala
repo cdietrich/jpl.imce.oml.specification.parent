@@ -20,7 +20,7 @@ package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
  * An OML TerminologyBoxStatement is a logical axiom about an OML TerminologyThing
- * asserted in the context of an OML TerminologyBox.
+ * in an OML TerminologyBox.
  */
 trait TerminologyBoxStatement
   extends TerminologyThing

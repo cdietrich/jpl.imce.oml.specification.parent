@@ -76,7 +76,7 @@ public class DataRelationshipFromStructureItemProvider extends DataRelationshipD
 				 getResourceLocator(),
 				 getString("_UI_DataRelationshipFromStructure_domain_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataRelationshipFromStructure_domain_feature", "_UI_DataRelationshipFromStructure_type"),
-				 OMLPackage.Literals.DATA_RELATIONSHIP_FROM_STRUCTURE__DOMAIN,
+				 OMLPackage.eINSTANCE.getDataRelationshipFromStructure_Domain(),
 				 true,
 				 false,
 				 true,

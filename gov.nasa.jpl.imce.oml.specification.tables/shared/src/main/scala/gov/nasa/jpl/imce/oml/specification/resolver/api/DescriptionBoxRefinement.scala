@@ -30,8 +30,10 @@ trait DescriptionBoxRefinement
   val refiningDescriptionBox: DescriptionBox
   val refinedDescriptionBox: DescriptionBox
 
+  override def calculateUUID
+  (): java.util.UUID
   def descriptionDomain
   (): DescriptionBox
-  def contextTarget
-  (): Context
+  def targetModule
+  (): Module
 }

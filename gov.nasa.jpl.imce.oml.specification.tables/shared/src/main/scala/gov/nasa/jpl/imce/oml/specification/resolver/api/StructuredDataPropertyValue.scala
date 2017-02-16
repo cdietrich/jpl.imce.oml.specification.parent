@@ -29,4 +29,9 @@ trait StructuredDataPropertyValue
   val singletonInstance: SingletonInstance
   val structuredDataProperty: DataRelationshipToStructure
   val structuredPropertyTuple: DataStructureTuple
+
+  override def calculateUUID
+  (): java.util.UUID
+  def descriptionBox
+  (): DescriptionBox
 }

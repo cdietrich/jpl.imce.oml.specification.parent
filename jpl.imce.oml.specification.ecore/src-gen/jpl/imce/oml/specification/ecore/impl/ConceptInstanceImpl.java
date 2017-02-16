@@ -18,13 +18,22 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import com.fasterxml.uuid.Generators;
+
+import com.fasterxml.uuid.impl.NameBasedGenerator;
+
 import java.lang.reflect.InvocationTargetException;
+
+import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.Concept;
 import jpl.imce.oml.specification.ecore.ConceptInstance;
 import jpl.imce.oml.specification.ecore.ConceptualEntity;
+import jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance;
 import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion;
+import jpl.imce.oml.specification.ecore.TerminologyThing;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -80,7 +89,7 @@ public class ConceptInstanceImpl extends ConceptualEntitySingletonInstanceImpl i
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.CONCEPT_INSTANCE;
+		return OMLPackage.eINSTANCE.getConceptInstance();
 	}
 
 	/**
@@ -170,6 +179,29 @@ public class ConceptInstanceImpl extends ConceptualEntitySingletonInstanceImpl i
 		singletonConceptClassifier = newSingletonConceptClassifier;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.CONCEPT_INSTANCE__SINGLETON_CONCEPT_CLASSIFIER, oldSingletonConceptClassifier, singletonConceptClassifier));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String calculateUUID() {
+		String _xblockexpression = null;
+		{
+			DescriptionBox _descriptionBox = this.descriptionBox();
+			String _uuid = _descriptionBox.getUuid();
+			String _plus = ("ConceptInstance(descriptionBox=" + _uuid);
+			String _plus_1 = (_plus + ",singletonConceptClassifier=");
+			Concept _singletonConceptClassifier = this.getSingletonConceptClassifier();
+			String _uuid_1 = _singletonConceptClassifier.getUuid();
+			String _plus_2 = (_plus_1 + _uuid_1);
+			final String namespace = (_plus_2 + ")");
+			NameBasedGenerator _nameBasedGenerator = Generators.nameBasedGenerator(NameBasedGenerator.NAMESPACE_URL);
+			UUID _generate = _nameBasedGenerator.generate(namespace);
+			_xblockexpression = _generate.toString();
+		}
+		return _xblockexpression;
 	}
 
 	/**
@@ -301,8 +333,38 @@ public class ConceptInstanceImpl extends ConceptualEntitySingletonInstanceImpl i
 	 * @generated
 	 */
 	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == TerminologyThing.class) {
+			switch (baseOperationID) {
+				case OMLPackage.TERMINOLOGY_THING___CALCULATE_UUID: return OMLPackage.CONCEPT_INSTANCE___CALCULATE_UUID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		if (baseClass == TerminologyInstanceAssertion.class) {
+			switch (baseOperationID) {
+				case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID: return OMLPackage.CONCEPT_INSTANCE___CALCULATE_UUID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		if (baseClass == ConceptualEntitySingletonInstance.class) {
+			switch (baseOperationID) {
+				case OMLPackage.CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER: return OMLPackage.CONCEPT_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+			case OMLPackage.CONCEPT_INSTANCE___CALCULATE_UUID:
+				return calculateUUID();
 			case OMLPackage.CONCEPT_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER:
 				return conceptualEntitySingletonClassifier();
 		}

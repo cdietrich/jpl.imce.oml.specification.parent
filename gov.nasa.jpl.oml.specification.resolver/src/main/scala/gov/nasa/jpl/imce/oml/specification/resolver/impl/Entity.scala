@@ -25,6 +25,14 @@ extends resolver.api.Entity
   with Term
 {
 
+  override val uuid
+  : java.util.UUID
+  = {
+    calculateUUID()
+  }
+  
+
+
   override def canEqual(that: scala.Any): scala.Boolean = that match {
   	case _: Entity => true
   	case _ => false

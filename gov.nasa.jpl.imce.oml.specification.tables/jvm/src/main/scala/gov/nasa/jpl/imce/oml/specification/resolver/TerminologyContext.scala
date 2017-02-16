@@ -33,13 +33,13 @@ import scalax.collection.immutable.Graph
 
 case class TerminologyContext private[resolver]
 (extent: resolver.api.TerminologyExtent,
- g: Graph[resolver.api.Context, TerminologyEdge] = Graph[resolver.api.Context, TerminologyEdge]()) {
+ g: Graph[resolver.api.Module, TerminologyEdge] = Graph[resolver.api.Module, TerminologyEdge]()) {
 
   def topologicalOrder()
-  : Try[g.TopologicalOrder[resolver.api.Context]]
+  : Try[g.TopologicalOrder[resolver.api.Module]]
   = g
     .topologicalSort()
-    .fold[Try[g.TopologicalOrder[resolver.api.Context]]](
+    .fold[Try[g.TopologicalOrder[resolver.api.Module]]](
     (cycleNode: g.NodeT) =>
       Failure(new java.lang.IllegalArgumentException(
         s"TerminologyContext circularity on node: $cycleNode in graph $g")),
@@ -47,13 +47,13 @@ case class TerminologyContext private[resolver]
       Success(order.toOuter))
 
   def findFirstStartingFrom[T]
-  (b: resolver.api.Context,
-   pf: PartialFunction[resolver.api.Context, T])
+  (b: resolver.api.Module,
+   pf: PartialFunction[resolver.api.Module, T])
   : Option[T]
   = g.get(b).outerNodeTraverser.collectFirst(pf)
 
   val nodes
-  : Map[UUID, resolver.api.Context]
+  : Map[UUID, resolver.api.Module]
   = g.nodes.toOuter.map(t => t.uuid -> t).toMap
 
   val tboxes
@@ -102,11 +102,11 @@ case class TerminologyContext private[resolver]
 
 
   val bottomNodes
-  : Set[_ <: resolver.api.Context]
+  : Set[_ <: resolver.api.Module]
   = g.nodes.filter(0 == _.inDegree).toOuterNodes.to[Set]
 
   val rootNodes
-  : Set[_ <: resolver.api.Context]
+  : Set[_ <: resolver.api.Module]
   = g.nodes.filter(0 == _.outDegree).toOuterNodes.to[Set]
 
 }
@@ -115,31 +115,31 @@ object TerminologyContext {
 
   def replaceNode
   (factory: resolver.api.OMLResolvedFactory,
-   g: Graph[resolver.api.Context, TerminologyEdge],
-   prev: resolver.api.Context,
-   next: resolver.api.Context)
-  : Try[Graph[resolver.api.Context, TerminologyEdge]]
+   g: Graph[resolver.api.Module, TerminologyEdge],
+   prev: resolver.api.Module,
+   next: resolver.api.Module)
+  : Try[Graph[resolver.api.Module, TerminologyEdge]]
   = g
     .find(outerNode = prev)
-    .fold[Try[Graph[resolver.api.Context, TerminologyEdge]]](
+    .fold[Try[Graph[resolver.api.Module, TerminologyEdge]]](
     Failure(new java.lang.IllegalArgumentException(s"prev node is not in the graph:\nprev:\n$prev\ngraph:\n$g"))
   ) { prevT =>
-    nonFatalCatch[Try[Graph[resolver.api.Context, TerminologyEdge]]]
+    nonFatalCatch[Try[Graph[resolver.api.Module, TerminologyEdge]]]
       .withApply { (t: java.lang.Throwable) => Failure(t) }
       .apply {
-        val in: Set[TerminologyEdge[resolver.api.Context]] = prevT.incoming.map { eT =>
+        val in: Set[TerminologyEdge[resolver.api.Module]] = prevT.incoming.map { eT =>
           val e = eT.toOuter
           require(e.target == prev)
-          e.copy[resolver.api.Context](Tuple2(e.source, next))
+          e.copy[resolver.api.Module](Tuple2(e.source, next))
         }
-        val out: Set[TerminologyEdge[resolver.api.Context]] = prevT.outgoing.map { eT =>
+        val out: Set[TerminologyEdge[resolver.api.Module]] = prevT.outgoing.map { eT =>
           val e = eT.toOuter
           require(e.source == prev)
-          e.copy[resolver.api.Context](Tuple2(next, e.target))
+          e.copy[resolver.api.Module](Tuple2(next, e.target))
         }
 
-        val g1: Graph[resolver.api.Context, TerminologyEdge] = g - prev + next
-        val g2: Graph[resolver.api.Context, TerminologyEdge] = g1 ++ in ++ out
+        val g1: Graph[resolver.api.Module, TerminologyEdge] = g - prev + next
+        val g2: Graph[resolver.api.Module, TerminologyEdge] = g1 ++ in ++ out
         Success(g2)
       }
   }

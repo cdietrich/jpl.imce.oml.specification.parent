@@ -24,4 +24,7 @@ package gov.nasa.jpl.imce.oml.specification.resolver.api
 trait SynonymScalarRestriction
   extends RestrictedDataRange
 {
+
+  override def calculateUUID
+  (): java.util.UUID
 }

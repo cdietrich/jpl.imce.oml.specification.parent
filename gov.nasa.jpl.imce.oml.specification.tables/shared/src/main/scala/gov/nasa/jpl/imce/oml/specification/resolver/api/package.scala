@@ -26,8 +26,8 @@ package object api {
   = new scala.Ordering[Annotation] {
   	def compare(x: Annotation, y: Annotation)
   	: scala.Int
-  	= contextOrdering.compare(x.context,y.context) match {
-  	 	case c_context if 0 != c_context => c_context
+  	= moduleOrdering.compare(x.module,y.module) match {
+  	 	case c_module if 0 != c_module => c_module
   	 	case 0 => terminologyThingOrdering.compare(x.subject,y.subject) match {
   	 	case c_subject if 0 != c_subject => c_subject
   	 	case 0 => annotationPropertyOrdering.compare(x.property,y.property) match {
@@ -42,8 +42,8 @@ package object api {
   = new scala.Ordering[AnnotationEntry] {
   	def compare(x: AnnotationEntry, y: AnnotationEntry)
   	: scala.Int
-  	= contextOrdering.compare(x.context,y.context) match {
-  	 	case c_context if 0 != c_context => c_context
+  	= moduleOrdering.compare(x.module,y.module) match {
+  	 	case c_module if 0 != c_module => c_module
   	 	case 0 => terminologyThingOrdering.compare(x.subject,y.subject) match {
   	 	case c_subject if 0 != c_subject => c_subject
   	 	case 0 => x.value.compareTo(y.value) match {
@@ -185,16 +185,6 @@ package object api {
   : scala.Ordering[ConceptualEntitySingletonInstance]
   = new scala.Ordering[ConceptualEntitySingletonInstance] {
   	def compare(x: ConceptualEntitySingletonInstance, y: ConceptualEntitySingletonInstance)
-  	: scala.Int
-  	= x.uuid.compareTo(y.uuid) match {
-  	 	case c_uuid if 0 != c_uuid => c_uuid
-  	 	case 0 => 0 }
-  }
-  
-  implicit def contextOrdering
-  : scala.Ordering[Context]
-  = new scala.Ordering[Context] {
-  	def compare(x: Context, y: Context)
   	: scala.Int
   	= x.uuid.compareTo(y.uuid) match {
   	 	case c_uuid if 0 != c_uuid => c_uuid
@@ -405,6 +395,16 @@ package object api {
   : scala.Ordering[IRIScalarRestriction]
   = new scala.Ordering[IRIScalarRestriction] {
   	def compare(x: IRIScalarRestriction, y: IRIScalarRestriction)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
+  implicit def moduleOrdering
+  : scala.Ordering[Module]
+  = new scala.Ordering[Module] {
+  	def compare(x: Module, y: Module)
   	: scala.Int
   	= x.uuid.compareTo(y.uuid) match {
   	 	case c_uuid if 0 != c_uuid => c_uuid

@@ -95,10 +95,10 @@ public class TerminologyExtentItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OMLPackage.Literals.TERMINOLOGY_EXTENT__ANNOTATION_PROPERTIES);
-			childrenFeatures.add(OMLPackage.Literals.TERMINOLOGY_EXTENT__TERMINOLOGY_GRAPHS);
-			childrenFeatures.add(OMLPackage.Literals.TERMINOLOGY_EXTENT__BUNDLES);
-			childrenFeatures.add(OMLPackage.Literals.TERMINOLOGY_EXTENT__DESCRIPTIONS);
+			childrenFeatures.add(OMLPackage.eINSTANCE.getTerminologyExtent_AnnotationProperties());
+			childrenFeatures.add(OMLPackage.eINSTANCE.getTerminologyExtent_TerminologyGraphs());
+			childrenFeatures.add(OMLPackage.eINSTANCE.getTerminologyExtent_Bundles());
+			childrenFeatures.add(OMLPackage.eINSTANCE.getTerminologyExtent_Descriptions());
 		}
 		return childrenFeatures;
 	}
@@ -174,22 +174,22 @@ public class TerminologyExtentItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_EXTENT__ANNOTATION_PROPERTIES,
+				(OMLPackage.eINSTANCE.getTerminologyExtent_AnnotationProperties(),
 				 OMLFactory.eINSTANCE.createAnnotationProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_EXTENT__TERMINOLOGY_GRAPHS,
+				(OMLPackage.eINSTANCE.getTerminologyExtent_TerminologyGraphs(),
 				 OMLFactory.eINSTANCE.createTerminologyGraph()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_EXTENT__BUNDLES,
+				(OMLPackage.eINSTANCE.getTerminologyExtent_Bundles(),
 				 OMLFactory.eINSTANCE.createBundle()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.Literals.TERMINOLOGY_EXTENT__DESCRIPTIONS,
+				(OMLPackage.eINSTANCE.getTerminologyExtent_Descriptions(),
 				 OMLFactory.eINSTANCE.createDescriptionBox()));
 	}
 

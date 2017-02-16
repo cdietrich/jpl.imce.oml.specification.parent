@@ -77,7 +77,7 @@ public class DisjointUnionOfConceptsAxiomItemProvider extends TerminologyBundleS
 				 getResourceLocator(),
 				 getString("_UI_DisjointUnionOfConceptsAxiom_disjointTaxonomyParent_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DisjointUnionOfConceptsAxiom_disjointTaxonomyParent_feature", "_UI_DisjointUnionOfConceptsAxiom_type"),
-				 OMLPackage.Literals.DISJOINT_UNION_OF_CONCEPTS_AXIOM__DISJOINT_TAXONOMY_PARENT,
+				 OMLPackage.eINSTANCE.getDisjointUnionOfConceptsAxiom_DisjointTaxonomyParent(),
 				 true,
 				 false,
 				 true,

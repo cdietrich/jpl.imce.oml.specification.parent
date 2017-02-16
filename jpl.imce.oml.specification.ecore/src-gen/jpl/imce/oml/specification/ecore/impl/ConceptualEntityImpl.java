@@ -79,7 +79,7 @@ public abstract class ConceptualEntityImpl extends CDOObjectImpl implements Conc
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.CONCEPTUAL_ENTITY;
+		return OMLPackage.eINSTANCE.getConceptualEntity();
 	}
 
 	/**

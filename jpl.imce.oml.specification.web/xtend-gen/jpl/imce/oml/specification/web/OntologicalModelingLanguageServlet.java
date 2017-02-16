@@ -24,19 +24,16 @@ import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 public class OntologicalModelingLanguageServlet extends XtextServlet {
   private final List<ExecutorService> executorServices = CollectionLiterals.<ExecutorService>newArrayList();
   
+  @Override
   public void init() {
     try {
       super.init();
-      final Provider<ExecutorService> _function = new Provider<ExecutorService>() {
-        public ExecutorService get() {
-          ExecutorService _newCachedThreadPool = Executors.newCachedThreadPool();
-          final Procedure1<ExecutorService> _function = new Procedure1<ExecutorService>() {
-            public void apply(final ExecutorService it) {
-              OntologicalModelingLanguageServlet.this.executorServices.add(it);
-            }
-          };
-          return ObjectExtensions.<ExecutorService>operator_doubleArrow(_newCachedThreadPool, _function);
-        }
+      final Provider<ExecutorService> _function = () -> {
+        ExecutorService _newCachedThreadPool = Executors.newCachedThreadPool();
+        final Procedure1<ExecutorService> _function_1 = (ExecutorService it) -> {
+          this.executorServices.add(it);
+        };
+        return ObjectExtensions.<ExecutorService>operator_doubleArrow(_newCachedThreadPool, _function_1);
       };
       final Provider<ExecutorService> executorServiceProvider = _function;
       OntologicalModelingLanguageWebSetup _ontologicalModelingLanguageWebSetup = new OntologicalModelingLanguageWebSetup(executorServiceProvider);
@@ -46,11 +43,10 @@ public class OntologicalModelingLanguageServlet extends XtextServlet {
     }
   }
   
+  @Override
   public void destroy() {
-    final Consumer<ExecutorService> _function = new Consumer<ExecutorService>() {
-      public void accept(final ExecutorService it) {
-        it.shutdown();
-      }
+    final Consumer<ExecutorService> _function = (ExecutorService it) -> {
+      it.shutdown();
     };
     this.executorServices.forEach(_function);
     this.executorServices.clear();

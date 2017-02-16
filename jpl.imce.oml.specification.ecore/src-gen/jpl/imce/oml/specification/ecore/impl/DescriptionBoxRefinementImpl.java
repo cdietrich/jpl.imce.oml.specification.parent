@@ -18,11 +18,17 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
+import com.fasterxml.uuid.Generators;
+
+import com.fasterxml.uuid.impl.NameBasedGenerator;
+
 import java.lang.reflect.InvocationTargetException;
 
-import jpl.imce.oml.specification.ecore.Context;
+import java.util.UUID;
+
 import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.DescriptionBoxRefinement;
+import jpl.imce.oml.specification.ecore.Module;
 import jpl.imce.oml.specification.ecore.OMLPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -79,7 +85,7 @@ public class DescriptionBoxRefinementImpl extends DescriptionBoxRelationshipImpl
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.DESCRIPTION_BOX_REFINEMENT;
+		return OMLPackage.eINSTANCE.getDescriptionBoxRefinement();
 	}
 
 	/**
@@ -176,6 +182,29 @@ public class DescriptionBoxRefinementImpl extends DescriptionBoxRelationshipImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String calculateUUID() {
+		String _xblockexpression = null;
+		{
+			DescriptionBox _refiningDescriptionBox = this.getRefiningDescriptionBox();
+			String _uuid = _refiningDescriptionBox.getUuid();
+			String _plus = ("DescriptionBoxRefinement(refiningDescriptionBox=" + _uuid);
+			String _plus_1 = (_plus + ",refinedDescriptionBox=");
+			DescriptionBox _refinedDescriptionBox = this.getRefinedDescriptionBox();
+			String _uuid_1 = _refinedDescriptionBox.getUuid();
+			String _plus_2 = (_plus_1 + _uuid_1);
+			final String namespace = (_plus_2 + ")");
+			NameBasedGenerator _nameBasedGenerator = Generators.nameBasedGenerator(NameBasedGenerator.NAMESPACE_URL);
+			UUID _generate = _nameBasedGenerator.generate(namespace);
+			_xblockexpression = _generate.toString();
+		}
+		return _xblockexpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DescriptionBox descriptionDomain() {
 		return this.getRefiningDescriptionBox();
 	}
@@ -185,7 +214,7 @@ public class DescriptionBoxRefinementImpl extends DescriptionBoxRelationshipImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Context contextTarget() {
+	public Module targetModule() {
 		return this.getRefinedDescriptionBox();
 	}
 
@@ -311,10 +340,12 @@ public class DescriptionBoxRefinementImpl extends DescriptionBoxRelationshipImpl
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+			case OMLPackage.DESCRIPTION_BOX_REFINEMENT___CALCULATE_UUID:
+				return calculateUUID();
 			case OMLPackage.DESCRIPTION_BOX_REFINEMENT___DESCRIPTION_DOMAIN:
 				return descriptionDomain();
-			case OMLPackage.DESCRIPTION_BOX_REFINEMENT___CONTEXT_TARGET:
-				return contextTarget();
+			case OMLPackage.DESCRIPTION_BOX_REFINEMENT___TARGET_MODULE:
+				return targetModule();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

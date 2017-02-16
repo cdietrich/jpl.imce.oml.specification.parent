@@ -19,11 +19,11 @@
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
- * An OML Context maps to an [OWL2-DL Ontology];
+ * An OML Module maps to an [OWL2-DL Ontology];
  * it is a kind of OML Resource that is a logical container of OML TerminologyThing(s)
  * and a non-logical container of OML Annotation(s).
  */
-trait Context
+trait Module
   extends TerminologyThing
   with Resource
 {
@@ -33,7 +33,7 @@ trait Context
 
   def extent
   (): TerminologyExtent
-  def calculateUUID
+  override def calculateUUID
   (): java.util.UUID
   def nsPrefix
   (): gov.nasa.jpl.imce.oml.specification.tables.NamespacePrefix
@@ -42,7 +42,7 @@ trait Context
   def annotationsByProperty
   (): scala.collection.immutable.SortedSet[AnnotationPropertyTable]
   def withAnnotations
-  (a: scala.collection.immutable.SortedSet[AnnotationPropertyTable]): Context
+  (a: scala.collection.immutable.SortedSet[AnnotationPropertyTable]): Module
   def entities
   (): scala.collection.immutable.SortedSet[Entity]
   def aspects

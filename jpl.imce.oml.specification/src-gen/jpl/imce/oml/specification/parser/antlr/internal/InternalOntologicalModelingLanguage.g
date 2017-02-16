@@ -3090,17 +3090,25 @@ ruleConceptSpecializationAxiom returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_0=RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getConceptSpecializationAxiomRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptConceptCrossReference_0_0());
+				}
+				ruleReference
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_1=RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN
 		{
-			newLeafNode(this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_0, grammarAccess.getConceptSpecializationAxiomAccess().getCONCEPT_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_0());
-		}
-		this_LCURLY_1=RULE_LCURLY
-		{
-			newLeafNode(this_LCURLY_1, grammarAccess.getConceptSpecializationAxiomAccess().getLCURLYTerminalRuleCall_1());
-		}
-		otherlv_2='subConcept'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptKeyword_2());
+			newLeafNode(this_CONCEPT_SPECIALIZATION_AXIOM_TOKEN_1, grammarAccess.getConceptSpecializationAxiomAccess().getCONCEPT_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_1());
 		}
 		(
 			(
@@ -3110,7 +3118,7 @@ ruleConceptSpecializationAxiom returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptConceptCrossReference_3_0());
+					newCompositeNode(grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptConceptCrossReference_2_0());
 				}
 				ruleReference
 				{
@@ -3118,30 +3126,6 @@ ruleConceptSpecializationAxiom returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_4='superConcept'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptKeyword_4());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getConceptSpecializationAxiomRule());
-					}
-				}
-				{
-					newCompositeNode(grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptConceptCrossReference_5_0());
-				}
-				ruleReference
-				{
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		this_RCURLY_6=RULE_RCURLY
-		{
-			newLeafNode(this_RCURLY_6, grammarAccess.getConceptSpecializationAxiomAccess().getRCURLYTerminalRuleCall_6());
-		}
 	)
 ;
 
@@ -3161,17 +3145,25 @@ ruleReifiedRelationshipSpecializationAxiom returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_0=RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getReifiedRelationshipSpecializationAxiomRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipReifiedRelationshipCrossReference_0_0());
+				}
+				ruleReference
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_1=RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN
 		{
-			newLeafNode(this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_0, grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getREIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_0());
-		}
-		this_LCURLY_1=RULE_LCURLY
-		{
-			newLeafNode(this_LCURLY_1, grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getLCURLYTerminalRuleCall_1());
-		}
-		otherlv_2='subRelationship'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipKeyword_2());
+			newLeafNode(this_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN_1, grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getREIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_1());
 		}
 		(
 			(
@@ -3181,7 +3173,7 @@ ruleReifiedRelationshipSpecializationAxiom returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipReifiedRelationshipCrossReference_3_0());
+					newCompositeNode(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipReifiedRelationshipCrossReference_2_0());
 				}
 				ruleReference
 				{
@@ -3189,30 +3181,6 @@ ruleReifiedRelationshipSpecializationAxiom returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_4='superRelationship'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipKeyword_4());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getReifiedRelationshipSpecializationAxiomRule());
-					}
-				}
-				{
-					newCompositeNode(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipReifiedRelationshipCrossReference_5_0());
-				}
-				ruleReference
-				{
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		this_RCURLY_6=RULE_RCURLY
-		{
-			newLeafNode(this_RCURLY_6, grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getRCURLYTerminalRuleCall_6());
-		}
 	)
 ;
 
@@ -5806,11 +5774,11 @@ RULE_ENTITY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN : 'entityExistentialRestrictionA
 
 RULE_ENTITY_UNIVERSAL_RESTRICTION_AXIOM_TOKEN : 'entityUniversalRestrictionAxiom';
 
-RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN : 'conceptSpecializationAxiom';
+RULE_CONCEPT_SPECIALIZATION_AXIOM_TOKEN : 'extendsConcept';
 
 RULE_ASPECT_SPECIALIZATION_AXIOM_TOKEN : 'extendsAspect';
 
-RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN : 'reifiedRelationshipSpecializationAxiom';
+RULE_REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN : 'extendsRelationship';
 
 RULE_ENTITY_SCALAR_DATA_PROPERTY_EXISTENTIAL_RESTRICTION_AXIOM_TOKEN : 'entityScalarDataPropertyExistentialRestrictionAxiom';
 

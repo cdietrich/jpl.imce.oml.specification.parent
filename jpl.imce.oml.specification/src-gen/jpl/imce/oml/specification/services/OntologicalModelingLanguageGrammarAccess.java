@@ -1997,120 +1997,82 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 	public class ConceptSpecializationAxiomElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.ConceptSpecializationAxiom");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cCONCEPT_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final RuleCall cLCURLYTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Keyword cSubConceptKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cSubConceptAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cSubConceptConceptCrossReference_3_0 = (CrossReference)cSubConceptAssignment_3.eContents().get(0);
-		private final RuleCall cSubConceptConceptReferenceParserRuleCall_3_0_1 = (RuleCall)cSubConceptConceptCrossReference_3_0.eContents().get(1);
-		private final Keyword cSuperConceptKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cSuperConceptAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final CrossReference cSuperConceptConceptCrossReference_5_0 = (CrossReference)cSuperConceptAssignment_5.eContents().get(0);
-		private final RuleCall cSuperConceptConceptReferenceParserRuleCall_5_0_1 = (RuleCall)cSuperConceptConceptCrossReference_5_0.eContents().get(1);
-		private final RuleCall cRCURLYTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
+		private final Assignment cSubConceptAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cSubConceptConceptCrossReference_0_0 = (CrossReference)cSubConceptAssignment_0.eContents().get(0);
+		private final RuleCall cSubConceptConceptReferenceParserRuleCall_0_0_1 = (RuleCall)cSubConceptConceptCrossReference_0_0.eContents().get(1);
+		private final RuleCall cCONCEPT_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cSuperConceptAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cSuperConceptConceptCrossReference_2_0 = (CrossReference)cSuperConceptAssignment_2.eContents().get(0);
+		private final RuleCall cSuperConceptConceptReferenceParserRuleCall_2_0_1 = (RuleCall)cSuperConceptConceptCrossReference_2_0.eContents().get(1);
 		
 		//ConceptSpecializationAxiom:
-		//	CONCEPT_SPECIALIZATION_AXIOM_TOKEN
-		//	LCURLY
-		//	'subConcept' subConcept=[Concept|Reference]
-		//	'superConcept' superConcept=[Concept|Reference] RCURLY;
+		//	subConcept=[Concept|Reference] CONCEPT_SPECIALIZATION_AXIOM_TOKEN superConcept=[Concept|Reference];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//CONCEPT_SPECIALIZATION_AXIOM_TOKEN LCURLY 'subConcept' subConcept=[Concept|Reference] 'superConcept'
-		//superConcept=[Concept|Reference] RCURLY
+		//subConcept=[Concept|Reference] CONCEPT_SPECIALIZATION_AXIOM_TOKEN superConcept=[Concept|Reference]
 		public Group getGroup() { return cGroup; }
 		
-		//CONCEPT_SPECIALIZATION_AXIOM_TOKEN
-		public RuleCall getCONCEPT_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_0() { return cCONCEPT_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_0; }
-		
-		//LCURLY
-		public RuleCall getLCURLYTerminalRuleCall_1() { return cLCURLYTerminalRuleCall_1; }
-		
-		//'subConcept'
-		public Keyword getSubConceptKeyword_2() { return cSubConceptKeyword_2; }
-		
 		//subConcept=[Concept|Reference]
-		public Assignment getSubConceptAssignment_3() { return cSubConceptAssignment_3; }
+		public Assignment getSubConceptAssignment_0() { return cSubConceptAssignment_0; }
 		
 		//[Concept|Reference]
-		public CrossReference getSubConceptConceptCrossReference_3_0() { return cSubConceptConceptCrossReference_3_0; }
+		public CrossReference getSubConceptConceptCrossReference_0_0() { return cSubConceptConceptCrossReference_0_0; }
 		
 		//Reference
-		public RuleCall getSubConceptConceptReferenceParserRuleCall_3_0_1() { return cSubConceptConceptReferenceParserRuleCall_3_0_1; }
+		public RuleCall getSubConceptConceptReferenceParserRuleCall_0_0_1() { return cSubConceptConceptReferenceParserRuleCall_0_0_1; }
 		
-		//'superConcept'
-		public Keyword getSuperConceptKeyword_4() { return cSuperConceptKeyword_4; }
+		//CONCEPT_SPECIALIZATION_AXIOM_TOKEN
+		public RuleCall getCONCEPT_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_1() { return cCONCEPT_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_1; }
 		
 		//superConcept=[Concept|Reference]
-		public Assignment getSuperConceptAssignment_5() { return cSuperConceptAssignment_5; }
+		public Assignment getSuperConceptAssignment_2() { return cSuperConceptAssignment_2; }
 		
 		//[Concept|Reference]
-		public CrossReference getSuperConceptConceptCrossReference_5_0() { return cSuperConceptConceptCrossReference_5_0; }
+		public CrossReference getSuperConceptConceptCrossReference_2_0() { return cSuperConceptConceptCrossReference_2_0; }
 		
 		//Reference
-		public RuleCall getSuperConceptConceptReferenceParserRuleCall_5_0_1() { return cSuperConceptConceptReferenceParserRuleCall_5_0_1; }
-		
-		//RCURLY
-		public RuleCall getRCURLYTerminalRuleCall_6() { return cRCURLYTerminalRuleCall_6; }
+		public RuleCall getSuperConceptConceptReferenceParserRuleCall_2_0_1() { return cSuperConceptConceptReferenceParserRuleCall_2_0_1; }
 	}
 	public class ReifiedRelationshipSpecializationAxiomElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.ReifiedRelationshipSpecializationAxiom");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cREIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final RuleCall cLCURLYTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Keyword cSubRelationshipKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cSubRelationshipAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cSubRelationshipReifiedRelationshipCrossReference_3_0 = (CrossReference)cSubRelationshipAssignment_3.eContents().get(0);
-		private final RuleCall cSubRelationshipReifiedRelationshipReferenceParserRuleCall_3_0_1 = (RuleCall)cSubRelationshipReifiedRelationshipCrossReference_3_0.eContents().get(1);
-		private final Keyword cSuperRelationshipKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cSuperRelationshipAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final CrossReference cSuperRelationshipReifiedRelationshipCrossReference_5_0 = (CrossReference)cSuperRelationshipAssignment_5.eContents().get(0);
-		private final RuleCall cSuperRelationshipReifiedRelationshipReferenceParserRuleCall_5_0_1 = (RuleCall)cSuperRelationshipReifiedRelationshipCrossReference_5_0.eContents().get(1);
-		private final RuleCall cRCURLYTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
+		private final Assignment cSubRelationshipAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cSubRelationshipReifiedRelationshipCrossReference_0_0 = (CrossReference)cSubRelationshipAssignment_0.eContents().get(0);
+		private final RuleCall cSubRelationshipReifiedRelationshipReferenceParserRuleCall_0_0_1 = (RuleCall)cSubRelationshipReifiedRelationshipCrossReference_0_0.eContents().get(1);
+		private final RuleCall cREIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cSuperRelationshipAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cSuperRelationshipReifiedRelationshipCrossReference_2_0 = (CrossReference)cSuperRelationshipAssignment_2.eContents().get(0);
+		private final RuleCall cSuperRelationshipReifiedRelationshipReferenceParserRuleCall_2_0_1 = (RuleCall)cSuperRelationshipReifiedRelationshipCrossReference_2_0.eContents().get(1);
 		
 		//ReifiedRelationshipSpecializationAxiom:
-		//	REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN
-		//	LCURLY
-		//	'subRelationship' subRelationship=[ReifiedRelationship|Reference]
-		//	'superRelationship' superRelationship=[ReifiedRelationship|Reference] RCURLY;
+		//	subRelationship=[ReifiedRelationship|Reference] REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN
+		//	superRelationship=[ReifiedRelationship|Reference];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN LCURLY 'subRelationship' subRelationship=[ReifiedRelationship|Reference]
-		//'superRelationship' superRelationship=[ReifiedRelationship|Reference] RCURLY
+		//subRelationship=[ReifiedRelationship|Reference] REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN
+		//superRelationship=[ReifiedRelationship|Reference]
 		public Group getGroup() { return cGroup; }
 		
-		//REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN
-		public RuleCall getREIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_0() { return cREIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_0; }
-		
-		//LCURLY
-		public RuleCall getLCURLYTerminalRuleCall_1() { return cLCURLYTerminalRuleCall_1; }
-		
-		//'subRelationship'
-		public Keyword getSubRelationshipKeyword_2() { return cSubRelationshipKeyword_2; }
-		
 		//subRelationship=[ReifiedRelationship|Reference]
-		public Assignment getSubRelationshipAssignment_3() { return cSubRelationshipAssignment_3; }
+		public Assignment getSubRelationshipAssignment_0() { return cSubRelationshipAssignment_0; }
 		
 		//[ReifiedRelationship|Reference]
-		public CrossReference getSubRelationshipReifiedRelationshipCrossReference_3_0() { return cSubRelationshipReifiedRelationshipCrossReference_3_0; }
+		public CrossReference getSubRelationshipReifiedRelationshipCrossReference_0_0() { return cSubRelationshipReifiedRelationshipCrossReference_0_0; }
 		
 		//Reference
-		public RuleCall getSubRelationshipReifiedRelationshipReferenceParserRuleCall_3_0_1() { return cSubRelationshipReifiedRelationshipReferenceParserRuleCall_3_0_1; }
+		public RuleCall getSubRelationshipReifiedRelationshipReferenceParserRuleCall_0_0_1() { return cSubRelationshipReifiedRelationshipReferenceParserRuleCall_0_0_1; }
 		
-		//'superRelationship'
-		public Keyword getSuperRelationshipKeyword_4() { return cSuperRelationshipKeyword_4; }
+		//REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN
+		public RuleCall getREIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_1() { return cREIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKENTerminalRuleCall_1; }
 		
 		//superRelationship=[ReifiedRelationship|Reference]
-		public Assignment getSuperRelationshipAssignment_5() { return cSuperRelationshipAssignment_5; }
+		public Assignment getSuperRelationshipAssignment_2() { return cSuperRelationshipAssignment_2; }
 		
 		//[ReifiedRelationship|Reference]
-		public CrossReference getSuperRelationshipReifiedRelationshipCrossReference_5_0() { return cSuperRelationshipReifiedRelationshipCrossReference_5_0; }
+		public CrossReference getSuperRelationshipReifiedRelationshipCrossReference_2_0() { return cSuperRelationshipReifiedRelationshipCrossReference_2_0; }
 		
 		//Reference
-		public RuleCall getSuperRelationshipReifiedRelationshipReferenceParserRuleCall_5_0_1() { return cSuperRelationshipReifiedRelationshipReferenceParserRuleCall_5_0_1; }
-		
-		//RCURLY
-		public RuleCall getRCURLYTerminalRuleCall_6() { return cRCURLYTerminalRuleCall_6; }
+		public RuleCall getSuperRelationshipReifiedRelationshipReferenceParserRuleCall_2_0_1() { return cSuperRelationshipReifiedRelationshipReferenceParserRuleCall_2_0_1; }
 	}
 	public class EntityScalarDataPropertyExistentialRestrictionAxiomElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "jpl.imce.oml.specification.OntologicalModelingLanguage.EntityScalarDataPropertyExistentialRestrictionAxiom");
@@ -4834,10 +4796,7 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 	}
 	
 	//ConceptSpecializationAxiom:
-	//	CONCEPT_SPECIALIZATION_AXIOM_TOKEN
-	//	LCURLY
-	//	'subConcept' subConcept=[Concept|Reference]
-	//	'superConcept' superConcept=[Concept|Reference] RCURLY;
+	//	subConcept=[Concept|Reference] CONCEPT_SPECIALIZATION_AXIOM_TOKEN superConcept=[Concept|Reference];
 	public ConceptSpecializationAxiomElements getConceptSpecializationAxiomAccess() {
 		return pConceptSpecializationAxiom;
 	}
@@ -4847,10 +4806,8 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 	}
 	
 	//ReifiedRelationshipSpecializationAxiom:
-	//	REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN
-	//	LCURLY
-	//	'subRelationship' subRelationship=[ReifiedRelationship|Reference]
-	//	'superRelationship' superRelationship=[ReifiedRelationship|Reference] RCURLY;
+	//	subRelationship=[ReifiedRelationship|Reference] REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN
+	//	superRelationship=[ReifiedRelationship|Reference];
 	public ReifiedRelationshipSpecializationAxiomElements getReifiedRelationshipSpecializationAxiomAccess() {
 		return pReifiedRelationshipSpecializationAxiom;
 	}
@@ -5446,7 +5403,7 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 	}
 	
 	//terminal CONCEPT_SPECIALIZATION_AXIOM_TOKEN:
-	//	'conceptSpecializationAxiom';
+	//	'extendsConcept';
 	public TerminalRule getCONCEPT_SPECIALIZATION_AXIOM_TOKENRule() {
 		return tCONCEPT_SPECIALIZATION_AXIOM_TOKEN;
 	}
@@ -5458,7 +5415,7 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 	}
 	
 	//terminal REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN:
-	//	'reifiedRelationshipSpecializationAxiom';
+	//	'extendsRelationship';
 	public TerminalRule getREIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKENRule() {
 		return tREIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM_TOKEN;
 	}

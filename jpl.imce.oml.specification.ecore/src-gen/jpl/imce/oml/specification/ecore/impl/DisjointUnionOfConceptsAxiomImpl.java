@@ -70,7 +70,7 @@ public abstract class DisjointUnionOfConceptsAxiomImpl extends TerminologyBundle
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.Literals.DISJOINT_UNION_OF_CONCEPTS_AXIOM;
+		return OMLPackage.eINSTANCE.getDisjointUnionOfConceptsAxiom();
 	}
 
 	/**

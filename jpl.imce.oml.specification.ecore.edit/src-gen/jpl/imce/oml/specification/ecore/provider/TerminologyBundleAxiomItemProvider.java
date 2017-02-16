@@ -77,7 +77,7 @@ public class TerminologyBundleAxiomItemProvider extends TerminologyAxiomItemProv
 				 getResourceLocator(),
 				 getString("_UI_TerminologyBundleAxiom_terminologyBundle_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TerminologyBundleAxiom_terminologyBundle_feature", "_UI_TerminologyBundleAxiom_type"),
-				 OMLPackage.Literals.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE,
+				 OMLPackage.eINSTANCE.getTerminologyBundleAxiom_TerminologyBundle(),
 				 true,
 				 false,
 				 true,
