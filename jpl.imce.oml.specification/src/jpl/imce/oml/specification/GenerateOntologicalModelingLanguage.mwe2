@@ -17,12 +17,23 @@
  */
 module jpl.imce.GenerateOntologicalModelingLanguage
 
+import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.xtext.generator.*
 import org.eclipse.xtext.xtext.generator.model.project.*
 
 var rootPath = ".."
 
 Workflow {
+	
+	bean = StandaloneSetup {
+		scanClassPath  = true
+		registerEcoreFile = "platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore"
+		registerGenModelFile = "platform:/resource/org.eclipse.emf.ecore/model/Ecore.genmodel"
+		registerEcoreFile = "platform:/resource/org.eclipse.emf.ecore/model/XMLNamespace.ecore"
+		registerGenModelFile = "platform:/resource/org.eclipse.emf.ecore/model/XMLNamespace.genmodel"
+		registerEcoreFile = "platform:/resource/org.eclipse.emf.ecore/model/XMLType.ecore"
+		registerGenModelFile = "platform:/resource/org.eclipse.emf.ecore/model/XMLType.genmodel"
+	}
 	
 	component = XtextGenerator {
 		configuration = {
@@ -56,6 +67,8 @@ Workflow {
 			fileExtensions = "oml"
 			referencedResource = "platform:/resource/jpl.imce.oml.specification.ecore/model/OMLSpecification.xcore"
 				
+			grammarUri = "platform:/resource/jpl.imce.oml.specification/src/jpl/imce/oml/specification/OntologicalModelingLanguage.xtext"
+			
 			//fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}
 
 			//fragment = org.eclipse.xtext.generator.adapter.FragmentAdapter {
