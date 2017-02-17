@@ -38,18 +38,22 @@ import org.eclipse.xtext.scoping.IScopeProvider;
  */
 @SuppressWarnings("all")
 public class OntologicalModelingLanguageRuntimeModule extends AbstractOntologicalModelingLanguageRuntimeModule {
+  @Override
   public Class<? extends ILinkingService> bindILinkingService() {
     return OWLLinkingService.class;
   }
   
+  @Override
   public Class<? extends IScopeProvider> bindIScopeProvider() {
     return OMLImportedNamespaceAwareLocalScopeProvider.class;
   }
   
+  @Override
   public Class<? extends IValueConverterService> bindIValueConverterService() {
     return OMLValueConverterService.class;
   }
   
+  @Override
   public Class<? extends IQualifiedNameProvider> bindIQualifiedNameProvider() {
     return OMLQualifiedNameProvider.class;
   }
@@ -58,10 +62,12 @@ public class OntologicalModelingLanguageRuntimeModule extends AbstractOntologica
     return OMLQualifiedNameConverter.class;
   }
   
+  @Override
   public Class<? extends IGrammarAccess> bindIGrammarAccess() {
     return OntologicalModelingLanguageGrammarAccess.class;
   }
   
+  @Override
   public Class<? extends IFormatter2> bindIFormatter2() {
     return OntologicalModelingLanguageFormatter.class;
   }

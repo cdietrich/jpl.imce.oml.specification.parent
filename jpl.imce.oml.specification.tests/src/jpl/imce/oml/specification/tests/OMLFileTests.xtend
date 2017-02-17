@@ -68,28 +68,29 @@ class OMLFileTests extends XtextTest {
 		testFile("ModuleTests/base.oml")
 	}
 	
-	@Test 
-	def void indent1() {
-		assertFormatted[
-			preferences[
-				put(FormatterPreferenceKeys.indentation, " ")
-			]
-			expectation = '''
-				open terminology <http://imce.jpl.nasa.gov/foundation/base/base> {
-				 aspect IdentifiedElement
-				}
-			'''
-			toBeFormatted = '''
-				 open 
-				 
-				  terminology 
-				  
-				    <http://imce.jpl.nasa.gov/foundation/base/base>       {
-					
-					    aspect 
-					  IdentifiedElement
-				}
-			'''
-		]
-	}
+//	@Test 
+//	def void indent1() {
+//		assertFormatted[
+//			preferences[
+//				put(FormatterPreferenceKeys.indentation, "\t")
+//				put(FormatterPreferenceKeys.tabWidth, 2)
+//			]
+//			expectation = '''
+//				open terminology <http://imce.jpl.nasa.gov/foundation/base/base> {
+//				 aspect IdentifiedElement
+//				}
+//			'''
+//			toBeFormatted = '''
+//				 open 
+//				 
+//				  terminology 
+//				  
+//				    <http://imce.jpl.nasa.gov/foundation/base/base>       {
+//					
+//					    aspect 
+//					  IdentifiedElement
+//				}
+//			'''
+//		]
+//	}
 }
