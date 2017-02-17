@@ -1,13 +1,14 @@
-BuilderConfiguration.is_project_specific=true
-ValidatorConfiguration.is_project_specific=true
-eclipse.preferences.version=1
-generateGeneratedAnnotation=false
+#Thu Feb 16 13:50:44 PST 2017
 generateSuppressWarnings=true
-includeDateInGenerated=false
-outlet.DEFAULT_OUTPUT.hideLocalSyntheticVariables=true
-outlet.DEFAULT_OUTPUT.installDslAsPrimarySource=false
-outlet.DEFAULT_OUTPUT.sourceFolder.src-gen.directory=build/xcore/main
-outlet.DEFAULT_OUTPUT.sourceFolder.src.directory=build/xcore/main
-outlet.DEFAULT_OUTPUT.userOutputPerSourceFolder=true
-targetJavaVersion=JAVA8
+BuilderConfiguration.is_project_specific=true
+targetJavaVersion=Java8
 useJavaCompilerCompliance=false
+outlet.DEFAULT_OUTPUT.installDslAsPrimarySource=false
+outlet.DEFAULT_OUTPUT.userOutputPerSourceFolder=true
+outlet.DEFAULT_OUTPUT.sourceFolder.src-gen.directory=build/xcore/main
+outlet.DEFAULT_OUTPUT.hideLocalSyntheticVariables=true
+eclipse.preferences.version=1
+includeDateInGenerated=false
+generateGeneratedAnnotation=false
+outlet.DEFAULT_OUTPUT.sourceFolder.src.directory=build/xcore/main
+ValidatorConfiguration.is_project_specific=true

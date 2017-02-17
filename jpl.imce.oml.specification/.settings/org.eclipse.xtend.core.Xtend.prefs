@@ -1,7 +1,7 @@
-#Sun Jan 22 15:19:38 PST 2017
+#Thu Feb 16 13:50:44 PST 2017
 generateSuppressWarnings=true
 BuilderConfiguration.is_project_specific=true
-targetJavaVersion=Java6
+targetJavaVersion=Java8
 useJavaCompilerCompliance=false
 outlet.DEFAULT_OUTPUT.installDslAsPrimarySource=false
 outlet.DEFAULT_OUTPUT.userOutputPerSourceFolder=true

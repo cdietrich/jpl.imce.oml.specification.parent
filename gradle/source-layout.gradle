@@ -6,7 +6,7 @@ if (name.endsWith(".tests")) {
 		}
 		test {
 			java.srcDirs = ['src', 'src-gen']
-			resources.srcDirs = ['src', 'src-gen']
+			resources.srcDirs = ['resources', 'src', 'src-gen']
 			xtendOutputDir = 'xtend-gen'
 		}
 		all {

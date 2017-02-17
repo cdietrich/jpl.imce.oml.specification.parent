@@ -49,16 +49,18 @@ public class OMLLoadTest extends OMLUtilities {
       System.exit(1);
     }
     final String xcoreFile = "/model/OMLSpecification.xcore";
-    final Procedure1<Map<URI, URI>> _function = (Map<URI, URI> uriMap) -> {
-      try {
-        URI _createURI = URI.createURI(("platform:/resource/jpl.imce.oml.specification.ecore" + xcoreFile));
-        URL _resource = OMLPackage.class.getResource(xcoreFile);
-        java.net.URI _uRI = _resource.toURI();
-        String _string = _uRI.toString();
-        URI _createURI_1 = URI.createURI(_string);
-        uriMap.put(_createURI, _createURI_1);
-      } catch (Throwable _e) {
-        throw Exceptions.sneakyThrow(_e);
+    final Procedure1<Map<URI, URI>> _function = new Procedure1<Map<URI, URI>>() {
+      public void apply(final Map<URI, URI> uriMap) {
+        try {
+          URI _createURI = URI.createURI(("platform:/resource/jpl.imce.oml.specification.ecore" + xcoreFile));
+          URL _resource = OMLPackage.class.getResource(xcoreFile);
+          java.net.URI _uRI = _resource.toURI();
+          String _string = _uRI.toString();
+          URI _createURI_1 = URI.createURI(_string);
+          uriMap.put(_createURI, _createURI_1);
+        } catch (Throwable _e) {
+          throw Exceptions.sneakyThrow(_e);
+        }
       }
     };
     final XtextResourceSet set = OMLUtilities.createXcoreResourceSet(_function);
@@ -74,13 +76,15 @@ public class OMLLoadTest extends OMLUtilities {
       String _plus = (Integer.valueOf(_size) + " errors in resource!");
       System.err.println(_plus);
       EList<Resource.Diagnostic> _errors_2 = sourceResource.getErrors();
-      final Consumer<Resource.Diagnostic> _function_1 = (Resource.Diagnostic e) -> {
-        Class<? extends Resource.Diagnostic> _class = e.getClass();
-        String _name = _class.getName();
-        String _plus_1 = (_name + " => ");
-        String _message = e.getMessage();
-        String _plus_2 = (_plus_1 + _message);
-        System.err.println(_plus_2);
+      final Consumer<Resource.Diagnostic> _function_1 = new Consumer<Resource.Diagnostic>() {
+        public void accept(final Resource.Diagnostic e) {
+          Class<? extends Resource.Diagnostic> _class = e.getClass();
+          String _name = _class.getName();
+          String _plus = (_name + " => ");
+          String _message = e.getMessage();
+          String _plus_1 = (_plus + _message);
+          System.err.println(_plus_1);
+        }
       };
       _errors_2.forEach(_function_1);
     }
@@ -89,15 +93,19 @@ public class OMLLoadTest extends OMLUtilities {
     final EPackage ePackage = ((EPackage[])Conversions.unwrapArray(_filter, EPackage.class))[0];
     EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
     Iterable<EClass> _filter_1 = Iterables.<EClass>filter(_eClassifiers, EClass.class);
-    final Function1<EClass, Boolean> _function_2 = (EClass it) -> {
-      String _name = it.getName();
-      return Boolean.valueOf(Objects.equal(_name, "Concept"));
+    final Function1<EClass, Boolean> _function_2 = new Function1<EClass, Boolean>() {
+      public Boolean apply(final EClass it) {
+        String _name = it.getName();
+        return Boolean.valueOf(Objects.equal(_name, "Concept"));
+      }
     };
     EClass _findFirst = IterableExtensions.<EClass>findFirst(_filter_1, _function_2);
     EList<EStructuralFeature> _eStructuralFeatures = _findFirst.getEStructuralFeatures();
-    final Function1<EStructuralFeature, Boolean> _function_3 = (EStructuralFeature it) -> {
-      String _name = it.getName();
-      return Boolean.valueOf(Objects.equal(_name, "isAbstract"));
+    final Function1<EStructuralFeature, Boolean> _function_3 = new Function1<EStructuralFeature, Boolean>() {
+      public Boolean apply(final EStructuralFeature it) {
+        String _name = it.getName();
+        return Boolean.valueOf(Objects.equal(_name, "isAbstract"));
+      }
     };
     EStructuralFeature _findFirst_1 = IterableExtensions.<EStructuralFeature>findFirst(_eStructuralFeatures, _function_3);
     EClassifier _eType = _findFirst_1.getEType();

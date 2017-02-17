@@ -22,7 +22,6 @@ import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor;
 public class OntologicalModelingLanguageWebSetup extends OntologicalModelingLanguageStandaloneSetup {
   private final Provider<ExecutorService> executorServiceProvider;
   
-  @Override
   public Injector createInjector() {
     final OntologicalModelingLanguageRuntimeModule runtimeModule = new OntologicalModelingLanguageRuntimeModule();
     final OntologicalModelingLanguageWebModule webModule = new OntologicalModelingLanguageWebModule(this.executorServiceProvider);

@@ -41,29 +41,37 @@ public class OMLExtensions {
   
   public void phasedResolveAll(final TerminologyExtent it) {
     EList<TerminologyGraph> _terminologyGraphs = it.getTerminologyGraphs();
-    final Consumer<TerminologyGraph> _function = (TerminologyGraph it_1) -> {
-      EList<TerminologyBoxAxiom> _terminologyBoxAxioms = it_1.getTerminologyBoxAxioms();
-      final Consumer<TerminologyBoxAxiom> _function_1 = (TerminologyBoxAxiom it_2) -> {
-        boolean _matched = false;
-        if (it_2 instanceof TerminologyExtensionAxiom) {
-          _matched=true;
-          EcoreUtil.resolveAll(it_2);
-        }
-      };
-      _terminologyBoxAxioms.forEach(_function_1);
+    final Consumer<TerminologyGraph> _function = new Consumer<TerminologyGraph>() {
+      public void accept(final TerminologyGraph it) {
+        EList<TerminologyBoxAxiom> _terminologyBoxAxioms = it.getTerminologyBoxAxioms();
+        final Consumer<TerminologyBoxAxiom> _function = new Consumer<TerminologyBoxAxiom>() {
+          public void accept(final TerminologyBoxAxiom it) {
+            boolean _matched = false;
+            if (it instanceof TerminologyExtensionAxiom) {
+              _matched=true;
+              EcoreUtil.resolveAll(it);
+            }
+          }
+        };
+        _terminologyBoxAxioms.forEach(_function);
+      }
     };
     _terminologyGraphs.forEach(_function);
     EList<TerminologyGraph> _terminologyGraphs_1 = it.getTerminologyGraphs();
-    final Consumer<TerminologyGraph> _function_1 = (TerminologyGraph it_1) -> {
-      EList<TerminologyBoxAxiom> _terminologyBoxAxioms = it_1.getTerminologyBoxAxioms();
-      final Consumer<TerminologyBoxAxiom> _function_2 = (TerminologyBoxAxiom it_2) -> {
-        boolean _matched = false;
-        if (it_2 instanceof SpecializationAxiom) {
-          _matched=true;
-          EcoreUtil.resolveAll(it_2);
-        }
-      };
-      _terminologyBoxAxioms.forEach(_function_2);
+    final Consumer<TerminologyGraph> _function_1 = new Consumer<TerminologyGraph>() {
+      public void accept(final TerminologyGraph it) {
+        EList<TerminologyBoxAxiom> _terminologyBoxAxioms = it.getTerminologyBoxAxioms();
+        final Consumer<TerminologyBoxAxiom> _function = new Consumer<TerminologyBoxAxiom>() {
+          public void accept(final TerminologyBoxAxiom it) {
+            boolean _matched = false;
+            if (it instanceof SpecializationAxiom) {
+              _matched=true;
+              EcoreUtil.resolveAll(it);
+            }
+          }
+        };
+        _terminologyBoxAxioms.forEach(_function);
+      }
     };
     _terminologyGraphs_1.forEach(_function_1);
   }
@@ -84,8 +92,10 @@ public class OMLExtensions {
       final TerminologyBox tbox = IterableExtensions.<TerminologyBox>head(queue);
       queue.remove(tbox);
       EList<TerminologyBoxAxiom> _terminologyBoxAxioms = tbox.getTerminologyBoxAxioms();
-      final Function1<TerminologyBoxAxiom, TerminologyBox> _function = (TerminologyBoxAxiom it) -> {
-        return it.target();
+      final Function1<TerminologyBoxAxiom, TerminologyBox> _function = new Function1<TerminologyBoxAxiom, TerminologyBox>() {
+        public TerminologyBox apply(final TerminologyBoxAxiom it) {
+          return it.target();
+        }
       };
       final List<TerminologyBox> inc = ListExtensions.<TerminologyBoxAxiom, TerminologyBox>map(_terminologyBoxAxioms, _function);
       queue.addAll(inc);
@@ -103,8 +113,10 @@ public class OMLExtensions {
   public Iterable<Entity> allEntities(final TerminologyBox it) {
     Iterable<Entity> _localEntities = this.localEntities(it);
     Iterable<TerminologyBox> _allImportedTerminologies = this.allImportedTerminologies(it);
-    final Function1<TerminologyBox, Iterable<Entity>> _function = (TerminologyBox it_1) -> {
-      return this.localEntities(it_1);
+    final Function1<TerminologyBox, Iterable<Entity>> _function = new Function1<TerminologyBox, Iterable<Entity>>() {
+      public Iterable<Entity> apply(final TerminologyBox it) {
+        return OMLExtensions.this.localEntities(it);
+      }
     };
     Iterable<Iterable<Entity>> _map = IterableExtensions.<TerminologyBox, Iterable<Entity>>map(_allImportedTerminologies, _function);
     Iterable<Entity> _flatten = Iterables.<Entity>concat(_map);
@@ -119,8 +131,10 @@ public class OMLExtensions {
   public Iterable<Aspect> allAspects(final TerminologyBox it) {
     Iterable<Aspect> _localAspects = this.localAspects(it);
     Iterable<TerminologyBox> _allImportedTerminologies = this.allImportedTerminologies(it);
-    final Function1<TerminologyBox, Iterable<Aspect>> _function = (TerminologyBox it_1) -> {
-      return this.localAspects(it_1);
+    final Function1<TerminologyBox, Iterable<Aspect>> _function = new Function1<TerminologyBox, Iterable<Aspect>>() {
+      public Iterable<Aspect> apply(final TerminologyBox it) {
+        return OMLExtensions.this.localAspects(it);
+      }
     };
     Iterable<Iterable<Aspect>> _map = IterableExtensions.<TerminologyBox, Iterable<Aspect>>map(_allImportedTerminologies, _function);
     Iterable<Aspect> _flatten = Iterables.<Aspect>concat(_map);
@@ -135,8 +149,10 @@ public class OMLExtensions {
   public Iterable<Concept> allConcepts(final TerminologyBox it) {
     Iterable<Concept> _localConcepts = this.localConcepts(it);
     Iterable<TerminologyBox> _allImportedTerminologies = this.allImportedTerminologies(it);
-    final Function1<TerminologyBox, Iterable<Concept>> _function = (TerminologyBox it_1) -> {
-      return this.localConcepts(it_1);
+    final Function1<TerminologyBox, Iterable<Concept>> _function = new Function1<TerminologyBox, Iterable<Concept>>() {
+      public Iterable<Concept> apply(final TerminologyBox it) {
+        return OMLExtensions.this.localConcepts(it);
+      }
     };
     Iterable<Iterable<Concept>> _map = IterableExtensions.<TerminologyBox, Iterable<Concept>>map(_allImportedTerminologies, _function);
     Iterable<Concept> _flatten = Iterables.<Concept>concat(_map);
@@ -151,8 +167,10 @@ public class OMLExtensions {
   public Iterable<ReifiedRelationship> allReifiedRelationships(final TerminologyBox it) {
     Iterable<ReifiedRelationship> _localReifiedRelationships = this.localReifiedRelationships(it);
     Iterable<TerminologyBox> _allImportedTerminologies = this.allImportedTerminologies(it);
-    final Function1<TerminologyBox, Iterable<ReifiedRelationship>> _function = (TerminologyBox it_1) -> {
-      return this.localReifiedRelationships(it_1);
+    final Function1<TerminologyBox, Iterable<ReifiedRelationship>> _function = new Function1<TerminologyBox, Iterable<ReifiedRelationship>>() {
+      public Iterable<ReifiedRelationship> apply(final TerminologyBox it) {
+        return OMLExtensions.this.localReifiedRelationships(it);
+      }
     };
     Iterable<Iterable<ReifiedRelationship>> _map = IterableExtensions.<TerminologyBox, Iterable<ReifiedRelationship>>map(_allImportedTerminologies, _function);
     Iterable<ReifiedRelationship> _flatten = Iterables.<ReifiedRelationship>concat(_map);

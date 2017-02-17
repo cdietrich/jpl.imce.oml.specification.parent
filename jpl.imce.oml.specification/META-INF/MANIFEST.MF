@@ -23,5 +23,6 @@ Export-Package: jpl.imce.oml.specification,
  jpl.imce.oml.specification.generator,
  jpl.imce.oml.specification.validation,
  jpl.imce.oml.specification.parser.antlr,
- jpl.imce.oml.specification.serializer
+ jpl.imce.oml.specification.serializer,
+ jpl.imce.oml.specification.formatting2
 Import-Package: org.apache.log4j

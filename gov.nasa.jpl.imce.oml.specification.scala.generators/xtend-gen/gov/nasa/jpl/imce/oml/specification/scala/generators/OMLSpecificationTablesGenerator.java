@@ -66,22 +66,24 @@ public class OMLSpecificationTablesGenerator extends OMLUtilities {
   public void generate(final String targetDir) {
     final String omlXcore = "/model/OMLSpecification.xcore";
     final String oml2otiXcore = "/model/OMLProvenanceOTI.xcore";
-    final Procedure1<Map<URI, URI>> _function = (Map<URI, URI> uriMap) -> {
-      try {
-        URI _createURI = URI.createURI(("platform:/resource/jpl.imce.oml.specification.ecore" + omlXcore));
-        URL _resource = OMLPackage.class.getResource(omlXcore);
-        java.net.URI _uRI = _resource.toURI();
-        String _string = _uRI.toString();
-        URI _createURI_1 = URI.createURI(_string);
-        uriMap.put(_createURI, _createURI_1);
-        URI _createURI_2 = URI.createURI(("platform:/resource/jpl.imce.oml.specification.ecore" + oml2otiXcore));
-        URL _resource_1 = OMLPackage.class.getResource(oml2otiXcore);
-        java.net.URI _uRI_1 = _resource_1.toURI();
-        String _string_1 = _uRI_1.toString();
-        URI _createURI_3 = URI.createURI(_string_1);
-        uriMap.put(_createURI_2, _createURI_3);
-      } catch (Throwable _e) {
-        throw Exceptions.sneakyThrow(_e);
+    final Procedure1<Map<URI, URI>> _function = new Procedure1<Map<URI, URI>>() {
+      public void apply(final Map<URI, URI> uriMap) {
+        try {
+          URI _createURI = URI.createURI(("platform:/resource/jpl.imce.oml.specification.ecore" + omlXcore));
+          URL _resource = OMLPackage.class.getResource(omlXcore);
+          java.net.URI _uRI = _resource.toURI();
+          String _string = _uRI.toString();
+          URI _createURI_1 = URI.createURI(_string);
+          uriMap.put(_createURI, _createURI_1);
+          URI _createURI_2 = URI.createURI(("platform:/resource/jpl.imce.oml.specification.ecore" + oml2otiXcore));
+          URL _resource_1 = OMLPackage.class.getResource(oml2otiXcore);
+          java.net.URI _uRI_1 = _resource_1.toURI();
+          String _string_1 = _uRI_1.toString();
+          URI _createURI_3 = URI.createURI(_string_1);
+          uriMap.put(_createURI_2, _createURI_3);
+        } catch (Throwable _e) {
+          throw Exceptions.sneakyThrow(_e);
+        }
       }
     };
     final XtextResourceSet set = OMLUtilities.createXcoreResourceSet(_function);
@@ -143,8 +145,10 @@ public class OMLSpecificationTablesGenerator extends OMLUtilities {
       tablesFile.write(_bytes_1);
       EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
       Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
-      final Function1<EClass, Boolean> _function = (EClass it) -> {
-        return OMLUtilities.isFunctionalAPI(it);
+      final Function1<EClass, Boolean> _function = new Function1<EClass, Boolean>() {
+        public Boolean apply(final EClass it) {
+          return OMLUtilities.isFunctionalAPI(it);
+        }
       };
       Iterable<EClass> _filter_1 = IterableExtensions.<EClass>filter(_filter, _function);
       for (final EClass eClass : _filter_1) {
@@ -215,8 +219,10 @@ public class OMLSpecificationTablesGenerator extends OMLUtilities {
         {
           EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
           Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
-          final Function1<EClass, Boolean> _function = (EClass it) -> {
-            return Boolean.valueOf((((OMLUtilities.isFunctionalAPI(it)).booleanValue() && (!it.isInterface())) && (!(OMLUtilities.isValueTable(it)).booleanValue())));
+          final Function1<EClass, Boolean> _function = new Function1<EClass, Boolean>() {
+            public Boolean apply(final EClass it) {
+              return Boolean.valueOf((((OMLUtilities.isFunctionalAPI(it)).booleanValue() && (!it.isInterface())) && (!(OMLUtilities.isValueTable(it)).booleanValue())));
+            }
           };
           Iterable<EClass> _filter_1 = IterableExtensions.<EClass>filter(_filter, _function);
           OMLUtilities.OMLTableCompare _oMLTableCompare = new OMLUtilities.OMLTableCompare();
@@ -244,8 +250,10 @@ public class OMLSpecificationTablesGenerator extends OMLUtilities {
         {
           EList<EClassifier> _eClassifiers_1 = ePackage.getEClassifiers();
           Iterable<EClass> _filter_2 = Iterables.<EClass>filter(_eClassifiers_1, EClass.class);
-          final Function1<EClass, Boolean> _function_1 = (EClass it) -> {
-            return Boolean.valueOf((((OMLUtilities.isFunctionalAPI(it)).booleanValue() && (!it.isInterface())) && (!(OMLUtilities.isValueTable(it)).booleanValue())));
+          final Function1<EClass, Boolean> _function_1 = new Function1<EClass, Boolean>() {
+            public Boolean apply(final EClass it) {
+              return Boolean.valueOf((((OMLUtilities.isFunctionalAPI(it)).booleanValue() && (!it.isInterface())) && (!(OMLUtilities.isValueTable(it)).booleanValue())));
+            }
           };
           Iterable<EClass> _filter_3 = IterableExtensions.<EClass>filter(_filter_2, _function_1);
           OMLUtilities.OMLTableCompare _oMLTableCompare_1 = new OMLUtilities.OMLTableCompare();
@@ -274,8 +282,10 @@ public class OMLSpecificationTablesGenerator extends OMLUtilities {
     {
       EList<EClassifier> _eClassifiers_2 = ePackage.getEClassifiers();
       Iterable<EClass> _filter_4 = Iterables.<EClass>filter(_eClassifiers_2, EClass.class);
-      final Function1<EClass, Boolean> _function_2 = (EClass it) -> {
-        return Boolean.valueOf((((OMLUtilities.isFunctionalAPI(it)).booleanValue() && (!it.isInterface())) && (!(OMLUtilities.isValueTable(it)).booleanValue())));
+      final Function1<EClass, Boolean> _function_2 = new Function1<EClass, Boolean>() {
+        public Boolean apply(final EClass it) {
+          return Boolean.valueOf((((OMLUtilities.isFunctionalAPI(it)).booleanValue() && (!it.isInterface())) && (!(OMLUtilities.isValueTable(it)).booleanValue())));
+        }
       };
       Iterable<EClass> _filter_5 = IterableExtensions.<EClass>filter(_filter_4, _function_2);
       OMLUtilities.OMLTableCompare _oMLTableCompare_2 = new OMLUtilities.OMLTableCompare();
@@ -299,8 +309,10 @@ public class OMLSpecificationTablesGenerator extends OMLUtilities {
         {
           EList<EClassifier> _eClassifiers_3 = ePackage.getEClassifiers();
           Iterable<EClass> _filter_6 = Iterables.<EClass>filter(_eClassifiers_3, EClass.class);
-          final Function1<EClass, Boolean> _function_3 = (EClass it) -> {
-            return Boolean.valueOf((((OMLUtilities.isFunctionalAPI(it)).booleanValue() && (!it.isInterface())) && (!(OMLUtilities.isValueTable(it)).booleanValue())));
+          final Function1<EClass, Boolean> _function_3 = new Function1<EClass, Boolean>() {
+            public Boolean apply(final EClass it) {
+              return Boolean.valueOf((((OMLUtilities.isFunctionalAPI(it)).booleanValue() && (!it.isInterface())) && (!(OMLUtilities.isValueTable(it)).booleanValue())));
+            }
           };
           Iterable<EClass> _filter_7 = IterableExtensions.<EClass>filter(_filter_6, _function_3);
           OMLUtilities.OMLTableCompare _oMLTableCompare_3 = new OMLUtilities.OMLTableCompare();
@@ -327,8 +339,10 @@ public class OMLSpecificationTablesGenerator extends OMLUtilities {
         {
           EList<EClassifier> _eClassifiers_4 = ePackage.getEClassifiers();
           Iterable<EClass> _filter_8 = Iterables.<EClass>filter(_eClassifiers_4, EClass.class);
-          final Function1<EClass, Boolean> _function_4 = (EClass it) -> {
-            return Boolean.valueOf((((OMLUtilities.isFunctionalAPI(it)).booleanValue() && (!it.isInterface())) && (!(OMLUtilities.isValueTable(it)).booleanValue())));
+          final Function1<EClass, Boolean> _function_4 = new Function1<EClass, Boolean>() {
+            public Boolean apply(final EClass it) {
+              return Boolean.valueOf((((OMLUtilities.isFunctionalAPI(it)).booleanValue() && (!it.isInterface())) && (!(OMLUtilities.isValueTable(it)).booleanValue())));
+            }
           };
           Iterable<EClass> _filter_9 = IterableExtensions.<EClass>filter(_filter_8, _function_4);
           OMLUtilities.OMLTableCompare _oMLTableCompare_4 = new OMLUtilities.OMLTableCompare();
@@ -462,8 +476,10 @@ public class OMLSpecificationTablesGenerator extends OMLUtilities {
         {
           EList<EClassifier> _eClassifiers_5 = ePackage.getEClassifiers();
           Iterable<EClass> _filter_10 = Iterables.<EClass>filter(_eClassifiers_5, EClass.class);
-          final Function1<EClass, Boolean> _function_5 = (EClass it) -> {
-            return Boolean.valueOf((((OMLUtilities.isFunctionalAPI(it)).booleanValue() && (!it.isInterface())) && (!(OMLUtilities.isValueTable(it)).booleanValue())));
+          final Function1<EClass, Boolean> _function_5 = new Function1<EClass, Boolean>() {
+            public Boolean apply(final EClass it) {
+              return Boolean.valueOf((((OMLUtilities.isFunctionalAPI(it)).booleanValue() && (!it.isInterface())) && (!(OMLUtilities.isValueTable(it)).booleanValue())));
+            }
           };
           Iterable<EClass> _filter_11 = IterableExtensions.<EClass>filter(_filter_10, _function_5);
           OMLUtilities.OMLTableCompare _oMLTableCompare_5 = new OMLUtilities.OMLTableCompare();
@@ -496,8 +512,10 @@ public class OMLSpecificationTablesGenerator extends OMLUtilities {
         {
           EList<EClassifier> _eClassifiers_6 = ePackage.getEClassifiers();
           Iterable<EClass> _filter_12 = Iterables.<EClass>filter(_eClassifiers_6, EClass.class);
-          final Function1<EClass, Boolean> _function_6 = (EClass it) -> {
-            return Boolean.valueOf((((OMLUtilities.isFunctionalAPI(it)).booleanValue() && (!it.isInterface())) && (!(OMLUtilities.isValueTable(it)).booleanValue())));
+          final Function1<EClass, Boolean> _function_6 = new Function1<EClass, Boolean>() {
+            public Boolean apply(final EClass it) {
+              return Boolean.valueOf((((OMLUtilities.isFunctionalAPI(it)).booleanValue() && (!it.isInterface())) && (!(OMLUtilities.isValueTable(it)).booleanValue())));
+            }
           };
           Iterable<EClass> _filter_13 = IterableExtensions.<EClass>filter(_filter_12, _function_6);
           OMLUtilities.OMLTableCompare _oMLTableCompare_6 = new OMLUtilities.OMLTableCompare();
@@ -556,8 +574,10 @@ public class OMLSpecificationTablesGenerator extends OMLUtilities {
     {
       EList<EClassifier> _eClassifiers_7 = ePackage.getEClassifiers();
       Iterable<EClass> _filter_14 = Iterables.<EClass>filter(_eClassifiers_7, EClass.class);
-      final Function1<EClass, Boolean> _function_7 = (EClass it) -> {
-        return Boolean.valueOf((((OMLUtilities.isFunctionalAPI(it)).booleanValue() && (!it.isInterface())) && (!(OMLUtilities.isValueTable(it)).booleanValue())));
+      final Function1<EClass, Boolean> _function_7 = new Function1<EClass, Boolean>() {
+        public Boolean apply(final EClass it) {
+          return Boolean.valueOf((((OMLUtilities.isFunctionalAPI(it)).booleanValue() && (!it.isInterface())) && (!(OMLUtilities.isValueTable(it)).booleanValue())));
+        }
       };
       Iterable<EClass> _filter_15 = IterableExtensions.<EClass>filter(_filter_14, _function_7);
       OMLUtilities.OMLTableCompare _oMLTableCompare_7 = new OMLUtilities.OMLTableCompare();
@@ -683,8 +703,10 @@ public class OMLSpecificationTablesGenerator extends OMLUtilities {
     {
       EList<EClassifier> _eClassifiers_8 = ePackage.getEClassifiers();
       Iterable<EClass> _filter_16 = Iterables.<EClass>filter(_eClassifiers_8, EClass.class);
-      final Function1<EClass, Boolean> _function_8 = (EClass it) -> {
-        return Boolean.valueOf((((OMLUtilities.isFunctionalAPI(it)).booleanValue() && (!it.isInterface())) && (!(OMLUtilities.isValueTable(it)).booleanValue())));
+      final Function1<EClass, Boolean> _function_8 = new Function1<EClass, Boolean>() {
+        public Boolean apply(final EClass it) {
+          return Boolean.valueOf((((OMLUtilities.isFunctionalAPI(it)).booleanValue() && (!it.isInterface())) && (!(OMLUtilities.isValueTable(it)).booleanValue())));
+        }
       };
       Iterable<EClass> _filter_17 = IterableExtensions.<EClass>filter(_filter_16, _function_8);
       OMLUtilities.OMLTableCompare _oMLTableCompare_8 = new OMLUtilities.OMLTableCompare();
@@ -884,8 +906,10 @@ public class OMLSpecificationTablesGenerator extends OMLUtilities {
     try {
       EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
       Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
-      final Function1<EClass, Boolean> _function = (EClass it) -> {
-        return Boolean.valueOf(((OMLUtilities.isFunctionalAPI(it)).booleanValue() && (OMLUtilities.hasOptionalAttributes(it)).booleanValue()));
+      final Function1<EClass, Boolean> _function = new Function1<EClass, Boolean>() {
+        public Boolean apply(final EClass it) {
+          return Boolean.valueOf(((OMLUtilities.isFunctionalAPI(it)).booleanValue() && (OMLUtilities.hasOptionalAttributes(it)).booleanValue()));
+        }
       };
       Iterable<EClass> _filter_1 = IterableExtensions.<EClass>filter(_filter, _function);
       for (final EClass eClass : _filter_1) {
@@ -909,8 +933,10 @@ public class OMLSpecificationTablesGenerator extends OMLUtilities {
     try {
       EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
       Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
-      final Function1<EClass, Boolean> _function = (EClass it) -> {
-        return Boolean.valueOf(((OMLUtilities.isFunctionalAPI(it)).booleanValue() && (OMLUtilities.hasOptionalAttributes(it)).booleanValue()));
+      final Function1<EClass, Boolean> _function = new Function1<EClass, Boolean>() {
+        public Boolean apply(final EClass it) {
+          return Boolean.valueOf(((OMLUtilities.isFunctionalAPI(it)).booleanValue() && (OMLUtilities.hasOptionalAttributes(it)).booleanValue()));
+        }
       };
       Iterable<EClass> _filter_1 = IterableExtensions.<EClass>filter(_filter, _function);
       for (final EClass eClass : _filter_1) {
@@ -961,12 +987,16 @@ public class OMLSpecificationTablesGenerator extends OMLUtilities {
     {
       EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
       Iterable<EDataType> _filter = Iterables.<EDataType>filter(_eClassifiers, EDataType.class);
-      final Function1<EDataType, Boolean> _function = (EDataType t) -> {
-        return Boolean.valueOf((!(t instanceof EEnum)));
+      final Function1<EDataType, Boolean> _function = new Function1<EDataType, Boolean>() {
+        public Boolean apply(final EDataType t) {
+          return Boolean.valueOf((!(t instanceof EEnum)));
+        }
       };
       Iterable<EDataType> _filter_1 = IterableExtensions.<EDataType>filter(_filter, _function);
-      final Function1<EDataType, String> _function_1 = (EDataType it) -> {
-        return it.getName();
+      final Function1<EDataType, String> _function_1 = new Function1<EDataType, String>() {
+        public String apply(final EDataType it) {
+          return it.getName();
+        }
       };
       List<EDataType> _sortBy = IterableExtensions.<EDataType, String>sortBy(_filter_1, _function_1);
       for(final EDataType type : _sortBy) {
@@ -994,12 +1024,16 @@ public class OMLSpecificationTablesGenerator extends OMLUtilities {
     {
       EList<EClassifier> _eClassifiers_1 = ePackage.getEClassifiers();
       Iterable<EClass> _filter_2 = Iterables.<EClass>filter(_eClassifiers_1, EClass.class);
-      final Function1<EClass, Boolean> _function_2 = (EClass it) -> {
-        return OMLUtilities.isFunctionalAPIWithOrderingKeys(it);
+      final Function1<EClass, Boolean> _function_2 = new Function1<EClass, Boolean>() {
+        public Boolean apply(final EClass it) {
+          return OMLUtilities.isFunctionalAPIWithOrderingKeys(it);
+        }
       };
       Iterable<EClass> _filter_3 = IterableExtensions.<EClass>filter(_filter_2, _function_2);
-      final Function1<EClass, String> _function_3 = (EClass it) -> {
-        return it.getName();
+      final Function1<EClass, String> _function_3 = new Function1<EClass, String>() {
+        public String apply(final EClass it) {
+          return it.getName();
+        }
       };
       List<EClass> _sortBy_1 = IterableExtensions.<EClass, String>sortBy(_filter_3, _function_3);
       for(final EClass eClass : _sortBy_1) {
@@ -1183,9 +1217,11 @@ public class OMLSpecificationTablesGenerator extends OMLUtilities {
         _builder.append("  ");
         {
           Iterable<ETypedElement> _functionalAPIOrOrderingKeyAttributes_2 = OMLUtilities.functionalAPIOrOrderingKeyAttributes(eClass);
-          final Function1<ETypedElement, Boolean> _function = (ETypedElement a) -> {
-            int _lowerBound_1 = a.getLowerBound();
-            return Boolean.valueOf((_lowerBound_1 > 0));
+          final Function1<ETypedElement, Boolean> _function = new Function1<ETypedElement, Boolean>() {
+            public Boolean apply(final ETypedElement a) {
+              int _lowerBound = a.getLowerBound();
+              return Boolean.valueOf((_lowerBound > 0));
+            }
           };
           Iterable<ETypedElement> _filter = IterableExtensions.<ETypedElement>filter(_functionalAPIOrOrderingKeyAttributes_2, _function);
           boolean _hasElements_1 = false;
@@ -1243,9 +1279,11 @@ public class OMLSpecificationTablesGenerator extends OMLUtilities {
         _builder.newLine();
         {
           Iterable<ETypedElement> _functionalAPIOrOrderingKeyAttributes_4 = OMLUtilities.functionalAPIOrOrderingKeyAttributes(eClass);
-          final Function1<ETypedElement, Boolean> _function_1 = (ETypedElement a) -> {
-            int _lowerBound_2 = a.getLowerBound();
-            return Boolean.valueOf((_lowerBound_2 == 0));
+          final Function1<ETypedElement, Boolean> _function_1 = new Function1<ETypedElement, Boolean>() {
+            public Boolean apply(final ETypedElement a) {
+              int _lowerBound = a.getLowerBound();
+              return Boolean.valueOf((_lowerBound == 0));
+            }
           };
           Iterable<ETypedElement> _filter_1 = IterableExtensions.<ETypedElement>filter(_functionalAPIOrOrderingKeyAttributes_4, _function_1);
           boolean _hasElements_3 = false;

@@ -1,4 +1,5 @@
 .classpath
 /src-gen/**/.gitignore
+/src-gen/**/*.ecore
 /build/
 /target/

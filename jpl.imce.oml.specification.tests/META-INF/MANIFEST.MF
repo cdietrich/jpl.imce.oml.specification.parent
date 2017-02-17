@@ -4,11 +4,12 @@ Bundle-Name: jpl.imce.oml.specification.tests
 Bundle-Version: 0.3.0
 Bundle-SymbolicName: jpl.imce.oml.specification.tests; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: jpl.imce.oml.specification,
- org.junit,
- org.eclipse.xtext.junit4,
- org.eclipse.xtext.xbase.junit,
- org.eclipse.xtext.xbase.lib
+Require-Bundle: jpl.imce.oml.specification;visibility:=reexport,
+ org.junit;visibility:=reexport,
+ org.eclipse.xtext.junit4;visibility:=reexport,
+ org.eclipse.xtext.xbase.junit;visibility:=reexport,
+ org.eclipse.xtext.xbase.lib;visibility:=reexport,
+ com.itemis.xtext.testing;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: jpl.imce.oml.specification.tests
 Import-Package: org.hamcrest.core,

@@ -12,6 +12,7 @@ dependencies {
 	testCompile project(':jpl.imce.oml.specification')
 	testCompile withEclipseBundle('org.eclipse.xtext.junit4')
 	testCompile withEclipseBundle('org.eclipse.xtext.xbase.junit')
+	testCompile withEclipseBundle('com.itemis.xtext.testing')
 }
 
 configurations {

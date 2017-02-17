@@ -62,16 +62,18 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
   
   public void generate(final String targetDir) {
     final String omlXcore = "/model/OMLSpecification.xcore";
-    final Procedure1<Map<URI, URI>> _function = (Map<URI, URI> uriMap) -> {
-      try {
-        URI _createURI = URI.createURI(("platform:/resource/jpl.imce.oml.specification.ecore" + omlXcore));
-        URL _resource = OMLPackage.class.getResource(omlXcore);
-        java.net.URI _uRI = _resource.toURI();
-        String _string = _uRI.toString();
-        URI _createURI_1 = URI.createURI(_string);
-        uriMap.put(_createURI, _createURI_1);
-      } catch (Throwable _e) {
-        throw Exceptions.sneakyThrow(_e);
+    final Procedure1<Map<URI, URI>> _function = new Procedure1<Map<URI, URI>>() {
+      public void apply(final Map<URI, URI> uriMap) {
+        try {
+          URI _createURI = URI.createURI(("platform:/resource/jpl.imce.oml.specification.ecore" + omlXcore));
+          URL _resource = OMLPackage.class.getResource(omlXcore);
+          java.net.URI _uRI = _resource.toURI();
+          String _string = _uRI.toString();
+          URI _createURI_1 = URI.createURI(_string);
+          uriMap.put(_createURI, _createURI_1);
+        } catch (Throwable _e) {
+          throw Exceptions.sneakyThrow(_e);
+        }
       }
     };
     final XtextResourceSet set = OMLUtilities.createXcoreResourceSet(_function);
@@ -114,8 +116,10 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
       }
       EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
       Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
-      final Function1<EClass, Boolean> _function = (EClass it) -> {
-        return OMLUtilities.isAPI(it);
+      final Function1<EClass, Boolean> _function = new Function1<EClass, Boolean>() {
+        public Boolean apply(final EClass it) {
+          return OMLUtilities.isAPI(it);
+        }
       };
       Iterable<EClass> _filter_1 = IterableExtensions.<EClass>filter(_filter, _function);
       for (final EClass eClass : _filter_1) {
@@ -162,14 +166,18 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
     _builder.newLine();
     {
       Iterable<EClass> _FunctionalAPIClasses = OMLUtilities.FunctionalAPIClasses(ePackage);
-      final Function1<EClass, Boolean> _function = (EClass it) -> {
-        Iterable<ETypedElement> _orderingKeys = OMLUtilities.orderingKeys(it);
-        boolean _isEmpty = IterableExtensions.isEmpty(_orderingKeys);
-        return Boolean.valueOf((!_isEmpty));
+      final Function1<EClass, Boolean> _function = new Function1<EClass, Boolean>() {
+        public Boolean apply(final EClass it) {
+          Iterable<ETypedElement> _orderingKeys = OMLUtilities.orderingKeys(it);
+          boolean _isEmpty = IterableExtensions.isEmpty(_orderingKeys);
+          return Boolean.valueOf((!_isEmpty));
+        }
       };
       Iterable<EClass> _filter = IterableExtensions.<EClass>filter(_FunctionalAPIClasses, _function);
-      final Function1<EClass, String> _function_1 = (EClass it) -> {
-        return it.getName();
+      final Function1<EClass, String> _function_1 = new Function1<EClass, String>() {
+        public String apply(final EClass it) {
+          return it.getName();
+        }
       };
       List<EClass> _sortBy = IterableExtensions.<EClass, String>sortBy(_filter, _function_1);
       for(final EClass eClass : _sortBy) {
@@ -297,13 +305,17 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
     _builder.newLine();
     {
       Iterable<EClass> _FunctionalAPIClasses = OMLUtilities.FunctionalAPIClasses(ePackage);
-      final Function1<EClass, Boolean> _function = (EClass it) -> {
-        boolean _isAbstract = it.isAbstract();
-        return Boolean.valueOf((!_isAbstract));
+      final Function1<EClass, Boolean> _function = new Function1<EClass, Boolean>() {
+        public Boolean apply(final EClass it) {
+          boolean _isAbstract = it.isAbstract();
+          return Boolean.valueOf((!_isAbstract));
+        }
       };
       Iterable<EClass> _filter = IterableExtensions.<EClass>filter(_FunctionalAPIClasses, _function);
-      final Function1<EClass, String> _function_1 = (EClass it) -> {
-        return it.getName();
+      final Function1<EClass, String> _function_1 = new Function1<EClass, String>() {
+        public String apply(final EClass it) {
+          return it.getName();
+        }
       };
       List<EClass> _sortBy = IterableExtensions.<EClass, String>sortBy(_filter, _function_1);
       for(final EClass eClass : _sortBy) {
