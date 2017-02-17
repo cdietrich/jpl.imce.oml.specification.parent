@@ -27,6 +27,10 @@ import org.eclipse.xtext.linking.ILinkingService
 import org.eclipse.xtext.naming.IQualifiedNameConverter
 import org.eclipse.xtext.naming.IQualifiedNameProvider
 import org.eclipse.xtext.scoping.IScopeProvider
+import org.eclipse.xtext.formatting2.IFormatter2
+import jpl.imce.oml.specification.formatting2.OntologicalModelingLanguageFormatter
+import org.eclipse.xtext.IGrammarAccess
+import jpl.imce.oml.specification.services.OntologicalModelingLanguageGrammarAccess
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
@@ -51,5 +55,13 @@ class OntologicalModelingLanguageRuntimeModule extends AbstractOntologicalModeli
 
 	def Class<? extends IQualifiedNameConverter> bindIQualifiedNameConverter() {
 	    OMLQualifiedNameConverter
+	}
+	
+	override def Class<? extends IGrammarAccess> bindIGrammarAccess() {
+		OntologicalModelingLanguageGrammarAccess
+	}
+	
+	override def Class<? extends IFormatter2> bindIFormatter2() {
+		OntologicalModelingLanguageFormatter
 	}
 }

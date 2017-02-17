@@ -18,12 +18,16 @@
 package jpl.imce.oml.specification;
 
 import jpl.imce.oml.specification.AbstractOntologicalModelingLanguageRuntimeModule;
+import jpl.imce.oml.specification.formatting2.OntologicalModelingLanguageFormatter;
 import jpl.imce.oml.specification.linking.OWLLinkingService;
 import jpl.imce.oml.specification.scoping.OMLImportedNamespaceAwareLocalScopeProvider;
+import jpl.imce.oml.specification.services.OntologicalModelingLanguageGrammarAccess;
 import jpl.imce.oml.specification.util.OMLQualifiedNameConverter;
 import jpl.imce.oml.specification.util.OMLQualifiedNameProvider;
 import jpl.imce.oml.specification.util.OMLValueConverterService;
+import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.conversion.IValueConverterService;
+import org.eclipse.xtext.formatting2.IFormatter2;
 import org.eclipse.xtext.linking.ILinkingService;
 import org.eclipse.xtext.naming.IQualifiedNameConverter;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
@@ -52,5 +56,13 @@ public class OntologicalModelingLanguageRuntimeModule extends AbstractOntologica
   
   public Class<? extends IQualifiedNameConverter> bindIQualifiedNameConverter() {
     return OMLQualifiedNameConverter.class;
+  }
+  
+  public Class<? extends IGrammarAccess> bindIGrammarAccess() {
+    return OntologicalModelingLanguageGrammarAccess.class;
+  }
+  
+  public Class<? extends IFormatter2> bindIFormatter2() {
+    return OntologicalModelingLanguageFormatter.class;
   }
 }
