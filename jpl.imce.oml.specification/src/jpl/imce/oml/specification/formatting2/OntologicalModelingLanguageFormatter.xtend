@@ -42,7 +42,7 @@ class OntologicalModelingLanguageFormatter extends AbstractFormatter2 {
 	//@Inject extension OntologicalModelingLanguageGrammarAccess
 
 	def dispatch void format(TerminologyExtent terminologyExtent, extension IFormattableDocument document) {
-		terminologyExtent.prepend[noSpace]
+		terminologyExtent.prepend[newLine]
 		
 		for (AnnotationProperty annotationProperty : terminologyExtent.getAnnotationProperties()) {
 			annotationProperty.format;
@@ -62,7 +62,7 @@ class OntologicalModelingLanguageFormatter extends AbstractFormatter2 {
 	}
 
 	def dispatch void format(AnnotationProperty annotationProperty, extension IFormattableDocument document) {
-		annotationProperty.prepend[noSpace]
+		annotationProperty.prepend[newLine]
 		
 		//annotationProperty.regionFor.ruleCall(annotationPropertyAccess.ANNOTATION_PROPERTY_TOKENTerminalRuleCall_0).append[oneSpace]
 		//annotationProperty.regionFor.ruleCall(annotationPropertyAccess.EQUALTerminalRuleCall_2).surround[noSpace]
@@ -76,7 +76,7 @@ class OntologicalModelingLanguageFormatter extends AbstractFormatter2 {
 	}
 	
 	def dispatch void format(Annotation annotation, extension IFormattableDocument document) {
-		annotation.prepend[noSpace]
+		annotation.prepend[newLine]
 		//annotation.regionFor.ruleCall(annotationAccess.ANNOTATION_TOKENTerminalRuleCall_0).append[oneSpace]
 		annotation.regionFor.keyword("annotation").append[oneSpace]
 		//annotation.regionFor.ruleCall(annotationAccess.EQUALTerminalRuleCall_2).surround[noSpace]
@@ -84,7 +84,7 @@ class OntologicalModelingLanguageFormatter extends AbstractFormatter2 {
 	}
 	
 	def dispatch void format(TerminologyGraph terminologyGraph, extension IFormattableDocument document) {
-		terminologyGraph.prepend[noSpace]
+		terminologyGraph.prepend[newLine]
 			
 		terminologyGraph.regionFor.feature(OMLPackage.eINSTANCE.terminologyBox_Kind).append[oneSpace]
 		
@@ -98,7 +98,7 @@ class OntologicalModelingLanguageFormatter extends AbstractFormatter2 {
 		val lcurly = terminologyGraph.regionFor.keyword("{")
 		//val rcurly = terminologyGraph.regionFor.ruleCall(terminologyGraphAccess.RCURLYTerminalRuleCall_5)
 		val rcurly = terminologyGraph.regionFor.keyword("}")
-		lcurly.surround[oneSpace]
+		lcurly.prepend[oneSpace]
 		lcurly.append[newLine]
 		interior(lcurly, rcurly)[indent]
 		rcurly.append[newLine]
@@ -116,9 +116,8 @@ class OntologicalModelingLanguageFormatter extends AbstractFormatter2 {
 		}
 	}
 	
-
 	def dispatch void format(Bundle bundle, extension IFormattableDocument document) {
-		bundle.prepend[noSpace]
+		bundle.prepend[newLine]
 			
 		//val lcurly = bundle.regionFor.ruleCall(terminologyGraphAccess.LCURLYTerminalRuleCall_3)
 		val lcurly = bundle.regionFor.keyword("{")
@@ -141,7 +140,7 @@ class OntologicalModelingLanguageFormatter extends AbstractFormatter2 {
 	}
 	
 	def dispatch void format(DescriptionBox descriptionBox, extension IFormattableDocument document) {
-		descriptionBox.prepend[noSpace]
+		descriptionBox.prepend[newLine]
 			
 		//val lcurly = descriptionBox.regionFor.ruleCall(terminologyGraphAccess.LCURLYTerminalRuleCall_3)
 		val lcurly = descriptionBox.regionFor.keyword("{")
@@ -157,7 +156,10 @@ class OntologicalModelingLanguageFormatter extends AbstractFormatter2 {
 
 	def dispatch void format(Aspect aspect, extension IFormattableDocument document) {
 		//aspect.regionFor.ruleCall(aspectAccess.ASPECT_TOKENTerminalRuleCall_0).append[oneSpace]
-		aspect.regionFor.keyword("aspect").surround[oneSpace]
+		
+		aspect.prepend[newLine]
+		aspect.regionFor.keyword("aspect").append[oneSpace]
+		
 		//aspect.regionFor.ruleCall(aspectAccess.nameIDTerminalRuleCall_1_0).append[newLine]
 		aspect.regionFor.feature(OMLPackage.eINSTANCE.term_Name).prepend[oneSpace]
 		aspect.regionFor.feature(OMLPackage.eINSTANCE.term_Name).append[newLine]

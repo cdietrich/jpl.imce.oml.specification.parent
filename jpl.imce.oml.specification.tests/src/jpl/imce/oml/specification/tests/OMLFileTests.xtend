@@ -68,29 +68,43 @@ class OMLFileTests extends XtextTest {
 		testFile("ModuleTests/base.oml")
 	}
 	
-//	@Test 
-//	def void indent1() {
-//		assertFormatted[
-//			preferences[
-//				put(FormatterPreferenceKeys.indentation, "\t")
-//				put(FormatterPreferenceKeys.tabWidth, 2)
-//			]
-//			expectation = '''
-//				open terminology <http://imce.jpl.nasa.gov/foundation/base/base> {
-//				 aspect IdentifiedElement
-//				}
-//			'''
-//			toBeFormatted = '''
-//				 open 
-//				 
-//				  terminology 
-//				  
-//				    <http://imce.jpl.nasa.gov/foundation/base/base>       {
-//					
-//					    aspect 
-//					  IdentifiedElement
-//				}
-//			'''
-//		]
-//	}
+	@Test 
+	def void testMission() {
+		val topURL = OMLFileTests.getResource("/")
+		System.out.println("topURL="+topURL)
+		
+		val missionURL = OMLFileTests.getResource("/ModuleTests/mission.oml")
+		System.out.println("missionURL="+missionURL)
+		
+		// need support for multi-file cross-references.
+		//testFile("ModuleTests/mission.oml", "ModuleTests/base.oml")
+		testFile("ModuleTests/mission.oml")
+	}
+	
+	@Test 
+	def void format1() {
+		assertFormatted[
+			preferences[
+				put(FormatterPreferenceKeys.indentation, "\t")
+				put(FormatterPreferenceKeys.tabWidth, 2)
+			]
+			expectation = '''
+				
+				open terminology <http://imce.jpl.nasa.gov/foundation/base/base> {
+				aspect IdentifiedElement
+				}
+			'''
+			toBeFormatted = '''
+				 open 
+				 
+				  terminology 
+				  
+				    <http://imce.jpl.nasa.gov/foundation/base/base>       {
+					
+					    aspect 
+					  IdentifiedElement
+				}
+			'''
+		]
+	}
 }

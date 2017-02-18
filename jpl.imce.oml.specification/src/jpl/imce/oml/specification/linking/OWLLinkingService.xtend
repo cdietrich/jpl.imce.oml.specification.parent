@@ -73,6 +73,12 @@ class OWLLinkingService extends DefaultLinkingService {
 			return Collections.<EObject> emptyList()
 
 		val crossRefString = getCrossRefNodeAsString(node)
+		
+		// TODO: catalog-based cross-ref resolver.
+		// when crossRefString = "<....>" 
+		// look for a catalog from the current "file" directory and to the parent folders.
+		// if found, use it to resolve the crossRef IRI to a local file; which needs to be loaded.
+		
 		if (crossRefString != null && !crossRefString.equals("")) {
 			val IScope scope = getScope(context, ref)
 			val QualifiedName qualifiedLinkName = qualifiedNameConverter.toQualifiedName(crossRefString)
