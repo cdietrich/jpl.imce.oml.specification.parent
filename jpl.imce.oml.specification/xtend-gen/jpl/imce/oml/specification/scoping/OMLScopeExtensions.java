@@ -32,7 +32,6 @@ import jpl.imce.oml.specification.ecore.Concept;
 import jpl.imce.oml.specification.ecore.ConceptDesignationTerminologyAxiom;
 import jpl.imce.oml.specification.ecore.Entity;
 import jpl.imce.oml.specification.ecore.EntityRelationship;
-import jpl.imce.oml.specification.ecore.Module;
 import jpl.imce.oml.specification.ecore.ReifiedRelationship;
 import jpl.imce.oml.specification.ecore.Resource;
 import jpl.imce.oml.specification.ecore.TerminologyBox;
@@ -69,59 +68,46 @@ public class OMLScopeExtensions {
    * in terms of the abbrevIRI of each AnnotationProperty in the TerminologyExtent.
    */
   public IScope scope_Annotation_property(final Annotation annotation, final EReference eRef) {
-    Module _module = annotation.getModule();
-    TerminologyExtent _extent = _module.extent();
-    EList<AnnotationProperty> _annotationProperties = _extent.getAnnotationProperties();
     final Function<AnnotationProperty, QualifiedName> _function = (AnnotationProperty it) -> {
-      String _abbrevIRI = it.getAbbrevIRI();
-      return this.qnc.toQualifiedName(_abbrevIRI);
+      return this.qnc.toQualifiedName(it.getAbbrevIRI());
     };
-    return Scopes.<AnnotationProperty>scopeFor(_annotationProperties, _function, 
+    return Scopes.<AnnotationProperty>scopeFor(
+      annotation.getModule().extent().getAnnotationProperties(), _function, 
       IScope.NULLSCOPE);
   }
   
   public IScope scope_AspectSpecializationAxiom_subEntity(final AspectSpecializationAxiom context) {
-    TerminologyBox _tbox = context.getTbox();
-    return this.allEntitiesScope(_tbox);
+    return this.allEntitiesScope(context.getTbox());
   }
   
   public IScope scope_AspectSpecializationAxiom_superAspect(final AspectSpecializationAxiom context) {
-    TerminologyBox _tbox = context.getTbox();
-    return this.allAspectsScope(_tbox);
+    return this.allAspectsScope(context.getTbox());
   }
   
   public IScope scope_BundledTerminologyAxiom_bundledTerminology(final BundledTerminologyAxiom context) {
-    Bundle _terminologyBundle = context.getTerminologyBundle();
-    TerminologyExtent _extent = _terminologyBundle.extent();
-    Iterable<TerminologyBox> _terminologies = this._oMLExtensions.terminologies(_extent);
     final Function<TerminologyBox, QualifiedName> _function = (TerminologyBox it) -> {
-      String _nsPrefix = it.nsPrefix();
-      return this.qnc.toQualifiedName(_nsPrefix);
+      return this.qnc.toQualifiedName(it.nsPrefix());
     };
-    return Scopes.<TerminologyBox>scopeFor(_terminologies, _function, 
+    return Scopes.<TerminologyBox>scopeFor(
+      this._oMLExtensions.terminologies(context.getTerminologyBundle().extent()), _function, 
       IScope.NULLSCOPE);
   }
   
   public IScope scope_ConceptDesignationTerminologyAxiom_designatedTerminology(final ConceptDesignationTerminologyAxiom context) {
-    TerminologyBox _tbox = context.getTbox();
-    TerminologyExtent _extent = _tbox.extent();
-    Iterable<TerminologyBox> _terminologies = this._oMLExtensions.terminologies(_extent);
     final Function<TerminologyBox, QualifiedName> _function = (TerminologyBox it) -> {
-      String _nsPrefix = it.nsPrefix();
-      return this.qnc.toQualifiedName(_nsPrefix);
+      return this.qnc.toQualifiedName(it.nsPrefix());
     };
-    return Scopes.<TerminologyBox>scopeFor(_terminologies, _function, 
+    return Scopes.<TerminologyBox>scopeFor(
+      this._oMLExtensions.terminologies(context.getTbox().extent()), _function, 
       IScope.NULLSCOPE);
   }
   
   public IScope scope_ConceptDesignationTerminologyAxiom_designatedConcept(final ConceptDesignationTerminologyAxiom context) {
-    TerminologyBox _designatedTerminology = context.getDesignatedTerminology();
-    return this.allConceptsScope(_designatedTerminology);
+    return this.allConceptsScope(context.getDesignatedTerminology());
   }
   
   public IScope scope_EntityRelationship(final EntityRelationship context) {
-    TerminologyBox _tbox = context.getTbox();
-    return this.allEntitiesScope(_tbox);
+    return this.allEntitiesScope(context.getTbox());
   }
   
   /**
@@ -132,14 +118,12 @@ public class OMLScopeExtensions {
   public IScope scope_TerminologyExtensionAxiom_extendedTerminology(final TerminologyExtensionAxiom context, final EReference eRef) {
     IScope _xblockexpression = null;
     {
-      TerminologyBox _tbox = context.getTbox();
-      final TerminologyExtent ext = _tbox.extent();
+      final TerminologyExtent ext = context.getTbox().extent();
       EList<TerminologyGraph> _terminologyGraphs = ext.getTerminologyGraphs();
       EList<Bundle> _bundles = ext.getBundles();
       final Iterable<TerminologyBox> tboxes = Iterables.<TerminologyBox>concat(_terminologyGraphs, _bundles);
       final Function<TerminologyBox, QualifiedName> _function = (TerminologyBox it) -> {
-        String _nsPrefix = it.nsPrefix();
-        return this.qnc.toQualifiedName(_nsPrefix);
+        return this.qnc.toQualifiedName(it.nsPrefix());
       };
       _xblockexpression = Scopes.<TerminologyBox>scopeFor(tboxes, _function, 
         IScope.NULLSCOPE);
@@ -154,32 +138,25 @@ public class OMLScopeExtensions {
     SimpleScope _xblockexpression = null;
     {
       final ArrayList<IEObjectDescription> result = Lists.<IEObjectDescription>newArrayList();
-      Iterable<T> _apply = localScopeFunction.apply(tbox);
-      Iterable<IEObjectDescription> _scopedElementsFor = Scopes.scopedElementsFor(_apply);
-      Iterables.<IEObjectDescription>addAll(result, _scopedElementsFor);
-      Iterable<TerminologyBox> _allImportedTerminologies = this._oMLExtensions.allImportedTerminologies(tbox);
+      Iterables.<IEObjectDescription>addAll(result, Scopes.scopedElementsFor(localScopeFunction.apply(tbox)));
       final Function1<TerminologyBox, Iterable<IEObjectDescription>> _function = (TerminologyBox importedTbox) -> {
-        Iterable<T> _apply_1 = localScopeFunction.apply(importedTbox);
         final Function<T, QualifiedName> _function_1 = (T importedThing) -> {
-          Pair<TerminologyBox, T> _of = Pair.<TerminologyBox, T>of(importedTbox, importedThing);
-          return nameFunction.apply(_of);
+          return nameFunction.apply(Pair.<TerminologyBox, T>of(importedTbox, importedThing));
         };
-        return Scopes.<T>scopedElementsFor(_apply_1, _function_1);
+        return Scopes.<T>scopedElementsFor(
+          localScopeFunction.apply(importedTbox), _function_1);
       };
-      Iterable<Iterable<IEObjectDescription>> _map = IterableExtensions.<TerminologyBox, Iterable<IEObjectDescription>>map(_allImportedTerminologies, _function);
-      Iterable<IEObjectDescription> _flatten = Iterables.<IEObjectDescription>concat(_map);
-      Iterables.<IEObjectDescription>addAll(result, _flatten);
+      Iterables.<IEObjectDescription>addAll(result, 
+        Iterables.<IEObjectDescription>concat(IterableExtensions.<TerminologyBox, Iterable<IEObjectDescription>>map(this._oMLExtensions.allImportedTerminologies(tbox), _function)));
       _xblockexpression = new SimpleScope(result);
     }
     return _xblockexpression;
   }
   
   public <T extends Resource> QualifiedName importedResourceNameFunction(final Pair<TerminologyBox, T> p) {
-    TerminologyBox _key = p.getKey();
-    String _nsPrefix = _key.nsPrefix();
+    String _nsPrefix = p.getKey().nsPrefix();
     String _plus = (_nsPrefix + ":");
-    T _value = p.getValue();
-    String _name = _value.name();
+    String _name = p.getValue().name();
     String _plus_1 = (_plus + _name);
     return this.qnc.toQualifiedName(_plus_1);
   }

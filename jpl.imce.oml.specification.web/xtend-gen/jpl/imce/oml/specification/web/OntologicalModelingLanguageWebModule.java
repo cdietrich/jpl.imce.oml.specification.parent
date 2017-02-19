@@ -3,8 +3,6 @@
  */
 package jpl.imce.oml.specification.web;
 
-import com.google.inject.Provider;
-import java.util.concurrent.ExecutorService;
 import jpl.imce.oml.specification.web.AbstractOntologicalModelingLanguageWebModule;
 import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor;
 
@@ -14,7 +12,4 @@ import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor;
 @FinalFieldsConstructor
 @SuppressWarnings("all")
 public class OntologicalModelingLanguageWebModule extends AbstractOntologicalModelingLanguageWebModule {
-  public OntologicalModelingLanguageWebModule(final Provider<ExecutorService> executorServiceProvider) {
-    super(executorServiceProvider);
-  }
 }

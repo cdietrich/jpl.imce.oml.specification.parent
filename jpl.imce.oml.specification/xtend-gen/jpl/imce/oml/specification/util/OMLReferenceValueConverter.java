@@ -37,8 +37,7 @@ public class OMLReferenceValueConverter extends AbstractValueConverter<String> {
     if ((value.startsWith("<") && value.endsWith(">"))) {
       return value;
     } else {
-      String _delegateRuleName = this.getDelegateRuleName();
-      return this.valueConverterService.toString(value, _delegateRuleName);
+      return this.valueConverterService.toString(value, this.getDelegateRuleName());
     }
   }
   
@@ -47,8 +46,7 @@ public class OMLReferenceValueConverter extends AbstractValueConverter<String> {
     if ((string.startsWith("<") && string.endsWith(">"))) {
       return string;
     } else {
-      String _delegateRuleName = this.getDelegateRuleName();
-      Object _value = this.valueConverterService.toValue(string, _delegateRuleName, null);
+      Object _value = this.valueConverterService.toValue(string, this.getDelegateRuleName(), null);
       return ((String) _value);
     }
   }

@@ -18,7 +18,7 @@ package jpl.imce.oml.specification.ui.tests;
 
 import com.google.inject.Injector;
 import jpl.imce.oml.specification.ui.internal.SpecificationActivator;
-import org.eclipse.xtext.junit4.IInjectorProvider;
+import org.eclipse.xtext.testing.IInjectorProvider;
 
 public class OntologicalModelingLanguageUiInjectorProvider implements IInjectorProvider {
 

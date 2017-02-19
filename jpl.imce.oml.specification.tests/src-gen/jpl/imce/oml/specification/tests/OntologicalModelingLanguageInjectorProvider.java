@@ -20,10 +20,10 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import jpl.imce.oml.specification.OntologicalModelingLanguageRuntimeModule;
 import jpl.imce.oml.specification.OntologicalModelingLanguageStandaloneSetup;
-import org.eclipse.xtext.junit4.GlobalRegistries;
-import org.eclipse.xtext.junit4.GlobalRegistries.GlobalStateMemento;
-import org.eclipse.xtext.junit4.IInjectorProvider;
-import org.eclipse.xtext.junit4.IRegistryConfigurator;
+import org.eclipse.xtext.testing.GlobalRegistries;
+import org.eclipse.xtext.testing.GlobalRegistries.GlobalStateMemento;
+import org.eclipse.xtext.testing.IInjectorProvider;
+import org.eclipse.xtext.testing.IRegistryConfigurator;
 
 public class OntologicalModelingLanguageInjectorProvider implements IInjectorProvider, IRegistryConfigurator {
 

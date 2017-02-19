@@ -1,0 +1,39 @@
+apply plugin: eclipsebuild.BundlePlugin
+
+final def swtPluginId = "org.eclipse.swt.${ECLIPSE_WS}.${ECLIPSE_OS}.${ECLIPSE_ARCH}"
+
+dependencies {
+	compile withEclipseBundle(swtPluginId)
+	compile withEclipseBundle('org.eclipse.core.resources')
+	compile withEclipseBundle('org.eclipse.ui.views')
+	compile withEclipseBundle('org.eclipse.ui.ide')
+	compile withEclipseBundle('org.eclipse.emf.ecore.xmi')
+	
+	compile withEclipseBundle('org.eclipse.emf.ecore.change')
+	compile withEclipseBundle('org.eclipse.emf.common.ui')
+	compile withEclipseBundle('org.eclipse.emf.edit.ui')
+	
+	compile project(':jpl.imce.oml.specification.ecore.edit')
+}
+
+configurations.all {
+    
+    resolutionStrategy {
+    
+    	// Override an unresolvable dependency on org.eclipse.emf:org.eclipse.emf.ecore.change:[2.5.0,)
+    	// Required by:
+    	// project :jpl.imce.oml.specification.ecore.editor > 
+    	// org.eclipse.platform:org.eclipse.ui.ide:3.12.2 >
+    	// org.eclipse.platform:org.eclipse.e4.ui.workbench:1.4.0
+    
+    	eachDependency { DependencyResolveDetails details ->
+        	if (details.requested.group == 'org.eclipse.emf' && 
+            	details.requested.name == 'org.eclipse.emf.ecore.change' &&
+            	details.requested.version == '[2.5.0,)') {
+           
+            	details.useVersion '2.11.0.v20160420-0247'
+        	}
+   		}
+   		
+   	}
+}

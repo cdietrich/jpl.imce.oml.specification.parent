@@ -10,6 +10,7 @@ if (name.endsWith(".tests")) {
 			xtendOutputDir = 'xtend-gen'
 		}
 		all {
+			output.classesDir = 'target/classes'
 			resources.exclude '**/*.g', '**/*.xtext', '**/*.mwe2', '**/*.xtend', '**/*._trace'
 		}
 	}
@@ -23,6 +24,9 @@ if (name.endsWith(".tests")) {
 		test {
 			java.srcDirs = []
 			resources.srcDirs = []
+		}
+		all {
+			output.classesDir = 'target/classes'
 		}
 	}
 	
@@ -40,6 +44,7 @@ if (name.endsWith(".tests")) {
 			resources.srcDirs = []
 		}
 		all {
+			output.classesDir = 'target/classes'
 			resources.exclude '**/*.g', '**/*.xtext', '**/*.mwe2', '**/*.xtend', '**/*._trace'
 		}
 	}

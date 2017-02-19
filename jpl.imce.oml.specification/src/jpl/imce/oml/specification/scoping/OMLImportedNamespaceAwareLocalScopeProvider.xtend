@@ -149,7 +149,7 @@ class OMLImportedNamespaceAwareLocalScopeProvider extends ImportedNamespaceAware
 			TerminologyNestingAxiom:
 				{}
 		} 
-		if (null != scope)
+		if (null !== scope)
 			scope
 		else
 			super.getScope(context, reference)

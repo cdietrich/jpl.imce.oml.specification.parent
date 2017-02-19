@@ -17,7 +17,6 @@
  */
 package jpl.imce.oml.specification.util;
 
-import com.google.common.base.Objects;
 import org.eclipse.xtext.naming.IQualifiedNameConverter;
 import org.eclipse.xtext.naming.QualifiedName;
 
@@ -27,12 +26,10 @@ public class OMLQualifiedNameConverter extends IQualifiedNameConverter.DefaultIm
   public String toString(final QualifiedName qualifiedName) {
     String _xblockexpression = null;
     {
-      boolean _equals = Objects.equal(qualifiedName, null);
-      if (_equals) {
+      if ((null == qualifiedName)) {
         throw new IllegalArgumentException("Qualified name cannot be null");
       }
-      String _delimiter = this.getDelimiter();
-      _xblockexpression = qualifiedName.toString(_delimiter);
+      _xblockexpression = qualifiedName.toString(this.getDelimiter());
     }
     return _xblockexpression;
   }

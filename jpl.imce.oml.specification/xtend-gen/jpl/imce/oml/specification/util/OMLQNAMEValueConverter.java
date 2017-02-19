@@ -38,24 +38,16 @@ public class OMLQNAMEValueConverter extends AbstractValueConverter<String> {
     if (_contains) {
       final StringBuilder buffer = new StringBuilder();
       final String[] segment = value.split(":");
-      String _get = segment[0];
-      boolean _equals = _get.equals("");
+      boolean _equals = segment[0].equals("");
       boolean _not = (!_equals);
       if (_not) {
-        Object _get_1 = segment[0];
-        String _delegateRuleName = this.getDelegateRuleName();
-        String _string = this.valueConverterService.toString(_get_1, _delegateRuleName);
-        buffer.append(_string);
+        buffer.append(this.valueConverterService.toString(segment[0], this.getDelegateRuleName()));
       }
       buffer.append(":");
-      Object _get_2 = segment[1];
-      String _delegateRuleName_1 = this.getDelegateRuleName();
-      String _string_1 = this.valueConverterService.toString(_get_2, _delegateRuleName_1);
-      buffer.append(_string_1);
+      buffer.append(this.valueConverterService.toString(segment[1], this.getDelegateRuleName()));
       return buffer.toString();
     } else {
-      String _delegateRuleName_2 = this.getDelegateRuleName();
-      return this.valueConverterService.toString(value, _delegateRuleName_2);
+      return this.valueConverterService.toString(value, this.getDelegateRuleName());
     }
   }
   
@@ -65,24 +57,18 @@ public class OMLQNAMEValueConverter extends AbstractValueConverter<String> {
     if (_contains) {
       final StringBuilder buffer = new StringBuilder();
       final String[] segment = string.split(":");
-      String _get = segment[0];
-      boolean _equals = _get.equals("");
+      boolean _equals = segment[0].equals("");
       boolean _not = (!_equals);
       if (_not) {
-        String _get_1 = segment[0];
-        String _delegateRuleName = this.getDelegateRuleName();
-        Object _value = this.valueConverterService.toValue(_get_1, _delegateRuleName, null);
+        Object _value = this.valueConverterService.toValue(segment[0], this.getDelegateRuleName(), null);
         buffer.append(((String) _value));
       }
       buffer.append(":");
-      String _get_2 = segment[1];
-      String _delegateRuleName_1 = this.getDelegateRuleName();
-      Object _value_1 = this.valueConverterService.toValue(_get_2, _delegateRuleName_1, null);
+      Object _value_1 = this.valueConverterService.toValue(segment[1], this.getDelegateRuleName(), null);
       buffer.append(((String) _value_1));
       return buffer.toString();
     } else {
-      String _delegateRuleName_2 = this.getDelegateRuleName();
-      Object _value_2 = this.valueConverterService.toValue(string, _delegateRuleName_2, null);
+      Object _value_2 = this.valueConverterService.toValue(string, this.getDelegateRuleName(), null);
       return ((String) _value_2);
     }
   }

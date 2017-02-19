@@ -2,6 +2,8 @@ apply plugin: eclipsebuild.BundlePlugin
 
 dependencies {
 	compile withEclipseBundle('com.ibm.icu')
+	compile withEclipseBundle('com.google.inject')
+	compile withEclipseBundle('javax.inject')
 	compile withEclipseBundle('org.apache.log4j')
 	compile withEclipseBundle('org.eclipse.xtext')
 	compile withEclipseBundle('org.eclipse.xtext.xbase')
@@ -25,12 +27,13 @@ configurations {
 }
 
 dependencies {
-	mwe2 withEclipseBundle('org.eclipse.emf.mwe2.launch')
-	mwe2 withEclipseBundle('org.eclipse.xtext.xtext.generator')
+   	mwe2 withEclipseBundle('org.eclipse.xtext.xtext.generator')
 	mwe2 withEclipseBundle('org.eclipse.xtext.generator')
 	mwe2 withEclipseBundle('org.eclipse.xpand')
 	mwe2 withEclipseBundle('org.eclipse.xtend')
-    
+    mwe2 withEclipseBundle('org.eclipse.emf.mwe.utils')
+    mwe2 withEclipseBundle('org.eclipse.emf.mwe2.launch')
+	
 	// added for Xcore support
 	mwe2 withEclipseBundle('org.eclipse.emf.ecore.xcore')
     mwe2 withEclipseBundle('org.eclipse.emf.ecore.xcore.lib')

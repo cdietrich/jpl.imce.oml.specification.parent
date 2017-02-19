@@ -34,8 +34,7 @@ public class OMLImportNormalizer extends ImportNormalizer {
   public OMLImportNormalizer(final QualifiedName importedNamespace, final String prefix) {
     super(importedNamespace, false, false);
     this.prefix = prefix;
-    String _string = this.qnc.toString(importedNamespace);
-    this.namespace = _string;
+    this.namespace = this.qnc.toString(importedNamespace);
   }
   
   @Override
@@ -49,8 +48,7 @@ public class OMLImportNormalizer extends ImportNormalizer {
         if ((Objects.equal(this.prefix, "") && (!relative.contains(":")))) {
           int _length = relative.length();
           int _minus = (_length - 1);
-          String _substring = relative.substring(1, _minus);
-          relative = _substring;
+          relative = relative.substring(1, _minus);
           return QualifiedName.create(((("<" + this.namespace) + relative) + ">"));
         }
       }
@@ -87,8 +85,7 @@ public class OMLImportNormalizer extends ImportNormalizer {
     if ((qualified.startsWith("<") && qualified.endsWith(">"))) {
       int _length = qualified.length();
       int _minus = (_length - 1);
-      String _substring = qualified.substring(1, _minus);
-      qualified = _substring;
+      qualified = qualified.substring(1, _minus);
       boolean _startsWith = qualified.startsWith(this.namespace);
       if (_startsWith) {
         final String name = qualified.replaceFirst(this.namespace, "");

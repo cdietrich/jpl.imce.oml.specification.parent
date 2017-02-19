@@ -28,8 +28,7 @@ import org.eclipse.emf.ecore.EPackage;
 @SuppressWarnings("all")
 public class OntologicalModelingLanguageStandaloneSetup extends OntologicalModelingLanguageStandaloneSetupGenerated {
   public static void doSetup() {
-    OntologicalModelingLanguageStandaloneSetup _ontologicalModelingLanguageStandaloneSetup = new OntologicalModelingLanguageStandaloneSetup();
-    _ontologicalModelingLanguageStandaloneSetup.createInjectorAndDoEMFRegistration();
+    new OntologicalModelingLanguageStandaloneSetup().createInjectorAndDoEMFRegistration();
   }
   
   @Override

@@ -9,7 +9,7 @@
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/jpl.imce.oml.specification/jpl.imce.oml.specification">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/jpl.imce.oml.specification.model/jpl.imce.oml.specification.model">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/jpl.imce.oml.specification.ecore/jpl.imce.oml.specification.ecore">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/jpl.imce.oml.specification.ide/jpl.imce.oml.specification.ide">

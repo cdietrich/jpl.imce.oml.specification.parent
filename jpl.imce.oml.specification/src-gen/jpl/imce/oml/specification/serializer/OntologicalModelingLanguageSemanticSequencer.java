@@ -285,7 +285,7 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.eINSTANCE.getAnnotation_Value()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getAnnotationAccess().getPropertyAnnotationPropertyABBREV_IRIParserRuleCall_1_0_1(), semanticObject.getProperty());
+		feeder.accept(grammarAccess.getAnnotationAccess().getPropertyAnnotationPropertyABBREV_IRIParserRuleCall_1_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getAnnotation_Property(), false));
 		feeder.accept(grammarAccess.getAnnotationAccess().getValueSTRINGTerminalRuleCall_3_0(), semanticObject.getValue());
 		feeder.finish();
 	}
@@ -306,7 +306,7 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.eINSTANCE.getDisjointUnionOfConceptsAxiom_DisjointTaxonomyParent()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getAnonymousConceptTaxonomyAxiomAccess().getDisjointTaxonomyParentConceptTreeDisjunctionReferenceParserRuleCall_3_0_1(), semanticObject.getDisjointTaxonomyParent());
+		feeder.accept(grammarAccess.getAnonymousConceptTaxonomyAxiomAccess().getDisjointTaxonomyParentConceptTreeDisjunctionReferenceParserRuleCall_3_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getDisjointUnionOfConceptsAxiom_DisjointTaxonomyParent(), false));
 		feeder.finish();
 	}
 	
@@ -330,8 +330,8 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.eINSTANCE.getAspectSpecializationAxiom_SuperAspect()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getAspectSpecializationAxiomAccess().getSubEntityEntityReferenceParserRuleCall_0_0_1(), semanticObject.getSubEntity());
-		feeder.accept(grammarAccess.getAspectSpecializationAxiomAccess().getSuperAspectAspectReferenceParserRuleCall_2_0_1(), semanticObject.getSuperAspect());
+		feeder.accept(grammarAccess.getAspectSpecializationAxiomAccess().getSubEntityEntityReferenceParserRuleCall_0_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getAspectSpecializationAxiom_SubEntity(), false));
+		feeder.accept(grammarAccess.getAspectSpecializationAxiomAccess().getSuperAspectAspectReferenceParserRuleCall_2_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getAspectSpecializationAxiom_SuperAspect(), false));
 		feeder.finish();
 	}
 	
@@ -411,7 +411,7 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.eINSTANCE.getBundledTerminologyAxiom_BundledTerminology()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getBundledTerminologyAxiomAccess().getBundledTerminologyTerminologyBoxReferenceParserRuleCall_3_0_1(), semanticObject.getBundledTerminology());
+		feeder.accept(grammarAccess.getBundledTerminologyAxiomAccess().getBundledTerminologyTerminologyBoxReferenceParserRuleCall_3_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getBundledTerminologyAxiom_BundledTerminology(), false));
 		feeder.finish();
 	}
 	
@@ -432,8 +432,8 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.eINSTANCE.getConceptDesignationTerminologyAxiom_DesignatedConcept()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getConceptDesignationTerminologyAxiomAccess().getDesignatedTerminologyTerminologyBoxReferenceParserRuleCall_3_0_1(), semanticObject.getDesignatedTerminology());
-		feeder.accept(grammarAccess.getConceptDesignationTerminologyAxiomAccess().getDesignatedConceptConceptReferenceParserRuleCall_5_0_1(), semanticObject.getDesignatedConcept());
+		feeder.accept(grammarAccess.getConceptDesignationTerminologyAxiomAccess().getDesignatedTerminologyTerminologyBoxReferenceParserRuleCall_3_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getConceptDesignationTerminologyAxiom_DesignatedTerminology(), false));
+		feeder.accept(grammarAccess.getConceptDesignationTerminologyAxiomAccess().getDesignatedConceptConceptReferenceParserRuleCall_5_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getConceptDesignationTerminologyAxiom_DesignatedConcept(), false));
 		feeder.finish();
 	}
 	
@@ -452,7 +452,7 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.eINSTANCE.getConceptInstance_SingletonConceptClassifier()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getConceptInstanceAccess().getSingletonConceptClassifierConceptReferenceParserRuleCall_3_0_1(), semanticObject.getSingletonConceptClassifier());
+		feeder.accept(grammarAccess.getConceptInstanceAccess().getSingletonConceptClassifierConceptReferenceParserRuleCall_3_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getConceptInstance_SingletonConceptClassifier(), false));
 		feeder.finish();
 	}
 	
@@ -476,8 +476,8 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.eINSTANCE.getConceptSpecializationAxiom_SuperConcept()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptConceptReferenceParserRuleCall_0_0_1(), semanticObject.getSubConcept());
-		feeder.accept(grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptConceptReferenceParserRuleCall_2_0_1(), semanticObject.getSuperConcept());
+		feeder.accept(grammarAccess.getConceptSpecializationAxiomAccess().getSubConceptConceptReferenceParserRuleCall_0_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getConceptSpecializationAxiom_SubConcept(), false));
+		feeder.accept(grammarAccess.getConceptSpecializationAxiomAccess().getSuperConceptConceptReferenceParserRuleCall_2_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getConceptSpecializationAxiom_SuperConcept(), false));
 		feeder.finish();
 	}
 	
@@ -511,7 +511,7 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.eINSTANCE.getDataStructureTuple_DataStructureType()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getDataStructureTupleAccess().getDataStructureTypeStructureReferenceParserRuleCall_3_0_1(), semanticObject.getDataStructureType());
+		feeder.accept(grammarAccess.getDataStructureTupleAccess().getDataStructureTypeStructureReferenceParserRuleCall_3_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getDataStructureTuple_DataStructureType(), false));
 		feeder.finish();
 	}
 	
@@ -529,7 +529,7 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.eINSTANCE.getDescriptionBoxExtendsClosedWorldDefinitions_ClosedWorldDefinitions()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getDescriptionBoxExtendsClosedWorldDefinitionsAccess().getClosedWorldDefinitionsTerminologyBoxReferenceParserRuleCall_1_0_1(), semanticObject.getClosedWorldDefinitions());
+		feeder.accept(grammarAccess.getDescriptionBoxExtendsClosedWorldDefinitionsAccess().getClosedWorldDefinitionsTerminologyBoxReferenceParserRuleCall_1_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getDescriptionBoxExtendsClosedWorldDefinitions_ClosedWorldDefinitions(), false));
 		feeder.finish();
 	}
 	
@@ -547,7 +547,7 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.eINSTANCE.getDescriptionBoxRefinement_RefinedDescriptionBox()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getDescriptionBoxRefinementAccess().getRefinedDescriptionBoxDescriptionBoxReferenceParserRuleCall_1_0_1(), semanticObject.getRefinedDescriptionBox());
+		feeder.accept(grammarAccess.getDescriptionBoxRefinementAccess().getRefinedDescriptionBoxDescriptionBoxReferenceParserRuleCall_1_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getDescriptionBoxRefinement_RefinedDescriptionBox(), false));
 		feeder.finish();
 	}
 	
@@ -598,9 +598,9 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.eINSTANCE.getEntityRestrictionAxiom_RestrictedDomain()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getEntityExistentialRestrictionAxiomAccess().getRestrictedRelationReifiedRelationshipReferenceParserRuleCall_3_0_1(), semanticObject.getRestrictedRelation());
-		feeder.accept(grammarAccess.getEntityExistentialRestrictionAxiomAccess().getRestrictedRangeEntityReferenceParserRuleCall_5_0_1(), semanticObject.getRestrictedRange());
-		feeder.accept(grammarAccess.getEntityExistentialRestrictionAxiomAccess().getRestrictedDomainEntityReferenceParserRuleCall_7_0_1(), semanticObject.getRestrictedDomain());
+		feeder.accept(grammarAccess.getEntityExistentialRestrictionAxiomAccess().getRestrictedRelationReifiedRelationshipReferenceParserRuleCall_3_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getEntityRestrictionAxiom_RestrictedRelation(), false));
+		feeder.accept(grammarAccess.getEntityExistentialRestrictionAxiomAccess().getRestrictedRangeEntityReferenceParserRuleCall_5_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getEntityRestrictionAxiom_RestrictedRange(), false));
+		feeder.accept(grammarAccess.getEntityExistentialRestrictionAxiomAccess().getRestrictedDomainEntityReferenceParserRuleCall_7_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getEntityRestrictionAxiom_RestrictedDomain(), false));
 		feeder.finish();
 	}
 	
@@ -626,9 +626,9 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.eINSTANCE.getEntityScalarDataPropertyExistentialRestrictionAxiom_ScalarRestriction()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getEntityScalarDataPropertyExistentialRestrictionAxiomAccess().getRestrictedEntityEntityReferenceParserRuleCall_3_0_1(), semanticObject.getRestrictedEntity());
-		feeder.accept(grammarAccess.getEntityScalarDataPropertyExistentialRestrictionAxiomAccess().getScalarPropertyEntityScalarDataPropertyReferenceParserRuleCall_5_0_1(), semanticObject.getScalarProperty());
-		feeder.accept(grammarAccess.getEntityScalarDataPropertyExistentialRestrictionAxiomAccess().getScalarRestrictionDataRangeReferenceParserRuleCall_7_0_1(), semanticObject.getScalarRestriction());
+		feeder.accept(grammarAccess.getEntityScalarDataPropertyExistentialRestrictionAxiomAccess().getRestrictedEntityEntityReferenceParserRuleCall_3_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getEntityScalarDataPropertyRestrictionAxiom_RestrictedEntity(), false));
+		feeder.accept(grammarAccess.getEntityScalarDataPropertyExistentialRestrictionAxiomAccess().getScalarPropertyEntityScalarDataPropertyReferenceParserRuleCall_5_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getEntityScalarDataPropertyRestrictionAxiom_ScalarProperty(), false));
+		feeder.accept(grammarAccess.getEntityScalarDataPropertyExistentialRestrictionAxiomAccess().getScalarRestrictionDataRangeReferenceParserRuleCall_7_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getEntityScalarDataPropertyExistentialRestrictionAxiom_ScalarRestriction(), false));
 		feeder.finish();
 	}
 	
@@ -654,8 +654,8 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.eINSTANCE.getEntityScalarDataPropertyParticularRestrictionAxiom_LiteralValue()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getEntityScalarDataPropertyParticularRestrictionAxiomAccess().getRestrictedEntityEntityReferenceParserRuleCall_3_0_1(), semanticObject.getRestrictedEntity());
-		feeder.accept(grammarAccess.getEntityScalarDataPropertyParticularRestrictionAxiomAccess().getScalarPropertyEntityScalarDataPropertyReferenceParserRuleCall_5_0_1(), semanticObject.getScalarProperty());
+		feeder.accept(grammarAccess.getEntityScalarDataPropertyParticularRestrictionAxiomAccess().getRestrictedEntityEntityReferenceParserRuleCall_3_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getEntityScalarDataPropertyRestrictionAxiom_RestrictedEntity(), false));
+		feeder.accept(grammarAccess.getEntityScalarDataPropertyParticularRestrictionAxiomAccess().getScalarPropertyEntityScalarDataPropertyReferenceParserRuleCall_5_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getEntityScalarDataPropertyRestrictionAxiom_ScalarProperty(), false));
 		feeder.accept(grammarAccess.getEntityScalarDataPropertyParticularRestrictionAxiomAccess().getLiteralValueSTRINGTerminalRuleCall_7_0(), semanticObject.getLiteralValue());
 		feeder.finish();
 	}
@@ -682,9 +682,9 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.eINSTANCE.getEntityScalarDataPropertyUniversalRestrictionAxiom_ScalarRestriction()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getEntityScalarDataPropertyUniversalRestrictionAxiomAccess().getRestrictedEntityEntityReferenceParserRuleCall_3_0_1(), semanticObject.getRestrictedEntity());
-		feeder.accept(grammarAccess.getEntityScalarDataPropertyUniversalRestrictionAxiomAccess().getScalarPropertyEntityScalarDataPropertyReferenceParserRuleCall_5_0_1(), semanticObject.getScalarProperty());
-		feeder.accept(grammarAccess.getEntityScalarDataPropertyUniversalRestrictionAxiomAccess().getScalarRestrictionDataRangeReferenceParserRuleCall_7_0_1(), semanticObject.getScalarRestriction());
+		feeder.accept(grammarAccess.getEntityScalarDataPropertyUniversalRestrictionAxiomAccess().getRestrictedEntityEntityReferenceParserRuleCall_3_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getEntityScalarDataPropertyRestrictionAxiom_RestrictedEntity(), false));
+		feeder.accept(grammarAccess.getEntityScalarDataPropertyUniversalRestrictionAxiomAccess().getScalarPropertyEntityScalarDataPropertyReferenceParserRuleCall_5_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getEntityScalarDataPropertyRestrictionAxiom_ScalarProperty(), false));
+		feeder.accept(grammarAccess.getEntityScalarDataPropertyUniversalRestrictionAxiomAccess().getScalarRestrictionDataRangeReferenceParserRuleCall_7_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getEntityScalarDataPropertyUniversalRestrictionAxiom_ScalarRestriction(), false));
 		feeder.finish();
 	}
 	
@@ -710,8 +710,8 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
 		feeder.accept(grammarAccess.getEntityScalarDataPropertyAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getEntityScalarDataPropertyAccess().getDomainEntityReferenceParserRuleCall_4_0_1(), semanticObject.getDomain());
-		feeder.accept(grammarAccess.getEntityScalarDataPropertyAccess().getRangeDataRangeReferenceParserRuleCall_6_0_1(), semanticObject.getRange());
+		feeder.accept(grammarAccess.getEntityScalarDataPropertyAccess().getDomainEntityReferenceParserRuleCall_4_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getDataRelationshipFromEntity_Domain(), false));
+		feeder.accept(grammarAccess.getEntityScalarDataPropertyAccess().getRangeDataRangeReferenceParserRuleCall_6_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getDataRelationshipToScalar_Range(), false));
 		feeder.finish();
 	}
 	
@@ -737,8 +737,8 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
 		feeder.accept(grammarAccess.getEntityStructuredDataPropertyAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getEntityStructuredDataPropertyAccess().getDomainEntityReferenceParserRuleCall_4_0_1(), semanticObject.getDomain());
-		feeder.accept(grammarAccess.getEntityStructuredDataPropertyAccess().getRangeStructureReferenceParserRuleCall_6_0_1(), semanticObject.getRange());
+		feeder.accept(grammarAccess.getEntityStructuredDataPropertyAccess().getDomainEntityReferenceParserRuleCall_4_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getDataRelationshipFromEntity_Domain(), false));
+		feeder.accept(grammarAccess.getEntityStructuredDataPropertyAccess().getRangeStructureReferenceParserRuleCall_6_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getDataRelationshipToStructure_Range(), false));
 		feeder.finish();
 	}
 	
@@ -764,9 +764,9 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.eINSTANCE.getEntityRestrictionAxiom_RestrictedDomain()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getEntityUniversalRestrictionAxiomAccess().getRestrictedRelationReifiedRelationshipReferenceParserRuleCall_3_0_1(), semanticObject.getRestrictedRelation());
-		feeder.accept(grammarAccess.getEntityUniversalRestrictionAxiomAccess().getRestrictedRangeEntityReferenceParserRuleCall_5_0_1(), semanticObject.getRestrictedRange());
-		feeder.accept(grammarAccess.getEntityUniversalRestrictionAxiomAccess().getRestrictedDomainEntityReferenceParserRuleCall_7_0_1(), semanticObject.getRestrictedDomain());
+		feeder.accept(grammarAccess.getEntityUniversalRestrictionAxiomAccess().getRestrictedRelationReifiedRelationshipReferenceParserRuleCall_3_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getEntityRestrictionAxiom_RestrictedRelation(), false));
+		feeder.accept(grammarAccess.getEntityUniversalRestrictionAxiomAccess().getRestrictedRangeEntityReferenceParserRuleCall_5_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getEntityRestrictionAxiom_RestrictedRange(), false));
+		feeder.accept(grammarAccess.getEntityUniversalRestrictionAxiomAccess().getRestrictedDomainEntityReferenceParserRuleCall_7_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getEntityRestrictionAxiom_RestrictedDomain(), false));
 		feeder.finish();
 	}
 	
@@ -860,8 +860,8 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.eINSTANCE.getReifiedRelationshipInstanceDomain_Domain()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getReifiedRelationshipInstanceDomainAccess().getReifiedRelationshipInstanceReifiedRelationshipInstanceReferenceParserRuleCall_3_0_1(), semanticObject.getReifiedRelationshipInstance());
-		feeder.accept(grammarAccess.getReifiedRelationshipInstanceDomainAccess().getDomainConceptualEntitySingletonInstanceReferenceParserRuleCall_5_0_1(), semanticObject.getDomain());
+		feeder.accept(grammarAccess.getReifiedRelationshipInstanceDomainAccess().getReifiedRelationshipInstanceReifiedRelationshipInstanceReferenceParserRuleCall_3_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getReifiedRelationshipInstanceDomain_ReifiedRelationshipInstance(), false));
+		feeder.accept(grammarAccess.getReifiedRelationshipInstanceDomainAccess().getDomainConceptualEntitySingletonInstanceReferenceParserRuleCall_5_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getReifiedRelationshipInstanceDomain_Domain(), false));
 		feeder.finish();
 	}
 	
@@ -882,8 +882,8 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.eINSTANCE.getReifiedRelationshipInstanceRange_Range()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getReifiedRelationshipInstanceRangeAccess().getReifiedRelationshipInstanceReifiedRelationshipInstanceReferenceParserRuleCall_3_0_1(), semanticObject.getReifiedRelationshipInstance());
-		feeder.accept(grammarAccess.getReifiedRelationshipInstanceRangeAccess().getRangeConceptualEntitySingletonInstanceReferenceParserRuleCall_5_0_1(), semanticObject.getRange());
+		feeder.accept(grammarAccess.getReifiedRelationshipInstanceRangeAccess().getReifiedRelationshipInstanceReifiedRelationshipInstanceReferenceParserRuleCall_3_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getReifiedRelationshipInstanceRange_ReifiedRelationshipInstance(), false));
+		feeder.accept(grammarAccess.getReifiedRelationshipInstanceRangeAccess().getRangeConceptualEntitySingletonInstanceReferenceParserRuleCall_5_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getReifiedRelationshipInstanceRange_Range(), false));
 		feeder.finish();
 	}
 	
@@ -902,7 +902,7 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.eINSTANCE.getReifiedRelationshipInstance_SingletonReifiedRelationshipClassifier()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getReifiedRelationshipInstanceAccess().getSingletonReifiedRelationshipClassifierReifiedRelationshipReferenceParserRuleCall_3_0_1(), semanticObject.getSingletonReifiedRelationshipClassifier());
+		feeder.accept(grammarAccess.getReifiedRelationshipInstanceAccess().getSingletonReifiedRelationshipClassifierReifiedRelationshipReferenceParserRuleCall_3_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getReifiedRelationshipInstance_SingletonReifiedRelationshipClassifier(), false));
 		feeder.finish();
 	}
 	
@@ -926,8 +926,8 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.eINSTANCE.getReifiedRelationshipSpecializationAxiom_SuperRelationship()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipReifiedRelationshipReferenceParserRuleCall_0_0_1(), semanticObject.getSubRelationship());
-		feeder.accept(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipReifiedRelationshipReferenceParserRuleCall_2_0_1(), semanticObject.getSuperRelationship());
+		feeder.accept(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSubRelationshipReifiedRelationshipReferenceParserRuleCall_0_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getReifiedRelationshipSpecializationAxiom_SubRelationship(), false));
+		feeder.accept(grammarAccess.getReifiedRelationshipSpecializationAxiomAccess().getSuperRelationshipReifiedRelationshipReferenceParserRuleCall_2_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getReifiedRelationshipSpecializationAxiom_SuperRelationship(), false));
 		feeder.finish();
 	}
 	
@@ -978,7 +978,7 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.eINSTANCE.getRootConceptTaxonomyAxiom_Root()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getRootConceptTaxonomyAxiomAccess().getRootConceptReferenceParserRuleCall_3_0_1(), semanticObject.getRoot());
+		feeder.accept(grammarAccess.getRootConceptTaxonomyAxiomAccess().getRootConceptReferenceParserRuleCall_3_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getRootConceptTaxonomyAxiom_Root(), false));
 		feeder.finish();
 	}
 	
@@ -1000,7 +1000,7 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
 		feeder.accept(grammarAccess.getScalarDataPropertyValueAccess().getScalarPropertyValueReferenceParserRuleCall_3_0(), semanticObject.getScalarPropertyValue());
-		feeder.accept(grammarAccess.getScalarDataPropertyValueAccess().getScalarDataPropertyDataRelationshipToScalarReferenceParserRuleCall_5_0_1(), semanticObject.getScalarDataProperty());
+		feeder.accept(grammarAccess.getScalarDataPropertyValueAccess().getScalarDataPropertyDataRelationshipToScalarReferenceParserRuleCall_5_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getScalarDataPropertyValue_ScalarDataProperty(), false));
 		feeder.finish();
 	}
 	
@@ -1026,8 +1026,8 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
 		feeder.accept(grammarAccess.getScalarDataPropertyAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getScalarDataPropertyAccess().getDomainStructureReferenceParserRuleCall_4_0_1(), semanticObject.getDomain());
-		feeder.accept(grammarAccess.getScalarDataPropertyAccess().getRangeDataRangeReferenceParserRuleCall_6_0_1(), semanticObject.getRange());
+		feeder.accept(grammarAccess.getScalarDataPropertyAccess().getDomainStructureReferenceParserRuleCall_4_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getDataRelationshipFromStructure_Domain(), false));
+		feeder.accept(grammarAccess.getScalarDataPropertyAccess().getRangeDataRangeReferenceParserRuleCall_6_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getDataRelationshipToScalar_Range(), false));
 		feeder.finish();
 	}
 	
@@ -1050,7 +1050,7 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
 		feeder.accept(grammarAccess.getScalarOneOfLiteralAxiomAccess().getValueSTRINGTerminalRuleCall_3_0(), semanticObject.getValue());
-		feeder.accept(grammarAccess.getScalarOneOfLiteralAxiomAccess().getAxiomScalarOneOfRestrictionReferenceParserRuleCall_5_0_1(), semanticObject.getAxiom());
+		feeder.accept(grammarAccess.getScalarOneOfLiteralAxiomAccess().getAxiomScalarOneOfRestrictionReferenceParserRuleCall_5_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getScalarOneOfLiteralAxiom_Axiom(), false));
 		feeder.finish();
 	}
 	
@@ -1076,7 +1076,7 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
 		feeder.accept(grammarAccess.getScalarOneOfRestrictionAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getScalarOneOfRestrictionAccess().getRestrictedRangeDataRangeReferenceParserRuleCall_4_0_1(), semanticObject.getRestrictedRange());
+		feeder.accept(grammarAccess.getScalarOneOfRestrictionAccess().getRestrictedRangeDataRangeReferenceParserRuleCall_4_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getRestrictedDataRange_RestrictedRange(), false));
 		feeder.finish();
 	}
 	
@@ -1119,8 +1119,8 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.eINSTANCE.getSpecificDisjointConceptAxiom_DisjointLeaf()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getSpecificDisjointConceptAxiomAccess().getDisjointTaxonomyParentConceptTreeDisjunctionReferenceParserRuleCall_3_0_1(), semanticObject.getDisjointTaxonomyParent());
-		feeder.accept(grammarAccess.getSpecificDisjointConceptAxiomAccess().getDisjointLeafConceptReferenceParserRuleCall_5_0_1(), semanticObject.getDisjointLeaf());
+		feeder.accept(grammarAccess.getSpecificDisjointConceptAxiomAccess().getDisjointTaxonomyParentConceptTreeDisjunctionReferenceParserRuleCall_3_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getDisjointUnionOfConceptsAxiom_DisjointTaxonomyParent(), false));
+		feeder.accept(grammarAccess.getSpecificDisjointConceptAxiomAccess().getDisjointLeafConceptReferenceParserRuleCall_5_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getSpecificDisjointConceptAxiom_DisjointLeaf(), false));
 		feeder.finish();
 	}
 	
@@ -1186,7 +1186,7 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.eINSTANCE.getStructuredDataPropertyValue_StructuredPropertyTuple()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getStructuredDataPropertyValueAccess().getStructuredDataPropertyDataRelationshipToStructureReferenceParserRuleCall_3_0_1(), semanticObject.getStructuredDataProperty());
+		feeder.accept(grammarAccess.getStructuredDataPropertyValueAccess().getStructuredDataPropertyDataRelationshipToStructureReferenceParserRuleCall_3_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getStructuredDataPropertyValue_StructuredDataProperty(), false));
 		feeder.accept(grammarAccess.getStructuredDataPropertyValueAccess().getStructuredPropertyTupleDataStructureTupleParserRuleCall_5_0(), semanticObject.getStructuredPropertyTuple());
 		feeder.finish();
 	}
@@ -1213,8 +1213,8 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
 		feeder.accept(grammarAccess.getStructuredDataPropertyAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getStructuredDataPropertyAccess().getDomainStructureReferenceParserRuleCall_4_0_1(), semanticObject.getDomain());
-		feeder.accept(grammarAccess.getStructuredDataPropertyAccess().getRangeStructureReferenceParserRuleCall_6_0_1(), semanticObject.getRange());
+		feeder.accept(grammarAccess.getStructuredDataPropertyAccess().getDomainStructureReferenceParserRuleCall_4_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getDataRelationshipFromStructure_Domain(), false));
+		feeder.accept(grammarAccess.getStructuredDataPropertyAccess().getRangeStructureReferenceParserRuleCall_6_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getDataRelationshipToStructure_Range(), false));
 		feeder.finish();
 	}
 	
@@ -1240,7 +1240,7 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
 		feeder.accept(grammarAccess.getSynonymScalarRestrictionAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getSynonymScalarRestrictionAccess().getRestrictedRangeDataRangeReferenceParserRuleCall_4_0_1(), semanticObject.getRestrictedRange());
+		feeder.accept(grammarAccess.getSynonymScalarRestrictionAccess().getRestrictedRangeDataRangeReferenceParserRuleCall_4_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getRestrictedDataRange_RestrictedRange(), false));
 		feeder.finish();
 	}
 	
@@ -1259,7 +1259,7 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.eINSTANCE.getTerminologyExtensionAxiom_ExtendedTerminology()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getTerminologyExtensionAxiomAccess().getExtendedTerminologyTerminologyBoxReferenceParserRuleCall_1_0_1(), semanticObject.getExtendedTerminology());
+		feeder.accept(grammarAccess.getTerminologyExtensionAxiomAccess().getExtendedTerminologyTerminologyBoxReferenceParserRuleCall_1_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getTerminologyExtensionAxiom_ExtendedTerminology(), false));
 		feeder.finish();
 	}
 	
@@ -1309,8 +1309,8 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.eINSTANCE.getTerminologyNestingAxiom_NestingContext()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getTerminologyNestingAxiomAccess().getNestingTerminologyTerminologyBoxReferenceParserRuleCall_3_0_1(), semanticObject.getNestingTerminology());
-		feeder.accept(grammarAccess.getTerminologyNestingAxiomAccess().getNestingContextConceptReferenceParserRuleCall_5_0_1(), semanticObject.getNestingContext());
+		feeder.accept(grammarAccess.getTerminologyNestingAxiomAccess().getNestingTerminologyTerminologyBoxReferenceParserRuleCall_3_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getTerminologyNestingAxiom_NestingTerminology(), false));
+		feeder.accept(grammarAccess.getTerminologyNestingAxiomAccess().getNestingContextConceptReferenceParserRuleCall_5_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getTerminologyNestingAxiom_NestingContext(), false));
 		feeder.finish();
 	}
 	
@@ -1361,9 +1361,9 @@ public class OntologicalModelingLanguageSemanticSequencer extends AbstractDelega
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing((EObject) semanticObject, OMLPackage.eINSTANCE.getUnreifiedRelationshipInstanceTuple_Range()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, (EObject) semanticObject);
-		feeder.accept(grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getUnreifiedRelationshipUnreifiedRelationshipReferenceParserRuleCall_3_0_1(), semanticObject.getUnreifiedRelationship());
-		feeder.accept(grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getDomainConceptualEntitySingletonInstanceReferenceParserRuleCall_5_0_1(), semanticObject.getDomain());
-		feeder.accept(grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getRangeConceptualEntitySingletonInstanceReferenceParserRuleCall_7_0_1(), semanticObject.getRange());
+		feeder.accept(grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getUnreifiedRelationshipUnreifiedRelationshipReferenceParserRuleCall_3_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getUnreifiedRelationshipInstanceTuple_UnreifiedRelationship(), false));
+		feeder.accept(grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getDomainConceptualEntitySingletonInstanceReferenceParserRuleCall_5_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getUnreifiedRelationshipInstanceTuple_Domain(), false));
+		feeder.accept(grammarAccess.getUnreifiedRelationshipInstanceTupleAccess().getRangeConceptualEntitySingletonInstanceReferenceParserRuleCall_7_0_1(), semanticObject.eGet(OMLPackage.eINSTANCE.getUnreifiedRelationshipInstanceTuple_Range(), false));
 		feeder.finish();
 	}
 	

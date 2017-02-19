@@ -16,6 +16,7 @@
  */
 package jpl.imce.oml.specification.formatting2;
 
+import com.google.inject.Inject;
 import java.util.Arrays;
 import jpl.imce.oml.specification.ecore.Annotation;
 import jpl.imce.oml.specification.ecore.AnnotationProperty;
@@ -27,20 +28,23 @@ import jpl.imce.oml.specification.ecore.TerminologyBoxAxiom;
 import jpl.imce.oml.specification.ecore.TerminologyBoxStatement;
 import jpl.imce.oml.specification.ecore.TerminologyExtent;
 import jpl.imce.oml.specification.ecore.TerminologyGraph;
+import jpl.imce.oml.specification.services.OntologicalModelingLanguageGrammarAccess;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.formatting2.AbstractFormatter2;
 import org.eclipse.xtext.formatting2.IFormattableDocument;
 import org.eclipse.xtext.formatting2.IHiddenRegionFormatter;
 import org.eclipse.xtext.formatting2.regionaccess.ISemanticRegion;
-import org.eclipse.xtext.formatting2.regionaccess.ISemanticRegionsFinder;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
 @SuppressWarnings("all")
 public class OntologicalModelingLanguageFormatter extends AbstractFormatter2 {
+  @Inject
+  @Extension
+  private OntologicalModelingLanguageGrammarAccess _ontologicalModelingLanguageGrammarAccess;
+  
   protected void _format(final TerminologyExtent terminologyExtent, @Extension final IFormattableDocument document) {
     final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
       it.newLine();
@@ -69,32 +73,22 @@ public class OntologicalModelingLanguageFormatter extends AbstractFormatter2 {
       it.newLine();
     };
     document.<AnnotationProperty>prepend(annotationProperty, _function);
-    ISemanticRegionsFinder _regionFor = this.textRegionExtensions.regionFor(annotationProperty);
-    ISemanticRegion _keyword = _regionFor.keyword("annotationProperty");
     final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
       it.oneSpace();
     };
-    document.append(_keyword, _function_1);
-    ISemanticRegionsFinder _regionFor_1 = this.textRegionExtensions.regionFor(annotationProperty);
-    EAttribute _annotationProperty_AbbrevIRI = OMLPackage.eINSTANCE.getAnnotationProperty_AbbrevIRI();
-    ISemanticRegion _feature = _regionFor_1.feature(_annotationProperty_AbbrevIRI);
+    document.append(this.textRegionExtensions.regionFor(annotationProperty).ruleCall(this._ontologicalModelingLanguageGrammarAccess.getAnnotationPropertyAccess().getANNOTATION_PROPERTY_TOKENTerminalRuleCall_0()), _function_1);
     final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
       it.oneSpace();
     };
-    document.prepend(_feature, _function_2);
-    ISemanticRegionsFinder _regionFor_2 = this.textRegionExtensions.regionFor(annotationProperty);
-    ISemanticRegion _keyword_1 = _regionFor_2.keyword("=");
+    document.prepend(this.textRegionExtensions.regionFor(annotationProperty).feature(OMLPackage.eINSTANCE.getAnnotationProperty_AbbrevIRI()), _function_2);
     final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
       it.noSpace();
     };
-    document.surround(_keyword_1, _function_3);
-    ISemanticRegionsFinder _regionFor_3 = this.textRegionExtensions.regionFor(annotationProperty);
-    EAttribute _annotationProperty_Iri = OMLPackage.eINSTANCE.getAnnotationProperty_Iri();
-    ISemanticRegion _feature_1 = _regionFor_3.feature(_annotationProperty_Iri);
+    document.surround(this.textRegionExtensions.regionFor(annotationProperty).keyword("="), _function_3);
     final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
       it.newLine();
     };
-    document.append(_feature_1, _function_4);
+    document.append(this.textRegionExtensions.regionFor(annotationProperty).feature(OMLPackage.eINSTANCE.getAnnotationProperty_Iri()), _function_4);
   }
   
   protected void _format(final Annotation annotation, @Extension final IFormattableDocument document) {
@@ -102,18 +96,14 @@ public class OntologicalModelingLanguageFormatter extends AbstractFormatter2 {
       it.newLine();
     };
     document.<Annotation>prepend(annotation, _function);
-    ISemanticRegionsFinder _regionFor = this.textRegionExtensions.regionFor(annotation);
-    ISemanticRegion _keyword = _regionFor.keyword("annotation");
     final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
       it.oneSpace();
     };
-    document.append(_keyword, _function_1);
-    ISemanticRegionsFinder _regionFor_1 = this.textRegionExtensions.regionFor(annotation);
-    ISemanticRegion _keyword_1 = _regionFor_1.keyword("=");
+    document.append(this.textRegionExtensions.regionFor(annotation).keyword("annotation"), _function_1);
     final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
       it.noSpace();
     };
-    document.surround(_keyword_1, _function_2);
+    document.surround(this.textRegionExtensions.regionFor(annotation).keyword("="), _function_2);
   }
   
   protected void _format(final TerminologyGraph terminologyGraph, @Extension final IFormattableDocument document) {
@@ -121,30 +111,20 @@ public class OntologicalModelingLanguageFormatter extends AbstractFormatter2 {
       it.newLine();
     };
     document.<TerminologyGraph>prepend(terminologyGraph, _function);
-    ISemanticRegionsFinder _regionFor = this.textRegionExtensions.regionFor(terminologyGraph);
-    EAttribute _terminologyBox_Kind = OMLPackage.eINSTANCE.getTerminologyBox_Kind();
-    ISemanticRegion _feature = _regionFor.feature(_terminologyBox_Kind);
     final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
       it.oneSpace();
     };
-    document.append(_feature, _function_1);
-    ISemanticRegionsFinder _regionFor_1 = this.textRegionExtensions.regionFor(terminologyGraph);
-    ISemanticRegion _keyword = _regionFor_1.keyword("terminology");
+    document.append(this.textRegionExtensions.regionFor(terminologyGraph).feature(OMLPackage.eINSTANCE.getTerminologyBox_Kind()), _function_1);
     final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
       it.oneSpace();
     };
-    document.surround(_keyword, _function_2);
-    ISemanticRegionsFinder _regionFor_2 = this.textRegionExtensions.regionFor(terminologyGraph);
-    EAttribute _module_Iri = OMLPackage.eINSTANCE.getModule_Iri();
-    ISemanticRegion _feature_1 = _regionFor_2.feature(_module_Iri);
+    document.surround(this.textRegionExtensions.regionFor(terminologyGraph).keyword("terminology"), _function_2);
     final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
       it.oneSpace();
     };
-    document.surround(_feature_1, _function_3);
-    ISemanticRegionsFinder _regionFor_3 = this.textRegionExtensions.regionFor(terminologyGraph);
-    final ISemanticRegion lcurly = _regionFor_3.keyword("{");
-    ISemanticRegionsFinder _regionFor_4 = this.textRegionExtensions.regionFor(terminologyGraph);
-    final ISemanticRegion rcurly = _regionFor_4.keyword("}");
+    document.surround(this.textRegionExtensions.regionFor(terminologyGraph).feature(OMLPackage.eINSTANCE.getModule_Iri()), _function_3);
+    final ISemanticRegion lcurly = this.textRegionExtensions.regionFor(terminologyGraph).ruleCall(this._ontologicalModelingLanguageGrammarAccess.getTerminologyGraphAccess().getLCURLYTerminalRuleCall_3());
+    final ISemanticRegion rcurly = this.textRegionExtensions.regionFor(terminologyGraph).ruleCall(this._ontologicalModelingLanguageGrammarAccess.getTerminologyGraphAccess().getRCURLYTerminalRuleCall_5());
     final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
       it.oneSpace();
     };
@@ -180,10 +160,8 @@ public class OntologicalModelingLanguageFormatter extends AbstractFormatter2 {
       it.newLine();
     };
     document.<Bundle>prepend(bundle, _function);
-    ISemanticRegionsFinder _regionFor = this.textRegionExtensions.regionFor(bundle);
-    final ISemanticRegion lcurly = _regionFor.keyword("{");
-    ISemanticRegionsFinder _regionFor_1 = this.textRegionExtensions.regionFor(bundle);
-    final ISemanticRegion rcurly = _regionFor_1.keyword("}");
+    final ISemanticRegion lcurly = this.textRegionExtensions.regionFor(bundle).keyword("{");
+    final ISemanticRegion rcurly = this.textRegionExtensions.regionFor(bundle).keyword("}");
     final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
       it.newLine();
     };
@@ -211,10 +189,8 @@ public class OntologicalModelingLanguageFormatter extends AbstractFormatter2 {
       it.newLine();
     };
     document.<DescriptionBox>prepend(descriptionBox, _function);
-    ISemanticRegionsFinder _regionFor = this.textRegionExtensions.regionFor(descriptionBox);
-    final ISemanticRegion lcurly = _regionFor.keyword("{");
-    ISemanticRegionsFinder _regionFor_1 = this.textRegionExtensions.regionFor(descriptionBox);
-    final ISemanticRegion rcurly = _regionFor_1.keyword("}");
+    final ISemanticRegion lcurly = this.textRegionExtensions.regionFor(descriptionBox).keyword("{");
+    final ISemanticRegion rcurly = this.textRegionExtensions.regionFor(descriptionBox).keyword("}");
     final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
       it.newLine();
     };
@@ -231,29 +207,17 @@ public class OntologicalModelingLanguageFormatter extends AbstractFormatter2 {
   
   protected void _format(final Aspect aspect, @Extension final IFormattableDocument document) {
     final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
-      it.newLine();
+      it.oneSpace();
     };
-    document.<Aspect>prepend(aspect, _function);
-    ISemanticRegionsFinder _regionFor = this.textRegionExtensions.regionFor(aspect);
-    ISemanticRegion _keyword = _regionFor.keyword("aspect");
+    document.append(this.textRegionExtensions.regionFor(aspect).keyword("aspect"), _function);
     final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
       it.oneSpace();
     };
-    document.append(_keyword, _function_1);
-    ISemanticRegionsFinder _regionFor_1 = this.textRegionExtensions.regionFor(aspect);
-    EAttribute _term_Name = OMLPackage.eINSTANCE.getTerm_Name();
-    ISemanticRegion _feature = _regionFor_1.feature(_term_Name);
+    document.prepend(this.textRegionExtensions.regionFor(aspect).feature(OMLPackage.eINSTANCE.getTerm_Name()), _function_1);
     final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
-      it.oneSpace();
-    };
-    document.prepend(_feature, _function_2);
-    ISemanticRegionsFinder _regionFor_2 = this.textRegionExtensions.regionFor(aspect);
-    EAttribute _term_Name_1 = OMLPackage.eINSTANCE.getTerm_Name();
-    ISemanticRegion _feature_1 = _regionFor_2.feature(_term_Name_1);
-    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
       it.newLine();
     };
-    document.append(_feature_1, _function_3);
+    document.append(this.textRegionExtensions.regionFor(aspect).feature(OMLPackage.eINSTANCE.getTerm_Name()), _function_2);
   }
   
   public void format(final Object aspect, final IFormattableDocument document) {

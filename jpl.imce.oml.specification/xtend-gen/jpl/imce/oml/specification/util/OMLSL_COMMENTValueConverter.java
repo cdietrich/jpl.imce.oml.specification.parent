@@ -40,7 +40,6 @@ public class OMLSL_COMMENTValueConverter extends AbstractLexerBasedConverter<Str
     if (_not) {
       throw new ValueConverterException("Invalid Single Line Comment", node, null);
     }
-    int _length = string.length();
-    return string.substring(2, _length);
+    return string.substring(2, string.length());
   }
 }

@@ -142,7 +142,7 @@ public abstract class AbstractOntologicalModelingLanguageRuntimeModule extends D
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
-	public Provider<InternalOntologicalModelingLanguageLexer> provideInternalOntologicalModelingLanguageLexer() {
+	public Provider<? extends InternalOntologicalModelingLanguageLexer> provideInternalOntologicalModelingLanguageLexer() {
 		return LexerProvider.create(InternalOntologicalModelingLanguageLexer.class);
 	}
 	

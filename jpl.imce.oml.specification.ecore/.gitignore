@@ -3,3 +3,4 @@
 /src-gen/**/*.ecore
 /build/
 /target/
+/bin/

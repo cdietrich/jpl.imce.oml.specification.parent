@@ -32,14 +32,14 @@ import jpl.imce.oml.specification.ecore.Aspect
 // Cannot use the GrammarAccess for the formatter because it fails to build cleanly with the xtext-gradle-plugin.
 // See: https://www.eclipse.org/forums/index.php?t=msg&th=1084511&goto=1754437&#msg_1754437
 
-//import com.google.inject.Inject
-//import jpl.imce.oml.specification.services.OntologicalModelingLanguageGrammarAccess
+import com.google.inject.Inject
+import jpl.imce.oml.specification.services.OntologicalModelingLanguageGrammarAccess
 
 @SuppressWarnings("all")
 class OntologicalModelingLanguageFormatter extends AbstractFormatter2 {
 	
 	// Refactored to do formatting without a dependency injection for the GrammarAccess.
-	//@Inject extension OntologicalModelingLanguageGrammarAccess
+	@Inject extension OntologicalModelingLanguageGrammarAccess
 
 	def dispatch void format(TerminologyExtent terminologyExtent, extension IFormattableDocument document) {
 		terminologyExtent.prepend[newLine]
@@ -64,10 +64,10 @@ class OntologicalModelingLanguageFormatter extends AbstractFormatter2 {
 	def dispatch void format(AnnotationProperty annotationProperty, extension IFormattableDocument document) {
 		annotationProperty.prepend[newLine]
 		
-		//annotationProperty.regionFor.ruleCall(annotationPropertyAccess.ANNOTATION_PROPERTY_TOKENTerminalRuleCall_0).append[oneSpace]
+		annotationProperty.regionFor.ruleCall(annotationPropertyAccess.ANNOTATION_PROPERTY_TOKENTerminalRuleCall_0).append[oneSpace]
 		//annotationProperty.regionFor.ruleCall(annotationPropertyAccess.EQUALTerminalRuleCall_2).surround[noSpace]
 		
-		annotationProperty.regionFor.keyword("annotationProperty").append[oneSpace]
+		//annotationProperty.regionFor.keyword("annotationProperty").append[oneSpace]
 		
 		annotationProperty.regionFor.feature(OMLPackage.eINSTANCE.annotationProperty_AbbrevIRI).prepend[oneSpace]
 		annotationProperty.regionFor.keyword("=").surround[noSpace]
@@ -94,10 +94,10 @@ class OntologicalModelingLanguageFormatter extends AbstractFormatter2 {
 		//terminologyGraph.regionFor.ruleCall(terminologyGraphAccess.iriIRITerminalRuleCall_2_0).surround[oneSpace]
 		terminologyGraph.regionFor.feature(OMLPackage.eINSTANCE.module_Iri).surround[oneSpace]
 		
-		//val lcurly = terminologyGraph.regionFor.ruleCall(terminologyGraphAccess.LCURLYTerminalRuleCall_3)
-		val lcurly = terminologyGraph.regionFor.keyword("{")
-		//val rcurly = terminologyGraph.regionFor.ruleCall(terminologyGraphAccess.RCURLYTerminalRuleCall_5)
-		val rcurly = terminologyGraph.regionFor.keyword("}")
+		val lcurly = terminologyGraph.regionFor.ruleCall(terminologyGraphAccess.LCURLYTerminalRuleCall_3)
+		//val lcurly = terminologyGraph.regionFor.keyword("{")
+		val rcurly = terminologyGraph.regionFor.ruleCall(terminologyGraphAccess.RCURLYTerminalRuleCall_5)
+		//val rcurly = terminologyGraph.regionFor.keyword("}")
 		lcurly.prepend[oneSpace]
 		lcurly.append[newLine]
 		interior(lcurly, rcurly)[indent]
@@ -157,7 +157,7 @@ class OntologicalModelingLanguageFormatter extends AbstractFormatter2 {
 	def dispatch void format(Aspect aspect, extension IFormattableDocument document) {
 		//aspect.regionFor.ruleCall(aspectAccess.ASPECT_TOKENTerminalRuleCall_0).append[oneSpace]
 		
-		aspect.prepend[newLine]
+		//aspect.prepend[newLine]
 		aspect.regionFor.keyword("aspect").append[oneSpace]
 		
 		//aspect.regionFor.ruleCall(aspectAccess.nameIDTerminalRuleCall_1_0).append[newLine]

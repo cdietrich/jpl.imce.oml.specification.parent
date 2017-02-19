@@ -69,7 +69,7 @@ class OWLLinkingService extends DefaultLinkingService {
 	
 	override getLinkedObjects(EObject context, EReference ref, INode node) throws IllegalNodeException {
 		var EClass requiredType = ref.getEReferenceType()
-		if (requiredType == null)
+		if (null === requiredType)
 			return Collections.<EObject> emptyList()
 
 		val crossRefString = getCrossRefNodeAsString(node)
@@ -79,11 +79,11 @@ class OWLLinkingService extends DefaultLinkingService {
 		// look for a catalog from the current "file" directory and to the parent folders.
 		// if found, use it to resolve the crossRef IRI to a local file; which needs to be loaded.
 		
-		if (crossRefString != null && !crossRefString.equals("")) {
+		if (null !== crossRefString && !crossRefString.equals("")) {
 			val IScope scope = getScope(context, ref)
 			val QualifiedName qualifiedLinkName = qualifiedNameConverter.toQualifiedName(crossRefString)
 			val IEObjectDescription eObjectDescription = scope.getSingleElement(qualifiedLinkName)
-			if (eObjectDescription != null) {
+			if (null !== eObjectDescription) {
 				val e = eObjectDescription.getEObjectOrProxy()
 				
 				switch context {

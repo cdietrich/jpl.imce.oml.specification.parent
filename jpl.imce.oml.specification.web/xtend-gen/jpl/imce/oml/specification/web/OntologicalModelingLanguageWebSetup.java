@@ -3,15 +3,10 @@
  */
 package jpl.imce.oml.specification.web;
 
-import com.google.inject.Guice;
 import com.google.inject.Injector;
-import com.google.inject.Module;
 import com.google.inject.Provider;
-import com.google.inject.util.Modules;
 import java.util.concurrent.ExecutorService;
-import jpl.imce.oml.specification.OntologicalModelingLanguageRuntimeModule;
 import jpl.imce.oml.specification.OntologicalModelingLanguageStandaloneSetup;
-import jpl.imce.oml.specification.web.OntologicalModelingLanguageWebModule;
 import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor;
 
 /**
@@ -23,11 +18,8 @@ public class OntologicalModelingLanguageWebSetup extends OntologicalModelingLang
   private final Provider<ExecutorService> executorServiceProvider;
   
   public Injector createInjector() {
-    final OntologicalModelingLanguageRuntimeModule runtimeModule = new OntologicalModelingLanguageRuntimeModule();
-    final OntologicalModelingLanguageWebModule webModule = new OntologicalModelingLanguageWebModule(this.executorServiceProvider);
-    Modules.OverriddenModuleBuilder _override = Modules.override(runtimeModule);
-    Module _with = _override.with(webModule);
-    return Guice.createInjector(_with);
+    throw new Error("Unresolved compilation problems:"
+      + "\nInvalid number of arguments. The constructor OntologicalModelingLanguageWebModule() is not applicable for the arguments (Provider<ExecutorService>)");
   }
   
   public OntologicalModelingLanguageWebSetup(final Provider<ExecutorService> executorServiceProvider) {

@@ -141,7 +141,7 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cValueSTRINGTerminalRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		
-		/// *
+		///*
 		// * Note that the concrete syntax for the Annotation.subject is defined implicitly
 		// * in the sense that the subject of an Annotation is always the preceding
 		// * TerminologyThing or the subject of the preceding Annotation.
@@ -159,7 +159,7 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 		// * @rdfs:label = "bar
 		// * 
 		// * @see jpl.imce.oml.specification.linking.OMLLinkingService
-		// * / Annotation:
+		// */ Annotation:
 		//	ANNOTATION_TOKEN property=[AnnotationProperty|ABBREV_IRI] EQUAL value=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -442,7 +442,7 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 		private final RuleCall cConceptParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//AtomicEntity Entity:
-		//	Aspect | Concept
+		//	Aspect | Concept;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//Aspect | Concept
@@ -499,7 +499,7 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 		private final RuleCall cRestrictedDataRangeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//ScalarDataRange DataRange:
-		//	Scalar | RestrictedDataRange
+		//	Scalar | RestrictedDataRange;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//Scalar | RestrictedDataRange
@@ -4291,7 +4291,7 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 		return getAnnotationPropertyAccess().getRule();
 	}
 	
-	/// *
+	///*
 	// * Note that the concrete syntax for the Annotation.subject is defined implicitly
 	// * in the sense that the subject of an Annotation is always the preceding
 	// * TerminologyThing or the subject of the preceding Annotation.
@@ -4309,7 +4309,7 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 	// * @rdfs:label = "bar
 	// * 
 	// * @see jpl.imce.oml.specification.linking.OMLLinkingService
-	// * / Annotation:
+	// */ Annotation:
 	//	ANNOTATION_TOKEN property=[AnnotationProperty|ABBREV_IRI] EQUAL value=STRING;
 	public AnnotationElements getAnnotationAccess() {
 		return pAnnotation;
@@ -4386,7 +4386,7 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 	}
 	
 	//AtomicEntity Entity:
-	//	Aspect | Concept
+	//	Aspect | Concept;
 	public AtomicEntityElements getAtomicEntityAccess() {
 		return pAtomicEntity;
 	}
@@ -4416,7 +4416,7 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 	}
 	
 	//ScalarDataRange DataRange:
-	//	Scalar | RestrictedDataRange
+	//	Scalar | RestrictedDataRange;
 	public ScalarDataRangeElements getScalarDataRangeAccess() {
 		return pScalarDataRange;
 	}
@@ -5584,7 +5584,7 @@ public class OntologicalModelingLanguageGrammarAccess extends AbstractGrammarEle
 	}
 	
 	//terminal ML_COMMENT:
-	//	'/ *'->'* /';
+	//	'/*'->'*/';
 	public TerminalRule getML_COMMENTRule() {
 		return tML_COMMENT;
 	}
