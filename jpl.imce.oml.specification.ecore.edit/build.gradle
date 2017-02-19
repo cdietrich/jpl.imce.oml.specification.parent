@@ -1,6 +1,0 @@
-apply plugin: eclipsebuild.BundlePlugin
-
-dependencies {
-    compile withEclipseBundle('org.eclipse.emf.edit')
-	compile project(':jpl.imce.oml.specification.ecore')
-}
