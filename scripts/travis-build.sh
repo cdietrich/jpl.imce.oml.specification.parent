@@ -17,15 +17,15 @@ t=$(git name-rev --tags --name-only $(git rev-parse HEAD))
 ./gradlew :installTargetPlatform
 
 # Update Eclipse project-related metadata
-./gradlew :jpl.imce.oml.specification.ecore:cleanEclipse
-./gradlew :jpl.imce.oml.specification.ecore:eclipse
+#./gradlew :jpl.imce.oml.specification.ecore:cleanEclipse
+#./gradlew :jpl.imce.oml.specification.ecore:eclipse
 
 # build the OML metamodel
-./gradlew :jpl.imce.oml.specification.ecore:build
+#./gradlew :jpl.imce.oml.specification.ecore:build
 
 # generate the Scala libraries
-./gradlew :gov.nasa.jpl.imce.oml.specification.scala.generators:generateOMLResolverLibrary
+#./gradlew :gov.nasa.jpl.imce.oml.specification.scala.generators:generateOMLResolverLibrary
 
 # Use the mavenized target platform repository to build the actual eclipse projects
-./gradlew build 
+#./gradlew build 
 
