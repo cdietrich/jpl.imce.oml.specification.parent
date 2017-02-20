@@ -21,15 +21,7 @@ limitations under the License.
    pluginKey="OML", 
    modelName="OML", prefix="OML",
    modelPluginID="jpl.imce.oml.specification.ecore",
-   modelDirectory="/jpl.imce.oml.specification.ecore/src-gen", 
-   
-   editPluginID="jpl.imce.oml.specification.ecore.edit",
-   editPluginClass="jpl.imce.oml.specification.ecore.edit.provider.OMLEditPlugin", 
-   editDirectory="/jpl.imce.oml.specification.ecore.edit/src-gen", 
-   
-   editorPluginID="jpl.imce.oml.specification.ecore.editor", 
-   editorPluginClass="jpl.imce.oml.specification.eore.editor.presentation.OMLEditorPlugin", 
-   editorDirectory="/jpl.imce.oml.specification.ecore.editor/src-gen")
+   modelDirectory="/jpl.imce.oml.specification.ecore/build/xcore/main")
    
 package jpl.imce.oml.specification.ecore
 

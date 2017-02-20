@@ -7,7 +7,7 @@ if (name.endsWith(".tests")) {
 		test {
 			java.srcDirs = ['src', 'src-gen']
 			resources.srcDirs = ['resources', 'src', 'src-gen']
-			xtendOutputDir = 'xtend-gen'
+			xtendOutputDir = 'build/xtend-gen'
 			output.classesDir = 'build/classes/test'
 			resources.exclude '**/*.g', '**/*.xtext', '**/*.mwe2', '**/*.xtend', '**/*._trace'
 		}
@@ -35,7 +35,7 @@ if (name.endsWith(".tests")) {
 		main {
 			java.srcDirs = ['src', 'src-gen']
 			resources.srcDirs = ['src', 'src-gen']
-			xtendOutputDir = 'xtend-gen'
+			xtendOutputDir = 'build/xtend-gen'
 			output.classesDir = 'build/classes/main'
 			resources.exclude '**/*.g', '**/*.xtext', '**/*.mwe2', '**/*.xtend', '**/*._trace'
 		}
