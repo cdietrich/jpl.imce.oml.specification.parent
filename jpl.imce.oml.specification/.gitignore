@@ -1,6 +1,6 @@
 /build/
-/target/
-/.antlr-generator-3.2.0-patch.jar
-*._trace
-*.xtextbin
-**/.gitignore
+.classpath
+.project
+.settings/org.eclipse.jdt.core.prefs
+.settings/org.eclipse.xtend.core.Xtend.prefs
+.settings/org.eclipse.xtext.java.Java.prefs

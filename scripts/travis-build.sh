@@ -17,7 +17,7 @@ t=$(git name-rev --tags --name-only $(git rev-parse HEAD))
 ./gradlew :installTargetPlatform
 
 # Update Eclipse project-related metadata
-#./gradlew :jpl.imce.oml.specification.ecore:cleanEclipse
+./gradlew :jpl.imce.oml.specification.ecore:cleanEclipse
 #./gradlew :jpl.imce.oml.specification.ecore:eclipse
 
 # build the OML metamodel

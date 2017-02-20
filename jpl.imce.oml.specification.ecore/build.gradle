@@ -24,9 +24,13 @@ dependencies {
 
 sourceSets {
 	main {
+		java.srcDirs = ['src', 'build/xcore/main', 'build/xtend-gen/main']
+		output.classesDir = 'build/classes/main'
 		resources {
-			exclude '**/*.xcore'
+			include '**/*.ecore'
+			exclude '**/*.xcore', '**/*.g', '**/*.xtext', '**/*.mwe2', '**/*.xtend', '**/*._trace'
 		}
+		xtendOutputDir = 'build/xtend-gen/main'
 	}
 }
 

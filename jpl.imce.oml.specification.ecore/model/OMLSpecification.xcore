@@ -89,6 +89,46 @@ annotation "http://imce.jpl.nasa.gov/oml/CopyConstructor" as CopyConstructor
  */
 annotation "http://imce.jpl.nasa.gov/oml/Glossary" as Glossary
 
+type OTI_TOOL_SPECIFIC_ID wraps String
+
+type OTI_TOOL_SPECIFIC_UUID wraps String
+
+type OTI_TOOL_SPECIFIC_URL wraps String
+
+/*
+ * A 3 or 4 tuple establishing the provenance between:
+ * - an OML TerminologyThing (identified by its primary key: omlUUID)
+ * - an OTI UMLElement (identified by its keys: otiID, otiURL, and, if available, otiUUID)
+ */
+@NotFunctionalAPI
+class OML2OTIProvenance {
+	
+	/*
+	 * The OML UUID of a TerminologyThing mapped to OTI
+	 */
+	UUID[1] omlUUID
+	
+	/*
+	 * The OTI tool-specific ID of the OTI element mapped from an OML TerminologyThing
+	 */
+	OTI_TOOL_SPECIFIC_ID[1] otiID
+	
+	/*
+	 * The OTI tool-specific URL of the OTI element mapped from an OML TerminologyThing
+	 */
+	OTI_TOOL_SPECIFIC_URL[1] otiURL
+	
+	/*
+	 * The OTI tool-specific UUID of the OTI element mapped from an OML TerminologyThing
+	 */
+	OTI_TOOL_SPECIFIC_UUID[?] otiUUID
+	
+	/*
+	 * Explanation of the OML to OTI provenance mapping
+	 */
+	String[1] explanation
+}
+
 /*
  * An IRI based on RFC 3987
  */

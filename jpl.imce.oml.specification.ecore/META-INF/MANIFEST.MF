@@ -11,10 +11,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: jpl.imce.oml.specification.ecore,
  jpl.imce.oml.specification.ecore.extensions,
  jpl.imce.oml.specification.ecore.impl,
- jpl.imce.oml.specification.ecore.util,
- gov.nasa.jpl.imce.oml.provenance.oti,
- gov.nasa.jpl.imce.oml.provenance.oti.impl,
- gov.nasa.jpl.imce.oml.provenance.oti.util
+ jpl.imce.oml.specification.ecore.util
 Require-Bundle: org.eclipse.core.runtime;visibility:=reexport,
  org.eclipse.core.resources;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
