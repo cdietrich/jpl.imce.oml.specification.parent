@@ -104,7 +104,7 @@ subprojects { subproject ->
 		
 		eclipse {
 			classpath {
-			   defaultOutputDir = file('target/classes')
+			   defaultOutputDir = file('build/classes/main')
 			   downloadSources=true
 			   downloadJavadoc=true
 			}

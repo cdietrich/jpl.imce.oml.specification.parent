@@ -57,6 +57,10 @@ annotation "http://imce.jpl.nasa.gov/oml/Override" as Override
  */
 annotation "http://imce.jpl.nasa.gov/oml/NotFunctionalAPI" as NotFunctionalAPI
 
+/*
+ * If present, specifies that the annotated method is intended as an interface operation;
+ * not for generating an implementation.
+ */
 annotation "http://imce.jpl.nasa.gov/oml/FunctionalInterface" as FunctionalInterface
 
 /*

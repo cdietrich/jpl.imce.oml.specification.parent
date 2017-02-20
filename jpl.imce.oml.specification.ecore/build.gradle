@@ -30,10 +30,13 @@ sourceSets {
 	}
 }
 
-generateXtext.onlyIf { false }
-
 xtext {
 	version = "${xtextVersion}"
+	sourceSets {
+		main {
+			srcDir 'model'
+		}
+	}
 	languages {
 		ecore {
 			setup = 'org.eclipse.xtext.ecore.EcoreSupport'

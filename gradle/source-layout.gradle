@@ -8,9 +8,7 @@ if (name.endsWith(".tests")) {
 			java.srcDirs = ['src', 'src-gen']
 			resources.srcDirs = ['resources', 'src', 'src-gen']
 			xtendOutputDir = 'xtend-gen'
-		}
-		all {
-			output.classesDir = 'target/classes'
+			output.classesDir = 'build/classes/test'
 			resources.exclude '**/*.g', '**/*.xtext', '**/*.mwe2', '**/*.xtend', '**/*._trace'
 		}
 	}
@@ -26,7 +24,7 @@ if (name.endsWith(".tests")) {
 			resources.srcDirs = []
 		}
 		all {
-			output.classesDir = 'target/classes'
+			output.classesDir = 'build/classes/main'
 		}
 	}
 	
@@ -38,14 +36,12 @@ if (name.endsWith(".tests")) {
 			java.srcDirs = ['src', 'src-gen']
 			resources.srcDirs = ['src', 'src-gen']
 			xtendOutputDir = 'xtend-gen'
+			output.classesDir = 'build/classes/main'
+			resources.exclude '**/*.g', '**/*.xtext', '**/*.mwe2', '**/*.xtend', '**/*._trace'
 		}
 		test {
 			java.srcDirs = []
 			resources.srcDirs = []
-		}
-		all {
-			output.classesDir = 'target/classes'
-			resources.exclude '**/*.g', '**/*.xtext', '**/*.mwe2', '**/*.xtend', '**/*._trace'
 		}
 	}
 	

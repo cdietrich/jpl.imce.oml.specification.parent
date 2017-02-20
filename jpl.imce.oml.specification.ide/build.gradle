@@ -1,0 +1,10 @@
+apply plugin: eclipsebuild.BundlePlugin
+
+dependencies {
+	compile project(':jpl.imce.oml.specification.ecore')
+	compile withEclipseBundle('org.eclipse.xtext.ide')
+	compile withEclipseBundle('org.eclipse.xtext.xbase.ide')
+}
+//this is an eclipse plugin project
+eclipseClasspath.enabled=false
+cleanEclipseClasspath.enabled=false
