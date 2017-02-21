@@ -22,7 +22,7 @@ package jpl.imce.oml.specification.ecore.provider;
 import java.util.Collection;
 import java.util.List;
 
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.TerminologyGraph;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -77,7 +77,7 @@ public class TerminologyGraphItemProvider extends TerminologyBoxItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_TerminologyGraph_graphExtent_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TerminologyGraph_graphExtent_feature", "_UI_TerminologyGraph_type"),
-				 OMLPackage.eINSTANCE.getTerminologyGraph_GraphExtent(),
+				 EcorePackage.eINSTANCE.getTerminologyGraph_GraphExtent(),
 				 true,
 				 false,
 				 true,

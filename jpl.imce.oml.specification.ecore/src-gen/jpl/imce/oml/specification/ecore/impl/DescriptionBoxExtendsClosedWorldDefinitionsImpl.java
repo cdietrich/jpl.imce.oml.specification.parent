@@ -28,8 +28,8 @@ import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Module;
-import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.TerminologyBox;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -86,7 +86,7 @@ public class DescriptionBoxExtendsClosedWorldDefinitionsImpl extends Description
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getDescriptionBoxExtendsClosedWorldDefinitions();
+		return EcorePackage.eINSTANCE.getDescriptionBoxExtendsClosedWorldDefinitions();
 	}
 
 	/**
@@ -95,7 +95,7 @@ public class DescriptionBoxExtendsClosedWorldDefinitionsImpl extends Description
 	 * @generated
 	 */
 	public DescriptionBox getDescriptionBox() {
-		if (eContainerFeatureID() != OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX) return null;
+		if (eContainerFeatureID() != EcorePackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX) return null;
 		return (DescriptionBox)eContainer();
 	}
 
@@ -105,7 +105,7 @@ public class DescriptionBoxExtendsClosedWorldDefinitionsImpl extends Description
 	 * @generated
 	 */
 	public DescriptionBox basicGetDescriptionBox() {
-		if (eContainerFeatureID() != OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX) return null;
+		if (eContainerFeatureID() != EcorePackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX) return null;
 		return (DescriptionBox)eInternalContainer();
 	}
 
@@ -115,7 +115,7 @@ public class DescriptionBoxExtendsClosedWorldDefinitionsImpl extends Description
 	 * @generated
 	 */
 	public NotificationChain basicSetDescriptionBox(DescriptionBox newDescriptionBox, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newDescriptionBox, OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newDescriptionBox, EcorePackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX, msgs);
 		return msgs;
 	}
 
@@ -125,19 +125,19 @@ public class DescriptionBoxExtendsClosedWorldDefinitionsImpl extends Description
 	 * @generated
 	 */
 	public void setDescriptionBox(DescriptionBox newDescriptionBox) {
-		if (newDescriptionBox != eInternalContainer() || (eContainerFeatureID() != OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX && newDescriptionBox != null)) {
+		if (newDescriptionBox != eInternalContainer() || (eContainerFeatureID() != EcorePackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX && newDescriptionBox != null)) {
 			if (EcoreUtil.isAncestor(this, (EObject)newDescriptionBox))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newDescriptionBox != null)
-				msgs = ((InternalEObject)newDescriptionBox).eInverseAdd(this, OMLPackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS, DescriptionBox.class, msgs);
+				msgs = ((InternalEObject)newDescriptionBox).eInverseAdd(this, EcorePackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS, DescriptionBox.class, msgs);
 			msgs = basicSetDescriptionBox(newDescriptionBox, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX, newDescriptionBox, newDescriptionBox));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX, newDescriptionBox, newDescriptionBox));
 	}
 
 	/**
@@ -151,7 +151,7 @@ public class DescriptionBoxExtendsClosedWorldDefinitionsImpl extends Description
 			closedWorldDefinitions = (TerminologyBox)eResolveProxy(oldClosedWorldDefinitions);
 			if (closedWorldDefinitions != oldClosedWorldDefinitions) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__CLOSED_WORLD_DEFINITIONS, oldClosedWorldDefinitions, closedWorldDefinitions));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__CLOSED_WORLD_DEFINITIONS, oldClosedWorldDefinitions, closedWorldDefinitions));
 			}
 		}
 		return closedWorldDefinitions;
@@ -175,7 +175,7 @@ public class DescriptionBoxExtendsClosedWorldDefinitionsImpl extends Description
 		TerminologyBox oldClosedWorldDefinitions = closedWorldDefinitions;
 		closedWorldDefinitions = newClosedWorldDefinitions;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__CLOSED_WORLD_DEFINITIONS, oldClosedWorldDefinitions, closedWorldDefinitions));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__CLOSED_WORLD_DEFINITIONS, oldClosedWorldDefinitions, closedWorldDefinitions));
 	}
 
 	/**
@@ -227,7 +227,7 @@ public class DescriptionBoxExtendsClosedWorldDefinitionsImpl extends Description
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX:
+			case EcorePackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetDescriptionBox((DescriptionBox)otherEnd, msgs);
@@ -243,7 +243,7 @@ public class DescriptionBoxExtendsClosedWorldDefinitionsImpl extends Description
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX:
+			case EcorePackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX:
 				return basicSetDescriptionBox(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -257,8 +257,8 @@ public class DescriptionBoxExtendsClosedWorldDefinitionsImpl extends Description
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX:
-				return eInternalContainer().eInverseRemove(this, OMLPackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS, DescriptionBox.class, msgs);
+			case EcorePackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX:
+				return eInternalContainer().eInverseRemove(this, EcorePackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS, DescriptionBox.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -271,10 +271,10 @@ public class DescriptionBoxExtendsClosedWorldDefinitionsImpl extends Description
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX:
+			case EcorePackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX:
 				if (resolve) return getDescriptionBox();
 				return basicGetDescriptionBox();
-			case OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__CLOSED_WORLD_DEFINITIONS:
+			case EcorePackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__CLOSED_WORLD_DEFINITIONS:
 				if (resolve) return getClosedWorldDefinitions();
 				return basicGetClosedWorldDefinitions();
 		}
@@ -289,10 +289,10 @@ public class DescriptionBoxExtendsClosedWorldDefinitionsImpl extends Description
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX:
+			case EcorePackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX:
 				setDescriptionBox((DescriptionBox)newValue);
 				return;
-			case OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__CLOSED_WORLD_DEFINITIONS:
+			case EcorePackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__CLOSED_WORLD_DEFINITIONS:
 				setClosedWorldDefinitions((TerminologyBox)newValue);
 				return;
 		}
@@ -307,10 +307,10 @@ public class DescriptionBoxExtendsClosedWorldDefinitionsImpl extends Description
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX:
+			case EcorePackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX:
 				setDescriptionBox((DescriptionBox)null);
 				return;
-			case OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__CLOSED_WORLD_DEFINITIONS:
+			case EcorePackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__CLOSED_WORLD_DEFINITIONS:
 				setClosedWorldDefinitions((TerminologyBox)null);
 				return;
 		}
@@ -325,9 +325,9 @@ public class DescriptionBoxExtendsClosedWorldDefinitionsImpl extends Description
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX:
+			case EcorePackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX:
 				return basicGetDescriptionBox() != null;
-			case OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__CLOSED_WORLD_DEFINITIONS:
+			case EcorePackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__CLOSED_WORLD_DEFINITIONS:
 				return closedWorldDefinitions != null;
 		}
 		return super.eIsSet(featureID);
@@ -341,11 +341,11 @@ public class DescriptionBoxExtendsClosedWorldDefinitionsImpl extends Description
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS___CALCULATE_UUID:
+			case EcorePackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS___CALCULATE_UUID:
 				return calculateUUID();
-			case OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS___DESCRIPTION_DOMAIN:
+			case EcorePackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS___DESCRIPTION_DOMAIN:
 				return descriptionDomain();
-			case OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS___TARGET_MODULE:
+			case EcorePackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS___TARGET_MODULE:
 				return targetModule();
 		}
 		return super.eInvoke(operationID, arguments);

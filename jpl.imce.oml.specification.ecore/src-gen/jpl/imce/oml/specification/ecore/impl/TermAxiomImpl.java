@@ -18,7 +18,7 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.TermAxiom;
 
 import org.eclipse.emf.ecore.EClass;
@@ -47,7 +47,7 @@ public abstract class TermAxiomImpl extends AxiomImpl implements TermAxiom {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getTermAxiom();
+		return EcorePackage.eINSTANCE.getTermAxiom();
 	}
 
 } //TermAxiomImpl

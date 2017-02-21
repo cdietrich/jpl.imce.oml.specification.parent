@@ -31,7 +31,7 @@ import org.eclipse.emf.cdo.CDOObject;
  * <!-- end-model-doc -->
  *
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getDataRelationshipRange()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getDataRelationshipRange()
  * @model abstract="true"
  * @extends CDOObject
  * @generated

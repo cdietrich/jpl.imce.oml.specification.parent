@@ -26,7 +26,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import java.util.UUID;
 
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.ScalarOneOfLiteralAxiom;
 import jpl.imce.oml.specification.ecore.ScalarOneOfRestriction;
 
@@ -101,7 +101,7 @@ public class ScalarOneOfLiteralAxiomImpl extends AxiomImpl implements ScalarOneO
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getScalarOneOfLiteralAxiom();
+		return EcorePackage.eINSTANCE.getScalarOneOfLiteralAxiom();
 	}
 
 	/**
@@ -115,7 +115,7 @@ public class ScalarOneOfLiteralAxiomImpl extends AxiomImpl implements ScalarOneO
 			axiom = (ScalarOneOfRestriction)eResolveProxy(oldAxiom);
 			if (axiom != oldAxiom) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.SCALAR_ONE_OF_LITERAL_AXIOM__AXIOM, oldAxiom, axiom));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.SCALAR_ONE_OF_LITERAL_AXIOM__AXIOM, oldAxiom, axiom));
 			}
 		}
 		return axiom;
@@ -139,7 +139,7 @@ public class ScalarOneOfLiteralAxiomImpl extends AxiomImpl implements ScalarOneO
 		ScalarOneOfRestriction oldAxiom = axiom;
 		axiom = newAxiom;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.SCALAR_ONE_OF_LITERAL_AXIOM__AXIOM, oldAxiom, axiom));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.SCALAR_ONE_OF_LITERAL_AXIOM__AXIOM, oldAxiom, axiom));
 	}
 
 	/**
@@ -160,7 +160,7 @@ public class ScalarOneOfLiteralAxiomImpl extends AxiomImpl implements ScalarOneO
 		String oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.SCALAR_ONE_OF_LITERAL_AXIOM__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.SCALAR_ONE_OF_LITERAL_AXIOM__VALUE, oldValue, value));
 	}
 
 	/**
@@ -190,10 +190,10 @@ public class ScalarOneOfLiteralAxiomImpl extends AxiomImpl implements ScalarOneO
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.SCALAR_ONE_OF_LITERAL_AXIOM__AXIOM:
+			case EcorePackage.SCALAR_ONE_OF_LITERAL_AXIOM__AXIOM:
 				if (resolve) return getAxiom();
 				return basicGetAxiom();
-			case OMLPackage.SCALAR_ONE_OF_LITERAL_AXIOM__VALUE:
+			case EcorePackage.SCALAR_ONE_OF_LITERAL_AXIOM__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -207,10 +207,10 @@ public class ScalarOneOfLiteralAxiomImpl extends AxiomImpl implements ScalarOneO
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.SCALAR_ONE_OF_LITERAL_AXIOM__AXIOM:
+			case EcorePackage.SCALAR_ONE_OF_LITERAL_AXIOM__AXIOM:
 				setAxiom((ScalarOneOfRestriction)newValue);
 				return;
-			case OMLPackage.SCALAR_ONE_OF_LITERAL_AXIOM__VALUE:
+			case EcorePackage.SCALAR_ONE_OF_LITERAL_AXIOM__VALUE:
 				setValue((String)newValue);
 				return;
 		}
@@ -225,10 +225,10 @@ public class ScalarOneOfLiteralAxiomImpl extends AxiomImpl implements ScalarOneO
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.SCALAR_ONE_OF_LITERAL_AXIOM__AXIOM:
+			case EcorePackage.SCALAR_ONE_OF_LITERAL_AXIOM__AXIOM:
 				setAxiom((ScalarOneOfRestriction)null);
 				return;
-			case OMLPackage.SCALAR_ONE_OF_LITERAL_AXIOM__VALUE:
+			case EcorePackage.SCALAR_ONE_OF_LITERAL_AXIOM__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
 		}
@@ -243,9 +243,9 @@ public class ScalarOneOfLiteralAxiomImpl extends AxiomImpl implements ScalarOneO
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.SCALAR_ONE_OF_LITERAL_AXIOM__AXIOM:
+			case EcorePackage.SCALAR_ONE_OF_LITERAL_AXIOM__AXIOM:
 				return axiom != null;
-			case OMLPackage.SCALAR_ONE_OF_LITERAL_AXIOM__VALUE:
+			case EcorePackage.SCALAR_ONE_OF_LITERAL_AXIOM__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
@@ -259,7 +259,7 @@ public class ScalarOneOfLiteralAxiomImpl extends AxiomImpl implements ScalarOneO
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.SCALAR_ONE_OF_LITERAL_AXIOM___CALCULATE_UUID:
+			case EcorePackage.SCALAR_ONE_OF_LITERAL_AXIOM___CALCULATE_UUID:
 				return calculateUUID();
 		}
 		return super.eInvoke(operationID, arguments);

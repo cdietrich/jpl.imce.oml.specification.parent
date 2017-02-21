@@ -25,8 +25,8 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated OML -->
       <factory
-            uri="jpl.imce.oml.specification.ecore"
-            class="jpl.imce.oml.specification.ecore.provider.OMLItemProviderAdapterFactory"
+            uri="http://imce.jpl.nasa.gov/oml"
+            class="jpl.imce.oml.specification.ecore.provider.EcoreItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

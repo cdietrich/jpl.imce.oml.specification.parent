@@ -37,7 +37,7 @@ import org.eclipse.emf.common.util.EMap;
  *   <li>{@link jpl.imce.oml.specification.ecore.TerminologyGraph#getGraphExtent <em>Graph Extent</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyGraph()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyGraph()
  * @model
  * @generated
  */
@@ -53,7 +53,7 @@ public interface TerminologyGraph extends TerminologyBox {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Graph Extent</em>' container reference.
 	 * @see #setGraphExtent(TerminologyExtent)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyGraph_GraphExtent()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyGraph_GraphExtent()
 	 * @see jpl.imce.oml.specification.ecore.TerminologyExtent#getTerminologyGraphs
 	 * @model opposite="terminologyGraphs" required="true" transient="false"
 	 * @generated

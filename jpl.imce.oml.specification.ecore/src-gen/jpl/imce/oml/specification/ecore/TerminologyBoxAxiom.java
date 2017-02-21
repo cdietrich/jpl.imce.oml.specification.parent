@@ -35,7 +35,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.TerminologyBoxAxiom#getTbox <em>Tbox</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyBoxAxiom()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyBoxAxiom()
  * @model abstract="true"
  * @generated
  */
@@ -51,7 +51,7 @@ public interface TerminologyBoxAxiom extends TerminologyAxiom {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tbox</em>' container reference.
 	 * @see #setTbox(TerminologyBox)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyBoxAxiom_Tbox()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyBoxAxiom_Tbox()
 	 * @see jpl.imce.oml.specification.ecore.TerminologyBox#getTerminologyBoxAxioms
 	 * @model opposite="terminologyBoxAxioms" required="true" transient="false"
 	 * @generated

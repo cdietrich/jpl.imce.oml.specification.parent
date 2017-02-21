@@ -38,7 +38,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.ConceptSpecializationAxiom#getSuperConcept <em>Super Concept</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getConceptSpecializationAxiom()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getConceptSpecializationAxiom()
  * @model
  * @generated
  */
@@ -53,7 +53,7 @@ public interface ConceptSpecializationAxiom extends SpecializationAxiom {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sub Concept</em>' reference.
 	 * @see #setSubConcept(Concept)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getConceptSpecializationAxiom_SubConcept()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getConceptSpecializationAxiom_SubConcept()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -79,7 +79,7 @@ public interface ConceptSpecializationAxiom extends SpecializationAxiom {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Super Concept</em>' reference.
 	 * @see #setSuperConcept(Concept)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getConceptSpecializationAxiom_SuperConcept()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getConceptSpecializationAxiom_SuperConcept()
 	 * @model required="true"
 	 * @generated
 	 */

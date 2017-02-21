@@ -22,9 +22,8 @@ package jpl.imce.oml.specification.ecore.provider;
 import java.util.Collection;
 import java.util.List;
 
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.IRIScalarRestriction;
-import jpl.imce.oml.specification.ecore.OMLPackage;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -82,7 +81,7 @@ public class IRIScalarRestrictionItemProvider extends RestrictedDataRangeItemPro
 				 getResourceLocator(),
 				 getString("_UI_IRIScalarRestriction_length_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_IRIScalarRestriction_length_feature", "_UI_IRIScalarRestriction_type"),
-				 OMLPackage.eINSTANCE.getIRIScalarRestriction_Length(),
+				 EcorePackage.eINSTANCE.getIRIScalarRestriction_Length(),
 				 true,
 				 false,
 				 false,
@@ -104,7 +103,7 @@ public class IRIScalarRestrictionItemProvider extends RestrictedDataRangeItemPro
 				 getResourceLocator(),
 				 getString("_UI_IRIScalarRestriction_minLength_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_IRIScalarRestriction_minLength_feature", "_UI_IRIScalarRestriction_type"),
-				 OMLPackage.eINSTANCE.getIRIScalarRestriction_MinLength(),
+				 EcorePackage.eINSTANCE.getIRIScalarRestriction_MinLength(),
 				 true,
 				 false,
 				 false,
@@ -126,7 +125,7 @@ public class IRIScalarRestrictionItemProvider extends RestrictedDataRangeItemPro
 				 getResourceLocator(),
 				 getString("_UI_IRIScalarRestriction_maxLength_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_IRIScalarRestriction_maxLength_feature", "_UI_IRIScalarRestriction_type"),
-				 OMLPackage.eINSTANCE.getIRIScalarRestriction_MaxLength(),
+				 EcorePackage.eINSTANCE.getIRIScalarRestriction_MaxLength(),
 				 true,
 				 false,
 				 false,
@@ -148,7 +147,7 @@ public class IRIScalarRestrictionItemProvider extends RestrictedDataRangeItemPro
 				 getResourceLocator(),
 				 getString("_UI_IRIScalarRestriction_pattern_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_IRIScalarRestriction_pattern_feature", "_UI_IRIScalarRestriction_type"),
-				 OMLPackage.eINSTANCE.getIRIScalarRestriction_Pattern(),
+				 EcorePackage.eINSTANCE.getIRIScalarRestriction_Pattern(),
 				 true,
 				 false,
 				 false,
@@ -195,10 +194,10 @@ public class IRIScalarRestrictionItemProvider extends RestrictedDataRangeItemPro
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(IRIScalarRestriction.class)) {
-			case OMLPackage.IRI_SCALAR_RESTRICTION__LENGTH:
-			case OMLPackage.IRI_SCALAR_RESTRICTION__MIN_LENGTH:
-			case OMLPackage.IRI_SCALAR_RESTRICTION__MAX_LENGTH:
-			case OMLPackage.IRI_SCALAR_RESTRICTION__PATTERN:
+			case EcorePackage.IRI_SCALAR_RESTRICTION__LENGTH:
+			case EcorePackage.IRI_SCALAR_RESTRICTION__MIN_LENGTH:
+			case EcorePackage.IRI_SCALAR_RESTRICTION__MAX_LENGTH:
+			case EcorePackage.IRI_SCALAR_RESTRICTION__PATTERN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

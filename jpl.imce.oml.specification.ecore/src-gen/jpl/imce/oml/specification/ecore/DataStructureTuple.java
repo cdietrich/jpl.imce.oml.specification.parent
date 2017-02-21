@@ -36,7 +36,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.DataStructureTuple#getDataStructureType <em>Data Structure Type</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getDataStructureTuple()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getDataStructureTuple()
  * @model
  * @generated
  */
@@ -52,7 +52,7 @@ public interface DataStructureTuple extends SingletonInstance {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Structured Data Property Value</em>' container reference.
 	 * @see #setStructuredDataPropertyValue(StructuredDataPropertyValue)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDataStructureTuple_StructuredDataPropertyValue()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getDataStructureTuple_StructuredDataPropertyValue()
 	 * @see jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getStructuredPropertyTuple
 	 * @model opposite="structuredPropertyTuple" required="true" transient="false"
 	 * @generated
@@ -79,7 +79,7 @@ public interface DataStructureTuple extends SingletonInstance {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Data Structure Type</em>' reference.
 	 * @see #setDataStructureType(Structure)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDataStructureTuple_DataStructureType()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getDataStructureTuple_DataStructureType()
 	 * @model required="true"
 	 * @generated
 	 */

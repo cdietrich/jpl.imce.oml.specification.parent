@@ -22,7 +22,7 @@ package jpl.imce.oml.specification.ecore.provider;
 import java.util.Collection;
 import java.util.List;
 
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.ScalarDataProperty;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -78,7 +78,7 @@ public class ScalarDataPropertyItemProvider extends DataRelationshipItemProvider
 				 getResourceLocator(),
 				 getString("_UI_DataRelationshipFromStructure_domain_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataRelationshipFromStructure_domain_feature", "_UI_DataRelationshipFromStructure_type"),
-				 OMLPackage.eINSTANCE.getDataRelationshipFromStructure_Domain(),
+				 EcorePackage.eINSTANCE.getDataRelationshipFromStructure_Domain(),
 				 true,
 				 false,
 				 true,
@@ -100,7 +100,7 @@ public class ScalarDataPropertyItemProvider extends DataRelationshipItemProvider
 				 getResourceLocator(),
 				 getString("_UI_DataRelationshipToScalar_range_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataRelationshipToScalar_range_feature", "_UI_DataRelationshipToScalar_type"),
-				 OMLPackage.eINSTANCE.getDataRelationshipToScalar_Range(),
+				 EcorePackage.eINSTANCE.getDataRelationshipToScalar_Range(),
 				 true,
 				 false,
 				 true,

@@ -30,7 +30,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-model-doc -->
  *
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityUniversalRestrictionAxiom()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityUniversalRestrictionAxiom()
  * @model
  * @generated
  */

@@ -20,7 +20,7 @@ package jpl.imce.oml.specification.ecore.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.TerminologyThing;
 
 import org.eclipse.emf.common.util.EList;
@@ -69,7 +69,7 @@ public abstract class TerminologyThingImpl extends CDOObjectImpl implements Term
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getTerminologyThing();
+		return EcorePackage.eINSTANCE.getTerminologyThing();
 	}
 
 	/**
@@ -100,7 +100,7 @@ public abstract class TerminologyThingImpl extends CDOObjectImpl implements Term
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_THING__UUID:
+			case EcorePackage.TERMINOLOGY_THING__UUID:
 				return getUuid();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -114,7 +114,7 @@ public abstract class TerminologyThingImpl extends CDOObjectImpl implements Term
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_THING__UUID:
+			case EcorePackage.TERMINOLOGY_THING__UUID:
 				return UUID_EDEFAULT == null ? getUuid() != null : !UUID_EDEFAULT.equals(getUuid());
 		}
 		return super.eIsSet(featureID);
@@ -128,7 +128,7 @@ public abstract class TerminologyThingImpl extends CDOObjectImpl implements Term
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.TERMINOLOGY_THING___CALCULATE_UUID:
+			case EcorePackage.TERMINOLOGY_THING___CALCULATE_UUID:
 				return calculateUUID();
 		}
 		return super.eInvoke(operationID, arguments);

@@ -40,7 +40,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.TerminologyNestingAxiom#getNestingContext <em>Nesting Context</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyNestingAxiom()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyNestingAxiom()
  * @model
  * @generated
  */
@@ -55,7 +55,7 @@ public interface TerminologyNestingAxiom extends TerminologyBoxAxiom {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Nesting Terminology</em>' reference.
 	 * @see #setNestingTerminology(TerminologyBox)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyNestingAxiom_NestingTerminology()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyNestingAxiom_NestingTerminology()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -81,7 +81,7 @@ public interface TerminologyNestingAxiom extends TerminologyBoxAxiom {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Nesting Context</em>' reference.
 	 * @see #setNestingContext(Concept)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyNestingAxiom_NestingContext()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyNestingAxiom_NestingContext()
 	 * @model required="true"
 	 * @generated
 	 */

@@ -37,7 +37,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link jpl.imce.oml.specification.ecore.SingletonInstance#getStructuredDataPropertyValues <em>Structured Data Property Values</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getSingletonInstance()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getSingletonInstance()
  * @model abstract="true"
  * @generated
  */
@@ -53,7 +53,7 @@ public interface SingletonInstance extends TerminologyInstanceAssertion {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Scalar Data Property Values</em>' containment reference list.
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getSingletonInstance_ScalarDataPropertyValues()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getSingletonInstance_ScalarDataPropertyValues()
 	 * @see jpl.imce.oml.specification.ecore.ScalarDataPropertyValue#getSingletonInstance
 	 * @model opposite="singletonInstance" containment="true"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
@@ -72,7 +72,7 @@ public interface SingletonInstance extends TerminologyInstanceAssertion {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Structured Data Property Values</em>' containment reference list.
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getSingletonInstance_StructuredDataPropertyValues()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getSingletonInstance_StructuredDataPropertyValues()
 	 * @see jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getSingletonInstance
 	 * @model opposite="singletonInstance" containment="true"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"

@@ -43,7 +43,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple#getRange <em>Range</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getUnreifiedRelationshipInstanceTuple()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getUnreifiedRelationshipInstanceTuple()
  * @model
  * @generated
  */
@@ -59,7 +59,7 @@ public interface UnreifiedRelationshipInstanceTuple extends TerminologyInstanceA
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Description Box</em>' container reference.
 	 * @see #setDescriptionBox(DescriptionBox)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getUnreifiedRelationshipInstanceTuple_DescriptionBox()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getUnreifiedRelationshipInstanceTuple_DescriptionBox()
 	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getUnreifiedRelationshipInstanceTuples
 	 * @model opposite="unreifiedRelationshipInstanceTuples" required="true" transient="false"
 	 * @generated
@@ -86,7 +86,7 @@ public interface UnreifiedRelationshipInstanceTuple extends TerminologyInstanceA
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Unreified Relationship</em>' reference.
 	 * @see #setUnreifiedRelationship(UnreifiedRelationship)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getUnreifiedRelationshipInstanceTuple_UnreifiedRelationship()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getUnreifiedRelationshipInstanceTuple_UnreifiedRelationship()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -112,7 +112,7 @@ public interface UnreifiedRelationshipInstanceTuple extends TerminologyInstanceA
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Domain</em>' reference.
 	 * @see #setDomain(ConceptualEntitySingletonInstance)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getUnreifiedRelationshipInstanceTuple_Domain()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getUnreifiedRelationshipInstanceTuple_Domain()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -138,7 +138,7 @@ public interface UnreifiedRelationshipInstanceTuple extends TerminologyInstanceA
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Range</em>' reference.
 	 * @see #setRange(ConceptualEntitySingletonInstance)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getUnreifiedRelationshipInstanceTuple_Range()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getUnreifiedRelationshipInstanceTuple_Range()
 	 * @model required="true"
 	 * @generated
 	 */

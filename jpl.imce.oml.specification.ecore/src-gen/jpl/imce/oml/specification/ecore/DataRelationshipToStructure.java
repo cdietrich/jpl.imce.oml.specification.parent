@@ -36,7 +36,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.DataRelationshipToStructure#getRange <em>Range</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getDataRelationshipToStructure()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getDataRelationshipToStructure()
  * @model abstract="true"
  * @generated
  */
@@ -51,7 +51,7 @@ public interface DataRelationshipToStructure extends DataRelationshipRange {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Range</em>' reference.
 	 * @see #setRange(Structure)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDataRelationshipToStructure_Range()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getDataRelationshipToStructure_Range()
 	 * @model required="true"
 	 * @generated
 	 */

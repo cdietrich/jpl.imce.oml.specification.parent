@@ -23,8 +23,7 @@ import java.util.Collection;
 import java.util.List;
 
 import jpl.imce.oml.specification.ecore.DisjointUnionOfConceptsAxiom;
-import jpl.imce.oml.specification.ecore.OMLPackage;
-
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -77,7 +76,7 @@ public class DisjointUnionOfConceptsAxiomItemProvider extends TerminologyBundleS
 				 getResourceLocator(),
 				 getString("_UI_DisjointUnionOfConceptsAxiom_disjointTaxonomyParent_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DisjointUnionOfConceptsAxiom_disjointTaxonomyParent_feature", "_UI_DisjointUnionOfConceptsAxiom_type"),
-				 OMLPackage.eINSTANCE.getDisjointUnionOfConceptsAxiom_DisjointTaxonomyParent(),
+				 EcorePackage.eINSTANCE.getDisjointUnionOfConceptsAxiom_DisjointTaxonomyParent(),
 				 true,
 				 false,
 				 true,

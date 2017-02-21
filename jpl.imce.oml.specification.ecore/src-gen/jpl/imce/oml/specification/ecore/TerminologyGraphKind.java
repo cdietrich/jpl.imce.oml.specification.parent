@@ -44,7 +44,7 @@ import org.eclipse.emf.common.util.Enumerator;
  *   the sense that it is intended to classify a singleton individual uniquely identified
  *   via the values of its identifying OML DataRelationshipFromEntity properties.
  * <!-- end-model-doc -->
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyGraphKind()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyGraphKind()
  * @model
  * @generated
  */

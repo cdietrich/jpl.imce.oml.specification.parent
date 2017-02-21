@@ -48,7 +48,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.IRIScalarRestriction#getPattern <em>Pattern</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getIRIScalarRestriction()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getIRIScalarRestriction()
  * @model
  * @generated
  */
@@ -62,7 +62,7 @@ public interface IRIScalarRestriction extends RestrictedDataRange {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Length</em>' attribute.
 	 * @see #setLength(int)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getIRIScalarRestriction_Length()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getIRIScalarRestriction_Length()
 	 * @model unique="false"
 	 * @generated
 	 */
@@ -87,7 +87,7 @@ public interface IRIScalarRestriction extends RestrictedDataRange {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Min Length</em>' attribute.
 	 * @see #setMinLength(int)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getIRIScalarRestriction_MinLength()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getIRIScalarRestriction_MinLength()
 	 * @model unique="false"
 	 * @generated
 	 */
@@ -112,7 +112,7 @@ public interface IRIScalarRestriction extends RestrictedDataRange {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Max Length</em>' attribute.
 	 * @see #setMaxLength(int)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getIRIScalarRestriction_MaxLength()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getIRIScalarRestriction_MaxLength()
 	 * @model unique="false"
 	 * @generated
 	 */
@@ -137,7 +137,7 @@ public interface IRIScalarRestriction extends RestrictedDataRange {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Pattern</em>' attribute.
 	 * @see #setPattern(String)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getIRIScalarRestriction_Pattern()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getIRIScalarRestriction_Pattern()
 	 * @model unique="false" dataType="jpl.imce.oml.specification.ecore.Pattern"
 	 * @generated
 	 */

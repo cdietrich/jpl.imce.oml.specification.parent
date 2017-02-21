@@ -23,8 +23,7 @@ import java.util.Collection;
 import java.util.List;
 
 import jpl.imce.oml.specification.ecore.AnnotationSubjectPropertyValue;
-import jpl.imce.oml.specification.ecore.OMLPackage;
-
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.edit.provider.OMLEditPlugin;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -97,7 +96,7 @@ public class AnnotationSubjectPropertyValueItemProvider
 				 getResourceLocator(),
 				 getString("_UI_AnnotationSubjectPropertyValue_property_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationSubjectPropertyValue_property_feature", "_UI_AnnotationSubjectPropertyValue_type"),
-				 OMLPackage.eINSTANCE.getAnnotationSubjectPropertyValue_Property(),
+				 EcorePackage.eINSTANCE.getAnnotationSubjectPropertyValue_Property(),
 				 true,
 				 false,
 				 true,
@@ -119,7 +118,7 @@ public class AnnotationSubjectPropertyValueItemProvider
 				 getResourceLocator(),
 				 getString("_UI_AnnotationSubjectPropertyValue_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationSubjectPropertyValue_value_feature", "_UI_AnnotationSubjectPropertyValue_type"),
-				 OMLPackage.eINSTANCE.getAnnotationSubjectPropertyValue_Value(),
+				 EcorePackage.eINSTANCE.getAnnotationSubjectPropertyValue_Value(),
 				 true,
 				 false,
 				 false,
@@ -166,7 +165,7 @@ public class AnnotationSubjectPropertyValueItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AnnotationSubjectPropertyValue.class)) {
-			case OMLPackage.ANNOTATION_SUBJECT_PROPERTY_VALUE__VALUE:
+			case EcorePackage.ANNOTATION_SUBJECT_PROPERTY_VALUE__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

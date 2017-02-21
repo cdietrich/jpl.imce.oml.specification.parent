@@ -44,7 +44,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link jpl.imce.oml.specification.ecore.TerminologyBox#getBoxStatements <em>Box Statements</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyBox()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyBox()
  * @model abstract="true"
  * @generated
  */
@@ -61,7 +61,7 @@ public interface TerminologyBox extends Module {
 	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see jpl.imce.oml.specification.ecore.TerminologyGraphKind
 	 * @see #setKind(TerminologyGraphKind)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyBox_Kind()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyBox_Kind()
 	 * @model unique="false" required="true"
 	 * @generated
 	 */
@@ -88,7 +88,7 @@ public interface TerminologyBox extends Module {
 	 * The TerminologyBoxAxioms asserted in this TerminologyBox
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Terminology Box Axioms</em>' containment reference list.
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyBox_TerminologyBoxAxioms()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyBox_TerminologyBoxAxioms()
 	 * @see jpl.imce.oml.specification.ecore.TerminologyBoxAxiom#getTbox
 	 * @model opposite="tbox" containment="true"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
@@ -106,7 +106,7 @@ public interface TerminologyBox extends Module {
 	 * The TerminologyBoxStatements asserted in this TerminologyBox
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Box Statements</em>' containment reference list.
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyBox_BoxStatements()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyBox_BoxStatements()
 	 * @see jpl.imce.oml.specification.ecore.TerminologyBoxStatement#getTbox
 	 * @model opposite="tbox" containment="true"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"

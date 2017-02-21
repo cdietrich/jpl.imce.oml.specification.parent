@@ -19,7 +19,7 @@
 package jpl.imce.oml.specification.ecore.impl;
 
 import jpl.imce.oml.specification.ecore.Bundle;
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.TerminologyBundleStatement;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -63,7 +63,7 @@ public abstract class TerminologyBundleStatementImpl extends TerminologyThingImp
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getTerminologyBundleStatement();
+		return EcorePackage.eINSTANCE.getTerminologyBundleStatement();
 	}
 
 	/**
@@ -72,7 +72,7 @@ public abstract class TerminologyBundleStatementImpl extends TerminologyThingImp
 	 * @generated
 	 */
 	public Bundle getBundle() {
-		if (eContainerFeatureID() != OMLPackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE) return null;
+		if (eContainerFeatureID() != EcorePackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE) return null;
 		return (Bundle)eContainer();
 	}
 
@@ -82,7 +82,7 @@ public abstract class TerminologyBundleStatementImpl extends TerminologyThingImp
 	 * @generated
 	 */
 	public Bundle basicGetBundle() {
-		if (eContainerFeatureID() != OMLPackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE) return null;
+		if (eContainerFeatureID() != EcorePackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE) return null;
 		return (Bundle)eInternalContainer();
 	}
 
@@ -92,7 +92,7 @@ public abstract class TerminologyBundleStatementImpl extends TerminologyThingImp
 	 * @generated
 	 */
 	public NotificationChain basicSetBundle(Bundle newBundle, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newBundle, OMLPackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newBundle, EcorePackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE, msgs);
 		return msgs;
 	}
 
@@ -102,19 +102,19 @@ public abstract class TerminologyBundleStatementImpl extends TerminologyThingImp
 	 * @generated
 	 */
 	public void setBundle(Bundle newBundle) {
-		if (newBundle != eInternalContainer() || (eContainerFeatureID() != OMLPackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE && newBundle != null)) {
+		if (newBundle != eInternalContainer() || (eContainerFeatureID() != EcorePackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE && newBundle != null)) {
 			if (EcoreUtil.isAncestor(this, (EObject)newBundle))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newBundle != null)
-				msgs = ((InternalEObject)newBundle).eInverseAdd(this, OMLPackage.BUNDLE__BUNDLE_STATEMENTS, Bundle.class, msgs);
+				msgs = ((InternalEObject)newBundle).eInverseAdd(this, EcorePackage.BUNDLE__BUNDLE_STATEMENTS, Bundle.class, msgs);
 			msgs = basicSetBundle(newBundle, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE, newBundle, newBundle));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE, newBundle, newBundle));
 	}
 
 	/**
@@ -125,7 +125,7 @@ public abstract class TerminologyBundleStatementImpl extends TerminologyThingImp
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE:
+			case EcorePackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetBundle((Bundle)otherEnd, msgs);
@@ -141,7 +141,7 @@ public abstract class TerminologyBundleStatementImpl extends TerminologyThingImp
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE:
+			case EcorePackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE:
 				return basicSetBundle(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -155,8 +155,8 @@ public abstract class TerminologyBundleStatementImpl extends TerminologyThingImp
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case OMLPackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE:
-				return eInternalContainer().eInverseRemove(this, OMLPackage.BUNDLE__BUNDLE_STATEMENTS, Bundle.class, msgs);
+			case EcorePackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE:
+				return eInternalContainer().eInverseRemove(this, EcorePackage.BUNDLE__BUNDLE_STATEMENTS, Bundle.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -169,7 +169,7 @@ public abstract class TerminologyBundleStatementImpl extends TerminologyThingImp
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE:
+			case EcorePackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE:
 				if (resolve) return getBundle();
 				return basicGetBundle();
 		}
@@ -184,7 +184,7 @@ public abstract class TerminologyBundleStatementImpl extends TerminologyThingImp
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE:
+			case EcorePackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE:
 				setBundle((Bundle)newValue);
 				return;
 		}
@@ -199,7 +199,7 @@ public abstract class TerminologyBundleStatementImpl extends TerminologyThingImp
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE:
+			case EcorePackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE:
 				setBundle((Bundle)null);
 				return;
 		}
@@ -214,7 +214,7 @@ public abstract class TerminologyBundleStatementImpl extends TerminologyThingImp
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE:
+			case EcorePackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE:
 				return basicGetBundle() != null;
 		}
 		return super.eIsSet(featureID);

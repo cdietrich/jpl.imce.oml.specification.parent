@@ -29,7 +29,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-model-doc -->
  *
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getSynonymScalarRestriction()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getSynonymScalarRestriction()
  * @model
  * @generated
  */

@@ -23,8 +23,8 @@ import java.util.Collection;
 import java.util.List;
 
 import jpl.imce.oml.specification.ecore.DescriptionBox;
-import jpl.imce.oml.specification.ecore.OMLFactory;
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcoreFactory;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -81,7 +81,7 @@ public class DescriptionBoxItemProvider
 				 getResourceLocator(),
 				 getString("_UI_DescriptionBox_kind_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionBox_kind_feature", "_UI_DescriptionBox_type"),
-				 OMLPackage.eINSTANCE.getDescriptionBox_Kind(),
+				 EcorePackage.eINSTANCE.getDescriptionBox_Kind(),
 				 true,
 				 false,
 				 false,
@@ -103,7 +103,7 @@ public class DescriptionBoxItemProvider
 				 getResourceLocator(),
 				 getString("_UI_DescriptionBox_descriptionExtent_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionBox_descriptionExtent_feature", "_UI_DescriptionBox_type"),
-				 OMLPackage.eINSTANCE.getDescriptionBox_DescriptionExtent(),
+				 EcorePackage.eINSTANCE.getDescriptionBox_DescriptionExtent(),
 				 true,
 				 false,
 				 true,
@@ -124,13 +124,13 @@ public class DescriptionBoxItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OMLPackage.eINSTANCE.getDescriptionBox_ClosedWorldDefinitions());
-			childrenFeatures.add(OMLPackage.eINSTANCE.getDescriptionBox_DescriptionBoxRefinements());
-			childrenFeatures.add(OMLPackage.eINSTANCE.getDescriptionBox_ConceptInstances());
-			childrenFeatures.add(OMLPackage.eINSTANCE.getDescriptionBox_ReifiedRelationshipInstances());
-			childrenFeatures.add(OMLPackage.eINSTANCE.getDescriptionBox_ReifiedRelationshipInstanceDomains());
-			childrenFeatures.add(OMLPackage.eINSTANCE.getDescriptionBox_ReifiedRelationshipInstanceRanges());
-			childrenFeatures.add(OMLPackage.eINSTANCE.getDescriptionBox_UnreifiedRelationshipInstanceTuples());
+			childrenFeatures.add(EcorePackage.eINSTANCE.getDescriptionBox_ClosedWorldDefinitions());
+			childrenFeatures.add(EcorePackage.eINSTANCE.getDescriptionBox_DescriptionBoxRefinements());
+			childrenFeatures.add(EcorePackage.eINSTANCE.getDescriptionBox_ConceptInstances());
+			childrenFeatures.add(EcorePackage.eINSTANCE.getDescriptionBox_ReifiedRelationshipInstances());
+			childrenFeatures.add(EcorePackage.eINSTANCE.getDescriptionBox_ReifiedRelationshipInstanceDomains());
+			childrenFeatures.add(EcorePackage.eINSTANCE.getDescriptionBox_ReifiedRelationshipInstanceRanges());
+			childrenFeatures.add(EcorePackage.eINSTANCE.getDescriptionBox_UnreifiedRelationshipInstanceTuples());
 		}
 		return childrenFeatures;
 	}
@@ -186,16 +186,16 @@ public class DescriptionBoxItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DescriptionBox.class)) {
-			case OMLPackage.DESCRIPTION_BOX__KIND:
+			case EcorePackage.DESCRIPTION_BOX__KIND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case OMLPackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS:
-			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS:
-			case OMLPackage.DESCRIPTION_BOX__CONCEPT_INSTANCES:
-			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES:
-			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS:
-			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES:
-			case OMLPackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES:
+			case EcorePackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS:
+			case EcorePackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS:
+			case EcorePackage.DESCRIPTION_BOX__CONCEPT_INSTANCES:
+			case EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES:
+			case EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS:
+			case EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES:
+			case EcorePackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -215,38 +215,38 @@ public class DescriptionBoxItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.eINSTANCE.getDescriptionBox_ClosedWorldDefinitions(),
-				 OMLFactory.eINSTANCE.createDescriptionBoxExtendsClosedWorldDefinitions()));
+				(EcorePackage.eINSTANCE.getDescriptionBox_ClosedWorldDefinitions(),
+				 EcoreFactory.eINSTANCE.createDescriptionBoxExtendsClosedWorldDefinitions()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.eINSTANCE.getDescriptionBox_DescriptionBoxRefinements(),
-				 OMLFactory.eINSTANCE.createDescriptionBoxRefinement()));
+				(EcorePackage.eINSTANCE.getDescriptionBox_DescriptionBoxRefinements(),
+				 EcoreFactory.eINSTANCE.createDescriptionBoxRefinement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.eINSTANCE.getDescriptionBox_ConceptInstances(),
-				 OMLFactory.eINSTANCE.createConceptInstance()));
+				(EcorePackage.eINSTANCE.getDescriptionBox_ConceptInstances(),
+				 EcoreFactory.eINSTANCE.createConceptInstance()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.eINSTANCE.getDescriptionBox_ReifiedRelationshipInstances(),
-				 OMLFactory.eINSTANCE.createReifiedRelationshipInstance()));
+				(EcorePackage.eINSTANCE.getDescriptionBox_ReifiedRelationshipInstances(),
+				 EcoreFactory.eINSTANCE.createReifiedRelationshipInstance()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.eINSTANCE.getDescriptionBox_ReifiedRelationshipInstanceDomains(),
-				 OMLFactory.eINSTANCE.createReifiedRelationshipInstanceDomain()));
+				(EcorePackage.eINSTANCE.getDescriptionBox_ReifiedRelationshipInstanceDomains(),
+				 EcoreFactory.eINSTANCE.createReifiedRelationshipInstanceDomain()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.eINSTANCE.getDescriptionBox_ReifiedRelationshipInstanceRanges(),
-				 OMLFactory.eINSTANCE.createReifiedRelationshipInstanceRange()));
+				(EcorePackage.eINSTANCE.getDescriptionBox_ReifiedRelationshipInstanceRanges(),
+				 EcoreFactory.eINSTANCE.createReifiedRelationshipInstanceRange()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.eINSTANCE.getDescriptionBox_UnreifiedRelationshipInstanceTuples(),
-				 OMLFactory.eINSTANCE.createUnreifiedRelationshipInstanceTuple()));
+				(EcorePackage.eINSTANCE.getDescriptionBox_UnreifiedRelationshipInstanceTuples(),
+				 EcoreFactory.eINSTANCE.createUnreifiedRelationshipInstanceTuple()));
 	}
 
 }

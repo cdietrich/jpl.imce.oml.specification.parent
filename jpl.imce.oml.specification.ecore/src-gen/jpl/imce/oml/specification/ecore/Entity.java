@@ -32,7 +32,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-model-doc -->
  *
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntity()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntity()
  * @model abstract="true"
  * @generated
  */

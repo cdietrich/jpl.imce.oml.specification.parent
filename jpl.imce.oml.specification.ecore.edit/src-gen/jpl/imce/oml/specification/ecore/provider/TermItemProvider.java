@@ -22,7 +22,7 @@ package jpl.imce.oml.specification.ecore.provider;
 import java.util.Collection;
 import java.util.List;
 
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Term;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -79,7 +79,7 @@ public class TermItemProvider extends TerminologyBoxStatementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Term_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Term_name_feature", "_UI_Term_type"),
-				 OMLPackage.eINSTANCE.getTerm_Name(),
+				 EcorePackage.eINSTANCE.getTerm_Name(),
 				 true,
 				 false,
 				 false,
@@ -115,7 +115,7 @@ public class TermItemProvider extends TerminologyBoxStatementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Term.class)) {
-			case OMLPackage.TERM__NAME:
+			case EcorePackage.TERM__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

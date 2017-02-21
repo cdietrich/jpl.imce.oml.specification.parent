@@ -22,9 +22,8 @@ package jpl.imce.oml.specification.ecore.provider;
 import java.util.Collection;
 import java.util.List;
 
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.EntityRelationship;
-import jpl.imce.oml.specification.ecore.OMLPackage;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -89,7 +88,7 @@ public class EntityRelationshipItemProvider extends TermItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityRelationship_source_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityRelationship_source_feature", "_UI_EntityRelationship_type"),
-				 OMLPackage.eINSTANCE.getEntityRelationship_Source(),
+				 EcorePackage.eINSTANCE.getEntityRelationship_Source(),
 				 true,
 				 false,
 				 true,
@@ -111,7 +110,7 @@ public class EntityRelationshipItemProvider extends TermItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityRelationship_target_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityRelationship_target_feature", "_UI_EntityRelationship_type"),
-				 OMLPackage.eINSTANCE.getEntityRelationship_Target(),
+				 EcorePackage.eINSTANCE.getEntityRelationship_Target(),
 				 true,
 				 false,
 				 true,
@@ -133,7 +132,7 @@ public class EntityRelationshipItemProvider extends TermItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityRelationship_isFunctional_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityRelationship_isFunctional_feature", "_UI_EntityRelationship_type"),
-				 OMLPackage.eINSTANCE.getEntityRelationship_IsFunctional(),
+				 EcorePackage.eINSTANCE.getEntityRelationship_IsFunctional(),
 				 true,
 				 false,
 				 false,
@@ -155,7 +154,7 @@ public class EntityRelationshipItemProvider extends TermItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityRelationship_isInverseFunctional_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityRelationship_isInverseFunctional_feature", "_UI_EntityRelationship_type"),
-				 OMLPackage.eINSTANCE.getEntityRelationship_IsInverseFunctional(),
+				 EcorePackage.eINSTANCE.getEntityRelationship_IsInverseFunctional(),
 				 true,
 				 false,
 				 false,
@@ -177,7 +176,7 @@ public class EntityRelationshipItemProvider extends TermItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityRelationship_isEssential_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityRelationship_isEssential_feature", "_UI_EntityRelationship_type"),
-				 OMLPackage.eINSTANCE.getEntityRelationship_IsEssential(),
+				 EcorePackage.eINSTANCE.getEntityRelationship_IsEssential(),
 				 true,
 				 false,
 				 false,
@@ -199,7 +198,7 @@ public class EntityRelationshipItemProvider extends TermItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityRelationship_isInverseEssential_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityRelationship_isInverseEssential_feature", "_UI_EntityRelationship_type"),
-				 OMLPackage.eINSTANCE.getEntityRelationship_IsInverseEssential(),
+				 EcorePackage.eINSTANCE.getEntityRelationship_IsInverseEssential(),
 				 true,
 				 false,
 				 false,
@@ -221,7 +220,7 @@ public class EntityRelationshipItemProvider extends TermItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityRelationship_isSymmetric_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityRelationship_isSymmetric_feature", "_UI_EntityRelationship_type"),
-				 OMLPackage.eINSTANCE.getEntityRelationship_IsSymmetric(),
+				 EcorePackage.eINSTANCE.getEntityRelationship_IsSymmetric(),
 				 true,
 				 false,
 				 false,
@@ -243,7 +242,7 @@ public class EntityRelationshipItemProvider extends TermItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityRelationship_isAsymmetric_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityRelationship_isAsymmetric_feature", "_UI_EntityRelationship_type"),
-				 OMLPackage.eINSTANCE.getEntityRelationship_IsAsymmetric(),
+				 EcorePackage.eINSTANCE.getEntityRelationship_IsAsymmetric(),
 				 true,
 				 false,
 				 false,
@@ -265,7 +264,7 @@ public class EntityRelationshipItemProvider extends TermItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityRelationship_isReflexive_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityRelationship_isReflexive_feature", "_UI_EntityRelationship_type"),
-				 OMLPackage.eINSTANCE.getEntityRelationship_IsReflexive(),
+				 EcorePackage.eINSTANCE.getEntityRelationship_IsReflexive(),
 				 true,
 				 false,
 				 false,
@@ -287,7 +286,7 @@ public class EntityRelationshipItemProvider extends TermItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityRelationship_isIrreflexive_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityRelationship_isIrreflexive_feature", "_UI_EntityRelationship_type"),
-				 OMLPackage.eINSTANCE.getEntityRelationship_IsIrreflexive(),
+				 EcorePackage.eINSTANCE.getEntityRelationship_IsIrreflexive(),
 				 true,
 				 false,
 				 false,
@@ -309,7 +308,7 @@ public class EntityRelationshipItemProvider extends TermItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityRelationship_isTransitive_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityRelationship_isTransitive_feature", "_UI_EntityRelationship_type"),
-				 OMLPackage.eINSTANCE.getEntityRelationship_IsTransitive(),
+				 EcorePackage.eINSTANCE.getEntityRelationship_IsTransitive(),
 				 true,
 				 false,
 				 false,
@@ -345,15 +344,15 @@ public class EntityRelationshipItemProvider extends TermItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EntityRelationship.class)) {
-			case OMLPackage.ENTITY_RELATIONSHIP__IS_FUNCTIONAL:
-			case OMLPackage.ENTITY_RELATIONSHIP__IS_INVERSE_FUNCTIONAL:
-			case OMLPackage.ENTITY_RELATIONSHIP__IS_ESSENTIAL:
-			case OMLPackage.ENTITY_RELATIONSHIP__IS_INVERSE_ESSENTIAL:
-			case OMLPackage.ENTITY_RELATIONSHIP__IS_SYMMETRIC:
-			case OMLPackage.ENTITY_RELATIONSHIP__IS_ASYMMETRIC:
-			case OMLPackage.ENTITY_RELATIONSHIP__IS_REFLEXIVE:
-			case OMLPackage.ENTITY_RELATIONSHIP__IS_IRREFLEXIVE:
-			case OMLPackage.ENTITY_RELATIONSHIP__IS_TRANSITIVE:
+			case EcorePackage.ENTITY_RELATIONSHIP__IS_FUNCTIONAL:
+			case EcorePackage.ENTITY_RELATIONSHIP__IS_INVERSE_FUNCTIONAL:
+			case EcorePackage.ENTITY_RELATIONSHIP__IS_ESSENTIAL:
+			case EcorePackage.ENTITY_RELATIONSHIP__IS_INVERSE_ESSENTIAL:
+			case EcorePackage.ENTITY_RELATIONSHIP__IS_SYMMETRIC:
+			case EcorePackage.ENTITY_RELATIONSHIP__IS_ASYMMETRIC:
+			case EcorePackage.ENTITY_RELATIONSHIP__IS_REFLEXIVE:
+			case EcorePackage.ENTITY_RELATIONSHIP__IS_IRREFLEXIVE:
+			case EcorePackage.ENTITY_RELATIONSHIP__IS_TRANSITIVE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

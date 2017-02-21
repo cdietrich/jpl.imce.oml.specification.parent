@@ -27,7 +27,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.Concept;
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.TerminologyBox;
 import jpl.imce.oml.specification.ecore.TerminologyGraph;
 import jpl.imce.oml.specification.ecore.TerminologyNestingAxiom;
@@ -93,7 +93,7 @@ public class TerminologyNestingAxiomImpl extends TerminologyBoxAxiomImpl impleme
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getTerminologyNestingAxiom();
+		return EcorePackage.eINSTANCE.getTerminologyNestingAxiom();
 	}
 
 	/**
@@ -107,7 +107,7 @@ public class TerminologyNestingAxiomImpl extends TerminologyBoxAxiomImpl impleme
 			nestingTerminology = (TerminologyBox)eResolveProxy(oldNestingTerminology);
 			if (nestingTerminology != oldNestingTerminology) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.TERMINOLOGY_NESTING_AXIOM__NESTING_TERMINOLOGY, oldNestingTerminology, nestingTerminology));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.TERMINOLOGY_NESTING_AXIOM__NESTING_TERMINOLOGY, oldNestingTerminology, nestingTerminology));
 			}
 		}
 		return nestingTerminology;
@@ -131,7 +131,7 @@ public class TerminologyNestingAxiomImpl extends TerminologyBoxAxiomImpl impleme
 		TerminologyBox oldNestingTerminology = nestingTerminology;
 		nestingTerminology = newNestingTerminology;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.TERMINOLOGY_NESTING_AXIOM__NESTING_TERMINOLOGY, oldNestingTerminology, nestingTerminology));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.TERMINOLOGY_NESTING_AXIOM__NESTING_TERMINOLOGY, oldNestingTerminology, nestingTerminology));
 	}
 
 	/**
@@ -145,7 +145,7 @@ public class TerminologyNestingAxiomImpl extends TerminologyBoxAxiomImpl impleme
 			nestingContext = (Concept)eResolveProxy(oldNestingContext);
 			if (nestingContext != oldNestingContext) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.TERMINOLOGY_NESTING_AXIOM__NESTING_CONTEXT, oldNestingContext, nestingContext));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.TERMINOLOGY_NESTING_AXIOM__NESTING_CONTEXT, oldNestingContext, nestingContext));
 			}
 		}
 		return nestingContext;
@@ -169,7 +169,7 @@ public class TerminologyNestingAxiomImpl extends TerminologyBoxAxiomImpl impleme
 		Concept oldNestingContext = nestingContext;
 		nestingContext = newNestingContext;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.TERMINOLOGY_NESTING_AXIOM__NESTING_CONTEXT, oldNestingContext, nestingContext));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.TERMINOLOGY_NESTING_AXIOM__NESTING_CONTEXT, oldNestingContext, nestingContext));
 	}
 
 	/**
@@ -242,10 +242,10 @@ public class TerminologyNestingAxiomImpl extends TerminologyBoxAxiomImpl impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_NESTING_AXIOM__NESTING_TERMINOLOGY:
+			case EcorePackage.TERMINOLOGY_NESTING_AXIOM__NESTING_TERMINOLOGY:
 				if (resolve) return getNestingTerminology();
 				return basicGetNestingTerminology();
-			case OMLPackage.TERMINOLOGY_NESTING_AXIOM__NESTING_CONTEXT:
+			case EcorePackage.TERMINOLOGY_NESTING_AXIOM__NESTING_CONTEXT:
 				if (resolve) return getNestingContext();
 				return basicGetNestingContext();
 		}
@@ -260,10 +260,10 @@ public class TerminologyNestingAxiomImpl extends TerminologyBoxAxiomImpl impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_NESTING_AXIOM__NESTING_TERMINOLOGY:
+			case EcorePackage.TERMINOLOGY_NESTING_AXIOM__NESTING_TERMINOLOGY:
 				setNestingTerminology((TerminologyBox)newValue);
 				return;
-			case OMLPackage.TERMINOLOGY_NESTING_AXIOM__NESTING_CONTEXT:
+			case EcorePackage.TERMINOLOGY_NESTING_AXIOM__NESTING_CONTEXT:
 				setNestingContext((Concept)newValue);
 				return;
 		}
@@ -278,10 +278,10 @@ public class TerminologyNestingAxiomImpl extends TerminologyBoxAxiomImpl impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_NESTING_AXIOM__NESTING_TERMINOLOGY:
+			case EcorePackage.TERMINOLOGY_NESTING_AXIOM__NESTING_TERMINOLOGY:
 				setNestingTerminology((TerminologyBox)null);
 				return;
-			case OMLPackage.TERMINOLOGY_NESTING_AXIOM__NESTING_CONTEXT:
+			case EcorePackage.TERMINOLOGY_NESTING_AXIOM__NESTING_CONTEXT:
 				setNestingContext((Concept)null);
 				return;
 		}
@@ -296,9 +296,9 @@ public class TerminologyNestingAxiomImpl extends TerminologyBoxAxiomImpl impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_NESTING_AXIOM__NESTING_TERMINOLOGY:
+			case EcorePackage.TERMINOLOGY_NESTING_AXIOM__NESTING_TERMINOLOGY:
 				return nestingTerminology != null;
-			case OMLPackage.TERMINOLOGY_NESTING_AXIOM__NESTING_CONTEXT:
+			case EcorePackage.TERMINOLOGY_NESTING_AXIOM__NESTING_CONTEXT:
 				return nestingContext != null;
 		}
 		return super.eIsSet(featureID);
@@ -312,13 +312,13 @@ public class TerminologyNestingAxiomImpl extends TerminologyBoxAxiomImpl impleme
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.TERMINOLOGY_NESTING_AXIOM___CALCULATE_UUID:
+			case EcorePackage.TERMINOLOGY_NESTING_AXIOM___CALCULATE_UUID:
 				return calculateUUID();
-			case OMLPackage.TERMINOLOGY_NESTING_AXIOM___NESTED_TERMINOLOGY:
+			case EcorePackage.TERMINOLOGY_NESTING_AXIOM___NESTED_TERMINOLOGY:
 				return nestedTerminology();
-			case OMLPackage.TERMINOLOGY_NESTING_AXIOM___SOURCE:
+			case EcorePackage.TERMINOLOGY_NESTING_AXIOM___SOURCE:
 				return source();
-			case OMLPackage.TERMINOLOGY_NESTING_AXIOM___TARGET:
+			case EcorePackage.TERMINOLOGY_NESTING_AXIOM___TARGET:
 				return target();
 		}
 		return super.eInvoke(operationID, arguments);

@@ -65,7 +65,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.NumericScalarRestriction#getMaxExclusive <em>Max Exclusive</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getNumericScalarRestriction()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getNumericScalarRestriction()
  * @model
  * @generated
  */
@@ -79,7 +79,7 @@ public interface NumericScalarRestriction extends RestrictedDataRange {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Min Inclusive</em>' attribute.
 	 * @see #setMinInclusive(String)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getNumericScalarRestriction_MinInclusive()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getNumericScalarRestriction_MinInclusive()
 	 * @model unique="false" dataType="jpl.imce.oml.specification.ecore.LexicalNumber"
 	 * @generated
 	 */
@@ -104,7 +104,7 @@ public interface NumericScalarRestriction extends RestrictedDataRange {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Max Inclusive</em>' attribute.
 	 * @see #setMaxInclusive(String)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getNumericScalarRestriction_MaxInclusive()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getNumericScalarRestriction_MaxInclusive()
 	 * @model unique="false" dataType="jpl.imce.oml.specification.ecore.LexicalNumber"
 	 * @generated
 	 */
@@ -129,7 +129,7 @@ public interface NumericScalarRestriction extends RestrictedDataRange {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Min Exclusive</em>' attribute.
 	 * @see #setMinExclusive(String)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getNumericScalarRestriction_MinExclusive()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getNumericScalarRestriction_MinExclusive()
 	 * @model unique="false" dataType="jpl.imce.oml.specification.ecore.LexicalNumber"
 	 * @generated
 	 */
@@ -154,7 +154,7 @@ public interface NumericScalarRestriction extends RestrictedDataRange {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Max Exclusive</em>' attribute.
 	 * @see #setMaxExclusive(String)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getNumericScalarRestriction_MaxExclusive()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getNumericScalarRestriction_MaxExclusive()
 	 * @model unique="false" dataType="jpl.imce.oml.specification.ecore.LexicalNumber"
 	 * @generated
 	 */

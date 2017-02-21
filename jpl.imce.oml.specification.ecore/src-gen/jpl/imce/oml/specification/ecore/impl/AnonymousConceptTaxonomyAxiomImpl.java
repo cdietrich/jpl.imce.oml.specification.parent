@@ -29,7 +29,7 @@ import java.util.UUID;
 import jpl.imce.oml.specification.ecore.AnonymousConceptTaxonomyAxiom;
 import jpl.imce.oml.specification.ecore.Bundle;
 import jpl.imce.oml.specification.ecore.ConceptTreeDisjunction;
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -59,7 +59,7 @@ public class AnonymousConceptTaxonomyAxiomImpl extends DisjointUnionOfConceptsAx
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getAnonymousConceptTaxonomyAxiom();
+		return EcorePackage.eINSTANCE.getAnonymousConceptTaxonomyAxiom();
 	}
 
 	/**
@@ -93,7 +93,7 @@ public class AnonymousConceptTaxonomyAxiomImpl extends DisjointUnionOfConceptsAx
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.ANONYMOUS_CONCEPT_TAXONOMY_AXIOM___CALCULATE_UUID:
+			case EcorePackage.ANONYMOUS_CONCEPT_TAXONOMY_AXIOM___CALCULATE_UUID:
 				return calculateUUID();
 		}
 		return super.eInvoke(operationID, arguments);

@@ -19,7 +19,7 @@
 package jpl.imce.oml.specification.ecore.impl;
 
 import jpl.imce.oml.specification.ecore.Aspect;
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -47,7 +47,7 @@ public class AspectImpl extends EntityImpl implements Aspect {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getAspect();
+		return EcorePackage.eINSTANCE.getAspect();
 	}
 
 } //AspectImpl

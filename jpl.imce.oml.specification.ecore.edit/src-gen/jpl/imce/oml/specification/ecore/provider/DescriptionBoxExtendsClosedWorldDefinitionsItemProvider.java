@@ -23,7 +23,7 @@ import java.util.Collection;
 import java.util.List;
 
 import jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions;
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -77,7 +77,7 @@ public class DescriptionBoxExtendsClosedWorldDefinitionsItemProvider
 				 getResourceLocator(),
 				 getString("_UI_DescriptionBoxExtendsClosedWorldDefinitions_descriptionBox_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionBoxExtendsClosedWorldDefinitions_descriptionBox_feature", "_UI_DescriptionBoxExtendsClosedWorldDefinitions_type"),
-				 OMLPackage.eINSTANCE.getDescriptionBoxExtendsClosedWorldDefinitions_DescriptionBox(),
+				 EcorePackage.eINSTANCE.getDescriptionBoxExtendsClosedWorldDefinitions_DescriptionBox(),
 				 true,
 				 false,
 				 true,
@@ -99,7 +99,7 @@ public class DescriptionBoxExtendsClosedWorldDefinitionsItemProvider
 				 getResourceLocator(),
 				 getString("_UI_DescriptionBoxExtendsClosedWorldDefinitions_closedWorldDefinitions_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionBoxExtendsClosedWorldDefinitions_closedWorldDefinitions_feature", "_UI_DescriptionBoxExtendsClosedWorldDefinitions_type"),
-				 OMLPackage.eINSTANCE.getDescriptionBoxExtendsClosedWorldDefinitions_ClosedWorldDefinitions(),
+				 EcorePackage.eINSTANCE.getDescriptionBoxExtendsClosedWorldDefinitions_ClosedWorldDefinitions(),
 				 true,
 				 false,
 				 true,

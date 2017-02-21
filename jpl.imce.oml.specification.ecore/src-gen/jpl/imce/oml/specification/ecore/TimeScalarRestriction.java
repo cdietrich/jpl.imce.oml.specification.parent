@@ -49,7 +49,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.TimeScalarRestriction#getMaxExclusive <em>Max Exclusive</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getTimeScalarRestriction()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getTimeScalarRestriction()
  * @model
  * @generated
  */
@@ -63,7 +63,7 @@ public interface TimeScalarRestriction extends RestrictedDataRange {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Min Inclusive</em>' attribute.
 	 * @see #setMinInclusive(String)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTimeScalarRestriction_MinInclusive()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getTimeScalarRestriction_MinInclusive()
 	 * @model unique="false" dataType="jpl.imce.oml.specification.ecore.LexicalTime"
 	 * @generated
 	 */
@@ -88,7 +88,7 @@ public interface TimeScalarRestriction extends RestrictedDataRange {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Max Inclusive</em>' attribute.
 	 * @see #setMaxInclusive(String)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTimeScalarRestriction_MaxInclusive()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getTimeScalarRestriction_MaxInclusive()
 	 * @model unique="false" dataType="jpl.imce.oml.specification.ecore.LexicalTime"
 	 * @generated
 	 */
@@ -113,7 +113,7 @@ public interface TimeScalarRestriction extends RestrictedDataRange {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Min Exclusive</em>' attribute.
 	 * @see #setMinExclusive(String)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTimeScalarRestriction_MinExclusive()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getTimeScalarRestriction_MinExclusive()
 	 * @model unique="false" dataType="jpl.imce.oml.specification.ecore.LexicalTime"
 	 * @generated
 	 */
@@ -138,7 +138,7 @@ public interface TimeScalarRestriction extends RestrictedDataRange {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Max Exclusive</em>' attribute.
 	 * @see #setMaxExclusive(String)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTimeScalarRestriction_MaxExclusive()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getTimeScalarRestriction_MaxExclusive()
 	 * @model unique="false" dataType="jpl.imce.oml.specification.ecore.LexicalTime"
 	 * @generated
 	 */

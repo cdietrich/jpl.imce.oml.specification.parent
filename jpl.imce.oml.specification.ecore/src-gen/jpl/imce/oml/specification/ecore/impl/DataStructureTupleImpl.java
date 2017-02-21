@@ -28,7 +28,7 @@ import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.DataStructureTuple;
 import jpl.imce.oml.specification.ecore.DescriptionBox;
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Structure;
 import jpl.imce.oml.specification.ecore.StructuredDataPropertyValue;
 import jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion;
@@ -88,7 +88,7 @@ public class DataStructureTupleImpl extends SingletonInstanceImpl implements Dat
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getDataStructureTuple();
+		return EcorePackage.eINSTANCE.getDataStructureTuple();
 	}
 
 	/**
@@ -97,7 +97,7 @@ public class DataStructureTupleImpl extends SingletonInstanceImpl implements Dat
 	 * @generated
 	 */
 	public StructuredDataPropertyValue getStructuredDataPropertyValue() {
-		if (eContainerFeatureID() != OMLPackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE) return null;
+		if (eContainerFeatureID() != EcorePackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE) return null;
 		return (StructuredDataPropertyValue)eContainer();
 	}
 
@@ -107,7 +107,7 @@ public class DataStructureTupleImpl extends SingletonInstanceImpl implements Dat
 	 * @generated
 	 */
 	public StructuredDataPropertyValue basicGetStructuredDataPropertyValue() {
-		if (eContainerFeatureID() != OMLPackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE) return null;
+		if (eContainerFeatureID() != EcorePackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE) return null;
 		return (StructuredDataPropertyValue)eInternalContainer();
 	}
 
@@ -117,7 +117,7 @@ public class DataStructureTupleImpl extends SingletonInstanceImpl implements Dat
 	 * @generated
 	 */
 	public NotificationChain basicSetStructuredDataPropertyValue(StructuredDataPropertyValue newStructuredDataPropertyValue, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newStructuredDataPropertyValue, OMLPackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newStructuredDataPropertyValue, EcorePackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE, msgs);
 		return msgs;
 	}
 
@@ -127,19 +127,19 @@ public class DataStructureTupleImpl extends SingletonInstanceImpl implements Dat
 	 * @generated
 	 */
 	public void setStructuredDataPropertyValue(StructuredDataPropertyValue newStructuredDataPropertyValue) {
-		if (newStructuredDataPropertyValue != eInternalContainer() || (eContainerFeatureID() != OMLPackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE && newStructuredDataPropertyValue != null)) {
+		if (newStructuredDataPropertyValue != eInternalContainer() || (eContainerFeatureID() != EcorePackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE && newStructuredDataPropertyValue != null)) {
 			if (EcoreUtil.isAncestor(this, (EObject)newStructuredDataPropertyValue))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newStructuredDataPropertyValue != null)
-				msgs = ((InternalEObject)newStructuredDataPropertyValue).eInverseAdd(this, OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_PROPERTY_TUPLE, StructuredDataPropertyValue.class, msgs);
+				msgs = ((InternalEObject)newStructuredDataPropertyValue).eInverseAdd(this, EcorePackage.STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_PROPERTY_TUPLE, StructuredDataPropertyValue.class, msgs);
 			msgs = basicSetStructuredDataPropertyValue(newStructuredDataPropertyValue, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE, newStructuredDataPropertyValue, newStructuredDataPropertyValue));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE, newStructuredDataPropertyValue, newStructuredDataPropertyValue));
 	}
 
 	/**
@@ -153,7 +153,7 @@ public class DataStructureTupleImpl extends SingletonInstanceImpl implements Dat
 			dataStructureType = (Structure)eResolveProxy(oldDataStructureType);
 			if (dataStructureType != oldDataStructureType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.DATA_STRUCTURE_TUPLE__DATA_STRUCTURE_TYPE, oldDataStructureType, dataStructureType));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.DATA_STRUCTURE_TUPLE__DATA_STRUCTURE_TYPE, oldDataStructureType, dataStructureType));
 			}
 		}
 		return dataStructureType;
@@ -177,7 +177,7 @@ public class DataStructureTupleImpl extends SingletonInstanceImpl implements Dat
 		Structure oldDataStructureType = dataStructureType;
 		dataStructureType = newDataStructureType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.DATA_STRUCTURE_TUPLE__DATA_STRUCTURE_TYPE, oldDataStructureType, dataStructureType));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.DATA_STRUCTURE_TUPLE__DATA_STRUCTURE_TYPE, oldDataStructureType, dataStructureType));
 	}
 
 	/**
@@ -221,7 +221,7 @@ public class DataStructureTupleImpl extends SingletonInstanceImpl implements Dat
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE:
+			case EcorePackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetStructuredDataPropertyValue((StructuredDataPropertyValue)otherEnd, msgs);
@@ -237,7 +237,7 @@ public class DataStructureTupleImpl extends SingletonInstanceImpl implements Dat
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE:
+			case EcorePackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE:
 				return basicSetStructuredDataPropertyValue(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -251,8 +251,8 @@ public class DataStructureTupleImpl extends SingletonInstanceImpl implements Dat
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case OMLPackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE:
-				return eInternalContainer().eInverseRemove(this, OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_PROPERTY_TUPLE, StructuredDataPropertyValue.class, msgs);
+			case EcorePackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE:
+				return eInternalContainer().eInverseRemove(this, EcorePackage.STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_PROPERTY_TUPLE, StructuredDataPropertyValue.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -265,10 +265,10 @@ public class DataStructureTupleImpl extends SingletonInstanceImpl implements Dat
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE:
+			case EcorePackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE:
 				if (resolve) return getStructuredDataPropertyValue();
 				return basicGetStructuredDataPropertyValue();
-			case OMLPackage.DATA_STRUCTURE_TUPLE__DATA_STRUCTURE_TYPE:
+			case EcorePackage.DATA_STRUCTURE_TUPLE__DATA_STRUCTURE_TYPE:
 				if (resolve) return getDataStructureType();
 				return basicGetDataStructureType();
 		}
@@ -283,10 +283,10 @@ public class DataStructureTupleImpl extends SingletonInstanceImpl implements Dat
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE:
+			case EcorePackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE:
 				setStructuredDataPropertyValue((StructuredDataPropertyValue)newValue);
 				return;
-			case OMLPackage.DATA_STRUCTURE_TUPLE__DATA_STRUCTURE_TYPE:
+			case EcorePackage.DATA_STRUCTURE_TUPLE__DATA_STRUCTURE_TYPE:
 				setDataStructureType((Structure)newValue);
 				return;
 		}
@@ -301,10 +301,10 @@ public class DataStructureTupleImpl extends SingletonInstanceImpl implements Dat
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE:
+			case EcorePackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE:
 				setStructuredDataPropertyValue((StructuredDataPropertyValue)null);
 				return;
-			case OMLPackage.DATA_STRUCTURE_TUPLE__DATA_STRUCTURE_TYPE:
+			case EcorePackage.DATA_STRUCTURE_TUPLE__DATA_STRUCTURE_TYPE:
 				setDataStructureType((Structure)null);
 				return;
 		}
@@ -319,9 +319,9 @@ public class DataStructureTupleImpl extends SingletonInstanceImpl implements Dat
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE:
+			case EcorePackage.DATA_STRUCTURE_TUPLE__STRUCTURED_DATA_PROPERTY_VALUE:
 				return basicGetStructuredDataPropertyValue() != null;
-			case OMLPackage.DATA_STRUCTURE_TUPLE__DATA_STRUCTURE_TYPE:
+			case EcorePackage.DATA_STRUCTURE_TUPLE__DATA_STRUCTURE_TYPE:
 				return dataStructureType != null;
 		}
 		return super.eIsSet(featureID);
@@ -336,14 +336,14 @@ public class DataStructureTupleImpl extends SingletonInstanceImpl implements Dat
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == TerminologyThing.class) {
 			switch (baseOperationID) {
-				case OMLPackage.TERMINOLOGY_THING___CALCULATE_UUID: return OMLPackage.DATA_STRUCTURE_TUPLE___CALCULATE_UUID;
+				case EcorePackage.TERMINOLOGY_THING___CALCULATE_UUID: return EcorePackage.DATA_STRUCTURE_TUPLE___CALCULATE_UUID;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
 		if (baseClass == TerminologyInstanceAssertion.class) {
 			switch (baseOperationID) {
-				case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___DESCRIPTION_BOX: return OMLPackage.DATA_STRUCTURE_TUPLE___DESCRIPTION_BOX;
-				case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID: return OMLPackage.DATA_STRUCTURE_TUPLE___CALCULATE_UUID;
+				case EcorePackage.TERMINOLOGY_INSTANCE_ASSERTION___DESCRIPTION_BOX: return EcorePackage.DATA_STRUCTURE_TUPLE___DESCRIPTION_BOX;
+				case EcorePackage.TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID: return EcorePackage.DATA_STRUCTURE_TUPLE___CALCULATE_UUID;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
@@ -358,9 +358,9 @@ public class DataStructureTupleImpl extends SingletonInstanceImpl implements Dat
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.DATA_STRUCTURE_TUPLE___CALCULATE_UUID:
+			case EcorePackage.DATA_STRUCTURE_TUPLE___CALCULATE_UUID:
 				return calculateUUID();
-			case OMLPackage.DATA_STRUCTURE_TUPLE___DESCRIPTION_BOX:
+			case EcorePackage.DATA_STRUCTURE_TUPLE___DESCRIPTION_BOX:
 				return descriptionBox();
 		}
 		return super.eInvoke(operationID, arguments);

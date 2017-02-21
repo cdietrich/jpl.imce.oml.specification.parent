@@ -23,9 +23,8 @@ import java.util.Collection;
 import java.util.List;
 
 import jpl.imce.oml.specification.ecore.Bundle;
-import jpl.imce.oml.specification.ecore.OMLFactory;
-import jpl.imce.oml.specification.ecore.OMLPackage;
-
+import jpl.imce.oml.specification.ecore.EcoreFactory;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -81,7 +80,7 @@ public class BundleItemProvider extends TerminologyBoxItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Bundle_bundleExtent_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Bundle_bundleExtent_feature", "_UI_Bundle_type"),
-				 OMLPackage.eINSTANCE.getBundle_BundleExtent(),
+				 EcorePackage.eINSTANCE.getBundle_BundleExtent(),
 				 true,
 				 false,
 				 true,
@@ -102,8 +101,8 @@ public class BundleItemProvider extends TerminologyBoxItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OMLPackage.eINSTANCE.getBundle_BundleStatements());
-			childrenFeatures.add(OMLPackage.eINSTANCE.getBundle_TerminologyBundleAxioms());
+			childrenFeatures.add(EcorePackage.eINSTANCE.getBundle_BundleStatements());
+			childrenFeatures.add(EcorePackage.eINSTANCE.getBundle_TerminologyBundleAxioms());
 		}
 		return childrenFeatures;
 	}
@@ -159,8 +158,8 @@ public class BundleItemProvider extends TerminologyBoxItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Bundle.class)) {
-			case OMLPackage.BUNDLE__BUNDLE_STATEMENTS:
-			case OMLPackage.BUNDLE__TERMINOLOGY_BUNDLE_AXIOMS:
+			case EcorePackage.BUNDLE__BUNDLE_STATEMENTS:
+			case EcorePackage.BUNDLE__TERMINOLOGY_BUNDLE_AXIOMS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -180,23 +179,23 @@ public class BundleItemProvider extends TerminologyBoxItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.eINSTANCE.getBundle_BundleStatements(),
-				 OMLFactory.eINSTANCE.createSpecificDisjointConceptAxiom()));
+				(EcorePackage.eINSTANCE.getBundle_BundleStatements(),
+				 EcoreFactory.eINSTANCE.createSpecificDisjointConceptAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.eINSTANCE.getBundle_BundleStatements(),
-				 OMLFactory.eINSTANCE.createAnonymousConceptTaxonomyAxiom()));
+				(EcorePackage.eINSTANCE.getBundle_BundleStatements(),
+				 EcoreFactory.eINSTANCE.createAnonymousConceptTaxonomyAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.eINSTANCE.getBundle_BundleStatements(),
-				 OMLFactory.eINSTANCE.createRootConceptTaxonomyAxiom()));
+				(EcorePackage.eINSTANCE.getBundle_BundleStatements(),
+				 EcoreFactory.eINSTANCE.createRootConceptTaxonomyAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.eINSTANCE.getBundle_TerminologyBundleAxioms(),
-				 OMLFactory.eINSTANCE.createBundledTerminologyAxiom()));
+				(EcorePackage.eINSTANCE.getBundle_TerminologyBundleAxioms(),
+				 EcoreFactory.eINSTANCE.createBundledTerminologyAxiom()));
 	}
 
 }

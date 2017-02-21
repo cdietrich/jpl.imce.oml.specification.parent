@@ -36,7 +36,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.ConceptInstance#getSingletonConceptClassifier <em>Singleton Concept Classifier</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getConceptInstance()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getConceptInstance()
  * @model
  * @generated
  */
@@ -52,7 +52,7 @@ public interface ConceptInstance extends ConceptualEntitySingletonInstance {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Description Box</em>' container reference.
 	 * @see #setDescriptionBox(DescriptionBox)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getConceptInstance_DescriptionBox()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getConceptInstance_DescriptionBox()
 	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getConceptInstances
 	 * @model opposite="conceptInstances" required="true" transient="false"
 	 * @generated
@@ -79,7 +79,7 @@ public interface ConceptInstance extends ConceptualEntitySingletonInstance {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Singleton Concept Classifier</em>' reference.
 	 * @see #setSingletonConceptClassifier(Concept)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getConceptInstance_SingletonConceptClassifier()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getConceptInstance_SingletonConceptClassifier()
 	 * @model required="true"
 	 * @generated
 	 */

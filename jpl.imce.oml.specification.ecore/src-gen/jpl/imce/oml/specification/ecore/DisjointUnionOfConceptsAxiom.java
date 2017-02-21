@@ -37,7 +37,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.DisjointUnionOfConceptsAxiom#getDisjointTaxonomyParent <em>Disjoint Taxonomy Parent</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getDisjointUnionOfConceptsAxiom()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getDisjointUnionOfConceptsAxiom()
  * @model abstract="true"
  * @generated
  */
@@ -51,7 +51,7 @@ public interface DisjointUnionOfConceptsAxiom extends TerminologyBundleStatement
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Disjoint Taxonomy Parent</em>' reference.
 	 * @see #setDisjointTaxonomyParent(ConceptTreeDisjunction)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDisjointUnionOfConceptsAxiom_DisjointTaxonomyParent()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getDisjointUnionOfConceptsAxiom_DisjointTaxonomyParent()
 	 * @model required="true"
 	 * @generated
 	 */

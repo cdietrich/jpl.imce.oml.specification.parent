@@ -23,9 +23,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-import jpl.imce.oml.specification.ecore.OMLFactory;
-import jpl.imce.oml.specification.ecore.OMLPackage;
-
+import jpl.imce.oml.specification.ecore.EcoreFactory;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.edit.provider.OMLEditPlugin;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -98,7 +97,7 @@ public class AnnotationPropertyTableItemProvider
 				 getResourceLocator(),
 				 getString("_UI_AnnotationPropertyTable_key_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationPropertyTable_key_feature", "_UI_AnnotationPropertyTable_type"),
-				 OMLPackage.eINSTANCE.getAnnotationPropertyTable_Key(),
+				 EcorePackage.eINSTANCE.getAnnotationPropertyTable_Key(),
 				 true,
 				 false,
 				 true,
@@ -119,7 +118,7 @@ public class AnnotationPropertyTableItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(OMLPackage.eINSTANCE.getAnnotationPropertyTable_Value());
+			childrenFeatures.add(EcorePackage.eINSTANCE.getAnnotationPropertyTable_Value());
 		}
 		return childrenFeatures;
 	}
@@ -173,7 +172,7 @@ public class AnnotationPropertyTableItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Map.Entry.class)) {
-			case OMLPackage.ANNOTATION_PROPERTY_TABLE__VALUE:
+			case EcorePackage.ANNOTATION_PROPERTY_TABLE__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -193,8 +192,8 @@ public class AnnotationPropertyTableItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OMLPackage.eINSTANCE.getAnnotationPropertyTable_Value(),
-				 OMLFactory.eINSTANCE.createAnnotationEntry()));
+				(EcorePackage.eINSTANCE.getAnnotationPropertyTable_Value(),
+				 EcoreFactory.eINSTANCE.createAnnotationEntry()));
 	}
 
 	/**

@@ -36,7 +36,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.EntityScalarDataPropertyParticularRestrictionAxiom#getLiteralValue <em>Literal Value</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityScalarDataPropertyParticularRestrictionAxiom()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityScalarDataPropertyParticularRestrictionAxiom()
  * @model
  * @generated
  */
@@ -51,7 +51,7 @@ public interface EntityScalarDataPropertyParticularRestrictionAxiom extends Enti
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Literal Value</em>' attribute.
 	 * @see #setLiteralValue(String)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityScalarDataPropertyParticularRestrictionAxiom_LiteralValue()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityScalarDataPropertyParticularRestrictionAxiom_LiteralValue()
 	 * @model unique="false" dataType="jpl.imce.oml.specification.ecore.LexicalValue" required="true"
 	 * @generated
 	 */

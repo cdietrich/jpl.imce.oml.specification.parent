@@ -23,8 +23,7 @@ import java.util.Collection;
 import java.util.List;
 
 import jpl.imce.oml.specification.ecore.DataStructureTuple;
-import jpl.imce.oml.specification.ecore.OMLPackage;
-
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -78,7 +77,7 @@ public class DataStructureTupleItemProvider extends SingletonInstanceItemProvide
 				 getResourceLocator(),
 				 getString("_UI_DataStructureTuple_structuredDataPropertyValue_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataStructureTuple_structuredDataPropertyValue_feature", "_UI_DataStructureTuple_type"),
-				 OMLPackage.eINSTANCE.getDataStructureTuple_StructuredDataPropertyValue(),
+				 EcorePackage.eINSTANCE.getDataStructureTuple_StructuredDataPropertyValue(),
 				 true,
 				 false,
 				 true,
@@ -100,7 +99,7 @@ public class DataStructureTupleItemProvider extends SingletonInstanceItemProvide
 				 getResourceLocator(),
 				 getString("_UI_DataStructureTuple_dataStructureType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataStructureTuple_dataStructureType_feature", "_UI_DataStructureTuple_type"),
-				 OMLPackage.eINSTANCE.getDataStructureTuple_DataStructureType(),
+				 EcorePackage.eINSTANCE.getDataStructureTuple_DataStructureType(),
 				 true,
 				 false,
 				 true,

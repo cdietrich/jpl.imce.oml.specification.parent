@@ -22,7 +22,7 @@ package jpl.imce.oml.specification.ecore.provider;
 import java.util.Collection;
 import java.util.List;
 
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.RestrictedDataRange;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -77,7 +77,7 @@ public class RestrictedDataRangeItemProvider extends DataRangeItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_RestrictedDataRange_restrictedRange_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_RestrictedDataRange_restrictedRange_feature", "_UI_RestrictedDataRange_type"),
-				 OMLPackage.eINSTANCE.getRestrictedDataRange_RestrictedRange(),
+				 EcorePackage.eINSTANCE.getRestrictedDataRange_RestrictedRange(),
 				 true,
 				 false,
 				 true,

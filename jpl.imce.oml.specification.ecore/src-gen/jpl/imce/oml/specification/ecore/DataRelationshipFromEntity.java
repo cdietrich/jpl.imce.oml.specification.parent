@@ -37,7 +37,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.DataRelationshipFromEntity#isIsIdentityCriteria <em>Is Identity Criteria</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getDataRelationshipFromEntity()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getDataRelationshipFromEntity()
  * @model abstract="true"
  * @generated
  */
@@ -52,7 +52,7 @@ public interface DataRelationshipFromEntity extends DataRelationshipDomain {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Domain</em>' reference.
 	 * @see #setDomain(Entity)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDataRelationshipFromEntity_Domain()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getDataRelationshipFromEntity_Domain()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -81,7 +81,7 @@ public interface DataRelationshipFromEntity extends DataRelationshipDomain {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Is Identity Criteria</em>' attribute.
 	 * @see #setIsIdentityCriteria(boolean)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDataRelationshipFromEntity_IsIdentityCriteria()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getDataRelationshipFromEntity_IsIdentityCriteria()
 	 * @model unique="false" required="true"
 	 * @generated
 	 */

@@ -44,7 +44,7 @@ import org.eclipse.emf.cdo.CDOObject;
  *   <li>{@link jpl.imce.oml.specification.ecore.ConceptualEntity#isIsAbstract <em>Is Abstract</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getConceptualEntity()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getConceptualEntity()
  * @model abstract="true"
  * @extends CDOObject
  * @generated
@@ -60,7 +60,7 @@ public interface ConceptualEntity extends CDOObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Is Abstract</em>' attribute.
 	 * @see #setIsAbstract(boolean)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getConceptualEntity_IsAbstract()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getConceptualEntity_IsAbstract()
 	 * @model unique="false" required="true"
 	 * @generated
 	 */

@@ -36,7 +36,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.DataRelationshipToScalar#getRange <em>Range</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getDataRelationshipToScalar()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getDataRelationshipToScalar()
  * @model abstract="true"
  * @generated
  */
@@ -51,7 +51,7 @@ public interface DataRelationshipToScalar extends DataRelationshipRange {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Range</em>' reference.
 	 * @see #setRange(DataRange)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDataRelationshipToScalar_Range()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getDataRelationshipToScalar_Range()
 	 * @model required="true"
 	 * @generated
 	 */

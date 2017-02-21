@@ -38,7 +38,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.AspectSpecializationAxiom#getSuperAspect <em>Super Aspect</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getAspectSpecializationAxiom()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getAspectSpecializationAxiom()
  * @model
  * @generated
  */
@@ -52,7 +52,7 @@ public interface AspectSpecializationAxiom extends SpecializationAxiom {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Sub Entity</em>' reference.
 	 * @see #setSubEntity(Entity)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getAspectSpecializationAxiom_SubEntity()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getAspectSpecializationAxiom_SubEntity()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -77,7 +77,7 @@ public interface AspectSpecializationAxiom extends SpecializationAxiom {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Super Aspect</em>' reference.
 	 * @see #setSuperAspect(Aspect)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getAspectSpecializationAxiom_SuperAspect()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getAspectSpecializationAxiom_SuperAspect()
 	 * @model required="true"
 	 * @generated
 	 */

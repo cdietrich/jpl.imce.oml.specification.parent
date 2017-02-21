@@ -26,7 +26,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import java.util.UUID;
 
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Resource;
 import jpl.imce.oml.specification.ecore.Term;
 import jpl.imce.oml.specification.ecore.TerminologyBox;
@@ -90,7 +90,7 @@ public abstract class TermImpl extends TerminologyBoxStatementImpl implements Te
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getTerm();
+		return EcorePackage.eINSTANCE.getTerm();
 	}
 
 	/**
@@ -111,7 +111,7 @@ public abstract class TermImpl extends TerminologyBoxStatementImpl implements Te
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.TERM__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.TERM__NAME, oldName, name));
 	}
 
 	/**
@@ -156,7 +156,7 @@ public abstract class TermImpl extends TerminologyBoxStatementImpl implements Te
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.TERM__NAME:
+			case EcorePackage.TERM__NAME:
 				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -170,7 +170,7 @@ public abstract class TermImpl extends TerminologyBoxStatementImpl implements Te
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.TERM__NAME:
+			case EcorePackage.TERM__NAME:
 				setName((String)newValue);
 				return;
 		}
@@ -185,7 +185,7 @@ public abstract class TermImpl extends TerminologyBoxStatementImpl implements Te
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.TERM__NAME:
+			case EcorePackage.TERM__NAME:
 				setName(NAME_EDEFAULT);
 				return;
 		}
@@ -200,7 +200,7 @@ public abstract class TermImpl extends TerminologyBoxStatementImpl implements Te
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.TERM__NAME:
+			case EcorePackage.TERM__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
@@ -215,14 +215,14 @@ public abstract class TermImpl extends TerminologyBoxStatementImpl implements Te
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == TerminologyThing.class) {
 			switch (baseOperationID) {
-				case OMLPackage.TERMINOLOGY_THING___CALCULATE_UUID: return OMLPackage.TERM___CALCULATE_UUID;
+				case EcorePackage.TERMINOLOGY_THING___CALCULATE_UUID: return EcorePackage.TERM___CALCULATE_UUID;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
 		if (baseClass == Resource.class) {
 			switch (baseOperationID) {
-				case OMLPackage.RESOURCE___IRI: return OMLPackage.TERM___IRI;
-				case OMLPackage.RESOURCE___NAME: return OMLPackage.TERM___NAME;
+				case EcorePackage.RESOURCE___IRI: return EcorePackage.TERM___IRI;
+				case EcorePackage.RESOURCE___NAME: return EcorePackage.TERM___NAME;
 				default: return -1;
 			}
 		}
@@ -237,11 +237,11 @@ public abstract class TermImpl extends TerminologyBoxStatementImpl implements Te
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.TERM___CALCULATE_UUID:
+			case EcorePackage.TERM___CALCULATE_UUID:
 				return calculateUUID();
-			case OMLPackage.TERM___IRI:
+			case EcorePackage.TERM___IRI:
 				return iri();
-			case OMLPackage.TERM___NAME:
+			case EcorePackage.TERM___NAME:
 				return name();
 		}
 		return super.eInvoke(operationID, arguments);

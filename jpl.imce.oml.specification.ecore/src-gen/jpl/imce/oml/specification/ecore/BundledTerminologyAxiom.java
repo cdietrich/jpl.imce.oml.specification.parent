@@ -38,7 +38,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.BundledTerminologyAxiom#getBundledTerminology <em>Bundled Terminology</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getBundledTerminologyAxiom()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getBundledTerminologyAxiom()
  * @model
  * @generated
  */
@@ -53,7 +53,7 @@ public interface BundledTerminologyAxiom extends TerminologyBundleAxiom {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Bundled Terminology</em>' reference.
 	 * @see #setBundledTerminology(TerminologyBox)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getBundledTerminologyAxiom_BundledTerminology()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getBundledTerminologyAxiom_BundledTerminology()
 	 * @model required="true"
 	 * @generated
 	 */

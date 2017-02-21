@@ -22,9 +22,8 @@ package jpl.imce.oml.specification.ecore.provider;
 import java.util.Collection;
 import java.util.List;
 
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.EntityRestrictionAxiom;
-import jpl.imce.oml.specification.ecore.OMLPackage;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -79,7 +78,7 @@ public class EntityRestrictionAxiomItemProvider extends TermAxiomItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityRestrictionAxiom_restrictedRelation_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityRestrictionAxiom_restrictedRelation_feature", "_UI_EntityRestrictionAxiom_type"),
-				 OMLPackage.eINSTANCE.getEntityRestrictionAxiom_RestrictedRelation(),
+				 EcorePackage.eINSTANCE.getEntityRestrictionAxiom_RestrictedRelation(),
 				 true,
 				 false,
 				 true,
@@ -101,7 +100,7 @@ public class EntityRestrictionAxiomItemProvider extends TermAxiomItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityRestrictionAxiom_restrictedRange_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityRestrictionAxiom_restrictedRange_feature", "_UI_EntityRestrictionAxiom_type"),
-				 OMLPackage.eINSTANCE.getEntityRestrictionAxiom_RestrictedRange(),
+				 EcorePackage.eINSTANCE.getEntityRestrictionAxiom_RestrictedRange(),
 				 true,
 				 false,
 				 true,
@@ -123,7 +122,7 @@ public class EntityRestrictionAxiomItemProvider extends TermAxiomItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityRestrictionAxiom_restrictedDomain_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityRestrictionAxiom_restrictedDomain_feature", "_UI_EntityRestrictionAxiom_type"),
-				 OMLPackage.eINSTANCE.getEntityRestrictionAxiom_RestrictedDomain(),
+				 EcorePackage.eINSTANCE.getEntityRestrictionAxiom_RestrictedDomain(),
 				 true,
 				 false,
 				 true,

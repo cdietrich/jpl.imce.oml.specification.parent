@@ -54,7 +54,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.StringScalarRestriction#getPattern <em>Pattern</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getStringScalarRestriction()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getStringScalarRestriction()
  * @model
  * @generated
  */
@@ -68,7 +68,7 @@ public interface StringScalarRestriction extends RestrictedDataRange {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Length</em>' attribute.
 	 * @see #setLength(int)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getStringScalarRestriction_Length()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getStringScalarRestriction_Length()
 	 * @model unique="false"
 	 * @generated
 	 */
@@ -93,7 +93,7 @@ public interface StringScalarRestriction extends RestrictedDataRange {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Min Length</em>' attribute.
 	 * @see #setMinLength(int)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getStringScalarRestriction_MinLength()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getStringScalarRestriction_MinLength()
 	 * @model unique="false"
 	 * @generated
 	 */
@@ -118,7 +118,7 @@ public interface StringScalarRestriction extends RestrictedDataRange {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Max Length</em>' attribute.
 	 * @see #setMaxLength(int)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getStringScalarRestriction_MaxLength()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getStringScalarRestriction_MaxLength()
 	 * @model unique="false"
 	 * @generated
 	 */
@@ -143,7 +143,7 @@ public interface StringScalarRestriction extends RestrictedDataRange {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Pattern</em>' attribute.
 	 * @see #setPattern(String)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getStringScalarRestriction_Pattern()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getStringScalarRestriction_Pattern()
 	 * @model unique="false" dataType="jpl.imce.oml.specification.ecore.Pattern"
 	 * @generated
 	 */

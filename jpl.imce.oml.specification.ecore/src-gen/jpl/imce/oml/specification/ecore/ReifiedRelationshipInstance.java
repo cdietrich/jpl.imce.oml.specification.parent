@@ -36,7 +36,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstance#getSingletonReifiedRelationshipClassifier <em>Singleton Reified Relationship Classifier</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getReifiedRelationshipInstance()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getReifiedRelationshipInstance()
  * @model
  * @generated
  */
@@ -52,7 +52,7 @@ public interface ReifiedRelationshipInstance extends ConceptualEntitySingletonIn
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Description Box</em>' container reference.
 	 * @see #setDescriptionBox(DescriptionBox)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getReifiedRelationshipInstance_DescriptionBox()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getReifiedRelationshipInstance_DescriptionBox()
 	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getReifiedRelationshipInstances
 	 * @model opposite="reifiedRelationshipInstances" required="true" transient="false"
 	 * @generated
@@ -79,7 +79,7 @@ public interface ReifiedRelationshipInstance extends ConceptualEntitySingletonIn
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Singleton Reified Relationship Classifier</em>' reference.
 	 * @see #setSingletonReifiedRelationshipClassifier(ReifiedRelationship)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getReifiedRelationshipInstance_SingletonReifiedRelationshipClassifier()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getReifiedRelationshipInstance_SingletonReifiedRelationshipClassifier()
 	 * @model required="true"
 	 * @generated
 	 */

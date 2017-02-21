@@ -1,3 +1,4 @@
+@Ecore(nsPrefix="oml", nsURI="http://imce.jpl.nasa.gov/oml")
 @GenModel(copyrightText="
 Copyright 2016 California Institute of Technology (\"Caltech\").
 U.S. Government sponsorship acknowledged.
@@ -19,7 +20,7 @@ limitations under the License.
    rootExtendsInterface="org.eclipse.emf.cdo.CDOObject",
    childCreationExtenders="true", 
    pluginKey="OML", 
-   modelName="OML", prefix="OML",
+   modelName="OML", 
    modelPluginID="jpl.imce.oml.specification.ecore",
    modelDirectory="/jpl.imce.oml.specification.ecore/src-gen", 
    

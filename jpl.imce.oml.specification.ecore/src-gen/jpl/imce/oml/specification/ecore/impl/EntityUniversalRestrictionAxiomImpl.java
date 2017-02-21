@@ -26,10 +26,10 @@ import java.lang.reflect.InvocationTargetException;
 
 import java.util.UUID;
 
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Entity;
 import jpl.imce.oml.specification.ecore.EntityRelationship;
 import jpl.imce.oml.specification.ecore.EntityUniversalRestrictionAxiom;
-import jpl.imce.oml.specification.ecore.OMLPackage;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -59,7 +59,7 @@ public class EntityUniversalRestrictionAxiomImpl extends EntityRestrictionAxiomI
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getEntityUniversalRestrictionAxiom();
+		return EcorePackage.eINSTANCE.getEntityUniversalRestrictionAxiom();
 	}
 
 	/**
@@ -97,7 +97,7 @@ public class EntityUniversalRestrictionAxiomImpl extends EntityRestrictionAxiomI
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.ENTITY_UNIVERSAL_RESTRICTION_AXIOM___CALCULATE_UUID:
+			case EcorePackage.ENTITY_UNIVERSAL_RESTRICTION_AXIOM___CALCULATE_UUID:
 				return calculateUUID();
 		}
 		return super.eInvoke(operationID, arguments);

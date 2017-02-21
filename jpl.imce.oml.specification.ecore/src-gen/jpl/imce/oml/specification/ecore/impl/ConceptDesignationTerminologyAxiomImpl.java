@@ -28,7 +28,7 @@ import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.Concept;
 import jpl.imce.oml.specification.ecore.ConceptDesignationTerminologyAxiom;
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.TerminologyBox;
 import jpl.imce.oml.specification.ecore.TerminologyGraph;
 
@@ -93,7 +93,7 @@ public class ConceptDesignationTerminologyAxiomImpl extends TerminologyBoxAxiomI
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getConceptDesignationTerminologyAxiom();
+		return EcorePackage.eINSTANCE.getConceptDesignationTerminologyAxiom();
 	}
 
 	/**
@@ -107,7 +107,7 @@ public class ConceptDesignationTerminologyAxiomImpl extends TerminologyBoxAxiomI
 			designatedTerminology = (TerminologyBox)eResolveProxy(oldDesignatedTerminology);
 			if (designatedTerminology != oldDesignatedTerminology) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM__DESIGNATED_TERMINOLOGY, oldDesignatedTerminology, designatedTerminology));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM__DESIGNATED_TERMINOLOGY, oldDesignatedTerminology, designatedTerminology));
 			}
 		}
 		return designatedTerminology;
@@ -131,7 +131,7 @@ public class ConceptDesignationTerminologyAxiomImpl extends TerminologyBoxAxiomI
 		TerminologyBox oldDesignatedTerminology = designatedTerminology;
 		designatedTerminology = newDesignatedTerminology;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM__DESIGNATED_TERMINOLOGY, oldDesignatedTerminology, designatedTerminology));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM__DESIGNATED_TERMINOLOGY, oldDesignatedTerminology, designatedTerminology));
 	}
 
 	/**
@@ -145,7 +145,7 @@ public class ConceptDesignationTerminologyAxiomImpl extends TerminologyBoxAxiomI
 			designatedConcept = (Concept)eResolveProxy(oldDesignatedConcept);
 			if (designatedConcept != oldDesignatedConcept) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM__DESIGNATED_CONCEPT, oldDesignatedConcept, designatedConcept));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM__DESIGNATED_CONCEPT, oldDesignatedConcept, designatedConcept));
 			}
 		}
 		return designatedConcept;
@@ -169,7 +169,7 @@ public class ConceptDesignationTerminologyAxiomImpl extends TerminologyBoxAxiomI
 		Concept oldDesignatedConcept = designatedConcept;
 		designatedConcept = newDesignatedConcept;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM__DESIGNATED_CONCEPT, oldDesignatedConcept, designatedConcept));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM__DESIGNATED_CONCEPT, oldDesignatedConcept, designatedConcept));
 	}
 
 	/**
@@ -238,10 +238,10 @@ public class ConceptDesignationTerminologyAxiomImpl extends TerminologyBoxAxiomI
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM__DESIGNATED_TERMINOLOGY:
+			case EcorePackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM__DESIGNATED_TERMINOLOGY:
 				if (resolve) return getDesignatedTerminology();
 				return basicGetDesignatedTerminology();
-			case OMLPackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM__DESIGNATED_CONCEPT:
+			case EcorePackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM__DESIGNATED_CONCEPT:
 				if (resolve) return getDesignatedConcept();
 				return basicGetDesignatedConcept();
 		}
@@ -256,10 +256,10 @@ public class ConceptDesignationTerminologyAxiomImpl extends TerminologyBoxAxiomI
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM__DESIGNATED_TERMINOLOGY:
+			case EcorePackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM__DESIGNATED_TERMINOLOGY:
 				setDesignatedTerminology((TerminologyBox)newValue);
 				return;
-			case OMLPackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM__DESIGNATED_CONCEPT:
+			case EcorePackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM__DESIGNATED_CONCEPT:
 				setDesignatedConcept((Concept)newValue);
 				return;
 		}
@@ -274,10 +274,10 @@ public class ConceptDesignationTerminologyAxiomImpl extends TerminologyBoxAxiomI
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM__DESIGNATED_TERMINOLOGY:
+			case EcorePackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM__DESIGNATED_TERMINOLOGY:
 				setDesignatedTerminology((TerminologyBox)null);
 				return;
-			case OMLPackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM__DESIGNATED_CONCEPT:
+			case EcorePackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM__DESIGNATED_CONCEPT:
 				setDesignatedConcept((Concept)null);
 				return;
 		}
@@ -292,9 +292,9 @@ public class ConceptDesignationTerminologyAxiomImpl extends TerminologyBoxAxiomI
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM__DESIGNATED_TERMINOLOGY:
+			case EcorePackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM__DESIGNATED_TERMINOLOGY:
 				return designatedTerminology != null;
-			case OMLPackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM__DESIGNATED_CONCEPT:
+			case EcorePackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM__DESIGNATED_CONCEPT:
 				return designatedConcept != null;
 		}
 		return super.eIsSet(featureID);
@@ -308,13 +308,13 @@ public class ConceptDesignationTerminologyAxiomImpl extends TerminologyBoxAxiomI
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM___CALCULATE_UUID:
+			case EcorePackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM___CALCULATE_UUID:
 				return calculateUUID();
-			case OMLPackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM___DESIGNATION_TERMINOLOGY_GRAPH:
+			case EcorePackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM___DESIGNATION_TERMINOLOGY_GRAPH:
 				return designationTerminologyGraph();
-			case OMLPackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM___SOURCE:
+			case EcorePackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM___SOURCE:
 				return source();
-			case OMLPackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM___TARGET:
+			case EcorePackage.CONCEPT_DESIGNATION_TERMINOLOGY_AXIOM___TARGET:
 				return target();
 		}
 		return super.eInvoke(operationID, arguments);

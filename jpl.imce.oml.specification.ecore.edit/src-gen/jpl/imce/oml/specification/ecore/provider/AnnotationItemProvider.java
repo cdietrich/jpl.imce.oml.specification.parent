@@ -23,8 +23,7 @@ import java.util.Collection;
 import java.util.List;
 
 import jpl.imce.oml.specification.ecore.Annotation;
-import jpl.imce.oml.specification.ecore.OMLPackage;
-
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.edit.provider.OMLEditPlugin;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -99,7 +98,7 @@ public class AnnotationItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Annotation_module_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Annotation_module_feature", "_UI_Annotation_type"),
-				 OMLPackage.eINSTANCE.getAnnotation_Module(),
+				 EcorePackage.eINSTANCE.getAnnotation_Module(),
 				 true,
 				 false,
 				 true,
@@ -121,7 +120,7 @@ public class AnnotationItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Annotation_property_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Annotation_property_feature", "_UI_Annotation_type"),
-				 OMLPackage.eINSTANCE.getAnnotation_Property(),
+				 EcorePackage.eINSTANCE.getAnnotation_Property(),
 				 true,
 				 false,
 				 true,
@@ -143,7 +142,7 @@ public class AnnotationItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Annotation_subject_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Annotation_subject_feature", "_UI_Annotation_type"),
-				 OMLPackage.eINSTANCE.getAnnotation_Subject(),
+				 EcorePackage.eINSTANCE.getAnnotation_Subject(),
 				 true,
 				 false,
 				 true,
@@ -165,7 +164,7 @@ public class AnnotationItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Annotation_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Annotation_value_feature", "_UI_Annotation_type"),
-				 OMLPackage.eINSTANCE.getAnnotation_Value(),
+				 EcorePackage.eINSTANCE.getAnnotation_Value(),
 				 true,
 				 false,
 				 false,
@@ -212,7 +211,7 @@ public class AnnotationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Annotation.class)) {
-			case OMLPackage.ANNOTATION__VALUE:
+			case EcorePackage.ANNOTATION__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

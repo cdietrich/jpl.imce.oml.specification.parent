@@ -29,7 +29,7 @@ import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions;
 import jpl.imce.oml.specification.ecore.DescriptionBoxRefinement;
 import jpl.imce.oml.specification.ecore.DescriptionKind;
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.ReifiedRelationshipInstance;
 import jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceDomain;
 import jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceRange;
@@ -180,7 +180,7 @@ public class DescriptionBoxImpl extends ModuleImpl implements DescriptionBox {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getDescriptionBox();
+		return EcorePackage.eINSTANCE.getDescriptionBox();
 	}
 
 	/**
@@ -201,7 +201,7 @@ public class DescriptionBoxImpl extends ModuleImpl implements DescriptionBox {
 		DescriptionKind oldKind = kind;
 		kind = newKind == null ? KIND_EDEFAULT : newKind;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.DESCRIPTION_BOX__KIND, oldKind, kind));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.DESCRIPTION_BOX__KIND, oldKind, kind));
 	}
 
 	/**
@@ -210,7 +210,7 @@ public class DescriptionBoxImpl extends ModuleImpl implements DescriptionBox {
 	 * @generated
 	 */
 	public TerminologyExtent getDescriptionExtent() {
-		if (eContainerFeatureID() != OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT) return null;
+		if (eContainerFeatureID() != EcorePackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT) return null;
 		return (TerminologyExtent)eContainer();
 	}
 
@@ -220,7 +220,7 @@ public class DescriptionBoxImpl extends ModuleImpl implements DescriptionBox {
 	 * @generated
 	 */
 	public TerminologyExtent basicGetDescriptionExtent() {
-		if (eContainerFeatureID() != OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT) return null;
+		if (eContainerFeatureID() != EcorePackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT) return null;
 		return (TerminologyExtent)eInternalContainer();
 	}
 
@@ -230,7 +230,7 @@ public class DescriptionBoxImpl extends ModuleImpl implements DescriptionBox {
 	 * @generated
 	 */
 	public NotificationChain basicSetDescriptionExtent(TerminologyExtent newDescriptionExtent, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newDescriptionExtent, OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newDescriptionExtent, EcorePackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT, msgs);
 		return msgs;
 	}
 
@@ -240,19 +240,19 @@ public class DescriptionBoxImpl extends ModuleImpl implements DescriptionBox {
 	 * @generated
 	 */
 	public void setDescriptionExtent(TerminologyExtent newDescriptionExtent) {
-		if (newDescriptionExtent != eInternalContainer() || (eContainerFeatureID() != OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT && newDescriptionExtent != null)) {
+		if (newDescriptionExtent != eInternalContainer() || (eContainerFeatureID() != EcorePackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT && newDescriptionExtent != null)) {
 			if (EcoreUtil.isAncestor(this, (EObject)newDescriptionExtent))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newDescriptionExtent != null)
-				msgs = ((InternalEObject)newDescriptionExtent).eInverseAdd(this, OMLPackage.TERMINOLOGY_EXTENT__DESCRIPTIONS, TerminologyExtent.class, msgs);
+				msgs = ((InternalEObject)newDescriptionExtent).eInverseAdd(this, EcorePackage.TERMINOLOGY_EXTENT__DESCRIPTIONS, TerminologyExtent.class, msgs);
 			msgs = basicSetDescriptionExtent(newDescriptionExtent, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT, newDescriptionExtent, newDescriptionExtent));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT, newDescriptionExtent, newDescriptionExtent));
 	}
 
 	/**
@@ -262,7 +262,7 @@ public class DescriptionBoxImpl extends ModuleImpl implements DescriptionBox {
 	 */
 	public EList<DescriptionBoxExtendsClosedWorldDefinitions> getClosedWorldDefinitions() {
 		if (closedWorldDefinitions == null) {
-			closedWorldDefinitions = new EObjectContainmentWithInverseEList<DescriptionBoxExtendsClosedWorldDefinitions>(DescriptionBoxExtendsClosedWorldDefinitions.class, this, OMLPackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS, OMLPackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX);
+			closedWorldDefinitions = new EObjectContainmentWithInverseEList<DescriptionBoxExtendsClosedWorldDefinitions>(DescriptionBoxExtendsClosedWorldDefinitions.class, this, EcorePackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS, EcorePackage.DESCRIPTION_BOX_EXTENDS_CLOSED_WORLD_DEFINITIONS__DESCRIPTION_BOX);
 		}
 		return closedWorldDefinitions;
 	}
@@ -274,7 +274,7 @@ public class DescriptionBoxImpl extends ModuleImpl implements DescriptionBox {
 	 */
 	public EList<DescriptionBoxRefinement> getDescriptionBoxRefinements() {
 		if (descriptionBoxRefinements == null) {
-			descriptionBoxRefinements = new EObjectContainmentWithInverseEList<DescriptionBoxRefinement>(DescriptionBoxRefinement.class, this, OMLPackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS, OMLPackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX);
+			descriptionBoxRefinements = new EObjectContainmentWithInverseEList<DescriptionBoxRefinement>(DescriptionBoxRefinement.class, this, EcorePackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS, EcorePackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX);
 		}
 		return descriptionBoxRefinements;
 	}
@@ -286,7 +286,7 @@ public class DescriptionBoxImpl extends ModuleImpl implements DescriptionBox {
 	 */
 	public EList<ConceptInstance> getConceptInstances() {
 		if (conceptInstances == null) {
-			conceptInstances = new EObjectContainmentWithInverseEList<ConceptInstance>(ConceptInstance.class, this, OMLPackage.DESCRIPTION_BOX__CONCEPT_INSTANCES, OMLPackage.CONCEPT_INSTANCE__DESCRIPTION_BOX);
+			conceptInstances = new EObjectContainmentWithInverseEList<ConceptInstance>(ConceptInstance.class, this, EcorePackage.DESCRIPTION_BOX__CONCEPT_INSTANCES, EcorePackage.CONCEPT_INSTANCE__DESCRIPTION_BOX);
 		}
 		return conceptInstances;
 	}
@@ -298,7 +298,7 @@ public class DescriptionBoxImpl extends ModuleImpl implements DescriptionBox {
 	 */
 	public EList<ReifiedRelationshipInstance> getReifiedRelationshipInstances() {
 		if (reifiedRelationshipInstances == null) {
-			reifiedRelationshipInstances = new EObjectContainmentWithInverseEList<ReifiedRelationshipInstance>(ReifiedRelationshipInstance.class, this, OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES, OMLPackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX);
+			reifiedRelationshipInstances = new EObjectContainmentWithInverseEList<ReifiedRelationshipInstance>(ReifiedRelationshipInstance.class, this, EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES, EcorePackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX);
 		}
 		return reifiedRelationshipInstances;
 	}
@@ -310,7 +310,7 @@ public class DescriptionBoxImpl extends ModuleImpl implements DescriptionBox {
 	 */
 	public EList<ReifiedRelationshipInstanceDomain> getReifiedRelationshipInstanceDomains() {
 		if (reifiedRelationshipInstanceDomains == null) {
-			reifiedRelationshipInstanceDomains = new EObjectContainmentWithInverseEList<ReifiedRelationshipInstanceDomain>(ReifiedRelationshipInstanceDomain.class, this, OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS, OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_DOMAIN__DESCRIPTION_BOX);
+			reifiedRelationshipInstanceDomains = new EObjectContainmentWithInverseEList<ReifiedRelationshipInstanceDomain>(ReifiedRelationshipInstanceDomain.class, this, EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS, EcorePackage.REIFIED_RELATIONSHIP_INSTANCE_DOMAIN__DESCRIPTION_BOX);
 		}
 		return reifiedRelationshipInstanceDomains;
 	}
@@ -322,7 +322,7 @@ public class DescriptionBoxImpl extends ModuleImpl implements DescriptionBox {
 	 */
 	public EList<ReifiedRelationshipInstanceRange> getReifiedRelationshipInstanceRanges() {
 		if (reifiedRelationshipInstanceRanges == null) {
-			reifiedRelationshipInstanceRanges = new EObjectContainmentWithInverseEList<ReifiedRelationshipInstanceRange>(ReifiedRelationshipInstanceRange.class, this, OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES, OMLPackage.REIFIED_RELATIONSHIP_INSTANCE_RANGE__DESCRIPTION_BOX);
+			reifiedRelationshipInstanceRanges = new EObjectContainmentWithInverseEList<ReifiedRelationshipInstanceRange>(ReifiedRelationshipInstanceRange.class, this, EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES, EcorePackage.REIFIED_RELATIONSHIP_INSTANCE_RANGE__DESCRIPTION_BOX);
 		}
 		return reifiedRelationshipInstanceRanges;
 	}
@@ -334,7 +334,7 @@ public class DescriptionBoxImpl extends ModuleImpl implements DescriptionBox {
 	 */
 	public EList<UnreifiedRelationshipInstanceTuple> getUnreifiedRelationshipInstanceTuples() {
 		if (unreifiedRelationshipInstanceTuples == null) {
-			unreifiedRelationshipInstanceTuples = new EObjectContainmentWithInverseEList<UnreifiedRelationshipInstanceTuple>(UnreifiedRelationshipInstanceTuple.class, this, OMLPackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES, OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX);
+			unreifiedRelationshipInstanceTuples = new EObjectContainmentWithInverseEList<UnreifiedRelationshipInstanceTuple>(UnreifiedRelationshipInstanceTuple.class, this, EcorePackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES, EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX);
 		}
 		return unreifiedRelationshipInstanceTuples;
 	}
@@ -368,23 +368,23 @@ public class DescriptionBoxImpl extends ModuleImpl implements DescriptionBox {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT:
+			case EcorePackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetDescriptionExtent((TerminologyExtent)otherEnd, msgs);
-			case OMLPackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS:
+			case EcorePackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getClosedWorldDefinitions()).basicAdd(otherEnd, msgs);
-			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS:
+			case EcorePackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDescriptionBoxRefinements()).basicAdd(otherEnd, msgs);
-			case OMLPackage.DESCRIPTION_BOX__CONCEPT_INSTANCES:
+			case EcorePackage.DESCRIPTION_BOX__CONCEPT_INSTANCES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConceptInstances()).basicAdd(otherEnd, msgs);
-			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES:
+			case EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getReifiedRelationshipInstances()).basicAdd(otherEnd, msgs);
-			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS:
+			case EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getReifiedRelationshipInstanceDomains()).basicAdd(otherEnd, msgs);
-			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES:
+			case EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getReifiedRelationshipInstanceRanges()).basicAdd(otherEnd, msgs);
-			case OMLPackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES:
+			case EcorePackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getUnreifiedRelationshipInstanceTuples()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -398,21 +398,21 @@ public class DescriptionBoxImpl extends ModuleImpl implements DescriptionBox {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT:
+			case EcorePackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT:
 				return basicSetDescriptionExtent(null, msgs);
-			case OMLPackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS:
+			case EcorePackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS:
 				return ((InternalEList<?>)getClosedWorldDefinitions()).basicRemove(otherEnd, msgs);
-			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS:
+			case EcorePackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS:
 				return ((InternalEList<?>)getDescriptionBoxRefinements()).basicRemove(otherEnd, msgs);
-			case OMLPackage.DESCRIPTION_BOX__CONCEPT_INSTANCES:
+			case EcorePackage.DESCRIPTION_BOX__CONCEPT_INSTANCES:
 				return ((InternalEList<?>)getConceptInstances()).basicRemove(otherEnd, msgs);
-			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES:
+			case EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES:
 				return ((InternalEList<?>)getReifiedRelationshipInstances()).basicRemove(otherEnd, msgs);
-			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS:
+			case EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS:
 				return ((InternalEList<?>)getReifiedRelationshipInstanceDomains()).basicRemove(otherEnd, msgs);
-			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES:
+			case EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES:
 				return ((InternalEList<?>)getReifiedRelationshipInstanceRanges()).basicRemove(otherEnd, msgs);
-			case OMLPackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES:
+			case EcorePackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES:
 				return ((InternalEList<?>)getUnreifiedRelationshipInstanceTuples()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -426,8 +426,8 @@ public class DescriptionBoxImpl extends ModuleImpl implements DescriptionBox {
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT:
-				return eInternalContainer().eInverseRemove(this, OMLPackage.TERMINOLOGY_EXTENT__DESCRIPTIONS, TerminologyExtent.class, msgs);
+			case EcorePackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT:
+				return eInternalContainer().eInverseRemove(this, EcorePackage.TERMINOLOGY_EXTENT__DESCRIPTIONS, TerminologyExtent.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -440,24 +440,24 @@ public class DescriptionBoxImpl extends ModuleImpl implements DescriptionBox {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.DESCRIPTION_BOX__KIND:
+			case EcorePackage.DESCRIPTION_BOX__KIND:
 				return getKind();
-			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT:
+			case EcorePackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT:
 				if (resolve) return getDescriptionExtent();
 				return basicGetDescriptionExtent();
-			case OMLPackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS:
+			case EcorePackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS:
 				return getClosedWorldDefinitions();
-			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS:
+			case EcorePackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS:
 				return getDescriptionBoxRefinements();
-			case OMLPackage.DESCRIPTION_BOX__CONCEPT_INSTANCES:
+			case EcorePackage.DESCRIPTION_BOX__CONCEPT_INSTANCES:
 				return getConceptInstances();
-			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES:
+			case EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES:
 				return getReifiedRelationshipInstances();
-			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS:
+			case EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS:
 				return getReifiedRelationshipInstanceDomains();
-			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES:
+			case EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES:
 				return getReifiedRelationshipInstanceRanges();
-			case OMLPackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES:
+			case EcorePackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES:
 				return getUnreifiedRelationshipInstanceTuples();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -472,37 +472,37 @@ public class DescriptionBoxImpl extends ModuleImpl implements DescriptionBox {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.DESCRIPTION_BOX__KIND:
+			case EcorePackage.DESCRIPTION_BOX__KIND:
 				setKind((DescriptionKind)newValue);
 				return;
-			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT:
+			case EcorePackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT:
 				setDescriptionExtent((TerminologyExtent)newValue);
 				return;
-			case OMLPackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS:
+			case EcorePackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS:
 				getClosedWorldDefinitions().clear();
 				getClosedWorldDefinitions().addAll((Collection<? extends DescriptionBoxExtendsClosedWorldDefinitions>)newValue);
 				return;
-			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS:
+			case EcorePackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS:
 				getDescriptionBoxRefinements().clear();
 				getDescriptionBoxRefinements().addAll((Collection<? extends DescriptionBoxRefinement>)newValue);
 				return;
-			case OMLPackage.DESCRIPTION_BOX__CONCEPT_INSTANCES:
+			case EcorePackage.DESCRIPTION_BOX__CONCEPT_INSTANCES:
 				getConceptInstances().clear();
 				getConceptInstances().addAll((Collection<? extends ConceptInstance>)newValue);
 				return;
-			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES:
+			case EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES:
 				getReifiedRelationshipInstances().clear();
 				getReifiedRelationshipInstances().addAll((Collection<? extends ReifiedRelationshipInstance>)newValue);
 				return;
-			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS:
+			case EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS:
 				getReifiedRelationshipInstanceDomains().clear();
 				getReifiedRelationshipInstanceDomains().addAll((Collection<? extends ReifiedRelationshipInstanceDomain>)newValue);
 				return;
-			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES:
+			case EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES:
 				getReifiedRelationshipInstanceRanges().clear();
 				getReifiedRelationshipInstanceRanges().addAll((Collection<? extends ReifiedRelationshipInstanceRange>)newValue);
 				return;
-			case OMLPackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES:
+			case EcorePackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES:
 				getUnreifiedRelationshipInstanceTuples().clear();
 				getUnreifiedRelationshipInstanceTuples().addAll((Collection<? extends UnreifiedRelationshipInstanceTuple>)newValue);
 				return;
@@ -518,31 +518,31 @@ public class DescriptionBoxImpl extends ModuleImpl implements DescriptionBox {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.DESCRIPTION_BOX__KIND:
+			case EcorePackage.DESCRIPTION_BOX__KIND:
 				setKind(KIND_EDEFAULT);
 				return;
-			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT:
+			case EcorePackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT:
 				setDescriptionExtent((TerminologyExtent)null);
 				return;
-			case OMLPackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS:
+			case EcorePackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS:
 				getClosedWorldDefinitions().clear();
 				return;
-			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS:
+			case EcorePackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS:
 				getDescriptionBoxRefinements().clear();
 				return;
-			case OMLPackage.DESCRIPTION_BOX__CONCEPT_INSTANCES:
+			case EcorePackage.DESCRIPTION_BOX__CONCEPT_INSTANCES:
 				getConceptInstances().clear();
 				return;
-			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES:
+			case EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES:
 				getReifiedRelationshipInstances().clear();
 				return;
-			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS:
+			case EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS:
 				getReifiedRelationshipInstanceDomains().clear();
 				return;
-			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES:
+			case EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES:
 				getReifiedRelationshipInstanceRanges().clear();
 				return;
-			case OMLPackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES:
+			case EcorePackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES:
 				getUnreifiedRelationshipInstanceTuples().clear();
 				return;
 		}
@@ -557,23 +557,23 @@ public class DescriptionBoxImpl extends ModuleImpl implements DescriptionBox {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.DESCRIPTION_BOX__KIND:
+			case EcorePackage.DESCRIPTION_BOX__KIND:
 				return kind != KIND_EDEFAULT;
-			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT:
+			case EcorePackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT:
 				return basicGetDescriptionExtent() != null;
-			case OMLPackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS:
+			case EcorePackage.DESCRIPTION_BOX__CLOSED_WORLD_DEFINITIONS:
 				return closedWorldDefinitions != null && !closedWorldDefinitions.isEmpty();
-			case OMLPackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS:
+			case EcorePackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS:
 				return descriptionBoxRefinements != null && !descriptionBoxRefinements.isEmpty();
-			case OMLPackage.DESCRIPTION_BOX__CONCEPT_INSTANCES:
+			case EcorePackage.DESCRIPTION_BOX__CONCEPT_INSTANCES:
 				return conceptInstances != null && !conceptInstances.isEmpty();
-			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES:
+			case EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES:
 				return reifiedRelationshipInstances != null && !reifiedRelationshipInstances.isEmpty();
-			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS:
+			case EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_DOMAINS:
 				return reifiedRelationshipInstanceDomains != null && !reifiedRelationshipInstanceDomains.isEmpty();
-			case OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES:
+			case EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCE_RANGES:
 				return reifiedRelationshipInstanceRanges != null && !reifiedRelationshipInstanceRanges.isEmpty();
-			case OMLPackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES:
+			case EcorePackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES:
 				return unreifiedRelationshipInstanceTuples != null && !unreifiedRelationshipInstanceTuples.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -588,9 +588,9 @@ public class DescriptionBoxImpl extends ModuleImpl implements DescriptionBox {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.DESCRIPTION_BOX___WITH_ANNOTATIONS__EMAP:
+			case EcorePackage.DESCRIPTION_BOX___WITH_ANNOTATIONS__EMAP:
 				return withAnnotations((EMap<AnnotationProperty, EList<AnnotationEntry>>)arguments.get(0));
-			case OMLPackage.DESCRIPTION_BOX___EXTENT:
+			case EcorePackage.DESCRIPTION_BOX___EXTENT:
 				return extent();
 		}
 		return super.eInvoke(operationID, arguments);

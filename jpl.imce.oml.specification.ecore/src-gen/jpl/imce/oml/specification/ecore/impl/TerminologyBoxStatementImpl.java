@@ -18,7 +18,7 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.TerminologyBox;
 import jpl.imce.oml.specification.ecore.TerminologyBoxStatement;
 
@@ -63,7 +63,7 @@ public abstract class TerminologyBoxStatementImpl extends TerminologyThingImpl i
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getTerminologyBoxStatement();
+		return EcorePackage.eINSTANCE.getTerminologyBoxStatement();
 	}
 
 	/**
@@ -72,7 +72,7 @@ public abstract class TerminologyBoxStatementImpl extends TerminologyThingImpl i
 	 * @generated
 	 */
 	public TerminologyBox getTbox() {
-		if (eContainerFeatureID() != OMLPackage.TERMINOLOGY_BOX_STATEMENT__TBOX) return null;
+		if (eContainerFeatureID() != EcorePackage.TERMINOLOGY_BOX_STATEMENT__TBOX) return null;
 		return (TerminologyBox)eContainer();
 	}
 
@@ -82,7 +82,7 @@ public abstract class TerminologyBoxStatementImpl extends TerminologyThingImpl i
 	 * @generated
 	 */
 	public TerminologyBox basicGetTbox() {
-		if (eContainerFeatureID() != OMLPackage.TERMINOLOGY_BOX_STATEMENT__TBOX) return null;
+		if (eContainerFeatureID() != EcorePackage.TERMINOLOGY_BOX_STATEMENT__TBOX) return null;
 		return (TerminologyBox)eInternalContainer();
 	}
 
@@ -92,7 +92,7 @@ public abstract class TerminologyBoxStatementImpl extends TerminologyThingImpl i
 	 * @generated
 	 */
 	public NotificationChain basicSetTbox(TerminologyBox newTbox, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newTbox, OMLPackage.TERMINOLOGY_BOX_STATEMENT__TBOX, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newTbox, EcorePackage.TERMINOLOGY_BOX_STATEMENT__TBOX, msgs);
 		return msgs;
 	}
 
@@ -102,19 +102,19 @@ public abstract class TerminologyBoxStatementImpl extends TerminologyThingImpl i
 	 * @generated
 	 */
 	public void setTbox(TerminologyBox newTbox) {
-		if (newTbox != eInternalContainer() || (eContainerFeatureID() != OMLPackage.TERMINOLOGY_BOX_STATEMENT__TBOX && newTbox != null)) {
+		if (newTbox != eInternalContainer() || (eContainerFeatureID() != EcorePackage.TERMINOLOGY_BOX_STATEMENT__TBOX && newTbox != null)) {
 			if (EcoreUtil.isAncestor(this, (EObject)newTbox))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newTbox != null)
-				msgs = ((InternalEObject)newTbox).eInverseAdd(this, OMLPackage.TERMINOLOGY_BOX__BOX_STATEMENTS, TerminologyBox.class, msgs);
+				msgs = ((InternalEObject)newTbox).eInverseAdd(this, EcorePackage.TERMINOLOGY_BOX__BOX_STATEMENTS, TerminologyBox.class, msgs);
 			msgs = basicSetTbox(newTbox, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.TERMINOLOGY_BOX_STATEMENT__TBOX, newTbox, newTbox));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.TERMINOLOGY_BOX_STATEMENT__TBOX, newTbox, newTbox));
 	}
 
 	/**
@@ -125,7 +125,7 @@ public abstract class TerminologyBoxStatementImpl extends TerminologyThingImpl i
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BOX_STATEMENT__TBOX:
+			case EcorePackage.TERMINOLOGY_BOX_STATEMENT__TBOX:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetTbox((TerminologyBox)otherEnd, msgs);
@@ -141,7 +141,7 @@ public abstract class TerminologyBoxStatementImpl extends TerminologyThingImpl i
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BOX_STATEMENT__TBOX:
+			case EcorePackage.TERMINOLOGY_BOX_STATEMENT__TBOX:
 				return basicSetTbox(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -155,8 +155,8 @@ public abstract class TerminologyBoxStatementImpl extends TerminologyThingImpl i
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case OMLPackage.TERMINOLOGY_BOX_STATEMENT__TBOX:
-				return eInternalContainer().eInverseRemove(this, OMLPackage.TERMINOLOGY_BOX__BOX_STATEMENTS, TerminologyBox.class, msgs);
+			case EcorePackage.TERMINOLOGY_BOX_STATEMENT__TBOX:
+				return eInternalContainer().eInverseRemove(this, EcorePackage.TERMINOLOGY_BOX__BOX_STATEMENTS, TerminologyBox.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -169,7 +169,7 @@ public abstract class TerminologyBoxStatementImpl extends TerminologyThingImpl i
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BOX_STATEMENT__TBOX:
+			case EcorePackage.TERMINOLOGY_BOX_STATEMENT__TBOX:
 				if (resolve) return getTbox();
 				return basicGetTbox();
 		}
@@ -184,7 +184,7 @@ public abstract class TerminologyBoxStatementImpl extends TerminologyThingImpl i
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BOX_STATEMENT__TBOX:
+			case EcorePackage.TERMINOLOGY_BOX_STATEMENT__TBOX:
 				setTbox((TerminologyBox)newValue);
 				return;
 		}
@@ -199,7 +199,7 @@ public abstract class TerminologyBoxStatementImpl extends TerminologyThingImpl i
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BOX_STATEMENT__TBOX:
+			case EcorePackage.TERMINOLOGY_BOX_STATEMENT__TBOX:
 				setTbox((TerminologyBox)null);
 				return;
 		}
@@ -214,7 +214,7 @@ public abstract class TerminologyBoxStatementImpl extends TerminologyThingImpl i
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BOX_STATEMENT__TBOX:
+			case EcorePackage.TERMINOLOGY_BOX_STATEMENT__TBOX:
 				return basicGetTbox() != null;
 		}
 		return super.eIsSet(featureID);

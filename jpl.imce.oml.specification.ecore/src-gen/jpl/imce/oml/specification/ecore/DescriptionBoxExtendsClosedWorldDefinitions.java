@@ -39,7 +39,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions#getClosedWorldDefinitions <em>Closed World Definitions</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBoxExtendsClosedWorldDefinitions()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getDescriptionBoxExtendsClosedWorldDefinitions()
  * @model
  * @generated
  */
@@ -55,7 +55,7 @@ public interface DescriptionBoxExtendsClosedWorldDefinitions extends Description
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Description Box</em>' container reference.
 	 * @see #setDescriptionBox(DescriptionBox)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBoxExtendsClosedWorldDefinitions_DescriptionBox()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getDescriptionBoxExtendsClosedWorldDefinitions_DescriptionBox()
 	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getClosedWorldDefinitions
 	 * @model opposite="closedWorldDefinitions" required="true" transient="false"
 	 * @generated
@@ -82,7 +82,7 @@ public interface DescriptionBoxExtendsClosedWorldDefinitions extends Description
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Closed World Definitions</em>' reference.
 	 * @see #setClosedWorldDefinitions(TerminologyBox)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBoxExtendsClosedWorldDefinitions_ClosedWorldDefinitions()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getDescriptionBoxExtendsClosedWorldDefinitions_ClosedWorldDefinitions()
 	 * @model required="true"
 	 * @generated
 	 */

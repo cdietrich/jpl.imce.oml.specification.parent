@@ -23,7 +23,7 @@ import java.util.Collection;
 import java.util.List;
 
 import jpl.imce.oml.specification.ecore.Concept;
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -77,7 +77,7 @@ public class ConceptItemProvider extends EntityItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ConceptualEntity_isAbstract_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ConceptualEntity_isAbstract_feature", "_UI_ConceptualEntity_type"),
-				 OMLPackage.eINSTANCE.getConceptualEntity_IsAbstract(),
+				 EcorePackage.eINSTANCE.getConceptualEntity_IsAbstract(),
 				 true,
 				 false,
 				 false,
@@ -124,7 +124,7 @@ public class ConceptItemProvider extends EntityItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Concept.class)) {
-			case OMLPackage.CONCEPT__IS_ABSTRACT:
+			case EcorePackage.CONCEPT__IS_ABSTRACT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

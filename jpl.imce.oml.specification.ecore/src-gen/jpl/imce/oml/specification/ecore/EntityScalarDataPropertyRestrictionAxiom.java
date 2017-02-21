@@ -37,7 +37,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.EntityScalarDataPropertyRestrictionAxiom#getScalarProperty <em>Scalar Property</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityScalarDataPropertyRestrictionAxiom()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityScalarDataPropertyRestrictionAxiom()
  * @model abstract="true"
  * @generated
  */
@@ -52,7 +52,7 @@ public interface EntityScalarDataPropertyRestrictionAxiom extends TermAxiom {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Restricted Entity</em>' reference.
 	 * @see #setRestrictedEntity(Entity)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityScalarDataPropertyRestrictionAxiom_RestrictedEntity()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityScalarDataPropertyRestrictionAxiom_RestrictedEntity()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -78,7 +78,7 @@ public interface EntityScalarDataPropertyRestrictionAxiom extends TermAxiom {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Scalar Property</em>' reference.
 	 * @see #setScalarProperty(EntityScalarDataProperty)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityScalarDataPropertyRestrictionAxiom_ScalarProperty()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityScalarDataPropertyRestrictionAxiom_ScalarProperty()
 	 * @model required="true"
 	 * @generated
 	 */

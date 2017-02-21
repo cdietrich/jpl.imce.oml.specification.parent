@@ -19,7 +19,7 @@
 package jpl.imce.oml.specification.ecore.impl;
 
 import jpl.imce.oml.specification.ecore.DataRelationshipFromStructure;
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Structure;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -70,7 +70,7 @@ public abstract class DataRelationshipFromStructureImpl extends DataRelationship
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getDataRelationshipFromStructure();
+		return EcorePackage.eINSTANCE.getDataRelationshipFromStructure();
 	}
 
 	/**
@@ -84,7 +84,7 @@ public abstract class DataRelationshipFromStructureImpl extends DataRelationship
 			domain = (Structure)eResolveProxy(oldDomain);
 			if (domain != oldDomain) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.DATA_RELATIONSHIP_FROM_STRUCTURE__DOMAIN, oldDomain, domain));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.DATA_RELATIONSHIP_FROM_STRUCTURE__DOMAIN, oldDomain, domain));
 			}
 		}
 		return domain;
@@ -108,7 +108,7 @@ public abstract class DataRelationshipFromStructureImpl extends DataRelationship
 		Structure oldDomain = domain;
 		domain = newDomain;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.DATA_RELATIONSHIP_FROM_STRUCTURE__DOMAIN, oldDomain, domain));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.DATA_RELATIONSHIP_FROM_STRUCTURE__DOMAIN, oldDomain, domain));
 	}
 
 	/**
@@ -119,7 +119,7 @@ public abstract class DataRelationshipFromStructureImpl extends DataRelationship
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.DATA_RELATIONSHIP_FROM_STRUCTURE__DOMAIN:
+			case EcorePackage.DATA_RELATIONSHIP_FROM_STRUCTURE__DOMAIN:
 				if (resolve) return getDomain();
 				return basicGetDomain();
 		}
@@ -134,7 +134,7 @@ public abstract class DataRelationshipFromStructureImpl extends DataRelationship
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.DATA_RELATIONSHIP_FROM_STRUCTURE__DOMAIN:
+			case EcorePackage.DATA_RELATIONSHIP_FROM_STRUCTURE__DOMAIN:
 				setDomain((Structure)newValue);
 				return;
 		}
@@ -149,7 +149,7 @@ public abstract class DataRelationshipFromStructureImpl extends DataRelationship
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.DATA_RELATIONSHIP_FROM_STRUCTURE__DOMAIN:
+			case EcorePackage.DATA_RELATIONSHIP_FROM_STRUCTURE__DOMAIN:
 				setDomain((Structure)null);
 				return;
 		}
@@ -164,7 +164,7 @@ public abstract class DataRelationshipFromStructureImpl extends DataRelationship
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.DATA_RELATIONSHIP_FROM_STRUCTURE__DOMAIN:
+			case EcorePackage.DATA_RELATIONSHIP_FROM_STRUCTURE__DOMAIN:
 				return domain != null;
 		}
 		return super.eIsSet(featureID);

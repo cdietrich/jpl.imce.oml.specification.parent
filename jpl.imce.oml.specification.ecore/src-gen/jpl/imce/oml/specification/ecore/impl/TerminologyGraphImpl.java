@@ -22,7 +22,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import jpl.imce.oml.specification.ecore.AnnotationEntry;
 import jpl.imce.oml.specification.ecore.AnnotationProperty;
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.TerminologyBoxStatement;
 import jpl.imce.oml.specification.ecore.TerminologyExtent;
 import jpl.imce.oml.specification.ecore.TerminologyGraph;
@@ -71,7 +71,7 @@ public class TerminologyGraphImpl extends TerminologyBoxImpl implements Terminol
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getTerminologyGraph();
+		return EcorePackage.eINSTANCE.getTerminologyGraph();
 	}
 
 	/**
@@ -80,7 +80,7 @@ public class TerminologyGraphImpl extends TerminologyBoxImpl implements Terminol
 	 * @generated
 	 */
 	public TerminologyExtent getGraphExtent() {
-		if (eContainerFeatureID() != OMLPackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT) return null;
+		if (eContainerFeatureID() != EcorePackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT) return null;
 		return (TerminologyExtent)eContainer();
 	}
 
@@ -90,7 +90,7 @@ public class TerminologyGraphImpl extends TerminologyBoxImpl implements Terminol
 	 * @generated
 	 */
 	public TerminologyExtent basicGetGraphExtent() {
-		if (eContainerFeatureID() != OMLPackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT) return null;
+		if (eContainerFeatureID() != EcorePackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT) return null;
 		return (TerminologyExtent)eInternalContainer();
 	}
 
@@ -100,7 +100,7 @@ public class TerminologyGraphImpl extends TerminologyBoxImpl implements Terminol
 	 * @generated
 	 */
 	public NotificationChain basicSetGraphExtent(TerminologyExtent newGraphExtent, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newGraphExtent, OMLPackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newGraphExtent, EcorePackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT, msgs);
 		return msgs;
 	}
 
@@ -110,19 +110,19 @@ public class TerminologyGraphImpl extends TerminologyBoxImpl implements Terminol
 	 * @generated
 	 */
 	public void setGraphExtent(TerminologyExtent newGraphExtent) {
-		if (newGraphExtent != eInternalContainer() || (eContainerFeatureID() != OMLPackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT && newGraphExtent != null)) {
+		if (newGraphExtent != eInternalContainer() || (eContainerFeatureID() != EcorePackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT && newGraphExtent != null)) {
 			if (EcoreUtil.isAncestor(this, (EObject)newGraphExtent))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newGraphExtent != null)
-				msgs = ((InternalEObject)newGraphExtent).eInverseAdd(this, OMLPackage.TERMINOLOGY_EXTENT__TERMINOLOGY_GRAPHS, TerminologyExtent.class, msgs);
+				msgs = ((InternalEObject)newGraphExtent).eInverseAdd(this, EcorePackage.TERMINOLOGY_EXTENT__TERMINOLOGY_GRAPHS, TerminologyExtent.class, msgs);
 			msgs = basicSetGraphExtent(newGraphExtent, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT, newGraphExtent, newGraphExtent));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT, newGraphExtent, newGraphExtent));
 	}
 
 	/**
@@ -164,7 +164,7 @@ public class TerminologyGraphImpl extends TerminologyBoxImpl implements Terminol
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT:
+			case EcorePackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetGraphExtent((TerminologyExtent)otherEnd, msgs);
@@ -180,7 +180,7 @@ public class TerminologyGraphImpl extends TerminologyBoxImpl implements Terminol
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT:
+			case EcorePackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT:
 				return basicSetGraphExtent(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -194,8 +194,8 @@ public class TerminologyGraphImpl extends TerminologyBoxImpl implements Terminol
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case OMLPackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT:
-				return eInternalContainer().eInverseRemove(this, OMLPackage.TERMINOLOGY_EXTENT__TERMINOLOGY_GRAPHS, TerminologyExtent.class, msgs);
+			case EcorePackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT:
+				return eInternalContainer().eInverseRemove(this, EcorePackage.TERMINOLOGY_EXTENT__TERMINOLOGY_GRAPHS, TerminologyExtent.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -208,7 +208,7 @@ public class TerminologyGraphImpl extends TerminologyBoxImpl implements Terminol
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT:
+			case EcorePackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT:
 				if (resolve) return getGraphExtent();
 				return basicGetGraphExtent();
 		}
@@ -223,7 +223,7 @@ public class TerminologyGraphImpl extends TerminologyBoxImpl implements Terminol
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT:
+			case EcorePackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT:
 				setGraphExtent((TerminologyExtent)newValue);
 				return;
 		}
@@ -238,7 +238,7 @@ public class TerminologyGraphImpl extends TerminologyBoxImpl implements Terminol
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT:
+			case EcorePackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT:
 				setGraphExtent((TerminologyExtent)null);
 				return;
 		}
@@ -253,7 +253,7 @@ public class TerminologyGraphImpl extends TerminologyBoxImpl implements Terminol
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT:
+			case EcorePackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT:
 				return basicGetGraphExtent() != null;
 		}
 		return super.eIsSet(featureID);
@@ -268,11 +268,11 @@ public class TerminologyGraphImpl extends TerminologyBoxImpl implements Terminol
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.TERMINOLOGY_GRAPH___EXTENT:
+			case EcorePackage.TERMINOLOGY_GRAPH___EXTENT:
 				return extent();
-			case OMLPackage.TERMINOLOGY_GRAPH___WITH_ANNOTATIONS__EMAP:
+			case EcorePackage.TERMINOLOGY_GRAPH___WITH_ANNOTATIONS__EMAP:
 				return withAnnotations((EMap<AnnotationProperty, EList<AnnotationEntry>>)arguments.get(0));
-			case OMLPackage.TERMINOLOGY_GRAPH___WITH_BOX_STATEMENTS__ELIST:
+			case EcorePackage.TERMINOLOGY_GRAPH___WITH_BOX_STATEMENTS__ELIST:
 				return withBoxStatements((EList<TerminologyBoxStatement>)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);

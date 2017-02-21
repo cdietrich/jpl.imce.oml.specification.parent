@@ -19,7 +19,7 @@
 package jpl.imce.oml.specification.ecore.impl;
 
 import jpl.imce.oml.specification.ecore.Datatype;
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -47,7 +47,7 @@ public abstract class DatatypeImpl extends TermImpl implements Datatype {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getDatatype();
+		return EcorePackage.eINSTANCE.getDatatype();
 	}
 
 } //DatatypeImpl

@@ -46,7 +46,7 @@ import org.eclipse.emf.common.util.EMap;
  *   <li>{@link jpl.imce.oml.specification.ecore.DescriptionBox#getUnreifiedRelationshipInstanceTuples <em>Unreified Relationship Instance Tuples</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBox()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getDescriptionBox()
  * @model
  * @generated
  */
@@ -63,7 +63,7 @@ public interface DescriptionBox extends Module {
 	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see jpl.imce.oml.specification.ecore.DescriptionKind
 	 * @see #setKind(DescriptionKind)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBox_Kind()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getDescriptionBox_Kind()
 	 * @model unique="false" required="true"
 	 * @generated
 	 */
@@ -91,7 +91,7 @@ public interface DescriptionBox extends Module {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Description Extent</em>' container reference.
 	 * @see #setDescriptionExtent(TerminologyExtent)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBox_DescriptionExtent()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getDescriptionBox_DescriptionExtent()
 	 * @see jpl.imce.oml.specification.ecore.TerminologyExtent#getDescriptions
 	 * @model opposite="descriptions" required="true" transient="false"
 	 * @generated
@@ -119,7 +119,7 @@ public interface DescriptionBox extends Module {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Closed World Definitions</em>' containment reference list.
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBox_ClosedWorldDefinitions()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getDescriptionBox_ClosedWorldDefinitions()
 	 * @see jpl.imce.oml.specification.ecore.DescriptionBoxExtendsClosedWorldDefinitions#getDescriptionBox
 	 * @model opposite="descriptionBox" containment="true"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
@@ -138,7 +138,7 @@ public interface DescriptionBox extends Module {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Description Box Refinements</em>' containment reference list.
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBox_DescriptionBoxRefinements()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getDescriptionBox_DescriptionBoxRefinements()
 	 * @see jpl.imce.oml.specification.ecore.DescriptionBoxRefinement#getRefiningDescriptionBox
 	 * @model opposite="refiningDescriptionBox" containment="true"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
@@ -157,7 +157,7 @@ public interface DescriptionBox extends Module {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Concept Instances</em>' containment reference list.
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBox_ConceptInstances()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getDescriptionBox_ConceptInstances()
 	 * @see jpl.imce.oml.specification.ecore.ConceptInstance#getDescriptionBox
 	 * @model opposite="descriptionBox" containment="true"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
@@ -176,7 +176,7 @@ public interface DescriptionBox extends Module {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Reified Relationship Instances</em>' containment reference list.
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBox_ReifiedRelationshipInstances()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getDescriptionBox_ReifiedRelationshipInstances()
 	 * @see jpl.imce.oml.specification.ecore.ReifiedRelationshipInstance#getDescriptionBox
 	 * @model opposite="descriptionBox" containment="true"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
@@ -195,7 +195,7 @@ public interface DescriptionBox extends Module {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Reified Relationship Instance Domains</em>' containment reference list.
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBox_ReifiedRelationshipInstanceDomains()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getDescriptionBox_ReifiedRelationshipInstanceDomains()
 	 * @see jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceDomain#getDescriptionBox
 	 * @model opposite="descriptionBox" containment="true"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
@@ -214,7 +214,7 @@ public interface DescriptionBox extends Module {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Reified Relationship Instance Ranges</em>' containment reference list.
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBox_ReifiedRelationshipInstanceRanges()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getDescriptionBox_ReifiedRelationshipInstanceRanges()
 	 * @see jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceRange#getDescriptionBox
 	 * @model opposite="descriptionBox" containment="true"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
@@ -233,7 +233,7 @@ public interface DescriptionBox extends Module {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Unreified Relationship Instance Tuples</em>' containment reference list.
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBox_UnreifiedRelationshipInstanceTuples()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getDescriptionBox_UnreifiedRelationshipInstanceTuples()
 	 * @see jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple#getDescriptionBox
 	 * @model opposite="descriptionBox" containment="true"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"

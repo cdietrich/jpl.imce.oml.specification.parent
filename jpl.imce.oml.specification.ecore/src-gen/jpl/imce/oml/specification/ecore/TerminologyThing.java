@@ -37,7 +37,7 @@ import org.eclipse.emf.cdo.CDOObject;
  *   <li>{@link jpl.imce.oml.specification.ecore.TerminologyThing#getUuid <em>Uuid</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyThing()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyThing()
  * @model abstract="true"
  * @extends CDOObject
  * @generated
@@ -52,7 +52,7 @@ public interface TerminologyThing extends CDOObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Uuid</em>' attribute.
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyThing_Uuid()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyThing_Uuid()
 	 * @model unique="false" dataType="jpl.imce.oml.specification.ecore.UUID" required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Scala code='calculateUUID()'"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='return this.calculateUUID();'"

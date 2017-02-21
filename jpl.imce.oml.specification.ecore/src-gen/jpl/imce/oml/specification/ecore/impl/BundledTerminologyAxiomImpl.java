@@ -28,7 +28,7 @@ import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.Bundle;
 import jpl.imce.oml.specification.ecore.BundledTerminologyAxiom;
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.TerminologyBox;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -81,7 +81,7 @@ public class BundledTerminologyAxiomImpl extends TerminologyBundleAxiomImpl impl
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getBundledTerminologyAxiom();
+		return EcorePackage.eINSTANCE.getBundledTerminologyAxiom();
 	}
 
 	/**
@@ -95,7 +95,7 @@ public class BundledTerminologyAxiomImpl extends TerminologyBundleAxiomImpl impl
 			bundledTerminology = (TerminologyBox)eResolveProxy(oldBundledTerminology);
 			if (bundledTerminology != oldBundledTerminology) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.BUNDLED_TERMINOLOGY_AXIOM__BUNDLED_TERMINOLOGY, oldBundledTerminology, bundledTerminology));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.BUNDLED_TERMINOLOGY_AXIOM__BUNDLED_TERMINOLOGY, oldBundledTerminology, bundledTerminology));
 			}
 		}
 		return bundledTerminology;
@@ -119,7 +119,7 @@ public class BundledTerminologyAxiomImpl extends TerminologyBundleAxiomImpl impl
 		TerminologyBox oldBundledTerminology = bundledTerminology;
 		bundledTerminology = newBundledTerminology;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.BUNDLED_TERMINOLOGY_AXIOM__BUNDLED_TERMINOLOGY, oldBundledTerminology, bundledTerminology));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.BUNDLED_TERMINOLOGY_AXIOM__BUNDLED_TERMINOLOGY, oldBundledTerminology, bundledTerminology));
 	}
 
 	/**
@@ -171,7 +171,7 @@ public class BundledTerminologyAxiomImpl extends TerminologyBundleAxiomImpl impl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.BUNDLED_TERMINOLOGY_AXIOM__BUNDLED_TERMINOLOGY:
+			case EcorePackage.BUNDLED_TERMINOLOGY_AXIOM__BUNDLED_TERMINOLOGY:
 				if (resolve) return getBundledTerminology();
 				return basicGetBundledTerminology();
 		}
@@ -186,7 +186,7 @@ public class BundledTerminologyAxiomImpl extends TerminologyBundleAxiomImpl impl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.BUNDLED_TERMINOLOGY_AXIOM__BUNDLED_TERMINOLOGY:
+			case EcorePackage.BUNDLED_TERMINOLOGY_AXIOM__BUNDLED_TERMINOLOGY:
 				setBundledTerminology((TerminologyBox)newValue);
 				return;
 		}
@@ -201,7 +201,7 @@ public class BundledTerminologyAxiomImpl extends TerminologyBundleAxiomImpl impl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.BUNDLED_TERMINOLOGY_AXIOM__BUNDLED_TERMINOLOGY:
+			case EcorePackage.BUNDLED_TERMINOLOGY_AXIOM__BUNDLED_TERMINOLOGY:
 				setBundledTerminology((TerminologyBox)null);
 				return;
 		}
@@ -216,7 +216,7 @@ public class BundledTerminologyAxiomImpl extends TerminologyBundleAxiomImpl impl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.BUNDLED_TERMINOLOGY_AXIOM__BUNDLED_TERMINOLOGY:
+			case EcorePackage.BUNDLED_TERMINOLOGY_AXIOM__BUNDLED_TERMINOLOGY:
 				return bundledTerminology != null;
 		}
 		return super.eIsSet(featureID);
@@ -230,11 +230,11 @@ public class BundledTerminologyAxiomImpl extends TerminologyBundleAxiomImpl impl
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.BUNDLED_TERMINOLOGY_AXIOM___CALCULATE_UUID:
+			case EcorePackage.BUNDLED_TERMINOLOGY_AXIOM___CALCULATE_UUID:
 				return calculateUUID();
-			case OMLPackage.BUNDLED_TERMINOLOGY_AXIOM___SOURCE:
+			case EcorePackage.BUNDLED_TERMINOLOGY_AXIOM___SOURCE:
 				return source();
-			case OMLPackage.BUNDLED_TERMINOLOGY_AXIOM___TARGET:
+			case EcorePackage.BUNDLED_TERMINOLOGY_AXIOM___TARGET:
 				return target();
 		}
 		return super.eInvoke(operationID, arguments);

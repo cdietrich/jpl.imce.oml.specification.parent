@@ -35,7 +35,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.TerminologyBundleAxiom#getTerminologyBundle <em>Terminology Bundle</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyBundleAxiom()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyBundleAxiom()
  * @model abstract="true"
  * @generated
  */
@@ -51,7 +51,7 @@ public interface TerminologyBundleAxiom extends TerminologyAxiom {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Terminology Bundle</em>' container reference.
 	 * @see #setTerminologyBundle(Bundle)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyBundleAxiom_TerminologyBundle()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyBundleAxiom_TerminologyBundle()
 	 * @see jpl.imce.oml.specification.ecore.Bundle#getTerminologyBundleAxioms
 	 * @model opposite="terminologyBundleAxioms" required="true" transient="false"
 	 * @generated

@@ -36,7 +36,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.ScalarOneOfLiteralAxiom#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getScalarOneOfLiteralAxiom()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getScalarOneOfLiteralAxiom()
  * @model
  * @generated
  */
@@ -51,7 +51,7 @@ public interface ScalarOneOfLiteralAxiom extends Axiom {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Axiom</em>' reference.
 	 * @see #setAxiom(ScalarOneOfRestriction)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getScalarOneOfLiteralAxiom_Axiom()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getScalarOneOfLiteralAxiom_Axiom()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -76,7 +76,7 @@ public interface ScalarOneOfLiteralAxiom extends Axiom {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getScalarOneOfLiteralAxiom_Value()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getScalarOneOfLiteralAxiom_Value()
 	 * @model unique="false" dataType="jpl.imce.oml.specification.ecore.LexicalValue" required="true"
 	 * @generated
 	 */

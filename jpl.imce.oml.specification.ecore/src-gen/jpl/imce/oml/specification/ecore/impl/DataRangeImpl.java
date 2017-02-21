@@ -19,7 +19,7 @@
 package jpl.imce.oml.specification.ecore.impl;
 
 import jpl.imce.oml.specification.ecore.DataRange;
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -47,7 +47,7 @@ public abstract class DataRangeImpl extends DatatypeImpl implements DataRange {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getDataRange();
+		return EcorePackage.eINSTANCE.getDataRange();
 	}
 
 } //DataRangeImpl

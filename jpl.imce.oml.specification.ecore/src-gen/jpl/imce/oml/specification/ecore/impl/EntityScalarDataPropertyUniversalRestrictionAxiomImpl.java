@@ -27,10 +27,10 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.DataRange;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Entity;
 import jpl.imce.oml.specification.ecore.EntityScalarDataProperty;
 import jpl.imce.oml.specification.ecore.EntityScalarDataPropertyUniversalRestrictionAxiom;
-import jpl.imce.oml.specification.ecore.OMLPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -82,7 +82,7 @@ public class EntityScalarDataPropertyUniversalRestrictionAxiomImpl extends Entit
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getEntityScalarDataPropertyUniversalRestrictionAxiom();
+		return EcorePackage.eINSTANCE.getEntityScalarDataPropertyUniversalRestrictionAxiom();
 	}
 
 	/**
@@ -96,7 +96,7 @@ public class EntityScalarDataPropertyUniversalRestrictionAxiomImpl extends Entit
 			scalarRestriction = (DataRange)eResolveProxy(oldScalarRestriction);
 			if (scalarRestriction != oldScalarRestriction) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM__SCALAR_RESTRICTION, oldScalarRestriction, scalarRestriction));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM__SCALAR_RESTRICTION, oldScalarRestriction, scalarRestriction));
 			}
 		}
 		return scalarRestriction;
@@ -120,7 +120,7 @@ public class EntityScalarDataPropertyUniversalRestrictionAxiomImpl extends Entit
 		DataRange oldScalarRestriction = scalarRestriction;
 		scalarRestriction = newScalarRestriction;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM__SCALAR_RESTRICTION, oldScalarRestriction, scalarRestriction));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM__SCALAR_RESTRICTION, oldScalarRestriction, scalarRestriction));
 	}
 
 	/**
@@ -158,7 +158,7 @@ public class EntityScalarDataPropertyUniversalRestrictionAxiomImpl extends Entit
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM__SCALAR_RESTRICTION:
+			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM__SCALAR_RESTRICTION:
 				if (resolve) return getScalarRestriction();
 				return basicGetScalarRestriction();
 		}
@@ -173,7 +173,7 @@ public class EntityScalarDataPropertyUniversalRestrictionAxiomImpl extends Entit
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM__SCALAR_RESTRICTION:
+			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM__SCALAR_RESTRICTION:
 				setScalarRestriction((DataRange)newValue);
 				return;
 		}
@@ -188,7 +188,7 @@ public class EntityScalarDataPropertyUniversalRestrictionAxiomImpl extends Entit
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM__SCALAR_RESTRICTION:
+			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM__SCALAR_RESTRICTION:
 				setScalarRestriction((DataRange)null);
 				return;
 		}
@@ -203,7 +203,7 @@ public class EntityScalarDataPropertyUniversalRestrictionAxiomImpl extends Entit
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM__SCALAR_RESTRICTION:
+			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM__SCALAR_RESTRICTION:
 				return scalarRestriction != null;
 		}
 		return super.eIsSet(featureID);
@@ -217,7 +217,7 @@ public class EntityScalarDataPropertyUniversalRestrictionAxiomImpl extends Entit
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM___CALCULATE_UUID:
+			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_UNIVERSAL_RESTRICTION_AXIOM___CALCULATE_UUID:
 				return calculateUUID();
 		}
 		return super.eInvoke(operationID, arguments);

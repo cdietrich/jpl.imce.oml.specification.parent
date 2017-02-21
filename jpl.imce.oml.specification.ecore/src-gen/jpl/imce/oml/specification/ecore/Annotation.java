@@ -42,7 +42,7 @@ import org.eclipse.emf.cdo.CDOObject;
  *   <li>{@link jpl.imce.oml.specification.ecore.Annotation#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getAnnotation()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getAnnotation()
  * @model
  * @extends CDOObject
  * @generated
@@ -59,7 +59,7 @@ public interface Annotation extends CDOObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Module</em>' container reference.
 	 * @see #setModule(Module)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getAnnotation_Module()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getAnnotation_Module()
 	 * @see jpl.imce.oml.specification.ecore.Module#getAnnotations
 	 * @model opposite="annotations" required="true" transient="false"
 	 * @generated
@@ -86,7 +86,7 @@ public interface Annotation extends CDOObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Property</em>' reference.
 	 * @see #setProperty(AnnotationProperty)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getAnnotation_Property()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getAnnotation_Property()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -112,7 +112,7 @@ public interface Annotation extends CDOObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Subject</em>' reference.
 	 * @see #setSubject(TerminologyThing)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getAnnotation_Subject()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getAnnotation_Subject()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -138,7 +138,7 @@ public interface Annotation extends CDOObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getAnnotation_Value()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getAnnotation_Value()
 	 * @model unique="false" required="true"
 	 * @generated
 	 */

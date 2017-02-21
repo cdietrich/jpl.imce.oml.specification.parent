@@ -26,8 +26,8 @@ import java.lang.reflect.InvocationTargetException;
 
 import java.util.UUID;
 
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Entity;
-import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.ReifiedRelationship;
 import jpl.imce.oml.specification.ecore.ReifiedRelationshipSpecializationAxiom;
 
@@ -92,7 +92,7 @@ public class ReifiedRelationshipSpecializationAxiomImpl extends SpecializationAx
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getReifiedRelationshipSpecializationAxiom();
+		return EcorePackage.eINSTANCE.getReifiedRelationshipSpecializationAxiom();
 	}
 
 	/**
@@ -106,7 +106,7 @@ public class ReifiedRelationshipSpecializationAxiomImpl extends SpecializationAx
 			subRelationship = (ReifiedRelationship)eResolveProxy(oldSubRelationship);
 			if (subRelationship != oldSubRelationship) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUB_RELATIONSHIP, oldSubRelationship, subRelationship));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUB_RELATIONSHIP, oldSubRelationship, subRelationship));
 			}
 		}
 		return subRelationship;
@@ -130,7 +130,7 @@ public class ReifiedRelationshipSpecializationAxiomImpl extends SpecializationAx
 		ReifiedRelationship oldSubRelationship = subRelationship;
 		subRelationship = newSubRelationship;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUB_RELATIONSHIP, oldSubRelationship, subRelationship));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUB_RELATIONSHIP, oldSubRelationship, subRelationship));
 	}
 
 	/**
@@ -144,7 +144,7 @@ public class ReifiedRelationshipSpecializationAxiomImpl extends SpecializationAx
 			superRelationship = (ReifiedRelationship)eResolveProxy(oldSuperRelationship);
 			if (superRelationship != oldSuperRelationship) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUPER_RELATIONSHIP, oldSuperRelationship, superRelationship));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUPER_RELATIONSHIP, oldSuperRelationship, superRelationship));
 			}
 		}
 		return superRelationship;
@@ -168,7 +168,7 @@ public class ReifiedRelationshipSpecializationAxiomImpl extends SpecializationAx
 		ReifiedRelationship oldSuperRelationship = superRelationship;
 		superRelationship = newSuperRelationship;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUPER_RELATIONSHIP, oldSuperRelationship, superRelationship));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUPER_RELATIONSHIP, oldSuperRelationship, superRelationship));
 	}
 
 	/**
@@ -220,10 +220,10 @@ public class ReifiedRelationshipSpecializationAxiomImpl extends SpecializationAx
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUB_RELATIONSHIP:
+			case EcorePackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUB_RELATIONSHIP:
 				if (resolve) return getSubRelationship();
 				return basicGetSubRelationship();
-			case OMLPackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUPER_RELATIONSHIP:
+			case EcorePackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUPER_RELATIONSHIP:
 				if (resolve) return getSuperRelationship();
 				return basicGetSuperRelationship();
 		}
@@ -238,10 +238,10 @@ public class ReifiedRelationshipSpecializationAxiomImpl extends SpecializationAx
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUB_RELATIONSHIP:
+			case EcorePackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUB_RELATIONSHIP:
 				setSubRelationship((ReifiedRelationship)newValue);
 				return;
-			case OMLPackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUPER_RELATIONSHIP:
+			case EcorePackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUPER_RELATIONSHIP:
 				setSuperRelationship((ReifiedRelationship)newValue);
 				return;
 		}
@@ -256,10 +256,10 @@ public class ReifiedRelationshipSpecializationAxiomImpl extends SpecializationAx
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUB_RELATIONSHIP:
+			case EcorePackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUB_RELATIONSHIP:
 				setSubRelationship((ReifiedRelationship)null);
 				return;
-			case OMLPackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUPER_RELATIONSHIP:
+			case EcorePackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUPER_RELATIONSHIP:
 				setSuperRelationship((ReifiedRelationship)null);
 				return;
 		}
@@ -274,9 +274,9 @@ public class ReifiedRelationshipSpecializationAxiomImpl extends SpecializationAx
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUB_RELATIONSHIP:
+			case EcorePackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUB_RELATIONSHIP:
 				return subRelationship != null;
-			case OMLPackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUPER_RELATIONSHIP:
+			case EcorePackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM__SUPER_RELATIONSHIP:
 				return superRelationship != null;
 		}
 		return super.eIsSet(featureID);
@@ -290,11 +290,11 @@ public class ReifiedRelationshipSpecializationAxiomImpl extends SpecializationAx
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM___CALCULATE_UUID:
+			case EcorePackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM___CALCULATE_UUID:
 				return calculateUUID();
-			case OMLPackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM___CHILD:
+			case EcorePackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM___CHILD:
 				return child();
-			case OMLPackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM___PARENT:
+			case EcorePackage.REIFIED_RELATIONSHIP_SPECIALIZATION_AXIOM___PARENT:
 				return parent();
 		}
 		return super.eInvoke(operationID, arguments);

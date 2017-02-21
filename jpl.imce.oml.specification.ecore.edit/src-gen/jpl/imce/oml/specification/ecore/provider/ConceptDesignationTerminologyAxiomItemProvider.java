@@ -23,8 +23,7 @@ import java.util.Collection;
 import java.util.List;
 
 import jpl.imce.oml.specification.ecore.ConceptDesignationTerminologyAxiom;
-import jpl.imce.oml.specification.ecore.OMLPackage;
-
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -78,7 +77,7 @@ public class ConceptDesignationTerminologyAxiomItemProvider extends TerminologyB
 				 getResourceLocator(),
 				 getString("_UI_ConceptDesignationTerminologyAxiom_designatedTerminology_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ConceptDesignationTerminologyAxiom_designatedTerminology_feature", "_UI_ConceptDesignationTerminologyAxiom_type"),
-				 OMLPackage.eINSTANCE.getConceptDesignationTerminologyAxiom_DesignatedTerminology(),
+				 EcorePackage.eINSTANCE.getConceptDesignationTerminologyAxiom_DesignatedTerminology(),
 				 true,
 				 false,
 				 true,
@@ -100,7 +99,7 @@ public class ConceptDesignationTerminologyAxiomItemProvider extends TerminologyB
 				 getResourceLocator(),
 				 getString("_UI_ConceptDesignationTerminologyAxiom_designatedConcept_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ConceptDesignationTerminologyAxiom_designatedConcept_feature", "_UI_ConceptDesignationTerminologyAxiom_type"),
-				 OMLPackage.eINSTANCE.getConceptDesignationTerminologyAxiom_DesignatedConcept(),
+				 EcorePackage.eINSTANCE.getConceptDesignationTerminologyAxiom_DesignatedConcept(),
 				 true,
 				 false,
 				 true,

@@ -21,7 +21,7 @@ package jpl.imce.oml.specification.ecore.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import jpl.imce.oml.specification.ecore.ConceptTreeDisjunction;
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -53,7 +53,7 @@ public abstract class ConceptTreeDisjunctionImpl extends CDOObjectImpl implement
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getConceptTreeDisjunction();
+		return EcorePackage.eINSTANCE.getConceptTreeDisjunction();
 	}
 
 	/**
@@ -75,7 +75,7 @@ public abstract class ConceptTreeDisjunctionImpl extends CDOObjectImpl implement
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.CONCEPT_TREE_DISJUNCTION___CALCULATE_UUID:
+			case EcorePackage.CONCEPT_TREE_DISJUNCTION___CALCULATE_UUID:
 				return calculateUUID();
 		}
 		return super.eInvoke(operationID, arguments);

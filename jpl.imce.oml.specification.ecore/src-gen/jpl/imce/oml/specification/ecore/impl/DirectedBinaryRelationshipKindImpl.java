@@ -21,7 +21,7 @@ package jpl.imce.oml.specification.ecore.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import jpl.imce.oml.specification.ecore.DirectedBinaryRelationshipKind;
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Term;
 
 import org.eclipse.emf.common.util.EList;
@@ -54,7 +54,7 @@ public abstract class DirectedBinaryRelationshipKindImpl extends CDOObjectImpl i
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getDirectedBinaryRelationshipKind();
+		return EcorePackage.eINSTANCE.getDirectedBinaryRelationshipKind();
 	}
 
 	/**
@@ -87,9 +87,9 @@ public abstract class DirectedBinaryRelationshipKindImpl extends CDOObjectImpl i
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.DIRECTED_BINARY_RELATIONSHIP_KIND___RELATION_DOMAIN:
+			case EcorePackage.DIRECTED_BINARY_RELATIONSHIP_KIND___RELATION_DOMAIN:
 				return relationDomain();
-			case OMLPackage.DIRECTED_BINARY_RELATIONSHIP_KIND___RELATION_RANGE:
+			case EcorePackage.DIRECTED_BINARY_RELATIONSHIP_KIND___RELATION_RANGE:
 				return relationRange();
 		}
 		return super.eInvoke(operationID, arguments);

@@ -23,8 +23,7 @@ import java.util.Collection;
 import java.util.List;
 
 import jpl.imce.oml.specification.ecore.ConceptualEntity;
-import jpl.imce.oml.specification.ecore.OMLPackage;
-
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.edit.provider.OMLEditPlugin;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -96,7 +95,7 @@ public class ConceptualEntityItemProvider
 				 getResourceLocator(),
 				 getString("_UI_ConceptualEntity_isAbstract_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ConceptualEntity_isAbstract_feature", "_UI_ConceptualEntity_type"),
-				 OMLPackage.eINSTANCE.getConceptualEntity_IsAbstract(),
+				 EcorePackage.eINSTANCE.getConceptualEntity_IsAbstract(),
 				 true,
 				 false,
 				 false,
@@ -130,7 +129,7 @@ public class ConceptualEntityItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ConceptualEntity.class)) {
-			case OMLPackage.CONCEPTUAL_ENTITY__IS_ABSTRACT:
+			case EcorePackage.CONCEPTUAL_ENTITY__IS_ABSTRACT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

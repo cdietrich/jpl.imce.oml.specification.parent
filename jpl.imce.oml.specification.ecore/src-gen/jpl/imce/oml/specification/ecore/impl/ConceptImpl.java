@@ -20,7 +20,7 @@ package jpl.imce.oml.specification.ecore.impl;
 
 import jpl.imce.oml.specification.ecore.Concept;
 import jpl.imce.oml.specification.ecore.ConceptualEntity;
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.UnaryTermKind;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -79,7 +79,7 @@ public class ConceptImpl extends EntityImpl implements Concept {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getConcept();
+		return EcorePackage.eINSTANCE.getConcept();
 	}
 
 	/**
@@ -100,7 +100,7 @@ public class ConceptImpl extends EntityImpl implements Concept {
 		boolean oldIsAbstract = isAbstract;
 		isAbstract = newIsAbstract;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.CONCEPT__IS_ABSTRACT, oldIsAbstract, isAbstract));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.CONCEPT__IS_ABSTRACT, oldIsAbstract, isAbstract));
 	}
 
 	/**
@@ -111,7 +111,7 @@ public class ConceptImpl extends EntityImpl implements Concept {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.CONCEPT__IS_ABSTRACT:
+			case EcorePackage.CONCEPT__IS_ABSTRACT:
 				return isIsAbstract();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -125,7 +125,7 @@ public class ConceptImpl extends EntityImpl implements Concept {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.CONCEPT__IS_ABSTRACT:
+			case EcorePackage.CONCEPT__IS_ABSTRACT:
 				setIsAbstract((Boolean)newValue);
 				return;
 		}
@@ -140,7 +140,7 @@ public class ConceptImpl extends EntityImpl implements Concept {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.CONCEPT__IS_ABSTRACT:
+			case EcorePackage.CONCEPT__IS_ABSTRACT:
 				setIsAbstract(IS_ABSTRACT_EDEFAULT);
 				return;
 		}
@@ -155,7 +155,7 @@ public class ConceptImpl extends EntityImpl implements Concept {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.CONCEPT__IS_ABSTRACT:
+			case EcorePackage.CONCEPT__IS_ABSTRACT:
 				return isAbstract != IS_ABSTRACT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -170,7 +170,7 @@ public class ConceptImpl extends EntityImpl implements Concept {
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == ConceptualEntity.class) {
 			switch (derivedFeatureID) {
-				case OMLPackage.CONCEPT__IS_ABSTRACT: return OMLPackage.CONCEPTUAL_ENTITY__IS_ABSTRACT;
+				case EcorePackage.CONCEPT__IS_ABSTRACT: return EcorePackage.CONCEPTUAL_ENTITY__IS_ABSTRACT;
 				default: return -1;
 			}
 		}
@@ -191,7 +191,7 @@ public class ConceptImpl extends EntityImpl implements Concept {
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == ConceptualEntity.class) {
 			switch (baseFeatureID) {
-				case OMLPackage.CONCEPTUAL_ENTITY__IS_ABSTRACT: return OMLPackage.CONCEPT__IS_ABSTRACT;
+				case EcorePackage.CONCEPTUAL_ENTITY__IS_ABSTRACT: return EcorePackage.CONCEPT__IS_ABSTRACT;
 				default: return -1;
 			}
 		}

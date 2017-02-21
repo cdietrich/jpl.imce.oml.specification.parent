@@ -30,7 +30,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-model-doc -->
  *
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getSpecializationAxiom()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getSpecializationAxiom()
  * @model abstract="true"
  * @generated
  */

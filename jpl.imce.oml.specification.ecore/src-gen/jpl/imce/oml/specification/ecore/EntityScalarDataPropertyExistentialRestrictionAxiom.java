@@ -36,7 +36,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.EntityScalarDataPropertyExistentialRestrictionAxiom#getScalarRestriction <em>Scalar Restriction</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityScalarDataPropertyExistentialRestrictionAxiom()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityScalarDataPropertyExistentialRestrictionAxiom()
  * @model
  * @generated
  */
@@ -51,7 +51,7 @@ public interface EntityScalarDataPropertyExistentialRestrictionAxiom extends Ent
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Scalar Restriction</em>' reference.
 	 * @see #setScalarRestriction(DataRange)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityScalarDataPropertyExistentialRestrictionAxiom_ScalarRestriction()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityScalarDataPropertyExistentialRestrictionAxiom_ScalarRestriction()
 	 * @model required="true"
 	 * @generated
 	 */

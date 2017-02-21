@@ -22,7 +22,7 @@ package jpl.imce.oml.specification.ecore.provider;
 import java.util.Collection;
 import java.util.List;
 
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.TerminologyNestingAxiom;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -78,7 +78,7 @@ public class TerminologyNestingAxiomItemProvider extends TerminologyBoxAxiomItem
 				 getResourceLocator(),
 				 getString("_UI_TerminologyNestingAxiom_nestingTerminology_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TerminologyNestingAxiom_nestingTerminology_feature", "_UI_TerminologyNestingAxiom_type"),
-				 OMLPackage.eINSTANCE.getTerminologyNestingAxiom_NestingTerminology(),
+				 EcorePackage.eINSTANCE.getTerminologyNestingAxiom_NestingTerminology(),
 				 true,
 				 false,
 				 true,
@@ -100,7 +100,7 @@ public class TerminologyNestingAxiomItemProvider extends TerminologyBoxAxiomItem
 				 getResourceLocator(),
 				 getString("_UI_TerminologyNestingAxiom_nestingContext_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TerminologyNestingAxiom_nestingContext_feature", "_UI_TerminologyNestingAxiom_type"),
-				 OMLPackage.eINSTANCE.getTerminologyNestingAxiom_NestingContext(),
+				 EcorePackage.eINSTANCE.getTerminologyNestingAxiom_NestingContext(),
 				 true,
 				 false,
 				 true,

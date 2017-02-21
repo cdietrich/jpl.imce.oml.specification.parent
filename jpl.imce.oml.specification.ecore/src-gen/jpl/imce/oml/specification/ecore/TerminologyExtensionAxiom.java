@@ -37,7 +37,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.TerminologyExtensionAxiom#getExtendedTerminology <em>Extended Terminology</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyExtensionAxiom()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyExtensionAxiom()
  * @model
  * @generated
  */
@@ -52,7 +52,7 @@ public interface TerminologyExtensionAxiom extends TerminologyBoxAxiom {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Extended Terminology</em>' reference.
 	 * @see #setExtendedTerminology(TerminologyBox)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyExtensionAxiom_ExtendedTerminology()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyExtensionAxiom_ExtendedTerminology()
 	 * @model required="true"
 	 * @generated
 	 */

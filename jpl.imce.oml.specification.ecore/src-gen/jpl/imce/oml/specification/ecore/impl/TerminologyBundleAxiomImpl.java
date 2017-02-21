@@ -19,7 +19,7 @@
 package jpl.imce.oml.specification.ecore.impl;
 
 import jpl.imce.oml.specification.ecore.Bundle;
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.TerminologyBundleAxiom;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -63,7 +63,7 @@ public abstract class TerminologyBundleAxiomImpl extends TerminologyAxiomImpl im
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getTerminologyBundleAxiom();
+		return EcorePackage.eINSTANCE.getTerminologyBundleAxiom();
 	}
 
 	/**
@@ -72,7 +72,7 @@ public abstract class TerminologyBundleAxiomImpl extends TerminologyAxiomImpl im
 	 * @generated
 	 */
 	public Bundle getTerminologyBundle() {
-		if (eContainerFeatureID() != OMLPackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE) return null;
+		if (eContainerFeatureID() != EcorePackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE) return null;
 		return (Bundle)eContainer();
 	}
 
@@ -82,7 +82,7 @@ public abstract class TerminologyBundleAxiomImpl extends TerminologyAxiomImpl im
 	 * @generated
 	 */
 	public Bundle basicGetTerminologyBundle() {
-		if (eContainerFeatureID() != OMLPackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE) return null;
+		if (eContainerFeatureID() != EcorePackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE) return null;
 		return (Bundle)eInternalContainer();
 	}
 
@@ -92,7 +92,7 @@ public abstract class TerminologyBundleAxiomImpl extends TerminologyAxiomImpl im
 	 * @generated
 	 */
 	public NotificationChain basicSetTerminologyBundle(Bundle newTerminologyBundle, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newTerminologyBundle, OMLPackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newTerminologyBundle, EcorePackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE, msgs);
 		return msgs;
 	}
 
@@ -102,19 +102,19 @@ public abstract class TerminologyBundleAxiomImpl extends TerminologyAxiomImpl im
 	 * @generated
 	 */
 	public void setTerminologyBundle(Bundle newTerminologyBundle) {
-		if (newTerminologyBundle != eInternalContainer() || (eContainerFeatureID() != OMLPackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE && newTerminologyBundle != null)) {
+		if (newTerminologyBundle != eInternalContainer() || (eContainerFeatureID() != EcorePackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE && newTerminologyBundle != null)) {
 			if (EcoreUtil.isAncestor(this, (EObject)newTerminologyBundle))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newTerminologyBundle != null)
-				msgs = ((InternalEObject)newTerminologyBundle).eInverseAdd(this, OMLPackage.BUNDLE__TERMINOLOGY_BUNDLE_AXIOMS, Bundle.class, msgs);
+				msgs = ((InternalEObject)newTerminologyBundle).eInverseAdd(this, EcorePackage.BUNDLE__TERMINOLOGY_BUNDLE_AXIOMS, Bundle.class, msgs);
 			msgs = basicSetTerminologyBundle(newTerminologyBundle, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE, newTerminologyBundle, newTerminologyBundle));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE, newTerminologyBundle, newTerminologyBundle));
 	}
 
 	/**
@@ -125,7 +125,7 @@ public abstract class TerminologyBundleAxiomImpl extends TerminologyAxiomImpl im
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE:
+			case EcorePackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetTerminologyBundle((Bundle)otherEnd, msgs);
@@ -141,7 +141,7 @@ public abstract class TerminologyBundleAxiomImpl extends TerminologyAxiomImpl im
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE:
+			case EcorePackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE:
 				return basicSetTerminologyBundle(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -155,8 +155,8 @@ public abstract class TerminologyBundleAxiomImpl extends TerminologyAxiomImpl im
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case OMLPackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE:
-				return eInternalContainer().eInverseRemove(this, OMLPackage.BUNDLE__TERMINOLOGY_BUNDLE_AXIOMS, Bundle.class, msgs);
+			case EcorePackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE:
+				return eInternalContainer().eInverseRemove(this, EcorePackage.BUNDLE__TERMINOLOGY_BUNDLE_AXIOMS, Bundle.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -169,7 +169,7 @@ public abstract class TerminologyBundleAxiomImpl extends TerminologyAxiomImpl im
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE:
+			case EcorePackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE:
 				if (resolve) return getTerminologyBundle();
 				return basicGetTerminologyBundle();
 		}
@@ -184,7 +184,7 @@ public abstract class TerminologyBundleAxiomImpl extends TerminologyAxiomImpl im
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE:
+			case EcorePackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE:
 				setTerminologyBundle((Bundle)newValue);
 				return;
 		}
@@ -199,7 +199,7 @@ public abstract class TerminologyBundleAxiomImpl extends TerminologyAxiomImpl im
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE:
+			case EcorePackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE:
 				setTerminologyBundle((Bundle)null);
 				return;
 		}
@@ -214,7 +214,7 @@ public abstract class TerminologyBundleAxiomImpl extends TerminologyAxiomImpl im
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE:
+			case EcorePackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE:
 				return basicGetTerminologyBundle() != null;
 		}
 		return super.eIsSet(featureID);

@@ -40,7 +40,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.ConceptDesignationTerminologyAxiom#getDesignatedConcept <em>Designated Concept</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getConceptDesignationTerminologyAxiom()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getConceptDesignationTerminologyAxiom()
  * @model
  * @generated
  */
@@ -55,7 +55,7 @@ public interface ConceptDesignationTerminologyAxiom extends TerminologyBoxAxiom 
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Designated Terminology</em>' reference.
 	 * @see #setDesignatedTerminology(TerminologyBox)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getConceptDesignationTerminologyAxiom_DesignatedTerminology()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getConceptDesignationTerminologyAxiom_DesignatedTerminology()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -81,7 +81,7 @@ public interface ConceptDesignationTerminologyAxiom extends TerminologyBoxAxiom 
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Designated Concept</em>' reference.
 	 * @see #setDesignatedConcept(Concept)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getConceptDesignationTerminologyAxiom_DesignatedConcept()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getConceptDesignationTerminologyAxiom_DesignatedConcept()
 	 * @model required="true"
 	 * @generated
 	 */

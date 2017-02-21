@@ -28,8 +28,8 @@ import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.Concept;
 import jpl.imce.oml.specification.ecore.ConceptSpecializationAxiom;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Entity;
-import jpl.imce.oml.specification.ecore.OMLPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -92,7 +92,7 @@ public class ConceptSpecializationAxiomImpl extends SpecializationAxiomImpl impl
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getConceptSpecializationAxiom();
+		return EcorePackage.eINSTANCE.getConceptSpecializationAxiom();
 	}
 
 	/**
@@ -106,7 +106,7 @@ public class ConceptSpecializationAxiomImpl extends SpecializationAxiomImpl impl
 			subConcept = (Concept)eResolveProxy(oldSubConcept);
 			if (subConcept != oldSubConcept) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.CONCEPT_SPECIALIZATION_AXIOM__SUB_CONCEPT, oldSubConcept, subConcept));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.CONCEPT_SPECIALIZATION_AXIOM__SUB_CONCEPT, oldSubConcept, subConcept));
 			}
 		}
 		return subConcept;
@@ -130,7 +130,7 @@ public class ConceptSpecializationAxiomImpl extends SpecializationAxiomImpl impl
 		Concept oldSubConcept = subConcept;
 		subConcept = newSubConcept;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.CONCEPT_SPECIALIZATION_AXIOM__SUB_CONCEPT, oldSubConcept, subConcept));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.CONCEPT_SPECIALIZATION_AXIOM__SUB_CONCEPT, oldSubConcept, subConcept));
 	}
 
 	/**
@@ -144,7 +144,7 @@ public class ConceptSpecializationAxiomImpl extends SpecializationAxiomImpl impl
 			superConcept = (Concept)eResolveProxy(oldSuperConcept);
 			if (superConcept != oldSuperConcept) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.CONCEPT_SPECIALIZATION_AXIOM__SUPER_CONCEPT, oldSuperConcept, superConcept));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.CONCEPT_SPECIALIZATION_AXIOM__SUPER_CONCEPT, oldSuperConcept, superConcept));
 			}
 		}
 		return superConcept;
@@ -168,7 +168,7 @@ public class ConceptSpecializationAxiomImpl extends SpecializationAxiomImpl impl
 		Concept oldSuperConcept = superConcept;
 		superConcept = newSuperConcept;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.CONCEPT_SPECIALIZATION_AXIOM__SUPER_CONCEPT, oldSuperConcept, superConcept));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.CONCEPT_SPECIALIZATION_AXIOM__SUPER_CONCEPT, oldSuperConcept, superConcept));
 	}
 
 	/**
@@ -220,10 +220,10 @@ public class ConceptSpecializationAxiomImpl extends SpecializationAxiomImpl impl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.CONCEPT_SPECIALIZATION_AXIOM__SUB_CONCEPT:
+			case EcorePackage.CONCEPT_SPECIALIZATION_AXIOM__SUB_CONCEPT:
 				if (resolve) return getSubConcept();
 				return basicGetSubConcept();
-			case OMLPackage.CONCEPT_SPECIALIZATION_AXIOM__SUPER_CONCEPT:
+			case EcorePackage.CONCEPT_SPECIALIZATION_AXIOM__SUPER_CONCEPT:
 				if (resolve) return getSuperConcept();
 				return basicGetSuperConcept();
 		}
@@ -238,10 +238,10 @@ public class ConceptSpecializationAxiomImpl extends SpecializationAxiomImpl impl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.CONCEPT_SPECIALIZATION_AXIOM__SUB_CONCEPT:
+			case EcorePackage.CONCEPT_SPECIALIZATION_AXIOM__SUB_CONCEPT:
 				setSubConcept((Concept)newValue);
 				return;
-			case OMLPackage.CONCEPT_SPECIALIZATION_AXIOM__SUPER_CONCEPT:
+			case EcorePackage.CONCEPT_SPECIALIZATION_AXIOM__SUPER_CONCEPT:
 				setSuperConcept((Concept)newValue);
 				return;
 		}
@@ -256,10 +256,10 @@ public class ConceptSpecializationAxiomImpl extends SpecializationAxiomImpl impl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.CONCEPT_SPECIALIZATION_AXIOM__SUB_CONCEPT:
+			case EcorePackage.CONCEPT_SPECIALIZATION_AXIOM__SUB_CONCEPT:
 				setSubConcept((Concept)null);
 				return;
-			case OMLPackage.CONCEPT_SPECIALIZATION_AXIOM__SUPER_CONCEPT:
+			case EcorePackage.CONCEPT_SPECIALIZATION_AXIOM__SUPER_CONCEPT:
 				setSuperConcept((Concept)null);
 				return;
 		}
@@ -274,9 +274,9 @@ public class ConceptSpecializationAxiomImpl extends SpecializationAxiomImpl impl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.CONCEPT_SPECIALIZATION_AXIOM__SUB_CONCEPT:
+			case EcorePackage.CONCEPT_SPECIALIZATION_AXIOM__SUB_CONCEPT:
 				return subConcept != null;
-			case OMLPackage.CONCEPT_SPECIALIZATION_AXIOM__SUPER_CONCEPT:
+			case EcorePackage.CONCEPT_SPECIALIZATION_AXIOM__SUPER_CONCEPT:
 				return superConcept != null;
 		}
 		return super.eIsSet(featureID);
@@ -290,11 +290,11 @@ public class ConceptSpecializationAxiomImpl extends SpecializationAxiomImpl impl
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.CONCEPT_SPECIALIZATION_AXIOM___CALCULATE_UUID:
+			case EcorePackage.CONCEPT_SPECIALIZATION_AXIOM___CALCULATE_UUID:
 				return calculateUUID();
-			case OMLPackage.CONCEPT_SPECIALIZATION_AXIOM___CHILD:
+			case EcorePackage.CONCEPT_SPECIALIZATION_AXIOM___CHILD:
 				return child();
-			case OMLPackage.CONCEPT_SPECIALIZATION_AXIOM___PARENT:
+			case EcorePackage.CONCEPT_SPECIALIZATION_AXIOM___PARENT:
 				return parent();
 		}
 		return super.eInvoke(operationID, arguments);

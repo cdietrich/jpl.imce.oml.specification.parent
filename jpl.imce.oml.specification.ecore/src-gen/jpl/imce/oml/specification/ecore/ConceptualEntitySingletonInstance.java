@@ -39,7 +39,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-model-doc -->
  *
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getConceptualEntitySingletonInstance()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getConceptualEntitySingletonInstance()
  * @model abstract="true"
  * @generated
  */

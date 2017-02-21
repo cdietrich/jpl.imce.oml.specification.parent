@@ -22,8 +22,7 @@ package jpl.imce.oml.specification.ecore.provider;
 import java.util.Collection;
 import java.util.List;
 
-import jpl.imce.oml.specification.ecore.OMLPackage;
-
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -76,7 +75,7 @@ public class DataRelationshipToStructureItemProvider extends DataRelationshipRan
 				 getResourceLocator(),
 				 getString("_UI_DataRelationshipToStructure_range_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataRelationshipToStructure_range_feature", "_UI_DataRelationshipToStructure_type"),
-				 OMLPackage.eINSTANCE.getDataRelationshipToStructure_Range(),
+				 EcorePackage.eINSTANCE.getDataRelationshipToStructure_Range(),
 				 true,
 				 false,
 				 true,

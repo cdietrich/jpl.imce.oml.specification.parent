@@ -20,7 +20,7 @@ package jpl.imce.oml.specification.ecore.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Resource;
 
 import org.eclipse.emf.common.util.EList;
@@ -53,7 +53,7 @@ public abstract class ResourceImpl extends CDOObjectImpl implements Resource {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getResource();
+		return EcorePackage.eINSTANCE.getResource();
 	}
 
 	/**
@@ -86,9 +86,9 @@ public abstract class ResourceImpl extends CDOObjectImpl implements Resource {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.RESOURCE___IRI:
+			case EcorePackage.RESOURCE___IRI:
 				return iri();
-			case OMLPackage.RESOURCE___NAME:
+			case EcorePackage.RESOURCE___NAME:
 				return name();
 		}
 		return super.eInvoke(operationID, arguments);

@@ -40,7 +40,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.ReifiedRelationship#getUnreifiedInversePropertyName <em>Unreified Inverse Property Name</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getReifiedRelationship()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getReifiedRelationship()
  * @model
  * @generated
  */
@@ -55,7 +55,7 @@ public interface ReifiedRelationship extends EntityRelationship, Entity, Concept
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Unreified Property Name</em>' attribute.
 	 * @see #setUnreifiedPropertyName(String)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getReifiedRelationship_UnreifiedPropertyName()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getReifiedRelationship_UnreifiedPropertyName()
 	 * @model unique="false" dataType="jpl.imce.oml.specification.ecore.LocalName" required="true"
 	 * @generated
 	 */
@@ -81,7 +81,7 @@ public interface ReifiedRelationship extends EntityRelationship, Entity, Concept
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Unreified Inverse Property Name</em>' attribute.
 	 * @see #setUnreifiedInversePropertyName(String)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getReifiedRelationship_UnreifiedInversePropertyName()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getReifiedRelationship_UnreifiedInversePropertyName()
 	 * @model unique="false" dataType="jpl.imce.oml.specification.ecore.LocalName"
 	 * @generated
 	 */

@@ -22,7 +22,7 @@ package jpl.imce.oml.specification.ecore.provider;
 import java.util.Collection;
 import java.util.List;
 
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.StructuredDataProperty;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -78,7 +78,7 @@ public class StructuredDataPropertyItemProvider extends DataRelationshipItemProv
 				 getResourceLocator(),
 				 getString("_UI_DataRelationshipFromStructure_domain_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataRelationshipFromStructure_domain_feature", "_UI_DataRelationshipFromStructure_type"),
-				 OMLPackage.eINSTANCE.getDataRelationshipFromStructure_Domain(),
+				 EcorePackage.eINSTANCE.getDataRelationshipFromStructure_Domain(),
 				 true,
 				 false,
 				 true,
@@ -100,7 +100,7 @@ public class StructuredDataPropertyItemProvider extends DataRelationshipItemProv
 				 getResourceLocator(),
 				 getString("_UI_DataRelationshipToStructure_range_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataRelationshipToStructure_range_feature", "_UI_DataRelationshipToStructure_type"),
-				 OMLPackage.eINSTANCE.getDataRelationshipToStructure_Range(),
+				 EcorePackage.eINSTANCE.getDataRelationshipToStructure_Range(),
 				 true,
 				 false,
 				 true,

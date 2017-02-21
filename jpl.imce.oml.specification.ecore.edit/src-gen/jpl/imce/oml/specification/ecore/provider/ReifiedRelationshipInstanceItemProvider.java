@@ -22,7 +22,7 @@ package jpl.imce.oml.specification.ecore.provider;
 import java.util.Collection;
 import java.util.List;
 
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.ReifiedRelationshipInstance;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -78,7 +78,7 @@ public class ReifiedRelationshipInstanceItemProvider extends ConceptualEntitySin
 				 getResourceLocator(),
 				 getString("_UI_ReifiedRelationshipInstance_descriptionBox_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ReifiedRelationshipInstance_descriptionBox_feature", "_UI_ReifiedRelationshipInstance_type"),
-				 OMLPackage.eINSTANCE.getReifiedRelationshipInstance_DescriptionBox(),
+				 EcorePackage.eINSTANCE.getReifiedRelationshipInstance_DescriptionBox(),
 				 true,
 				 false,
 				 true,
@@ -100,7 +100,7 @@ public class ReifiedRelationshipInstanceItemProvider extends ConceptualEntitySin
 				 getResourceLocator(),
 				 getString("_UI_ReifiedRelationshipInstance_singletonReifiedRelationshipClassifier_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ReifiedRelationshipInstance_singletonReifiedRelationshipClassifier_feature", "_UI_ReifiedRelationshipInstance_type"),
-				 OMLPackage.eINSTANCE.getReifiedRelationshipInstance_SingletonReifiedRelationshipClassifier(),
+				 EcorePackage.eINSTANCE.getReifiedRelationshipInstance_SingletonReifiedRelationshipClassifier(),
 				 true,
 				 false,
 				 true,

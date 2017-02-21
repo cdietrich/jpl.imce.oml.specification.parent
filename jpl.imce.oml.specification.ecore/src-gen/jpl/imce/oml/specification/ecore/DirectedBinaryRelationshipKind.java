@@ -32,7 +32,7 @@ import org.eclipse.emf.cdo.CDOObject;
  * <!-- end-model-doc -->
  *
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getDirectedBinaryRelationshipKind()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getDirectedBinaryRelationshipKind()
  * @model abstract="true"
  * @extends CDOObject
  * @generated

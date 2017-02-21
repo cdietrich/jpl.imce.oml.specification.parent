@@ -22,7 +22,7 @@ package jpl.imce.oml.specification.ecore.provider;
 import java.util.Collection;
 import java.util.List;
 
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.TerminologyBundleStatement;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -77,7 +77,7 @@ public class TerminologyBundleStatementItemProvider extends TerminologyThingItem
 				 getResourceLocator(),
 				 getString("_UI_TerminologyBundleStatement_bundle_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TerminologyBundleStatement_bundle_feature", "_UI_TerminologyBundleStatement_type"),
-				 OMLPackage.eINSTANCE.getTerminologyBundleStatement_Bundle(),
+				 EcorePackage.eINSTANCE.getTerminologyBundleStatement_Bundle(),
 				 true,
 				 false,
 				 true,

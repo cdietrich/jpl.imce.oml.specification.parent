@@ -22,7 +22,7 @@ package jpl.imce.oml.specification.ecore.provider;
 import java.util.Collection;
 import java.util.List;
 
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.ReifiedRelationshipSpecializationAxiom;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -78,7 +78,7 @@ public class ReifiedRelationshipSpecializationAxiomItemProvider extends Speciali
 				 getResourceLocator(),
 				 getString("_UI_ReifiedRelationshipSpecializationAxiom_subRelationship_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ReifiedRelationshipSpecializationAxiom_subRelationship_feature", "_UI_ReifiedRelationshipSpecializationAxiom_type"),
-				 OMLPackage.eINSTANCE.getReifiedRelationshipSpecializationAxiom_SubRelationship(),
+				 EcorePackage.eINSTANCE.getReifiedRelationshipSpecializationAxiom_SubRelationship(),
 				 true,
 				 false,
 				 true,
@@ -100,7 +100,7 @@ public class ReifiedRelationshipSpecializationAxiomItemProvider extends Speciali
 				 getResourceLocator(),
 				 getString("_UI_ReifiedRelationshipSpecializationAxiom_superRelationship_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ReifiedRelationshipSpecializationAxiom_superRelationship_feature", "_UI_ReifiedRelationshipSpecializationAxiom_type"),
-				 OMLPackage.eINSTANCE.getReifiedRelationshipSpecializationAxiom_SuperRelationship(),
+				 EcorePackage.eINSTANCE.getReifiedRelationshipSpecializationAxiom_SuperRelationship(),
 				 true,
 				 false,
 				 true,

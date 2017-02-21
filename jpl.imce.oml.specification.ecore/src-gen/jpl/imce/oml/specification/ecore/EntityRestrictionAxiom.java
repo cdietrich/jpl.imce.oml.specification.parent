@@ -38,7 +38,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.EntityRestrictionAxiom#getRestrictedDomain <em>Restricted Domain</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityRestrictionAxiom()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityRestrictionAxiom()
  * @model abstract="true"
  * @generated
  */
@@ -53,7 +53,7 @@ public interface EntityRestrictionAxiom extends TermAxiom {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Restricted Relation</em>' reference.
 	 * @see #setRestrictedRelation(EntityRelationship)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityRestrictionAxiom_RestrictedRelation()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityRestrictionAxiom_RestrictedRelation()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -79,7 +79,7 @@ public interface EntityRestrictionAxiom extends TermAxiom {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Restricted Range</em>' reference.
 	 * @see #setRestrictedRange(Entity)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityRestrictionAxiom_RestrictedRange()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityRestrictionAxiom_RestrictedRange()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -105,7 +105,7 @@ public interface EntityRestrictionAxiom extends TermAxiom {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Restricted Domain</em>' reference.
 	 * @see #setRestrictedDomain(Entity)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityRestrictionAxiom_RestrictedDomain()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityRestrictionAxiom_RestrictedDomain()
 	 * @model required="true"
 	 * @generated
 	 */

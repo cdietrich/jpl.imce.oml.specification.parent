@@ -21,7 +21,7 @@ package jpl.imce.oml.specification.ecore.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import jpl.imce.oml.specification.ecore.DataRelationshipDomain;
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -53,7 +53,7 @@ public abstract class DataRelationshipDomainImpl extends CDOObjectImpl implement
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getDataRelationshipDomain();
+		return EcorePackage.eINSTANCE.getDataRelationshipDomain();
 	}
 
 	/**
@@ -75,7 +75,7 @@ public abstract class DataRelationshipDomainImpl extends CDOObjectImpl implement
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.DATA_RELATIONSHIP_DOMAIN___CALCULATE_UUID:
+			case EcorePackage.DATA_RELATIONSHIP_DOMAIN___CALCULATE_UUID:
 				return calculateUUID();
 		}
 		return super.eInvoke(operationID, arguments);

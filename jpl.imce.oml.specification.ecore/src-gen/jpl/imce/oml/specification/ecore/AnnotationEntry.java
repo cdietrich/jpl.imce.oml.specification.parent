@@ -43,7 +43,7 @@ import org.eclipse.emf.cdo.CDOObject;
  *   <li>{@link jpl.imce.oml.specification.ecore.AnnotationEntry#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getAnnotationEntry()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getAnnotationEntry()
  * @model
  * @extends CDOObject
  * @generated
@@ -59,7 +59,7 @@ public interface AnnotationEntry extends CDOObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Module</em>' reference.
 	 * @see #setModule(Module)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getAnnotationEntry_Module()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getAnnotationEntry_Module()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -85,7 +85,7 @@ public interface AnnotationEntry extends CDOObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Subject</em>' reference.
 	 * @see #setSubject(TerminologyThing)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getAnnotationEntry_Subject()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getAnnotationEntry_Subject()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -111,7 +111,7 @@ public interface AnnotationEntry extends CDOObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getAnnotationEntry_Value()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getAnnotationEntry_Value()
 	 * @model unique="false" required="true"
 	 * @generated
 	 */

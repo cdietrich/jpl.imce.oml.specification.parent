@@ -22,7 +22,7 @@ package jpl.imce.oml.specification.ecore.provider;
 import java.util.Collection;
 import java.util.List;
 
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.TimeScalarRestriction;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -82,7 +82,7 @@ public class TimeScalarRestrictionItemProvider extends RestrictedDataRangeItemPr
 				 getResourceLocator(),
 				 getString("_UI_TimeScalarRestriction_minInclusive_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TimeScalarRestriction_minInclusive_feature", "_UI_TimeScalarRestriction_type"),
-				 OMLPackage.eINSTANCE.getTimeScalarRestriction_MinInclusive(),
+				 EcorePackage.eINSTANCE.getTimeScalarRestriction_MinInclusive(),
 				 true,
 				 false,
 				 false,
@@ -104,7 +104,7 @@ public class TimeScalarRestrictionItemProvider extends RestrictedDataRangeItemPr
 				 getResourceLocator(),
 				 getString("_UI_TimeScalarRestriction_maxInclusive_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TimeScalarRestriction_maxInclusive_feature", "_UI_TimeScalarRestriction_type"),
-				 OMLPackage.eINSTANCE.getTimeScalarRestriction_MaxInclusive(),
+				 EcorePackage.eINSTANCE.getTimeScalarRestriction_MaxInclusive(),
 				 true,
 				 false,
 				 false,
@@ -126,7 +126,7 @@ public class TimeScalarRestrictionItemProvider extends RestrictedDataRangeItemPr
 				 getResourceLocator(),
 				 getString("_UI_TimeScalarRestriction_minExclusive_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TimeScalarRestriction_minExclusive_feature", "_UI_TimeScalarRestriction_type"),
-				 OMLPackage.eINSTANCE.getTimeScalarRestriction_MinExclusive(),
+				 EcorePackage.eINSTANCE.getTimeScalarRestriction_MinExclusive(),
 				 true,
 				 false,
 				 false,
@@ -148,7 +148,7 @@ public class TimeScalarRestrictionItemProvider extends RestrictedDataRangeItemPr
 				 getResourceLocator(),
 				 getString("_UI_TimeScalarRestriction_maxExclusive_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TimeScalarRestriction_maxExclusive_feature", "_UI_TimeScalarRestriction_type"),
-				 OMLPackage.eINSTANCE.getTimeScalarRestriction_MaxExclusive(),
+				 EcorePackage.eINSTANCE.getTimeScalarRestriction_MaxExclusive(),
 				 true,
 				 false,
 				 false,
@@ -195,10 +195,10 @@ public class TimeScalarRestrictionItemProvider extends RestrictedDataRangeItemPr
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TimeScalarRestriction.class)) {
-			case OMLPackage.TIME_SCALAR_RESTRICTION__MIN_INCLUSIVE:
-			case OMLPackage.TIME_SCALAR_RESTRICTION__MAX_INCLUSIVE:
-			case OMLPackage.TIME_SCALAR_RESTRICTION__MIN_EXCLUSIVE:
-			case OMLPackage.TIME_SCALAR_RESTRICTION__MAX_EXCLUSIVE:
+			case EcorePackage.TIME_SCALAR_RESTRICTION__MIN_INCLUSIVE:
+			case EcorePackage.TIME_SCALAR_RESTRICTION__MAX_INCLUSIVE:
+			case EcorePackage.TIME_SCALAR_RESTRICTION__MIN_EXCLUSIVE:
+			case EcorePackage.TIME_SCALAR_RESTRICTION__MAX_EXCLUSIVE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

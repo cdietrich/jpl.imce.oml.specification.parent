@@ -35,7 +35,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.Term#getName <em>Name</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerm()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerm()
  * @model abstract="true"
  * @generated
  */
@@ -50,7 +50,7 @@ public interface Term extends TerminologyBoxStatement, Resource {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerm_Name()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerm_Name()
 	 * @model unique="false" id="true" dataType="jpl.imce.oml.specification.ecore.LocalName" required="true"
 	 * @generated
 	 */

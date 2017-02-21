@@ -23,7 +23,7 @@ import java.util.Collection;
 import jpl.imce.oml.specification.ecore.AnnotationProperty;
 import jpl.imce.oml.specification.ecore.Bundle;
 import jpl.imce.oml.specification.ecore.DescriptionBox;
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.TerminologyExtent;
 import jpl.imce.oml.specification.ecore.TerminologyGraph;
 
@@ -113,7 +113,7 @@ public class TerminologyExtentImpl extends CDOObjectImpl implements TerminologyE
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getTerminologyExtent();
+		return EcorePackage.eINSTANCE.getTerminologyExtent();
 	}
 
 	/**
@@ -123,7 +123,7 @@ public class TerminologyExtentImpl extends CDOObjectImpl implements TerminologyE
 	 */
 	public EList<AnnotationProperty> getAnnotationProperties() {
 		if (annotationProperties == null) {
-			annotationProperties = new EObjectContainmentEList<AnnotationProperty>(AnnotationProperty.class, this, OMLPackage.TERMINOLOGY_EXTENT__ANNOTATION_PROPERTIES);
+			annotationProperties = new EObjectContainmentEList<AnnotationProperty>(AnnotationProperty.class, this, EcorePackage.TERMINOLOGY_EXTENT__ANNOTATION_PROPERTIES);
 		}
 		return annotationProperties;
 	}
@@ -135,7 +135,7 @@ public class TerminologyExtentImpl extends CDOObjectImpl implements TerminologyE
 	 */
 	public EList<TerminologyGraph> getTerminologyGraphs() {
 		if (terminologyGraphs == null) {
-			terminologyGraphs = new EObjectContainmentWithInverseEList<TerminologyGraph>(TerminologyGraph.class, this, OMLPackage.TERMINOLOGY_EXTENT__TERMINOLOGY_GRAPHS, OMLPackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT);
+			terminologyGraphs = new EObjectContainmentWithInverseEList<TerminologyGraph>(TerminologyGraph.class, this, EcorePackage.TERMINOLOGY_EXTENT__TERMINOLOGY_GRAPHS, EcorePackage.TERMINOLOGY_GRAPH__GRAPH_EXTENT);
 		}
 		return terminologyGraphs;
 	}
@@ -147,7 +147,7 @@ public class TerminologyExtentImpl extends CDOObjectImpl implements TerminologyE
 	 */
 	public EList<Bundle> getBundles() {
 		if (bundles == null) {
-			bundles = new EObjectContainmentWithInverseEList<Bundle>(Bundle.class, this, OMLPackage.TERMINOLOGY_EXTENT__BUNDLES, OMLPackage.BUNDLE__BUNDLE_EXTENT);
+			bundles = new EObjectContainmentWithInverseEList<Bundle>(Bundle.class, this, EcorePackage.TERMINOLOGY_EXTENT__BUNDLES, EcorePackage.BUNDLE__BUNDLE_EXTENT);
 		}
 		return bundles;
 	}
@@ -159,7 +159,7 @@ public class TerminologyExtentImpl extends CDOObjectImpl implements TerminologyE
 	 */
 	public EList<DescriptionBox> getDescriptions() {
 		if (descriptions == null) {
-			descriptions = new EObjectContainmentWithInverseEList<DescriptionBox>(DescriptionBox.class, this, OMLPackage.TERMINOLOGY_EXTENT__DESCRIPTIONS, OMLPackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT);
+			descriptions = new EObjectContainmentWithInverseEList<DescriptionBox>(DescriptionBox.class, this, EcorePackage.TERMINOLOGY_EXTENT__DESCRIPTIONS, EcorePackage.DESCRIPTION_BOX__DESCRIPTION_EXTENT);
 		}
 		return descriptions;
 	}
@@ -173,11 +173,11 @@ public class TerminologyExtentImpl extends CDOObjectImpl implements TerminologyE
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_EXTENT__TERMINOLOGY_GRAPHS:
+			case EcorePackage.TERMINOLOGY_EXTENT__TERMINOLOGY_GRAPHS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTerminologyGraphs()).basicAdd(otherEnd, msgs);
-			case OMLPackage.TERMINOLOGY_EXTENT__BUNDLES:
+			case EcorePackage.TERMINOLOGY_EXTENT__BUNDLES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBundles()).basicAdd(otherEnd, msgs);
-			case OMLPackage.TERMINOLOGY_EXTENT__DESCRIPTIONS:
+			case EcorePackage.TERMINOLOGY_EXTENT__DESCRIPTIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDescriptions()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -191,13 +191,13 @@ public class TerminologyExtentImpl extends CDOObjectImpl implements TerminologyE
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_EXTENT__ANNOTATION_PROPERTIES:
+			case EcorePackage.TERMINOLOGY_EXTENT__ANNOTATION_PROPERTIES:
 				return ((InternalEList<?>)getAnnotationProperties()).basicRemove(otherEnd, msgs);
-			case OMLPackage.TERMINOLOGY_EXTENT__TERMINOLOGY_GRAPHS:
+			case EcorePackage.TERMINOLOGY_EXTENT__TERMINOLOGY_GRAPHS:
 				return ((InternalEList<?>)getTerminologyGraphs()).basicRemove(otherEnd, msgs);
-			case OMLPackage.TERMINOLOGY_EXTENT__BUNDLES:
+			case EcorePackage.TERMINOLOGY_EXTENT__BUNDLES:
 				return ((InternalEList<?>)getBundles()).basicRemove(otherEnd, msgs);
-			case OMLPackage.TERMINOLOGY_EXTENT__DESCRIPTIONS:
+			case EcorePackage.TERMINOLOGY_EXTENT__DESCRIPTIONS:
 				return ((InternalEList<?>)getDescriptions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -211,13 +211,13 @@ public class TerminologyExtentImpl extends CDOObjectImpl implements TerminologyE
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_EXTENT__ANNOTATION_PROPERTIES:
+			case EcorePackage.TERMINOLOGY_EXTENT__ANNOTATION_PROPERTIES:
 				return getAnnotationProperties();
-			case OMLPackage.TERMINOLOGY_EXTENT__TERMINOLOGY_GRAPHS:
+			case EcorePackage.TERMINOLOGY_EXTENT__TERMINOLOGY_GRAPHS:
 				return getTerminologyGraphs();
-			case OMLPackage.TERMINOLOGY_EXTENT__BUNDLES:
+			case EcorePackage.TERMINOLOGY_EXTENT__BUNDLES:
 				return getBundles();
-			case OMLPackage.TERMINOLOGY_EXTENT__DESCRIPTIONS:
+			case EcorePackage.TERMINOLOGY_EXTENT__DESCRIPTIONS:
 				return getDescriptions();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -232,19 +232,19 @@ public class TerminologyExtentImpl extends CDOObjectImpl implements TerminologyE
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_EXTENT__ANNOTATION_PROPERTIES:
+			case EcorePackage.TERMINOLOGY_EXTENT__ANNOTATION_PROPERTIES:
 				getAnnotationProperties().clear();
 				getAnnotationProperties().addAll((Collection<? extends AnnotationProperty>)newValue);
 				return;
-			case OMLPackage.TERMINOLOGY_EXTENT__TERMINOLOGY_GRAPHS:
+			case EcorePackage.TERMINOLOGY_EXTENT__TERMINOLOGY_GRAPHS:
 				getTerminologyGraphs().clear();
 				getTerminologyGraphs().addAll((Collection<? extends TerminologyGraph>)newValue);
 				return;
-			case OMLPackage.TERMINOLOGY_EXTENT__BUNDLES:
+			case EcorePackage.TERMINOLOGY_EXTENT__BUNDLES:
 				getBundles().clear();
 				getBundles().addAll((Collection<? extends Bundle>)newValue);
 				return;
-			case OMLPackage.TERMINOLOGY_EXTENT__DESCRIPTIONS:
+			case EcorePackage.TERMINOLOGY_EXTENT__DESCRIPTIONS:
 				getDescriptions().clear();
 				getDescriptions().addAll((Collection<? extends DescriptionBox>)newValue);
 				return;
@@ -260,16 +260,16 @@ public class TerminologyExtentImpl extends CDOObjectImpl implements TerminologyE
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_EXTENT__ANNOTATION_PROPERTIES:
+			case EcorePackage.TERMINOLOGY_EXTENT__ANNOTATION_PROPERTIES:
 				getAnnotationProperties().clear();
 				return;
-			case OMLPackage.TERMINOLOGY_EXTENT__TERMINOLOGY_GRAPHS:
+			case EcorePackage.TERMINOLOGY_EXTENT__TERMINOLOGY_GRAPHS:
 				getTerminologyGraphs().clear();
 				return;
-			case OMLPackage.TERMINOLOGY_EXTENT__BUNDLES:
+			case EcorePackage.TERMINOLOGY_EXTENT__BUNDLES:
 				getBundles().clear();
 				return;
-			case OMLPackage.TERMINOLOGY_EXTENT__DESCRIPTIONS:
+			case EcorePackage.TERMINOLOGY_EXTENT__DESCRIPTIONS:
 				getDescriptions().clear();
 				return;
 		}
@@ -284,13 +284,13 @@ public class TerminologyExtentImpl extends CDOObjectImpl implements TerminologyE
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.TERMINOLOGY_EXTENT__ANNOTATION_PROPERTIES:
+			case EcorePackage.TERMINOLOGY_EXTENT__ANNOTATION_PROPERTIES:
 				return annotationProperties != null && !annotationProperties.isEmpty();
-			case OMLPackage.TERMINOLOGY_EXTENT__TERMINOLOGY_GRAPHS:
+			case EcorePackage.TERMINOLOGY_EXTENT__TERMINOLOGY_GRAPHS:
 				return terminologyGraphs != null && !terminologyGraphs.isEmpty();
-			case OMLPackage.TERMINOLOGY_EXTENT__BUNDLES:
+			case EcorePackage.TERMINOLOGY_EXTENT__BUNDLES:
 				return bundles != null && !bundles.isEmpty();
-			case OMLPackage.TERMINOLOGY_EXTENT__DESCRIPTIONS:
+			case EcorePackage.TERMINOLOGY_EXTENT__DESCRIPTIONS:
 				return descriptions != null && !descriptions.isEmpty();
 		}
 		return super.eIsSet(featureID);

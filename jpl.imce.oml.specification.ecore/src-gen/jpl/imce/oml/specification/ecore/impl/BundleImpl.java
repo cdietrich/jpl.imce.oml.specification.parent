@@ -25,7 +25,7 @@ import java.util.Collection;
 import jpl.imce.oml.specification.ecore.AnnotationEntry;
 import jpl.imce.oml.specification.ecore.AnnotationProperty;
 import jpl.imce.oml.specification.ecore.Bundle;
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.TerminologyBoxStatement;
 import jpl.imce.oml.specification.ecore.TerminologyBundleAxiom;
 import jpl.imce.oml.specification.ecore.TerminologyBundleStatement;
@@ -99,7 +99,7 @@ public class BundleImpl extends TerminologyBoxImpl implements Bundle {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getBundle();
+		return EcorePackage.eINSTANCE.getBundle();
 	}
 
 	/**
@@ -108,7 +108,7 @@ public class BundleImpl extends TerminologyBoxImpl implements Bundle {
 	 * @generated
 	 */
 	public TerminologyExtent getBundleExtent() {
-		if (eContainerFeatureID() != OMLPackage.BUNDLE__BUNDLE_EXTENT) return null;
+		if (eContainerFeatureID() != EcorePackage.BUNDLE__BUNDLE_EXTENT) return null;
 		return (TerminologyExtent)eContainer();
 	}
 
@@ -118,7 +118,7 @@ public class BundleImpl extends TerminologyBoxImpl implements Bundle {
 	 * @generated
 	 */
 	public TerminologyExtent basicGetBundleExtent() {
-		if (eContainerFeatureID() != OMLPackage.BUNDLE__BUNDLE_EXTENT) return null;
+		if (eContainerFeatureID() != EcorePackage.BUNDLE__BUNDLE_EXTENT) return null;
 		return (TerminologyExtent)eInternalContainer();
 	}
 
@@ -128,7 +128,7 @@ public class BundleImpl extends TerminologyBoxImpl implements Bundle {
 	 * @generated
 	 */
 	public NotificationChain basicSetBundleExtent(TerminologyExtent newBundleExtent, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newBundleExtent, OMLPackage.BUNDLE__BUNDLE_EXTENT, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newBundleExtent, EcorePackage.BUNDLE__BUNDLE_EXTENT, msgs);
 		return msgs;
 	}
 
@@ -138,19 +138,19 @@ public class BundleImpl extends TerminologyBoxImpl implements Bundle {
 	 * @generated
 	 */
 	public void setBundleExtent(TerminologyExtent newBundleExtent) {
-		if (newBundleExtent != eInternalContainer() || (eContainerFeatureID() != OMLPackage.BUNDLE__BUNDLE_EXTENT && newBundleExtent != null)) {
+		if (newBundleExtent != eInternalContainer() || (eContainerFeatureID() != EcorePackage.BUNDLE__BUNDLE_EXTENT && newBundleExtent != null)) {
 			if (EcoreUtil.isAncestor(this, (EObject)newBundleExtent))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newBundleExtent != null)
-				msgs = ((InternalEObject)newBundleExtent).eInverseAdd(this, OMLPackage.TERMINOLOGY_EXTENT__BUNDLES, TerminologyExtent.class, msgs);
+				msgs = ((InternalEObject)newBundleExtent).eInverseAdd(this, EcorePackage.TERMINOLOGY_EXTENT__BUNDLES, TerminologyExtent.class, msgs);
 			msgs = basicSetBundleExtent(newBundleExtent, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.BUNDLE__BUNDLE_EXTENT, newBundleExtent, newBundleExtent));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.BUNDLE__BUNDLE_EXTENT, newBundleExtent, newBundleExtent));
 	}
 
 	/**
@@ -160,7 +160,7 @@ public class BundleImpl extends TerminologyBoxImpl implements Bundle {
 	 */
 	public EList<TerminologyBundleStatement> getBundleStatements() {
 		if (bundleStatements == null) {
-			bundleStatements = new EObjectContainmentWithInverseEList<TerminologyBundleStatement>(TerminologyBundleStatement.class, this, OMLPackage.BUNDLE__BUNDLE_STATEMENTS, OMLPackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE);
+			bundleStatements = new EObjectContainmentWithInverseEList<TerminologyBundleStatement>(TerminologyBundleStatement.class, this, EcorePackage.BUNDLE__BUNDLE_STATEMENTS, EcorePackage.TERMINOLOGY_BUNDLE_STATEMENT__BUNDLE);
 		}
 		return bundleStatements;
 	}
@@ -172,7 +172,7 @@ public class BundleImpl extends TerminologyBoxImpl implements Bundle {
 	 */
 	public EList<TerminologyBundleAxiom> getTerminologyBundleAxioms() {
 		if (terminologyBundleAxioms == null) {
-			terminologyBundleAxioms = new EObjectContainmentWithInverseEList<TerminologyBundleAxiom>(TerminologyBundleAxiom.class, this, OMLPackage.BUNDLE__TERMINOLOGY_BUNDLE_AXIOMS, OMLPackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE);
+			terminologyBundleAxioms = new EObjectContainmentWithInverseEList<TerminologyBundleAxiom>(TerminologyBundleAxiom.class, this, EcorePackage.BUNDLE__TERMINOLOGY_BUNDLE_AXIOMS, EcorePackage.TERMINOLOGY_BUNDLE_AXIOM__TERMINOLOGY_BUNDLE);
 		}
 		return terminologyBundleAxioms;
 	}
@@ -228,13 +228,13 @@ public class BundleImpl extends TerminologyBoxImpl implements Bundle {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.BUNDLE__BUNDLE_EXTENT:
+			case EcorePackage.BUNDLE__BUNDLE_EXTENT:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetBundleExtent((TerminologyExtent)otherEnd, msgs);
-			case OMLPackage.BUNDLE__BUNDLE_STATEMENTS:
+			case EcorePackage.BUNDLE__BUNDLE_STATEMENTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBundleStatements()).basicAdd(otherEnd, msgs);
-			case OMLPackage.BUNDLE__TERMINOLOGY_BUNDLE_AXIOMS:
+			case EcorePackage.BUNDLE__TERMINOLOGY_BUNDLE_AXIOMS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTerminologyBundleAxioms()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -248,11 +248,11 @@ public class BundleImpl extends TerminologyBoxImpl implements Bundle {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OMLPackage.BUNDLE__BUNDLE_EXTENT:
+			case EcorePackage.BUNDLE__BUNDLE_EXTENT:
 				return basicSetBundleExtent(null, msgs);
-			case OMLPackage.BUNDLE__BUNDLE_STATEMENTS:
+			case EcorePackage.BUNDLE__BUNDLE_STATEMENTS:
 				return ((InternalEList<?>)getBundleStatements()).basicRemove(otherEnd, msgs);
-			case OMLPackage.BUNDLE__TERMINOLOGY_BUNDLE_AXIOMS:
+			case EcorePackage.BUNDLE__TERMINOLOGY_BUNDLE_AXIOMS:
 				return ((InternalEList<?>)getTerminologyBundleAxioms()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -266,8 +266,8 @@ public class BundleImpl extends TerminologyBoxImpl implements Bundle {
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case OMLPackage.BUNDLE__BUNDLE_EXTENT:
-				return eInternalContainer().eInverseRemove(this, OMLPackage.TERMINOLOGY_EXTENT__BUNDLES, TerminologyExtent.class, msgs);
+			case EcorePackage.BUNDLE__BUNDLE_EXTENT:
+				return eInternalContainer().eInverseRemove(this, EcorePackage.TERMINOLOGY_EXTENT__BUNDLES, TerminologyExtent.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -280,12 +280,12 @@ public class BundleImpl extends TerminologyBoxImpl implements Bundle {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.BUNDLE__BUNDLE_EXTENT:
+			case EcorePackage.BUNDLE__BUNDLE_EXTENT:
 				if (resolve) return getBundleExtent();
 				return basicGetBundleExtent();
-			case OMLPackage.BUNDLE__BUNDLE_STATEMENTS:
+			case EcorePackage.BUNDLE__BUNDLE_STATEMENTS:
 				return getBundleStatements();
-			case OMLPackage.BUNDLE__TERMINOLOGY_BUNDLE_AXIOMS:
+			case EcorePackage.BUNDLE__TERMINOLOGY_BUNDLE_AXIOMS:
 				return getTerminologyBundleAxioms();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -300,14 +300,14 @@ public class BundleImpl extends TerminologyBoxImpl implements Bundle {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.BUNDLE__BUNDLE_EXTENT:
+			case EcorePackage.BUNDLE__BUNDLE_EXTENT:
 				setBundleExtent((TerminologyExtent)newValue);
 				return;
-			case OMLPackage.BUNDLE__BUNDLE_STATEMENTS:
+			case EcorePackage.BUNDLE__BUNDLE_STATEMENTS:
 				getBundleStatements().clear();
 				getBundleStatements().addAll((Collection<? extends TerminologyBundleStatement>)newValue);
 				return;
-			case OMLPackage.BUNDLE__TERMINOLOGY_BUNDLE_AXIOMS:
+			case EcorePackage.BUNDLE__TERMINOLOGY_BUNDLE_AXIOMS:
 				getTerminologyBundleAxioms().clear();
 				getTerminologyBundleAxioms().addAll((Collection<? extends TerminologyBundleAxiom>)newValue);
 				return;
@@ -323,13 +323,13 @@ public class BundleImpl extends TerminologyBoxImpl implements Bundle {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.BUNDLE__BUNDLE_EXTENT:
+			case EcorePackage.BUNDLE__BUNDLE_EXTENT:
 				setBundleExtent((TerminologyExtent)null);
 				return;
-			case OMLPackage.BUNDLE__BUNDLE_STATEMENTS:
+			case EcorePackage.BUNDLE__BUNDLE_STATEMENTS:
 				getBundleStatements().clear();
 				return;
-			case OMLPackage.BUNDLE__TERMINOLOGY_BUNDLE_AXIOMS:
+			case EcorePackage.BUNDLE__TERMINOLOGY_BUNDLE_AXIOMS:
 				getTerminologyBundleAxioms().clear();
 				return;
 		}
@@ -344,11 +344,11 @@ public class BundleImpl extends TerminologyBoxImpl implements Bundle {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.BUNDLE__BUNDLE_EXTENT:
+			case EcorePackage.BUNDLE__BUNDLE_EXTENT:
 				return basicGetBundleExtent() != null;
-			case OMLPackage.BUNDLE__BUNDLE_STATEMENTS:
+			case EcorePackage.BUNDLE__BUNDLE_STATEMENTS:
 				return bundleStatements != null && !bundleStatements.isEmpty();
-			case OMLPackage.BUNDLE__TERMINOLOGY_BUNDLE_AXIOMS:
+			case EcorePackage.BUNDLE__TERMINOLOGY_BUNDLE_AXIOMS:
 				return terminologyBundleAxioms != null && !terminologyBundleAxioms.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -363,13 +363,13 @@ public class BundleImpl extends TerminologyBoxImpl implements Bundle {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.BUNDLE___EXTENT:
+			case EcorePackage.BUNDLE___EXTENT:
 				return extent();
-			case OMLPackage.BUNDLE___WITH_ANNOTATIONS__EMAP:
+			case EcorePackage.BUNDLE___WITH_ANNOTATIONS__EMAP:
 				return withAnnotations((EMap<AnnotationProperty, EList<AnnotationEntry>>)arguments.get(0));
-			case OMLPackage.BUNDLE___WITH_BUNDLE_STATEMENTS__ELIST:
+			case EcorePackage.BUNDLE___WITH_BUNDLE_STATEMENTS__ELIST:
 				return withBundleStatements((EList<TerminologyBundleStatement>)arguments.get(0));
-			case OMLPackage.BUNDLE___WITH_BOX_STATEMENTS__ELIST:
+			case EcorePackage.BUNDLE___WITH_BOX_STATEMENTS__ELIST:
 				return withBoxStatements((EList<TerminologyBoxStatement>)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);

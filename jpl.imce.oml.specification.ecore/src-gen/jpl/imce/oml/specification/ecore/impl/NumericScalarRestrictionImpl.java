@@ -27,8 +27,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.DataRange;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.NumericScalarRestriction;
-import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.Term;
 import jpl.imce.oml.specification.ecore.TerminologyThing;
 
@@ -153,7 +153,7 @@ public class NumericScalarRestrictionImpl extends RestrictedDataRangeImpl implem
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getNumericScalarRestriction();
+		return EcorePackage.eINSTANCE.getNumericScalarRestriction();
 	}
 
 	/**
@@ -174,7 +174,7 @@ public class NumericScalarRestrictionImpl extends RestrictedDataRangeImpl implem
 		String oldMinInclusive = minInclusive;
 		minInclusive = newMinInclusive;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.NUMERIC_SCALAR_RESTRICTION__MIN_INCLUSIVE, oldMinInclusive, minInclusive));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.NUMERIC_SCALAR_RESTRICTION__MIN_INCLUSIVE, oldMinInclusive, minInclusive));
 	}
 
 	/**
@@ -195,7 +195,7 @@ public class NumericScalarRestrictionImpl extends RestrictedDataRangeImpl implem
 		String oldMaxInclusive = maxInclusive;
 		maxInclusive = newMaxInclusive;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.NUMERIC_SCALAR_RESTRICTION__MAX_INCLUSIVE, oldMaxInclusive, maxInclusive));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.NUMERIC_SCALAR_RESTRICTION__MAX_INCLUSIVE, oldMaxInclusive, maxInclusive));
 	}
 
 	/**
@@ -216,7 +216,7 @@ public class NumericScalarRestrictionImpl extends RestrictedDataRangeImpl implem
 		String oldMinExclusive = minExclusive;
 		minExclusive = newMinExclusive;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.NUMERIC_SCALAR_RESTRICTION__MIN_EXCLUSIVE, oldMinExclusive, minExclusive));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.NUMERIC_SCALAR_RESTRICTION__MIN_EXCLUSIVE, oldMinExclusive, minExclusive));
 	}
 
 	/**
@@ -237,7 +237,7 @@ public class NumericScalarRestrictionImpl extends RestrictedDataRangeImpl implem
 		String oldMaxExclusive = maxExclusive;
 		maxExclusive = newMaxExclusive;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.NUMERIC_SCALAR_RESTRICTION__MAX_EXCLUSIVE, oldMaxExclusive, maxExclusive));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.NUMERIC_SCALAR_RESTRICTION__MAX_EXCLUSIVE, oldMaxExclusive, maxExclusive));
 	}
 
 	/**
@@ -267,13 +267,13 @@ public class NumericScalarRestrictionImpl extends RestrictedDataRangeImpl implem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.NUMERIC_SCALAR_RESTRICTION__MIN_INCLUSIVE:
+			case EcorePackage.NUMERIC_SCALAR_RESTRICTION__MIN_INCLUSIVE:
 				return getMinInclusive();
-			case OMLPackage.NUMERIC_SCALAR_RESTRICTION__MAX_INCLUSIVE:
+			case EcorePackage.NUMERIC_SCALAR_RESTRICTION__MAX_INCLUSIVE:
 				return getMaxInclusive();
-			case OMLPackage.NUMERIC_SCALAR_RESTRICTION__MIN_EXCLUSIVE:
+			case EcorePackage.NUMERIC_SCALAR_RESTRICTION__MIN_EXCLUSIVE:
 				return getMinExclusive();
-			case OMLPackage.NUMERIC_SCALAR_RESTRICTION__MAX_EXCLUSIVE:
+			case EcorePackage.NUMERIC_SCALAR_RESTRICTION__MAX_EXCLUSIVE:
 				return getMaxExclusive();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -287,16 +287,16 @@ public class NumericScalarRestrictionImpl extends RestrictedDataRangeImpl implem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.NUMERIC_SCALAR_RESTRICTION__MIN_INCLUSIVE:
+			case EcorePackage.NUMERIC_SCALAR_RESTRICTION__MIN_INCLUSIVE:
 				setMinInclusive((String)newValue);
 				return;
-			case OMLPackage.NUMERIC_SCALAR_RESTRICTION__MAX_INCLUSIVE:
+			case EcorePackage.NUMERIC_SCALAR_RESTRICTION__MAX_INCLUSIVE:
 				setMaxInclusive((String)newValue);
 				return;
-			case OMLPackage.NUMERIC_SCALAR_RESTRICTION__MIN_EXCLUSIVE:
+			case EcorePackage.NUMERIC_SCALAR_RESTRICTION__MIN_EXCLUSIVE:
 				setMinExclusive((String)newValue);
 				return;
-			case OMLPackage.NUMERIC_SCALAR_RESTRICTION__MAX_EXCLUSIVE:
+			case EcorePackage.NUMERIC_SCALAR_RESTRICTION__MAX_EXCLUSIVE:
 				setMaxExclusive((String)newValue);
 				return;
 		}
@@ -311,16 +311,16 @@ public class NumericScalarRestrictionImpl extends RestrictedDataRangeImpl implem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.NUMERIC_SCALAR_RESTRICTION__MIN_INCLUSIVE:
+			case EcorePackage.NUMERIC_SCALAR_RESTRICTION__MIN_INCLUSIVE:
 				setMinInclusive(MIN_INCLUSIVE_EDEFAULT);
 				return;
-			case OMLPackage.NUMERIC_SCALAR_RESTRICTION__MAX_INCLUSIVE:
+			case EcorePackage.NUMERIC_SCALAR_RESTRICTION__MAX_INCLUSIVE:
 				setMaxInclusive(MAX_INCLUSIVE_EDEFAULT);
 				return;
-			case OMLPackage.NUMERIC_SCALAR_RESTRICTION__MIN_EXCLUSIVE:
+			case EcorePackage.NUMERIC_SCALAR_RESTRICTION__MIN_EXCLUSIVE:
 				setMinExclusive(MIN_EXCLUSIVE_EDEFAULT);
 				return;
-			case OMLPackage.NUMERIC_SCALAR_RESTRICTION__MAX_EXCLUSIVE:
+			case EcorePackage.NUMERIC_SCALAR_RESTRICTION__MAX_EXCLUSIVE:
 				setMaxExclusive(MAX_EXCLUSIVE_EDEFAULT);
 				return;
 		}
@@ -335,13 +335,13 @@ public class NumericScalarRestrictionImpl extends RestrictedDataRangeImpl implem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.NUMERIC_SCALAR_RESTRICTION__MIN_INCLUSIVE:
+			case EcorePackage.NUMERIC_SCALAR_RESTRICTION__MIN_INCLUSIVE:
 				return MIN_INCLUSIVE_EDEFAULT == null ? minInclusive != null : !MIN_INCLUSIVE_EDEFAULT.equals(minInclusive);
-			case OMLPackage.NUMERIC_SCALAR_RESTRICTION__MAX_INCLUSIVE:
+			case EcorePackage.NUMERIC_SCALAR_RESTRICTION__MAX_INCLUSIVE:
 				return MAX_INCLUSIVE_EDEFAULT == null ? maxInclusive != null : !MAX_INCLUSIVE_EDEFAULT.equals(maxInclusive);
-			case OMLPackage.NUMERIC_SCALAR_RESTRICTION__MIN_EXCLUSIVE:
+			case EcorePackage.NUMERIC_SCALAR_RESTRICTION__MIN_EXCLUSIVE:
 				return MIN_EXCLUSIVE_EDEFAULT == null ? minExclusive != null : !MIN_EXCLUSIVE_EDEFAULT.equals(minExclusive);
-			case OMLPackage.NUMERIC_SCALAR_RESTRICTION__MAX_EXCLUSIVE:
+			case EcorePackage.NUMERIC_SCALAR_RESTRICTION__MAX_EXCLUSIVE:
 				return MAX_EXCLUSIVE_EDEFAULT == null ? maxExclusive != null : !MAX_EXCLUSIVE_EDEFAULT.equals(maxExclusive);
 		}
 		return super.eIsSet(featureID);
@@ -356,13 +356,13 @@ public class NumericScalarRestrictionImpl extends RestrictedDataRangeImpl implem
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == TerminologyThing.class) {
 			switch (baseOperationID) {
-				case OMLPackage.TERMINOLOGY_THING___CALCULATE_UUID: return OMLPackage.NUMERIC_SCALAR_RESTRICTION___CALCULATE_UUID;
+				case EcorePackage.TERMINOLOGY_THING___CALCULATE_UUID: return EcorePackage.NUMERIC_SCALAR_RESTRICTION___CALCULATE_UUID;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
 		if (baseClass == Term.class) {
 			switch (baseOperationID) {
-				case OMLPackage.TERM___CALCULATE_UUID: return OMLPackage.NUMERIC_SCALAR_RESTRICTION___CALCULATE_UUID;
+				case EcorePackage.TERM___CALCULATE_UUID: return EcorePackage.NUMERIC_SCALAR_RESTRICTION___CALCULATE_UUID;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
@@ -377,7 +377,7 @@ public class NumericScalarRestrictionImpl extends RestrictedDataRangeImpl implem
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.NUMERIC_SCALAR_RESTRICTION___CALCULATE_UUID:
+			case EcorePackage.NUMERIC_SCALAR_RESTRICTION___CALCULATE_UUID:
 				return calculateUUID();
 		}
 		return super.eInvoke(operationID, arguments);

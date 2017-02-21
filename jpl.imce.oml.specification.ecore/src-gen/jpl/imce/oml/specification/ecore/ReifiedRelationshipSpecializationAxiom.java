@@ -38,7 +38,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.ReifiedRelationshipSpecializationAxiom#getSuperRelationship <em>Super Relationship</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getReifiedRelationshipSpecializationAxiom()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getReifiedRelationshipSpecializationAxiom()
  * @model
  * @generated
  */
@@ -52,7 +52,7 @@ public interface ReifiedRelationshipSpecializationAxiom extends SpecializationAx
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Sub Relationship</em>' reference.
 	 * @see #setSubRelationship(ReifiedRelationship)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getReifiedRelationshipSpecializationAxiom_SubRelationship()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getReifiedRelationshipSpecializationAxiom_SubRelationship()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -77,7 +77,7 @@ public interface ReifiedRelationshipSpecializationAxiom extends SpecializationAx
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Super Relationship</em>' reference.
 	 * @see #setSuperRelationship(ReifiedRelationship)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getReifiedRelationshipSpecializationAxiom_SuperRelationship()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getReifiedRelationshipSpecializationAxiom_SuperRelationship()
 	 * @model required="true"
 	 * @generated
 	 */

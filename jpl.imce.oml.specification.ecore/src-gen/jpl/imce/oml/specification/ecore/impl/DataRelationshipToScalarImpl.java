@@ -20,7 +20,7 @@ package jpl.imce.oml.specification.ecore.impl;
 
 import jpl.imce.oml.specification.ecore.DataRange;
 import jpl.imce.oml.specification.ecore.DataRelationshipToScalar;
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -70,7 +70,7 @@ public abstract class DataRelationshipToScalarImpl extends DataRelationshipRange
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getDataRelationshipToScalar();
+		return EcorePackage.eINSTANCE.getDataRelationshipToScalar();
 	}
 
 	/**
@@ -84,7 +84,7 @@ public abstract class DataRelationshipToScalarImpl extends DataRelationshipRange
 			range = (DataRange)eResolveProxy(oldRange);
 			if (range != oldRange) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.DATA_RELATIONSHIP_TO_SCALAR__RANGE, oldRange, range));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.DATA_RELATIONSHIP_TO_SCALAR__RANGE, oldRange, range));
 			}
 		}
 		return range;
@@ -108,7 +108,7 @@ public abstract class DataRelationshipToScalarImpl extends DataRelationshipRange
 		DataRange oldRange = range;
 		range = newRange;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.DATA_RELATIONSHIP_TO_SCALAR__RANGE, oldRange, range));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.DATA_RELATIONSHIP_TO_SCALAR__RANGE, oldRange, range));
 	}
 
 	/**
@@ -119,7 +119,7 @@ public abstract class DataRelationshipToScalarImpl extends DataRelationshipRange
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.DATA_RELATIONSHIP_TO_SCALAR__RANGE:
+			case EcorePackage.DATA_RELATIONSHIP_TO_SCALAR__RANGE:
 				if (resolve) return getRange();
 				return basicGetRange();
 		}
@@ -134,7 +134,7 @@ public abstract class DataRelationshipToScalarImpl extends DataRelationshipRange
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.DATA_RELATIONSHIP_TO_SCALAR__RANGE:
+			case EcorePackage.DATA_RELATIONSHIP_TO_SCALAR__RANGE:
 				setRange((DataRange)newValue);
 				return;
 		}
@@ -149,7 +149,7 @@ public abstract class DataRelationshipToScalarImpl extends DataRelationshipRange
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.DATA_RELATIONSHIP_TO_SCALAR__RANGE:
+			case EcorePackage.DATA_RELATIONSHIP_TO_SCALAR__RANGE:
 				setRange((DataRange)null);
 				return;
 		}
@@ -164,7 +164,7 @@ public abstract class DataRelationshipToScalarImpl extends DataRelationshipRange
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.DATA_RELATIONSHIP_TO_SCALAR__RANGE:
+			case EcorePackage.DATA_RELATIONSHIP_TO_SCALAR__RANGE:
 				return range != null;
 		}
 		return super.eIsSet(featureID);

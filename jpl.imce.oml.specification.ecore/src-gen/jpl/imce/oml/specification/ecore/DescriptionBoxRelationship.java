@@ -30,7 +30,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-model-doc -->
  *
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBoxRelationship()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getDescriptionBoxRelationship()
  * @model abstract="true"
  * @generated
  */

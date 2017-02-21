@@ -41,7 +41,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceRange#getRange <em>Range</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getReifiedRelationshipInstanceRange()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getReifiedRelationshipInstanceRange()
  * @model
  * @generated
  */
@@ -57,7 +57,7 @@ public interface ReifiedRelationshipInstanceRange extends TerminologyInstanceAss
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Description Box</em>' container reference.
 	 * @see #setDescriptionBox(DescriptionBox)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getReifiedRelationshipInstanceRange_DescriptionBox()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getReifiedRelationshipInstanceRange_DescriptionBox()
 	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getReifiedRelationshipInstanceRanges
 	 * @model opposite="reifiedRelationshipInstanceRanges" required="true" transient="false"
 	 * @generated
@@ -84,7 +84,7 @@ public interface ReifiedRelationshipInstanceRange extends TerminologyInstanceAss
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Reified Relationship Instance</em>' reference.
 	 * @see #setReifiedRelationshipInstance(ReifiedRelationshipInstance)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getReifiedRelationshipInstanceRange_ReifiedRelationshipInstance()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getReifiedRelationshipInstanceRange_ReifiedRelationshipInstance()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -110,7 +110,7 @@ public interface ReifiedRelationshipInstanceRange extends TerminologyInstanceAss
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Range</em>' reference.
 	 * @see #setRange(ConceptualEntitySingletonInstance)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getReifiedRelationshipInstanceRange_Range()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getReifiedRelationshipInstanceRange_Range()
 	 * @model required="true"
 	 * @generated
 	 */

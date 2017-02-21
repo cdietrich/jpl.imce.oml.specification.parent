@@ -38,7 +38,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.DescriptionBoxRefinement#getRefinedDescriptionBox <em>Refined Description Box</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBoxRefinement()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getDescriptionBoxRefinement()
  * @model
  * @generated
  */
@@ -54,7 +54,7 @@ public interface DescriptionBoxRefinement extends DescriptionBoxRelationship {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Refining Description Box</em>' container reference.
 	 * @see #setRefiningDescriptionBox(DescriptionBox)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBoxRefinement_RefiningDescriptionBox()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getDescriptionBoxRefinement_RefiningDescriptionBox()
 	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getDescriptionBoxRefinements
 	 * @model opposite="descriptionBoxRefinements" required="true" transient="false"
 	 * @generated
@@ -81,7 +81,7 @@ public interface DescriptionBoxRefinement extends DescriptionBoxRelationship {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Refined Description Box</em>' reference.
 	 * @see #setRefinedDescriptionBox(DescriptionBox)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionBoxRefinement_RefinedDescriptionBox()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getDescriptionBoxRefinement_RefinedDescriptionBox()
 	 * @model required="true"
 	 * @generated
 	 */

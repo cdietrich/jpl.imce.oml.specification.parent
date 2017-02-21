@@ -20,7 +20,7 @@ package jpl.imce.oml.specification.ecore.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.TerminologyAxiom;
 import jpl.imce.oml.specification.ecore.TerminologyBox;
 
@@ -52,7 +52,7 @@ public abstract class TerminologyAxiomImpl extends TerminologyThingImpl implemen
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getTerminologyAxiom();
+		return EcorePackage.eINSTANCE.getTerminologyAxiom();
 	}
 
 	/**
@@ -85,9 +85,9 @@ public abstract class TerminologyAxiomImpl extends TerminologyThingImpl implemen
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.TERMINOLOGY_AXIOM___SOURCE:
+			case EcorePackage.TERMINOLOGY_AXIOM___SOURCE:
 				return source();
-			case OMLPackage.TERMINOLOGY_AXIOM___TARGET:
+			case EcorePackage.TERMINOLOGY_AXIOM___TARGET:
 				return target();
 		}
 		return super.eInvoke(operationID, arguments);

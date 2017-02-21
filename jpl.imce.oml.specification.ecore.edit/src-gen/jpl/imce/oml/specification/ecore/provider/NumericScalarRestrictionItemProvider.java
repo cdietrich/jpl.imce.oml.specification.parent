@@ -22,9 +22,8 @@ package jpl.imce.oml.specification.ecore.provider;
 import java.util.Collection;
 import java.util.List;
 
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.NumericScalarRestriction;
-import jpl.imce.oml.specification.ecore.OMLPackage;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -82,7 +81,7 @@ public class NumericScalarRestrictionItemProvider extends RestrictedDataRangeIte
 				 getResourceLocator(),
 				 getString("_UI_NumericScalarRestriction_minInclusive_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_NumericScalarRestriction_minInclusive_feature", "_UI_NumericScalarRestriction_type"),
-				 OMLPackage.eINSTANCE.getNumericScalarRestriction_MinInclusive(),
+				 EcorePackage.eINSTANCE.getNumericScalarRestriction_MinInclusive(),
 				 true,
 				 false,
 				 false,
@@ -104,7 +103,7 @@ public class NumericScalarRestrictionItemProvider extends RestrictedDataRangeIte
 				 getResourceLocator(),
 				 getString("_UI_NumericScalarRestriction_maxInclusive_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_NumericScalarRestriction_maxInclusive_feature", "_UI_NumericScalarRestriction_type"),
-				 OMLPackage.eINSTANCE.getNumericScalarRestriction_MaxInclusive(),
+				 EcorePackage.eINSTANCE.getNumericScalarRestriction_MaxInclusive(),
 				 true,
 				 false,
 				 false,
@@ -126,7 +125,7 @@ public class NumericScalarRestrictionItemProvider extends RestrictedDataRangeIte
 				 getResourceLocator(),
 				 getString("_UI_NumericScalarRestriction_minExclusive_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_NumericScalarRestriction_minExclusive_feature", "_UI_NumericScalarRestriction_type"),
-				 OMLPackage.eINSTANCE.getNumericScalarRestriction_MinExclusive(),
+				 EcorePackage.eINSTANCE.getNumericScalarRestriction_MinExclusive(),
 				 true,
 				 false,
 				 false,
@@ -148,7 +147,7 @@ public class NumericScalarRestrictionItemProvider extends RestrictedDataRangeIte
 				 getResourceLocator(),
 				 getString("_UI_NumericScalarRestriction_maxExclusive_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_NumericScalarRestriction_maxExclusive_feature", "_UI_NumericScalarRestriction_type"),
-				 OMLPackage.eINSTANCE.getNumericScalarRestriction_MaxExclusive(),
+				 EcorePackage.eINSTANCE.getNumericScalarRestriction_MaxExclusive(),
 				 true,
 				 false,
 				 false,
@@ -195,10 +194,10 @@ public class NumericScalarRestrictionItemProvider extends RestrictedDataRangeIte
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(NumericScalarRestriction.class)) {
-			case OMLPackage.NUMERIC_SCALAR_RESTRICTION__MIN_INCLUSIVE:
-			case OMLPackage.NUMERIC_SCALAR_RESTRICTION__MAX_INCLUSIVE:
-			case OMLPackage.NUMERIC_SCALAR_RESTRICTION__MIN_EXCLUSIVE:
-			case OMLPackage.NUMERIC_SCALAR_RESTRICTION__MAX_EXCLUSIVE:
+			case EcorePackage.NUMERIC_SCALAR_RESTRICTION__MIN_INCLUSIVE:
+			case EcorePackage.NUMERIC_SCALAR_RESTRICTION__MAX_INCLUSIVE:
+			case EcorePackage.NUMERIC_SCALAR_RESTRICTION__MIN_EXCLUSIVE:
+			case EcorePackage.NUMERIC_SCALAR_RESTRICTION__MAX_EXCLUSIVE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

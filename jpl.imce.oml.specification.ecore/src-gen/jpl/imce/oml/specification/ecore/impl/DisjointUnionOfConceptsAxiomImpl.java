@@ -20,7 +20,7 @@ package jpl.imce.oml.specification.ecore.impl;
 
 import jpl.imce.oml.specification.ecore.ConceptTreeDisjunction;
 import jpl.imce.oml.specification.ecore.DisjointUnionOfConceptsAxiom;
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -70,7 +70,7 @@ public abstract class DisjointUnionOfConceptsAxiomImpl extends TerminologyBundle
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getDisjointUnionOfConceptsAxiom();
+		return EcorePackage.eINSTANCE.getDisjointUnionOfConceptsAxiom();
 	}
 
 	/**
@@ -84,7 +84,7 @@ public abstract class DisjointUnionOfConceptsAxiomImpl extends TerminologyBundle
 			disjointTaxonomyParent = (ConceptTreeDisjunction)eResolveProxy(oldDisjointTaxonomyParent);
 			if (disjointTaxonomyParent != oldDisjointTaxonomyParent) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.DISJOINT_UNION_OF_CONCEPTS_AXIOM__DISJOINT_TAXONOMY_PARENT, oldDisjointTaxonomyParent, disjointTaxonomyParent));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.DISJOINT_UNION_OF_CONCEPTS_AXIOM__DISJOINT_TAXONOMY_PARENT, oldDisjointTaxonomyParent, disjointTaxonomyParent));
 			}
 		}
 		return disjointTaxonomyParent;
@@ -108,7 +108,7 @@ public abstract class DisjointUnionOfConceptsAxiomImpl extends TerminologyBundle
 		ConceptTreeDisjunction oldDisjointTaxonomyParent = disjointTaxonomyParent;
 		disjointTaxonomyParent = newDisjointTaxonomyParent;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.DISJOINT_UNION_OF_CONCEPTS_AXIOM__DISJOINT_TAXONOMY_PARENT, oldDisjointTaxonomyParent, disjointTaxonomyParent));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.DISJOINT_UNION_OF_CONCEPTS_AXIOM__DISJOINT_TAXONOMY_PARENT, oldDisjointTaxonomyParent, disjointTaxonomyParent));
 	}
 
 	/**
@@ -119,7 +119,7 @@ public abstract class DisjointUnionOfConceptsAxiomImpl extends TerminologyBundle
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.DISJOINT_UNION_OF_CONCEPTS_AXIOM__DISJOINT_TAXONOMY_PARENT:
+			case EcorePackage.DISJOINT_UNION_OF_CONCEPTS_AXIOM__DISJOINT_TAXONOMY_PARENT:
 				if (resolve) return getDisjointTaxonomyParent();
 				return basicGetDisjointTaxonomyParent();
 		}
@@ -134,7 +134,7 @@ public abstract class DisjointUnionOfConceptsAxiomImpl extends TerminologyBundle
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.DISJOINT_UNION_OF_CONCEPTS_AXIOM__DISJOINT_TAXONOMY_PARENT:
+			case EcorePackage.DISJOINT_UNION_OF_CONCEPTS_AXIOM__DISJOINT_TAXONOMY_PARENT:
 				setDisjointTaxonomyParent((ConceptTreeDisjunction)newValue);
 				return;
 		}
@@ -149,7 +149,7 @@ public abstract class DisjointUnionOfConceptsAxiomImpl extends TerminologyBundle
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.DISJOINT_UNION_OF_CONCEPTS_AXIOM__DISJOINT_TAXONOMY_PARENT:
+			case EcorePackage.DISJOINT_UNION_OF_CONCEPTS_AXIOM__DISJOINT_TAXONOMY_PARENT:
 				setDisjointTaxonomyParent((ConceptTreeDisjunction)null);
 				return;
 		}
@@ -164,7 +164,7 @@ public abstract class DisjointUnionOfConceptsAxiomImpl extends TerminologyBundle
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.DISJOINT_UNION_OF_CONCEPTS_AXIOM__DISJOINT_TAXONOMY_PARENT:
+			case EcorePackage.DISJOINT_UNION_OF_CONCEPTS_AXIOM__DISJOINT_TAXONOMY_PARENT:
 				return disjointTaxonomyParent != null;
 		}
 		return super.eIsSet(featureID);

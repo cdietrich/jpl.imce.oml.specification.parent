@@ -22,7 +22,7 @@ package jpl.imce.oml.specification.ecore.provider;
 import java.util.Collection;
 import java.util.List;
 
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.TerminologyExtensionAxiom;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -77,7 +77,7 @@ public class TerminologyExtensionAxiomItemProvider extends TerminologyBoxAxiomIt
 				 getResourceLocator(),
 				 getString("_UI_TerminologyExtensionAxiom_extendedTerminology_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TerminologyExtensionAxiom_extendedTerminology_feature", "_UI_TerminologyExtensionAxiom_type"),
-				 OMLPackage.eINSTANCE.getTerminologyExtensionAxiom_ExtendedTerminology(),
+				 EcorePackage.eINSTANCE.getTerminologyExtensionAxiom_ExtendedTerminology(),
 				 true,
 				 false,
 				 true,

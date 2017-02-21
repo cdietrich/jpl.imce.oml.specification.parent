@@ -23,8 +23,7 @@ import java.util.Collection;
 import java.util.List;
 
 import jpl.imce.oml.specification.ecore.DataRelationshipFromEntity;
-import jpl.imce.oml.specification.ecore.OMLPackage;
-
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -80,7 +79,7 @@ public class DataRelationshipFromEntityItemProvider extends DataRelationshipDoma
 				 getResourceLocator(),
 				 getString("_UI_DataRelationshipFromEntity_domain_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataRelationshipFromEntity_domain_feature", "_UI_DataRelationshipFromEntity_type"),
-				 OMLPackage.eINSTANCE.getDataRelationshipFromEntity_Domain(),
+				 EcorePackage.eINSTANCE.getDataRelationshipFromEntity_Domain(),
 				 true,
 				 false,
 				 true,
@@ -102,7 +101,7 @@ public class DataRelationshipFromEntityItemProvider extends DataRelationshipDoma
 				 getResourceLocator(),
 				 getString("_UI_DataRelationshipFromEntity_isIdentityCriteria_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataRelationshipFromEntity_isIdentityCriteria_feature", "_UI_DataRelationshipFromEntity_type"),
-				 OMLPackage.eINSTANCE.getDataRelationshipFromEntity_IsIdentityCriteria(),
+				 EcorePackage.eINSTANCE.getDataRelationshipFromEntity_IsIdentityCriteria(),
 				 true,
 				 false,
 				 false,
@@ -136,7 +135,7 @@ public class DataRelationshipFromEntityItemProvider extends DataRelationshipDoma
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DataRelationshipFromEntity.class)) {
-			case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA:
+			case EcorePackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

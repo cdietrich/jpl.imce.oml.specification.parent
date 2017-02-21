@@ -28,8 +28,8 @@ import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.Aspect;
 import jpl.imce.oml.specification.ecore.AspectSpecializationAxiom;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Entity;
-import jpl.imce.oml.specification.ecore.OMLPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -92,7 +92,7 @@ public class AspectSpecializationAxiomImpl extends SpecializationAxiomImpl imple
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getAspectSpecializationAxiom();
+		return EcorePackage.eINSTANCE.getAspectSpecializationAxiom();
 	}
 
 	/**
@@ -106,7 +106,7 @@ public class AspectSpecializationAxiomImpl extends SpecializationAxiomImpl imple
 			subEntity = (Entity)eResolveProxy(oldSubEntity);
 			if (subEntity != oldSubEntity) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.ASPECT_SPECIALIZATION_AXIOM__SUB_ENTITY, oldSubEntity, subEntity));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.ASPECT_SPECIALIZATION_AXIOM__SUB_ENTITY, oldSubEntity, subEntity));
 			}
 		}
 		return subEntity;
@@ -130,7 +130,7 @@ public class AspectSpecializationAxiomImpl extends SpecializationAxiomImpl imple
 		Entity oldSubEntity = subEntity;
 		subEntity = newSubEntity;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ASPECT_SPECIALIZATION_AXIOM__SUB_ENTITY, oldSubEntity, subEntity));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ASPECT_SPECIALIZATION_AXIOM__SUB_ENTITY, oldSubEntity, subEntity));
 	}
 
 	/**
@@ -144,7 +144,7 @@ public class AspectSpecializationAxiomImpl extends SpecializationAxiomImpl imple
 			superAspect = (Aspect)eResolveProxy(oldSuperAspect);
 			if (superAspect != oldSuperAspect) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.ASPECT_SPECIALIZATION_AXIOM__SUPER_ASPECT, oldSuperAspect, superAspect));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.ASPECT_SPECIALIZATION_AXIOM__SUPER_ASPECT, oldSuperAspect, superAspect));
 			}
 		}
 		return superAspect;
@@ -168,7 +168,7 @@ public class AspectSpecializationAxiomImpl extends SpecializationAxiomImpl imple
 		Aspect oldSuperAspect = superAspect;
 		superAspect = newSuperAspect;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ASPECT_SPECIALIZATION_AXIOM__SUPER_ASPECT, oldSuperAspect, superAspect));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ASPECT_SPECIALIZATION_AXIOM__SUPER_ASPECT, oldSuperAspect, superAspect));
 	}
 
 	/**
@@ -220,10 +220,10 @@ public class AspectSpecializationAxiomImpl extends SpecializationAxiomImpl imple
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.ASPECT_SPECIALIZATION_AXIOM__SUB_ENTITY:
+			case EcorePackage.ASPECT_SPECIALIZATION_AXIOM__SUB_ENTITY:
 				if (resolve) return getSubEntity();
 				return basicGetSubEntity();
-			case OMLPackage.ASPECT_SPECIALIZATION_AXIOM__SUPER_ASPECT:
+			case EcorePackage.ASPECT_SPECIALIZATION_AXIOM__SUPER_ASPECT:
 				if (resolve) return getSuperAspect();
 				return basicGetSuperAspect();
 		}
@@ -238,10 +238,10 @@ public class AspectSpecializationAxiomImpl extends SpecializationAxiomImpl imple
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.ASPECT_SPECIALIZATION_AXIOM__SUB_ENTITY:
+			case EcorePackage.ASPECT_SPECIALIZATION_AXIOM__SUB_ENTITY:
 				setSubEntity((Entity)newValue);
 				return;
-			case OMLPackage.ASPECT_SPECIALIZATION_AXIOM__SUPER_ASPECT:
+			case EcorePackage.ASPECT_SPECIALIZATION_AXIOM__SUPER_ASPECT:
 				setSuperAspect((Aspect)newValue);
 				return;
 		}
@@ -256,10 +256,10 @@ public class AspectSpecializationAxiomImpl extends SpecializationAxiomImpl imple
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.ASPECT_SPECIALIZATION_AXIOM__SUB_ENTITY:
+			case EcorePackage.ASPECT_SPECIALIZATION_AXIOM__SUB_ENTITY:
 				setSubEntity((Entity)null);
 				return;
-			case OMLPackage.ASPECT_SPECIALIZATION_AXIOM__SUPER_ASPECT:
+			case EcorePackage.ASPECT_SPECIALIZATION_AXIOM__SUPER_ASPECT:
 				setSuperAspect((Aspect)null);
 				return;
 		}
@@ -274,9 +274,9 @@ public class AspectSpecializationAxiomImpl extends SpecializationAxiomImpl imple
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.ASPECT_SPECIALIZATION_AXIOM__SUB_ENTITY:
+			case EcorePackage.ASPECT_SPECIALIZATION_AXIOM__SUB_ENTITY:
 				return subEntity != null;
-			case OMLPackage.ASPECT_SPECIALIZATION_AXIOM__SUPER_ASPECT:
+			case EcorePackage.ASPECT_SPECIALIZATION_AXIOM__SUPER_ASPECT:
 				return superAspect != null;
 		}
 		return super.eIsSet(featureID);
@@ -290,11 +290,11 @@ public class AspectSpecializationAxiomImpl extends SpecializationAxiomImpl imple
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.ASPECT_SPECIALIZATION_AXIOM___CALCULATE_UUID:
+			case EcorePackage.ASPECT_SPECIALIZATION_AXIOM___CALCULATE_UUID:
 				return calculateUUID();
-			case OMLPackage.ASPECT_SPECIALIZATION_AXIOM___CHILD:
+			case EcorePackage.ASPECT_SPECIALIZATION_AXIOM___CHILD:
 				return child();
-			case OMLPackage.ASPECT_SPECIALIZATION_AXIOM___PARENT:
+			case EcorePackage.ASPECT_SPECIALIZATION_AXIOM___PARENT:
 				return parent();
 		}
 		return super.eInvoke(operationID, arguments);

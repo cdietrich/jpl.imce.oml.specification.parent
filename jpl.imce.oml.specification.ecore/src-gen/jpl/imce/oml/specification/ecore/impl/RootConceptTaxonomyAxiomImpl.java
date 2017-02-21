@@ -28,7 +28,7 @@ import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.Bundle;
 import jpl.imce.oml.specification.ecore.Concept;
-import jpl.imce.oml.specification.ecore.OMLPackage;
+import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.RootConceptTaxonomyAxiom;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -81,7 +81,7 @@ public class RootConceptTaxonomyAxiomImpl extends TerminologyBundleStatementImpl
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OMLPackage.eINSTANCE.getRootConceptTaxonomyAxiom();
+		return EcorePackage.eINSTANCE.getRootConceptTaxonomyAxiom();
 	}
 
 	/**
@@ -95,7 +95,7 @@ public class RootConceptTaxonomyAxiomImpl extends TerminologyBundleStatementImpl
 			root = (Concept)eResolveProxy(oldRoot);
 			if (root != oldRoot) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.ROOT_CONCEPT_TAXONOMY_AXIOM__ROOT, oldRoot, root));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.ROOT_CONCEPT_TAXONOMY_AXIOM__ROOT, oldRoot, root));
 			}
 		}
 		return root;
@@ -119,7 +119,7 @@ public class RootConceptTaxonomyAxiomImpl extends TerminologyBundleStatementImpl
 		Concept oldRoot = root;
 		root = newRoot;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ROOT_CONCEPT_TAXONOMY_AXIOM__ROOT, oldRoot, root));
+			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ROOT_CONCEPT_TAXONOMY_AXIOM__ROOT, oldRoot, root));
 	}
 
 	/**
@@ -153,7 +153,7 @@ public class RootConceptTaxonomyAxiomImpl extends TerminologyBundleStatementImpl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OMLPackage.ROOT_CONCEPT_TAXONOMY_AXIOM__ROOT:
+			case EcorePackage.ROOT_CONCEPT_TAXONOMY_AXIOM__ROOT:
 				if (resolve) return getRoot();
 				return basicGetRoot();
 		}
@@ -168,7 +168,7 @@ public class RootConceptTaxonomyAxiomImpl extends TerminologyBundleStatementImpl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OMLPackage.ROOT_CONCEPT_TAXONOMY_AXIOM__ROOT:
+			case EcorePackage.ROOT_CONCEPT_TAXONOMY_AXIOM__ROOT:
 				setRoot((Concept)newValue);
 				return;
 		}
@@ -183,7 +183,7 @@ public class RootConceptTaxonomyAxiomImpl extends TerminologyBundleStatementImpl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OMLPackage.ROOT_CONCEPT_TAXONOMY_AXIOM__ROOT:
+			case EcorePackage.ROOT_CONCEPT_TAXONOMY_AXIOM__ROOT:
 				setRoot((Concept)null);
 				return;
 		}
@@ -198,7 +198,7 @@ public class RootConceptTaxonomyAxiomImpl extends TerminologyBundleStatementImpl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OMLPackage.ROOT_CONCEPT_TAXONOMY_AXIOM__ROOT:
+			case EcorePackage.ROOT_CONCEPT_TAXONOMY_AXIOM__ROOT:
 				return root != null;
 		}
 		return super.eIsSet(featureID);
@@ -212,7 +212,7 @@ public class RootConceptTaxonomyAxiomImpl extends TerminologyBundleStatementImpl
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OMLPackage.ROOT_CONCEPT_TAXONOMY_AXIOM___CALCULATE_UUID:
+			case EcorePackage.ROOT_CONCEPT_TAXONOMY_AXIOM___CALCULATE_UUID:
 				return calculateUUID();
 		}
 		return super.eInvoke(operationID, arguments);

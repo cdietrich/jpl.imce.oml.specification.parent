@@ -36,7 +36,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.TerminologyBundleStatement#getBundle <em>Bundle</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyBundleStatement()
+ * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyBundleStatement()
  * @model abstract="true"
  * @generated
  */
@@ -52,7 +52,7 @@ public interface TerminologyBundleStatement extends TerminologyThing {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Bundle</em>' container reference.
 	 * @see #setBundle(Bundle)
-	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyBundleStatement_Bundle()
+	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyBundleStatement_Bundle()
 	 * @see jpl.imce.oml.specification.ecore.Bundle#getBundleStatements
 	 * @model opposite="bundleStatements" required="true" transient="false"
 	 * @generated
