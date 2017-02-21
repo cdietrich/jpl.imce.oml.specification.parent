@@ -40,7 +40,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see jpl.imce.oml.specification.ecore.OMLFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/emf/2002/GenModel copyrightText='\nCopyright 2016 California Institute of Technology (\"Caltech\").\nU.S. Government sponsorship acknowledged.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n     http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n' featureDelegation='None' modelPluginVariables='org.eclipse.xtext.xbase.lib org.eclipse.emf.ecore.xcore.lib org.eclipse.emf.cdo' rootExtendsClass='org.eclipse.emf.internal.cdo.CDOObjectImpl' rootExtendsInterface='org.eclipse.emf.cdo.CDOObject' childCreationExtenders='true' pluginKey='OML' modelName='OML' prefix='OML' modelPluginID='jpl.imce.oml.specification.ecore' modelDirectory='/jpl.imce.oml.specification.ecore/src-gen' editPluginID='jpl.imce.oml.specification.ecore.edit' editPluginClass='jpl.imce.oml.specification.ecore.edit.provider.OMLEditPlugin' editDirectory='/jpl.imce.oml.specification.ecore.edit/src-gen' editorPluginID='jpl.imce.oml.specification.ecore.editor' editorPluginClass='jpl.imce.oml.specification.eore.editor.presentation.OMLEditorPlugin' editorDirectory='/jpl.imce.oml.specification.ecore.editor/src-gen' basePackage='jpl.imce.oml.specification'"
+ *        annotation="http://www.eclipse.org/emf/2002/GenModel copyrightText='\nCopyright 2016 California Institute of Technology (\"Caltech\").\nU.S. Government sponsorship acknowledged.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n     http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n' featureDelegation='None' modelPluginVariables='org.eclipse.xtext.xbase.lib org.eclipse.emf.ecore.xcore.lib org.eclipse.emf.cdo' rootExtendsClass='org.eclipse.emf.internal.cdo.CDOObjectImpl' rootExtendsInterface='org.eclipse.emf.cdo.CDOObject' childCreationExtenders='true' pluginKey='OML' prefix='OML' modelName='OML' modelPluginID='jpl.imce.oml.specification.ecore' modelDirectory='/jpl.imce.oml.specification.ecore/src-gen' editPluginID='jpl.imce.oml.specification.ecore.edit' editPluginClass='jpl.imce.oml.specification.ecore.edit.provider.OMLEditPlugin' editDirectory='/jpl.imce.oml.specification.ecore.edit/src-gen' editorPluginID='jpl.imce.oml.specification.ecore.editor' editorPluginClass='jpl.imce.oml.specification.eore.editor.presentation.OMLEditorPlugin' editorDirectory='/jpl.imce.oml.specification.ecore.editor/src-gen' basePackage='jpl.imce.oml.specification'"
  *        annotation="http://www.eclipse.org/emf/2011/Xcore Collection='http://imce.jpl.nasa.gov/oml/Collection' Override='http://imce.jpl.nasa.gov/oml/Override' NotFunctionalAPI='http://imce.jpl.nasa.gov/oml/NotFunctionalAPI' FunctionalInterface='http://imce.jpl.nasa.gov/oml/FunctionalInterface' NotSchema='http://imce.jpl.nasa.gov/oml/NotSchema' ValueTable='http://imce.jpl.nasa.gov/oml/ValueTable' Scala='http://imce.jpl.nasa.gov/oml/Scala' IsOrderingKey='http://imce.jpl.nasa.gov/oml/IsOrderingKey' CopyConstructor='http://imce.jpl.nasa.gov/oml/CopyConstructor' Glossary='http://imce.jpl.nasa.gov/oml/Glossary'"
  * @generated
  */
@@ -59,7 +59,7 @@ public interface OMLPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "jpl.imce.oml.specification.ecore";
+	String eNS_URI = "http://imce.jpl.nasa.gov/oml";
 
 	/**
 	 * The package namespace name.
@@ -67,7 +67,7 @@ public interface OMLPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "ecore";
+	String eNS_PREFIX = "oml";
 
 	/**
 	 * The singleton instance of the package.

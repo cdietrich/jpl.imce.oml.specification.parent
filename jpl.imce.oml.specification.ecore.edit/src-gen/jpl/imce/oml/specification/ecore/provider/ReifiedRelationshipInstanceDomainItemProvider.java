@@ -21,8 +21,7 @@ package jpl.imce.oml.specification.ecore.provider;
 
 import java.util.Collection;
 import java.util.List;
-
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceDomain;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -79,7 +78,7 @@ public class ReifiedRelationshipInstanceDomainItemProvider extends TerminologyIn
 				 getResourceLocator(),
 				 getString("_UI_ReifiedRelationshipInstanceDomain_descriptionBox_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ReifiedRelationshipInstanceDomain_descriptionBox_feature", "_UI_ReifiedRelationshipInstanceDomain_type"),
-				 EcorePackage.eINSTANCE.getReifiedRelationshipInstanceDomain_DescriptionBox(),
+				 OMLPackage.eINSTANCE.getReifiedRelationshipInstanceDomain_DescriptionBox(),
 				 true,
 				 false,
 				 true,
@@ -101,7 +100,7 @@ public class ReifiedRelationshipInstanceDomainItemProvider extends TerminologyIn
 				 getResourceLocator(),
 				 getString("_UI_ReifiedRelationshipInstanceDomain_reifiedRelationshipInstance_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ReifiedRelationshipInstanceDomain_reifiedRelationshipInstance_feature", "_UI_ReifiedRelationshipInstanceDomain_type"),
-				 EcorePackage.eINSTANCE.getReifiedRelationshipInstanceDomain_ReifiedRelationshipInstance(),
+				 OMLPackage.eINSTANCE.getReifiedRelationshipInstanceDomain_ReifiedRelationshipInstance(),
 				 true,
 				 false,
 				 true,
@@ -123,7 +122,7 @@ public class ReifiedRelationshipInstanceDomainItemProvider extends TerminologyIn
 				 getResourceLocator(),
 				 getString("_UI_ReifiedRelationshipInstanceDomain_domain_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ReifiedRelationshipInstanceDomain_domain_feature", "_UI_ReifiedRelationshipInstanceDomain_type"),
-				 EcorePackage.eINSTANCE.getReifiedRelationshipInstanceDomain_Domain(),
+				 OMLPackage.eINSTANCE.getReifiedRelationshipInstanceDomain_Domain(),
 				 true,
 				 false,
 				 true,

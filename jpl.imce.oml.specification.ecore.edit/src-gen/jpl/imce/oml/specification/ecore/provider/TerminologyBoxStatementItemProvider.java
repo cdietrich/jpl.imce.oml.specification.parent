@@ -21,8 +21,7 @@ package jpl.imce.oml.specification.ecore.provider;
 
 import java.util.Collection;
 import java.util.List;
-
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.TerminologyBoxStatement;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -77,7 +76,7 @@ public class TerminologyBoxStatementItemProvider extends TerminologyThingItemPro
 				 getResourceLocator(),
 				 getString("_UI_TerminologyBoxStatement_tbox_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TerminologyBoxStatement_tbox_feature", "_UI_TerminologyBoxStatement_type"),
-				 EcorePackage.eINSTANCE.getTerminologyBoxStatement_Tbox(),
+				 OMLPackage.eINSTANCE.getTerminologyBoxStatement_Tbox(),
 				 true,
 				 false,
 				 true,

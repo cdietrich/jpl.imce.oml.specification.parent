@@ -19,8 +19,8 @@
 package jpl.imce.oml.specification.ecore.impl;
 
 import jpl.imce.oml.specification.ecore.DataRelationshipFromEntity;
-import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Entity;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -91,7 +91,7 @@ public abstract class DataRelationshipFromEntityImpl extends DataRelationshipDom
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getDataRelationshipFromEntity();
+		return OMLPackage.eINSTANCE.getDataRelationshipFromEntity();
 	}
 
 	/**
@@ -105,7 +105,7 @@ public abstract class DataRelationshipFromEntityImpl extends DataRelationshipDom
 			domain = (Entity)eResolveProxy(oldDomain);
 			if (domain != oldDomain) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN, oldDomain, domain));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN, oldDomain, domain));
 			}
 		}
 		return domain;
@@ -129,7 +129,7 @@ public abstract class DataRelationshipFromEntityImpl extends DataRelationshipDom
 		Entity oldDomain = domain;
 		domain = newDomain;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN, oldDomain, domain));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN, oldDomain, domain));
 	}
 
 	/**
@@ -150,7 +150,7 @@ public abstract class DataRelationshipFromEntityImpl extends DataRelationshipDom
 		boolean oldIsIdentityCriteria = isIdentityCriteria;
 		isIdentityCriteria = newIsIdentityCriteria;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA, oldIsIdentityCriteria, isIdentityCriteria));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA, oldIsIdentityCriteria, isIdentityCriteria));
 	}
 
 	/**
@@ -161,10 +161,10 @@ public abstract class DataRelationshipFromEntityImpl extends DataRelationshipDom
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN:
+			case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN:
 				if (resolve) return getDomain();
 				return basicGetDomain();
-			case EcorePackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA:
+			case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA:
 				return isIsIdentityCriteria();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -178,10 +178,10 @@ public abstract class DataRelationshipFromEntityImpl extends DataRelationshipDom
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN:
+			case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN:
 				setDomain((Entity)newValue);
 				return;
-			case EcorePackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA:
+			case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA:
 				setIsIdentityCriteria((Boolean)newValue);
 				return;
 		}
@@ -196,10 +196,10 @@ public abstract class DataRelationshipFromEntityImpl extends DataRelationshipDom
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN:
+			case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN:
 				setDomain((Entity)null);
 				return;
-			case EcorePackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA:
+			case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA:
 				setIsIdentityCriteria(IS_IDENTITY_CRITERIA_EDEFAULT);
 				return;
 		}
@@ -214,9 +214,9 @@ public abstract class DataRelationshipFromEntityImpl extends DataRelationshipDom
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN:
+			case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN:
 				return domain != null;
-			case EcorePackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA:
+			case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA:
 				return isIdentityCriteria != IS_IDENTITY_CRITERIA_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

@@ -35,7 +35,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion#getName <em>Name</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyInstanceAssertion()
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyInstanceAssertion()
  * @model abstract="true"
  * @generated
  */
@@ -50,7 +50,7 @@ public interface TerminologyInstanceAssertion extends TerminologyThing, Resource
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyInstanceAssertion_Name()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyInstanceAssertion_Name()
 	 * @model unique="false" id="true" dataType="jpl.imce.oml.specification.ecore.LocalName" required="true"
 	 * @generated
 	 */

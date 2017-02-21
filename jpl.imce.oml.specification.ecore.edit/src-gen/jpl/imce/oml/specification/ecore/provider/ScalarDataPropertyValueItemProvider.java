@@ -21,8 +21,7 @@ package jpl.imce.oml.specification.ecore.provider;
 
 import java.util.Collection;
 import java.util.List;
-
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.ScalarDataPropertyValue;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -81,7 +80,7 @@ public class ScalarDataPropertyValueItemProvider extends TerminologyInstanceAsse
 				 getResourceLocator(),
 				 getString("_UI_ScalarDataPropertyValue_singletonInstance_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ScalarDataPropertyValue_singletonInstance_feature", "_UI_ScalarDataPropertyValue_type"),
-				 EcorePackage.eINSTANCE.getScalarDataPropertyValue_SingletonInstance(),
+				 OMLPackage.eINSTANCE.getScalarDataPropertyValue_SingletonInstance(),
 				 true,
 				 false,
 				 true,
@@ -103,7 +102,7 @@ public class ScalarDataPropertyValueItemProvider extends TerminologyInstanceAsse
 				 getResourceLocator(),
 				 getString("_UI_ScalarDataPropertyValue_scalarDataProperty_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ScalarDataPropertyValue_scalarDataProperty_feature", "_UI_ScalarDataPropertyValue_type"),
-				 EcorePackage.eINSTANCE.getScalarDataPropertyValue_ScalarDataProperty(),
+				 OMLPackage.eINSTANCE.getScalarDataPropertyValue_ScalarDataProperty(),
 				 true,
 				 false,
 				 true,
@@ -125,7 +124,7 @@ public class ScalarDataPropertyValueItemProvider extends TerminologyInstanceAsse
 				 getResourceLocator(),
 				 getString("_UI_ScalarDataPropertyValue_scalarPropertyValue_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ScalarDataPropertyValue_scalarPropertyValue_feature", "_UI_ScalarDataPropertyValue_type"),
-				 EcorePackage.eINSTANCE.getScalarDataPropertyValue_ScalarPropertyValue(),
+				 OMLPackage.eINSTANCE.getScalarDataPropertyValue_ScalarPropertyValue(),
 				 true,
 				 false,
 				 false,
@@ -172,7 +171,7 @@ public class ScalarDataPropertyValueItemProvider extends TerminologyInstanceAsse
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ScalarDataPropertyValue.class)) {
-			case EcorePackage.SCALAR_DATA_PROPERTY_VALUE__SCALAR_PROPERTY_VALUE:
+			case OMLPackage.SCALAR_DATA_PROPERTY_VALUE__SCALAR_PROPERTY_VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -23,7 +23,7 @@ import java.util.Collection;
 import java.util.List;
 
 import jpl.imce.oml.specification.ecore.AnnotationEntry;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.edit.provider.OMLEditPlugin;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -97,7 +97,7 @@ public class AnnotationEntryItemProvider
 				 getResourceLocator(),
 				 getString("_UI_AnnotationEntry_module_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationEntry_module_feature", "_UI_AnnotationEntry_type"),
-				 EcorePackage.eINSTANCE.getAnnotationEntry_Module(),
+				 OMLPackage.eINSTANCE.getAnnotationEntry_Module(),
 				 true,
 				 false,
 				 true,
@@ -119,7 +119,7 @@ public class AnnotationEntryItemProvider
 				 getResourceLocator(),
 				 getString("_UI_AnnotationEntry_subject_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationEntry_subject_feature", "_UI_AnnotationEntry_type"),
-				 EcorePackage.eINSTANCE.getAnnotationEntry_Subject(),
+				 OMLPackage.eINSTANCE.getAnnotationEntry_Subject(),
 				 true,
 				 false,
 				 true,
@@ -141,7 +141,7 @@ public class AnnotationEntryItemProvider
 				 getResourceLocator(),
 				 getString("_UI_AnnotationEntry_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationEntry_value_feature", "_UI_AnnotationEntry_type"),
-				 EcorePackage.eINSTANCE.getAnnotationEntry_Value(),
+				 OMLPackage.eINSTANCE.getAnnotationEntry_Value(),
 				 true,
 				 false,
 				 false,
@@ -188,7 +188,7 @@ public class AnnotationEntryItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AnnotationEntry.class)) {
-			case EcorePackage.ANNOTATION_ENTRY__VALUE:
+			case OMLPackage.ANNOTATION_ENTRY__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

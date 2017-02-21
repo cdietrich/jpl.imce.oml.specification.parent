@@ -29,7 +29,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-model-doc -->
  *
  *
- * @see jpl.imce.oml.specification.ecore.EcorePackage#getAxiom()
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getAxiom()
  * @model abstract="true"
  * @generated
  */

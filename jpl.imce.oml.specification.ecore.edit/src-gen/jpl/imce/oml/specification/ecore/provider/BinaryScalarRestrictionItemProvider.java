@@ -23,7 +23,7 @@ import java.util.Collection;
 import java.util.List;
 
 import jpl.imce.oml.specification.ecore.BinaryScalarRestriction;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -80,7 +80,7 @@ public class BinaryScalarRestrictionItemProvider extends RestrictedDataRangeItem
 				 getResourceLocator(),
 				 getString("_UI_BinaryScalarRestriction_length_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_BinaryScalarRestriction_length_feature", "_UI_BinaryScalarRestriction_type"),
-				 EcorePackage.eINSTANCE.getBinaryScalarRestriction_Length(),
+				 OMLPackage.eINSTANCE.getBinaryScalarRestriction_Length(),
 				 true,
 				 false,
 				 false,
@@ -102,7 +102,7 @@ public class BinaryScalarRestrictionItemProvider extends RestrictedDataRangeItem
 				 getResourceLocator(),
 				 getString("_UI_BinaryScalarRestriction_minLength_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_BinaryScalarRestriction_minLength_feature", "_UI_BinaryScalarRestriction_type"),
-				 EcorePackage.eINSTANCE.getBinaryScalarRestriction_MinLength(),
+				 OMLPackage.eINSTANCE.getBinaryScalarRestriction_MinLength(),
 				 true,
 				 false,
 				 false,
@@ -124,7 +124,7 @@ public class BinaryScalarRestrictionItemProvider extends RestrictedDataRangeItem
 				 getResourceLocator(),
 				 getString("_UI_BinaryScalarRestriction_maxLength_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_BinaryScalarRestriction_maxLength_feature", "_UI_BinaryScalarRestriction_type"),
-				 EcorePackage.eINSTANCE.getBinaryScalarRestriction_MaxLength(),
+				 OMLPackage.eINSTANCE.getBinaryScalarRestriction_MaxLength(),
 				 true,
 				 false,
 				 false,
@@ -171,9 +171,9 @@ public class BinaryScalarRestrictionItemProvider extends RestrictedDataRangeItem
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(BinaryScalarRestriction.class)) {
-			case EcorePackage.BINARY_SCALAR_RESTRICTION__LENGTH:
-			case EcorePackage.BINARY_SCALAR_RESTRICTION__MIN_LENGTH:
-			case EcorePackage.BINARY_SCALAR_RESTRICTION__MAX_LENGTH:
+			case OMLPackage.BINARY_SCALAR_RESTRICTION__LENGTH:
+			case OMLPackage.BINARY_SCALAR_RESTRICTION__MIN_LENGTH:
+			case OMLPackage.BINARY_SCALAR_RESTRICTION__MAX_LENGTH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

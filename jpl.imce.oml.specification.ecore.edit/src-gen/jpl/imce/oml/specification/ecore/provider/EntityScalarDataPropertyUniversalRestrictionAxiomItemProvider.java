@@ -21,9 +21,8 @@ package jpl.imce.oml.specification.ecore.provider;
 
 import java.util.Collection;
 import java.util.List;
-
-import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.EntityScalarDataPropertyUniversalRestrictionAxiom;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -76,7 +75,7 @@ public class EntityScalarDataPropertyUniversalRestrictionAxiomItemProvider exten
 				 getResourceLocator(),
 				 getString("_UI_EntityScalarDataPropertyUniversalRestrictionAxiom_scalarRestriction_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityScalarDataPropertyUniversalRestrictionAxiom_scalarRestriction_feature", "_UI_EntityScalarDataPropertyUniversalRestrictionAxiom_type"),
-				 EcorePackage.eINSTANCE.getEntityScalarDataPropertyUniversalRestrictionAxiom_ScalarRestriction(),
+				 OMLPackage.eINSTANCE.getEntityScalarDataPropertyUniversalRestrictionAxiom_ScalarRestriction(),
 				 true,
 				 false,
 				 true,

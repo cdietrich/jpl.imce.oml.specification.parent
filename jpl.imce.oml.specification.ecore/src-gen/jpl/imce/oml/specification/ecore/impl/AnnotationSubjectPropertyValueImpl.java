@@ -20,7 +20,7 @@ package jpl.imce.oml.specification.ecore.impl;
 
 import jpl.imce.oml.specification.ecore.AnnotationProperty;
 import jpl.imce.oml.specification.ecore.AnnotationSubjectPropertyValue;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -93,7 +93,7 @@ public class AnnotationSubjectPropertyValueImpl extends CDOObjectImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getAnnotationSubjectPropertyValue();
+		return OMLPackage.eINSTANCE.getAnnotationSubjectPropertyValue();
 	}
 
 	/**
@@ -107,7 +107,7 @@ public class AnnotationSubjectPropertyValueImpl extends CDOObjectImpl implements
 			property = (AnnotationProperty)eResolveProxy(oldProperty);
 			if (property != oldProperty) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.ANNOTATION_SUBJECT_PROPERTY_VALUE__PROPERTY, oldProperty, property));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.ANNOTATION_SUBJECT_PROPERTY_VALUE__PROPERTY, oldProperty, property));
 			}
 		}
 		return property;
@@ -131,7 +131,7 @@ public class AnnotationSubjectPropertyValueImpl extends CDOObjectImpl implements
 		AnnotationProperty oldProperty = property;
 		property = newProperty;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ANNOTATION_SUBJECT_PROPERTY_VALUE__PROPERTY, oldProperty, property));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ANNOTATION_SUBJECT_PROPERTY_VALUE__PROPERTY, oldProperty, property));
 	}
 
 	/**
@@ -152,7 +152,7 @@ public class AnnotationSubjectPropertyValueImpl extends CDOObjectImpl implements
 		String oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ANNOTATION_SUBJECT_PROPERTY_VALUE__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ANNOTATION_SUBJECT_PROPERTY_VALUE__VALUE, oldValue, value));
 	}
 
 	/**
@@ -163,10 +163,10 @@ public class AnnotationSubjectPropertyValueImpl extends CDOObjectImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.ANNOTATION_SUBJECT_PROPERTY_VALUE__PROPERTY:
+			case OMLPackage.ANNOTATION_SUBJECT_PROPERTY_VALUE__PROPERTY:
 				if (resolve) return getProperty();
 				return basicGetProperty();
-			case EcorePackage.ANNOTATION_SUBJECT_PROPERTY_VALUE__VALUE:
+			case OMLPackage.ANNOTATION_SUBJECT_PROPERTY_VALUE__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -180,10 +180,10 @@ public class AnnotationSubjectPropertyValueImpl extends CDOObjectImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.ANNOTATION_SUBJECT_PROPERTY_VALUE__PROPERTY:
+			case OMLPackage.ANNOTATION_SUBJECT_PROPERTY_VALUE__PROPERTY:
 				setProperty((AnnotationProperty)newValue);
 				return;
-			case EcorePackage.ANNOTATION_SUBJECT_PROPERTY_VALUE__VALUE:
+			case OMLPackage.ANNOTATION_SUBJECT_PROPERTY_VALUE__VALUE:
 				setValue((String)newValue);
 				return;
 		}
@@ -198,10 +198,10 @@ public class AnnotationSubjectPropertyValueImpl extends CDOObjectImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.ANNOTATION_SUBJECT_PROPERTY_VALUE__PROPERTY:
+			case OMLPackage.ANNOTATION_SUBJECT_PROPERTY_VALUE__PROPERTY:
 				setProperty((AnnotationProperty)null);
 				return;
-			case EcorePackage.ANNOTATION_SUBJECT_PROPERTY_VALUE__VALUE:
+			case OMLPackage.ANNOTATION_SUBJECT_PROPERTY_VALUE__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
 		}
@@ -216,9 +216,9 @@ public class AnnotationSubjectPropertyValueImpl extends CDOObjectImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.ANNOTATION_SUBJECT_PROPERTY_VALUE__PROPERTY:
+			case OMLPackage.ANNOTATION_SUBJECT_PROPERTY_VALUE__PROPERTY:
 				return property != null;
-			case EcorePackage.ANNOTATION_SUBJECT_PROPERTY_VALUE__VALUE:
+			case OMLPackage.ANNOTATION_SUBJECT_PROPERTY_VALUE__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);

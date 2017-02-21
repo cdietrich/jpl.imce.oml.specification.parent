@@ -41,7 +41,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceDomain#getDomain <em>Domain</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.EcorePackage#getReifiedRelationshipInstanceDomain()
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getReifiedRelationshipInstanceDomain()
  * @model
  * @generated
  */
@@ -57,7 +57,7 @@ public interface ReifiedRelationshipInstanceDomain extends TerminologyInstanceAs
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Description Box</em>' container reference.
 	 * @see #setDescriptionBox(DescriptionBox)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getReifiedRelationshipInstanceDomain_DescriptionBox()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getReifiedRelationshipInstanceDomain_DescriptionBox()
 	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getReifiedRelationshipInstanceDomains
 	 * @model opposite="reifiedRelationshipInstanceDomains" required="true" transient="false"
 	 * @generated
@@ -84,7 +84,7 @@ public interface ReifiedRelationshipInstanceDomain extends TerminologyInstanceAs
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Reified Relationship Instance</em>' reference.
 	 * @see #setReifiedRelationshipInstance(ReifiedRelationshipInstance)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getReifiedRelationshipInstanceDomain_ReifiedRelationshipInstance()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getReifiedRelationshipInstanceDomain_ReifiedRelationshipInstance()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -110,7 +110,7 @@ public interface ReifiedRelationshipInstanceDomain extends TerminologyInstanceAs
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Domain</em>' reference.
 	 * @see #setDomain(ConceptualEntitySingletonInstance)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getReifiedRelationshipInstanceDomain_Domain()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getReifiedRelationshipInstanceDomain_Domain()
 	 * @model required="true"
 	 * @generated
 	 */

@@ -38,7 +38,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.StructuredDataPropertyValue#getStructuredPropertyTuple <em>Structured Property Tuple</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.EcorePackage#getStructuredDataPropertyValue()
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getStructuredDataPropertyValue()
  * @model
  * @generated
  */
@@ -54,7 +54,7 @@ public interface StructuredDataPropertyValue extends TerminologyInstanceAssertio
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Singleton Instance</em>' container reference.
 	 * @see #setSingletonInstance(SingletonInstance)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getStructuredDataPropertyValue_SingletonInstance()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getStructuredDataPropertyValue_SingletonInstance()
 	 * @see jpl.imce.oml.specification.ecore.SingletonInstance#getStructuredDataPropertyValues
 	 * @model opposite="structuredDataPropertyValues" required="true" transient="false"
 	 * @generated
@@ -81,7 +81,7 @@ public interface StructuredDataPropertyValue extends TerminologyInstanceAssertio
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Structured Data Property</em>' reference.
 	 * @see #setStructuredDataProperty(DataRelationshipToStructure)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getStructuredDataPropertyValue_StructuredDataProperty()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getStructuredDataPropertyValue_StructuredDataProperty()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -108,7 +108,7 @@ public interface StructuredDataPropertyValue extends TerminologyInstanceAssertio
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Structured Property Tuple</em>' containment reference.
 	 * @see #setStructuredPropertyTuple(DataStructureTuple)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getStructuredDataPropertyValue_StructuredPropertyTuple()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getStructuredDataPropertyValue_StructuredPropertyTuple()
 	 * @see jpl.imce.oml.specification.ecore.DataStructureTuple#getStructuredDataPropertyValue
 	 * @model opposite="structuredDataPropertyValue" containment="true" required="true"
 	 * @generated

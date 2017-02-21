@@ -18,7 +18,7 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.UnaryTermKind;
 
 import org.eclipse.emf.ecore.EClass;
@@ -49,7 +49,7 @@ public abstract class UnaryTermKindImpl extends CDOObjectImpl implements UnaryTe
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getUnaryTermKind();
+		return OMLPackage.eINSTANCE.getUnaryTermKind();
 	}
 
 } //UnaryTermKindImpl

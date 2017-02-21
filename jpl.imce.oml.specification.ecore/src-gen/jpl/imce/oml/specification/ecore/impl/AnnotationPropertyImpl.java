@@ -23,7 +23,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.AnnotationProperty;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -106,7 +106,7 @@ public class AnnotationPropertyImpl extends CDOObjectImpl implements AnnotationP
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getAnnotationProperty();
+		return OMLPackage.eINSTANCE.getAnnotationProperty();
 	}
 
 	/**
@@ -127,7 +127,7 @@ public class AnnotationPropertyImpl extends CDOObjectImpl implements AnnotationP
 		String oldIri = iri;
 		iri = newIri;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ANNOTATION_PROPERTY__IRI, oldIri, iri));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ANNOTATION_PROPERTY__IRI, oldIri, iri));
 	}
 
 	/**
@@ -148,7 +148,7 @@ public class AnnotationPropertyImpl extends CDOObjectImpl implements AnnotationP
 		String oldAbbrevIRI = abbrevIRI;
 		abbrevIRI = newAbbrevIRI;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ANNOTATION_PROPERTY__ABBREV_IRI, oldAbbrevIRI, abbrevIRI));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ANNOTATION_PROPERTY__ABBREV_IRI, oldAbbrevIRI, abbrevIRI));
 	}
 
 	/**
@@ -170,9 +170,9 @@ public class AnnotationPropertyImpl extends CDOObjectImpl implements AnnotationP
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.ANNOTATION_PROPERTY__IRI:
+			case OMLPackage.ANNOTATION_PROPERTY__IRI:
 				return getIri();
-			case EcorePackage.ANNOTATION_PROPERTY__ABBREV_IRI:
+			case OMLPackage.ANNOTATION_PROPERTY__ABBREV_IRI:
 				return getAbbrevIRI();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -186,10 +186,10 @@ public class AnnotationPropertyImpl extends CDOObjectImpl implements AnnotationP
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.ANNOTATION_PROPERTY__IRI:
+			case OMLPackage.ANNOTATION_PROPERTY__IRI:
 				setIri((String)newValue);
 				return;
-			case EcorePackage.ANNOTATION_PROPERTY__ABBREV_IRI:
+			case OMLPackage.ANNOTATION_PROPERTY__ABBREV_IRI:
 				setAbbrevIRI((String)newValue);
 				return;
 		}
@@ -204,10 +204,10 @@ public class AnnotationPropertyImpl extends CDOObjectImpl implements AnnotationP
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.ANNOTATION_PROPERTY__IRI:
+			case OMLPackage.ANNOTATION_PROPERTY__IRI:
 				setIri(IRI_EDEFAULT);
 				return;
-			case EcorePackage.ANNOTATION_PROPERTY__ABBREV_IRI:
+			case OMLPackage.ANNOTATION_PROPERTY__ABBREV_IRI:
 				setAbbrevIRI(ABBREV_IRI_EDEFAULT);
 				return;
 		}
@@ -222,9 +222,9 @@ public class AnnotationPropertyImpl extends CDOObjectImpl implements AnnotationP
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.ANNOTATION_PROPERTY__IRI:
+			case OMLPackage.ANNOTATION_PROPERTY__IRI:
 				return IRI_EDEFAULT == null ? iri != null : !IRI_EDEFAULT.equals(iri);
-			case EcorePackage.ANNOTATION_PROPERTY__ABBREV_IRI:
+			case OMLPackage.ANNOTATION_PROPERTY__ABBREV_IRI:
 				return ABBREV_IRI_EDEFAULT == null ? abbrevIRI != null : !ABBREV_IRI_EDEFAULT.equals(abbrevIRI);
 		}
 		return super.eIsSet(featureID);
@@ -238,7 +238,7 @@ public class AnnotationPropertyImpl extends CDOObjectImpl implements AnnotationP
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.ANNOTATION_PROPERTY___UUID:
+			case OMLPackage.ANNOTATION_PROPERTY___UUID:
 				return uuid();
 		}
 		return super.eInvoke(operationID, arguments);

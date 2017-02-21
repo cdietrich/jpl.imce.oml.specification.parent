@@ -23,7 +23,7 @@ import java.lang.reflect.InvocationTargetException;
 import jpl.imce.oml.specification.ecore.DataRelationship;
 import jpl.imce.oml.specification.ecore.Datatype;
 import jpl.imce.oml.specification.ecore.DirectedBinaryRelationshipKind;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.Term;
 
 import org.eclipse.emf.common.util.EList;
@@ -54,7 +54,7 @@ public abstract class DataRelationshipImpl extends TermImpl implements DataRelat
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getDataRelationship();
+		return OMLPackage.eINSTANCE.getDataRelationship();
 	}
 
 	/**
@@ -106,8 +106,8 @@ public abstract class DataRelationshipImpl extends TermImpl implements DataRelat
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == DirectedBinaryRelationshipKind.class) {
 			switch (baseOperationID) {
-				case EcorePackage.DIRECTED_BINARY_RELATIONSHIP_KIND___RELATION_DOMAIN: return EcorePackage.DATA_RELATIONSHIP___RELATION_DOMAIN;
-				case EcorePackage.DIRECTED_BINARY_RELATIONSHIP_KIND___RELATION_RANGE: return EcorePackage.DATA_RELATIONSHIP___RELATION_RANGE;
+				case OMLPackage.DIRECTED_BINARY_RELATIONSHIP_KIND___RELATION_DOMAIN: return OMLPackage.DATA_RELATIONSHIP___RELATION_DOMAIN;
+				case OMLPackage.DIRECTED_BINARY_RELATIONSHIP_KIND___RELATION_RANGE: return OMLPackage.DATA_RELATIONSHIP___RELATION_RANGE;
 				default: return -1;
 			}
 		}
@@ -122,13 +122,13 @@ public abstract class DataRelationshipImpl extends TermImpl implements DataRelat
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.DATA_RELATIONSHIP___SOURCE:
+			case OMLPackage.DATA_RELATIONSHIP___SOURCE:
 				return source();
-			case EcorePackage.DATA_RELATIONSHIP___RELATION_DOMAIN:
+			case OMLPackage.DATA_RELATIONSHIP___RELATION_DOMAIN:
 				return relationDomain();
-			case EcorePackage.DATA_RELATIONSHIP___TARGET:
+			case OMLPackage.DATA_RELATIONSHIP___TARGET:
 				return target();
-			case EcorePackage.DATA_RELATIONSHIP___RELATION_RANGE:
+			case OMLPackage.DATA_RELATIONSHIP___RELATION_RANGE:
 				return relationRange();
 		}
 		return super.eInvoke(operationID, arguments);

@@ -18,7 +18,7 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.Structure;
 
 import org.eclipse.emf.ecore.EClass;
@@ -47,7 +47,7 @@ public class StructureImpl extends DatatypeImpl implements Structure {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getStructure();
+		return OMLPackage.eINSTANCE.getStructure();
 	}
 
 } //StructureImpl

@@ -38,7 +38,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.ScalarDataPropertyValue#getScalarPropertyValue <em>Scalar Property Value</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.EcorePackage#getScalarDataPropertyValue()
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getScalarDataPropertyValue()
  * @model
  * @generated
  */
@@ -54,7 +54,7 @@ public interface ScalarDataPropertyValue extends TerminologyInstanceAssertion {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Singleton Instance</em>' container reference.
 	 * @see #setSingletonInstance(SingletonInstance)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getScalarDataPropertyValue_SingletonInstance()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getScalarDataPropertyValue_SingletonInstance()
 	 * @see jpl.imce.oml.specification.ecore.SingletonInstance#getScalarDataPropertyValues
 	 * @model opposite="scalarDataPropertyValues" required="true" transient="false"
 	 * @generated
@@ -81,7 +81,7 @@ public interface ScalarDataPropertyValue extends TerminologyInstanceAssertion {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Scalar Data Property</em>' reference.
 	 * @see #setScalarDataProperty(DataRelationshipToScalar)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getScalarDataPropertyValue_ScalarDataProperty()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getScalarDataPropertyValue_ScalarDataProperty()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -107,7 +107,7 @@ public interface ScalarDataPropertyValue extends TerminologyInstanceAssertion {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Scalar Property Value</em>' attribute.
 	 * @see #setScalarPropertyValue(String)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getScalarDataPropertyValue_ScalarPropertyValue()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getScalarDataPropertyValue_ScalarPropertyValue()
 	 * @model unique="false" required="true"
 	 * @generated
 	 */

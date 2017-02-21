@@ -19,7 +19,7 @@
 package jpl.imce.oml.specification.ecore.impl;
 
 import jpl.imce.oml.specification.ecore.ConceptualEntity;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -79,7 +79,7 @@ public abstract class ConceptualEntityImpl extends CDOObjectImpl implements Conc
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getConceptualEntity();
+		return OMLPackage.eINSTANCE.getConceptualEntity();
 	}
 
 	/**
@@ -100,7 +100,7 @@ public abstract class ConceptualEntityImpl extends CDOObjectImpl implements Conc
 		boolean oldIsAbstract = isAbstract;
 		isAbstract = newIsAbstract;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.CONCEPTUAL_ENTITY__IS_ABSTRACT, oldIsAbstract, isAbstract));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.CONCEPTUAL_ENTITY__IS_ABSTRACT, oldIsAbstract, isAbstract));
 	}
 
 	/**
@@ -111,7 +111,7 @@ public abstract class ConceptualEntityImpl extends CDOObjectImpl implements Conc
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.CONCEPTUAL_ENTITY__IS_ABSTRACT:
+			case OMLPackage.CONCEPTUAL_ENTITY__IS_ABSTRACT:
 				return isIsAbstract();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -125,7 +125,7 @@ public abstract class ConceptualEntityImpl extends CDOObjectImpl implements Conc
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.CONCEPTUAL_ENTITY__IS_ABSTRACT:
+			case OMLPackage.CONCEPTUAL_ENTITY__IS_ABSTRACT:
 				setIsAbstract((Boolean)newValue);
 				return;
 		}
@@ -140,7 +140,7 @@ public abstract class ConceptualEntityImpl extends CDOObjectImpl implements Conc
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.CONCEPTUAL_ENTITY__IS_ABSTRACT:
+			case OMLPackage.CONCEPTUAL_ENTITY__IS_ABSTRACT:
 				setIsAbstract(IS_ABSTRACT_EDEFAULT);
 				return;
 		}
@@ -155,7 +155,7 @@ public abstract class ConceptualEntityImpl extends CDOObjectImpl implements Conc
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.CONCEPTUAL_ENTITY__IS_ABSTRACT:
+			case OMLPackage.CONCEPTUAL_ENTITY__IS_ABSTRACT:
 				return isAbstract != IS_ABSTRACT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

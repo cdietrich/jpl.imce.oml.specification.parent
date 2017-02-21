@@ -28,7 +28,7 @@ import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.Bundle;
 import jpl.imce.oml.specification.ecore.Concept;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.SpecificDisjointConceptAxiom;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -81,7 +81,7 @@ public class SpecificDisjointConceptAxiomImpl extends DisjointUnionOfConceptsAxi
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getSpecificDisjointConceptAxiom();
+		return OMLPackage.eINSTANCE.getSpecificDisjointConceptAxiom();
 	}
 
 	/**
@@ -95,7 +95,7 @@ public class SpecificDisjointConceptAxiomImpl extends DisjointUnionOfConceptsAxi
 			disjointLeaf = (Concept)eResolveProxy(oldDisjointLeaf);
 			if (disjointLeaf != oldDisjointLeaf) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.SPECIFIC_DISJOINT_CONCEPT_AXIOM__DISJOINT_LEAF, oldDisjointLeaf, disjointLeaf));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.SPECIFIC_DISJOINT_CONCEPT_AXIOM__DISJOINT_LEAF, oldDisjointLeaf, disjointLeaf));
 			}
 		}
 		return disjointLeaf;
@@ -119,7 +119,7 @@ public class SpecificDisjointConceptAxiomImpl extends DisjointUnionOfConceptsAxi
 		Concept oldDisjointLeaf = disjointLeaf;
 		disjointLeaf = newDisjointLeaf;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.SPECIFIC_DISJOINT_CONCEPT_AXIOM__DISJOINT_LEAF, oldDisjointLeaf, disjointLeaf));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.SPECIFIC_DISJOINT_CONCEPT_AXIOM__DISJOINT_LEAF, oldDisjointLeaf, disjointLeaf));
 	}
 
 	/**
@@ -153,7 +153,7 @@ public class SpecificDisjointConceptAxiomImpl extends DisjointUnionOfConceptsAxi
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.SPECIFIC_DISJOINT_CONCEPT_AXIOM__DISJOINT_LEAF:
+			case OMLPackage.SPECIFIC_DISJOINT_CONCEPT_AXIOM__DISJOINT_LEAF:
 				if (resolve) return getDisjointLeaf();
 				return basicGetDisjointLeaf();
 		}
@@ -168,7 +168,7 @@ public class SpecificDisjointConceptAxiomImpl extends DisjointUnionOfConceptsAxi
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.SPECIFIC_DISJOINT_CONCEPT_AXIOM__DISJOINT_LEAF:
+			case OMLPackage.SPECIFIC_DISJOINT_CONCEPT_AXIOM__DISJOINT_LEAF:
 				setDisjointLeaf((Concept)newValue);
 				return;
 		}
@@ -183,7 +183,7 @@ public class SpecificDisjointConceptAxiomImpl extends DisjointUnionOfConceptsAxi
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.SPECIFIC_DISJOINT_CONCEPT_AXIOM__DISJOINT_LEAF:
+			case OMLPackage.SPECIFIC_DISJOINT_CONCEPT_AXIOM__DISJOINT_LEAF:
 				setDisjointLeaf((Concept)null);
 				return;
 		}
@@ -198,7 +198,7 @@ public class SpecificDisjointConceptAxiomImpl extends DisjointUnionOfConceptsAxi
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.SPECIFIC_DISJOINT_CONCEPT_AXIOM__DISJOINT_LEAF:
+			case OMLPackage.SPECIFIC_DISJOINT_CONCEPT_AXIOM__DISJOINT_LEAF:
 				return disjointLeaf != null;
 		}
 		return super.eIsSet(featureID);
@@ -212,7 +212,7 @@ public class SpecificDisjointConceptAxiomImpl extends DisjointUnionOfConceptsAxi
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.SPECIFIC_DISJOINT_CONCEPT_AXIOM___CALCULATE_UUID:
+			case OMLPackage.SPECIFIC_DISJOINT_CONCEPT_AXIOM___CALCULATE_UUID:
 				return calculateUUID();
 		}
 		return super.eInvoke(operationID, arguments);

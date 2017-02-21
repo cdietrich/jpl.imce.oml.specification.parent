@@ -35,10 +35,10 @@ import jpl.imce.oml.specification.ecore.Aspect;
 import jpl.imce.oml.specification.ecore.Concept;
 import jpl.imce.oml.specification.ecore.DataRange;
 import jpl.imce.oml.specification.ecore.DataRelationship;
-import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Entity;
 import jpl.imce.oml.specification.ecore.EntityScalarDataProperty;
 import jpl.imce.oml.specification.ecore.Module;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.ReifiedRelationship;
 import jpl.imce.oml.specification.ecore.Resource;
 import jpl.imce.oml.specification.ecore.Scalar;
@@ -123,7 +123,7 @@ public abstract class ModuleImpl extends TerminologyThingImpl implements Module 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getModule();
+		return OMLPackage.eINSTANCE.getModule();
 	}
 
 	/**
@@ -144,7 +144,7 @@ public abstract class ModuleImpl extends TerminologyThingImpl implements Module 
 		String oldIri = iri;
 		iri = newIri;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.MODULE__IRI, oldIri, iri));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.MODULE__IRI, oldIri, iri));
 	}
 
 	/**
@@ -154,7 +154,7 @@ public abstract class ModuleImpl extends TerminologyThingImpl implements Module 
 	 */
 	public EList<Annotation> getAnnotations() {
 		if (annotations == null) {
-			annotations = new EObjectContainmentWithInverseEList<Annotation>(Annotation.class, this, EcorePackage.MODULE__ANNOTATIONS, EcorePackage.ANNOTATION__MODULE);
+			annotations = new EObjectContainmentWithInverseEList<Annotation>(Annotation.class, this, OMLPackage.MODULE__ANNOTATIONS, OMLPackage.ANNOTATION__MODULE);
 		}
 		return annotations;
 	}
@@ -387,7 +387,7 @@ public abstract class ModuleImpl extends TerminologyThingImpl implements Module 
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case EcorePackage.MODULE__ANNOTATIONS:
+			case OMLPackage.MODULE__ANNOTATIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAnnotations()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -401,7 +401,7 @@ public abstract class ModuleImpl extends TerminologyThingImpl implements Module 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case EcorePackage.MODULE__ANNOTATIONS:
+			case OMLPackage.MODULE__ANNOTATIONS:
 				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -415,9 +415,9 @@ public abstract class ModuleImpl extends TerminologyThingImpl implements Module 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.MODULE__IRI:
+			case OMLPackage.MODULE__IRI:
 				return getIri();
-			case EcorePackage.MODULE__ANNOTATIONS:
+			case OMLPackage.MODULE__ANNOTATIONS:
 				return getAnnotations();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -432,10 +432,10 @@ public abstract class ModuleImpl extends TerminologyThingImpl implements Module 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.MODULE__IRI:
+			case OMLPackage.MODULE__IRI:
 				setIri((String)newValue);
 				return;
-			case EcorePackage.MODULE__ANNOTATIONS:
+			case OMLPackage.MODULE__ANNOTATIONS:
 				getAnnotations().clear();
 				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
 				return;
@@ -451,10 +451,10 @@ public abstract class ModuleImpl extends TerminologyThingImpl implements Module 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.MODULE__IRI:
+			case OMLPackage.MODULE__IRI:
 				setIri(IRI_EDEFAULT);
 				return;
-			case EcorePackage.MODULE__ANNOTATIONS:
+			case OMLPackage.MODULE__ANNOTATIONS:
 				getAnnotations().clear();
 				return;
 		}
@@ -469,9 +469,9 @@ public abstract class ModuleImpl extends TerminologyThingImpl implements Module 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.MODULE__IRI:
+			case OMLPackage.MODULE__IRI:
 				return IRI_EDEFAULT == null ? iri != null : !IRI_EDEFAULT.equals(iri);
-			case EcorePackage.MODULE__ANNOTATIONS:
+			case OMLPackage.MODULE__ANNOTATIONS:
 				return annotations != null && !annotations.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -486,14 +486,14 @@ public abstract class ModuleImpl extends TerminologyThingImpl implements Module 
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == TerminologyThing.class) {
 			switch (baseOperationID) {
-				case EcorePackage.TERMINOLOGY_THING___CALCULATE_UUID: return EcorePackage.MODULE___CALCULATE_UUID;
+				case OMLPackage.TERMINOLOGY_THING___CALCULATE_UUID: return OMLPackage.MODULE___CALCULATE_UUID;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
 		if (baseClass == Resource.class) {
 			switch (baseOperationID) {
-				case EcorePackage.RESOURCE___IRI: return EcorePackage.MODULE___IRI;
-				case EcorePackage.RESOURCE___NAME: return EcorePackage.MODULE___NAME;
+				case OMLPackage.RESOURCE___IRI: return OMLPackage.MODULE___IRI;
+				case OMLPackage.RESOURCE___NAME: return OMLPackage.MODULE___NAME;
 				default: return -1;
 			}
 		}
@@ -509,45 +509,45 @@ public abstract class ModuleImpl extends TerminologyThingImpl implements Module 
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.MODULE___EXTENT:
+			case OMLPackage.MODULE___EXTENT:
 				return extent();
-			case EcorePackage.MODULE___CALCULATE_UUID:
+			case OMLPackage.MODULE___CALCULATE_UUID:
 				return calculateUUID();
-			case EcorePackage.MODULE___IRI:
+			case OMLPackage.MODULE___IRI:
 				return iri();
-			case EcorePackage.MODULE___NS_PREFIX:
+			case OMLPackage.MODULE___NS_PREFIX:
 				return nsPrefix();
-			case EcorePackage.MODULE___NAME:
+			case OMLPackage.MODULE___NAME:
 				return name();
-			case EcorePackage.MODULE___ANNOTATIONS_BY_SUBJECT:
+			case OMLPackage.MODULE___ANNOTATIONS_BY_SUBJECT:
 				return annotationsBySubject();
-			case EcorePackage.MODULE___ANNOTATIONS_BY_PROPERTY:
+			case OMLPackage.MODULE___ANNOTATIONS_BY_PROPERTY:
 				return annotationsByProperty();
-			case EcorePackage.MODULE___WITH_ANNOTATIONS__EMAP:
+			case OMLPackage.MODULE___WITH_ANNOTATIONS__EMAP:
 				return withAnnotations((EMap<AnnotationProperty, EList<AnnotationEntry>>)arguments.get(0));
-			case EcorePackage.MODULE___ENTITIES:
+			case OMLPackage.MODULE___ENTITIES:
 				return entities();
-			case EcorePackage.MODULE___ASPECTS:
+			case OMLPackage.MODULE___ASPECTS:
 				return aspects();
-			case EcorePackage.MODULE___CONCEPTS:
+			case OMLPackage.MODULE___CONCEPTS:
 				return concepts();
-			case EcorePackage.MODULE___REIFIED_RELATIONSHIPS:
+			case OMLPackage.MODULE___REIFIED_RELATIONSHIPS:
 				return reifiedRelationships();
-			case EcorePackage.MODULE___UNREIFIED_RELATIONSHIPS:
+			case OMLPackage.MODULE___UNREIFIED_RELATIONSHIPS:
 				return unreifiedRelationships();
-			case EcorePackage.MODULE___DATA_RELATIONSHIPS:
+			case OMLPackage.MODULE___DATA_RELATIONSHIPS:
 				return dataRelationships();
-			case EcorePackage.MODULE___ENTITY_SCALAR_DATA_PROPERTIES:
+			case OMLPackage.MODULE___ENTITY_SCALAR_DATA_PROPERTIES:
 				return entityScalarDataProperties();
-			case EcorePackage.MODULE___DATARANGES:
+			case OMLPackage.MODULE___DATARANGES:
 				return dataranges();
-			case EcorePackage.MODULE___SCALARS:
+			case OMLPackage.MODULE___SCALARS:
 				return scalars();
-			case EcorePackage.MODULE___STRUCTURES:
+			case OMLPackage.MODULE___STRUCTURES:
 				return structures();
-			case EcorePackage.MODULE___TERM_AXIOMS:
+			case OMLPackage.MODULE___TERM_AXIOMS:
 				return termAxioms();
-			case EcorePackage.MODULE___EVERYTHING:
+			case OMLPackage.MODULE___EVERYTHING:
 				return everything();
 		}
 		return super.eInvoke(operationID, arguments);

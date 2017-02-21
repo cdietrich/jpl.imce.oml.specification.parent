@@ -21,9 +21,8 @@ package jpl.imce.oml.specification.ecore.provider;
 
 import java.util.Collection;
 import java.util.List;
-
-import jpl.imce.oml.specification.ecore.EcoreFactory;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLFactory;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.StructuredDataPropertyValue;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -81,7 +80,7 @@ public class StructuredDataPropertyValueItemProvider extends TerminologyInstance
 				 getResourceLocator(),
 				 getString("_UI_StructuredDataPropertyValue_singletonInstance_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_StructuredDataPropertyValue_singletonInstance_feature", "_UI_StructuredDataPropertyValue_type"),
-				 EcorePackage.eINSTANCE.getStructuredDataPropertyValue_SingletonInstance(),
+				 OMLPackage.eINSTANCE.getStructuredDataPropertyValue_SingletonInstance(),
 				 true,
 				 false,
 				 true,
@@ -103,7 +102,7 @@ public class StructuredDataPropertyValueItemProvider extends TerminologyInstance
 				 getResourceLocator(),
 				 getString("_UI_StructuredDataPropertyValue_structuredDataProperty_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_StructuredDataPropertyValue_structuredDataProperty_feature", "_UI_StructuredDataPropertyValue_type"),
-				 EcorePackage.eINSTANCE.getStructuredDataPropertyValue_StructuredDataProperty(),
+				 OMLPackage.eINSTANCE.getStructuredDataPropertyValue_StructuredDataProperty(),
 				 true,
 				 false,
 				 true,
@@ -124,7 +123,7 @@ public class StructuredDataPropertyValueItemProvider extends TerminologyInstance
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(EcorePackage.eINSTANCE.getStructuredDataPropertyValue_StructuredPropertyTuple());
+			childrenFeatures.add(OMLPackage.eINSTANCE.getStructuredDataPropertyValue_StructuredPropertyTuple());
 		}
 		return childrenFeatures;
 	}
@@ -180,7 +179,7 @@ public class StructuredDataPropertyValueItemProvider extends TerminologyInstance
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(StructuredDataPropertyValue.class)) {
-			case EcorePackage.STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_PROPERTY_TUPLE:
+			case OMLPackage.STRUCTURED_DATA_PROPERTY_VALUE__STRUCTURED_PROPERTY_TUPLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -200,8 +199,8 @@ public class StructuredDataPropertyValueItemProvider extends TerminologyInstance
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getStructuredDataPropertyValue_StructuredPropertyTuple(),
-				 EcoreFactory.eINSTANCE.createDataStructureTuple()));
+				(OMLPackage.eINSTANCE.getStructuredDataPropertyValue_StructuredPropertyTuple(),
+				 OMLFactory.eINSTANCE.createDataStructureTuple()));
 	}
 
 }

@@ -19,7 +19,7 @@
 package jpl.imce.oml.specification.ecore.impl;
 
 import jpl.imce.oml.specification.ecore.DataRelationshipToStructure;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.Structure;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -70,7 +70,7 @@ public abstract class DataRelationshipToStructureImpl extends DataRelationshipRa
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getDataRelationshipToStructure();
+		return OMLPackage.eINSTANCE.getDataRelationshipToStructure();
 	}
 
 	/**
@@ -84,7 +84,7 @@ public abstract class DataRelationshipToStructureImpl extends DataRelationshipRa
 			range = (Structure)eResolveProxy(oldRange);
 			if (range != oldRange) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.DATA_RELATIONSHIP_TO_STRUCTURE__RANGE, oldRange, range));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.DATA_RELATIONSHIP_TO_STRUCTURE__RANGE, oldRange, range));
 			}
 		}
 		return range;
@@ -108,7 +108,7 @@ public abstract class DataRelationshipToStructureImpl extends DataRelationshipRa
 		Structure oldRange = range;
 		range = newRange;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.DATA_RELATIONSHIP_TO_STRUCTURE__RANGE, oldRange, range));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.DATA_RELATIONSHIP_TO_STRUCTURE__RANGE, oldRange, range));
 	}
 
 	/**
@@ -119,7 +119,7 @@ public abstract class DataRelationshipToStructureImpl extends DataRelationshipRa
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.DATA_RELATIONSHIP_TO_STRUCTURE__RANGE:
+			case OMLPackage.DATA_RELATIONSHIP_TO_STRUCTURE__RANGE:
 				if (resolve) return getRange();
 				return basicGetRange();
 		}
@@ -134,7 +134,7 @@ public abstract class DataRelationshipToStructureImpl extends DataRelationshipRa
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.DATA_RELATIONSHIP_TO_STRUCTURE__RANGE:
+			case OMLPackage.DATA_RELATIONSHIP_TO_STRUCTURE__RANGE:
 				setRange((Structure)newValue);
 				return;
 		}
@@ -149,7 +149,7 @@ public abstract class DataRelationshipToStructureImpl extends DataRelationshipRa
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.DATA_RELATIONSHIP_TO_STRUCTURE__RANGE:
+			case OMLPackage.DATA_RELATIONSHIP_TO_STRUCTURE__RANGE:
 				setRange((Structure)null);
 				return;
 		}
@@ -164,7 +164,7 @@ public abstract class DataRelationshipToStructureImpl extends DataRelationshipRa
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.DATA_RELATIONSHIP_TO_STRUCTURE__RANGE:
+			case OMLPackage.DATA_RELATIONSHIP_TO_STRUCTURE__RANGE:
 				return range != null;
 		}
 		return super.eIsSet(featureID);

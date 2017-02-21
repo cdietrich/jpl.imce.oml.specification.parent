@@ -47,7 +47,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.EntityRelationship#isIsTransitive <em>Is Transitive</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityRelationship()
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityRelationship()
  * @model abstract="true"
  * @generated
  */
@@ -62,7 +62,7 @@ public interface EntityRelationship extends Term, DirectedBinaryRelationshipKind
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(Entity)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityRelationship_Source()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityRelationship_Source()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -88,7 +88,7 @@ public interface EntityRelationship extends Term, DirectedBinaryRelationshipKind
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(Entity)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityRelationship_Target()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityRelationship_Target()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -113,7 +113,7 @@ public interface EntityRelationship extends Term, DirectedBinaryRelationshipKind
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Is Functional</em>' attribute.
 	 * @see #setIsFunctional(boolean)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityRelationship_IsFunctional()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityRelationship_IsFunctional()
 	 * @model unique="false" required="true"
 	 * @generated
 	 */
@@ -138,7 +138,7 @@ public interface EntityRelationship extends Term, DirectedBinaryRelationshipKind
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Is Inverse Functional</em>' attribute.
 	 * @see #setIsInverseFunctional(boolean)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityRelationship_IsInverseFunctional()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityRelationship_IsInverseFunctional()
 	 * @model unique="false" required="true"
 	 * @generated
 	 */
@@ -163,7 +163,7 @@ public interface EntityRelationship extends Term, DirectedBinaryRelationshipKind
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Is Essential</em>' attribute.
 	 * @see #setIsEssential(boolean)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityRelationship_IsEssential()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityRelationship_IsEssential()
 	 * @model unique="false" required="true"
 	 * @generated
 	 */
@@ -188,7 +188,7 @@ public interface EntityRelationship extends Term, DirectedBinaryRelationshipKind
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Is Inverse Essential</em>' attribute.
 	 * @see #setIsInverseEssential(boolean)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityRelationship_IsInverseEssential()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityRelationship_IsInverseEssential()
 	 * @model unique="false" required="true"
 	 * @generated
 	 */
@@ -213,7 +213,7 @@ public interface EntityRelationship extends Term, DirectedBinaryRelationshipKind
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Is Symmetric</em>' attribute.
 	 * @see #setIsSymmetric(boolean)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityRelationship_IsSymmetric()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityRelationship_IsSymmetric()
 	 * @model unique="false" required="true"
 	 * @generated
 	 */
@@ -238,7 +238,7 @@ public interface EntityRelationship extends Term, DirectedBinaryRelationshipKind
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Is Asymmetric</em>' attribute.
 	 * @see #setIsAsymmetric(boolean)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityRelationship_IsAsymmetric()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityRelationship_IsAsymmetric()
 	 * @model unique="false" required="true"
 	 * @generated
 	 */
@@ -263,7 +263,7 @@ public interface EntityRelationship extends Term, DirectedBinaryRelationshipKind
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Is Reflexive</em>' attribute.
 	 * @see #setIsReflexive(boolean)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityRelationship_IsReflexive()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityRelationship_IsReflexive()
 	 * @model unique="false" required="true"
 	 * @generated
 	 */
@@ -288,7 +288,7 @@ public interface EntityRelationship extends Term, DirectedBinaryRelationshipKind
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Is Irreflexive</em>' attribute.
 	 * @see #setIsIrreflexive(boolean)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityRelationship_IsIrreflexive()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityRelationship_IsIrreflexive()
 	 * @model unique="false" required="true"
 	 * @generated
 	 */
@@ -313,7 +313,7 @@ public interface EntityRelationship extends Term, DirectedBinaryRelationshipKind
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Is Transitive</em>' attribute.
 	 * @see #setIsTransitive(boolean)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityRelationship_IsTransitive()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityRelationship_IsTransitive()
 	 * @model unique="false" required="true"
 	 * @generated
 	 */

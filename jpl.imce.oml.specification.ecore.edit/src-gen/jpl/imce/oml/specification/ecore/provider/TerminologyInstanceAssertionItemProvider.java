@@ -21,7 +21,7 @@ package jpl.imce.oml.specification.ecore.provider;
 
 import java.util.Collection;
 import java.util.List;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -77,7 +77,7 @@ public class TerminologyInstanceAssertionItemProvider extends TerminologyThingIt
 				 getResourceLocator(),
 				 getString("_UI_TerminologyInstanceAssertion_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TerminologyInstanceAssertion_name_feature", "_UI_TerminologyInstanceAssertion_type"),
-				 EcorePackage.eINSTANCE.getTerminologyInstanceAssertion_Name(),
+				 OMLPackage.eINSTANCE.getTerminologyInstanceAssertion_Name(),
 				 true,
 				 false,
 				 false,
@@ -113,7 +113,7 @@ public class TerminologyInstanceAssertionItemProvider extends TerminologyThingIt
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TerminologyInstanceAssertion.class)) {
-			case EcorePackage.TERMINOLOGY_INSTANCE_ASSERTION__NAME:
+			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

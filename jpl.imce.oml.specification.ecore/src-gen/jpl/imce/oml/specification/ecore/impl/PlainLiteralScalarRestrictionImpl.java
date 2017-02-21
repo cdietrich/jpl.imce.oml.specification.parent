@@ -27,7 +27,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.DataRange;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction;
 import jpl.imce.oml.specification.ecore.Term;
 import jpl.imce.oml.specification.ecore.TerminologyThing;
@@ -174,7 +174,7 @@ public class PlainLiteralScalarRestrictionImpl extends RestrictedDataRangeImpl i
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getPlainLiteralScalarRestriction();
+		return OMLPackage.eINSTANCE.getPlainLiteralScalarRestriction();
 	}
 
 	/**
@@ -195,7 +195,7 @@ public class PlainLiteralScalarRestrictionImpl extends RestrictedDataRangeImpl i
 		int oldLength = length;
 		length = newLength;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LENGTH, oldLength, length));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LENGTH, oldLength, length));
 	}
 
 	/**
@@ -216,7 +216,7 @@ public class PlainLiteralScalarRestrictionImpl extends RestrictedDataRangeImpl i
 		int oldMinLength = minLength;
 		minLength = newMinLength;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MIN_LENGTH, oldMinLength, minLength));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MIN_LENGTH, oldMinLength, minLength));
 	}
 
 	/**
@@ -237,7 +237,7 @@ public class PlainLiteralScalarRestrictionImpl extends RestrictedDataRangeImpl i
 		int oldMaxLength = maxLength;
 		maxLength = newMaxLength;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MAX_LENGTH, oldMaxLength, maxLength));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MAX_LENGTH, oldMaxLength, maxLength));
 	}
 
 	/**
@@ -258,7 +258,7 @@ public class PlainLiteralScalarRestrictionImpl extends RestrictedDataRangeImpl i
 		String oldPattern = pattern;
 		pattern = newPattern;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__PATTERN, oldPattern, pattern));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__PATTERN, oldPattern, pattern));
 	}
 
 	/**
@@ -279,7 +279,7 @@ public class PlainLiteralScalarRestrictionImpl extends RestrictedDataRangeImpl i
 		String oldLangRange = langRange;
 		langRange = newLangRange;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LANG_RANGE, oldLangRange, langRange));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LANG_RANGE, oldLangRange, langRange));
 	}
 
 	/**
@@ -309,15 +309,15 @@ public class PlainLiteralScalarRestrictionImpl extends RestrictedDataRangeImpl i
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LENGTH:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LENGTH:
 				return getLength();
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MIN_LENGTH:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MIN_LENGTH:
 				return getMinLength();
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MAX_LENGTH:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MAX_LENGTH:
 				return getMaxLength();
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__PATTERN:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__PATTERN:
 				return getPattern();
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LANG_RANGE:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LANG_RANGE:
 				return getLangRange();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -331,19 +331,19 @@ public class PlainLiteralScalarRestrictionImpl extends RestrictedDataRangeImpl i
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LENGTH:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LENGTH:
 				setLength((Integer)newValue);
 				return;
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MIN_LENGTH:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MIN_LENGTH:
 				setMinLength((Integer)newValue);
 				return;
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MAX_LENGTH:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MAX_LENGTH:
 				setMaxLength((Integer)newValue);
 				return;
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__PATTERN:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__PATTERN:
 				setPattern((String)newValue);
 				return;
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LANG_RANGE:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LANG_RANGE:
 				setLangRange((String)newValue);
 				return;
 		}
@@ -358,19 +358,19 @@ public class PlainLiteralScalarRestrictionImpl extends RestrictedDataRangeImpl i
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LENGTH:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LENGTH:
 				setLength(LENGTH_EDEFAULT);
 				return;
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MIN_LENGTH:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MIN_LENGTH:
 				setMinLength(MIN_LENGTH_EDEFAULT);
 				return;
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MAX_LENGTH:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MAX_LENGTH:
 				setMaxLength(MAX_LENGTH_EDEFAULT);
 				return;
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__PATTERN:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__PATTERN:
 				setPattern(PATTERN_EDEFAULT);
 				return;
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LANG_RANGE:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LANG_RANGE:
 				setLangRange(LANG_RANGE_EDEFAULT);
 				return;
 		}
@@ -385,15 +385,15 @@ public class PlainLiteralScalarRestrictionImpl extends RestrictedDataRangeImpl i
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LENGTH:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LENGTH:
 				return length != LENGTH_EDEFAULT;
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MIN_LENGTH:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MIN_LENGTH:
 				return minLength != MIN_LENGTH_EDEFAULT;
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MAX_LENGTH:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MAX_LENGTH:
 				return maxLength != MAX_LENGTH_EDEFAULT;
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__PATTERN:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__PATTERN:
 				return PATTERN_EDEFAULT == null ? pattern != null : !PATTERN_EDEFAULT.equals(pattern);
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LANG_RANGE:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LANG_RANGE:
 				return LANG_RANGE_EDEFAULT == null ? langRange != null : !LANG_RANGE_EDEFAULT.equals(langRange);
 		}
 		return super.eIsSet(featureID);
@@ -408,13 +408,13 @@ public class PlainLiteralScalarRestrictionImpl extends RestrictedDataRangeImpl i
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == TerminologyThing.class) {
 			switch (baseOperationID) {
-				case EcorePackage.TERMINOLOGY_THING___CALCULATE_UUID: return EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION___CALCULATE_UUID;
+				case OMLPackage.TERMINOLOGY_THING___CALCULATE_UUID: return OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION___CALCULATE_UUID;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
 		if (baseClass == Term.class) {
 			switch (baseOperationID) {
-				case EcorePackage.TERM___CALCULATE_UUID: return EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION___CALCULATE_UUID;
+				case OMLPackage.TERM___CALCULATE_UUID: return OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION___CALCULATE_UUID;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
@@ -429,7 +429,7 @@ public class PlainLiteralScalarRestrictionImpl extends RestrictedDataRangeImpl i
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION___CALCULATE_UUID:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION___CALCULATE_UUID:
 				return calculateUUID();
 		}
 		return super.eInvoke(operationID, arguments);

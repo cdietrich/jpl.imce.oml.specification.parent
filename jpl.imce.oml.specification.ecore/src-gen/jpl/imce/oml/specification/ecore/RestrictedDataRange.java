@@ -42,7 +42,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.RestrictedDataRange#getRestrictedRange <em>Restricted Range</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.EcorePackage#getRestrictedDataRange()
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getRestrictedDataRange()
  * @model abstract="true"
  * @generated
  */
@@ -56,7 +56,7 @@ public interface RestrictedDataRange extends DataRange {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Restricted Range</em>' reference.
 	 * @see #setRestrictedRange(DataRange)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getRestrictedDataRange_RestrictedRange()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getRestrictedDataRange_RestrictedRange()
 	 * @model required="true"
 	 * @generated
 	 */

@@ -21,8 +21,7 @@ package jpl.imce.oml.specification.ecore.provider;
 
 import java.util.Collection;
 import java.util.List;
-
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -83,7 +82,7 @@ public class PlainLiteralScalarRestrictionItemProvider extends RestrictedDataRan
 				 getResourceLocator(),
 				 getString("_UI_PlainLiteralScalarRestriction_length_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_PlainLiteralScalarRestriction_length_feature", "_UI_PlainLiteralScalarRestriction_type"),
-				 EcorePackage.eINSTANCE.getPlainLiteralScalarRestriction_Length(),
+				 OMLPackage.eINSTANCE.getPlainLiteralScalarRestriction_Length(),
 				 true,
 				 false,
 				 false,
@@ -105,7 +104,7 @@ public class PlainLiteralScalarRestrictionItemProvider extends RestrictedDataRan
 				 getResourceLocator(),
 				 getString("_UI_PlainLiteralScalarRestriction_minLength_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_PlainLiteralScalarRestriction_minLength_feature", "_UI_PlainLiteralScalarRestriction_type"),
-				 EcorePackage.eINSTANCE.getPlainLiteralScalarRestriction_MinLength(),
+				 OMLPackage.eINSTANCE.getPlainLiteralScalarRestriction_MinLength(),
 				 true,
 				 false,
 				 false,
@@ -127,7 +126,7 @@ public class PlainLiteralScalarRestrictionItemProvider extends RestrictedDataRan
 				 getResourceLocator(),
 				 getString("_UI_PlainLiteralScalarRestriction_maxLength_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_PlainLiteralScalarRestriction_maxLength_feature", "_UI_PlainLiteralScalarRestriction_type"),
-				 EcorePackage.eINSTANCE.getPlainLiteralScalarRestriction_MaxLength(),
+				 OMLPackage.eINSTANCE.getPlainLiteralScalarRestriction_MaxLength(),
 				 true,
 				 false,
 				 false,
@@ -149,7 +148,7 @@ public class PlainLiteralScalarRestrictionItemProvider extends RestrictedDataRan
 				 getResourceLocator(),
 				 getString("_UI_PlainLiteralScalarRestriction_pattern_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_PlainLiteralScalarRestriction_pattern_feature", "_UI_PlainLiteralScalarRestriction_type"),
-				 EcorePackage.eINSTANCE.getPlainLiteralScalarRestriction_Pattern(),
+				 OMLPackage.eINSTANCE.getPlainLiteralScalarRestriction_Pattern(),
 				 true,
 				 false,
 				 false,
@@ -171,7 +170,7 @@ public class PlainLiteralScalarRestrictionItemProvider extends RestrictedDataRan
 				 getResourceLocator(),
 				 getString("_UI_PlainLiteralScalarRestriction_langRange_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_PlainLiteralScalarRestriction_langRange_feature", "_UI_PlainLiteralScalarRestriction_type"),
-				 EcorePackage.eINSTANCE.getPlainLiteralScalarRestriction_LangRange(),
+				 OMLPackage.eINSTANCE.getPlainLiteralScalarRestriction_LangRange(),
 				 true,
 				 false,
 				 false,
@@ -218,11 +217,11 @@ public class PlainLiteralScalarRestrictionItemProvider extends RestrictedDataRan
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PlainLiteralScalarRestriction.class)) {
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LENGTH:
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MIN_LENGTH:
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MAX_LENGTH:
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__PATTERN:
-			case EcorePackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LANG_RANGE:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LENGTH:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MIN_LENGTH:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__MAX_LENGTH:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__PATTERN:
+			case OMLPackage.PLAIN_LITERAL_SCALAR_RESTRICTION__LANG_RANGE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

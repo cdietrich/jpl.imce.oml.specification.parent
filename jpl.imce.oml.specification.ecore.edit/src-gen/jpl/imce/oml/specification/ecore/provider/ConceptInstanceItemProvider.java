@@ -23,8 +23,7 @@ import java.util.Collection;
 import java.util.List;
 
 import jpl.imce.oml.specification.ecore.ConceptInstance;
-
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -78,7 +77,7 @@ public class ConceptInstanceItemProvider extends ConceptualEntitySingletonInstan
 				 getResourceLocator(),
 				 getString("_UI_ConceptInstance_descriptionBox_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ConceptInstance_descriptionBox_feature", "_UI_ConceptInstance_type"),
-				 EcorePackage.eINSTANCE.getConceptInstance_DescriptionBox(),
+				 OMLPackage.eINSTANCE.getConceptInstance_DescriptionBox(),
 				 true,
 				 false,
 				 true,
@@ -100,7 +99,7 @@ public class ConceptInstanceItemProvider extends ConceptualEntitySingletonInstan
 				 getResourceLocator(),
 				 getString("_UI_ConceptInstance_singletonConceptClassifier_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ConceptInstance_singletonConceptClassifier_feature", "_UI_ConceptInstance_type"),
-				 EcorePackage.eINSTANCE.getConceptInstance_SingletonConceptClassifier(),
+				 OMLPackage.eINSTANCE.getConceptInstance_SingletonConceptClassifier(),
 				 true,
 				 false,
 				 true,

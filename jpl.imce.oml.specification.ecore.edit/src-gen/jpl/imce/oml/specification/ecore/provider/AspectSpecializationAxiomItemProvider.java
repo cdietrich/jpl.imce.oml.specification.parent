@@ -23,7 +23,7 @@ import java.util.Collection;
 import java.util.List;
 
 import jpl.imce.oml.specification.ecore.AspectSpecializationAxiom;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -77,7 +77,7 @@ public class AspectSpecializationAxiomItemProvider extends SpecializationAxiomIt
 				 getResourceLocator(),
 				 getString("_UI_AspectSpecializationAxiom_subEntity_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AspectSpecializationAxiom_subEntity_feature", "_UI_AspectSpecializationAxiom_type"),
-				 EcorePackage.eINSTANCE.getAspectSpecializationAxiom_SubEntity(),
+				 OMLPackage.eINSTANCE.getAspectSpecializationAxiom_SubEntity(),
 				 true,
 				 false,
 				 true,
@@ -99,7 +99,7 @@ public class AspectSpecializationAxiomItemProvider extends SpecializationAxiomIt
 				 getResourceLocator(),
 				 getString("_UI_AspectSpecializationAxiom_superAspect_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AspectSpecializationAxiom_superAspect_feature", "_UI_AspectSpecializationAxiom_type"),
-				 EcorePackage.eINSTANCE.getAspectSpecializationAxiom_SuperAspect(),
+				 OMLPackage.eINSTANCE.getAspectSpecializationAxiom_SuperAspect(),
 				 true,
 				 false,
 				 true,

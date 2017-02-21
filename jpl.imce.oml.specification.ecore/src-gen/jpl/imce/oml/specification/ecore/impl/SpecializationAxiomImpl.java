@@ -20,8 +20,8 @@ package jpl.imce.oml.specification.ecore.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
-import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Entity;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.SpecializationAxiom;
 
 import org.eclipse.emf.common.util.EList;
@@ -52,7 +52,7 @@ public abstract class SpecializationAxiomImpl extends TermAxiomImpl implements S
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getSpecializationAxiom();
+		return OMLPackage.eINSTANCE.getSpecializationAxiom();
 	}
 
 	/**
@@ -85,9 +85,9 @@ public abstract class SpecializationAxiomImpl extends TermAxiomImpl implements S
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.SPECIALIZATION_AXIOM___CHILD:
+			case OMLPackage.SPECIALIZATION_AXIOM___CHILD:
 				return child();
-			case EcorePackage.SPECIALIZATION_AXIOM___PARENT:
+			case OMLPackage.SPECIALIZATION_AXIOM___PARENT:
 				return parent();
 		}
 		return super.eInvoke(operationID, arguments);

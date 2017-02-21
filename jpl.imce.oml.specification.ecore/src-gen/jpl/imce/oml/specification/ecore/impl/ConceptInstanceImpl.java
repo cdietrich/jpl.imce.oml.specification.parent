@@ -31,7 +31,7 @@ import jpl.imce.oml.specification.ecore.ConceptInstance;
 import jpl.imce.oml.specification.ecore.ConceptualEntity;
 import jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance;
 import jpl.imce.oml.specification.ecore.DescriptionBox;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion;
 import jpl.imce.oml.specification.ecore.TerminologyThing;
 
@@ -89,7 +89,7 @@ public class ConceptInstanceImpl extends ConceptualEntitySingletonInstanceImpl i
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getConceptInstance();
+		return OMLPackage.eINSTANCE.getConceptInstance();
 	}
 
 	/**
@@ -98,7 +98,7 @@ public class ConceptInstanceImpl extends ConceptualEntitySingletonInstanceImpl i
 	 * @generated
 	 */
 	public DescriptionBox getDescriptionBox() {
-		if (eContainerFeatureID() != EcorePackage.CONCEPT_INSTANCE__DESCRIPTION_BOX) return null;
+		if (eContainerFeatureID() != OMLPackage.CONCEPT_INSTANCE__DESCRIPTION_BOX) return null;
 		return (DescriptionBox)eContainer();
 	}
 
@@ -108,7 +108,7 @@ public class ConceptInstanceImpl extends ConceptualEntitySingletonInstanceImpl i
 	 * @generated
 	 */
 	public DescriptionBox basicGetDescriptionBox() {
-		if (eContainerFeatureID() != EcorePackage.CONCEPT_INSTANCE__DESCRIPTION_BOX) return null;
+		if (eContainerFeatureID() != OMLPackage.CONCEPT_INSTANCE__DESCRIPTION_BOX) return null;
 		return (DescriptionBox)eInternalContainer();
 	}
 
@@ -118,7 +118,7 @@ public class ConceptInstanceImpl extends ConceptualEntitySingletonInstanceImpl i
 	 * @generated
 	 */
 	public NotificationChain basicSetDescriptionBox(DescriptionBox newDescriptionBox, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newDescriptionBox, EcorePackage.CONCEPT_INSTANCE__DESCRIPTION_BOX, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newDescriptionBox, OMLPackage.CONCEPT_INSTANCE__DESCRIPTION_BOX, msgs);
 		return msgs;
 	}
 
@@ -128,19 +128,19 @@ public class ConceptInstanceImpl extends ConceptualEntitySingletonInstanceImpl i
 	 * @generated
 	 */
 	public void setDescriptionBox(DescriptionBox newDescriptionBox) {
-		if (newDescriptionBox != eInternalContainer() || (eContainerFeatureID() != EcorePackage.CONCEPT_INSTANCE__DESCRIPTION_BOX && newDescriptionBox != null)) {
+		if (newDescriptionBox != eInternalContainer() || (eContainerFeatureID() != OMLPackage.CONCEPT_INSTANCE__DESCRIPTION_BOX && newDescriptionBox != null)) {
 			if (EcoreUtil.isAncestor(this, (EObject)newDescriptionBox))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newDescriptionBox != null)
-				msgs = ((InternalEObject)newDescriptionBox).eInverseAdd(this, EcorePackage.DESCRIPTION_BOX__CONCEPT_INSTANCES, DescriptionBox.class, msgs);
+				msgs = ((InternalEObject)newDescriptionBox).eInverseAdd(this, OMLPackage.DESCRIPTION_BOX__CONCEPT_INSTANCES, DescriptionBox.class, msgs);
 			msgs = basicSetDescriptionBox(newDescriptionBox, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.CONCEPT_INSTANCE__DESCRIPTION_BOX, newDescriptionBox, newDescriptionBox));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.CONCEPT_INSTANCE__DESCRIPTION_BOX, newDescriptionBox, newDescriptionBox));
 	}
 
 	/**
@@ -154,7 +154,7 @@ public class ConceptInstanceImpl extends ConceptualEntitySingletonInstanceImpl i
 			singletonConceptClassifier = (Concept)eResolveProxy(oldSingletonConceptClassifier);
 			if (singletonConceptClassifier != oldSingletonConceptClassifier) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.CONCEPT_INSTANCE__SINGLETON_CONCEPT_CLASSIFIER, oldSingletonConceptClassifier, singletonConceptClassifier));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.CONCEPT_INSTANCE__SINGLETON_CONCEPT_CLASSIFIER, oldSingletonConceptClassifier, singletonConceptClassifier));
 			}
 		}
 		return singletonConceptClassifier;
@@ -178,7 +178,7 @@ public class ConceptInstanceImpl extends ConceptualEntitySingletonInstanceImpl i
 		Concept oldSingletonConceptClassifier = singletonConceptClassifier;
 		singletonConceptClassifier = newSingletonConceptClassifier;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.CONCEPT_INSTANCE__SINGLETON_CONCEPT_CLASSIFIER, oldSingletonConceptClassifier, singletonConceptClassifier));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.CONCEPT_INSTANCE__SINGLETON_CONCEPT_CLASSIFIER, oldSingletonConceptClassifier, singletonConceptClassifier));
 	}
 
 	/**
@@ -221,7 +221,7 @@ public class ConceptInstanceImpl extends ConceptualEntitySingletonInstanceImpl i
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case EcorePackage.CONCEPT_INSTANCE__DESCRIPTION_BOX:
+			case OMLPackage.CONCEPT_INSTANCE__DESCRIPTION_BOX:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetDescriptionBox((DescriptionBox)otherEnd, msgs);
@@ -237,7 +237,7 @@ public class ConceptInstanceImpl extends ConceptualEntitySingletonInstanceImpl i
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case EcorePackage.CONCEPT_INSTANCE__DESCRIPTION_BOX:
+			case OMLPackage.CONCEPT_INSTANCE__DESCRIPTION_BOX:
 				return basicSetDescriptionBox(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -251,8 +251,8 @@ public class ConceptInstanceImpl extends ConceptualEntitySingletonInstanceImpl i
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case EcorePackage.CONCEPT_INSTANCE__DESCRIPTION_BOX:
-				return eInternalContainer().eInverseRemove(this, EcorePackage.DESCRIPTION_BOX__CONCEPT_INSTANCES, DescriptionBox.class, msgs);
+			case OMLPackage.CONCEPT_INSTANCE__DESCRIPTION_BOX:
+				return eInternalContainer().eInverseRemove(this, OMLPackage.DESCRIPTION_BOX__CONCEPT_INSTANCES, DescriptionBox.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -265,10 +265,10 @@ public class ConceptInstanceImpl extends ConceptualEntitySingletonInstanceImpl i
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.CONCEPT_INSTANCE__DESCRIPTION_BOX:
+			case OMLPackage.CONCEPT_INSTANCE__DESCRIPTION_BOX:
 				if (resolve) return getDescriptionBox();
 				return basicGetDescriptionBox();
-			case EcorePackage.CONCEPT_INSTANCE__SINGLETON_CONCEPT_CLASSIFIER:
+			case OMLPackage.CONCEPT_INSTANCE__SINGLETON_CONCEPT_CLASSIFIER:
 				if (resolve) return getSingletonConceptClassifier();
 				return basicGetSingletonConceptClassifier();
 		}
@@ -283,10 +283,10 @@ public class ConceptInstanceImpl extends ConceptualEntitySingletonInstanceImpl i
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.CONCEPT_INSTANCE__DESCRIPTION_BOX:
+			case OMLPackage.CONCEPT_INSTANCE__DESCRIPTION_BOX:
 				setDescriptionBox((DescriptionBox)newValue);
 				return;
-			case EcorePackage.CONCEPT_INSTANCE__SINGLETON_CONCEPT_CLASSIFIER:
+			case OMLPackage.CONCEPT_INSTANCE__SINGLETON_CONCEPT_CLASSIFIER:
 				setSingletonConceptClassifier((Concept)newValue);
 				return;
 		}
@@ -301,10 +301,10 @@ public class ConceptInstanceImpl extends ConceptualEntitySingletonInstanceImpl i
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.CONCEPT_INSTANCE__DESCRIPTION_BOX:
+			case OMLPackage.CONCEPT_INSTANCE__DESCRIPTION_BOX:
 				setDescriptionBox((DescriptionBox)null);
 				return;
-			case EcorePackage.CONCEPT_INSTANCE__SINGLETON_CONCEPT_CLASSIFIER:
+			case OMLPackage.CONCEPT_INSTANCE__SINGLETON_CONCEPT_CLASSIFIER:
 				setSingletonConceptClassifier((Concept)null);
 				return;
 		}
@@ -319,9 +319,9 @@ public class ConceptInstanceImpl extends ConceptualEntitySingletonInstanceImpl i
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.CONCEPT_INSTANCE__DESCRIPTION_BOX:
+			case OMLPackage.CONCEPT_INSTANCE__DESCRIPTION_BOX:
 				return basicGetDescriptionBox() != null;
-			case EcorePackage.CONCEPT_INSTANCE__SINGLETON_CONCEPT_CLASSIFIER:
+			case OMLPackage.CONCEPT_INSTANCE__SINGLETON_CONCEPT_CLASSIFIER:
 				return singletonConceptClassifier != null;
 		}
 		return super.eIsSet(featureID);
@@ -336,19 +336,19 @@ public class ConceptInstanceImpl extends ConceptualEntitySingletonInstanceImpl i
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == TerminologyThing.class) {
 			switch (baseOperationID) {
-				case EcorePackage.TERMINOLOGY_THING___CALCULATE_UUID: return EcorePackage.CONCEPT_INSTANCE___CALCULATE_UUID;
+				case OMLPackage.TERMINOLOGY_THING___CALCULATE_UUID: return OMLPackage.CONCEPT_INSTANCE___CALCULATE_UUID;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
 		if (baseClass == TerminologyInstanceAssertion.class) {
 			switch (baseOperationID) {
-				case EcorePackage.TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID: return EcorePackage.CONCEPT_INSTANCE___CALCULATE_UUID;
+				case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID: return OMLPackage.CONCEPT_INSTANCE___CALCULATE_UUID;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
 		if (baseClass == ConceptualEntitySingletonInstance.class) {
 			switch (baseOperationID) {
-				case EcorePackage.CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER: return EcorePackage.CONCEPT_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER;
+				case OMLPackage.CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER: return OMLPackage.CONCEPT_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
@@ -363,9 +363,9 @@ public class ConceptInstanceImpl extends ConceptualEntitySingletonInstanceImpl i
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.CONCEPT_INSTANCE___CALCULATE_UUID:
+			case OMLPackage.CONCEPT_INSTANCE___CALCULATE_UUID:
 				return calculateUUID();
-			case EcorePackage.CONCEPT_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER:
+			case OMLPackage.CONCEPT_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER:
 				return conceptualEntitySingletonClassifier();
 		}
 		return super.eInvoke(operationID, arguments);

@@ -26,7 +26,7 @@ import jpl.imce.oml.specification.ecore.DataRelationshipFromStructure;
 import jpl.imce.oml.specification.ecore.DataRelationshipRange;
 import jpl.imce.oml.specification.ecore.DataRelationshipToScalar;
 import jpl.imce.oml.specification.ecore.Datatype;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.ScalarDataProperty;
 import jpl.imce.oml.specification.ecore.Structure;
 import jpl.imce.oml.specification.ecore.Term;
@@ -92,7 +92,7 @@ public class ScalarDataPropertyImpl extends DataRelationshipImpl implements Scal
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getScalarDataProperty();
+		return OMLPackage.eINSTANCE.getScalarDataProperty();
 	}
 
 	/**
@@ -106,7 +106,7 @@ public class ScalarDataPropertyImpl extends DataRelationshipImpl implements Scal
 			domain = (Structure)eResolveProxy(oldDomain);
 			if (domain != oldDomain) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.SCALAR_DATA_PROPERTY__DOMAIN, oldDomain, domain));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.SCALAR_DATA_PROPERTY__DOMAIN, oldDomain, domain));
 			}
 		}
 		return domain;
@@ -130,7 +130,7 @@ public class ScalarDataPropertyImpl extends DataRelationshipImpl implements Scal
 		Structure oldDomain = domain;
 		domain = newDomain;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.SCALAR_DATA_PROPERTY__DOMAIN, oldDomain, domain));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.SCALAR_DATA_PROPERTY__DOMAIN, oldDomain, domain));
 	}
 
 	/**
@@ -144,7 +144,7 @@ public class ScalarDataPropertyImpl extends DataRelationshipImpl implements Scal
 			range = (DataRange)eResolveProxy(oldRange);
 			if (range != oldRange) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.SCALAR_DATA_PROPERTY__RANGE, oldRange, range));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.SCALAR_DATA_PROPERTY__RANGE, oldRange, range));
 			}
 		}
 		return range;
@@ -168,7 +168,7 @@ public class ScalarDataPropertyImpl extends DataRelationshipImpl implements Scal
 		DataRange oldRange = range;
 		range = newRange;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.SCALAR_DATA_PROPERTY__RANGE, oldRange, range));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.SCALAR_DATA_PROPERTY__RANGE, oldRange, range));
 	}
 
 	/**
@@ -197,10 +197,10 @@ public class ScalarDataPropertyImpl extends DataRelationshipImpl implements Scal
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.SCALAR_DATA_PROPERTY__DOMAIN:
+			case OMLPackage.SCALAR_DATA_PROPERTY__DOMAIN:
 				if (resolve) return getDomain();
 				return basicGetDomain();
-			case EcorePackage.SCALAR_DATA_PROPERTY__RANGE:
+			case OMLPackage.SCALAR_DATA_PROPERTY__RANGE:
 				if (resolve) return getRange();
 				return basicGetRange();
 		}
@@ -215,10 +215,10 @@ public class ScalarDataPropertyImpl extends DataRelationshipImpl implements Scal
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.SCALAR_DATA_PROPERTY__DOMAIN:
+			case OMLPackage.SCALAR_DATA_PROPERTY__DOMAIN:
 				setDomain((Structure)newValue);
 				return;
-			case EcorePackage.SCALAR_DATA_PROPERTY__RANGE:
+			case OMLPackage.SCALAR_DATA_PROPERTY__RANGE:
 				setRange((DataRange)newValue);
 				return;
 		}
@@ -233,10 +233,10 @@ public class ScalarDataPropertyImpl extends DataRelationshipImpl implements Scal
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.SCALAR_DATA_PROPERTY__DOMAIN:
+			case OMLPackage.SCALAR_DATA_PROPERTY__DOMAIN:
 				setDomain((Structure)null);
 				return;
-			case EcorePackage.SCALAR_DATA_PROPERTY__RANGE:
+			case OMLPackage.SCALAR_DATA_PROPERTY__RANGE:
 				setRange((DataRange)null);
 				return;
 		}
@@ -251,9 +251,9 @@ public class ScalarDataPropertyImpl extends DataRelationshipImpl implements Scal
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.SCALAR_DATA_PROPERTY__DOMAIN:
+			case OMLPackage.SCALAR_DATA_PROPERTY__DOMAIN:
 				return domain != null;
-			case EcorePackage.SCALAR_DATA_PROPERTY__RANGE:
+			case OMLPackage.SCALAR_DATA_PROPERTY__RANGE:
 				return range != null;
 		}
 		return super.eIsSet(featureID);
@@ -273,7 +273,7 @@ public class ScalarDataPropertyImpl extends DataRelationshipImpl implements Scal
 		}
 		if (baseClass == DataRelationshipFromStructure.class) {
 			switch (derivedFeatureID) {
-				case EcorePackage.SCALAR_DATA_PROPERTY__DOMAIN: return EcorePackage.DATA_RELATIONSHIP_FROM_STRUCTURE__DOMAIN;
+				case OMLPackage.SCALAR_DATA_PROPERTY__DOMAIN: return OMLPackage.DATA_RELATIONSHIP_FROM_STRUCTURE__DOMAIN;
 				default: return -1;
 			}
 		}
@@ -284,7 +284,7 @@ public class ScalarDataPropertyImpl extends DataRelationshipImpl implements Scal
 		}
 		if (baseClass == DataRelationshipToScalar.class) {
 			switch (derivedFeatureID) {
-				case EcorePackage.SCALAR_DATA_PROPERTY__RANGE: return EcorePackage.DATA_RELATIONSHIP_TO_SCALAR__RANGE;
+				case OMLPackage.SCALAR_DATA_PROPERTY__RANGE: return OMLPackage.DATA_RELATIONSHIP_TO_SCALAR__RANGE;
 				default: return -1;
 			}
 		}
@@ -305,7 +305,7 @@ public class ScalarDataPropertyImpl extends DataRelationshipImpl implements Scal
 		}
 		if (baseClass == DataRelationshipFromStructure.class) {
 			switch (baseFeatureID) {
-				case EcorePackage.DATA_RELATIONSHIP_FROM_STRUCTURE__DOMAIN: return EcorePackage.SCALAR_DATA_PROPERTY__DOMAIN;
+				case OMLPackage.DATA_RELATIONSHIP_FROM_STRUCTURE__DOMAIN: return OMLPackage.SCALAR_DATA_PROPERTY__DOMAIN;
 				default: return -1;
 			}
 		}
@@ -316,7 +316,7 @@ public class ScalarDataPropertyImpl extends DataRelationshipImpl implements Scal
 		}
 		if (baseClass == DataRelationshipToScalar.class) {
 			switch (baseFeatureID) {
-				case EcorePackage.DATA_RELATIONSHIP_TO_SCALAR__RANGE: return EcorePackage.SCALAR_DATA_PROPERTY__RANGE;
+				case OMLPackage.DATA_RELATIONSHIP_TO_SCALAR__RANGE: return OMLPackage.SCALAR_DATA_PROPERTY__RANGE;
 				default: return -1;
 			}
 		}
@@ -331,9 +331,9 @@ public class ScalarDataPropertyImpl extends DataRelationshipImpl implements Scal
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.SCALAR_DATA_PROPERTY___SOURCE:
+			case OMLPackage.SCALAR_DATA_PROPERTY___SOURCE:
 				return source();
-			case EcorePackage.SCALAR_DATA_PROPERTY___TARGET:
+			case OMLPackage.SCALAR_DATA_PROPERTY___TARGET:
 				return target();
 		}
 		return super.eInvoke(operationID, arguments);

@@ -27,7 +27,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.DescriptionBox;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.Resource;
 import jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion;
 import jpl.imce.oml.specification.ecore.TerminologyThing;
@@ -90,7 +90,7 @@ public abstract class TerminologyInstanceAssertionImpl extends TerminologyThingI
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getTerminologyInstanceAssertion();
+		return OMLPackage.eINSTANCE.getTerminologyInstanceAssertion();
 	}
 
 	/**
@@ -111,7 +111,7 @@ public abstract class TerminologyInstanceAssertionImpl extends TerminologyThingI
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.TERMINOLOGY_INSTANCE_ASSERTION__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION__NAME, oldName, name));
 	}
 
 	/**
@@ -167,7 +167,7 @@ public abstract class TerminologyInstanceAssertionImpl extends TerminologyThingI
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.TERMINOLOGY_INSTANCE_ASSERTION__NAME:
+			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION__NAME:
 				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -181,7 +181,7 @@ public abstract class TerminologyInstanceAssertionImpl extends TerminologyThingI
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.TERMINOLOGY_INSTANCE_ASSERTION__NAME:
+			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION__NAME:
 				setName((String)newValue);
 				return;
 		}
@@ -196,7 +196,7 @@ public abstract class TerminologyInstanceAssertionImpl extends TerminologyThingI
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.TERMINOLOGY_INSTANCE_ASSERTION__NAME:
+			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
 		}
@@ -211,7 +211,7 @@ public abstract class TerminologyInstanceAssertionImpl extends TerminologyThingI
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.TERMINOLOGY_INSTANCE_ASSERTION__NAME:
+			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
@@ -226,14 +226,14 @@ public abstract class TerminologyInstanceAssertionImpl extends TerminologyThingI
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == TerminologyThing.class) {
 			switch (baseOperationID) {
-				case EcorePackage.TERMINOLOGY_THING___CALCULATE_UUID: return EcorePackage.TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID;
+				case OMLPackage.TERMINOLOGY_THING___CALCULATE_UUID: return OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
 		if (baseClass == Resource.class) {
 			switch (baseOperationID) {
-				case EcorePackage.RESOURCE___IRI: return EcorePackage.TERMINOLOGY_INSTANCE_ASSERTION___IRI;
-				case EcorePackage.RESOURCE___NAME: return EcorePackage.TERMINOLOGY_INSTANCE_ASSERTION___NAME;
+				case OMLPackage.RESOURCE___IRI: return OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___IRI;
+				case OMLPackage.RESOURCE___NAME: return OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___NAME;
 				default: return -1;
 			}
 		}
@@ -248,13 +248,13 @@ public abstract class TerminologyInstanceAssertionImpl extends TerminologyThingI
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.TERMINOLOGY_INSTANCE_ASSERTION___DESCRIPTION_BOX:
+			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___DESCRIPTION_BOX:
 				return descriptionBox();
-			case EcorePackage.TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID:
+			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID:
 				return calculateUUID();
-			case EcorePackage.TERMINOLOGY_INSTANCE_ASSERTION___IRI:
+			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___IRI:
 				return iri();
-			case EcorePackage.TERMINOLOGY_INSTANCE_ASSERTION___NAME:
+			case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___NAME:
 				return name();
 		}
 		return super.eInvoke(operationID, arguments);

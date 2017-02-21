@@ -22,8 +22,8 @@ import java.lang.reflect.InvocationTargetException;
 
 import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.DescriptionBoxRelationship;
-import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Module;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -53,7 +53,7 @@ public abstract class DescriptionBoxRelationshipImpl extends TerminologyThingImp
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getDescriptionBoxRelationship();
+		return OMLPackage.eINSTANCE.getDescriptionBoxRelationship();
 	}
 
 	/**
@@ -86,9 +86,9 @@ public abstract class DescriptionBoxRelationshipImpl extends TerminologyThingImp
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.DESCRIPTION_BOX_RELATIONSHIP___DESCRIPTION_DOMAIN:
+			case OMLPackage.DESCRIPTION_BOX_RELATIONSHIP___DESCRIPTION_DOMAIN:
 				return descriptionDomain();
-			case EcorePackage.DESCRIPTION_BOX_RELATIONSHIP___TARGET_MODULE:
+			case OMLPackage.DESCRIPTION_BOX_RELATIONSHIP___TARGET_MODULE:
 				return targetModule();
 		}
 		return super.eInvoke(operationID, arguments);

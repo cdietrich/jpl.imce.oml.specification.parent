@@ -21,8 +21,7 @@ package jpl.imce.oml.specification.ecore.provider;
 
 import java.util.Collection;
 import java.util.List;
-
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.RootConceptTaxonomyAxiom;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -77,7 +76,7 @@ public class RootConceptTaxonomyAxiomItemProvider extends TerminologyBundleState
 				 getResourceLocator(),
 				 getString("_UI_RootConceptTaxonomyAxiom_root_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_RootConceptTaxonomyAxiom_root_feature", "_UI_RootConceptTaxonomyAxiom_type"),
-				 EcorePackage.eINSTANCE.getRootConceptTaxonomyAxiom_Root(),
+				 OMLPackage.eINSTANCE.getRootConceptTaxonomyAxiom_Root(),
 				 true,
 				 false,
 				 true,

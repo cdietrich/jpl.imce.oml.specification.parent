@@ -18,7 +18,7 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.Scalar;
 
 import org.eclipse.emf.ecore.EClass;
@@ -47,7 +47,7 @@ public class ScalarImpl extends DataRangeImpl implements Scalar {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getScalar();
+		return OMLPackage.eINSTANCE.getScalar();
 	}
 
 } //ScalarImpl

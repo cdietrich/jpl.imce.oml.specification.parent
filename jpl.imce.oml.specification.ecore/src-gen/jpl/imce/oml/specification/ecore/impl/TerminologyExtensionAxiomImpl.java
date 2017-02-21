@@ -26,7 +26,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import java.util.UUID;
 
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.TerminologyBox;
 import jpl.imce.oml.specification.ecore.TerminologyExtensionAxiom;
 
@@ -80,7 +80,7 @@ public class TerminologyExtensionAxiomImpl extends TerminologyBoxAxiomImpl imple
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getTerminologyExtensionAxiom();
+		return OMLPackage.eINSTANCE.getTerminologyExtensionAxiom();
 	}
 
 	/**
@@ -94,7 +94,7 @@ public class TerminologyExtensionAxiomImpl extends TerminologyBoxAxiomImpl imple
 			extendedTerminology = (TerminologyBox)eResolveProxy(oldExtendedTerminology);
 			if (extendedTerminology != oldExtendedTerminology) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.TERMINOLOGY_EXTENSION_AXIOM__EXTENDED_TERMINOLOGY, oldExtendedTerminology, extendedTerminology));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.TERMINOLOGY_EXTENSION_AXIOM__EXTENDED_TERMINOLOGY, oldExtendedTerminology, extendedTerminology));
 			}
 		}
 		return extendedTerminology;
@@ -118,7 +118,7 @@ public class TerminologyExtensionAxiomImpl extends TerminologyBoxAxiomImpl imple
 		TerminologyBox oldExtendedTerminology = extendedTerminology;
 		extendedTerminology = newExtendedTerminology;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.TERMINOLOGY_EXTENSION_AXIOM__EXTENDED_TERMINOLOGY, oldExtendedTerminology, extendedTerminology));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.TERMINOLOGY_EXTENSION_AXIOM__EXTENDED_TERMINOLOGY, oldExtendedTerminology, extendedTerminology));
 	}
 
 	/**
@@ -179,7 +179,7 @@ public class TerminologyExtensionAxiomImpl extends TerminologyBoxAxiomImpl imple
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.TERMINOLOGY_EXTENSION_AXIOM__EXTENDED_TERMINOLOGY:
+			case OMLPackage.TERMINOLOGY_EXTENSION_AXIOM__EXTENDED_TERMINOLOGY:
 				if (resolve) return getExtendedTerminology();
 				return basicGetExtendedTerminology();
 		}
@@ -194,7 +194,7 @@ public class TerminologyExtensionAxiomImpl extends TerminologyBoxAxiomImpl imple
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.TERMINOLOGY_EXTENSION_AXIOM__EXTENDED_TERMINOLOGY:
+			case OMLPackage.TERMINOLOGY_EXTENSION_AXIOM__EXTENDED_TERMINOLOGY:
 				setExtendedTerminology((TerminologyBox)newValue);
 				return;
 		}
@@ -209,7 +209,7 @@ public class TerminologyExtensionAxiomImpl extends TerminologyBoxAxiomImpl imple
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.TERMINOLOGY_EXTENSION_AXIOM__EXTENDED_TERMINOLOGY:
+			case OMLPackage.TERMINOLOGY_EXTENSION_AXIOM__EXTENDED_TERMINOLOGY:
 				setExtendedTerminology((TerminologyBox)null);
 				return;
 		}
@@ -224,7 +224,7 @@ public class TerminologyExtensionAxiomImpl extends TerminologyBoxAxiomImpl imple
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.TERMINOLOGY_EXTENSION_AXIOM__EXTENDED_TERMINOLOGY:
+			case OMLPackage.TERMINOLOGY_EXTENSION_AXIOM__EXTENDED_TERMINOLOGY:
 				return extendedTerminology != null;
 		}
 		return super.eIsSet(featureID);
@@ -238,13 +238,13 @@ public class TerminologyExtensionAxiomImpl extends TerminologyBoxAxiomImpl imple
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.TERMINOLOGY_EXTENSION_AXIOM___CALCULATE_UUID:
+			case OMLPackage.TERMINOLOGY_EXTENSION_AXIOM___CALCULATE_UUID:
 				return calculateUUID();
-			case EcorePackage.TERMINOLOGY_EXTENSION_AXIOM___EXTENDING_TERMINOLOGY:
+			case OMLPackage.TERMINOLOGY_EXTENSION_AXIOM___EXTENDING_TERMINOLOGY:
 				return extendingTerminology();
-			case EcorePackage.TERMINOLOGY_EXTENSION_AXIOM___SOURCE:
+			case OMLPackage.TERMINOLOGY_EXTENSION_AXIOM___SOURCE:
 				return source();
-			case EcorePackage.TERMINOLOGY_EXTENSION_AXIOM___TARGET:
+			case OMLPackage.TERMINOLOGY_EXTENSION_AXIOM___TARGET:
 				return target();
 		}
 		return super.eInvoke(operationID, arguments);

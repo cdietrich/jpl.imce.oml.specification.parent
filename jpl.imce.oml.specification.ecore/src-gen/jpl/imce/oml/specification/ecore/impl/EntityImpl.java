@@ -18,8 +18,8 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
-import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Entity;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -47,7 +47,7 @@ public abstract class EntityImpl extends TermImpl implements Entity {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getEntity();
+		return OMLPackage.eINSTANCE.getEntity();
 	}
 
 } //EntityImpl

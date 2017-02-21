@@ -36,7 +36,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.RootConceptTaxonomyAxiom#getRoot <em>Root</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.EcorePackage#getRootConceptTaxonomyAxiom()
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getRootConceptTaxonomyAxiom()
  * @model
  * @generated
  */
@@ -50,7 +50,7 @@ public interface RootConceptTaxonomyAxiom extends TerminologyBundleStatement, Co
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Root</em>' reference.
 	 * @see #setRoot(Concept)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getRootConceptTaxonomyAxiom_Root()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getRootConceptTaxonomyAxiom_Root()
 	 * @model required="true"
 	 * @generated
 	 */

@@ -19,7 +19,7 @@
 package jpl.imce.oml.specification.ecore.impl;
 
 import jpl.imce.oml.specification.ecore.DataRange;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.RestrictedDataRange;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -70,7 +70,7 @@ public abstract class RestrictedDataRangeImpl extends DataRangeImpl implements R
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getRestrictedDataRange();
+		return OMLPackage.eINSTANCE.getRestrictedDataRange();
 	}
 
 	/**
@@ -84,7 +84,7 @@ public abstract class RestrictedDataRangeImpl extends DataRangeImpl implements R
 			restrictedRange = (DataRange)eResolveProxy(oldRestrictedRange);
 			if (restrictedRange != oldRestrictedRange) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.RESTRICTED_DATA_RANGE__RESTRICTED_RANGE, oldRestrictedRange, restrictedRange));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.RESTRICTED_DATA_RANGE__RESTRICTED_RANGE, oldRestrictedRange, restrictedRange));
 			}
 		}
 		return restrictedRange;
@@ -108,7 +108,7 @@ public abstract class RestrictedDataRangeImpl extends DataRangeImpl implements R
 		DataRange oldRestrictedRange = restrictedRange;
 		restrictedRange = newRestrictedRange;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.RESTRICTED_DATA_RANGE__RESTRICTED_RANGE, oldRestrictedRange, restrictedRange));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.RESTRICTED_DATA_RANGE__RESTRICTED_RANGE, oldRestrictedRange, restrictedRange));
 	}
 
 	/**
@@ -119,7 +119,7 @@ public abstract class RestrictedDataRangeImpl extends DataRangeImpl implements R
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.RESTRICTED_DATA_RANGE__RESTRICTED_RANGE:
+			case OMLPackage.RESTRICTED_DATA_RANGE__RESTRICTED_RANGE:
 				if (resolve) return getRestrictedRange();
 				return basicGetRestrictedRange();
 		}
@@ -134,7 +134,7 @@ public abstract class RestrictedDataRangeImpl extends DataRangeImpl implements R
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.RESTRICTED_DATA_RANGE__RESTRICTED_RANGE:
+			case OMLPackage.RESTRICTED_DATA_RANGE__RESTRICTED_RANGE:
 				setRestrictedRange((DataRange)newValue);
 				return;
 		}
@@ -149,7 +149,7 @@ public abstract class RestrictedDataRangeImpl extends DataRangeImpl implements R
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.RESTRICTED_DATA_RANGE__RESTRICTED_RANGE:
+			case OMLPackage.RESTRICTED_DATA_RANGE__RESTRICTED_RANGE:
 				setRestrictedRange((DataRange)null);
 				return;
 		}
@@ -164,7 +164,7 @@ public abstract class RestrictedDataRangeImpl extends DataRangeImpl implements R
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.RESTRICTED_DATA_RANGE__RESTRICTED_RANGE:
+			case OMLPackage.RESTRICTED_DATA_RANGE__RESTRICTED_RANGE:
 				return restrictedRange != null;
 		}
 		return super.eIsSet(featureID);

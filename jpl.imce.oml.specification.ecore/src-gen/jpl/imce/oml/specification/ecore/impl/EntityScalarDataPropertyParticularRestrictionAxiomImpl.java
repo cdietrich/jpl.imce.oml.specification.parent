@@ -26,10 +26,10 @@ import java.lang.reflect.InvocationTargetException;
 
 import java.util.UUID;
 
-import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Entity;
 import jpl.imce.oml.specification.ecore.EntityScalarDataProperty;
 import jpl.imce.oml.specification.ecore.EntityScalarDataPropertyParticularRestrictionAxiom;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -89,7 +89,7 @@ public class EntityScalarDataPropertyParticularRestrictionAxiomImpl extends Enti
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getEntityScalarDataPropertyParticularRestrictionAxiom();
+		return OMLPackage.eINSTANCE.getEntityScalarDataPropertyParticularRestrictionAxiom();
 	}
 
 	/**
@@ -110,7 +110,7 @@ public class EntityScalarDataPropertyParticularRestrictionAxiomImpl extends Enti
 		String oldLiteralValue = literalValue;
 		literalValue = newLiteralValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM__LITERAL_VALUE, oldLiteralValue, literalValue));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM__LITERAL_VALUE, oldLiteralValue, literalValue));
 	}
 
 	/**
@@ -144,7 +144,7 @@ public class EntityScalarDataPropertyParticularRestrictionAxiomImpl extends Enti
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM__LITERAL_VALUE:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM__LITERAL_VALUE:
 				return getLiteralValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -158,7 +158,7 @@ public class EntityScalarDataPropertyParticularRestrictionAxiomImpl extends Enti
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM__LITERAL_VALUE:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM__LITERAL_VALUE:
 				setLiteralValue((String)newValue);
 				return;
 		}
@@ -173,7 +173,7 @@ public class EntityScalarDataPropertyParticularRestrictionAxiomImpl extends Enti
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM__LITERAL_VALUE:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM__LITERAL_VALUE:
 				setLiteralValue(LITERAL_VALUE_EDEFAULT);
 				return;
 		}
@@ -188,7 +188,7 @@ public class EntityScalarDataPropertyParticularRestrictionAxiomImpl extends Enti
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM__LITERAL_VALUE:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM__LITERAL_VALUE:
 				return LITERAL_VALUE_EDEFAULT == null ? literalValue != null : !LITERAL_VALUE_EDEFAULT.equals(literalValue);
 		}
 		return super.eIsSet(featureID);
@@ -202,7 +202,7 @@ public class EntityScalarDataPropertyParticularRestrictionAxiomImpl extends Enti
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM___CALCULATE_UUID:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM___CALCULATE_UUID:
 				return calculateUUID();
 		}
 		return super.eInvoke(operationID, arguments);

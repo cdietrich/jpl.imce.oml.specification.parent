@@ -21,8 +21,7 @@ package jpl.imce.oml.specification.ecore.provider;
 
 import java.util.Collection;
 import java.util.List;
-
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.UnreifiedRelationshipInstanceTuple;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -80,7 +79,7 @@ public class UnreifiedRelationshipInstanceTupleItemProvider extends TerminologyI
 				 getResourceLocator(),
 				 getString("_UI_UnreifiedRelationshipInstanceTuple_descriptionBox_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnreifiedRelationshipInstanceTuple_descriptionBox_feature", "_UI_UnreifiedRelationshipInstanceTuple_type"),
-				 EcorePackage.eINSTANCE.getUnreifiedRelationshipInstanceTuple_DescriptionBox(),
+				 OMLPackage.eINSTANCE.getUnreifiedRelationshipInstanceTuple_DescriptionBox(),
 				 true,
 				 false,
 				 true,
@@ -102,7 +101,7 @@ public class UnreifiedRelationshipInstanceTupleItemProvider extends TerminologyI
 				 getResourceLocator(),
 				 getString("_UI_UnreifiedRelationshipInstanceTuple_unreifiedRelationship_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnreifiedRelationshipInstanceTuple_unreifiedRelationship_feature", "_UI_UnreifiedRelationshipInstanceTuple_type"),
-				 EcorePackage.eINSTANCE.getUnreifiedRelationshipInstanceTuple_UnreifiedRelationship(),
+				 OMLPackage.eINSTANCE.getUnreifiedRelationshipInstanceTuple_UnreifiedRelationship(),
 				 true,
 				 false,
 				 true,
@@ -124,7 +123,7 @@ public class UnreifiedRelationshipInstanceTupleItemProvider extends TerminologyI
 				 getResourceLocator(),
 				 getString("_UI_UnreifiedRelationshipInstanceTuple_domain_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnreifiedRelationshipInstanceTuple_domain_feature", "_UI_UnreifiedRelationshipInstanceTuple_type"),
-				 EcorePackage.eINSTANCE.getUnreifiedRelationshipInstanceTuple_Domain(),
+				 OMLPackage.eINSTANCE.getUnreifiedRelationshipInstanceTuple_Domain(),
 				 true,
 				 false,
 				 true,
@@ -146,7 +145,7 @@ public class UnreifiedRelationshipInstanceTupleItemProvider extends TerminologyI
 				 getResourceLocator(),
 				 getString("_UI_UnreifiedRelationshipInstanceTuple_range_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnreifiedRelationshipInstanceTuple_range_feature", "_UI_UnreifiedRelationshipInstanceTuple_type"),
-				 EcorePackage.eINSTANCE.getUnreifiedRelationshipInstanceTuple_Range(),
+				 OMLPackage.eINSTANCE.getUnreifiedRelationshipInstanceTuple_Range(),
 				 true,
 				 false,
 				 true,

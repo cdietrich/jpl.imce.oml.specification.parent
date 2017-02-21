@@ -26,9 +26,9 @@ import jpl.imce.oml.specification.ecore.DataRelationshipFromEntity;
 import jpl.imce.oml.specification.ecore.DataRelationshipRange;
 import jpl.imce.oml.specification.ecore.DataRelationshipToScalar;
 import jpl.imce.oml.specification.ecore.Datatype;
-import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Entity;
 import jpl.imce.oml.specification.ecore.EntityScalarDataProperty;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.Term;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -113,7 +113,7 @@ public class EntityScalarDataPropertyImpl extends DataRelationshipImpl implement
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getEntityScalarDataProperty();
+		return OMLPackage.eINSTANCE.getEntityScalarDataProperty();
 	}
 
 	/**
@@ -127,7 +127,7 @@ public class EntityScalarDataPropertyImpl extends DataRelationshipImpl implement
 			domain = (Entity)eResolveProxy(oldDomain);
 			if (domain != oldDomain) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.ENTITY_SCALAR_DATA_PROPERTY__DOMAIN, oldDomain, domain));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__DOMAIN, oldDomain, domain));
 			}
 		}
 		return domain;
@@ -151,7 +151,7 @@ public class EntityScalarDataPropertyImpl extends DataRelationshipImpl implement
 		Entity oldDomain = domain;
 		domain = newDomain;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ENTITY_SCALAR_DATA_PROPERTY__DOMAIN, oldDomain, domain));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__DOMAIN, oldDomain, domain));
 	}
 
 	/**
@@ -172,7 +172,7 @@ public class EntityScalarDataPropertyImpl extends DataRelationshipImpl implement
 		boolean oldIsIdentityCriteria = isIdentityCriteria;
 		isIdentityCriteria = newIsIdentityCriteria;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ENTITY_SCALAR_DATA_PROPERTY__IS_IDENTITY_CRITERIA, oldIsIdentityCriteria, isIdentityCriteria));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__IS_IDENTITY_CRITERIA, oldIsIdentityCriteria, isIdentityCriteria));
 	}
 
 	/**
@@ -186,7 +186,7 @@ public class EntityScalarDataPropertyImpl extends DataRelationshipImpl implement
 			range = (DataRange)eResolveProxy(oldRange);
 			if (range != oldRange) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.ENTITY_SCALAR_DATA_PROPERTY__RANGE, oldRange, range));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__RANGE, oldRange, range));
 			}
 		}
 		return range;
@@ -210,7 +210,7 @@ public class EntityScalarDataPropertyImpl extends DataRelationshipImpl implement
 		DataRange oldRange = range;
 		range = newRange;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ENTITY_SCALAR_DATA_PROPERTY__RANGE, oldRange, range));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__RANGE, oldRange, range));
 	}
 
 	/**
@@ -239,12 +239,12 @@ public class EntityScalarDataPropertyImpl extends DataRelationshipImpl implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY__DOMAIN:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__DOMAIN:
 				if (resolve) return getDomain();
 				return basicGetDomain();
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
 				return isIsIdentityCriteria();
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY__RANGE:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__RANGE:
 				if (resolve) return getRange();
 				return basicGetRange();
 		}
@@ -259,13 +259,13 @@ public class EntityScalarDataPropertyImpl extends DataRelationshipImpl implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY__DOMAIN:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__DOMAIN:
 				setDomain((Entity)newValue);
 				return;
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
 				setIsIdentityCriteria((Boolean)newValue);
 				return;
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY__RANGE:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__RANGE:
 				setRange((DataRange)newValue);
 				return;
 		}
@@ -280,13 +280,13 @@ public class EntityScalarDataPropertyImpl extends DataRelationshipImpl implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY__DOMAIN:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__DOMAIN:
 				setDomain((Entity)null);
 				return;
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
 				setIsIdentityCriteria(IS_IDENTITY_CRITERIA_EDEFAULT);
 				return;
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY__RANGE:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__RANGE:
 				setRange((DataRange)null);
 				return;
 		}
@@ -301,11 +301,11 @@ public class EntityScalarDataPropertyImpl extends DataRelationshipImpl implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY__DOMAIN:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__DOMAIN:
 				return domain != null;
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
 				return isIdentityCriteria != IS_IDENTITY_CRITERIA_EDEFAULT;
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY__RANGE:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__RANGE:
 				return range != null;
 		}
 		return super.eIsSet(featureID);
@@ -325,8 +325,8 @@ public class EntityScalarDataPropertyImpl extends DataRelationshipImpl implement
 		}
 		if (baseClass == DataRelationshipFromEntity.class) {
 			switch (derivedFeatureID) {
-				case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY__DOMAIN: return EcorePackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN;
-				case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY__IS_IDENTITY_CRITERIA: return EcorePackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA;
+				case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__DOMAIN: return OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN;
+				case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__IS_IDENTITY_CRITERIA: return OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA;
 				default: return -1;
 			}
 		}
@@ -337,7 +337,7 @@ public class EntityScalarDataPropertyImpl extends DataRelationshipImpl implement
 		}
 		if (baseClass == DataRelationshipToScalar.class) {
 			switch (derivedFeatureID) {
-				case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY__RANGE: return EcorePackage.DATA_RELATIONSHIP_TO_SCALAR__RANGE;
+				case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__RANGE: return OMLPackage.DATA_RELATIONSHIP_TO_SCALAR__RANGE;
 				default: return -1;
 			}
 		}
@@ -358,8 +358,8 @@ public class EntityScalarDataPropertyImpl extends DataRelationshipImpl implement
 		}
 		if (baseClass == DataRelationshipFromEntity.class) {
 			switch (baseFeatureID) {
-				case EcorePackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN: return EcorePackage.ENTITY_SCALAR_DATA_PROPERTY__DOMAIN;
-				case EcorePackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA: return EcorePackage.ENTITY_SCALAR_DATA_PROPERTY__IS_IDENTITY_CRITERIA;
+				case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN: return OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__DOMAIN;
+				case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA: return OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__IS_IDENTITY_CRITERIA;
 				default: return -1;
 			}
 		}
@@ -370,7 +370,7 @@ public class EntityScalarDataPropertyImpl extends DataRelationshipImpl implement
 		}
 		if (baseClass == DataRelationshipToScalar.class) {
 			switch (baseFeatureID) {
-				case EcorePackage.DATA_RELATIONSHIP_TO_SCALAR__RANGE: return EcorePackage.ENTITY_SCALAR_DATA_PROPERTY__RANGE;
+				case OMLPackage.DATA_RELATIONSHIP_TO_SCALAR__RANGE: return OMLPackage.ENTITY_SCALAR_DATA_PROPERTY__RANGE;
 				default: return -1;
 			}
 		}
@@ -385,9 +385,9 @@ public class EntityScalarDataPropertyImpl extends DataRelationshipImpl implement
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY___SOURCE:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY___SOURCE:
 				return source();
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY___TARGET:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY___TARGET:
 				return target();
 		}
 		return super.eInvoke(operationID, arguments);

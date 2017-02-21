@@ -30,7 +30,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-model-doc -->
  *
  *
- * @see jpl.imce.oml.specification.ecore.EcorePackage#getDataRelationship()
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getDataRelationship()
  * @model abstract="true"
  * @generated
  */

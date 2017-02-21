@@ -36,7 +36,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * |========================================|=======================|===========|
  * | OML ConceptualEntitySingletonInstance	| Concrete OML ConceptualEntity | Any OML ConceptualEntity  |
  * <!-- end-model-doc -->
- * @see jpl.imce.oml.specification.ecore.EcorePackage#getDescriptionKind()
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getDescriptionKind()
  * @model
  * @generated
  */

@@ -20,6 +20,7 @@ limitations under the License.
    rootExtendsInterface="org.eclipse.emf.cdo.CDOObject",
    childCreationExtenders="true", 
    pluginKey="OML", 
+   prefix="OML",
    modelName="OML", 
    modelPluginID="jpl.imce.oml.specification.ecore",
    modelDirectory="/jpl.imce.oml.specification.ecore/src-gen", 

@@ -22,7 +22,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
 
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.TerminologyBox;
 import jpl.imce.oml.specification.ecore.TerminologyBoxAxiom;
 import jpl.imce.oml.specification.ecore.TerminologyBoxStatement;
@@ -113,7 +113,7 @@ public abstract class TerminologyBoxImpl extends ModuleImpl implements Terminolo
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getTerminologyBox();
+		return OMLPackage.eINSTANCE.getTerminologyBox();
 	}
 
 	/**
@@ -134,7 +134,7 @@ public abstract class TerminologyBoxImpl extends ModuleImpl implements Terminolo
 		TerminologyGraphKind oldKind = kind;
 		kind = newKind == null ? KIND_EDEFAULT : newKind;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.TERMINOLOGY_BOX__KIND, oldKind, kind));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.TERMINOLOGY_BOX__KIND, oldKind, kind));
 	}
 
 	/**
@@ -144,7 +144,7 @@ public abstract class TerminologyBoxImpl extends ModuleImpl implements Terminolo
 	 */
 	public EList<TerminologyBoxAxiom> getTerminologyBoxAxioms() {
 		if (terminologyBoxAxioms == null) {
-			terminologyBoxAxioms = new EObjectContainmentWithInverseEList<TerminologyBoxAxiom>(TerminologyBoxAxiom.class, this, EcorePackage.TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS, EcorePackage.TERMINOLOGY_BOX_AXIOM__TBOX);
+			terminologyBoxAxioms = new EObjectContainmentWithInverseEList<TerminologyBoxAxiom>(TerminologyBoxAxiom.class, this, OMLPackage.TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS, OMLPackage.TERMINOLOGY_BOX_AXIOM__TBOX);
 		}
 		return terminologyBoxAxioms;
 	}
@@ -156,7 +156,7 @@ public abstract class TerminologyBoxImpl extends ModuleImpl implements Terminolo
 	 */
 	public EList<TerminologyBoxStatement> getBoxStatements() {
 		if (boxStatements == null) {
-			boxStatements = new EObjectContainmentWithInverseEList<TerminologyBoxStatement>(TerminologyBoxStatement.class, this, EcorePackage.TERMINOLOGY_BOX__BOX_STATEMENTS, EcorePackage.TERMINOLOGY_BOX_STATEMENT__TBOX);
+			boxStatements = new EObjectContainmentWithInverseEList<TerminologyBoxStatement>(TerminologyBoxStatement.class, this, OMLPackage.TERMINOLOGY_BOX__BOX_STATEMENTS, OMLPackage.TERMINOLOGY_BOX_STATEMENT__TBOX);
 		}
 		return boxStatements;
 	}
@@ -181,9 +181,9 @@ public abstract class TerminologyBoxImpl extends ModuleImpl implements Terminolo
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case EcorePackage.TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS:
+			case OMLPackage.TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTerminologyBoxAxioms()).basicAdd(otherEnd, msgs);
-			case EcorePackage.TERMINOLOGY_BOX__BOX_STATEMENTS:
+			case OMLPackage.TERMINOLOGY_BOX__BOX_STATEMENTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBoxStatements()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -197,9 +197,9 @@ public abstract class TerminologyBoxImpl extends ModuleImpl implements Terminolo
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case EcorePackage.TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS:
+			case OMLPackage.TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS:
 				return ((InternalEList<?>)getTerminologyBoxAxioms()).basicRemove(otherEnd, msgs);
-			case EcorePackage.TERMINOLOGY_BOX__BOX_STATEMENTS:
+			case OMLPackage.TERMINOLOGY_BOX__BOX_STATEMENTS:
 				return ((InternalEList<?>)getBoxStatements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -213,11 +213,11 @@ public abstract class TerminologyBoxImpl extends ModuleImpl implements Terminolo
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.TERMINOLOGY_BOX__KIND:
+			case OMLPackage.TERMINOLOGY_BOX__KIND:
 				return getKind();
-			case EcorePackage.TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS:
+			case OMLPackage.TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS:
 				return getTerminologyBoxAxioms();
-			case EcorePackage.TERMINOLOGY_BOX__BOX_STATEMENTS:
+			case OMLPackage.TERMINOLOGY_BOX__BOX_STATEMENTS:
 				return getBoxStatements();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -232,14 +232,14 @@ public abstract class TerminologyBoxImpl extends ModuleImpl implements Terminolo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.TERMINOLOGY_BOX__KIND:
+			case OMLPackage.TERMINOLOGY_BOX__KIND:
 				setKind((TerminologyGraphKind)newValue);
 				return;
-			case EcorePackage.TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS:
+			case OMLPackage.TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS:
 				getTerminologyBoxAxioms().clear();
 				getTerminologyBoxAxioms().addAll((Collection<? extends TerminologyBoxAxiom>)newValue);
 				return;
-			case EcorePackage.TERMINOLOGY_BOX__BOX_STATEMENTS:
+			case OMLPackage.TERMINOLOGY_BOX__BOX_STATEMENTS:
 				getBoxStatements().clear();
 				getBoxStatements().addAll((Collection<? extends TerminologyBoxStatement>)newValue);
 				return;
@@ -255,13 +255,13 @@ public abstract class TerminologyBoxImpl extends ModuleImpl implements Terminolo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.TERMINOLOGY_BOX__KIND:
+			case OMLPackage.TERMINOLOGY_BOX__KIND:
 				setKind(KIND_EDEFAULT);
 				return;
-			case EcorePackage.TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS:
+			case OMLPackage.TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS:
 				getTerminologyBoxAxioms().clear();
 				return;
-			case EcorePackage.TERMINOLOGY_BOX__BOX_STATEMENTS:
+			case OMLPackage.TERMINOLOGY_BOX__BOX_STATEMENTS:
 				getBoxStatements().clear();
 				return;
 		}
@@ -276,11 +276,11 @@ public abstract class TerminologyBoxImpl extends ModuleImpl implements Terminolo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.TERMINOLOGY_BOX__KIND:
+			case OMLPackage.TERMINOLOGY_BOX__KIND:
 				return kind != KIND_EDEFAULT;
-			case EcorePackage.TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS:
+			case OMLPackage.TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS:
 				return terminologyBoxAxioms != null && !terminologyBoxAxioms.isEmpty();
-			case EcorePackage.TERMINOLOGY_BOX__BOX_STATEMENTS:
+			case OMLPackage.TERMINOLOGY_BOX__BOX_STATEMENTS:
 				return boxStatements != null && !boxStatements.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -295,7 +295,7 @@ public abstract class TerminologyBoxImpl extends ModuleImpl implements Terminolo
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.TERMINOLOGY_BOX___WITH_BOX_STATEMENTS__ELIST:
+			case OMLPackage.TERMINOLOGY_BOX___WITH_BOX_STATEMENTS__ELIST:
 				return withBoxStatements((EList<TerminologyBoxStatement>)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);

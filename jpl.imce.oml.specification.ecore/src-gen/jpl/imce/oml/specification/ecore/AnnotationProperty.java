@@ -39,7 +39,7 @@ import org.eclipse.emf.cdo.CDOObject;
  *   <li>{@link jpl.imce.oml.specification.ecore.AnnotationProperty#getAbbrevIRI <em>Abbrev IRI</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.EcorePackage#getAnnotationProperty()
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getAnnotationProperty()
  * @model
  * @extends CDOObject
  * @generated
@@ -55,7 +55,7 @@ public interface AnnotationProperty extends CDOObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Iri</em>' attribute.
 	 * @see #setIri(String)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getAnnotationProperty_Iri()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getAnnotationProperty_Iri()
 	 * @model unique="false" dataType="jpl.imce.oml.specification.ecore.IRI" required="true"
 	 * @generated
 	 */
@@ -81,7 +81,7 @@ public interface AnnotationProperty extends CDOObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Abbrev IRI</em>' attribute.
 	 * @see #setAbbrevIRI(String)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getAnnotationProperty_AbbrevIRI()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getAnnotationProperty_AbbrevIRI()
 	 * @model unique="false" id="true" dataType="jpl.imce.oml.specification.ecore.AbbrevIRI" required="true"
 	 * @generated
 	 */

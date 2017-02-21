@@ -27,8 +27,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.DataRange;
-import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.IRIScalarRestriction;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.Term;
 import jpl.imce.oml.specification.ecore.TerminologyThing;
 
@@ -153,7 +153,7 @@ public class IRIScalarRestrictionImpl extends RestrictedDataRangeImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getIRIScalarRestriction();
+		return OMLPackage.eINSTANCE.getIRIScalarRestriction();
 	}
 
 	/**
@@ -174,7 +174,7 @@ public class IRIScalarRestrictionImpl extends RestrictedDataRangeImpl implements
 		int oldLength = length;
 		length = newLength;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.IRI_SCALAR_RESTRICTION__LENGTH, oldLength, length));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.IRI_SCALAR_RESTRICTION__LENGTH, oldLength, length));
 	}
 
 	/**
@@ -195,7 +195,7 @@ public class IRIScalarRestrictionImpl extends RestrictedDataRangeImpl implements
 		int oldMinLength = minLength;
 		minLength = newMinLength;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.IRI_SCALAR_RESTRICTION__MIN_LENGTH, oldMinLength, minLength));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.IRI_SCALAR_RESTRICTION__MIN_LENGTH, oldMinLength, minLength));
 	}
 
 	/**
@@ -216,7 +216,7 @@ public class IRIScalarRestrictionImpl extends RestrictedDataRangeImpl implements
 		int oldMaxLength = maxLength;
 		maxLength = newMaxLength;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.IRI_SCALAR_RESTRICTION__MAX_LENGTH, oldMaxLength, maxLength));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.IRI_SCALAR_RESTRICTION__MAX_LENGTH, oldMaxLength, maxLength));
 	}
 
 	/**
@@ -237,7 +237,7 @@ public class IRIScalarRestrictionImpl extends RestrictedDataRangeImpl implements
 		String oldPattern = pattern;
 		pattern = newPattern;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.IRI_SCALAR_RESTRICTION__PATTERN, oldPattern, pattern));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.IRI_SCALAR_RESTRICTION__PATTERN, oldPattern, pattern));
 	}
 
 	/**
@@ -267,13 +267,13 @@ public class IRIScalarRestrictionImpl extends RestrictedDataRangeImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.IRI_SCALAR_RESTRICTION__LENGTH:
+			case OMLPackage.IRI_SCALAR_RESTRICTION__LENGTH:
 				return getLength();
-			case EcorePackage.IRI_SCALAR_RESTRICTION__MIN_LENGTH:
+			case OMLPackage.IRI_SCALAR_RESTRICTION__MIN_LENGTH:
 				return getMinLength();
-			case EcorePackage.IRI_SCALAR_RESTRICTION__MAX_LENGTH:
+			case OMLPackage.IRI_SCALAR_RESTRICTION__MAX_LENGTH:
 				return getMaxLength();
-			case EcorePackage.IRI_SCALAR_RESTRICTION__PATTERN:
+			case OMLPackage.IRI_SCALAR_RESTRICTION__PATTERN:
 				return getPattern();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -287,16 +287,16 @@ public class IRIScalarRestrictionImpl extends RestrictedDataRangeImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.IRI_SCALAR_RESTRICTION__LENGTH:
+			case OMLPackage.IRI_SCALAR_RESTRICTION__LENGTH:
 				setLength((Integer)newValue);
 				return;
-			case EcorePackage.IRI_SCALAR_RESTRICTION__MIN_LENGTH:
+			case OMLPackage.IRI_SCALAR_RESTRICTION__MIN_LENGTH:
 				setMinLength((Integer)newValue);
 				return;
-			case EcorePackage.IRI_SCALAR_RESTRICTION__MAX_LENGTH:
+			case OMLPackage.IRI_SCALAR_RESTRICTION__MAX_LENGTH:
 				setMaxLength((Integer)newValue);
 				return;
-			case EcorePackage.IRI_SCALAR_RESTRICTION__PATTERN:
+			case OMLPackage.IRI_SCALAR_RESTRICTION__PATTERN:
 				setPattern((String)newValue);
 				return;
 		}
@@ -311,16 +311,16 @@ public class IRIScalarRestrictionImpl extends RestrictedDataRangeImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.IRI_SCALAR_RESTRICTION__LENGTH:
+			case OMLPackage.IRI_SCALAR_RESTRICTION__LENGTH:
 				setLength(LENGTH_EDEFAULT);
 				return;
-			case EcorePackage.IRI_SCALAR_RESTRICTION__MIN_LENGTH:
+			case OMLPackage.IRI_SCALAR_RESTRICTION__MIN_LENGTH:
 				setMinLength(MIN_LENGTH_EDEFAULT);
 				return;
-			case EcorePackage.IRI_SCALAR_RESTRICTION__MAX_LENGTH:
+			case OMLPackage.IRI_SCALAR_RESTRICTION__MAX_LENGTH:
 				setMaxLength(MAX_LENGTH_EDEFAULT);
 				return;
-			case EcorePackage.IRI_SCALAR_RESTRICTION__PATTERN:
+			case OMLPackage.IRI_SCALAR_RESTRICTION__PATTERN:
 				setPattern(PATTERN_EDEFAULT);
 				return;
 		}
@@ -335,13 +335,13 @@ public class IRIScalarRestrictionImpl extends RestrictedDataRangeImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.IRI_SCALAR_RESTRICTION__LENGTH:
+			case OMLPackage.IRI_SCALAR_RESTRICTION__LENGTH:
 				return length != LENGTH_EDEFAULT;
-			case EcorePackage.IRI_SCALAR_RESTRICTION__MIN_LENGTH:
+			case OMLPackage.IRI_SCALAR_RESTRICTION__MIN_LENGTH:
 				return minLength != MIN_LENGTH_EDEFAULT;
-			case EcorePackage.IRI_SCALAR_RESTRICTION__MAX_LENGTH:
+			case OMLPackage.IRI_SCALAR_RESTRICTION__MAX_LENGTH:
 				return maxLength != MAX_LENGTH_EDEFAULT;
-			case EcorePackage.IRI_SCALAR_RESTRICTION__PATTERN:
+			case OMLPackage.IRI_SCALAR_RESTRICTION__PATTERN:
 				return PATTERN_EDEFAULT == null ? pattern != null : !PATTERN_EDEFAULT.equals(pattern);
 		}
 		return super.eIsSet(featureID);
@@ -356,13 +356,13 @@ public class IRIScalarRestrictionImpl extends RestrictedDataRangeImpl implements
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == TerminologyThing.class) {
 			switch (baseOperationID) {
-				case EcorePackage.TERMINOLOGY_THING___CALCULATE_UUID: return EcorePackage.IRI_SCALAR_RESTRICTION___CALCULATE_UUID;
+				case OMLPackage.TERMINOLOGY_THING___CALCULATE_UUID: return OMLPackage.IRI_SCALAR_RESTRICTION___CALCULATE_UUID;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
 		if (baseClass == Term.class) {
 			switch (baseOperationID) {
-				case EcorePackage.TERM___CALCULATE_UUID: return EcorePackage.IRI_SCALAR_RESTRICTION___CALCULATE_UUID;
+				case OMLPackage.TERM___CALCULATE_UUID: return OMLPackage.IRI_SCALAR_RESTRICTION___CALCULATE_UUID;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
@@ -377,7 +377,7 @@ public class IRIScalarRestrictionImpl extends RestrictedDataRangeImpl implements
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.IRI_SCALAR_RESTRICTION___CALCULATE_UUID:
+			case OMLPackage.IRI_SCALAR_RESTRICTION___CALCULATE_UUID:
 				return calculateUUID();
 		}
 		return super.eInvoke(operationID, arguments);

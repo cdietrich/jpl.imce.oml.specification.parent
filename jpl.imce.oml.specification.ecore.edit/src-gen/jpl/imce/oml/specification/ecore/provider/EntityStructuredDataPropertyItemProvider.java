@@ -21,9 +21,8 @@ package jpl.imce.oml.specification.ecore.provider;
 
 import java.util.Collection;
 import java.util.List;
-
-import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.EntityStructuredDataProperty;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -80,7 +79,7 @@ public class EntityStructuredDataPropertyItemProvider extends DataRelationshipIt
 				 getResourceLocator(),
 				 getString("_UI_DataRelationshipFromEntity_domain_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataRelationshipFromEntity_domain_feature", "_UI_DataRelationshipFromEntity_type"),
-				 EcorePackage.eINSTANCE.getDataRelationshipFromEntity_Domain(),
+				 OMLPackage.eINSTANCE.getDataRelationshipFromEntity_Domain(),
 				 true,
 				 false,
 				 true,
@@ -102,7 +101,7 @@ public class EntityStructuredDataPropertyItemProvider extends DataRelationshipIt
 				 getResourceLocator(),
 				 getString("_UI_DataRelationshipFromEntity_isIdentityCriteria_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataRelationshipFromEntity_isIdentityCriteria_feature", "_UI_DataRelationshipFromEntity_type"),
-				 EcorePackage.eINSTANCE.getDataRelationshipFromEntity_IsIdentityCriteria(),
+				 OMLPackage.eINSTANCE.getDataRelationshipFromEntity_IsIdentityCriteria(),
 				 true,
 				 false,
 				 false,
@@ -124,7 +123,7 @@ public class EntityStructuredDataPropertyItemProvider extends DataRelationshipIt
 				 getResourceLocator(),
 				 getString("_UI_DataRelationshipToStructure_range_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataRelationshipToStructure_range_feature", "_UI_DataRelationshipToStructure_type"),
-				 EcorePackage.eINSTANCE.getDataRelationshipToStructure_Range(),
+				 OMLPackage.eINSTANCE.getDataRelationshipToStructure_Range(),
 				 true,
 				 false,
 				 true,
@@ -171,7 +170,7 @@ public class EntityStructuredDataPropertyItemProvider extends DataRelationshipIt
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EntityStructuredDataProperty.class)) {
-			case EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
+			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -21,9 +21,8 @@ package jpl.imce.oml.specification.ecore.provider;
 
 import java.util.Collection;
 import java.util.List;
-
-import jpl.imce.oml.specification.ecore.EcoreFactory;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLFactory;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.TerminologyExtent;
 
 import jpl.imce.oml.specification.ecore.edit.provider.OMLEditPlugin;
@@ -95,10 +94,10 @@ public class TerminologyExtentItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(EcorePackage.eINSTANCE.getTerminologyExtent_AnnotationProperties());
-			childrenFeatures.add(EcorePackage.eINSTANCE.getTerminologyExtent_TerminologyGraphs());
-			childrenFeatures.add(EcorePackage.eINSTANCE.getTerminologyExtent_Bundles());
-			childrenFeatures.add(EcorePackage.eINSTANCE.getTerminologyExtent_Descriptions());
+			childrenFeatures.add(OMLPackage.eINSTANCE.getTerminologyExtent_AnnotationProperties());
+			childrenFeatures.add(OMLPackage.eINSTANCE.getTerminologyExtent_TerminologyGraphs());
+			childrenFeatures.add(OMLPackage.eINSTANCE.getTerminologyExtent_Bundles());
+			childrenFeatures.add(OMLPackage.eINSTANCE.getTerminologyExtent_Descriptions());
 		}
 		return childrenFeatures;
 	}
@@ -151,10 +150,10 @@ public class TerminologyExtentItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TerminologyExtent.class)) {
-			case EcorePackage.TERMINOLOGY_EXTENT__ANNOTATION_PROPERTIES:
-			case EcorePackage.TERMINOLOGY_EXTENT__TERMINOLOGY_GRAPHS:
-			case EcorePackage.TERMINOLOGY_EXTENT__BUNDLES:
-			case EcorePackage.TERMINOLOGY_EXTENT__DESCRIPTIONS:
+			case OMLPackage.TERMINOLOGY_EXTENT__ANNOTATION_PROPERTIES:
+			case OMLPackage.TERMINOLOGY_EXTENT__TERMINOLOGY_GRAPHS:
+			case OMLPackage.TERMINOLOGY_EXTENT__BUNDLES:
+			case OMLPackage.TERMINOLOGY_EXTENT__DESCRIPTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -174,23 +173,23 @@ public class TerminologyExtentItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyExtent_AnnotationProperties(),
-				 EcoreFactory.eINSTANCE.createAnnotationProperty()));
+				(OMLPackage.eINSTANCE.getTerminologyExtent_AnnotationProperties(),
+				 OMLFactory.eINSTANCE.createAnnotationProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyExtent_TerminologyGraphs(),
-				 EcoreFactory.eINSTANCE.createTerminologyGraph()));
+				(OMLPackage.eINSTANCE.getTerminologyExtent_TerminologyGraphs(),
+				 OMLFactory.eINSTANCE.createTerminologyGraph()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyExtent_Bundles(),
-				 EcoreFactory.eINSTANCE.createBundle()));
+				(OMLPackage.eINSTANCE.getTerminologyExtent_Bundles(),
+				 OMLFactory.eINSTANCE.createBundle()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyExtent_Descriptions(),
-				 EcoreFactory.eINSTANCE.createDescriptionBox()));
+				(OMLPackage.eINSTANCE.getTerminologyExtent_Descriptions(),
+				 OMLFactory.eINSTANCE.createDescriptionBox()));
 	}
 
 	/**

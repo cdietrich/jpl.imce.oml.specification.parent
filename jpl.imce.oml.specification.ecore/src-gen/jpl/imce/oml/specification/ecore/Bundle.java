@@ -41,7 +41,7 @@ import org.eclipse.emf.common.util.EMap;
  *   <li>{@link jpl.imce.oml.specification.ecore.Bundle#getTerminologyBundleAxioms <em>Terminology Bundle Axioms</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.EcorePackage#getBundle()
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getBundle()
  * @model
  * @generated
  */
@@ -57,7 +57,7 @@ public interface Bundle extends TerminologyBox {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Bundle Extent</em>' container reference.
 	 * @see #setBundleExtent(TerminologyExtent)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getBundle_BundleExtent()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getBundle_BundleExtent()
 	 * @see jpl.imce.oml.specification.ecore.TerminologyExtent#getBundles
 	 * @model opposite="bundles" required="true" transient="false"
 	 * @generated
@@ -84,7 +84,7 @@ public interface Bundle extends TerminologyBox {
 	 * The TerminologyBundleStatements asserted in this Bundle
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Bundle Statements</em>' containment reference list.
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getBundle_BundleStatements()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getBundle_BundleStatements()
 	 * @see jpl.imce.oml.specification.ecore.TerminologyBundleStatement#getBundle
 	 * @model opposite="bundle" containment="true"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
@@ -102,7 +102,7 @@ public interface Bundle extends TerminologyBox {
 	 * The BundledTerminologyAxioms asserted in this Bundle
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Terminology Bundle Axioms</em>' containment reference list.
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getBundle_TerminologyBundleAxioms()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getBundle_TerminologyBundleAxioms()
 	 * @see jpl.imce.oml.specification.ecore.TerminologyBundleAxiom#getTerminologyBundle
 	 * @model opposite="terminologyBundle" containment="true"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"

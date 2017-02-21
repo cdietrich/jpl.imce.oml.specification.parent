@@ -46,7 +46,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link jpl.imce.oml.specification.ecore.TerminologyExtent#getDescriptions <em>Descriptions</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyExtent()
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyExtent()
  * @model
  * @extends CDOObject
  * @generated
@@ -62,7 +62,7 @@ public interface TerminologyExtent extends CDOObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Annotation Properties</em>' containment reference list.
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyExtent_AnnotationProperties()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyExtent_AnnotationProperties()
 	 * @model containment="true"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
 	 * @generated
@@ -80,7 +80,7 @@ public interface TerminologyExtent extends CDOObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Terminology Graphs</em>' containment reference list.
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyExtent_TerminologyGraphs()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyExtent_TerminologyGraphs()
 	 * @see jpl.imce.oml.specification.ecore.TerminologyGraph#getGraphExtent
 	 * @model opposite="graphExtent" containment="true"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
@@ -99,7 +99,7 @@ public interface TerminologyExtent extends CDOObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Bundles</em>' containment reference list.
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyExtent_Bundles()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyExtent_Bundles()
 	 * @see jpl.imce.oml.specification.ecore.Bundle#getBundleExtent
 	 * @model opposite="bundleExtent" containment="true"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"
@@ -118,7 +118,7 @@ public interface TerminologyExtent extends CDOObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Descriptions</em>' containment reference list.
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyExtent_Descriptions()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyExtent_Descriptions()
 	 * @see jpl.imce.oml.specification.ecore.DescriptionBox#getDescriptionExtent
 	 * @model opposite="descriptionExtent" containment="true"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"

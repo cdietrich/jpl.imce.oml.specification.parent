@@ -18,10 +18,10 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
-import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Entity;
 import jpl.imce.oml.specification.ecore.EntityRelationship;
 import jpl.imce.oml.specification.ecore.EntityRestrictionAxiom;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -93,7 +93,7 @@ public abstract class EntityRestrictionAxiomImpl extends TermAxiomImpl implement
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getEntityRestrictionAxiom();
+		return OMLPackage.eINSTANCE.getEntityRestrictionAxiom();
 	}
 
 	/**
@@ -107,7 +107,7 @@ public abstract class EntityRestrictionAxiomImpl extends TermAxiomImpl implement
 			restrictedRelation = (EntityRelationship)eResolveProxy(oldRestrictedRelation);
 			if (restrictedRelation != oldRestrictedRelation) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_RELATION, oldRestrictedRelation, restrictedRelation));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_RELATION, oldRestrictedRelation, restrictedRelation));
 			}
 		}
 		return restrictedRelation;
@@ -131,7 +131,7 @@ public abstract class EntityRestrictionAxiomImpl extends TermAxiomImpl implement
 		EntityRelationship oldRestrictedRelation = restrictedRelation;
 		restrictedRelation = newRestrictedRelation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_RELATION, oldRestrictedRelation, restrictedRelation));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_RELATION, oldRestrictedRelation, restrictedRelation));
 	}
 
 	/**
@@ -145,7 +145,7 @@ public abstract class EntityRestrictionAxiomImpl extends TermAxiomImpl implement
 			restrictedRange = (Entity)eResolveProxy(oldRestrictedRange);
 			if (restrictedRange != oldRestrictedRange) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_RANGE, oldRestrictedRange, restrictedRange));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_RANGE, oldRestrictedRange, restrictedRange));
 			}
 		}
 		return restrictedRange;
@@ -169,7 +169,7 @@ public abstract class EntityRestrictionAxiomImpl extends TermAxiomImpl implement
 		Entity oldRestrictedRange = restrictedRange;
 		restrictedRange = newRestrictedRange;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_RANGE, oldRestrictedRange, restrictedRange));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_RANGE, oldRestrictedRange, restrictedRange));
 	}
 
 	/**
@@ -183,7 +183,7 @@ public abstract class EntityRestrictionAxiomImpl extends TermAxiomImpl implement
 			restrictedDomain = (Entity)eResolveProxy(oldRestrictedDomain);
 			if (restrictedDomain != oldRestrictedDomain) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_DOMAIN, oldRestrictedDomain, restrictedDomain));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_DOMAIN, oldRestrictedDomain, restrictedDomain));
 			}
 		}
 		return restrictedDomain;
@@ -207,7 +207,7 @@ public abstract class EntityRestrictionAxiomImpl extends TermAxiomImpl implement
 		Entity oldRestrictedDomain = restrictedDomain;
 		restrictedDomain = newRestrictedDomain;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_DOMAIN, oldRestrictedDomain, restrictedDomain));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_DOMAIN, oldRestrictedDomain, restrictedDomain));
 	}
 
 	/**
@@ -218,13 +218,13 @@ public abstract class EntityRestrictionAxiomImpl extends TermAxiomImpl implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_RELATION:
+			case OMLPackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_RELATION:
 				if (resolve) return getRestrictedRelation();
 				return basicGetRestrictedRelation();
-			case EcorePackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_RANGE:
+			case OMLPackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_RANGE:
 				if (resolve) return getRestrictedRange();
 				return basicGetRestrictedRange();
-			case EcorePackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_DOMAIN:
+			case OMLPackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_DOMAIN:
 				if (resolve) return getRestrictedDomain();
 				return basicGetRestrictedDomain();
 		}
@@ -239,13 +239,13 @@ public abstract class EntityRestrictionAxiomImpl extends TermAxiomImpl implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_RELATION:
+			case OMLPackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_RELATION:
 				setRestrictedRelation((EntityRelationship)newValue);
 				return;
-			case EcorePackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_RANGE:
+			case OMLPackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_RANGE:
 				setRestrictedRange((Entity)newValue);
 				return;
-			case EcorePackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_DOMAIN:
+			case OMLPackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_DOMAIN:
 				setRestrictedDomain((Entity)newValue);
 				return;
 		}
@@ -260,13 +260,13 @@ public abstract class EntityRestrictionAxiomImpl extends TermAxiomImpl implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_RELATION:
+			case OMLPackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_RELATION:
 				setRestrictedRelation((EntityRelationship)null);
 				return;
-			case EcorePackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_RANGE:
+			case OMLPackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_RANGE:
 				setRestrictedRange((Entity)null);
 				return;
-			case EcorePackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_DOMAIN:
+			case OMLPackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_DOMAIN:
 				setRestrictedDomain((Entity)null);
 				return;
 		}
@@ -281,11 +281,11 @@ public abstract class EntityRestrictionAxiomImpl extends TermAxiomImpl implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_RELATION:
+			case OMLPackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_RELATION:
 				return restrictedRelation != null;
-			case EcorePackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_RANGE:
+			case OMLPackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_RANGE:
 				return restrictedRange != null;
-			case EcorePackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_DOMAIN:
+			case OMLPackage.ENTITY_RESTRICTION_AXIOM__RESTRICTED_DOMAIN:
 				return restrictedDomain != null;
 		}
 		return super.eIsSet(featureID);

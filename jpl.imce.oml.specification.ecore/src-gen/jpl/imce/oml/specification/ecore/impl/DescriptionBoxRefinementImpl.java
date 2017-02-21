@@ -28,8 +28,8 @@ import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.DescriptionBox;
 import jpl.imce.oml.specification.ecore.DescriptionBoxRefinement;
-import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Module;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -85,7 +85,7 @@ public class DescriptionBoxRefinementImpl extends DescriptionBoxRelationshipImpl
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getDescriptionBoxRefinement();
+		return OMLPackage.eINSTANCE.getDescriptionBoxRefinement();
 	}
 
 	/**
@@ -94,7 +94,7 @@ public class DescriptionBoxRefinementImpl extends DescriptionBoxRelationshipImpl
 	 * @generated
 	 */
 	public DescriptionBox getRefiningDescriptionBox() {
-		if (eContainerFeatureID() != EcorePackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX) return null;
+		if (eContainerFeatureID() != OMLPackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX) return null;
 		return (DescriptionBox)eContainer();
 	}
 
@@ -104,7 +104,7 @@ public class DescriptionBoxRefinementImpl extends DescriptionBoxRelationshipImpl
 	 * @generated
 	 */
 	public DescriptionBox basicGetRefiningDescriptionBox() {
-		if (eContainerFeatureID() != EcorePackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX) return null;
+		if (eContainerFeatureID() != OMLPackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX) return null;
 		return (DescriptionBox)eInternalContainer();
 	}
 
@@ -114,7 +114,7 @@ public class DescriptionBoxRefinementImpl extends DescriptionBoxRelationshipImpl
 	 * @generated
 	 */
 	public NotificationChain basicSetRefiningDescriptionBox(DescriptionBox newRefiningDescriptionBox, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newRefiningDescriptionBox, EcorePackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newRefiningDescriptionBox, OMLPackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX, msgs);
 		return msgs;
 	}
 
@@ -124,19 +124,19 @@ public class DescriptionBoxRefinementImpl extends DescriptionBoxRelationshipImpl
 	 * @generated
 	 */
 	public void setRefiningDescriptionBox(DescriptionBox newRefiningDescriptionBox) {
-		if (newRefiningDescriptionBox != eInternalContainer() || (eContainerFeatureID() != EcorePackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX && newRefiningDescriptionBox != null)) {
+		if (newRefiningDescriptionBox != eInternalContainer() || (eContainerFeatureID() != OMLPackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX && newRefiningDescriptionBox != null)) {
 			if (EcoreUtil.isAncestor(this, (EObject)newRefiningDescriptionBox))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newRefiningDescriptionBox != null)
-				msgs = ((InternalEObject)newRefiningDescriptionBox).eInverseAdd(this, EcorePackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS, DescriptionBox.class, msgs);
+				msgs = ((InternalEObject)newRefiningDescriptionBox).eInverseAdd(this, OMLPackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS, DescriptionBox.class, msgs);
 			msgs = basicSetRefiningDescriptionBox(newRefiningDescriptionBox, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX, newRefiningDescriptionBox, newRefiningDescriptionBox));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX, newRefiningDescriptionBox, newRefiningDescriptionBox));
 	}
 
 	/**
@@ -150,7 +150,7 @@ public class DescriptionBoxRefinementImpl extends DescriptionBoxRelationshipImpl
 			refinedDescriptionBox = (DescriptionBox)eResolveProxy(oldRefinedDescriptionBox);
 			if (refinedDescriptionBox != oldRefinedDescriptionBox) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.DESCRIPTION_BOX_REFINEMENT__REFINED_DESCRIPTION_BOX, oldRefinedDescriptionBox, refinedDescriptionBox));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.DESCRIPTION_BOX_REFINEMENT__REFINED_DESCRIPTION_BOX, oldRefinedDescriptionBox, refinedDescriptionBox));
 			}
 		}
 		return refinedDescriptionBox;
@@ -174,7 +174,7 @@ public class DescriptionBoxRefinementImpl extends DescriptionBoxRelationshipImpl
 		DescriptionBox oldRefinedDescriptionBox = refinedDescriptionBox;
 		refinedDescriptionBox = newRefinedDescriptionBox;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.DESCRIPTION_BOX_REFINEMENT__REFINED_DESCRIPTION_BOX, oldRefinedDescriptionBox, refinedDescriptionBox));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.DESCRIPTION_BOX_REFINEMENT__REFINED_DESCRIPTION_BOX, oldRefinedDescriptionBox, refinedDescriptionBox));
 	}
 
 	/**
@@ -226,7 +226,7 @@ public class DescriptionBoxRefinementImpl extends DescriptionBoxRelationshipImpl
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case EcorePackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX:
+			case OMLPackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetRefiningDescriptionBox((DescriptionBox)otherEnd, msgs);
@@ -242,7 +242,7 @@ public class DescriptionBoxRefinementImpl extends DescriptionBoxRelationshipImpl
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case EcorePackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX:
+			case OMLPackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX:
 				return basicSetRefiningDescriptionBox(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -256,8 +256,8 @@ public class DescriptionBoxRefinementImpl extends DescriptionBoxRelationshipImpl
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case EcorePackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX:
-				return eInternalContainer().eInverseRemove(this, EcorePackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS, DescriptionBox.class, msgs);
+			case OMLPackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX:
+				return eInternalContainer().eInverseRemove(this, OMLPackage.DESCRIPTION_BOX__DESCRIPTION_BOX_REFINEMENTS, DescriptionBox.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -270,10 +270,10 @@ public class DescriptionBoxRefinementImpl extends DescriptionBoxRelationshipImpl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX:
+			case OMLPackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX:
 				if (resolve) return getRefiningDescriptionBox();
 				return basicGetRefiningDescriptionBox();
-			case EcorePackage.DESCRIPTION_BOX_REFINEMENT__REFINED_DESCRIPTION_BOX:
+			case OMLPackage.DESCRIPTION_BOX_REFINEMENT__REFINED_DESCRIPTION_BOX:
 				if (resolve) return getRefinedDescriptionBox();
 				return basicGetRefinedDescriptionBox();
 		}
@@ -288,10 +288,10 @@ public class DescriptionBoxRefinementImpl extends DescriptionBoxRelationshipImpl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX:
+			case OMLPackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX:
 				setRefiningDescriptionBox((DescriptionBox)newValue);
 				return;
-			case EcorePackage.DESCRIPTION_BOX_REFINEMENT__REFINED_DESCRIPTION_BOX:
+			case OMLPackage.DESCRIPTION_BOX_REFINEMENT__REFINED_DESCRIPTION_BOX:
 				setRefinedDescriptionBox((DescriptionBox)newValue);
 				return;
 		}
@@ -306,10 +306,10 @@ public class DescriptionBoxRefinementImpl extends DescriptionBoxRelationshipImpl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX:
+			case OMLPackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX:
 				setRefiningDescriptionBox((DescriptionBox)null);
 				return;
-			case EcorePackage.DESCRIPTION_BOX_REFINEMENT__REFINED_DESCRIPTION_BOX:
+			case OMLPackage.DESCRIPTION_BOX_REFINEMENT__REFINED_DESCRIPTION_BOX:
 				setRefinedDescriptionBox((DescriptionBox)null);
 				return;
 		}
@@ -324,9 +324,9 @@ public class DescriptionBoxRefinementImpl extends DescriptionBoxRelationshipImpl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX:
+			case OMLPackage.DESCRIPTION_BOX_REFINEMENT__REFINING_DESCRIPTION_BOX:
 				return basicGetRefiningDescriptionBox() != null;
-			case EcorePackage.DESCRIPTION_BOX_REFINEMENT__REFINED_DESCRIPTION_BOX:
+			case OMLPackage.DESCRIPTION_BOX_REFINEMENT__REFINED_DESCRIPTION_BOX:
 				return refinedDescriptionBox != null;
 		}
 		return super.eIsSet(featureID);
@@ -340,11 +340,11 @@ public class DescriptionBoxRefinementImpl extends DescriptionBoxRelationshipImpl
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.DESCRIPTION_BOX_REFINEMENT___CALCULATE_UUID:
+			case OMLPackage.DESCRIPTION_BOX_REFINEMENT___CALCULATE_UUID:
 				return calculateUUID();
-			case EcorePackage.DESCRIPTION_BOX_REFINEMENT___DESCRIPTION_DOMAIN:
+			case OMLPackage.DESCRIPTION_BOX_REFINEMENT___DESCRIPTION_DOMAIN:
 				return descriptionDomain();
-			case EcorePackage.DESCRIPTION_BOX_REFINEMENT___TARGET_MODULE:
+			case OMLPackage.DESCRIPTION_BOX_REFINEMENT___TARGET_MODULE:
 				return targetModule();
 		}
 		return super.eInvoke(operationID, arguments);

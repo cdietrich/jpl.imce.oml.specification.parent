@@ -21,8 +21,8 @@ package jpl.imce.oml.specification.ecore.provider;
 
 import java.util.Collection;
 import java.util.List;
-import jpl.imce.oml.specification.ecore.EcoreFactory;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLFactory;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.SingletonInstance;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -75,8 +75,8 @@ public class SingletonInstanceItemProvider extends TerminologyInstanceAssertionI
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(EcorePackage.eINSTANCE.getSingletonInstance_ScalarDataPropertyValues());
-			childrenFeatures.add(EcorePackage.eINSTANCE.getSingletonInstance_StructuredDataPropertyValues());
+			childrenFeatures.add(OMLPackage.eINSTANCE.getSingletonInstance_ScalarDataPropertyValues());
+			childrenFeatures.add(OMLPackage.eINSTANCE.getSingletonInstance_StructuredDataPropertyValues());
 		}
 		return childrenFeatures;
 	}
@@ -121,8 +121,8 @@ public class SingletonInstanceItemProvider extends TerminologyInstanceAssertionI
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SingletonInstance.class)) {
-			case EcorePackage.SINGLETON_INSTANCE__SCALAR_DATA_PROPERTY_VALUES:
-			case EcorePackage.SINGLETON_INSTANCE__STRUCTURED_DATA_PROPERTY_VALUES:
+			case OMLPackage.SINGLETON_INSTANCE__SCALAR_DATA_PROPERTY_VALUES:
+			case OMLPackage.SINGLETON_INSTANCE__STRUCTURED_DATA_PROPERTY_VALUES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -142,13 +142,13 @@ public class SingletonInstanceItemProvider extends TerminologyInstanceAssertionI
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getSingletonInstance_ScalarDataPropertyValues(),
-				 EcoreFactory.eINSTANCE.createScalarDataPropertyValue()));
+				(OMLPackage.eINSTANCE.getSingletonInstance_ScalarDataPropertyValues(),
+				 OMLFactory.eINSTANCE.createScalarDataPropertyValue()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getSingletonInstance_StructuredDataPropertyValues(),
-				 EcoreFactory.eINSTANCE.createStructuredDataPropertyValue()));
+				(OMLPackage.eINSTANCE.getSingletonInstance_StructuredDataPropertyValues(),
+				 OMLFactory.eINSTANCE.createStructuredDataPropertyValue()));
 	}
 
 }

@@ -18,7 +18,7 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.UnreifiedRelationship;
 
 import org.eclipse.emf.ecore.EClass;
@@ -47,7 +47,7 @@ public class UnreifiedRelationshipImpl extends EntityRelationshipImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getUnreifiedRelationship();
+		return OMLPackage.eINSTANCE.getUnreifiedRelationship();
 	}
 
 } //UnreifiedRelationshipImpl

@@ -21,7 +21,7 @@ package jpl.imce.oml.specification.ecore.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import jpl.imce.oml.specification.ecore.DataRelationshipRange;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -53,7 +53,7 @@ public abstract class DataRelationshipRangeImpl extends CDOObjectImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getDataRelationshipRange();
+		return OMLPackage.eINSTANCE.getDataRelationshipRange();
 	}
 
 	/**
@@ -75,7 +75,7 @@ public abstract class DataRelationshipRangeImpl extends CDOObjectImpl implements
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.DATA_RELATIONSHIP_RANGE___CALCULATE_UUID:
+			case OMLPackage.DATA_RELATIONSHIP_RANGE___CALCULATE_UUID:
 				return calculateUUID();
 		}
 		return super.eInvoke(operationID, arguments);

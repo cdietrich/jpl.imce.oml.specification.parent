@@ -35,7 +35,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.SpecificDisjointConceptAxiom#getDisjointLeaf <em>Disjoint Leaf</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.EcorePackage#getSpecificDisjointConceptAxiom()
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getSpecificDisjointConceptAxiom()
  * @model
  * @generated
  */
@@ -49,7 +49,7 @@ public interface SpecificDisjointConceptAxiom extends DisjointUnionOfConceptsAxi
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Disjoint Leaf</em>' reference.
 	 * @see #setDisjointLeaf(Concept)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getSpecificDisjointConceptAxiom_DisjointLeaf()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getSpecificDisjointConceptAxiom_DisjointLeaf()
 	 * @model required="true"
 	 * @generated
 	 */

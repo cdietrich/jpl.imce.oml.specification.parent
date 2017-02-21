@@ -26,7 +26,7 @@
       <!-- @generated OML -->
       <factory
             uri="http://imce.jpl.nasa.gov/oml"
-            class="jpl.imce.oml.specification.ecore.provider.EcoreItemProviderAdapterFactory"
+            class="jpl.imce.oml.specification.ecore.provider.OMLItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

@@ -29,7 +29,7 @@ import java.util.UUID;
 import jpl.imce.oml.specification.ecore.ConceptualEntity;
 import jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance;
 import jpl.imce.oml.specification.ecore.DescriptionBox;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.ReifiedRelationship;
 import jpl.imce.oml.specification.ecore.ReifiedRelationshipInstance;
 import jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion;
@@ -89,7 +89,7 @@ public class ReifiedRelationshipInstanceImpl extends ConceptualEntitySingletonIn
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getReifiedRelationshipInstance();
+		return OMLPackage.eINSTANCE.getReifiedRelationshipInstance();
 	}
 
 	/**
@@ -98,7 +98,7 @@ public class ReifiedRelationshipInstanceImpl extends ConceptualEntitySingletonIn
 	 * @generated
 	 */
 	public DescriptionBox getDescriptionBox() {
-		if (eContainerFeatureID() != EcorePackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX) return null;
+		if (eContainerFeatureID() != OMLPackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX) return null;
 		return (DescriptionBox)eContainer();
 	}
 
@@ -108,7 +108,7 @@ public class ReifiedRelationshipInstanceImpl extends ConceptualEntitySingletonIn
 	 * @generated
 	 */
 	public DescriptionBox basicGetDescriptionBox() {
-		if (eContainerFeatureID() != EcorePackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX) return null;
+		if (eContainerFeatureID() != OMLPackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX) return null;
 		return (DescriptionBox)eInternalContainer();
 	}
 
@@ -118,7 +118,7 @@ public class ReifiedRelationshipInstanceImpl extends ConceptualEntitySingletonIn
 	 * @generated
 	 */
 	public NotificationChain basicSetDescriptionBox(DescriptionBox newDescriptionBox, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newDescriptionBox, EcorePackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newDescriptionBox, OMLPackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX, msgs);
 		return msgs;
 	}
 
@@ -128,19 +128,19 @@ public class ReifiedRelationshipInstanceImpl extends ConceptualEntitySingletonIn
 	 * @generated
 	 */
 	public void setDescriptionBox(DescriptionBox newDescriptionBox) {
-		if (newDescriptionBox != eInternalContainer() || (eContainerFeatureID() != EcorePackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX && newDescriptionBox != null)) {
+		if (newDescriptionBox != eInternalContainer() || (eContainerFeatureID() != OMLPackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX && newDescriptionBox != null)) {
 			if (EcoreUtil.isAncestor(this, (EObject)newDescriptionBox))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newDescriptionBox != null)
-				msgs = ((InternalEObject)newDescriptionBox).eInverseAdd(this, EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES, DescriptionBox.class, msgs);
+				msgs = ((InternalEObject)newDescriptionBox).eInverseAdd(this, OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES, DescriptionBox.class, msgs);
 			msgs = basicSetDescriptionBox(newDescriptionBox, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX, newDescriptionBox, newDescriptionBox));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX, newDescriptionBox, newDescriptionBox));
 	}
 
 	/**
@@ -154,7 +154,7 @@ public class ReifiedRelationshipInstanceImpl extends ConceptualEntitySingletonIn
 			singletonReifiedRelationshipClassifier = (ReifiedRelationship)eResolveProxy(oldSingletonReifiedRelationshipClassifier);
 			if (singletonReifiedRelationshipClassifier != oldSingletonReifiedRelationshipClassifier) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.REIFIED_RELATIONSHIP_INSTANCE__SINGLETON_REIFIED_RELATIONSHIP_CLASSIFIER, oldSingletonReifiedRelationshipClassifier, singletonReifiedRelationshipClassifier));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.REIFIED_RELATIONSHIP_INSTANCE__SINGLETON_REIFIED_RELATIONSHIP_CLASSIFIER, oldSingletonReifiedRelationshipClassifier, singletonReifiedRelationshipClassifier));
 			}
 		}
 		return singletonReifiedRelationshipClassifier;
@@ -178,7 +178,7 @@ public class ReifiedRelationshipInstanceImpl extends ConceptualEntitySingletonIn
 		ReifiedRelationship oldSingletonReifiedRelationshipClassifier = singletonReifiedRelationshipClassifier;
 		singletonReifiedRelationshipClassifier = newSingletonReifiedRelationshipClassifier;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.REIFIED_RELATIONSHIP_INSTANCE__SINGLETON_REIFIED_RELATIONSHIP_CLASSIFIER, oldSingletonReifiedRelationshipClassifier, singletonReifiedRelationshipClassifier));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.REIFIED_RELATIONSHIP_INSTANCE__SINGLETON_REIFIED_RELATIONSHIP_CLASSIFIER, oldSingletonReifiedRelationshipClassifier, singletonReifiedRelationshipClassifier));
 	}
 
 	/**
@@ -221,7 +221,7 @@ public class ReifiedRelationshipInstanceImpl extends ConceptualEntitySingletonIn
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case EcorePackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX:
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetDescriptionBox((DescriptionBox)otherEnd, msgs);
@@ -237,7 +237,7 @@ public class ReifiedRelationshipInstanceImpl extends ConceptualEntitySingletonIn
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case EcorePackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX:
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX:
 				return basicSetDescriptionBox(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -251,8 +251,8 @@ public class ReifiedRelationshipInstanceImpl extends ConceptualEntitySingletonIn
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case EcorePackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX:
-				return eInternalContainer().eInverseRemove(this, EcorePackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES, DescriptionBox.class, msgs);
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX:
+				return eInternalContainer().eInverseRemove(this, OMLPackage.DESCRIPTION_BOX__REIFIED_RELATIONSHIP_INSTANCES, DescriptionBox.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -265,10 +265,10 @@ public class ReifiedRelationshipInstanceImpl extends ConceptualEntitySingletonIn
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX:
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX:
 				if (resolve) return getDescriptionBox();
 				return basicGetDescriptionBox();
-			case EcorePackage.REIFIED_RELATIONSHIP_INSTANCE__SINGLETON_REIFIED_RELATIONSHIP_CLASSIFIER:
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE__SINGLETON_REIFIED_RELATIONSHIP_CLASSIFIER:
 				if (resolve) return getSingletonReifiedRelationshipClassifier();
 				return basicGetSingletonReifiedRelationshipClassifier();
 		}
@@ -283,10 +283,10 @@ public class ReifiedRelationshipInstanceImpl extends ConceptualEntitySingletonIn
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX:
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX:
 				setDescriptionBox((DescriptionBox)newValue);
 				return;
-			case EcorePackage.REIFIED_RELATIONSHIP_INSTANCE__SINGLETON_REIFIED_RELATIONSHIP_CLASSIFIER:
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE__SINGLETON_REIFIED_RELATIONSHIP_CLASSIFIER:
 				setSingletonReifiedRelationshipClassifier((ReifiedRelationship)newValue);
 				return;
 		}
@@ -301,10 +301,10 @@ public class ReifiedRelationshipInstanceImpl extends ConceptualEntitySingletonIn
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX:
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX:
 				setDescriptionBox((DescriptionBox)null);
 				return;
-			case EcorePackage.REIFIED_RELATIONSHIP_INSTANCE__SINGLETON_REIFIED_RELATIONSHIP_CLASSIFIER:
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE__SINGLETON_REIFIED_RELATIONSHIP_CLASSIFIER:
 				setSingletonReifiedRelationshipClassifier((ReifiedRelationship)null);
 				return;
 		}
@@ -319,9 +319,9 @@ public class ReifiedRelationshipInstanceImpl extends ConceptualEntitySingletonIn
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX:
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE__DESCRIPTION_BOX:
 				return basicGetDescriptionBox() != null;
-			case EcorePackage.REIFIED_RELATIONSHIP_INSTANCE__SINGLETON_REIFIED_RELATIONSHIP_CLASSIFIER:
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE__SINGLETON_REIFIED_RELATIONSHIP_CLASSIFIER:
 				return singletonReifiedRelationshipClassifier != null;
 		}
 		return super.eIsSet(featureID);
@@ -336,19 +336,19 @@ public class ReifiedRelationshipInstanceImpl extends ConceptualEntitySingletonIn
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == TerminologyThing.class) {
 			switch (baseOperationID) {
-				case EcorePackage.TERMINOLOGY_THING___CALCULATE_UUID: return EcorePackage.REIFIED_RELATIONSHIP_INSTANCE___CALCULATE_UUID;
+				case OMLPackage.TERMINOLOGY_THING___CALCULATE_UUID: return OMLPackage.REIFIED_RELATIONSHIP_INSTANCE___CALCULATE_UUID;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
 		if (baseClass == TerminologyInstanceAssertion.class) {
 			switch (baseOperationID) {
-				case EcorePackage.TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID: return EcorePackage.REIFIED_RELATIONSHIP_INSTANCE___CALCULATE_UUID;
+				case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID: return OMLPackage.REIFIED_RELATIONSHIP_INSTANCE___CALCULATE_UUID;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
 		if (baseClass == ConceptualEntitySingletonInstance.class) {
 			switch (baseOperationID) {
-				case EcorePackage.CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER: return EcorePackage.REIFIED_RELATIONSHIP_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER;
+				case OMLPackage.CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER: return OMLPackage.REIFIED_RELATIONSHIP_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
@@ -363,9 +363,9 @@ public class ReifiedRelationshipInstanceImpl extends ConceptualEntitySingletonIn
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.REIFIED_RELATIONSHIP_INSTANCE___CALCULATE_UUID:
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE___CALCULATE_UUID:
 				return calculateUUID();
-			case EcorePackage.REIFIED_RELATIONSHIP_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER:
+			case OMLPackage.REIFIED_RELATIONSHIP_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER:
 				return conceptualEntitySingletonClassifier();
 		}
 		return super.eInvoke(operationID, arguments);

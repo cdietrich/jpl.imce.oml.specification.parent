@@ -25,9 +25,9 @@ import jpl.imce.oml.specification.ecore.DataRelationshipFromEntity;
 import jpl.imce.oml.specification.ecore.DataRelationshipRange;
 import jpl.imce.oml.specification.ecore.DataRelationshipToStructure;
 import jpl.imce.oml.specification.ecore.Datatype;
-import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Entity;
 import jpl.imce.oml.specification.ecore.EntityStructuredDataProperty;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.Structure;
 import jpl.imce.oml.specification.ecore.Term;
 
@@ -113,7 +113,7 @@ public class EntityStructuredDataPropertyImpl extends DataRelationshipImpl imple
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getEntityStructuredDataProperty();
+		return OMLPackage.eINSTANCE.getEntityStructuredDataProperty();
 	}
 
 	/**
@@ -127,7 +127,7 @@ public class EntityStructuredDataPropertyImpl extends DataRelationshipImpl imple
 			domain = (Entity)eResolveProxy(oldDomain);
 			if (domain != oldDomain) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY__DOMAIN, oldDomain, domain));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__DOMAIN, oldDomain, domain));
 			}
 		}
 		return domain;
@@ -151,7 +151,7 @@ public class EntityStructuredDataPropertyImpl extends DataRelationshipImpl imple
 		Entity oldDomain = domain;
 		domain = newDomain;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY__DOMAIN, oldDomain, domain));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__DOMAIN, oldDomain, domain));
 	}
 
 	/**
@@ -172,7 +172,7 @@ public class EntityStructuredDataPropertyImpl extends DataRelationshipImpl imple
 		boolean oldIsIdentityCriteria = isIdentityCriteria;
 		isIdentityCriteria = newIsIdentityCriteria;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY__IS_IDENTITY_CRITERIA, oldIsIdentityCriteria, isIdentityCriteria));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__IS_IDENTITY_CRITERIA, oldIsIdentityCriteria, isIdentityCriteria));
 	}
 
 	/**
@@ -186,7 +186,7 @@ public class EntityStructuredDataPropertyImpl extends DataRelationshipImpl imple
 			range = (Structure)eResolveProxy(oldRange);
 			if (range != oldRange) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY__RANGE, oldRange, range));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__RANGE, oldRange, range));
 			}
 		}
 		return range;
@@ -210,7 +210,7 @@ public class EntityStructuredDataPropertyImpl extends DataRelationshipImpl imple
 		Structure oldRange = range;
 		range = newRange;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY__RANGE, oldRange, range));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__RANGE, oldRange, range));
 	}
 
 	/**
@@ -239,12 +239,12 @@ public class EntityStructuredDataPropertyImpl extends DataRelationshipImpl imple
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY__DOMAIN:
+			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__DOMAIN:
 				if (resolve) return getDomain();
 				return basicGetDomain();
-			case EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
+			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
 				return isIsIdentityCriteria();
-			case EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY__RANGE:
+			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__RANGE:
 				if (resolve) return getRange();
 				return basicGetRange();
 		}
@@ -259,13 +259,13 @@ public class EntityStructuredDataPropertyImpl extends DataRelationshipImpl imple
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY__DOMAIN:
+			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__DOMAIN:
 				setDomain((Entity)newValue);
 				return;
-			case EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
+			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
 				setIsIdentityCriteria((Boolean)newValue);
 				return;
-			case EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY__RANGE:
+			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__RANGE:
 				setRange((Structure)newValue);
 				return;
 		}
@@ -280,13 +280,13 @@ public class EntityStructuredDataPropertyImpl extends DataRelationshipImpl imple
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY__DOMAIN:
+			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__DOMAIN:
 				setDomain((Entity)null);
 				return;
-			case EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
+			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
 				setIsIdentityCriteria(IS_IDENTITY_CRITERIA_EDEFAULT);
 				return;
-			case EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY__RANGE:
+			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__RANGE:
 				setRange((Structure)null);
 				return;
 		}
@@ -301,11 +301,11 @@ public class EntityStructuredDataPropertyImpl extends DataRelationshipImpl imple
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY__DOMAIN:
+			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__DOMAIN:
 				return domain != null;
-			case EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
+			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__IS_IDENTITY_CRITERIA:
 				return isIdentityCriteria != IS_IDENTITY_CRITERIA_EDEFAULT;
-			case EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY__RANGE:
+			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__RANGE:
 				return range != null;
 		}
 		return super.eIsSet(featureID);
@@ -325,8 +325,8 @@ public class EntityStructuredDataPropertyImpl extends DataRelationshipImpl imple
 		}
 		if (baseClass == DataRelationshipFromEntity.class) {
 			switch (derivedFeatureID) {
-				case EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY__DOMAIN: return EcorePackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN;
-				case EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY__IS_IDENTITY_CRITERIA: return EcorePackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA;
+				case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__DOMAIN: return OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN;
+				case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__IS_IDENTITY_CRITERIA: return OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA;
 				default: return -1;
 			}
 		}
@@ -337,7 +337,7 @@ public class EntityStructuredDataPropertyImpl extends DataRelationshipImpl imple
 		}
 		if (baseClass == DataRelationshipToStructure.class) {
 			switch (derivedFeatureID) {
-				case EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY__RANGE: return EcorePackage.DATA_RELATIONSHIP_TO_STRUCTURE__RANGE;
+				case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__RANGE: return OMLPackage.DATA_RELATIONSHIP_TO_STRUCTURE__RANGE;
 				default: return -1;
 			}
 		}
@@ -358,8 +358,8 @@ public class EntityStructuredDataPropertyImpl extends DataRelationshipImpl imple
 		}
 		if (baseClass == DataRelationshipFromEntity.class) {
 			switch (baseFeatureID) {
-				case EcorePackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN: return EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY__DOMAIN;
-				case EcorePackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA: return EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY__IS_IDENTITY_CRITERIA;
+				case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__DOMAIN: return OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__DOMAIN;
+				case OMLPackage.DATA_RELATIONSHIP_FROM_ENTITY__IS_IDENTITY_CRITERIA: return OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__IS_IDENTITY_CRITERIA;
 				default: return -1;
 			}
 		}
@@ -370,7 +370,7 @@ public class EntityStructuredDataPropertyImpl extends DataRelationshipImpl imple
 		}
 		if (baseClass == DataRelationshipToStructure.class) {
 			switch (baseFeatureID) {
-				case EcorePackage.DATA_RELATIONSHIP_TO_STRUCTURE__RANGE: return EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY__RANGE;
+				case OMLPackage.DATA_RELATIONSHIP_TO_STRUCTURE__RANGE: return OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY__RANGE;
 				default: return -1;
 			}
 		}
@@ -385,9 +385,9 @@ public class EntityStructuredDataPropertyImpl extends DataRelationshipImpl imple
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY___SOURCE:
+			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY___SOURCE:
 				return source();
-			case EcorePackage.ENTITY_STRUCTURED_DATA_PROPERTY___TARGET:
+			case OMLPackage.ENTITY_STRUCTURED_DATA_PROPERTY___TARGET:
 				return target();
 		}
 		return super.eInvoke(operationID, arguments);

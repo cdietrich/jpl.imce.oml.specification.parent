@@ -21,9 +21,9 @@ package jpl.imce.oml.specification.ecore.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import jpl.imce.oml.specification.ecore.DirectedBinaryRelationshipKind;
-import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Entity;
 import jpl.imce.oml.specification.ecore.EntityRelationship;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.Term;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -276,7 +276,7 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getEntityRelationship();
+		return OMLPackage.eINSTANCE.getEntityRelationship();
 	}
 
 	/**
@@ -290,7 +290,7 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 			source = (Entity)eResolveProxy(oldSource);
 			if (source != oldSource) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.ENTITY_RELATIONSHIP__SOURCE, oldSource, source));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.ENTITY_RELATIONSHIP__SOURCE, oldSource, source));
 			}
 		}
 		return source;
@@ -314,7 +314,7 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 		Entity oldSource = source;
 		source = newSource;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ENTITY_RELATIONSHIP__SOURCE, oldSource, source));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_RELATIONSHIP__SOURCE, oldSource, source));
 	}
 
 	/**
@@ -328,7 +328,7 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 			target = (Entity)eResolveProxy(oldTarget);
 			if (target != oldTarget) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.ENTITY_RELATIONSHIP__TARGET, oldTarget, target));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.ENTITY_RELATIONSHIP__TARGET, oldTarget, target));
 			}
 		}
 		return target;
@@ -352,7 +352,7 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 		Entity oldTarget = target;
 		target = newTarget;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ENTITY_RELATIONSHIP__TARGET, oldTarget, target));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_RELATIONSHIP__TARGET, oldTarget, target));
 	}
 
 	/**
@@ -373,7 +373,7 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 		boolean oldIsFunctional = isFunctional;
 		isFunctional = newIsFunctional;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ENTITY_RELATIONSHIP__IS_FUNCTIONAL, oldIsFunctional, isFunctional));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_RELATIONSHIP__IS_FUNCTIONAL, oldIsFunctional, isFunctional));
 	}
 
 	/**
@@ -394,7 +394,7 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 		boolean oldIsInverseFunctional = isInverseFunctional;
 		isInverseFunctional = newIsInverseFunctional;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ENTITY_RELATIONSHIP__IS_INVERSE_FUNCTIONAL, oldIsInverseFunctional, isInverseFunctional));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_RELATIONSHIP__IS_INVERSE_FUNCTIONAL, oldIsInverseFunctional, isInverseFunctional));
 	}
 
 	/**
@@ -415,7 +415,7 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 		boolean oldIsEssential = isEssential;
 		isEssential = newIsEssential;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ENTITY_RELATIONSHIP__IS_ESSENTIAL, oldIsEssential, isEssential));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_RELATIONSHIP__IS_ESSENTIAL, oldIsEssential, isEssential));
 	}
 
 	/**
@@ -436,7 +436,7 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 		boolean oldIsInverseEssential = isInverseEssential;
 		isInverseEssential = newIsInverseEssential;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ENTITY_RELATIONSHIP__IS_INVERSE_ESSENTIAL, oldIsInverseEssential, isInverseEssential));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_RELATIONSHIP__IS_INVERSE_ESSENTIAL, oldIsInverseEssential, isInverseEssential));
 	}
 
 	/**
@@ -457,7 +457,7 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 		boolean oldIsSymmetric = isSymmetric;
 		isSymmetric = newIsSymmetric;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ENTITY_RELATIONSHIP__IS_SYMMETRIC, oldIsSymmetric, isSymmetric));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_RELATIONSHIP__IS_SYMMETRIC, oldIsSymmetric, isSymmetric));
 	}
 
 	/**
@@ -478,7 +478,7 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 		boolean oldIsAsymmetric = isAsymmetric;
 		isAsymmetric = newIsAsymmetric;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ENTITY_RELATIONSHIP__IS_ASYMMETRIC, oldIsAsymmetric, isAsymmetric));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_RELATIONSHIP__IS_ASYMMETRIC, oldIsAsymmetric, isAsymmetric));
 	}
 
 	/**
@@ -499,7 +499,7 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 		boolean oldIsReflexive = isReflexive;
 		isReflexive = newIsReflexive;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ENTITY_RELATIONSHIP__IS_REFLEXIVE, oldIsReflexive, isReflexive));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_RELATIONSHIP__IS_REFLEXIVE, oldIsReflexive, isReflexive));
 	}
 
 	/**
@@ -520,7 +520,7 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 		boolean oldIsIrreflexive = isIrreflexive;
 		isIrreflexive = newIsIrreflexive;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ENTITY_RELATIONSHIP__IS_IRREFLEXIVE, oldIsIrreflexive, isIrreflexive));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_RELATIONSHIP__IS_IRREFLEXIVE, oldIsIrreflexive, isIrreflexive));
 	}
 
 	/**
@@ -541,7 +541,7 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 		boolean oldIsTransitive = isTransitive;
 		isTransitive = newIsTransitive;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ENTITY_RELATIONSHIP__IS_TRANSITIVE, oldIsTransitive, isTransitive));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_RELATIONSHIP__IS_TRANSITIVE, oldIsTransitive, isTransitive));
 	}
 
 	/**
@@ -570,29 +570,29 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.ENTITY_RELATIONSHIP__SOURCE:
+			case OMLPackage.ENTITY_RELATIONSHIP__SOURCE:
 				if (resolve) return getSource();
 				return basicGetSource();
-			case EcorePackage.ENTITY_RELATIONSHIP__TARGET:
+			case OMLPackage.ENTITY_RELATIONSHIP__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_FUNCTIONAL:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_FUNCTIONAL:
 				return isIsFunctional();
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_INVERSE_FUNCTIONAL:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_INVERSE_FUNCTIONAL:
 				return isIsInverseFunctional();
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_ESSENTIAL:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_ESSENTIAL:
 				return isIsEssential();
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_INVERSE_ESSENTIAL:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_INVERSE_ESSENTIAL:
 				return isIsInverseEssential();
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_SYMMETRIC:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_SYMMETRIC:
 				return isIsSymmetric();
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_ASYMMETRIC:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_ASYMMETRIC:
 				return isIsAsymmetric();
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_REFLEXIVE:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_REFLEXIVE:
 				return isIsReflexive();
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_IRREFLEXIVE:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_IRREFLEXIVE:
 				return isIsIrreflexive();
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_TRANSITIVE:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_TRANSITIVE:
 				return isIsTransitive();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -606,37 +606,37 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.ENTITY_RELATIONSHIP__SOURCE:
+			case OMLPackage.ENTITY_RELATIONSHIP__SOURCE:
 				setSource((Entity)newValue);
 				return;
-			case EcorePackage.ENTITY_RELATIONSHIP__TARGET:
+			case OMLPackage.ENTITY_RELATIONSHIP__TARGET:
 				setTarget((Entity)newValue);
 				return;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_FUNCTIONAL:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_FUNCTIONAL:
 				setIsFunctional((Boolean)newValue);
 				return;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_INVERSE_FUNCTIONAL:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_INVERSE_FUNCTIONAL:
 				setIsInverseFunctional((Boolean)newValue);
 				return;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_ESSENTIAL:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_ESSENTIAL:
 				setIsEssential((Boolean)newValue);
 				return;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_INVERSE_ESSENTIAL:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_INVERSE_ESSENTIAL:
 				setIsInverseEssential((Boolean)newValue);
 				return;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_SYMMETRIC:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_SYMMETRIC:
 				setIsSymmetric((Boolean)newValue);
 				return;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_ASYMMETRIC:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_ASYMMETRIC:
 				setIsAsymmetric((Boolean)newValue);
 				return;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_REFLEXIVE:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_REFLEXIVE:
 				setIsReflexive((Boolean)newValue);
 				return;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_IRREFLEXIVE:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_IRREFLEXIVE:
 				setIsIrreflexive((Boolean)newValue);
 				return;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_TRANSITIVE:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_TRANSITIVE:
 				setIsTransitive((Boolean)newValue);
 				return;
 		}
@@ -651,37 +651,37 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.ENTITY_RELATIONSHIP__SOURCE:
+			case OMLPackage.ENTITY_RELATIONSHIP__SOURCE:
 				setSource((Entity)null);
 				return;
-			case EcorePackage.ENTITY_RELATIONSHIP__TARGET:
+			case OMLPackage.ENTITY_RELATIONSHIP__TARGET:
 				setTarget((Entity)null);
 				return;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_FUNCTIONAL:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_FUNCTIONAL:
 				setIsFunctional(IS_FUNCTIONAL_EDEFAULT);
 				return;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_INVERSE_FUNCTIONAL:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_INVERSE_FUNCTIONAL:
 				setIsInverseFunctional(IS_INVERSE_FUNCTIONAL_EDEFAULT);
 				return;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_ESSENTIAL:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_ESSENTIAL:
 				setIsEssential(IS_ESSENTIAL_EDEFAULT);
 				return;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_INVERSE_ESSENTIAL:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_INVERSE_ESSENTIAL:
 				setIsInverseEssential(IS_INVERSE_ESSENTIAL_EDEFAULT);
 				return;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_SYMMETRIC:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_SYMMETRIC:
 				setIsSymmetric(IS_SYMMETRIC_EDEFAULT);
 				return;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_ASYMMETRIC:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_ASYMMETRIC:
 				setIsAsymmetric(IS_ASYMMETRIC_EDEFAULT);
 				return;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_REFLEXIVE:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_REFLEXIVE:
 				setIsReflexive(IS_REFLEXIVE_EDEFAULT);
 				return;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_IRREFLEXIVE:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_IRREFLEXIVE:
 				setIsIrreflexive(IS_IRREFLEXIVE_EDEFAULT);
 				return;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_TRANSITIVE:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_TRANSITIVE:
 				setIsTransitive(IS_TRANSITIVE_EDEFAULT);
 				return;
 		}
@@ -696,27 +696,27 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.ENTITY_RELATIONSHIP__SOURCE:
+			case OMLPackage.ENTITY_RELATIONSHIP__SOURCE:
 				return source != null;
-			case EcorePackage.ENTITY_RELATIONSHIP__TARGET:
+			case OMLPackage.ENTITY_RELATIONSHIP__TARGET:
 				return target != null;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_FUNCTIONAL:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_FUNCTIONAL:
 				return isFunctional != IS_FUNCTIONAL_EDEFAULT;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_INVERSE_FUNCTIONAL:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_INVERSE_FUNCTIONAL:
 				return isInverseFunctional != IS_INVERSE_FUNCTIONAL_EDEFAULT;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_ESSENTIAL:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_ESSENTIAL:
 				return isEssential != IS_ESSENTIAL_EDEFAULT;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_INVERSE_ESSENTIAL:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_INVERSE_ESSENTIAL:
 				return isInverseEssential != IS_INVERSE_ESSENTIAL_EDEFAULT;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_SYMMETRIC:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_SYMMETRIC:
 				return isSymmetric != IS_SYMMETRIC_EDEFAULT;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_ASYMMETRIC:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_ASYMMETRIC:
 				return isAsymmetric != IS_ASYMMETRIC_EDEFAULT;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_REFLEXIVE:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_REFLEXIVE:
 				return isReflexive != IS_REFLEXIVE_EDEFAULT;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_IRREFLEXIVE:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_IRREFLEXIVE:
 				return isIrreflexive != IS_IRREFLEXIVE_EDEFAULT;
-			case EcorePackage.ENTITY_RELATIONSHIP__IS_TRANSITIVE:
+			case OMLPackage.ENTITY_RELATIONSHIP__IS_TRANSITIVE:
 				return isTransitive != IS_TRANSITIVE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -731,8 +731,8 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == DirectedBinaryRelationshipKind.class) {
 			switch (baseOperationID) {
-				case EcorePackage.DIRECTED_BINARY_RELATIONSHIP_KIND___RELATION_DOMAIN: return EcorePackage.ENTITY_RELATIONSHIP___RELATION_DOMAIN;
-				case EcorePackage.DIRECTED_BINARY_RELATIONSHIP_KIND___RELATION_RANGE: return EcorePackage.ENTITY_RELATIONSHIP___RELATION_RANGE;
+				case OMLPackage.DIRECTED_BINARY_RELATIONSHIP_KIND___RELATION_DOMAIN: return OMLPackage.ENTITY_RELATIONSHIP___RELATION_DOMAIN;
+				case OMLPackage.DIRECTED_BINARY_RELATIONSHIP_KIND___RELATION_RANGE: return OMLPackage.ENTITY_RELATIONSHIP___RELATION_RANGE;
 				default: return -1;
 			}
 		}
@@ -747,9 +747,9 @@ public abstract class EntityRelationshipImpl extends TermImpl implements EntityR
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.ENTITY_RELATIONSHIP___RELATION_DOMAIN:
+			case OMLPackage.ENTITY_RELATIONSHIP___RELATION_DOMAIN:
 				return relationDomain();
-			case EcorePackage.ENTITY_RELATIONSHIP___RELATION_RANGE:
+			case OMLPackage.ENTITY_RELATIONSHIP___RELATION_RANGE:
 				return relationRange();
 		}
 		return super.eInvoke(operationID, arguments);

@@ -21,9 +21,8 @@ package jpl.imce.oml.specification.ecore.provider;
 
 import java.util.Collection;
 import java.util.List;
-
-import jpl.imce.oml.specification.ecore.EcoreFactory;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLFactory;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.TerminologyBox;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -82,7 +81,7 @@ public class TerminologyBoxItemProvider extends ModuleItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_TerminologyBox_kind_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TerminologyBox_kind_feature", "_UI_TerminologyBox_type"),
-				 EcorePackage.eINSTANCE.getTerminologyBox_Kind(),
+				 OMLPackage.eINSTANCE.getTerminologyBox_Kind(),
 				 true,
 				 false,
 				 false,
@@ -103,8 +102,8 @@ public class TerminologyBoxItemProvider extends ModuleItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(EcorePackage.eINSTANCE.getTerminologyBox_TerminologyBoxAxioms());
-			childrenFeatures.add(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements());
+			childrenFeatures.add(OMLPackage.eINSTANCE.getTerminologyBox_TerminologyBoxAxioms());
+			childrenFeatures.add(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements());
 		}
 		return childrenFeatures;
 	}
@@ -149,11 +148,11 @@ public class TerminologyBoxItemProvider extends ModuleItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TerminologyBox.class)) {
-			case EcorePackage.TERMINOLOGY_BOX__KIND:
+			case OMLPackage.TERMINOLOGY_BOX__KIND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case EcorePackage.TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS:
-			case EcorePackage.TERMINOLOGY_BOX__BOX_STATEMENTS:
+			case OMLPackage.TERMINOLOGY_BOX__TERMINOLOGY_BOX_AXIOMS:
+			case OMLPackage.TERMINOLOGY_BOX__BOX_STATEMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -173,153 +172,153 @@ public class TerminologyBoxItemProvider extends ModuleItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_TerminologyBoxAxioms(),
-				 EcoreFactory.eINSTANCE.createConceptDesignationTerminologyAxiom()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_TerminologyBoxAxioms(),
+				 OMLFactory.eINSTANCE.createConceptDesignationTerminologyAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_TerminologyBoxAxioms(),
-				 EcoreFactory.eINSTANCE.createTerminologyExtensionAxiom()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_TerminologyBoxAxioms(),
+				 OMLFactory.eINSTANCE.createTerminologyExtensionAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_TerminologyBoxAxioms(),
-				 EcoreFactory.eINSTANCE.createTerminologyNestingAxiom()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_TerminologyBoxAxioms(),
+				 OMLFactory.eINSTANCE.createTerminologyNestingAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createAspect()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createAspect()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createConcept()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createConcept()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createReifiedRelationship()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createReifiedRelationship()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createUnreifiedRelationship()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createUnreifiedRelationship()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createScalar()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createScalar()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createEntityStructuredDataProperty()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createEntityStructuredDataProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createEntityScalarDataProperty()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createEntityScalarDataProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createStructuredDataProperty()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createStructuredDataProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createScalarDataProperty()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createScalarDataProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createStructure()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createStructure()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createEntityExistentialRestrictionAxiom()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createEntityExistentialRestrictionAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createEntityUniversalRestrictionAxiom()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createEntityUniversalRestrictionAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createAspectSpecializationAxiom()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createAspectSpecializationAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createConceptSpecializationAxiom()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createConceptSpecializationAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createReifiedRelationshipSpecializationAxiom()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createReifiedRelationshipSpecializationAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createEntityScalarDataPropertyExistentialRestrictionAxiom()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createEntityScalarDataPropertyExistentialRestrictionAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createEntityScalarDataPropertyUniversalRestrictionAxiom()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createEntityScalarDataPropertyUniversalRestrictionAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createEntityScalarDataPropertyParticularRestrictionAxiom()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createEntityScalarDataPropertyParticularRestrictionAxiom()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createBinaryScalarRestriction()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createBinaryScalarRestriction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createIRIScalarRestriction()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createIRIScalarRestriction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createNumericScalarRestriction()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createNumericScalarRestriction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createPlainLiteralScalarRestriction()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createPlainLiteralScalarRestriction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createStringScalarRestriction()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createStringScalarRestriction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createTimeScalarRestriction()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createTimeScalarRestriction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createSynonymScalarRestriction()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createSynonymScalarRestriction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createScalarOneOfRestriction()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createScalarOneOfRestriction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getTerminologyBox_BoxStatements(),
-				 EcoreFactory.eINSTANCE.createScalarOneOfLiteralAxiom()));
+				(OMLPackage.eINSTANCE.getTerminologyBox_BoxStatements(),
+				 OMLFactory.eINSTANCE.createScalarOneOfLiteralAxiom()));
 	}
 
 }

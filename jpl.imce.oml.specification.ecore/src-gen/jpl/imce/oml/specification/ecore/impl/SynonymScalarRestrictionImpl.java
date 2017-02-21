@@ -27,7 +27,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.DataRange;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.SynonymScalarRestriction;
 import jpl.imce.oml.specification.ecore.Term;
 import jpl.imce.oml.specification.ecore.TerminologyThing;
@@ -60,7 +60,7 @@ public class SynonymScalarRestrictionImpl extends RestrictedDataRangeImpl implem
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getSynonymScalarRestriction();
+		return OMLPackage.eINSTANCE.getSynonymScalarRestriction();
 	}
 
 	/**
@@ -91,13 +91,13 @@ public class SynonymScalarRestrictionImpl extends RestrictedDataRangeImpl implem
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == TerminologyThing.class) {
 			switch (baseOperationID) {
-				case EcorePackage.TERMINOLOGY_THING___CALCULATE_UUID: return EcorePackage.SYNONYM_SCALAR_RESTRICTION___CALCULATE_UUID;
+				case OMLPackage.TERMINOLOGY_THING___CALCULATE_UUID: return OMLPackage.SYNONYM_SCALAR_RESTRICTION___CALCULATE_UUID;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
 		if (baseClass == Term.class) {
 			switch (baseOperationID) {
-				case EcorePackage.TERM___CALCULATE_UUID: return EcorePackage.SYNONYM_SCALAR_RESTRICTION___CALCULATE_UUID;
+				case OMLPackage.TERM___CALCULATE_UUID: return OMLPackage.SYNONYM_SCALAR_RESTRICTION___CALCULATE_UUID;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
@@ -112,7 +112,7 @@ public class SynonymScalarRestrictionImpl extends RestrictedDataRangeImpl implem
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.SYNONYM_SCALAR_RESTRICTION___CALCULATE_UUID:
+			case OMLPackage.SYNONYM_SCALAR_RESTRICTION___CALCULATE_UUID:
 				return calculateUUID();
 		}
 		return super.eInvoke(operationID, arguments);

@@ -25,7 +25,7 @@ import jpl.imce.oml.specification.ecore.DataRelationshipFromStructure;
 import jpl.imce.oml.specification.ecore.DataRelationshipRange;
 import jpl.imce.oml.specification.ecore.DataRelationshipToStructure;
 import jpl.imce.oml.specification.ecore.Datatype;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.Structure;
 import jpl.imce.oml.specification.ecore.StructuredDataProperty;
 import jpl.imce.oml.specification.ecore.Term;
@@ -91,7 +91,7 @@ public class StructuredDataPropertyImpl extends DataRelationshipImpl implements 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getStructuredDataProperty();
+		return OMLPackage.eINSTANCE.getStructuredDataProperty();
 	}
 
 	/**
@@ -105,7 +105,7 @@ public class StructuredDataPropertyImpl extends DataRelationshipImpl implements 
 			domain = (Structure)eResolveProxy(oldDomain);
 			if (domain != oldDomain) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.STRUCTURED_DATA_PROPERTY__DOMAIN, oldDomain, domain));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.STRUCTURED_DATA_PROPERTY__DOMAIN, oldDomain, domain));
 			}
 		}
 		return domain;
@@ -129,7 +129,7 @@ public class StructuredDataPropertyImpl extends DataRelationshipImpl implements 
 		Structure oldDomain = domain;
 		domain = newDomain;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.STRUCTURED_DATA_PROPERTY__DOMAIN, oldDomain, domain));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.STRUCTURED_DATA_PROPERTY__DOMAIN, oldDomain, domain));
 	}
 
 	/**
@@ -143,7 +143,7 @@ public class StructuredDataPropertyImpl extends DataRelationshipImpl implements 
 			range = (Structure)eResolveProxy(oldRange);
 			if (range != oldRange) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.STRUCTURED_DATA_PROPERTY__RANGE, oldRange, range));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.STRUCTURED_DATA_PROPERTY__RANGE, oldRange, range));
 			}
 		}
 		return range;
@@ -167,7 +167,7 @@ public class StructuredDataPropertyImpl extends DataRelationshipImpl implements 
 		Structure oldRange = range;
 		range = newRange;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.STRUCTURED_DATA_PROPERTY__RANGE, oldRange, range));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.STRUCTURED_DATA_PROPERTY__RANGE, oldRange, range));
 	}
 
 	/**
@@ -196,10 +196,10 @@ public class StructuredDataPropertyImpl extends DataRelationshipImpl implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.STRUCTURED_DATA_PROPERTY__DOMAIN:
+			case OMLPackage.STRUCTURED_DATA_PROPERTY__DOMAIN:
 				if (resolve) return getDomain();
 				return basicGetDomain();
-			case EcorePackage.STRUCTURED_DATA_PROPERTY__RANGE:
+			case OMLPackage.STRUCTURED_DATA_PROPERTY__RANGE:
 				if (resolve) return getRange();
 				return basicGetRange();
 		}
@@ -214,10 +214,10 @@ public class StructuredDataPropertyImpl extends DataRelationshipImpl implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.STRUCTURED_DATA_PROPERTY__DOMAIN:
+			case OMLPackage.STRUCTURED_DATA_PROPERTY__DOMAIN:
 				setDomain((Structure)newValue);
 				return;
-			case EcorePackage.STRUCTURED_DATA_PROPERTY__RANGE:
+			case OMLPackage.STRUCTURED_DATA_PROPERTY__RANGE:
 				setRange((Structure)newValue);
 				return;
 		}
@@ -232,10 +232,10 @@ public class StructuredDataPropertyImpl extends DataRelationshipImpl implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.STRUCTURED_DATA_PROPERTY__DOMAIN:
+			case OMLPackage.STRUCTURED_DATA_PROPERTY__DOMAIN:
 				setDomain((Structure)null);
 				return;
-			case EcorePackage.STRUCTURED_DATA_PROPERTY__RANGE:
+			case OMLPackage.STRUCTURED_DATA_PROPERTY__RANGE:
 				setRange((Structure)null);
 				return;
 		}
@@ -250,9 +250,9 @@ public class StructuredDataPropertyImpl extends DataRelationshipImpl implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.STRUCTURED_DATA_PROPERTY__DOMAIN:
+			case OMLPackage.STRUCTURED_DATA_PROPERTY__DOMAIN:
 				return domain != null;
-			case EcorePackage.STRUCTURED_DATA_PROPERTY__RANGE:
+			case OMLPackage.STRUCTURED_DATA_PROPERTY__RANGE:
 				return range != null;
 		}
 		return super.eIsSet(featureID);
@@ -272,7 +272,7 @@ public class StructuredDataPropertyImpl extends DataRelationshipImpl implements 
 		}
 		if (baseClass == DataRelationshipFromStructure.class) {
 			switch (derivedFeatureID) {
-				case EcorePackage.STRUCTURED_DATA_PROPERTY__DOMAIN: return EcorePackage.DATA_RELATIONSHIP_FROM_STRUCTURE__DOMAIN;
+				case OMLPackage.STRUCTURED_DATA_PROPERTY__DOMAIN: return OMLPackage.DATA_RELATIONSHIP_FROM_STRUCTURE__DOMAIN;
 				default: return -1;
 			}
 		}
@@ -283,7 +283,7 @@ public class StructuredDataPropertyImpl extends DataRelationshipImpl implements 
 		}
 		if (baseClass == DataRelationshipToStructure.class) {
 			switch (derivedFeatureID) {
-				case EcorePackage.STRUCTURED_DATA_PROPERTY__RANGE: return EcorePackage.DATA_RELATIONSHIP_TO_STRUCTURE__RANGE;
+				case OMLPackage.STRUCTURED_DATA_PROPERTY__RANGE: return OMLPackage.DATA_RELATIONSHIP_TO_STRUCTURE__RANGE;
 				default: return -1;
 			}
 		}
@@ -304,7 +304,7 @@ public class StructuredDataPropertyImpl extends DataRelationshipImpl implements 
 		}
 		if (baseClass == DataRelationshipFromStructure.class) {
 			switch (baseFeatureID) {
-				case EcorePackage.DATA_RELATIONSHIP_FROM_STRUCTURE__DOMAIN: return EcorePackage.STRUCTURED_DATA_PROPERTY__DOMAIN;
+				case OMLPackage.DATA_RELATIONSHIP_FROM_STRUCTURE__DOMAIN: return OMLPackage.STRUCTURED_DATA_PROPERTY__DOMAIN;
 				default: return -1;
 			}
 		}
@@ -315,7 +315,7 @@ public class StructuredDataPropertyImpl extends DataRelationshipImpl implements 
 		}
 		if (baseClass == DataRelationshipToStructure.class) {
 			switch (baseFeatureID) {
-				case EcorePackage.DATA_RELATIONSHIP_TO_STRUCTURE__RANGE: return EcorePackage.STRUCTURED_DATA_PROPERTY__RANGE;
+				case OMLPackage.DATA_RELATIONSHIP_TO_STRUCTURE__RANGE: return OMLPackage.STRUCTURED_DATA_PROPERTY__RANGE;
 				default: return -1;
 			}
 		}
@@ -330,9 +330,9 @@ public class StructuredDataPropertyImpl extends DataRelationshipImpl implements 
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.STRUCTURED_DATA_PROPERTY___SOURCE:
+			case OMLPackage.STRUCTURED_DATA_PROPERTY___SOURCE:
 				return source();
-			case EcorePackage.STRUCTURED_DATA_PROPERTY___TARGET:
+			case OMLPackage.STRUCTURED_DATA_PROPERTY___TARGET:
 				return target();
 		}
 		return super.eInvoke(operationID, arguments);

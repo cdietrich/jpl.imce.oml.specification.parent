@@ -26,9 +26,9 @@ import jpl.imce.oml.specification.ecore.ConceptualEntity;
 import jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance;
 import jpl.imce.oml.specification.ecore.DataRelationshipToScalar;
 import jpl.imce.oml.specification.ecore.DataRelationshipToStructure;
-import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.EntityScalarDataProperty;
 import jpl.imce.oml.specification.ecore.EntityStructuredDataProperty;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.ScalarDataPropertyValue;
 import jpl.imce.oml.specification.ecore.StructuredDataPropertyValue;
 
@@ -65,7 +65,7 @@ public abstract class ConceptualEntitySingletonInstanceImpl extends SingletonIns
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getConceptualEntitySingletonInstance();
+		return OMLPackage.eINSTANCE.getConceptualEntitySingletonInstance();
 	}
 
 	/**
@@ -147,11 +147,11 @@ public abstract class ConceptualEntitySingletonInstanceImpl extends SingletonIns
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER:
+			case OMLPackage.CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___CONCEPTUAL_ENTITY_SINGLETON_CLASSIFIER:
 				return conceptualEntitySingletonClassifier();
-			case EcorePackage.CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___IDENTIFYING_SCALAR_VALUES:
+			case OMLPackage.CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___IDENTIFYING_SCALAR_VALUES:
 				return identifyingScalarValues();
-			case EcorePackage.CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___IDENTIFYING_STRUCTURED_TUPLES:
+			case OMLPackage.CONCEPTUAL_ENTITY_SINGLETON_INSTANCE___IDENTIFYING_STRUCTURED_TUPLES:
 				return identifyingStructuredTuples();
 		}
 		return super.eInvoke(operationID, arguments);

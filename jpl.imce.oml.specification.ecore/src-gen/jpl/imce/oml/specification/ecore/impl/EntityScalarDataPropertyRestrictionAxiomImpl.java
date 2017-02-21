@@ -18,10 +18,10 @@
  */
 package jpl.imce.oml.specification.ecore.impl;
 
-import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Entity;
 import jpl.imce.oml.specification.ecore.EntityScalarDataProperty;
 import jpl.imce.oml.specification.ecore.EntityScalarDataPropertyRestrictionAxiom;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -82,7 +82,7 @@ public abstract class EntityScalarDataPropertyRestrictionAxiomImpl extends TermA
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getEntityScalarDataPropertyRestrictionAxiom();
+		return OMLPackage.eINSTANCE.getEntityScalarDataPropertyRestrictionAxiom();
 	}
 
 	/**
@@ -96,7 +96,7 @@ public abstract class EntityScalarDataPropertyRestrictionAxiomImpl extends TermA
 			restrictedEntity = (Entity)eResolveProxy(oldRestrictedEntity);
 			if (restrictedEntity != oldRestrictedEntity) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM__RESTRICTED_ENTITY, oldRestrictedEntity, restrictedEntity));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM__RESTRICTED_ENTITY, oldRestrictedEntity, restrictedEntity));
 			}
 		}
 		return restrictedEntity;
@@ -120,7 +120,7 @@ public abstract class EntityScalarDataPropertyRestrictionAxiomImpl extends TermA
 		Entity oldRestrictedEntity = restrictedEntity;
 		restrictedEntity = newRestrictedEntity;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM__RESTRICTED_ENTITY, oldRestrictedEntity, restrictedEntity));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM__RESTRICTED_ENTITY, oldRestrictedEntity, restrictedEntity));
 	}
 
 	/**
@@ -134,7 +134,7 @@ public abstract class EntityScalarDataPropertyRestrictionAxiomImpl extends TermA
 			scalarProperty = (EntityScalarDataProperty)eResolveProxy(oldScalarProperty);
 			if (scalarProperty != oldScalarProperty) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM__SCALAR_PROPERTY, oldScalarProperty, scalarProperty));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM__SCALAR_PROPERTY, oldScalarProperty, scalarProperty));
 			}
 		}
 		return scalarProperty;
@@ -158,7 +158,7 @@ public abstract class EntityScalarDataPropertyRestrictionAxiomImpl extends TermA
 		EntityScalarDataProperty oldScalarProperty = scalarProperty;
 		scalarProperty = newScalarProperty;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM__SCALAR_PROPERTY, oldScalarProperty, scalarProperty));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM__SCALAR_PROPERTY, oldScalarProperty, scalarProperty));
 	}
 
 	/**
@@ -169,10 +169,10 @@ public abstract class EntityScalarDataPropertyRestrictionAxiomImpl extends TermA
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM__RESTRICTED_ENTITY:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM__RESTRICTED_ENTITY:
 				if (resolve) return getRestrictedEntity();
 				return basicGetRestrictedEntity();
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM__SCALAR_PROPERTY:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM__SCALAR_PROPERTY:
 				if (resolve) return getScalarProperty();
 				return basicGetScalarProperty();
 		}
@@ -187,10 +187,10 @@ public abstract class EntityScalarDataPropertyRestrictionAxiomImpl extends TermA
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM__RESTRICTED_ENTITY:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM__RESTRICTED_ENTITY:
 				setRestrictedEntity((Entity)newValue);
 				return;
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM__SCALAR_PROPERTY:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM__SCALAR_PROPERTY:
 				setScalarProperty((EntityScalarDataProperty)newValue);
 				return;
 		}
@@ -205,10 +205,10 @@ public abstract class EntityScalarDataPropertyRestrictionAxiomImpl extends TermA
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM__RESTRICTED_ENTITY:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM__RESTRICTED_ENTITY:
 				setRestrictedEntity((Entity)null);
 				return;
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM__SCALAR_PROPERTY:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM__SCALAR_PROPERTY:
 				setScalarProperty((EntityScalarDataProperty)null);
 				return;
 		}
@@ -223,9 +223,9 @@ public abstract class EntityScalarDataPropertyRestrictionAxiomImpl extends TermA
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM__RESTRICTED_ENTITY:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM__RESTRICTED_ENTITY:
 				return restrictedEntity != null;
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM__SCALAR_PROPERTY:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_RESTRICTION_AXIOM__SCALAR_PROPERTY:
 				return scalarProperty != null;
 		}
 		return super.eIsSet(featureID);

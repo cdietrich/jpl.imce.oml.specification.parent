@@ -47,7 +47,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.BinaryScalarRestriction#getMaxLength <em>Max Length</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.EcorePackage#getBinaryScalarRestriction()
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getBinaryScalarRestriction()
  * @model
  * @generated
  */
@@ -61,7 +61,7 @@ public interface BinaryScalarRestriction extends RestrictedDataRange {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Length</em>' attribute.
 	 * @see #setLength(int)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getBinaryScalarRestriction_Length()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getBinaryScalarRestriction_Length()
 	 * @model unique="false"
 	 * @generated
 	 */
@@ -86,7 +86,7 @@ public interface BinaryScalarRestriction extends RestrictedDataRange {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Min Length</em>' attribute.
 	 * @see #setMinLength(int)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getBinaryScalarRestriction_MinLength()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getBinaryScalarRestriction_MinLength()
 	 * @model unique="false"
 	 * @generated
 	 */
@@ -111,7 +111,7 @@ public interface BinaryScalarRestriction extends RestrictedDataRange {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Max Length</em>' attribute.
 	 * @see #setMaxLength(int)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getBinaryScalarRestriction_MaxLength()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getBinaryScalarRestriction_MaxLength()
 	 * @model unique="false"
 	 * @generated
 	 */

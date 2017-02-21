@@ -21,8 +21,7 @@ package jpl.imce.oml.specification.ecore.provider;
 
 import java.util.Collection;
 import java.util.List;
-
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.TerminologyThing;
 
 import jpl.imce.oml.specification.ecore.edit.provider.OMLEditPlugin;
@@ -96,7 +95,7 @@ public class TerminologyThingItemProvider
 				 getResourceLocator(),
 				 getString("_UI_TerminologyThing_uuid_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TerminologyThing_uuid_feature", "_UI_TerminologyThing_type"),
-				 EcorePackage.eINSTANCE.getTerminologyThing_Uuid(),
+				 OMLPackage.eINSTANCE.getTerminologyThing_Uuid(),
 				 false,
 				 false,
 				 false,
@@ -132,7 +131,7 @@ public class TerminologyThingItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TerminologyThing.class)) {
-			case EcorePackage.TERMINOLOGY_THING__UUID:
+			case OMLPackage.TERMINOLOGY_THING__UUID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

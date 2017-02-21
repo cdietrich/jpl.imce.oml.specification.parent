@@ -29,7 +29,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-model-doc -->
  *
  *
- * @see jpl.imce.oml.specification.ecore.EcorePackage#getAnonymousConceptTaxonomyAxiom()
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getAnonymousConceptTaxonomyAxiom()
  * @model
  * @generated
  */

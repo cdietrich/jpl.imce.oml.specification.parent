@@ -21,8 +21,7 @@ package jpl.imce.oml.specification.ecore.provider;
 
 import java.util.Collection;
 import java.util.List;
-
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.ReifiedRelationshipInstanceRange;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -79,7 +78,7 @@ public class ReifiedRelationshipInstanceRangeItemProvider extends TerminologyIns
 				 getResourceLocator(),
 				 getString("_UI_ReifiedRelationshipInstanceRange_descriptionBox_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ReifiedRelationshipInstanceRange_descriptionBox_feature", "_UI_ReifiedRelationshipInstanceRange_type"),
-				 EcorePackage.eINSTANCE.getReifiedRelationshipInstanceRange_DescriptionBox(),
+				 OMLPackage.eINSTANCE.getReifiedRelationshipInstanceRange_DescriptionBox(),
 				 true,
 				 false,
 				 true,
@@ -101,7 +100,7 @@ public class ReifiedRelationshipInstanceRangeItemProvider extends TerminologyIns
 				 getResourceLocator(),
 				 getString("_UI_ReifiedRelationshipInstanceRange_reifiedRelationshipInstance_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ReifiedRelationshipInstanceRange_reifiedRelationshipInstance_feature", "_UI_ReifiedRelationshipInstanceRange_type"),
-				 EcorePackage.eINSTANCE.getReifiedRelationshipInstanceRange_ReifiedRelationshipInstance(),
+				 OMLPackage.eINSTANCE.getReifiedRelationshipInstanceRange_ReifiedRelationshipInstance(),
 				 true,
 				 false,
 				 true,
@@ -123,7 +122,7 @@ public class ReifiedRelationshipInstanceRangeItemProvider extends TerminologyIns
 				 getResourceLocator(),
 				 getString("_UI_ReifiedRelationshipInstanceRange_range_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ReifiedRelationshipInstanceRange_range_feature", "_UI_ReifiedRelationshipInstanceRange_type"),
-				 EcorePackage.eINSTANCE.getReifiedRelationshipInstanceRange_Range(),
+				 OMLPackage.eINSTANCE.getReifiedRelationshipInstanceRange_Range(),
 				 true,
 				 false,
 				 true,

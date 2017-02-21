@@ -38,7 +38,7 @@ import org.eclipse.emf.cdo.CDOObject;
  *   <li>{@link jpl.imce.oml.specification.ecore.AnnotationSubjectPropertyValue#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.EcorePackage#getAnnotationSubjectPropertyValue()
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getAnnotationSubjectPropertyValue()
  * @model
  * @extends CDOObject
  * @generated
@@ -54,7 +54,7 @@ public interface AnnotationSubjectPropertyValue extends CDOObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Property</em>' reference.
 	 * @see #setProperty(AnnotationProperty)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getAnnotationSubjectPropertyValue_Property()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getAnnotationSubjectPropertyValue_Property()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -80,7 +80,7 @@ public interface AnnotationSubjectPropertyValue extends CDOObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getAnnotationSubjectPropertyValue_Value()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getAnnotationSubjectPropertyValue_Value()
 	 * @model unique="false" required="true"
 	 * @generated
 	 */

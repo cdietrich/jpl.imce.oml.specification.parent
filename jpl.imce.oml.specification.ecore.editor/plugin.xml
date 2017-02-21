@@ -28,12 +28,12 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="jpl.imce.oml.specification.ecore.presentation.EcoreModelWizardID"
-            name="%_UI_EcoreModelWizard_label"
-            class="jpl.imce.oml.specification.ecore.presentation.EcoreModelWizard"
+            id="jpl.imce.oml.specification.ecore.presentation.OMLModelWizardID"
+            name="%_UI_OMLModelWizard_label"
+            class="jpl.imce.oml.specification.ecore.presentation.OMLModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/EcoreModelFile.gif">
-         <description>%_UI_EcoreModelWizard_description</description>
+            icon="icons/full/obj16/OMLModelFile.gif">
+         <description>%_UI_OMLModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
@@ -41,12 +41,12 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated OML -->
       <editor
-            id="jpl.imce.oml.specification.ecore.presentation.EcoreEditorID"
-            name="%_UI_EcoreEditor_label"
-            icon="icons/full/obj16/EcoreModelFile.gif"
-            extensions="ecore"
-            class="jpl.imce.oml.specification.ecore.presentation.EcoreEditor"
-            contributorClass="jpl.imce.oml.specification.ecore.presentation.EcoreActionBarContributor">
+            id="jpl.imce.oml.specification.ecore.presentation.OMLEditorID"
+            name="%_UI_OMLEditor_label"
+            icon="icons/full/obj16/OMLModelFile.gif"
+            extensions="oml"
+            class="jpl.imce.oml.specification.ecore.presentation.OMLEditor"
+            contributorClass="jpl.imce.oml.specification.ecore.presentation.OMLActionBarContributor">
       </editor>
    </extension>
 </plugin>

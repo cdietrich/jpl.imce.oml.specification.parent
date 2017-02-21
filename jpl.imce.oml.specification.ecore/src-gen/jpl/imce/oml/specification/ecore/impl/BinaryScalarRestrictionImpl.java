@@ -28,7 +28,7 @@ import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.BinaryScalarRestriction;
 import jpl.imce.oml.specification.ecore.DataRange;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.Term;
 import jpl.imce.oml.specification.ecore.TerminologyThing;
 
@@ -132,7 +132,7 @@ public class BinaryScalarRestrictionImpl extends RestrictedDataRangeImpl impleme
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getBinaryScalarRestriction();
+		return OMLPackage.eINSTANCE.getBinaryScalarRestriction();
 	}
 
 	/**
@@ -153,7 +153,7 @@ public class BinaryScalarRestrictionImpl extends RestrictedDataRangeImpl impleme
 		int oldLength = length;
 		length = newLength;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.BINARY_SCALAR_RESTRICTION__LENGTH, oldLength, length));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.BINARY_SCALAR_RESTRICTION__LENGTH, oldLength, length));
 	}
 
 	/**
@@ -174,7 +174,7 @@ public class BinaryScalarRestrictionImpl extends RestrictedDataRangeImpl impleme
 		int oldMinLength = minLength;
 		minLength = newMinLength;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.BINARY_SCALAR_RESTRICTION__MIN_LENGTH, oldMinLength, minLength));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.BINARY_SCALAR_RESTRICTION__MIN_LENGTH, oldMinLength, minLength));
 	}
 
 	/**
@@ -195,7 +195,7 @@ public class BinaryScalarRestrictionImpl extends RestrictedDataRangeImpl impleme
 		int oldMaxLength = maxLength;
 		maxLength = newMaxLength;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.BINARY_SCALAR_RESTRICTION__MAX_LENGTH, oldMaxLength, maxLength));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.BINARY_SCALAR_RESTRICTION__MAX_LENGTH, oldMaxLength, maxLength));
 	}
 
 	/**
@@ -225,11 +225,11 @@ public class BinaryScalarRestrictionImpl extends RestrictedDataRangeImpl impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.BINARY_SCALAR_RESTRICTION__LENGTH:
+			case OMLPackage.BINARY_SCALAR_RESTRICTION__LENGTH:
 				return getLength();
-			case EcorePackage.BINARY_SCALAR_RESTRICTION__MIN_LENGTH:
+			case OMLPackage.BINARY_SCALAR_RESTRICTION__MIN_LENGTH:
 				return getMinLength();
-			case EcorePackage.BINARY_SCALAR_RESTRICTION__MAX_LENGTH:
+			case OMLPackage.BINARY_SCALAR_RESTRICTION__MAX_LENGTH:
 				return getMaxLength();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -243,13 +243,13 @@ public class BinaryScalarRestrictionImpl extends RestrictedDataRangeImpl impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.BINARY_SCALAR_RESTRICTION__LENGTH:
+			case OMLPackage.BINARY_SCALAR_RESTRICTION__LENGTH:
 				setLength((Integer)newValue);
 				return;
-			case EcorePackage.BINARY_SCALAR_RESTRICTION__MIN_LENGTH:
+			case OMLPackage.BINARY_SCALAR_RESTRICTION__MIN_LENGTH:
 				setMinLength((Integer)newValue);
 				return;
-			case EcorePackage.BINARY_SCALAR_RESTRICTION__MAX_LENGTH:
+			case OMLPackage.BINARY_SCALAR_RESTRICTION__MAX_LENGTH:
 				setMaxLength((Integer)newValue);
 				return;
 		}
@@ -264,13 +264,13 @@ public class BinaryScalarRestrictionImpl extends RestrictedDataRangeImpl impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.BINARY_SCALAR_RESTRICTION__LENGTH:
+			case OMLPackage.BINARY_SCALAR_RESTRICTION__LENGTH:
 				setLength(LENGTH_EDEFAULT);
 				return;
-			case EcorePackage.BINARY_SCALAR_RESTRICTION__MIN_LENGTH:
+			case OMLPackage.BINARY_SCALAR_RESTRICTION__MIN_LENGTH:
 				setMinLength(MIN_LENGTH_EDEFAULT);
 				return;
-			case EcorePackage.BINARY_SCALAR_RESTRICTION__MAX_LENGTH:
+			case OMLPackage.BINARY_SCALAR_RESTRICTION__MAX_LENGTH:
 				setMaxLength(MAX_LENGTH_EDEFAULT);
 				return;
 		}
@@ -285,11 +285,11 @@ public class BinaryScalarRestrictionImpl extends RestrictedDataRangeImpl impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.BINARY_SCALAR_RESTRICTION__LENGTH:
+			case OMLPackage.BINARY_SCALAR_RESTRICTION__LENGTH:
 				return length != LENGTH_EDEFAULT;
-			case EcorePackage.BINARY_SCALAR_RESTRICTION__MIN_LENGTH:
+			case OMLPackage.BINARY_SCALAR_RESTRICTION__MIN_LENGTH:
 				return minLength != MIN_LENGTH_EDEFAULT;
-			case EcorePackage.BINARY_SCALAR_RESTRICTION__MAX_LENGTH:
+			case OMLPackage.BINARY_SCALAR_RESTRICTION__MAX_LENGTH:
 				return maxLength != MAX_LENGTH_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -304,13 +304,13 @@ public class BinaryScalarRestrictionImpl extends RestrictedDataRangeImpl impleme
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == TerminologyThing.class) {
 			switch (baseOperationID) {
-				case EcorePackage.TERMINOLOGY_THING___CALCULATE_UUID: return EcorePackage.BINARY_SCALAR_RESTRICTION___CALCULATE_UUID;
+				case OMLPackage.TERMINOLOGY_THING___CALCULATE_UUID: return OMLPackage.BINARY_SCALAR_RESTRICTION___CALCULATE_UUID;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
 		if (baseClass == Term.class) {
 			switch (baseOperationID) {
-				case EcorePackage.TERM___CALCULATE_UUID: return EcorePackage.BINARY_SCALAR_RESTRICTION___CALCULATE_UUID;
+				case OMLPackage.TERM___CALCULATE_UUID: return OMLPackage.BINARY_SCALAR_RESTRICTION___CALCULATE_UUID;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
@@ -325,7 +325,7 @@ public class BinaryScalarRestrictionImpl extends RestrictedDataRangeImpl impleme
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.BINARY_SCALAR_RESTRICTION___CALCULATE_UUID:
+			case OMLPackage.BINARY_SCALAR_RESTRICTION___CALCULATE_UUID:
 				return calculateUUID();
 		}
 		return super.eInvoke(operationID, arguments);

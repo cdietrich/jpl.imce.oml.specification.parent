@@ -27,7 +27,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.DataRange;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.Term;
 import jpl.imce.oml.specification.ecore.TerminologyThing;
 import jpl.imce.oml.specification.ecore.TimeScalarRestriction;
@@ -153,7 +153,7 @@ public class TimeScalarRestrictionImpl extends RestrictedDataRangeImpl implement
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getTimeScalarRestriction();
+		return OMLPackage.eINSTANCE.getTimeScalarRestriction();
 	}
 
 	/**
@@ -174,7 +174,7 @@ public class TimeScalarRestrictionImpl extends RestrictedDataRangeImpl implement
 		String oldMinInclusive = minInclusive;
 		minInclusive = newMinInclusive;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.TIME_SCALAR_RESTRICTION__MIN_INCLUSIVE, oldMinInclusive, minInclusive));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.TIME_SCALAR_RESTRICTION__MIN_INCLUSIVE, oldMinInclusive, minInclusive));
 	}
 
 	/**
@@ -195,7 +195,7 @@ public class TimeScalarRestrictionImpl extends RestrictedDataRangeImpl implement
 		String oldMaxInclusive = maxInclusive;
 		maxInclusive = newMaxInclusive;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.TIME_SCALAR_RESTRICTION__MAX_INCLUSIVE, oldMaxInclusive, maxInclusive));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.TIME_SCALAR_RESTRICTION__MAX_INCLUSIVE, oldMaxInclusive, maxInclusive));
 	}
 
 	/**
@@ -216,7 +216,7 @@ public class TimeScalarRestrictionImpl extends RestrictedDataRangeImpl implement
 		String oldMinExclusive = minExclusive;
 		minExclusive = newMinExclusive;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.TIME_SCALAR_RESTRICTION__MIN_EXCLUSIVE, oldMinExclusive, minExclusive));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.TIME_SCALAR_RESTRICTION__MIN_EXCLUSIVE, oldMinExclusive, minExclusive));
 	}
 
 	/**
@@ -237,7 +237,7 @@ public class TimeScalarRestrictionImpl extends RestrictedDataRangeImpl implement
 		String oldMaxExclusive = maxExclusive;
 		maxExclusive = newMaxExclusive;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.TIME_SCALAR_RESTRICTION__MAX_EXCLUSIVE, oldMaxExclusive, maxExclusive));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.TIME_SCALAR_RESTRICTION__MAX_EXCLUSIVE, oldMaxExclusive, maxExclusive));
 	}
 
 	/**
@@ -267,13 +267,13 @@ public class TimeScalarRestrictionImpl extends RestrictedDataRangeImpl implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.TIME_SCALAR_RESTRICTION__MIN_INCLUSIVE:
+			case OMLPackage.TIME_SCALAR_RESTRICTION__MIN_INCLUSIVE:
 				return getMinInclusive();
-			case EcorePackage.TIME_SCALAR_RESTRICTION__MAX_INCLUSIVE:
+			case OMLPackage.TIME_SCALAR_RESTRICTION__MAX_INCLUSIVE:
 				return getMaxInclusive();
-			case EcorePackage.TIME_SCALAR_RESTRICTION__MIN_EXCLUSIVE:
+			case OMLPackage.TIME_SCALAR_RESTRICTION__MIN_EXCLUSIVE:
 				return getMinExclusive();
-			case EcorePackage.TIME_SCALAR_RESTRICTION__MAX_EXCLUSIVE:
+			case OMLPackage.TIME_SCALAR_RESTRICTION__MAX_EXCLUSIVE:
 				return getMaxExclusive();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -287,16 +287,16 @@ public class TimeScalarRestrictionImpl extends RestrictedDataRangeImpl implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.TIME_SCALAR_RESTRICTION__MIN_INCLUSIVE:
+			case OMLPackage.TIME_SCALAR_RESTRICTION__MIN_INCLUSIVE:
 				setMinInclusive((String)newValue);
 				return;
-			case EcorePackage.TIME_SCALAR_RESTRICTION__MAX_INCLUSIVE:
+			case OMLPackage.TIME_SCALAR_RESTRICTION__MAX_INCLUSIVE:
 				setMaxInclusive((String)newValue);
 				return;
-			case EcorePackage.TIME_SCALAR_RESTRICTION__MIN_EXCLUSIVE:
+			case OMLPackage.TIME_SCALAR_RESTRICTION__MIN_EXCLUSIVE:
 				setMinExclusive((String)newValue);
 				return;
-			case EcorePackage.TIME_SCALAR_RESTRICTION__MAX_EXCLUSIVE:
+			case OMLPackage.TIME_SCALAR_RESTRICTION__MAX_EXCLUSIVE:
 				setMaxExclusive((String)newValue);
 				return;
 		}
@@ -311,16 +311,16 @@ public class TimeScalarRestrictionImpl extends RestrictedDataRangeImpl implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.TIME_SCALAR_RESTRICTION__MIN_INCLUSIVE:
+			case OMLPackage.TIME_SCALAR_RESTRICTION__MIN_INCLUSIVE:
 				setMinInclusive(MIN_INCLUSIVE_EDEFAULT);
 				return;
-			case EcorePackage.TIME_SCALAR_RESTRICTION__MAX_INCLUSIVE:
+			case OMLPackage.TIME_SCALAR_RESTRICTION__MAX_INCLUSIVE:
 				setMaxInclusive(MAX_INCLUSIVE_EDEFAULT);
 				return;
-			case EcorePackage.TIME_SCALAR_RESTRICTION__MIN_EXCLUSIVE:
+			case OMLPackage.TIME_SCALAR_RESTRICTION__MIN_EXCLUSIVE:
 				setMinExclusive(MIN_EXCLUSIVE_EDEFAULT);
 				return;
-			case EcorePackage.TIME_SCALAR_RESTRICTION__MAX_EXCLUSIVE:
+			case OMLPackage.TIME_SCALAR_RESTRICTION__MAX_EXCLUSIVE:
 				setMaxExclusive(MAX_EXCLUSIVE_EDEFAULT);
 				return;
 		}
@@ -335,13 +335,13 @@ public class TimeScalarRestrictionImpl extends RestrictedDataRangeImpl implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.TIME_SCALAR_RESTRICTION__MIN_INCLUSIVE:
+			case OMLPackage.TIME_SCALAR_RESTRICTION__MIN_INCLUSIVE:
 				return MIN_INCLUSIVE_EDEFAULT == null ? minInclusive != null : !MIN_INCLUSIVE_EDEFAULT.equals(minInclusive);
-			case EcorePackage.TIME_SCALAR_RESTRICTION__MAX_INCLUSIVE:
+			case OMLPackage.TIME_SCALAR_RESTRICTION__MAX_INCLUSIVE:
 				return MAX_INCLUSIVE_EDEFAULT == null ? maxInclusive != null : !MAX_INCLUSIVE_EDEFAULT.equals(maxInclusive);
-			case EcorePackage.TIME_SCALAR_RESTRICTION__MIN_EXCLUSIVE:
+			case OMLPackage.TIME_SCALAR_RESTRICTION__MIN_EXCLUSIVE:
 				return MIN_EXCLUSIVE_EDEFAULT == null ? minExclusive != null : !MIN_EXCLUSIVE_EDEFAULT.equals(minExclusive);
-			case EcorePackage.TIME_SCALAR_RESTRICTION__MAX_EXCLUSIVE:
+			case OMLPackage.TIME_SCALAR_RESTRICTION__MAX_EXCLUSIVE:
 				return MAX_EXCLUSIVE_EDEFAULT == null ? maxExclusive != null : !MAX_EXCLUSIVE_EDEFAULT.equals(maxExclusive);
 		}
 		return super.eIsSet(featureID);
@@ -356,13 +356,13 @@ public class TimeScalarRestrictionImpl extends RestrictedDataRangeImpl implement
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == TerminologyThing.class) {
 			switch (baseOperationID) {
-				case EcorePackage.TERMINOLOGY_THING___CALCULATE_UUID: return EcorePackage.TIME_SCALAR_RESTRICTION___CALCULATE_UUID;
+				case OMLPackage.TERMINOLOGY_THING___CALCULATE_UUID: return OMLPackage.TIME_SCALAR_RESTRICTION___CALCULATE_UUID;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
 		if (baseClass == Term.class) {
 			switch (baseOperationID) {
-				case EcorePackage.TERM___CALCULATE_UUID: return EcorePackage.TIME_SCALAR_RESTRICTION___CALCULATE_UUID;
+				case OMLPackage.TERM___CALCULATE_UUID: return OMLPackage.TIME_SCALAR_RESTRICTION___CALCULATE_UUID;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
@@ -377,7 +377,7 @@ public class TimeScalarRestrictionImpl extends RestrictedDataRangeImpl implement
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.TIME_SCALAR_RESTRICTION___CALCULATE_UUID:
+			case OMLPackage.TIME_SCALAR_RESTRICTION___CALCULATE_UUID:
 				return calculateUUID();
 		}
 		return super.eInvoke(operationID, arguments);

@@ -36,7 +36,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.DataRelationshipFromStructure#getDomain <em>Domain</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.EcorePackage#getDataRelationshipFromStructure()
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getDataRelationshipFromStructure()
  * @model abstract="true"
  * @generated
  */
@@ -51,7 +51,7 @@ public interface DataRelationshipFromStructure extends DataRelationshipDomain {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Domain</em>' reference.
 	 * @see #setDomain(Structure)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getDataRelationshipFromStructure_Domain()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getDataRelationshipFromStructure_Domain()
 	 * @model required="true"
 	 * @generated
 	 */

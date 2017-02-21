@@ -21,8 +21,7 @@ package jpl.imce.oml.specification.ecore.provider;
 
 import java.util.Collection;
 import java.util.List;
-
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.ReifiedRelationship;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -81,7 +80,7 @@ public class ReifiedRelationshipItemProvider extends EntityRelationshipItemProvi
 				 getResourceLocator(),
 				 getString("_UI_ConceptualEntity_isAbstract_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ConceptualEntity_isAbstract_feature", "_UI_ConceptualEntity_type"),
-				 EcorePackage.eINSTANCE.getConceptualEntity_IsAbstract(),
+				 OMLPackage.eINSTANCE.getConceptualEntity_IsAbstract(),
 				 true,
 				 false,
 				 false,
@@ -103,7 +102,7 @@ public class ReifiedRelationshipItemProvider extends EntityRelationshipItemProvi
 				 getResourceLocator(),
 				 getString("_UI_ReifiedRelationship_unreifiedPropertyName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ReifiedRelationship_unreifiedPropertyName_feature", "_UI_ReifiedRelationship_type"),
-				 EcorePackage.eINSTANCE.getReifiedRelationship_UnreifiedPropertyName(),
+				 OMLPackage.eINSTANCE.getReifiedRelationship_UnreifiedPropertyName(),
 				 true,
 				 false,
 				 false,
@@ -125,7 +124,7 @@ public class ReifiedRelationshipItemProvider extends EntityRelationshipItemProvi
 				 getResourceLocator(),
 				 getString("_UI_ReifiedRelationship_unreifiedInversePropertyName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ReifiedRelationship_unreifiedInversePropertyName_feature", "_UI_ReifiedRelationship_type"),
-				 EcorePackage.eINSTANCE.getReifiedRelationship_UnreifiedInversePropertyName(),
+				 OMLPackage.eINSTANCE.getReifiedRelationship_UnreifiedInversePropertyName(),
 				 true,
 				 false,
 				 false,
@@ -172,9 +171,9 @@ public class ReifiedRelationshipItemProvider extends EntityRelationshipItemProvi
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ReifiedRelationship.class)) {
-			case EcorePackage.REIFIED_RELATIONSHIP__IS_ABSTRACT:
-			case EcorePackage.REIFIED_RELATIONSHIP__UNREIFIED_PROPERTY_NAME:
-			case EcorePackage.REIFIED_RELATIONSHIP__UNREIFIED_INVERSE_PROPERTY_NAME:
+			case OMLPackage.REIFIED_RELATIONSHIP__IS_ABSTRACT:
+			case OMLPackage.REIFIED_RELATIONSHIP__UNREIFIED_PROPERTY_NAME:
+			case OMLPackage.REIFIED_RELATIONSHIP__UNREIFIED_INVERSE_PROPERTY_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -30,7 +30,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-model-doc -->
  *
  *
- * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityScalarDataProperty()
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityScalarDataProperty()
  * @model
  * @generated
  */

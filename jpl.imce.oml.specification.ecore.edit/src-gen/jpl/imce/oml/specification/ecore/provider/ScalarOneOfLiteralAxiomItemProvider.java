@@ -21,8 +21,7 @@ package jpl.imce.oml.specification.ecore.provider;
 
 import java.util.Collection;
 import java.util.List;
-
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.ScalarOneOfLiteralAxiom;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -80,7 +79,7 @@ public class ScalarOneOfLiteralAxiomItemProvider extends AxiomItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ScalarOneOfLiteralAxiom_axiom_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ScalarOneOfLiteralAxiom_axiom_feature", "_UI_ScalarOneOfLiteralAxiom_type"),
-				 EcorePackage.eINSTANCE.getScalarOneOfLiteralAxiom_Axiom(),
+				 OMLPackage.eINSTANCE.getScalarOneOfLiteralAxiom_Axiom(),
 				 true,
 				 false,
 				 true,
@@ -102,7 +101,7 @@ public class ScalarOneOfLiteralAxiomItemProvider extends AxiomItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ScalarOneOfLiteralAxiom_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ScalarOneOfLiteralAxiom_value_feature", "_UI_ScalarOneOfLiteralAxiom_type"),
-				 EcorePackage.eINSTANCE.getScalarOneOfLiteralAxiom_Value(),
+				 OMLPackage.eINSTANCE.getScalarOneOfLiteralAxiom_Value(),
 				 true,
 				 false,
 				 false,
@@ -149,7 +148,7 @@ public class ScalarOneOfLiteralAxiomItemProvider extends AxiomItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ScalarOneOfLiteralAxiom.class)) {
-			case EcorePackage.SCALAR_ONE_OF_LITERAL_AXIOM__VALUE:
+			case OMLPackage.SCALAR_ONE_OF_LITERAL_AXIOM__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

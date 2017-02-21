@@ -23,7 +23,7 @@ import java.util.Collection;
 import java.util.List;
 
 import jpl.imce.oml.specification.ecore.AnnotationProperty;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.edit.provider.OMLEditPlugin;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -96,7 +96,7 @@ public class AnnotationPropertyItemProvider
 				 getResourceLocator(),
 				 getString("_UI_AnnotationProperty_iri_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationProperty_iri_feature", "_UI_AnnotationProperty_type"),
-				 EcorePackage.eINSTANCE.getAnnotationProperty_Iri(),
+				 OMLPackage.eINSTANCE.getAnnotationProperty_Iri(),
 				 true,
 				 false,
 				 false,
@@ -118,7 +118,7 @@ public class AnnotationPropertyItemProvider
 				 getResourceLocator(),
 				 getString("_UI_AnnotationProperty_abbrevIRI_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AnnotationProperty_abbrevIRI_feature", "_UI_AnnotationProperty_type"),
-				 EcorePackage.eINSTANCE.getAnnotationProperty_AbbrevIRI(),
+				 OMLPackage.eINSTANCE.getAnnotationProperty_AbbrevIRI(),
 				 true,
 				 false,
 				 false,
@@ -165,8 +165,8 @@ public class AnnotationPropertyItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AnnotationProperty.class)) {
-			case EcorePackage.ANNOTATION_PROPERTY__IRI:
-			case EcorePackage.ANNOTATION_PROPERTY__ABBREV_IRI:
+			case OMLPackage.ANNOTATION_PROPERTY__IRI:
+			case OMLPackage.ANNOTATION_PROPERTY__ABBREV_IRI:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

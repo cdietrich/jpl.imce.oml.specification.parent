@@ -36,7 +36,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.TerminologyBoxStatement#getTbox <em>Tbox</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyBoxStatement()
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyBoxStatement()
  * @model abstract="true"
  * @generated
  */
@@ -52,7 +52,7 @@ public interface TerminologyBoxStatement extends TerminologyThing {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tbox</em>' container reference.
 	 * @see #setTbox(TerminologyBox)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getTerminologyBoxStatement_Tbox()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getTerminologyBoxStatement_Tbox()
 	 * @see jpl.imce.oml.specification.ecore.TerminologyBox#getBoxStatements
 	 * @model opposite="boxStatements" required="true" transient="false"
 	 * @generated

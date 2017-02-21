@@ -23,7 +23,7 @@ import java.util.Collection;
 import java.util.List;
 
 import jpl.imce.oml.specification.ecore.DescriptionBoxRefinement;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -77,7 +77,7 @@ public class DescriptionBoxRefinementItemProvider extends DescriptionBoxRelation
 				 getResourceLocator(),
 				 getString("_UI_DescriptionBoxRefinement_refiningDescriptionBox_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionBoxRefinement_refiningDescriptionBox_feature", "_UI_DescriptionBoxRefinement_type"),
-				 EcorePackage.eINSTANCE.getDescriptionBoxRefinement_RefiningDescriptionBox(),
+				 OMLPackage.eINSTANCE.getDescriptionBoxRefinement_RefiningDescriptionBox(),
 				 true,
 				 false,
 				 true,
@@ -99,7 +99,7 @@ public class DescriptionBoxRefinementItemProvider extends DescriptionBoxRelation
 				 getResourceLocator(),
 				 getString("_UI_DescriptionBoxRefinement_refinedDescriptionBox_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DescriptionBoxRefinement_refinedDescriptionBox_feature", "_UI_DescriptionBoxRefinement_type"),
-				 EcorePackage.eINSTANCE.getDescriptionBoxRefinement_RefinedDescriptionBox(),
+				 OMLPackage.eINSTANCE.getDescriptionBoxRefinement_RefinedDescriptionBox(),
 				 true,
 				 false,
 				 true,

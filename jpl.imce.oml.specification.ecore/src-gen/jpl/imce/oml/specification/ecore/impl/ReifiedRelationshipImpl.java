@@ -19,8 +19,8 @@
 package jpl.imce.oml.specification.ecore.impl;
 
 import jpl.imce.oml.specification.ecore.ConceptualEntity;
-import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Entity;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.ReifiedRelationship;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -121,7 +121,7 @@ public class ReifiedRelationshipImpl extends EntityRelationshipImpl implements R
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getReifiedRelationship();
+		return OMLPackage.eINSTANCE.getReifiedRelationship();
 	}
 
 	/**
@@ -142,7 +142,7 @@ public class ReifiedRelationshipImpl extends EntityRelationshipImpl implements R
 		boolean oldIsAbstract = isAbstract;
 		isAbstract = newIsAbstract;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.REIFIED_RELATIONSHIP__IS_ABSTRACT, oldIsAbstract, isAbstract));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.REIFIED_RELATIONSHIP__IS_ABSTRACT, oldIsAbstract, isAbstract));
 	}
 
 	/**
@@ -163,7 +163,7 @@ public class ReifiedRelationshipImpl extends EntityRelationshipImpl implements R
 		String oldUnreifiedPropertyName = unreifiedPropertyName;
 		unreifiedPropertyName = newUnreifiedPropertyName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.REIFIED_RELATIONSHIP__UNREIFIED_PROPERTY_NAME, oldUnreifiedPropertyName, unreifiedPropertyName));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.REIFIED_RELATIONSHIP__UNREIFIED_PROPERTY_NAME, oldUnreifiedPropertyName, unreifiedPropertyName));
 	}
 
 	/**
@@ -184,7 +184,7 @@ public class ReifiedRelationshipImpl extends EntityRelationshipImpl implements R
 		String oldUnreifiedInversePropertyName = unreifiedInversePropertyName;
 		unreifiedInversePropertyName = newUnreifiedInversePropertyName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.REIFIED_RELATIONSHIP__UNREIFIED_INVERSE_PROPERTY_NAME, oldUnreifiedInversePropertyName, unreifiedInversePropertyName));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.REIFIED_RELATIONSHIP__UNREIFIED_INVERSE_PROPERTY_NAME, oldUnreifiedInversePropertyName, unreifiedInversePropertyName));
 	}
 
 	/**
@@ -195,11 +195,11 @@ public class ReifiedRelationshipImpl extends EntityRelationshipImpl implements R
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.REIFIED_RELATIONSHIP__IS_ABSTRACT:
+			case OMLPackage.REIFIED_RELATIONSHIP__IS_ABSTRACT:
 				return isIsAbstract();
-			case EcorePackage.REIFIED_RELATIONSHIP__UNREIFIED_PROPERTY_NAME:
+			case OMLPackage.REIFIED_RELATIONSHIP__UNREIFIED_PROPERTY_NAME:
 				return getUnreifiedPropertyName();
-			case EcorePackage.REIFIED_RELATIONSHIP__UNREIFIED_INVERSE_PROPERTY_NAME:
+			case OMLPackage.REIFIED_RELATIONSHIP__UNREIFIED_INVERSE_PROPERTY_NAME:
 				return getUnreifiedInversePropertyName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -213,13 +213,13 @@ public class ReifiedRelationshipImpl extends EntityRelationshipImpl implements R
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.REIFIED_RELATIONSHIP__IS_ABSTRACT:
+			case OMLPackage.REIFIED_RELATIONSHIP__IS_ABSTRACT:
 				setIsAbstract((Boolean)newValue);
 				return;
-			case EcorePackage.REIFIED_RELATIONSHIP__UNREIFIED_PROPERTY_NAME:
+			case OMLPackage.REIFIED_RELATIONSHIP__UNREIFIED_PROPERTY_NAME:
 				setUnreifiedPropertyName((String)newValue);
 				return;
-			case EcorePackage.REIFIED_RELATIONSHIP__UNREIFIED_INVERSE_PROPERTY_NAME:
+			case OMLPackage.REIFIED_RELATIONSHIP__UNREIFIED_INVERSE_PROPERTY_NAME:
 				setUnreifiedInversePropertyName((String)newValue);
 				return;
 		}
@@ -234,13 +234,13 @@ public class ReifiedRelationshipImpl extends EntityRelationshipImpl implements R
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.REIFIED_RELATIONSHIP__IS_ABSTRACT:
+			case OMLPackage.REIFIED_RELATIONSHIP__IS_ABSTRACT:
 				setIsAbstract(IS_ABSTRACT_EDEFAULT);
 				return;
-			case EcorePackage.REIFIED_RELATIONSHIP__UNREIFIED_PROPERTY_NAME:
+			case OMLPackage.REIFIED_RELATIONSHIP__UNREIFIED_PROPERTY_NAME:
 				setUnreifiedPropertyName(UNREIFIED_PROPERTY_NAME_EDEFAULT);
 				return;
-			case EcorePackage.REIFIED_RELATIONSHIP__UNREIFIED_INVERSE_PROPERTY_NAME:
+			case OMLPackage.REIFIED_RELATIONSHIP__UNREIFIED_INVERSE_PROPERTY_NAME:
 				setUnreifiedInversePropertyName(UNREIFIED_INVERSE_PROPERTY_NAME_EDEFAULT);
 				return;
 		}
@@ -255,11 +255,11 @@ public class ReifiedRelationshipImpl extends EntityRelationshipImpl implements R
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.REIFIED_RELATIONSHIP__IS_ABSTRACT:
+			case OMLPackage.REIFIED_RELATIONSHIP__IS_ABSTRACT:
 				return isAbstract != IS_ABSTRACT_EDEFAULT;
-			case EcorePackage.REIFIED_RELATIONSHIP__UNREIFIED_PROPERTY_NAME:
+			case OMLPackage.REIFIED_RELATIONSHIP__UNREIFIED_PROPERTY_NAME:
 				return UNREIFIED_PROPERTY_NAME_EDEFAULT == null ? unreifiedPropertyName != null : !UNREIFIED_PROPERTY_NAME_EDEFAULT.equals(unreifiedPropertyName);
-			case EcorePackage.REIFIED_RELATIONSHIP__UNREIFIED_INVERSE_PROPERTY_NAME:
+			case OMLPackage.REIFIED_RELATIONSHIP__UNREIFIED_INVERSE_PROPERTY_NAME:
 				return UNREIFIED_INVERSE_PROPERTY_NAME_EDEFAULT == null ? unreifiedInversePropertyName != null : !UNREIFIED_INVERSE_PROPERTY_NAME_EDEFAULT.equals(unreifiedInversePropertyName);
 		}
 		return super.eIsSet(featureID);
@@ -279,7 +279,7 @@ public class ReifiedRelationshipImpl extends EntityRelationshipImpl implements R
 		}
 		if (baseClass == ConceptualEntity.class) {
 			switch (derivedFeatureID) {
-				case EcorePackage.REIFIED_RELATIONSHIP__IS_ABSTRACT: return EcorePackage.CONCEPTUAL_ENTITY__IS_ABSTRACT;
+				case OMLPackage.REIFIED_RELATIONSHIP__IS_ABSTRACT: return OMLPackage.CONCEPTUAL_ENTITY__IS_ABSTRACT;
 				default: return -1;
 			}
 		}
@@ -300,7 +300,7 @@ public class ReifiedRelationshipImpl extends EntityRelationshipImpl implements R
 		}
 		if (baseClass == ConceptualEntity.class) {
 			switch (baseFeatureID) {
-				case EcorePackage.CONCEPTUAL_ENTITY__IS_ABSTRACT: return EcorePackage.REIFIED_RELATIONSHIP__IS_ABSTRACT;
+				case OMLPackage.CONCEPTUAL_ENTITY__IS_ABSTRACT: return OMLPackage.REIFIED_RELATIONSHIP__IS_ABSTRACT;
 				default: return -1;
 			}
 		}

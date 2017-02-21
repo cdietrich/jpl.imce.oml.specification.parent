@@ -21,10 +21,9 @@ package jpl.imce.oml.specification.ecore.provider;
 
 import java.util.Collection;
 import java.util.List;
-
-import jpl.imce.oml.specification.ecore.EcoreFactory;
-import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.Module;
+import jpl.imce.oml.specification.ecore.OMLFactory;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -81,7 +80,7 @@ public class ModuleItemProvider extends TerminologyThingItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Module_iri_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Module_iri_feature", "_UI_Module_type"),
-				 EcorePackage.eINSTANCE.getModule_Iri(),
+				 OMLPackage.eINSTANCE.getModule_Iri(),
 				 true,
 				 false,
 				 false,
@@ -102,7 +101,7 @@ public class ModuleItemProvider extends TerminologyThingItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(EcorePackage.eINSTANCE.getModule_Annotations());
+			childrenFeatures.add(OMLPackage.eINSTANCE.getModule_Annotations());
 		}
 		return childrenFeatures;
 	}
@@ -147,10 +146,10 @@ public class ModuleItemProvider extends TerminologyThingItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Module.class)) {
-			case EcorePackage.MODULE__IRI:
+			case OMLPackage.MODULE__IRI:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case EcorePackage.MODULE__ANNOTATIONS:
+			case OMLPackage.MODULE__ANNOTATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -170,8 +169,8 @@ public class ModuleItemProvider extends TerminologyThingItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EcorePackage.eINSTANCE.getModule_Annotations(),
-				 EcoreFactory.eINSTANCE.createAnnotation()));
+				(OMLPackage.eINSTANCE.getModule_Annotations(),
+				 OMLFactory.eINSTANCE.createAnnotation()));
 	}
 
 }

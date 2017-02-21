@@ -40,7 +40,7 @@ import org.eclipse.emf.common.util.EMap;
  *   <li>{@link jpl.imce.oml.specification.ecore.Module#getAnnotations <em>Annotations</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.EcorePackage#getModule()
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getModule()
  * @model abstract="true"
  * @generated
  */
@@ -55,7 +55,7 @@ public interface Module extends TerminologyThing, Resource {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Iri</em>' attribute.
 	 * @see #setIri(String)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getModule_Iri()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getModule_Iri()
 	 * @model unique="false" id="true" dataType="jpl.imce.oml.specification.ecore.IRI" required="true"
 	 * @generated
 	 */
@@ -82,7 +82,7 @@ public interface Module extends TerminologyThing, Resource {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Annotations</em>' containment reference list.
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getModule_Annotations()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getModule_Annotations()
 	 * @see jpl.imce.oml.specification.ecore.Annotation#getModule
 	 * @model opposite="module" containment="true"
 	 *        annotation="http://imce.jpl.nasa.gov/oml/Collection kind='SortedSet'"

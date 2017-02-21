@@ -21,9 +21,8 @@ package jpl.imce.oml.specification.ecore.provider;
 
 import java.util.Collection;
 import java.util.List;
-
-import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.EntityScalarDataPropertyRestrictionAxiom;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -77,7 +76,7 @@ public class EntityScalarDataPropertyRestrictionAxiomItemProvider extends TermAx
 				 getResourceLocator(),
 				 getString("_UI_EntityScalarDataPropertyRestrictionAxiom_restrictedEntity_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityScalarDataPropertyRestrictionAxiom_restrictedEntity_feature", "_UI_EntityScalarDataPropertyRestrictionAxiom_type"),
-				 EcorePackage.eINSTANCE.getEntityScalarDataPropertyRestrictionAxiom_RestrictedEntity(),
+				 OMLPackage.eINSTANCE.getEntityScalarDataPropertyRestrictionAxiom_RestrictedEntity(),
 				 true,
 				 false,
 				 true,
@@ -99,7 +98,7 @@ public class EntityScalarDataPropertyRestrictionAxiomItemProvider extends TermAx
 				 getResourceLocator(),
 				 getString("_UI_EntityScalarDataPropertyRestrictionAxiom_scalarProperty_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityScalarDataPropertyRestrictionAxiom_scalarProperty_feature", "_UI_EntityScalarDataPropertyRestrictionAxiom_type"),
-				 EcorePackage.eINSTANCE.getEntityScalarDataPropertyRestrictionAxiom_ScalarProperty(),
+				 OMLPackage.eINSTANCE.getEntityScalarDataPropertyRestrictionAxiom_ScalarProperty(),
 				 true,
 				 false,
 				 true,

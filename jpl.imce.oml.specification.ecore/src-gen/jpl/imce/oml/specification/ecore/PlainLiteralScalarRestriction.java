@@ -50,7 +50,7 @@ package jpl.imce.oml.specification.ecore;
  *   <li>{@link jpl.imce.oml.specification.ecore.PlainLiteralScalarRestriction#getLangRange <em>Lang Range</em>}</li>
  * </ul>
  *
- * @see jpl.imce.oml.specification.ecore.EcorePackage#getPlainLiteralScalarRestriction()
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getPlainLiteralScalarRestriction()
  * @model
  * @generated
  */
@@ -64,7 +64,7 @@ public interface PlainLiteralScalarRestriction extends RestrictedDataRange {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Length</em>' attribute.
 	 * @see #setLength(int)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getPlainLiteralScalarRestriction_Length()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getPlainLiteralScalarRestriction_Length()
 	 * @model unique="false"
 	 * @generated
 	 */
@@ -89,7 +89,7 @@ public interface PlainLiteralScalarRestriction extends RestrictedDataRange {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Min Length</em>' attribute.
 	 * @see #setMinLength(int)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getPlainLiteralScalarRestriction_MinLength()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getPlainLiteralScalarRestriction_MinLength()
 	 * @model unique="false"
 	 * @generated
 	 */
@@ -114,7 +114,7 @@ public interface PlainLiteralScalarRestriction extends RestrictedDataRange {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Max Length</em>' attribute.
 	 * @see #setMaxLength(int)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getPlainLiteralScalarRestriction_MaxLength()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getPlainLiteralScalarRestriction_MaxLength()
 	 * @model unique="false"
 	 * @generated
 	 */
@@ -139,7 +139,7 @@ public interface PlainLiteralScalarRestriction extends RestrictedDataRange {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Pattern</em>' attribute.
 	 * @see #setPattern(String)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getPlainLiteralScalarRestriction_Pattern()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getPlainLiteralScalarRestriction_Pattern()
 	 * @model unique="false" dataType="jpl.imce.oml.specification.ecore.Pattern"
 	 * @generated
 	 */
@@ -164,7 +164,7 @@ public interface PlainLiteralScalarRestriction extends RestrictedDataRange {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Lang Range</em>' attribute.
 	 * @see #setLangRange(String)
-	 * @see jpl.imce.oml.specification.ecore.EcorePackage#getPlainLiteralScalarRestriction_LangRange()
+	 * @see jpl.imce.oml.specification.ecore.OMLPackage#getPlainLiteralScalarRestriction_LangRange()
 	 * @model unique="false" dataType="jpl.imce.oml.specification.ecore.LangRange"
 	 * @generated
 	 */

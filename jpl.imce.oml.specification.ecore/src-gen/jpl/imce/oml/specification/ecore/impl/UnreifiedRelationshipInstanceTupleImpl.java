@@ -28,7 +28,7 @@ import java.util.UUID;
 
 import jpl.imce.oml.specification.ecore.ConceptualEntitySingletonInstance;
 import jpl.imce.oml.specification.ecore.DescriptionBox;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import jpl.imce.oml.specification.ecore.TerminologyInstanceAssertion;
 import jpl.imce.oml.specification.ecore.TerminologyThing;
 import jpl.imce.oml.specification.ecore.UnreifiedRelationship;
@@ -110,7 +110,7 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getUnreifiedRelationshipInstanceTuple();
+		return OMLPackage.eINSTANCE.getUnreifiedRelationshipInstanceTuple();
 	}
 
 	/**
@@ -119,7 +119,7 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 	 * @generated
 	 */
 	public DescriptionBox getDescriptionBox() {
-		if (eContainerFeatureID() != EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX) return null;
+		if (eContainerFeatureID() != OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX) return null;
 		return (DescriptionBox)eContainer();
 	}
 
@@ -129,7 +129,7 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 	 * @generated
 	 */
 	public DescriptionBox basicGetDescriptionBox() {
-		if (eContainerFeatureID() != EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX) return null;
+		if (eContainerFeatureID() != OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX) return null;
 		return (DescriptionBox)eInternalContainer();
 	}
 
@@ -139,7 +139,7 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 	 * @generated
 	 */
 	public NotificationChain basicSetDescriptionBox(DescriptionBox newDescriptionBox, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newDescriptionBox, EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newDescriptionBox, OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX, msgs);
 		return msgs;
 	}
 
@@ -149,19 +149,19 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 	 * @generated
 	 */
 	public void setDescriptionBox(DescriptionBox newDescriptionBox) {
-		if (newDescriptionBox != eInternalContainer() || (eContainerFeatureID() != EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX && newDescriptionBox != null)) {
+		if (newDescriptionBox != eInternalContainer() || (eContainerFeatureID() != OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX && newDescriptionBox != null)) {
 			if (EcoreUtil.isAncestor(this, (EObject)newDescriptionBox))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newDescriptionBox != null)
-				msgs = ((InternalEObject)newDescriptionBox).eInverseAdd(this, EcorePackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES, DescriptionBox.class, msgs);
+				msgs = ((InternalEObject)newDescriptionBox).eInverseAdd(this, OMLPackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES, DescriptionBox.class, msgs);
 			msgs = basicSetDescriptionBox(newDescriptionBox, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX, newDescriptionBox, newDescriptionBox));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX, newDescriptionBox, newDescriptionBox));
 	}
 
 	/**
@@ -175,7 +175,7 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 			unreifiedRelationship = (UnreifiedRelationship)eResolveProxy(oldUnreifiedRelationship);
 			if (unreifiedRelationship != oldUnreifiedRelationship) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__UNREIFIED_RELATIONSHIP, oldUnreifiedRelationship, unreifiedRelationship));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__UNREIFIED_RELATIONSHIP, oldUnreifiedRelationship, unreifiedRelationship));
 			}
 		}
 		return unreifiedRelationship;
@@ -199,7 +199,7 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 		UnreifiedRelationship oldUnreifiedRelationship = unreifiedRelationship;
 		unreifiedRelationship = newUnreifiedRelationship;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__UNREIFIED_RELATIONSHIP, oldUnreifiedRelationship, unreifiedRelationship));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__UNREIFIED_RELATIONSHIP, oldUnreifiedRelationship, unreifiedRelationship));
 	}
 
 	/**
@@ -213,7 +213,7 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 			domain = (ConceptualEntitySingletonInstance)eResolveProxy(oldDomain);
 			if (domain != oldDomain) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DOMAIN, oldDomain, domain));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DOMAIN, oldDomain, domain));
 			}
 		}
 		return domain;
@@ -237,7 +237,7 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 		ConceptualEntitySingletonInstance oldDomain = domain;
 		domain = newDomain;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DOMAIN, oldDomain, domain));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DOMAIN, oldDomain, domain));
 	}
 
 	/**
@@ -251,7 +251,7 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 			range = (ConceptualEntitySingletonInstance)eResolveProxy(oldRange);
 			if (range != oldRange) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__RANGE, oldRange, range));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__RANGE, oldRange, range));
 			}
 		}
 		return range;
@@ -275,7 +275,7 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 		ConceptualEntitySingletonInstance oldRange = range;
 		range = newRange;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__RANGE, oldRange, range));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__RANGE, oldRange, range));
 	}
 
 	/**
@@ -317,7 +317,7 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX:
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetDescriptionBox((DescriptionBox)otherEnd, msgs);
@@ -333,7 +333,7 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX:
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX:
 				return basicSetDescriptionBox(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -347,8 +347,8 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX:
-				return eInternalContainer().eInverseRemove(this, EcorePackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES, DescriptionBox.class, msgs);
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX:
+				return eInternalContainer().eInverseRemove(this, OMLPackage.DESCRIPTION_BOX__UNREIFIED_RELATIONSHIP_INSTANCE_TUPLES, DescriptionBox.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -361,16 +361,16 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX:
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX:
 				if (resolve) return getDescriptionBox();
 				return basicGetDescriptionBox();
-			case EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__UNREIFIED_RELATIONSHIP:
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__UNREIFIED_RELATIONSHIP:
 				if (resolve) return getUnreifiedRelationship();
 				return basicGetUnreifiedRelationship();
-			case EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DOMAIN:
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DOMAIN:
 				if (resolve) return getDomain();
 				return basicGetDomain();
-			case EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__RANGE:
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__RANGE:
 				if (resolve) return getRange();
 				return basicGetRange();
 		}
@@ -385,16 +385,16 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX:
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX:
 				setDescriptionBox((DescriptionBox)newValue);
 				return;
-			case EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__UNREIFIED_RELATIONSHIP:
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__UNREIFIED_RELATIONSHIP:
 				setUnreifiedRelationship((UnreifiedRelationship)newValue);
 				return;
-			case EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DOMAIN:
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DOMAIN:
 				setDomain((ConceptualEntitySingletonInstance)newValue);
 				return;
-			case EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__RANGE:
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__RANGE:
 				setRange((ConceptualEntitySingletonInstance)newValue);
 				return;
 		}
@@ -409,16 +409,16 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX:
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX:
 				setDescriptionBox((DescriptionBox)null);
 				return;
-			case EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__UNREIFIED_RELATIONSHIP:
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__UNREIFIED_RELATIONSHIP:
 				setUnreifiedRelationship((UnreifiedRelationship)null);
 				return;
-			case EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DOMAIN:
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DOMAIN:
 				setDomain((ConceptualEntitySingletonInstance)null);
 				return;
-			case EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__RANGE:
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__RANGE:
 				setRange((ConceptualEntitySingletonInstance)null);
 				return;
 		}
@@ -433,13 +433,13 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX:
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DESCRIPTION_BOX:
 				return basicGetDescriptionBox() != null;
-			case EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__UNREIFIED_RELATIONSHIP:
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__UNREIFIED_RELATIONSHIP:
 				return unreifiedRelationship != null;
-			case EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DOMAIN:
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__DOMAIN:
 				return domain != null;
-			case EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__RANGE:
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE__RANGE:
 				return range != null;
 		}
 		return super.eIsSet(featureID);
@@ -454,13 +454,13 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == TerminologyThing.class) {
 			switch (baseOperationID) {
-				case EcorePackage.TERMINOLOGY_THING___CALCULATE_UUID: return EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE___CALCULATE_UUID;
+				case OMLPackage.TERMINOLOGY_THING___CALCULATE_UUID: return OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE___CALCULATE_UUID;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
 		if (baseClass == TerminologyInstanceAssertion.class) {
 			switch (baseOperationID) {
-				case EcorePackage.TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID: return EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE___CALCULATE_UUID;
+				case OMLPackage.TERMINOLOGY_INSTANCE_ASSERTION___CALCULATE_UUID: return OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE___CALCULATE_UUID;
 				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
@@ -475,7 +475,7 @@ public class UnreifiedRelationshipInstanceTupleImpl extends TerminologyInstanceA
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case EcorePackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE___CALCULATE_UUID:
+			case OMLPackage.UNREIFIED_RELATIONSHIP_INSTANCE_TUPLE___CALCULATE_UUID:
 				return calculateUUID();
 		}
 		return super.eInvoke(operationID, arguments);

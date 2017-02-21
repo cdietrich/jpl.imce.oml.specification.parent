@@ -34,7 +34,7 @@
       <!-- @generated OML -->
       <package
             uri="http://imce.jpl.nasa.gov/oml"
-            class="jpl.imce.oml.specification.ecore.EcorePackage"
+            class="jpl.imce.oml.specification.ecore.OMLPackage"
             genModel="model/OMLSpecification.xcore"/>
    </extension>
 

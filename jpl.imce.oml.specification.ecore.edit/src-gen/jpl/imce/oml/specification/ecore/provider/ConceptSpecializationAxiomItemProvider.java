@@ -23,7 +23,7 @@ import java.util.Collection;
 import java.util.List;
 
 import jpl.imce.oml.specification.ecore.ConceptSpecializationAxiom;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -77,7 +77,7 @@ public class ConceptSpecializationAxiomItemProvider extends SpecializationAxiomI
 				 getResourceLocator(),
 				 getString("_UI_ConceptSpecializationAxiom_subConcept_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ConceptSpecializationAxiom_subConcept_feature", "_UI_ConceptSpecializationAxiom_type"),
-				 EcorePackage.eINSTANCE.getConceptSpecializationAxiom_SubConcept(),
+				 OMLPackage.eINSTANCE.getConceptSpecializationAxiom_SubConcept(),
 				 true,
 				 false,
 				 true,
@@ -99,7 +99,7 @@ public class ConceptSpecializationAxiomItemProvider extends SpecializationAxiomI
 				 getResourceLocator(),
 				 getString("_UI_ConceptSpecializationAxiom_superConcept_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ConceptSpecializationAxiom_superConcept_feature", "_UI_ConceptSpecializationAxiom_type"),
-				 EcorePackage.eINSTANCE.getConceptSpecializationAxiom_SuperConcept(),
+				 OMLPackage.eINSTANCE.getConceptSpecializationAxiom_SuperConcept(),
 				 true,
 				 false,
 				 true,

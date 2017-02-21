@@ -30,7 +30,7 @@ package jpl.imce.oml.specification.ecore;
  * <!-- end-model-doc -->
  *
  *
- * @see jpl.imce.oml.specification.ecore.EcorePackage#getEntityExistentialRestrictionAxiom()
+ * @see jpl.imce.oml.specification.ecore.OMLPackage#getEntityExistentialRestrictionAxiom()
  * @model
  * @generated
  */

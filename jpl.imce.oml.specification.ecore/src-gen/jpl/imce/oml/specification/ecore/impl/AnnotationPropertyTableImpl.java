@@ -22,7 +22,7 @@ import java.util.Collection;
 
 import jpl.imce.oml.specification.ecore.AnnotationEntry;
 import jpl.imce.oml.specification.ecore.AnnotationProperty;
-import jpl.imce.oml.specification.ecore.EcorePackage;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -93,7 +93,7 @@ public class AnnotationPropertyTableImpl extends CDOObjectImpl implements BasicE
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EcorePackage.eINSTANCE.getAnnotationPropertyTable();
+		return OMLPackage.eINSTANCE.getAnnotationPropertyTable();
 	}
 
 	/**
@@ -107,7 +107,7 @@ public class AnnotationPropertyTableImpl extends CDOObjectImpl implements BasicE
 			key = (AnnotationProperty)eResolveProxy(oldKey);
 			if (key != oldKey) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcorePackage.ANNOTATION_PROPERTY_TABLE__KEY, oldKey, key));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OMLPackage.ANNOTATION_PROPERTY_TABLE__KEY, oldKey, key));
 			}
 		}
 		return key;
@@ -131,7 +131,7 @@ public class AnnotationPropertyTableImpl extends CDOObjectImpl implements BasicE
 		AnnotationProperty oldKey = key;
 		key = newKey;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EcorePackage.ANNOTATION_PROPERTY_TABLE__KEY, oldKey, key));
+			eNotify(new ENotificationImpl(this, Notification.SET, OMLPackage.ANNOTATION_PROPERTY_TABLE__KEY, oldKey, key));
 	}
 
 	/**
@@ -141,7 +141,7 @@ public class AnnotationPropertyTableImpl extends CDOObjectImpl implements BasicE
 	 */
 	public EList<AnnotationEntry> getTypedValue() {
 		if (value == null) {
-			value = new EObjectContainmentEList<AnnotationEntry>(AnnotationEntry.class, this, EcorePackage.ANNOTATION_PROPERTY_TABLE__VALUE);
+			value = new EObjectContainmentEList<AnnotationEntry>(AnnotationEntry.class, this, OMLPackage.ANNOTATION_PROPERTY_TABLE__VALUE);
 		}
 		return value;
 	}
@@ -154,7 +154,7 @@ public class AnnotationPropertyTableImpl extends CDOObjectImpl implements BasicE
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case EcorePackage.ANNOTATION_PROPERTY_TABLE__VALUE:
+			case OMLPackage.ANNOTATION_PROPERTY_TABLE__VALUE:
 				return ((InternalEList<?>)getTypedValue()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -168,10 +168,10 @@ public class AnnotationPropertyTableImpl extends CDOObjectImpl implements BasicE
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EcorePackage.ANNOTATION_PROPERTY_TABLE__KEY:
+			case OMLPackage.ANNOTATION_PROPERTY_TABLE__KEY:
 				if (resolve) return getTypedKey();
 				return basicGetTypedKey();
-			case EcorePackage.ANNOTATION_PROPERTY_TABLE__VALUE:
+			case OMLPackage.ANNOTATION_PROPERTY_TABLE__VALUE:
 				return getTypedValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -186,10 +186,10 @@ public class AnnotationPropertyTableImpl extends CDOObjectImpl implements BasicE
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EcorePackage.ANNOTATION_PROPERTY_TABLE__KEY:
+			case OMLPackage.ANNOTATION_PROPERTY_TABLE__KEY:
 				setTypedKey((AnnotationProperty)newValue);
 				return;
-			case EcorePackage.ANNOTATION_PROPERTY_TABLE__VALUE:
+			case OMLPackage.ANNOTATION_PROPERTY_TABLE__VALUE:
 				getTypedValue().clear();
 				getTypedValue().addAll((Collection<? extends AnnotationEntry>)newValue);
 				return;
@@ -205,10 +205,10 @@ public class AnnotationPropertyTableImpl extends CDOObjectImpl implements BasicE
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EcorePackage.ANNOTATION_PROPERTY_TABLE__KEY:
+			case OMLPackage.ANNOTATION_PROPERTY_TABLE__KEY:
 				setTypedKey((AnnotationProperty)null);
 				return;
-			case EcorePackage.ANNOTATION_PROPERTY_TABLE__VALUE:
+			case OMLPackage.ANNOTATION_PROPERTY_TABLE__VALUE:
 				getTypedValue().clear();
 				return;
 		}
@@ -223,9 +223,9 @@ public class AnnotationPropertyTableImpl extends CDOObjectImpl implements BasicE
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EcorePackage.ANNOTATION_PROPERTY_TABLE__KEY:
+			case OMLPackage.ANNOTATION_PROPERTY_TABLE__KEY:
 				return key != null;
-			case EcorePackage.ANNOTATION_PROPERTY_TABLE__VALUE:
+			case OMLPackage.ANNOTATION_PROPERTY_TABLE__VALUE:
 				return value != null && !value.isEmpty();
 		}
 		return super.eIsSet(featureID);

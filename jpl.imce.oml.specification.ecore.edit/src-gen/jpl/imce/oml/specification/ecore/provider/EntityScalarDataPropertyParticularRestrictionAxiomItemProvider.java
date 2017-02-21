@@ -21,9 +21,8 @@ package jpl.imce.oml.specification.ecore.provider;
 
 import java.util.Collection;
 import java.util.List;
-
-import jpl.imce.oml.specification.ecore.EcorePackage;
 import jpl.imce.oml.specification.ecore.EntityScalarDataPropertyParticularRestrictionAxiom;
+import jpl.imce.oml.specification.ecore.OMLPackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -78,7 +77,7 @@ public class EntityScalarDataPropertyParticularRestrictionAxiomItemProvider exte
 				 getResourceLocator(),
 				 getString("_UI_EntityScalarDataPropertyParticularRestrictionAxiom_literalValue_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityScalarDataPropertyParticularRestrictionAxiom_literalValue_feature", "_UI_EntityScalarDataPropertyParticularRestrictionAxiom_type"),
-				 EcorePackage.eINSTANCE.getEntityScalarDataPropertyParticularRestrictionAxiom_LiteralValue(),
+				 OMLPackage.eINSTANCE.getEntityScalarDataPropertyParticularRestrictionAxiom_LiteralValue(),
 				 true,
 				 false,
 				 false,
@@ -125,7 +124,7 @@ public class EntityScalarDataPropertyParticularRestrictionAxiomItemProvider exte
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EntityScalarDataPropertyParticularRestrictionAxiom.class)) {
-			case EcorePackage.ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM__LITERAL_VALUE:
+			case OMLPackage.ENTITY_SCALAR_DATA_PROPERTY_PARTICULAR_RESTRICTION_AXIOM__LITERAL_VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
