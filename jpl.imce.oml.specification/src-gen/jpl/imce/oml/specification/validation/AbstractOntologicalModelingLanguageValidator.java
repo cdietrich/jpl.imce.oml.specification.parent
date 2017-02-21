@@ -29,7 +29,7 @@ public abstract class AbstractOntologicalModelingLanguageValidator extends Abstr
 	@Override
 	protected List<EPackage> getEPackages() {
 		List<EPackage> result = new ArrayList<EPackage>();
-		result.add(EPackage.Registry.INSTANCE.getEPackage("jpl.imce.oml.specification.ecore"));
+		result.add(EPackage.Registry.INSTANCE.getEPackage("http://imce.jpl.nasa.gov/oml"));
 		return result;
 	}
 	
