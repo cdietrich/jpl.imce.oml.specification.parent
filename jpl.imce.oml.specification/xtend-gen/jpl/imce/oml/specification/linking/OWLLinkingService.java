@@ -30,6 +30,7 @@ import org.eclipse.xtext.linking.impl.DefaultLinkingService;
 import org.eclipse.xtext.linking.impl.IllegalNodeException;
 import org.eclipse.xtext.naming.IQualifiedNameConverter;
 import org.eclipse.xtext.naming.QualifiedName;
+import org.eclipse.xtext.nodemodel.ICompositeNode;
 import org.eclipse.xtext.nodemodel.ILeafNode;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.resource.IEObjectDescription;
@@ -67,7 +68,6 @@ public class OWLLinkingService extends DefaultLinkingService {
   @Inject
   private IQualifiedNameConverter qualifiedNameConverter;
   
-  @Override
   public List<EObject> getLinkedObjects(final EObject context, final EReference ref, final INode node) throws IllegalNodeException {
     EClass requiredType = ref.getEReferenceType();
     if ((null == requiredType)) {
@@ -86,8 +86,11 @@ public class OWLLinkingService extends DefaultLinkingService {
           boolean _matched_1 = false;
           if (e instanceof AnnotationProperty) {
             _matched_1=true;
-            final INode prevNode = node.getParent().getPreviousSibling();
-            final EObject prevSE = IterableExtensions.<ILeafNode>head(prevNode.getLeafNodes()).getSemanticElement();
+            ICompositeNode _parent = node.getParent();
+            final INode prevNode = _parent.getPreviousSibling();
+            Iterable<ILeafNode> _leafNodes = prevNode.getLeafNodes();
+            ILeafNode _head = IterableExtensions.<ILeafNode>head(_leafNodes);
+            final EObject prevSE = _head.getSemanticElement();
             boolean _matched_2 = false;
             if (prevSE instanceof TerminologyThing) {
               _matched_2=true;
@@ -96,7 +99,8 @@ public class OWLLinkingService extends DefaultLinkingService {
             if (!_matched_2) {
               if (prevSE instanceof Annotation) {
                 _matched_2=true;
-                ((Annotation)context).setSubject(((Annotation)prevSE).getSubject());
+                TerminologyThing _subject = ((Annotation)prevSE).getSubject();
+                ((Annotation)context).setSubject(_subject);
               }
             }
             return Collections.<EObject>singletonList(e);

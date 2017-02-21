@@ -65,7 +65,6 @@ public class OMLImportedNamespaceAwareLocalScopeProvider extends ImportedNamespa
   @Inject
   private IQualifiedNameConverter qnc;
   
-  @Override
   public List<ImportNormalizer> getImportedNamespaceResolvers(final EObject context, final boolean ignoreCase) {
     final ArrayList<ImportNormalizer> res = new ArrayList<ImportNormalizer>();
     boolean _matched = false;
@@ -73,7 +72,8 @@ public class OMLImportedNamespaceAwareLocalScopeProvider extends ImportedNamespa
       _matched=true;
       EList<AnnotationProperty> _annotationProperties = ((TerminologyExtent)context).getAnnotationProperties();
       for (final AnnotationProperty ap : _annotationProperties) {
-        QualifiedName _qualifiedName = this.qnc.toQualifiedName(ap.getIri());
+        String _iri = ap.getIri();
+        QualifiedName _qualifiedName = this.qnc.toQualifiedName(_iri);
         String _abbrevIRI = ap.getAbbrevIRI();
         OMLImportNormalizer _oMLImportNormalizer = new OMLImportNormalizer(_qualifiedName, _abbrevIRI);
         res.add(_oMLImportNormalizer);
@@ -82,23 +82,29 @@ public class OMLImportedNamespaceAwareLocalScopeProvider extends ImportedNamespa
     if (!_matched) {
       if (context instanceof TerminologyBox) {
         _matched=true;
-        EList<AnnotationProperty> _annotationProperties = ((TerminologyBox)context).extent().getAnnotationProperties();
+        TerminologyExtent _extent = ((TerminologyBox)context).extent();
+        EList<AnnotationProperty> _annotationProperties = _extent.getAnnotationProperties();
         for (final AnnotationProperty ap : _annotationProperties) {
-          QualifiedName _qualifiedName = this.qnc.toQualifiedName(ap.getIri());
+          String _iri = ap.getIri();
+          QualifiedName _qualifiedName = this.qnc.toQualifiedName(_iri);
           String _abbrevIRI = ap.getAbbrevIRI();
           OMLImportNormalizer _oMLImportNormalizer = new OMLImportNormalizer(_qualifiedName, _abbrevIRI);
           res.add(_oMLImportNormalizer);
         }
         EList<TerminologyBoxAxiom> _terminologyBoxAxioms = ((TerminologyBox)context).getTerminologyBoxAxioms();
         for (final TerminologyBoxAxiom e : _terminologyBoxAxioms) {
-          QualifiedName _qualifiedName_1 = this.qnc.toQualifiedName(e.target().iri());
-          String _name = e.target().name();
+          TerminologyBox _target = e.target();
+          String _iri_1 = _target.iri();
+          QualifiedName _qualifiedName_1 = this.qnc.toQualifiedName(_iri_1);
+          TerminologyBox _target_1 = e.target();
+          String _name = _target_1.name();
           OMLImportNormalizer _oMLImportNormalizer_1 = new OMLImportNormalizer(_qualifiedName_1, _name);
           res.add(_oMLImportNormalizer_1);
         }
       }
     }
-    res.addAll(super.getImportedNamespaceResolvers(context, ignoreCase));
+    List<ImportNormalizer> _importedNamespaceResolvers = super.getImportedNamespaceResolvers(context, ignoreCase);
+    res.addAll(_importedNamespaceResolvers);
     return res;
   }
   
@@ -108,7 +114,6 @@ public class OMLImportedNamespaceAwareLocalScopeProvider extends ImportedNamespa
   
   private final OMLPackage epackage = OMLPackage.eINSTANCE;
   
-  @Override
   public IScope getScope(final EObject context, final EReference reference) {
     IScope _xblockexpression = null;
     {
@@ -119,7 +124,8 @@ public class OMLImportedNamespaceAwareLocalScopeProvider extends ImportedNamespa
         EReference _annotation_Property = this.epackage.getAnnotation_Property();
         boolean _equals = Objects.equal(reference, _annotation_Property);
         if (_equals) {
-          scope = this._oMLScopeExtensions.scope_Annotation_property(((Annotation)context), reference);
+          IScope _scope_Annotation_property = this._oMLScopeExtensions.scope_Annotation_property(((Annotation)context), reference);
+          scope = _scope_Annotation_property;
         }
       }
       if (!_matched) {
@@ -127,7 +133,8 @@ public class OMLImportedNamespaceAwareLocalScopeProvider extends ImportedNamespa
           _matched=true;
           if ((Objects.equal(reference, this.epackage.getEntityRelationship_Source()) || 
             Objects.equal(reference, this.epackage.getEntityRelationship_Target()))) {
-            scope = this._oMLScopeExtensions.scope_EntityRelationship(((EntityRelationship)context));
+            IScope _scope_EntityRelationship = this._oMLScopeExtensions.scope_EntityRelationship(((EntityRelationship)context));
+            scope = _scope_EntityRelationship;
           }
         }
       }
@@ -137,12 +144,14 @@ public class OMLImportedNamespaceAwareLocalScopeProvider extends ImportedNamespa
           EReference _aspectSpecializationAxiom_SubEntity = this.epackage.getAspectSpecializationAxiom_SubEntity();
           boolean _equals = Objects.equal(reference, _aspectSpecializationAxiom_SubEntity);
           if (_equals) {
-            scope = this._oMLScopeExtensions.scope_AspectSpecializationAxiom_subEntity(((AspectSpecializationAxiom)context));
+            IScope _scope_AspectSpecializationAxiom_subEntity = this._oMLScopeExtensions.scope_AspectSpecializationAxiom_subEntity(((AspectSpecializationAxiom)context));
+            scope = _scope_AspectSpecializationAxiom_subEntity;
           } else {
             EReference _aspectSpecializationAxiom_SuperAspect = this.epackage.getAspectSpecializationAxiom_SuperAspect();
             boolean _equals_1 = Objects.equal(reference, _aspectSpecializationAxiom_SuperAspect);
             if (_equals_1) {
-              scope = this._oMLScopeExtensions.scope_AspectSpecializationAxiom_superAspect(((AspectSpecializationAxiom)context));
+              IScope _scope_AspectSpecializationAxiom_superAspect = this._oMLScopeExtensions.scope_AspectSpecializationAxiom_superAspect(((AspectSpecializationAxiom)context));
+              scope = _scope_AspectSpecializationAxiom_superAspect;
             }
           }
         }
@@ -228,7 +237,8 @@ public class OMLImportedNamespaceAwareLocalScopeProvider extends ImportedNamespa
           EReference _bundledTerminologyAxiom_BundledTerminology = this.epackage.getBundledTerminologyAxiom_BundledTerminology();
           boolean _equals = Objects.equal(reference, _bundledTerminologyAxiom_BundledTerminology);
           if (_equals) {
-            scope = this._oMLScopeExtensions.scope_BundledTerminologyAxiom_bundledTerminology(((BundledTerminologyAxiom)context));
+            IScope _scope_BundledTerminologyAxiom_bundledTerminology = this._oMLScopeExtensions.scope_BundledTerminologyAxiom_bundledTerminology(((BundledTerminologyAxiom)context));
+            scope = _scope_BundledTerminologyAxiom_bundledTerminology;
           }
         }
       }
@@ -238,12 +248,14 @@ public class OMLImportedNamespaceAwareLocalScopeProvider extends ImportedNamespa
           EReference _conceptDesignationTerminologyAxiom_DesignatedTerminology = this.epackage.getConceptDesignationTerminologyAxiom_DesignatedTerminology();
           boolean _equals = Objects.equal(reference, _conceptDesignationTerminologyAxiom_DesignatedTerminology);
           if (_equals) {
-            scope = this._oMLScopeExtensions.scope_ConceptDesignationTerminologyAxiom_designatedTerminology(((ConceptDesignationTerminologyAxiom)context));
+            IScope _scope_ConceptDesignationTerminologyAxiom_designatedTerminology = this._oMLScopeExtensions.scope_ConceptDesignationTerminologyAxiom_designatedTerminology(((ConceptDesignationTerminologyAxiom)context));
+            scope = _scope_ConceptDesignationTerminologyAxiom_designatedTerminology;
           } else {
             EReference _conceptDesignationTerminologyAxiom_DesignatedConcept = this.epackage.getConceptDesignationTerminologyAxiom_DesignatedConcept();
             boolean _equals_1 = Objects.equal(reference, _conceptDesignationTerminologyAxiom_DesignatedConcept);
             if (_equals_1) {
-              scope = this._oMLScopeExtensions.scope_ConceptDesignationTerminologyAxiom_designatedConcept(((ConceptDesignationTerminologyAxiom)context));
+              IScope _scope_ConceptDesignationTerminologyAxiom_designatedConcept = this._oMLScopeExtensions.scope_ConceptDesignationTerminologyAxiom_designatedConcept(((ConceptDesignationTerminologyAxiom)context));
+              scope = _scope_ConceptDesignationTerminologyAxiom_designatedConcept;
             }
           }
         }
@@ -254,7 +266,8 @@ public class OMLImportedNamespaceAwareLocalScopeProvider extends ImportedNamespa
           EReference _terminologyExtensionAxiom_ExtendedTerminology = this.epackage.getTerminologyExtensionAxiom_ExtendedTerminology();
           boolean _equals = Objects.equal(reference, _terminologyExtensionAxiom_ExtendedTerminology);
           if (_equals) {
-            scope = this._oMLScopeExtensions.scope_TerminologyExtensionAxiom_extendedTerminology(((TerminologyExtensionAxiom)context), reference);
+            IScope _scope_TerminologyExtensionAxiom_extendedTerminology = this._oMLScopeExtensions.scope_TerminologyExtensionAxiom_extendedTerminology(((TerminologyExtensionAxiom)context), reference);
+            scope = _scope_TerminologyExtensionAxiom_extendedTerminology;
           }
         }
       }

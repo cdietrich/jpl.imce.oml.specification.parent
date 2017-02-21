@@ -28,10 +28,10 @@ import org.eclipse.emf.ecore.EPackage;
 @SuppressWarnings("all")
 public class OntologicalModelingLanguageStandaloneSetup extends OntologicalModelingLanguageStandaloneSetupGenerated {
   public static void doSetup() {
-    new OntologicalModelingLanguageStandaloneSetup().createInjectorAndDoEMFRegistration();
+    OntologicalModelingLanguageStandaloneSetup _ontologicalModelingLanguageStandaloneSetup = new OntologicalModelingLanguageStandaloneSetup();
+    _ontologicalModelingLanguageStandaloneSetup.createInjectorAndDoEMFRegistration();
   }
   
-  @Override
   public void register(final Injector injector) {
     boolean _containsKey = EPackage.Registry.INSTANCE.containsKey(OMLPackage.eNS_URI);
     boolean _not = (!_containsKey);
