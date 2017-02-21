@@ -44,9 +44,9 @@ annotationProperty rdfs:label=<http://www.w3.org/2000/01/rdf-schema#label>
 
 open terminology <http://imce.jpl.nasa.gov/foundation/mission/mission>
 {
-	abstract concept PerformingElement
-	@rdfs:label = "Performing Element"
-	@rdfs:label = "A performing element"
+ abstract concept PerformingElement
+ @rdfs:label = "Performing Element"
+ @rdfs:label = "A performing element"
 }
 ''')
 		assertNotNull(result)

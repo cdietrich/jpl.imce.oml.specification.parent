@@ -28,18 +28,20 @@ import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.EObject
 import com.google.inject.Provider
 import org.eclipse.xtext.resource.XtextResourceSet
-import org.eclipse.xtext.testing.formatter.FormatterTestHelper
-import org.eclipse.xtext.formatting2.FormatterPreferenceKeys
 import org.eclipse.xtext.testing.XtextRunner
+import org.eclipse.xtext.testing.formatter.FormatterTestHelper
+import org.eclipse.xtext.testing.util.ParseHelper
+import org.eclipse.xtext.formatting2.FormatterPreferenceKeys
 
 @RunWith(XtextRunner)
 @InjectWith(OntologicalModelingLanguageInjectorProvider)
-class OMLFileTests extends OMLTest {
+class OMLModuleTests extends OMLTest {
 
 	@Inject
 	ParseHelper<TerminologyExtent> parseHelper
 
-	@Inject extension FormatterTestHelper
+	@Inject 
+	extension FormatterTestHelper
 
 	@Inject 
 	extension ValidationTestHelper
@@ -61,7 +63,8 @@ class OMLFileTests extends OMLTest {
 		val baseURL = OMLFileTests.getResource("/ModuleTests/base.oml")
 		System.out.println("baseURL="+baseURL)
 		
-		testFile("ModuleTests/base.oml")
+		val URI testFileURI = URI.createURI(baseURL.toURI.toString)
+		testFile1(testFileURI)
 	}
 	
 	@Test 
@@ -74,7 +77,9 @@ class OMLFileTests extends OMLTest {
 		
 		// need support for multi-file cross-references.
 		//testFile("ModuleTests/mission.oml", "ModuleTests/base.oml")
-		testFile("ModuleTests/mission.oml")
+		
+		val URI testFileURI = URI.createURI(missionURL.toURI.toString)
+		testFile1(testFileURI)
 	}
 	
 	@Test 
@@ -85,10 +90,9 @@ class OMLFileTests extends OMLTest {
 				put(FormatterPreferenceKeys.tabWidth, 2)
 			]
 			expectation = 
-'''open terminology <http://imce.jpl.nasa.gov/foundation/base/base> {
-	aspect IdentifiedElement
-}
-'''
+			"open terminology <http://imce.jpl.nasa.gov/foundation/base/base> {\n"+
+			"\taspect IdentifiedElement\n"+
+			"}\n"
 			toBeFormatted = '''
 				 open 
 				 

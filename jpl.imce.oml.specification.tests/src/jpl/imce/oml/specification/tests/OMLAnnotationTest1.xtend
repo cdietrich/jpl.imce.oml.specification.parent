@@ -42,14 +42,15 @@ class OMLAnnotationTest1 {
 	@Test 
 	def void test() {
 		
+		
 		val result = parseHelper.parse(
 '''
 annotationProperty rdfs:label=<http://www.w3.org/2000/01/rdf-schema#label>
 
 open terminology <http://imce.jpl.nasa.gov/foundation/mission/mission>
 {	
-	abstract concept PerformingElement
-	@rdfs:label = "Performing Element"
+ abstract concept PerformingElement
+ @rdfs:label = "Performing Element"
 }
 ''')
 		assertNotNull(result)

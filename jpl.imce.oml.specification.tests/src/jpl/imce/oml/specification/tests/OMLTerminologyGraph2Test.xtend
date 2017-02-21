@@ -48,18 +48,16 @@ class OMLTerminologyGraph2Test{
 annotationProperty rdfs:label=<http://www.w3.org/2000/01/rdf-schema#label>
 annotationProperty dc:description=<http://purl.org/dc/elements/1.1/>
 
-open terminology <http://imce.jpl.nasa.gov/foundation/base/base>
-{
-	aspect IdentifiedElement	
+open terminology <http://imce.jpl.nasa.gov/foundation/base/base> {
+ aspect IdentifiedElement	
 }
 
-open terminology <http://imce.jpl.nasa.gov/foundation/mission/mission>
-{
-	extends base
-	
-	concept Component
-	
-	Component extendsAspect base:IdentifiedElement
+open terminology <http://imce.jpl.nasa.gov/foundation/mission/mission> {
+ extends base
+
+ concept Component
+ 
+ Component extendsAspect base:IdentifiedElement
 }
 ''')
 		Assert.assertNotNull(result)
