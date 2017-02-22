@@ -3,12 +3,9 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="src-gen"/>
 	<classpathentry kind="src" path="xtend-gen"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
-	<classpathentry kind="src" path="build/xtend/test"/>
-	<classpathentry path="target/classes" kind="output"/>
-	<classpathentry path="bin" kind="output"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
 	<classpathentry kind="src" path="/jpl.imce.oml.specification">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
@@ -24,19 +21,19 @@
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.xbase.web/2.11.0/eacd7f9d8332142375f2536c4ef6bf0b32224324/org.eclipse.xtext.xbase.web-2.11.0-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.xbase.web/2.11.0/f9b90298a7ffb1f06762816c2a29b997356ff0ee/org.eclipse.xtext.xbase.web-2.11.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.xbase.web/2.11.0/f9b90298a7ffb1f06762816c2a29b997356ff0ee/org.eclipse.xtext.xbase.web-2.11.0.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.xbase.web/2.11.0/eacd7f9d8332142375f2536c4ef6bf0b32224324/org.eclipse.xtext.xbase.web-2.11.0-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.xbase.web/2.11.0/6bd90215f2340026d0a56e9891604b3458760bf2/org.eclipse.xtext.xbase.web-2.11.0-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.web.servlet/2.11.0/54ac3237c3c69931fdcd6219b53061056421c023/org.eclipse.xtext.web.servlet-2.11.0-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.web.servlet/2.11.0/f1010ba51d2634ed3051e2577e5735bb40af9889/org.eclipse.xtext.web.servlet-2.11.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.web.servlet/2.11.0/f1010ba51d2634ed3051e2577e5735bb40af9889/org.eclipse.xtext.web.servlet-2.11.0.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.web.servlet/2.11.0/54ac3237c3c69931fdcd6219b53061056421c023/org.eclipse.xtext.web.servlet-2.11.0-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.web.servlet/2.11.0/255110b4a3b176178c28504a9a64fd85cf5a7935/org.eclipse.xtext.web.servlet-2.11.0-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtend/org.eclipse.xtend.lib/2.11.0/8889a9b43af649292682a8865eeddbccf152abb5/org.eclipse.xtend.lib-2.11.0-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtend/org.eclipse.xtend.lib/2.11.0/5f62a80ee05ff553e2aa23afbae10d657792bb67/org.eclipse.xtend.lib-2.11.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtend/org.eclipse.xtend.lib/2.11.0/5f62a80ee05ff553e2aa23afbae10d657792bb67/org.eclipse.xtend.lib-2.11.0.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtend/org.eclipse.xtend.lib/2.11.0/8889a9b43af649292682a8865eeddbccf152abb5/org.eclipse.xtend.lib-2.11.0-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtend/org.eclipse.xtend.lib/2.11.0/a19ea1c8a5cb77f1a3c936fe863db8c1b12c43ba/org.eclipse.xtend.lib-2.11.0-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
@@ -47,7 +44,7 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.webjars/jquery/2.2.3/5f19f029da633c065766c5814703a7eed167c62c/jquery-2.2.3-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.webjars/jquery/2.2.3/19d1bfa1b3b44d9ec66d3b672bcd26b470185708/jquery-2.2.3.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.webjars/jquery/2.2.3/19d1bfa1b3b44d9ec66d3b672bcd26b470185708/jquery-2.2.3.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.webjars/jquery/2.2.3/5f19f029da633c065766c5814703a7eed167c62c/jquery-2.2.3-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
@@ -58,29 +55,29 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-annotations/9.3.8.v20160314/326749aed77693974fdb655dd18a30c506d74c75/jetty-annotations-9.3.8.v20160314-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-annotations/9.3.8.v20160314/f62c5f0fcaca6ec20502491f5e6b3a1abe7d0285/jetty-annotations-9.3.8.v20160314.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-annotations/9.3.8.v20160314/f62c5f0fcaca6ec20502491f5e6b3a1abe7d0285/jetty-annotations-9.3.8.v20160314.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-annotations/9.3.8.v20160314/326749aed77693974fdb655dd18a30c506d74c75/jetty-annotations-9.3.8.v20160314-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-annotations/9.3.8.v20160314/9a5059e717b80c4dc481dc2766af58497b899865/jetty-annotations-9.3.8.v20160314-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/1.7.21/58eb8609a8f14e5bbf4d260ce5f364724079227/slf4j-simple-1.7.21-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/1.7.21/be4b3c560a37e69b6c58278116740db28832232c/slf4j-simple-1.7.21.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/1.7.21/be4b3c560a37e69b6c58278116740db28832232c/slf4j-simple-1.7.21.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/1.7.21/58eb8609a8f14e5bbf4d260ce5f364724079227/slf4j-simple-1.7.21-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/1.7.21/e7d6a21aa39105e214206de49e5df44c3d2c7329/slf4j-simple-1.7.21-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext/2.11.0/org.eclipse.xtext-2.11.0-sources.jar" kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext/2.11.0/org.eclipse.xtext-2.11.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext/2.11.0/org.eclipse.xtext-2.11.0.jar" sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext/2.11.0/org.eclipse.xtext-2.11.0-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.xbase/2.11.0/org.eclipse.xtext.xbase-2.11.0-sources.jar" kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.xbase/2.11.0/org.eclipse.xtext.xbase-2.11.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.xbase/2.11.0/org.eclipse.xtext.xbase-2.11.0.jar" sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.xbase/2.11.0/org.eclipse.xtext.xbase-2.11.0-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.xbase.lib/2.11.0/org.eclipse.xtext.xbase.lib-2.11.0-sources.jar" kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.xbase.lib/2.11.0/org.eclipse.xtext.xbase.lib-2.11.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.xbase.lib/2.11.0/org.eclipse.xtext.xbase.lib-2.11.0.jar" sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.xbase.lib/2.11.0/org.eclipse.xtext.xbase.lib-2.11.0-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
@@ -90,122 +87,122 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.util/2.11.0/org.eclipse.xtext.util-2.11.0-sources.jar" kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.util/2.11.0/org.eclipse.xtext.util-2.11.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.util/2.11.0/org.eclipse.xtext.util-2.11.0.jar" sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.util/2.11.0/org.eclipse.xtext.util-2.11.0-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtend.lib/2.11.0/org.eclipse.xtend.lib-2.11.0-sources.jar" kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtend.lib/2.11.0/org.eclipse.xtend.lib-2.11.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtend.lib/2.11.0/org.eclipse.xtend.lib-2.11.0.jar" sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtend.lib/2.11.0/org.eclipse.xtend.lib-2.11.0-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/com.ibm.icu/56.1.0/com.ibm.icu-56.1.0-sources.jar" kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/com.ibm.icu/56.1.0/com.ibm.icu-56.1.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/com.ibm.icu/56.1.0/com.ibm.icu-56.1.0.jar" sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/com.ibm.icu/56.1.0/com.ibm.icu-56.1.0-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.apache.log4j/1.2.15/org.apache.log4j-1.2.15-sources.jar" kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.apache.log4j/1.2.15/org.apache.log4j-1.2.15.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.apache.log4j/1.2.15/org.apache.log4j-1.2.15.jar" sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.apache.log4j/1.2.15/org.apache.log4j-1.2.15-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.ecore.xcore/1.4.0/org.eclipse.emf.ecore.xcore-1.4.0-sources.jar" kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.ecore.xcore/1.4.0/org.eclipse.emf.ecore.xcore-1.4.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.ecore.xcore/1.4.0/org.eclipse.emf.ecore.xcore-1.4.0.jar" sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.ecore.xcore/1.4.0/org.eclipse.emf.ecore.xcore-1.4.0-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.ecore.xcore.lib/1.1.100/org.eclipse.emf.ecore.xcore.lib-1.1.100-sources.jar" kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.ecore.xcore.lib/1.1.100/org.eclipse.emf.ecore.xcore.lib-1.1.100.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.ecore.xcore.lib/1.1.100/org.eclipse.emf.ecore.xcore.lib-1.1.100.jar" sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.ecore.xcore.lib/1.1.100/org.eclipse.emf.ecore.xcore.lib-1.1.100-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.ide/2.11.0/org.eclipse.xtext.ide-2.11.0-sources.jar" kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.ide/2.11.0/org.eclipse.xtext.ide-2.11.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.ide/2.11.0/org.eclipse.xtext.ide-2.11.0.jar" sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.ide/2.11.0/org.eclipse.xtext.ide-2.11.0-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.xbase.ide/2.11.0/org.eclipse.xtext.xbase.ide-2.11.0-sources.jar" kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.xbase.ide/2.11.0/org.eclipse.xtext.xbase.ide-2.11.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.xbase.ide/2.11.0/org.eclipse.xtext.xbase.ide-2.11.0.jar" sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.xbase.ide/2.11.0/org.eclipse.xtext.xbase.ide-2.11.0-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.web/2.11.0/ea24cb2e92fcc1ac5953ca7d22d443898ad90104/org.eclipse.xtext.web-2.11.0-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.web/2.11.0/78565d12aedfc15b78afc2d024f71f8d9a6c35fe/org.eclipse.xtext.web-2.11.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.web/2.11.0/78565d12aedfc15b78afc2d024f71f8d9a6c35fe/org.eclipse.xtext.web-2.11.0.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.web/2.11.0/ea24cb2e92fcc1ac5953ca7d22d443898ad90104/org.eclipse.xtext.web-2.11.0-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.web/2.11.0/f66fa54680851e045617e1899dd261622803bb42/org.eclipse.xtext.web-2.11.0-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.xbase.ide/2.11.0/d8602537798858629f78a54a9c10301f66cfb0e7/org.eclipse.xtext.xbase.ide-2.11.0-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.xbase.ide/2.11.0/15eea6cf365ce83dc2af3a935d8f17f6c6579a22/org.eclipse.xtext.xbase.ide-2.11.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.xbase.ide/2.11.0/15eea6cf365ce83dc2af3a935d8f17f6c6579a22/org.eclipse.xtext.xbase.ide-2.11.0.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.xbase.ide/2.11.0/d8602537798858629f78a54a9c10301f66cfb0e7/org.eclipse.xtext.xbase.ide-2.11.0-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.xbase.ide/2.11.0/e0ef8fd0dae7f397c80b51e1ad381b29eb11f99e/org.eclipse.xtext.xbase.ide-2.11.0-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.xbase.lib/2.11.0/16f37b75de3488f4f42899ce47b851ded840df95/org.eclipse.xtext.xbase.lib-2.11.0-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.xbase.lib/2.11.0/ce11ff73ceb7f564e1bd46fa9cae4460a013cf0/org.eclipse.xtext.xbase.lib-2.11.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.xbase.lib/2.11.0/ce11ff73ceb7f564e1bd46fa9cae4460a013cf0/org.eclipse.xtext.xbase.lib-2.11.0.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.xbase.lib/2.11.0/16f37b75de3488f4f42899ce47b851ded840df95/org.eclipse.xtext.xbase.lib-2.11.0-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.xbase.lib/2.11.0/87a2cf7375ecb999431f5af2b7a19aff5ab032de/org.eclipse.xtext.xbase.lib-2.11.0-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtend/org.eclipse.xtend.lib.macro/2.11.0/84a442eacc3b5d44c413d5e2fb8a5a47483cfdce/org.eclipse.xtend.lib.macro-2.11.0-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtend/org.eclipse.xtend.lib.macro/2.11.0/f962e3cbdbb540682107ff37713ea23f730f69a6/org.eclipse.xtend.lib.macro-2.11.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtend/org.eclipse.xtend.lib.macro/2.11.0/f962e3cbdbb540682107ff37713ea23f730f69a6/org.eclipse.xtend.lib.macro-2.11.0.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtend/org.eclipse.xtend.lib.macro/2.11.0/84a442eacc3b5d44c413d5e2fb8a5a47483cfdce/org.eclipse.xtend.lib.macro-2.11.0-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtend/org.eclipse.xtend.lib.macro/2.11.0/21a860aaa26a3a5f9b14be507257d449f5de52aa/org.eclipse.xtend.lib.macro-2.11.0-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-plus/9.3.8.v20160314/dc0ba3069eda756b1833b2c8e69e82d02f5ef893/jetty-plus-9.3.8.v20160314-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-plus/9.3.8.v20160314/411fa7abeb05a1cb4eb359e8412c0338a9319d13/jetty-plus-9.3.8.v20160314.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-plus/9.3.8.v20160314/411fa7abeb05a1cb4eb359e8412c0338a9319d13/jetty-plus-9.3.8.v20160314.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-plus/9.3.8.v20160314/dc0ba3069eda756b1833b2c8e69e82d02f5ef893/jetty-plus-9.3.8.v20160314-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-plus/9.3.8.v20160314/b6b1c2bf3279947f3e035fa2549cb89816dbfd3f/jetty-plus-9.3.8.v20160314-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-webapp/9.3.8.v20160314/2092ef8821f61bc6e1f995ec58d9786fb9aeac2a/jetty-webapp-9.3.8.v20160314-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-webapp/9.3.8.v20160314/2f0dfef84af7c97f2a1f14db65aa3f37349420e4/jetty-webapp-9.3.8.v20160314.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-webapp/9.3.8.v20160314/2f0dfef84af7c97f2a1f14db65aa3f37349420e4/jetty-webapp-9.3.8.v20160314.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-webapp/9.3.8.v20160314/2092ef8821f61bc6e1f995ec58d9786fb9aeac2a/jetty-webapp-9.3.8.v20160314-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-webapp/9.3.8.v20160314/b2126bc41e1dc77d84652b73919113e92f38ac5e/jetty-webapp-9.3.8.v20160314-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/javax.annotation/javax.annotation-api/1.2/ad18a02db08eaee697f812e333f692fc51129e4a/javax.annotation-api-1.2-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/javax.annotation/javax.annotation-api/1.2/479c1e06db31c432330183f5cae684163f186146/javax.annotation-api-1.2.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/javax.annotation/javax.annotation-api/1.2/479c1e06db31c432330183f5cae684163f186146/javax.annotation-api-1.2.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/javax.annotation/javax.annotation-api/1.2/ad18a02db08eaee697f812e333f692fc51129e4a/javax.annotation-api-1.2-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/javax.annotation/javax.annotation-api/1.2/1064ee6b28b926dfa355f9db146a33d1111a7bf1/javax.annotation-api-1.2-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/5.0.1/78ebb2694324283f3120aa3ed52465b22fab8a4a/asm-5.0.1-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/5.0.1/2fd56467a018aafe6ec6a73ccba520be4a7e1565/asm-5.0.1.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/5.0.1/2fd56467a018aafe6ec6a73ccba520be4a7e1565/asm-5.0.1.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/5.0.1/78ebb2694324283f3120aa3ed52465b22fab8a4a/asm-5.0.1-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/5.0.1/dc71b9748ba9e775fb63e5156305ab3ce5d64b53/asm-5.0.1-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/5.0.1/78ebb2694324283f3120aa3ed52465b22fab8a4a/asm-commons-5.0.1-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/5.0.1/7b7147a390a93a14d2edfdcf3f7b0e87a0939c3e/asm-commons-5.0.1.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/5.0.1/7b7147a390a93a14d2edfdcf3f7b0e87a0939c3e/asm-commons-5.0.1.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/5.0.1/78ebb2694324283f3120aa3ed52465b22fab8a4a/asm-commons-5.0.1-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/5.0.1/dc71b9748ba9e775fb63e5156305ab3ce5d64b53/asm-commons-5.0.1-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.21/f285ac123f201fb4b028bac556928d7cf527ef48/slf4j-api-1.7.21-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.21/139535a69a4239db087de9bab0bee568bf8e0b70/slf4j-api-1.7.21.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.21/139535a69a4239db087de9bab0bee568bf8e0b70/slf4j-api-1.7.21.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.21/f285ac123f201fb4b028bac556928d7cf527ef48/slf4j-api-1.7.21-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.21/72e00d8dc052190c5d0aca77f9a9c5124ec3a1c1/slf4j-api-1.7.21-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.ecore.xmi/2.12.0/org.eclipse.emf.ecore.xmi-2.12.0-sources.jar" kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.ecore.xmi/2.12.0/org.eclipse.emf.ecore.xmi-2.12.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.ecore.xmi/2.12.0/org.eclipse.emf.ecore.xmi-2.12.0.jar" sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.ecore.xmi/2.12.0/org.eclipse.emf.ecore.xmi-2.12.0-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.ecore/2.12.0/org.eclipse.emf.ecore-2.12.0-sources.jar" kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.ecore/2.12.0/org.eclipse.emf.ecore-2.12.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.ecore/2.12.0/org.eclipse.emf.ecore-2.12.0.jar" sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.ecore/2.12.0/org.eclipse.emf.ecore-2.12.0-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.common/2.12.0/org.eclipse.emf.common-2.12.0-sources.jar" kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.common/2.12.0/org.eclipse.emf.common-2.12.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.common/2.12.0/org.eclipse.emf.common-2.12.0.jar" sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.common/2.12.0/org.eclipse.emf.common-2.12.0-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/com.google.inject/3.0.0/com.google.inject-3.0.0-sources.jar" kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/com.google.inject/3.0.0/com.google.inject-3.0.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/com.google.inject/3.0.0/com.google.inject-3.0.0.jar" sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/com.google.inject/3.0.0/com.google.inject-3.0.0-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
@@ -215,17 +212,17 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.common.types/2.11.0/org.eclipse.xtext.common.types-2.11.0-sources.jar" kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.common.types/2.11.0/org.eclipse.xtext.common.types-2.11.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.common.types/2.11.0/org.eclipse.xtext.common.types-2.11.0.jar" sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.common.types/2.11.0/org.eclipse.xtext.common.types-2.11.0-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/com.google.guava/15.0.0/com.google.guava-15.0.0-sources.jar" kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/com.google.guava/15.0.0/com.google.guava-15.0.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/com.google.guava/15.0.0/com.google.guava-15.0.0.jar" sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/com.google.guava/15.0.0/com.google.guava-15.0.0-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtend.lib.macro/2.11.0/org.eclipse.xtend.lib.macro-2.11.0-sources.jar" kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtend.lib.macro/2.11.0/org.eclipse.xtend.lib.macro-2.11.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtend.lib.macro/2.11.0/org.eclipse.xtend.lib.macro-2.11.0.jar" sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtend.lib.macro/2.11.0/org.eclipse.xtend.lib.macro-2.11.0-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
@@ -255,69 +252,69 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.ecore/2.11.0/org.eclipse.xtext.ecore-2.11.0-sources.jar" kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.ecore/2.11.0/org.eclipse.xtext.ecore-2.11.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.ecore/2.11.0/org.eclipse.xtext.ecore-2.11.0.jar" sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.xtext.ecore/2.11.0/org.eclipse.xtext.ecore-2.11.0-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.codegen.ecore.xtext/1.2.0/org.eclipse.emf.codegen.ecore.xtext-1.2.0-sources.jar" kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.codegen.ecore.xtext/1.2.0/org.eclipse.emf.codegen.ecore.xtext-1.2.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.codegen.ecore.xtext/1.2.0/org.eclipse.emf.codegen.ecore.xtext-1.2.0.jar" sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.codegen.ecore.xtext/1.2.0/org.eclipse.emf.codegen.ecore.xtext-1.2.0-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.codegen.ecore/2.12.0/org.eclipse.emf.codegen.ecore-2.12.0-sources.jar" kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.codegen.ecore/2.12.0/org.eclipse.emf.codegen.ecore-2.12.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.codegen.ecore/2.12.0/org.eclipse.emf.codegen.ecore-2.12.0.jar" sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.codegen.ecore/2.12.0/org.eclipse.emf.codegen.ecore-2.12.0-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.objectweb.asm/5.0.1/org.objectweb.asm-5.0.1-sources.jar" kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.objectweb.asm/5.0.1/org.objectweb.asm-5.0.1.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.objectweb.asm/5.0.1/org.objectweb.asm-5.0.1.jar" sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.objectweb.asm/5.0.1/org.objectweb.asm-5.0.1-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.ide/2.11.0/1f41a38e7238e83184bbe7a76981864f2de7e65e/org.eclipse.xtext.ide-2.11.0-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.ide/2.11.0/ec376e306673e54fd9f44855901af85f3b2f45d4/org.eclipse.xtext.ide-2.11.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.ide/2.11.0/ec376e306673e54fd9f44855901af85f3b2f45d4/org.eclipse.xtext.ide-2.11.0.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.ide/2.11.0/1f41a38e7238e83184bbe7a76981864f2de7e65e/org.eclipse.xtext.ide-2.11.0-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.ide/2.11.0/a57b2d53835b448e26c3b0e62977c900654eda97/org.eclipse.xtext.ide-2.11.0-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.common.types/2.11.0/7757a3a90de01a186b096d21aa0ab5b054540be5/org.eclipse.xtext.common.types-2.11.0-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.common.types/2.11.0/6f5e6474dfe5fbf648e0cbb4382d4689c125fce4/org.eclipse.xtext.common.types-2.11.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.common.types/2.11.0/6f5e6474dfe5fbf648e0cbb4382d4689c125fce4/org.eclipse.xtext.common.types-2.11.0.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.common.types/2.11.0/7757a3a90de01a186b096d21aa0ab5b054540be5/org.eclipse.xtext.common.types-2.11.0-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.common.types/2.11.0/4fb7c4e2bbf12836f1f869fd94a0add5914213cd/org.eclipse.xtext.common.types-2.11.0-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.xbase/2.11.0/c6f9f132c6c721d4959b72fca241a0ccdea190aa/org.eclipse.xtext.xbase-2.11.0-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.xbase/2.11.0/ebb780d0aff64be16ad8b176edf93c5a657ec080/org.eclipse.xtext.xbase-2.11.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.xbase/2.11.0/ebb780d0aff64be16ad8b176edf93c5a657ec080/org.eclipse.xtext.xbase-2.11.0.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.xbase/2.11.0/c6f9f132c6c721d4959b72fca241a0ccdea190aa/org.eclipse.xtext.xbase-2.11.0-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.xbase/2.11.0/70f3c744c7c29e0b762df05e92ee4fd8ff133c01/org.eclipse.xtext.xbase-2.11.0-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/18.0/ad97fe8faaf01a3d3faacecd58e8fa6e78a973ca/guava-18.0-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/18.0/cce0823396aa693798f8882e64213b1772032b09/guava-18.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/18.0/cce0823396aa693798f8882e64213b1772032b09/guava-18.0.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/18.0/ad97fe8faaf01a3d3faacecd58e8fa6e78a973ca/guava-18.0-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/18.0/418be347c254422b51adee3cacb10e3f69e279ec/guava-18.0-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-jndi/9.3.8.v20160314/3cd32512d80d9e4fbe318172401ab43cb9cfa927/jetty-jndi-9.3.8.v20160314-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-jndi/9.3.8.v20160314/ae2759b9ae8a3fb165e19eed8762ec34dd188bb3/jetty-jndi-9.3.8.v20160314.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-jndi/9.3.8.v20160314/ae2759b9ae8a3fb165e19eed8762ec34dd188bb3/jetty-jndi-9.3.8.v20160314.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-jndi/9.3.8.v20160314/3cd32512d80d9e4fbe318172401ab43cb9cfa927/jetty-jndi-9.3.8.v20160314-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-jndi/9.3.8.v20160314/414f67c71daf6853fd6390236bd5ab500a19278b/jetty-jndi-9.3.8.v20160314-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-xml/9.3.8.v20160314/e076290bce9c87ecee87ed4ec0d5c84c640083f5/jetty-xml-9.3.8.v20160314-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-xml/9.3.8.v20160314/f02bbbf71d7ea706a95fedf7e76c3ff243049bfc/jetty-xml-9.3.8.v20160314.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-xml/9.3.8.v20160314/f02bbbf71d7ea706a95fedf7e76c3ff243049bfc/jetty-xml-9.3.8.v20160314.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-xml/9.3.8.v20160314/e076290bce9c87ecee87ed4ec0d5c84c640083f5/jetty-xml-9.3.8.v20160314-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-xml/9.3.8.v20160314/103990f4b385f8f0a7e48e4113ad1c7b97d2eef5/jetty-xml-9.3.8.v20160314-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-servlet/9.3.8.v20160314/fbfb45f1c9f795d40c6b4021aa36ed931ccd1585/jetty-servlet-9.3.8.v20160314-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-servlet/9.3.8.v20160314/ea5f25d3326d7745d9c21d405dcf6f878efbd5fb/jetty-servlet-9.3.8.v20160314.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-servlet/9.3.8.v20160314/ea5f25d3326d7745d9c21d405dcf6f878efbd5fb/jetty-servlet-9.3.8.v20160314.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-servlet/9.3.8.v20160314/fbfb45f1c9f795d40c6b4021aa36ed931ccd1585/jetty-servlet-9.3.8.v20160314-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-servlet/9.3.8.v20160314/c730b96ab502dfc98b464a0b48e91af37cbdbde1/jetty-servlet-9.3.8.v20160314-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/5.0.1/78ebb2694324283f3120aa3ed52465b22fab8a4a/asm-tree-5.0.1-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/5.0.1/1b1e6e9d869acd704056d0a4223071a511c619e6/asm-tree-5.0.1.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/5.0.1/1b1e6e9d869acd704056d0a4223071a511c619e6/asm-tree-5.0.1.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/5.0.1/78ebb2694324283f3120aa3ed52465b22fab8a4a/asm-tree-5.0.1-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/5.0.1/dc71b9748ba9e775fb63e5156305ab3ce5d64b53/asm-tree-5.0.1-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
@@ -363,12 +360,12 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.ecore.change/2.11.0/org.eclipse.emf.ecore.change-2.11.0-sources.jar" kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.ecore.change/2.11.0/org.eclipse.emf.ecore.change-2.11.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.ecore.change/2.11.0/org.eclipse.emf.ecore.change-2.11.0.jar" sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.ecore.change/2.11.0/org.eclipse.emf.ecore.change-2.11.0-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.mwe2.runtime/2.9.0/org.eclipse.emf.mwe2.runtime-2.9.0-sources.jar" kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.mwe2.runtime/2.9.0/org.eclipse.emf.mwe2.runtime-2.9.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.mwe2.runtime/2.9.0/org.eclipse.emf.mwe2.runtime-2.9.0.jar" sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.mwe2.runtime/2.9.0/org.eclipse.emf.mwe2.runtime-2.9.0-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
@@ -383,7 +380,7 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.codegen/2.11.0/org.eclipse.emf.codegen-2.11.0-sources.jar" kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.codegen/2.11.0/org.eclipse.emf.codegen-2.11.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.codegen/2.11.0/org.eclipse.emf.codegen-2.11.0.jar" sourcepath="/Users/rouquett/.tooling/eclipse/targetPlatforms/46/mavenized-target-platform/eclipse/org.eclipse.emf.codegen/2.11.0/org.eclipse.emf.codegen-2.11.0-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
@@ -393,25 +390,25 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext/2.11.0/3e1a8a1c82efe4b790b9bf393c52794d258292f9/org.eclipse.xtext-2.11.0-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext/2.11.0/9f8d2ac37bff038479a443300b995af0a5a138ba/org.eclipse.xtext-2.11.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext/2.11.0/9f8d2ac37bff038479a443300b995af0a5a138ba/org.eclipse.xtext-2.11.0.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext/2.11.0/3e1a8a1c82efe4b790b9bf393c52794d258292f9/org.eclipse.xtext-2.11.0-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext/2.11.0/f53956e869e1f704d7a5c19a9cb712b90533c57c/org.eclipse.xtext-2.11.0-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.lsp4j/org.eclipse.lsp4j/0.1.1/1b96ed2a84275364f60bfc94ce3131e844767f47/org.eclipse.lsp4j-0.1.1-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.lsp4j/org.eclipse.lsp4j/0.1.1/58722384fa42f6df2f51ab864a88cfb5dd45920a/org.eclipse.lsp4j-0.1.1.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.lsp4j/org.eclipse.lsp4j/0.1.1/58722384fa42f6df2f51ab864a88cfb5dd45920a/org.eclipse.lsp4j-0.1.1.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.lsp4j/org.eclipse.lsp4j/0.1.1/1b96ed2a84275364f60bfc94ce3131e844767f47/org.eclipse.lsp4j-0.1.1-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.lsp4j/org.eclipse.lsp4j/0.1.1/1c673dac09d031db8261a924f004ca1d40b516d4/org.eclipse.lsp4j-0.1.1-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-util/9.3.8.v20160314/6232f8c6af72572e4b1200ab9a15f8042f55b0f0/jetty-util-9.3.8.v20160314-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-util/9.3.8.v20160314/1d53c7a7e7715e67d6f4edec6c5b328ee162e65/jetty-util-9.3.8.v20160314.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-util/9.3.8.v20160314/1d53c7a7e7715e67d6f4edec6c5b328ee162e65/jetty-util-9.3.8.v20160314.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-util/9.3.8.v20160314/6232f8c6af72572e4b1200ab9a15f8042f55b0f0/jetty-util-9.3.8.v20160314-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-util/9.3.8.v20160314/cba08a81c5a6db9d3e2ec46ff70b5d742a89810c/jetty-util-9.3.8.v20160314-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-security/9.3.8.v20160314/3e6aa47e0c6833e64b0fb5971f86f7eba95ec350/jetty-security-9.3.8.v20160314-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-security/9.3.8.v20160314/5291fa5e3098f08017bfcc7f950a7ce36c9544d7/jetty-security-9.3.8.v20160314.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-security/9.3.8.v20160314/5291fa5e3098f08017bfcc7f950a7ce36c9544d7/jetty-security-9.3.8.v20160314.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-security/9.3.8.v20160314/3e6aa47e0c6833e64b0fb5971f86f7eba95ec350/jetty-security-9.3.8.v20160314-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-security/9.3.8.v20160314/fe9bf365b0f87849862df7d4b4ddf0d6d4d4cb5d/jetty-security-9.3.8.v20160314-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
@@ -437,107 +434,107 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.util/2.11.0/5fc3e3d235a4490621da5444b1470381b5edfb02/org.eclipse.xtext.util-2.11.0-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.util/2.11.0/799086dcff93984a99e3eba46775b4e634c8f3c3/org.eclipse.xtext.util-2.11.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.util/2.11.0/799086dcff93984a99e3eba46775b4e634c8f3c3/org.eclipse.xtext.util-2.11.0.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.util/2.11.0/5fc3e3d235a4490621da5444b1470381b5edfb02/org.eclipse.xtext.util-2.11.0-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.xtext/org.eclipse.xtext.util/2.11.0/80cf5c54269beedb893cf18b7d0be1ed88903dd6/org.eclipse.xtext.util-2.11.0-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.16/bf945d1dc995be7fe64923625f842fbb6bf443be/log4j-1.2.16-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.16/7999a63bfccbc7c247a9aea10d83d4272bd492c6/log4j-1.2.16.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.16/7999a63bfccbc7c247a9aea10d83d4272bd492c6/log4j-1.2.16.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.16/bf945d1dc995be7fe64923625f842fbb6bf443be/log4j-1.2.16-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.16/78aa1cbf0fa3b259abdc7d87f9f6788d785aac2a/log4j-1.2.16-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.platform/org.eclipse.equinox.common/3.8.0/a3d16e12ae80f338ce40b83832a421405021e062/org.eclipse.equinox.common-3.8.0-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.platform/org.eclipse.equinox.common/3.8.0/9a166c07468f7f10c03a9125669406baa05b80d0/org.eclipse.equinox.common-3.8.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.platform/org.eclipse.equinox.common/3.8.0/9a166c07468f7f10c03a9125669406baa05b80d0/org.eclipse.equinox.common-3.8.0.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.platform/org.eclipse.equinox.common/3.8.0/a3d16e12ae80f338ce40b83832a421405021e062/org.eclipse.equinox.common-3.8.0-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.platform/org.eclipse.equinox.common/3.8.0/35798edc4dc0b15bd38f468e86a0f2f516023f52/org.eclipse.equinox.common-3.8.0-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.platform/org.eclipse.osgi/3.11.2/ed6283d9d542eb949d3be78455b839496f473e26/org.eclipse.osgi-3.11.2-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.platform/org.eclipse.osgi/3.11.2/e8d062db7f518a41e6b4029a8005b49c855c5aac/org.eclipse.osgi-3.11.2.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.platform/org.eclipse.osgi/3.11.2/e8d062db7f518a41e6b4029a8005b49c855c5aac/org.eclipse.osgi-3.11.2.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.platform/org.eclipse.osgi/3.11.2/ed6283d9d542eb949d3be78455b839496f473e26/org.eclipse.osgi-3.11.2-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.platform/org.eclipse.osgi/3.11.2/35798edc4dc0b15bd38f468e86a0f2f516023f52/org.eclipse.osgi-3.11.2-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.emf/org.eclipse.emf.common/2.12.0/af459a19ba693bf5adc846a38636e60360e84963/org.eclipse.emf.common-2.12.0-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.emf/org.eclipse.emf.common/2.12.0/ce79e5cc3c2de3e8d96a6df4dad3bf5c9fa6b7d7/org.eclipse.emf.common-2.12.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.emf/org.eclipse.emf.common/2.12.0/ce79e5cc3c2de3e8d96a6df4dad3bf5c9fa6b7d7/org.eclipse.emf.common-2.12.0.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.emf/org.eclipse.emf.common/2.12.0/af459a19ba693bf5adc846a38636e60360e84963/org.eclipse.emf.common-2.12.0-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.emf/org.eclipse.emf.common/2.12.0/d51ecb975790a8ddffe6ae004cda9fe4c213689b/org.eclipse.emf.common-2.12.0-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.emf/org.eclipse.emf.ecore.xmi/2.12.0/daddaf80c0d94360a70b603d4a44d1299683229c/org.eclipse.emf.ecore.xmi-2.12.0-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.emf/org.eclipse.emf.ecore.xmi/2.12.0/ad136ea23fcdaebec17ec6c730dfdf74b2077c37/org.eclipse.emf.ecore.xmi-2.12.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.emf/org.eclipse.emf.ecore.xmi/2.12.0/ad136ea23fcdaebec17ec6c730dfdf74b2077c37/org.eclipse.emf.ecore.xmi-2.12.0.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.emf/org.eclipse.emf.ecore.xmi/2.12.0/daddaf80c0d94360a70b603d4a44d1299683229c/org.eclipse.emf.ecore.xmi-2.12.0-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.emf/org.eclipse.emf.ecore.xmi/2.12.0/d51ecb975790a8ddffe6ae004cda9fe4c213689b/org.eclipse.emf.ecore.xmi-2.12.0-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/com.google.inject/guice/3.0/d117c4481f64955cb1862ed38cb568add2f5fe05/guice-3.0-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/com.google.inject/guice/3.0/9d84f15fe35e2c716a02979fb62f50a29f38aefa/guice-3.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/com.google.inject/guice/3.0/9d84f15fe35e2c716a02979fb62f50a29f38aefa/guice-3.0.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/com.google.inject/guice/3.0/d117c4481f64955cb1862ed38cb568add2f5fe05/guice-3.0-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/com.google.inject/guice/3.0/9785ebd9ca29e8bcac23a2e6ce9ea3ccb339fe18/guice-3.0-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.antlr/antlr-runtime/3.2/fc08e5ebbee6d8c4576b34743aec39989e9bf2c4/antlr-runtime-3.2-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.antlr/antlr-runtime/3.2/31c746001016c6226bd7356c9f87a6a084ce3715/antlr-runtime-3.2.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.antlr/antlr-runtime/3.2/31c746001016c6226bd7356c9f87a6a084ce3715/antlr-runtime-3.2.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.antlr/antlr-runtime/3.2/fc08e5ebbee6d8c4576b34743aec39989e9bf2c4/antlr-runtime-3.2-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.lsp4j/org.eclipse.lsp4j.generator/0.1.1/d26a7098bc52d4acfa6de5f164921b973d5b2877/org.eclipse.lsp4j.generator-0.1.1-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.lsp4j/org.eclipse.lsp4j.generator/0.1.1/a063e9c57f3834a3702e528ff4bf62e4c834eff3/org.eclipse.lsp4j.generator-0.1.1.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.lsp4j/org.eclipse.lsp4j.generator/0.1.1/a063e9c57f3834a3702e528ff4bf62e4c834eff3/org.eclipse.lsp4j.generator-0.1.1.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.lsp4j/org.eclipse.lsp4j.generator/0.1.1/d26a7098bc52d4acfa6de5f164921b973d5b2877/org.eclipse.lsp4j.generator-0.1.1-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.lsp4j/org.eclipse.lsp4j.generator/0.1.1/ecf8aa418fac10fb863db7354e5b94ab5e47e7ed/org.eclipse.lsp4j.generator-0.1.1-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.lsp4j/org.eclipse.lsp4j.jsonrpc/0.1.1/22bc8bcd2dff16661c3d201ae717195897e1c43a/org.eclipse.lsp4j.jsonrpc-0.1.1-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.lsp4j/org.eclipse.lsp4j.jsonrpc/0.1.1/569c0232b2d7a4d2f4d29f9c5a9fb31a2a29433e/org.eclipse.lsp4j.jsonrpc-0.1.1.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.lsp4j/org.eclipse.lsp4j.jsonrpc/0.1.1/569c0232b2d7a4d2f4d29f9c5a9fb31a2a29433e/org.eclipse.lsp4j.jsonrpc-0.1.1.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.lsp4j/org.eclipse.lsp4j.jsonrpc/0.1.1/22bc8bcd2dff16661c3d201ae717195897e1c43a/org.eclipse.lsp4j.jsonrpc-0.1.1-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.lsp4j/org.eclipse.lsp4j.jsonrpc/0.1.1/f6a88c7aa19d646dce7e803899025e084c8376e8/org.eclipse.lsp4j.jsonrpc-0.1.1-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-server/9.3.8.v20160314/6c0719aa3768d81c0cc329e938a861d295883bc2/jetty-server-9.3.8.v20160314-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-server/9.3.8.v20160314/da8366f602f35d4c3177cb081472e2fc4abe04ea/jetty-server-9.3.8.v20160314.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-server/9.3.8.v20160314/da8366f602f35d4c3177cb081472e2fc4abe04ea/jetty-server-9.3.8.v20160314.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-server/9.3.8.v20160314/6c0719aa3768d81c0cc329e938a861d295883bc2/jetty-server-9.3.8.v20160314-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-server/9.3.8.v20160314/e75cf145c3f7d162b34021e4e8cfbd5c3df7204e/jetty-server-9.3.8.v20160314-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.emf/org.eclipse.emf.ecore/2.12.0/aa1cd16cf2bf412b6d55ae94e06303ae098d0d63/org.eclipse.emf.ecore-2.12.0-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.emf/org.eclipse.emf.ecore/2.12.0/644751074e8b448526815f9bdeda26770df2e213/org.eclipse.emf.ecore-2.12.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.emf/org.eclipse.emf.ecore/2.12.0/644751074e8b448526815f9bdeda26770df2e213/org.eclipse.emf.ecore-2.12.0.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.emf/org.eclipse.emf.ecore/2.12.0/aa1cd16cf2bf412b6d55ae94e06303ae098d0d63/org.eclipse.emf.ecore-2.12.0-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.emf/org.eclipse.emf.ecore/2.12.0/d51ecb975790a8ddffe6ae004cda9fe4c213689b/org.eclipse.emf.ecore-2.12.0-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/a00123f261762a7c5e0ec916a2c7c8298d29c400/javax.inject-1-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/a00123f261762a7c5e0ec916a2c7c8298d29c400/javax.inject-1-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/70ec961c25111ed9015d1af77772d96383c2d238/javax.inject-1-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/aopalliance/aopalliance/1.0/4a4b6d692e17846a9f3da036438a7ac491d3c814/aopalliance-1.0-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/aopalliance/aopalliance/1.0/235ba8b489512805ac13a8f9ea77a1ca5ebe3e8/aopalliance-1.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/aopalliance/aopalliance/1.0/235ba8b489512805ac13a8f9ea77a1ca5ebe3e8/aopalliance-1.0.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/aopalliance/aopalliance/1.0/4a4b6d692e17846a9f3da036438a7ac491d3c814/aopalliance-1.0-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/ab3976d4574c48d22dc1abf6a9e8bd0fdf928223/javax.servlet-api-3.1.0-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/3cd63d075497751784b2fa84be59432f4905bf7c/javax.servlet-api-3.1.0.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/3cd63d075497751784b2fa84be59432f4905bf7c/javax.servlet-api-3.1.0.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/ab3976d4574c48d22dc1abf6a9e8bd0fdf928223/javax.servlet-api-3.1.0-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/7898c2d7d0779c852dea51cb75a446eeb932eb1b/javax.servlet-api-3.1.0-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-http/9.3.8.v20160314/ba46c47690ae0acfd6a75a66137c10c9f8693327/jetty-http-9.3.8.v20160314-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-http/9.3.8.v20160314/127feb7407f4137ff4295b5fa2895845db56710/jetty-http-9.3.8.v20160314.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-http/9.3.8.v20160314/127feb7407f4137ff4295b5fa2895845db56710/jetty-http-9.3.8.v20160314.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-http/9.3.8.v20160314/ba46c47690ae0acfd6a75a66137c10c9f8693327/jetty-http-9.3.8.v20160314-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-http/9.3.8.v20160314/5c40edbc52b32828f0b83dabcb10053d4eea5215/jetty-http-9.3.8.v20160314-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-io/9.3.8.v20160314/44ea18599a52f22994f04d020ecceb6c097d3785/jetty-io-9.3.8.v20160314-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-io/9.3.8.v20160314/371e3c2b72d9a9737579ec0fdfd6a2a3ab8b8141/jetty-io-9.3.8.v20160314.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-io/9.3.8.v20160314/371e3c2b72d9a9737579ec0fdfd6a2a3ab8b8141/jetty-io-9.3.8.v20160314.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-io/9.3.8.v20160314/44ea18599a52f22994f04d020ecceb6c097d3785/jetty-io-9.3.8.v20160314-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-io/9.3.8.v20160314/89dd4697f7cbf599b7ecea146b321aa57c089ba9/jetty-io-9.3.8.v20160314-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/bbb63ca253b483da8ee53a50374593923e3de2e2/gson-2.7-sources.jar" kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar">
+	<classpathentry kind="lib" path="/Users/rouquett/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar" sourcepath="/Users/rouquett/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/bbb63ca253b483da8ee53a50374593923e3de2e2/gson-2.7-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/Users/rouquett/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/ceb1b728624941fdcc57d2c6d9aa10643bdd5d4c/gson-2.7-javadoc.jar!/"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
@@ -548,4 +545,5 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
 </classpath>
