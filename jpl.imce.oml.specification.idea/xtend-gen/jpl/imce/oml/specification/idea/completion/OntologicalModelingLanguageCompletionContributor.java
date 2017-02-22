@@ -4,16 +4,16 @@
 package jpl.imce.oml.specification.idea.completion;
 
 import jpl.imce.oml.specification.idea.completion.AbstractOntologicalModelingLanguageCompletionContributor;
-import jpl.imce.oml.specification.idea.lang.OntologicalModelingLanguageLanguage;
-import org.eclipse.xtext.idea.lang.AbstractXtextLanguage;
 
 @SuppressWarnings("all")
 public class OntologicalModelingLanguageCompletionContributor extends AbstractOntologicalModelingLanguageCompletionContributor {
   public OntologicalModelingLanguageCompletionContributor() {
-    this(OntologicalModelingLanguageLanguage.INSTANCE);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe constructor OntologicalModelingLanguageCompletionContributor(AbstractXtextLanguage) refers to the missing type AbstractXtextLanguage");
   }
   
-  public OntologicalModelingLanguageCompletionContributor(final AbstractXtextLanguage lang) {
-    super(lang);
+  public OntologicalModelingLanguageCompletionContributor(final /* AbstractXtextLanguage */Object lang) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method super(AbstractXtextLanguage) is undefined");
   }
 }

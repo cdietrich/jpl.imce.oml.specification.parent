@@ -4,19 +4,12 @@
 package jpl.imce.oml.specification.idea;
 
 import com.google.inject.Injector;
-import jpl.imce.oml.specification.idea.OntologicalModelingLanguageStandaloneSetupIdea;
-import org.eclipse.xtext.ISetup;
-import org.eclipse.xtext.idea.extensions.EcoreGlobalRegistries;
 
 @SuppressWarnings("all")
-public class OntologicalModelingLanguageIdeaSetup implements ISetup {
+public class OntologicalModelingLanguageIdeaSetup /* implements ISetup  */{
   public Injector createInjectorAndDoEMFRegistration() {
-    Injector _xblockexpression = null;
-    {
-      EcoreGlobalRegistries.ensureInitialized();
-      OntologicalModelingLanguageStandaloneSetupIdea _ontologicalModelingLanguageStandaloneSetupIdea = new OntologicalModelingLanguageStandaloneSetupIdea();
-      _xblockexpression = _ontologicalModelingLanguageStandaloneSetupIdea.createInjector();
-    }
-    return _xblockexpression;
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field EcoreGlobalRegistries is undefined"
+      + "\nensureInitialized cannot be resolved");
   }
 }

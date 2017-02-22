@@ -4,13 +4,13 @@
 package jpl.imce.oml.specification.idea.lang;
 
 import jpl.imce.oml.specification.idea.lang.AbstractOntologicalModelingLanguageFileType;
-import jpl.imce.oml.specification.idea.lang.OntologicalModelingLanguageLanguage;
 
 @SuppressWarnings("all")
 public class OntologicalModelingLanguageFileType extends AbstractOntologicalModelingLanguageFileType {
   public final static OntologicalModelingLanguageFileType INSTANCE = new OntologicalModelingLanguageFileType();
   
   public OntologicalModelingLanguageFileType() {
-    super(OntologicalModelingLanguageLanguage.INSTANCE);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method super(OntologicalModelingLanguageLanguage) is undefined");
   }
 }

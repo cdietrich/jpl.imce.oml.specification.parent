@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="buildship-neon" sequenceNumber="62">
+<?pde version="3.8"?><target includeMode="feature" name="buildship-neon" sequenceNumber="63">
 <locations>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.buildship.feature.group" version="2.0.0.v20170111-1002-m"/>
@@ -27,27 +27,6 @@
 <unit id="org.eclipse.emf.cdo.feature.group" version="4.5.0.v20160607-1254"/>
 <unit id="org.eclipse.net4j.util.doc.feature.group" version="4.2.300.v20160607-1511"/>
 <repository location="http://download.eclipse.org/modeling/emf/cdo/updates/releases/4.5/"/>
-</location>
-<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.emf.ecore.xcore.sdk.feature.group" version="1.4.0.v20160526-0606"/>
-<unit id="org.eclipse.sirius.specifier.properties.feature.feature.group" version="4.1.2.201612021444"/>
-<unit id="org.eclipse.oomph.workingsets.feature.group" version="1.6.0.v20161111-1110"/>
-<unit id="org.eclipse.m2e.logback.feature.feature.group" version="1.7.0.20160603-1933"/>
-<unit id="org.eclipse.oomph.projectconfig.feature.group" version="1.6.0.v20161019-0656"/>
-<unit id="org.eclipse.sirius.runtime.ide.xtext.feature.group" version="4.1.2.201612021444"/>
-<unit id="org.eclipse.oomph.preferences.feature.group" version="1.6.0.v20161019-0656"/>
-<unit id="org.eclipse.sirius.specifier.feature.group" version="4.1.2.201612021444"/>
-<unit id="org.eclipse.m2e.feature.feature.group" version="1.7.0.20160603-1933"/>
-<unit id="org.eclipse.oomph.version.feature.group" version="1.6.0.v20161019-0656"/>
-<unit id="org.eclipse.emf.sdk.feature.group" version="2.12.0.v20160526-0356"/>
-<unit id="org.eclipse.sirius.properties.feature.feature.group" version="4.1.2.201612021444"/>
-<unit id="org.eclipse.oomph.setup.sdk.feature.group" version="1.6.0.v20161128-0928"/>
-<unit id="org.eclipse.oomph.targlets.feature.group" version="1.6.0.v20161104-0635"/>
-<unit id="org.eclipse.emf.mwe2.language.sdk.feature.group" version="2.9.0.v201605261103"/>
-<unit id="org.eclipse.m2e.sdk.feature.feature.group" version="1.7.0.20160603-1933"/>
-<unit id="org.eclipse.emf.eef.sdk-feature.feature.group" version="1.5.1.201601141612"/>
-<unit id="org.eclipse.xsd.sdk.feature.group" version="2.12.0.v20160526-0356"/>
-<repository location="http://download.eclipse.org/releases/neon/"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
 <unit id="com.itemis.xtext.testing.feature.feature.group" version="0.2.0.201612011358"/>
@@ -203,6 +182,29 @@
 <unit id="org.apache.commons.lang.source" version="2.6.0.v201404270220"/>
 <unit id="javax.validation.source" version="1.0.0.GA_v201205091237"/>
 <repository location="http://builds.gradle.org:8000/eclipse/update-site/mirror/orbit-neon/"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.emf.ecore.xcore.sdk.feature.group" version="1.4.0.v20160526-0606"/>
+<unit id="org.eclipse.sirius.specifier.properties.feature.feature.group" version="4.1.2.201612021444"/>
+<unit id="org.eclipse.oomph.workingsets.feature.group" version="1.6.0.v20161111-1110"/>
+<unit id="org.eclipse.m2e.logback.feature.feature.group" version="1.7.0.20160603-1933"/>
+<unit id="org.eclipse.oomph.projectconfig.feature.group" version="1.6.0.v20161019-0656"/>
+<unit id="org.eclipse.sirius.runtime.ide.xtext.feature.group" version="4.1.2.201612021444"/>
+<unit id="org.eclipse.oomph.targlets.feature.group" version="1.6.0.v20161104-0635"/>
+<unit id="org.eclipse.emf.mwe2.language.sdk.feature.group" version="2.9.0.v201605261103"/>
+<unit id="org.eclipse.oomph.preferences.feature.group" version="1.6.0.v20161019-0656"/>
+<unit id="org.eclipse.sirius.specifier.feature.group" version="4.1.2.201612021444"/>
+<unit id="org.eclipse.m2e.feature.feature.group" version="1.7.0.20160603-1933"/>
+<unit id="org.eclipse.oomph.version.feature.group" version="1.6.0.v20161019-0656"/>
+<unit id="org.eclipse.emf.sdk.feature.group" version="2.12.0.v20160526-0356"/>
+<unit id="org.eclipse.m2e.sdk.feature.feature.group" version="1.7.0.20160603-1933"/>
+<unit id="org.eclipse.emf.eef.sdk-feature.feature.group" version="1.5.1.201601141612"/>
+<unit id="org.eclipse.sirius.properties.feature.feature.group" version="4.1.2.201612021444"/>
+<unit id="org.eclipse.pde.feature.group" version="3.12.2.v20161124-1400"/>
+<unit id="org.eclipse.xsd.sdk.feature.group" version="2.12.0.v20160526-0356"/>
+<unit id="org.eclipse.e4.core.tools.feature.source.feature.group" version="4.5.100.v20160503-0947"/>
+<unit id="org.eclipse.oomph.setup.sdk.feature.group" version="1.6.0.v20161128-0928"/>
+<repository location="http://download.eclipse.org/releases/neon/"/>
 </location>
 </locations>
 <targetJRE path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>

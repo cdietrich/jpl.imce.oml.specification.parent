@@ -9,7 +9,6 @@ import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor;
 /**
  * Use this class to register additional components to be used within the web application.
  */
-@FinalFieldsConstructor
-@SuppressWarnings("all")
+/* @FinalFieldsConstructor */@SuppressWarnings("all")
 public class OntologicalModelingLanguageWebModule extends AbstractOntologicalModelingLanguageWebModule {
 }
