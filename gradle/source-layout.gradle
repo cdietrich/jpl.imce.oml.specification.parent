@@ -30,25 +30,6 @@ if (name.endsWith(".tests")) {
 		}
 	}
 	
-} else if (!name.endsWith(".feature") &&
-		   !name.endsWith(".doc")) {
-	
-	sourceSets {
-		main {
-			java.srcDirs = ['src', 'src-gen']
-			resources.srcDirs = ['src', 'src-gen']
-			xtendOutputDir = 'xtend-gen'
-		}
-		test {
-			java.srcDirs = []
-			resources.srcDirs = []
-		}
-		all {
-			output.classesDir = 'target/classes'
-			resources.exclude '**/*.g', '**/*.xtext', '**/*.mwe2', '**/*.xtend', '**/*._trace'
-		}
-	}
-	
 }
 
 plugins.withId('war') {

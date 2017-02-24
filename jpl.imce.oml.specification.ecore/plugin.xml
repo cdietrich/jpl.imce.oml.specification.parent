@@ -31,11 +31,19 @@
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated OMLC -->
+      <package
+            uri="http://imce.jpl.nasa.gov/oml/common"
+            class="gov.nasa.jpl.imce.oml.common.OMLCPackage"
+            genModel="model/OMLCommon.xcore"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated OML -->
       <package
             uri="http://imce.jpl.nasa.gov/oml"
             class="jpl.imce.oml.specification.ecore.OMLPackage"
-            genModel="model/OMLSpecification.xcore"/>
+            genModel="old/OMLSpecification.xcore"/>
    </extension>
 
 </plugin>

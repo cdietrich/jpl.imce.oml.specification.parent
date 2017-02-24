@@ -3,6 +3,7 @@
 .idea
 .ivy
 .sbtboot
+*~
 *.log
 *._trace
 *.xtendbin
