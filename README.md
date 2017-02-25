@@ -19,7 +19,7 @@ See [jpl.imce.oml.specification.repository/README.md](jpl.imce.oml.specification
 
 This project is developed using two IDEs: Eclipse & Intellij IDEA Ultimate.
 It would be nice if a single IDE could handle all the requirements.
- 
+
 ### Eclipse Neon.2 
 
 Specifically, the Eclipse Neon.2 Modeling package which includes EMF, CDO, EGIT augmented with the following:
@@ -33,6 +33,26 @@ In principle, it should be possible to use Eclipse Oomph to configure
 a package with the above; in practice, it is unfortunately not obvious
 how to do this despite several attempts. 
 
+What doesn't work:
+
+- No IDE support for developing/debugging gradle build scripts
+
+  The Eclipse Buildship 2.0 supports executing gradle tasks as long as everything works fine.
+  
+  See: Bugzilla – Bug 469287 (CLOSED WONTFIX)](https://bugs.eclipse.org/bugs/show_bug.cgi?id=469287),
+  The workaround involves using IDEA and the [gradle-kotlin-plugin](https://github.com/gradle/gradle-script-kotlin)
+  (bleeding edge dependency is better than no working IDE support).
+ 
+- Poor IDE support for developing/debugging SBT build scripts
+  
+- Location-independent development
+
+  Eclipse metadata files tend to include absolute paths that depend on the development host.
+  It is difficult to avoid this problem.
+  This project uses support from other build tools (e.g. Gradle, SBT) to generate the Eclipse metadata files 
+  which are no longer kept in Github. This requires Eclipse developers to use the appropriate build
+  tool to generate these metadata files before importing the project in Eclipse.
+  
 ### Intellij IDEA Ultimate
 
 All the SBT build configuration was developed using IDEA.
@@ -69,45 +89,30 @@ Thanks to the Gradle-based Eclipse Buildship, it is possible to:
 - build the Eclipse-based projects plugins, features & p2 repos 
 - execute the unit tests
 
-However, there are some caveats.
+### Gradle/Kotlin
 
-### Caveats about Gradle
+Some of the Eclipse Buildship 2.0 scripts were used for this project.
+To provide better development/debugging support, the functionality is migrated to gradle/kotlin
+using the [gradle-kotlin-plugin](https://github.com/gradle/gradle-script-kotlin).
 
-Although Gradle is conceptually very similar to SBT (i.e., execution of a graph of tasks based on their dependencies),
-the fact that Gradle is dynamically typed and SBT is statically typed means that:
-- Gradle scripting looses the benefits that SBT scripting enjoys with static, compile-time checking. 
-- It can be difficult to understand what a particular Gradle script really does because the runtime dependency injection
-  that ultimately determines the actual runtime behavior can be difficult to find.
-  
-Following the suggestion from [Bugzilla – Bug 469287 (CLOSED WONTFIX)](https://bugs.eclipse.org/bugs/show_bug.cgi?id=469287),
-this project includes a copy of the internal gradle plugins that Eclipse buildship uses for building/publishing.
-Several Eclipse test-related scripts were deleted because of errors.
+The particular Gradle distribution used is specified here: 
+[gradle/wrapper/gradle-wrapper.properties](gradle/wrapper/gradle-wrapper.properties)
 
-However, following [Eclipse buildship developer setup instructions](https://github.com/eclipse/buildship/blob/master/docs/development/Setup.md) 
-turns out to be a non-trivial affair:
-- Adding the Java & Groovy nature (and possibly Gradle nature) would be required to get JDT support for
-  editing the buildship Java+Groovy scripts in [buildSrc/src/main/groovy](buildSrc/src/main/groovy).
-  However, doing so brings a lot of compilation errors; including the fact that without the Gradle 3.3 libraries,
-  a lot of imports are unresolved.
-  
-- The Eclipse buildship support can add gradle nature; however, it doesn't add Gradle 3.3 to the project classpath.
-  This means that there is no JDT support for editing gradle scripts!
+For example::
 
-- Debugging gradle scripts is tedious with Eclipse Buildship.
+    distributionUrl=https\://repo.gradle.org/gradle/dist-snapshots/gradle-script-kotlin-3.5-20170224224706+0000-all.zip
 
-Intellij IDEA (2017.1 EAP) provides very good support for gradle projects.
-
-- IDEA can run/debug gradle tasks easily like anything else JVM-based.
+The version comes from the Artifactory repository here: 
+https://repo.gradle.org/gradle/webapp/#/artifacts/browse/tree/General/dist-snapshots
 
 ### Caveats about Eclipse Xtext/Xtend/Xcore
 
-Currently, this project uses the Eclipse-based tooling.
-The generated code is currently in GIT; however, there is some code generation noise that
-causes frivolous changes:
-- the `@Override` annotation is sometimes generated; sometimes not.
-- the generated `ecore.ecore` from the Xcore metamodel varies, primarily due to variations in serialization order
-- the generated `.classpath` files have platform-specific paths -- it is unclear whether these files can be
-  ignored in GIT and re-generated properly.
+This project depends on Xtext 2.11 for grammar-based formatting
+(see: https://github.com/eclipse/xtext-extras/issues/30)
+
+There is a different bug in the EMF generator used by the XcoreGenerator
+that prevents using GenModel annotations that would generate Eclipse metadata files
+like `plugin.xml` (see: https://www.eclipse.org/forums/index.php?t=msg&th=1084555&goto=1754620&#msg_1754620)
 
 ## Continuous Integration
 

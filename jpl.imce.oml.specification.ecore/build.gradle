@@ -23,18 +23,18 @@ dependencies {
 }
 
 eclipse {
+    // TODO this should work according to the doc.
+    // @see https://docs.gradle.org/current/dsl/org.gradle.plugins.ide.eclipse.model.EclipseModel.html
     pathVariables 'GRADLE_HOME': gradle.gradleUserHomeDir
+
     classpath {
         defaultOutputDir file('build/target/classes/main/')
     }
-}
-
-sourceSets {
-	main {
-		resources {
-			exclude '**/*.xcore'
-		}
-	}
+    project {
+        natures 'org.eclipse.pde.PluginNature'
+        buildCommand 'org.eclipse.pde.ManifestBuilder'
+        buildCommand 'org.eclipse.pde.SchemaBuilder'
+    }
 }
 
 sourceSets {
@@ -42,7 +42,14 @@ sourceSets {
 		java.srcDirs = ['src', 'build/xcore/main/']
 		resources.srcDirs = ['model']
 		xtendOutputDir = 'build/xcore/main/'
+        resources {
+            exclude '**/*.xcore'
+        }
 	}
+    test {
+        java.srcDirs = []
+        resources.srcDirs = []
+    }
 }
 
 xtext {
