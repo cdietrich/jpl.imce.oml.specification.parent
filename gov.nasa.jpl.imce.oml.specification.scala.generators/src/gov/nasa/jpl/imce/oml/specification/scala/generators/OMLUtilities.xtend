@@ -427,9 +427,13 @@ class OMLUtilities extends OMLXcorePackages {
     }
 		
     static def Boolean isSchema(ENamedElement e) {
-    	null === e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotSchema")
+    	null === e.getEAnnotation("http://imce.jpl.nasa.gov/oml/NotSchema") && !e.isResolverAPI
     }
-    
+		
+    static def Boolean isResolverAPI(ENamedElement e) {
+    	null !== e.getEAnnotation("http://imce.jpl.nasa.gov/oml/ResolverAPI")
+    }
+     
     static def Boolean isValueTable(ENamedElement e) {
     	null !== e.getEAnnotation("http://imce.jpl.nasa.gov/oml/ValueTable")
     }
@@ -458,7 +462,7 @@ class OMLUtilities extends OMLXcorePackages {
 		"AnnotationPropertyTable",
 		"AnnotationSubjectPropertyValue",
 		"AnnotationSubjectTable",
-		"TerminologyExtent", 
+		"Extent", 
 		"TerminologyGraph", 
 		"Bundle", 
 		"ConceptDesignationTerminologyAxiom",
@@ -519,9 +523,7 @@ class OMLUtilities extends OMLXcorePackages {
 		val knownAttributes = #[
 		"uuid", 
 		"tboxUUID",
-		"bundleExtentUUID",
-		"graphExtentUUID",
-		"descriptionExtentUUID",
+		"extentUUID",
 		"terminologyBundleUUID",
 		"bundledTerminologyUUID",
 		"extendedTerminologyUUID",
@@ -598,7 +600,12 @@ class OMLUtilities extends OMLXcorePackages {
 		"iri",
 		"value",
 		"scalarPropertyValue",
-		"literalValue"
+		"literalValue",
+		"annotationsUUID",
+		"boxStatementsUUID",
+		"boxAxiomsUUID",
+		"bundleStatementsUUID",
+		"bundleAxiomsUUID"
 		]
 		override compare(ETypedElement o1, ETypedElement o2) {
 			val name1 = o1.columnName

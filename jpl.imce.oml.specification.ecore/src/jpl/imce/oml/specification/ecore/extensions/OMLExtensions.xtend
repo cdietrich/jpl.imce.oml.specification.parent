@@ -1,6 +1,9 @@
 package jpl.imce.oml.specification.ecore.extensions
 
 import com.google.common.collect.Lists
+import gov.nasa.jpl.imce.oml.common.Extent
+import gov.nasa.jpl.imce.oml.bundles.Bundle
+import gov.nasa.jpl.imce.oml.graphs.TerminologyGraph
 import gov.nasa.jpl.imce.oml.terminologies.Aspect
 import gov.nasa.jpl.imce.oml.terminologies.Concept
 import gov.nasa.jpl.imce.oml.terminologies.Entity
@@ -8,20 +11,24 @@ import gov.nasa.jpl.imce.oml.terminologies.ReifiedRelationship
 import gov.nasa.jpl.imce.oml.terminologies.SpecializationAxiom
 import gov.nasa.jpl.imce.oml.terminologies.TerminologyBox
 import gov.nasa.jpl.imce.oml.terminologies.TerminologyExtensionAxiom
-import gov.nasa.jpl.imce.oml.extents.TerminologyExtent
 import org.eclipse.emf.ecore.util.EcoreUtil
 import java.util.ArrayList
 
 class OMLExtensions {
 	
-	def Iterable<TerminologyBox> terminologies(TerminologyExtent it) {
-		val ArrayList<TerminologyBox> result = Lists.newArrayList
-		result.addAll(terminologyGraphs)
-		result.addAll(bundles)
-		result.immutableCopy
+	def Iterable<TerminologyBox> terminologies(Extent it) {
+		it.modules.filter(TerminologyBox)
 	}
 	
-	def phasedResolveAll(TerminologyExtent it) {
+	def Iterable<TerminologyGraph> terminologyGraphs(Extent it) {
+		it.modules.filter(TerminologyGraph)
+	}
+	
+	def Iterable<Bundle> bundles(Extent it) {
+		it.modules.filter(Bundle)
+	}
+	
+	def phasedResolveAll(Extent it) {
 		
 		// phase 1
 		terminologyGraphs.forEach[

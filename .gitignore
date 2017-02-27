@@ -10,6 +10,10 @@
 .DS_Store
 build
 target
+/gov.nasa.jpl.imce.oml.specification.tables/shared/src/main/scala/gov/nasa/jpl/imce/oml/specification/resolver/api/*.scala
+/gov.nasa.jpl.imce.oml.specification.tables/shared/src/main/scala/gov/nasa/jpl/imce/oml/specification/tables/*.scala
+/gov.nasa.jpl.imce.oml.specification.tables/shared/src/main/scala/gov/nasa/jpl/imce/oml/provenance/oti/*.scala
+/gov.nasa.jpl.oml.specification.resolver/src/main/scala/gov/nasa/jpl/imce/oml/specification/resolver/impl/*.scala
 /gov.nasa.jpl.imce.oml.specification.scala.generators/.project
 /gov.nasa.jpl.imce.oml.specification.scala.generators/.settings/org.eclipse.jdt.core.prefs
 /gov.nasa.jpl.imce.oml.specification.scala.generators/.settings/org.eclipse.xtend.core.Xtend.prefs

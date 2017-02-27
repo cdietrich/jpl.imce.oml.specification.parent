@@ -1514,14 +1514,10 @@ with a set of OML AnnotationEntry values.
 
 {APIs: **Functional**}
 
-## OML TerminologyExtent
+## OML Extent
 
-An OML TerminologyExtent defines an in-memory tuple
-about each OML Module involved in modeling and reasoning about domain-specific
-vocabularies and systems descriptions using such vocabularies:
-- An OML TerminologyGraph for defining a vocabulary about a domain or a description of a system in a domain;
-- An OML Bundle for aggregating OML TerminologyBox(es) for as modular [OWL2-DL Ontologies] for monotonic refinement and reasoning;
-- An OML DescriptionBox for describing actual systems according to one or more domain-specific OML TerminologyBox vocabularies.
+An OML Extent is an in-memory store of all OML Element(s)
+loaded from external OML documents.
 
 {APIs: **Functional**}
 

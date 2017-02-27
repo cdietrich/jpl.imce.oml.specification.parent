@@ -1,6 +1,6 @@
 package jpl.imce.oml.specification.ecore.extensions
 
-import gov.nasa.jpl.imce.oml.extents.ExtentsPackage
+import gov.nasa.jpl.imce.oml.common.CommonPackage
 import java.util.Map
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.EPackage
@@ -25,7 +25,6 @@ class OMLXcorePackages {
 	public val EPackage g
 	public val EPackage b
 	public val EPackage d
-	public val EPackage e
 	public val EPackage oml2oti
 	
 	new() {
@@ -45,12 +44,12 @@ class OMLXcorePackages {
 		
 		this.set = createXcoreResourceSet(
 			[Map<URI,URI> uriMap | 
-			uriMap.put(omlc_uri, URI.createURI(ExtentsPackage.getResource(omlc).toURI.toString))
-			uriMap.put(omlt_uri, URI.createURI(ExtentsPackage.getResource(omlt).toURI.toString))
-			uriMap.put(omlg_uri, URI.createURI(ExtentsPackage.getResource(omlg).toURI.toString))
-			uriMap.put(omlb_uri, URI.createURI(ExtentsPackage.getResource(omlb).toURI.toString))
-			uriMap.put(omld_uri, URI.createURI(ExtentsPackage.getResource(omld).toURI.toString))
-			uriMap.put(oml2oti_uri, URI.createURI(ExtentsPackage.getResource(oml2oti).toURI.toString))
+			uriMap.put(omlc_uri, URI.createURI(CommonPackage.getResource(omlc).toURI.toString))
+			uriMap.put(omlt_uri, URI.createURI(CommonPackage.getResource(omlt).toURI.toString))
+			uriMap.put(omlg_uri, URI.createURI(CommonPackage.getResource(omlg).toURI.toString))
+			uriMap.put(omlb_uri, URI.createURI(CommonPackage.getResource(omlb).toURI.toString))
+			uriMap.put(omld_uri, URI.createURI(CommonPackage.getResource(omld).toURI.toString))
+			uriMap.put(oml2oti_uri, URI.createURI(CommonPackage.getResource(oml2oti).toURI.toString))
 				])
 			
 		val oml2oti_r = set.getResource(oml2oti_uri, true)

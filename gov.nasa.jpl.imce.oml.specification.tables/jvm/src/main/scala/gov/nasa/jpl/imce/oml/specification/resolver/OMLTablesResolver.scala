@@ -43,7 +43,7 @@ object OMLTablesResolver {
   = for {
     init <- Try.apply(OMLTablesResolver(
       resolver.TerminologyContext(
-        factory.createTerminologyExtent(
+        factory.createExtent(
           annotationProperties =
             t
               .annotationProperties
@@ -52,9 +52,7 @@ object OMLTablesResolver {
                 acc +
                   factory.createAnnotationProperty(ap.iri, ap.abbrevIRI)
             },
-          bundles = TreeSet.empty[resolver.api.Bundle],
-          terminologyGraphs = TreeSet.empty[resolver.api.TerminologyGraph],
-          descriptions = TreeSet.empty[resolver.api.DescriptionBox])),
+          modules = TreeSet.empty[resolver.api.Module])),
       t,
       factory))
     // Terminologies
@@ -104,17 +102,17 @@ object OMLTablesResolver {
     val c = step11.context
     val e1 =
       factory
-        .copyTerminologyExtent_terminologyGraphs(
+        .copyExtent_modules(
           c.extent,
-          c.graphs.foldLeft[SortedSet[resolver.api.TerminologyGraph]](TreeSet.empty[resolver.api.TerminologyGraph]) {
+          c.graphs.foldLeft[SortedSet[resolver.api.Module]](TreeSet.empty[resolver.api.Module]) {
             case (acc, (_, g)) =>
               acc + g
           })
     val e2 =
       factory
-      .copyTerminologyExtent_bundles(
+      .copyExtent_modules(
         c.extent,
-        c.bundles.foldLeft[SortedSet[resolver.api.Bundle]](TreeSet.empty[resolver.api.Bundle]) {
+        c.bundles.foldLeft[SortedSet[resolver.api.Module]](TreeSet.empty[resolver.api.Module]) {
           case (acc, (_, b)) =>
             acc + b
         })
