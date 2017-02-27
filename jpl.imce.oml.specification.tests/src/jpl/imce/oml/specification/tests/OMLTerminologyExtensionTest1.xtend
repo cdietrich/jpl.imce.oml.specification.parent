@@ -17,14 +17,14 @@
 package jpl.imce.oml.specification.tests
 
 import com.google.inject.Inject
-import jpl.imce.oml.specification.ecore.TerminologyExtent
+import gov.nasa.jpl.imce.oml.extents.TerminologyExtent
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.XtextRunner
 import org.eclipse.xtext.testing.util.ParseHelper
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.eclipse.xtext.junit4.validation.ValidationTestHelper
+import org.eclipse.xtext.testing.validation.ValidationTestHelper
 
 @RunWith(XtextRunner)
 @InjectWith(OntologicalModelingLanguageInjectorProvider)

@@ -17,8 +17,8 @@
 package jpl.imce.oml.specification.tests
 
 import com.google.inject.Inject
-import jpl.imce.oml.specification.ecore.Concept
-import jpl.imce.oml.specification.ecore.TerminologyExtent
+import gov.nasa.jpl.imce.oml.extents.TerminologyExtent
+import gov.nasa.jpl.imce.oml.terminologies.Concept
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.XtextRunner
 import org.eclipse.xtext.testing.util.ParseHelper
