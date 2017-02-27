@@ -28,11 +28,11 @@ trait Term
 
   override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName
 
+  override def iri
+  (): gov.nasa.jpl.imce.oml.specification.tables.IRI
   /*
    * The UUID of a Term is a Version5 namespace UUID based on the term's IRI.
    */
   override def calculateUUID
   (): java.util.UUID
-  override def iri
-  (): gov.nasa.jpl.imce.oml.specification.tables.IRI
 }

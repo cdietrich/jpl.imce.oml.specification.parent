@@ -33,7 +33,7 @@ import scala.Predef._
 case class TerminologyGraph
 (
   @(JSExport @field) uuid: UUID,
-  @(JSExport @field) kind: TerminologyGraphKind,
+  @(JSExport @field) kind: TerminologyKind,
   @(JSExport @field) iri: IRI
 ) {
   override val hashCode

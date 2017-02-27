@@ -20,99 +20,92 @@ package gov.nasa.jpl.imce.oml.specification.scala.generators;
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import gov.nasa.jpl.imce.oml.specification.scala.generators.OMLUtilities;
-import java.net.URL;
-import java.util.Map;
-import java.util.function.Consumer;
-import jpl.imce.oml.specification.ecore.OMLPackage;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.xtext.resource.XtextResourceSet;
-import org.eclipse.xtext.xbase.lib.Conversions;
-import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
+/**
+ * For some mysterious reason, this fails to execute like this:
+ * :gov.nasa.jpl.imce.oml.specification.scala.generators:generateXtext UP-TO-DATE
+ * :gov.nasa.jpl.imce.oml.specification.scala.generators:compileJava UP-TO-DATE
+ * :gov.nasa.jpl.imce.oml.specification.scala.generators:processResources NO-SOURCE
+ * :gov.nasa.jpl.imce.oml.specification.scala.generators:classes UP-TO-DATE
+ * :gov.nasa.jpl.imce.oml.specification.scala.generators:jar UP-TO-DATE
+ * :gov.nasa.jpl.imce.oml.specification.scala.generators:OMLLoadTest
+ * 0    [main] ERROR base.resource.BatchLinkableResource  - resolution of uriFragment '|6' failed.
+ * org.eclipse.emf.common.util.BasicEList$BasicIndexOutOfBoundsException: index=1, size=1
+ * at org.eclipse.emf.common.util.BasicEList.get(BasicEList.java:346)
+ * at org.eclipse.emf.ecore.xcore.scoping.XcoreImportedNamespaceAwareScopeProvider.getLocalClassifiersScope(XcoreImportedNamespaceAwareScopeProvider.java:285)
+ * at org.eclipse.emf.ecore.xcore.scoping.XcoreImportedNamespaceAwareScopeProvider.access$9(XcoreImportedNamespaceAwareScopeProvider.java:280)
+ * at org.eclipse.emf.ecore.xcore.scoping.XcoreImportedNamespaceAwareScopeProvider$3.get(XcoreImportedNamespaceAwareScopeProvider.java:261)
+ * at org.eclipse.emf.ecore.xcore.scoping.XcoreImportedNamespaceAwareScopeProvider$3.get(XcoreImportedNamespaceAwareScopeProvider.java:1)
+ * at org.eclipse.xtext.util.OnChangeEvictingCache.get(OnChangeEvictingCache.java:77)
+ * at org.eclipse.emf.ecore.xcore.scoping.XcoreImportedNamespaceAwareScopeProvider.getClassifierScope(XcoreImportedNamespaceAwareScopeProvider.java:222)
+ * at org.eclipse.emf.ecore.xcore.scoping.XcoreImportedNamespaceAwareScopeProvider.getScope(XcoreImportedNamespaceAwareScopeProvider.java:104)
+ * at org.eclipse.xtext.xbase.scoping.batch.XbaseBatchScopeProvider.delegateGetScope(XbaseBatchScopeProvider.java:63)
+ * at org.eclipse.xtext.xbase.scoping.batch.XbaseBatchScopeProvider.getScope(XbaseBatchScopeProvider.java:107)
+ * at org.eclipse.xtext.xbase.annotations.typesystem.XbaseWithAnnotationsBatchScopeProvider.getScope(XbaseWithAnnotationsBatchScopeProvider.java:53)
+ * at org.eclipse.emf.ecore.xcore.scoping.XcoreScopeProvider.getScope(XcoreScopeProvider.java:74)
+ * at org.eclipse.xtext.linking.impl.DefaultLinkingService.getScope(DefaultLinkingService.java:59)
+ * at org.eclipse.xtext.linking.impl.DefaultLinkingService.getLinkedObjects(DefaultLinkingService.java:120)
+ * at org.eclipse.xtext.linking.lazy.LazyLinkingResource.getEObject(LazyLinkingResource.java:247)
+ * at org.eclipse.xtext.xbase.resource.BatchLinkableResource.getEObject(BatchLinkableResource.java:119)
+ * at org.eclipse.emf.ecore.xcore.resource.XcoreResource.getEObject(XcoreResource.java:186)
+ * at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getEObject(ResourceSetImpl.java:223)
+ * at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:199)
+ * at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:259)
+ * at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eResolveProxy(BasicEObjectImpl.java:1477)
+ * at org.eclipse.emf.ecore.xcore.impl.XGenericTypeImpl.getType(XGenericTypeImpl.java:232)
+ * at org.eclipse.emf.ecore.xcore.impl.XGenericTypeImpl.eGet(XGenericTypeImpl.java:302)
+ * at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eGet(BasicEObjectImpl.java:1011)
+ * at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eGet(BasicEObjectImpl.java:1003)
+ * at org.eclipse.emf.ecore.util.EContentsEList$FeatureIteratorImpl.hasNext(EContentsEList.java:439)
+ * at org.eclipse.emf.ecore.util.EcoreUtil.resolveCrossReferences(EcoreUtil.java:304)
+ * at org.eclipse.emf.ecore.util.EcoreUtil.resolveAll(EcoreUtil.java:298)
+ * at org.eclipse.emf.ecore.util.EcoreUtil.resolveAll(EcoreUtil.java:283)
+ * at org.eclipse.xtext.linking.lazy.LazyLinkingResource.doLoad(LazyLinkingResource.java:102)
+ * at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1518)
+ * at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1297)
+ * at org.eclipse.xtext.resource.persistence.StorageAwareResource.load(StorageAwareResource.java:80)
+ * at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoad(ResourceSetImpl.java:259)
+ * at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoadHelper(ResourceSetImpl.java:274)
+ * at org.eclipse.xtext.resource.XtextResourceSet.getResource(XtextResourceSet.java:265)
+ * at jpl.imce.oml.specification.ecore.extensions.OMLXcorePackages.<init>(OMLXcorePackages.java:72)
+ * at gov.nasa.jpl.imce.oml.specification.scala.generators.OMLUtilities.<init>(OMLUtilities.java:56)
+ * at gov.nasa.jpl.imce.oml.specification.scala.generators.OMLLoadTest.<init>(OMLLoadTest.java:29)
+ * at gov.nasa.jpl.imce.oml.specification.scala.generators.OMLLoadTest.main(OMLLoadTest.java:31)
+ */
 public class OMLLoadTest extends OMLUtilities {
   public static void main(final String[] args) {
-    int _length = args.length;
-    boolean _notEquals = (1 != _length);
+    final OMLLoadTest o = new OMLLoadTest();
+    o.test();
+  }
+  
+  public void test() {
+    final Function1<EClass, Boolean> _function = (EClass it) -> {
+      String _name = it.getName();
+      return Boolean.valueOf(Objects.equal(_name, "TerminologyExtent"));
+    };
+    final EClass terminologyExtent = IterableExtensions.<EClass>findFirst(Iterables.<EClass>filter(this.e.getEClassifiers(), EClass.class), _function);
+    final Function1<EClass, Boolean> _function_1 = (EClass it) -> {
+      String _name = it.getName();
+      return Boolean.valueOf(Objects.equal(_name, "Module"));
+    };
+    final Function1<EOperation, Boolean> _function_2 = (EOperation it) -> {
+      String _name = it.getName();
+      return Boolean.valueOf(Objects.equal(_name, "extent"));
+    };
+    final EOperation module_extent = IterableExtensions.<EOperation>findFirst(IterableExtensions.<EClass>findFirst(Iterables.<EClass>filter(this.t.getEClassifiers(), EClass.class), _function_1).getEOperations(), _function_2);
+    EClassifier _eType = module_extent.getEType();
+    boolean _notEquals = (!Objects.equal(terminologyExtent, _eType));
     if (_notEquals) {
-      System.err.println("usage: <dir> where <dir> is the directory of the /gov.nasa.jpl.imce.oml.specification.tables project");
-      System.exit(1);
-    }
-    final String xcoreFile = "/model/OMLSpecification.xcore";
-    final Procedure1<Map<URI, URI>> _function = new Procedure1<Map<URI, URI>>() {
-      public void apply(final Map<URI, URI> uriMap) {
-        try {
-          URI _createURI = URI.createURI(("platform:/resource/jpl.imce.oml.specification.ecore" + xcoreFile));
-          URL _resource = OMLPackage.class.getResource(xcoreFile);
-          java.net.URI _uRI = _resource.toURI();
-          String _string = _uRI.toString();
-          URI _createURI_1 = URI.createURI(_string);
-          uriMap.put(_createURI, _createURI_1);
-        } catch (Throwable _e) {
-          throw Exceptions.sneakyThrow(_e);
-        }
-      }
-    };
-    final XtextResourceSet set = OMLUtilities.createXcoreResourceSet(_function);
-    final URI sourceURI = URI.createPlatformResourceURI(("/jpl.imce.oml.specification.ecore" + xcoreFile), false);
-    final Resource sourceResource = set.getResource(sourceURI, true);
-    EcoreUtil.resolveAll(set);
-    EList<Resource.Diagnostic> _errors = sourceResource.getErrors();
-    boolean _isEmpty = _errors.isEmpty();
-    boolean _not = (!_isEmpty);
-    if (_not) {
-      EList<Resource.Diagnostic> _errors_1 = sourceResource.getErrors();
-      int _size = _errors_1.size();
-      String _plus = (Integer.valueOf(_size) + " errors in resource!");
+      System.err.println("Module.extent() should be typed by TerminologyExtent");
+      EClassifier _eType_1 = module_extent.getEType();
+      String _plus = ("Module.extent().EType =" + _eType_1);
       System.err.println(_plus);
-      EList<Resource.Diagnostic> _errors_2 = sourceResource.getErrors();
-      final Consumer<Resource.Diagnostic> _function_1 = new Consumer<Resource.Diagnostic>() {
-        public void accept(final Resource.Diagnostic e) {
-          Class<? extends Resource.Diagnostic> _class = e.getClass();
-          String _name = _class.getName();
-          String _plus = (_name + " => ");
-          String _message = e.getMessage();
-          String _plus_1 = (_plus + _message);
-          System.err.println(_plus_1);
-        }
-      };
-      _errors_2.forEach(_function_1);
-    }
-    EList<EObject> _contents = sourceResource.getContents();
-    Iterable<EPackage> _filter = Iterables.<EPackage>filter(_contents, EPackage.class);
-    final EPackage ePackage = ((EPackage[])Conversions.unwrapArray(_filter, EPackage.class))[0];
-    EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
-    Iterable<EClass> _filter_1 = Iterables.<EClass>filter(_eClassifiers, EClass.class);
-    final Function1<EClass, Boolean> _function_2 = new Function1<EClass, Boolean>() {
-      public Boolean apply(final EClass it) {
-        String _name = it.getName();
-        return Boolean.valueOf(Objects.equal(_name, "Concept"));
-      }
-    };
-    EClass _findFirst = IterableExtensions.<EClass>findFirst(_filter_1, _function_2);
-    EList<EStructuralFeature> _eStructuralFeatures = _findFirst.getEStructuralFeatures();
-    final Function1<EStructuralFeature, Boolean> _function_3 = new Function1<EStructuralFeature, Boolean>() {
-      public Boolean apply(final EStructuralFeature it) {
-        String _name = it.getName();
-        return Boolean.valueOf(Objects.equal(_name, "isAbstract"));
-      }
-    };
-    EStructuralFeature _findFirst_1 = IterableExtensions.<EStructuralFeature>findFirst(_eStructuralFeatures, _function_3);
-    EClassifier _eType = _findFirst_1.getEType();
-    final String eboolean_name = _eType.getName();
-    boolean _notEquals_1 = (!Objects.equal("EBoolean", eboolean_name));
-    if (_notEquals_1) {
-      System.err.println("Concept.isAbstract should be typed by EBoolean");
+      System.err.println(("TerminologyExtent =" + terminologyExtent));
     } else {
       System.out.println("OK");
     }

@@ -23,7 +23,7 @@ package gov.nasa.jpl.imce.oml.specification.resolver.api
  * in an OML TerminologyBox.
  */
 trait TerminologyBoxStatement
-  extends TerminologyThing
+  extends ModuleElement
 {
 
   val tbox: TerminologyBox

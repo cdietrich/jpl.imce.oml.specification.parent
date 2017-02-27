@@ -19,8 +19,6 @@ package jpl.imce.oml.specification;
 
 import com.google.inject.Injector;
 import jpl.imce.oml.specification.OntologicalModelingLanguageStandaloneSetupGenerated;
-import jpl.imce.oml.specification.ecore.OMLPackage;
-import org.eclipse.emf.ecore.EPackage;
 
 /**
  * Initialization support for running Xtext languages without Equinox extension registry.
@@ -33,11 +31,12 @@ public class OntologicalModelingLanguageStandaloneSetup extends OntologicalModel
   }
   
   public void register(final Injector injector) {
-    boolean _containsKey = EPackage.Registry.INSTANCE.containsKey(OMLPackage.eNS_URI);
-    boolean _not = (!_containsKey);
-    if (_not) {
-      EPackage.Registry.INSTANCE.put(OMLPackage.eNS_URI, OMLPackage.eINSTANCE);
-    }
-    super.register(injector);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field OMLPackage is undefined"
+      + "\nThe method or field OMLPackage is undefined"
+      + "\nThe method or field OMLPackage is undefined"
+      + "\neNS_URI cannot be resolved"
+      + "\neNS_URI cannot be resolved"
+      + "\neINSTANCE cannot be resolved");
   }
 }

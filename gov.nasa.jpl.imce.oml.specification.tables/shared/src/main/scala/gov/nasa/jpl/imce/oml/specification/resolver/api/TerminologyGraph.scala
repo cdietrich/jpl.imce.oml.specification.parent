@@ -33,6 +33,8 @@ trait TerminologyGraph
   (a: scala.collection.immutable.SortedSet[AnnotationPropertyTable]): TerminologyGraph
   override def annotationsByProperty
   (): scala.collection.immutable.SortedSet[AnnotationPropertyTable]
+  override def withBoxAxioms
+  (s: scala.collection.immutable.SortedSet[TerminologyBoxAxiom]): TerminologyGraph
   override def withBoxStatements
   (s: scala.collection.immutable.SortedSet[TerminologyBoxStatement]): TerminologyGraph
 }

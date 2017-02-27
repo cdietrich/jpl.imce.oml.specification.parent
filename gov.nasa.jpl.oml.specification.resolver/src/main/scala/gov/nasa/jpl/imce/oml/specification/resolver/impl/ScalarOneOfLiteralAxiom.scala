@@ -27,7 +27,7 @@ case class ScalarOneOfLiteralAxiom private[impl]
  override val value: gov.nasa.jpl.imce.oml.specification.tables.LexicalValue
 )
 extends resolver.api.ScalarOneOfLiteralAxiom
-  with Axiom
+  with TermAxiom
 {
   override def calculateUUID
   ()

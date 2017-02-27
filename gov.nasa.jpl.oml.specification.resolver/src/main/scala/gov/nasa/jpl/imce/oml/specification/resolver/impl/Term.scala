@@ -25,6 +25,13 @@ extends resolver.api.Term
   with TerminologyBoxStatement
   with Resource
 {
+  override def iri
+  ()
+  : gov.nasa.jpl.imce.oml.specification.tables.IRI
+  = {
+    tbox.iri + "#" + name
+  }
+  
   /*
    * The UUID of a Term is a Version5 namespace UUID based on the term's IRI.
    */
@@ -33,13 +40,6 @@ extends resolver.api.Term
   : java.util.UUID
   = {
     com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(iri())
-  }
-  
-  override def iri
-  ()
-  : gov.nasa.jpl.imce.oml.specification.tables.IRI
-  = {
-    tbox.iri + "#" + name
   }
   
 

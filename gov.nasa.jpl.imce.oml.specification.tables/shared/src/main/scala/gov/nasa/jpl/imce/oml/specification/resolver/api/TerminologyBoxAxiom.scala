@@ -19,7 +19,8 @@
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
- * An OML TerminologyBoxAxiom is a TerminologyAxiom that asserts a logical statement about a Term.
+ * An OML TerminologyBoxAxiom is an OML TerminologyAxiom that
+ * asserts a logical statement about an OML TerminologyBox.
  */
 trait TerminologyBoxAxiom
   extends TerminologyAxiom

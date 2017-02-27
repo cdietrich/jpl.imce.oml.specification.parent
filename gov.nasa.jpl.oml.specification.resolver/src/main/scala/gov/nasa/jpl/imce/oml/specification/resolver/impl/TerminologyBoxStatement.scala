@@ -22,7 +22,7 @@ import gov.nasa.jpl.imce.oml.specification._
 
 trait TerminologyBoxStatement
 extends resolver.api.TerminologyBoxStatement
-  with TerminologyThing
+  with ModuleElement
 {
 
   override val uuid

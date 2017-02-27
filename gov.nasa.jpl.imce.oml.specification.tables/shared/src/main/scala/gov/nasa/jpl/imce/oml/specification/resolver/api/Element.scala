@@ -19,16 +19,17 @@
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
- * An OML Annotation maps to an [OWL2 Annotation] and is similarly
- * a non-logical statement in an OML Module
- * associating some information as the value of an
- * OML AnnotationProperty for describing a subject (an OML TerminologyThing).
+ * An OML Element is a logical abstraction
+ * for everything involved in OML that
+ * is globally identified by a UUID.
  */
-trait Annotation
+trait Element
 {
 
-  val module: Module
-  val property: AnnotationProperty
-  val subject: Element
-  val value: scala.Predef.String
+  val uuid: java.util.UUID
+
+  def calculateUUID
+  (): java.util.UUID
+
+def canEqual(that: scala.Any): scala.Boolean
 }

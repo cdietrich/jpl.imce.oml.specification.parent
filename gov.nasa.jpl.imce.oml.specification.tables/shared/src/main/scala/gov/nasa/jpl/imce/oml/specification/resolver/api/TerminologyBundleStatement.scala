@@ -23,7 +23,7 @@ package gov.nasa.jpl.imce.oml.specification.resolver.api
  * in an OML Bundle.
  */
 trait TerminologyBundleStatement
-  extends TerminologyThing
+  extends ModuleElement
 {
 
   val bundle: Bundle

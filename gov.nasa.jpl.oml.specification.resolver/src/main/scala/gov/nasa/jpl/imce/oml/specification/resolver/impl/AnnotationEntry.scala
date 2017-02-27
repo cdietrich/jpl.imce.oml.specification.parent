@@ -23,7 +23,7 @@ import gov.nasa.jpl.imce.oml.specification._
 case class AnnotationEntry private[impl] 
 (
  override val module: resolver.api.Module,
- override val subject: resolver.api.TerminologyThing,
+ override val subject: resolver.api.Element,
  override val value: scala.Predef.String
 )
 extends resolver.api.AnnotationEntry

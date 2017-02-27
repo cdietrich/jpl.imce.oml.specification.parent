@@ -19,18 +19,12 @@
 package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
- * An OML ConceptualEntity is an OML Entity
- * that can be either abstract or concrete.
- * An abstract OML ConceptualEntity cannot have any instance
- * in a final OML DescriptionBox.
- * A concrete OML ConceptualEntity can be partially instantiated
+ * An OML ConceptualEntity is an OML Entity that can be instantiated
  * as an OML ConceptualEntitySingletonInstance in any OML DescriptionBox.
- * If is partially instantiated if some essential OML EntityRelationship
+ * It is partially instantiated if some essential OML EntityRelationship
  * or OML DataRelationshipFromEntity with `isIdentityCriteria=true` lacks
  * an OML TerminologyInstanceAssertion specifying its reference or value respectively.
  */
 trait ConceptualEntity
 {
-
-  val isAbstract: scala.Boolean
 }

@@ -28,7 +28,7 @@ package object api {
   	: scala.Int
   	= moduleOrdering.compare(x.module,y.module) match {
   	 	case c_module if 0 != c_module => c_module
-  	 	case 0 => terminologyThingOrdering.compare(x.subject,y.subject) match {
+  	 	case 0 => elementOrdering.compare(x.subject,y.subject) match {
   	 	case c_subject if 0 != c_subject => c_subject
   	 	case 0 => annotationPropertyOrdering.compare(x.property,y.property) match {
   	 	case c_property if 0 != c_property => c_property
@@ -44,7 +44,7 @@ package object api {
   	: scala.Int
   	= moduleOrdering.compare(x.module,y.module) match {
   	 	case c_module if 0 != c_module => c_module
-  	 	case 0 => terminologyThingOrdering.compare(x.subject,y.subject) match {
+  	 	case 0 => elementOrdering.compare(x.subject,y.subject) match {
   	 	case c_subject if 0 != c_subject => c_subject
   	 	case 0 => x.value.compareTo(y.value) match {
   	 	case c_value if 0 != c_value => c_value
@@ -95,16 +95,6 @@ package object api {
   : scala.Ordering[AspectSpecializationAxiom]
   = new scala.Ordering[AspectSpecializationAxiom] {
   	def compare(x: AspectSpecializationAxiom, y: AspectSpecializationAxiom)
-  	: scala.Int
-  	= x.uuid.compareTo(y.uuid) match {
-  	 	case c_uuid if 0 != c_uuid => c_uuid
-  	 	case 0 => 0 }
-  }
-  
-  implicit def axiomOrdering
-  : scala.Ordering[Axiom]
-  = new scala.Ordering[Axiom] {
-  	def compare(x: Axiom, y: Axiom)
   	: scala.Int
   	= x.uuid.compareTo(y.uuid) match {
   	 	case c_uuid if 0 != c_uuid => c_uuid
@@ -281,6 +271,16 @@ package object api {
   	 	case 0 => 0 }
   }
   
+  implicit def elementOrdering
+  : scala.Ordering[Element]
+  = new scala.Ordering[Element] {
+  	def compare(x: Element, y: Element)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
   implicit def entityOrdering
   : scala.Ordering[Entity]
   = new scala.Ordering[Entity] {
@@ -405,6 +405,16 @@ package object api {
   : scala.Ordering[Module]
   = new scala.Ordering[Module] {
   	def compare(x: Module, y: Module)
+  	: scala.Int
+  	= x.uuid.compareTo(y.uuid) match {
+  	 	case c_uuid if 0 != c_uuid => c_uuid
+  	 	case 0 => 0 }
+  }
+  
+  implicit def moduleElementOrdering
+  : scala.Ordering[ModuleElement]
+  = new scala.Ordering[ModuleElement] {
+  	def compare(x: ModuleElement, y: ModuleElement)
   	: scala.Int
   	= x.uuid.compareTo(y.uuid) match {
   	 	case c_uuid if 0 != c_uuid => c_uuid
@@ -745,16 +755,6 @@ package object api {
   : scala.Ordering[TerminologyNestingAxiom]
   = new scala.Ordering[TerminologyNestingAxiom] {
   	def compare(x: TerminologyNestingAxiom, y: TerminologyNestingAxiom)
-  	: scala.Int
-  	= x.uuid.compareTo(y.uuid) match {
-  	 	case c_uuid if 0 != c_uuid => c_uuid
-  	 	case 0 => 0 }
-  }
-  
-  implicit def terminologyThingOrdering
-  : scala.Ordering[TerminologyThing]
-  = new scala.Ordering[TerminologyThing] {
-  	def compare(x: TerminologyThing, y: TerminologyThing)
   	: scala.Int
   	= x.uuid.compareTo(y.uuid) match {
   	 	case c_uuid if 0 != c_uuid => c_uuid

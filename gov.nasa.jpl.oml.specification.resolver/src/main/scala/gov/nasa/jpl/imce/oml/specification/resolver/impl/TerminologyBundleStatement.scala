@@ -22,7 +22,7 @@ import gov.nasa.jpl.imce.oml.specification._
 
 trait TerminologyBundleStatement
 extends resolver.api.TerminologyBundleStatement
-  with TerminologyThing
+  with ModuleElement
 {
 
   override val uuid

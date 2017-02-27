@@ -22,7 +22,7 @@ import gov.nasa.jpl.imce.oml.specification._
 
 trait TermAxiom
 extends resolver.api.TermAxiom
-  with Axiom
+  with TerminologyBoxStatement
 {
 
   override val uuid

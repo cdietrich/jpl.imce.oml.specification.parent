@@ -35,6 +35,7 @@ package gov.nasa.jpl.imce.oml.terminologies
 
 import gov.nasa.jpl.imce.oml.common.Collection
 import gov.nasa.jpl.imce.oml.common.CopyConstructor
+import gov.nasa.jpl.imce.oml.common.Element
 import gov.nasa.jpl.imce.oml.common.FunctionalInterface
 import gov.nasa.jpl.imce.oml.common.Glossary
 import gov.nasa.jpl.imce.oml.common.IRI
@@ -135,10 +136,10 @@ abstract class TerminologyBox extends Module {
 	(@Collection(kind="SortedSet") TerminologyBoxStatement[] s)
 	
 	@NotSchema
-	@Scala(code="scala.collection.immutable.SortedSet.empty[resolver.api.ModuleElement] ++ boxStatements + this")
+	@Scala(code="scala.collection.immutable.SortedSet.empty[resolver.api.Element] ++ boxStatements + this")
 	@Collection(kind="SortedSet")
 	@Override
-	op ModuleElement[] everything()
+	op Element[] everything()
 }
 
 /*

@@ -19,7 +19,6 @@ package jpl.imce.oml.specification.tests;
 
 import com.google.inject.Inject;
 import java.net.URL;
-import jpl.imce.oml.specification.ecore.TerminologyExtent;
 import jpl.imce.oml.specification.tests.OMLFileTests;
 import jpl.imce.oml.specification.tests.OMLTest;
 import jpl.imce.oml.specification.tests.OntologicalModelingLanguageInjectorProvider;
@@ -45,7 +44,7 @@ import org.junit.runner.RunWith;
 @SuppressWarnings("all")
 public class OMLModuleTests extends OMLTest {
   @Inject
-  private ParseHelper<TerminologyExtent> parseHelper;
+  private /* ParseHelper<TerminologyExtent> */Object parseHelper;
   
   @Inject
   @Extension
@@ -61,7 +60,9 @@ public class OMLModuleTests extends OMLTest {
    * is precisely an OML TerminologyExtent
    */
   protected Class<? extends EObject> getRootObjectType(final URI uri) {
-    return TerminologyExtent.class;
+    throw new Error("Unresolved compilation problems:"
+      + "\nTerminologyExtent cannot be resolved to a type."
+      + "\nType mismatch: cannot convert from Class<void> to Class<? extends EObject>");
   }
   
   @Test

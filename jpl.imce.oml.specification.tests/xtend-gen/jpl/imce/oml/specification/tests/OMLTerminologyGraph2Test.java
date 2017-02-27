@@ -17,17 +17,13 @@
 package jpl.imce.oml.specification.tests;
 
 import com.google.inject.Inject;
-import jpl.imce.oml.specification.ecore.TerminologyExtent;
 import jpl.imce.oml.specification.ecore.extensions.OMLExtensions;
 import jpl.imce.oml.specification.tests.OntologicalModelingLanguageInjectorProvider;
-import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.testing.InjectWith;
 import org.eclipse.xtext.testing.XtextRunner;
 import org.eclipse.xtext.testing.util.ParseHelper;
 import org.eclipse.xtext.testing.validation.ValidationTestHelper;
-import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -36,7 +32,7 @@ import org.junit.runner.RunWith;
 @SuppressWarnings("all")
 public class OMLTerminologyGraph2Test {
   @Inject
-  private ParseHelper<TerminologyExtent> parseHelper;
+  private /* ParseHelper<TerminologyExtent> */Object parseHelper;
   
   @Inject
   @Extension
@@ -48,47 +44,9 @@ public class OMLTerminologyGraph2Test {
   
   @Test
   public void terminologyGraph2() {
-    try {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("annotationProperty rdfs:label=<http://www.w3.org/2000/01/rdf-schema#label>");
-      _builder.newLine();
-      _builder.append("annotationProperty dc:description=<http://purl.org/dc/elements/1.1/>");
-      _builder.newLine();
-      _builder.newLine();
-      _builder.append("open terminology <http://imce.jpl.nasa.gov/foundation/base/base> {");
-      _builder.newLine();
-      _builder.append(" ");
-      _builder.append("aspect IdentifiedElement\t");
-      _builder.newLine();
-      _builder.append("}");
-      _builder.newLine();
-      _builder.newLine();
-      _builder.append("open terminology <http://imce.jpl.nasa.gov/foundation/mission/mission> {");
-      _builder.newLine();
-      _builder.append(" ");
-      _builder.append("extends base");
-      _builder.newLine();
-      _builder.newLine();
-      _builder.append(" ");
-      _builder.append("concept Component");
-      _builder.newLine();
-      _builder.append(" ");
-      _builder.newLine();
-      _builder.append(" ");
-      _builder.append("Component extendsAspect base:IdentifiedElement");
-      _builder.newLine();
-      _builder.append("}");
-      _builder.newLine();
-      final TerminologyExtent result = this.parseHelper.parse(_builder);
-      Assert.assertNotNull(result);
-      this._oMLExtensions.phasedResolveAll(result);
-      this._validationTestHelper.assertNoErrors(result);
-      Class<? extends OMLTerminologyGraph2Test> _class = this.getClass();
-      String _name = _class.getName();
-      String _plus = (_name + " OK!");
-      System.out.println(_plus);
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe field OMLTerminologyGraph2Test.parseHelper refers to the missing type TerminologyExtent"
+      + "\nphasedResolveAll cannot be resolved"
+      + "\nassertNoErrors cannot be resolved");
   }
 }

@@ -22,8 +22,8 @@ import gov.nasa.jpl.imce.oml.specification._
 
 case class BundledTerminologyAxiom private[impl] 
 (
- override val terminologyBundle: resolver.api.Bundle,
- override val bundledTerminology: resolver.api.TerminologyBox
+ override val bundledTerminology: resolver.api.TerminologyBox,
+ override val bundle: resolver.api.Bundle
 )
 extends resolver.api.BundledTerminologyAxiom
   with TerminologyBundleAxiom
@@ -33,7 +33,7 @@ extends resolver.api.BundledTerminologyAxiom
   : java.util.UUID
   = {
     
-    	val namespace = "BundledTerminologyAxiom(terminologyBundle=" + terminologyBundle.uuid + ",bundledTerminology="+bundledTerminology.uuid+")"
+    	val namespace = "BundledTerminologyAxiom(bundle=" + bundle.uuid + ",bundledTerminology="+bundledTerminology.uuid+")"
     	com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace)
   }
   
@@ -44,7 +44,7 @@ extends resolver.api.BundledTerminologyAxiom
   ()
   : resolver.api.TerminologyBox
   = {
-    terminologyBundle
+    bundle
   }
   
   /*
@@ -73,14 +73,14 @@ extends resolver.api.BundledTerminologyAxiom
 
   override val hashCode
   : scala.Int
-  = (uuid, terminologyBundle, bundledTerminology).##
+  = (uuid, bundledTerminology, bundle).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: BundledTerminologyAxiom =>
 	    (that canEqual this) &&
 	    (this.uuid == that.uuid) &&
-	    (this.terminologyBundle == that.terminologyBundle) &&
-	    (this.bundledTerminology == that.bundledTerminology)
+	    (this.bundledTerminology == that.bundledTerminology) &&
+	    (this.bundle == that.bundle)
 
 	  case _ =>
 	    false

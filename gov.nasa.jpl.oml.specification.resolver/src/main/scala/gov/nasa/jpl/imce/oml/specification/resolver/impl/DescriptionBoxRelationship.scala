@@ -22,7 +22,7 @@ import gov.nasa.jpl.imce.oml.specification._
 
 trait DescriptionBoxRelationship
 extends resolver.api.DescriptionBoxRelationship
-  with TerminologyThing
+  with ModuleElement
 {
 
   override val uuid

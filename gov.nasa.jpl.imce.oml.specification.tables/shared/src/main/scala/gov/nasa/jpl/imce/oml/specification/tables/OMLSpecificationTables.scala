@@ -29,7 +29,7 @@ import scala.util.{Failure,Success,Try}
 import scala.{Boolean,Unit}
 import scala.Predef.ArrowAssoc
 
-case class OMLSpecificationTables private[tables]
+case class OMLSpecificationTables
 (
   annotationProperties : Seq[AnnotationProperty] = Seq.empty,
   terminologyGraphs : Seq[TerminologyGraph] = Seq.empty,
@@ -304,7 +304,7 @@ object OMLSpecificationTables {
       Success(omlTables)
     }
 
-  private[tables] def mergeTables
+  def mergeTables
   (t1: OMLSpecificationTables, t2: OMLSpecificationTables)
   : OMLSpecificationTables
   = OMLSpecificationTables(
@@ -358,7 +358,7 @@ object OMLSpecificationTables {
       unreifiedRelationshipInstanceTuples = t1.unreifiedRelationshipInstanceTuples ++ t2.unreifiedRelationshipInstanceTuples,
       annotations = t1.annotations ++ t2.annotations)
   
-  private[tables] def readZipArchive
+  def readZipArchive
   (zipFile: ZipFile)
   (tables: OMLSpecificationTables, ze: ZipArchiveEntry)
   : OMLSpecificationTables

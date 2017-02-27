@@ -20,88 +20,31 @@ package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
  * An OML TerminologyBox is an OML Module for defining a domain-specific vocabulary
- * as a logical set of OML TerminologyBoxStatement(s),
- * possibly by reuse of other vocabularies via OML TerminologyBoxAxiom(s).
+ * as a logical set of OML TerminologyBoxStatement(s), possibly by reuse of other
+ * vocabularies via OML TerminologyBoxAxiom(s).
  * The semantics of an OML TerminologyBox domain-specific vocabulary is defined
  * by the mapping to [OWL2-DL] of the other vocabularies it reuses, if any, and
  * that of its OML TerminologyBoxAxiom(s) and OML TerminologyBoxStatement(s)
- * according to its OML TerminologyGraphKind.
+ * according to its OML TerminologyKind.
  */
 trait TerminologyBox
   extends Module
 {
 
-  val kind: gov.nasa.jpl.imce.oml.specification.tables.TerminologyGraphKind
+  val kind: gov.nasa.jpl.imce.oml.specification.tables.TerminologyKind
   /*
-   * The TerminologyBoxAxioms asserted in this TerminologyBox
+   * The OML TerminologyBoxAxiom(s) asserted in this OML TerminologyBox
    */
-  val terminologyBoxAxioms: scala.collection.immutable.SortedSet[TerminologyBoxAxiom]
+  val boxAxioms: scala.collection.immutable.SortedSet[TerminologyBoxAxiom]
   /*
-   * The TerminologyBoxStatements asserted in this TerminologyBox
+   * The OML TerminologyBoxStatement(s) asserted in this OML TerminologyBox
    */
   val boxStatements: scala.collection.immutable.SortedSet[TerminologyBoxStatement]
 
+  def withBoxAxioms
+  (s: scala.collection.immutable.SortedSet[TerminologyBoxAxiom]): TerminologyBox
   def withBoxStatements
   (s: scala.collection.immutable.SortedSet[TerminologyBoxStatement]): TerminologyBox
-  /*
-   * The subset of statements that are entities.
-   */
-  override def entities
-  (): scala.collection.immutable.SortedSet[Entity]
-  /*
-   * The subset of statements that are aspects.
-   */
-  override def aspects
-  (): scala.collection.immutable.SortedSet[Aspect]
-  /*
-   * The subset of statements that are concepts.
-   */
-  override def concepts
-  (): scala.collection.immutable.SortedSet[Concept]
-  /*
-   * The subset of statements that are reified relationships.
-   */
-  override def reifiedRelationships
-  (): scala.collection.immutable.SortedSet[ReifiedRelationship]
-  /*
-   * The subset of statements that are unreified relationships.
-   */
-  override def unreifiedRelationships
-  (): scala.collection.immutable.SortedSet[UnreifiedRelationship]
-  /*
-   * The subset of statements that are data relationships.
-   */
-  override def dataRelationships
-  (): scala.collection.immutable.SortedSet[DataRelationship]
-  /*
-   * A map for the subset of statements that are
-   * entity scalar data property terms indexed by their uuid.
-   */
-  override def entityScalarDataProperties
-  (): scala.collection.immutable.SortedSet[EntityScalarDataProperty]
-  /*
-   * A map for the subset of statements that are
-   * data range terms indexed by their uuid.
-   */
-  override def dataranges
-  (): scala.collection.immutable.SortedSet[DataRange]
-  /*
-   * A map for the subset of statements that are
-   * scalar datatype terms indexed by their uuid.
-   */
-  override def scalars
-  (): scala.collection.immutable.SortedSet[Scalar]
-  /*
-   * A map for the subset of statements that are
-   * structured datatype terms indexed by their uuid.
-   */
-  override def structures
-  (): scala.collection.immutable.SortedSet[Structure]
-  /*
-   * The subset of axioms about terms.
-   */
-  override def termAxioms
-  (): scala.collection.immutable.SortedSet[TermAxiom]
   override def everything
-  (): scala.collection.immutable.SortedSet[TerminologyThing]
+  (): scala.collection.immutable.SortedSet[Element]
 }

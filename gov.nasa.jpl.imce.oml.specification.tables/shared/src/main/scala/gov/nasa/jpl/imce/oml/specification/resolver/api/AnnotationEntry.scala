@@ -30,6 +30,6 @@ trait AnnotationEntry
 {
 
   val module: Module
-  val subject: TerminologyThing
+  val subject: Element
   val value: scala.Predef.String
 }

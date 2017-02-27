@@ -23,8 +23,11 @@ t=$(git name-rev --tags --name-only $(git rev-parse HEAD))
 # build the OML metamodel
 ./gradlew :jpl.imce.oml.specification.ecore:build
 
-# generate the Scala libraries
-./gradlew :gov.nasa.jpl.imce.oml.specification.scala.generators:generateOMLResolverLibrary
+# generate & compile the Scala libraries
+./gradlew :gov.nasa.jpl.imce.oml.specification.scala.generators:build
+
+# build the SBT projects
+(cd gov.nasa.jpl.oml.specification.resolver; sbt build)
 
 # Use the mavenized target platform repository to build the actual eclipse projects
 ./gradlew build 

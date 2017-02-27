@@ -72,6 +72,12 @@ class TerminologyGraph extends TerminologyBox {
 	op AnnotationPropertyTable[] annotationsByProperty()	
 	
 	@NotSchema
+	@Scala(code="copy(boxAxioms = this.boxAxioms ++ s)")
+	@Override
+	op TerminologyGraph[1] withBoxAxioms
+	(@Collection(kind="SortedSet") TerminologyBoxAxiom[] s)
+	
+	@NotSchema
 	@Scala(code="copy(boxStatements = this.boxStatements ++ s)")
 	@Override
 	op TerminologyGraph[1] withBoxStatements

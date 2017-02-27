@@ -22,9 +22,16 @@ import gov.nasa.jpl.imce.oml.specification._
 
 trait TerminologyInstanceAssertion
 extends resolver.api.TerminologyInstanceAssertion
-  with TerminologyThing
+  with ModuleElement
   with Resource
 {
+  override def iri
+  ()
+  : gov.nasa.jpl.imce.oml.specification.tables.IRI
+  = {
+    descriptionBox.iri + "#" + name
+  }
+  
   /*
    * The UUID of a Term is a Version5 namespace UUID based on the term's IRI.
    */
@@ -33,13 +40,6 @@ extends resolver.api.TerminologyInstanceAssertion
   : java.util.UUID
   = {
     com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(iri())
-  }
-  
-  override def iri
-  ()
-  : gov.nasa.jpl.imce.oml.specification.tables.IRI
-  = {
-    descriptionBox.iri + "#" + name
   }
   
 

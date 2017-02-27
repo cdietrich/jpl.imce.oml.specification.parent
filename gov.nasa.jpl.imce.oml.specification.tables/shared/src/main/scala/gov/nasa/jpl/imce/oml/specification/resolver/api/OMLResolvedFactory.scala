@@ -24,7 +24,7 @@ trait OMLResolvedFactory {
   
   def createAnnotation
   ( module: Module,
-    subject: TerminologyThing,
+    subject: Element,
     property: AnnotationProperty,
     value: scala.Predef.String )
   : Annotation
@@ -33,7 +33,7 @@ trait OMLResolvedFactory {
   
   def createAnnotationEntry
   ( module: Module,
-    subject: TerminologyThing,
+    subject: Element,
     value: scala.Predef.String )
   : AnnotationEntry
   
@@ -88,25 +88,20 @@ trait OMLResolvedFactory {
   
   def createBundle
   ( bundleExtent: TerminologyExtent,
-    kind: gov.nasa.jpl.imce.oml.specification.tables.TerminologyGraphKind,
+    kind: gov.nasa.jpl.imce.oml.specification.tables.TerminologyKind,
     iri: gov.nasa.jpl.imce.oml.specification.tables.IRI,
     annotations: scala.collection.immutable.SortedSet[Annotation],
+    boxAxioms: scala.collection.immutable.SortedSet[TerminologyBoxAxiom],
     boxStatements: scala.collection.immutable.SortedSet[TerminologyBoxStatement],
-    bundleStatements: scala.collection.immutable.SortedSet[TerminologyBundleStatement],
-    terminologyBoxAxioms: scala.collection.immutable.SortedSet[TerminologyBoxAxiom],
-    terminologyBundleAxioms: scala.collection.immutable.SortedSet[TerminologyBundleAxiom] )
+    bundleAxioms: scala.collection.immutable.SortedSet[TerminologyBundleAxiom],
+    bundleStatements: scala.collection.immutable.SortedSet[TerminologyBundleStatement] )
   : Bundle
   
   // BundledTerminologyAxiom
   
   def createBundledTerminologyAxiom
-  ( terminologyBundle: Bundle,
-    bundledTerminology: TerminologyBox )
-  : BundledTerminologyAxiom
-  
-  def copyBundledTerminologyAxiom_terminologyBundle
-  ( that: BundledTerminologyAxiom,
-    terminologyBundle: Bundle )
+  ( bundledTerminology: TerminologyBox,
+    bundle: Bundle )
   : BundledTerminologyAxiom
   
   def copyBundledTerminologyAxiom_bundledTerminology
@@ -114,11 +109,15 @@ trait OMLResolvedFactory {
     bundledTerminology: TerminologyBox )
   : BundledTerminologyAxiom
   
+  def copyBundledTerminologyAxiom_bundle
+  ( that: BundledTerminologyAxiom,
+    bundle: Bundle )
+  : BundledTerminologyAxiom
+  
   // Concept
   
   def createConcept
   ( tbox: TerminologyBox,
-    isAbstract: scala.Boolean,
     name: gov.nasa.jpl.imce.oml.specification.tables.LocalName )
   : Concept
   
@@ -361,7 +360,6 @@ trait OMLResolvedFactory {
   ( tbox: TerminologyBox,
     source: Entity,
     target: Entity,
-    isAbstract: scala.Boolean,
     isAsymmetric: scala.Boolean,
     isEssential: scala.Boolean,
     isFunctional: scala.Boolean,
@@ -573,11 +571,11 @@ trait OMLResolvedFactory {
   
   def createTerminologyGraph
   ( graphExtent: TerminologyExtent,
-    kind: gov.nasa.jpl.imce.oml.specification.tables.TerminologyGraphKind,
+    kind: gov.nasa.jpl.imce.oml.specification.tables.TerminologyKind,
     iri: gov.nasa.jpl.imce.oml.specification.tables.IRI,
     annotations: scala.collection.immutable.SortedSet[Annotation],
-    boxStatements: scala.collection.immutable.SortedSet[TerminologyBoxStatement],
-    terminologyBoxAxioms: scala.collection.immutable.SortedSet[TerminologyBoxAxiom] )
+    boxAxioms: scala.collection.immutable.SortedSet[TerminologyBoxAxiom],
+    boxStatements: scala.collection.immutable.SortedSet[TerminologyBoxStatement] )
   : TerminologyGraph
   
   // TerminologyNestingAxiom

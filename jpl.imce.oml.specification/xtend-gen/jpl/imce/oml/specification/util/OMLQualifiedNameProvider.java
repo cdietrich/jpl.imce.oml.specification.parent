@@ -18,8 +18,6 @@
 package jpl.imce.oml.specification.util;
 
 import com.google.inject.Inject;
-import jpl.imce.oml.specification.ecore.AnnotationProperty;
-import jpl.imce.oml.specification.ecore.Resource;
 import org.eclipse.xtext.naming.DefaultDeclarativeQualifiedNameProvider;
 import org.eclipse.xtext.naming.IQualifiedNameConverter;
 import org.eclipse.xtext.naming.QualifiedName;
@@ -29,17 +27,13 @@ public class OMLQualifiedNameProvider extends DefaultDeclarativeQualifiedNamePro
   @Inject
   private IQualifiedNameConverter qnc;
   
-  public QualifiedName qualifiedName(final AnnotationProperty ap) {
-    String _iri = ap.getIri();
-    String _plus = ("<" + _iri);
-    String _plus_1 = (_plus + ">");
-    return this.qnc.toQualifiedName(_plus_1);
+  public QualifiedName qualifiedName(final /* AnnotationProperty */Object ap) {
+    throw new Error("Unresolved compilation problems:"
+      + "\niri cannot be resolved");
   }
   
-  public QualifiedName qualifiedName(final Resource resource) {
-    String _iri = resource.iri();
-    String _plus = ("<" + _iri);
-    String _plus_1 = (_plus + ">");
-    return this.qnc.toQualifiedName(_plus_1);
+  public QualifiedName qualifiedName(final /* Resource */Object resource) {
+    throw new Error("Unresolved compilation problems:"
+      + "\niri cannot be resolved");
   }
 }

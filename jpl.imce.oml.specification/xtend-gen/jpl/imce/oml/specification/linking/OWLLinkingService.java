@@ -18,24 +18,13 @@
 package jpl.imce.oml.specification.linking;
 
 import com.google.inject.Inject;
-import java.util.Collections;
 import java.util.List;
-import jpl.imce.oml.specification.ecore.Annotation;
-import jpl.imce.oml.specification.ecore.AnnotationProperty;
-import jpl.imce.oml.specification.ecore.TerminologyThing;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.linking.impl.DefaultLinkingService;
 import org.eclipse.xtext.linking.impl.IllegalNodeException;
 import org.eclipse.xtext.naming.IQualifiedNameConverter;
-import org.eclipse.xtext.naming.QualifiedName;
-import org.eclipse.xtext.nodemodel.ICompositeNode;
-import org.eclipse.xtext.nodemodel.ILeafNode;
 import org.eclipse.xtext.nodemodel.INode;
-import org.eclipse.xtext.resource.IEObjectDescription;
-import org.eclipse.xtext.scoping.IScope;
-import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 /**
  * In the OML metamodel, an OML Annotation has 2 non-container references that require cross-reference resolution:
@@ -69,46 +58,14 @@ public class OWLLinkingService extends DefaultLinkingService {
   private IQualifiedNameConverter qualifiedNameConverter;
   
   public List<EObject> getLinkedObjects(final EObject context, final EReference ref, final INode node) throws IllegalNodeException {
-    EClass requiredType = ref.getEReferenceType();
-    if ((null == requiredType)) {
-      return Collections.<EObject>emptyList();
-    }
-    final String crossRefString = this.getCrossRefNodeAsString(node);
-    if (((null != crossRefString) && (!crossRefString.equals("")))) {
-      final IScope scope = this.getScope(context, ref);
-      final QualifiedName qualifiedLinkName = this.qualifiedNameConverter.toQualifiedName(crossRefString);
-      final IEObjectDescription eObjectDescription = scope.getSingleElement(qualifiedLinkName);
-      if ((null != eObjectDescription)) {
-        final EObject e = eObjectDescription.getEObjectOrProxy();
-        boolean _matched = false;
-        if (context instanceof Annotation) {
-          _matched=true;
-          boolean _matched_1 = false;
-          if (e instanceof AnnotationProperty) {
-            _matched_1=true;
-            ICompositeNode _parent = node.getParent();
-            final INode prevNode = _parent.getPreviousSibling();
-            Iterable<ILeafNode> _leafNodes = prevNode.getLeafNodes();
-            ILeafNode _head = IterableExtensions.<ILeafNode>head(_leafNodes);
-            final EObject prevSE = _head.getSemanticElement();
-            boolean _matched_2 = false;
-            if (prevSE instanceof TerminologyThing) {
-              _matched_2=true;
-              ((Annotation)context).setSubject(((TerminologyThing)prevSE));
-            }
-            if (!_matched_2) {
-              if (prevSE instanceof Annotation) {
-                _matched_2=true;
-                TerminologyThing _subject = ((Annotation)prevSE).getSubject();
-                ((Annotation)context).setSubject(_subject);
-              }
-            }
-            return Collections.<EObject>singletonList(e);
-          }
-        }
-        return Collections.<EObject>singletonList(e);
-      }
-    }
-    return Collections.<EObject>emptyList();
+    throw new Error("Unresolved compilation problems:"
+      + "\nAnnotation cannot be resolved to a type."
+      + "\nAnnotationProperty cannot be resolved to a type."
+      + "\nTerminologyThing cannot be resolved to a type."
+      + "\nAnnotation cannot be resolved to a type."
+      + "\nThe method subject(EObject) is undefined for the type EObject"
+      + "\nThe method subject(Object) is undefined for the type EObject"
+      + "\nThe method or field subject is undefined for the type EObject"
+      + "\nUnreachable code: The case can never match. It is already handled by a previous condition.");
   }
 }

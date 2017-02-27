@@ -32,21 +32,21 @@ public class OMLReferenceValueConverter extends AbstractValueConverter<String> {
     return "QNAME";
   }
   
-  @Override
   public String toString(final String value) {
     if ((value.startsWith("<") && value.endsWith(">"))) {
       return value;
     } else {
-      return this.valueConverterService.toString(value, this.getDelegateRuleName());
+      String _delegateRuleName = this.getDelegateRuleName();
+      return this.valueConverterService.toString(value, _delegateRuleName);
     }
   }
   
-  @Override
   public String toValue(final String string, final INode node) throws ValueConverterException {
     if ((string.startsWith("<") && string.endsWith(">"))) {
       return string;
     } else {
-      Object _value = this.valueConverterService.toValue(string, this.getDelegateRuleName(), null);
+      String _delegateRuleName = this.getDelegateRuleName();
+      Object _value = this.valueConverterService.toValue(string, _delegateRuleName, null);
       return ((String) _value);
     }
   }

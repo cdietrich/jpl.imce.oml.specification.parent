@@ -17,14 +17,10 @@
 package jpl.imce.oml.specification.tests;
 
 import com.google.inject.Inject;
-import jpl.imce.oml.specification.ecore.TerminologyExtent;
 import jpl.imce.oml.specification.tests.OntologicalModelingLanguageInjectorProvider;
-import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.testing.InjectWith;
 import org.eclipse.xtext.testing.XtextRunner;
 import org.eclipse.xtext.testing.util.ParseHelper;
-import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -33,18 +29,11 @@ import org.junit.runner.RunWith;
 @SuppressWarnings("all")
 public class OntologicalModelingLanguageParsingTest {
   @Inject
-  private ParseHelper<TerminologyExtent> parseHelper;
+  private /* ParseHelper<TerminologyExtent> */Object parseHelper;
   
   @Test
   public void loadModel() {
-    try {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("Hello Xtext!");
-      _builder.newLine();
-      final TerminologyExtent result = this.parseHelper.parse(_builder);
-      Assert.assertNotNull(result);
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe field OntologicalModelingLanguageParsingTest.parseHelper refers to the missing type TerminologyExtent");
   }
 }

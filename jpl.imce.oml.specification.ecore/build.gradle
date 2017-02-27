@@ -5,31 +5,29 @@ dependencies {
     compile withEclipseBundle('org.eclipse.core.resources')
 	compile withEclipseBundle('org.eclipse.xtext.xbase')
 	compile withEclipseBundle('org.eclipse.emf.ecore.xcore.lib')
-	compile files('lib/java-uuid-generator-3.1.3.jar')
-	
+	compile withEclipseBundle('org.eclipse.emf.ecore.xcore')
+	compile withEclipseBundle('org.eclipse.emf.ecore.xcore.lib')
+	compile withEclipseBundle('org.eclipse.emf.codegen.ecore')
+	compile withEclipseBundle('org.eclipse.emf.codegen.ecore.xtext')
+	compile withEclipseBundle('org.eclipse.xtext.ecore')
 	compile withEclipseBundle('org.eclipse.net4j.util')
 	compile withEclipseBundle('org.eclipse.emf.cdo.common')
 	compile withEclipseBundle('org.eclipse.emf.cdo')
 	
+	compile files('lib/java-uuid-generator-3.1.3.jar') 
+
 	xtextLanguages withEclipseBundle('org.eclipse.emf.ecore.xcore')
-	xtextLanguages withEclipseBundle('org.eclipse.emf.ecore.xcore.lib')
-	xtextLanguages withEclipseBundle('org.eclipse.emf.codegen.ecore')
-	xtextLanguages withEclipseBundle('org.eclipse.emf.codegen.ecore.xtext')
-	xtextLanguages withEclipseBundle('org.eclipse.xtext.ecore')
-	xtextLanguages files('lib/java-uuid-generator-3.1.3.jar')
-	xtextLanguages withEclipseBundle('org.eclipse.net4j.util')
-	xtextLanguages withEclipseBundle('org.eclipse.emf.cdo.common')
-	xtextLanguages withEclipseBundle('org.eclipse.emf.cdo')
 }
 
-eclipse {
-    // TODO this should work according to the doc.
-    // @see https://docs.gradle.org/current/dsl/org.gradle.plugins.ide.eclipse.model.EclipseModel.html
-    pathVariables 'GRADLE_HOME': gradle.gradleUserHomeDir
 
-    classpath {
-        defaultOutputDir file('build/target/classes/main/')
-    }
+configurations {
+	xtextLanguages {
+		extendsFrom compile
+	}
+	compile.transitive = true
+	testCompile.transitive = true
+}
+eclipse {
     project {
         natures 'org.eclipse.pde.PluginNature'
         buildCommand 'org.eclipse.pde.ManifestBuilder'

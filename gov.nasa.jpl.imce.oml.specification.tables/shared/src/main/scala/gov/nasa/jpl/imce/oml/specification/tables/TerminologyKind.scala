@@ -22,17 +22,17 @@ import scala.scalajs.js.annotation.{JSExport, JSExportDescendentObjects}
 import scala.Predef.String
 
 @JSExportDescendentObjects
-sealed trait TerminologyGraphKind
+sealed trait TerminologyKind
 
-case object OpenWorldDefinitions extends TerminologyGraphKind
+case object OpenWorldDefinitions extends TerminologyKind
 
-case object ClosedWorldDesignations extends TerminologyGraphKind
+case object ClosedWorldDesignations extends TerminologyKind
 
 @JSExport
-object TerminologyGraphKind {
+object TerminologyKind {
 
   @JSExport
-  def toString(k: TerminologyGraphKind)
+  def toString(k: TerminologyKind)
   : String
   = k match {
     case OpenWorldDefinitions =>
@@ -42,19 +42,19 @@ object TerminologyGraphKind {
   }
 
   implicit val w
-  : upickle.default.Writer[TerminologyGraphKind]
-  = upickle.default.Writer[TerminologyGraphKind]{ (k: TerminologyGraphKind) =>
+  : upickle.default.Writer[TerminologyKind]
+  = upickle.default.Writer[TerminologyKind]{ (k: TerminologyKind) =>
     upickle.Js.Str(toString(k))
   }
 
   @JSExport
-  def toJSON(k: TerminologyGraphKind)
+  def toJSON(k: TerminologyKind)
   : String
   = upickle.default.write(expr=k, indent=0)
 
   @JSExport
   def fromString(k: String)
-  : TerminologyGraphKind
+  : TerminologyKind
   = k match {
     case "OpenWorldDefinitions" =>
       OpenWorldDefinitions
@@ -63,15 +63,15 @@ object TerminologyGraphKind {
   }
 
   implicit val r
-  : upickle.default.Reader[TerminologyGraphKind]
-  = upickle.default.Reader[TerminologyGraphKind]{
+  : upickle.default.Reader[TerminologyKind]
+  = upickle.default.Reader[TerminologyKind]{
     case upickle.Js.Str(k) =>
       fromString(k)
   }
 
   @JSExport
   def fromJSON(k: String)
-  : TerminologyGraphKind
-  = upickle.default.read[TerminologyGraphKind](k)
+  : TerminologyKind
+  = upickle.default.read[TerminologyKind](k)
 
 }

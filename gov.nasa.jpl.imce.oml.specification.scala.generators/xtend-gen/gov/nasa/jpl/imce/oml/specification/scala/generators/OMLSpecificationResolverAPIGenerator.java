@@ -21,30 +21,23 @@ import com.google.common.collect.Iterables;
 import gov.nasa.jpl.imce.oml.specification.scala.generators.OMLUtilities;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Collections;
 import java.util.List;
-import java.util.Map;
-import jpl.imce.oml.specification.ecore.OMLPackage;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.ETypedElement;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtend2.lib.StringConcatenation;
-import org.eclipse.xtext.resource.XtextResourceSet;
-import org.eclipse.xtext.xbase.lib.Conversions;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
+import org.eclipse.xtext.xbase.lib.ListExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 
 public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
@@ -55,74 +48,44 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
       System.err.println("usage: <dir> where <dir> is the directory of the /gov.nasa.jpl.imce.oml.specification.tables project");
       System.exit(1);
     }
-    OMLSpecificationResolverAPIGenerator _oMLSpecificationResolverAPIGenerator = new OMLSpecificationResolverAPIGenerator();
-    String _get = args[0];
-    _oMLSpecificationResolverAPIGenerator.generate(_get);
+    new OMLSpecificationResolverAPIGenerator().generate(args[0]);
   }
   
   public void generate(final String targetDir) {
-    final String omlXcore = "/model/OMLSpecification.xcore";
-    final Procedure1<Map<URI, URI>> _function = new Procedure1<Map<URI, URI>>() {
-      public void apply(final Map<URI, URI> uriMap) {
-        try {
-          URI _createURI = URI.createURI(("platform:/resource/jpl.imce.oml.specification.ecore" + omlXcore));
-          URL _resource = OMLPackage.class.getResource(omlXcore);
-          java.net.URI _uRI = _resource.toURI();
-          String _string = _uRI.toString();
-          URI _createURI_1 = URI.createURI(_string);
-          uriMap.put(_createURI, _createURI_1);
-        } catch (Throwable _e) {
-          throw Exceptions.sneakyThrow(_e);
-        }
-      }
-    };
-    final XtextResourceSet set = OMLUtilities.createXcoreResourceSet(_function);
-    final URI sourceURI = URI.createPlatformResourceURI(("/jpl.imce.oml.specification.ecore" + omlXcore), false);
-    final Resource sourceResource = set.getResource(sourceURI, true);
-    EcoreUtil.resolveAll(set);
-    EList<EObject> _contents = sourceResource.getContents();
-    Iterable<EPackage> _filter = Iterables.<EPackage>filter(_contents, EPackage.class);
-    final EPackage ePackage = ((EPackage[])Conversions.unwrapArray(_filter, EPackage.class))[0];
     final Path bundlePath = Paths.get(targetDir);
     final String targetFolder = "shared/src/main/scala/gov/nasa/jpl/imce/oml/specification/resolver/api";
     final Path targetPath = bundlePath.resolve(targetFolder);
-    File _file = targetPath.toFile();
-    _file.mkdirs();
-    Path _absolutePath = targetPath.toAbsolutePath();
-    String _string = _absolutePath.toString();
-    this.generate(ePackage, 
-      "gov.nasa.jpl.imce.oml.specification.resolver.api", _string);
+    targetPath.toFile().mkdirs();
+    this.generate(
+      Collections.<EPackage>unmodifiableList(CollectionLiterals.<EPackage>newArrayList(this.c, this.t, this.g, this.b, this.d, this.e)), 
+      "gov.nasa.jpl.imce.oml.specification.resolver.api", 
+      targetPath.toAbsolutePath().toString());
   }
   
-  public void generate(final EPackage ePackage, final String packageQName, final String targetFolder) {
+  public void generate(final List<EPackage> ePackages, final String packageQName, final String targetFolder) {
     try {
       File _file = new File(((targetFolder + File.separator) + "package.scala"));
       final FileOutputStream packageFile = new FileOutputStream(_file);
       try {
-        String _generatePackageFile = this.generatePackageFile(ePackage, packageQName);
-        byte[] _bytes = _generatePackageFile.getBytes();
-        packageFile.write(_bytes);
+        packageFile.write(this.generatePackageFile(ePackages, packageQName).getBytes());
       } finally {
         packageFile.close();
       }
       File _file_1 = new File(((targetFolder + File.separator) + "OMLResolvedFactory.scala"));
       final FileOutputStream factoryFile = new FileOutputStream(_file_1);
       try {
-        String _generateFactoryFile = this.generateFactoryFile(ePackage, packageQName);
-        byte[] _bytes_1 = _generateFactoryFile.getBytes();
-        factoryFile.write(_bytes_1);
+        factoryFile.write(this.generateFactoryFile(ePackages, packageQName).getBytes());
       } finally {
         factoryFile.close();
       }
-      EList<EClassifier> _eClassifiers = ePackage.getEClassifiers();
-      Iterable<EClass> _filter = Iterables.<EClass>filter(_eClassifiers, EClass.class);
-      final Function1<EClass, Boolean> _function = new Function1<EClass, Boolean>() {
-        public Boolean apply(final EClass it) {
-          return OMLUtilities.isAPI(it);
-        }
+      final Function1<EPackage, EList<EClassifier>> _function = (EPackage it) -> {
+        return it.getEClassifiers();
       };
-      Iterable<EClass> _filter_1 = IterableExtensions.<EClass>filter(_filter, _function);
-      for (final EClass eClass : _filter_1) {
+      final Function1<EClass, Boolean> _function_1 = (EClass it) -> {
+        return OMLUtilities.isAPI(it);
+      };
+      Iterable<EClass> _filter = IterableExtensions.<EClass>filter(Iterables.<EClass>filter(Iterables.<EClassifier>concat(ListExtensions.<EPackage, EList<EClassifier>>map(ePackages, _function)), EClass.class), _function_1);
+      for (final EClass eClass : _filter) {
         {
           String _name = eClass.getName();
           String _plus = ((targetFolder + File.separator) + _name);
@@ -130,9 +93,7 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
           File _file_2 = new File(_plus_1);
           final FileOutputStream classFile = new FileOutputStream(_file_2);
           try {
-            String _generateClassFile = this.generateClassFile(eClass);
-            byte[] _bytes_2 = _generateClassFile.getBytes();
-            classFile.write(_bytes_2);
+            classFile.write(this.generateClassFile(eClass).getBytes());
           } finally {
             classFile.close();
           }
@@ -143,71 +104,65 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
     }
   }
   
-  public String generatePackageFile(final EPackage ePackage, final String packageQName) {
+  public String generatePackageFile(final List<EPackage> ePackages, final String packageQName) {
     StringConcatenation _builder = new StringConcatenation();
     String _copyright = OMLUtilities.copyright();
-    _builder.append(_copyright, "");
+    _builder.append(_copyright);
     _builder.newLineIfNotEmpty();
     _builder.newLine();
     _builder.append("package ");
-    int _lastIndexOf = packageQName.lastIndexOf(".");
-    String _substring = packageQName.substring(0, _lastIndexOf);
-    _builder.append(_substring, "");
+    String _substring = packageQName.substring(0, packageQName.lastIndexOf("."));
+    _builder.append(_substring);
     _builder.newLineIfNotEmpty();
     _builder.newLine();
     _builder.append("package object ");
-    int _lastIndexOf_1 = packageQName.lastIndexOf(".");
-    int _plus = (_lastIndexOf_1 + 1);
+    int _lastIndexOf = packageQName.lastIndexOf(".");
+    int _plus = (_lastIndexOf + 1);
     String _substring_1 = packageQName.substring(_plus);
-    _builder.append(_substring_1, "");
+    _builder.append(_substring_1);
     _builder.append(" {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.newLine();
     {
-      Iterable<EClass> _FunctionalAPIClasses = OMLUtilities.FunctionalAPIClasses(ePackage);
-      final Function1<EClass, Boolean> _function = new Function1<EClass, Boolean>() {
-        public Boolean apply(final EClass it) {
-          Iterable<ETypedElement> _orderingKeys = OMLUtilities.orderingKeys(it);
-          boolean _isEmpty = IterableExtensions.isEmpty(_orderingKeys);
-          return Boolean.valueOf((!_isEmpty));
-        }
+      final Function1<EPackage, Iterable<EClass>> _function = (EPackage it) -> {
+        return OMLUtilities.FunctionalAPIClasses(it);
       };
-      Iterable<EClass> _filter = IterableExtensions.<EClass>filter(_FunctionalAPIClasses, _function);
-      final Function1<EClass, String> _function_1 = new Function1<EClass, String>() {
-        public String apply(final EClass it) {
-          return it.getName();
-        }
+      final Function1<EClass, Boolean> _function_1 = (EClass it) -> {
+        boolean _isEmpty = IterableExtensions.isEmpty(OMLUtilities.orderingKeys(it));
+        return Boolean.valueOf((!_isEmpty));
       };
-      List<EClass> _sortBy = IterableExtensions.<EClass, String>sortBy(_filter, _function_1);
+      final Function1<EClass, String> _function_2 = (EClass it) -> {
+        return it.getName();
+      };
+      List<EClass> _sortBy = IterableExtensions.<EClass, String>sortBy(IterableExtensions.<EClass>filter(Iterables.<EClass>concat(ListExtensions.<EPackage, Iterable<EClass>>map(ePackages, _function)), _function_1), _function_2);
       for(final EClass eClass : _sortBy) {
         _builder.append("  ");
         _builder.append("implicit def ");
-        String _name = eClass.getName();
-        String _firstLower = StringExtensions.toFirstLower(_name);
+        String _firstLower = StringExtensions.toFirstLower(eClass.getName());
         _builder.append(_firstLower, "  ");
         _builder.append("Ordering");
         _builder.newLineIfNotEmpty();
         _builder.append("  ");
         _builder.append(": scala.Ordering[");
-        String _name_1 = eClass.getName();
-        _builder.append(_name_1, "  ");
+        String _name = eClass.getName();
+        _builder.append(_name, "  ");
         _builder.append("]");
         _builder.newLineIfNotEmpty();
         _builder.append("  ");
         _builder.append("= new scala.Ordering[");
-        String _name_2 = eClass.getName();
-        _builder.append(_name_2, "  ");
+        String _name_1 = eClass.getName();
+        _builder.append(_name_1, "  ");
         _builder.append("] {");
         _builder.newLineIfNotEmpty();
         _builder.append("  ");
         _builder.append("\t");
         _builder.append("def compare(x: ");
+        String _name_2 = eClass.getName();
+        _builder.append(_name_2, "  \t");
+        _builder.append(", y: ");
         String _name_3 = eClass.getName();
         _builder.append(_name_3, "  \t");
-        _builder.append(", y: ");
-        String _name_4 = eClass.getName();
-        _builder.append(_name_4, "  \t");
         _builder.append(")");
         _builder.newLineIfNotEmpty();
         _builder.append("  ");
@@ -223,16 +178,14 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
             {
               Boolean _isClassFeature = OMLUtilities.isClassFeature(keyFeature);
               if ((_isClassFeature).booleanValue()) {
-                EClassifier _eType = keyFeature.getEType();
-                String _name_5 = _eType.getName();
-                String _firstLower_1 = StringExtensions.toFirstLower(_name_5);
+                String _firstLower_1 = StringExtensions.toFirstLower(keyFeature.getEType().getName());
                 _builder.append(_firstLower_1, "  \t");
                 _builder.append("Ordering.compare(x.");
-                String _name_6 = keyFeature.getName();
-                _builder.append(_name_6, "  \t");
+                String _name_4 = keyFeature.getName();
+                _builder.append(_name_4, "  \t");
                 _builder.append(",y.");
-                String _name_7 = keyFeature.getName();
-                _builder.append(_name_7, "  \t");
+                String _name_5 = keyFeature.getName();
+                _builder.append(_name_5, "  \t");
                 _builder.append(")");
               } else {
                 _builder.append("x.");
@@ -250,14 +203,14 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
             _builder.append("\t");
             _builder.append(" \t");
             _builder.append("case c_");
+            String _name_6 = keyFeature.getName();
+            _builder.append(_name_6, "  \t \t");
+            _builder.append(" if 0 != c_");
+            String _name_7 = keyFeature.getName();
+            _builder.append(_name_7, "  \t \t");
+            _builder.append(" => c_");
             String _name_8 = keyFeature.getName();
             _builder.append(_name_8, "  \t \t");
-            _builder.append(" if 0 != c_");
-            String _name_9 = keyFeature.getName();
-            _builder.append(_name_9, "  \t \t");
-            _builder.append(" => c_");
-            String _name_10 = keyFeature.getName();
-            _builder.append(_name_10, "  \t \t");
             _builder.newLineIfNotEmpty();
             _builder.append("  ");
             _builder.append("\t");
@@ -290,13 +243,13 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
     return _builder.toString();
   }
   
-  public String generateFactoryFile(final EPackage ePackage, final String packageQName) {
+  public String generateFactoryFile(final List<EPackage> ePackages, final String packageQName) {
     StringConcatenation _builder = new StringConcatenation();
     String _copyright = OMLUtilities.copyright();
-    _builder.append(_copyright, "");
+    _builder.append(_copyright);
     _builder.newLineIfNotEmpty();
     _builder.append("package ");
-    _builder.append(packageQName, "");
+    _builder.append(packageQName);
     _builder.newLineIfNotEmpty();
     _builder.newLine();
     _builder.append("trait OMLResolvedFactory {");
@@ -304,20 +257,17 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
     _builder.append("\t");
     _builder.newLine();
     {
-      Iterable<EClass> _FunctionalAPIClasses = OMLUtilities.FunctionalAPIClasses(ePackage);
-      final Function1<EClass, Boolean> _function = new Function1<EClass, Boolean>() {
-        public Boolean apply(final EClass it) {
-          boolean _isAbstract = it.isAbstract();
-          return Boolean.valueOf((!_isAbstract));
-        }
+      final Function1<EPackage, Iterable<EClass>> _function = (EPackage it) -> {
+        return OMLUtilities.FunctionalAPIClasses(it);
       };
-      Iterable<EClass> _filter = IterableExtensions.<EClass>filter(_FunctionalAPIClasses, _function);
-      final Function1<EClass, String> _function_1 = new Function1<EClass, String>() {
-        public String apply(final EClass it) {
-          return it.getName();
-        }
+      final Function1<EClass, Boolean> _function_1 = (EClass it) -> {
+        boolean _isAbstract = it.isAbstract();
+        return Boolean.valueOf((!_isAbstract));
       };
-      List<EClass> _sortBy = IterableExtensions.<EClass, String>sortBy(_filter, _function_1);
+      final Function1<EClass, String> _function_2 = (EClass it) -> {
+        return it.getName();
+      };
+      List<EClass> _sortBy = IterableExtensions.<EClass, String>sortBy(IterableExtensions.<EClass>filter(Iterables.<EClass>concat(ListExtensions.<EPackage, Iterable<EClass>>map(ePackages, _function)), _function_1), _function_2);
       for(final EClass eClass : _sortBy) {
         _builder.append("  ");
         _builder.append("// ");
@@ -406,15 +356,15 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
   public String generateClassFile(final EClass eClass) {
     StringConcatenation _builder = new StringConcatenation();
     String _copyright = OMLUtilities.copyright();
-    _builder.append(_copyright, "");
+    _builder.append(_copyright);
     _builder.newLineIfNotEmpty();
     _builder.append("package gov.nasa.jpl.imce.oml.specification.resolver.api");
     _builder.newLine();
     _builder.newLine();
     String _doc = OMLUtilities.doc(eClass, "");
-    _builder.append(_doc, "");
+    _builder.append(_doc);
     String _traitDeclaration = OMLSpecificationResolverAPIGenerator.traitDeclaration(eClass);
-    _builder.append(_traitDeclaration, "");
+    _builder.append(_traitDeclaration);
     _builder.newLineIfNotEmpty();
     _builder.append("{");
     _builder.newLine();
@@ -424,12 +374,12 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
       for(final EStructuralFeature f : _APIStructuralFeatures) {
         if (!_hasElements) {
           _hasElements = true;
-          _builder.append("\n  ", "");
+          _builder.append("\n  ");
         } else {
           _builder.appendImmediate("\n  ", "");
         }
         String _doc_1 = OMLUtilities.doc(f, "  ");
-        _builder.append(_doc_1, "");
+        _builder.append(_doc_1);
         {
           Boolean _isOverride = OMLUtilities.isOverride(f);
           if ((_isOverride).booleanValue()) {
@@ -438,13 +388,13 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
         }
         _builder.append("val ");
         String _name = f.getName();
-        _builder.append(_name, "");
+        _builder.append(_name);
         _builder.append(": ");
         String _queryResolverType = OMLUtilities.queryResolverType(f, "");
-        _builder.append(_queryResolverType, "");
+        _builder.append(_queryResolverType);
       }
       if (_hasElements) {
-        _builder.append("\n", "");
+        _builder.append("\n");
       }
     }
     _builder.newLineIfNotEmpty();
@@ -454,20 +404,20 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
       for(final EOperation op : _APIOperations) {
         if (!_hasElements_1) {
           _hasElements_1 = true;
-          _builder.append("\n  ", "");
+          _builder.append("\n  ");
         } else {
           _builder.appendImmediate("\n  ", "");
         }
         String _doc_2 = OMLUtilities.doc(op, "  ");
-        _builder.append(_doc_2, "");
+        _builder.append(_doc_2);
         String _queryResolverName = OMLUtilities.queryResolverName(op, "");
-        _builder.append(_queryResolverName, "");
+        _builder.append(_queryResolverName);
         _builder.append(": ");
         String _queryResolverType_1 = OMLUtilities.queryResolverType(op, "");
-        _builder.append(_queryResolverType_1, "");
+        _builder.append(_queryResolverType_1);
       }
       if (_hasElements_1) {
-        _builder.append("\n", "");
+        _builder.append("\n");
       }
     }
     _builder.newLineIfNotEmpty();
@@ -488,7 +438,7 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("trait ");
     String _name = eClass.getName();
-    _builder.append(_name, "");
+    _builder.append(_name);
     _builder.newLineIfNotEmpty();
     {
       EList<EClass> _eSuperTypes = eClass.getESuperTypes();
@@ -496,12 +446,12 @@ public class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
       for(final EClass parent : _eSuperTypes) {
         if (!_hasElements) {
           _hasElements = true;
-          _builder.append("  extends ", "");
+          _builder.append("  extends ");
         } else {
           _builder.appendImmediate("\n  with ", "");
         }
         String _name_1 = parent.getName();
-        _builder.append(_name_1, "");
+        _builder.append(_name_1);
       }
     }
     _builder.newLineIfNotEmpty();

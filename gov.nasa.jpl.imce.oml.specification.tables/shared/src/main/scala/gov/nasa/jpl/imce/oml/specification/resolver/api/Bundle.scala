@@ -35,7 +35,7 @@ trait Bundle
   /*
    * The BundledTerminologyAxioms asserted in this Bundle
    */
-  val terminologyBundleAxioms: scala.collection.immutable.SortedSet[TerminologyBundleAxiom]
+  val bundleAxioms: scala.collection.immutable.SortedSet[TerminologyBundleAxiom]
 
   def extent
   (): TerminologyExtent
@@ -45,8 +45,10 @@ trait Bundle
   (): scala.collection.immutable.SortedSet[AnnotationPropertyTable]
   def withBundleStatements
   (s: scala.collection.immutable.SortedSet[TerminologyBundleStatement]): Bundle
+  override def withBoxAxioms
+  (s: scala.collection.immutable.SortedSet[TerminologyBoxAxiom]): Bundle
   override def withBoxStatements
   (s: scala.collection.immutable.SortedSet[TerminologyBoxStatement]): Bundle
   override def everything
-  (): scala.collection.immutable.SortedSet[TerminologyThing]
+  (): scala.collection.immutable.SortedSet[Element]
 }

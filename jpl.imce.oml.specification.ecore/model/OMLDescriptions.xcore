@@ -36,6 +36,7 @@ package gov.nasa.jpl.imce.oml.descriptions
 import gov.nasa.jpl.imce.oml.common.AnnotationPropertyTable
 import gov.nasa.jpl.imce.oml.common.Collection
 import gov.nasa.jpl.imce.oml.common.CopyConstructor
+import gov.nasa.jpl.imce.oml.common.Element
 import gov.nasa.jpl.imce.oml.common.Glossary
 import gov.nasa.jpl.imce.oml.common.IRI
 import gov.nasa.jpl.imce.oml.common.LocalName
@@ -127,15 +128,16 @@ class DescriptionBox extends Module {
 	contains UnreifiedRelationshipInstanceTuple[] unreifiedRelationshipInstanceTuples opposite descriptionBox
 	
 	@NotSchema
-	@Scala(code="scala.collection.immutable.SortedSet.empty[resolver.api.ModuleElement] ++ 
+	@Scala(code="scala.collection.immutable.SortedSet.empty[resolver.api.Element] ++ 
 	conceptInstances ++
 	reifiedRelationshipInstances ++ 
 	reifiedRelationshipInstanceDomains ++ 
 	reifiedRelationshipInstanceRanges ++ 
-	unreifiedRelationshipInstanceTuples")
+	unreifiedRelationshipInstanceTuples + 
+	this")
 	@Collection(kind="SortedSet")
 	@Override
-	op ModuleElement[] everything()
+	op Element[] everything()
 }
 
 /*
@@ -274,6 +276,7 @@ class ScalarDataPropertyValue extends TerminologyInstanceAssertion {
 		com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace).toString
 	}
 	
+	@Scala(code="singletonInstance.descriptionBox()")
 	@NotSchema
 	op DescriptionBox[1] descriptionBox() { singletonInstance.descriptionBox() }
 	
@@ -300,6 +303,7 @@ class StructuredDataPropertyValue extends TerminologyInstanceAssertion {
 		com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace).toString
 	}
 	
+	@Scala(code="singletonInstance.descriptionBox()")
 	@NotSchema
 	op DescriptionBox[1] descriptionBox() { singletonInstance.descriptionBox() }
 	
@@ -324,6 +328,7 @@ class DataStructureTuple extends SingletonInstance {
 		com.fasterxml.uuid.Generators.nameBasedGenerator(com.fasterxml.uuid.impl.NameBasedGenerator.NAMESPACE_URL).generate(namespace).toString
 	}
 	
+	@Scala(code="structuredDataPropertyValue.descriptionBox()")
 	@NotSchema
 	op DescriptionBox[1] descriptionBox() { structuredDataPropertyValue.descriptionBox() }
 	

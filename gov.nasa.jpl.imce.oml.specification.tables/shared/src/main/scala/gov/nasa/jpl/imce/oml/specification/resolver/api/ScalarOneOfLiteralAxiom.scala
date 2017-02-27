@@ -22,7 +22,7 @@ package gov.nasa.jpl.imce.oml.specification.resolver.api
  * An OML ScalarOneOfLiteralAxiom specifies a literal in a ScalarOneOfRestriction data range.
  */
 trait ScalarOneOfLiteralAxiom
-  extends Axiom
+  extends TermAxiom
 {
 
   val axiom: ScalarOneOfRestriction

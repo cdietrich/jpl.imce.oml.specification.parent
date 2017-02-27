@@ -103,6 +103,8 @@ subprojects { subproject ->
 		targetCompatibility = '1.8'
 		
 		eclipse {
+			pathVariables 'GRADLE_HOME': gradle.gradleUserHomeDir
+
 			classpath {
 			   defaultOutputDir = file('build/target/classes/main/')
 			   downloadSources=true

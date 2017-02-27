@@ -23,11 +23,11 @@ import gov.nasa.jpl.imce.oml.specification._
 case class TerminologyGraph private[impl] 
 (
  override val graphExtent: resolver.api.TerminologyExtent,
- override val kind: gov.nasa.jpl.imce.oml.specification.tables.TerminologyGraphKind,
+ override val kind: gov.nasa.jpl.imce.oml.specification.tables.TerminologyKind,
  override val iri: gov.nasa.jpl.imce.oml.specification.tables.IRI,
  override val annotations: scala.collection.immutable.SortedSet[resolver.api.Annotation],
- override val boxStatements: scala.collection.immutable.SortedSet[resolver.api.TerminologyBoxStatement],
- override val terminologyBoxAxioms: scala.collection.immutable.SortedSet[resolver.api.TerminologyBoxAxiom]
+ override val boxAxioms: scala.collection.immutable.SortedSet[resolver.api.TerminologyBoxAxiom],
+ override val boxStatements: scala.collection.immutable.SortedSet[resolver.api.TerminologyBoxStatement]
 )
 extends resolver.api.TerminologyGraph
   with TerminologyBox
@@ -53,6 +53,13 @@ extends resolver.api.TerminologyGraph
     resolver.groupAnnotationsByProperty(annotations)
   }
   
+  override def withBoxAxioms
+  (s: scala.collection.immutable.SortedSet[resolver.api.TerminologyBoxAxiom])
+  : resolver.api.TerminologyGraph
+  = {
+    copy(boxAxioms = this.boxAxioms ++ s)
+  }
+  
   override def withBoxStatements
   (s: scala.collection.immutable.SortedSet[resolver.api.TerminologyBoxStatement])
   : resolver.api.TerminologyGraph
@@ -76,7 +83,7 @@ extends resolver.api.TerminologyGraph
 
   override val hashCode
   : scala.Int
-  = (uuid, graphExtent, kind, iri, annotations, boxStatements, terminologyBoxAxioms).##
+  = (uuid, graphExtent, kind, iri, annotations, boxAxioms, boxStatements).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: TerminologyGraph =>
@@ -86,8 +93,8 @@ extends resolver.api.TerminologyGraph
 	    (this.kind == that.kind) &&
 	    (this.iri == that.iri) &&
 	    (this.annotations == that.annotations) &&
-	    (this.boxStatements == that.boxStatements) &&
-	    (this.terminologyBoxAxioms == that.terminologyBoxAxioms)
+	    (this.boxAxioms == that.boxAxioms) &&
+	    (this.boxStatements == that.boxStatements)
 
 	  case _ =>
 	    false

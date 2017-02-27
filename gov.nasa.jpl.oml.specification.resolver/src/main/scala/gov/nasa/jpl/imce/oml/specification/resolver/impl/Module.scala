@@ -22,7 +22,7 @@ import gov.nasa.jpl.imce.oml.specification._
 
 trait Module
 extends resolver.api.Module
-  with TerminologyThing
+  with Element
   with Resource
 {
   override def calculateUUID

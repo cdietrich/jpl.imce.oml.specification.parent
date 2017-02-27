@@ -23,13 +23,13 @@ import gov.nasa.jpl.imce.oml.specification._
 case class Bundle private[impl] 
 (
  override val bundleExtent: resolver.api.TerminologyExtent,
- override val kind: gov.nasa.jpl.imce.oml.specification.tables.TerminologyGraphKind,
+ override val kind: gov.nasa.jpl.imce.oml.specification.tables.TerminologyKind,
  override val iri: gov.nasa.jpl.imce.oml.specification.tables.IRI,
  override val annotations: scala.collection.immutable.SortedSet[resolver.api.Annotation],
+ override val boxAxioms: scala.collection.immutable.SortedSet[resolver.api.TerminologyBoxAxiom],
  override val boxStatements: scala.collection.immutable.SortedSet[resolver.api.TerminologyBoxStatement],
- override val bundleStatements: scala.collection.immutable.SortedSet[resolver.api.TerminologyBundleStatement],
- override val terminologyBoxAxioms: scala.collection.immutable.SortedSet[resolver.api.TerminologyBoxAxiom],
- override val terminologyBundleAxioms: scala.collection.immutable.SortedSet[resolver.api.TerminologyBundleAxiom]
+ override val bundleAxioms: scala.collection.immutable.SortedSet[resolver.api.TerminologyBundleAxiom],
+ override val bundleStatements: scala.collection.immutable.SortedSet[resolver.api.TerminologyBundleStatement]
 )
 extends resolver.api.Bundle
   with TerminologyBox
@@ -62,6 +62,13 @@ extends resolver.api.Bundle
     copy(bundleStatements = this.bundleStatements ++ s)
   }
   
+  override def withBoxAxioms
+  (s: scala.collection.immutable.SortedSet[resolver.api.TerminologyBoxAxiom])
+  : resolver.api.Bundle
+  = {
+    copy(boxAxioms = this.boxAxioms ++ s)
+  }
+  
   override def withBoxStatements
   (s: scala.collection.immutable.SortedSet[resolver.api.TerminologyBoxStatement])
   : resolver.api.Bundle
@@ -71,7 +78,7 @@ extends resolver.api.Bundle
   
   override def everything
   ()
-  : scala.collection.immutable.SortedSet[resolver.api.TerminologyThing]
+  : scala.collection.immutable.SortedSet[resolver.api.Element]
   = {
     super.everything() ++ bundleStatements + this
   }
@@ -92,7 +99,7 @@ extends resolver.api.Bundle
 
   override val hashCode
   : scala.Int
-  = (uuid, bundleExtent, kind, iri, annotations, boxStatements, bundleStatements, terminologyBoxAxioms, terminologyBundleAxioms).##
+  = (uuid, bundleExtent, kind, iri, annotations, boxAxioms, boxStatements, bundleAxioms, bundleStatements).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: Bundle =>
@@ -102,10 +109,10 @@ extends resolver.api.Bundle
 	    (this.kind == that.kind) &&
 	    (this.iri == that.iri) &&
 	    (this.annotations == that.annotations) &&
+	    (this.boxAxioms == that.boxAxioms) &&
 	    (this.boxStatements == that.boxStatements) &&
-	    (this.bundleStatements == that.bundleStatements) &&
-	    (this.terminologyBoxAxioms == that.terminologyBoxAxioms) &&
-	    (this.terminologyBundleAxioms == that.terminologyBundleAxioms)
+	    (this.bundleAxioms == that.bundleAxioms) &&
+	    (this.bundleStatements == that.bundleStatements)
 
 	  case _ =>
 	    false

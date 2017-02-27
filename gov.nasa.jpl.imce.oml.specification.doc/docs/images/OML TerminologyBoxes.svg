@@ -359,7 +359,7 @@
 <text x="480" y="542" clip-path="url(#clipPath4)" fill="black" stroke="none" xml:space="preserve">Term</text>
 </g>
 <g stroke-width="1.1" font-size="8" font-weight="bold" stroke-linecap="butt">
-<image x="427" y="554" clip-path="url(#clipPath5)" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAcklEQVR42mNgGAWM&#10;6AJza/T/E9KU3HIRro8FXfLHHyaG5MYFODXPrU9A4TOhK/j6iwWv7ejyGKo/AxX8&#10;/88K8R/Mof+hnv0PkcdrAMiG4qxMnC7gYGGhczRJ2pfhjRUmSjTT3gVkpURctj8/&#10;2MVIk0AGAJdzIYcp/aiWAAAAAElFTkSuQmCC" xlink:type="simple" xlink:actuate="onLoad" height="16" preserveAspectRatio="none" xlink:show="embed"/>
+<image x="427" y="554" clip-path="url(#clipPath5)" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAc0lEQVR42mNgGPKA&#10;EV1gbo3+f0KaklsuwvWxoEv++MPEkNy4AKfmufUJKHwmdAVff7HgtR1dHkP1Z6CC&#10;//9ZIf6DOfQ/1LP/IfJ4DQDZUJyVidMFHCwsQy2eJe3L8EYrEyWaae8CspIyLtuf&#10;H+xipEkgAwC2ZyGHIreMBQAAAABJRU5ErkJggg==" xlink:type="simple" xlink:actuate="onLoad" height="16" preserveAspectRatio="none" xlink:show="embed"/>
 <text xml:space="preserve" x="446" y="565" clip-path="url(#clipPath6)" stroke="none">name : LocalName</text>
 </g>
 <g stroke-linecap="butt" font-size="8" fill="rgb(125,125,125)" font-style="italic" stroke="rgb(125,125,125)" stroke-width="1.1">
@@ -390,7 +390,7 @@
 <text x="267" y="209" clip-path="url(#clipPath25)" fill="black" stroke="none" xml:space="preserve">TerminologyBox</text>
 </g>
 <g stroke-width="1.1" font-size="8" font-weight="bold" stroke-linecap="butt">
-<image x="145" y="221" clip-path="url(#clipPath26)" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAcklEQVR42mNgGAWM&#10;6AJza/T/E9KU3HIRro8FXfLHHyaG5MYFODXPrU9A4TOhK/j6iwWv7ejyGKo/AxX8&#10;/88K8R/Mof+hnv0PkcdrAMiG4qxMnC7gYGGhczRJ2pfhjRUmSjTT3gVkpURctj8/&#10;2MVIk0AGAJdzIYcp/aiWAAAAAElFTkSuQmCC" xlink:type="simple" xlink:actuate="onLoad" height="16" preserveAspectRatio="none" xlink:show="embed"/>
+<image x="145" y="221" clip-path="url(#clipPath26)" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAc0lEQVR42mNgGPKA&#10;EV1gbo3+f0KaklsuwvWxoEv++MPEkNy4AKfmufUJKHwmdAVff7HgtR1dHkP1Z6CC&#10;//9ZIf6DOfQ/1LP/IfJ4DQDZUJyVidMFHCwsQy2eJe3L8EYrEyWaae8CspIyLtuf&#10;H+xipEkgAwC2ZyGHIreMBQAAAABJRU5ErkJggg==" xlink:type="simple" xlink:actuate="onLoad" height="16" preserveAspectRatio="none" xlink:show="embed"/>
 <text xml:space="preserve" x="164" y="232" clip-path="url(#clipPath27)" stroke="none">kind : TerminologyKind = OpenWorldDefinitions</text>
 <image width="16" xlink:show="embed" xlink:type="simple" clip-path="url(#clipPath28)" preserveAspectRatio="none" font-weight="normal" height="16" x="145" y="237" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA+ElEQVR42mNkwAPs&#10;4+v/H1zICKT/Mxxc2MiITQ0zdq0N/+3t5RsObpzIsOzUBoa+HE8Ge/v4hocPAxsY&#10;GA40EjQApNkhIYEhvXoimK9j5c7gHp3I8ObWcoaHDy+iGMCE1dkHFzKoaxsy7Ny6&#10;niHKTIDhwYMHDDevnmcAiYPk8RoA8vOyUx/A7IWNiQz/f38A0yBQP38/WJ6AC/6D&#10;bQXZGF8/n4GRVQBMg0BjoiNYHhkwYg+D+P/p3RPBhsAAyBsPDhwAeYMRrwvA3jio&#10;yDCzNB9sI8xmiGZFDLWMlKYD2gNJ+7L/+OSZKNFMexcQAxiJtf35wS7axAIAA99u&#10;M7VwA38AAAAASUVORK5CYII=" xlink:actuate="onLoad"/>
 <text x="164" y="248" clip-path="url(#clipPath29)" stroke="none" font-weight="normal" xml:space="preserve">withBoxAxioms(s TerminologyBoxAxiom) : TerminologyBox</text>
@@ -441,7 +441,7 @@
 <text x="284" y="128" clip-path="url(#clipPath62)" fill="black" stroke="none" xml:space="preserve">Module</text>
 </g>
 <g stroke-width="1.1" font-size="8" font-weight="bold" stroke-linecap="butt">
-<image x="235" y="140" clip-path="url(#clipPath63)" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAcklEQVR42mNgGAWM&#10;6AJza/T/E9KU3HIRro8FXfLHHyaG5MYFODXPrU9A4TOhK/j6iwWv7ejyGKo/AxX8&#10;/88K8R/Mof+hnv0PkcdrAMiG4qxMnC7gYGGhczRJ2pfhjRUmSjTT3gVkpURctj8/&#10;2MVIk0AGAJdzIYcp/aiWAAAAAElFTkSuQmCC" xlink:type="simple" xlink:actuate="onLoad" height="16" preserveAspectRatio="none" xlink:show="embed"/>
+<image x="235" y="140" clip-path="url(#clipPath63)" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAc0lEQVR42mNgGPKA&#10;EV1gbo3+f0KaklsuwvWxoEv++MPEkNy4AKfmufUJKHwmdAVff7HgtR1dHkP1Z6CC&#10;//9ZIf6DOfQ/1LP/IfJ4DQDZUJyVidMFHCwsQy2eJe3L8EYrEyWaae8CspIyLtuf&#10;H+xipEkgAwC2ZyGHIreMBQAAAABJRU5ErkJggg==" xlink:type="simple" xlink:actuate="onLoad" height="16" preserveAspectRatio="none" xlink:show="embed"/>
 <text xml:space="preserve" x="254" y="151" clip-path="url(#clipPath64)" stroke="none">iri : IRI</text>
 </g>
 <g stroke-linecap="butt" font-size="8" fill="rgb(125,125,125)" font-style="italic" stroke="rgb(125,125,125)" stroke-width="1.1">

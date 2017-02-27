@@ -22,24 +22,22 @@ import org.eclipse.xtext.naming.QualifiedName;
 
 @SuppressWarnings("all")
 public class OMLQualifiedNameConverter extends IQualifiedNameConverter.DefaultImpl {
-  @Override
   public String toString(final QualifiedName qualifiedName) {
     String _xblockexpression = null;
     {
       if ((null == qualifiedName)) {
         throw new IllegalArgumentException("Qualified name cannot be null");
       }
-      _xblockexpression = qualifiedName.toString(this.getDelimiter());
+      String _delimiter = this.getDelimiter();
+      _xblockexpression = qualifiedName.toString(_delimiter);
     }
     return _xblockexpression;
   }
   
-  @Override
   public String getDelimiter() {
     return ":";
   }
   
-  @Override
   public QualifiedName toQualifiedName(final String qualifiedNameAsString) {
     return super.toQualifiedName(qualifiedNameAsString);
   }

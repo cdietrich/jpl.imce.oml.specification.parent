@@ -25,5 +25,5 @@ trait TerminologyBundleAxiom
   extends TerminologyAxiom
 {
 
-  val terminologyBundle: Bundle
+  val bundle: Bundle
 }

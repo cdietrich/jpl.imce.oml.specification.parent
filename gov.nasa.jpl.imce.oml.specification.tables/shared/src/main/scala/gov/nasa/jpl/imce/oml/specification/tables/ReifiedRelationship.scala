@@ -29,7 +29,6 @@ import scala.Predef._
   * @param tboxUUID[1,1]
   * @param sourceUUID[1,1]
   * @param targetUUID[1,1]
-  * @param isAbstract[1,1]
   * @param isAsymmetric[1,1]
   * @param isEssential[1,1]
   * @param isFunctional[1,1]
@@ -49,7 +48,6 @@ case class ReifiedRelationship
   @(JSExport @field) tboxUUID: UUID,
   @(JSExport @field) sourceUUID: UUID,
   @(JSExport @field) targetUUID: UUID,
-  @(JSExport @field) isAbstract: scala.Boolean,
   @(JSExport @field) isAsymmetric: scala.Boolean,
   @(JSExport @field) isEssential: scala.Boolean,
   @(JSExport @field) isFunctional: scala.Boolean,
@@ -69,7 +67,6 @@ case class ReifiedRelationship
     tboxUUID: UUID,
     sourceUUID: UUID,
     targetUUID: UUID,
-    isAbstract: scala.Boolean,
     isAsymmetric: scala.Boolean,
     isEssential: scala.Boolean,
     isFunctional: scala.Boolean,
@@ -86,7 +83,6 @@ case class ReifiedRelationship
       tboxUUID,
       sourceUUID,
       targetUUID,
-      isAbstract,
       isAsymmetric,
       isEssential,
       isFunctional,
@@ -106,7 +102,7 @@ case class ReifiedRelationship
   
   override val hashCode
   : scala.Int 
-  = (uuid, tboxUUID, sourceUUID, targetUUID, isAbstract, isAsymmetric, isEssential, isFunctional, isInverseEssential, isInverseFunctional, isIrreflexive, isReflexive, isSymmetric, isTransitive, name, unreifiedPropertyName, unreifiedInversePropertyName).##
+  = (uuid, tboxUUID, sourceUUID, targetUUID, isAsymmetric, isEssential, isFunctional, isInverseEssential, isInverseFunctional, isIrreflexive, isReflexive, isSymmetric, isTransitive, name, unreifiedPropertyName, unreifiedInversePropertyName).##
   
   override def equals(other: scala.Any): scala.Boolean = other match {
   	case that: ReifiedRelationship =>
@@ -114,7 +110,6 @@ case class ReifiedRelationship
   	  (this.tboxUUID == that.tboxUUID) &&
   	  (this.sourceUUID == that.sourceUUID) &&
   	  (this.targetUUID == that.targetUUID) &&
-  	  (this.isAbstract == that.isAbstract) &&
   	  (this.isAsymmetric == that.isAsymmetric) &&
   	  (this.isEssential == that.isEssential) &&
   	  (this.isFunctional == that.isFunctional) &&

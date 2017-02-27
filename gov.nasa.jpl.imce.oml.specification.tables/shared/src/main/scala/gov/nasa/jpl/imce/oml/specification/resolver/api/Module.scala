@@ -20,19 +20,17 @@ package gov.nasa.jpl.imce.oml.specification.resolver.api
 
 /*
  * An OML Module maps to an [OWL2-DL Ontology];
- * it is a kind of OML Resource that is a logical container of OML TerminologyThing(s)
+ * it is a kind of OML Resource that is a logical container of OML ModuleElement(s)
  * and a non-logical container of OML Annotation(s).
  */
 trait Module
-  extends TerminologyThing
+  extends Element
   with Resource
 {
 
   override val iri: gov.nasa.jpl.imce.oml.specification.tables.IRI
   val annotations: scala.collection.immutable.SortedSet[Annotation]
 
-  def extent
-  (): TerminologyExtent
   override def calculateUUID
   (): java.util.UUID
   def nsPrefix
@@ -43,28 +41,6 @@ trait Module
   (): scala.collection.immutable.SortedSet[AnnotationPropertyTable]
   def withAnnotations
   (a: scala.collection.immutable.SortedSet[AnnotationPropertyTable]): Module
-  def entities
-  (): scala.collection.immutable.SortedSet[Entity]
-  def aspects
-  (): scala.collection.immutable.SortedSet[Aspect]
-  def concepts
-  (): scala.collection.immutable.SortedSet[Concept]
-  def reifiedRelationships
-  (): scala.collection.immutable.SortedSet[ReifiedRelationship]
-  def unreifiedRelationships
-  (): scala.collection.immutable.SortedSet[UnreifiedRelationship]
-  def dataRelationships
-  (): scala.collection.immutable.SortedSet[DataRelationship]
-  def entityScalarDataProperties
-  (): scala.collection.immutable.SortedSet[EntityScalarDataProperty]
-  def dataranges
-  (): scala.collection.immutable.SortedSet[DataRange]
-  def scalars
-  (): scala.collection.immutable.SortedSet[Scalar]
-  def structures
-  (): scala.collection.immutable.SortedSet[Structure]
-  def termAxioms
-  (): scala.collection.immutable.SortedSet[TermAxiom]
   def everything
-  (): scala.collection.immutable.SortedSet[TerminologyThing]
+  (): scala.collection.immutable.SortedSet[Element]
 }

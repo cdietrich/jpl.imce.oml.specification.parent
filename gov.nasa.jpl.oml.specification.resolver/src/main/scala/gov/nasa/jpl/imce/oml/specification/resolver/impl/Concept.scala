@@ -23,7 +23,6 @@ import gov.nasa.jpl.imce.oml.specification._
 case class Concept private[impl] 
 (
  override val tbox: resolver.api.TerminologyBox,
- override val isAbstract: scala.Boolean,
  override val name: gov.nasa.jpl.imce.oml.specification.tables.LocalName
 )
 extends resolver.api.Concept
@@ -47,14 +46,13 @@ extends resolver.api.Concept
 
   override val hashCode
   : scala.Int
-  = (uuid, tbox, isAbstract, name).##
+  = (uuid, tbox, name).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: Concept =>
 	    (that canEqual this) &&
 	    (this.uuid == that.uuid) &&
 	    (this.tbox == that.tbox) &&
-	    (this.isAbstract == that.isAbstract) &&
 	    (this.name == that.name)
 
 	  case _ =>

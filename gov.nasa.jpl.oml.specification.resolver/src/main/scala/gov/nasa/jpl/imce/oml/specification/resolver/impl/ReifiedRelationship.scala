@@ -25,7 +25,6 @@ case class ReifiedRelationship private[impl]
  override val tbox: resolver.api.TerminologyBox,
  override val source: resolver.api.Entity,
  override val target: resolver.api.Entity,
- override val isAbstract: scala.Boolean,
  override val isAsymmetric: scala.Boolean,
  override val isEssential: scala.Boolean,
  override val isFunctional: scala.Boolean,
@@ -60,7 +59,7 @@ extends resolver.api.ReifiedRelationship
 
   override val hashCode
   : scala.Int
-  = (uuid, tbox, source, target, isAbstract, isAsymmetric, isEssential, isFunctional, isInverseEssential, isInverseFunctional, isIrreflexive, isReflexive, isSymmetric, isTransitive, name, unreifiedPropertyName, unreifiedInversePropertyName).##
+  = (uuid, tbox, source, target, isAsymmetric, isEssential, isFunctional, isInverseEssential, isInverseFunctional, isIrreflexive, isReflexive, isSymmetric, isTransitive, name, unreifiedPropertyName, unreifiedInversePropertyName).##
 
   override def equals(other: scala.Any): scala.Boolean = other match {
 	  case that: ReifiedRelationship =>
@@ -69,7 +68,6 @@ extends resolver.api.ReifiedRelationship
 	    (this.tbox == that.tbox) &&
 	    (this.source == that.source) &&
 	    (this.target == that.target) &&
-	    (this.isAbstract == that.isAbstract) &&
 	    (this.isAsymmetric == that.isAsymmetric) &&
 	    (this.isEssential == that.isEssential) &&
 	    (this.isFunctional == that.isFunctional) &&

@@ -26,7 +26,7 @@ case class OMLResolvedFactoryImpl() extends resolver.api.OMLResolvedFactory {
   
   def createAnnotation
   ( module: resolver.api.Module,
-    subject: resolver.api.TerminologyThing,
+    subject: resolver.api.Element,
     property: resolver.api.AnnotationProperty,
     value: scala.Predef.String)
   : resolver.api.Annotation
@@ -40,7 +40,7 @@ case class OMLResolvedFactoryImpl() extends resolver.api.OMLResolvedFactory {
   
   def createAnnotationEntry
   ( module: resolver.api.Module,
-    subject: resolver.api.TerminologyThing,
+    subject: resolver.api.Element,
     value: scala.Predef.String)
   : resolver.api.AnnotationEntry
   = resolver.impl.AnnotationEntry(
@@ -122,42 +122,33 @@ case class OMLResolvedFactoryImpl() extends resolver.api.OMLResolvedFactory {
   
   def createBundle
   ( bundleExtent: resolver.api.TerminologyExtent,
-    kind: gov.nasa.jpl.imce.oml.specification.tables.TerminologyGraphKind,
+    kind: gov.nasa.jpl.imce.oml.specification.tables.TerminologyKind,
     iri: gov.nasa.jpl.imce.oml.specification.tables.IRI,
     annotations: scala.collection.immutable.SortedSet[resolver.api.Annotation],
+    boxAxioms: scala.collection.immutable.SortedSet[resolver.api.TerminologyBoxAxiom],
     boxStatements: scala.collection.immutable.SortedSet[resolver.api.TerminologyBoxStatement],
-    bundleStatements: scala.collection.immutable.SortedSet[resolver.api.TerminologyBundleStatement],
-    terminologyBoxAxioms: scala.collection.immutable.SortedSet[resolver.api.TerminologyBoxAxiom],
-    terminologyBundleAxioms: scala.collection.immutable.SortedSet[resolver.api.TerminologyBundleAxiom])
+    bundleAxioms: scala.collection.immutable.SortedSet[resolver.api.TerminologyBundleAxiom],
+    bundleStatements: scala.collection.immutable.SortedSet[resolver.api.TerminologyBundleStatement])
   : resolver.api.Bundle
   = resolver.impl.Bundle(
     bundleExtent,
     kind,
     iri,
     annotations,
+    boxAxioms,
     boxStatements,
-    bundleStatements,
-    terminologyBoxAxioms,
-    terminologyBundleAxioms )
+    bundleAxioms,
+    bundleStatements )
   
   // BundledTerminologyAxiom
   
   def createBundledTerminologyAxiom
-  ( terminologyBundle: resolver.api.Bundle,
-    bundledTerminology: resolver.api.TerminologyBox)
+  ( bundledTerminology: resolver.api.TerminologyBox,
+    bundle: resolver.api.Bundle)
   : resolver.api.BundledTerminologyAxiom
   = resolver.impl.BundledTerminologyAxiom(
-    terminologyBundle,
-    bundledTerminology )
-  
-  def copyBundledTerminologyAxiom_terminologyBundle
-  ( that: resolver.api.BundledTerminologyAxiom,
-    terminologyBundle: resolver.api.Bundle )
-  : resolver.api.BundledTerminologyAxiom
-  = that match {
-  	case x: resolver.impl.BundledTerminologyAxiom =>
-  	  x.copy(terminologyBundle = terminologyBundle)
-  }
+    bundledTerminology,
+    bundle )
   
   def copyBundledTerminologyAxiom_bundledTerminology
   ( that: resolver.api.BundledTerminologyAxiom,
@@ -168,16 +159,23 @@ case class OMLResolvedFactoryImpl() extends resolver.api.OMLResolvedFactory {
   	  x.copy(bundledTerminology = bundledTerminology)
   }
   
+  def copyBundledTerminologyAxiom_bundle
+  ( that: resolver.api.BundledTerminologyAxiom,
+    bundle: resolver.api.Bundle )
+  : resolver.api.BundledTerminologyAxiom
+  = that match {
+  	case x: resolver.impl.BundledTerminologyAxiom =>
+  	  x.copy(bundle = bundle)
+  }
+  
   // Concept
   
   def createConcept
   ( tbox: resolver.api.TerminologyBox,
-    isAbstract: scala.Boolean,
     name: gov.nasa.jpl.imce.oml.specification.tables.LocalName)
   : resolver.api.Concept
   = resolver.impl.Concept(
     tbox,
-    isAbstract,
     name )
   
   // ConceptDesignationTerminologyAxiom
@@ -571,7 +569,6 @@ case class OMLResolvedFactoryImpl() extends resolver.api.OMLResolvedFactory {
   ( tbox: resolver.api.TerminologyBox,
     source: resolver.api.Entity,
     target: resolver.api.Entity,
-    isAbstract: scala.Boolean,
     isAsymmetric: scala.Boolean,
     isEssential: scala.Boolean,
     isFunctional: scala.Boolean,
@@ -589,7 +586,6 @@ case class OMLResolvedFactoryImpl() extends resolver.api.OMLResolvedFactory {
     tbox,
     source,
     target,
-    isAbstract,
     isAsymmetric,
     isEssential,
     isFunctional,
@@ -913,19 +909,19 @@ case class OMLResolvedFactoryImpl() extends resolver.api.OMLResolvedFactory {
   
   def createTerminologyGraph
   ( graphExtent: resolver.api.TerminologyExtent,
-    kind: gov.nasa.jpl.imce.oml.specification.tables.TerminologyGraphKind,
+    kind: gov.nasa.jpl.imce.oml.specification.tables.TerminologyKind,
     iri: gov.nasa.jpl.imce.oml.specification.tables.IRI,
     annotations: scala.collection.immutable.SortedSet[resolver.api.Annotation],
-    boxStatements: scala.collection.immutable.SortedSet[resolver.api.TerminologyBoxStatement],
-    terminologyBoxAxioms: scala.collection.immutable.SortedSet[resolver.api.TerminologyBoxAxiom])
+    boxAxioms: scala.collection.immutable.SortedSet[resolver.api.TerminologyBoxAxiom],
+    boxStatements: scala.collection.immutable.SortedSet[resolver.api.TerminologyBoxStatement])
   : resolver.api.TerminologyGraph
   = resolver.impl.TerminologyGraph(
     graphExtent,
     kind,
     iri,
     annotations,
-    boxStatements,
-    terminologyBoxAxioms )
+    boxAxioms,
+    boxStatements )
   
   // TerminologyNestingAxiom
   

@@ -28,18 +28,17 @@ public class OMLSL_COMMENTValueConverter extends AbstractLexerBasedConverter<Str
   @Inject
   protected IValueConverterService valueConverterService;
   
-  @Override
   public String toEscapedString(final String value) {
     return ("//" + value);
   }
   
-  @Override
   public String toValue(final String string, final INode node) throws ValueConverterException {
     boolean _startsWith = string.startsWith("//");
     boolean _not = (!_startsWith);
     if (_not) {
       throw new ValueConverterException("Invalid Single Line Comment", node, null);
     }
-    return string.substring(2, string.length());
+    int _length = string.length();
+    return string.substring(2, _length);
   }
 }
