@@ -26,7 +26,7 @@ t=$(git name-rev --tags --name-only $(git rev-parse HEAD))
 ./gradlew eclipse
 
 # generate & build the Xtext grammar
-./gradlew :jpl.imce.oml.specification:build
+./gradlew :jpl.imce.oml.specification:build -S
 
 # generate Eclipse metadata
 ./gradlew eclipse
