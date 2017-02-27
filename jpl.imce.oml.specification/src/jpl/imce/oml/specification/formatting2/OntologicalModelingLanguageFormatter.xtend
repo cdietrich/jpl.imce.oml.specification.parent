@@ -17,41 +17,38 @@
 package jpl.imce.oml.specification.formatting2
 
 import com.google.inject.Inject
-import jpl.imce.oml.specification.ecore.Annotation
-import jpl.imce.oml.specification.ecore.AnnotationProperty
-import jpl.imce.oml.specification.ecore.Bundle
-import jpl.imce.oml.specification.ecore.DescriptionBox
-import jpl.imce.oml.specification.ecore.TerminologyBoxAxiom
-import jpl.imce.oml.specification.ecore.TerminologyBoxStatement
-import jpl.imce.oml.specification.ecore.TerminologyExtent
-import jpl.imce.oml.specification.ecore.TerminologyGraph
+import gov.nasa.jpl.imce.oml.common.Annotation
+import gov.nasa.jpl.imce.oml.common.AnnotationProperty
+import gov.nasa.jpl.imce.oml.common.Module
+import gov.nasa.jpl.imce.oml.bundles.Bundle
+import gov.nasa.jpl.imce.oml.descriptions.DescriptionBox
+import gov.nasa.jpl.imce.oml.terminologies.TerminologyBoxAxiom
+import gov.nasa.jpl.imce.oml.terminologies.TerminologyBoxStatement
+import gov.nasa.jpl.imce.oml.common.Extent
+import gov.nasa.jpl.imce.oml.graphs.TerminologyGraph
 import jpl.imce.oml.specification.services.OntologicalModelingLanguageGrammarAccess
 import org.eclipse.xtext.formatting2.AbstractFormatter2
 import org.eclipse.xtext.formatting2.IFormattableDocument
-import jpl.imce.oml.specification.ecore.OMLPackage
-import jpl.imce.oml.specification.ecore.Aspect
+import gov.nasa.jpl.imce.oml.terminologies.Aspect
+import gov.nasa.jpl.imce.oml.terminologies.TerminologiesPackage
+import gov.nasa.jpl.imce.oml.common.CommonPackage
+import gov.nasa.jpl.imce.oml.bundles.TerminologyBundleAxiom
+import gov.nasa.jpl.imce.oml.bundles.TerminologyBundleStatement
+import gov.nasa.jpl.imce.oml.terminologies.TerminologyExtensionAxiom
 
 class OntologicalModelingLanguageFormatter extends AbstractFormatter2 {
 	
 	@Inject extension OntologicalModelingLanguageGrammarAccess
 
-	def dispatch void format(TerminologyExtent terminologyExtent, extension IFormattableDocument document) {
-		terminologyExtent.prepend[noSpace]
+	def dispatch void format(Extent extent, extension IFormattableDocument document) {
+		extent.prepend[noSpace]
 		
-		for (AnnotationProperty annotationProperty : terminologyExtent.getAnnotationProperties()) {
+		for (AnnotationProperty annotationProperty : extent.getAnnotationProperties()) {
 			annotationProperty.format;
 		}
 		
-		for (TerminologyGraph terminologyGraph : terminologyExtent.getTerminologyGraphs()) {
-			terminologyGraph.format;
-		}
-		
-		for (Bundle bundle : terminologyExtent.getBundles()) {
-			bundle.format;
-		}
-		
-		for (DescriptionBox description : terminologyExtent.getDescriptions()) {
-			description.format;
+		for (Module module : extent.getModules()) {
+			module.format;
 		}
 	}
 
@@ -59,7 +56,7 @@ class OntologicalModelingLanguageFormatter extends AbstractFormatter2 {
 		annotationProperty.prepend[noSpace]
 		annotationProperty.regionFor.ruleCall(annotationPropertyAccess.ANNOTATION_PROPERTY_TOKENTerminalRuleCall_0).append[oneSpace]
 		annotationProperty.regionFor.ruleCall(annotationPropertyAccess.EQUALTerminalRuleCall_2).surround[noSpace]
-		annotationProperty.regionFor.feature(OMLPackage.eINSTANCE.annotationProperty_Iri).append[newLine]
+		annotationProperty.regionFor.feature(CommonPackage.eINSTANCE.annotationProperty_Iri).append[newLine]
 	}
 	
 	def dispatch void format(Annotation annotation, extension IFormattableDocument document) {
@@ -71,7 +68,7 @@ class OntologicalModelingLanguageFormatter extends AbstractFormatter2 {
 	def dispatch void format(TerminologyGraph terminologyGraph, extension IFormattableDocument document) {
 		terminologyGraph.prepend[noSpace]
 			
-		terminologyGraph.regionFor.feature(OMLPackage.eINSTANCE.terminologyBox_Kind).append[oneSpace]
+		terminologyGraph.regionFor.feature(TerminologiesPackage.eINSTANCE.terminologyBox_Kind).append[oneSpace]
 		terminologyGraph.regionFor.ruleCall(terminologyGraphAccess.TERMINOLOGY_GRAPH_TOKENTerminalRuleCall_1).surround[oneSpace]
 		terminologyGraph.regionFor.ruleCall(terminologyGraphAccess.iriIRITerminalRuleCall_2_0).surround[oneSpace]
 	
@@ -86,12 +83,12 @@ class OntologicalModelingLanguageFormatter extends AbstractFormatter2 {
 			annotations.format
 		}
 		
-		for (TerminologyBoxAxiom terminologyBoxAxioms : terminologyGraph.getTerminologyBoxAxioms()) {
-			terminologyBoxAxioms.format
+		for (TerminologyBoxAxiom boxAxiom : terminologyGraph.getBoxAxioms()) {
+			boxAxiom.format
 		}
 		
-		for (TerminologyBoxStatement boxStatements : terminologyGraph.getBoxStatements()) {
-			boxStatements.format
+		for (TerminologyBoxStatement boxStatement : terminologyGraph.getBoxStatements()) {
+			boxStatement.format
 		}
 	}
 	
@@ -108,12 +105,20 @@ class OntologicalModelingLanguageFormatter extends AbstractFormatter2 {
 			annotations.format
 		}
 		
-		for (TerminologyBoxAxiom terminologyBoxAxioms : bundle.getTerminologyBoxAxioms()) {
-			terminologyBoxAxioms.format
+		for (TerminologyBoxAxiom boxAxiom : bundle.getBoxAxioms()) {
+			boxAxiom.format
 		}
 		
-		for (TerminologyBoxStatement boxStatements : bundle.getBoxStatements()) {
-			boxStatements.format
+		for (TerminologyBoxStatement boxStatement : bundle.getBoxStatements()) {
+			boxStatement.format
+		}
+		
+		for (TerminologyBundleAxiom bundleAxiom : bundle.getBundleAxioms()) {
+			bundleAxiom.format
+		}
+		
+		for (TerminologyBundleStatement bundleStatement : bundle.getBundleStatements()) {
+			bundleStatement.format
 		}
 	}
 	
@@ -134,5 +139,11 @@ class OntologicalModelingLanguageFormatter extends AbstractFormatter2 {
 		aspect.prepend[noSpace]
 		aspect.regionFor.ruleCall(aspectAccess.ASPECT_TOKENTerminalRuleCall_0).append[oneSpace]
 		aspect.regionFor.ruleCall(aspectAccess.nameIDTerminalRuleCall_1_0).append[newLine]
+	}
+	
+	def dispatch void format(TerminologyExtensionAxiom ax, extension IFormattableDocument document) {
+		ax.prepend[noSpace]
+		ax.regionFor.ruleCall(terminologyExtensionAxiomAccess.EXTENDS_TOKENTerminalRuleCall_0).append[oneSpace]
+		ax.regionFor.ruleCall(terminologyExtensionAxiomAccess.extendedTerminologyTerminologyBoxReferenceParserRuleCall_1_0_1).append[newLine]
 	}
 }

@@ -18,7 +18,7 @@
  package jpl.imce.oml.specification.tests
 
 import com.google.inject.Inject
-import gov.nasa.jpl.imce.oml.extents.TerminologyExtent
+import gov.nasa.jpl.imce.oml.common.Extent
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.formatting2.FormatterPreferenceKeys
@@ -29,13 +29,15 @@ import org.eclipse.xtext.testing.util.ParseHelper
 import org.eclipse.xtext.testing.validation.ValidationTestHelper
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.junit.internal.runners.statements.FailOnTimeout.Builder
+import org.junit.Assert
 
 @RunWith(XtextRunner)
 @InjectWith(OntologicalModelingLanguageInjectorProvider)
 class OMLModuleTests extends OMLTest {
 
 	@Inject
-	ParseHelper<TerminologyExtent> parseHelper
+	ParseHelper<Extent> parseHelper
 
 	@Inject 
 	extension FormatterTestHelper
@@ -49,7 +51,7 @@ class OMLModuleTests extends OMLTest {
 	 * is precisely an OML TerminologyExtent
 	 */
  	protected override Class<? extends EObject> getRootObjectType(URI uri) {
-        return typeof(TerminologyExtent)
+        return typeof(Extent)
     }
 
 	@Test 

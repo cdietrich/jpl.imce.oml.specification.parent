@@ -17,8 +17,10 @@
 package jpl.imce.oml.specification.tests
 
 import com.google.inject.Inject
-import gov.nasa.jpl.imce.oml.extents.TerminologyExtent
-import gov.nasa.jpl.imce.oml.terminologies.Concept
+import gov.nasa.jpl.imce.oml.common.Extent
+import gov.nasa.jpl.imce.oml.terminologies.Aspect
+import gov.nasa.jpl.imce.oml.terminologies.TerminologyBox
+import org.eclipse.emf.ecore.util.EcoreUtil
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.XtextRunner
 import org.eclipse.xtext.testing.util.ParseHelper
@@ -26,14 +28,13 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 import static extension org.junit.Assert.*
-import org.eclipse.emf.ecore.util.EcoreUtil
 
 @RunWith(XtextRunner)
 @InjectWith(OntologicalModelingLanguageInjectorProvider)
 class OMLTerminologyGraph1Test{
 
 	@Inject
-	ParseHelper<TerminologyExtent> parseHelper
+	ParseHelper<Extent> parseHelper
 
 	@Test 
 	def void terminologyGraph1() {
@@ -43,7 +44,7 @@ class OMLTerminologyGraph1Test{
 annotationProperty rdfs:label=<http://www.w3.org/2000/01/rdf-schema#label>
 
 open terminology <http://imce.jpl.nasa.gov/foundation/mission/mission> {
- abstract concept PerformingElement
+ aspect PerformingElement
  @rdfs:label = "Performing Element"
 }
 ''')
@@ -56,11 +57,11 @@ open terminology <http://imce.jpl.nasa.gov/foundation/mission/mission> {
 		
 		val ap = result.annotationProperties.head
 		
-		val tbox = result.terminologyGraphs.head
+		val tbox = result.modules.filter(TerminologyBox).head
 		tbox.nsPrefix.assertEquals("mission")
 		
-		val c = tbox.boxStatements.filter(Concept).head
-		c.name().assertEquals("PerformingElement")
+		val pe = tbox.boxStatements.filter(Aspect).head
+		pe.name().assertEquals("PerformingElement")
 		
 		val a = tbox.annotations.head
 		val a_prop = a.property
@@ -69,7 +70,7 @@ open terminology <http://imce.jpl.nasa.gov/foundation/mission/mission> {
 		
 		"Performing Element".assertEquals(a_value)
 		ap.assertSame(a_prop)
-		c.assertSame(a_subj)
+		pe.assertSame(a_subj)
 		
 		System.out.println(this.class.name + " OK!")
 	}

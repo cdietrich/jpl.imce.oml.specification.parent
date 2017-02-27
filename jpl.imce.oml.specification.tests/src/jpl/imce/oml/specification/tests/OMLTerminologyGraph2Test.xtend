@@ -17,7 +17,7 @@
 package jpl.imce.oml.specification.tests
 
 import com.google.inject.Inject
-import gov.nasa.jpl.imce.oml.extents.TerminologyExtent
+import gov.nasa.jpl.imce.oml.common.Extent
 import jpl.imce.oml.specification.ecore.extensions.OMLExtensions
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.XtextRunner
@@ -32,7 +32,7 @@ import org.junit.runner.RunWith
 class OMLTerminologyGraph2Test{
 
 	@Inject
-	ParseHelper<TerminologyExtent> parseHelper
+	ParseHelper<Extent> parseHelper
 
 	@Inject 
 	extension ValidationTestHelper

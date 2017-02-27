@@ -17,7 +17,7 @@
 package jpl.imce.oml.specification.tests
 
 import com.google.inject.Inject
-import gov.nasa.jpl.imce.oml.extents.TerminologyExtent
+import gov.nasa.jpl.imce.oml.common.Extent
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.XtextRunner
 import org.eclipse.xtext.testing.util.ParseHelper
@@ -31,7 +31,7 @@ import org.junit.runner.RunWith
 class OMLTerminologyGraph3Test{
 
 	@Inject
-	ParseHelper<TerminologyExtent> parseHelper
+	ParseHelper<Extent> parseHelper
 
 	@Inject 
 	extension ValidationTestHelper
@@ -51,7 +51,7 @@ open terminology <http://imce.jpl.nasa.gov/foundation/base/base> {
 open terminology <http://imce.jpl.nasa.gov/foundation/mission/mission> {
  extends base
 
- abstract concept PerformingElement
+ aspect PerformingElement
  @rdfs:label = "PerformingElement"
 	
  concept Component

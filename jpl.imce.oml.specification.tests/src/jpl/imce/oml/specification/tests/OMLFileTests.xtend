@@ -18,7 +18,7 @@
  package jpl.imce.oml.specification.tests
 
 import com.google.inject.Inject
-import gov.nasa.jpl.imce.oml.extents.TerminologyExtent
+import gov.nasa.jpl.imce.oml.common.Extent
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.formatting2.FormatterPreferenceKeys
@@ -35,7 +35,7 @@ import org.junit.runner.RunWith
 class OMLFileTests extends OMLTest {
 
 	@Inject
-	ParseHelper<TerminologyExtent> parseHelper
+	ParseHelper<Extent> parseHelper
 
 	@Inject extension FormatterTestHelper
 
@@ -48,7 +48,7 @@ class OMLFileTests extends OMLTest {
 	 * is precisely an OML TerminologyExtent
 	 */
  	protected override Class<? extends EObject> getRootObjectType(URI uri) {
-        return typeof(TerminologyExtent)
+        return typeof(Extent)
     }
 
 	@Test 
@@ -72,6 +72,7 @@ class OMLFileTests extends OMLTest {
 		
 		// need support for multi-file cross-references.
 		//testFile("ModuleTests/mission.oml", "ModuleTests/base.oml")
+		
 		testFile("ModuleTests/mission.oml")
 	}
 	

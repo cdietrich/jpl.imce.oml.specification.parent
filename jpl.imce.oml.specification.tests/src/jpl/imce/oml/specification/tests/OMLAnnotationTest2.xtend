@@ -17,8 +17,9 @@
 package jpl.imce.oml.specification.tests
 
 import com.google.inject.Inject
-import gov.nasa.jpl.imce.oml.extents.TerminologyExtent
-import gov.nasa.jpl.imce.oml.terminologies.Concept
+import gov.nasa.jpl.imce.oml.common.Extent
+import gov.nasa.jpl.imce.oml.terminologies.Aspect
+import gov.nasa.jpl.imce.oml.terminologies.TerminologyBox
 import org.eclipse.emf.ecore.util.EcoreUtil
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.XtextRunner
@@ -33,7 +34,7 @@ import static extension org.junit.Assert.*
 class OMLAnnotationTest2 {
 
 	@Inject
-	ParseHelper<TerminologyExtent> parseHelper
+	ParseHelper<Extent> parseHelper
 
 	@Test 
 	def void test() {
@@ -44,7 +45,7 @@ annotationProperty rdfs:label=<http://www.w3.org/2000/01/rdf-schema#label>
 
 open terminology <http://imce.jpl.nasa.gov/foundation/mission/mission>
 {
- abstract concept PerformingElement
+ aspect PerformingElement
  @rdfs:label = "Performing Element"
  @rdfs:label = "A performing element"
 }
@@ -58,11 +59,11 @@ open terminology <http://imce.jpl.nasa.gov/foundation/mission/mission>
 		
 		val ap = result.annotationProperties.head
 		
-		val tbox = result.terminologyGraphs.head
+		val tbox = result.modules.filter(TerminologyBox).head
 		tbox.nsPrefix.assertEquals("mission")
 		
-		val c = tbox.boxStatements.filter(Concept).head
-		c.name().assertEquals("PerformingElement")
+		val pe = tbox.boxStatements.filter(Aspect).head
+		pe.name().assertEquals("PerformingElement")
 		
 		val ann = tbox.annotations
 		assertEquals(2, ann.size)
@@ -74,7 +75,7 @@ open terminology <http://imce.jpl.nasa.gov/foundation/mission/mission>
 		
 			assertTrue(a_value.equals("Performing Element") || a_value.equals("A performing element"))
 			ap.assertSame(a_prop)
-			c.assertSame(a_subj)
+			pe.assertSame(a_subj)
 		]
 		
 		

@@ -9,9 +9,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.URI;
@@ -20,16 +18,22 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.mwe.utils.StandaloneSetup;
+import org.eclipse.xtext.diagnostics.Severity;
 import org.eclipse.xtext.resource.IResourceServiceProvider;
 import org.eclipse.xtext.resource.SaveOptions;
 import org.eclipse.xtext.resource.SaveOptions.Builder;
 import org.eclipse.xtext.resource.XtextResourceSet;
+import org.eclipse.xtext.util.IAcceptor;
 import org.eclipse.xtext.util.Pair;
 import org.eclipse.xtext.util.Tuples;
 import org.eclipse.xtext.validation.CheckMode;
+import org.eclipse.xtext.validation.IDiagnosticConverter;
+import org.eclipse.xtext.validation.IResourceValidator;
 import org.eclipse.xtext.validation.Issue;
+import org.junit.Assert;
 import org.junit.Before;
 
+import com.google.common.collect.Lists;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import com.itemis.xtext.testing.FluentIssueCollection;
@@ -71,7 +75,6 @@ public class OMLTest {
     }
     
     protected FluentIssueCollection issues;
-    private Set<Issue> assertedIssues;
     private boolean compareSerializedModelToInputFile;
     private boolean invokeSerializer;
     private boolean formatOnSerialize;
@@ -83,7 +86,6 @@ public class OMLTest {
     @Before
     public final void _before() {
         issues = null;
-        assertedIssues = new HashSet<Issue>();
         invokeSerializer = true;
         compareSerializedModelToInputFile = true;
         formatOnSerialize = true;
@@ -121,7 +123,24 @@ public class OMLTest {
     
     protected FluentIssueCollection testFile1(final URI uriToTest) {
         final Pair<String, FluentIssueCollection> result = loadAndSaveModule(uriToTest);
+        issues = result.getSecond();
 
+        final List<Issue> problems = issues.getIssues();
+        final Resource r = issues.getResource();
+
+        if (!problems.isEmpty()) {
+            StringBuffer buff = new StringBuffer();
+            buff.append(uriToTest.toString());
+            buff.append("\n" + problems.size() + " problems:");
+            buff.append("\n");
+            for (Issue problem : problems) {
+                buff.append(FluentIssueCollection.getIssueSummary(r, problem));
+                buff.append("\n");
+            }
+			Assert.fail(buff.toString());
+			return issues;
+		}
+        
         String serialized = result.getFirst();
 
         if (compareSerializedModelToInputFile) {
@@ -135,7 +154,7 @@ public class OMLTest {
             assertEquals(expected.trim(), serialized.trim());
         }
 
-        return issues = result.getSecond();
+        return issues;
     }
 
     @SuppressWarnings("unchecked")
@@ -218,13 +237,56 @@ public class OMLTest {
         final URI uri = URI.createURI(resourceRoot + "/" + filename);
         return loadAndSaveModule(uri);
     }
-    
+
+    // Copied from ResourceValidatorImpl.
+    protected static class ListBasedMarkerAcceptor implements IAcceptor<Issue> {
+        private final List<Issue> result;
+
+        protected ListBasedMarkerAcceptor(List<Issue> result) {
+            this.result = result;
+        }
+
+        @Override
+        public void accept(Issue issue) {
+            if (issue != null)
+                result.add(issue);
+        }
+    }
+
+    // Copied from ResourceValidatorImpl
+
+    @Inject
+    private IDiagnosticConverter converter;
+
+    protected void issueFromXtextResourceDiagnostic(org.eclipse.emf.ecore.resource.Resource.Diagnostic diagnostic,
+                                                    Severity severity, IAcceptor<Issue> acceptor) {
+        converter.convertResourceDiagnostic(diagnostic, severity, acceptor);
+    }
+
+    /*
+     * Don't execute validation if there are problems in the resource (errors or warnings)
+     */
     protected Pair<String, FluentIssueCollection> loadAndSaveModule(final URI uri) {
-                rootElement = loadModel(resourceSet, uri, getRootObjectType(uri));
+		rootElement = loadModel(resourceSet, uri, getRootObjectType(uri));
 
         final Resource r = resourceSet.getResource(uri, false);
         final IResourceServiceProvider provider = serviceProviderRegistry.getResourceServiceProvider(r.getURI());
-        final List<Issue> result = provider.getResourceValidator().validate(r, CheckMode.ALL, null);
+        final IResourceValidator v = provider.getResourceValidator();
+
+        final List<Issue> problems = Lists.newArrayListWithExpectedSize(r.getErrors().size() + r.getWarnings().size());
+
+        final IAcceptor<Issue> acceptor =  new ListBasedMarkerAcceptor(problems);
+        for (int i = 0; i < r.getErrors().size(); i++) {
+            issueFromXtextResourceDiagnostic(r.getErrors().get(i), Severity.ERROR, acceptor);
+        }
+
+        for (int i = 0; i < r.getWarnings().size(); i++) {
+            issueFromXtextResourceDiagnostic(r.getWarnings().get(i), Severity.WARNING, acceptor);
+        }
+        if (!problems.isEmpty())
+            return Tuples.create("-not serialized-", new FluentIssueCollection(r, problems, new ArrayList<String>()));
+
+        final List<Issue> result = v.validate(r, CheckMode.ALL, null);
 
         if (invokeSerializer) {
             final ByteArrayOutputStream bos = new ByteArrayOutputStream();

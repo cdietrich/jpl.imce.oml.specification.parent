@@ -32,9 +32,9 @@ import org.eclipse.xtext.nodemodel.INode
 import org.eclipse.xtext.scoping.IScope
 import org.eclipse.xtext.resource.IEObjectDescription
 
-import jpl.imce.oml.specification.ecore.AnnotationProperty
-import jpl.imce.oml.specification.ecore.Annotation
-import jpl.imce.oml.specification.ecore.TerminologyThing
+import gov.nasa.jpl.imce.oml.common.AnnotationProperty
+import gov.nasa.jpl.imce.oml.common.Annotation
+import gov.nasa.jpl.imce.oml.common.Element
 
 /*
  * In the OML metamodel, an OML Annotation has 2 non-container references that require cross-reference resolution:
@@ -99,7 +99,7 @@ class OWLLinkingService extends DefaultLinkingService {
 								val prevNode = node.parent.previousSibling
 								val prevSE = prevNode.leafNodes.head.semanticElement
 								switch prevSE {
-									TerminologyThing:
+									Element:
 										// In this case, the concrete syntax looks like this:
 										// <TerminologyThing> == prevSE
 										// <Annotation> == context

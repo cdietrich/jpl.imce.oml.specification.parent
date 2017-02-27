@@ -28,6 +28,9 @@ t=$(git name-rev --tags --name-only $(git rev-parse HEAD))
 # generate Eclipse metadata
 ./gradlew eclipse
 
+# execute the OML specification unit tests
+./gradlew :jpl.imce.oml.specification.tests:test
+
 # build the SBT projects
 (cd gov.nasa.jpl.oml.specification.resolver; sbt compile)
 
