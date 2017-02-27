@@ -48,7 +48,6 @@ import gov.nasa.jpl.imce.oml.common.Resource
 import gov.nasa.jpl.imce.oml.common.Scala
 import gov.nasa.jpl.imce.oml.common.ModuleElement
 import gov.nasa.jpl.imce.oml.common.UUID
-import gov.nasa.jpl.imce.oml.extents.TerminologyExtent
 import gov.nasa.jpl.imce.oml.terminologies.Concept
 import gov.nasa.jpl.imce.oml.terminologies.ConceptualEntity
 import gov.nasa.jpl.imce.oml.terminologies.DataRelationshipToScalar
@@ -80,9 +79,6 @@ enum DescriptionKind {
 class DescriptionBox extends Module {
 	
 	@NotSchema
-	op TerminologyExtent[1] extent() { descriptionExtent }
-	
-	@NotSchema
 	@Scala(code="copy(annotations = this.annotations ++ resolver.convertToAnnotations(a))")
 	@Override
 	op DescriptionBox[1] withAnnotations
@@ -95,9 +91,6 @@ class DescriptionBox extends Module {
 	op AnnotationPropertyTable[] annotationsByProperty()	
 	
 	DescriptionKind[1] kind
-	
-	@NotSchema
-	container TerminologyExtent[1] descriptionExtent opposite descriptions
 	
 	@CopyConstructor
 	@Collection(kind="SortedSet")

@@ -42,7 +42,7 @@ class OMLSpecificationResolverAPIGenerator extends OMLUtilities {
 		targetPath.toFile.mkdirs	
 		
       	generate(
-      		#[c, t, g, b, d, e], 
+      		#[c, t, g, b, d], 
       		"gov.nasa.jpl.imce.oml.specification.resolver.api", 
       		targetPath.toAbsolutePath.toString
       	)      	

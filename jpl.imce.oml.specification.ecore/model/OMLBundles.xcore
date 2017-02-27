@@ -44,7 +44,6 @@ import gov.nasa.jpl.imce.oml.common.Override
 import gov.nasa.jpl.imce.oml.common.Scala
 import gov.nasa.jpl.imce.oml.common.ModuleElement
 import gov.nasa.jpl.imce.oml.common.UUID
-import gov.nasa.jpl.imce.oml.extents.TerminologyExtent
 import gov.nasa.jpl.imce.oml.terminologies.Concept
 import gov.nasa.jpl.imce.oml.terminologies.TerminologyAxiom
 import gov.nasa.jpl.imce.oml.terminologies.TerminologyBox
@@ -59,13 +58,7 @@ import gov.nasa.jpl.imce.oml.terminologies.TerminologyBoxStatement
  */
 @Glossary
 class Bundle extends TerminologyBox {
-	
-	@NotSchema
-	op TerminologyExtent[1] extent() { bundleExtent }
 		
-	@NotSchema
-	container TerminologyExtent[1] bundleExtent opposite bundles
-	
 	@NotSchema
 	@Scala(code="copy(annotations = this.annotations ++ resolver.convertToAnnotations(a))")
 	@Override

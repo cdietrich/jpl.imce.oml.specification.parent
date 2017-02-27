@@ -44,7 +44,7 @@ class OMLSpecificationTablesGenerator extends OMLUtilities {
 		oml_Folder.toFile.mkdirs	
 		
       	generate(
-      		#[c, t, g, b, d, e], 
+      		#[c, t, g, b, d], 
       		oml_Folder.toAbsolutePath.toString, 
       		"gov.nasa.jpl.imce.oml.specification.tables",
       		"OMLSpecificationTables")

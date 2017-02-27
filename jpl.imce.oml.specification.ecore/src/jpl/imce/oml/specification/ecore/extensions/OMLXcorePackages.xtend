@@ -40,8 +40,6 @@ class OMLXcorePackages {
 		val omlb_uri = URI.createPlatformResourceURI("/jpl.imce.oml.specification.ecore"+omlb, false)
 		val omld = "/model/OMLDescriptions.xcore"
 		val omld_uri = URI.createPlatformResourceURI("/jpl.imce.oml.specification.ecore"+omld, false)
-		val omle = "/model/OMLExtents.xcore"
-		val omle_uri = URI.createPlatformResourceURI("/jpl.imce.oml.specification.ecore"+omle, false)
 		val oml2oti = "/model/OMLProvenanceOTI.xcore"
 		val oml2oti_uri = URI.createPlatformResourceURI("/jpl.imce.oml.specification.ecore"+oml2oti, false)
 		
@@ -52,7 +50,6 @@ class OMLXcorePackages {
 			uriMap.put(omlg_uri, URI.createURI(ExtentsPackage.getResource(omlg).toURI.toString))
 			uriMap.put(omlb_uri, URI.createURI(ExtentsPackage.getResource(omlb).toURI.toString))
 			uriMap.put(omld_uri, URI.createURI(ExtentsPackage.getResource(omld).toURI.toString))
-			uriMap.put(omle_uri, URI.createURI(ExtentsPackage.getResource(omle).toURI.toString))
 			uriMap.put(oml2oti_uri, URI.createURI(ExtentsPackage.getResource(oml2oti).toURI.toString))
 				])
 			
@@ -62,7 +59,6 @@ class OMLXcorePackages {
 		val omlg_r = set.getResource(omlg_uri, true)
 		val omlb_r = set.getResource(omlb_uri, true)
 		val omld_r = set.getResource(omld_uri, true)
-		val omle_r = set.getResource(omle_uri, true)
 		EcoreUtil.resolveAll(set)
       	
       	this.c = omlc_r.getContents().filter(EPackage).get(0)
@@ -70,7 +66,6 @@ class OMLXcorePackages {
      	this.g = omlg_r.getContents().filter(EPackage).get(0)
       	this.b = omlb_r.getContents().filter(EPackage).get(0)
       	this.d = omld_r.getContents().filter(EPackage).get(0)
-      	this.e = omle_r.getContents().filter(EPackage).get(0)
       	this.oml2oti = oml2oti_r.getContents().filter(EPackage).get(0)
 	}
 	

@@ -42,7 +42,7 @@ class OMLSpecificationResolverLibraryGenerator extends OMLUtilities {
 		val targetPath = bundlePath.resolve(targetFolder)
 		targetPath.toFile.mkdirs	
 		
-      	generate(#[c, t, g, b, d, e], targetPath.toAbsolutePath.toString)	      	
+      	generate(#[c, t, g, b, d], targetPath.toAbsolutePath.toString)	      	
 	}
 	
 	def generate(List<EPackage> ePackages, String targetFolder) {

@@ -41,7 +41,7 @@ class OMLSpecificationDocGenerator extends OMLUtilities {
 		targetPath.toFile.mkdirs
 
 		generateGlossaryFile(
-			#[c, t, g, b, d, e], 
+			#[c, t, g, b, d], 
 			targetPath.toAbsolutePath.toString
 		)
 	}
