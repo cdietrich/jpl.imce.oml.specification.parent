@@ -22,14 +22,17 @@ t=$(git name-rev --tags --name-only $(git rev-parse HEAD))
 # build the OML metamodel
 ./gradlew :jpl.imce.oml.specification.ecore:build
 
-# generate & compile the Scala libraries
+# generate & build the Xtext grammar
+./gradlew :jpl.imce.oml.specification:build
+
+# execute the OML specification unit tests
+./gradlew :jpl.imce.oml.specification.tests:test
+
+# generate the Scala libraries
 ./gradlew :gov.nasa.jpl.imce.oml.specification.scala.generators:build
 
 # generate Eclipse metadata
 ./gradlew eclipse
-
-# execute the OML specification unit tests
-./gradlew :jpl.imce.oml.specification.tests:test
 
 # build the SBT projects
 (cd gov.nasa.jpl.oml.specification.resolver; sbt compile)
